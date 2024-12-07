@@ -37,6 +37,7 @@ public interface ListConversationProfilesResponseOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.ConversationProfile>
       getConversationProfilesList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListConversationProfilesResponseOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.ConversationProfile getConversationProfiles(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListConversationProfilesResponseOrBuilder
    * </code>
    */
   int getConversationProfilesCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListConversationProfilesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ConversationProfileOrBuilder>
       getConversationProfilesOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ListConversationProfilesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

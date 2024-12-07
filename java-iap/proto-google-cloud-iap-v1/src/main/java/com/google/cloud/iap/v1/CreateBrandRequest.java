@@ -33,6 +33,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.CreateBrandRequest)
     CreateBrandRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateBrandRequest.newBuilder() to construct.
   private CreateBrandRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int BRAND_FIELD_NUMBER = 2;
   private com.google.cloud.iap.v1.Brand brand_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasBrand() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.iap.v1.Brand getBrand() {
     return brand_ == null ? com.google.cloud.iap.v1.Brand.getDefaultInstance() : brand_;
   }
+
   /**
    *
    *
@@ -336,6 +342,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -548,6 +555,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -571,6 +579,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -634,6 +645,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -664,6 +676,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.iap.v1.Brand.Builder,
             com.google.cloud.iap.v1.BrandOrBuilder>
         brandBuilder_;
+
     /**
      *
      *
@@ -678,6 +691,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasBrand() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -696,6 +710,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
         return brandBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -718,6 +733,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +753,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +781,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +801,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +816,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getBrandFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -813,6 +833,7 @@ public final class CreateBrandRequest extends com.google.protobuf.GeneratedMessa
         return brand_ == null ? com.google.cloud.iap.v1.Brand.getDefaultInstance() : brand_;
       }
     }
+
     /**
      *
      *

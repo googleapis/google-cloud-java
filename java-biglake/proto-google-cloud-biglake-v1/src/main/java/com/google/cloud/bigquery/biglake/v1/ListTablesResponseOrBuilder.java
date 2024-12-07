@@ -34,6 +34,7 @@ public interface ListTablesResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.biglake.v1.Table tables = 1;</code>
    */
   java.util.List<com.google.cloud.bigquery.biglake.v1.Table> getTablesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTablesResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.biglake.v1.Table tables = 1;</code>
    */
   com.google.cloud.bigquery.biglake.v1.Table getTables(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTablesResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.biglake.v1.Table tables = 1;</code>
    */
   int getTablesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListTablesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.biglake.v1.TableOrBuilder>
       getTablesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListTablesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

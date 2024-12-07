@@ -36,6 +36,7 @@ public interface DatabaseInstanceEntityOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DatabaseInstanceEntityOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
+
   /**
    *
    *

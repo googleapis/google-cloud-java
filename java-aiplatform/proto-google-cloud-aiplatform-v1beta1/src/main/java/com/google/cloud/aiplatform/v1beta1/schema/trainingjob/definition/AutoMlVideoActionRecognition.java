@@ -36,6 +36,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoActionRecognition)
     AutoMlVideoActionRecognitionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlVideoActionRecognition.newBuilder() to construct.
   private AutoMlVideoActionRecognition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
   private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlVideoActionRecognitionInputs
       inputs_;
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
   public boolean hasInputs() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
             .AutoMlVideoActionRecognitionInputs.getDefaultInstance()
         : inputs_;
   }
+
   /**
    *
    *
@@ -323,6 +327,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -563,6 +568,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlVideoActionRecognitionInputsOrBuilder>
         inputsBuilder_;
+
     /**
      *
      *
@@ -579,6 +585,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
     public boolean hasInputs() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -604,6 +611,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
         return inputsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -631,6 +639,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +664,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +699,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +721,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +740,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -751,6 +764,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
             : inputs_;
       }
     }
+
     /**
      *
      *

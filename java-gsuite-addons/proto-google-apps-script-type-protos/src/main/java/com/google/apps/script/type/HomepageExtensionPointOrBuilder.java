@@ -37,6 +37,7 @@ public interface HomepageExtensionPointOrBuilder
    * @return The runFunction.
    */
   java.lang.String getRunFunction();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface HomepageExtensionPointOrBuilder
    * @return Whether the enabled field is set.
    */
   boolean hasEnabled();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface HomepageExtensionPointOrBuilder
    * @return The enabled.
    */
   com.google.protobuf.BoolValue getEnabled();
+
   /**
    *
    *

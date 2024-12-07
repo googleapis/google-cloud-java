@@ -33,6 +33,7 @@ public final class GetRecommendationRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1beta1.GetRecommendationRequest)
     GetRecommendationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetRecommendationRequest.newBuilder() to construct.
   private GetRecommendationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GetRecommendationRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class GetRecommendationRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -278,6 +281,7 @@ public final class GetRecommendationRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -465,6 +469,7 @@ public final class GetRecommendationRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -489,6 +494,7 @@ public final class GetRecommendationRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -513,6 +519,7 @@ public final class GetRecommendationRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -536,6 +543,7 @@ public final class GetRecommendationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -555,6 +563,7 @@ public final class GetRecommendationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

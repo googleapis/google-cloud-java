@@ -33,6 +33,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v2.UpgradeHistoryEntry)
     UpgradeHistoryEntryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpgradeHistoryEntry.newBuilder() to construct.
   private UpgradeHistoryEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,6 +134,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -143,6 +145,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
      * <code>STARTED = 1;</code>
      */
     public static final int STARTED_VALUE = 1;
+
     /**
      *
      *
@@ -153,6 +156,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
      * <code>SUCCEEDED = 2;</code>
      */
     public static final int SUCCEEDED_VALUE = 2;
+
     /**
      *
      *
@@ -304,6 +308,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
      * <code>ACTION_UNSPECIFIED = 0;</code>
      */
     public static final int ACTION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -314,6 +319,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
      * <code>UPGRADE = 1;</code>
      */
     public static final int UPGRADE_VALUE = 1;
+
     /**
      *
      *
@@ -415,6 +421,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object snapshot_ = "";
+
   /**
    *
    *
@@ -439,6 +446,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -468,6 +476,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmImage_ = "";
+
   /**
    *
    *
@@ -491,6 +500,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -519,6 +529,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object containerImage_ = "";
+
   /**
    *
    *
@@ -542,6 +553,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -570,6 +582,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object framework_ = "";
+
   /**
    *
    *
@@ -593,6 +606,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -621,6 +635,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -644,6 +659,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -670,6 +686,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
 
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_ = 0;
+
   /**
    *
    *
@@ -687,6 +704,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -711,6 +729,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -727,6 +746,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -743,6 +763,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -760,6 +781,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
 
   public static final int ACTION_FIELD_NUMBER = 8;
   private int action_ = 0;
+
   /**
    *
    *
@@ -777,6 +799,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
   public int getActionValue() {
     return action_;
   }
+
   /**
    *
    *
@@ -803,6 +826,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetVersion_ = "";
+
   /**
    *
    *
@@ -826,6 +850,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -1092,6 +1117,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1406,6 +1432,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object snapshot_ = "";
+
     /**
      *
      *
@@ -1429,6 +1456,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1452,6 +1480,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1474,6 +1503,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1492,6 +1522,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1517,6 +1548,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object vmImage_ = "";
+
     /**
      *
      *
@@ -1539,6 +1571,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1561,6 +1594,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1582,6 +1616,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1599,6 +1634,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1623,6 +1659,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object containerImage_ = "";
+
     /**
      *
      *
@@ -1645,6 +1682,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1667,6 +1705,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1688,6 +1727,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1705,6 +1745,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1729,6 +1770,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object framework_ = "";
+
     /**
      *
      *
@@ -1751,6 +1793,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1773,6 +1816,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1794,6 +1838,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1811,6 +1856,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1835,6 +1881,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -1857,6 +1904,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1879,6 +1927,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1900,6 +1949,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1917,6 +1967,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1941,6 +1992,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1958,6 +2010,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1978,6 +2031,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1999,6 +2053,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.notebooks.v2.UpgradeHistoryEntry.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2022,6 +2077,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2048,6 +2104,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2063,6 +2120,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2084,6 +2142,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2107,6 +2166,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2127,6 +2187,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2155,6 +2216,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2175,6 +2237,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2190,6 +2253,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2209,6 +2273,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2237,6 +2302,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
     }
 
     private int action_ = 0;
+
     /**
      *
      *
@@ -2254,6 +2320,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
     public int getActionValue() {
       return action_;
     }
+
     /**
      *
      *
@@ -2274,6 +2341,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2295,6 +2363,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.notebooks.v2.UpgradeHistoryEntry.Action.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2318,6 +2387,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2339,6 +2409,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object targetVersion_ = "";
+
     /**
      *
      *
@@ -2361,6 +2432,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2383,6 +2455,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2404,6 +2477,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2421,6 +2495,7 @@ public final class UpgradeHistoryEntry extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

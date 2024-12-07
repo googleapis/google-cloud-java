@@ -38,6 +38,7 @@ public interface UpdateExperimentRequestOrBuilder
    * @return Whether the experiment field is set.
    */
   boolean hasExperiment();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateExperimentRequestOrBuilder
    * @return The experiment.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Experiment getExperiment();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateExperimentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateExperimentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

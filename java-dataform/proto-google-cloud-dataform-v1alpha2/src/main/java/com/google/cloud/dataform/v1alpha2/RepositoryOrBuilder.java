@@ -36,6 +36,7 @@ public interface RepositoryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RepositoryOrBuilder
    * @return Whether the gitRemoteSettings field is set.
    */
   boolean hasGitRemoteSettings();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface RepositoryOrBuilder
    * @return The gitRemoteSettings.
    */
   com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings getGitRemoteSettings();
+
   /**
    *
    *

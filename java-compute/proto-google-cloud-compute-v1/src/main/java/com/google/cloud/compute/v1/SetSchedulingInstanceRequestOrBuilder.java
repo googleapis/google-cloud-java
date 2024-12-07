@@ -36,6 +36,7 @@ public interface SetSchedulingInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SetSchedulingInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface SetSchedulingInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface SetSchedulingInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface SetSchedulingInstanceRequestOrBuilder
    * @return Whether the schedulingResource field is set.
    */
   boolean hasSchedulingResource();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface SetSchedulingInstanceRequestOrBuilder
    * @return The schedulingResource.
    */
   com.google.cloud.compute.v1.Scheduling getSchedulingResource();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface SetSchedulingInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

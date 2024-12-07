@@ -44,6 +44,7 @@ public interface BatchRunReportsRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface BatchRunReportsRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.RunReportRequest requests = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.RunReportRequest> getRequestsList();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface BatchRunReportsRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.RunReportRequest requests = 2;</code>
    */
   com.google.analytics.data.v1beta.RunReportRequest getRequests(int index);
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface BatchRunReportsRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.RunReportRequest requests = 2;</code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface BatchRunReportsRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.RunReportRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *

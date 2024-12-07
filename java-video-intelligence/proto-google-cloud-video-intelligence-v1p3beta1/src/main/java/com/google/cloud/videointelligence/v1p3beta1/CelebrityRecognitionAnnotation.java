@@ -33,6 +33,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.CelebrityRecognitionAnnotation)
     CelebrityRecognitionAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CelebrityRecognitionAnnotation.newBuilder() to construct.
   private CelebrityRecognitionAnnotation(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack>
       celebrityTracks_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
       getCelebrityTracksList() {
     return celebrityTracks_;
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
       getCelebrityTracksOrBuilderList() {
     return celebrityTracks_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
   public int getCelebrityTracksCount() {
     return celebrityTracks_.size();
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
   public com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack getCelebrityTracks(int index) {
     return celebrityTracks_.get(index);
   }
+
   /**
    *
    *
@@ -319,6 +325,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -597,6 +604,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
         return celebrityTracksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -615,6 +623,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
         return celebrityTracksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -634,6 +643,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
         return celebrityTracksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -659,6 +669,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +693,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +876,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
         getCelebrityTracksBuilder(int index) {
       return getCelebrityTracksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -876,6 +896,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
         return celebrityTracksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -896,6 +917,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(celebrityTracks_);
       }
     }
+
     /**
      *
      *
@@ -913,6 +935,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
           .addBuilder(
               com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -931,6 +954,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
               index,
               com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.getDefaultInstance());
     }
+
     /**
      *
      *

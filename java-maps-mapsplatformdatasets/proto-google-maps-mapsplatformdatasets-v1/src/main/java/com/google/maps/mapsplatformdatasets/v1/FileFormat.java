@@ -82,6 +82,7 @@ public enum FileFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FILE_FORMAT_UNSPECIFIED = 0;</code>
    */
   public static final int FILE_FORMAT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum FileFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FILE_FORMAT_GEOJSON = 1;</code>
    */
   public static final int FILE_FORMAT_GEOJSON_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum FileFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FILE_FORMAT_KML = 2;</code>
    */
   public static final int FILE_FORMAT_KML_VALUE = 2;
+
   /**
    *
    *

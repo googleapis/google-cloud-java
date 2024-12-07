@@ -34,6 +34,7 @@ public interface BatchCalculateEffectiveSettingsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Settings settings = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.settings.v1beta1.Settings> getSettingsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BatchCalculateEffectiveSettingsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Settings settings = 1;</code>
    */
   com.google.cloud.securitycenter.settings.v1beta1.Settings getSettings(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BatchCalculateEffectiveSettingsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Settings settings = 1;</code>
    */
   int getSettingsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BatchCalculateEffectiveSettingsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.settings.v1beta1.SettingsOrBuilder>
       getSettingsOrBuilderList();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface UpdateAnnotationRequestOrBuilder
    * @return Whether the annotation field is set.
    */
   boolean hasAnnotation();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateAnnotationRequestOrBuilder
    * @return The annotation.
    */
   com.google.cloud.visionai.v1.Annotation getAnnotation();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface UpdateAnnotationRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface UpdateAnnotationRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

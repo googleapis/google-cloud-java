@@ -34,6 +34,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.SynthesizeLongAudioRequest)
     SynthesizeLongAudioRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SynthesizeLongAudioRequest.newBuilder() to construct.
   private SynthesizeLongAudioRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
 
   public static final int INPUT_FIELD_NUMBER = 2;
   private com.google.cloud.texttospeech.v1.SynthesisInput input_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
   public boolean hasInput() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         ? com.google.cloud.texttospeech.v1.SynthesisInput.getDefaultInstance()
         : input_;
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
 
   public static final int AUDIO_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.texttospeech.v1.AudioConfig audioConfig_;
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
   public boolean hasAudioConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         ? com.google.cloud.texttospeech.v1.AudioConfig.getDefaultInstance()
         : audioConfig_;
   }
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object outputGcsUri_ = "";
+
   /**
    *
    *
@@ -260,6 +270,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -288,6 +299,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
 
   public static final int VOICE_FIELD_NUMBER = 5;
   private com.google.cloud.texttospeech.v1.VoiceSelectionParams voice_;
+
   /**
    *
    *
@@ -305,6 +317,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
   public boolean hasVoice() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -324,6 +337,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         ? com.google.cloud.texttospeech.v1.VoiceSelectionParams.getDefaultInstance()
         : voice_;
   }
+
   /**
    *
    *
@@ -553,6 +567,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -821,6 +836,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -844,6 +860,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -867,6 +884,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -889,6 +907,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +926,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +957,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
             com.google.cloud.texttospeech.v1.SynthesisInput.Builder,
             com.google.cloud.texttospeech.v1.SynthesisInputOrBuilder>
         inputBuilder_;
+
     /**
      *
      *
@@ -953,6 +974,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
     public boolean hasInput() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -975,6 +997,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         return inputBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -999,6 +1022,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1045,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1075,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1097,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1114,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return getInputFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1107,6 +1135,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
             : input_;
       }
     }
+
     /**
      *
      *
@@ -1141,6 +1170,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
             com.google.cloud.texttospeech.v1.AudioConfig.Builder,
             com.google.cloud.texttospeech.v1.AudioConfigOrBuilder>
         audioConfigBuilder_;
+
     /**
      *
      *
@@ -1157,6 +1187,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
     public boolean hasAudioConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1179,6 +1210,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         return audioConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1203,6 +1235,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1225,6 +1258,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1288,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1275,6 +1310,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1291,6 +1327,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return getAudioConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1311,6 +1348,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
             : audioConfig_;
       }
     }
+
     /**
      *
      *
@@ -1340,6 +1378,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object outputGcsUri_ = "";
+
     /**
      *
      *
@@ -1364,6 +1403,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1388,6 +1428,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1411,6 +1452,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1430,6 +1472,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1461,6 +1504,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
             com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder,
             com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder>
         voiceBuilder_;
+
     /**
      *
      *
@@ -1477,6 +1521,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
     public boolean hasVoice() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1499,6 +1544,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         return voiceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1523,6 +1569,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1545,6 +1592,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1623,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1596,6 +1645,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1612,6 +1662,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       onChanged();
       return getVoiceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1632,6 +1683,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
             : voice_;
       }
     }
+
     /**
      *
      *

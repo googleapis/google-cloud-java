@@ -39,6 +39,7 @@ public interface CreateAppConnectorRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateAppConnectorRequestOrBuilder
    * @return The appConnectorId.
    */
   java.lang.String getAppConnectorId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreateAppConnectorRequestOrBuilder
    * @return Whether the appConnector field is set.
    */
   boolean hasAppConnector();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateAppConnectorRequestOrBuilder
    * @return The appConnector.
    */
   com.google.cloud.beyondcorp.appconnectors.v1.AppConnector getAppConnector();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface CreateAppConnectorRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

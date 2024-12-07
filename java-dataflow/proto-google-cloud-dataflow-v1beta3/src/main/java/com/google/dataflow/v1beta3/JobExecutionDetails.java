@@ -33,6 +33,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.JobExecutionDetails)
     JobExecutionDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use JobExecutionDetails.newBuilder() to construct.
   private JobExecutionDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.StageSummary> stages_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.dataflow.v1beta3.StageSummary> getStagesList() {
     return stages_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       getStagesOrBuilderList() {
     return stages_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
   public int getStagesCount() {
     return stages_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
   public com.google.dataflow.v1beta3.StageSummary getStages(int index) {
     return stages_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -636,6 +645,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
         return stagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
         return stagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
         return stagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +746,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +789,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +810,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +831,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +851,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +871,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +884,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
     public com.google.dataflow.v1beta3.StageSummary.Builder getStagesBuilder(int index) {
       return getStagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -879,6 +901,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
         return stagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -896,6 +919,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(stages_);
       }
     }
+
     /**
      *
      *
@@ -909,6 +933,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       return getStagesFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.StageSummary.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -922,6 +947,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       return getStagesFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.StageSummary.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -953,6 +979,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -977,6 +1004,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1029,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1053,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1073,7 @@ public final class JobExecutionDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

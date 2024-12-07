@@ -33,6 +33,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.GuidedSearchSpec)
     GuidedSearchSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GuidedSearchSpec.newBuilder() to construct.
   private GuidedSearchSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
 
   public static final int ENABLE_REFINEMENT_ATTRIBUTES_FIELD_NUMBER = 1;
   private boolean enableRefinementAttributes_ = false;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
 
   public static final int ENABLE_RELATED_QUESTIONS_FIELD_NUMBER = 2;
   private boolean enableRelatedQuestions_ = false;
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
 
   public static final int MAX_RELATED_QUESTIONS_FIELD_NUMBER = 3;
   private int maxRelatedQuestions_ = 0;
+
   /**
    *
    *
@@ -295,6 +299,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -503,6 +508,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private boolean enableRefinementAttributes_;
+
     /**
      *
      *
@@ -519,6 +525,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
     public boolean getEnableRefinementAttributes() {
       return enableRefinementAttributes_;
     }
+
     /**
      *
      *
@@ -539,6 +546,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -559,6 +567,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean enableRelatedQuestions_;
+
     /**
      *
      *
@@ -574,6 +583,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
     public boolean getEnableRelatedQuestions() {
       return enableRelatedQuestions_;
     }
+
     /**
      *
      *
@@ -593,6 +603,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -612,6 +623,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
     }
 
     private int maxRelatedQuestions_;
+
     /**
      *
      *
@@ -628,6 +640,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
     public int getMaxRelatedQuestions() {
       return maxRelatedQuestions_;
     }
+
     /**
      *
      *
@@ -648,6 +661,7 @@ public final class GuidedSearchSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

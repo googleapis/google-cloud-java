@@ -33,6 +33,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse)
     SearchExampleComparisonsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchExampleComparisonsResponse.newBuilder() to construct.
   private SearchExampleComparisonsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -82,6 +83,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      * @return Whether the groundTruthExample field is set.
      */
     boolean hasGroundTruthExample();
+
     /**
      *
      *
@@ -94,6 +96,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      * @return The groundTruthExample.
      */
     com.google.cloud.datalabeling.v1beta1.Example getGroundTruthExample();
+
     /**
      *
      *
@@ -115,6 +118,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
     java.util.List<com.google.cloud.datalabeling.v1beta1.Example> getModelCreatedExamplesList();
+
     /**
      *
      *
@@ -125,6 +129,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
     com.google.cloud.datalabeling.v1beta1.Example getModelCreatedExamples(int index);
+
     /**
      *
      *
@@ -135,6 +140,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
     int getModelCreatedExamplesCount();
+
     /**
      *
      *
@@ -146,6 +152,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      */
     java.util.List<? extends com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder>
         getModelCreatedExamplesOrBuilderList();
+
     /**
      *
      *
@@ -158,6 +165,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder getModelCreatedExamplesOrBuilder(
         int index);
   }
+
   /**
    *
    *
@@ -174,6 +182,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison)
       ExampleComparisonOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ExampleComparison.newBuilder() to construct.
     private ExampleComparison(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -209,6 +218,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     private int bitField0_;
     public static final int GROUND_TRUTH_EXAMPLE_FIELD_NUMBER = 1;
     private com.google.cloud.datalabeling.v1beta1.Example groundTruthExample_;
+
     /**
      *
      *
@@ -224,6 +234,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     public boolean hasGroundTruthExample() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -241,6 +252,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           ? com.google.cloud.datalabeling.v1beta1.Example.getDefaultInstance()
           : groundTruthExample_;
     }
+
     /**
      *
      *
@@ -261,6 +273,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.datalabeling.v1beta1.Example> modelCreatedExamples_;
+
     /**
      *
      *
@@ -275,6 +288,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         getModelCreatedExamplesList() {
       return modelCreatedExamples_;
     }
+
     /**
      *
      *
@@ -289,6 +303,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         getModelCreatedExamplesOrBuilderList() {
       return modelCreatedExamples_;
     }
+
     /**
      *
      *
@@ -302,6 +317,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     public int getModelCreatedExamplesCount() {
       return modelCreatedExamples_.size();
     }
+
     /**
      *
      *
@@ -315,6 +331,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     public com.google.cloud.datalabeling.v1beta1.Example getModelCreatedExamples(int index) {
       return modelCreatedExamples_.get(index);
     }
+
     /**
      *
      *
@@ -535,6 +552,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
               com.google.cloud.datalabeling.v1beta1.Example.Builder,
               com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder>
           groundTruthExampleBuilder_;
+
       /**
        *
        *
@@ -850,6 +869,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       public boolean hasGroundTruthExample() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -870,6 +890,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           return groundTruthExampleBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -892,6 +913,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -912,6 +934,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -940,6 +963,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -959,6 +983,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -973,6 +998,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         onChanged();
         return getGroundTruthExampleFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -992,6 +1018,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
               : groundTruthExample_;
         }
       }
+
       /**
        *
        *
@@ -1054,6 +1081,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           return modelCreatedExamplesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1071,6 +1099,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           return modelCreatedExamplesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1088,6 +1117,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           return modelCreatedExamplesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1112,6 +1142,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -1133,6 +1164,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -1156,6 +1188,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -1180,6 +1213,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -1201,6 +1235,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -1222,6 +1257,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -1243,6 +1279,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -1263,6 +1300,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -1283,6 +1321,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -1297,6 +1336,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           int index) {
         return getModelCreatedExamplesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1315,6 +1355,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           return modelCreatedExamplesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1333,6 +1374,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           return java.util.Collections.unmodifiableList(modelCreatedExamples_);
         }
       }
+
       /**
        *
        *
@@ -1348,6 +1390,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return getModelCreatedExamplesFieldBuilder()
             .addBuilder(com.google.cloud.datalabeling.v1beta1.Example.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1363,6 +1406,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return getModelCreatedExamplesFieldBuilder()
             .addBuilder(index, com.google.cloud.datalabeling.v1beta1.Example.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1475,6 +1519,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
   private java.util.List<
           com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison>
       exampleComparisons_;
+
   /**
    *
    *
@@ -1492,6 +1537,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       getExampleComparisonsList() {
     return exampleComparisons_;
   }
+
   /**
    *
    *
@@ -1511,6 +1557,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       getExampleComparisonsOrBuilderList() {
     return exampleComparisons_;
   }
+
   /**
    *
    *
@@ -1526,6 +1573,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
   public int getExampleComparisonsCount() {
     return exampleComparisons_.size();
   }
+
   /**
    *
    *
@@ -1542,6 +1590,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       getExampleComparisons(int index) {
     return exampleComparisons_.get(index);
   }
+
   /**
    *
    *
@@ -1564,6 +1613,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -1587,6 +1637,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -1784,6 +1835,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2085,6 +2137,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return exampleComparisonsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2103,6 +2156,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return exampleComparisonsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2122,6 +2176,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return exampleComparisonsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2149,6 +2204,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2174,6 +2230,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2200,6 +2257,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2227,6 +2285,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2251,6 +2310,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2276,6 +2336,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2302,6 +2363,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2323,6 +2385,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2344,6 +2407,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2360,6 +2424,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         getExampleComparisonsBuilder(int index) {
       return getExampleComparisonsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2380,6 +2445,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return exampleComparisonsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2402,6 +2468,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(exampleComparisons_);
       }
     }
+
     /**
      *
      *
@@ -2421,6 +2488,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
               com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse
                   .ExampleComparison.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2441,6 +2509,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
               com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse
                   .ExampleComparison.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2486,6 +2555,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -2508,6 +2578,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2530,6 +2601,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2551,6 +2623,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2568,6 +2641,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

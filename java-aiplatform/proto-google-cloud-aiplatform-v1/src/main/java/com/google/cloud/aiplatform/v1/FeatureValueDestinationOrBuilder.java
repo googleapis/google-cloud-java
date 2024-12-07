@@ -40,6 +40,7 @@ public interface FeatureValueDestinationOrBuilder
    * @return Whether the bigqueryDestination field is set.
    */
   boolean hasBigqueryDestination();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface FeatureValueDestinationOrBuilder
    * @return The bigqueryDestination.
    */
   com.google.cloud.aiplatform.v1.BigQueryDestination getBigqueryDestination();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface FeatureValueDestinationOrBuilder
    * @return Whether the tfrecordDestination field is set.
    */
   boolean hasTfrecordDestination();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface FeatureValueDestinationOrBuilder
    * @return The tfrecordDestination.
    */
   com.google.cloud.aiplatform.v1.TFRecordDestination getTfrecordDestination();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public interface FeatureValueDestinationOrBuilder
    * @return Whether the csvDestination field is set.
    */
   boolean hasCsvDestination();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface FeatureValueDestinationOrBuilder
    * @return The csvDestination.
    */
   com.google.cloud.aiplatform.v1.CsvDestination getCsvDestination();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListLiveAdTagDetailsResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.LiveAdTagDetail live_ad_tag_details = 1;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.LiveAdTagDetail> getLiveAdTagDetailsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListLiveAdTagDetailsResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.LiveAdTagDetail live_ad_tag_details = 1;</code>
    */
   com.google.cloud.video.stitcher.v1.LiveAdTagDetail getLiveAdTagDetails(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListLiveAdTagDetailsResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.LiveAdTagDetail live_ad_tag_details = 1;</code>
    */
   int getLiveAdTagDetailsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListLiveAdTagDetailsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.LiveAdTagDetailOrBuilder>
       getLiveAdTagDetailsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListLiveAdTagDetailsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

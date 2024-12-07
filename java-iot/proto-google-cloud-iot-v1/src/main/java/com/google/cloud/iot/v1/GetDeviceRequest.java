@@ -33,6 +33,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.GetDeviceRequest)
     GetDeviceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetDeviceRequest.newBuilder() to construct.
   private GetDeviceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int FIELD_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask fieldMask_;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasFieldMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.FieldMask getFieldMask() {
     return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
   }
+
   /**
    *
    *
@@ -347,6 +353,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -559,6 +566,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -585,6 +593,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -611,6 +620,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -636,6 +646,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         fieldMaskBuilder_;
+
     /**
      *
      *
@@ -706,6 +719,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasFieldMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
         return fieldMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -750,6 +765,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +787,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +839,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +856,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getFieldMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -855,6 +875,7 @@ public final class GetDeviceRequest extends com.google.protobuf.GeneratedMessage
         return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
       }
     }
+
     /**
      *
      *

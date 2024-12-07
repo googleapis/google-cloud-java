@@ -36,6 +36,7 @@ public interface TranslationTaskDetailsOrBuilder
    * @return Whether the teradataOptions field is set.
    */
   boolean hasTeradataOptions();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TranslationTaskDetailsOrBuilder
    * @return The teradataOptions.
    */
   com.google.cloud.bigquery.migration.v2alpha.TeradataOptions getTeradataOptions();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface TranslationTaskDetailsOrBuilder
    * @return Whether the bteqOptions field is set.
    */
   boolean hasBteqOptions();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface TranslationTaskDetailsOrBuilder
    * @return The bteqOptions.
    */
   com.google.cloud.bigquery.migration.v2alpha.BteqOptions getBteqOptions();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface TranslationTaskDetailsOrBuilder
    * @return The inputPath.
    */
   java.lang.String getInputPath();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface TranslationTaskDetailsOrBuilder
    * @return The outputPath.
    */
   java.lang.String getOutputPath();
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public interface TranslationTaskDetailsOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.migration.v2alpha.TranslationFileMapping>
       getFilePathsList();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface TranslationTaskDetailsOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.migration.v2alpha.TranslationFileMapping getFilePaths(int index);
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public interface TranslationTaskDetailsOrBuilder
    * </code>
    */
   int getFilePathsCount();
+
   /**
    *
    *
@@ -192,6 +201,7 @@ public interface TranslationTaskDetailsOrBuilder
   java.util.List<
           ? extends com.google.cloud.bigquery.migration.v2alpha.TranslationFileMappingOrBuilder>
       getFilePathsOrBuilderList();
+
   /**
    *
    *
@@ -218,6 +228,7 @@ public interface TranslationTaskDetailsOrBuilder
    * @return The schemaPath.
    */
   java.lang.String getSchemaPath();
+
   /**
    *
    *
@@ -246,6 +257,7 @@ public interface TranslationTaskDetailsOrBuilder
    * @return The enum numeric value on the wire for fileEncoding.
    */
   int getFileEncodingValue();
+
   /**
    *
    *
@@ -274,6 +286,7 @@ public interface TranslationTaskDetailsOrBuilder
    * @return Whether the identifierSettings field is set.
    */
   boolean hasIdentifierSettings();
+
   /**
    *
    *
@@ -287,6 +300,7 @@ public interface TranslationTaskDetailsOrBuilder
    * @return The identifierSettings.
    */
   com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings getIdentifierSettings();
+
   /**
    *
    *
@@ -317,6 +331,7 @@ public interface TranslationTaskDetailsOrBuilder
    * </code>
    */
   int getSpecialTokenMapCount();
+
   /**
    *
    *
@@ -334,12 +349,14 @@ public interface TranslationTaskDetailsOrBuilder
    * </code>
    */
   boolean containsSpecialTokenMap(java.lang.String key);
+
   /** Use {@link #getSpecialTokenMapMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType>
       getSpecialTokenMap();
+
   /**
    *
    *
@@ -360,6 +377,7 @@ public interface TranslationTaskDetailsOrBuilder
           java.lang.String,
           com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType>
       getSpecialTokenMapMap();
+
   /**
    *
    *
@@ -383,6 +401,7 @@ public interface TranslationTaskDetailsOrBuilder
           /* nullable */
           com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType
               defaultValue);
+
   /**
    *
    *
@@ -401,9 +420,11 @@ public interface TranslationTaskDetailsOrBuilder
    */
   com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType
       getSpecialTokenMapOrThrow(java.lang.String key);
+
   /** Use {@link #getSpecialTokenMapValueMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getSpecialTokenMapValue();
+
   /**
    *
    *
@@ -421,6 +442,7 @@ public interface TranslationTaskDetailsOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.Integer> getSpecialTokenMapValueMap();
+
   /**
    *
    *
@@ -438,6 +460,7 @@ public interface TranslationTaskDetailsOrBuilder
    * </code>
    */
   int getSpecialTokenMapValueOrDefault(java.lang.String key, int defaultValue);
+
   /**
    *
    *
@@ -468,6 +491,7 @@ public interface TranslationTaskDetailsOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -480,6 +504,7 @@ public interface TranslationTaskDetailsOrBuilder
    * @return The filter.
    */
   com.google.cloud.bigquery.migration.v2alpha.Filter getFilter();
+
   /**
    *
    *
@@ -506,6 +531,7 @@ public interface TranslationTaskDetailsOrBuilder
    * @return The translationExceptionTable.
    */
   java.lang.String getTranslationExceptionTable();
+
   /**
    *
    *

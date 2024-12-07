@@ -35,6 +35,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.SpeedReadingInterval)
     SpeedReadingIntervalOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpeedReadingInterval.newBuilder() to construct.
   private SpeedReadingInterval(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,6 +129,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      * <code>SPEED_UNSPECIFIED = 0;</code>
      */
     public static final int SPEED_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -138,6 +140,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      * <code>NORMAL = 1;</code>
      */
     public static final int NORMAL_VALUE = 1;
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      * <code>SLOW = 2;</code>
      */
     public static final int SLOW_VALUE = 2;
+
     /**
      *
      *
@@ -248,6 +252,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
 
   public static final int START_POLYLINE_POINT_INDEX_FIELD_NUMBER = 1;
   private int startPolylinePointIndex_ = 0;
+
   /**
    *
    *
@@ -267,6 +272,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
 
   public static final int END_POLYLINE_POINT_INDEX_FIELD_NUMBER = 2;
   private int endPolylinePointIndex_ = 0;
+
   /**
    *
    *
@@ -286,6 +292,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
 
   public static final int SPEED_FIELD_NUMBER = 3;
   private int speed_ = 0;
+
   /**
    *
    *
@@ -301,6 +308,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
   public int getSpeedValue() {
     return speed_;
   }
+
   /**
    *
    *
@@ -502,6 +510,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -712,6 +721,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int startPolylinePointIndex_;
+
     /**
      *
      *
@@ -728,6 +738,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
     public int getStartPolylinePointIndex() {
       return startPolylinePointIndex_;
     }
+
     /**
      *
      *
@@ -748,6 +759,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +780,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
     }
 
     private int endPolylinePointIndex_;
+
     /**
      *
      *
@@ -784,6 +797,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
     public int getEndPolylinePointIndex() {
       return endPolylinePointIndex_;
     }
+
     /**
      *
      *
@@ -804,6 +818,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +839,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
     }
 
     private int speed_ = 0;
+
     /**
      *
      *
@@ -839,6 +855,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
     public int getSpeedValue() {
       return speed_;
     }
+
     /**
      *
      *
@@ -857,6 +874,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +894,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
           ? com.google.maps.fleetengine.v1.SpeedReadingInterval.Speed.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -897,6 +916,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

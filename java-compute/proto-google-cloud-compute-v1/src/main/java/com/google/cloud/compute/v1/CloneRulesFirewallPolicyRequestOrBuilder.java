@@ -36,6 +36,7 @@ public interface CloneRulesFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   java.lang.String getFirewallPolicy();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CloneRulesFirewallPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface CloneRulesFirewallPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface CloneRulesFirewallPolicyRequestOrBuilder
    * @return Whether the sourceFirewallPolicy field is set.
    */
   boolean hasSourceFirewallPolicy();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface CloneRulesFirewallPolicyRequestOrBuilder
    * @return The sourceFirewallPolicy.
    */
   java.lang.String getSourceFirewallPolicy();
+
   /**
    *
    *

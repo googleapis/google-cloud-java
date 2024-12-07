@@ -34,6 +34,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance)
     OSPolicyResourceComplianceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OSPolicyResourceCompliance.newBuilder() to construct.
   private OSPolicyResourceCompliance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,6 +87,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
      */
     com.google.protobuf.ByteString getEnforcementOutput();
   }
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.ExecResourceOutput)
       ExecResourceOutputOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ExecResourceOutput.newBuilder() to construct.
     private ExecResourceOutput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -136,6 +139,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     public static final int ENFORCEMENT_OUTPUT_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString enforcementOutput_ =
         com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -322,6 +326,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -525,6 +530,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
 
       private com.google.protobuf.ByteString enforcementOutput_ =
           com.google.protobuf.ByteString.EMPTY;
+
       /**
        *
        *
@@ -541,6 +547,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       public com.google.protobuf.ByteString getEnforcementOutput() {
         return enforcementOutput_;
       }
+
       /**
        *
        *
@@ -563,6 +570,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -667,6 +675,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     private OutputCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -701,6 +710,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object osPolicyResourceId_ = "";
+
   /**
    *
    *
@@ -724,6 +734,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -752,6 +763,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep> configSteps_;
+
   /**
    *
    *
@@ -768,6 +780,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       getConfigStepsList() {
     return configSteps_;
   }
+
   /**
    *
    *
@@ -785,6 +798,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       getConfigStepsOrBuilderList() {
     return configSteps_;
   }
+
   /**
    *
    *
@@ -800,6 +814,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
   public int getConfigStepsCount() {
     return configSteps_.size();
   }
+
   /**
    *
    *
@@ -815,6 +830,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
   public com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep getConfigSteps(int index) {
     return configSteps_.get(index);
   }
+
   /**
    *
    *
@@ -834,6 +850,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -849,6 +866,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -870,6 +888,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
   }
 
   public static final int EXEC_RESOURCE_OUTPUT_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -887,6 +906,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
   public boolean hasExecResourceOutput() {
     return outputCase_ == 4;
   }
+
   /**
    *
    *
@@ -910,6 +930,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     return com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.ExecResourceOutput
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1147,6 +1168,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1456,6 +1478,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object osPolicyResourceId_ = "";
+
     /**
      *
      *
@@ -1478,6 +1501,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1500,6 +1524,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1521,6 +1546,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1538,6 +1564,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1598,6 +1625,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         return configStepsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1616,6 +1644,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         return configStepsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1634,6 +1663,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         return configStepsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1659,6 +1689,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1682,6 +1713,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1707,6 +1739,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1765,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1754,6 +1788,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1777,6 +1812,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1800,6 +1836,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1821,6 +1858,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1842,6 +1880,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1857,6 +1896,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         getConfigStepsBuilder(int index) {
       return getConfigStepsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1876,6 +1916,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         return configStepsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1896,6 +1937,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(configSteps_);
       }
     }
+
     /**
      *
      *
@@ -1913,6 +1955,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
           .addBuilder(
               com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1931,6 +1974,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
               index,
               com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1965,6 +2009,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1980,6 +2025,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1998,6 +2044,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2017,6 +2064,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
           ? com.google.cloud.osconfig.v1alpha.OSPolicyComplianceState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2038,6 +2086,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2062,6 +2111,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
             com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance
                 .ExecResourceOutputOrBuilder>
         execResourceOutputBuilder_;
+
     /**
      *
      *
@@ -2079,6 +2129,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     public boolean hasExecResourceOutput() {
       return outputCase_ == 4;
     }
+
     /**
      *
      *
@@ -2110,6 +2161,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2135,6 +2187,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       outputCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2158,6 +2211,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       outputCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2198,6 +2252,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       outputCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2225,6 +2280,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2240,6 +2296,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         getExecResourceOutputBuilder() {
       return getExecResourceOutputFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2265,6 +2322,7 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

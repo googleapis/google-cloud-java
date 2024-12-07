@@ -33,6 +33,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.TrafficPortSelector)
     TrafficPortSelectorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TrafficPortSelector.newBuilder() to construct.
   private TrafficPortSelector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList ports_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getPortsList() {
     return ports_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
   public int getPortsCount() {
     return ports_.size();
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
   public java.lang.String getPorts(int index) {
     return ports_.get(index);
   }
+
   /**
    *
    *
@@ -306,6 +311,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -505,6 +511,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -523,6 +530,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
       ports_.makeImmutable();
       return ports_;
     }
+
     /**
      *
      *
@@ -540,6 +548,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
     public int getPortsCount() {
       return ports_.size();
     }
+
     /**
      *
      *
@@ -558,6 +567,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
     public java.lang.String getPorts(int index) {
       return ports_.get(index);
     }
+
     /**
      *
      *
@@ -576,6 +586,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getPortsBytes(int index) {
       return ports_.getByteString(index);
     }
+
     /**
      *
      *
@@ -602,6 +613,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -627,6 +639,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -649,6 +662,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +684,7 @@ public final class TrafficPortSelector extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

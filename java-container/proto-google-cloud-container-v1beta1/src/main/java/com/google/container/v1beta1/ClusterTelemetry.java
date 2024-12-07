@@ -33,6 +33,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.ClusterTelemetry)
     ClusterTelemetryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClusterTelemetry.newBuilder() to construct.
   private ClusterTelemetry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -126,6 +127,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
      * <code>UNSPECIFIED = 0;</code>
      */
     public static final int UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -136,6 +138,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -146,6 +149,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
      * <code>ENABLED = 2;</code>
      */
     public static final int ENABLED_VALUE = 2;
+
     /**
      *
      *
@@ -244,6 +248,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -259,6 +264,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -438,6 +444,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -619,6 +626,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -634,6 +642,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -652,6 +661,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -671,6 +681,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
           ? com.google.container.v1beta1.ClusterTelemetry.Type.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -692,6 +703,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

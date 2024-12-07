@@ -32,6 +32,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkAttachmentsScopedList)
     NetworkAttachmentsScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkAttachmentsScopedList.newBuilder() to construct.
   private NetworkAttachmentsScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NetworkAttachment> networkAttachments_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.compute.v1.NetworkAttachment> getNetworkAttachmentsList() {
     return networkAttachments_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       getNetworkAttachmentsOrBuilderList() {
     return networkAttachments_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
   public int getNetworkAttachmentsCount() {
     return networkAttachments_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
   public com.google.cloud.compute.v1.NetworkAttachment getNetworkAttachments(int index) {
     return networkAttachments_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -172,6 +180,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -364,6 +373,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -658,6 +668,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
         return networkAttachmentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
         return networkAttachmentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
         return networkAttachmentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -716,6 +729,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +751,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +775,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +800,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +844,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +866,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +887,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +908,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +923,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
         int index) {
       return getNetworkAttachmentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -919,6 +942,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
         return networkAttachmentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -937,6 +961,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(networkAttachments_);
       }
     }
+
     /**
      *
      *
@@ -951,6 +976,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       return getNetworkAttachmentsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NetworkAttachment.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -966,6 +992,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       return getNetworkAttachmentsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NetworkAttachment.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1007,6 +1034,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -1021,6 +1049,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1041,6 +1070,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1093,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1113,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1141,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1161,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1176,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1160,6 +1195,7 @@ public final class NetworkAttachmentsScopedList extends com.google.protobuf.Gene
             : warning_;
       }
     }
+
     /**
      *
      *

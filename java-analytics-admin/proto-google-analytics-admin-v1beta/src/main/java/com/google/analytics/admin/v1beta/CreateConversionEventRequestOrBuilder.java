@@ -38,6 +38,7 @@ public interface CreateConversionEventRequestOrBuilder
    * @return Whether the conversionEvent field is set.
    */
   boolean hasConversionEvent();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CreateConversionEventRequestOrBuilder
    * @return The conversionEvent.
    */
   com.google.analytics.admin.v1beta.ConversionEvent getConversionEvent();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface CreateConversionEventRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

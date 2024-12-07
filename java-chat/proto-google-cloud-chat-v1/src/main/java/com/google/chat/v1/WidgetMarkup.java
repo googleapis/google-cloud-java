@@ -33,6 +33,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.WidgetMarkup)
     WidgetMarkupOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WidgetMarkup.newBuilder() to construct.
   private WidgetMarkup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,64 +139,94 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>ICON_UNSPECIFIED = 0;</code> */
     public static final int ICON_UNSPECIFIED_VALUE = 0;
+
     /** <code>AIRPLANE = 1;</code> */
     public static final int AIRPLANE_VALUE = 1;
+
     /** <code>BOOKMARK = 26;</code> */
     public static final int BOOKMARK_VALUE = 26;
+
     /** <code>BUS = 25;</code> */
     public static final int BUS_VALUE = 25;
+
     /** <code>CAR = 9;</code> */
     public static final int CAR_VALUE = 9;
+
     /** <code>CLOCK = 2;</code> */
     public static final int CLOCK_VALUE = 2;
+
     /** <code>CONFIRMATION_NUMBER_ICON = 12;</code> */
     public static final int CONFIRMATION_NUMBER_ICON_VALUE = 12;
+
     /** <code>DOLLAR = 14;</code> */
     public static final int DOLLAR_VALUE = 14;
+
     /** <code>DESCRIPTION = 27;</code> */
     public static final int DESCRIPTION_VALUE = 27;
+
     /** <code>EMAIL = 10;</code> */
     public static final int EMAIL_VALUE = 10;
+
     /** <code>EVENT_PERFORMER = 20;</code> */
     public static final int EVENT_PERFORMER_VALUE = 20;
+
     /** <code>EVENT_SEAT = 21;</code> */
     public static final int EVENT_SEAT_VALUE = 21;
+
     /** <code>FLIGHT_ARRIVAL = 16;</code> */
     public static final int FLIGHT_ARRIVAL_VALUE = 16;
+
     /** <code>FLIGHT_DEPARTURE = 15;</code> */
     public static final int FLIGHT_DEPARTURE_VALUE = 15;
+
     /** <code>HOTEL = 6;</code> */
     public static final int HOTEL_VALUE = 6;
+
     /** <code>HOTEL_ROOM_TYPE = 17;</code> */
     public static final int HOTEL_ROOM_TYPE_VALUE = 17;
+
     /** <code>INVITE = 19;</code> */
     public static final int INVITE_VALUE = 19;
+
     /** <code>MAP_PIN = 3;</code> */
     public static final int MAP_PIN_VALUE = 3;
+
     /** <code>MEMBERSHIP = 24;</code> */
     public static final int MEMBERSHIP_VALUE = 24;
+
     /** <code>MULTIPLE_PEOPLE = 18;</code> */
     public static final int MULTIPLE_PEOPLE_VALUE = 18;
+
     /** <code>OFFER = 30;</code> */
     public static final int OFFER_VALUE = 30;
+
     /** <code>PERSON = 11;</code> */
     public static final int PERSON_VALUE = 11;
+
     /** <code>PHONE = 13;</code> */
     public static final int PHONE_VALUE = 13;
+
     /** <code>RESTAURANT_ICON = 7;</code> */
     public static final int RESTAURANT_ICON_VALUE = 7;
+
     /** <code>SHOPPING_CART = 8;</code> */
     public static final int SHOPPING_CART_VALUE = 8;
+
     /** <code>STAR = 5;</code> */
     public static final int STAR_VALUE = 5;
+
     /** <code>STORE = 22;</code> */
     public static final int STORE_VALUE = 22;
+
     /** <code>TICKET = 4;</code> */
     public static final int TICKET_VALUE = 4;
+
     /** <code>TRAIN = 23;</code> */
     public static final int TRAIN_VALUE = 23;
+
     /** <code>VIDEO_CAMERA = 28;</code> */
     public static final int VIDEO_CAMERA_VALUE = 28;
+
     /** <code>VIDEO_PLAY = 29;</code> */
     public static final int VIDEO_PLAY_VALUE = 29;
 
@@ -349,6 +380,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The text.
      */
     java.lang.String getText();
+
     /**
      * <code>string text = 1;</code>
      *
@@ -356,6 +388,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTextBytes();
   }
+
   /**
    *
    *
@@ -377,6 +410,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.WidgetMarkup.TextParagraph)
       TextParagraphOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TextParagraph.newBuilder() to construct.
     private TextParagraph(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -411,6 +445,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object text_ = "";
+
     /**
      * <code>string text = 1;</code>
      *
@@ -428,6 +463,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      * <code>string text = 1;</code>
      *
@@ -606,6 +642,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -800,6 +837,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object text_ = "";
+
       /**
        * <code>string text = 1;</code>
        *
@@ -816,6 +854,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string text = 1;</code>
        *
@@ -832,6 +871,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string text = 1;</code>
        *
@@ -847,6 +887,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        * <code>string text = 1;</code>
        *
@@ -858,6 +899,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        * <code>string text = 1;</code>
        *
@@ -956,6 +998,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the textButton field is set.
      */
     boolean hasTextButton();
+
     /**
      *
      *
@@ -968,6 +1011,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The textButton.
      */
     com.google.chat.v1.WidgetMarkup.TextButton getTextButton();
+
     /**
      *
      *
@@ -991,6 +1035,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the imageButton field is set.
      */
     boolean hasImageButton();
+
     /**
      *
      *
@@ -1003,6 +1048,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The imageButton.
      */
     com.google.chat.v1.WidgetMarkup.ImageButton getImageButton();
+
     /**
      *
      *
@@ -1016,6 +1062,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     com.google.chat.v1.WidgetMarkup.Button.TypeCase getTypeCase();
   }
+
   /**
    *
    *
@@ -1030,6 +1077,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.WidgetMarkup.Button)
       ButtonOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Button.newBuilder() to construct.
     private Button(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1075,6 +1123,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       private TypeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1108,6 +1157,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TEXT_BUTTON_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -1123,6 +1173,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextButton() {
       return typeCase_ == 1;
     }
+
     /**
      *
      *
@@ -1141,6 +1192,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.chat.v1.WidgetMarkup.TextButton.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1159,6 +1211,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int IMAGE_BUTTON_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -1174,6 +1227,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImageButton() {
       return typeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1192,6 +1246,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.chat.v1.WidgetMarkup.ImageButton.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1398,6 +1453,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1635,6 +1691,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.WidgetMarkup.TextButton.Builder,
               com.google.chat.v1.WidgetMarkup.TextButtonOrBuilder>
           textButtonBuilder_;
+
       /**
        *
        *
@@ -1650,6 +1707,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTextButton() {
         return typeCase_ == 1;
       }
+
       /**
        *
        *
@@ -1675,6 +1733,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return com.google.chat.v1.WidgetMarkup.TextButton.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1697,6 +1756,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         typeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1717,6 +1777,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         typeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1749,6 +1810,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         typeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1774,6 +1836,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1786,6 +1849,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public com.google.chat.v1.WidgetMarkup.TextButton.Builder getTextButtonBuilder() {
         return getTextButtonFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1806,6 +1870,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return com.google.chat.v1.WidgetMarkup.TextButton.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1844,6 +1909,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.WidgetMarkup.ImageButton.Builder,
               com.google.chat.v1.WidgetMarkup.ImageButtonOrBuilder>
           imageButtonBuilder_;
+
       /**
        *
        *
@@ -1859,6 +1925,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasImageButton() {
         return typeCase_ == 2;
       }
+
       /**
        *
        *
@@ -1884,6 +1951,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return com.google.chat.v1.WidgetMarkup.ImageButton.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1906,6 +1974,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         typeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1926,6 +1995,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         typeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1958,6 +2028,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         typeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1983,6 +2054,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1995,6 +2067,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public com.google.chat.v1.WidgetMarkup.ImageButton.Builder getImageButtonBuilder() {
         return getImageButtonFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2015,6 +2088,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return com.google.chat.v1.WidgetMarkup.ImageButton.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2129,6 +2203,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The text.
      */
     java.lang.String getText();
+
     /**
      *
      *
@@ -2154,6 +2229,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the onClick field is set.
      */
     boolean hasOnClick();
+
     /**
      *
      *
@@ -2166,6 +2242,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The onClick.
      */
     com.google.chat.v1.WidgetMarkup.OnClick getOnClick();
+
     /**
      *
      *
@@ -2177,6 +2254,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.chat.v1.WidgetMarkup.OnClickOrBuilder getOnClickOrBuilder();
   }
+
   /**
    *
    *
@@ -2191,6 +2269,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.WidgetMarkup.TextButton)
       TextButtonOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TextButton.newBuilder() to construct.
     private TextButton(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2226,6 +2305,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object text_ = "";
+
     /**
      *
      *
@@ -2249,6 +2329,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2275,6 +2356,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ON_CLICK_FIELD_NUMBER = 2;
     private com.google.chat.v1.WidgetMarkup.OnClick onClick_;
+
     /**
      *
      *
@@ -2290,6 +2372,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOnClick() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2307,6 +2390,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           ? com.google.chat.v1.WidgetMarkup.OnClick.getDefaultInstance()
           : onClick_;
     }
+
     /**
      *
      *
@@ -2497,6 +2581,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2712,6 +2797,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object text_ = "";
+
       /**
        *
        *
@@ -2734,6 +2820,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2756,6 +2843,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2777,6 +2865,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2794,6 +2883,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2823,6 +2913,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.WidgetMarkup.OnClick.Builder,
               com.google.chat.v1.WidgetMarkup.OnClickOrBuilder>
           onClickBuilder_;
+
       /**
        *
        *
@@ -2837,6 +2928,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOnClick() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2857,6 +2949,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return onClickBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2879,6 +2972,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2898,6 +2992,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2925,6 +3020,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2944,6 +3040,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2958,6 +3055,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOnClickFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2976,6 +3074,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
               : onClick_;
         }
       }
+
       /**
        *
        *
@@ -3084,6 +3183,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the icon field is set.
      */
     boolean hasIcon();
+
     /**
      *
      *
@@ -3097,6 +3197,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for icon.
      */
     int getIconValue();
+
     /**
      *
      *
@@ -3123,6 +3224,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the iconUrl field is set.
      */
     boolean hasIconUrl();
+
     /**
      *
      *
@@ -3135,6 +3237,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The iconUrl.
      */
     java.lang.String getIconUrl();
+
     /**
      *
      *
@@ -3167,6 +3270,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The topLabel.
      */
     java.lang.String getTopLabel();
+
     /**
      *
      *
@@ -3207,6 +3311,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The content.
      */
     java.lang.String getContent();
+
     /**
      *
      *
@@ -3259,6 +3364,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The bottomLabel.
      */
     java.lang.String getBottomLabel();
+
     /**
      *
      *
@@ -3291,6 +3397,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the onClick field is set.
      */
     boolean hasOnClick();
+
     /**
      *
      *
@@ -3304,6 +3411,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The onClick.
      */
     com.google.chat.v1.WidgetMarkup.OnClick getOnClick();
+
     /**
      *
      *
@@ -3328,6 +3436,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the button field is set.
      */
     boolean hasButton();
+
     /**
      *
      *
@@ -3340,6 +3449,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The button.
      */
     com.google.chat.v1.WidgetMarkup.Button getButton();
+
     /**
      *
      *
@@ -3355,6 +3465,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     com.google.chat.v1.WidgetMarkup.KeyValue.ControlCase getControlCase();
   }
+
   /**
    *
    *
@@ -3370,6 +3481,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.WidgetMarkup.KeyValue)
       KeyValueOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use KeyValue.newBuilder() to construct.
     private KeyValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3420,6 +3532,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       private IconsCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -3468,6 +3581,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       private ControlCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -3499,6 +3613,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ICON_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -3514,6 +3629,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIcon() {
       return iconsCase_ == 1;
     }
+
     /**
      *
      *
@@ -3532,6 +3648,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -3554,6 +3671,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ICON_URL_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -3568,6 +3686,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIconUrl() {
       return iconsCase_ == 2;
     }
+
     /**
      *
      *
@@ -3595,6 +3714,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3627,6 +3747,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object topLabel_ = "";
+
     /**
      *
      *
@@ -3657,6 +3778,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3692,6 +3814,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object content_ = "";
+
     /**
      *
      *
@@ -3723,6 +3846,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3757,6 +3881,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CONTENT_MULTILINE_FIELD_NUMBER = 9;
     private boolean contentMultiline_ = false;
+
     /**
      *
      *
@@ -3777,6 +3902,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object bottomLabel_ = "";
+
     /**
      *
      *
@@ -3806,6 +3932,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3838,6 +3965,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ON_CLICK_FIELD_NUMBER = 6;
     private com.google.chat.v1.WidgetMarkup.OnClick onClick_;
+
     /**
      *
      *
@@ -3854,6 +3982,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOnClick() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3872,6 +4001,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           ? com.google.chat.v1.WidgetMarkup.OnClick.getDefaultInstance()
           : onClick_;
     }
+
     /**
      *
      *
@@ -3890,6 +4020,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int BUTTON_FIELD_NUMBER = 7;
+
     /**
      *
      *
@@ -3905,6 +4036,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasButton() {
       return controlCase_ == 7;
     }
+
     /**
      *
      *
@@ -3923,6 +4055,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.chat.v1.WidgetMarkup.Button.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4201,6 +4334,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4570,6 +4704,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasIcon() {
         return iconsCase_ == 1;
       }
+
       /**
        *
        *
@@ -4589,6 +4724,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return 0;
       }
+
       /**
        *
        *
@@ -4608,6 +4744,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4629,6 +4766,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.chat.v1.WidgetMarkup.Icon.ICON_UNSPECIFIED;
       }
+
       /**
        *
        *
@@ -4651,6 +4789,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4687,6 +4826,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasIconUrl() {
         return iconsCase_ == 2;
       }
+
       /**
        *
        *
@@ -4715,6 +4855,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4743,6 +4884,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4764,6 +4906,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4783,6 +4926,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4807,6 +4951,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object topLabel_ = "";
+
       /**
        *
        *
@@ -4836,6 +4981,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4865,6 +5011,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4893,6 +5040,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4917,6 +5065,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4948,6 +5097,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object content_ = "";
+
       /**
        *
        *
@@ -4978,6 +5128,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5008,6 +5159,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5037,6 +5189,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5062,6 +5215,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5094,6 +5248,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean contentMultiline_;
+
       /**
        *
        *
@@ -5109,6 +5264,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean getContentMultiline() {
         return contentMultiline_;
       }
+
       /**
        *
        *
@@ -5128,6 +5284,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5147,6 +5304,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object bottomLabel_ = "";
+
       /**
        *
        *
@@ -5175,6 +5333,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5203,6 +5362,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5230,6 +5390,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5253,6 +5414,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5288,6 +5450,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.WidgetMarkup.OnClick.Builder,
               com.google.chat.v1.WidgetMarkup.OnClickOrBuilder>
           onClickBuilder_;
+
       /**
        *
        *
@@ -5303,6 +5466,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOnClick() {
         return ((bitField0_ & 0x00000040) != 0);
       }
+
       /**
        *
        *
@@ -5324,6 +5488,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return onClickBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5347,6 +5512,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5367,6 +5533,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5395,6 +5562,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5415,6 +5583,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5430,6 +5599,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOnClickFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5449,6 +5619,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
               : onClick_;
         }
       }
+
       /**
        *
        *
@@ -5481,6 +5652,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.WidgetMarkup.Button.Builder,
               com.google.chat.v1.WidgetMarkup.ButtonOrBuilder>
           buttonBuilder_;
+
       /**
        *
        *
@@ -5496,6 +5668,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasButton() {
         return controlCase_ == 7;
       }
+
       /**
        *
        *
@@ -5521,6 +5694,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return com.google.chat.v1.WidgetMarkup.Button.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5543,6 +5717,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         controlCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -5562,6 +5737,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         controlCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -5594,6 +5770,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         controlCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -5619,6 +5796,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5631,6 +5809,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public com.google.chat.v1.WidgetMarkup.Button.Builder getButtonBuilder() {
         return getButtonFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5651,6 +5830,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return com.google.chat.v1.WidgetMarkup.Button.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5765,6 +5945,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The imageUrl.
      */
     java.lang.String getImageUrl();
+
     /**
      *
      *
@@ -5790,6 +5971,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the onClick field is set.
      */
     boolean hasOnClick();
+
     /**
      *
      *
@@ -5802,6 +5984,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The onClick.
      */
     com.google.chat.v1.WidgetMarkup.OnClick getOnClick();
+
     /**
      *
      *
@@ -5829,6 +6012,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      */
     double getAspectRatio();
   }
+
   /**
    *
    *
@@ -5843,6 +6027,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.WidgetMarkup.Image)
       ImageOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Image.newBuilder() to construct.
     private Image(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5878,6 +6063,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object imageUrl_ = "";
+
     /**
      *
      *
@@ -5901,6 +6087,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -5927,6 +6114,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ON_CLICK_FIELD_NUMBER = 2;
     private com.google.chat.v1.WidgetMarkup.OnClick onClick_;
+
     /**
      *
      *
@@ -5942,6 +6130,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOnClick() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -5959,6 +6148,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           ? com.google.chat.v1.WidgetMarkup.OnClick.getDefaultInstance()
           : onClick_;
     }
+
     /**
      *
      *
@@ -5977,6 +6167,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ASPECT_RATIO_FIELD_NUMBER = 3;
     private double aspectRatio_ = 0D;
+
     /**
      *
      *
@@ -6182,6 +6373,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6410,6 +6602,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object imageUrl_ = "";
+
       /**
        *
        *
@@ -6432,6 +6625,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6454,6 +6648,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6475,6 +6670,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6492,6 +6688,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6521,6 +6718,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.WidgetMarkup.OnClick.Builder,
               com.google.chat.v1.WidgetMarkup.OnClickOrBuilder>
           onClickBuilder_;
+
       /**
        *
        *
@@ -6535,6 +6733,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOnClick() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -6555,6 +6754,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return onClickBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -6577,6 +6777,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6596,6 +6797,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6623,6 +6825,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6642,6 +6845,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6656,6 +6860,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOnClickFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6674,6 +6879,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
               : onClick_;
         }
       }
+
       /**
        *
        *
@@ -6701,6 +6907,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double aspectRatio_;
+
       /**
        *
        *
@@ -6719,6 +6926,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public double getAspectRatio() {
         return aspectRatio_;
       }
+
       /**
        *
        *
@@ -6741,6 +6949,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6844,6 +7053,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the icon field is set.
      */
     boolean hasIcon();
+
     /**
      *
      *
@@ -6857,6 +7067,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for icon.
      */
     int getIconValue();
+
     /**
      *
      *
@@ -6883,6 +7094,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the iconUrl field is set.
      */
     boolean hasIconUrl();
+
     /**
      *
      *
@@ -6895,6 +7107,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The iconUrl.
      */
     java.lang.String getIconUrl();
+
     /**
      *
      *
@@ -6920,6 +7133,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the onClick field is set.
      */
     boolean hasOnClick();
+
     /**
      *
      *
@@ -6932,6 +7146,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The onClick.
      */
     com.google.chat.v1.WidgetMarkup.OnClick getOnClick();
+
     /**
      *
      *
@@ -6956,6 +7171,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -6972,6 +7188,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     com.google.chat.v1.WidgetMarkup.ImageButton.IconsCase getIconsCase();
   }
+
   /**
    *
    *
@@ -6986,6 +7203,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.WidgetMarkup.ImageButton)
       ImageButtonOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ImageButton.newBuilder() to construct.
     private ImageButton(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7034,6 +7252,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       private IconsCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -7067,6 +7286,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ICON_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -7082,6 +7302,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIcon() {
       return iconsCase_ == 1;
     }
+
     /**
      *
      *
@@ -7100,6 +7321,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -7122,6 +7344,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ICON_URL_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -7136,6 +7359,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIconUrl() {
       return iconsCase_ == 3;
     }
+
     /**
      *
      *
@@ -7163,6 +7387,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -7193,6 +7418,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ON_CLICK_FIELD_NUMBER = 2;
     private com.google.chat.v1.WidgetMarkup.OnClick onClick_;
+
     /**
      *
      *
@@ -7208,6 +7434,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOnClick() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -7225,6 +7452,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           ? com.google.chat.v1.WidgetMarkup.OnClick.getDefaultInstance()
           : onClick_;
     }
+
     /**
      *
      *
@@ -7245,6 +7473,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -7269,6 +7498,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -7504,6 +7734,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7788,6 +8019,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasIcon() {
         return iconsCase_ == 1;
       }
+
       /**
        *
        *
@@ -7807,6 +8039,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return 0;
       }
+
       /**
        *
        *
@@ -7826,6 +8059,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7847,6 +8081,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.chat.v1.WidgetMarkup.Icon.ICON_UNSPECIFIED;
       }
+
       /**
        *
        *
@@ -7869,6 +8104,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7905,6 +8141,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasIconUrl() {
         return iconsCase_ == 3;
       }
+
       /**
        *
        *
@@ -7933,6 +8170,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7961,6 +8199,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7982,6 +8221,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8001,6 +8241,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -8030,6 +8271,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.WidgetMarkup.OnClick.Builder,
               com.google.chat.v1.WidgetMarkup.OnClickOrBuilder>
           onClickBuilder_;
+
       /**
        *
        *
@@ -8044,6 +8286,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOnClick() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -8064,6 +8307,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return onClickBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -8086,6 +8330,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8105,6 +8350,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8132,6 +8378,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -8151,6 +8398,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8165,6 +8413,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOnClickFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8183,6 +8432,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
               : onClick_;
         }
       }
+
       /**
        *
        *
@@ -8210,6 +8460,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -8233,6 +8484,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8256,6 +8508,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8278,6 +8531,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8296,6 +8550,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8401,6 +8656,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the action field is set.
      */
     boolean hasAction();
+
     /**
      *
      *
@@ -8413,6 +8669,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The action.
      */
     com.google.chat.v1.WidgetMarkup.FormAction getAction();
+
     /**
      *
      *
@@ -8436,6 +8693,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the openLink field is set.
      */
     boolean hasOpenLink();
+
     /**
      *
      *
@@ -8448,6 +8706,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The openLink.
      */
     com.google.chat.v1.WidgetMarkup.OpenLink getOpenLink();
+
     /**
      *
      *
@@ -8461,6 +8720,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     com.google.chat.v1.WidgetMarkup.OnClick.DataCase getDataCase();
   }
+
   /**
    *
    *
@@ -8475,6 +8735,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.WidgetMarkup.OnClick)
       OnClickOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OnClick.newBuilder() to construct.
     private OnClick(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8520,6 +8781,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       private DataCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -8553,6 +8815,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ACTION_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -8568,6 +8831,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAction() {
       return dataCase_ == 1;
     }
+
     /**
      *
      *
@@ -8586,6 +8850,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.chat.v1.WidgetMarkup.FormAction.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -8604,6 +8869,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int OPEN_LINK_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -8619,6 +8885,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOpenLink() {
       return dataCase_ == 2;
     }
+
     /**
      *
      *
@@ -8637,6 +8904,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.chat.v1.WidgetMarkup.OpenLink.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -8843,6 +9111,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -9080,6 +9349,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.WidgetMarkup.FormAction.Builder,
               com.google.chat.v1.WidgetMarkup.FormActionOrBuilder>
           actionBuilder_;
+
       /**
        *
        *
@@ -9095,6 +9365,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAction() {
         return dataCase_ == 1;
       }
+
       /**
        *
        *
@@ -9120,6 +9391,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return com.google.chat.v1.WidgetMarkup.FormAction.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9142,6 +9414,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         dataCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -9161,6 +9434,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         dataCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -9193,6 +9467,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         dataCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -9218,6 +9493,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -9230,6 +9506,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public com.google.chat.v1.WidgetMarkup.FormAction.Builder getActionBuilder() {
         return getActionFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -9250,6 +9527,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return com.google.chat.v1.WidgetMarkup.FormAction.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9288,6 +9566,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.WidgetMarkup.OpenLink.Builder,
               com.google.chat.v1.WidgetMarkup.OpenLinkOrBuilder>
           openLinkBuilder_;
+
       /**
        *
        *
@@ -9303,6 +9582,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOpenLink() {
         return dataCase_ == 2;
       }
+
       /**
        *
        *
@@ -9328,6 +9608,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return com.google.chat.v1.WidgetMarkup.OpenLink.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9350,6 +9631,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         dataCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -9369,6 +9651,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         dataCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -9401,6 +9684,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         dataCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -9426,6 +9710,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -9438,6 +9723,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       public com.google.chat.v1.WidgetMarkup.OpenLink.Builder getOpenLinkBuilder() {
         return getOpenLinkFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -9458,6 +9744,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return com.google.chat.v1.WidgetMarkup.OpenLink.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9572,6 +9859,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The url.
      */
     java.lang.String getUrl();
+
     /**
      *
      *
@@ -9585,6 +9873,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getUrlBytes();
   }
+
   /**
    *
    *
@@ -9599,6 +9888,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.WidgetMarkup.OpenLink)
       OpenLinkOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OpenLink.newBuilder() to construct.
     private OpenLink(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9633,6 +9923,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object url_ = "";
+
     /**
      *
      *
@@ -9656,6 +9947,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -9840,6 +10132,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -10026,6 +10319,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object url_ = "";
+
       /**
        *
        *
@@ -10048,6 +10342,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -10070,6 +10365,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -10091,6 +10387,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10108,6 +10405,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10215,6 +10513,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * @return The actionMethodName.
      */
     java.lang.String getActionMethodName();
+
     /**
      *
      *
@@ -10241,6 +10540,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.chat.v1.WidgetMarkup.FormAction.ActionParameter parameters = 2;</code>
      */
     java.util.List<com.google.chat.v1.WidgetMarkup.FormAction.ActionParameter> getParametersList();
+
     /**
      *
      *
@@ -10251,6 +10551,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.chat.v1.WidgetMarkup.FormAction.ActionParameter parameters = 2;</code>
      */
     com.google.chat.v1.WidgetMarkup.FormAction.ActionParameter getParameters(int index);
+
     /**
      *
      *
@@ -10261,6 +10562,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.chat.v1.WidgetMarkup.FormAction.ActionParameter parameters = 2;</code>
      */
     int getParametersCount();
+
     /**
      *
      *
@@ -10272,6 +10574,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.chat.v1.WidgetMarkup.FormAction.ActionParameterOrBuilder>
         getParametersOrBuilderList();
+
     /**
      *
      *
@@ -10284,6 +10587,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     com.google.chat.v1.WidgetMarkup.FormAction.ActionParameterOrBuilder getParametersOrBuilder(
         int index);
   }
+
   /**
    *
    *
@@ -10299,6 +10603,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.WidgetMarkup.FormAction)
       FormActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FormAction.newBuilder() to construct.
     private FormAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10347,6 +10652,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
        * @return The key.
        */
       java.lang.String getKey();
+
       /**
        *
        *
@@ -10372,6 +10678,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
        * @return The value.
        */
       java.lang.String getValue();
+
       /**
        *
        *
@@ -10385,6 +10692,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getValueBytes();
     }
+
     /**
      *
      *
@@ -10402,6 +10710,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.chat.v1.WidgetMarkup.FormAction.ActionParameter)
         ActionParameterOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use ActionParameter.newBuilder() to construct.
       private ActionParameter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -10437,6 +10746,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object key_ = "";
+
       /**
        *
        *
@@ -10460,6 +10770,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -10488,6 +10799,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object value_ = "";
+
       /**
        *
        *
@@ -10511,6 +10823,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -10705,6 +11018,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -10913,6 +11227,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object key_ = "";
+
         /**
          *
          *
@@ -10935,6 +11250,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -10957,6 +11273,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -10978,6 +11295,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -10995,6 +11313,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -11019,6 +11338,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object value_ = "";
+
         /**
          *
          *
@@ -11041,6 +11361,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -11063,6 +11384,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -11084,6 +11406,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -11101,6 +11424,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -11195,6 +11519,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object actionMethodName_ = "";
+
     /**
      *
      *
@@ -11221,6 +11546,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -11252,6 +11578,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.chat.v1.WidgetMarkup.FormAction.ActionParameter> parameters_;
+
     /**
      *
      *
@@ -11266,6 +11593,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         getParametersList() {
       return parameters_;
     }
+
     /**
      *
      *
@@ -11281,6 +11609,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         getParametersOrBuilderList() {
       return parameters_;
     }
+
     /**
      *
      *
@@ -11294,6 +11623,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public int getParametersCount() {
       return parameters_.size();
     }
+
     /**
      *
      *
@@ -11307,6 +11637,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.WidgetMarkup.FormAction.ActionParameter getParameters(int index) {
       return parameters_.get(index);
     }
+
     /**
      *
      *
@@ -11493,6 +11824,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -11741,6 +12073,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object actionMethodName_ = "";
+
       /**
        *
        *
@@ -11766,6 +12099,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -11791,6 +12125,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -11815,6 +12150,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11835,6 +12171,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11897,6 +12234,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return parametersBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -11914,6 +12252,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return parametersBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -11931,6 +12270,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return parametersBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -11955,6 +12295,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11977,6 +12318,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12001,6 +12343,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12025,6 +12368,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12046,6 +12390,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12068,6 +12413,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12090,6 +12436,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12110,6 +12457,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12130,6 +12478,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12144,6 +12493,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           getParametersBuilder(int index) {
         return getParametersFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -12162,6 +12512,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return parametersBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -12181,6 +12532,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(parameters_);
         }
       }
+
       /**
        *
        *
@@ -12197,6 +12549,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 com.google.chat.v1.WidgetMarkup.FormAction.ActionParameter.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -12214,6 +12567,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
                 index,
                 com.google.chat.v1.WidgetMarkup.FormAction.ActionParameter.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -12328,6 +12682,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     private DataCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -12363,6 +12718,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_PARAGRAPH_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -12378,6 +12734,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTextParagraph() {
     return dataCase_ == 1;
   }
+
   /**
    *
    *
@@ -12396,6 +12753,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.WidgetMarkup.TextParagraph.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12414,6 +12772,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -12429,6 +12788,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImage() {
     return dataCase_ == 2;
   }
+
   /**
    *
    *
@@ -12447,6 +12807,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.WidgetMarkup.Image.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12465,6 +12826,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEY_VALUE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -12480,6 +12842,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKeyValue() {
     return dataCase_ == 3;
   }
+
   /**
    *
    *
@@ -12498,6 +12861,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.WidgetMarkup.KeyValue.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12519,6 +12883,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.chat.v1.WidgetMarkup.Button> buttons_;
+
   /**
    *
    *
@@ -12533,6 +12898,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.chat.v1.WidgetMarkup.Button> getButtonsList() {
     return buttons_;
   }
+
   /**
    *
    *
@@ -12548,6 +12914,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       getButtonsOrBuilderList() {
     return buttons_;
   }
+
   /**
    *
    *
@@ -12562,6 +12929,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
   public int getButtonsCount() {
     return buttons_.size();
   }
+
   /**
    *
    *
@@ -12576,6 +12944,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
   public com.google.chat.v1.WidgetMarkup.Button getButtons(int index) {
     return buttons_.get(index);
   }
+
   /**
    *
    *
@@ -12804,6 +13173,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -13111,6 +13481,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.WidgetMarkup.TextParagraph.Builder,
             com.google.chat.v1.WidgetMarkup.TextParagraphOrBuilder>
         textParagraphBuilder_;
+
     /**
      *
      *
@@ -13126,6 +13497,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextParagraph() {
       return dataCase_ == 1;
     }
+
     /**
      *
      *
@@ -13151,6 +13523,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.WidgetMarkup.TextParagraph.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13173,6 +13546,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -13193,6 +13567,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -13225,6 +13600,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -13250,6 +13626,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13262,6 +13639,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.WidgetMarkup.TextParagraph.Builder getTextParagraphBuilder() {
       return getTextParagraphFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13282,6 +13660,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.WidgetMarkup.TextParagraph.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13320,6 +13699,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.WidgetMarkup.Image.Builder,
             com.google.chat.v1.WidgetMarkup.ImageOrBuilder>
         imageBuilder_;
+
     /**
      *
      *
@@ -13335,6 +13715,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImage() {
       return dataCase_ == 2;
     }
+
     /**
      *
      *
@@ -13360,6 +13741,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.WidgetMarkup.Image.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13382,6 +13764,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -13401,6 +13784,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -13432,6 +13816,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -13457,6 +13842,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13469,6 +13855,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.WidgetMarkup.Image.Builder getImageBuilder() {
       return getImageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13489,6 +13876,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.WidgetMarkup.Image.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13525,6 +13913,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.WidgetMarkup.KeyValue.Builder,
             com.google.chat.v1.WidgetMarkup.KeyValueOrBuilder>
         keyValueBuilder_;
+
     /**
      *
      *
@@ -13540,6 +13929,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKeyValue() {
       return dataCase_ == 3;
     }
+
     /**
      *
      *
@@ -13565,6 +13955,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.WidgetMarkup.KeyValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13587,6 +13978,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -13606,6 +13998,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -13638,6 +14031,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -13663,6 +14057,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13675,6 +14070,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.WidgetMarkup.KeyValue.Builder getKeyValueBuilder() {
       return getKeyValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13695,6 +14091,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.WidgetMarkup.KeyValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13761,6 +14158,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return buttonsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -13778,6 +14176,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return buttonsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -13795,6 +14194,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return buttonsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -13818,6 +14218,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13839,6 +14240,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13862,6 +14264,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13885,6 +14288,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13905,6 +14309,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13926,6 +14331,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13947,6 +14353,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13967,6 +14374,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13987,6 +14395,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -14000,6 +14409,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.WidgetMarkup.Button.Builder getButtonsBuilder(int index) {
       return getButtonsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -14017,6 +14427,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return buttonsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -14035,6 +14446,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(buttons_);
       }
     }
+
     /**
      *
      *
@@ -14049,6 +14461,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       return getButtonsFieldBuilder()
           .addBuilder(com.google.chat.v1.WidgetMarkup.Button.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -14063,6 +14476,7 @@ public final class WidgetMarkup extends com.google.protobuf.GeneratedMessageV3
       return getButtonsFieldBuilder()
           .addBuilder(index, com.google.chat.v1.WidgetMarkup.Button.getDefaultInstance());
     }
+
     /**
      *
      *

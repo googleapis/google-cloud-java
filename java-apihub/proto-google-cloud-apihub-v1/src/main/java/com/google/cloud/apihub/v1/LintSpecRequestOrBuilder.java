@@ -40,6 +40,7 @@ public interface LintSpecRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

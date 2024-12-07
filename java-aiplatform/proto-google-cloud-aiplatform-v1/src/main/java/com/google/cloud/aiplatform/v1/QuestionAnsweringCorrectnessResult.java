@@ -33,6 +33,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.QuestionAnsweringCorrectnessResult)
     QuestionAnsweringCorrectnessResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QuestionAnsweringCorrectnessResult.newBuilder() to construct.
   private QuestionAnsweringCorrectnessResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
   public boolean hasScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object explanation_ = "";
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
 
   public static final int CONFIDENCE_FIELD_NUMBER = 3;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
   public boolean hasConfidence() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -373,6 +380,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -592,6 +600,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
     private int bitField0_;
 
     private float score_;
+
     /**
      *
      *
@@ -607,6 +616,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -622,6 +632,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -641,6 +652,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +672,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
     }
 
     private java.lang.Object explanation_ = "";
+
     /**
      *
      *
@@ -682,6 +695,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -704,6 +718,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -725,6 +740,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +783,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -781,6 +799,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
     public boolean hasConfidence() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -796,6 +815,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -815,6 +835,7 @@ public final class QuestionAnsweringCorrectnessResult extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

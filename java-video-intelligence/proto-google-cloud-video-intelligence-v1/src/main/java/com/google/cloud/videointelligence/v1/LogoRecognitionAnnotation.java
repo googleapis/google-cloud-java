@@ -33,6 +33,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.LogoRecognitionAnnotation)
     LogoRecognitionAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LogoRecognitionAnnotation.newBuilder() to construct.
   private LogoRecognitionAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int ENTITY_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1.Entity entity_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
   public boolean hasEntity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         ? com.google.cloud.videointelligence.v1.Entity.getDefaultInstance()
         : entity_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.Track> tracks_;
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.videointelligence.v1.Track> getTracksList() {
     return tracks_;
   }
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       getTracksOrBuilderList() {
     return tracks_;
   }
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
   public int getTracksCount() {
     return tracks_.size();
   }
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
   public com.google.cloud.videointelligence.v1.Track getTracks(int index) {
     return tracks_.get(index);
   }
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.VideoSegment> segments_;
+
   /**
    *
    *
@@ -212,6 +222,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.videointelligence.v1.VideoSegment> getSegmentsList() {
     return segments_;
   }
+
   /**
    *
    *
@@ -227,6 +238,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       getSegmentsOrBuilderList() {
     return segments_;
   }
+
   /**
    *
    *
@@ -241,6 +253,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
   public int getSegmentsCount() {
     return segments_.size();
   }
+
   /**
    *
    *
@@ -255,6 +268,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
   public com.google.cloud.videointelligence.v1.VideoSegment getSegments(int index) {
     return segments_.get(index);
   }
+
   /**
    *
    *
@@ -458,6 +472,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -785,6 +800,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
             com.google.cloud.videointelligence.v1.Entity.Builder,
             com.google.cloud.videointelligence.v1.EntityOrBuilder>
         entityBuilder_;
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
     public boolean hasEntity() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         return entityBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +883,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +912,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +933,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +949,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       onChanged();
       return getEntityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -946,6 +969,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
             : entity_;
       }
     }
+
     /**
      *
      *
@@ -1006,6 +1030,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         return tracksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1048,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         return tracksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1066,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         return tracksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1090,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1112,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1136,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1130,6 +1160,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1150,6 +1181,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1203,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1225,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1246,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1232,6 +1267,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1245,6 +1281,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
     public com.google.cloud.videointelligence.v1.Track.Builder getTracksBuilder(int index) {
       return getTracksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1262,6 +1299,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         return tracksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1280,6 +1318,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(tracks_);
       }
     }
+
     /**
      *
      *
@@ -1294,6 +1333,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       return getTracksFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1.Track.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1308,6 +1348,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       return getTracksFieldBuilder()
           .addBuilder(index, com.google.cloud.videointelligence.v1.Track.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1374,6 +1415,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         return segmentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1391,6 +1433,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         return segmentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1408,6 +1451,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         return segmentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1432,6 +1476,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1453,6 +1498,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1476,6 +1522,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1500,6 +1547,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1521,6 +1569,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1542,6 +1591,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1563,6 +1613,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1583,6 +1634,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1603,6 +1655,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1617,6 +1670,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         int index) {
       return getSegmentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1635,6 +1689,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         return segmentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1653,6 +1708,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(segments_);
       }
     }
+
     /**
      *
      *
@@ -1667,6 +1723,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       return getSegmentsFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1.VideoSegment.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1683,6 +1740,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
           .addBuilder(
               index, com.google.cloud.videointelligence.v1.VideoSegment.getDefaultInstance());
     }
+
     /**
      *
      *

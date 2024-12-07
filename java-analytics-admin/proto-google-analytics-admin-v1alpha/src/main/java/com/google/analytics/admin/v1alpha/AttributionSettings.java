@@ -34,6 +34,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.AttributionSettings)
     AttributionSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AttributionSettings.newBuilder() to construct.
   private AttributionSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -125,6 +126,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED = 0;</code>
      */
     public static final int ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -135,6 +137,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_7_DAYS = 1;</code>
      */
     public static final int ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_7_DAYS_VALUE = 1;
+
     /**
      *
      *
@@ -303,6 +306,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED = 0;</code>
      */
     public static final int OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -313,6 +317,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS = 1;</code>
      */
     public static final int OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS_VALUE = 1;
+
     /**
      *
      *
@@ -323,6 +328,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_60_DAYS = 2;</code>
      */
     public static final int OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_60_DAYS_VALUE = 2;
+
     /**
      *
      *
@@ -498,6 +504,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>REPORTING_ATTRIBUTION_MODEL_UNSPECIFIED = 0;</code>
      */
     public static final int REPORTING_ATTRIBUTION_MODEL_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -511,6 +518,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN = 1;</code>
      */
     public static final int PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN_VALUE = 1;
+
     /**
      *
      *
@@ -524,6 +532,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>PAID_AND_ORGANIC_CHANNELS_LAST_CLICK = 2;</code>
      */
     public static final int PAID_AND_ORGANIC_CHANNELS_LAST_CLICK_VALUE = 2;
+
     /**
      *
      *
@@ -697,6 +706,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED = 0;</code>
      */
     public static final int ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -708,6 +718,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>NOT_SELECTED_YET = 1;</code>
      */
     public static final int NOT_SELECTED_YET_VALUE = 1;
+
     /**
      *
      *
@@ -721,6 +732,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>PAID_AND_ORGANIC_CHANNELS = 2;</code>
      */
     public static final int PAID_AND_ORGANIC_CHANNELS_VALUE = 2;
+
     /**
      *
      *
@@ -828,6 +840,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -853,6 +866,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -881,6 +895,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
 
   public static final int ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_FIELD_NUMBER = 2;
   private int acquisitionConversionEventLookbackWindow_ = 0;
+
   /**
    *
    *
@@ -899,6 +914,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   public int getAcquisitionConversionEventLookbackWindowValue() {
     return acquisitionConversionEventLookbackWindow_;
   }
+
   /**
    *
    *
@@ -930,6 +946,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
 
   public static final int OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_FIELD_NUMBER = 3;
   private int otherConversionEventLookbackWindow_ = 0;
+
   /**
    *
    *
@@ -948,6 +965,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   public int getOtherConversionEventLookbackWindowValue() {
     return otherConversionEventLookbackWindow_;
   }
+
   /**
    *
    *
@@ -977,6 +995,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
 
   public static final int REPORTING_ATTRIBUTION_MODEL_FIELD_NUMBER = 4;
   private int reportingAttributionModel_ = 0;
+
   /**
    *
    *
@@ -999,6 +1018,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   public int getReportingAttributionModelValue() {
     return reportingAttributionModel_;
   }
+
   /**
    *
    *
@@ -1031,6 +1051,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
 
   public static final int ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_FIELD_NUMBER = 5;
   private int adsWebConversionDataExportScope_ = 0;
+
   /**
    *
    *
@@ -1049,6 +1070,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   public int getAdsWebConversionDataExportScopeValue() {
     return adsWebConversionDataExportScope_;
   }
+
   /**
    *
    *
@@ -1305,6 +1327,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1545,6 +1568,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1569,6 +1593,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1593,6 +1618,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1616,6 +1642,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1635,6 +1662,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1661,6 +1689,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     }
 
     private int acquisitionConversionEventLookbackWindow_ = 0;
+
     /**
      *
      *
@@ -1679,6 +1708,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     public int getAcquisitionConversionEventLookbackWindowValue() {
       return acquisitionConversionEventLookbackWindow_;
     }
+
     /**
      *
      *
@@ -1701,6 +1731,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1730,6 +1761,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
               .AcquisitionConversionEventLookbackWindow.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1757,6 +1789,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1779,6 +1812,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     }
 
     private int otherConversionEventLookbackWindow_ = 0;
+
     /**
      *
      *
@@ -1797,6 +1831,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     public int getOtherConversionEventLookbackWindowValue() {
       return otherConversionEventLookbackWindow_;
     }
+
     /**
      *
      *
@@ -1819,6 +1854,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1846,6 +1882,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
               .OtherConversionEventLookbackWindow.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1872,6 +1909,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1894,6 +1932,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     }
 
     private int reportingAttributionModel_ = 0;
+
     /**
      *
      *
@@ -1916,6 +1955,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     public int getReportingAttributionModelValue() {
       return reportingAttributionModel_;
     }
+
     /**
      *
      *
@@ -1941,6 +1981,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1970,6 +2011,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1999,6 +2041,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2025,6 +2068,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     }
 
     private int adsWebConversionDataExportScope_ = 0;
+
     /**
      *
      *
@@ -2043,6 +2087,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     public int getAdsWebConversionDataExportScopeValue() {
       return adsWebConversionDataExportScope_;
     }
+
     /**
      *
      *
@@ -2064,6 +2109,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2090,6 +2136,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2116,6 +2163,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

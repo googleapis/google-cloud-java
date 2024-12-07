@@ -36,6 +36,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *

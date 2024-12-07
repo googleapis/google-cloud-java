@@ -33,6 +33,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.PieChart)
     PieChartOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PieChart.newBuilder() to construct.
   private PieChart(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
      * <code>PIE_CHART_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int PIE_CHART_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
      * <code>PIE = 1;</code>
      */
     public static final int PIE_VALUE = 1;
+
     /**
      *
      *
@@ -241,6 +244,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeSeriesQuery field is set.
      */
     boolean hasTimeSeriesQuery();
+
     /**
      *
      *
@@ -256,6 +260,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
      * @return The timeSeriesQuery.
      */
     com.google.monitoring.dashboard.v1.TimeSeriesQuery getTimeSeriesQuery();
+
     /**
      *
      *
@@ -287,6 +292,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
      * @return The sliceNameTemplate.
      */
     java.lang.String getSliceNameTemplate();
+
     /**
      *
      *
@@ -323,6 +329,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the minAlignmentPeriod field is set.
      */
     boolean hasMinAlignmentPeriod();
+
     /**
      *
      *
@@ -341,6 +348,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
      * @return The minAlignmentPeriod.
      */
     com.google.protobuf.Duration getMinAlignmentPeriod();
+
     /**
      *
      *
@@ -358,6 +366,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getMinAlignmentPeriodOrBuilder();
   }
+
   /**
    *
    *
@@ -372,6 +381,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.PieChart.PieChartDataSet)
       PieChartDataSetOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PieChartDataSet.newBuilder() to construct.
     private PieChartDataSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -405,6 +415,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int TIME_SERIES_QUERY_FIELD_NUMBER = 1;
     private com.google.monitoring.dashboard.v1.TimeSeriesQuery timeSeriesQuery_;
+
     /**
      *
      *
@@ -423,6 +434,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeSeriesQuery() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -443,6 +455,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
           ? com.google.monitoring.dashboard.v1.TimeSeriesQuery.getDefaultInstance()
           : timeSeriesQuery_;
     }
+
     /**
      *
      *
@@ -467,6 +480,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sliceNameTemplate_ = "";
+
     /**
      *
      *
@@ -495,6 +509,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -526,6 +541,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MIN_ALIGNMENT_PERIOD_FIELD_NUMBER = 3;
     private com.google.protobuf.Duration minAlignmentPeriod_;
+
     /**
      *
      *
@@ -547,6 +563,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinAlignmentPeriod() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -570,6 +587,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : minAlignmentPeriod_;
     }
+
     /**
      *
      *
@@ -782,6 +800,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1031,6 +1050,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
               com.google.monitoring.dashboard.v1.TimeSeriesQuery.Builder,
               com.google.monitoring.dashboard.v1.TimeSeriesQueryOrBuilder>
           timeSeriesQueryBuilder_;
+
       /**
        *
        *
@@ -1048,6 +1068,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTimeSeriesQuery() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1071,6 +1092,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
           return timeSeriesQueryBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1096,6 +1118,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1119,6 +1142,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1151,6 +1175,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1173,6 +1198,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1191,6 +1217,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getTimeSeriesQueryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1213,6 +1240,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
               : timeSeriesQuery_;
         }
       }
+
       /**
        *
        *
@@ -1243,6 +1271,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object sliceNameTemplate_ = "";
+
       /**
        *
        *
@@ -1270,6 +1299,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1297,6 +1327,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1323,6 +1354,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1345,6 +1377,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1379,6 +1412,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           minAlignmentPeriodBuilder_;
+
       /**
        *
        *
@@ -1399,6 +1433,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMinAlignmentPeriod() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1425,6 +1460,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
           return minAlignmentPeriodBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1453,6 +1489,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1478,6 +1515,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1511,6 +1549,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1536,6 +1575,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1556,6 +1596,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMinAlignmentPeriodFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1580,6 +1621,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
               : minAlignmentPeriod_;
         }
       }
+
       /**
        *
        *
@@ -1681,6 +1723,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.dashboard.v1.PieChart.PieChartDataSet> dataSets_;
+
   /**
    *
    *
@@ -1697,6 +1740,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       getDataSetsList() {
     return dataSets_;
   }
+
   /**
    *
    *
@@ -1714,6 +1758,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       getDataSetsOrBuilderList() {
     return dataSets_;
   }
+
   /**
    *
    *
@@ -1729,6 +1774,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
   public int getDataSetsCount() {
     return dataSets_.size();
   }
+
   /**
    *
    *
@@ -1744,6 +1790,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
   public com.google.monitoring.dashboard.v1.PieChart.PieChartDataSet getDataSets(int index) {
     return dataSets_.get(index);
   }
+
   /**
    *
    *
@@ -1763,6 +1810,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHART_TYPE_FIELD_NUMBER = 2;
   private int chartType_ = 0;
+
   /**
    *
    *
@@ -1780,6 +1828,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
   public int getChartTypeValue() {
     return chartType_;
   }
+
   /**
    *
    *
@@ -1804,6 +1853,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHOW_LABELS_FIELD_NUMBER = 4;
   private boolean showLabels_ = false;
+
   /**
    *
    *
@@ -2003,6 +2053,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2294,6 +2345,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         return dataSetsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2312,6 +2364,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         return dataSetsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2330,6 +2383,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         return dataSetsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2355,6 +2409,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2378,6 +2433,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2402,6 +2458,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2427,6 +2484,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2449,6 +2507,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2472,6 +2531,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2495,6 +2555,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2516,6 +2577,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2537,6 +2599,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2552,6 +2615,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getDataSetsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2571,6 +2635,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         return dataSetsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2591,6 +2656,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(dataSets_);
       }
     }
+
     /**
      *
      *
@@ -2608,6 +2674,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.monitoring.dashboard.v1.PieChart.PieChartDataSet.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2626,6 +2693,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.monitoring.dashboard.v1.PieChart.PieChartDataSet.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2660,6 +2728,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int chartType_ = 0;
+
     /**
      *
      *
@@ -2677,6 +2746,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
     public int getChartTypeValue() {
       return chartType_;
     }
+
     /**
      *
      *
@@ -2697,6 +2767,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2718,6 +2789,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
           ? com.google.monitoring.dashboard.v1.PieChart.PieChartType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2741,6 +2813,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2762,6 +2835,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean showLabels_;
+
     /**
      *
      *
@@ -2777,6 +2851,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
     public boolean getShowLabels() {
       return showLabels_;
     }
+
     /**
      *
      *
@@ -2796,6 +2871,7 @@ public final class PieChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

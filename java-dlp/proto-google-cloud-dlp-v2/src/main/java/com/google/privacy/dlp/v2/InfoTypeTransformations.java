@@ -36,6 +36,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InfoTypeTransformations)
     InfoTypeTransformationsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InfoTypeTransformations.newBuilder() to construct.
   private InfoTypeTransformations(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
      */
     java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList();
+
     /**
      *
      *
@@ -95,6 +97,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
      */
     com.google.privacy.dlp.v2.InfoType getInfoTypes(int index);
+
     /**
      *
      *
@@ -107,6 +110,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
      */
     int getInfoTypesCount();
+
     /**
      *
      *
@@ -120,6 +124,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      */
     java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         getInfoTypesOrBuilderList();
+
     /**
      *
      *
@@ -147,6 +152,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      * @return Whether the primitiveTransformation field is set.
      */
     boolean hasPrimitiveTransformation();
+
     /**
      *
      *
@@ -161,6 +167,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      * @return The primitiveTransformation.
      */
     com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation();
+
     /**
      *
      *
@@ -175,6 +182,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
     com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder
         getPrimitiveTransformationOrBuilder();
   }
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation)
       InfoTypeTransformationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use InfoTypeTransformation.newBuilder() to construct.
     private InfoTypeTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -226,6 +235,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.privacy.dlp.v2.InfoType> infoTypes_;
+
     /**
      *
      *
@@ -241,6 +251,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
     public java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList() {
       return infoTypes_;
     }
+
     /**
      *
      *
@@ -257,6 +268,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         getInfoTypesOrBuilderList() {
       return infoTypes_;
     }
+
     /**
      *
      *
@@ -272,6 +284,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
     public int getInfoTypesCount() {
       return infoTypes_.size();
     }
+
     /**
      *
      *
@@ -287,6 +300,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.InfoType getInfoTypes(int index) {
       return infoTypes_.get(index);
     }
+
     /**
      *
      *
@@ -305,6 +319,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
 
     public static final int PRIMITIVE_TRANSFORMATION_FIELD_NUMBER = 2;
     private com.google.privacy.dlp.v2.PrimitiveTransformation primitiveTransformation_;
+
     /**
      *
      *
@@ -322,6 +337,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
     public boolean hasPrimitiveTransformation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -341,6 +357,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
           ? com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance()
           : primitiveTransformation_;
     }
+
     /**
      *
      *
@@ -546,6 +563,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -858,6 +876,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
           return infoTypesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -876,6 +895,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
           return infoTypesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -894,6 +914,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
           return infoTypesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -918,6 +939,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -940,6 +962,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -964,6 +987,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -988,6 +1012,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1009,6 +1034,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1031,6 +1057,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1053,6 +1080,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1074,6 +1102,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1095,6 +1124,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1109,6 +1139,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypesBuilder(int index) {
         return getInfoTypesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1127,6 +1158,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
           return infoTypesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1146,6 +1178,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
           return java.util.Collections.unmodifiableList(infoTypes_);
         }
       }
+
       /**
        *
        *
@@ -1161,6 +1194,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         return getInfoTypesFieldBuilder()
             .addBuilder(com.google.privacy.dlp.v2.InfoType.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1176,6 +1210,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         return getInfoTypesFieldBuilder()
             .addBuilder(index, com.google.privacy.dlp.v2.InfoType.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1214,6 +1249,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
               com.google.privacy.dlp.v2.PrimitiveTransformation.Builder,
               com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder>
           primitiveTransformationBuilder_;
+
       /**
        *
        *
@@ -1230,6 +1266,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       public boolean hasPrimitiveTransformation() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1252,6 +1289,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
           return primitiveTransformationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1277,6 +1315,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1299,6 +1338,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1330,6 +1370,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1351,6 +1392,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1368,6 +1410,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         onChanged();
         return getPrimitiveTransformationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1389,6 +1432,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
               : primitiveTransformation_;
         }
       }
+
       /**
        *
        *
@@ -1490,6 +1534,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>
       transformations_;
+
   /**
    *
    *
@@ -1507,6 +1552,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       getTransformationsList() {
     return transformations_;
   }
+
   /**
    *
    *
@@ -1526,6 +1572,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       getTransformationsOrBuilderList() {
     return transformations_;
   }
+
   /**
    *
    *
@@ -1542,6 +1589,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
   public int getTransformationsCount() {
     return transformations_.size();
   }
+
   /**
    *
    *
@@ -1559,6 +1607,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       getTransformations(int index) {
     return transformations_.get(index);
   }
+
   /**
    *
    *
@@ -1738,6 +1787,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2011,6 +2061,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         return transformationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2030,6 +2081,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         return transformationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2050,6 +2102,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         return transformationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2076,6 +2129,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2101,6 +2155,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2127,6 +2182,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2153,6 +2209,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2177,6 +2234,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2202,6 +2260,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2227,6 +2286,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2249,6 +2309,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2271,6 +2332,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2287,6 +2349,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         getTransformationsBuilder(int index) {
       return getTransformationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2307,6 +2370,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         return transformationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2329,6 +2393,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(transformations_);
       }
     }
+
     /**
      *
      *
@@ -2348,6 +2413,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
               com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2368,6 +2434,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
               com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
                   .getDefaultInstance());
     }
+
     /**
      *
      *

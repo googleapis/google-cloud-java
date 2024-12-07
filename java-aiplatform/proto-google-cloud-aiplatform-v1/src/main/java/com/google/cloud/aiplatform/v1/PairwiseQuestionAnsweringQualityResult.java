@@ -34,6 +34,7 @@ public final class PairwiseQuestionAnsweringQualityResult
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.PairwiseQuestionAnsweringQualityResult)
     PairwiseQuestionAnsweringQualityResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PairwiseQuestionAnsweringQualityResult.newBuilder() to construct.
   private PairwiseQuestionAnsweringQualityResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class PairwiseQuestionAnsweringQualityResult
   private int bitField0_;
   public static final int PAIRWISE_CHOICE_FIELD_NUMBER = 1;
   private int pairwiseChoice_ = 0;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class PairwiseQuestionAnsweringQualityResult
   public int getPairwiseChoiceValue() {
     return pairwiseChoice_;
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class PairwiseQuestionAnsweringQualityResult
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object explanation_ = "";
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class PairwiseQuestionAnsweringQualityResult
       return s;
     }
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class PairwiseQuestionAnsweringQualityResult
 
   public static final int CONFIDENCE_FIELD_NUMBER = 3;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class PairwiseQuestionAnsweringQualityResult
   public boolean hasConfidence() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -377,6 +384,7 @@ public final class PairwiseQuestionAnsweringQualityResult
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -597,6 +605,7 @@ public final class PairwiseQuestionAnsweringQualityResult
     private int bitField0_;
 
     private int pairwiseChoice_ = 0;
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class PairwiseQuestionAnsweringQualityResult
     public int getPairwiseChoiceValue() {
       return pairwiseChoice_;
     }
+
     /**
      *
      *
@@ -634,6 +644,7 @@ public final class PairwiseQuestionAnsweringQualityResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -653,6 +664,7 @@ public final class PairwiseQuestionAnsweringQualityResult
           com.google.cloud.aiplatform.v1.PairwiseChoice.forNumber(pairwiseChoice_);
       return result == null ? com.google.cloud.aiplatform.v1.PairwiseChoice.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -676,6 +688,7 @@ public final class PairwiseQuestionAnsweringQualityResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +710,7 @@ public final class PairwiseQuestionAnsweringQualityResult
     }
 
     private java.lang.Object explanation_ = "";
+
     /**
      *
      *
@@ -719,6 +733,7 @@ public final class PairwiseQuestionAnsweringQualityResult
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -741,6 +756,7 @@ public final class PairwiseQuestionAnsweringQualityResult
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -762,6 +778,7 @@ public final class PairwiseQuestionAnsweringQualityResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +796,7 @@ public final class PairwiseQuestionAnsweringQualityResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +821,7 @@ public final class PairwiseQuestionAnsweringQualityResult
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -818,6 +837,7 @@ public final class PairwiseQuestionAnsweringQualityResult
     public boolean hasConfidence() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -833,6 +853,7 @@ public final class PairwiseQuestionAnsweringQualityResult
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -852,6 +873,7 @@ public final class PairwiseQuestionAnsweringQualityResult
       onChanged();
       return this;
     }
+
     /**
      *
      *

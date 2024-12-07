@@ -40,6 +40,7 @@ public interface CreateTargetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateTargetRequestOrBuilder
    * @return The targetId.
    */
   java.lang.String getTargetId();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface CreateTargetRequestOrBuilder
    * @return Whether the target field is set.
    */
   boolean hasTarget();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateTargetRequestOrBuilder
    * @return The target.
    */
   com.google.cloud.deploy.v1.Target getTarget();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface CreateTargetRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

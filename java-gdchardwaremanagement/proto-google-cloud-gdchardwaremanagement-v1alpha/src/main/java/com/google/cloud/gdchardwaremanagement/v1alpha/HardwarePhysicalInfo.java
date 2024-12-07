@@ -33,6 +33,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.HardwarePhysicalInfo)
     HardwarePhysicalInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HardwarePhysicalInfo.newBuilder() to construct.
   private HardwarePhysicalInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,6 +131,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
      * <code>POWER_RECEPTACLE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int POWER_RECEPTACLE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +142,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
      * <code>NEMA_5_15 = 1;</code>
      */
     public static final int NEMA_5_15_VALUE = 1;
+
     /**
      *
      *
@@ -150,6 +153,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
      * <code>C_13 = 2;</code>
      */
     public static final int C_13_VALUE = 2;
+
     /**
      *
      *
@@ -295,6 +299,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
      * <code>NETWORK_UPLINK_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int NETWORK_UPLINK_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -445,6 +450,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
      * <code>VOLTAGE_UNSPECIFIED = 0;</code>
      */
     public static final int VOLTAGE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -455,6 +461,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
      * <code>VOLTAGE_110 = 1;</code>
      */
     public static final int VOLTAGE_110_VALUE = 1;
+
     /**
      *
      *
@@ -594,6 +601,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
      * <code>AMPERES_UNSPECIFIED = 0;</code>
      */
     public static final int AMPERES_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -690,6 +698,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
 
   public static final int POWER_RECEPTACLE_FIELD_NUMBER = 1;
   private int powerReceptacle_ = 0;
+
   /**
    *
    *
@@ -707,6 +716,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
   public int getPowerReceptacleValue() {
     return powerReceptacle_;
   }
+
   /**
    *
    *
@@ -734,6 +744,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
 
   public static final int NETWORK_UPLINK_FIELD_NUMBER = 2;
   private int networkUplink_ = 0;
+
   /**
    *
    *
@@ -751,6 +762,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
   public int getNetworkUplinkValue() {
     return networkUplink_;
   }
+
   /**
    *
    *
@@ -778,6 +790,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
 
   public static final int VOLTAGE_FIELD_NUMBER = 3;
   private int voltage_ = 0;
+
   /**
    *
    *
@@ -795,6 +808,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
   public int getVoltageValue() {
     return voltage_;
   }
+
   /**
    *
    *
@@ -820,6 +834,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
 
   public static final int AMPERES_FIELD_NUMBER = 4;
   private int amperes_ = 0;
+
   /**
    *
    *
@@ -837,6 +852,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
   public int getAmperesValue() {
     return amperes_;
   }
+
   /**
    *
    *
@@ -1072,6 +1088,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1300,6 +1317,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int powerReceptacle_ = 0;
+
     /**
      *
      *
@@ -1317,6 +1335,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
     public int getPowerReceptacleValue() {
       return powerReceptacle_;
     }
+
     /**
      *
      *
@@ -1337,6 +1356,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1382,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1387,6 +1408,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1430,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
     }
 
     private int networkUplink_ = 0;
+
     /**
      *
      *
@@ -1425,6 +1448,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
     public int getNetworkUplinkValue() {
       return networkUplink_;
     }
+
     /**
      *
      *
@@ -1445,6 +1469,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1469,6 +1494,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1494,6 +1520,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1515,6 +1542,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
     }
 
     private int voltage_ = 0;
+
     /**
      *
      *
@@ -1532,6 +1560,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
     public int getVoltageValue() {
       return voltage_;
     }
+
     /**
      *
      *
@@ -1552,6 +1581,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1605,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.gdchardwaremanagement.v1alpha.HardwarePhysicalInfo.Voltage.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1599,6 +1630,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1620,6 +1652,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
     }
 
     private int amperes_ = 0;
+
     /**
      *
      *
@@ -1637,6 +1670,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
     public int getAmperesValue() {
       return amperes_;
     }
+
     /**
      *
      *
@@ -1657,6 +1691,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1680,6 +1715,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.gdchardwaremanagement.v1alpha.HardwarePhysicalInfo.Amperes.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1704,6 +1740,7 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

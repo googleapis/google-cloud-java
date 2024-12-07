@@ -37,6 +37,7 @@ public interface PolicyContentStateOrBuilder
    * @return Whether the templateLibraryState field is set.
    */
   boolean hasTemplateLibraryState();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface PolicyContentStateOrBuilder
    * @return The templateLibraryState.
    */
   com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState getTemplateLibraryState();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface PolicyContentStateOrBuilder
    * </code>
    */
   int getBundleStatesCount();
+
   /**
    *
    *
@@ -89,10 +92,12 @@ public interface PolicyContentStateOrBuilder
    * </code>
    */
   boolean containsBundleStates(java.lang.String key);
+
   /** Use {@link #getBundleStatesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState>
       getBundleStates();
+
   /**
    *
    *
@@ -107,6 +112,7 @@ public interface PolicyContentStateOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState>
       getBundleStatesMap();
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface PolicyContentStateOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState defaultValue);
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public interface PolicyContentStateOrBuilder
    * @return Whether the referentialSyncConfigState field is set.
    */
   boolean hasReferentialSyncConfigState();
+
   /**
    *
    *
@@ -171,6 +179,7 @@ public interface PolicyContentStateOrBuilder
    * @return The referentialSyncConfigState.
    */
   com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState getReferentialSyncConfigState();
+
   /**
    *
    *

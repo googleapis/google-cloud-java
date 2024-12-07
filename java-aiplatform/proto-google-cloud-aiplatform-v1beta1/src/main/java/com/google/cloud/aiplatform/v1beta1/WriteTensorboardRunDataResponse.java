@@ -34,6 +34,7 @@ public final class WriteTensorboardRunDataResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataResponse)
     WriteTensorboardRunDataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WriteTensorboardRunDataResponse.newBuilder() to construct.
   private WriteTensorboardRunDataResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -215,6 +216,7 @@ public final class WriteTensorboardRunDataResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

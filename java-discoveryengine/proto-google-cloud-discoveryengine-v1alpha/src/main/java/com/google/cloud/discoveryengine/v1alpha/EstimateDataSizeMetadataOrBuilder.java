@@ -36,6 +36,7 @@ public interface EstimateDataSizeMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface EstimateDataSizeMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

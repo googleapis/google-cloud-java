@@ -35,6 +35,7 @@ public interface ListConversationDatasetsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.ConversationDataset> getConversationDatasetsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListConversationDatasetsResponseOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.ConversationDataset getConversationDatasets(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListConversationDatasetsResponseOrBuilder
    * </code>
    */
   int getConversationDatasetsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListConversationDatasetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.ConversationDatasetOrBuilder>
       getConversationDatasetsOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListConversationDatasetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.CreateFolderRequest)
     CreateFolderRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateFolderRequest.newBuilder() to construct.
   private CreateFolderRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int FOLDER_FIELD_NUMBER = 2;
   private com.google.cloud.resourcemanager.v3.Folder folder_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
   public boolean hasFolder() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.resourcemanager.v3.Folder.getDefaultInstance()
         : folder_;
   }
+
   /**
    *
    *
@@ -286,6 +290,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -489,6 +494,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.resourcemanager.v3.Folder.Builder,
             com.google.cloud.resourcemanager.v3.FolderOrBuilder>
         folderBuilder_;
+
     /**
      *
      *
@@ -506,6 +512,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
     public boolean hasFolder() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -529,6 +536,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
         return folderBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -554,6 +562,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -576,6 +585,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +616,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +657,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getFolderFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -666,6 +679,7 @@ public final class CreateFolderRequest extends com.google.protobuf.GeneratedMess
             : folder_;
       }
     }
+
     /**
      *
      *

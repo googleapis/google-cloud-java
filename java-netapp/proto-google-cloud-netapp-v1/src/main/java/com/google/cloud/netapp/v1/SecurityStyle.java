@@ -72,6 +72,7 @@ public enum SecurityStyle implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SECURITY_STYLE_UNSPECIFIED = 0;</code>
    */
   public static final int SECURITY_STYLE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum SecurityStyle implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NTFS = 1;</code>
    */
   public static final int NTFS_VALUE = 1;
+
   /**
    *
    *

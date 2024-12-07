@@ -34,6 +34,7 @@ public interface ListMessageBusesResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.MessageBus message_buses = 1;</code>
    */
   java.util.List<com.google.cloud.eventarc.v1.MessageBus> getMessageBusesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListMessageBusesResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.MessageBus message_buses = 1;</code>
    */
   com.google.cloud.eventarc.v1.MessageBus getMessageBuses(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListMessageBusesResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.MessageBus message_buses = 1;</code>
    */
   int getMessageBusesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListMessageBusesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.eventarc.v1.MessageBusOrBuilder>
       getMessageBusesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListMessageBusesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListMessageBusesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListMessageBusesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListMessageBusesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

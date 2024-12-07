@@ -36,6 +36,7 @@ public interface InstanceQuotaOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface InstanceQuotaOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getInstanceType();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface InstanceQuotaOrBuilder
    * @return The gcpService.
    */
   java.lang.String getGcpService();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface InstanceQuotaOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

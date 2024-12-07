@@ -33,6 +33,7 @@ public final class MoveFileResponse extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.MoveFileResponse)
     MoveFileResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MoveFileResponse.newBuilder() to construct.
   private MoveFileResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class MoveFileResponse extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

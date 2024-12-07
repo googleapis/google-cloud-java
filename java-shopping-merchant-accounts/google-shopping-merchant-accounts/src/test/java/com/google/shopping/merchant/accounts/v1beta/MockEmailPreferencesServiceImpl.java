@@ -93,7 +93,8 @@ public class MockEmailPreferencesServiceImpl extends EmailPreferencesServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateEmailPreferences, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateEmailPreferences, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   EmailPreferences.class.getName(),
                   Exception.class.getName())));

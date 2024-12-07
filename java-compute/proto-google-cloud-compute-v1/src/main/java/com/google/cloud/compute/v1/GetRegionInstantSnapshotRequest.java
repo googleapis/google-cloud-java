@@ -33,6 +33,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetRegionInstantSnapshotRequest)
     GetRegionInstantSnapshotRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetRegionInstantSnapshotRequest.newBuilder() to construct.
   private GetRegionInstantSnapshotRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instantSnapshot_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -397,6 +404,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -611,6 +619,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object instantSnapshot_ = "";
+
     /**
      *
      *
@@ -633,6 +642,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -655,6 +665,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -676,6 +687,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +705,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -761,6 +776,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -782,6 +798,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +816,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +841,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -845,6 +864,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -867,6 +887,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -888,6 +909,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +927,7 @@ public final class GetRegionInstantSnapshotRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

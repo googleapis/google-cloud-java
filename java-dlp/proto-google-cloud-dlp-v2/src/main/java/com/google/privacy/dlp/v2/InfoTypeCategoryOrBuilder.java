@@ -37,6 +37,7 @@ public interface InfoTypeCategoryOrBuilder
    * @return Whether the locationCategory field is set.
    */
   boolean hasLocationCategory();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface InfoTypeCategoryOrBuilder
    * @return The enum numeric value on the wire for locationCategory.
    */
   int getLocationCategoryValue();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface InfoTypeCategoryOrBuilder
    * @return Whether the industryCategory field is set.
    */
   boolean hasIndustryCategory();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface InfoTypeCategoryOrBuilder
    * @return The enum numeric value on the wire for industryCategory.
    */
   int getIndustryCategoryValue();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface InfoTypeCategoryOrBuilder
    * @return Whether the typeCategory field is set.
    */
   boolean hasTypeCategory();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface InfoTypeCategoryOrBuilder
    * @return The enum numeric value on the wire for typeCategory.
    */
   int getTypeCategoryValue();
+
   /**
    *
    *

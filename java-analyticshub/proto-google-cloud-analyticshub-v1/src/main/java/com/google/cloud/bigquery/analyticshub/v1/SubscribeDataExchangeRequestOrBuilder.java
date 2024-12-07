@@ -39,6 +39,7 @@ public interface SubscribeDataExchangeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface SubscribeDataExchangeRequestOrBuilder
    * @return The destination.
    */
   java.lang.String getDestination();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface SubscribeDataExchangeRequestOrBuilder
    * @return The subscription.
    */
   java.lang.String getSubscription();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface SubscribeDataExchangeRequestOrBuilder
    * @return The subscriberContact.
    */
   java.lang.String getSubscriberContact();
+
   /**
    *
    *

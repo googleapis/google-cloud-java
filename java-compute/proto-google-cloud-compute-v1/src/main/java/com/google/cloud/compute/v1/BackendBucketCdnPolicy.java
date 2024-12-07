@@ -33,6 +33,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendBucketCdnPolicy)
     BackendBucketCdnPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackendBucketCdnPolicy.newBuilder() to construct.
   private BackendBucketCdnPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,6 +132,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_CACHE_MODE = 0;</code>
      */
     public static final int UNDEFINED_CACHE_MODE_VALUE = 0;
+
     /**
      *
      *
@@ -141,6 +143,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * <code>CACHE_ALL_STATIC = 355027945;</code>
      */
     public static final int CACHE_ALL_STATIC_VALUE = 355027945;
+
     /**
      *
      *
@@ -151,8 +154,10 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * <code>FORCE_CACHE_ALL = 486026928;</code>
      */
     public static final int FORCE_CACHE_ALL_VALUE = 486026928;
+
     /** <code>INVALID_CACHE_MODE = 381295560;</code> */
     public static final int INVALID_CACHE_MODE_VALUE = 381295560;
+
     /**
      *
      *
@@ -260,6 +265,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   private java.util.List<
           com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader>
       bypassCacheOnRequestHeaders_;
+
   /**
    *
    *
@@ -277,6 +283,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       getBypassCacheOnRequestHeadersList() {
     return bypassCacheOnRequestHeaders_;
   }
+
   /**
    *
    *
@@ -295,6 +302,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       getBypassCacheOnRequestHeadersOrBuilderList() {
     return bypassCacheOnRequestHeaders_;
   }
+
   /**
    *
    *
@@ -310,6 +318,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public int getBypassCacheOnRequestHeadersCount() {
     return bypassCacheOnRequestHeaders_.size();
   }
+
   /**
    *
    *
@@ -326,6 +335,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       getBypassCacheOnRequestHeaders(int index) {
     return bypassCacheOnRequestHeaders_.get(index);
   }
+
   /**
    *
    *
@@ -345,6 +355,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
 
   public static final int CACHE_KEY_POLICY_FIELD_NUMBER = 159263727;
   private com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy cacheKeyPolicy_;
+
   /**
    *
    *
@@ -362,6 +373,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public boolean hasCacheKeyPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -381,6 +393,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         ? com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy.getDefaultInstance()
         : cacheKeyPolicy_;
   }
+
   /**
    *
    *
@@ -404,6 +417,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cacheMode_ = "";
+
   /**
    *
    *
@@ -420,6 +434,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public boolean hasCacheMode() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -444,6 +459,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -471,6 +487,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
 
   public static final int CLIENT_TTL_FIELD_NUMBER = 29034360;
   private int clientTtl_ = 0;
+
   /**
    *
    *
@@ -486,6 +503,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public boolean hasClientTtl() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -504,6 +522,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
 
   public static final int DEFAULT_TTL_FIELD_NUMBER = 100253422;
   private int defaultTtl_ = 0;
+
   /**
    *
    *
@@ -519,6 +538,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public boolean hasDefaultTtl() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -537,6 +557,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
 
   public static final int MAX_TTL_FIELD_NUMBER = 307578001;
   private int maxTtl_ = 0;
+
   /**
    *
    *
@@ -552,6 +573,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public boolean hasMaxTtl() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -570,6 +592,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
 
   public static final int NEGATIVE_CACHING_FIELD_NUMBER = 336110005;
   private boolean negativeCaching_ = false;
+
   /**
    *
    *
@@ -585,6 +608,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public boolean hasNegativeCaching() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -606,6 +630,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy>
       negativeCachingPolicy_;
+
   /**
    *
    *
@@ -622,6 +647,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       getNegativeCachingPolicyList() {
     return negativeCachingPolicy_;
   }
+
   /**
    *
    *
@@ -640,6 +666,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       getNegativeCachingPolicyOrBuilderList() {
     return negativeCachingPolicy_;
   }
+
   /**
    *
    *
@@ -655,6 +682,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public int getNegativeCachingPolicyCount() {
     return negativeCachingPolicy_.size();
   }
+
   /**
    *
    *
@@ -671,6 +699,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       getNegativeCachingPolicy(int index) {
     return negativeCachingPolicy_.get(index);
   }
+
   /**
    *
    *
@@ -690,6 +719,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
 
   public static final int REQUEST_COALESCING_FIELD_NUMBER = 532808276;
   private boolean requestCoalescing_ = false;
+
   /**
    *
    *
@@ -705,6 +735,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public boolean hasRequestCoalescing() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -723,6 +754,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
 
   public static final int SERVE_WHILE_STALE_FIELD_NUMBER = 236682203;
   private int serveWhileStale_ = 0;
+
   /**
    *
    *
@@ -738,6 +770,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public boolean hasServeWhileStale() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -756,6 +789,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
 
   public static final int SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER = 269374534;
   private long signedUrlCacheMaxAgeSec_ = 0L;
+
   /**
    *
    *
@@ -771,6 +805,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public boolean hasSignedUrlCacheMaxAgeSec() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -792,6 +827,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList signedUrlKeyNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -806,6 +842,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getSignedUrlKeyNamesList() {
     return signedUrlKeyNames_;
   }
+
   /**
    *
    *
@@ -820,6 +857,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public int getSignedUrlKeyNamesCount() {
     return signedUrlKeyNames_.size();
   }
+
   /**
    *
    *
@@ -835,6 +873,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public java.lang.String getSignedUrlKeyNames(int index) {
     return signedUrlKeyNames_.get(index);
   }
+
   /**
    *
    *
@@ -1174,6 +1213,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1672,6 +1712,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         return bypassCacheOnRequestHeadersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1690,6 +1731,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         return bypassCacheOnRequestHeadersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1709,6 +1751,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         return bypassCacheOnRequestHeadersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1735,6 +1778,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1759,6 +1803,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1784,6 +1829,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1810,6 +1856,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1833,6 +1880,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1857,6 +1905,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1883,6 +1932,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1904,6 +1954,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1925,6 +1976,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1940,6 +1992,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         getBypassCacheOnRequestHeadersBuilder(int index) {
       return getBypassCacheOnRequestHeadersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1959,6 +2012,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         return bypassCacheOnRequestHeadersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1981,6 +2035,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(bypassCacheOnRequestHeaders_);
       }
     }
+
     /**
      *
      *
@@ -1999,6 +2054,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
               com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2018,6 +2074,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
               com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2063,6 +2120,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy.Builder,
             com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicyOrBuilder>
         cacheKeyPolicyBuilder_;
+
     /**
      *
      *
@@ -2079,6 +2137,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public boolean hasCacheKeyPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2101,6 +2160,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         return cacheKeyPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2126,6 +2186,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2148,6 +2209,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2180,6 +2242,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2201,6 +2264,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2218,6 +2282,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return getCacheKeyPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2239,6 +2304,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
             : cacheKeyPolicy_;
       }
     }
+
     /**
      *
      *
@@ -2268,6 +2334,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object cacheMode_ = "";
+
     /**
      *
      *
@@ -2283,6 +2350,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public boolean hasCacheMode() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2306,6 +2374,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2329,6 +2398,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2351,6 +2421,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2369,6 +2440,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2394,6 +2466,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     }
 
     private int clientTtl_;
+
     /**
      *
      *
@@ -2409,6 +2482,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public boolean hasClientTtl() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2424,6 +2498,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public int getClientTtl() {
       return clientTtl_;
     }
+
     /**
      *
      *
@@ -2443,6 +2518,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2462,6 +2538,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     }
 
     private int defaultTtl_;
+
     /**
      *
      *
@@ -2477,6 +2554,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public boolean hasDefaultTtl() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2492,6 +2570,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public int getDefaultTtl() {
       return defaultTtl_;
     }
+
     /**
      *
      *
@@ -2511,6 +2590,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2530,6 +2610,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     }
 
     private int maxTtl_;
+
     /**
      *
      *
@@ -2545,6 +2626,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public boolean hasMaxTtl() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2560,6 +2642,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public int getMaxTtl() {
       return maxTtl_;
     }
+
     /**
      *
      *
@@ -2579,6 +2662,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2598,6 +2682,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     }
 
     private boolean negativeCaching_;
+
     /**
      *
      *
@@ -2613,6 +2698,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public boolean hasNegativeCaching() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2628,6 +2714,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public boolean getNegativeCaching() {
       return negativeCaching_;
     }
+
     /**
      *
      *
@@ -2647,6 +2734,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2703,6 +2791,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         return negativeCachingPolicyBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2721,6 +2810,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         return negativeCachingPolicyBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2740,6 +2830,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         return negativeCachingPolicyBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2765,6 +2856,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2789,6 +2881,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2814,6 +2907,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2839,6 +2933,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2862,6 +2957,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2886,6 +2982,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2910,6 +3007,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2931,6 +3029,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2952,6 +3051,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2967,6 +3067,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         getNegativeCachingPolicyBuilder(int index) {
       return getNegativeCachingPolicyFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2986,6 +3087,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         return negativeCachingPolicyBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3007,6 +3109,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(negativeCachingPolicy_);
       }
     }
+
     /**
      *
      *
@@ -3025,6 +3128,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
               com.google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3044,6 +3148,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
               com.google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3082,6 +3187,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     }
 
     private boolean requestCoalescing_;
+
     /**
      *
      *
@@ -3097,6 +3203,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public boolean hasRequestCoalescing() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3112,6 +3219,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public boolean getRequestCoalescing() {
       return requestCoalescing_;
     }
+
     /**
      *
      *
@@ -3131,6 +3239,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3150,6 +3259,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     }
 
     private int serveWhileStale_;
+
     /**
      *
      *
@@ -3165,6 +3275,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public boolean hasServeWhileStale() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3180,6 +3291,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public int getServeWhileStale() {
       return serveWhileStale_;
     }
+
     /**
      *
      *
@@ -3199,6 +3311,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3218,6 +3331,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     }
 
     private long signedUrlCacheMaxAgeSec_;
+
     /**
      *
      *
@@ -3233,6 +3347,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public boolean hasSignedUrlCacheMaxAgeSec() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3248,6 +3363,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public long getSignedUrlCacheMaxAgeSec() {
       return signedUrlCacheMaxAgeSec_;
     }
+
     /**
      *
      *
@@ -3267,6 +3383,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3294,6 +3411,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000800;
     }
+
     /**
      *
      *
@@ -3309,6 +3427,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       signedUrlKeyNames_.makeImmutable();
       return signedUrlKeyNames_;
     }
+
     /**
      *
      *
@@ -3323,6 +3442,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public int getSignedUrlKeyNamesCount() {
       return signedUrlKeyNames_.size();
     }
+
     /**
      *
      *
@@ -3338,6 +3458,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public java.lang.String getSignedUrlKeyNames(int index) {
       return signedUrlKeyNames_.get(index);
     }
+
     /**
      *
      *
@@ -3353,6 +3474,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getSignedUrlKeyNamesBytes(int index) {
       return signedUrlKeyNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3376,6 +3498,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3398,6 +3521,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3417,6 +3541,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3435,6 +3560,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

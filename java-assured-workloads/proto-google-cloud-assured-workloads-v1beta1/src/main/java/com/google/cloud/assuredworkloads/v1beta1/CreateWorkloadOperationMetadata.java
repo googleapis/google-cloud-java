@@ -33,6 +33,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1beta1.CreateWorkloadOperationMetadata)
     CreateWorkloadOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateWorkloadOperationMetadata.newBuilder() to construct.
   private CreateWorkloadOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
 
   public static final int COMPLIANCE_REGIME_FIELD_NUMBER = 4;
   private int complianceRegime_ = 0;
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
   public int getComplianceRegimeValue() {
     return complianceRegime_;
   }
+
   /**
    *
    *
@@ -269,6 +279,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>
       resourceSettings_;
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       getResourceSettingsList() {
     return resourceSettings_;
   }
+
   /**
    *
    *
@@ -304,6 +316,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       getResourceSettingsOrBuilderList() {
     return resourceSettings_;
   }
+
   /**
    *
    *
@@ -320,6 +333,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
   public int getResourceSettingsCount() {
     return resourceSettings_.size();
   }
+
   /**
    *
    *
@@ -337,6 +351,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       int index) {
     return resourceSettings_.get(index);
   }
+
   /**
    *
    *
@@ -566,6 +581,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -887,6 +903,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -902,6 +919,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -923,6 +941,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -946,6 +965,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +986,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -994,6 +1015,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1036,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1052,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1048,6 +1072,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1076,6 +1101,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1098,6 +1124,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1120,6 +1147,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1141,6 +1169,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1187,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1212,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1204,6 +1235,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1226,6 +1258,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1247,6 +1280,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1298,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1288,6 +1323,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
     }
 
     private int complianceRegime_ = 0;
+
     /**
      *
      *
@@ -1306,6 +1342,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
     public int getComplianceRegimeValue() {
       return complianceRegime_;
     }
+
     /**
      *
      *
@@ -1327,6 +1364,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1351,6 +1389,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
           ? com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1376,6 +1415,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1436,6 +1476,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
         return resourceSettingsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1455,6 +1496,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
         return resourceSettingsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1475,6 +1517,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
         return resourceSettingsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1501,6 +1544,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1526,6 +1570,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1552,6 +1597,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1578,6 +1624,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1602,6 +1649,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1627,6 +1675,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1701,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1674,6 +1724,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1696,6 +1747,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1712,6 +1764,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
         getResourceSettingsBuilder(int index) {
       return getResourceSettingsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1732,6 +1785,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
         return resourceSettingsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1753,6 +1807,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(resourceSettings_);
       }
     }
+
     /**
      *
      *
@@ -1772,6 +1827,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
               com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1792,6 +1848,7 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
               com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings
                   .getDefaultInstance());
     }
+
     /**
      *
      *

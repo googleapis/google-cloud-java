@@ -40,6 +40,7 @@ public interface EngineOrBuilder
    * @return Whether the chatEngineConfig field is set.
    */
   boolean hasChatEngineConfig();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface EngineOrBuilder
    * @return The chatEngineConfig.
    */
   com.google.cloud.discoveryengine.v1beta.Engine.ChatEngineConfig getChatEngineConfig();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface EngineOrBuilder
    * @return Whether the searchEngineConfig field is set.
    */
   boolean hasSearchEngineConfig();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface EngineOrBuilder
    * @return The searchEngineConfig.
    */
   com.google.cloud.discoveryengine.v1beta.Engine.SearchEngineConfig getSearchEngineConfig();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface EngineOrBuilder
    * @return Whether the chatEngineMetadata field is set.
    */
   boolean hasChatEngineMetadata();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface EngineOrBuilder
    * @return The chatEngineMetadata.
    */
   com.google.cloud.discoveryengine.v1beta.Engine.ChatEngineMetadata getChatEngineMetadata();
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public interface EngineOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public interface EngineOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -255,6 +263,7 @@ public interface EngineOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public interface EngineOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -293,6 +303,7 @@ public interface EngineOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public interface EngineOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -349,6 +361,7 @@ public interface EngineOrBuilder
    * @return A list containing the dataStoreIds.
    */
   java.util.List<java.lang.String> getDataStoreIdsList();
+
   /**
    *
    *
@@ -380,6 +393,7 @@ public interface EngineOrBuilder
    * @return The count of dataStoreIds.
    */
   int getDataStoreIdsCount();
+
   /**
    *
    *
@@ -412,6 +426,7 @@ public interface EngineOrBuilder
    * @return The dataStoreIds at the given index.
    */
   java.lang.String getDataStoreIds(int index);
+
   /**
    *
    *
@@ -459,6 +474,7 @@ public interface EngineOrBuilder
    * @return The enum numeric value on the wire for solutionType.
    */
   int getSolutionTypeValue();
+
   /**
    *
    *
@@ -490,6 +506,7 @@ public interface EngineOrBuilder
    * @return The enum numeric value on the wire for industryVertical.
    */
   int getIndustryVerticalValue();
+
   /**
    *
    *
@@ -519,6 +536,7 @@ public interface EngineOrBuilder
    * @return Whether the commonConfig field is set.
    */
   boolean hasCommonConfig();
+
   /**
    *
    *
@@ -531,6 +549,7 @@ public interface EngineOrBuilder
    * @return The commonConfig.
    */
   com.google.cloud.discoveryengine.v1beta.Engine.CommonConfig getCommonConfig();
+
   /**
    *
    *

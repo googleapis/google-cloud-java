@@ -34,6 +34,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation)
     ImageBoundingPolyAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImageBoundingPolyAnnotation.newBuilder() to construct.
   private ImageBoundingPolyAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
     private BoundedAreaCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
   }
 
   public static final int BOUNDING_POLY_FIELD_NUMBER = 2;
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code>
    *
@@ -122,6 +125,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
   public boolean hasBoundingPoly() {
     return boundedAreaCase_ == 2;
   }
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code>
    *
@@ -134,6 +138,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
     }
     return com.google.cloud.datalabeling.v1beta1.BoundingPoly.getDefaultInstance();
   }
+
   /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code> */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
@@ -144,6 +149,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
   }
 
   public static final int NORMALIZED_BOUNDING_POLY_FIELD_NUMBER = 3;
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
    * </code>
@@ -154,6 +160,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
   public boolean hasNormalizedBoundingPoly() {
     return boundedAreaCase_ == 3;
   }
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
    * </code>
@@ -167,6 +174,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
     }
     return com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly.getDefaultInstance();
   }
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
    * </code>
@@ -182,6 +190,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
 
   public static final int ANNOTATION_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.AnnotationSpec annotationSpec_;
+
   /**
    *
    *
@@ -197,6 +206,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
   public boolean hasAnnotationSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -214,6 +224,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
         : annotationSpec_;
   }
+
   /**
    *
    *
@@ -437,6 +448,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -710,6 +722,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
             com.google.cloud.datalabeling.v1beta1.BoundingPoly.Builder,
             com.google.cloud.datalabeling.v1beta1.BoundingPolyOrBuilder>
         boundingPolyBuilder_;
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code>
      *
@@ -719,6 +732,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
     public boolean hasBoundingPoly() {
       return boundedAreaCase_ == 2;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code>
      *
@@ -738,6 +752,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
         return com.google.cloud.datalabeling.v1beta1.BoundingPoly.getDefaultInstance();
       }
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code> */
     public Builder setBoundingPoly(com.google.cloud.datalabeling.v1beta1.BoundingPoly value) {
       if (boundingPolyBuilder_ == null) {
@@ -752,6 +767,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       boundedAreaCase_ = 2;
       return this;
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code> */
     public Builder setBoundingPoly(
         com.google.cloud.datalabeling.v1beta1.BoundingPoly.Builder builderForValue) {
@@ -764,6 +780,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       boundedAreaCase_ = 2;
       return this;
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code> */
     public Builder mergeBoundingPoly(com.google.cloud.datalabeling.v1beta1.BoundingPoly value) {
       if (boundingPolyBuilder_ == null) {
@@ -789,6 +806,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       boundedAreaCase_ = 2;
       return this;
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code> */
     public Builder clearBoundingPoly() {
       if (boundingPolyBuilder_ == null) {
@@ -806,10 +824,12 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code> */
     public com.google.cloud.datalabeling.v1beta1.BoundingPoly.Builder getBoundingPolyBuilder() {
       return getBoundingPolyFieldBuilder().getBuilder();
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code> */
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
@@ -822,6 +842,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
         return com.google.cloud.datalabeling.v1beta1.BoundingPoly.getDefaultInstance();
       }
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.BoundingPoly,
@@ -852,6 +873,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
             com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly.Builder,
             com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPolyOrBuilder>
         normalizedBoundingPolyBuilder_;
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
      * </code>
@@ -862,6 +884,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
     public boolean hasNormalizedBoundingPoly() {
       return boundedAreaCase_ == 3;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
      * </code>
@@ -883,6 +906,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
         return com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly.getDefaultInstance();
       }
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
      * </code>
@@ -901,6 +925,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       boundedAreaCase_ = 3;
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
      * </code>
@@ -916,6 +941,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       boundedAreaCase_ = 3;
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
      * </code>
@@ -946,6 +972,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       boundedAreaCase_ = 3;
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
      * </code>
@@ -966,6 +993,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
      * </code>
@@ -974,6 +1002,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
         getNormalizedBoundingPolyBuilder() {
       return getNormalizedBoundingPolyFieldBuilder().getBuilder();
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
      * </code>
@@ -990,6 +1019,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
         return com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly.getDefaultInstance();
       }
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
      * </code>
@@ -1025,6 +1055,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
             com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder,
             com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder>
         annotationSpecBuilder_;
+
     /**
      *
      *
@@ -1039,6 +1070,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
     public boolean hasAnnotationSpec() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1059,6 +1091,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
         return annotationSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1114,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1135,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1164,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1184,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1162,6 +1199,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       onChanged();
       return getAnnotationSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1181,6 +1219,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
             : annotationSpec_;
       }
     }
+
     /**
      *
      *

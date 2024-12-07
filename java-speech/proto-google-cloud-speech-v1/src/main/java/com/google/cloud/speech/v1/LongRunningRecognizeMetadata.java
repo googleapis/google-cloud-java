@@ -35,6 +35,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1.LongRunningRecognizeMetadata)
     LongRunningRecognizeMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LongRunningRecognizeMetadata.newBuilder() to construct.
   private LongRunningRecognizeMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 1;
   private int progressPercent_ = 0;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
 
   public static final int START_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
 
   public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp lastUpdateTime_;
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
   public boolean hasLastUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastUpdateTime_;
   }
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -431,6 +441,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -679,6 +690,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     private int bitField0_;
 
     private int progressPercent_;
+
     /**
      *
      *
@@ -695,6 +707,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     public int getProgressPercent() {
       return progressPercent_;
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +754,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -772,6 +788,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -794,6 +811,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +831,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +879,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +894,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -889,6 +911,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -921,6 +944,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastUpdateTimeBuilder_;
+
     /**
      *
      *
@@ -935,6 +959,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     public boolean hasLastUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -955,6 +980,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
         return lastUpdateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -977,6 +1003,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1023,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1051,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1042,6 +1071,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1086,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       onChanged();
       return getLastUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1074,6 +1105,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
             : lastUpdateTime_;
       }
     }
+
     /**
      *
      *
@@ -1101,6 +1133,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1124,6 +1157,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1147,6 +1181,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1169,6 +1204,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1223,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

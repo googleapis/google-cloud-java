@@ -33,6 +33,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.devtools.containeranalysis.v1beta1.PackagesSummaryResponse)
     PackagesSummaryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PackagesSummaryResponse.newBuilder() to construct.
   private PackagesSummaryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
      * @return The license.
      */
     java.lang.String getLicense();
+
     /**
      *
      *
@@ -111,6 +113,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
      */
     long getCount();
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.devtools.containeranalysis.v1beta1.PackagesSummaryResponse.LicensesSummary)
       LicensesSummaryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use LicensesSummary.newBuilder() to construct.
     private LicensesSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -161,6 +165,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object license_ = "";
+
     /**
      *
      *
@@ -186,6 +191,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -214,6 +220,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
 
     public static final int COUNT_FIELD_NUMBER = 2;
     private long count_ = 0L;
+
     /**
      *
      *
@@ -408,6 +415,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -621,6 +629,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object license_ = "";
+
       /**
        *
        *
@@ -645,6 +654,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -669,6 +679,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -692,6 +703,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -711,6 +723,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -737,6 +750,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       }
 
       private long count_;
+
       /**
        *
        *
@@ -752,6 +766,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       public long getCount() {
         return count_;
       }
+
       /**
        *
        *
@@ -771,6 +786,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -862,6 +878,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceUrl_ = "";
+
   /**
    *
    *
@@ -886,6 +903,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -917,6 +935,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
   private java.util.List<
           com.google.containeranalysis.v1beta1.PackagesSummaryResponse.LicensesSummary>
       licensesSummary_;
+
   /**
    *
    *
@@ -934,6 +953,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       getLicensesSummaryList() {
     return licensesSummary_;
   }
+
   /**
    *
    *
@@ -952,6 +972,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       getLicensesSummaryOrBuilderList() {
     return licensesSummary_;
   }
+
   /**
    *
    *
@@ -967,6 +988,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
   public int getLicensesSummaryCount() {
     return licensesSummary_.size();
   }
+
   /**
    *
    *
@@ -983,6 +1005,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       getLicensesSummary(int index) {
     return licensesSummary_.get(index);
   }
+
   /**
    *
    *
@@ -1171,6 +1194,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1421,6 +1445,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object resourceUrl_ = "";
+
     /**
      *
      *
@@ -1444,6 +1469,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1467,6 +1493,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1489,6 +1516,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1507,6 +1535,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1571,6 +1600,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
         return licensesSummaryBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1589,6 +1619,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
         return licensesSummaryBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1608,6 +1639,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
         return licensesSummaryBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1634,6 +1666,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1658,6 +1691,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1683,6 +1717,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1709,6 +1744,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1768,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1756,6 +1793,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1819,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1841,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1823,6 +1863,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1838,6 +1879,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
         getLicensesSummaryBuilder(int index) {
       return getLicensesSummaryFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1857,6 +1899,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
         return licensesSummaryBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1879,6 +1922,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(licensesSummary_);
       }
     }
+
     /**
      *
      *
@@ -1897,6 +1941,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
               com.google.containeranalysis.v1beta1.PackagesSummaryResponse.LicensesSummary
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1916,6 +1961,7 @@ public final class PackagesSummaryResponse extends com.google.protobuf.Generated
               com.google.containeranalysis.v1beta1.PackagesSummaryResponse.LicensesSummary
                   .getDefaultInstance());
     }
+
     /**
      *
      *

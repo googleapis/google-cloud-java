@@ -36,6 +36,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.NotificationConfig)
     NotificationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NotificationConfig.newBuilder() to construct.
   private NotificationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -106,6 +107,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return The filter.
      */
     java.lang.String getFilter();
+
     /**
      *
      *
@@ -139,6 +141,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getFilterBytes();
   }
+
   /**
    *
    *
@@ -154,6 +157,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig)
       StreamingConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StreamingConfig.newBuilder() to construct.
     private StreamingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -188,6 +192,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -231,6 +236,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -437,6 +443,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -635,6 +642,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object filter_ = "";
+
       /**
        *
        *
@@ -677,6 +685,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -719,6 +728,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -760,6 +770,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -797,6 +808,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -924,6 +936,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     private NotifyConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -958,6 +971,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -986,6 +1000,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -1019,6 +1034,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1042,6 +1058,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -1070,6 +1087,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pubsubTopic_ = "";
+
   /**
    *
    *
@@ -1094,6 +1112,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -1123,6 +1142,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
+
   /**
    *
    *
@@ -1147,6 +1167,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -1173,6 +1194,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int STREAMING_CONFIG_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -1189,6 +1211,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasStreamingConfig() {
     return notifyConfigCase_ == 5;
   }
+
   /**
    *
    *
@@ -1210,6 +1233,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1444,6 +1468,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1721,6 +1746,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1748,6 +1774,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1775,6 +1802,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1801,6 +1829,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1823,6 +1852,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1852,6 +1882,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1874,6 +1905,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1896,6 +1928,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1917,6 +1950,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1934,6 +1968,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1958,6 +1993,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object pubsubTopic_ = "";
+
     /**
      *
      *
@@ -1981,6 +2017,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2004,6 +2041,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2026,6 +2064,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2044,6 +2083,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2069,6 +2109,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object serviceAccount_ = "";
+
     /**
      *
      *
@@ -2092,6 +2133,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2115,6 +2157,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2137,6 +2180,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2155,6 +2199,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2184,6 +2229,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig.Builder,
             com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfigOrBuilder>
         streamingConfigBuilder_;
+
     /**
      *
      *
@@ -2201,6 +2247,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasStreamingConfig() {
       return notifyConfigCase_ == 5;
     }
+
     /**
      *
      *
@@ -2232,6 +2279,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2257,6 +2305,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       notifyConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2280,6 +2329,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       notifyConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2318,6 +2368,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       notifyConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2345,6 +2396,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2360,6 +2412,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         getStreamingConfigBuilder() {
       return getStreamingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2385,6 +2438,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

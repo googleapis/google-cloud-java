@@ -36,6 +36,7 @@ public interface OracleSourceConfigOrBuilder
    * @return Whether the allowlist field is set.
    */
   boolean hasAllowlist();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface OracleSourceConfigOrBuilder
    * @return The allowlist.
    */
   com.google.cloud.datastream.v1alpha1.OracleRdbms getAllowlist();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface OracleSourceConfigOrBuilder
    * @return Whether the rejectlist field is set.
    */
   boolean hasRejectlist();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface OracleSourceConfigOrBuilder
    * @return The rejectlist.
    */
   com.google.cloud.datastream.v1alpha1.OracleRdbms getRejectlist();
+
   /**
    *
    *

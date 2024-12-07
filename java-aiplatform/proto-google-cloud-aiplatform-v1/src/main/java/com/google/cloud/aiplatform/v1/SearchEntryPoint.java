@@ -33,6 +33,7 @@ public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.SearchEntryPoint)
     SearchEntryPointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchEntryPoint.newBuilder() to construct.
   private SearchEntryPoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object renderedContent_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessage
 
   public static final int SDK_BLOB_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString sdkBlob_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -304,6 +308,7 @@ public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -501,6 +506,7 @@ public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object renderedContent_ = "";
+
     /**
      *
      *
@@ -524,6 +530,7 @@ public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -547,6 +554,7 @@ public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -569,6 +577,7 @@ public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -612,6 +622,7 @@ public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessage
     }
 
     private com.google.protobuf.ByteString sdkBlob_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getSdkBlob() {
       return sdkBlob_;
     }
+
     /**
      *
      *
@@ -650,6 +662,7 @@ public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

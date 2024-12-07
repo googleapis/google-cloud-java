@@ -36,6 +36,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * @return Whether the expirationTime field is set.
    */
   boolean hasExpirationTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * @return The expirationTime.
    */
   java.lang.String getExpirationTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * @return The startTime.
    */
   java.lang.String getStartTime();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * @return Whether the timeZone field is set.
    */
   boolean hasTimeZone();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * @return Whether the vmStartSchedule field is set.
    */
   boolean hasVmStartSchedule();
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * @return The vmStartSchedule.
    */
   com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule getVmStartSchedule();
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * @return Whether the vmStopSchedule field is set.
    */
   boolean hasVmStopSchedule();
+
   /**
    *
    *
@@ -205,6 +214,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * @return The vmStopSchedule.
    */
   com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule getVmStopSchedule();
+
   /**
    *
    *

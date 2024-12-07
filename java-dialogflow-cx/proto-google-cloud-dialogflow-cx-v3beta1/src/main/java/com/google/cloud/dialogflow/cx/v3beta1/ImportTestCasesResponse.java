@@ -34,6 +34,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ImportTestCasesResponse)
     ImportTestCasesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportTestCasesResponse.newBuilder() to construct.
   private ImportTestCasesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList names_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getNamesList() {
     return names_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
   public int getNamesCount() {
     return names_.size();
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
   public java.lang.String getNames(int index) {
     return names_.get(index);
   }
+
   /**
    *
    *
@@ -303,6 +308,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -506,6 +512,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -523,6 +530,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
       names_.makeImmutable();
       return names_;
     }
+
     /**
      *
      *
@@ -539,6 +547,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
     public int getNamesCount() {
       return names_.size();
     }
+
     /**
      *
      *
@@ -556,6 +565,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
     public java.lang.String getNames(int index) {
       return names_.get(index);
     }
+
     /**
      *
      *
@@ -573,6 +583,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getNamesBytes(int index) {
       return names_.getByteString(index);
     }
+
     /**
      *
      *
@@ -598,6 +609,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -622,6 +634,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -643,6 +656,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +677,7 @@ public final class ImportTestCasesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

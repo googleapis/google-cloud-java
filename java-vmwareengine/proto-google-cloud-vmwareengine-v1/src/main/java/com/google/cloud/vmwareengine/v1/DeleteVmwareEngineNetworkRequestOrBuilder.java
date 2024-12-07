@@ -42,6 +42,7 @@ public interface DeleteVmwareEngineNetworkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface DeleteVmwareEngineNetworkRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -127,6 +129,7 @@ public interface DeleteVmwareEngineNetworkRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

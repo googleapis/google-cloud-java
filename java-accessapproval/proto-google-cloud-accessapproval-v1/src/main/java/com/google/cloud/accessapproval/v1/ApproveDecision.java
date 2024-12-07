@@ -33,6 +33,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.accessapproval.v1.ApproveDecision)
     ApproveDecisionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ApproveDecision.newBuilder() to construct.
   private ApproveDecision(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int APPROVE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp approveTime_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
   public boolean hasApproveTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getApproveTime() {
     return approveTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : approveTime_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp expireTime_;
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
+
   /**
    *
    *
@@ -156,6 +163,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
 
   public static final int INVALIDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp invalidateTime_;
+
   /**
    *
    *
@@ -171,6 +179,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
   public boolean hasInvalidateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -188,6 +197,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : invalidateTime_;
   }
+
   /**
    *
    *
@@ -206,6 +216,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
 
   public static final int SIGNATURE_INFO_FIELD_NUMBER = 4;
   private com.google.cloud.accessapproval.v1.SignatureInfo signatureInfo_;
+
   /**
    *
    *
@@ -221,6 +232,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
   public boolean hasSignatureInfo() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -238,6 +250,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.accessapproval.v1.SignatureInfo.getDefaultInstance()
         : signatureInfo_;
   }
+
   /**
    *
    *
@@ -256,6 +269,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
 
   public static final int AUTO_APPROVED_FIELD_NUMBER = 5;
   private boolean autoApproved_ = false;
+
   /**
    *
    *
@@ -487,6 +501,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -763,6 +778,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         approveTimeBuilder_;
+
     /**
      *
      *
@@ -777,6 +793,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
     public boolean hasApproveTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -797,6 +814,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
         return approveTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -819,6 +837,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +857,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +885,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +905,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +920,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getApproveTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -916,6 +939,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
             : approveTime_;
       }
     }
+
     /**
      *
      *
@@ -948,6 +972,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -962,6 +987,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -982,6 +1008,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
         return expireTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1031,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1051,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1079,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1099,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1114,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1101,6 +1133,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
             : expireTime_;
       }
     }
+
     /**
      *
      *
@@ -1133,6 +1166,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         invalidateTimeBuilder_;
+
     /**
      *
      *
@@ -1147,6 +1181,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
     public boolean hasInvalidateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1167,6 +1202,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
         return invalidateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1225,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1245,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1273,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1293,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1268,6 +1308,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getInvalidateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1286,6 +1327,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
             : invalidateTime_;
       }
     }
+
     /**
      *
      *
@@ -1318,6 +1360,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.accessapproval.v1.SignatureInfo.Builder,
             com.google.cloud.accessapproval.v1.SignatureInfoOrBuilder>
         signatureInfoBuilder_;
+
     /**
      *
      *
@@ -1332,6 +1375,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
     public boolean hasSignatureInfo() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1352,6 +1396,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
         return signatureInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1374,6 +1419,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1394,6 +1440,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1422,6 +1469,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1441,6 +1489,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1455,6 +1504,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSignatureInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1473,6 +1523,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
             : signatureInfo_;
       }
     }
+
     /**
      *
      *
@@ -1500,6 +1551,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean autoApproved_;
+
     /**
      *
      *
@@ -1515,6 +1567,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
     public boolean getAutoApproved() {
       return autoApproved_;
     }
+
     /**
      *
      *
@@ -1534,6 +1587,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

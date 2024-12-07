@@ -34,6 +34,7 @@ public interface ListServiceBindingsResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.ServiceBinding service_bindings = 1;</code>
    */
   java.util.List<com.google.cloud.networkservices.v1.ServiceBinding> getServiceBindingsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListServiceBindingsResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.ServiceBinding service_bindings = 1;</code>
    */
   com.google.cloud.networkservices.v1.ServiceBinding getServiceBindings(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListServiceBindingsResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.ServiceBinding service_bindings = 1;</code>
    */
   int getServiceBindingsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListServiceBindingsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.ServiceBindingOrBuilder>
       getServiceBindingsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListServiceBindingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

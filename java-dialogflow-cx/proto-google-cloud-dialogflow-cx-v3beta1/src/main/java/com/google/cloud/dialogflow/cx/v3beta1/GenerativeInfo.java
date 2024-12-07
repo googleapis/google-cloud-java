@@ -34,6 +34,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.GenerativeInfo)
     GenerativeInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerativeInfo.newBuilder() to construct.
   private GenerativeInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList currentPlaybooks_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getCurrentPlaybooksList() {
     return currentPlaybooks_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
   public int getCurrentPlaybooksCount() {
     return currentPlaybooks_.size();
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getCurrentPlaybooks(int index) {
     return currentPlaybooks_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACTION_TRACING_INFO_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.cx.v3beta1.Example actionTracingInfo_;
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasActionTracingInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dialogflow.cx.v3beta1.Example.getDefaultInstance()
         : actionTracingInfo_;
   }
+
   /**
    *
    *
@@ -371,6 +379,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -604,6 +613,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -621,6 +631,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
       currentPlaybooks_.makeImmutable();
       return currentPlaybooks_;
     }
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
     public int getCurrentPlaybooksCount() {
       return currentPlaybooks_.size();
     }
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getCurrentPlaybooks(int index) {
       return currentPlaybooks_.get(index);
     }
+
     /**
      *
      *
@@ -671,6 +684,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getCurrentPlaybooksBytes(int index) {
       return currentPlaybooks_.getByteString(index);
     }
+
     /**
      *
      *
@@ -696,6 +710,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +735,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +757,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +778,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +811,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.cx.v3beta1.Example.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.ExampleOrBuilder>
         actionTracingInfoBuilder_;
+
     /**
      *
      *
@@ -808,6 +827,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasActionTracingInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -829,6 +849,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
         return actionTracingInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -852,6 +873,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +895,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +925,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +946,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +962,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getActionTracingInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -956,6 +982,7 @@ public final class GenerativeInfo extends com.google.protobuf.GeneratedMessageV3
             : actionTracingInfo_;
       }
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ImportEntriesMetadata)
     ImportEntriesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportEntriesMetadata.newBuilder() to construct.
   private ImportEntriesMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -139,6 +140,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
      * <code>IMPORT_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int IMPORT_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -149,6 +151,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
      * <code>IMPORT_QUEUED = 1;</code>
      */
     public static final int IMPORT_QUEUED_VALUE = 1;
+
     /**
      *
      *
@@ -159,6 +162,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
      * <code>IMPORT_IN_PROGRESS = 2;</code>
      */
     public static final int IMPORT_IN_PROGRESS_VALUE = 2;
+
     /**
      *
      *
@@ -169,6 +173,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
      * <code>IMPORT_DONE = 3;</code>
      */
     public static final int IMPORT_DONE_VALUE = 3;
+
     /**
      *
      *
@@ -271,6 +276,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -286,6 +292,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -310,6 +317,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errors_;
+
   /**
    *
    *
@@ -326,6 +334,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.rpc.Status> getErrorsList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -342,6 +351,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorsOrBuilderList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -358,6 +368,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
   public int getErrorsCount() {
     return errors_.size();
   }
+
   /**
    *
    *
@@ -374,6 +385,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
   public com.google.rpc.Status getErrors(int index) {
     return errors_.get(index);
   }
+
   /**
    *
    *
@@ -568,6 +580,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -812,6 +825,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -827,6 +841,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -845,6 +860,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +880,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.datacatalog.v1.ImportEntriesMetadata.ImportState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -886,6 +903,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +954,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
         return errorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -955,6 +974,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
         return errorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -974,6 +994,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
         return errorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -999,6 +1020,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1043,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1069,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1095,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1118,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1141,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1164,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1159,6 +1187,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1210,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1226,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
     public com.google.rpc.Status.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1215,6 +1246,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1234,6 +1266,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
+
     /**
      *
      *
@@ -1249,6 +1282,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
     public com.google.rpc.Status.Builder addErrorsBuilder() {
       return getErrorsFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1264,6 +1298,7 @@ public final class ImportEntriesMetadata extends com.google.protobuf.GeneratedMe
     public com.google.rpc.Status.Builder addErrorsBuilder(int index) {
       return getErrorsFieldBuilder().addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *

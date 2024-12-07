@@ -30,12 +30,14 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -55,6 +57,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -67,6 +70,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -102,9 +107,11 @@ public interface StoragePoolAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.StoragePoolsScopedList> getItems();
+
   /**
    *
    *
@@ -116,6 +123,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.StoragePoolsScopedList> getItemsMap();
+
   /**
    *
    *
@@ -131,6 +139,7 @@ public interface StoragePoolAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.StoragePoolsScopedList defaultValue);
+
   /**
    *
    *
@@ -155,6 +164,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -167,6 +177,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -192,6 +203,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -204,6 +216,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -229,6 +242,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -241,6 +255,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -266,6 +281,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
+
   /**
    *
    *
@@ -278,6 +294,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
+
   /**
    *
    *
@@ -291,6 +308,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
+
   /**
    *
    *
@@ -317,6 +335,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -329,6 +348,7 @@ public interface StoragePoolAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

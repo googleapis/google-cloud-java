@@ -36,6 +36,7 @@ public interface RetrievalOrBuilder
    * @return Whether the vertexAiSearch field is set.
    */
   boolean hasVertexAiSearch();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RetrievalOrBuilder
    * @return The vertexAiSearch.
    */
   com.google.cloud.aiplatform.v1.VertexAISearch getVertexAiSearch();
+
   /**
    *
    *

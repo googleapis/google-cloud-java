@@ -39,6 +39,7 @@ public interface CreateKnowledgeBaseRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateKnowledgeBaseRequestOrBuilder
    * @return Whether the knowledgeBase field is set.
    */
   boolean hasKnowledgeBase();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateKnowledgeBaseRequestOrBuilder
    * @return The knowledgeBase.
    */
   com.google.cloud.dialogflow.v2.KnowledgeBase getKnowledgeBase();
+
   /**
    *
    *

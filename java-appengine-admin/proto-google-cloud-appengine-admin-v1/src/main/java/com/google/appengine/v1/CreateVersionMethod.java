@@ -33,6 +33,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.appengine.v1.CreateVersionMethod)
     CreateVersionMethodOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateVersionMethod.newBuilder() to construct.
   private CreateVersionMethod(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int REQUEST_FIELD_NUMBER = 1;
   private com.google.appengine.v1.CreateVersionRequest request_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
   public boolean hasRequest() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
         ? com.google.appengine.v1.CreateVersionRequest.getDefaultInstance()
         : request_;
   }
+
   /**
    *
    *
@@ -276,6 +280,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -478,6 +483,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
             com.google.appengine.v1.CreateVersionRequest.Builder,
             com.google.appengine.v1.CreateVersionRequestOrBuilder>
         requestBuilder_;
+
     /**
      *
      *
@@ -492,6 +498,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
     public boolean hasRequest() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -512,6 +519,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
         return requestBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -534,6 +542,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -554,6 +563,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,6 +591,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -600,6 +611,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +626,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -632,6 +645,7 @@ public final class CreateVersionMethod extends com.google.protobuf.GeneratedMess
             : request_;
       }
     }
+
     /**
      *
      *

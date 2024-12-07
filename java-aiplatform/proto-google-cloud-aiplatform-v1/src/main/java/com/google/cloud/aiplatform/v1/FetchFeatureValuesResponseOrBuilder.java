@@ -38,6 +38,7 @@ public interface FetchFeatureValuesResponseOrBuilder
    * @return Whether the keyValues field is set.
    */
   boolean hasKeyValues();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface FetchFeatureValuesResponseOrBuilder
    * @return The keyValues.
    */
   com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse.FeatureNameValuePairList getKeyValues();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface FetchFeatureValuesResponseOrBuilder
    * @return Whether the protoStruct field is set.
    */
   boolean hasProtoStruct();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface FetchFeatureValuesResponseOrBuilder
    * @return The protoStruct.
    */
   com.google.protobuf.Struct getProtoStruct();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface FetchFeatureValuesResponseOrBuilder
    * @return Whether the dataKey field is set.
    */
   boolean hasDataKey();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface FetchFeatureValuesResponseOrBuilder
    * @return The dataKey.
    */
   com.google.cloud.aiplatform.v1.FeatureViewDataKey getDataKey();
+
   /**
    *
    *

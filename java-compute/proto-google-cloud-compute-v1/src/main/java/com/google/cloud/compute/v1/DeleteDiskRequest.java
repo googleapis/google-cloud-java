@@ -33,6 +33,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteDiskRequest)
     DeleteDiskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteDiskRequest.newBuilder() to construct.
   private DeleteDiskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object disk_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -485,6 +495,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -716,6 +727,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object disk_ = "";
+
     /**
      *
      *
@@ -738,6 +750,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -760,6 +773,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -781,6 +795,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +813,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +838,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -846,6 +863,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -870,6 +888,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -893,6 +912,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +932,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +959,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -952,6 +974,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -974,6 +997,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -996,6 +1020,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1017,6 +1042,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1060,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1085,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1082,6 +1110,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1106,6 +1135,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1159,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1179,7 @@ public final class DeleteDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

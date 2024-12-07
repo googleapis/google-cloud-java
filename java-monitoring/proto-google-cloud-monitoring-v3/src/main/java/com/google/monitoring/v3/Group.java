@@ -58,6 +58,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.Group)
     GroupOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Group.newBuilder() to construct.
   private Group(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -94,6 +95,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -123,6 +125,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -157,6 +160,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -180,6 +184,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -208,6 +213,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parentName_ = "";
+
   /**
    *
    *
@@ -235,6 +241,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -267,6 +274,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -291,6 +299,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -318,6 +327,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_CLUSTER_FIELD_NUMBER = 6;
   private boolean isCluster_ = false;
+
   /**
    *
    *
@@ -528,6 +538,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -792,6 +803,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -820,6 +832,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -848,6 +861,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -875,6 +889,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +913,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +944,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -950,6 +967,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -972,6 +990,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -993,6 +1012,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1030,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1055,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object parentName_ = "";
+
     /**
      *
      *
@@ -1060,6 +1082,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1086,6 +1109,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1111,6 +1135,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1132,6 +1157,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1160,6 +1186,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -1183,6 +1210,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1206,6 +1234,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1228,6 +1257,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1246,6 +1276,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1271,6 +1302,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isCluster_;
+
     /**
      *
      *
@@ -1287,6 +1319,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsCluster() {
       return isCluster_;
     }
+
     /**
      *
      *
@@ -1307,6 +1340,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

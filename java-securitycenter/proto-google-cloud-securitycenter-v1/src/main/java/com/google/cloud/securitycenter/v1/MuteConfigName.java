@@ -426,7 +426,8 @@ public class MuteConfigName implements ResourceName {
     private Builder(MuteConfigName muteConfigName) {
       Preconditions.checkArgument(
           Objects.equals(muteConfigName.pathTemplate, ORGANIZATION_MUTE_CONFIG),
-          "toBuilder is only supported when MuteConfigName has the pattern of organizations/{organization}/muteConfigs/{mute_config}");
+          "toBuilder is only supported when MuteConfigName has the pattern of"
+              + " organizations/{organization}/muteConfigs/{mute_config}");
       this.organization = muteConfigName.organization;
       this.muteConfig = muteConfigName.muteConfig;
     }

@@ -35,6 +35,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryCloudStorageFilter)
     DiscoveryCloudStorageFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveryCloudStorageFilter.newBuilder() to construct.
   private DiscoveryCloudStorageFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
     private FilterCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,6 +118,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
   }
 
   public static final int COLLECTION_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
   public boolean hasCollection() {
     return filterCase_ == 1;
   }
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
     }
     return com.google.privacy.dlp.v2.FileStoreCollection.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
   }
 
   public static final int CLOUD_STORAGE_RESOURCE_REFERENCE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
   public boolean hasCloudStorageResourceReference() {
     return filterCase_ == 2;
   }
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
     }
     return com.google.privacy.dlp.v2.CloudStorageResourceReference.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
   }
 
   public static final int OTHERS_FIELD_NUMBER = 100;
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
   public boolean hasOthers() {
     return filterCase_ == 100;
   }
+
   /**
    *
    *
@@ -284,6 +294,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
     }
     return com.google.privacy.dlp.v2.AllOtherResources.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -512,6 +523,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -767,6 +779,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.FileStoreCollection.Builder,
             com.google.privacy.dlp.v2.FileStoreCollectionOrBuilder>
         collectionBuilder_;
+
     /**
      *
      *
@@ -784,6 +797,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
     public boolean hasCollection() {
       return filterCase_ == 1;
     }
+
     /**
      *
      *
@@ -811,6 +825,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
         return com.google.privacy.dlp.v2.FileStoreCollection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -835,6 +850,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
       filterCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +873,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
       filterCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +908,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
       filterCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +936,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +951,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
     public com.google.privacy.dlp.v2.FileStoreCollection.Builder getCollectionBuilder() {
       return getCollectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -954,6 +974,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
         return com.google.privacy.dlp.v2.FileStoreCollection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -994,6 +1015,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.CloudStorageResourceReference.Builder,
             com.google.privacy.dlp.v2.CloudStorageResourceReferenceOrBuilder>
         cloudStorageResourceReferenceBuilder_;
+
     /**
      *
      *
@@ -1014,6 +1036,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
     public boolean hasCloudStorageResourceReference() {
       return filterCase_ == 2;
     }
+
     /**
      *
      *
@@ -1045,6 +1068,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
         return com.google.privacy.dlp.v2.CloudStorageResourceReference.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1073,6 +1097,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
       filterCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1098,6 +1123,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
       filterCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1163,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
       filterCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1194,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1185,6 +1213,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
         getCloudStorageResourceReferenceBuilder() {
       return getCloudStorageResourceReferenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1211,6 +1240,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
         return com.google.privacy.dlp.v2.CloudStorageResourceReference.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1254,6 +1284,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.AllOtherResources.Builder,
             com.google.privacy.dlp.v2.AllOtherResourcesOrBuilder>
         othersBuilder_;
+
     /**
      *
      *
@@ -1274,6 +1305,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
     public boolean hasOthers() {
       return filterCase_ == 100;
     }
+
     /**
      *
      *
@@ -1304,6 +1336,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
         return com.google.privacy.dlp.v2.AllOtherResources.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1331,6 +1364,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
       filterCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1389,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
       filterCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1392,6 +1427,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
       filterCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1422,6 +1458,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1439,6 +1476,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
     public com.google.privacy.dlp.v2.AllOtherResources.Builder getOthersBuilder() {
       return getOthersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1464,6 +1502,7 @@ public final class DiscoveryCloudStorageFilter extends com.google.protobuf.Gener
         return com.google.privacy.dlp.v2.AllOtherResources.getDefaultInstance();
       }
     }
+
     /**
      *
      *

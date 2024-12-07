@@ -37,6 +37,7 @@ public interface ManagedInstanceOrBuilder
    * @return Whether the currentAction field is set.
    */
   boolean hasCurrentAction();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ManagedInstanceOrBuilder
    * @return The currentAction.
    */
   java.lang.String getCurrentAction();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ManagedInstanceOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface ManagedInstanceOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface ManagedInstanceOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface ManagedInstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.ManagedInstanceInstanceHealth> getInstanceHealthList();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface ManagedInstanceOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.ManagedInstanceInstanceHealth getInstanceHealth(int index);
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface ManagedInstanceOrBuilder
    * </code>
    */
   int getInstanceHealthCount();
+
   /**
    *
    *
@@ -175,6 +183,7 @@ public interface ManagedInstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ManagedInstanceInstanceHealthOrBuilder>
       getInstanceHealthOrBuilderList();
+
   /**
    *
    *
@@ -202,6 +211,7 @@ public interface ManagedInstanceOrBuilder
    * @return Whether the instanceStatus field is set.
    */
   boolean hasInstanceStatus();
+
   /**
    *
    *
@@ -215,6 +225,7 @@ public interface ManagedInstanceOrBuilder
    * @return The instanceStatus.
    */
   java.lang.String getInstanceStatus();
+
   /**
    *
    *
@@ -242,6 +253,7 @@ public interface ManagedInstanceOrBuilder
    * @return Whether the lastAttempt field is set.
    */
   boolean hasLastAttempt();
+
   /**
    *
    *
@@ -255,6 +267,7 @@ public interface ManagedInstanceOrBuilder
    * @return The lastAttempt.
    */
   com.google.cloud.compute.v1.ManagedInstanceLastAttempt getLastAttempt();
+
   /**
    *
    *
@@ -279,6 +292,7 @@ public interface ManagedInstanceOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -291,6 +305,7 @@ public interface ManagedInstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -317,6 +332,7 @@ public interface ManagedInstanceOrBuilder
    * @return Whether the preservedStateFromConfig field is set.
    */
   boolean hasPreservedStateFromConfig();
+
   /**
    *
    *
@@ -330,6 +346,7 @@ public interface ManagedInstanceOrBuilder
    * @return The preservedStateFromConfig.
    */
   com.google.cloud.compute.v1.PreservedState getPreservedStateFromConfig();
+
   /**
    *
    *
@@ -355,6 +372,7 @@ public interface ManagedInstanceOrBuilder
    * @return Whether the preservedStateFromPolicy field is set.
    */
   boolean hasPreservedStateFromPolicy();
+
   /**
    *
    *
@@ -368,6 +386,7 @@ public interface ManagedInstanceOrBuilder
    * @return The preservedStateFromPolicy.
    */
   com.google.cloud.compute.v1.PreservedState getPreservedStateFromPolicy();
+
   /**
    *
    *
@@ -394,6 +413,7 @@ public interface ManagedInstanceOrBuilder
    * @return Whether the propertiesFromFlexibilityPolicy field is set.
    */
   boolean hasPropertiesFromFlexibilityPolicy();
+
   /**
    *
    *
@@ -409,6 +429,7 @@ public interface ManagedInstanceOrBuilder
    */
   com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy
       getPropertiesFromFlexibilityPolicy();
+
   /**
    *
    *
@@ -435,6 +456,7 @@ public interface ManagedInstanceOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
+
   /**
    *
    *
@@ -447,6 +469,7 @@ public interface ManagedInstanceOrBuilder
    * @return The version.
    */
   com.google.cloud.compute.v1.ManagedInstanceVersion getVersion();
+
   /**
    *
    *

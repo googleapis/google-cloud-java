@@ -33,6 +33,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.DiagnosticConfig)
     DiagnosticConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiagnosticConfig.newBuilder() to construct.
   private DiagnosticConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcsBucket_ = "";
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object relativePath_ = "";
+
   /**
    *
    *
@@ -171,6 +175,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -202,6 +207,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int REPAIR_FLAG_ENABLED_FIELD_NUMBER = 3;
   private boolean repairFlagEnabled_ = false;
+
   /**
    *
    *
@@ -220,6 +226,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int PACKET_CAPTURE_FLAG_ENABLED_FIELD_NUMBER = 4;
   private boolean packetCaptureFlagEnabled_ = false;
+
   /**
    *
    *
@@ -238,6 +245,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int COPY_HOME_FILES_FLAG_ENABLED_FIELD_NUMBER = 5;
   private boolean copyHomeFilesFlagEnabled_ = false;
+
   /**
    *
    *
@@ -449,6 +457,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -686,6 +695,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object gcsBucket_ = "";
+
     /**
      *
      *
@@ -720,6 +730,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -754,6 +765,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -787,6 +799,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +829,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +866,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object relativePath_ = "";
+
     /**
      *
      *
@@ -879,6 +894,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -906,6 +922,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -932,6 +949,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +972,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +1002,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean repairFlagEnabled_;
+
     /**
      *
      *
@@ -998,6 +1018,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     public boolean getRepairFlagEnabled() {
       return repairFlagEnabled_;
     }
+
     /**
      *
      *
@@ -1017,6 +1038,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1058,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean packetCaptureFlagEnabled_;
+
     /**
      *
      *
@@ -1051,6 +1074,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     public boolean getPacketCaptureFlagEnabled() {
       return packetCaptureFlagEnabled_;
     }
+
     /**
      *
      *
@@ -1070,6 +1094,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1114,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean copyHomeFilesFlagEnabled_;
+
     /**
      *
      *
@@ -1104,6 +1130,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     public boolean getCopyHomeFilesFlagEnabled() {
       return copyHomeFilesFlagEnabled_;
     }
+
     /**
      *
      *
@@ -1123,6 +1150,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

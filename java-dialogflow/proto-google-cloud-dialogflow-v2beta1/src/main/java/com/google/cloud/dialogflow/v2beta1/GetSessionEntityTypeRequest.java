@@ -34,6 +34,7 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest)
     GetSessionEntityTypeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetSessionEntityTypeRequest.newBuilder() to construct.
   private GetSessionEntityTypeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -305,6 +308,7 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -494,6 +498,7 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -531,6 +536,7 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -568,6 +574,7 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -604,6 +611,7 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +644,7 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

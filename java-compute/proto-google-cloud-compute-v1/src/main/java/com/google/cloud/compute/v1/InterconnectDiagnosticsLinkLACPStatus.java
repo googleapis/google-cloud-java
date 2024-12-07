@@ -33,6 +33,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus)
     InterconnectDiagnosticsLinkLACPStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InterconnectDiagnosticsLinkLACPStatus.newBuilder() to construct.
   private InterconnectDiagnosticsLinkLACPStatus(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -119,6 +120,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * <code>ACTIVE = 314733318;</code>
      */
     public static final int ACTIVE_VALUE = 314733318;
+
     /**
      *
      *
@@ -230,6 +233,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object googleSystemId_ = "";
+
   /**
    *
    *
@@ -245,6 +249,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
   public boolean hasGoogleSystemId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -268,6 +273,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       return s;
     }
   }
+
   /**
    *
    *
@@ -296,6 +302,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object neighborSystemId_ = "";
+
   /**
    *
    *
@@ -311,6 +318,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
   public boolean hasNeighborSystemId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -334,6 +342,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       return s;
     }
   }
+
   /**
    *
    *
@@ -362,6 +371,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
+
   /**
    *
    *
@@ -378,6 +388,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
   public boolean hasState() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -402,6 +413,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       return s;
     }
   }
+
   /**
    *
    *
@@ -622,6 +634,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -845,6 +858,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     private int bitField0_;
 
     private java.lang.Object googleSystemId_ = "";
+
     /**
      *
      *
@@ -859,6 +873,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     public boolean hasGoogleSystemId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -881,6 +896,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -903,6 +919,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -924,6 +941,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +959,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +984,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     }
 
     private java.lang.Object neighborSystemId_ = "";
+
     /**
      *
      *
@@ -979,6 +999,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     public boolean hasNeighborSystemId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1001,6 +1022,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1045,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1067,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1085,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1110,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     }
 
     private java.lang.Object state_ = "";
+
     /**
      *
      *
@@ -1100,6 +1126,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     public boolean hasState() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1123,6 +1150,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1146,6 +1174,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1168,6 +1197,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1186,6 +1216,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *

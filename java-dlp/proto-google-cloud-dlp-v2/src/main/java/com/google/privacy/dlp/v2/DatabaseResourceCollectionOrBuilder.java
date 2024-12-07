@@ -36,6 +36,7 @@ public interface DatabaseResourceCollectionOrBuilder
    * @return Whether the includeRegexes field is set.
    */
   boolean hasIncludeRegexes();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DatabaseResourceCollectionOrBuilder
    * @return The includeRegexes.
    */
   com.google.privacy.dlp.v2.DatabaseResourceRegexes getIncludeRegexes();
+
   /**
    *
    *

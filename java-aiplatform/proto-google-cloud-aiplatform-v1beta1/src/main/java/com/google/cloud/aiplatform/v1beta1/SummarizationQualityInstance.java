@@ -33,6 +33,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SummarizationQualityInstance)
     SummarizationQualityInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SummarizationQualityInstance.newBuilder() to construct.
   private SummarizationQualityInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object prediction_ = "";
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
   public boolean hasPrediction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reference_ = "";
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
   public boolean hasReference() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object context_ = "";
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
   public boolean hasContext() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -269,6 +279,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instruction_ = "";
+
   /**
    *
    *
@@ -284,6 +295,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
   public boolean hasInstruction() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -307,6 +319,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -538,6 +551,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -777,6 +791,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object prediction_ = "";
+
     /**
      *
      *
@@ -791,6 +806,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
     public boolean hasPrediction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -813,6 +829,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -835,6 +852,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -856,6 +874,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +892,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +917,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
     }
 
     private java.lang.Object reference_ = "";
+
     /**
      *
      *
@@ -911,6 +932,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
     public boolean hasReference() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -933,6 +955,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -955,6 +978,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -976,6 +1000,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1018,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1043,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
     }
 
     private java.lang.Object context_ = "";
+
     /**
      *
      *
@@ -1031,6 +1058,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
     public boolean hasContext() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1053,6 +1081,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1075,6 +1104,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1126,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1144,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1169,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
     }
 
     private java.lang.Object instruction_ = "";
+
     /**
      *
      *
@@ -1151,6 +1184,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
     public boolean hasInstruction() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1173,6 +1207,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1195,6 +1230,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1216,6 +1252,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1270,7 @@ public final class SummarizationQualityInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

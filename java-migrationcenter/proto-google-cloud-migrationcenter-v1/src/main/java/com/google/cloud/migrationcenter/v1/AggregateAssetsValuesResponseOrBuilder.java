@@ -34,6 +34,7 @@ public interface AggregateAssetsValuesResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.AggregationResult results = 1;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.AggregationResult> getResultsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface AggregateAssetsValuesResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.AggregationResult results = 1;</code>
    */
   com.google.cloud.migrationcenter.v1.AggregationResult getResults(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface AggregateAssetsValuesResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.AggregationResult results = 1;</code>
    */
   int getResultsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface AggregateAssetsValuesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.AggregationResultOrBuilder>
       getResultsOrBuilderList();
+
   /**
    *
    *

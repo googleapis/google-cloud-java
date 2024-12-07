@@ -40,6 +40,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface VirtualMachineConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.notebooks.v1.ContainerImage> getContainerImagesList();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface VirtualMachineConfigOrBuilder
    * </code>
    */
   com.google.cloud.notebooks.v1.ContainerImage getContainerImages(int index);
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface VirtualMachineConfigOrBuilder
    * </code>
    */
   int getContainerImagesCount();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface VirtualMachineConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.notebooks.v1.ContainerImageOrBuilder>
       getContainerImagesOrBuilderList();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return Whether the dataDisk field is set.
    */
   boolean hasDataDisk();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return The dataDisk.
    */
   com.google.cloud.notebooks.v1.LocalDisk getDataDisk();
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
+
   /**
    *
    *
@@ -219,6 +228,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return The encryptionConfig.
    */
   com.google.cloud.notebooks.v1.EncryptionConfig getEncryptionConfig();
+
   /**
    *
    *
@@ -246,6 +256,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return Whether the shieldedInstanceConfig field is set.
    */
   boolean hasShieldedInstanceConfig();
+
   /**
    *
    *
@@ -260,6 +271,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return The shieldedInstanceConfig.
    */
   com.google.cloud.notebooks.v1.RuntimeShieldedInstanceConfig getShieldedInstanceConfig();
+
   /**
    *
    *
@@ -288,6 +300,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return Whether the acceleratorConfig field is set.
    */
   boolean hasAcceleratorConfig();
+
   /**
    *
    *
@@ -302,6 +315,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return The acceleratorConfig.
    */
   com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig getAcceleratorConfig();
+
   /**
    *
    *
@@ -344,6 +358,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -392,6 +407,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return The subnet.
    */
   java.lang.String getSubnet();
+
   /**
    *
    *
@@ -442,6 +458,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
+
   /**
    *
    *
@@ -455,6 +472,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -469,6 +487,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
+
   /**
    *
    *
@@ -499,6 +518,7 @@ public interface VirtualMachineConfigOrBuilder
    * </code>
    */
   int getGuestAttributesCount();
+
   /**
    *
    *
@@ -514,9 +534,11 @@ public interface VirtualMachineConfigOrBuilder
    * </code>
    */
   boolean containsGuestAttributes(java.lang.String key);
+
   /** Use {@link #getGuestAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getGuestAttributes();
+
   /**
    *
    *
@@ -532,6 +554,7 @@ public interface VirtualMachineConfigOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getGuestAttributesMap();
+
   /**
    *
    *
@@ -551,6 +574,7 @@ public interface VirtualMachineConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -579,6 +603,7 @@ public interface VirtualMachineConfigOrBuilder
    * <code>map&lt;string, string&gt; metadata = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -591,9 +616,11 @@ public interface VirtualMachineConfigOrBuilder
    * <code>map&lt;string, string&gt; metadata = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -606,6 +633,7 @@ public interface VirtualMachineConfigOrBuilder
    * <code>map&lt;string, string&gt; metadata = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -622,6 +650,7 @@ public interface VirtualMachineConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -651,6 +680,7 @@ public interface VirtualMachineConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -667,9 +697,11 @@ public interface VirtualMachineConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -686,6 +718,7 @@ public interface VirtualMachineConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -706,6 +739,7 @@ public interface VirtualMachineConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -738,6 +772,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return The enum numeric value on the wire for nicType.
    */
   int getNicTypeValue();
+
   /**
    *
    *
@@ -780,6 +815,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return The reservedIpRange.
    */
   java.lang.String getReservedIpRange();
+
   /**
    *
    *
@@ -821,6 +857,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return Whether the bootImage field is set.
    */
   boolean hasBootImage();
+
   /**
    *
    *
@@ -835,6 +872,7 @@ public interface VirtualMachineConfigOrBuilder
    * @return The bootImage.
    */
   com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage getBootImage();
+
   /**
    *
    *

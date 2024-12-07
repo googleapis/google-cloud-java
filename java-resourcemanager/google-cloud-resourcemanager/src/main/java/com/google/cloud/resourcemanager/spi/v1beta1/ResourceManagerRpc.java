@@ -84,6 +84,7 @@ public interface ResourceManagerRpc extends ServiceRpc {
       return pageToken;
     }
   }
+
   /**
    * Creates a new project.
    *

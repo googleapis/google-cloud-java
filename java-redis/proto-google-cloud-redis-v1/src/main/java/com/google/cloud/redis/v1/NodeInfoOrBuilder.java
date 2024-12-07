@@ -36,6 +36,7 @@ public interface NodeInfoOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface NodeInfoOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

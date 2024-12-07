@@ -33,6 +33,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.UpdateEntryRequest)
     UpdateEntryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateEntryRequest.newBuilder() to construct.
   private UpdateEntryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int ENTRY_FIELD_NUMBER = 1;
   private com.google.cloud.dataplex.v1.Entry entry_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasEntry() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.dataplex.v1.Entry getEntry() {
     return entry_ == null ? com.google.cloud.dataplex.v1.Entry.getDefaultInstance() : entry_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
   private boolean allowMissing_ = false;
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int DELETE_MISSING_ASPECTS_FIELD_NUMBER = 4;
   private boolean deleteMissingAspects_ = false;
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList aspectKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -249,6 +259,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getAspectKeysList() {
     return aspectKeys_;
   }
+
   /**
    *
    *
@@ -280,6 +291,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   public int getAspectKeysCount() {
     return aspectKeys_.size();
   }
+
   /**
    *
    *
@@ -312,6 +324,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   public java.lang.String getAspectKeys(int index) {
     return aspectKeys_.get(index);
   }
+
   /**
    *
    *
@@ -557,6 +570,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -827,6 +841,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.dataplex.v1.Entry.Builder,
             com.google.cloud.dataplex.v1.EntryOrBuilder>
         entryBuilder_;
+
     /**
      *
      *
@@ -842,6 +857,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasEntry() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -861,6 +877,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
         return entryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -884,6 +901,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +922,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +951,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +972,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +988,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getEntryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -984,6 +1006,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
         return entry_ == null ? com.google.cloud.dataplex.v1.Entry.getDefaultInstance() : entry_;
       }
     }
+
     /**
      *
      *
@@ -1017,6 +1040,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -1036,6 +1060,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1061,6 +1086,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1088,6 +1114,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1112,6 +1139,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1172,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1197,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1217,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1210,6 +1241,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -1242,6 +1274,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean allowMissing_;
+
     /**
      *
      *
@@ -1258,6 +1291,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     public boolean getAllowMissing() {
       return allowMissing_;
     }
+
     /**
      *
      *
@@ -1278,6 +1312,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1333,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean deleteMissingAspects_;
+
     /**
      *
      *
@@ -1315,6 +1351,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     public boolean getDeleteMissingAspects() {
       return deleteMissingAspects_;
     }
+
     /**
      *
      *
@@ -1336,6 +1373,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1403,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -1397,6 +1436,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       aspectKeys_.makeImmutable();
       return aspectKeys_;
     }
+
     /**
      *
      *
@@ -1428,6 +1468,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     public int getAspectKeysCount() {
       return aspectKeys_.size();
     }
+
     /**
      *
      *
@@ -1460,6 +1501,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     public java.lang.String getAspectKeys(int index) {
       return aspectKeys_.get(index);
     }
+
     /**
      *
      *
@@ -1492,6 +1534,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getAspectKeysBytes(int index) {
       return aspectKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1532,6 +1575,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1571,6 +1615,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1607,6 +1652,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1642,6 +1688,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

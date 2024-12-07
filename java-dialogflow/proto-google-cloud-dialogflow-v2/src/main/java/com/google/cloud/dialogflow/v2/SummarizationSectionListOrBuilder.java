@@ -37,6 +37,7 @@ public interface SummarizationSectionListOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.v2.SummarizationSection>
       getSummarizationSectionsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface SummarizationSectionListOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.SummarizationSection getSummarizationSections(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface SummarizationSectionListOrBuilder
    * </code>
    */
   int getSummarizationSectionsCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface SummarizationSectionListOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.SummarizationSectionOrBuilder>
       getSummarizationSectionsOrBuilderList();
+
   /**
    *
    *

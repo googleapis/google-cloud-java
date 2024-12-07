@@ -35,6 +35,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.SpeechAdaptation)
     SpeechAdaptationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpeechAdaptation.newBuilder() to construct.
   private SpeechAdaptation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      * @return Whether the phraseSet field is set.
      */
     boolean hasPhraseSet();
+
     /**
      *
      *
@@ -97,6 +99,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      * @return The phraseSet.
      */
     java.lang.String getPhraseSet();
+
     /**
      *
      *
@@ -123,6 +126,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      * @return Whether the inlinePhraseSet field is set.
      */
     boolean hasInlinePhraseSet();
+
     /**
      *
      *
@@ -135,6 +139,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      * @return The inlinePhraseSet.
      */
     com.google.cloud.speech.v2.PhraseSet getInlinePhraseSet();
+
     /**
      *
      *
@@ -148,6 +153,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
 
     com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet.ValueCase getValueCase();
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet)
       AdaptationPhraseSetOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AdaptationPhraseSet.newBuilder() to construct.
     private AdaptationPhraseSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -208,6 +215,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       private ValueCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -241,6 +249,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int PHRASE_SET_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -256,6 +265,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     public boolean hasPhraseSet() {
       return valueCase_ == 1;
     }
+
     /**
      *
      *
@@ -284,6 +294,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -314,6 +325,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int INLINE_PHRASE_SET_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -329,6 +341,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     public boolean hasInlinePhraseSet() {
       return valueCase_ == 2;
     }
+
     /**
      *
      *
@@ -347,6 +360,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return com.google.cloud.speech.v2.PhraseSet.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -554,6 +568,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -808,6 +823,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       public boolean hasPhraseSet() {
         return valueCase_ == 1;
       }
+
       /**
        *
        *
@@ -837,6 +853,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -866,6 +883,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -888,6 +906,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -908,6 +927,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -937,6 +957,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
               com.google.cloud.speech.v2.PhraseSet.Builder,
               com.google.cloud.speech.v2.PhraseSetOrBuilder>
           inlinePhraseSetBuilder_;
+
       /**
        *
        *
@@ -952,6 +973,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       public boolean hasInlinePhraseSet() {
         return valueCase_ == 2;
       }
+
       /**
        *
        *
@@ -977,6 +999,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
           return com.google.cloud.speech.v2.PhraseSet.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -999,6 +1022,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         valueCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1019,6 +1043,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         valueCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1051,6 +1076,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         valueCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1076,6 +1102,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -1088,6 +1115,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.speech.v2.PhraseSet.Builder getInlinePhraseSetBuilder() {
         return getInlinePhraseSetFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1108,6 +1136,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
           return com.google.cloud.speech.v2.PhraseSet.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1211,6 +1240,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet>
       phraseSets_;
+
   /**
    *
    *
@@ -1226,6 +1256,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       getPhraseSetsList() {
     return phraseSets_;
   }
+
   /**
    *
    *
@@ -1242,6 +1273,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       getPhraseSetsOrBuilderList() {
     return phraseSets_;
   }
+
   /**
    *
    *
@@ -1256,6 +1288,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   public int getPhraseSetsCount() {
     return phraseSets_.size();
   }
+
   /**
    *
    *
@@ -1270,6 +1303,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet getPhraseSets(int index) {
     return phraseSets_.get(index);
   }
+
   /**
    *
    *
@@ -1290,6 +1324,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v2.CustomClass> customClasses_;
+
   /**
    *
    *
@@ -1304,6 +1339,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.speech.v2.CustomClass> getCustomClassesList() {
     return customClasses_;
   }
+
   /**
    *
    *
@@ -1319,6 +1355,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       getCustomClassesOrBuilderList() {
     return customClasses_;
   }
+
   /**
    *
    *
@@ -1333,6 +1370,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   public int getCustomClassesCount() {
     return customClasses_.size();
   }
+
   /**
    *
    *
@@ -1347,6 +1385,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.speech.v2.CustomClass getCustomClasses(int index) {
     return customClasses_.get(index);
   }
+
   /**
    *
    *
@@ -1534,6 +1573,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1856,6 +1896,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         return phraseSetsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1873,6 +1914,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         return phraseSetsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1891,6 +1933,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         return phraseSetsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1915,6 +1958,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1937,6 +1981,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1961,6 +2006,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1985,6 +2031,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2006,6 +2053,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2028,6 +2076,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2051,6 +2100,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2071,6 +2121,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2091,6 +2142,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2105,6 +2157,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         getPhraseSetsBuilder(int index) {
       return getPhraseSetsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2123,6 +2176,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         return phraseSetsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2142,6 +2196,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(phraseSets_);
       }
     }
+
     /**
      *
      *
@@ -2158,6 +2213,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2175,6 +2231,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
               index,
               com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2241,6 +2298,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         return customClassesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2258,6 +2316,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         return customClassesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2275,6 +2334,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         return customClassesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2298,6 +2358,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2319,6 +2380,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2342,6 +2404,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2365,6 +2428,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2386,6 +2450,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2407,6 +2472,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2428,6 +2494,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2448,6 +2515,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2468,6 +2536,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2481,6 +2550,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.speech.v2.CustomClass.Builder getCustomClassesBuilder(int index) {
       return getCustomClassesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2498,6 +2568,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         return customClassesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2516,6 +2587,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(customClasses_);
       }
     }
+
     /**
      *
      *
@@ -2530,6 +2602,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       return getCustomClassesFieldBuilder()
           .addBuilder(com.google.cloud.speech.v2.CustomClass.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2544,6 +2617,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       return getCustomClassesFieldBuilder()
           .addBuilder(index, com.google.cloud.speech.v2.CustomClass.getDefaultInstance());
     }
+
     /**
      *
      *

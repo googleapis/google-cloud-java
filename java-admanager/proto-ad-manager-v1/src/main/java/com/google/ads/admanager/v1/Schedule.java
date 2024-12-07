@@ -33,6 +33,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.Schedule)
     ScheduleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Schedule.newBuilder() to construct.
   private Schedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -166,6 +167,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>FREQUENCY_UNSPECIFIED = 0;</code>
      */
     public static final int FREQUENCY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -176,6 +178,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>HOURLY = 1;</code>
      */
     public static final int HOURLY_VALUE = 1;
+
     /**
      *
      *
@@ -186,6 +189,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>TWO_TIMES_DAILY = 2;</code>
      */
     public static final int TWO_TIMES_DAILY_VALUE = 2;
+
     /**
      *
      *
@@ -196,6 +200,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>THREE_TIMES_DAILY = 3;</code>
      */
     public static final int THREE_TIMES_DAILY_VALUE = 3;
+
     /**
      *
      *
@@ -206,6 +211,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>FOUR_TIMES_DAILY = 4;</code>
      */
     public static final int FOUR_TIMES_DAILY_VALUE = 4;
+
     /**
      *
      *
@@ -216,6 +222,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>DAILY = 5;</code>
      */
     public static final int DAILY_VALUE = 5;
+
     /**
      *
      *
@@ -226,6 +233,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>WEEKLY = 6;</code>
      */
     public static final int WEEKLY_VALUE = 6;
+
     /**
      *
      *
@@ -347,6 +355,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the weeklyScheduledDays.
      */
     java.util.List<com.google.type.DayOfWeek> getWeeklyScheduledDaysList();
+
     /**
      *
      *
@@ -359,6 +368,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of weeklyScheduledDays.
      */
     int getWeeklyScheduledDaysCount();
+
     /**
      *
      *
@@ -372,6 +382,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return The weeklyScheduledDays at the given index.
      */
     com.google.type.DayOfWeek getWeeklyScheduledDays(int index);
+
     /**
      *
      *
@@ -384,6 +395,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the enum numeric values on the wire for weeklyScheduledDays.
      */
     java.util.List<java.lang.Integer> getWeeklyScheduledDaysValueList();
+
     /**
      *
      *
@@ -398,6 +410,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     int getWeeklyScheduledDaysValue(int index);
   }
+
   /**
    *
    *
@@ -412,6 +425,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.Schedule.WeeklySchedule)
       WeeklyScheduleOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use WeeklySchedule.newBuilder() to construct.
     private WeeklySchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -457,6 +471,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
                 return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
               }
             };
+
     /**
      *
      *
@@ -474,6 +489,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.type.DayOfWeek>(
           weeklyScheduledDays_, weeklyScheduledDays_converter_);
     }
+
     /**
      *
      *
@@ -489,6 +505,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public int getWeeklyScheduledDaysCount() {
       return weeklyScheduledDays_.size();
     }
+
     /**
      *
      *
@@ -505,6 +522,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.DayOfWeek getWeeklyScheduledDays(int index) {
       return weeklyScheduledDays_converter_.convert(weeklyScheduledDays_.get(index));
     }
+
     /**
      *
      *
@@ -520,6 +538,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getWeeklyScheduledDaysValueList() {
       return weeklyScheduledDays_;
     }
+
     /**
      *
      *
@@ -718,6 +737,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -939,6 +959,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
         }
       }
+
       /**
        *
        *
@@ -955,6 +976,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             java.lang.Integer, com.google.type.DayOfWeek>(
             weeklyScheduledDays_, weeklyScheduledDays_converter_);
       }
+
       /**
        *
        *
@@ -969,6 +991,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       public int getWeeklyScheduledDaysCount() {
         return weeklyScheduledDays_.size();
       }
+
       /**
        *
        *
@@ -984,6 +1007,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       public com.google.type.DayOfWeek getWeeklyScheduledDays(int index) {
         return weeklyScheduledDays_converter_.convert(weeklyScheduledDays_.get(index));
       }
+
       /**
        *
        *
@@ -1006,6 +1030,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1027,6 +1052,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1048,6 +1074,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1065,6 +1092,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1079,6 +1107,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       public java.util.List<java.lang.Integer> getWeeklyScheduledDaysValueList() {
         return java.util.Collections.unmodifiableList(weeklyScheduledDays_);
       }
+
       /**
        *
        *
@@ -1094,6 +1123,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       public int getWeeklyScheduledDaysValue(int index) {
         return weeklyScheduledDays_.get(index);
       }
+
       /**
        *
        *
@@ -1113,6 +1143,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1131,6 +1162,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1234,6 +1266,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the monthlyScheduledDays.
      */
     java.util.List<java.lang.Integer> getMonthlyScheduledDaysList();
+
     /**
      *
      *
@@ -1247,6 +1280,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of monthlyScheduledDays.
      */
     int getMonthlyScheduledDaysCount();
+
     /**
      *
      *
@@ -1262,6 +1296,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     int getMonthlyScheduledDays(int index);
   }
+
   /**
    *
    *
@@ -1276,6 +1311,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.Schedule.MonthlySchedule)
       MonthlyScheduleOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MonthlySchedule.newBuilder() to construct.
     private MonthlySchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1310,6 +1346,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList monthlyScheduledDays_ = emptyIntList();
+
     /**
      *
      *
@@ -1326,6 +1363,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getMonthlyScheduledDaysList() {
       return monthlyScheduledDays_;
     }
+
     /**
      *
      *
@@ -1341,6 +1379,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public int getMonthlyScheduledDaysCount() {
       return monthlyScheduledDays_.size();
     }
+
     /**
      *
      *
@@ -1539,6 +1578,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1752,6 +1792,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -1768,6 +1809,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         monthlyScheduledDays_.makeImmutable();
         return monthlyScheduledDays_;
       }
+
       /**
        *
        *
@@ -1783,6 +1825,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       public int getMonthlyScheduledDaysCount() {
         return monthlyScheduledDays_.size();
       }
+
       /**
        *
        *
@@ -1799,6 +1842,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       public int getMonthlyScheduledDays(int index) {
         return monthlyScheduledDays_.getInt(index);
       }
+
       /**
        *
        *
@@ -1821,6 +1865,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1842,6 +1887,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1863,6 +1909,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1964,6 +2011,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     private FrequencyScheduleCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1997,6 +2045,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WEEKLY_SCHEDULE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -2012,6 +2061,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWeeklySchedule() {
     return frequencyScheduleCase_ == 6;
   }
+
   /**
    *
    *
@@ -2030,6 +2080,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.ads.admanager.v1.Schedule.WeeklySchedule.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2048,6 +2099,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MONTHLY_SCHEDULE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -2063,6 +2115,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMonthlySchedule() {
     return frequencyScheduleCase_ == 7;
   }
+
   /**
    *
    *
@@ -2081,6 +2134,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.ads.admanager.v1.Schedule.MonthlySchedule.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2101,6 +2155,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_DATE_FIELD_NUMBER = 1;
   private com.google.type.Date startDate_;
+
   /**
    *
    *
@@ -2116,6 +2171,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2131,6 +2187,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Date getStartDate() {
     return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
   }
+
   /**
    *
    *
@@ -2147,6 +2204,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_DATE_FIELD_NUMBER = 2;
   private com.google.type.Date endDate_;
+
   /**
    *
    *
@@ -2162,6 +2220,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndDate() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2177,6 +2236,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Date getEndDate() {
     return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
   }
+
   /**
    *
    *
@@ -2193,6 +2253,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FREQUENCY_FIELD_NUMBER = 3;
   private int frequency_ = 0;
+
   /**
    *
    *
@@ -2208,6 +2269,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public int getFrequencyValue() {
     return frequency_;
   }
+
   /**
    *
    *
@@ -2228,6 +2290,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 4;
   private com.google.type.TimeOfDay startTime_;
+
   /**
    *
    *
@@ -2252,6 +2315,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -2276,6 +2340,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.TimeOfDay getStartTime() {
     return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -2541,6 +2606,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2854,6 +2920,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             com.google.ads.admanager.v1.Schedule.WeeklySchedule.Builder,
             com.google.ads.admanager.v1.Schedule.WeeklyScheduleOrBuilder>
         weeklyScheduleBuilder_;
+
     /**
      *
      *
@@ -2869,6 +2936,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWeeklySchedule() {
       return frequencyScheduleCase_ == 6;
     }
+
     /**
      *
      *
@@ -2894,6 +2962,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return com.google.ads.admanager.v1.Schedule.WeeklySchedule.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2916,6 +2985,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       frequencyScheduleCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2936,6 +3006,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       frequencyScheduleCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2969,6 +3040,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       frequencyScheduleCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2994,6 +3066,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3006,6 +3079,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public com.google.ads.admanager.v1.Schedule.WeeklySchedule.Builder getWeeklyScheduleBuilder() {
       return getWeeklyScheduleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3027,6 +3101,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return com.google.ads.admanager.v1.Schedule.WeeklySchedule.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3066,6 +3141,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             com.google.ads.admanager.v1.Schedule.MonthlySchedule.Builder,
             com.google.ads.admanager.v1.Schedule.MonthlyScheduleOrBuilder>
         monthlyScheduleBuilder_;
+
     /**
      *
      *
@@ -3081,6 +3157,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMonthlySchedule() {
       return frequencyScheduleCase_ == 7;
     }
+
     /**
      *
      *
@@ -3106,6 +3183,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return com.google.ads.admanager.v1.Schedule.MonthlySchedule.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3128,6 +3206,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       frequencyScheduleCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3148,6 +3227,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       frequencyScheduleCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3182,6 +3262,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       frequencyScheduleCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3207,6 +3288,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3220,6 +3302,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         getMonthlyScheduleBuilder() {
       return getMonthlyScheduleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3241,6 +3324,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return com.google.ads.admanager.v1.Schedule.MonthlySchedule.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3279,6 +3363,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         startDateBuilder_;
+
     /**
      *
      *
@@ -3293,6 +3378,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartDate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3311,6 +3397,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return startDateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3333,6 +3420,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3352,6 +3440,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3379,6 +3468,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3398,6 +3488,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3412,6 +3503,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3428,6 +3520,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
       }
     }
+
     /**
      *
      *
@@ -3454,6 +3547,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         endDateBuilder_;
+
     /**
      *
      *
@@ -3468,6 +3562,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndDate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -3486,6 +3581,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return endDateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3508,6 +3604,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3527,6 +3624,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3554,6 +3652,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3573,6 +3672,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3587,6 +3687,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3603,6 +3704,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
       }
     }
+
     /**
      *
      *
@@ -3626,6 +3728,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int frequency_ = 0;
+
     /**
      *
      *
@@ -3641,6 +3744,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public int getFrequencyValue() {
       return frequency_;
     }
+
     /**
      *
      *
@@ -3659,6 +3763,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3676,6 +3781,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
           com.google.ads.admanager.v1.Schedule.Frequency.forNumber(frequency_);
       return result == null ? com.google.ads.admanager.v1.Schedule.Frequency.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3697,6 +3803,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3721,6 +3828,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             com.google.type.TimeOfDay.Builder,
             com.google.type.TimeOfDayOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -3744,6 +3852,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3771,6 +3880,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3802,6 +3912,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3830,6 +3941,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3866,6 +3978,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3894,6 +4007,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3917,6 +4031,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3942,6 +4057,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface GetPhraseSetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.ConversationContext)
     ConversationContextOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConversationContext.newBuilder() to construct.
   private ConversationContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.MessageEntry> messageEntries_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.dialogflow.v2beta1.MessageEntry> getMessageEntriesList() {
     return messageEntries_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       getMessageEntriesOrBuilderList() {
     return messageEntries_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
   public int getMessageEntriesCount() {
     return messageEntries_.size();
   }
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
   public com.google.cloud.dialogflow.v2beta1.MessageEntry getMessageEntries(int index) {
     return messageEntries_.get(index);
   }
+
   /**
    *
    *
@@ -307,6 +313,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -574,6 +581,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
         return messageEntriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -592,6 +600,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
         return messageEntriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -610,6 +619,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
         return messageEntriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -635,6 +645,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +693,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +719,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +742,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +765,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +788,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +810,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +848,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
         int index) {
       return getMessageEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -848,6 +868,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
         return messageEntriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -867,6 +888,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(messageEntries_);
       }
     }
+
     /**
      *
      *
@@ -882,6 +904,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       return getMessageEntriesFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.MessageEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -898,6 +921,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       return getMessageEntriesFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2beta1.MessageEntry.getDefaultInstance());
     }
+
     /**
      *
      *

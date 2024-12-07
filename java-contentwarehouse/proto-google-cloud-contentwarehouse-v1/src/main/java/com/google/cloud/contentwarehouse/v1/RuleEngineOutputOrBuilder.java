@@ -36,6 +36,7 @@ public interface RuleEngineOutputOrBuilder
    * @return The documentName.
    */
   java.lang.String getDocumentName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RuleEngineOutputOrBuilder
    * @return Whether the ruleEvaluatorOutput field is set.
    */
   boolean hasRuleEvaluatorOutput();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface RuleEngineOutputOrBuilder
    * @return The ruleEvaluatorOutput.
    */
   com.google.cloud.contentwarehouse.v1.RuleEvaluatorOutput getRuleEvaluatorOutput();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface RuleEngineOutputOrBuilder
    * @return Whether the actionExecutorOutput field is set.
    */
   boolean hasActionExecutorOutput();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface RuleEngineOutputOrBuilder
    * @return The actionExecutorOutput.
    */
   com.google.cloud.contentwarehouse.v1.ActionExecutorOutput getActionExecutorOutput();
+
   /**
    *
    *

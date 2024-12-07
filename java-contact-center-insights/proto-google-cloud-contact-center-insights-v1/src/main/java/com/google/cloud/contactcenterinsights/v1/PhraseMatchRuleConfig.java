@@ -33,6 +33,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig)
     PhraseMatchRuleConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PhraseMatchRuleConfig.newBuilder() to construct.
   private PhraseMatchRuleConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
     private ConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int EXACT_MATCH_CONFIG_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
   public boolean hasExactMatchConfig() {
     return configCase_ == 1;
   }
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.contactcenterinsights.v1.ExactMatchConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -334,6 +339,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -558,6 +564,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
             com.google.cloud.contactcenterinsights.v1.ExactMatchConfig.Builder,
             com.google.cloud.contactcenterinsights.v1.ExactMatchConfigOrBuilder>
         exactMatchConfigBuilder_;
+
     /**
      *
      *
@@ -573,6 +580,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
     public boolean hasExactMatchConfig() {
       return configCase_ == 1;
     }
+
     /**
      *
      *
@@ -598,6 +606,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
         return com.google.cloud.contactcenterinsights.v1.ExactMatchConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -621,6 +630,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
       configCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
       configCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +687,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
       configCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
         getExactMatchConfigBuilder() {
       return getExactMatchConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -735,6 +749,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
         return com.google.cloud.contactcenterinsights.v1.ExactMatchConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Provider)
     ProviderOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Provider.newBuilder() to construct.
   private Provider(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.eventarc.v1.EventType> eventTypes_;
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.eventarc.v1.EventType> getEventTypesList() {
     return eventTypes_;
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       getEventTypesOrBuilderList() {
     return eventTypes_;
   }
+
   /**
    *
    *
@@ -221,6 +229,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
   public int getEventTypesCount() {
     return eventTypes_.size();
   }
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.eventarc.v1.EventType getEventTypes(int index) {
     return eventTypes_.get(index);
   }
+
   /**
    *
    *
@@ -429,6 +439,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -687,6 +698,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -755,6 +769,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +788,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -866,6 +885,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +904,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +963,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
         return eventTypesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -960,6 +982,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
         return eventTypesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -978,6 +1001,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
         return eventTypesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1026,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1024,6 +1049,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1074,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1099,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1121,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1144,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1167,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1189,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1211,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1193,6 +1226,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.eventarc.v1.EventType.Builder getEventTypesBuilder(int index) {
       return getEventTypesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1211,6 +1245,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
         return eventTypesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1230,6 +1265,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(eventTypes_);
       }
     }
+
     /**
      *
      *
@@ -1245,6 +1281,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       return getEventTypesFieldBuilder()
           .addBuilder(com.google.cloud.eventarc.v1.EventType.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1260,6 +1297,7 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
       return getEventTypesFieldBuilder()
           .addBuilder(index, com.google.cloud.eventarc.v1.EventType.getDefaultInstance());
     }
+
     /**
      *
      *

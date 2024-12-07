@@ -39,6 +39,7 @@ public interface GetBillingAccountRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

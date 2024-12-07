@@ -43,6 +43,7 @@ public interface TranslateTextGlossaryConfigOrBuilder
    * @return The glossary.
    */
   java.lang.String getGlossary();
+
   /**
    *
    *

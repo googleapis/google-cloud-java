@@ -32,6 +32,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DisksScopedList)
     DisksScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DisksScopedList.newBuilder() to construct.
   private DisksScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Disk> disks_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.compute.v1.Disk> getDisksList() {
     return disks_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       getDisksOrBuilderList() {
     return disks_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
   public int getDisksCount() {
     return disks_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.compute.v1.Disk getDisks(int index) {
     return disks_.get(index);
   }
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +174,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -355,6 +364,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -642,6 +652,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
         return disksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -658,6 +669,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
         return disksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -674,6 +686,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
         return disksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -696,6 +709,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +729,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +752,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +775,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +795,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +815,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +836,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +856,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +876,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +889,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.Disk.Builder getDisksBuilder(int index) {
       return getDisksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -883,6 +906,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
         return disksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -900,6 +924,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(disks_);
       }
     }
+
     /**
      *
      *
@@ -913,6 +938,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       return getDisksFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Disk.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -926,6 +952,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       return getDisksFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Disk.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -962,6 +989,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -976,6 +1004,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -996,6 +1025,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1048,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1068,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1096,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1116,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1131,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1115,6 +1150,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
             : warning_;
       }
     }
+
     /**
      *
      *

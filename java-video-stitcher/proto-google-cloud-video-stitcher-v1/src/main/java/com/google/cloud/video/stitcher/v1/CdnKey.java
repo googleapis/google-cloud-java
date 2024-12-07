@@ -35,6 +35,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.CdnKey)
     CdnKeyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CdnKey.newBuilder() to construct.
   private CdnKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     private CdnKeyConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,6 +121,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GOOGLE_CDN_KEY_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGoogleCdnKey() {
     return cdnKeyConfigCase_ == 5;
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.video.stitcher.v1.GoogleCdnKey.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AKAMAI_CDN_KEY_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAkamaiCdnKey() {
     return cdnKeyConfigCase_ == 6;
   }
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.video.stitcher.v1.AkamaiCdnKey.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -221,6 +229,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEDIA_CDN_KEY_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMediaCdnKey() {
     return cdnKeyConfigCase_ == 8;
   }
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.video.stitcher.v1.MediaCdnKey.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -275,6 +286,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -300,6 +312,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -330,6 +343,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostname_ = "";
+
   /**
    *
    *
@@ -353,6 +367,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -599,6 +614,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -882,6 +898,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.GoogleCdnKey.Builder,
             com.google.cloud.video.stitcher.v1.GoogleCdnKeyOrBuilder>
         googleCdnKeyBuilder_;
+
     /**
      *
      *
@@ -897,6 +914,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGoogleCdnKey() {
       return cdnKeyConfigCase_ == 5;
     }
+
     /**
      *
      *
@@ -922,6 +940,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.stitcher.v1.GoogleCdnKey.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -944,6 +963,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       cdnKeyConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +984,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       cdnKeyConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1018,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       cdnKeyConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1044,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1057,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.GoogleCdnKey.Builder getGoogleCdnKeyBuilder() {
       return getGoogleCdnKeyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1054,6 +1078,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.stitcher.v1.GoogleCdnKey.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1117,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.AkamaiCdnKey.Builder,
             com.google.cloud.video.stitcher.v1.AkamaiCdnKeyOrBuilder>
         akamaiCdnKeyBuilder_;
+
     /**
      *
      *
@@ -1107,6 +1133,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAkamaiCdnKey() {
       return cdnKeyConfigCase_ == 6;
     }
+
     /**
      *
      *
@@ -1132,6 +1159,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.stitcher.v1.AkamaiCdnKey.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1154,6 +1182,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       cdnKeyConfigCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1174,6 +1203,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       cdnKeyConfigCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1237,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       cdnKeyConfigCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1232,6 +1263,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1276,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.AkamaiCdnKey.Builder getAkamaiCdnKeyBuilder() {
       return getAkamaiCdnKeyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1264,6 +1297,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.stitcher.v1.AkamaiCdnKey.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1302,6 +1336,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.MediaCdnKey.Builder,
             com.google.cloud.video.stitcher.v1.MediaCdnKeyOrBuilder>
         mediaCdnKeyBuilder_;
+
     /**
      *
      *
@@ -1317,6 +1352,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMediaCdnKey() {
       return cdnKeyConfigCase_ == 8;
     }
+
     /**
      *
      *
@@ -1342,6 +1378,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.stitcher.v1.MediaCdnKey.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1364,6 +1401,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       cdnKeyConfigCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1384,6 +1422,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       cdnKeyConfigCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1456,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       cdnKeyConfigCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1442,6 +1482,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1454,6 +1495,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.MediaCdnKey.Builder getMediaCdnKeyBuilder() {
       return getMediaCdnKeyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1474,6 +1516,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.stitcher.v1.MediaCdnKey.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1508,6 +1551,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1532,6 +1576,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1556,6 +1601,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1579,6 +1625,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1598,6 +1645,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1624,6 +1672,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object hostname_ = "";
+
     /**
      *
      *
@@ -1646,6 +1695,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1668,6 +1718,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1689,6 +1740,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1706,6 +1758,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

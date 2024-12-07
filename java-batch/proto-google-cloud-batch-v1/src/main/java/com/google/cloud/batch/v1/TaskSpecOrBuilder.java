@@ -43,6 +43,7 @@ public interface TaskSpecOrBuilder
    * <code>repeated .google.cloud.batch.v1.Runnable runnables = 8;</code>
    */
   java.util.List<com.google.cloud.batch.v1.Runnable> getRunnablesList();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface TaskSpecOrBuilder
    * <code>repeated .google.cloud.batch.v1.Runnable runnables = 8;</code>
    */
   com.google.cloud.batch.v1.Runnable getRunnables(int index);
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface TaskSpecOrBuilder
    * <code>repeated .google.cloud.batch.v1.Runnable runnables = 8;</code>
    */
   int getRunnablesCount();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface TaskSpecOrBuilder
    * <code>repeated .google.cloud.batch.v1.Runnable runnables = 8;</code>
    */
   java.util.List<? extends com.google.cloud.batch.v1.RunnableOrBuilder> getRunnablesOrBuilderList();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface TaskSpecOrBuilder
    * @return Whether the computeResource field is set.
    */
   boolean hasComputeResource();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface TaskSpecOrBuilder
    * @return The computeResource.
    */
   com.google.cloud.batch.v1.ComputeResource getComputeResource();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface TaskSpecOrBuilder
    * @return Whether the maxRunDuration field is set.
    */
   boolean hasMaxRunDuration();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface TaskSpecOrBuilder
    * @return The maxRunDuration.
    */
   com.google.protobuf.Duration getMaxRunDuration();
+
   /**
    *
    *
@@ -246,6 +254,7 @@ public interface TaskSpecOrBuilder
    * <code>repeated .google.cloud.batch.v1.LifecyclePolicy lifecycle_policies = 9;</code>
    */
   java.util.List<com.google.cloud.batch.v1.LifecyclePolicy> getLifecyclePoliciesList();
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public interface TaskSpecOrBuilder
    * <code>repeated .google.cloud.batch.v1.LifecyclePolicy lifecycle_policies = 9;</code>
    */
   com.google.cloud.batch.v1.LifecyclePolicy getLifecyclePolicies(int index);
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public interface TaskSpecOrBuilder
    * <code>repeated .google.cloud.batch.v1.LifecyclePolicy lifecycle_policies = 9;</code>
    */
   int getLifecyclePoliciesCount();
+
   /**
    *
    *
@@ -298,6 +309,7 @@ public interface TaskSpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.batch.v1.LifecyclePolicyOrBuilder>
       getLifecyclePoliciesOrBuilderList();
+
   /**
    *
    *
@@ -327,6 +339,7 @@ public interface TaskSpecOrBuilder
    */
   @java.lang.Deprecated
   int getEnvironmentsCount();
+
   /**
    *
    *
@@ -338,9 +351,11 @@ public interface TaskSpecOrBuilder
    */
   @java.lang.Deprecated
   boolean containsEnvironments(java.lang.String key);
+
   /** Use {@link #getEnvironmentsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEnvironments();
+
   /**
    *
    *
@@ -352,6 +367,7 @@ public interface TaskSpecOrBuilder
    */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEnvironmentsMap();
+
   /**
    *
    *
@@ -366,6 +382,7 @@ public interface TaskSpecOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -388,6 +405,7 @@ public interface TaskSpecOrBuilder
    * <code>repeated .google.cloud.batch.v1.Volume volumes = 7;</code>
    */
   java.util.List<com.google.cloud.batch.v1.Volume> getVolumesList();
+
   /**
    *
    *
@@ -398,6 +416,7 @@ public interface TaskSpecOrBuilder
    * <code>repeated .google.cloud.batch.v1.Volume volumes = 7;</code>
    */
   com.google.cloud.batch.v1.Volume getVolumes(int index);
+
   /**
    *
    *
@@ -408,6 +427,7 @@ public interface TaskSpecOrBuilder
    * <code>repeated .google.cloud.batch.v1.Volume volumes = 7;</code>
    */
   int getVolumesCount();
+
   /**
    *
    *
@@ -418,6 +438,7 @@ public interface TaskSpecOrBuilder
    * <code>repeated .google.cloud.batch.v1.Volume volumes = 7;</code>
    */
   java.util.List<? extends com.google.cloud.batch.v1.VolumeOrBuilder> getVolumesOrBuilderList();
+
   /**
    *
    *
@@ -441,6 +462,7 @@ public interface TaskSpecOrBuilder
    * @return Whether the environment field is set.
    */
   boolean hasEnvironment();
+
   /**
    *
    *
@@ -453,6 +475,7 @@ public interface TaskSpecOrBuilder
    * @return The environment.
    */
   com.google.cloud.batch.v1.Environment getEnvironment();
+
   /**
    *
    *

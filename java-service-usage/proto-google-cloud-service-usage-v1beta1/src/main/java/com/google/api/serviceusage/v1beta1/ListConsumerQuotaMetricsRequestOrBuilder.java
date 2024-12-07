@@ -41,6 +41,7 @@ public interface ListConsumerQuotaMetricsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface ListConsumerQuotaMetricsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface ListConsumerQuotaMetricsRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
+
   /**
    *
    *

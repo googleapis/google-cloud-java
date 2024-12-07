@@ -38,6 +38,7 @@ public interface DeleteWorkspaceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

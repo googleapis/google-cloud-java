@@ -36,6 +36,7 @@ public interface ThreatEntryRemovalsOrBuilder
    * @return Whether the rawIndices field is set.
    */
   boolean hasRawIndices();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ThreatEntryRemovalsOrBuilder
    * @return The rawIndices.
    */
   com.google.webrisk.v1.RawIndices getRawIndices();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface ThreatEntryRemovalsOrBuilder
    * @return Whether the riceIndices field is set.
    */
   boolean hasRiceIndices();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ThreatEntryRemovalsOrBuilder
    * @return The riceIndices.
    */
   com.google.webrisk.v1.RiceDeltaEncoding getRiceIndices();
+
   /**
    *
    *

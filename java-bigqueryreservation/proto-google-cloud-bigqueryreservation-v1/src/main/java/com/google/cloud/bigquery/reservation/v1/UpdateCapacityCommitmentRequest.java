@@ -34,6 +34,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest)
     UpdateCapacityCommitmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateCapacityCommitmentRequest.newBuilder() to construct.
   private UpdateCapacityCommitmentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,6 +67,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
   private int bitField0_;
   public static final int CAPACITY_COMMITMENT_FIELD_NUMBER = 1;
   private com.google.cloud.bigquery.reservation.v1.CapacityCommitment capacityCommitment_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
   public boolean hasCapacityCommitment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
         ? com.google.cloud.bigquery.reservation.v1.CapacityCommitment.getDefaultInstance()
         : capacityCommitment_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -342,6 +349,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -579,6 +587,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
             com.google.cloud.bigquery.reservation.v1.CapacityCommitment.Builder,
             com.google.cloud.bigquery.reservation.v1.CapacityCommitmentOrBuilder>
         capacityCommitmentBuilder_;
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
     public boolean hasCapacityCommitment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -615,6 +625,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
         return capacityCommitmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -639,6 +650,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +672,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +704,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +725,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +742,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return getCapacityCommitmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -747,6 +763,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
             : capacityCommitment_;
       }
     }
+
     /**
      *
      *
@@ -780,6 +797,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -794,6 +812,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -814,6 +833,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -836,6 +856,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +876,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +904,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +924,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +939,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -933,6 +958,7 @@ public final class UpdateCapacityCommitmentRequest extends com.google.protobuf.G
             : updateMask_;
       }
     }
+
     /**
      *
      *

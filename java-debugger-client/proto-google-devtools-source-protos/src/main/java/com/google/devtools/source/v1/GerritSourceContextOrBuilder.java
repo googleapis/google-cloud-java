@@ -36,6 +36,7 @@ public interface GerritSourceContextOrBuilder
    * @return The hostUri.
    */
   java.lang.String getHostUri();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GerritSourceContextOrBuilder
    * @return The gerritProject.
    */
   java.lang.String getGerritProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface GerritSourceContextOrBuilder
    * @return Whether the revisionId field is set.
    */
   boolean hasRevisionId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface GerritSourceContextOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface GerritSourceContextOrBuilder
    */
   @java.lang.Deprecated
   boolean hasAliasName();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface GerritSourceContextOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getAliasName();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface GerritSourceContextOrBuilder
    * @return Whether the aliasContext field is set.
    */
   boolean hasAliasContext();
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public interface GerritSourceContextOrBuilder
    * @return The aliasContext.
    */
   com.google.devtools.source.v1.AliasContext getAliasContext();
+
   /**
    *
    *

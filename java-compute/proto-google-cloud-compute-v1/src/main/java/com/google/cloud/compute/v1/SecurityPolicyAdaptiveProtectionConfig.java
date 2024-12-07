@@ -34,6 +34,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig)
     SecurityPolicyAdaptiveProtectionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyAdaptiveProtectionConfig.newBuilder() to construct.
   private SecurityPolicyAdaptiveProtectionConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
   public static final int LAYER7_DDOS_DEFENSE_CONFIG_FIELD_NUMBER = 437316771;
   private com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       layer7DdosDefenseConfig_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
   public boolean hasLayer7DdosDefenseConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
             .getDefaultInstance()
         : layer7DdosDefenseConfig_;
   }
+
   /**
    *
    *
@@ -294,6 +298,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -513,6 +518,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
             com.google.cloud.compute.v1
                 .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigOrBuilder>
         layer7DdosDefenseConfigBuilder_;
+
     /**
      *
      *
@@ -529,6 +535,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
     public boolean hasLayer7DdosDefenseConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -553,6 +560,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
         return layer7DdosDefenseConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -579,6 +587,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -603,6 +612,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -637,6 +647,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +669,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +688,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
       onChanged();
       return getLayer7DdosDefenseConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -699,6 +712,7 @@ public final class SecurityPolicyAdaptiveProtectionConfig
             : layer7DdosDefenseConfig_;
       }
     }
+
     /**
      *
      *

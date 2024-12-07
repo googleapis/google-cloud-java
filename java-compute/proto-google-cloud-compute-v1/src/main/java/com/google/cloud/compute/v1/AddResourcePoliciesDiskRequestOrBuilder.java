@@ -36,6 +36,7 @@ public interface AddResourcePoliciesDiskRequestOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AddResourcePoliciesDiskRequestOrBuilder
    * @return Whether the disksAddResourcePoliciesRequestResource field is set.
    */
   boolean hasDisksAddResourcePoliciesRequestResource();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface AddResourcePoliciesDiskRequestOrBuilder
    */
   com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest
       getDisksAddResourcePoliciesRequestResource();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface AddResourcePoliciesDiskRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface AddResourcePoliciesDiskRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface AddResourcePoliciesDiskRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface AddResourcePoliciesDiskRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

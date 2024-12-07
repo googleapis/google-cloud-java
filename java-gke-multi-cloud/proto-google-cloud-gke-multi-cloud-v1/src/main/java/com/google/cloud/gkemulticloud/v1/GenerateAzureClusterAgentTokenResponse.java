@@ -26,6 +26,7 @@ public final class GenerateAzureClusterAgentTokenResponse
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse)
     GenerateAzureClusterAgentTokenResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateAzureClusterAgentTokenResponse.newBuilder() to construct.
   private GenerateAzureClusterAgentTokenResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -62,6 +63,7 @@ public final class GenerateAzureClusterAgentTokenResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accessToken_ = "";
+
   /**
    * <code>string access_token = 1;</code>
    *
@@ -79,6 +81,7 @@ public final class GenerateAzureClusterAgentTokenResponse
       return s;
     }
   }
+
   /**
    * <code>string access_token = 1;</code>
    *
@@ -99,6 +102,7 @@ public final class GenerateAzureClusterAgentTokenResponse
 
   public static final int EXPIRES_IN_FIELD_NUMBER = 2;
   private int expiresIn_ = 0;
+
   /**
    * <code>int32 expires_in = 2;</code>
    *
@@ -113,6 +117,7 @@ public final class GenerateAzureClusterAgentTokenResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tokenType_ = "";
+
   /**
    * <code>string token_type = 3;</code>
    *
@@ -130,6 +135,7 @@ public final class GenerateAzureClusterAgentTokenResponse
       return s;
     }
   }
+
   /**
    * <code>string token_type = 3;</code>
    *
@@ -328,6 +334,7 @@ public final class GenerateAzureClusterAgentTokenResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -542,6 +549,7 @@ public final class GenerateAzureClusterAgentTokenResponse
     private int bitField0_;
 
     private java.lang.Object accessToken_ = "";
+
     /**
      * <code>string access_token = 1;</code>
      *
@@ -558,6 +566,7 @@ public final class GenerateAzureClusterAgentTokenResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>string access_token = 1;</code>
      *
@@ -574,6 +583,7 @@ public final class GenerateAzureClusterAgentTokenResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>string access_token = 1;</code>
      *
@@ -589,6 +599,7 @@ public final class GenerateAzureClusterAgentTokenResponse
       onChanged();
       return this;
     }
+
     /**
      * <code>string access_token = 1;</code>
      *
@@ -600,6 +611,7 @@ public final class GenerateAzureClusterAgentTokenResponse
       onChanged();
       return this;
     }
+
     /**
      * <code>string access_token = 1;</code>
      *
@@ -618,6 +630,7 @@ public final class GenerateAzureClusterAgentTokenResponse
     }
 
     private int expiresIn_;
+
     /**
      * <code>int32 expires_in = 2;</code>
      *
@@ -627,6 +640,7 @@ public final class GenerateAzureClusterAgentTokenResponse
     public int getExpiresIn() {
       return expiresIn_;
     }
+
     /**
      * <code>int32 expires_in = 2;</code>
      *
@@ -640,6 +654,7 @@ public final class GenerateAzureClusterAgentTokenResponse
       onChanged();
       return this;
     }
+
     /**
      * <code>int32 expires_in = 2;</code>
      *
@@ -653,6 +668,7 @@ public final class GenerateAzureClusterAgentTokenResponse
     }
 
     private java.lang.Object tokenType_ = "";
+
     /**
      * <code>string token_type = 3;</code>
      *
@@ -669,6 +685,7 @@ public final class GenerateAzureClusterAgentTokenResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>string token_type = 3;</code>
      *
@@ -685,6 +702,7 @@ public final class GenerateAzureClusterAgentTokenResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>string token_type = 3;</code>
      *
@@ -700,6 +718,7 @@ public final class GenerateAzureClusterAgentTokenResponse
       onChanged();
       return this;
     }
+
     /**
      * <code>string token_type = 3;</code>
      *
@@ -711,6 +730,7 @@ public final class GenerateAzureClusterAgentTokenResponse
       onChanged();
       return this;
     }
+
     /**
      * <code>string token_type = 3;</code>
      *

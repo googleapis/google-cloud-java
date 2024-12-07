@@ -36,6 +36,7 @@ public interface HumanReviewStatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface HumanReviewStatusOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface HumanReviewStatusOrBuilder
    * @return The humanReviewOperation.
    */
   java.lang.String getHumanReviewOperation();
+
   /**
    *
    *

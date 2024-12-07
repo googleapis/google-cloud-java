@@ -37,6 +37,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.Condition)
     ConditionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Condition.newBuilder() to construct.
   private Condition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList ipSubnetworks_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getIpSubnetworksList() {
     return ipSubnetworks_;
   }
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public int getIpSubnetworksCount() {
     return ipSubnetworks_.size();
   }
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getIpSubnetworks(int index) {
     return ipSubnetworks_.get(index);
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEVICE_POLICY_FIELD_NUMBER = 2;
   private com.google.identity.accesscontextmanager.v1.DevicePolicy devicePolicy_;
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDevicePolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         ? com.google.identity.accesscontextmanager.v1.DevicePolicy.getDefaultInstance()
         : devicePolicy_;
   }
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList requiredAccessLevels_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRequiredAccessLevelsList() {
     return requiredAccessLevels_;
   }
+
   /**
    *
    *
@@ -258,6 +268,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public int getRequiredAccessLevelsCount() {
     return requiredAccessLevels_.size();
   }
+
   /**
    *
    *
@@ -277,6 +288,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRequiredAccessLevels(int index) {
     return requiredAccessLevels_.get(index);
   }
+
   /**
    *
    *
@@ -299,6 +311,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NEGATE_FIELD_NUMBER = 5;
   private boolean negate_ = false;
+
   /**
    *
    *
@@ -322,6 +335,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList members_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -341,6 +355,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getMembersList() {
     return members_;
   }
+
   /**
    *
    *
@@ -360,6 +375,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public int getMembersCount() {
     return members_.size();
   }
+
   /**
    *
    *
@@ -380,6 +396,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getMembers(int index) {
     return members_.get(index);
   }
+
   /**
    *
    *
@@ -406,6 +423,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList regions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -421,6 +439,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRegionsList() {
     return regions_;
   }
+
   /**
    *
    *
@@ -436,6 +455,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public int getRegionsCount() {
     return regions_.size();
   }
+
   /**
    *
    *
@@ -452,6 +472,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRegions(int index) {
     return regions_.get(index);
   }
+
   /**
    *
    *
@@ -708,6 +729,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1020,6 +1042,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -1042,6 +1065,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       ipSubnetworks_.makeImmutable();
       return ipSubnetworks_;
     }
+
     /**
      *
      *
@@ -1063,6 +1087,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public int getIpSubnetworksCount() {
       return ipSubnetworks_.size();
     }
+
     /**
      *
      *
@@ -1085,6 +1110,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getIpSubnetworks(int index) {
       return ipSubnetworks_.get(index);
     }
+
     /**
      *
      *
@@ -1107,6 +1133,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getIpSubnetworksBytes(int index) {
       return ipSubnetworks_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1137,6 +1164,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1194,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1221,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1247,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1285,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
             com.google.identity.accesscontextmanager.v1.DevicePolicy.Builder,
             com.google.identity.accesscontextmanager.v1.DevicePolicyOrBuilder>
         devicePolicyBuilder_;
+
     /**
      *
      *
@@ -1269,6 +1301,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDevicePolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1290,6 +1323,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         return devicePolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1313,6 +1347,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1369,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1364,6 +1400,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1384,6 +1421,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1438,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDevicePolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1420,6 +1459,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
             : devicePolicy_;
       }
     }
+
     /**
      *
      *
@@ -1456,6 +1496,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1475,6 +1516,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       requiredAccessLevels_.makeImmutable();
       return requiredAccessLevels_;
     }
+
     /**
      *
      *
@@ -1493,6 +1535,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public int getRequiredAccessLevelsCount() {
       return requiredAccessLevels_.size();
     }
+
     /**
      *
      *
@@ -1512,6 +1555,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRequiredAccessLevels(int index) {
       return requiredAccessLevels_.get(index);
     }
+
     /**
      *
      *
@@ -1531,6 +1575,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRequiredAccessLevelsBytes(int index) {
       return requiredAccessLevels_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1558,6 +1603,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1584,6 +1630,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1607,6 +1654,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1629,6 +1677,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1658,6 +1707,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean negate_;
+
     /**
      *
      *
@@ -1675,6 +1725,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public boolean getNegate() {
       return negate_;
     }
+
     /**
      *
      *
@@ -1696,6 +1747,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1725,6 +1777,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -1745,6 +1798,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       members_.makeImmutable();
       return members_;
     }
+
     /**
      *
      *
@@ -1764,6 +1818,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public int getMembersCount() {
       return members_.size();
     }
+
     /**
      *
      *
@@ -1784,6 +1839,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getMembers(int index) {
       return members_.get(index);
     }
+
     /**
      *
      *
@@ -1804,6 +1860,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getMembersBytes(int index) {
       return members_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1832,6 +1889,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1859,6 +1917,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1883,6 +1942,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1906,6 +1966,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1944,6 +2005,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -1960,6 +2022,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       regions_.makeImmutable();
       return regions_;
     }
+
     /**
      *
      *
@@ -1975,6 +2038,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public int getRegionsCount() {
       return regions_.size();
     }
+
     /**
      *
      *
@@ -1991,6 +2055,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRegions(int index) {
       return regions_.get(index);
     }
+
     /**
      *
      *
@@ -2007,6 +2072,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRegionsBytes(int index) {
       return regions_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2031,6 +2097,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2054,6 +2121,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2074,6 +2142,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2093,6 +2162,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface CalculateStatsRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface CalculateStatsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

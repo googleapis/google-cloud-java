@@ -33,6 +33,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.ListReportTasksResponse)
     ListReportTasksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListReportTasksResponse.newBuilder() to construct.
   private ListReportTasksResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.ReportTask> reportTasks_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.analytics.data.v1alpha.ReportTask> getReportTasksList() {
     return reportTasks_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       getReportTasksOrBuilderList() {
     return reportTasks_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
   public int getReportTasksCount() {
     return reportTasks_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
   public com.google.analytics.data.v1alpha.ReportTask getReportTasks(int index) {
     return reportTasks_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -156,6 +163,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -381,6 +390,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -661,6 +671,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
         return reportTasksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
         return reportTasksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -693,6 +705,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
         return reportTasksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +749,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +772,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +795,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +816,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +837,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +898,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +911,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
     public com.google.analytics.data.v1alpha.ReportTask.Builder getReportTasksBuilder(int index) {
       return getReportTasksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -906,6 +929,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
         return reportTasksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -923,6 +947,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(reportTasks_);
       }
     }
+
     /**
      *
      *
@@ -936,6 +961,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       return getReportTasksFieldBuilder()
           .addBuilder(com.google.analytics.data.v1alpha.ReportTask.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -949,6 +975,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       return getReportTasksFieldBuilder()
           .addBuilder(index, com.google.analytics.data.v1alpha.ReportTask.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -981,6 +1008,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -996,6 +1024,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1019,6 +1048,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1042,6 +1072,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1095,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1114,7 @@ public final class ListReportTasksResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

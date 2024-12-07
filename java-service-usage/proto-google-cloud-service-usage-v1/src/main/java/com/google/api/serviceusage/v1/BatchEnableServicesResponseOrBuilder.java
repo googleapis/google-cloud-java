@@ -34,6 +34,7 @@ public interface BatchEnableServicesResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1.Service services = 1;</code>
    */
   java.util.List<com.google.api.serviceusage.v1.Service> getServicesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BatchEnableServicesResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1.Service services = 1;</code>
    */
   com.google.api.serviceusage.v1.Service getServices(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BatchEnableServicesResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1.Service services = 1;</code>
    */
   int getServicesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BatchEnableServicesResponseOrBuilder
    */
   java.util.List<? extends com.google.api.serviceusage.v1.ServiceOrBuilder>
       getServicesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface BatchEnableServicesResponseOrBuilder
    */
   java.util.List<com.google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure>
       getFailuresList();
+
   /**
    *
    *
@@ -103,6 +108,7 @@ public interface BatchEnableServicesResponseOrBuilder
    * </code>
    */
   com.google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure getFailures(int index);
+
   /**
    *
    *
@@ -116,6 +122,7 @@ public interface BatchEnableServicesResponseOrBuilder
    * </code>
    */
   int getFailuresCount();
+
   /**
    *
    *
@@ -132,6 +139,7 @@ public interface BatchEnableServicesResponseOrBuilder
           ? extends
               com.google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailureOrBuilder>
       getFailuresOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.UpdateCollectionRequest)
     UpdateCollectionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateCollectionRequest.newBuilder() to construct.
   private UpdateCollectionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int COLLECTION_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.Collection collection_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
   public boolean hasCollection() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
         ? com.google.cloud.visionai.v1.Collection.getDefaultInstance()
         : collection_;
   }
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -372,6 +379,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -594,6 +602,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
             com.google.cloud.visionai.v1.Collection.Builder,
             com.google.cloud.visionai.v1.CollectionOrBuilder>
         collectionBuilder_;
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
     public boolean hasCollection() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -640,6 +650,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
         return collectionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +705,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +739,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +765,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return getCollectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -795,6 +811,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
             : collection_;
       }
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -853,6 +871,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -879,6 +898,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +953,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +987,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1013,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1034,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1034,6 +1059,7 @@ public final class UpdateCollectionRequest extends com.google.protobuf.Generated
             : updateMask_;
       }
     }
+
     /**
      *
      *

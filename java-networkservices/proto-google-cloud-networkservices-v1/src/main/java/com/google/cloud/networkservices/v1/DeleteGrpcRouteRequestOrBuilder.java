@@ -39,6 +39,7 @@ public interface DeleteGrpcRouteRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

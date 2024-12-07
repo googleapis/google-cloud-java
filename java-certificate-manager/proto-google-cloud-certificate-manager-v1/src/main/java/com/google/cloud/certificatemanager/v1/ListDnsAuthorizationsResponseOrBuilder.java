@@ -36,6 +36,7 @@ public interface ListDnsAuthorizationsResponseOrBuilder
    */
   java.util.List<com.google.cloud.certificatemanager.v1.DnsAuthorization>
       getDnsAuthorizationsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListDnsAuthorizationsResponseOrBuilder
    * </code>
    */
   com.google.cloud.certificatemanager.v1.DnsAuthorization getDnsAuthorizations(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListDnsAuthorizationsResponseOrBuilder
    * </code>
    */
   int getDnsAuthorizationsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListDnsAuthorizationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.certificatemanager.v1.DnsAuthorizationOrBuilder>
       getDnsAuthorizationsOrBuilderList();
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface ListDnsAuthorizationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface ListDnsAuthorizationsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public interface ListDnsAuthorizationsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -149,6 +156,7 @@ public interface ListDnsAuthorizationsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListSnapshotsResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.Snapshot snapshots = 1;</code>
    */
   java.util.List<com.google.cloud.netapp.v1.Snapshot> getSnapshotsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSnapshotsResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.Snapshot snapshots = 1;</code>
    */
   com.google.cloud.netapp.v1.Snapshot getSnapshots(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSnapshotsResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.Snapshot snapshots = 1;</code>
    */
   int getSnapshotsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSnapshotsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.netapp.v1.SnapshotOrBuilder>
       getSnapshotsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListSnapshotsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListSnapshotsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListSnapshotsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListSnapshotsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

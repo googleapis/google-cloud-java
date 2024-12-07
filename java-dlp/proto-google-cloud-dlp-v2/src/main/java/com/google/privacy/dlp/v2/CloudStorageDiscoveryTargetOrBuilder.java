@@ -39,6 +39,7 @@ public interface CloudStorageDiscoveryTargetOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface CloudStorageDiscoveryTargetOrBuilder
    * @return The filter.
    */
   com.google.privacy.dlp.v2.DiscoveryCloudStorageFilter getFilter();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CloudStorageDiscoveryTargetOrBuilder
    * @return Whether the conditions field is set.
    */
   boolean hasConditions();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface CloudStorageDiscoveryTargetOrBuilder
    * @return The conditions.
    */
   com.google.privacy.dlp.v2.DiscoveryFileStoreConditions getConditions();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface CloudStorageDiscoveryTargetOrBuilder
    * @return Whether the generationCadence field is set.
    */
   boolean hasGenerationCadence();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface CloudStorageDiscoveryTargetOrBuilder
    * @return The generationCadence.
    */
   com.google.privacy.dlp.v2.DiscoveryCloudStorageGenerationCadence getGenerationCadence();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface CloudStorageDiscoveryTargetOrBuilder
    * @return Whether the disabled field is set.
    */
   boolean hasDisabled();
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public interface CloudStorageDiscoveryTargetOrBuilder
    * @return The disabled.
    */
   com.google.privacy.dlp.v2.Disabled getDisabled();
+
   /**
    *
    *

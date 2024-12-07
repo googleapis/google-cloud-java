@@ -43,6 +43,7 @@ public interface RevokeDnsBindPermissionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface RevokeDnsBindPermissionRequestOrBuilder
    * @return Whether the principal field is set.
    */
   boolean hasPrincipal();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface RevokeDnsBindPermissionRequestOrBuilder
    * @return The principal.
    */
   com.google.cloud.vmwareengine.v1.Principal getPrincipal();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface RevokeDnsBindPermissionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

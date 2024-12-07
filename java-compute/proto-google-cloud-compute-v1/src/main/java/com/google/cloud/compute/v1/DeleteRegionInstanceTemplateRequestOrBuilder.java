@@ -36,6 +36,7 @@ public interface DeleteRegionInstanceTemplateRequestOrBuilder
    * @return The instanceTemplate.
    */
   java.lang.String getInstanceTemplate();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DeleteRegionInstanceTemplateRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface DeleteRegionInstanceTemplateRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface DeleteRegionInstanceTemplateRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface DeleteRegionInstanceTemplateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

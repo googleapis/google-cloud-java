@@ -38,6 +38,7 @@ public interface AzureSshConfigOrBuilder
    * @return The authorizedKey.
    */
   java.lang.String getAuthorizedKey();
+
   /**
    *
    *

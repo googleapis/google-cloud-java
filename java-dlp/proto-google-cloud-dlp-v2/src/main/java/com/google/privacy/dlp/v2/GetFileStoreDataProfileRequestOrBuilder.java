@@ -39,6 +39,7 @@ public interface GetFileStoreDataProfileRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

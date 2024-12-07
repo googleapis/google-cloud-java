@@ -34,6 +34,7 @@ public final class AssignResponse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.AssignResponse)
     AssignResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AssignResponse.newBuilder() to construct.
   private AssignResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class AssignResponse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

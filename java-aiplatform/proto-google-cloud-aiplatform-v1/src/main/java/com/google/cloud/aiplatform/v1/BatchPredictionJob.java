@@ -38,6 +38,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.BatchPredictionJob)
     BatchPredictionJobOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchPredictionJob.newBuilder() to construct.
   private BatchPredictionJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -103,6 +104,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return Whether the gcsSource field is set.
      */
     boolean hasGcsSource();
+
     /**
      *
      *
@@ -115,6 +117,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The gcsSource.
      */
     com.google.cloud.aiplatform.v1.GcsSource getGcsSource();
+
     /**
      *
      *
@@ -142,6 +145,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return Whether the bigquerySource field is set.
      */
     boolean hasBigquerySource();
+
     /**
      *
      *
@@ -158,6 +162,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The bigquerySource.
      */
     com.google.cloud.aiplatform.v1.BigQuerySource getBigquerySource();
+
     /**
      *
      *
@@ -187,6 +192,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The instancesFormat.
      */
     java.lang.String getInstancesFormat();
+
     /**
      *
      *
@@ -204,6 +210,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
     com.google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.SourceCase getSourceCase();
   }
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig)
       InputConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use InputConfig.newBuilder() to construct.
     private InputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -269,6 +277,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       private SourceCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -302,6 +311,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int GCS_SOURCE_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -317,6 +327,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -335,6 +346,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return com.google.cloud.aiplatform.v1.GcsSource.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -353,6 +365,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int BIGQUERY_SOURCE_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -372,6 +385,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasBigquerySource() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -394,6 +408,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return com.google.cloud.aiplatform.v1.BigQuerySource.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -419,6 +434,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object instancesFormat_ = "";
+
     /**
      *
      *
@@ -444,6 +460,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -670,6 +687,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -933,6 +951,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
               com.google.cloud.aiplatform.v1.GcsSource.Builder,
               com.google.cloud.aiplatform.v1.GcsSourceOrBuilder>
           gcsSourceBuilder_;
+
       /**
        *
        *
@@ -948,6 +967,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public boolean hasGcsSource() {
         return sourceCase_ == 2;
       }
+
       /**
        *
        *
@@ -973,6 +993,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return com.google.cloud.aiplatform.v1.GcsSource.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -995,6 +1016,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         sourceCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1015,6 +1037,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         sourceCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1047,6 +1070,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         sourceCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1072,6 +1096,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1084,6 +1109,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.aiplatform.v1.GcsSource.Builder getGcsSourceBuilder() {
         return getGcsSourceFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1104,6 +1130,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return com.google.cloud.aiplatform.v1.GcsSource.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1142,6 +1169,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
               com.google.cloud.aiplatform.v1.BigQuerySource.Builder,
               com.google.cloud.aiplatform.v1.BigQuerySourceOrBuilder>
           bigquerySourceBuilder_;
+
       /**
        *
        *
@@ -1161,6 +1189,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public boolean hasBigquerySource() {
         return sourceCase_ == 3;
       }
+
       /**
        *
        *
@@ -1190,6 +1219,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return com.google.cloud.aiplatform.v1.BigQuerySource.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1216,6 +1246,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         sourceCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1240,6 +1271,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         sourceCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1276,6 +1308,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         sourceCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1305,6 +1338,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1321,6 +1355,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.aiplatform.v1.BigQuerySource.Builder getBigquerySourceBuilder() {
         return getBigquerySourceFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1345,6 +1380,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return com.google.cloud.aiplatform.v1.BigQuerySource.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1383,6 +1419,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object instancesFormat_ = "";
+
       /**
        *
        *
@@ -1407,6 +1444,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1431,6 +1469,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1454,6 +1493,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1473,6 +1513,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1623,6 +1664,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The instanceType.
      */
     java.lang.String getInstanceType();
+
     /**
      *
      *
@@ -1705,6 +1747,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The keyField.
      */
     java.lang.String getKeyField();
+
     /**
      *
      *
@@ -1759,6 +1802,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return A list containing the includedFields.
      */
     java.util.List<java.lang.String> getIncludedFieldsList();
+
     /**
      *
      *
@@ -1784,6 +1828,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The count of includedFields.
      */
     int getIncludedFieldsCount();
+
     /**
      *
      *
@@ -1810,6 +1855,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The includedFields at the given index.
      */
     java.lang.String getIncludedFields(int index);
+
     /**
      *
      *
@@ -1861,6 +1907,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return A list containing the excludedFields.
      */
     java.util.List<java.lang.String> getExcludedFieldsList();
+
     /**
      *
      *
@@ -1885,6 +1932,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The count of excludedFields.
      */
     int getExcludedFieldsCount();
+
     /**
      *
      *
@@ -1910,6 +1958,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The excludedFields at the given index.
      */
     java.lang.String getExcludedFields(int index);
+
     /**
      *
      *
@@ -1936,6 +1985,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getExcludedFieldsBytes(int index);
   }
+
   /**
    *
    *
@@ -1951,6 +2001,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig)
       InstanceConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use InstanceConfig.newBuilder() to construct.
     private InstanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1988,6 +2039,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object instanceType_ = "";
+
     /**
      *
      *
@@ -2052,6 +2104,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -2121,6 +2174,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object keyField_ = "";
+
     /**
      *
      *
@@ -2160,6 +2214,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -2205,6 +2260,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList includedFields_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -2232,6 +2288,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ProtocolStringList getIncludedFieldsList() {
       return includedFields_;
     }
+
     /**
      *
      *
@@ -2259,6 +2316,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public int getIncludedFieldsCount() {
       return includedFields_.size();
     }
+
     /**
      *
      *
@@ -2287,6 +2345,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public java.lang.String getIncludedFields(int index) {
       return includedFields_.get(index);
     }
+
     /**
      *
      *
@@ -2321,6 +2380,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList excludedFields_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -2347,6 +2407,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ProtocolStringList getExcludedFieldsList() {
       return excludedFields_;
     }
+
     /**
      *
      *
@@ -2373,6 +2434,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public int getExcludedFieldsCount() {
       return excludedFields_.size();
     }
+
     /**
      *
      *
@@ -2400,6 +2462,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public java.lang.String getExcludedFields(int index) {
       return excludedFields_.get(index);
     }
+
     /**
      *
      *
@@ -2631,6 +2694,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2885,6 +2949,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object instanceType_ = "";
+
       /**
        *
        *
@@ -2948,6 +3013,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3011,6 +3077,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3073,6 +3140,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3131,6 +3199,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3196,6 +3265,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object keyField_ = "";
+
       /**
        *
        *
@@ -3234,6 +3304,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3272,6 +3343,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3309,6 +3381,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3342,6 +3415,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3390,6 +3464,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
@@ -3418,6 +3493,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         includedFields_.makeImmutable();
         return includedFields_;
       }
+
       /**
        *
        *
@@ -3445,6 +3521,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public int getIncludedFieldsCount() {
         return includedFields_.size();
       }
+
       /**
        *
        *
@@ -3473,6 +3550,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public java.lang.String getIncludedFields(int index) {
         return includedFields_.get(index);
       }
+
       /**
        *
        *
@@ -3501,6 +3579,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public com.google.protobuf.ByteString getIncludedFieldsBytes(int index) {
         return includedFields_.getByteString(index);
       }
+
       /**
        *
        *
@@ -3537,6 +3616,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3572,6 +3652,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3604,6 +3685,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3635,6 +3717,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3681,6 +3764,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         bitField0_ |= 0x00000008;
       }
+
       /**
        *
        *
@@ -3708,6 +3792,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         excludedFields_.makeImmutable();
         return excludedFields_;
       }
+
       /**
        *
        *
@@ -3734,6 +3819,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public int getExcludedFieldsCount() {
         return excludedFields_.size();
       }
+
       /**
        *
        *
@@ -3761,6 +3847,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public java.lang.String getExcludedFields(int index) {
         return excludedFields_.get(index);
       }
+
       /**
        *
        *
@@ -3788,6 +3875,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public com.google.protobuf.ByteString getExcludedFieldsBytes(int index) {
         return excludedFields_.getByteString(index);
       }
+
       /**
        *
        *
@@ -3823,6 +3911,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3857,6 +3946,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3888,6 +3978,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3918,6 +4009,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4059,6 +4151,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return Whether the gcsDestination field is set.
      */
     boolean hasGcsDestination();
+
     /**
      *
      *
@@ -4092,6 +4185,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The gcsDestination.
      */
     com.google.cloud.aiplatform.v1.GcsDestination getGcsDestination();
+
     /**
      *
      *
@@ -4155,6 +4249,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return Whether the bigqueryDestination field is set.
      */
     boolean hasBigqueryDestination();
+
     /**
      *
      *
@@ -4186,6 +4281,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The bigqueryDestination.
      */
     com.google.cloud.aiplatform.v1.BigQueryDestination getBigqueryDestination();
+
     /**
      *
      *
@@ -4230,6 +4326,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The predictionsFormat.
      */
     java.lang.String getPredictionsFormat();
+
     /**
      *
      *
@@ -4248,6 +4345,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.DestinationCase
         getDestinationCase();
   }
+
   /**
    *
    *
@@ -4266,6 +4364,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig)
       OutputConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OutputConfig.newBuilder() to construct.
     private OutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4313,6 +4412,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       private DestinationCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -4346,6 +4446,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int GCS_DESTINATION_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -4382,6 +4483,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasGcsDestination() {
       return destinationCase_ == 2;
     }
+
     /**
      *
      *
@@ -4421,6 +4523,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4460,6 +4563,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int BIGQUERY_DESTINATION_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -4494,6 +4598,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasBigqueryDestination() {
       return destinationCase_ == 3;
     }
+
     /**
      *
      *
@@ -4531,6 +4636,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return com.google.cloud.aiplatform.v1.BigQueryDestination.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4572,6 +4678,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object predictionsFormat_ = "";
+
     /**
      *
      *
@@ -4597,6 +4704,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -4823,6 +4931,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5087,6 +5196,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
               com.google.cloud.aiplatform.v1.GcsDestination.Builder,
               com.google.cloud.aiplatform.v1.GcsDestinationOrBuilder>
           gcsDestinationBuilder_;
+
       /**
        *
        *
@@ -5123,6 +5233,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public boolean hasGcsDestination() {
         return destinationCase_ == 2;
       }
+
       /**
        *
        *
@@ -5169,6 +5280,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5212,6 +5324,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         destinationCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -5253,6 +5366,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         destinationCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -5307,6 +5421,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         destinationCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -5353,6 +5468,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -5386,6 +5502,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.aiplatform.v1.GcsDestination.Builder getGcsDestinationBuilder() {
         return getGcsDestinationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5427,6 +5544,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5486,6 +5604,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
               com.google.cloud.aiplatform.v1.BigQueryDestination.Builder,
               com.google.cloud.aiplatform.v1.BigQueryDestinationOrBuilder>
           bigqueryDestinationBuilder_;
+
       /**
        *
        *
@@ -5520,6 +5639,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public boolean hasBigqueryDestination() {
         return destinationCase_ == 3;
       }
+
       /**
        *
        *
@@ -5564,6 +5684,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return com.google.cloud.aiplatform.v1.BigQueryDestination.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5606,6 +5727,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         destinationCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -5645,6 +5767,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         destinationCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -5698,6 +5821,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         destinationCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -5742,6 +5866,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -5774,6 +5899,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           getBigqueryDestinationBuilder() {
         return getBigqueryDestinationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5814,6 +5940,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return com.google.cloud.aiplatform.v1.BigQueryDestination.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5867,6 +5994,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object predictionsFormat_ = "";
+
       /**
        *
        *
@@ -5891,6 +6019,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5915,6 +6044,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5938,6 +6068,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5957,6 +6088,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6067,6 +6199,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return Whether the gcsOutputDirectory field is set.
      */
     boolean hasGcsOutputDirectory();
+
     /**
      *
      *
@@ -6080,6 +6213,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The gcsOutputDirectory.
      */
     java.lang.String getGcsOutputDirectory();
+
     /**
      *
      *
@@ -6108,6 +6242,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return Whether the bigqueryOutputDataset field is set.
      */
     boolean hasBigqueryOutputDataset();
+
     /**
      *
      *
@@ -6122,6 +6257,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The bigqueryOutputDataset.
      */
     java.lang.String getBigqueryOutputDataset();
+
     /**
      *
      *
@@ -6152,6 +6288,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * @return The bigqueryOutputTable.
      */
     java.lang.String getBigqueryOutputTable();
+
     /**
      *
      *
@@ -6171,6 +6308,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo.OutputLocationCase
         getOutputLocationCase();
   }
+
   /**
    *
    *
@@ -6187,6 +6325,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo)
       OutputInfoOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OutputInfo.newBuilder() to construct.
     private OutputInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6234,6 +6373,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       private OutputLocationCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -6267,6 +6407,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int GCS_OUTPUT_DIRECTORY_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -6282,6 +6423,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasGcsOutputDirectory() {
       return outputLocationCase_ == 1;
     }
+
     /**
      *
      *
@@ -6310,6 +6452,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -6340,6 +6483,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int BIGQUERY_OUTPUT_DATASET_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -6356,6 +6500,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasBigqueryOutputDataset() {
       return outputLocationCase_ == 2;
     }
+
     /**
      *
      *
@@ -6385,6 +6530,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -6419,6 +6565,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object bigqueryOutputTable_ = "";
+
     /**
      *
      *
@@ -6445,6 +6592,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -6668,6 +6816,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6932,6 +7081,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public boolean hasGcsOutputDirectory() {
         return outputLocationCase_ == 1;
       }
+
       /**
        *
        *
@@ -6961,6 +7111,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6990,6 +7141,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7012,6 +7164,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7032,6 +7185,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -7074,6 +7228,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public boolean hasBigqueryOutputDataset() {
         return outputLocationCase_ == 2;
       }
+
       /**
        *
        *
@@ -7105,6 +7260,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7136,6 +7292,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7160,6 +7317,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7182,6 +7340,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -7209,6 +7368,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object bigqueryOutputTable_ = "";
+
       /**
        *
        *
@@ -7234,6 +7394,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7259,6 +7420,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7283,6 +7445,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7303,6 +7466,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7401,6 +7565,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -7424,6 +7589,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -7452,6 +7618,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -7475,6 +7642,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -7503,6 +7671,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
+
   /**
    *
    *
@@ -7542,6 +7711,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -7586,6 +7756,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelVersionId_ = "";
+
   /**
    *
    *
@@ -7610,6 +7781,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -7637,6 +7809,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int UNMANAGED_CONTAINER_MODEL_FIELD_NUMBER = 28;
   private com.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanagedContainerModel_;
+
   /**
    *
    *
@@ -7655,6 +7828,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasUnmanagedContainerModel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -7675,6 +7849,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.UnmanagedContainerModel.getDefaultInstance()
         : unmanagedContainerModel_;
   }
+
   /**
    *
    *
@@ -7697,6 +7872,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int INPUT_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig inputConfig_;
+
   /**
    *
    *
@@ -7718,6 +7894,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -7741,6 +7918,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.getDefaultInstance()
         : inputConfig_;
   }
+
   /**
    *
    *
@@ -7766,6 +7944,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int INSTANCE_CONFIG_FIELD_NUMBER = 27;
   private com.google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig instanceConfig_;
+
   /**
    *
    *
@@ -7783,6 +7962,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasInstanceConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -7802,6 +7982,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.getDefaultInstance()
         : instanceConfig_;
   }
+
   /**
    *
    *
@@ -7823,6 +8004,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int MODEL_PARAMETERS_FIELD_NUMBER = 5;
   private com.google.protobuf.Value modelParameters_;
+
   /**
    *
    *
@@ -7842,6 +8024,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasModelParameters() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -7863,6 +8046,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.Value.getDefaultInstance()
         : modelParameters_;
   }
+
   /**
    *
    *
@@ -7885,6 +8069,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig outputConfig_;
+
   /**
    *
    *
@@ -7909,6 +8094,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -7935,6 +8121,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.getDefaultInstance()
         : outputConfig_;
   }
+
   /**
    *
    *
@@ -7963,6 +8150,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int DEDICATED_RESOURCES_FIELD_NUMBER = 7;
   private com.google.cloud.aiplatform.v1.BatchDedicatedResources dedicatedResources_;
+
   /**
    *
    *
@@ -7983,6 +8171,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasDedicatedResources() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -8005,6 +8194,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.BatchDedicatedResources.getDefaultInstance()
         : dedicatedResources_;
   }
+
   /**
    *
    *
@@ -8031,6 +8221,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
+
   /**
    *
    *
@@ -8060,6 +8251,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -8092,6 +8284,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int MANUAL_BATCH_TUNING_PARAMETERS_FIELD_NUMBER = 8;
   private com.google.cloud.aiplatform.v1.ManualBatchTuningParameters manualBatchTuningParameters_;
+
   /**
    *
    *
@@ -8112,6 +8305,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasManualBatchTuningParameters() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -8135,6 +8329,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.ManualBatchTuningParameters.getDefaultInstance()
         : manualBatchTuningParameters_;
   }
+
   /**
    *
    *
@@ -8159,6 +8354,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int GENERATE_EXPLANATION_FIELD_NUMBER = 23;
   private boolean generateExplanation_ = false;
+
   /**
    *
    *
@@ -8197,6 +8393,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int EXPLANATION_SPEC_FIELD_NUMBER = 25;
   private com.google.cloud.aiplatform.v1.ExplanationSpec explanationSpec_;
+
   /**
    *
    *
@@ -8225,6 +8422,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasExplanationSpec() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -8255,6 +8453,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.ExplanationSpec.getDefaultInstance()
         : explanationSpec_;
   }
+
   /**
    *
    *
@@ -8286,6 +8485,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int OUTPUT_INFO_FIELD_NUMBER = 9;
   private com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo outputInfo_;
+
   /**
    *
    *
@@ -8303,6 +8503,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasOutputInfo() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -8322,6 +8523,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo.getDefaultInstance()
         : outputInfo_;
   }
+
   /**
    *
    *
@@ -8343,6 +8545,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int STATE_FIELD_NUMBER = 10;
   private int state_ = 0;
+
   /**
    *
    *
@@ -8360,6 +8563,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -8382,6 +8586,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int ERROR_FIELD_NUMBER = 11;
   private com.google.rpc.Status error_;
+
   /**
    *
    *
@@ -8398,6 +8603,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasError() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -8414,6 +8620,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
+
   /**
    *
    *
@@ -8433,6 +8640,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> partialFailures_;
+
   /**
    *
    *
@@ -8451,6 +8659,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.rpc.Status> getPartialFailuresList() {
     return partialFailures_;
   }
+
   /**
    *
    *
@@ -8470,6 +8679,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       getPartialFailuresOrBuilderList() {
     return partialFailures_;
   }
+
   /**
    *
    *
@@ -8488,6 +8698,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public int getPartialFailuresCount() {
     return partialFailures_.size();
   }
+
   /**
    *
    *
@@ -8506,6 +8717,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public com.google.rpc.Status getPartialFailures(int index) {
     return partialFailures_.get(index);
   }
+
   /**
    *
    *
@@ -8527,6 +8739,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int RESOURCES_CONSUMED_FIELD_NUMBER = 13;
   private com.google.cloud.aiplatform.v1.ResourcesConsumed resourcesConsumed_;
+
   /**
    *
    *
@@ -8549,6 +8762,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasResourcesConsumed() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -8573,6 +8787,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.ResourcesConsumed.getDefaultInstance()
         : resourcesConsumed_;
   }
+
   /**
    *
    *
@@ -8598,6 +8813,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int COMPLETION_STATS_FIELD_NUMBER = 14;
   private com.google.cloud.aiplatform.v1.CompletionStats completionStats_;
+
   /**
    *
    *
@@ -8615,6 +8831,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasCompletionStats() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -8634,6 +8851,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.CompletionStats.getDefaultInstance()
         : completionStats_;
   }
+
   /**
    *
    *
@@ -8654,6 +8872,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int CREATE_TIME_FIELD_NUMBER = 15;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -8670,6 +8889,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00001000) != 0);
   }
+
   /**
    *
    *
@@ -8686,6 +8906,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -8703,6 +8924,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int START_TIME_FIELD_NUMBER = 16;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -8720,6 +8942,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00002000) != 0);
   }
+
   /**
    *
    *
@@ -8737,6 +8960,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -8755,6 +8979,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int END_TIME_FIELD_NUMBER = 17;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -8772,6 +8997,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00004000) != 0);
   }
+
   /**
    *
    *
@@ -8789,6 +9015,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -8807,6 +9034,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 18;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -8823,6 +9051,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00008000) != 0);
   }
+
   /**
    *
    *
@@ -8839,6 +9068,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -8880,6 +9110,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -8902,12 +9133,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -8927,6 +9160,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -8953,6 +9187,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -8982,6 +9217,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 24;
   private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+
   /**
    *
    *
@@ -8999,6 +9235,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   public boolean hasEncryptionSpec() {
     return ((bitField0_ & 0x00010000) != 0);
   }
+
   /**
    *
    *
@@ -9018,6 +9255,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
         : encryptionSpec_;
   }
+
   /**
    *
    *
@@ -9038,6 +9276,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int DISABLE_CONTAINER_LOGGING_FIELD_NUMBER = 34;
   private boolean disableContainerLogging_ = false;
+
   /**
    *
    *
@@ -9062,6 +9301,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int SATISFIES_PZS_FIELD_NUMBER = 36;
   private boolean satisfiesPzs_ = false;
+
   /**
    *
    *
@@ -9080,6 +9320,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
   public static final int SATISFIES_PZI_FIELD_NUMBER = 37;
   private boolean satisfiesPzi_ = false;
+
   /**
    *
    *
@@ -9607,6 +9848,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -10379,6 +10621,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -10401,6 +10644,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10423,6 +10667,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10444,6 +10689,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10461,6 +10707,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10485,6 +10732,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -10507,6 +10755,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10529,6 +10778,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10550,6 +10800,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10567,6 +10818,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10591,6 +10843,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -10629,6 +10882,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10667,6 +10921,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10704,6 +10959,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10737,6 +10993,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10777,6 +11034,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object modelVersionId_ = "";
+
     /**
      *
      *
@@ -10800,6 +11058,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10823,6 +11082,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10845,6 +11105,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10863,6 +11124,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10893,6 +11155,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.UnmanagedContainerModel.Builder,
             com.google.cloud.aiplatform.v1.UnmanagedContainerModelOrBuilder>
         unmanagedContainerModelBuilder_;
+
     /**
      *
      *
@@ -10910,6 +11173,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasUnmanagedContainerModel() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -10933,6 +11197,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return unmanagedContainerModelBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10959,6 +11224,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10982,6 +11248,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11014,6 +11281,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -11036,6 +11304,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11054,6 +11323,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUnmanagedContainerModelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11076,6 +11346,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : unmanagedContainerModel_;
       }
     }
+
     /**
      *
      *
@@ -11111,6 +11382,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.Builder,
             com.google.cloud.aiplatform.v1.BatchPredictionJob.InputConfigOrBuilder>
         inputConfigBuilder_;
+
     /**
      *
      *
@@ -11131,6 +11403,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -11157,6 +11430,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return inputConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -11186,6 +11460,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11212,6 +11487,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11248,6 +11524,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -11273,6 +11550,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11294,6 +11572,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11319,6 +11598,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : inputConfig_;
       }
     }
+
     /**
      *
      *
@@ -11357,6 +11637,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.Builder,
             com.google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfigOrBuilder>
         instanceConfigBuilder_;
+
     /**
      *
      *
@@ -11373,6 +11654,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasInstanceConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -11395,6 +11677,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return instanceConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -11420,6 +11703,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11442,6 +11726,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11474,6 +11759,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -11495,6 +11781,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11512,6 +11799,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getInstanceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11533,6 +11821,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : instanceConfig_;
       }
     }
+
     /**
      *
      *
@@ -11567,6 +11856,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         modelParametersBuilder_;
+
     /**
      *
      *
@@ -11585,6 +11875,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasModelParameters() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -11609,6 +11900,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return modelParametersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -11635,6 +11927,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11658,6 +11951,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11689,6 +11983,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -11712,6 +12007,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11730,6 +12026,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getModelParametersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11752,6 +12049,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : modelParameters_;
       }
     }
+
     /**
      *
      *
@@ -11788,6 +12086,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.Builder,
             com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfigOrBuilder>
         outputConfigBuilder_;
+
     /**
      *
      *
@@ -11811,6 +12110,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -11840,6 +12140,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return outputConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -11872,6 +12173,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11901,6 +12203,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11940,6 +12243,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -11968,6 +12272,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11992,6 +12297,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -12020,6 +12326,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : outputConfig_;
       }
     }
+
     /**
      *
      *
@@ -12061,6 +12368,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.BatchDedicatedResources.Builder,
             com.google.cloud.aiplatform.v1.BatchDedicatedResourcesOrBuilder>
         dedicatedResourcesBuilder_;
+
     /**
      *
      *
@@ -12080,6 +12388,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasDedicatedResources() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -12105,6 +12414,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return dedicatedResourcesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -12133,6 +12443,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12158,6 +12469,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12192,6 +12504,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -12216,6 +12529,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12236,6 +12550,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getDedicatedResourcesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -12260,6 +12575,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : dedicatedResources_;
       }
     }
+
     /**
      *
      *
@@ -12292,6 +12608,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object serviceAccount_ = "";
+
     /**
      *
      *
@@ -12320,6 +12637,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -12348,6 +12666,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -12375,6 +12694,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12398,6 +12718,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12433,6 +12754,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.ManualBatchTuningParameters.Builder,
             com.google.cloud.aiplatform.v1.ManualBatchTuningParametersOrBuilder>
         manualBatchTuningParametersBuilder_;
+
     /**
      *
      *
@@ -12452,6 +12774,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasManualBatchTuningParameters() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -12478,6 +12801,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return manualBatchTuningParametersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -12506,6 +12830,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12531,6 +12856,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12566,6 +12892,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -12590,6 +12917,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12610,6 +12938,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getManualBatchTuningParametersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -12634,6 +12963,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : manualBatchTuningParameters_;
       }
     }
+
     /**
      *
      *
@@ -12666,6 +12996,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean generateExplanation_;
+
     /**
      *
      *
@@ -12701,6 +13032,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean getGenerateExplanation() {
       return generateExplanation_;
     }
+
     /**
      *
      *
@@ -12740,6 +13072,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12784,6 +13117,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.ExplanationSpec.Builder,
             com.google.cloud.aiplatform.v1.ExplanationSpecOrBuilder>
         explanationSpecBuilder_;
+
     /**
      *
      *
@@ -12811,6 +13145,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasExplanationSpec() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -12844,6 +13179,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return explanationSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -12879,6 +13215,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12912,6 +13249,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12953,6 +13291,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -12985,6 +13324,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13012,6 +13352,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getExplanationSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13043,6 +13384,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : explanationSpec_;
       }
     }
+
     /**
      *
      *
@@ -13088,6 +13430,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo.Builder,
             com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfoOrBuilder>
         outputInfoBuilder_;
+
     /**
      *
      *
@@ -13104,6 +13447,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasOutputInfo() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -13126,6 +13470,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return outputInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -13151,6 +13496,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13173,6 +13519,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13205,6 +13552,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -13226,6 +13574,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13243,6 +13592,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getOutputInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13264,6 +13614,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : outputInfo_;
       }
     }
+
     /**
      *
      *
@@ -13293,6 +13644,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -13310,6 +13662,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -13330,6 +13683,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13349,6 +13703,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           com.google.cloud.aiplatform.v1.JobState.forNumber(state_);
       return result == null ? com.google.cloud.aiplatform.v1.JobState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -13372,6 +13727,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13396,6 +13752,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -13411,6 +13768,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasError() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -13430,6 +13788,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -13453,6 +13812,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13473,6 +13833,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13501,6 +13862,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -13521,6 +13883,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13536,6 +13899,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13553,6 +13917,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
+
     /**
      *
      *
@@ -13612,6 +13977,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return partialFailuresBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -13633,6 +13999,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return partialFailuresBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -13654,6 +14021,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return partialFailuresBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -13681,6 +14049,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -13705,6 +14074,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -13732,6 +14102,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -13759,6 +14130,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -13783,6 +14155,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -13807,6 +14180,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -13832,6 +14206,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -13856,6 +14231,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -13880,6 +14256,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -13897,6 +14274,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public com.google.rpc.Status.Builder getPartialFailuresBuilder(int index) {
       return getPartialFailuresFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -13918,6 +14296,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return partialFailuresBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -13940,6 +14319,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(partialFailures_);
       }
     }
+
     /**
      *
      *
@@ -13958,6 +14338,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       return getPartialFailuresFieldBuilder()
           .addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -13976,6 +14357,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       return getPartialFailuresFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -14018,6 +14400,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.ResourcesConsumed.Builder,
             com.google.cloud.aiplatform.v1.ResourcesConsumedOrBuilder>
         resourcesConsumedBuilder_;
+
     /**
      *
      *
@@ -14039,6 +14422,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasResourcesConsumed() {
       return ((bitField0_ & 0x00040000) != 0);
     }
+
     /**
      *
      *
@@ -14066,6 +14450,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return resourcesConsumedBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -14095,6 +14480,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14122,6 +14508,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14157,6 +14544,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -14183,6 +14571,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14204,6 +14593,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getResourcesConsumedFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14230,6 +14620,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : resourcesConsumed_;
       }
     }
+
     /**
      *
      *
@@ -14269,6 +14660,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.CompletionStats.Builder,
             com.google.cloud.aiplatform.v1.CompletionStatsOrBuilder>
         completionStatsBuilder_;
+
     /**
      *
      *
@@ -14285,6 +14677,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasCompletionStats() {
       return ((bitField0_ & 0x00080000) != 0);
     }
+
     /**
      *
      *
@@ -14307,6 +14700,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return completionStatsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -14331,6 +14725,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14353,6 +14748,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14383,6 +14779,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -14404,6 +14801,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14420,6 +14818,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCompletionStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14440,6 +14839,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : completionStats_;
       }
     }
+
     /**
      *
      *
@@ -14474,6 +14874,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -14490,6 +14891,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00100000) != 0);
     }
+
     /**
      *
      *
@@ -14512,6 +14914,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -14536,6 +14939,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14557,6 +14961,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14586,6 +14991,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -14607,6 +15013,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14623,6 +15030,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14643,6 +15051,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -14677,6 +15086,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -14694,6 +15104,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00200000) != 0);
     }
+
     /**
      *
      *
@@ -14715,6 +15126,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -14740,6 +15152,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14762,6 +15175,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14792,6 +15206,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -14814,6 +15229,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14831,6 +15247,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14850,6 +15267,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -14885,6 +15303,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -14901,6 +15320,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00400000) != 0);
     }
+
     /**
      *
      *
@@ -14921,6 +15341,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -14945,6 +15366,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14966,6 +15388,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14995,6 +15418,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -15016,6 +15440,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15032,6 +15457,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -15050,6 +15476,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -15084,6 +15511,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -15100,6 +15528,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00800000) != 0);
     }
+
     /**
      *
      *
@@ -15122,6 +15551,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -15146,6 +15576,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15167,6 +15598,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15196,6 +15628,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -15217,6 +15650,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15233,6 +15667,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -15253,6 +15688,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -15306,6 +15742,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -15328,12 +15765,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -15353,6 +15792,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -15379,6 +15819,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -15411,6 +15852,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -15433,12 +15875,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x01000000;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -15465,6 +15909,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x01000000;
       return this;
     }
+
     /**
      *
      *
@@ -15492,6 +15937,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
             com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
         encryptionSpecBuilder_;
+
     /**
      *
      *
@@ -15508,6 +15954,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean hasEncryptionSpec() {
       return ((bitField0_ & 0x02000000) != 0);
     }
+
     /**
      *
      *
@@ -15530,6 +15977,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return encryptionSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -15554,6 +16002,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15576,6 +16025,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15606,6 +16056,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -15627,6 +16078,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15643,6 +16095,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -15663,6 +16116,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             : encryptionSpec_;
       }
     }
+
     /**
      *
      *
@@ -15692,6 +16146,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean disableContainerLogging_;
+
     /**
      *
      *
@@ -15713,6 +16168,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean getDisableContainerLogging() {
       return disableContainerLogging_;
     }
+
     /**
      *
      *
@@ -15738,6 +16194,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15763,6 +16220,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean satisfiesPzs_;
+
     /**
      *
      *
@@ -15778,6 +16236,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean getSatisfiesPzs() {
       return satisfiesPzs_;
     }
+
     /**
      *
      *
@@ -15797,6 +16256,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15816,6 +16276,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean satisfiesPzi_;
+
     /**
      *
      *
@@ -15831,6 +16292,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public boolean getSatisfiesPzi() {
       return satisfiesPzi_;
     }
+
     /**
      *
      *
@@ -15850,6 +16312,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

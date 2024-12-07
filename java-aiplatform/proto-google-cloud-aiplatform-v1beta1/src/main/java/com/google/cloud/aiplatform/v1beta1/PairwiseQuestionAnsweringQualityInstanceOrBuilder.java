@@ -36,6 +36,7 @@ public interface PairwiseQuestionAnsweringQualityInstanceOrBuilder
    * @return Whether the prediction field is set.
    */
   boolean hasPrediction();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PairwiseQuestionAnsweringQualityInstanceOrBuilder
    * @return The prediction.
    */
   java.lang.String getPrediction();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface PairwiseQuestionAnsweringQualityInstanceOrBuilder
    * @return Whether the baselinePrediction field is set.
    */
   boolean hasBaselinePrediction();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface PairwiseQuestionAnsweringQualityInstanceOrBuilder
    * @return The baselinePrediction.
    */
   java.lang.String getBaselinePrediction();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface PairwiseQuestionAnsweringQualityInstanceOrBuilder
    * @return Whether the reference field is set.
    */
   boolean hasReference();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface PairwiseQuestionAnsweringQualityInstanceOrBuilder
    * @return The reference.
    */
   java.lang.String getReference();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface PairwiseQuestionAnsweringQualityInstanceOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface PairwiseQuestionAnsweringQualityInstanceOrBuilder
    * @return The context.
    */
   java.lang.String getContext();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface PairwiseQuestionAnsweringQualityInstanceOrBuilder
    * @return Whether the instruction field is set.
    */
   boolean hasInstruction();
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public interface PairwiseQuestionAnsweringQualityInstanceOrBuilder
    * @return The instruction.
    */
   java.lang.String getInstruction();
+
   /**
    *
    *

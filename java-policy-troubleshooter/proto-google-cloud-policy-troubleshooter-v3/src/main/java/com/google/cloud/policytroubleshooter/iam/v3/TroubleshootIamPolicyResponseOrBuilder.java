@@ -40,6 +40,7 @@ public interface TroubleshootIamPolicyResponseOrBuilder
    * @return The enum numeric value on the wire for overallAccessState.
    */
   int getOverallAccessStateValue();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface TroubleshootIamPolicyResponseOrBuilder
    * @return Whether the accessTuple field is set.
    */
   boolean hasAccessTuple();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface TroubleshootIamPolicyResponseOrBuilder
    * @return The accessTuple.
    */
   com.google.cloud.policytroubleshooter.iam.v3.AccessTuple getAccessTuple();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface TroubleshootIamPolicyResponseOrBuilder
    * @return Whether the allowPolicyExplanation field is set.
    */
   boolean hasAllowPolicyExplanation();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface TroubleshootIamPolicyResponseOrBuilder
    * @return The allowPolicyExplanation.
    */
   com.google.cloud.policytroubleshooter.iam.v3.AllowPolicyExplanation getAllowPolicyExplanation();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface TroubleshootIamPolicyResponseOrBuilder
    * @return Whether the denyPolicyExplanation field is set.
    */
   boolean hasDenyPolicyExplanation();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface TroubleshootIamPolicyResponseOrBuilder
    * @return The denyPolicyExplanation.
    */
   com.google.cloud.policytroubleshooter.iam.v3.DenyPolicyExplanation getDenyPolicyExplanation();
+
   /**
    *
    *

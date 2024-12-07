@@ -42,6 +42,7 @@ public interface MembershipSpecOrBuilder
    */
   @java.lang.Deprecated
   int getControlPlaneValue();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface MembershipSpecOrBuilder
    * @return The enum numeric value on the wire for management.
    */
   int getManagementValue();
+
   /**
    *
    *

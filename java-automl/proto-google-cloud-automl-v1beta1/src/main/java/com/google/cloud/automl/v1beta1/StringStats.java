@@ -33,6 +33,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.StringStats)
     StringStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StringStats.newBuilder() to construct.
   private StringStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
      * @return The value.
      */
     java.lang.String getValue();
+
     /**
      *
      *
@@ -106,6 +108,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
      */
     long getCount();
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.StringStats.UnigramStats)
       UnigramStatsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UnigramStats.newBuilder() to construct.
     private UnigramStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -154,6 +158,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object value_ = "";
+
     /**
      *
      *
@@ -177,6 +182,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -203,6 +209,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COUNT_FIELD_NUMBER = 2;
     private long count_ = 0L;
+
     /**
      *
      *
@@ -389,6 +396,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -589,6 +597,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object value_ = "";
+
       /**
        *
        *
@@ -611,6 +620,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -633,6 +643,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -654,6 +665,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -671,6 +683,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -695,6 +708,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long count_;
+
       /**
        *
        *
@@ -710,6 +724,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       public long getCount() {
         return count_;
       }
+
       /**
        *
        *
@@ -729,6 +744,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -815,6 +831,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.StringStats.UnigramStats> topUnigramStats_;
+
   /**
    *
    *
@@ -831,6 +848,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       getTopUnigramStatsList() {
     return topUnigramStats_;
   }
+
   /**
    *
    *
@@ -847,6 +865,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       getTopUnigramStatsOrBuilderList() {
     return topUnigramStats_;
   }
+
   /**
    *
    *
@@ -862,6 +881,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
   public int getTopUnigramStatsCount() {
     return topUnigramStats_.size();
   }
+
   /**
    *
    *
@@ -877,6 +897,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.automl.v1beta1.StringStats.UnigramStats getTopUnigramStats(int index) {
     return topUnigramStats_.get(index);
   }
+
   /**
    *
    *
@@ -1055,6 +1076,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1320,6 +1342,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
         return topUnigramStatsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1338,6 +1361,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
         return topUnigramStatsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1356,6 +1380,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
         return topUnigramStatsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1381,6 +1406,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1404,6 +1430,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1429,6 +1456,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1454,6 +1482,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1476,6 +1505,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1499,6 +1529,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1522,6 +1553,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1543,6 +1575,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1564,6 +1597,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1579,6 +1613,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
         getTopUnigramStatsBuilder(int index) {
       return getTopUnigramStatsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1598,6 +1633,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
         return topUnigramStatsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1618,6 +1654,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(topUnigramStats_);
       }
     }
+
     /**
      *
      *
@@ -1635,6 +1672,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.automl.v1beta1.StringStats.UnigramStats.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1652,6 +1690,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.automl.v1beta1.StringStats.UnigramStats.getDefaultInstance());
     }
+
     /**
      *
      *

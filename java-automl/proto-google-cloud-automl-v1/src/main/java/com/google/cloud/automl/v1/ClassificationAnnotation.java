@@ -33,6 +33,7 @@ public final class ClassificationAnnotation extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.ClassificationAnnotation)
     ClassificationAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClassificationAnnotation.newBuilder() to construct.
   private ClassificationAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class ClassificationAnnotation extends com.google.protobuf.Generate
 
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -243,6 +245,7 @@ public final class ClassificationAnnotation extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -425,6 +428,7 @@ public final class ClassificationAnnotation extends com.google.protobuf.Generate
     private int bitField0_;
 
     private float score_;
+
     /**
      *
      *
@@ -444,6 +448,7 @@ public final class ClassificationAnnotation extends com.google.protobuf.Generate
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -467,6 +472,7 @@ public final class ClassificationAnnotation extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

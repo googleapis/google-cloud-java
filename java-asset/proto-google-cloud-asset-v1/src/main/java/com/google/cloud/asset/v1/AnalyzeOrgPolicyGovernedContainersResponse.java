@@ -35,6 +35,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse)
     AnalyzeOrgPolicyGovernedContainersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnalyzeOrgPolicyGovernedContainersResponse.newBuilder() to construct.
   private AnalyzeOrgPolicyGovernedContainersResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -86,6 +87,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * @return The fullResourceName.
      */
     java.lang.String getFullResourceName();
+
     /**
      *
      *
@@ -116,6 +118,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * @return The parent.
      */
     java.lang.String getParent();
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * @return Whether the consolidatedPolicy field is set.
      */
     boolean hasConsolidatedPolicy();
+
     /**
      *
      *
@@ -164,6 +168,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * @return The consolidatedPolicy.
      */
     com.google.cloud.asset.v1.AnalyzerOrgPolicy getConsolidatedPolicy();
+
     /**
      *
      *
@@ -194,6 +199,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * <code>repeated .google.cloud.asset.v1.AnalyzerOrgPolicy policy_bundle = 4;</code>
      */
     java.util.List<com.google.cloud.asset.v1.AnalyzerOrgPolicy> getPolicyBundleList();
+
     /**
      *
      *
@@ -209,6 +215,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * <code>repeated .google.cloud.asset.v1.AnalyzerOrgPolicy policy_bundle = 4;</code>
      */
     com.google.cloud.asset.v1.AnalyzerOrgPolicy getPolicyBundle(int index);
+
     /**
      *
      *
@@ -224,6 +231,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * <code>repeated .google.cloud.asset.v1.AnalyzerOrgPolicy policy_bundle = 4;</code>
      */
     int getPolicyBundleCount();
+
     /**
      *
      *
@@ -240,6 +248,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      */
     java.util.List<? extends com.google.cloud.asset.v1.AnalyzerOrgPolicyOrBuilder>
         getPolicyBundleOrBuilderList();
+
     /**
      *
      *
@@ -270,6 +279,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * @return The project.
      */
     java.lang.String getProject();
+
     /**
      *
      *
@@ -299,6 +309,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * @return A list containing the folders.
      */
     java.util.List<java.lang.String> getFoldersList();
+
     /**
      *
      *
@@ -313,6 +324,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * @return The count of folders.
      */
     int getFoldersCount();
+
     /**
      *
      *
@@ -328,6 +340,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * @return The folders at the given index.
      */
     java.lang.String getFolders(int index);
+
     /**
      *
      *
@@ -358,6 +371,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * @return The organization.
      */
     java.lang.String getOrganization();
+
     /**
      *
      *
@@ -383,6 +397,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
      */
     java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> getEffectiveTagsList();
+
     /**
      *
      *
@@ -393,6 +408,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
      */
     com.google.cloud.asset.v1.EffectiveTagDetails getEffectiveTags(int index);
+
     /**
      *
      *
@@ -403,6 +419,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
      */
     int getEffectiveTagsCount();
+
     /**
      *
      *
@@ -414,6 +431,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      */
     java.util.List<? extends com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>
         getEffectiveTagsOrBuilderList();
+
     /**
      *
      *
@@ -425,6 +443,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      */
     com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder getEffectiveTagsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -442,6 +461,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer)
       GovernedContainerOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GovernedContainer.newBuilder() to construct.
     private GovernedContainer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -485,6 +505,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fullResourceName_ = "";
+
     /**
      *
      *
@@ -510,6 +531,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return s;
       }
     }
+
     /**
      *
      *
@@ -540,6 +562,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -566,6 +589,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return s;
       }
     }
+
     /**
      *
      *
@@ -595,6 +619,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
 
     public static final int CONSOLIDATED_POLICY_FIELD_NUMBER = 3;
     private com.google.cloud.asset.v1.AnalyzerOrgPolicy consolidatedPolicy_;
+
     /**
      *
      *
@@ -614,6 +639,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     public boolean hasConsolidatedPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -635,6 +661,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           ? com.google.cloud.asset.v1.AnalyzerOrgPolicy.getDefaultInstance()
           : consolidatedPolicy_;
     }
+
     /**
      *
      *
@@ -659,6 +686,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.asset.v1.AnalyzerOrgPolicy> policyBundle_;
+
     /**
      *
      *
@@ -677,6 +705,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     public java.util.List<com.google.cloud.asset.v1.AnalyzerOrgPolicy> getPolicyBundleList() {
       return policyBundle_;
     }
+
     /**
      *
      *
@@ -696,6 +725,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         getPolicyBundleOrBuilderList() {
       return policyBundle_;
     }
+
     /**
      *
      *
@@ -714,6 +744,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     public int getPolicyBundleCount() {
       return policyBundle_.size();
     }
+
     /**
      *
      *
@@ -732,6 +763,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     public com.google.cloud.asset.v1.AnalyzerOrgPolicy getPolicyBundle(int index) {
       return policyBundle_.get(index);
     }
+
     /**
      *
      *
@@ -756,6 +788,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -781,6 +814,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return s;
       }
     }
+
     /**
      *
      *
@@ -812,6 +846,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList folders_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -828,6 +863,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     public com.google.protobuf.ProtocolStringList getFoldersList() {
       return folders_;
     }
+
     /**
      *
      *
@@ -844,6 +880,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     public int getFoldersCount() {
       return folders_.size();
     }
+
     /**
      *
      *
@@ -861,6 +898,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     public java.lang.String getFolders(int index) {
       return folders_.get(index);
     }
+
     /**
      *
      *
@@ -883,6 +921,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object organization_ = "";
+
     /**
      *
      *
@@ -908,6 +947,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return s;
       }
     }
+
     /**
      *
      *
@@ -938,6 +978,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> effectiveTags_;
+
     /**
      *
      *
@@ -951,6 +992,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     public java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> getEffectiveTagsList() {
       return effectiveTags_;
     }
+
     /**
      *
      *
@@ -965,6 +1007,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         getEffectiveTagsOrBuilderList() {
       return effectiveTags_;
     }
+
     /**
      *
      *
@@ -978,6 +1021,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     public int getEffectiveTagsCount() {
       return effectiveTags_.size();
     }
+
     /**
      *
      *
@@ -991,6 +1035,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     public com.google.cloud.asset.v1.EffectiveTagDetails getEffectiveTags(int index) {
       return effectiveTags_.get(index);
     }
+
     /**
      *
      *
@@ -1269,6 +1314,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1702,6 +1748,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       private int bitField0_;
 
       private java.lang.Object fullResourceName_ = "";
+
       /**
        *
        *
@@ -1726,6 +1773,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1750,6 +1798,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1773,6 +1822,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1792,6 +1842,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1818,6 +1869,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
 
       private java.lang.Object parent_ = "";
+
       /**
        *
        *
@@ -1843,6 +1895,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1868,6 +1921,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1892,6 +1946,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1912,6 +1967,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1944,6 +2000,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
               com.google.cloud.asset.v1.AnalyzerOrgPolicy.Builder,
               com.google.cloud.asset.v1.AnalyzerOrgPolicyOrBuilder>
           consolidatedPolicyBuilder_;
+
       /**
        *
        *
@@ -1962,6 +2019,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       public boolean hasConsolidatedPolicy() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1986,6 +2044,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return consolidatedPolicyBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2012,6 +2071,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2036,6 +2096,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2068,6 +2129,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -2091,6 +2153,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2109,6 +2172,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return getConsolidatedPolicyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2131,6 +2195,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
               : consolidatedPolicy_;
         }
       }
+
       /**
        *
        *
@@ -2199,6 +2264,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return policyBundleBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2220,6 +2286,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return policyBundleBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2241,6 +2308,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return policyBundleBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2268,6 +2336,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -2293,6 +2362,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -2320,6 +2390,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -2347,6 +2418,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -2372,6 +2444,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -2397,6 +2470,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -2422,6 +2496,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -2446,6 +2521,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -2470,6 +2546,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -2487,6 +2564,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       public com.google.cloud.asset.v1.AnalyzerOrgPolicy.Builder getPolicyBundleBuilder(int index) {
         return getPolicyBundleFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -2509,6 +2587,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return policyBundleBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -2531,6 +2610,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return java.util.Collections.unmodifiableList(policyBundle_);
         }
       }
+
       /**
        *
        *
@@ -2549,6 +2629,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return getPolicyBundleFieldBuilder()
             .addBuilder(com.google.cloud.asset.v1.AnalyzerOrgPolicy.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2567,6 +2648,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return getPolicyBundleFieldBuilder()
             .addBuilder(index, com.google.cloud.asset.v1.AnalyzerOrgPolicy.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2607,6 +2689,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
 
       private java.lang.Object project_ = "";
+
       /**
        *
        *
@@ -2631,6 +2714,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2655,6 +2739,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2678,6 +2763,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2697,6 +2783,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2731,6 +2818,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         bitField0_ |= 0x00000020;
       }
+
       /**
        *
        *
@@ -2748,6 +2836,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         folders_.makeImmutable();
         return folders_;
       }
+
       /**
        *
        *
@@ -2764,6 +2853,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       public int getFoldersCount() {
         return folders_.size();
       }
+
       /**
        *
        *
@@ -2781,6 +2871,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       public java.lang.String getFolders(int index) {
         return folders_.get(index);
       }
+
       /**
        *
        *
@@ -2798,6 +2889,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       public com.google.protobuf.ByteString getFoldersBytes(int index) {
         return folders_.getByteString(index);
       }
+
       /**
        *
        *
@@ -2823,6 +2915,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2847,6 +2940,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2868,6 +2962,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2888,6 +2983,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2915,6 +3011,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
 
       private java.lang.Object organization_ = "";
+
       /**
        *
        *
@@ -2939,6 +3036,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2963,6 +3061,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2986,6 +3085,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3005,6 +3105,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3064,6 +3165,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return effectiveTagsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -3080,6 +3182,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return effectiveTagsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -3096,6 +3199,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return effectiveTagsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -3119,6 +3223,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -3139,6 +3244,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -3161,6 +3267,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -3184,6 +3291,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -3204,6 +3312,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -3224,6 +3333,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -3244,6 +3354,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -3263,6 +3374,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -3282,6 +3394,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -3295,6 +3408,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           int index) {
         return getEffectiveTagsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3312,6 +3426,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return effectiveTagsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3329,6 +3444,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           return java.util.Collections.unmodifiableList(effectiveTags_);
         }
       }
+
       /**
        *
        *
@@ -3342,6 +3458,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return getEffectiveTagsFieldBuilder()
             .addBuilder(com.google.cloud.asset.v1.EffectiveTagDetails.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3356,6 +3473,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return getEffectiveTagsFieldBuilder()
             .addBuilder(index, com.google.cloud.asset.v1.EffectiveTagDetails.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3468,6 +3586,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
   private java.util.List<
           com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer>
       governedContainers_;
+
   /**
    *
    *
@@ -3485,6 +3604,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       getGovernedContainersList() {
     return governedContainers_;
   }
+
   /**
    *
    *
@@ -3504,6 +3624,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       getGovernedContainersOrBuilderList() {
     return governedContainers_;
   }
+
   /**
    *
    *
@@ -3519,6 +3640,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
   public int getGovernedContainersCount() {
     return governedContainers_.size();
   }
+
   /**
    *
    *
@@ -3535,6 +3657,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       getGovernedContainers(int index) {
     return governedContainers_.get(index);
   }
+
   /**
    *
    *
@@ -3555,6 +3678,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
 
   public static final int CONSTRAINT_FIELD_NUMBER = 2;
   private com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint constraint_;
+
   /**
    *
    *
@@ -3570,6 +3694,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
   public boolean hasConstraint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3587,6 +3712,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         ? com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.getDefaultInstance()
         : constraint_;
   }
+
   /**
    *
    *
@@ -3607,6 +3733,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -3631,6 +3758,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -3843,6 +3971,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4171,6 +4300,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return governedContainersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4189,6 +4319,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return governedContainersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4208,6 +4339,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return governedContainersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4235,6 +4367,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -4260,6 +4393,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -4286,6 +4420,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -4313,6 +4448,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -4337,6 +4473,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -4362,6 +4499,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -4388,6 +4526,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -4409,6 +4548,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -4430,6 +4570,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -4446,6 +4587,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         getGovernedContainersBuilder(int index) {
       return getGovernedContainersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4466,6 +4608,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return governedContainersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4488,6 +4631,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return java.util.Collections.unmodifiableList(governedContainers_);
       }
     }
+
     /**
      *
      *
@@ -4507,6 +4651,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
               com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4527,6 +4672,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
               com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4576,6 +4722,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
             com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Builder,
             com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraintOrBuilder>
         constraintBuilder_;
+
     /**
      *
      *
@@ -4590,6 +4737,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     public boolean hasConstraint() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -4610,6 +4758,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return constraintBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4632,6 +4781,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4652,6 +4802,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4680,6 +4831,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -4699,6 +4851,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4713,6 +4866,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       onChanged();
       return getConstraintFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4731,6 +4885,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
             : constraint_;
       }
     }
+
     /**
      *
      *
@@ -4758,6 +4913,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -4781,6 +4937,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4804,6 +4961,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4826,6 +4984,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4844,6 +5003,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

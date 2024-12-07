@@ -34,6 +34,7 @@ public interface TransitLineOrBuilder
    * <code>repeated .google.maps.routing.v2.TransitAgency agencies = 1;</code>
    */
   java.util.List<com.google.maps.routing.v2.TransitAgency> getAgenciesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface TransitLineOrBuilder
    * <code>repeated .google.maps.routing.v2.TransitAgency agencies = 1;</code>
    */
   com.google.maps.routing.v2.TransitAgency getAgencies(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface TransitLineOrBuilder
    * <code>repeated .google.maps.routing.v2.TransitAgency agencies = 1;</code>
    */
   int getAgenciesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface TransitLineOrBuilder
    */
   java.util.List<? extends com.google.maps.routing.v2.TransitAgencyOrBuilder>
       getAgenciesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface TransitLineOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface TransitLineOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public interface TransitLineOrBuilder
    * @return The color.
    */
   java.lang.String getColor();
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public interface TransitLineOrBuilder
    * @return The iconUri.
    */
   java.lang.String getIconUri();
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface TransitLineOrBuilder
    * @return The nameShort.
    */
   java.lang.String getNameShort();
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public interface TransitLineOrBuilder
    * @return The textColor.
    */
   java.lang.String getTextColor();
+
   /**
    *
    *
@@ -244,6 +254,7 @@ public interface TransitLineOrBuilder
    * @return Whether the vehicle field is set.
    */
   boolean hasVehicle();
+
   /**
    *
    *
@@ -256,6 +267,7 @@ public interface TransitLineOrBuilder
    * @return The vehicle.
    */
   com.google.maps.routing.v2.TransitVehicle getVehicle();
+
   /**
    *
    *

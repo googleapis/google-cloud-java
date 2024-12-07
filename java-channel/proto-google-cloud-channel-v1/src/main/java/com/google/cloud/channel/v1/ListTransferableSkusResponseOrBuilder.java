@@ -34,6 +34,7 @@ public interface ListTransferableSkusResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.TransferableSku> getTransferableSkusList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTransferableSkusResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
    */
   com.google.cloud.channel.v1.TransferableSku getTransferableSkus(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTransferableSkusResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
    */
   int getTransferableSkusCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListTransferableSkusResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.TransferableSkuOrBuilder>
       getTransferableSkusOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListTransferableSkusResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

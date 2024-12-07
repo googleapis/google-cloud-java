@@ -37,6 +37,7 @@ public interface NetworkConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.metastore.v1alpha.NetworkConfig.Consumer> getConsumersList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface NetworkConfigOrBuilder
    * </code>
    */
   com.google.cloud.metastore.v1alpha.NetworkConfig.Consumer getConsumers(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface NetworkConfigOrBuilder
    * </code>
    */
   int getConsumersCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface NetworkConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.metastore.v1alpha.NetworkConfig.ConsumerOrBuilder>
       getConsumersOrBuilderList();
+
   /**
    *
    *

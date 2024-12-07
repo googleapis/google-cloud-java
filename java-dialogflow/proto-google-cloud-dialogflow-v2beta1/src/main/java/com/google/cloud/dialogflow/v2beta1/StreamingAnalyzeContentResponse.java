@@ -54,6 +54,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse)
     StreamingAnalyzeContentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingAnalyzeContentResponse.newBuilder() to construct.
   private StreamingAnalyzeContentResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -90,6 +91,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
   private int bitField0_;
   public static final int RECOGNITION_RESULT_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult recognitionResult_;
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
   public boolean hasRecognitionResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         ? com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.getDefaultInstance()
         : recognitionResult_;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object replyText_ = "";
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
 
   public static final int REPLY_AUDIO_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.v2beta1.OutputAudio replyAudio_;
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
   public boolean hasReplyAudio() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -249,6 +257,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         ? com.google.cloud.dialogflow.v2beta1.OutputAudio.getDefaultInstance()
         : replyAudio_;
   }
+
   /**
    *
    *
@@ -277,6 +286,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
 
   public static final int AUTOMATED_AGENT_REPLY_FIELD_NUMBER = 4;
   private com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply automatedAgentReply_;
+
   /**
    *
    *
@@ -297,6 +307,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
   public boolean hasAutomatedAgentReply() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -319,6 +330,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         ? com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.getDefaultInstance()
         : automatedAgentReply_;
   }
+
   /**
    *
    *
@@ -343,6 +355,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
 
   public static final int MESSAGE_FIELD_NUMBER = 6;
   private com.google.cloud.dialogflow.v2beta1.Message message_;
+
   /**
    *
    *
@@ -358,6 +371,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
   public boolean hasMessage() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -375,6 +389,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         ? com.google.cloud.dialogflow.v2beta1.Message.getDefaultInstance()
         : message_;
   }
+
   /**
    *
    *
@@ -396,6 +411,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.SuggestionResult>
       humanAgentSuggestionResults_;
+
   /**
    *
    *
@@ -415,6 +431,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       getHumanAgentSuggestionResultsList() {
     return humanAgentSuggestionResults_;
   }
+
   /**
    *
    *
@@ -434,6 +451,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       getHumanAgentSuggestionResultsOrBuilderList() {
     return humanAgentSuggestionResults_;
   }
+
   /**
    *
    *
@@ -452,6 +470,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
   public int getHumanAgentSuggestionResultsCount() {
     return humanAgentSuggestionResults_.size();
   }
+
   /**
    *
    *
@@ -471,6 +490,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       int index) {
     return humanAgentSuggestionResults_.get(index);
   }
+
   /**
    *
    *
@@ -496,6 +516,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.SuggestionResult>
       endUserSuggestionResults_;
+
   /**
    *
    *
@@ -515,6 +536,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       getEndUserSuggestionResultsList() {
     return endUserSuggestionResults_;
   }
+
   /**
    *
    *
@@ -534,6 +556,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       getEndUserSuggestionResultsOrBuilderList() {
     return endUserSuggestionResults_;
   }
+
   /**
    *
    *
@@ -552,6 +575,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
   public int getEndUserSuggestionResultsCount() {
     return endUserSuggestionResults_.size();
   }
+
   /**
    *
    *
@@ -571,6 +595,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       int index) {
     return endUserSuggestionResults_.get(index);
   }
+
   /**
    *
    *
@@ -593,6 +618,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
 
   public static final int DTMF_PARAMETERS_FIELD_NUMBER = 10;
   private com.google.cloud.dialogflow.v2beta1.DtmfParameters dtmfParameters_;
+
   /**
    *
    *
@@ -608,6 +634,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
   public boolean hasDtmfParameters() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -625,6 +652,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         ? com.google.cloud.dialogflow.v2beta1.DtmfParameters.getDefaultInstance()
         : dtmfParameters_;
   }
+
   /**
    *
    *
@@ -643,6 +671,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
 
   public static final int DEBUGGING_INFO_FIELD_NUMBER = 11;
   private com.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfo debuggingInfo_;
+
   /**
    *
    *
@@ -660,6 +689,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
   public boolean hasDebuggingInfo() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -679,6 +709,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         ? com.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfo.getDefaultInstance()
         : debuggingInfo_;
   }
+
   /**
    *
    *
@@ -971,6 +1002,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1445,6 +1477,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
             com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.Builder,
             com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResultOrBuilder>
         recognitionResultBuilder_;
+
     /**
      *
      *
@@ -1460,6 +1493,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
     public boolean hasRecognitionResult() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1481,6 +1515,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return recognitionResultBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1505,6 +1540,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1526,6 +1562,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1557,6 +1594,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1577,6 +1615,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1593,6 +1632,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return getRecognitionResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1613,6 +1653,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
             : recognitionResult_;
       }
     }
+
     /**
      *
      *
@@ -1641,6 +1682,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object replyText_ = "";
+
     /**
      *
      *
@@ -1664,6 +1706,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1687,6 +1730,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1709,6 +1753,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1727,6 +1772,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1757,6 +1803,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
             com.google.cloud.dialogflow.v2beta1.OutputAudio.Builder,
             com.google.cloud.dialogflow.v2beta1.OutputAudioOrBuilder>
         replyAudioBuilder_;
+
     /**
      *
      *
@@ -1781,6 +1828,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
     public boolean hasReplyAudio() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1811,6 +1859,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return replyAudioBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1843,6 +1892,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1873,6 +1923,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1911,6 +1962,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1940,6 +1992,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1964,6 +2017,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return getReplyAudioFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1992,6 +2046,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
             : replyAudio_;
       }
     }
+
     /**
      *
      *
@@ -2034,6 +2089,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
             com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.Builder,
             com.google.cloud.dialogflow.v2beta1.AutomatedAgentReplyOrBuilder>
         automatedAgentReplyBuilder_;
+
     /**
      *
      *
@@ -2053,6 +2109,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
     public boolean hasAutomatedAgentReply() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2078,6 +2135,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return automatedAgentReplyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2106,6 +2164,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2131,6 +2190,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2165,6 +2225,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2189,6 +2250,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2209,6 +2271,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return getAutomatedAgentReplyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2233,6 +2296,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
             : automatedAgentReply_;
       }
     }
+
     /**
      *
      *
@@ -2270,6 +2334,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
             com.google.cloud.dialogflow.v2beta1.Message.Builder,
             com.google.cloud.dialogflow.v2beta1.MessageOrBuilder>
         messageBuilder_;
+
     /**
      *
      *
@@ -2284,6 +2349,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
     public boolean hasMessage() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2304,6 +2370,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return messageBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2326,6 +2393,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2345,6 +2413,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2372,6 +2441,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2391,6 +2461,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2405,6 +2476,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return getMessageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2423,6 +2495,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
             : message_;
       }
     }
+
     /**
      *
      *
@@ -2489,6 +2562,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return humanAgentSuggestionResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2510,6 +2584,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return humanAgentSuggestionResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2532,6 +2607,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return humanAgentSuggestionResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2560,6 +2636,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2585,6 +2662,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2613,6 +2691,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2641,6 +2720,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2666,6 +2746,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2691,6 +2772,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2717,6 +2799,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2741,6 +2824,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2765,6 +2849,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2783,6 +2868,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         getHumanAgentSuggestionResultsBuilder(int index) {
       return getHumanAgentSuggestionResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2805,6 +2891,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return humanAgentSuggestionResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2827,6 +2914,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(humanAgentSuggestionResults_);
       }
     }
+
     /**
      *
      *
@@ -2846,6 +2934,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       return getHumanAgentSuggestionResultsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.SuggestionResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2866,6 +2955,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
           .addBuilder(
               index, com.google.cloud.dialogflow.v2beta1.SuggestionResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2945,6 +3035,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return endUserSuggestionResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2966,6 +3057,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return endUserSuggestionResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2988,6 +3080,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return endUserSuggestionResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3016,6 +3109,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -3041,6 +3135,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -3069,6 +3164,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -3097,6 +3193,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -3122,6 +3219,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -3147,6 +3245,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -3172,6 +3271,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -3196,6 +3296,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -3220,6 +3321,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -3238,6 +3340,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         getEndUserSuggestionResultsBuilder(int index) {
       return getEndUserSuggestionResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3260,6 +3363,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return endUserSuggestionResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3282,6 +3386,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(endUserSuggestionResults_);
       }
     }
+
     /**
      *
      *
@@ -3301,6 +3406,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       return getEndUserSuggestionResultsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.SuggestionResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3321,6 +3427,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
           .addBuilder(
               index, com.google.cloud.dialogflow.v2beta1.SuggestionResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3366,6 +3473,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
             com.google.cloud.dialogflow.v2beta1.DtmfParameters.Builder,
             com.google.cloud.dialogflow.v2beta1.DtmfParametersOrBuilder>
         dtmfParametersBuilder_;
+
     /**
      *
      *
@@ -3380,6 +3488,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
     public boolean hasDtmfParameters() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3400,6 +3509,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return dtmfParametersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3422,6 +3532,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3442,6 +3553,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3470,6 +3582,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -3489,6 +3602,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3503,6 +3617,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return getDtmfParametersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3522,6 +3637,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
             : dtmfParameters_;
       }
     }
+
     /**
      *
      *
@@ -3554,6 +3670,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
             com.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfo.Builder,
             com.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfoOrBuilder>
         debuggingInfoBuilder_;
+
     /**
      *
      *
@@ -3570,6 +3687,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
     public boolean hasDebuggingInfo() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3593,6 +3711,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
         return debuggingInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3618,6 +3737,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3641,6 +3761,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3673,6 +3794,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -3694,6 +3816,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3711,6 +3834,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
       onChanged();
       return getDebuggingInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3733,6 +3857,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
             : debuggingInfo_;
       }
     }
+
     /**
      *
      *

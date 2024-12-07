@@ -36,6 +36,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * @return Whether the chainName field is set.
    */
   boolean hasChainName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * @return The chainName.
    */
   java.lang.String getChainName();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * @return Whether the guestFlush field is set.
    */
   boolean hasGuestFlush();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -106,9 +110,11 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -119,6 +125,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -133,6 +140,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -156,6 +164,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * @return A list containing the storageLocations.
    */
   java.util.List<java.lang.String> getStorageLocationsList();
+
   /**
    *
    *
@@ -168,6 +177,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * @return The count of storageLocations.
    */
   int getStorageLocationsCount();
+
   /**
    *
    *
@@ -181,6 +191,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * @return The storageLocations at the given index.
    */
   java.lang.String getStorageLocations(int index);
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse)
     FetchGitHubInstallationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchGitHubInstallationsResponse.newBuilder() to construct.
   private FetchGitHubInstallationsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -94,6 +95,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -119,6 +121,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
      * @return The type.
      */
     java.lang.String getType();
+
     /**
      *
      *
@@ -132,6 +135,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
      */
     com.google.protobuf.ByteString getTypeBytes();
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       // @@protoc_insertion_point(message_implements:google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse.Installation)
       InstallationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Installation.newBuilder() to construct.
     private Installation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -182,6 +187,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
 
     public static final int ID_FIELD_NUMBER = 1;
     private long id_ = 0L;
+
     /**
      *
      *
@@ -202,6 +208,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -225,6 +232,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
         return s;
       }
     }
+
     /**
      *
      *
@@ -253,6 +261,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -276,6 +285,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
         return s;
       }
     }
+
     /**
      *
      *
@@ -488,6 +498,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -723,6 +734,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       private int bitField0_;
 
       private long id_;
+
       /**
        *
        *
@@ -738,6 +750,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       public long getId() {
         return id_;
       }
+
       /**
        *
        *
@@ -757,6 +770,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -776,6 +790,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       }
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -798,6 +813,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -820,6 +836,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -841,6 +858,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -858,6 +876,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -882,6 +901,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       }
 
       private java.lang.Object type_ = "";
+
       /**
        *
        *
@@ -904,6 +924,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -926,6 +947,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -947,6 +969,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -964,6 +987,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1062,6 +1086,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
   private java.util.List<
           com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse.Installation>
       installations_;
+
   /**
    *
    *
@@ -1080,6 +1105,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       getInstallationsList() {
     return installations_;
   }
+
   /**
    *
    *
@@ -1100,6 +1126,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       getInstallationsOrBuilderList() {
     return installations_;
   }
+
   /**
    *
    *
@@ -1116,6 +1143,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
   public int getInstallationsCount() {
     return installations_.size();
   }
+
   /**
    *
    *
@@ -1133,6 +1161,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       getInstallations(int index) {
     return installations_.get(index);
   }
+
   /**
    *
    *
@@ -1314,6 +1343,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1596,6 +1626,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
         return installationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1615,6 +1646,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
         return installationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1635,6 +1667,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
         return installationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1662,6 +1695,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1687,6 +1721,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1713,6 +1748,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1740,6 +1776,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1764,6 +1801,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1789,6 +1827,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1816,6 +1855,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1838,6 +1878,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1860,6 +1901,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1877,6 +1919,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
         getInstallationsBuilder(int index) {
       return getInstallationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1898,6 +1941,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
         return installationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1921,6 +1965,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(installations_);
       }
     }
+
     /**
      *
      *
@@ -1941,6 +1986,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
               com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse.Installation
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1962,6 +2008,7 @@ public final class FetchGitHubInstallationsResponse extends com.google.protobuf.
               com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse.Installation
                   .getDefaultInstance());
     }
+
     /**
      *
      *

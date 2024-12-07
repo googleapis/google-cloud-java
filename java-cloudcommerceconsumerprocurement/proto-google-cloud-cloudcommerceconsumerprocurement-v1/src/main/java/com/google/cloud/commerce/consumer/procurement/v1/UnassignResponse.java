@@ -34,6 +34,7 @@ public final class UnassignResponse extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.UnassignResponse)
     UnassignResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UnassignResponse.newBuilder() to construct.
   private UnassignResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,6 +215,7 @@ public final class UnassignResponse extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

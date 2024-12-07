@@ -36,6 +36,7 @@ public interface HiveJobOrBuilder
    * @return Whether the queryFileUri field is set.
    */
   boolean hasQueryFileUri();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface HiveJobOrBuilder
    * @return The queryFileUri.
    */
   java.lang.String getQueryFileUri();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface HiveJobOrBuilder
    * @return Whether the queryList field is set.
    */
   boolean hasQueryList();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface HiveJobOrBuilder
    * @return The queryList.
    */
   com.google.cloud.dataproc.v1.QueryList getQueryList();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface HiveJobOrBuilder
    * </code>
    */
   int getScriptVariablesCount();
+
   /**
    *
    *
@@ -135,9 +140,11 @@ public interface HiveJobOrBuilder
    * </code>
    */
   boolean containsScriptVariables(java.lang.String key);
+
   /** Use {@link #getScriptVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getScriptVariables();
+
   /**
    *
    *
@@ -150,6 +157,7 @@ public interface HiveJobOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap();
+
   /**
    *
    *
@@ -166,6 +174,7 @@ public interface HiveJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -193,6 +202,7 @@ public interface HiveJobOrBuilder
    * </code>
    */
   int getPropertiesCount();
+
   /**
    *
    *
@@ -207,9 +217,11 @@ public interface HiveJobOrBuilder
    * </code>
    */
   boolean containsProperties(java.lang.String key);
+
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getProperties();
+
   /**
    *
    *
@@ -224,6 +236,7 @@ public interface HiveJobOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
+
   /**
    *
    *
@@ -242,6 +255,7 @@ public interface HiveJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -271,6 +285,7 @@ public interface HiveJobOrBuilder
    * @return A list containing the jarFileUris.
    */
   java.util.List<java.lang.String> getJarFileUrisList();
+
   /**
    *
    *
@@ -285,6 +300,7 @@ public interface HiveJobOrBuilder
    * @return The count of jarFileUris.
    */
   int getJarFileUrisCount();
+
   /**
    *
    *
@@ -300,6 +316,7 @@ public interface HiveJobOrBuilder
    * @return The jarFileUris at the given index.
    */
   java.lang.String getJarFileUris(int index);
+
   /**
    *
    *

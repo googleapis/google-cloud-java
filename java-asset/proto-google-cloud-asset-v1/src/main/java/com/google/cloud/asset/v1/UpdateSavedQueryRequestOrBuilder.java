@@ -45,6 +45,7 @@ public interface UpdateSavedQueryRequestOrBuilder
    * @return Whether the savedQuery field is set.
    */
   boolean hasSavedQuery();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface UpdateSavedQueryRequestOrBuilder
    * @return The savedQuery.
    */
   com.google.cloud.asset.v1.SavedQuery getSavedQuery();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface UpdateSavedQueryRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface UpdateSavedQueryRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

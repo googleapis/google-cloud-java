@@ -35,6 +35,7 @@ public interface ListDeviceConfigVersionsResponseOrBuilder
    * <code>repeated .google.cloud.iot.v1.DeviceConfig device_configs = 1;</code>
    */
   java.util.List<com.google.cloud.iot.v1.DeviceConfig> getDeviceConfigsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListDeviceConfigVersionsResponseOrBuilder
    * <code>repeated .google.cloud.iot.v1.DeviceConfig device_configs = 1;</code>
    */
   com.google.cloud.iot.v1.DeviceConfig getDeviceConfigs(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListDeviceConfigVersionsResponseOrBuilder
    * <code>repeated .google.cloud.iot.v1.DeviceConfig device_configs = 1;</code>
    */
   int getDeviceConfigsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListDeviceConfigVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.iot.v1.DeviceConfigOrBuilder>
       getDeviceConfigsOrBuilderList();
+
   /**
    *
    *

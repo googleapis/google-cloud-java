@@ -41,6 +41,7 @@ public interface CreateClusterRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface CreateClusterRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface CreateClusterRequestOrBuilder
    * @return Whether the cluster field is set.
    */
   boolean hasCluster();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface CreateClusterRequestOrBuilder
    * @return The cluster.
    */
   com.google.container.v1.Cluster getCluster();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface CreateClusterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

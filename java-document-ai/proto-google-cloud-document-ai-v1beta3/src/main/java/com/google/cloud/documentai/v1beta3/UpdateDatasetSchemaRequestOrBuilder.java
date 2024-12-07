@@ -39,6 +39,7 @@ public interface UpdateDatasetSchemaRequestOrBuilder
    * @return Whether the datasetSchema field is set.
    */
   boolean hasDatasetSchema();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateDatasetSchemaRequestOrBuilder
    * @return The datasetSchema.
    */
   com.google.cloud.documentai.v1beta3.DatasetSchema getDatasetSchema();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateDatasetSchemaRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface UpdateDatasetSchemaRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

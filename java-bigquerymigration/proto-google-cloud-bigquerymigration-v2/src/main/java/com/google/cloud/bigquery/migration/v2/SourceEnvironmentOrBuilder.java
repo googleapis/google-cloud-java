@@ -37,6 +37,7 @@ public interface SourceEnvironmentOrBuilder
    * @return The defaultDatabase.
    */
   java.lang.String getDefaultDatabase();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface SourceEnvironmentOrBuilder
    * @return A list containing the schemaSearchPath.
    */
   java.util.List<java.lang.String> getSchemaSearchPathList();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SourceEnvironmentOrBuilder
    * @return The count of schemaSearchPath.
    */
   int getSchemaSearchPathCount();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface SourceEnvironmentOrBuilder
    * @return The schemaSearchPath at the given index.
    */
   java.lang.String getSchemaSearchPath(int index);
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface SourceEnvironmentOrBuilder
    * @return The metadataStoreDataset.
    */
   java.lang.String getMetadataStoreDataset();
+
   /**
    *
    *

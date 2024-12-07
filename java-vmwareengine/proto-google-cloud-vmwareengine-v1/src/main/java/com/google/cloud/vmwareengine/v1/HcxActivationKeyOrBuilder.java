@@ -40,6 +40,7 @@ public interface HcxActivationKeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface HcxActivationKeyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface HcxActivationKeyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface HcxActivationKeyOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface HcxActivationKeyOrBuilder
    * @return The activationKey.
    */
   java.lang.String getActivationKey();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface HcxActivationKeyOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *

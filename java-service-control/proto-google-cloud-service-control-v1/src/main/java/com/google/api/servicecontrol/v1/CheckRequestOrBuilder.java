@@ -41,6 +41,7 @@ public interface CheckRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CheckRequestOrBuilder
    * @return Whether the operation field is set.
    */
   boolean hasOperation();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CheckRequestOrBuilder
    * @return The operation.
    */
   com.google.api.servicecontrol.v1.Operation getOperation();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CheckRequestOrBuilder
    * @return The serviceConfigId.
    */
   java.lang.String getServiceConfigId();
+
   /**
    *
    *

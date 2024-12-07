@@ -33,6 +33,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.ConversationMessage)
     ConversationMessageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConversationMessage.newBuilder() to construct.
   private ConversationMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
     private MessageCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
   }
 
   public static final int USER_INPUT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
   public boolean hasUserInput() {
     return messageCase_ == 1;
   }
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.discoveryengine.v1beta.TextInput.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
   }
 
   public static final int REPLY_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
   public boolean hasReply() {
     return messageCase_ == 2;
   }
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.discoveryengine.v1beta.Reply.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -231,6 +240,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +257,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -466,6 +477,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -731,6 +743,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
             com.google.cloud.discoveryengine.v1beta.TextInput.Builder,
             com.google.cloud.discoveryengine.v1beta.TextInputOrBuilder>
         userInputBuilder_;
+
     /**
      *
      *
@@ -746,6 +759,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
     public boolean hasUserInput() {
       return messageCase_ == 1;
     }
+
     /**
      *
      *
@@ -771,6 +785,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
         return com.google.cloud.discoveryengine.v1beta.TextInput.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -793,6 +808,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
       messageCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +829,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
       messageCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +862,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
       messageCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +888,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +901,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
     public com.google.cloud.discoveryengine.v1beta.TextInput.Builder getUserInputBuilder() {
       return getUserInputFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -902,6 +922,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
         return com.google.cloud.discoveryengine.v1beta.TextInput.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -940,6 +961,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
             com.google.cloud.discoveryengine.v1beta.Reply.Builder,
             com.google.cloud.discoveryengine.v1beta.ReplyOrBuilder>
         replyBuilder_;
+
     /**
      *
      *
@@ -955,6 +977,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
     public boolean hasReply() {
       return messageCase_ == 2;
     }
+
     /**
      *
      *
@@ -980,6 +1003,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
         return com.google.cloud.discoveryengine.v1beta.Reply.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1026,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
       messageCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1046,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
       messageCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1079,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
       messageCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1105,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1118,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
     public com.google.cloud.discoveryengine.v1beta.Reply.Builder getReplyBuilder() {
       return getReplyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1110,6 +1139,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
         return com.google.cloud.discoveryengine.v1beta.Reply.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1149,6 +1179,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1165,6 +1196,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1187,6 +1219,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1211,6 +1244,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1232,6 +1266,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1261,6 +1296,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1282,6 +1318,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1335,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1318,6 +1356,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
             : createTime_;
       }
     }
+
     /**
      *
      *

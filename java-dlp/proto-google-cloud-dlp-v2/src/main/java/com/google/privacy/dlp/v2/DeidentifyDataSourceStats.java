@@ -33,6 +33,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DeidentifyDataSourceStats)
     DeidentifyDataSourceStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeidentifyDataSourceStats.newBuilder() to construct.
   private DeidentifyDataSourceStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
 
   public static final int TRANSFORMED_BYTES_FIELD_NUMBER = 1;
   private long transformedBytes_ = 0L;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
 
   public static final int TRANSFORMATION_COUNT_FIELD_NUMBER = 2;
   private long transformationCount_ = 0L;
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
 
   public static final int TRANSFORMATION_ERROR_COUNT_FIELD_NUMBER = 3;
   private long transformationErrorCount_ = 0L;
+
   /**
    *
    *
@@ -292,6 +296,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -500,6 +505,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
     private int bitField0_;
 
     private long transformedBytes_;
+
     /**
      *
      *
@@ -515,6 +521,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
     public long getTransformedBytes() {
       return transformedBytes_;
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
     }
 
     private long transformationCount_;
+
     /**
      *
      *
@@ -568,6 +577,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
     public long getTransformationCount() {
       return transformationCount_;
     }
+
     /**
      *
      *
@@ -587,6 +597,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +617,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
     }
 
     private long transformationErrorCount_;
+
     /**
      *
      *
@@ -621,6 +633,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
     public long getTransformationErrorCount() {
       return transformationErrorCount_;
     }
+
     /**
      *
      *
@@ -640,6 +653,7 @@ public final class DeidentifyDataSourceStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

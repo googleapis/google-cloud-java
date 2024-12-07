@@ -36,6 +36,7 @@ public interface MoveGlobalAddressRequestOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface MoveGlobalAddressRequestOrBuilder
    * @return Whether the globalAddressesMoveRequestResource field is set.
    */
   boolean hasGlobalAddressesMoveRequestResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface MoveGlobalAddressRequestOrBuilder
    * @return The globalAddressesMoveRequestResource.
    */
   com.google.cloud.compute.v1.GlobalAddressesMoveRequest getGlobalAddressesMoveRequestResource();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface MoveGlobalAddressRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface MoveGlobalAddressRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface MoveGlobalAddressRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryTableModifiedCadence)
     DiscoveryTableModifiedCadenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveryTableModifiedCadence.newBuilder() to construct.
   private DiscoveryTableModifiedCadence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
                   : result;
             }
           };
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
         java.lang.Integer, com.google.privacy.dlp.v2.BigQueryTableModification>(
         types_, types_converter_);
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
   public int getTypesCount() {
     return types_.size();
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
   public com.google.privacy.dlp.v2.BigQueryTableModification getTypes(int index) {
     return types_converter_.convert(types_.get(index));
   }
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
   public java.util.List<java.lang.Integer> getTypesValueList() {
     return types_;
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
 
   public static final int FREQUENCY_FIELD_NUMBER = 2;
   private int frequency_ = 0;
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
   public int getFrequencyValue() {
     return frequency_;
   }
+
   /**
    *
    *
@@ -403,6 +411,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -633,6 +642,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
         bitField0_ |= 0x00000001;
       }
     }
+
     /**
      *
      *
@@ -651,6 +661,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
           java.lang.Integer, com.google.privacy.dlp.v2.BigQueryTableModification>(
           types_, types_converter_);
     }
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
     public int getTypesCount() {
       return types_.size();
     }
+
     /**
      *
      *
@@ -684,6 +696,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
     public com.google.privacy.dlp.v2.BigQueryTableModification getTypes(int index) {
       return types_converter_.convert(types_.get(index));
     }
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +745,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +789,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +806,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
     public java.util.List<java.lang.Integer> getTypesValueList() {
       return java.util.Collections.unmodifiableList(types_);
     }
+
     /**
      *
      *
@@ -806,6 +824,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
     public int getTypesValue(int index) {
       return types_.get(index);
     }
+
     /**
      *
      *
@@ -827,6 +846,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +867,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +892,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
     }
 
     private int frequency_ = 0;
+
     /**
      *
      *
@@ -887,6 +909,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
     public int getFrequencyValue() {
       return frequency_;
     }
+
     /**
      *
      *
@@ -906,6 +929,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +950,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
           ? com.google.privacy.dlp.v2.DataProfileUpdateFrequency.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -948,6 +973,7 @@ public final class DiscoveryTableModifiedCadence extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

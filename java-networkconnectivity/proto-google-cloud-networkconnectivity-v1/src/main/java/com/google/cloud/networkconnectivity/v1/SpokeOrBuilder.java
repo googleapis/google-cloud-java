@@ -38,6 +38,7 @@ public interface SpokeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface SpokeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface SpokeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface SpokeOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface SpokeOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface SpokeOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -153,9 +159,11 @@ public interface SpokeOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -168,6 +176,7 @@ public interface SpokeOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -184,6 +193,7 @@ public interface SpokeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -209,6 +219,7 @@ public interface SpokeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -236,6 +247,7 @@ public interface SpokeOrBuilder
    * @return The hub.
    */
   java.lang.String getHub();
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public interface SpokeOrBuilder
    * @return The group.
    */
   java.lang.String getGroup();
+
   /**
    *
    *
@@ -292,6 +305,7 @@ public interface SpokeOrBuilder
    * @return Whether the linkedVpnTunnels field is set.
    */
   boolean hasLinkedVpnTunnels();
+
   /**
    *
    *
@@ -304,6 +318,7 @@ public interface SpokeOrBuilder
    * @return The linkedVpnTunnels.
    */
   com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels getLinkedVpnTunnels();
+
   /**
    *
    *
@@ -329,6 +344,7 @@ public interface SpokeOrBuilder
    * @return Whether the linkedInterconnectAttachments field is set.
    */
   boolean hasLinkedInterconnectAttachments();
+
   /**
    *
    *
@@ -344,6 +360,7 @@ public interface SpokeOrBuilder
    */
   com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments
       getLinkedInterconnectAttachments();
+
   /**
    *
    *
@@ -372,6 +389,7 @@ public interface SpokeOrBuilder
    * @return Whether the linkedRouterApplianceInstances field is set.
    */
   boolean hasLinkedRouterApplianceInstances();
+
   /**
    *
    *
@@ -387,6 +405,7 @@ public interface SpokeOrBuilder
    */
   com.google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances
       getLinkedRouterApplianceInstances();
+
   /**
    *
    *
@@ -415,6 +434,7 @@ public interface SpokeOrBuilder
    * @return Whether the linkedVpcNetwork field is set.
    */
   boolean hasLinkedVpcNetwork();
+
   /**
    *
    *
@@ -429,6 +449,7 @@ public interface SpokeOrBuilder
    * @return The linkedVpcNetwork.
    */
   com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork getLinkedVpcNetwork();
+
   /**
    *
    *
@@ -456,6 +477,7 @@ public interface SpokeOrBuilder
    * @return The uniqueId.
    */
   java.lang.String getUniqueId();
+
   /**
    *
    *
@@ -485,6 +507,7 @@ public interface SpokeOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -513,6 +536,7 @@ public interface SpokeOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.Spoke.StateReason> getReasonsList();
+
   /**
    *
    *
@@ -526,6 +550,7 @@ public interface SpokeOrBuilder
    * </code>
    */
   com.google.cloud.networkconnectivity.v1.Spoke.StateReason getReasons(int index);
+
   /**
    *
    *
@@ -539,6 +564,7 @@ public interface SpokeOrBuilder
    * </code>
    */
   int getReasonsCount();
+
   /**
    *
    *
@@ -553,6 +579,7 @@ public interface SpokeOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkconnectivity.v1.Spoke.StateReasonOrBuilder>
       getReasonsOrBuilderList();
+
   /**
    *
    *
@@ -581,6 +608,7 @@ public interface SpokeOrBuilder
    * @return The enum numeric value on the wire for spokeType.
    */
   int getSpokeTypeValue();
+
   /**
    *
    *

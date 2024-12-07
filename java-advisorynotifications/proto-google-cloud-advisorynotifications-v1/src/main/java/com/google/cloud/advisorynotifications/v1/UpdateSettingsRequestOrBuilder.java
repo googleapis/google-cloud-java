@@ -38,6 +38,7 @@ public interface UpdateSettingsRequestOrBuilder
    * @return Whether the settings field is set.
    */
   boolean hasSettings();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateSettingsRequestOrBuilder
    * @return The settings.
    */
   com.google.cloud.advisorynotifications.v1.Settings getSettings();
+
   /**
    *
    *

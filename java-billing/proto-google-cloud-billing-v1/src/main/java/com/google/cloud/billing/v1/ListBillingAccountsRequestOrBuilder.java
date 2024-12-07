@@ -52,6 +52,7 @@ public interface ListBillingAccountsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface ListBillingAccountsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -121,6 +123,7 @@ public interface ListBillingAccountsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

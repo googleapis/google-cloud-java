@@ -33,6 +33,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.maps.mapsplatformdatasets.v1.ListDatasetsResponse)
     ListDatasetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDatasetsResponse.newBuilder() to construct.
   private ListDatasetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.mapsplatformdatasets.v1.Dataset> datasets_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.maps.mapsplatformdatasets.v1.Dataset> getDatasetsList() {
     return datasets_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       getDatasetsOrBuilderList() {
     return datasets_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
   public int getDatasetsCount() {
     return datasets_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
   public com.google.maps.mapsplatformdatasets.v1.Dataset getDatasets(int index) {
     return datasets_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -361,6 +369,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -642,6 +651,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
         return datasetsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
         return datasetsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -674,6 +685,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
         return datasetsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +729,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +775,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +796,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +891,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
     public com.google.maps.mapsplatformdatasets.v1.Dataset.Builder getDatasetsBuilder(int index) {
       return getDatasetsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -887,6 +909,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
         return datasetsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -904,6 +927,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(datasets_);
       }
     }
+
     /**
      *
      *
@@ -917,6 +941,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       return getDatasetsFieldBuilder()
           .addBuilder(com.google.maps.mapsplatformdatasets.v1.Dataset.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -930,6 +955,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       return getDatasetsFieldBuilder()
           .addBuilder(index, com.google.maps.mapsplatformdatasets.v1.Dataset.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -962,6 +988,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -986,6 +1013,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1010,6 +1038,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1062,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1082,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

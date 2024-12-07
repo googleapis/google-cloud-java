@@ -42,6 +42,7 @@ public interface AzureClientOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface AzureClientOrBuilder
    * @return The tenantId.
    */
   java.lang.String getTenantId();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface AzureClientOrBuilder
    * @return The applicationId.
    */
   java.lang.String getApplicationId();
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public interface AzureClientOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -162,9 +166,11 @@ public interface AzureClientOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public interface AzureClientOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public interface AzureClientOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public interface AzureClientOrBuilder
    * @return The pemCertificate.
    */
   java.lang.String getPemCertificate();
+
   /**
    *
    *
@@ -264,6 +273,7 @@ public interface AzureClientOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -290,6 +300,7 @@ public interface AzureClientOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -303,6 +314,7 @@ public interface AzureClientOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -328,6 +340,7 @@ public interface AzureClientOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -341,6 +354,7 @@ public interface AzureClientOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

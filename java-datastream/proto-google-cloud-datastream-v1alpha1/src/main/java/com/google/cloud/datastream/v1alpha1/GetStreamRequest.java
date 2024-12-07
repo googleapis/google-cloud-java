@@ -25,6 +25,7 @@ public final class GetStreamRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.GetStreamRequest)
     GetStreamRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetStreamRequest.newBuilder() to construct.
   private GetStreamRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -59,6 +60,7 @@ public final class GetStreamRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class GetStreamRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -270,6 +273,7 @@ public final class GetStreamRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.datastream.v1alpha1.GetStreamRequest} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -446,6 +450,7 @@ public final class GetStreamRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -470,6 +475,7 @@ public final class GetStreamRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -494,6 +500,7 @@ public final class GetStreamRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -517,6 +524,7 @@ public final class GetStreamRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -536,6 +544,7 @@ public final class GetStreamRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

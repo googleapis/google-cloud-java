@@ -37,6 +37,7 @@ public interface ModelMonitoringAlertConditionOrBuilder
    * @return Whether the threshold field is set.
    */
   boolean hasThreshold();
+
   /**
    *
    *

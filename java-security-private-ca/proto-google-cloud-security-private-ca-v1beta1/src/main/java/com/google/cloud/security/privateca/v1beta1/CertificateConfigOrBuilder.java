@@ -39,6 +39,7 @@ public interface CertificateConfigOrBuilder
    * @return Whether the subjectConfig field is set.
    */
   boolean hasSubjectConfig();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface CertificateConfigOrBuilder
    * @return The subjectConfig.
    */
   com.google.cloud.security.privateca.v1beta1.CertificateConfig.SubjectConfig getSubjectConfig();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface CertificateConfigOrBuilder
    * @return Whether the reusableConfig field is set.
    */
   boolean hasReusableConfig();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface CertificateConfigOrBuilder
    * @return The reusableConfig.
    */
   com.google.cloud.security.privateca.v1beta1.ReusableConfigWrapper getReusableConfig();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface CertificateConfigOrBuilder
    * @return Whether the publicKey field is set.
    */
   boolean hasPublicKey();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface CertificateConfigOrBuilder
    * @return The publicKey.
    */
   com.google.cloud.security.privateca.v1beta1.PublicKey getPublicKey();
+
   /**
    *
    *

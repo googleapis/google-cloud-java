@@ -34,6 +34,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse)
     SuggestSmartRepliesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SuggestSmartRepliesResponse.newBuilder() to construct.
   private SuggestSmartRepliesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.SmartReplyAnswer> smartReplyAnswers_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       getSmartReplyAnswersList() {
     return smartReplyAnswers_;
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       getSmartReplyAnswersOrBuilderList() {
     return smartReplyAnswers_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
   public int getSmartReplyAnswersCount() {
     return smartReplyAnswers_.size();
   }
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
   public com.google.cloud.dialogflow.v2beta1.SmartReplyAnswer getSmartReplyAnswers(int index) {
     return smartReplyAnswers_.get(index);
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -214,6 +222,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
   private int contextSize_ = 0;
+
   /**
    *
    *
@@ -416,6 +425,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -717,6 +727,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
         return smartReplyAnswersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -736,6 +747,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
         return smartReplyAnswersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -755,6 +767,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
         return smartReplyAnswersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -781,6 +794,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +818,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +845,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +872,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +896,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +920,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +944,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +967,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +990,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1007,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
         int index) {
       return getSmartReplyAnswersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1005,6 +1028,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
         return smartReplyAnswersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1049,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(smartReplyAnswers_);
       }
     }
+
     /**
      *
      *
@@ -1042,6 +1067,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       return getSmartReplyAnswersFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.SmartReplyAnswer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1060,6 +1086,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
           .addBuilder(
               index, com.google.cloud.dialogflow.v2beta1.SmartReplyAnswer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1098,6 +1125,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object latestMessage_ = "";
+
     /**
      *
      *
@@ -1124,6 +1152,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1179,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1175,6 +1205,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1227,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1256,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
     }
 
     private int contextSize_;
+
     /**
      *
      *
@@ -1244,6 +1277,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
     public int getContextSize() {
       return contextSize_;
     }
+
     /**
      *
      *
@@ -1268,6 +1302,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

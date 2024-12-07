@@ -39,6 +39,7 @@ public interface ProjectBillingInfoOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ProjectBillingInfoOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface ProjectBillingInfoOrBuilder
    * @return The billingAccountName.
    */
   java.lang.String getBillingAccountName();
+
   /**
    *
    *

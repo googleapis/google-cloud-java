@@ -39,6 +39,7 @@ public interface ListDependenciesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -100,6 +101,7 @@ public interface ListDependenciesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -178,6 +180,7 @@ public interface ListDependenciesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

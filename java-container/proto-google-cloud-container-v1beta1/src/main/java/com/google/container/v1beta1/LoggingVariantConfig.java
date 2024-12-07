@@ -33,6 +33,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.LoggingVariantConfig)
     LoggingVariantConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LoggingVariantConfig.newBuilder() to construct.
   private LoggingVariantConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,6 +117,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
      * <code>VARIANT_UNSPECIFIED = 0;</code>
      */
     public static final int VARIANT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
      * <code>DEFAULT = 1;</code>
      */
     public static final int DEFAULT_VALUE = 1;
+
     /**
      *
      *
@@ -224,6 +227,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
 
   public static final int VARIANT_FIELD_NUMBER = 1;
   private int variant_ = 0;
+
   /**
    *
    *
@@ -239,6 +243,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
   public int getVariantValue() {
     return variant_;
   }
+
   /**
    *
    *
@@ -422,6 +427,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -604,6 +610,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int variant_ = 0;
+
     /**
      *
      *
@@ -619,6 +626,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
     public int getVariantValue() {
       return variant_;
     }
+
     /**
      *
      *
@@ -637,6 +645,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +665,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
           ? com.google.container.v1beta1.LoggingVariantConfig.Variant.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -677,6 +687,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

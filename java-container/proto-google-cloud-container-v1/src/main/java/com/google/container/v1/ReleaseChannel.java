@@ -38,6 +38,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1.ReleaseChannel)
     ReleaseChannelOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReleaseChannel.newBuilder() to construct.
   private ReleaseChannel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -150,6 +151,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSPECIFIED = 0;</code>
      */
     public static final int UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -165,6 +167,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
      * <code>RAPID = 1;</code>
      */
     public static final int RAPID_VALUE = 1;
+
     /**
      *
      *
@@ -177,6 +180,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
      * <code>REGULAR = 2;</code>
      */
     public static final int REGULAR_VALUE = 2;
+
     /**
      *
      *
@@ -188,6 +192,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
      * <code>STABLE = 3;</code>
      */
     public static final int STABLE_VALUE = 3;
+
     /**
      *
      *
@@ -289,6 +294,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHANNEL_FIELD_NUMBER = 1;
   private int channel_ = 0;
+
   /**
    *
    *
@@ -304,6 +310,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
   public int getChannelValue() {
     return channel_;
   }
+
   /**
    *
    *
@@ -480,6 +487,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -666,6 +674,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int channel_ = 0;
+
     /**
      *
      *
@@ -681,6 +690,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
     public int getChannelValue() {
       return channel_;
     }
+
     /**
      *
      *
@@ -699,6 +709,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +727,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
           com.google.container.v1.ReleaseChannel.Channel.forNumber(channel_);
       return result == null ? com.google.container.v1.ReleaseChannel.Channel.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -737,6 +749,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

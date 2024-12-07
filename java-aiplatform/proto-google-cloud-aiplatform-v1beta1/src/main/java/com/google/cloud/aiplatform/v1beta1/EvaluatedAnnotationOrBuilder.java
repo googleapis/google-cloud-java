@@ -38,6 +38,7 @@ public interface EvaluatedAnnotationOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface EvaluatedAnnotationOrBuilder
    * </code>
    */
   java.util.List<com.google.protobuf.Value> getPredictionsList();
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public interface EvaluatedAnnotationOrBuilder
    * </code>
    */
   com.google.protobuf.Value getPredictions(int index);
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public interface EvaluatedAnnotationOrBuilder
    * </code>
    */
   int getPredictionsCount();
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public interface EvaluatedAnnotationOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.protobuf.ValueOrBuilder> getPredictionsOrBuilderList();
+
   /**
    *
    *
@@ -222,6 +227,7 @@ public interface EvaluatedAnnotationOrBuilder
    * </code>
    */
   java.util.List<com.google.protobuf.Value> getGroundTruthsList();
+
   /**
    *
    *
@@ -250,6 +256,7 @@ public interface EvaluatedAnnotationOrBuilder
    * </code>
    */
   com.google.protobuf.Value getGroundTruths(int index);
+
   /**
    *
    *
@@ -278,6 +285,7 @@ public interface EvaluatedAnnotationOrBuilder
    * </code>
    */
   int getGroundTruthsCount();
+
   /**
    *
    *
@@ -306,6 +314,7 @@ public interface EvaluatedAnnotationOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.protobuf.ValueOrBuilder> getGroundTruthsOrBuilderList();
+
   /**
    *
    *
@@ -350,6 +359,7 @@ public interface EvaluatedAnnotationOrBuilder
    * @return Whether the dataItemPayload field is set.
    */
   boolean hasDataItemPayload();
+
   /**
    *
    *
@@ -365,6 +375,7 @@ public interface EvaluatedAnnotationOrBuilder
    * @return The dataItemPayload.
    */
   com.google.protobuf.Value getDataItemPayload();
+
   /**
    *
    *
@@ -395,6 +406,7 @@ public interface EvaluatedAnnotationOrBuilder
    * @return The evaluatedDataItemViewId.
    */
   java.lang.String getEvaluatedDataItemViewId();
+
   /**
    *
    *
@@ -435,6 +447,7 @@ public interface EvaluatedAnnotationOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.EvaluatedAnnotationExplanation>
       getExplanationsList();
+
   /**
    *
    *
@@ -457,6 +470,7 @@ public interface EvaluatedAnnotationOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.EvaluatedAnnotationExplanation getExplanations(int index);
+
   /**
    *
    *
@@ -479,6 +493,7 @@ public interface EvaluatedAnnotationOrBuilder
    * </code>
    */
   int getExplanationsCount();
+
   /**
    *
    *
@@ -503,6 +518,7 @@ public interface EvaluatedAnnotationOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.EvaluatedAnnotationExplanationOrBuilder>
       getExplanationsOrBuilderList();
+
   /**
    *
    *
@@ -540,6 +556,7 @@ public interface EvaluatedAnnotationOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ErrorAnalysisAnnotation>
       getErrorAnalysisAnnotationsList();
+
   /**
    *
    *
@@ -553,6 +570,7 @@ public interface EvaluatedAnnotationOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ErrorAnalysisAnnotation getErrorAnalysisAnnotations(
       int index);
+
   /**
    *
    *
@@ -565,6 +583,7 @@ public interface EvaluatedAnnotationOrBuilder
    * </code>
    */
   int getErrorAnalysisAnnotationsCount();
+
   /**
    *
    *
@@ -578,6 +597,7 @@ public interface EvaluatedAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ErrorAnalysisAnnotationOrBuilder>
       getErrorAnalysisAnnotationsOrBuilderList();
+
   /**
    *
    *

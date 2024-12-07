@@ -36,6 +36,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return Whether the machineSpec field is set.
    */
   boolean hasMachineSpec();
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The machineSpec.
    */
   com.google.cloud.aiplatform.v1.MachineSpec getMachineSpec();
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return Whether the dataPersistentDiskSpec field is set.
    */
   boolean hasDataPersistentDiskSpec();
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The dataPersistentDiskSpec.
    */
   com.google.cloud.aiplatform.v1.PersistentDiskSpec getDataPersistentDiskSpec();
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return Whether the networkSpec field is set.
    */
   boolean hasNetworkSpec();
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The networkSpec.
    */
   com.google.cloud.aiplatform.v1.NetworkSpec getNetworkSpec();
+
   /**
    *
    *
@@ -266,6 +275,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -298,6 +308,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -329,6 +340,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 15;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -346,9 +358,11 @@ public interface NotebookRuntimeTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 15;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -366,6 +380,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 15;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -387,6 +402,7 @@ public interface NotebookRuntimeTemplateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -418,6 +434,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return Whether the idleShutdownConfig field is set.
    */
   boolean hasIdleShutdownConfig();
+
   /**
    *
    *
@@ -431,6 +448,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The idleShutdownConfig.
    */
   com.google.cloud.aiplatform.v1.NotebookIdleShutdownConfig getIdleShutdownConfig();
+
   /**
    *
    *
@@ -456,6 +474,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return Whether the eucConfig field is set.
    */
   boolean hasEucConfig();
+
   /**
    *
    *
@@ -468,6 +487,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The eucConfig.
    */
   com.google.cloud.aiplatform.v1.NotebookEucConfig getEucConfig();
+
   /**
    *
    *
@@ -492,6 +512,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -505,6 +526,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -531,6 +553,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -545,6 +568,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -572,6 +596,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The enum numeric value on the wire for notebookRuntimeType.
    */
   int getNotebookRuntimeTypeValue();
+
   /**
    *
    *
@@ -601,6 +626,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return Whether the shieldedVmConfig field is set.
    */
   boolean hasShieldedVmConfig();
+
   /**
    *
    *
@@ -615,6 +641,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The shieldedVmConfig.
    */
   com.google.cloud.aiplatform.v1.ShieldedVmConfig getShieldedVmConfig();
+
   /**
    *
    *
@@ -641,6 +668,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return A list containing the networkTags.
    */
   java.util.List<java.lang.String> getNetworkTagsList();
+
   /**
    *
    *
@@ -654,6 +682,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The count of networkTags.
    */
   int getNetworkTagsCount();
+
   /**
    *
    *
@@ -668,6 +697,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The networkTags at the given index.
    */
   java.lang.String getNetworkTags(int index);
+
   /**
    *
    *
@@ -695,6 +725,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -707,6 +738,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *

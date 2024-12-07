@@ -32,6 +32,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions)
     SecurityPolicyRuleRedirectOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyRuleRedirectOptions.newBuilder() to construct.
   private SecurityPolicyRuleRedirectOptions(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -101,8 +102,10 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
+
     /** <code>EXTERNAL_302 = 395733761;</code> */
     public static final int EXTERNAL_302_VALUE = 395733761;
+
     /** <code>GOOGLE_RECAPTCHA = 518803009;</code> */
     public static final int GOOGLE_RECAPTCHA_VALUE = 518803009;
 
@@ -196,6 +199,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object target_ = "";
+
   /**
    *
    *
@@ -211,6 +215,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
   public boolean hasTarget() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -234,6 +239,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -262,6 +268,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -278,6 +285,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
   public boolean hasType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -302,6 +310,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -506,6 +515,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -711,6 +721,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object target_ = "";
+
     /**
      *
      *
@@ -725,6 +736,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
     public boolean hasTarget() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -747,6 +759,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -769,6 +782,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -790,6 +804,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +822,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +847,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
     }
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -846,6 +863,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
     public boolean hasType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -892,6 +911,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -914,6 +934,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +953,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

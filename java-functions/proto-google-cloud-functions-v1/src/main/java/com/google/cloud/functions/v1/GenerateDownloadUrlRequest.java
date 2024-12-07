@@ -33,6 +33,7 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.functions.v1.GenerateDownloadUrlRequest)
     GenerateDownloadUrlRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateDownloadUrlRequest.newBuilder() to construct.
   private GenerateDownloadUrlRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
 
   public static final int VERSION_ID_FIELD_NUMBER = 2;
   private long versionId_ = 0L;
+
   /**
    *
    *
@@ -304,6 +308,7 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -501,6 +506,7 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -524,6 +530,7 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -547,6 +554,7 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -569,6 +577,7 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -612,6 +622,7 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
     }
 
     private long versionId_;
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
     public long getVersionId() {
       return versionId_;
     }
+
     /**
      *
      *
@@ -648,6 +660,7 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -42,6 +42,7 @@ public interface CreateNetworkPeeringRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface CreateNetworkPeeringRequestOrBuilder
    * @return The networkPeeringId.
    */
   java.lang.String getNetworkPeeringId();
+
   /**
    *
    *
@@ -120,6 +122,7 @@ public interface CreateNetworkPeeringRequestOrBuilder
    * @return Whether the networkPeering field is set.
    */
   boolean hasNetworkPeering();
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public interface CreateNetworkPeeringRequestOrBuilder
    * @return The networkPeering.
    */
   com.google.cloud.vmwareengine.v1.NetworkPeering getNetworkPeering();
+
   /**
    *
    *
@@ -172,6 +176,7 @@ public interface CreateNetworkPeeringRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

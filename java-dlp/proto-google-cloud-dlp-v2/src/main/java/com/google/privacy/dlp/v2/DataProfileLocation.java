@@ -33,6 +33,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileLocation)
     DataProfileLocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataProfileLocation.newBuilder() to construct.
   private DataProfileLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
     private LocationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
   public boolean hasOrganizationId() {
     return locationCase_ == 1;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FOLDER_ID_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
   public boolean hasFolderId() {
     return locationCase_ == 2;
   }
+
   /**
    *
    *
@@ -369,6 +375,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -600,6 +607,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
     public boolean hasOrganizationId() {
       return locationCase_ == 1;
     }
+
     /**
      *
      *
@@ -617,6 +625,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
       }
       return 0L;
     }
+
     /**
      *
      *
@@ -636,6 +645,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +680,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
     public boolean hasFolderId() {
       return locationCase_ == 2;
     }
+
     /**
      *
      *
@@ -687,6 +698,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
       }
       return 0L;
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig)
     SharingEnvironmentConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SharingEnvironmentConfig.newBuilder() to construct.
   private SharingEnvironmentConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.DefaultExchangeConfig)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.DefaultExchangeConfig)
       DefaultExchangeConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DefaultExchangeConfig.newBuilder() to construct.
     private DefaultExchangeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -288,6 +291,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -568,6 +572,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
      * @return Whether the singleSelectedResourceSharingRestriction field is set.
      */
     boolean hasSingleSelectedResourceSharingRestriction();
+
     /**
      *
      *
@@ -606,6 +611,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
      * @return Whether the singleLinkedDatasetPerCleanroom field is set.
      */
     boolean hasSingleLinkedDatasetPerCleanroom();
+
     /**
      *
      *
@@ -625,6 +631,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
      */
     boolean getSingleLinkedDatasetPerCleanroom();
   }
+
   /**
    *
    *
@@ -640,6 +647,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.DcrExchangeConfig)
       DcrExchangeConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DcrExchangeConfig.newBuilder() to construct.
     private DcrExchangeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -673,6 +681,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
     private int bitField0_;
     public static final int SINGLE_SELECTED_RESOURCE_SHARING_RESTRICTION_FIELD_NUMBER = 1;
     private boolean singleSelectedResourceSharingRestriction_ = false;
+
     /**
      *
      *
@@ -695,6 +704,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
     public boolean hasSingleSelectedResourceSharingRestriction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -720,6 +730,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
 
     public static final int SINGLE_LINKED_DATASET_PER_CLEANROOM_FIELD_NUMBER = 2;
     private boolean singleLinkedDatasetPerCleanroom_ = false;
+
     /**
      *
      *
@@ -741,6 +752,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
     public boolean hasSingleLinkedDatasetPerCleanroom() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -978,6 +990,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1203,6 +1216,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       private int bitField0_;
 
       private boolean singleSelectedResourceSharingRestriction_;
+
       /**
        *
        *
@@ -1225,6 +1239,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       public boolean hasSingleSelectedResourceSharingRestriction() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1247,6 +1262,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       public boolean getSingleSelectedResourceSharingRestriction() {
         return singleSelectedResourceSharingRestriction_;
       }
+
       /**
        *
        *
@@ -1273,6 +1289,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1299,6 +1316,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       }
 
       private boolean singleLinkedDatasetPerCleanroom_;
+
       /**
        *
        *
@@ -1320,6 +1338,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       public boolean hasSingleLinkedDatasetPerCleanroom() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1341,6 +1360,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       public boolean getSingleLinkedDatasetPerCleanroom() {
         return singleLinkedDatasetPerCleanroom_;
       }
+
       /**
        *
        *
@@ -1366,6 +1386,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1478,6 +1499,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
     private EnvironmentCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1511,6 +1533,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
   }
 
   public static final int DEFAULT_EXCHANGE_CONFIG_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1528,6 +1551,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
   public boolean hasDefaultExchangeConfig() {
     return environmentCase_ == 1;
   }
+
   /**
    *
    *
@@ -1552,6 +1576,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
     return com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.DefaultExchangeConfig
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1577,6 +1602,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
   }
 
   public static final int DCR_EXCHANGE_CONFIG_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1594,6 +1620,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
   public boolean hasDcrExchangeConfig() {
     return environmentCase_ == 2;
   }
+
   /**
    *
    *
@@ -1617,6 +1644,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
     return com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.DcrExchangeConfig
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1842,6 +1870,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2091,6 +2120,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
             com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig
                 .DefaultExchangeConfigOrBuilder>
         defaultExchangeConfigBuilder_;
+
     /**
      *
      *
@@ -2108,6 +2138,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
     public boolean hasDefaultExchangeConfig() {
       return environmentCase_ == 1;
     }
+
     /**
      *
      *
@@ -2140,6 +2171,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
             .DefaultExchangeConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2166,6 +2198,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       environmentCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2190,6 +2223,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       environmentCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2231,6 +2265,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       environmentCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2258,6 +2293,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2274,6 +2310,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
         getDefaultExchangeConfigBuilder() {
       return getDefaultExchangeConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2301,6 +2338,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
             .DefaultExchangeConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2353,6 +2391,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
             com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig
                 .DcrExchangeConfigOrBuilder>
         dcrExchangeConfigBuilder_;
+
     /**
      *
      *
@@ -2370,6 +2409,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
     public boolean hasDcrExchangeConfig() {
       return environmentCase_ == 2;
     }
+
     /**
      *
      *
@@ -2402,6 +2442,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2428,6 +2469,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       environmentCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2451,6 +2493,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       environmentCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2492,6 +2535,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       environmentCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2519,6 +2563,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2535,6 +2580,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
         getDcrExchangeConfigBuilder() {
       return getDcrExchangeConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2562,6 +2608,7 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

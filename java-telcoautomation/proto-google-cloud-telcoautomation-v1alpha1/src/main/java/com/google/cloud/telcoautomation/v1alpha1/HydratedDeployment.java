@@ -34,6 +34,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1alpha1.HydratedDeployment)
     HydratedDeploymentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HydratedDeployment.newBuilder() to construct.
   private HydratedDeployment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,6 +123,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -133,6 +135,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
      * <code>DRAFT = 1;</code>
      */
     public static final int DRAFT_VALUE = 1;
+
     /**
      *
      *
@@ -234,6 +237,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -257,6 +261,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -283,6 +288,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -300,6 +306,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -326,6 +333,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.telcoautomation.v1alpha1.File> files_;
+
   /**
    *
    *
@@ -344,6 +352,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.telcoautomation.v1alpha1.File> getFilesList() {
     return files_;
   }
+
   /**
    *
    *
@@ -363,6 +372,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       getFilesOrBuilderList() {
     return files_;
   }
+
   /**
    *
    *
@@ -381,6 +391,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
   public int getFilesCount() {
     return files_.size();
   }
+
   /**
    *
    *
@@ -399,6 +410,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.telcoautomation.v1alpha1.File getFiles(int index) {
     return files_.get(index);
   }
+
   /**
    *
    *
@@ -422,6 +434,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workloadCluster_ = "";
+
   /**
    *
    *
@@ -446,6 +459,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -664,6 +678,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -941,6 +956,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -963,6 +979,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -985,6 +1002,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1006,6 +1024,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1042,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1067,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1064,6 +1085,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1084,6 +1106,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1128,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.telcoautomation.v1alpha1.HydratedDeployment.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1129,6 +1153,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1186,6 +1211,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
         return filesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1207,6 +1233,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
         return filesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1228,6 +1255,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
         return filesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1255,6 +1283,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1280,6 +1309,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1307,6 +1337,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1365,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1391,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1384,6 +1417,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1409,6 +1443,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1433,6 +1468,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1457,6 +1493,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1474,6 +1511,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.telcoautomation.v1alpha1.File.Builder getFilesBuilder(int index) {
       return getFilesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1495,6 +1533,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
         return filesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1517,6 +1556,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(files_);
       }
     }
+
     /**
      *
      *
@@ -1535,6 +1575,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       return getFilesFieldBuilder()
           .addBuilder(com.google.cloud.telcoautomation.v1alpha1.File.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1553,6 +1594,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       return getFilesFieldBuilder()
           .addBuilder(index, com.google.cloud.telcoautomation.v1alpha1.File.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1590,6 +1632,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object workloadCluster_ = "";
+
     /**
      *
      *
@@ -1613,6 +1656,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1636,6 +1680,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1658,6 +1703,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1676,6 +1722,7 @@ public final class HydratedDeployment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

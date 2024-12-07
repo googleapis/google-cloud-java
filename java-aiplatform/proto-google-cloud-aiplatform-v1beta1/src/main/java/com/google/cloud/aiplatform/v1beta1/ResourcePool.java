@@ -34,6 +34,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ResourcePool)
     ResourcePoolOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourcePool.newBuilder() to construct.
   private ResourcePool(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,6 +89,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the minReplicaCount field is set.
      */
     boolean hasMinReplicaCount();
+
     /**
      *
      *
@@ -121,6 +123,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maxReplicaCount field is set.
      */
     boolean hasMaxReplicaCount();
+
     /**
      *
      *
@@ -135,6 +138,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      */
     long getMaxReplicaCount();
   }
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ResourcePool.AutoscalingSpec)
       AutoscalingSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AutoscalingSpec.newBuilder() to construct.
     private AutoscalingSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -180,6 +185,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int MIN_REPLICA_COUNT_FIELD_NUMBER = 1;
     private long minReplicaCount_ = 0L;
+
     /**
      *
      *
@@ -202,6 +208,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinReplicaCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -227,6 +234,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MAX_REPLICA_COUNT_FIELD_NUMBER = 2;
     private long maxReplicaCount_ = 0L;
+
     /**
      *
      *
@@ -243,6 +251,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxReplicaCount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -441,6 +450,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private long minReplicaCount_;
+
       /**
        *
        *
@@ -673,6 +684,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMinReplicaCount() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -696,6 +708,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       public long getMinReplicaCount() {
         return minReplicaCount_;
       }
+
       /**
        *
        *
@@ -723,6 +736,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -750,6 +764,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long maxReplicaCount_;
+
       /**
        *
        *
@@ -767,6 +782,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMaxReplicaCount() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -784,6 +800,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       public long getMaxReplicaCount() {
         return maxReplicaCount_;
       }
+
       /**
        *
        *
@@ -805,6 +822,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -897,6 +915,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -922,6 +941,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -950,6 +970,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MACHINE_SPEC_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.MachineSpec machineSpec_;
+
   /**
    *
    *
@@ -967,6 +988,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMachineSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -986,6 +1008,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.MachineSpec.getDefaultInstance()
         : machineSpec_;
   }
+
   /**
    *
    *
@@ -1006,6 +1029,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPLICA_COUNT_FIELD_NUMBER = 3;
   private long replicaCount_ = 0L;
+
   /**
    *
    *
@@ -1021,6 +1045,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReplicaCount() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1039,6 +1064,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISK_SPEC_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.DiskSpec diskSpec_;
+
   /**
    *
    *
@@ -1056,6 +1082,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiskSpec() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1075,6 +1102,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.DiskSpec.getDefaultInstance()
         : diskSpec_;
   }
+
   /**
    *
    *
@@ -1095,6 +1123,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USED_REPLICA_COUNT_FIELD_NUMBER = 6;
   private long usedReplicaCount_ = 0L;
+
   /**
    *
    *
@@ -1114,6 +1143,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTOSCALING_SPEC_FIELD_NUMBER = 7;
   private com.google.cloud.aiplatform.v1beta1.ResourcePool.AutoscalingSpec autoscalingSpec_;
+
   /**
    *
    *
@@ -1131,6 +1161,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAutoscalingSpec() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1150,6 +1181,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.ResourcePool.AutoscalingSpec.getDefaultInstance()
         : autoscalingSpec_;
   }
+
   /**
    *
    *
@@ -1393,6 +1425,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1674,6 +1707,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1698,6 +1732,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1722,6 +1757,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1745,6 +1781,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1764,6 +1801,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1795,6 +1833,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder>
         machineSpecBuilder_;
+
     /**
      *
      *
@@ -1811,6 +1850,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMachineSpec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1833,6 +1873,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
         return machineSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1857,6 +1898,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1879,6 +1921,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1909,6 +1952,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1930,6 +1974,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1946,6 +1991,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMachineSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1966,6 +2012,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
             : machineSpec_;
       }
     }
+
     /**
      *
      *
@@ -1995,6 +2042,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long replicaCount_;
+
     /**
      *
      *
@@ -2010,6 +2058,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReplicaCount() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2025,6 +2074,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     public long getReplicaCount() {
       return replicaCount_;
     }
+
     /**
      *
      *
@@ -2044,6 +2094,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2068,6 +2119,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.DiskSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.DiskSpecOrBuilder>
         diskSpecBuilder_;
+
     /**
      *
      *
@@ -2084,6 +2136,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDiskSpec() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2106,6 +2159,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
         return diskSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2130,6 +2184,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2152,6 +2207,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2181,6 +2237,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2202,6 +2259,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2218,6 +2276,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDiskSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2238,6 +2297,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
             : diskSpec_;
       }
     }
+
     /**
      *
      *
@@ -2267,6 +2327,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long usedReplicaCount_;
+
     /**
      *
      *
@@ -2283,6 +2344,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     public long getUsedReplicaCount() {
       return usedReplicaCount_;
     }
+
     /**
      *
      *
@@ -2303,6 +2365,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2328,6 +2391,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.ResourcePool.AutoscalingSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.ResourcePool.AutoscalingSpecOrBuilder>
         autoscalingSpecBuilder_;
+
     /**
      *
      *
@@ -2344,6 +2408,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAutoscalingSpec() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2366,6 +2431,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
         return autoscalingSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2391,6 +2457,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2413,6 +2480,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2445,6 +2513,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2466,6 +2535,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2483,6 +2553,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAutoscalingSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2504,6 +2575,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
             : autoscalingSpec_;
       }
     }
+
     /**
      *
      *

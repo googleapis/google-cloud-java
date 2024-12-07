@@ -36,6 +36,7 @@ public interface HttpRedirectActionOrBuilder
    * @return Whether the hostRedirect field is set.
    */
   boolean hasHostRedirect();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface HttpRedirectActionOrBuilder
    * @return The hostRedirect.
    */
   java.lang.String getHostRedirect();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface HttpRedirectActionOrBuilder
    * @return Whether the httpsRedirect field is set.
    */
   boolean hasHttpsRedirect();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface HttpRedirectActionOrBuilder
    * @return Whether the pathRedirect field is set.
    */
   boolean hasPathRedirect();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface HttpRedirectActionOrBuilder
    * @return The pathRedirect.
    */
   java.lang.String getPathRedirect();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface HttpRedirectActionOrBuilder
    * @return Whether the prefixRedirect field is set.
    */
   boolean hasPrefixRedirect();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface HttpRedirectActionOrBuilder
    * @return The prefixRedirect.
    */
   java.lang.String getPrefixRedirect();
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public interface HttpRedirectActionOrBuilder
    * @return Whether the redirectResponseCode field is set.
    */
   boolean hasRedirectResponseCode();
+
   /**
    *
    *
@@ -186,6 +194,7 @@ public interface HttpRedirectActionOrBuilder
    * @return The redirectResponseCode.
    */
   java.lang.String getRedirectResponseCode();
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public interface HttpRedirectActionOrBuilder
    * @return Whether the stripQuery field is set.
    */
   boolean hasStripQuery();
+
   /**
    *
    *

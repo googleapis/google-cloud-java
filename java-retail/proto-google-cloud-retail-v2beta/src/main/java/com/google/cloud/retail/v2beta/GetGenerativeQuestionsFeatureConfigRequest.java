@@ -34,6 +34,7 @@ public final class GetGenerativeQuestionsFeatureConfigRequest
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.GetGenerativeQuestionsFeatureConfigRequest)
     GetGenerativeQuestionsFeatureConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetGenerativeQuestionsFeatureConfigRequest.newBuilder() to construct.
   private GetGenerativeQuestionsFeatureConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class GetGenerativeQuestionsFeatureConfigRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object catalog_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class GetGenerativeQuestionsFeatureConfigRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -285,6 +288,7 @@ public final class GetGenerativeQuestionsFeatureConfigRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -480,6 +484,7 @@ public final class GetGenerativeQuestionsFeatureConfigRequest
     private int bitField0_;
 
     private java.lang.Object catalog_ = "";
+
     /**
      *
      *
@@ -505,6 +510,7 @@ public final class GetGenerativeQuestionsFeatureConfigRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -530,6 +536,7 @@ public final class GetGenerativeQuestionsFeatureConfigRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -554,6 +561,7 @@ public final class GetGenerativeQuestionsFeatureConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -574,6 +582,7 @@ public final class GetGenerativeQuestionsFeatureConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

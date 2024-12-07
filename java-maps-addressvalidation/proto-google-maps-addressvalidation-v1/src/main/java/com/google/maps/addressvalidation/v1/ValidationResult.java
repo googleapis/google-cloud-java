@@ -33,6 +33,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.maps.addressvalidation.v1.ValidationResult)
     ValidationResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ValidationResult.newBuilder() to construct.
   private ValidationResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int VERDICT_FIELD_NUMBER = 1;
   private com.google.maps.addressvalidation.v1.Verdict verdict_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
   public boolean hasVerdict() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         ? com.google.maps.addressvalidation.v1.Verdict.getDefaultInstance()
         : verdict_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
 
   public static final int ADDRESS_FIELD_NUMBER = 2;
   private com.google.maps.addressvalidation.v1.Address address_;
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
   public boolean hasAddress() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         ? com.google.maps.addressvalidation.v1.Address.getDefaultInstance()
         : address_;
   }
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
 
   public static final int GEOCODE_FIELD_NUMBER = 3;
   private com.google.maps.addressvalidation.v1.Geocode geocode_;
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
   public boolean hasGeocode() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         ? com.google.maps.addressvalidation.v1.Geocode.getDefaultInstance()
         : geocode_;
   }
+
   /**
    *
    *
@@ -214,6 +224,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
 
   public static final int METADATA_FIELD_NUMBER = 4;
   private com.google.maps.addressvalidation.v1.AddressMetadata metadata_;
+
   /**
    *
    *
@@ -230,6 +241,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -248,6 +260,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         ? com.google.maps.addressvalidation.v1.AddressMetadata.getDefaultInstance()
         : metadata_;
   }
+
   /**
    *
    *
@@ -267,6 +280,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
 
   public static final int USPS_DATA_FIELD_NUMBER = 5;
   private com.google.maps.addressvalidation.v1.UspsData uspsData_;
+
   /**
    *
    *
@@ -283,6 +297,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
   public boolean hasUspsData() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -301,6 +316,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         ? com.google.maps.addressvalidation.v1.UspsData.getDefaultInstance()
         : uspsData_;
   }
+
   /**
    *
    *
@@ -539,6 +555,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -818,6 +835,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
             com.google.maps.addressvalidation.v1.Verdict.Builder,
             com.google.maps.addressvalidation.v1.VerdictOrBuilder>
         verdictBuilder_;
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     public boolean hasVerdict() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -852,6 +871,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         return verdictBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -874,6 +894,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +915,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +943,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +963,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +978,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getVerdictFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -972,6 +997,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
             : verdict_;
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1030,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
             com.google.maps.addressvalidation.v1.Address.Builder,
             com.google.maps.addressvalidation.v1.AddressOrBuilder>
         addressBuilder_;
+
     /**
      *
      *
@@ -1018,6 +1045,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     public boolean hasAddress() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1038,6 +1066,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         return addressBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1060,6 +1089,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1110,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1138,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1158,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1173,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getAddressFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1158,6 +1192,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
             : address_;
       }
     }
+
     /**
      *
      *
@@ -1190,6 +1225,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
             com.google.maps.addressvalidation.v1.Geocode.Builder,
             com.google.maps.addressvalidation.v1.GeocodeOrBuilder>
         geocodeBuilder_;
+
     /**
      *
      *
@@ -1204,6 +1240,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     public boolean hasGeocode() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1224,6 +1261,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         return geocodeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1246,6 +1284,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1305,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1333,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1353,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1326,6 +1368,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getGeocodeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1344,6 +1387,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
             : geocode_;
       }
     }
+
     /**
      *
      *
@@ -1376,6 +1420,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
             com.google.maps.addressvalidation.v1.AddressMetadata.Builder,
             com.google.maps.addressvalidation.v1.AddressMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -1391,6 +1436,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1412,6 +1458,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         return metadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1435,6 +1482,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1456,6 +1504,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1485,6 +1534,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1505,6 +1555,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1520,6 +1571,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1539,6 +1591,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
             : metadata_;
       }
     }
+
     /**
      *
      *
@@ -1572,6 +1625,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
             com.google.maps.addressvalidation.v1.UspsData.Builder,
             com.google.maps.addressvalidation.v1.UspsDataOrBuilder>
         uspsDataBuilder_;
+
     /**
      *
      *
@@ -1587,6 +1641,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     public boolean hasUspsData() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1608,6 +1663,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         return uspsDataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1631,6 +1687,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1709,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1680,6 +1738,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1700,6 +1759,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1715,6 +1775,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getUspsDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1734,6 +1795,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
             : uspsData_;
       }
     }
+
     /**
      *
      *

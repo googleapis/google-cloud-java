@@ -43,6 +43,7 @@ public interface ListEntitlementChangesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -97,6 +98,7 @@ public interface ListEntitlementChangesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -128,6 +130,7 @@ public interface ListEntitlementChangesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.ReviewDocumentResponse)
     ReviewDocumentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReviewDocumentResponse.newBuilder() to construct.
   private ReviewDocumentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
      * <code>REJECTED = 1;</code>
      */
     public static final int REJECTED_VALUE = 1;
+
     /**
      *
      *
@@ -230,6 +233,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcsDestination_ = "";
+
   /**
    *
    *
@@ -254,6 +258,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -281,6 +286,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -296,6 +302,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -320,6 +327,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rejectionReason_ = "";
+
   /**
    *
    *
@@ -343,6 +351,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -549,6 +558,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -763,6 +773,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object gcsDestination_ = "";
+
     /**
      *
      *
@@ -786,6 +797,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -809,6 +821,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -831,6 +844,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +863,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +889,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -889,6 +905,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -907,6 +924,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +944,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
           ? com.google.cloud.documentai.v1.ReviewDocumentResponse.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -947,6 +966,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +986,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object rejectionReason_ = "";
+
     /**
      *
      *
@@ -988,6 +1009,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1010,6 +1032,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1054,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1072,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

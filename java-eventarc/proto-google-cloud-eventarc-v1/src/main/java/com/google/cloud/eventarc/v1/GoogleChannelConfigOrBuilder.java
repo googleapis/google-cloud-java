@@ -37,6 +37,7 @@ public interface GoogleChannelConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface GoogleChannelConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface GoogleChannelConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface GoogleChannelConfigOrBuilder
    * @return The cryptoKeyName.
    */
   java.lang.String getCryptoKeyName();
+
   /**
    *
    *

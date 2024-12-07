@@ -36,6 +36,7 @@ public interface SetBackupTargetPoolRequestOrBuilder
    * @return Whether the failoverRatio field is set.
    */
   boolean hasFailoverRatio();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SetBackupTargetPoolRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface SetBackupTargetPoolRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface SetBackupTargetPoolRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface SetBackupTargetPoolRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface SetBackupTargetPoolRequestOrBuilder
    * @return The targetPool.
    */
   java.lang.String getTargetPool();
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public interface SetBackupTargetPoolRequestOrBuilder
    * @return Whether the targetReferenceResource field is set.
    */
   boolean hasTargetReferenceResource();
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public interface SetBackupTargetPoolRequestOrBuilder
    * @return The targetReferenceResource.
    */
   com.google.cloud.compute.v1.TargetReference getTargetReferenceResource();
+
   /**
    *
    *

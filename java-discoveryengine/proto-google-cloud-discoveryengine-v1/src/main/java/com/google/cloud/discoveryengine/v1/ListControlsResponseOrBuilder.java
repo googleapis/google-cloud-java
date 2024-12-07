@@ -34,6 +34,7 @@ public interface ListControlsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.Control controls = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1.Control> getControlsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListControlsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.Control controls = 1;</code>
    */
   com.google.cloud.discoveryengine.v1.Control getControls(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListControlsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.Control controls = 1;</code>
    */
   int getControlsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListControlsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1.ControlOrBuilder>
       getControlsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListControlsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

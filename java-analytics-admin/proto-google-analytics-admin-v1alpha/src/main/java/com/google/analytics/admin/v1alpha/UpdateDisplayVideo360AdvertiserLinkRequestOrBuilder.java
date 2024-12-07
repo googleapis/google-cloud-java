@@ -38,6 +38,7 @@ public interface UpdateDisplayVideo360AdvertiserLinkRequestOrBuilder
    * @return Whether the displayVideo360AdvertiserLink field is set.
    */
   boolean hasDisplayVideo360AdvertiserLink();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface UpdateDisplayVideo360AdvertiserLinkRequestOrBuilder
    */
   com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
       getDisplayVideo360AdvertiserLink();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface UpdateDisplayVideo360AdvertiserLinkRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface UpdateDisplayVideo360AdvertiserLinkRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

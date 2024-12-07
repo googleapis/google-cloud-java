@@ -38,6 +38,7 @@ public interface LookupStreamObjectRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface LookupStreamObjectRequestOrBuilder
    * @return Whether the sourceObjectIdentifier field is set.
    */
   boolean hasSourceObjectIdentifier();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface LookupStreamObjectRequestOrBuilder
    * @return The sourceObjectIdentifier.
    */
   com.google.cloud.datastream.v1.SourceObjectIdentifier getSourceObjectIdentifier();
+
   /**
    *
    *

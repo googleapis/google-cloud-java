@@ -36,6 +36,7 @@ public interface SetCommonInstanceMetadataOperationMetadataPerLocationOperationI
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SetCommonInstanceMetadataOperationMetadataPerLocationOperationI
    * @return The error.
    */
   com.google.cloud.compute.v1.Status getError();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface SetCommonInstanceMetadataOperationMetadataPerLocationOperationI
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface SetCommonInstanceMetadataOperationMetadataPerLocationOperationI
    * @return The state.
    */
   java.lang.String getState();
+
   /**
    *
    *

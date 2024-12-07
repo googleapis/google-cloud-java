@@ -38,6 +38,7 @@ public interface UpdateResourceValueConfigRequestOrBuilder
    * @return Whether the resourceValueConfig field is set.
    */
   boolean hasResourceValueConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateResourceValueConfigRequestOrBuilder
    * @return The resourceValueConfig.
    */
   com.google.cloud.securitycenter.v2.ResourceValueConfig getResourceValueConfig();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface UpdateResourceValueConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpdateResourceValueConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

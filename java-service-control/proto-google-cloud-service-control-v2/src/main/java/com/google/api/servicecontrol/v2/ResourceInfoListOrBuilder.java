@@ -34,6 +34,7 @@ public interface ResourceInfoListOrBuilder
    * <code>repeated .google.api.servicecontrol.v2.ResourceInfo resources = 1;</code>
    */
   java.util.List<com.google.api.servicecontrol.v2.ResourceInfo> getResourcesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ResourceInfoListOrBuilder
    * <code>repeated .google.api.servicecontrol.v2.ResourceInfo resources = 1;</code>
    */
   com.google.api.servicecontrol.v2.ResourceInfo getResources(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ResourceInfoListOrBuilder
    * <code>repeated .google.api.servicecontrol.v2.ResourceInfo resources = 1;</code>
    */
   int getResourcesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ResourceInfoListOrBuilder
    */
   java.util.List<? extends com.google.api.servicecontrol.v2.ResourceInfoOrBuilder>
       getResourcesOrBuilderList();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface FeatureValueListOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureValue values = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureValue> getValuesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface FeatureValueListOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureValue values = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.FeatureValue getValues(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface FeatureValueListOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureValue values = 1;</code>
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface FeatureValueListOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.FeatureValueOrBuilder>
       getValuesOrBuilderList();
+
   /**
    *
    *

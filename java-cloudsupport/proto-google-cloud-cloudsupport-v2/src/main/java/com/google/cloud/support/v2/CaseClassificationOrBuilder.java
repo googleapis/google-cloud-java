@@ -39,6 +39,7 @@ public interface CaseClassificationOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CaseClassificationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

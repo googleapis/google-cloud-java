@@ -36,6 +36,7 @@ public interface RuntimeAccessConfigOrBuilder
    * @return The enum numeric value on the wire for accessType.
    */
   int getAccessTypeValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface RuntimeAccessConfigOrBuilder
    * @return The runtimeOwner.
    */
   java.lang.String getRuntimeOwner();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface RuntimeAccessConfigOrBuilder
    * @return The proxyUri.
    */
   java.lang.String getProxyUri();
+
   /**
    *
    *

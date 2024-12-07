@@ -36,6 +36,7 @@ public interface SensitivityScoreOrBuilder
    * @return The enum numeric value on the wire for score.
    */
   int getScoreValue();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface StoredInfoTypeStatsOrBuilder
    * @return Whether the largeCustomDictionary field is set.
    */
   boolean hasLargeCustomDictionary();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface StoredInfoTypeStatsOrBuilder
    * @return The largeCustomDictionary.
    */
   com.google.privacy.dlp.v2.LargeCustomDictionaryStats getLargeCustomDictionary();
+
   /**
    *
    *

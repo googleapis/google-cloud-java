@@ -35,6 +35,7 @@ public interface ListCustomConstraintsResponseOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
    */
   java.util.List<com.google.cloud.orgpolicy.v2.CustomConstraint> getCustomConstraintsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListCustomConstraintsResponseOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
    */
   com.google.cloud.orgpolicy.v2.CustomConstraint getCustomConstraints(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListCustomConstraintsResponseOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
    */
   int getCustomConstraintsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListCustomConstraintsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.orgpolicy.v2.CustomConstraintOrBuilder>
       getCustomConstraintsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListCustomConstraintsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

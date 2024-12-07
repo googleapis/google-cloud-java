@@ -36,6 +36,7 @@ public interface SetMachineTypeInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SetMachineTypeInstanceRequestOrBuilder
    * @return Whether the instancesSetMachineTypeRequestResource field is set.
    */
   boolean hasInstancesSetMachineTypeRequestResource();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface SetMachineTypeInstanceRequestOrBuilder
    */
   com.google.cloud.compute.v1.InstancesSetMachineTypeRequest
       getInstancesSetMachineTypeRequestResource();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface SetMachineTypeInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface SetMachineTypeInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface SetMachineTypeInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface SetMachineTypeInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

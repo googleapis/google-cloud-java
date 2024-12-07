@@ -33,6 +33,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.CreateAttestorRequest)
     CreateAttestorRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateAttestorRequest.newBuilder() to construct.
   private CreateAttestorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attestorId_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
 
   public static final int ATTESTOR_FIELD_NUMBER = 3;
   private com.google.cloud.binaryauthorization.v1beta1.Attestor attestor_;
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
   public boolean hasAttestor() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.binaryauthorization.v1beta1.Attestor.getDefaultInstance()
         : attestor_;
   }
+
   /**
    *
    *
@@ -417,6 +425,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -652,6 +661,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -676,6 +686,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -700,6 +711,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -723,6 +735,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +755,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +782,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object attestorId_ = "";
+
     /**
      *
      *
@@ -790,6 +805,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -812,6 +828,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +868,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +898,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.binaryauthorization.v1beta1.Attestor.Builder,
             com.google.cloud.binaryauthorization.v1beta1.AttestorOrBuilder>
         attestorBuilder_;
+
     /**
      *
      *
@@ -897,6 +917,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
     public boolean hasAttestor() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
         return attestorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -947,6 +969,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -971,6 +994,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1003,6 +1027,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1051,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1070,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getAttestorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1066,6 +1093,7 @@ public final class CreateAttestorRequest extends com.google.protobuf.GeneratedMe
             : attestor_;
       }
     }
+
     /**
      *
      *

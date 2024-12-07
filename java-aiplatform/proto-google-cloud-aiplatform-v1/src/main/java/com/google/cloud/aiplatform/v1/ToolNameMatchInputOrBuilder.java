@@ -38,6 +38,7 @@ public interface ToolNameMatchInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ToolNameMatchInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1.ToolNameMatchSpec getMetricSpec();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ToolNameMatchInputOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.ToolNameMatchInstance> getInstancesList();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ToolNameMatchInputOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.ToolNameMatchInstance getInstances(int index);
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ToolNameMatchInputOrBuilder
    * </code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface ToolNameMatchInputOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ToolNameMatchInstanceOrBuilder>
       getInstancesOrBuilderList();
+
   /**
    *
    *

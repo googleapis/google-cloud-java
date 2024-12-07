@@ -34,6 +34,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.NetworkingConfig)
     NetworkingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkingConfig.newBuilder() to construct.
   private NetworkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -124,6 +125,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
      * <code>CONNECTION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int CONNECTION_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -135,6 +137,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
      * <code>VPC_PEERING = 1;</code>
      */
     public static final int VPC_PEERING_VALUE = 1;
+
     /**
      *
      *
@@ -234,6 +237,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int CONNECTION_TYPE_FIELD_NUMBER = 1;
   private int connectionType_ = 0;
+
   /**
    *
    *
@@ -253,6 +257,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
   public int getConnectionTypeValue() {
     return connectionType_;
   }
+
   /**
    *
    *
@@ -447,6 +452,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -637,6 +643,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int connectionType_ = 0;
+
     /**
      *
      *
@@ -656,6 +663,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
     public int getConnectionTypeValue() {
       return connectionType_;
     }
+
     /**
      *
      *
@@ -678,6 +686,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -704,6 +713,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -730,6 +740,7 @@ public final class NetworkingConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

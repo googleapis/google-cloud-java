@@ -39,6 +39,7 @@ public interface FaceFrameOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1beta2.NormalizedBoundingBox>
       getNormalizedBoundingBoxesList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface FaceFrameOrBuilder
    */
   com.google.cloud.videointelligence.v1beta2.NormalizedBoundingBox getNormalizedBoundingBoxes(
       int index);
+
   /**
    *
    *
@@ -68,6 +70,7 @@ public interface FaceFrameOrBuilder
    * </code>
    */
   int getNormalizedBoundingBoxesCount();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface FaceFrameOrBuilder
   java.util.List<
           ? extends com.google.cloud.videointelligence.v1beta2.NormalizedBoundingBoxOrBuilder>
       getNormalizedBoundingBoxesOrBuilderList();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface FaceFrameOrBuilder
    * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface FaceFrameOrBuilder
    * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
+
   /**
    *
    *

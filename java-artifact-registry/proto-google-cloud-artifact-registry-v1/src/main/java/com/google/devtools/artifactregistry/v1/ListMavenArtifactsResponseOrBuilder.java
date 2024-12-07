@@ -34,6 +34,7 @@ public interface ListMavenArtifactsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.MavenArtifact maven_artifacts = 1;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1.MavenArtifact> getMavenArtifactsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListMavenArtifactsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.MavenArtifact maven_artifacts = 1;</code>
    */
   com.google.devtools.artifactregistry.v1.MavenArtifact getMavenArtifacts(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListMavenArtifactsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.MavenArtifact maven_artifacts = 1;</code>
    */
   int getMavenArtifactsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListMavenArtifactsResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1.MavenArtifactOrBuilder>
       getMavenArtifactsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListMavenArtifactsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

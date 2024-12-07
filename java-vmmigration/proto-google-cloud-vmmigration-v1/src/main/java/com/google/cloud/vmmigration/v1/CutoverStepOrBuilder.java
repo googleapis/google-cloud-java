@@ -36,6 +36,7 @@ public interface CutoverStepOrBuilder
    * @return Whether the previousReplicationCycle field is set.
    */
   boolean hasPreviousReplicationCycle();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CutoverStepOrBuilder
    * @return The previousReplicationCycle.
    */
   com.google.cloud.vmmigration.v1.ReplicationCycle getPreviousReplicationCycle();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface CutoverStepOrBuilder
    * @return Whether the shuttingDownSourceVm field is set.
    */
   boolean hasShuttingDownSourceVm();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface CutoverStepOrBuilder
    * @return The shuttingDownSourceVm.
    */
   com.google.cloud.vmmigration.v1.ShuttingDownSourceVMStep getShuttingDownSourceVm();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface CutoverStepOrBuilder
    * @return Whether the finalSync field is set.
    */
   boolean hasFinalSync();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface CutoverStepOrBuilder
    * @return The finalSync.
    */
   com.google.cloud.vmmigration.v1.ReplicationCycle getFinalSync();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface CutoverStepOrBuilder
    * @return Whether the preparingVmDisks field is set.
    */
   boolean hasPreparingVmDisks();
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public interface CutoverStepOrBuilder
    * @return The preparingVmDisks.
    */
   com.google.cloud.vmmigration.v1.PreparingVMDisksStep getPreparingVmDisks();
+
   /**
    *
    *
@@ -178,6 +186,7 @@ public interface CutoverStepOrBuilder
    * @return Whether the instantiatingMigratedVm field is set.
    */
   boolean hasInstantiatingMigratedVm();
+
   /**
    *
    *
@@ -191,6 +200,7 @@ public interface CutoverStepOrBuilder
    * @return The instantiatingMigratedVm.
    */
   com.google.cloud.vmmigration.v1.InstantiatingMigratedVMStep getInstantiatingMigratedVm();
+
   /**
    *
    *
@@ -216,6 +226,7 @@ public interface CutoverStepOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -228,6 +239,7 @@ public interface CutoverStepOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -251,6 +263,7 @@ public interface CutoverStepOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -263,6 +276,7 @@ public interface CutoverStepOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

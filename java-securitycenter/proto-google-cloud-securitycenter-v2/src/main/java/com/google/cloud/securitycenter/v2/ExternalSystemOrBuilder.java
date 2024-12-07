@@ -47,6 +47,7 @@ public interface ExternalSystemOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface ExternalSystemOrBuilder
    * @return A list containing the assignees.
    */
   java.util.List<java.lang.String> getAssigneesList();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface ExternalSystemOrBuilder
    * @return The count of assignees.
    */
   int getAssigneesCount();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface ExternalSystemOrBuilder
    * @return The assignees at the given index.
    */
   java.lang.String getAssignees(int index);
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface ExternalSystemOrBuilder
    * @return The externalUid.
    */
   java.lang.String getExternalUid();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface ExternalSystemOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public interface ExternalSystemOrBuilder
    * @return Whether the externalSystemUpdateTime field is set.
    */
   boolean hasExternalSystemUpdateTime();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface ExternalSystemOrBuilder
    * @return The externalSystemUpdateTime.
    */
   com.google.protobuf.Timestamp getExternalSystemUpdateTime();
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public interface ExternalSystemOrBuilder
    * @return The caseUri.
    */
   java.lang.String getCaseUri();
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public interface ExternalSystemOrBuilder
    * @return The casePriority.
    */
   java.lang.String getCasePriority();
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public interface ExternalSystemOrBuilder
    * @return Whether the caseSla field is set.
    */
   boolean hasCaseSla();
+
   /**
    *
    *
@@ -288,6 +299,7 @@ public interface ExternalSystemOrBuilder
    * @return The caseSla.
    */
   com.google.protobuf.Timestamp getCaseSla();
+
   /**
    *
    *
@@ -311,6 +323,7 @@ public interface ExternalSystemOrBuilder
    * @return Whether the caseCreateTime field is set.
    */
   boolean hasCaseCreateTime();
+
   /**
    *
    *
@@ -323,6 +336,7 @@ public interface ExternalSystemOrBuilder
    * @return The caseCreateTime.
    */
   com.google.protobuf.Timestamp getCaseCreateTime();
+
   /**
    *
    *
@@ -346,6 +360,7 @@ public interface ExternalSystemOrBuilder
    * @return Whether the caseCloseTime field is set.
    */
   boolean hasCaseCloseTime();
+
   /**
    *
    *
@@ -358,6 +373,7 @@ public interface ExternalSystemOrBuilder
    * @return The caseCloseTime.
    */
   com.google.protobuf.Timestamp getCaseCloseTime();
+
   /**
    *
    *
@@ -382,6 +398,7 @@ public interface ExternalSystemOrBuilder
    * @return Whether the ticketInfo field is set.
    */
   boolean hasTicketInfo();
+
   /**
    *
    *
@@ -395,6 +412,7 @@ public interface ExternalSystemOrBuilder
    * @return The ticketInfo.
    */
   com.google.cloud.securitycenter.v2.ExternalSystem.TicketInfo getTicketInfo();
+
   /**
    *
    *

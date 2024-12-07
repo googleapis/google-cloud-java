@@ -37,6 +37,7 @@ public interface FilesetSpecOrBuilder
    * @return Whether the dataplexFileset field is set.
    */
   boolean hasDataplexFileset();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface FilesetSpecOrBuilder
    * @return The dataplexFileset.
    */
   com.google.cloud.datacatalog.v1.DataplexFilesetSpec getDataplexFileset();
+
   /**
    *
    *

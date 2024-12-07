@@ -36,6 +36,7 @@ public final class UpdateDocumentProcessingConfigRequest
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest)
     UpdateDocumentProcessingConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateDocumentProcessingConfigRequest.newBuilder() to construct.
   private UpdateDocumentProcessingConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class UpdateDocumentProcessingConfigRequest
   public static final int DOCUMENT_PROCESSING_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig
       documentProcessingConfig_;
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class UpdateDocumentProcessingConfigRequest
   public boolean hasDocumentProcessingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class UpdateDocumentProcessingConfigRequest
         ? com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.getDefaultInstance()
         : documentProcessingConfig_;
   }
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public final class UpdateDocumentProcessingConfigRequest
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class UpdateDocumentProcessingConfigRequest
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class UpdateDocumentProcessingConfigRequest
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -409,6 +416,7 @@ public final class UpdateDocumentProcessingConfigRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -651,6 +659,7 @@ public final class UpdateDocumentProcessingConfigRequest
             com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.Builder,
             com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfigOrBuilder>
         documentProcessingConfigBuilder_;
+
     /**
      *
      *
@@ -677,6 +686,7 @@ public final class UpdateDocumentProcessingConfigRequest
     public boolean hasDocumentProcessingConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -710,6 +720,7 @@ public final class UpdateDocumentProcessingConfigRequest
         return documentProcessingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -745,6 +756,7 @@ public final class UpdateDocumentProcessingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +789,7 @@ public final class UpdateDocumentProcessingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +832,7 @@ public final class UpdateDocumentProcessingConfigRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +864,7 @@ public final class UpdateDocumentProcessingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +892,7 @@ public final class UpdateDocumentProcessingConfigRequest
       onChanged();
       return getDocumentProcessingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -908,6 +924,7 @@ public final class UpdateDocumentProcessingConfigRequest
             : documentProcessingConfig_;
       }
     }
+
     /**
      *
      *
@@ -952,6 +969,7 @@ public final class UpdateDocumentProcessingConfigRequest
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -972,6 +990,7 @@ public final class UpdateDocumentProcessingConfigRequest
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -998,6 +1017,7 @@ public final class UpdateDocumentProcessingConfigRequest
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1046,7 @@ public final class UpdateDocumentProcessingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1072,7 @@ public final class UpdateDocumentProcessingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1106,7 @@ public final class UpdateDocumentProcessingConfigRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1132,7 @@ public final class UpdateDocumentProcessingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1153,7 @@ public final class UpdateDocumentProcessingConfigRequest
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1153,6 +1178,7 @@ public final class UpdateDocumentProcessingConfigRequest
             : updateMask_;
       }
     }
+
     /**
      *
      *

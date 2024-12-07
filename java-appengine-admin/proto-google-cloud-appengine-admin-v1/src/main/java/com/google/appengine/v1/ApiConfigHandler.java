@@ -34,6 +34,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.appengine.v1.ApiConfigHandler)
     ApiConfigHandlerOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ApiConfigHandler.newBuilder() to construct.
   private ApiConfigHandler(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
 
   public static final int AUTH_FAIL_ACTION_FIELD_NUMBER = 1;
   private int authFailAction_ = 0;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
   public int getAuthFailActionValue() {
     return authFailAction_;
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
 
   public static final int LOGIN_FIELD_NUMBER = 2;
   private int login_ = 0;
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
   public int getLoginValue() {
     return login_;
   }
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object script_ = "";
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
 
   public static final int SECURITY_LEVEL_FIELD_NUMBER = 4;
   private int securityLevel_ = 0;
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
   public int getSecurityLevelValue() {
     return securityLevel_;
   }
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object url_ = "";
+
   /**
    *
    *
@@ -255,6 +265,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -475,6 +486,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -713,6 +725,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int authFailAction_ = 0;
+
     /**
      *
      *
@@ -729,6 +742,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     public int getAuthFailActionValue() {
       return authFailAction_;
     }
+
     /**
      *
      *
@@ -748,6 +762,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +781,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
           com.google.appengine.v1.AuthFailAction.forNumber(authFailAction_);
       return result == null ? com.google.appengine.v1.AuthFailAction.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -788,6 +804,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +825,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     }
 
     private int login_ = 0;
+
     /**
      *
      *
@@ -824,6 +842,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     public int getLoginValue() {
       return login_;
     }
+
     /**
      *
      *
@@ -843,6 +862,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +881,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
           com.google.appengine.v1.LoginRequirement.forNumber(login_);
       return result == null ? com.google.appengine.v1.LoginRequirement.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -883,6 +904,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +925,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object script_ = "";
+
     /**
      *
      *
@@ -925,6 +948,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -947,6 +971,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -968,6 +993,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1011,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1009,6 +1036,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     }
 
     private int securityLevel_ = 0;
+
     /**
      *
      *
@@ -1024,6 +1052,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     public int getSecurityLevelValue() {
       return securityLevel_;
     }
+
     /**
      *
      *
@@ -1042,6 +1071,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1089,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
           com.google.appengine.v1.SecurityLevel.forNumber(securityLevel_);
       return result == null ? com.google.appengine.v1.SecurityLevel.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1080,6 +1111,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1131,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object url_ = "";
+
     /**
      *
      *
@@ -1121,6 +1154,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1143,6 +1177,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1164,6 +1199,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1217,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface DataScanEventOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DataScanEventOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface DataScanEventOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface DataScanEventOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface DataScanEventOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface DataScanEventOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface DataScanEventOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface DataScanEventOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface DataScanEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public interface DataScanEventOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -241,6 +251,7 @@ public interface DataScanEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -266,6 +277,7 @@ public interface DataScanEventOrBuilder
    * @return The specVersion.
    */
   java.lang.String getSpecVersion();
+
   /**
    *
    *
@@ -291,6 +303,7 @@ public interface DataScanEventOrBuilder
    * @return The enum numeric value on the wire for trigger.
    */
   int getTriggerValue();
+
   /**
    *
    *
@@ -316,6 +329,7 @@ public interface DataScanEventOrBuilder
    * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
+
   /**
    *
    *
@@ -341,6 +355,7 @@ public interface DataScanEventOrBuilder
    * @return Whether the dataProfile field is set.
    */
   boolean hasDataProfile();
+
   /**
    *
    *
@@ -353,6 +368,7 @@ public interface DataScanEventOrBuilder
    * @return The dataProfile.
    */
   com.google.cloud.dataplex.v1.DataScanEvent.DataProfileResult getDataProfile();
+
   /**
    *
    *
@@ -376,6 +392,7 @@ public interface DataScanEventOrBuilder
    * @return Whether the dataQuality field is set.
    */
   boolean hasDataQuality();
+
   /**
    *
    *
@@ -388,6 +405,7 @@ public interface DataScanEventOrBuilder
    * @return The dataQuality.
    */
   com.google.cloud.dataplex.v1.DataScanEvent.DataQualityResult getDataQuality();
+
   /**
    *
    *
@@ -413,6 +431,7 @@ public interface DataScanEventOrBuilder
    * @return Whether the dataProfileConfigs field is set.
    */
   boolean hasDataProfileConfigs();
+
   /**
    *
    *
@@ -427,6 +446,7 @@ public interface DataScanEventOrBuilder
    * @return The dataProfileConfigs.
    */
   com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs getDataProfileConfigs();
+
   /**
    *
    *
@@ -455,6 +475,7 @@ public interface DataScanEventOrBuilder
    * @return Whether the dataQualityConfigs field is set.
    */
   boolean hasDataQualityConfigs();
+
   /**
    *
    *
@@ -469,6 +490,7 @@ public interface DataScanEventOrBuilder
    * @return The dataQualityConfigs.
    */
   com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs getDataQualityConfigs();
+
   /**
    *
    *
@@ -497,6 +519,7 @@ public interface DataScanEventOrBuilder
    * @return Whether the postScanActionsResult field is set.
    */
   boolean hasPostScanActionsResult();
+
   /**
    *
    *
@@ -511,6 +534,7 @@ public interface DataScanEventOrBuilder
    * @return The postScanActionsResult.
    */
   com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult getPostScanActionsResult();
+
   /**
    *
    *

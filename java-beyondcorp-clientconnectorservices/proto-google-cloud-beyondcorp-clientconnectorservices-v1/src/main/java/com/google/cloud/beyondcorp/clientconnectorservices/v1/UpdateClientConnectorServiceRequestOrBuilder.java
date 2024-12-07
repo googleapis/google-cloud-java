@@ -44,6 +44,7 @@ public interface UpdateClientConnectorServiceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface UpdateClientConnectorServiceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface UpdateClientConnectorServiceRequestOrBuilder
    * @return Whether the clientConnectorService field is set.
    */
   boolean hasClientConnectorService();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface UpdateClientConnectorServiceRequestOrBuilder
    */
   com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
       getClientConnectorService();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface UpdateClientConnectorServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

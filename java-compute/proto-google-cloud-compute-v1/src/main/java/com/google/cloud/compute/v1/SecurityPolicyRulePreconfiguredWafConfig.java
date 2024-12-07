@@ -33,6 +33,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig)
     SecurityPolicyRulePreconfiguredWafConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyRulePreconfiguredWafConfig.newBuilder() to construct.
   private SecurityPolicyRulePreconfiguredWafConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
   private java.util.List<
           com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusion>
       exclusions_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
       getExclusionsList() {
     return exclusions_;
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
       getExclusionsOrBuilderList() {
     return exclusions_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
   public int getExclusionsCount() {
     return exclusions_.size();
   }
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
       getExclusions(int index) {
     return exclusions_.get(index);
   }
+
   /**
    *
    *
@@ -318,6 +324,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -595,6 +602,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
         return exclusionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -613,6 +621,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
         return exclusionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -632,6 +641,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
         return exclusionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +693,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +770,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +795,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +821,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +843,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +865,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +881,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
         getExclusionsBuilder(int index) {
       return getExclusionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -881,6 +901,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
         return exclusionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -903,6 +924,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
         return java.util.Collections.unmodifiableList(exclusions_);
       }
     }
+
     /**
      *
      *
@@ -921,6 +943,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
               com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusion
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -940,6 +963,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfig
               com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusion
                   .getDefaultInstance());
     }
+
     /**
      *
      *

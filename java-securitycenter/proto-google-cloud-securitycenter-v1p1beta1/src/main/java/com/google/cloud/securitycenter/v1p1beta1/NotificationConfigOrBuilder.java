@@ -39,6 +39,7 @@ public interface NotificationConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface NotificationConfigOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface NotificationConfigOrBuilder
    * @return The enum numeric value on the wire for eventType.
    */
   int getEventTypeValue();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface NotificationConfigOrBuilder
    * @return The pubsubTopic.
    */
   java.lang.String getPubsubTopic();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface NotificationConfigOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public interface NotificationConfigOrBuilder
    * @return Whether the streamingConfig field is set.
    */
   boolean hasStreamingConfig();
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public interface NotificationConfigOrBuilder
    * @return The streamingConfig.
    */
   com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.StreamingConfig getStreamingConfig();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface SimulateMaintenanceEventNodeGroupRequestOrBuilder
    * @return The nodeGroup.
    */
   java.lang.String getNodeGroup();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SimulateMaintenanceEventNodeGroupRequestOrBuilder
    * @return Whether the nodeGroupsSimulateMaintenanceEventRequestResource field is set.
    */
   boolean hasNodeGroupsSimulateMaintenanceEventRequestResource();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface SimulateMaintenanceEventNodeGroupRequestOrBuilder
    */
   com.google.cloud.compute.v1.NodeGroupsSimulateMaintenanceEventRequest
       getNodeGroupsSimulateMaintenanceEventRequestResource();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface SimulateMaintenanceEventNodeGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface SimulateMaintenanceEventNodeGroupRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface SimulateMaintenanceEventNodeGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface SimulateMaintenanceEventNodeGroupRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

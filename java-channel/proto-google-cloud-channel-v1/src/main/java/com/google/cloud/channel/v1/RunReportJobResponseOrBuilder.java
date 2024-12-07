@@ -39,6 +39,7 @@ public interface RunReportJobResponseOrBuilder
    * @return Whether the reportJob field is set.
    */
   boolean hasReportJob();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface RunReportJobResponseOrBuilder
    * @return The reportJob.
    */
   com.google.cloud.channel.v1.ReportJob getReportJob();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface RunReportJobResponseOrBuilder
    * @return Whether the reportMetadata field is set.
    */
   boolean hasReportMetadata();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface RunReportJobResponseOrBuilder
    * @return The reportMetadata.
    */
   com.google.cloud.channel.v1.ReportResultsMetadata getReportMetadata();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.ListDeviceRegistriesResponse)
     ListDeviceRegistriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDeviceRegistriesResponse.newBuilder() to construct.
   private ListDeviceRegistriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.iot.v1.DeviceRegistry> deviceRegistries_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.iot.v1.DeviceRegistry> getDeviceRegistriesList() {
     return deviceRegistries_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       getDeviceRegistriesOrBuilderList() {
     return deviceRegistries_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
   public int getDeviceRegistriesCount() {
     return deviceRegistries_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
   public com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistries(int index) {
     return deviceRegistries_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -637,6 +646,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
         return deviceRegistriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -653,6 +663,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
         return deviceRegistriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -669,6 +680,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
         return deviceRegistriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -691,6 +703,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +724,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +747,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +770,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +791,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +812,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +833,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +853,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +873,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +886,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
     public com.google.cloud.iot.v1.DeviceRegistry.Builder getDeviceRegistriesBuilder(int index) {
       return getDeviceRegistriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -881,6 +903,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
         return deviceRegistriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -898,6 +921,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(deviceRegistries_);
       }
     }
+
     /**
      *
      *
@@ -911,6 +935,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       return getDeviceRegistriesFieldBuilder()
           .addBuilder(com.google.cloud.iot.v1.DeviceRegistry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -924,6 +949,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       return getDeviceRegistriesFieldBuilder()
           .addBuilder(index, com.google.cloud.iot.v1.DeviceRegistry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -959,6 +985,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -983,6 +1010,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1007,6 +1035,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1059,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1049,6 +1079,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

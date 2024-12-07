@@ -36,6 +36,7 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    * @return Whether the timeSegmentStart field is set.
    */
   boolean hasTimeSegmentStart();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    * @return The timeSegmentStart.
    */
   com.google.protobuf.Duration getTimeSegmentStart();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    * @return Whether the timeSegmentEnd field is set.
    */
   boolean hasTimeSegmentEnd();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    * @return The timeSegmentEnd.
    */
   com.google.protobuf.Duration getTimeSegmentEnd();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    * @return Whether the confidence field is set.
    */
   boolean hasConfidence();
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    * @return The confidence.
    */
   com.google.protobuf.FloatValue getConfidence();
+
   /**
    *
    *

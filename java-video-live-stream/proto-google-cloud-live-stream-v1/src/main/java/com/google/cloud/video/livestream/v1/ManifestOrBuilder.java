@@ -39,6 +39,7 @@ public interface ManifestOrBuilder
    * @return The fileName.
    */
   java.lang.String getFileName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ManifestOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface ManifestOrBuilder
    * @return A list containing the muxStreams.
    */
   java.util.List<java.lang.String> getMuxStreamsList();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface ManifestOrBuilder
    * @return The count of muxStreams.
    */
   int getMuxStreamsCount();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface ManifestOrBuilder
    * @return The muxStreams at the given index.
    */
   java.lang.String getMuxStreams(int index);
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public interface ManifestOrBuilder
    * @return Whether the segmentKeepDuration field is set.
    */
   boolean hasSegmentKeepDuration();
+
   /**
    *
    *
@@ -221,6 +227,7 @@ public interface ManifestOrBuilder
    * @return The segmentKeepDuration.
    */
   com.google.protobuf.Duration getSegmentKeepDuration();
+
   /**
    *
    *
@@ -274,6 +281,7 @@ public interface ManifestOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *

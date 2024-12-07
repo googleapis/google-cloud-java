@@ -33,6 +33,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.AssetList)
     AssetListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AssetList.newBuilder() to construct.
   private AssetList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList assetIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAssetIdsList() {
     return assetIds_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
   public int getAssetIdsCount() {
     return assetIds_.size();
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAssetIds(int index) {
     return assetIds_.get(index);
   }
+
   /**
    *
    *
@@ -301,6 +306,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -499,6 +505,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -516,6 +523,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
       assetIds_.makeImmutable();
       return assetIds_;
     }
+
     /**
      *
      *
@@ -532,6 +540,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
     public int getAssetIdsCount() {
       return assetIds_.size();
     }
+
     /**
      *
      *
@@ -549,6 +558,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAssetIds(int index) {
       return assetIds_.get(index);
     }
+
     /**
      *
      *
@@ -566,6 +576,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAssetIdsBytes(int index) {
       return assetIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -591,6 +602,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -615,6 +627,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +649,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +670,7 @@ public final class AssetList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -62,6 +62,7 @@ public interface AttackOrBuilder
    * @return The classification.
    */
   java.lang.String getClassification();
+
   /**
    *
    *

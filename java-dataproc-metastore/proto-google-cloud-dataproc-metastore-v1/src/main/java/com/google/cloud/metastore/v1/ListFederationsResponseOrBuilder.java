@@ -34,6 +34,7 @@ public interface ListFederationsResponseOrBuilder
    * <code>repeated .google.cloud.metastore.v1.Federation federations = 1;</code>
    */
   java.util.List<com.google.cloud.metastore.v1.Federation> getFederationsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListFederationsResponseOrBuilder
    * <code>repeated .google.cloud.metastore.v1.Federation federations = 1;</code>
    */
   com.google.cloud.metastore.v1.Federation getFederations(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListFederationsResponseOrBuilder
    * <code>repeated .google.cloud.metastore.v1.Federation federations = 1;</code>
    */
   int getFederationsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListFederationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.metastore.v1.FederationOrBuilder>
       getFederationsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListFederationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListFederationsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListFederationsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListFederationsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

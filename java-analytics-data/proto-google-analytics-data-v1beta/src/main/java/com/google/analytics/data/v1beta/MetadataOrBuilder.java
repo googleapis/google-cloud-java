@@ -36,6 +36,7 @@ public interface MetadataOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -59,6 +60,7 @@ public interface MetadataOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DimensionMetadata dimensions = 1;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.DimensionMetadata> getDimensionsList();
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface MetadataOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DimensionMetadata dimensions = 1;</code>
    */
   com.google.analytics.data.v1beta.DimensionMetadata getDimensions(int index);
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface MetadataOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DimensionMetadata dimensions = 1;</code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface MetadataOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.DimensionMetadataOrBuilder>
       getDimensionsOrBuilderList();
+
   /**
    *
    *
@@ -111,6 +116,7 @@ public interface MetadataOrBuilder
    * <code>repeated .google.analytics.data.v1beta.MetricMetadata metrics = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.MetricMetadata> getMetricsList();
+
   /**
    *
    *
@@ -121,6 +127,7 @@ public interface MetadataOrBuilder
    * <code>repeated .google.analytics.data.v1beta.MetricMetadata metrics = 2;</code>
    */
   com.google.analytics.data.v1beta.MetricMetadata getMetrics(int index);
+
   /**
    *
    *
@@ -131,6 +138,7 @@ public interface MetadataOrBuilder
    * <code>repeated .google.analytics.data.v1beta.MetricMetadata metrics = 2;</code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -142,6 +150,7 @@ public interface MetadataOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.MetricMetadataOrBuilder>
       getMetricsOrBuilderList();
+
   /**
    *
    *
@@ -163,6 +172,7 @@ public interface MetadataOrBuilder
    * <code>repeated .google.analytics.data.v1beta.ComparisonMetadata comparisons = 4;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.ComparisonMetadata> getComparisonsList();
+
   /**
    *
    *
@@ -173,6 +183,7 @@ public interface MetadataOrBuilder
    * <code>repeated .google.analytics.data.v1beta.ComparisonMetadata comparisons = 4;</code>
    */
   com.google.analytics.data.v1beta.ComparisonMetadata getComparisons(int index);
+
   /**
    *
    *
@@ -183,6 +194,7 @@ public interface MetadataOrBuilder
    * <code>repeated .google.analytics.data.v1beta.ComparisonMetadata comparisons = 4;</code>
    */
   int getComparisonsCount();
+
   /**
    *
    *
@@ -194,6 +206,7 @@ public interface MetadataOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.ComparisonMetadataOrBuilder>
       getComparisonsOrBuilderList();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface CreateNotificationConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface CreateNotificationConfigRequestOrBuilder
    * @return The configId.
    */
   java.lang.String getConfigId();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface CreateNotificationConfigRequestOrBuilder
    * @return Whether the notificationConfig field is set.
    */
   boolean hasNotificationConfig();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface CreateNotificationConfigRequestOrBuilder
    * @return The notificationConfig.
    */
   com.google.cloud.securitycenter.v2.NotificationConfig getNotificationConfig();
+
   /**
    *
    *

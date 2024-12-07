@@ -37,6 +37,7 @@ public interface ListDisplayVideo360AdvertiserLinkProposalsResponseOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
       getDisplayVideo360AdvertiserLinkProposalsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListDisplayVideo360AdvertiserLinkProposalsResponseOrBuilder
    */
   com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
       getDisplayVideo360AdvertiserLinkProposals(int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ListDisplayVideo360AdvertiserLinkProposalsResponseOrBuilder
    * </code>
    */
   int getDisplayVideo360AdvertiserLinkProposalsCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface ListDisplayVideo360AdvertiserLinkProposalsResponseOrBuilder
           ? extends
               com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposalOrBuilder>
       getDisplayVideo360AdvertiserLinkProposalsOrBuilderList();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface ListDisplayVideo360AdvertiserLinkProposalsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

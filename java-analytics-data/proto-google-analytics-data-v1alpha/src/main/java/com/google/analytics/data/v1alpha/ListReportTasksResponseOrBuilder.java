@@ -34,6 +34,7 @@ public interface ListReportTasksResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.ReportTask report_tasks = 1;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.ReportTask> getReportTasksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListReportTasksResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.ReportTask report_tasks = 1;</code>
    */
   com.google.analytics.data.v1alpha.ReportTask getReportTasks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListReportTasksResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.ReportTask report_tasks = 1;</code>
    */
   int getReportTasksCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListReportTasksResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.ReportTaskOrBuilder>
       getReportTasksOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListReportTasksResponseOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -102,6 +107,7 @@ public interface ListReportTasksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

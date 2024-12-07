@@ -48,6 +48,7 @@ public interface SecurityCenterServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface SecurityCenterServiceOrBuilder
    * @return The enum numeric value on the wire for intendedEnablementState.
    */
   int getIntendedEnablementStateValue();
+
   /**
    *
    *
@@ -125,6 +127,7 @@ public interface SecurityCenterServiceOrBuilder
    * @return The enum numeric value on the wire for effectiveEnablementState.
    */
   int getEffectiveEnablementStateValue();
+
   /**
    *
    *
@@ -159,6 +162,7 @@ public interface SecurityCenterServiceOrBuilder
    * </code>
    */
   int getModulesCount();
+
   /**
    *
    *
@@ -173,12 +177,14 @@ public interface SecurityCenterServiceOrBuilder
    * </code>
    */
   boolean containsModules(java.lang.String key);
+
   /** Use {@link #getModulesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.securitycentermanagement.v1.SecurityCenterService.ModuleSettings>
       getModules();
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface SecurityCenterServiceOrBuilder
           java.lang.String,
           com.google.cloud.securitycentermanagement.v1.SecurityCenterService.ModuleSettings>
       getModulesMap();
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public interface SecurityCenterServiceOrBuilder
           /* nullable */
           com.google.cloud.securitycentermanagement.v1.SecurityCenterService.ModuleSettings
               defaultValue);
+
   /**
    *
    *
@@ -247,6 +255,7 @@ public interface SecurityCenterServiceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -262,6 +271,7 @@ public interface SecurityCenterServiceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -290,6 +300,7 @@ public interface SecurityCenterServiceOrBuilder
    * @return Whether the serviceConfig field is set.
    */
   boolean hasServiceConfig();
+
   /**
    *
    *
@@ -304,6 +315,7 @@ public interface SecurityCenterServiceOrBuilder
    * @return The serviceConfig.
    */
   com.google.protobuf.Struct getServiceConfig();
+
   /**
    *
    *

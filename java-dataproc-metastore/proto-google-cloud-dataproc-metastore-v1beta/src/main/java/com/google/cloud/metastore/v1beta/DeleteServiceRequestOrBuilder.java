@@ -41,6 +41,7 @@ public interface DeleteServiceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface DeleteServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

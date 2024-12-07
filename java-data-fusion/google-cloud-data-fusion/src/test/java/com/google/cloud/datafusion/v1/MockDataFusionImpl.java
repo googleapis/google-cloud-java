@@ -74,7 +74,8 @@ public class MockDataFusionImpl extends DataFusionImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAvailableVersions, expected %s or %s",
+                  "Unrecognized response type %s for method ListAvailableVersions, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAvailableVersionsResponse.class.getName(),
                   Exception.class.getName())));

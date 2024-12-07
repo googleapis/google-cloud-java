@@ -33,6 +33,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.image.Layer)
     LayerOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Layer.newBuilder() to construct.
   private Layer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -265,6 +266,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>DIRECTIVE_UNSPECIFIED = 0;</code>
      */
     public static final int DIRECTIVE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -275,6 +277,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>MAINTAINER = 1;</code>
      */
     public static final int MAINTAINER_VALUE = 1;
+
     /**
      *
      *
@@ -285,6 +288,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>RUN = 2;</code>
      */
     public static final int RUN_VALUE = 2;
+
     /**
      *
      *
@@ -295,6 +299,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>CMD = 3;</code>
      */
     public static final int CMD_VALUE = 3;
+
     /**
      *
      *
@@ -305,6 +310,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>LABEL = 4;</code>
      */
     public static final int LABEL_VALUE = 4;
+
     /**
      *
      *
@@ -315,6 +321,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>EXPOSE = 5;</code>
      */
     public static final int EXPOSE_VALUE = 5;
+
     /**
      *
      *
@@ -325,6 +332,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>ENV = 6;</code>
      */
     public static final int ENV_VALUE = 6;
+
     /**
      *
      *
@@ -335,6 +343,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>ADD = 7;</code>
      */
     public static final int ADD_VALUE = 7;
+
     /**
      *
      *
@@ -345,6 +354,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>COPY = 8;</code>
      */
     public static final int COPY_VALUE = 8;
+
     /**
      *
      *
@@ -355,6 +365,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>ENTRYPOINT = 9;</code>
      */
     public static final int ENTRYPOINT_VALUE = 9;
+
     /**
      *
      *
@@ -365,6 +376,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>VOLUME = 10;</code>
      */
     public static final int VOLUME_VALUE = 10;
+
     /**
      *
      *
@@ -375,6 +387,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>USER = 11;</code>
      */
     public static final int USER_VALUE = 11;
+
     /**
      *
      *
@@ -385,6 +398,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>WORKDIR = 12;</code>
      */
     public static final int WORKDIR_VALUE = 12;
+
     /**
      *
      *
@@ -395,6 +409,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>ARG = 13;</code>
      */
     public static final int ARG_VALUE = 13;
+
     /**
      *
      *
@@ -405,6 +420,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>ONBUILD = 14;</code>
      */
     public static final int ONBUILD_VALUE = 14;
+
     /**
      *
      *
@@ -415,6 +431,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>STOPSIGNAL = 15;</code>
      */
     public static final int STOPSIGNAL_VALUE = 15;
+
     /**
      *
      *
@@ -425,6 +442,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * <code>HEALTHCHECK = 16;</code>
      */
     public static final int HEALTHCHECK_VALUE = 16;
+
     /**
      *
      *
@@ -551,6 +569,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DIRECTIVE_FIELD_NUMBER = 1;
   private int directive_ = 0;
+
   /**
    *
    *
@@ -566,6 +585,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
   public int getDirectiveValue() {
     return directive_;
   }
+
   /**
    *
    *
@@ -588,6 +608,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object arguments_ = "";
+
   /**
    *
    *
@@ -611,6 +632,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -801,6 +823,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -993,6 +1016,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int directive_ = 0;
+
     /**
      *
      *
@@ -1008,6 +1032,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
     public int getDirectiveValue() {
       return directive_;
     }
+
     /**
      *
      *
@@ -1026,6 +1051,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1069,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
           io.grafeas.v1beta1.image.Layer.Directive.forNumber(directive_);
       return result == null ? io.grafeas.v1beta1.image.Layer.Directive.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1064,6 +1091,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1111,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object arguments_ = "";
+
     /**
      *
      *
@@ -1105,6 +1134,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1127,6 +1157,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1148,6 +1179,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1197,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

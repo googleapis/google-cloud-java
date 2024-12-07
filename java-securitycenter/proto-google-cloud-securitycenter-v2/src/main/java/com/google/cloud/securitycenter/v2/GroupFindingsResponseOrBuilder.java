@@ -36,6 +36,7 @@ public interface GroupFindingsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.GroupResult group_by_results = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.GroupResult> getGroupByResultsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface GroupFindingsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.GroupResult group_by_results = 1;</code>
    */
   com.google.cloud.securitycenter.v2.GroupResult getGroupByResults(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface GroupFindingsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.GroupResult group_by_results = 1;</code>
    */
   int getGroupByResultsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface GroupFindingsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.GroupResultOrBuilder>
       getGroupByResultsOrBuilderList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface GroupFindingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

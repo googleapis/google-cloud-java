@@ -35,6 +35,7 @@ public final class ActivateCertificateAuthorityRequest
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1beta1.ActivateCertificateAuthorityRequest)
     ActivateCertificateAuthorityRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ActivateCertificateAuthorityRequest.newBuilder() to construct.
   private ActivateCertificateAuthorityRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,6 +75,7 @@ public final class ActivateCertificateAuthorityRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public final class ActivateCertificateAuthorityRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class ActivateCertificateAuthorityRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pemCaCertificate_ = "";
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class ActivateCertificateAuthorityRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public final class ActivateCertificateAuthorityRequest
 
   public static final int SUBORDINATE_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.security.privateca.v1beta1.SubordinateConfig subordinateConfig_;
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class ActivateCertificateAuthorityRequest
   public boolean hasSubordinateConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class ActivateCertificateAuthorityRequest
         ? com.google.cloud.security.privateca.v1beta1.SubordinateConfig.getDefaultInstance()
         : subordinateConfig_;
   }
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class ActivateCertificateAuthorityRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -279,6 +288,7 @@ public final class ActivateCertificateAuthorityRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -515,6 +525,7 @@ public final class ActivateCertificateAuthorityRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -777,6 +788,7 @@ public final class ActivateCertificateAuthorityRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -802,6 +814,7 @@ public final class ActivateCertificateAuthorityRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -827,6 +840,7 @@ public final class ActivateCertificateAuthorityRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -851,6 +865,7 @@ public final class ActivateCertificateAuthorityRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +886,7 @@ public final class ActivateCertificateAuthorityRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +914,7 @@ public final class ActivateCertificateAuthorityRequest
     }
 
     private java.lang.Object pemCaCertificate_ = "";
+
     /**
      *
      *
@@ -921,6 +938,7 @@ public final class ActivateCertificateAuthorityRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -944,6 +962,7 @@ public final class ActivateCertificateAuthorityRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -966,6 +985,7 @@ public final class ActivateCertificateAuthorityRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1004,7 @@ public final class ActivateCertificateAuthorityRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1035,7 @@ public final class ActivateCertificateAuthorityRequest
             com.google.cloud.security.privateca.v1beta1.SubordinateConfig.Builder,
             com.google.cloud.security.privateca.v1beta1.SubordinateConfigOrBuilder>
         subordinateConfigBuilder_;
+
     /**
      *
      *
@@ -1031,6 +1053,7 @@ public final class ActivateCertificateAuthorityRequest
     public boolean hasSubordinateConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1054,6 +1077,7 @@ public final class ActivateCertificateAuthorityRequest
         return subordinateConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1104,7 @@ public final class ActivateCertificateAuthorityRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1128,7 @@ public final class ActivateCertificateAuthorityRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1162,7 @@ public final class ActivateCertificateAuthorityRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1185,7 @@ public final class ActivateCertificateAuthorityRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1176,6 +1204,7 @@ public final class ActivateCertificateAuthorityRequest
       onChanged();
       return getSubordinateConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1198,6 +1227,7 @@ public final class ActivateCertificateAuthorityRequest
             : subordinateConfig_;
       }
     }
+
     /**
      *
      *
@@ -1228,6 +1258,7 @@ public final class ActivateCertificateAuthorityRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1262,6 +1293,7 @@ public final class ActivateCertificateAuthorityRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1296,6 +1328,7 @@ public final class ActivateCertificateAuthorityRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1329,6 +1362,7 @@ public final class ActivateCertificateAuthorityRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1392,7 @@ public final class ActivateCertificateAuthorityRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

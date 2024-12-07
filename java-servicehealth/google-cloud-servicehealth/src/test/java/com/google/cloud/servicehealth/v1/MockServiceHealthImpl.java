@@ -114,7 +114,8 @@ public class MockServiceHealthImpl extends ServiceHealthImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListOrganizationEvents, expected %s or %s",
+                  "Unrecognized response type %s for method ListOrganizationEvents, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListOrganizationEventsResponse.class.getName(),
                   Exception.class.getName())));
@@ -135,7 +136,8 @@ public class MockServiceHealthImpl extends ServiceHealthImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetOrganizationEvent, expected %s or %s",
+                  "Unrecognized response type %s for method GetOrganizationEvent, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   OrganizationEvent.class.getName(),
                   Exception.class.getName())));
@@ -157,7 +159,8 @@ public class MockServiceHealthImpl extends ServiceHealthImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListOrganizationImpacts, expected %s or %s",
+                  "Unrecognized response type %s for method ListOrganizationImpacts, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListOrganizationImpactsResponse.class.getName(),
                   Exception.class.getName())));
@@ -178,7 +181,8 @@ public class MockServiceHealthImpl extends ServiceHealthImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetOrganizationImpact, expected %s or %s",
+                  "Unrecognized response type %s for method GetOrganizationImpact, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   OrganizationImpact.class.getName(),
                   Exception.class.getName())));

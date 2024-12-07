@@ -36,6 +36,7 @@ public interface GetIamPolicyFirewallPolicyRequestOrBuilder
    * @return Whether the optionsRequestedPolicyVersion field is set.
    */
   boolean hasOptionsRequestedPolicyVersion();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetIamPolicyFirewallPolicyRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *

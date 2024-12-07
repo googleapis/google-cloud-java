@@ -38,6 +38,7 @@ public interface PatchPublicDelegatedPrefixeRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface PatchPublicDelegatedPrefixeRequestOrBuilder
    * @return The publicDelegatedPrefix.
    */
   java.lang.String getPublicDelegatedPrefix();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface PatchPublicDelegatedPrefixeRequestOrBuilder
    * @return Whether the publicDelegatedPrefixResource field is set.
    */
   boolean hasPublicDelegatedPrefixResource();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface PatchPublicDelegatedPrefixeRequestOrBuilder
    * @return The publicDelegatedPrefixResource.
    */
   com.google.cloud.compute.v1.PublicDelegatedPrefix getPublicDelegatedPrefixResource();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface PatchPublicDelegatedPrefixeRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface PatchPublicDelegatedPrefixeRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface PatchPublicDelegatedPrefixeRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

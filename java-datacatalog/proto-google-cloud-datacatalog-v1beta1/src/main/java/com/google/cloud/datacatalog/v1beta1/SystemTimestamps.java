@@ -33,6 +33,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.SystemTimestamps)
     SystemTimestampsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SystemTimestamps.newBuilder() to construct.
   private SystemTimestamps(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -156,6 +163,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp expireTime_;
+
   /**
    *
    *
@@ -173,6 +181,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -190,6 +199,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
+
   /**
    *
    *
@@ -399,6 +409,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -640,6 +651,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -674,6 +687,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -696,6 +710,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +730,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +778,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +793,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -793,6 +812,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -825,6 +845,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -839,6 +860,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -859,6 +881,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -881,6 +904,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +924,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +952,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +972,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +987,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -978,6 +1006,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -1010,6 +1039,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -1027,6 +1057,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1050,6 +1081,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
         return expireTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1075,6 +1107,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1130,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1161,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1184,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1202,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1187,6 +1224,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
             : expireTime_;
       }
     }
+
     /**
      *
      *

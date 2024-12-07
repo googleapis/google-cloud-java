@@ -38,6 +38,7 @@ public interface ImportCompletionSuggestionsRequestOrBuilder
    * @return Whether the inlineSource field is set.
    */
   boolean hasInlineSource();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface ImportCompletionSuggestionsRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsRequest.InlineSource
       getInlineSource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ImportCompletionSuggestionsRequestOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface ImportCompletionSuggestionsRequestOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.discoveryengine.v1.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface ImportCompletionSuggestionsRequestOrBuilder
    * @return Whether the bigquerySource field is set.
    */
   boolean hasBigquerySource();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface ImportCompletionSuggestionsRequestOrBuilder
    * @return The bigquerySource.
    */
   com.google.cloud.discoveryengine.v1.BigQuerySource getBigquerySource();
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public interface ImportCompletionSuggestionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public interface ImportCompletionSuggestionsRequestOrBuilder
    * @return Whether the errorConfig field is set.
    */
   boolean hasErrorConfig();
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface ImportCompletionSuggestionsRequestOrBuilder
    * @return The errorConfig.
    */
   com.google.cloud.discoveryengine.v1.ImportErrorConfig getErrorConfig();
+
   /**
    *
    *

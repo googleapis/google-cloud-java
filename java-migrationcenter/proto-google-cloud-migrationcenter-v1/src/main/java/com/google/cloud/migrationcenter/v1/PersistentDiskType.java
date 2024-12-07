@@ -86,6 +86,7 @@ public enum PersistentDiskType implements com.google.protobuf.ProtocolMessageEnu
    * <code>PERSISTENT_DISK_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int PERSISTENT_DISK_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -96,6 +97,7 @@ public enum PersistentDiskType implements com.google.protobuf.ProtocolMessageEnu
    * <code>PERSISTENT_DISK_TYPE_STANDARD = 1;</code>
    */
   public static final int PERSISTENT_DISK_TYPE_STANDARD_VALUE = 1;
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public enum PersistentDiskType implements com.google.protobuf.ProtocolMessageEnu
    * <code>PERSISTENT_DISK_TYPE_BALANCED = 2;</code>
    */
   public static final int PERSISTENT_DISK_TYPE_BALANCED_VALUE = 2;
+
   /**
    *
    *

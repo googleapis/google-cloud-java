@@ -37,6 +37,7 @@ public interface TimeSeriesOrBuilder
    * @return Whether the metric field is set.
    */
   boolean hasMetric();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface TimeSeriesOrBuilder
    * @return The metric.
    */
   com.google.api.Metric getMetric();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface TimeSeriesOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface TimeSeriesOrBuilder
    * @return The resource.
    */
   com.google.api.MonitoredResource getResource();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface TimeSeriesOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface TimeSeriesOrBuilder
    * @return The metadata.
    */
   com.google.api.MonitoredResourceMetadata getMetadata();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface TimeSeriesOrBuilder
    * @return The enum numeric value on the wire for metricKind.
    */
   int getMetricKindValue();
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public interface TimeSeriesOrBuilder
    * @return The enum numeric value on the wire for valueType.
    */
   int getValueTypeValue();
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public interface TimeSeriesOrBuilder
    * <code>repeated .google.monitoring.v3.Point points = 5;</code>
    */
   java.util.List<com.google.monitoring.v3.Point> getPointsList();
+
   /**
    *
    *
@@ -257,6 +266,7 @@ public interface TimeSeriesOrBuilder
    * <code>repeated .google.monitoring.v3.Point points = 5;</code>
    */
   com.google.monitoring.v3.Point getPoints(int index);
+
   /**
    *
    *
@@ -274,6 +284,7 @@ public interface TimeSeriesOrBuilder
    * <code>repeated .google.monitoring.v3.Point points = 5;</code>
    */
   int getPointsCount();
+
   /**
    *
    *
@@ -291,6 +302,7 @@ public interface TimeSeriesOrBuilder
    * <code>repeated .google.monitoring.v3.Point points = 5;</code>
    */
   java.util.List<? extends com.google.monitoring.v3.PointOrBuilder> getPointsOrBuilderList();
+
   /**
    *
    *
@@ -323,6 +335,7 @@ public interface TimeSeriesOrBuilder
    * @return The unit.
    */
   java.lang.String getUnit();
+
   /**
    *
    *

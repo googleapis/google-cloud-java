@@ -42,6 +42,7 @@ public interface ListMetricDescriptorsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface ListMetricDescriptorsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -129,6 +131,7 @@ public interface ListMetricDescriptorsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

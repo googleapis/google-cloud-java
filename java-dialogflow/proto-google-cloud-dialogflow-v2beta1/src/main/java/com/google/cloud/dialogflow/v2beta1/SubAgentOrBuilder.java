@@ -38,6 +38,7 @@ public interface SubAgentOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SubAgentOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
+
   /**
    *
    *

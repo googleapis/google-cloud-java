@@ -33,6 +33,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1beta2.ImportYumArtifactsGcsSource)
     ImportYumArtifactsGcsSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportYumArtifactsGcsSource.newBuilder() to construct.
   private ImportYumArtifactsGcsSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList uris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getUrisList() {
     return uris_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
   public int getUrisCount() {
     return uris_.size();
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
   public java.lang.String getUris(int index) {
     return uris_.get(index);
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
 
   public static final int USE_WILDCARDS_FIELD_NUMBER = 2;
   private boolean useWildcards_ = false;
+
   /**
    *
    *
@@ -323,6 +329,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -545,6 +552,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -560,6 +568,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
       uris_.makeImmutable();
       return uris_;
     }
+
     /**
      *
      *
@@ -574,6 +583,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
     public int getUrisCount() {
       return uris_.size();
     }
+
     /**
      *
      *
@@ -589,6 +599,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
     public java.lang.String getUris(int index) {
       return uris_.get(index);
     }
+
     /**
      *
      *
@@ -604,6 +615,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getUrisBytes(int index) {
       return uris_.getByteString(index);
     }
+
     /**
      *
      *
@@ -627,6 +639,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -649,6 +662,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +682,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +701,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +727,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
     }
 
     private boolean useWildcards_;
+
     /**
      *
      *
@@ -726,6 +743,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
     public boolean getUseWildcards() {
       return useWildcards_;
     }
+
     /**
      *
      *
@@ -745,6 +763,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.BigQueryRoutineSpec)
     BigQueryRoutineSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigQueryRoutineSpec.newBuilder() to construct.
   private BigQueryRoutineSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList importedLibraries_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getImportedLibrariesList() {
     return importedLibraries_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
   public int getImportedLibrariesCount() {
     return importedLibraries_.size();
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
   public java.lang.String getImportedLibraries(int index) {
     return importedLibraries_.get(index);
   }
+
   /**
    *
    *
@@ -293,6 +298,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -492,6 +498,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -507,6 +514,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
       importedLibraries_.makeImmutable();
       return importedLibraries_;
     }
+
     /**
      *
      *
@@ -521,6 +529,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
     public int getImportedLibrariesCount() {
       return importedLibraries_.size();
     }
+
     /**
      *
      *
@@ -536,6 +545,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
     public java.lang.String getImportedLibraries(int index) {
       return importedLibraries_.get(index);
     }
+
     /**
      *
      *
@@ -551,6 +561,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getImportedLibrariesBytes(int index) {
       return importedLibraries_.getByteString(index);
     }
+
     /**
      *
      *
@@ -574,6 +585,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -596,6 +608,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -615,6 +628,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +647,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

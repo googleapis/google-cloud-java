@@ -33,6 +33,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HttpRedirectAction)
     HttpRedirectActionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HttpRedirectAction.newBuilder() to construct.
   private HttpRedirectAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -149,6 +150,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_REDIRECT_RESPONSE_CODE = 0;</code>
      */
     public static final int UNDEFINED_REDIRECT_RESPONSE_CODE_VALUE = 0;
+
     /**
      *
      *
@@ -159,6 +161,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * <code>FOUND = 67084130;</code>
      */
     public static final int FOUND_VALUE = 67084130;
+
     /**
      *
      *
@@ -169,6 +172,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * <code>MOVED_PERMANENTLY_DEFAULT = 386698449;</code>
      */
     public static final int MOVED_PERMANENTLY_DEFAULT_VALUE = 386698449;
+
     /**
      *
      *
@@ -179,6 +183,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * <code>PERMANENT_REDIRECT = 382006381;</code>
      */
     public static final int PERMANENT_REDIRECT_VALUE = 382006381;
+
     /**
      *
      *
@@ -189,6 +194,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * <code>SEE_OTHER = 445380580;</code>
      */
     public static final int SEE_OTHER_VALUE = 445380580;
+
     /**
      *
      *
@@ -297,6 +303,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostRedirect_ = "";
+
   /**
    *
    *
@@ -312,6 +319,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
   public boolean hasHostRedirect() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -335,6 +343,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -361,6 +370,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
 
   public static final int HTTPS_REDIRECT_FIELD_NUMBER = 170260656;
   private boolean httpsRedirect_ = false;
+
   /**
    *
    *
@@ -376,6 +386,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
   public boolean hasHttpsRedirect() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -396,6 +407,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pathRedirect_ = "";
+
   /**
    *
    *
@@ -411,6 +423,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
   public boolean hasPathRedirect() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -434,6 +447,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -462,6 +476,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object prefixRedirect_ = "";
+
   /**
    *
    *
@@ -477,6 +492,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
   public boolean hasPrefixRedirect() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -500,6 +516,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -528,6 +545,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object redirectResponseCode_ = "";
+
   /**
    *
    *
@@ -544,6 +562,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
   public boolean hasRedirectResponseCode() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -568,6 +587,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -595,6 +615,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
 
   public static final int STRIP_QUERY_FIELD_NUMBER = 52284641;
   private boolean stripQuery_ = false;
+
   /**
    *
    *
@@ -610,6 +631,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
   public boolean hasStripQuery() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -862,6 +884,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1124,6 +1147,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object hostRedirect_ = "";
+
     /**
      *
      *
@@ -1138,6 +1162,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     public boolean hasHostRedirect() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1160,6 +1185,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1182,6 +1208,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1203,6 +1230,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1248,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1273,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean httpsRedirect_;
+
     /**
      *
      *
@@ -1259,6 +1289,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     public boolean hasHttpsRedirect() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1274,6 +1305,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     public boolean getHttpsRedirect() {
       return httpsRedirect_;
     }
+
     /**
      *
      *
@@ -1293,6 +1325,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1345,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object pathRedirect_ = "";
+
     /**
      *
      *
@@ -1326,6 +1360,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     public boolean hasPathRedirect() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1348,6 +1383,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1370,6 +1406,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1391,6 +1428,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1446,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1432,6 +1471,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object prefixRedirect_ = "";
+
     /**
      *
      *
@@ -1446,6 +1486,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     public boolean hasPrefixRedirect() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1468,6 +1509,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1490,6 +1532,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1511,6 +1554,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1528,6 +1572,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1552,6 +1597,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object redirectResponseCode_ = "";
+
     /**
      *
      *
@@ -1567,6 +1613,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     public boolean hasRedirectResponseCode() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1590,6 +1637,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1613,6 +1661,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1635,6 +1684,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1653,6 +1703,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1678,6 +1729,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean stripQuery_;
+
     /**
      *
      *
@@ -1693,6 +1745,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     public boolean hasStripQuery() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1708,6 +1761,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     public boolean getStripQuery() {
       return stripQuery_;
     }
+
     /**
      *
      *
@@ -1727,6 +1781,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

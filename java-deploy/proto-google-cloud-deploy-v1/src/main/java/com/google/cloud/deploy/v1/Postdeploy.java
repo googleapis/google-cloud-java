@@ -33,6 +33,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.Postdeploy)
     PostdeployOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Postdeploy.newBuilder() to construct.
   private Postdeploy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList actions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getActionsList() {
     return actions_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
   public int getActionsCount() {
     return actions_.size();
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getActions(int index) {
     return actions_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +300,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -493,6 +499,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -509,6 +516,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
       actions_.makeImmutable();
       return actions_;
     }
+
     /**
      *
      *
@@ -524,6 +532,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
     public int getActionsCount() {
       return actions_.size();
     }
+
     /**
      *
      *
@@ -540,6 +549,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getActions(int index) {
       return actions_.get(index);
     }
+
     /**
      *
      *
@@ -556,6 +566,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getActionsBytes(int index) {
       return actions_.getByteString(index);
     }
+
     /**
      *
      *
@@ -580,6 +591,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -603,6 +615,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -623,6 +636,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +656,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

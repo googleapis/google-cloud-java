@@ -39,6 +39,7 @@ public interface CreateZoneRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface CreateZoneRequestOrBuilder
    * @return The zoneId.
    */
   java.lang.String getZoneId();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface CreateZoneRequestOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface CreateZoneRequestOrBuilder
    * @return The zone.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Zone getZone();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface CreateZoneRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

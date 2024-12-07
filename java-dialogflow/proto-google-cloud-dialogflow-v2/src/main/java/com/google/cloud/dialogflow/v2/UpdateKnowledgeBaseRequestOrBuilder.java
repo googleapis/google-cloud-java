@@ -38,6 +38,7 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * @return Whether the knowledgeBase field is set.
    */
   boolean hasKnowledgeBase();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * @return The knowledgeBase.
    */
   com.google.cloud.dialogflow.v2.KnowledgeBase getKnowledgeBase();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

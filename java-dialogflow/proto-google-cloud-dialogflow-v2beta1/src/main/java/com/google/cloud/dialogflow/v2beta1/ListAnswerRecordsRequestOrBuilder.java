@@ -38,6 +38,7 @@ public interface ListAnswerRecordsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface ListAnswerRecordsRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -120,6 +122,7 @@ public interface ListAnswerRecordsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

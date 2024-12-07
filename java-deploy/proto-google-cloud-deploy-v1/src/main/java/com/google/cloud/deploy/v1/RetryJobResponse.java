@@ -33,6 +33,7 @@ public final class RetryJobResponse extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.RetryJobResponse)
     RetryJobResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RetryJobResponse.newBuilder() to construct.
   private RetryJobResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class RetryJobResponse extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

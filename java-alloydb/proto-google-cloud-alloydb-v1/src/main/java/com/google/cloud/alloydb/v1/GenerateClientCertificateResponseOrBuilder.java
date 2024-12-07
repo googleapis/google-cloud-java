@@ -38,6 +38,7 @@ public interface GenerateClientCertificateResponseOrBuilder
    * @return A list containing the pemCertificateChain.
    */
   java.util.List<java.lang.String> getPemCertificateChainList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface GenerateClientCertificateResponseOrBuilder
    * @return The count of pemCertificateChain.
    */
   int getPemCertificateChainCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface GenerateClientCertificateResponseOrBuilder
    * @return The pemCertificateChain at the given index.
    */
   java.lang.String getPemCertificateChain(int index);
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface GenerateClientCertificateResponseOrBuilder
    * @return The caCert.
    */
   java.lang.String getCaCert();
+
   /**
    *
    *

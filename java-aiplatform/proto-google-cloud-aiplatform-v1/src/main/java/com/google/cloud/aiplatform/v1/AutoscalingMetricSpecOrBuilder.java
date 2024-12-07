@@ -41,6 +41,7 @@ public interface AutoscalingMetricSpecOrBuilder
    * @return The metricName.
    */
   java.lang.String getMetricName();
+
   /**
    *
    *

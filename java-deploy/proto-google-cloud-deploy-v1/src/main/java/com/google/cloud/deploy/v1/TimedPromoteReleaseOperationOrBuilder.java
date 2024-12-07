@@ -38,6 +38,7 @@ public interface TimedPromoteReleaseOperationOrBuilder
    * @return The targetId.
    */
   java.lang.String getTargetId();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface TimedPromoteReleaseOperationOrBuilder
    * @return The release.
    */
   java.lang.String getRelease();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface TimedPromoteReleaseOperationOrBuilder
    * @return The phase.
    */
   java.lang.String getPhase();
+
   /**
    *
    *

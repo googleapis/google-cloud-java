@@ -41,6 +41,7 @@ public interface TextExtractionModelMetadataOrBuilder
    * @return The modelHint.
    */
   java.lang.String getModelHint();
+
   /**
    *
    *

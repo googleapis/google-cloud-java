@@ -33,6 +33,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.BatchCreateNotesResponse)
     BatchCreateNotesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateNotesResponse.newBuilder() to construct.
   private BatchCreateNotesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1beta1.Note> notes_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
   public java.util.List<io.grafeas.v1beta1.Note> getNotesList() {
     return notes_;
   }
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
   public java.util.List<? extends io.grafeas.v1beta1.NoteOrBuilder> getNotesOrBuilderList() {
     return notes_;
   }
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
   public int getNotesCount() {
     return notes_.size();
   }
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
   public io.grafeas.v1beta1.Note getNotes(int index) {
     return notes_.get(index);
   }
+
   /**
    *
    *
@@ -294,6 +300,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -551,6 +558,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
         return notesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -567,6 +575,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
         return notesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -583,6 +592,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
         return notesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -605,6 +615,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +658,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +681,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +701,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +721,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +741,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +761,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +781,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +794,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
     public io.grafeas.v1beta1.Note.Builder getNotesBuilder(int index) {
       return getNotesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -791,6 +811,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
         return notesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -807,6 +828,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(notes_);
       }
     }
+
     /**
      *
      *
@@ -819,6 +841,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
     public io.grafeas.v1beta1.Note.Builder addNotesBuilder() {
       return getNotesFieldBuilder().addBuilder(io.grafeas.v1beta1.Note.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -831,6 +854,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
     public io.grafeas.v1beta1.Note.Builder addNotesBuilder(int index) {
       return getNotesFieldBuilder().addBuilder(index, io.grafeas.v1beta1.Note.getDefaultInstance());
     }
+
     /**
      *
      *

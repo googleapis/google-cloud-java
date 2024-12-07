@@ -34,6 +34,7 @@ public interface ListRestoresResponseOrBuilder
    * <code>repeated .google.cloud.gkebackup.v1.Restore restores = 1;</code>
    */
   java.util.List<com.google.cloud.gkebackup.v1.Restore> getRestoresList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListRestoresResponseOrBuilder
    * <code>repeated .google.cloud.gkebackup.v1.Restore restores = 1;</code>
    */
   com.google.cloud.gkebackup.v1.Restore getRestores(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListRestoresResponseOrBuilder
    * <code>repeated .google.cloud.gkebackup.v1.Restore restores = 1;</code>
    */
   int getRestoresCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListRestoresResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreOrBuilder>
       getRestoresOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListRestoresResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface ListRestoresResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -131,6 +137,7 @@ public interface ListRestoresResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -144,6 +151,7 @@ public interface ListRestoresResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

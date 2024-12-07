@@ -37,6 +37,7 @@ public interface JsonFileFormatOrBuilder
    * @return The enum numeric value on the wire for schemaFileFormat.
    */
   int getSchemaFileFormatValue();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface JsonFileFormatOrBuilder
    * @return The enum numeric value on the wire for compression.
    */
   int getCompressionValue();
+
   /**
    *
    *

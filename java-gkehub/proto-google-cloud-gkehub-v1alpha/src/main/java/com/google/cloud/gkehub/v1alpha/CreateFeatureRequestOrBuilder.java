@@ -37,6 +37,7 @@ public interface CreateFeatureRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CreateFeatureRequestOrBuilder
    * @return The featureId.
    */
   java.lang.String getFeatureId();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface CreateFeatureRequestOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface CreateFeatureRequestOrBuilder
    * @return The resource.
    */
   com.google.cloud.gkehub.v1alpha.Feature getResource();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface CreateFeatureRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

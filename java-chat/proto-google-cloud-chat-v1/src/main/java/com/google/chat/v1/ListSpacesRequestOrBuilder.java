@@ -61,6 +61,7 @@ public interface ListSpacesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -108,6 +109,7 @@ public interface ListSpacesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

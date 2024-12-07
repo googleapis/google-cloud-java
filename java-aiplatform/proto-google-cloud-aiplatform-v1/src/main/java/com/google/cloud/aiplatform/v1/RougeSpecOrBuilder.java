@@ -36,6 +36,7 @@ public interface RougeSpecOrBuilder
    * @return The rougeType.
    */
   java.lang.String getRougeType();
+
   /**
    *
    *

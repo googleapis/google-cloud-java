@@ -36,6 +36,7 @@ public interface ImportAssetsMetadataOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ImportAssetsMetadataOrBuilder
    * @return The metadata.
    */
   com.google.cloud.visionai.v1.OperationMetadata getMetadata();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface ImportAssetsMetadataOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ImportAssetsMetadataOrBuilder
    * @return The status.
    */
   com.google.cloud.visionai.v1.BatchOperationStatus getStatus();
+
   /**
    *
    *

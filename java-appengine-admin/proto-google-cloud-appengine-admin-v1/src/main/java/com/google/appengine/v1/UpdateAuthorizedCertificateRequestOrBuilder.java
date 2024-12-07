@@ -37,6 +37,7 @@ public interface UpdateAuthorizedCertificateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface UpdateAuthorizedCertificateRequestOrBuilder
    * @return Whether the certificate field is set.
    */
   boolean hasCertificate();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateAuthorizedCertificateRequestOrBuilder
    * @return The certificate.
    */
   com.google.appengine.v1.AuthorizedCertificate getCertificate();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateAuthorizedCertificateRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface UpdateAuthorizedCertificateRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

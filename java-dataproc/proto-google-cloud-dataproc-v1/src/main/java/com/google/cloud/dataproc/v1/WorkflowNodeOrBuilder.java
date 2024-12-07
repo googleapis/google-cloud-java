@@ -36,6 +36,7 @@ public interface WorkflowNodeOrBuilder
    * @return The stepId.
    */
   java.lang.String getStepId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface WorkflowNodeOrBuilder
    * @return A list containing the prerequisiteStepIds.
    */
   java.util.List<java.lang.String> getPrerequisiteStepIdsList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface WorkflowNodeOrBuilder
    * @return The count of prerequisiteStepIds.
    */
   int getPrerequisiteStepIdsCount();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface WorkflowNodeOrBuilder
    * @return The prerequisiteStepIds at the given index.
    */
   java.lang.String getPrerequisiteStepIds(int index);
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface WorkflowNodeOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface WorkflowNodeOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface WorkflowNodeOrBuilder
    * @return The error.
    */
   java.lang.String getError();
+
   /**
    *
    *

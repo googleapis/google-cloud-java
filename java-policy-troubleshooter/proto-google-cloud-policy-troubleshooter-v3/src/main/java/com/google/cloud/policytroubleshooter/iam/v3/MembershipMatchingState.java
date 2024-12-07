@@ -101,6 +101,7 @@ public enum MembershipMatchingState implements com.google.protobuf.ProtocolMessa
    * <code>MEMBERSHIP_MATCHING_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int MEMBERSHIP_MATCHING_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -118,6 +119,7 @@ public enum MembershipMatchingState implements com.google.protobuf.ProtocolMessa
    * <code>MEMBERSHIP_MATCHED = 1;</code>
    */
   public static final int MEMBERSHIP_MATCHED_VALUE = 1;
+
   /**
    *
    *
@@ -128,6 +130,7 @@ public enum MembershipMatchingState implements com.google.protobuf.ProtocolMessa
    * <code>MEMBERSHIP_NOT_MATCHED = 2;</code>
    */
   public static final int MEMBERSHIP_NOT_MATCHED_VALUE = 2;
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public enum MembershipMatchingState implements com.google.protobuf.ProtocolMessa
    * <code>MEMBERSHIP_UNKNOWN_INFO = 3;</code>
    */
   public static final int MEMBERSHIP_UNKNOWN_INFO_VALUE = 3;
+
   /**
    *
    *

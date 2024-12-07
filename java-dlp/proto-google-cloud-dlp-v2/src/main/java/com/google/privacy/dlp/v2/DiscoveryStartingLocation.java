@@ -34,6 +34,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryStartingLocation)
     DiscoveryStartingLocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveryStartingLocation.newBuilder() to construct.
   private DiscoveryStartingLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
     private LocationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
   }
 
   public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
   public boolean hasOrganizationId() {
     return locationCase_ == 1;
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
   }
 
   public static final int FOLDER_ID_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
   public boolean hasFolderId() {
     return locationCase_ == 2;
   }
+
   /**
    *
    *
@@ -370,6 +376,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -603,6 +610,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
     public boolean hasOrganizationId() {
       return locationCase_ == 1;
     }
+
     /**
      *
      *
@@ -620,6 +628,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
       }
       return 0L;
     }
+
     /**
      *
      *
@@ -639,6 +648,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +683,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
     public boolean hasFolderId() {
       return locationCase_ == 2;
     }
+
     /**
      *
      *
@@ -690,6 +701,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
       }
       return 0L;
     }
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

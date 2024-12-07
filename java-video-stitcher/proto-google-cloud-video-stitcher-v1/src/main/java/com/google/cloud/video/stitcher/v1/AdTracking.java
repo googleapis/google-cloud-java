@@ -74,6 +74,7 @@ public enum AdTracking implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AD_TRACKING_UNSPECIFIED = 0;</code>
    */
   public static final int AD_TRACKING_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public enum AdTracking implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CLIENT = 1;</code>
    */
   public static final int CLIENT_VALUE = 1;
+
   /**
    *
    *

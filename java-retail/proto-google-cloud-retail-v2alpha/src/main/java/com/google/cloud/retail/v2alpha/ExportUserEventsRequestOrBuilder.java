@@ -40,6 +40,7 @@ public interface ExportUserEventsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface ExportUserEventsRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface ExportUserEventsRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.retail.v2alpha.OutputConfig getOutputConfig();
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public interface ExportUserEventsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

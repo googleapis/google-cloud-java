@@ -36,6 +36,7 @@ public interface UtilizationReportOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface UtilizationReportOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UtilizationReportOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface UtilizationReportOrBuilder
    * @return Whether the stateTime field is set.
    */
   boolean hasStateTime();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface UtilizationReportOrBuilder
    * @return The stateTime.
    */
   com.google.protobuf.Timestamp getStateTime();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface UtilizationReportOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface UtilizationReportOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public interface UtilizationReportOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public interface UtilizationReportOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public interface UtilizationReportOrBuilder
    * @return The enum numeric value on the wire for timeFrame.
    */
   int getTimeFrameValue();
+
   /**
    *
    *
@@ -262,6 +272,7 @@ public interface UtilizationReportOrBuilder
    * @return Whether the frameEndTime field is set.
    */
   boolean hasFrameEndTime();
+
   /**
    *
    *
@@ -279,6 +290,7 @@ public interface UtilizationReportOrBuilder
    * @return The frameEndTime.
    */
   com.google.protobuf.Timestamp getFrameEndTime();
+
   /**
    *
    *
@@ -321,6 +333,7 @@ public interface UtilizationReportOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.VmUtilizationInfo vms = 10;</code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.VmUtilizationInfo> getVmsList();
+
   /**
    *
    *
@@ -334,6 +347,7 @@ public interface UtilizationReportOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.VmUtilizationInfo vms = 10;</code>
    */
   com.google.cloud.vmmigration.v1.VmUtilizationInfo getVms(int index);
+
   /**
    *
    *
@@ -347,6 +361,7 @@ public interface UtilizationReportOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.VmUtilizationInfo vms = 10;</code>
    */
   int getVmsCount();
+
   /**
    *
    *
@@ -361,6 +376,7 @@ public interface UtilizationReportOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.VmUtilizationInfoOrBuilder>
       getVmsOrBuilderList();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface RecognitionMetadataOrBuilder
    * @return The enum numeric value on the wire for interactionType.
    */
   int getInteractionTypeValue();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface RecognitionMetadataOrBuilder
    * @return The enum numeric value on the wire for microphoneDistance.
    */
   int getMicrophoneDistanceValue();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface RecognitionMetadataOrBuilder
    * @return The enum numeric value on the wire for originalMediaType.
    */
   int getOriginalMediaTypeValue();
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public interface RecognitionMetadataOrBuilder
    * @return The enum numeric value on the wire for recordingDeviceType.
    */
   int getRecordingDeviceTypeValue();
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public interface RecognitionMetadataOrBuilder
    * @return The recordingDeviceName.
    */
   java.lang.String getRecordingDeviceName();
+
   /**
    *
    *
@@ -200,6 +205,7 @@ public interface RecognitionMetadataOrBuilder
    * @return The originalMimeType.
    */
   java.lang.String getOriginalMimeType();
+
   /**
    *
    *
@@ -246,6 +252,7 @@ public interface RecognitionMetadataOrBuilder
    * @return The audioTopic.
    */
   java.lang.String getAudioTopic();
+
   /**
    *
    *

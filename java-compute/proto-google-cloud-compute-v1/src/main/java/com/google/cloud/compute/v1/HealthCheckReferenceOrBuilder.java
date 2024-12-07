@@ -30,12 +30,14 @@ public interface HealthCheckReferenceOrBuilder
    * @return Whether the healthCheck field is set.
    */
   boolean hasHealthCheck();
+
   /**
    * <code>optional string health_check = 308876645;</code>
    *
    * @return The healthCheck.
    */
   java.lang.String getHealthCheck();
+
   /**
    * <code>optional string health_check = 308876645;</code>
    *

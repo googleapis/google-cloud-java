@@ -34,6 +34,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.EvaluationConfig)
     EvaluationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EvaluationConfig.newBuilder() to construct.
   private EvaluationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     private VerticalOptionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -109,6 +111,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int BOUNDING_BOX_EVALUATION_OPTIONS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasBoundingBoxEvaluationOptions() {
     return verticalOptionCase_ == 1;
   }
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -351,6 +356,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +577,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions.Builder,
             com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptionsOrBuilder>
         boundingBoxEvaluationOptionsBuilder_;
+
     /**
      *
      *
@@ -590,6 +597,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasBoundingBoxEvaluationOptions() {
       return verticalOptionCase_ == 1;
     }
+
     /**
      *
      *
@@ -623,6 +631,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -650,6 +659,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       verticalOptionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +685,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       verticalOptionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +726,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       verticalOptionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +756,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +774,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
         getBoundingBoxEvaluationOptionsBuilder() {
       return getBoundingBoxEvaluationOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -788,6 +802,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

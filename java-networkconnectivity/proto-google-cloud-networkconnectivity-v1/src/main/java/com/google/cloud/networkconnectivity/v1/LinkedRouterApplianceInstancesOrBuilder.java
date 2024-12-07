@@ -36,6 +36,7 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.RouterApplianceInstance>
       getInstancesList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    * </code>
    */
   com.google.cloud.networkconnectivity.v1.RouterApplianceInstance getInstances(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    * </code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkconnectivity.v1.RouterApplianceInstanceOrBuilder>
       getInstancesOrBuilderList();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    * @return The vpcNetwork.
    */
   java.lang.String getVpcNetwork();
+
   /**
    *
    *

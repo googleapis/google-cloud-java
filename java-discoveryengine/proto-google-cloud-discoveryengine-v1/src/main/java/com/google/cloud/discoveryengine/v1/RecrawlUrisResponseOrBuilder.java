@@ -37,6 +37,7 @@ public interface RecrawlUrisResponseOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1.RecrawlUrisResponse.FailureInfo>
       getFailureSamplesList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface RecrawlUrisResponseOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1.RecrawlUrisResponse.FailureInfo getFailureSamples(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface RecrawlUrisResponseOrBuilder
    * </code>
    */
   int getFailureSamplesCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface RecrawlUrisResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.discoveryengine.v1.RecrawlUrisResponse.FailureInfoOrBuilder>
       getFailureSamplesOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface RecrawlUrisResponseOrBuilder
    * @return A list containing the failedUris.
    */
   java.util.List<java.lang.String> getFailedUrisList();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface RecrawlUrisResponseOrBuilder
    * @return The count of failedUris.
    */
   int getFailedUrisCount();
+
   /**
    *
    *
@@ -126,6 +132,7 @@ public interface RecrawlUrisResponseOrBuilder
    * @return The failedUris at the given index.
    */
   java.lang.String getFailedUris(int index);
+
   /**
    *
    *

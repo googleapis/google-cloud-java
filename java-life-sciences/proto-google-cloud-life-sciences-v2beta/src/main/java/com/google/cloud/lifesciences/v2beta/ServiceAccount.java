@@ -33,6 +33,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.lifesciences.v2beta.ServiceAccount)
     ServiceAccountOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServiceAccount.newBuilder() to construct.
   private ServiceAccount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object email_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList scopes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getScopesList() {
     return scopes_;
   }
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   public int getScopesCount() {
     return scopes_.size();
   }
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getScopes(int index) {
     return scopes_.get(index);
   }
+
   /**
    *
    *
@@ -360,6 +367,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -566,6 +574,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object email_ = "";
+
     /**
      *
      *
@@ -589,6 +598,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -612,6 +622,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -634,6 +645,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -652,6 +664,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -685,6 +698,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -701,6 +715,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       scopes_.makeImmutable();
       return scopes_;
     }
+
     /**
      *
      *
@@ -716,6 +731,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     public int getScopesCount() {
       return scopes_.size();
     }
+
     /**
      *
      *
@@ -732,6 +748,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getScopes(int index) {
       return scopes_.get(index);
     }
+
     /**
      *
      *
@@ -748,6 +765,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getScopesBytes(int index) {
       return scopes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -772,6 +790,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +814,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +835,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +855,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

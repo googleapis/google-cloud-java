@@ -33,6 +33,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.ListReferenceImagesResponse)
     ListReferenceImagesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListReferenceImagesResponse.newBuilder() to construct.
   private ListReferenceImagesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.ReferenceImage> referenceImages_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.vision.v1.ReferenceImage> getReferenceImagesList() {
     return referenceImages_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       getReferenceImagesOrBuilderList() {
     return referenceImages_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
   public int getReferenceImagesCount() {
     return referenceImages_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
   public com.google.cloud.vision.v1.ReferenceImage getReferenceImages(int index) {
     return referenceImages_.get(index);
   }
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -384,6 +393,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -674,6 +684,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
         return referenceImagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -690,6 +701,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
         return referenceImagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
         return referenceImagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -728,6 +741,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +762,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +829,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +871,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +891,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +911,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +924,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
     public com.google.cloud.vision.v1.ReferenceImage.Builder getReferenceImagesBuilder(int index) {
       return getReferenceImagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -919,6 +942,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
         return referenceImagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -936,6 +960,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(referenceImages_);
       }
     }
+
     /**
      *
      *
@@ -949,6 +974,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       return getReferenceImagesFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.ReferenceImage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -962,6 +988,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       return getReferenceImagesFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.ReferenceImage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -997,6 +1024,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1012,6 +1040,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1031,6 +1060,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1080,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1072,6 +1103,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1094,6 +1126,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1148,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1132,6 +1166,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

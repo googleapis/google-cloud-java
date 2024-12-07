@@ -37,6 +37,7 @@ public interface ListConversionSourcesResponseOrBuilder
    */
   java.util.List<com.google.shopping.merchant.conversions.v1beta.ConversionSource>
       getConversionSourcesList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListConversionSourcesResponseOrBuilder
    * </code>
    */
   com.google.shopping.merchant.conversions.v1beta.ConversionSource getConversionSources(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListConversionSourcesResponseOrBuilder
    * </code>
    */
   int getConversionSourcesCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface ListConversionSourcesResponseOrBuilder
   java.util.List<
           ? extends com.google.shopping.merchant.conversions.v1beta.ConversionSourceOrBuilder>
       getConversionSourcesOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ListConversionSourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

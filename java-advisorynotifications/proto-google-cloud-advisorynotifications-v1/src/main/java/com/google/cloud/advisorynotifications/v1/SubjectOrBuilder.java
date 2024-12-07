@@ -36,6 +36,7 @@ public interface SubjectOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SubjectOrBuilder
    * @return The text.
    */
   com.google.cloud.advisorynotifications.v1.Text getText();
+
   /**
    *
    *

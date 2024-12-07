@@ -33,6 +33,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchInterconnectAttachmentRequest)
     PatchInterconnectAttachmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PatchInterconnectAttachmentRequest.newBuilder() to construct.
   private PatchInterconnectAttachmentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object interconnectAttachment_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
 
   public static final int INTERCONNECT_ATTACHMENT_RESOURCE_FIELD_NUMBER = 212341369;
   private com.google.cloud.compute.v1.InterconnectAttachment interconnectAttachmentResource_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
   public boolean hasInterconnectAttachmentResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
         ? com.google.cloud.compute.v1.InterconnectAttachment.getDefaultInstance()
         : interconnectAttachmentResource_;
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -262,6 +271,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -292,6 +302,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -307,6 +318,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -330,6 +342,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -567,6 +580,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -834,6 +848,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object interconnectAttachment_ = "";
+
     /**
      *
      *
@@ -857,6 +872,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -880,6 +896,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -902,6 +919,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +938,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +969,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
             com.google.cloud.compute.v1.InterconnectAttachment.Builder,
             com.google.cloud.compute.v1.InterconnectAttachmentOrBuilder>
         interconnectAttachmentResourceBuilder_;
+
     /**
      *
      *
@@ -966,6 +986,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     public boolean hasInterconnectAttachmentResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -988,6 +1009,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
         return interconnectAttachmentResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1035,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1058,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1090,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1112,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1130,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       onChanged();
       return getInterconnectAttachmentResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1125,6 +1152,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
             : interconnectAttachmentResource_;
       }
     }
+
     /**
      *
      *
@@ -1154,6 +1182,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1178,6 +1207,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1202,6 +1232,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1225,6 +1256,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1276,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1270,6 +1303,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1294,6 +1328,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1318,6 +1353,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1341,6 +1377,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1360,6 +1397,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1386,6 +1424,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1400,6 +1439,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1422,6 +1462,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1444,6 +1485,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1465,6 +1507,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1482,6 +1525,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

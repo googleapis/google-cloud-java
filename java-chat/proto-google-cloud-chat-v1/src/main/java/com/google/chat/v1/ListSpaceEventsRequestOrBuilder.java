@@ -42,6 +42,7 @@ public interface ListSpaceEventsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -94,6 +95,7 @@ public interface ListSpaceEventsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -175,6 +177,7 @@ public interface ListSpaceEventsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

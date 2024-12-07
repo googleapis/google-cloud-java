@@ -34,6 +34,7 @@ public interface ListSnapshotsResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Snapshot snapshots = 1;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.Snapshot> getSnapshotsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSnapshotsResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Snapshot snapshots = 1;</code>
    */
   com.google.dataflow.v1beta3.Snapshot getSnapshots(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSnapshotsResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Snapshot snapshots = 1;</code>
    */
   int getSnapshotsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSnapshotsResponseOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.SnapshotOrBuilder>
       getSnapshotsOrBuilderList();
+
   /**
    *
    *

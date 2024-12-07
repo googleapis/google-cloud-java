@@ -35,6 +35,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings)
     VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings.newBuilder() to construct.
   private VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,6 +76,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList drainNatIpPortRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   public com.google.protobuf.ProtocolStringList getDrainNatIpPortRangesList() {
     return drainNatIpPortRanges_;
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   public int getDrainNatIpPortRangesCount() {
     return drainNatIpPortRanges_.size();
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   public java.lang.String getDrainNatIpPortRanges(int index) {
     return drainNatIpPortRanges_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList natIpPortRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   public com.google.protobuf.ProtocolStringList getNatIpPortRangesList() {
     return natIpPortRanges_;
   }
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   public int getNatIpPortRangesCount() {
     return natIpPortRanges_.size();
   }
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   public java.lang.String getNatIpPortRanges(int index) {
     return natIpPortRanges_.get(index);
   }
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
 
   public static final int NUM_TOTAL_DRAIN_NAT_PORTS_FIELD_NUMBER = 335532793;
   private int numTotalDrainNatPorts_ = 0;
+
   /**
    *
    *
@@ -215,6 +225,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   public boolean hasNumTotalDrainNatPorts() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -233,6 +244,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
 
   public static final int NUM_TOTAL_NAT_PORTS_FIELD_NUMBER = 299904384;
   private int numTotalNatPorts_ = 0;
+
   /**
    *
    *
@@ -248,6 +260,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   public boolean hasNumTotalNatPorts() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -266,6 +279,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
 
   public static final int RULE_NUMBER_FIELD_NUMBER = 535211500;
   private int ruleNumber_ = 0;
+
   /**
    *
    *
@@ -281,6 +295,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   public boolean hasRuleNumber() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -534,6 +549,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -819,6 +835,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       drainNatIpPortRanges_.makeImmutable();
       return drainNatIpPortRanges_;
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     public int getDrainNatIpPortRangesCount() {
       return drainNatIpPortRanges_.size();
     }
+
     /**
      *
      *
@@ -863,6 +882,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     public java.lang.String getDrainNatIpPortRanges(int index) {
       return drainNatIpPortRanges_.get(index);
     }
+
     /**
      *
      *
@@ -878,6 +898,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     public com.google.protobuf.ByteString getDrainNatIpPortRangesBytes(int index) {
       return drainNatIpPortRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -901,6 +922,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +945,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +965,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +984,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1018,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1008,6 +1034,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       natIpPortRanges_.makeImmutable();
       return natIpPortRanges_;
     }
+
     /**
      *
      *
@@ -1022,6 +1049,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     public int getNatIpPortRangesCount() {
       return natIpPortRanges_.size();
     }
+
     /**
      *
      *
@@ -1037,6 +1065,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     public java.lang.String getNatIpPortRanges(int index) {
       return natIpPortRanges_.get(index);
     }
+
     /**
      *
      *
@@ -1052,6 +1081,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     public com.google.protobuf.ByteString getNatIpPortRangesBytes(int index) {
       return natIpPortRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1075,6 +1105,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1128,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1116,6 +1148,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1167,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1159,6 +1193,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     }
 
     private int numTotalDrainNatPorts_;
+
     /**
      *
      *
@@ -1174,6 +1209,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     public boolean hasNumTotalDrainNatPorts() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1189,6 +1225,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     public int getNumTotalDrainNatPorts() {
       return numTotalDrainNatPorts_;
     }
+
     /**
      *
      *
@@ -1208,6 +1245,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1265,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     }
 
     private int numTotalNatPorts_;
+
     /**
      *
      *
@@ -1242,6 +1281,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     public boolean hasNumTotalNatPorts() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1257,6 +1297,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     public int getNumTotalNatPorts() {
       return numTotalNatPorts_;
     }
+
     /**
      *
      *
@@ -1276,6 +1317,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1337,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     }
 
     private int ruleNumber_;
+
     /**
      *
      *
@@ -1310,6 +1353,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     public boolean hasRuleNumber() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1325,6 +1369,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     public int getRuleNumber() {
       return ruleNumber_;
     }
+
     /**
      *
      *
@@ -1344,6 +1389,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *

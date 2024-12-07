@@ -44,6 +44,7 @@ public interface ListTargetSitesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -98,6 +99,7 @@ public interface ListTargetSitesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

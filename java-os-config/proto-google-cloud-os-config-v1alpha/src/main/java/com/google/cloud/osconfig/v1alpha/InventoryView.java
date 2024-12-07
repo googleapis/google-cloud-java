@@ -74,6 +74,7 @@ public enum InventoryView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INVENTORY_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int INVENTORY_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public enum InventoryView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BASIC = 1;</code>
    */
   public static final int BASIC_VALUE = 1;
+
   /**
    *
    *

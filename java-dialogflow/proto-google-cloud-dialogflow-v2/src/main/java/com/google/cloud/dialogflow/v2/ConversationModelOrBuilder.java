@@ -37,6 +37,7 @@ public interface ConversationModelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ConversationModelOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface ConversationModelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface ConversationModelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface ConversationModelOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.InputDataset> getDatasetsList();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface ConversationModelOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.InputDataset getDatasets(int index);
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface ConversationModelOrBuilder
    * </code>
    */
   int getDatasetsCount();
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public interface ConversationModelOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.InputDatasetOrBuilder>
       getDatasetsOrBuilderList();
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface ConversationModelOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -223,6 +232,7 @@ public interface ConversationModelOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public interface ConversationModelOrBuilder
    * @return Whether the articleSuggestionModelMetadata field is set.
    */
   boolean hasArticleSuggestionModelMetadata();
+
   /**
    *
    *
@@ -268,6 +279,7 @@ public interface ConversationModelOrBuilder
    * @return The articleSuggestionModelMetadata.
    */
   com.google.cloud.dialogflow.v2.ArticleSuggestionModelMetadata getArticleSuggestionModelMetadata();
+
   /**
    *
    *
@@ -295,6 +307,7 @@ public interface ConversationModelOrBuilder
    * @return Whether the smartReplyModelMetadata field is set.
    */
   boolean hasSmartReplyModelMetadata();
+
   /**
    *
    *
@@ -308,6 +321,7 @@ public interface ConversationModelOrBuilder
    * @return The smartReplyModelMetadata.
    */
   com.google.cloud.dialogflow.v2.SmartReplyModelMetadata getSmartReplyModelMetadata();
+
   /**
    *
    *
@@ -334,6 +348,7 @@ public interface ConversationModelOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *
@@ -361,6 +376,7 @@ public interface ConversationModelOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
+
   /**
    *
    *

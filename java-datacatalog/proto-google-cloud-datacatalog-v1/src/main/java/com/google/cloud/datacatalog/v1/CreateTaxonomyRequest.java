@@ -34,6 +34,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.CreateTaxonomyRequest)
     CreateTaxonomyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateTaxonomyRequest.newBuilder() to construct.
   private CreateTaxonomyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
 
   public static final int TAXONOMY_FIELD_NUMBER = 2;
   private com.google.cloud.datacatalog.v1.Taxonomy taxonomy_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
   public boolean hasTaxonomy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.datacatalog.v1.Taxonomy.getDefaultInstance()
         : taxonomy_;
   }
+
   /**
    *
    *
@@ -344,6 +350,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -558,6 +565,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -582,6 +590,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -606,6 +615,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -629,6 +639,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -679,6 +691,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.datacatalog.v1.Taxonomy.Builder,
             com.google.cloud.datacatalog.v1.TaxonomyOrBuilder>
         taxonomyBuilder_;
+
     /**
      *
      *
@@ -693,6 +706,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     public boolean hasTaxonomy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -713,6 +727,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
         return taxonomyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -735,6 +750,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +770,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +798,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +818,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +833,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getTaxonomyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -832,6 +852,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
             : taxonomy_;
       }
     }
+
     /**
      *
      *

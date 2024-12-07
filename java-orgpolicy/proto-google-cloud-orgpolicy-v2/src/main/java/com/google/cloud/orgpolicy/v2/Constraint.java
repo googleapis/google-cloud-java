@@ -46,6 +46,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.Constraint)
     ConstraintOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Constraint.newBuilder() to construct.
   private Constraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -139,6 +140,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * <code>CONSTRAINT_DEFAULT_UNSPECIFIED = 0;</code>
      */
     public static final int CONSTRAINT_DEFAULT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -150,6 +152,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * <code>ALLOW = 1;</code>
      */
     public static final int ALLOW_VALUE = 1;
+
     /**
      *
      *
@@ -284,6 +287,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getSupportsUnder();
   }
+
   /**
    *
    *
@@ -299,6 +303,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.Constraint.ListConstraint)
       ListConstraintOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ListConstraint.newBuilder() to construct.
     private ListConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -329,6 +334,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SUPPORTS_IN_FIELD_NUMBER = 1;
     private boolean supportsIn_ = false;
+
     /**
      *
      *
@@ -349,6 +355,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SUPPORTS_UNDER_FIELD_NUMBER = 2;
     private boolean supportsUnder_ = false;
+
     /**
      *
      *
@@ -538,6 +545,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -737,6 +745,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean supportsIn_;
+
       /**
        *
        *
@@ -754,6 +763,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       public boolean getSupportsIn() {
         return supportsIn_;
       }
+
       /**
        *
        *
@@ -775,6 +785,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -796,6 +807,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean supportsUnder_;
+
       /**
        *
        *
@@ -814,6 +826,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       public boolean getSupportsUnder() {
         return supportsUnder_;
       }
+
       /**
        *
        *
@@ -836,6 +849,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -925,6 +939,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.orgpolicy.v2.Constraint.BooleanConstraint)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -943,6 +958,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.Constraint.BooleanConstraint)
       BooleanConstraintOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BooleanConstraint.newBuilder() to construct.
     private BooleanConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1123,6 +1139,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1372,6 +1389,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     private ConstraintTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1408,6 +1426,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1438,6 +1457,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1473,6 +1493,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -1498,6 +1519,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1528,6 +1550,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1554,6 +1577,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1583,6 +1607,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONSTRAINT_DEFAULT_FIELD_NUMBER = 4;
   private int constraintDefault_ = 0;
+
   /**
    *
    *
@@ -1598,6 +1623,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   public int getConstraintDefaultValue() {
     return constraintDefault_;
   }
+
   /**
    *
    *
@@ -1619,6 +1645,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LIST_CONSTRAINT_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -1634,6 +1661,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasListConstraint() {
     return constraintTypeCase_ == 5;
   }
+
   /**
    *
    *
@@ -1652,6 +1680,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.orgpolicy.v2.Constraint.ListConstraint.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1671,6 +1700,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOLEAN_CONSTRAINT_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -1686,6 +1716,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBooleanConstraint() {
     return constraintTypeCase_ == 6;
   }
+
   /**
    *
    *
@@ -1704,6 +1735,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1724,6 +1756,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUPPORTS_DRY_RUN_FIELD_NUMBER = 7;
   private boolean supportsDryRun_ = false;
+
   /**
    *
    *
@@ -1979,6 +2012,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2294,6 +2328,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2323,6 +2358,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2352,6 +2388,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2380,6 +2417,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2404,6 +2442,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2435,6 +2474,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2459,6 +2499,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2483,6 +2524,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2506,6 +2548,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2525,6 +2568,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2551,6 +2595,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2576,6 +2621,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2601,6 +2647,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2625,6 +2672,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2645,6 +2693,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2672,6 +2721,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int constraintDefault_ = 0;
+
     /**
      *
      *
@@ -2687,6 +2737,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public int getConstraintDefaultValue() {
       return constraintDefault_;
     }
+
     /**
      *
      *
@@ -2705,6 +2756,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2724,6 +2776,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2746,6 +2799,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2769,6 +2823,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.orgpolicy.v2.Constraint.ListConstraint.Builder,
             com.google.cloud.orgpolicy.v2.Constraint.ListConstraintOrBuilder>
         listConstraintBuilder_;
+
     /**
      *
      *
@@ -2784,6 +2839,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasListConstraint() {
       return constraintTypeCase_ == 5;
     }
+
     /**
      *
      *
@@ -2809,6 +2865,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.orgpolicy.v2.Constraint.ListConstraint.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2832,6 +2889,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       constraintTypeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2852,6 +2910,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       constraintTypeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2886,6 +2945,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       constraintTypeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2911,6 +2971,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2924,6 +2985,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         getListConstraintBuilder() {
       return getListConstraintFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2945,6 +3007,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.orgpolicy.v2.Constraint.ListConstraint.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2984,6 +3047,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint.Builder,
             com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraintOrBuilder>
         booleanConstraintBuilder_;
+
     /**
      *
      *
@@ -2999,6 +3063,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBooleanConstraint() {
       return constraintTypeCase_ == 6;
     }
+
     /**
      *
      *
@@ -3024,6 +3089,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3047,6 +3113,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       constraintTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3067,6 +3134,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       constraintTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3102,6 +3170,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       constraintTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3127,6 +3196,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3140,6 +3210,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         getBooleanConstraintBuilder() {
       return getBooleanConstraintFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3161,6 +3232,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3196,6 +3268,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean supportsDryRun_;
+
     /**
      *
      *
@@ -3211,6 +3284,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public boolean getSupportsDryRun() {
       return supportsDryRun_;
     }
+
     /**
      *
      *
@@ -3230,6 +3304,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

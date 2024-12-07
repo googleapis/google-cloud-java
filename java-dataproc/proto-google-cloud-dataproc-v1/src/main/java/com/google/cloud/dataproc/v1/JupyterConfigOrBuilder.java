@@ -38,6 +38,7 @@ public interface JupyterConfigOrBuilder
    * @return The enum numeric value on the wire for kernel.
    */
   int getKernelValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface JupyterConfigOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

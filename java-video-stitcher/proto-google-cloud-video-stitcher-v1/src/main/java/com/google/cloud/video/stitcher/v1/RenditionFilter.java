@@ -33,6 +33,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.RenditionFilter)
     RenditionFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RenditionFilter.newBuilder() to construct.
   private RenditionFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
 
   public static final int BITRATE_BPS_FIELD_NUMBER = 1;
   private int bitrateBps_ = 0;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object codecs_ = "";
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -303,6 +307,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -500,6 +505,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int bitrateBps_;
+
     /**
      *
      *
@@ -516,6 +522,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
     public int getBitrateBps() {
       return bitrateBps_;
     }
+
     /**
      *
      *
@@ -536,6 +543,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -556,6 +564,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object codecs_ = "";
+
     /**
      *
      *
@@ -579,6 +588,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -602,6 +612,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +654,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

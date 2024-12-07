@@ -39,6 +39,7 @@ public interface DeleteAttestorRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

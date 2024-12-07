@@ -35,6 +35,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.VodStitchDetail)
     VodStitchDetailOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VodStitchDetail.newBuilder() to construct.
   private VodStitchDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.AdStitchDetail> adStitchDetails_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       getAdStitchDetailsList() {
     return adStitchDetails_;
   }
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       getAdStitchDetailsOrBuilderList() {
     return adStitchDetails_;
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
   public int getAdStitchDetailsCount() {
     return adStitchDetails_.size();
   }
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.video.stitcher.v1.AdStitchDetail getAdStitchDetails(int index) {
     return adStitchDetails_.get(index);
   }
+
   /**
    *
    *
@@ -362,6 +370,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -610,6 +619,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -633,6 +643,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -656,6 +667,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +709,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +769,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
         return adStitchDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
         return adStitchDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -787,6 +803,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
         return adStitchDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -810,6 +827,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +848,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +871,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +916,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +937,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +958,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +978,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +998,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1012,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getAdStitchDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1003,6 +1030,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
         return adStitchDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1048,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(adStitchDetails_);
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1062,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       return getAdStitchDetailsFieldBuilder()
           .addBuilder(com.google.cloud.video.stitcher.v1.AdStitchDetail.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1048,6 +1078,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               index, com.google.cloud.video.stitcher.v1.AdStitchDetail.getDefaultInstance());
     }
+
     /**
      *
      *

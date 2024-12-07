@@ -38,6 +38,7 @@ public interface ToolConfigOrBuilder
    * @return Whether the functionCallingConfig field is set.
    */
   boolean hasFunctionCallingConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ToolConfigOrBuilder
    * @return The functionCallingConfig.
    */
   com.google.cloud.aiplatform.v1beta1.FunctionCallingConfig getFunctionCallingConfig();
+
   /**
    *
    *

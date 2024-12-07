@@ -38,6 +38,7 @@ public interface EnterpriseConfigOrBuilder
    * @return The enum numeric value on the wire for clusterTier.
    */
   int getClusterTierValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface EnterpriseConfigOrBuilder
    * @return The enum numeric value on the wire for desiredTier.
    */
   int getDesiredTierValue();
+
   /**
    *
    *

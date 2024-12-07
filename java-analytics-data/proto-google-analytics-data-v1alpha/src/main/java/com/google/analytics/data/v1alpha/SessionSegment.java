@@ -35,6 +35,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.SessionSegment)
     SessionSegmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SessionSegment.newBuilder() to construct.
   private SessionSegment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SESSION_INCLUSION_CRITERIA_FIELD_NUMBER = 1;
   private com.google.analytics.data.v1alpha.SessionSegmentCriteria sessionInclusionCriteria_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSessionInclusionCriteria() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.analytics.data.v1alpha.SessionSegmentCriteria.getDefaultInstance()
         : sessionInclusionCriteria_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXCLUSION_FIELD_NUMBER = 2;
   private com.google.analytics.data.v1alpha.SessionSegmentExclusion exclusion_;
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExclusion() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.analytics.data.v1alpha.SessionSegmentExclusion.getDefaultInstance()
         : exclusion_;
   }
+
   /**
    *
    *
@@ -349,6 +356,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -577,6 +585,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.data.v1alpha.SessionSegmentCriteria.Builder,
             com.google.analytics.data.v1alpha.SessionSegmentCriteriaOrBuilder>
         sessionInclusionCriteriaBuilder_;
+
     /**
      *
      *
@@ -592,6 +601,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSessionInclusionCriteria() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -613,6 +623,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
         return sessionInclusionCriteriaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +670,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +701,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +722,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +739,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSessionInclusionCriteriaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -744,6 +760,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
             : sessionInclusionCriteria_;
       }
     }
+
     /**
      *
      *
@@ -777,6 +794,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.data.v1alpha.SessionSegmentExclusion.Builder,
             com.google.analytics.data.v1alpha.SessionSegmentExclusionOrBuilder>
         exclusionBuilder_;
+
     /**
      *
      *
@@ -791,6 +809,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExclusion() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -811,6 +830,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
         return exclusionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -833,6 +853,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +874,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +903,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +923,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +938,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExclusionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -933,6 +958,7 @@ public final class SessionSegment extends com.google.protobuf.GeneratedMessageV3
             : exclusion_;
       }
     }
+
     /**
      *
      *

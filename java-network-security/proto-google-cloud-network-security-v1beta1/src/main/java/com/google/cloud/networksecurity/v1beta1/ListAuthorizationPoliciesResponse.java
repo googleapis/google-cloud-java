@@ -33,6 +33,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.networksecurity.v1beta1.ListAuthorizationPoliciesResponse)
     ListAuthorizationPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListAuthorizationPoliciesResponse.newBuilder() to construct.
   private ListAuthorizationPoliciesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy>
       authorizationPolicies_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       getAuthorizationPoliciesList() {
     return authorizationPolicies_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       getAuthorizationPoliciesOrBuilderList() {
     return authorizationPolicies_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
   public int getAuthorizationPoliciesCount() {
     return authorizationPolicies_.size();
   }
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       int index) {
     return authorizationPolicies_.get(index);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -387,6 +395,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -680,6 +689,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
         return authorizationPoliciesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -698,6 +708,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
         return authorizationPoliciesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -717,6 +728,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
         return authorizationPoliciesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -742,6 +754,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +778,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +804,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +830,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +853,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +877,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +901,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +923,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +945,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +961,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
         getAuthorizationPoliciesBuilder(int index) {
       return getAuthorizationPoliciesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -959,6 +981,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
         return authorizationPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -979,6 +1002,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
         return java.util.Collections.unmodifiableList(authorizationPolicies_);
       }
     }
+
     /**
      *
      *
@@ -996,6 +1020,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
           .addBuilder(
               com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1014,6 +1039,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
               index,
               com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1051,6 +1077,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1075,6 +1102,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1099,6 +1127,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1122,6 +1151,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1141,6 +1171,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.RuleSet)
     RuleSetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RuleSet.newBuilder() to construct.
   private RuleSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object source_ = "";
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -231,6 +238,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.Rule> rules_;
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.contentwarehouse.v1.Rule> getRulesList() {
     return rules_;
   }
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       getRulesOrBuilderList() {
     return rules_;
   }
+
   /**
    *
    *
@@ -271,6 +281,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
   public int getRulesCount() {
     return rules_.size();
   }
+
   /**
    *
    *
@@ -284,6 +295,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.contentwarehouse.v1.Rule getRules(int index) {
     return rules_.get(index);
   }
+
   /**
    *
    *
@@ -486,6 +498,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -759,6 +772,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -785,6 +799,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +874,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +903,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -907,6 +926,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -929,6 +949,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -950,6 +971,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +989,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1014,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object source_ = "";
+
     /**
      *
      *
@@ -1013,6 +1037,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1035,6 +1060,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1082,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1100,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1156,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
         return rulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1144,6 +1173,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
         return rulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1190,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
         return rulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1182,6 +1213,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1202,6 +1234,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1257,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1246,6 +1280,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1265,6 +1300,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1285,6 +1321,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1342,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1362,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1382,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1395,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.Rule.Builder getRulesBuilder(int index) {
       return getRulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1371,6 +1412,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
         return rulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1388,6 +1430,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(rules_);
       }
     }
+
     /**
      *
      *
@@ -1401,6 +1444,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       return getRulesFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.Rule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1414,6 +1458,7 @@ public final class RuleSet extends com.google.protobuf.GeneratedMessageV3
       return getRulesFieldBuilder()
           .addBuilder(index, com.google.cloud.contentwarehouse.v1.Rule.getDefaultInstance());
     }
+
     /**
      *
      *

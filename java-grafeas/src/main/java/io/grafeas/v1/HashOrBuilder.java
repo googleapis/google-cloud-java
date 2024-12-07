@@ -37,6 +37,7 @@ public interface HashOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

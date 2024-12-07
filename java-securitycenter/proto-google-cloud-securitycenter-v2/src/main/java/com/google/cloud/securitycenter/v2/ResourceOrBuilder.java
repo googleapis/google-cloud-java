@@ -37,6 +37,7 @@ public interface ResourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ResourceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface ResourceOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface ResourceOrBuilder
    * @return The enum numeric value on the wire for cloudProvider.
    */
   int getCloudProviderValue();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface ResourceOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface ResourceOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public interface ResourceOrBuilder
    * @return Whether the gcpMetadata field is set.
    */
   boolean hasGcpMetadata();
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public interface ResourceOrBuilder
    * @return The gcpMetadata.
    */
   com.google.cloud.securitycenter.v2.GcpMetadata getGcpMetadata();
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public interface ResourceOrBuilder
    * @return Whether the awsMetadata field is set.
    */
   boolean hasAwsMetadata();
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public interface ResourceOrBuilder
    * @return The awsMetadata.
    */
   com.google.cloud.securitycenter.v2.AwsMetadata getAwsMetadata();
+
   /**
    *
    *
@@ -258,6 +268,7 @@ public interface ResourceOrBuilder
    * @return Whether the azureMetadata field is set.
    */
   boolean hasAzureMetadata();
+
   /**
    *
    *
@@ -270,6 +281,7 @@ public interface ResourceOrBuilder
    * @return The azureMetadata.
    */
   com.google.cloud.securitycenter.v2.AzureMetadata getAzureMetadata();
+
   /**
    *
    *
@@ -293,6 +305,7 @@ public interface ResourceOrBuilder
    * @return Whether the resourcePath field is set.
    */
   boolean hasResourcePath();
+
   /**
    *
    *
@@ -305,6 +318,7 @@ public interface ResourceOrBuilder
    * @return The resourcePath.
    */
   com.google.cloud.securitycenter.v2.ResourcePath getResourcePath();
+
   /**
    *
    *
@@ -337,6 +351,7 @@ public interface ResourceOrBuilder
    * @return The resourcePathString.
    */
   java.lang.String getResourcePathString();
+
   /**
    *
    *

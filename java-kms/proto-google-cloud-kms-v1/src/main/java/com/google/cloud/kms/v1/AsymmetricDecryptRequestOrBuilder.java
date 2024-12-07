@@ -40,6 +40,7 @@ public interface AsymmetricDecryptRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -104,6 +105,7 @@ public interface AsymmetricDecryptRequestOrBuilder
    * @return Whether the ciphertextCrc32c field is set.
    */
   boolean hasCiphertextCrc32C();
+
   /**
    *
    *
@@ -136,6 +138,7 @@ public interface AsymmetricDecryptRequestOrBuilder
    * @return The ciphertextCrc32c.
    */
   com.google.protobuf.Int64Value getCiphertextCrc32C();
+
   /**
    *
    *

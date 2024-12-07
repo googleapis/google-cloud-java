@@ -36,6 +36,7 @@ public interface NetworkMountPointOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface NetworkMountPointOrBuilder
    * @return The logicalInterface.
    */
   java.lang.String getLogicalInterface();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface NetworkMountPointOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *

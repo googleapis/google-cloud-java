@@ -82,6 +82,7 @@ public enum DocumentLabelingState implements com.google.protobuf.ProtocolMessage
    * <code>DOCUMENT_LABELING_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int DOCUMENT_LABELING_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum DocumentLabelingState implements com.google.protobuf.ProtocolMessage
    * <code>DOCUMENT_LABELED = 1;</code>
    */
   public static final int DOCUMENT_LABELED_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum DocumentLabelingState implements com.google.protobuf.ProtocolMessage
    * <code>DOCUMENT_UNLABELED = 2;</code>
    */
   public static final int DOCUMENT_UNLABELED_VALUE = 2;
+
   /**
    *
    *

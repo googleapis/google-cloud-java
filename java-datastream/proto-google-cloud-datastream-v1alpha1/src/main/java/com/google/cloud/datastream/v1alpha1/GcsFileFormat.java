@@ -63,6 +63,7 @@ public enum GcsFileFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GCS_FILE_FORMAT_UNSPECIFIED = 0;</code>
    */
   public static final int GCS_FILE_FORMAT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface MitreAttackOrBuilder
    * @return The enum numeric value on the wire for primaryTactic.
    */
   int getPrimaryTacticValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface MitreAttackOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v1.MitreAttack.Technique>
       getPrimaryTechniquesList();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface MitreAttackOrBuilder
    * @return The count of primaryTechniques.
    */
   int getPrimaryTechniquesCount();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface MitreAttackOrBuilder
    * @return The primaryTechniques at the given index.
    */
   com.google.cloud.securitycenter.v1.MitreAttack.Technique getPrimaryTechniques(int index);
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface MitreAttackOrBuilder
    * @return A list containing the enum numeric values on the wire for primaryTechniques.
    */
   java.util.List<java.lang.Integer> getPrimaryTechniquesValueList();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface MitreAttackOrBuilder
    * @return A list containing the additionalTactics.
    */
   java.util.List<com.google.cloud.securitycenter.v1.MitreAttack.Tactic> getAdditionalTacticsList();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface MitreAttackOrBuilder
    * @return The count of additionalTactics.
    */
   int getAdditionalTacticsCount();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface MitreAttackOrBuilder
    * @return The additionalTactics at the given index.
    */
   com.google.cloud.securitycenter.v1.MitreAttack.Tactic getAdditionalTactics(int index);
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface MitreAttackOrBuilder
    * @return A list containing the enum numeric values on the wire for additionalTactics.
    */
   java.util.List<java.lang.Integer> getAdditionalTacticsValueList();
+
   /**
    *
    *
@@ -226,6 +235,7 @@ public interface MitreAttackOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v1.MitreAttack.Technique>
       getAdditionalTechniquesList();
+
   /**
    *
    *
@@ -240,6 +250,7 @@ public interface MitreAttackOrBuilder
    * @return The count of additionalTechniques.
    */
   int getAdditionalTechniquesCount();
+
   /**
    *
    *
@@ -255,6 +266,7 @@ public interface MitreAttackOrBuilder
    * @return The additionalTechniques at the given index.
    */
   com.google.cloud.securitycenter.v1.MitreAttack.Technique getAdditionalTechniques(int index);
+
   /**
    *
    *
@@ -269,6 +281,7 @@ public interface MitreAttackOrBuilder
    * @return A list containing the enum numeric values on the wire for additionalTechniques.
    */
   java.util.List<java.lang.Integer> getAdditionalTechniquesValueList();
+
   /**
    *
    *
@@ -297,6 +310,7 @@ public interface MitreAttackOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

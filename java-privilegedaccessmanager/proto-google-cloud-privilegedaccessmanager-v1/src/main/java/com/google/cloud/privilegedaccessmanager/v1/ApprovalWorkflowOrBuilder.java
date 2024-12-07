@@ -37,6 +37,7 @@ public interface ApprovalWorkflowOrBuilder
    * @return Whether the manualApprovals field is set.
    */
   boolean hasManualApprovals();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ApprovalWorkflowOrBuilder
    * @return The manualApprovals.
    */
   com.google.cloud.privilegedaccessmanager.v1.ManualApprovals getManualApprovals();
+
   /**
    *
    *

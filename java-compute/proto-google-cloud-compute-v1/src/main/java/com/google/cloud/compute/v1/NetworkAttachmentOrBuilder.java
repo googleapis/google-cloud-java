@@ -37,6 +37,7 @@ public interface NetworkAttachmentOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.NetworkAttachmentConnectedEndpoint>
       getConnectionEndpointsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface NetworkAttachmentOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.NetworkAttachmentConnectedEndpoint getConnectionEndpoints(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface NetworkAttachmentOrBuilder
    * </code>
    */
   int getConnectionEndpointsCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface NetworkAttachmentOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NetworkAttachmentConnectedEndpointOrBuilder>
       getConnectionEndpointsOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface NetworkAttachmentOrBuilder
    * @return Whether the connectionPreference field is set.
    */
   boolean hasConnectionPreference();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The connectionPreference.
    */
   java.lang.String getConnectionPreference();
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public interface NetworkAttachmentOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -152,6 +159,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -177,6 +185,7 @@ public interface NetworkAttachmentOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -189,6 +198,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -214,6 +224,7 @@ public interface NetworkAttachmentOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
+
   /**
    *
    *
@@ -226,6 +237,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
+
   /**
    *
    *
@@ -251,6 +263,7 @@ public interface NetworkAttachmentOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -276,6 +289,7 @@ public interface NetworkAttachmentOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -288,6 +302,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -313,6 +328,7 @@ public interface NetworkAttachmentOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -325,6 +341,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -350,6 +367,7 @@ public interface NetworkAttachmentOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -362,6 +380,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -387,6 +406,7 @@ public interface NetworkAttachmentOrBuilder
    * @return A list containing the producerAcceptLists.
    */
   java.util.List<java.lang.String> getProducerAcceptListsList();
+
   /**
    *
    *
@@ -399,6 +419,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The count of producerAcceptLists.
    */
   int getProducerAcceptListsCount();
+
   /**
    *
    *
@@ -412,6 +433,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The producerAcceptLists at the given index.
    */
   java.lang.String getProducerAcceptLists(int index);
+
   /**
    *
    *
@@ -438,6 +460,7 @@ public interface NetworkAttachmentOrBuilder
    * @return A list containing the producerRejectLists.
    */
   java.util.List<java.lang.String> getProducerRejectListsList();
+
   /**
    *
    *
@@ -450,6 +473,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The count of producerRejectLists.
    */
   int getProducerRejectListsCount();
+
   /**
    *
    *
@@ -463,6 +487,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The producerRejectLists at the given index.
    */
   java.lang.String getProducerRejectLists(int index);
+
   /**
    *
    *
@@ -489,6 +514,7 @@ public interface NetworkAttachmentOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -501,6 +527,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -526,6 +553,7 @@ public interface NetworkAttachmentOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -538,6 +566,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -563,6 +592,7 @@ public interface NetworkAttachmentOrBuilder
    * @return Whether the selfLinkWithId field is set.
    */
   boolean hasSelfLinkWithId();
+
   /**
    *
    *
@@ -575,6 +605,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The selfLinkWithId.
    */
   java.lang.String getSelfLinkWithId();
+
   /**
    *
    *
@@ -600,6 +631,7 @@ public interface NetworkAttachmentOrBuilder
    * @return A list containing the subnetworks.
    */
   java.util.List<java.lang.String> getSubnetworksList();
+
   /**
    *
    *
@@ -612,6 +644,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The count of subnetworks.
    */
   int getSubnetworksCount();
+
   /**
    *
    *
@@ -625,6 +658,7 @@ public interface NetworkAttachmentOrBuilder
    * @return The subnetworks at the given index.
    */
   java.lang.String getSubnetworks(int index);
+
   /**
    *
    *

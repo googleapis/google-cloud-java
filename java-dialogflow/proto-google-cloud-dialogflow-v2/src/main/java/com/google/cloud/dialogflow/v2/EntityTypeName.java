@@ -253,7 +253,8 @@ public class EntityTypeName implements ResourceName {
     private Builder(EntityTypeName entityTypeName) {
       Preconditions.checkArgument(
           Objects.equals(entityTypeName.pathTemplate, PROJECT_ENTITY_TYPE),
-          "toBuilder is only supported when EntityTypeName has the pattern of projects/{project}/agent/entityTypes/{entity_type}");
+          "toBuilder is only supported when EntityTypeName has the pattern of"
+              + " projects/{project}/agent/entityTypes/{entity_type}");
       this.project = entityTypeName.project;
       this.entityType = entityTypeName.entityType;
     }

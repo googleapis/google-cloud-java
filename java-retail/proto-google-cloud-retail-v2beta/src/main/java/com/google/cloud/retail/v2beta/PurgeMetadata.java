@@ -34,6 +34,7 @@ public final class PurgeMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.PurgeMetadata)
     PurgeMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PurgeMetadata.newBuilder() to construct.
   private PurgeMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class PurgeMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

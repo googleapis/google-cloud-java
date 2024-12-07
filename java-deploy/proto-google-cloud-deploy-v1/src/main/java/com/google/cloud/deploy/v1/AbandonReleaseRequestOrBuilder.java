@@ -39,6 +39,7 @@ public interface AbandonReleaseRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

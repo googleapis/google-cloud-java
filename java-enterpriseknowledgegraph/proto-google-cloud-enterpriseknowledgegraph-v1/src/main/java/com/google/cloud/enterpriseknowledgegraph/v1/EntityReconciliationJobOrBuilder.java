@@ -36,6 +36,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.enterpriseknowledgegraph.v1.InputConfig getInputConfig();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.enterpriseknowledgegraph.v1.OutputConfig getOutputConfig();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -251,6 +261,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -266,6 +277,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -294,6 +306,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -308,6 +321,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -335,6 +349,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return Whether the reconConfig field is set.
    */
   boolean hasReconConfig();
+
   /**
    *
    *
@@ -349,6 +364,7 @@ public interface EntityReconciliationJobOrBuilder
    * @return The reconConfig.
    */
   com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig getReconConfig();
+
   /**
    *
    *

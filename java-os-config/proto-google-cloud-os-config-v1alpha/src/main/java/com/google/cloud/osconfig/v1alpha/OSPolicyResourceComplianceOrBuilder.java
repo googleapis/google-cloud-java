@@ -37,6 +37,7 @@ public interface OSPolicyResourceComplianceOrBuilder
    * @return The osPolicyResourceId.
    */
   java.lang.String getOsPolicyResourceId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface OSPolicyResourceComplianceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep> getConfigStepsList();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface OSPolicyResourceComplianceOrBuilder
    * </code>
    */
   com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep getConfigSteps(int index);
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface OSPolicyResourceComplianceOrBuilder
    * </code>
    */
   int getConfigStepsCount();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface OSPolicyResourceComplianceOrBuilder
    */
   java.util.List<? extends com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStepOrBuilder>
       getConfigStepsOrBuilderList();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface OSPolicyResourceComplianceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface OSPolicyResourceComplianceOrBuilder
    * @return Whether the execResourceOutput field is set.
    */
   boolean hasExecResourceOutput();
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public interface OSPolicyResourceComplianceOrBuilder
    */
   com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.ExecResourceOutput
       getExecResourceOutput();
+
   /**
    *
    *

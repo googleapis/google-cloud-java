@@ -34,6 +34,7 @@ public interface RelatedResourcesOrBuilder
    * <code>repeated .google.cloud.asset.v1.RelatedResource related_resources = 1;</code>
    */
   java.util.List<com.google.cloud.asset.v1.RelatedResource> getRelatedResourcesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface RelatedResourcesOrBuilder
    * <code>repeated .google.cloud.asset.v1.RelatedResource related_resources = 1;</code>
    */
   com.google.cloud.asset.v1.RelatedResource getRelatedResources(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface RelatedResourcesOrBuilder
    * <code>repeated .google.cloud.asset.v1.RelatedResource related_resources = 1;</code>
    */
   int getRelatedResourcesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface RelatedResourcesOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1.RelatedResourceOrBuilder>
       getRelatedResourcesOrBuilderList();
+
   /**
    *
    *

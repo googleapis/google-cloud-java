@@ -39,6 +39,7 @@ public interface DeleteConsumerGroupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

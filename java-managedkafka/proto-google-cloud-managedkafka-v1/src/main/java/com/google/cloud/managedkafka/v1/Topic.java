@@ -33,6 +33,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.Topic)
     TopicOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Topic.newBuilder() to construct.
   private Topic(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARTITION_COUNT_FIELD_NUMBER = 2;
   private int partitionCount_ = 0;
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPLICATION_FACTOR_FIELD_NUMBER = 3;
   private int replicationFactor_ = 0;
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
   public int getConfigsCount() {
     return internalGetConfigs().getMap().size();
   }
+
   /**
    *
    *
@@ -216,12 +222,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetConfigs().getMap().containsKey(key);
   }
+
   /** Use {@link #getConfigsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getConfigs() {
     return getConfigsMap();
   }
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getConfigsMap() {
     return internalGetConfigs().getMap();
   }
+
   /**
    *
    *
@@ -259,6 +268,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetConfigs().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -475,6 +485,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -725,6 +736,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -749,6 +761,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -773,6 +786,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -796,6 +810,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +830,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +857,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int partitionCount_;
+
     /**
      *
      *
@@ -859,6 +876,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     public int getPartitionCount() {
       return partitionCount_;
     }
+
     /**
      *
      *
@@ -881,6 +899,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +922,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int replicationFactor_;
+
     /**
      *
      *
@@ -921,6 +941,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     public int getReplicationFactor() {
       return replicationFactor_;
     }
+
     /**
      *
      *
@@ -943,6 +964,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -989,6 +1011,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     public int getConfigsCount() {
       return internalGetConfigs().getMap().size();
     }
+
     /**
      *
      *
@@ -1007,12 +1030,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetConfigs().getMap().containsKey(key);
     }
+
     /** Use {@link #getConfigsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getConfigs() {
       return getConfigsMap();
     }
+
     /**
      *
      *
@@ -1028,6 +1053,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getConfigsMap() {
       return internalGetConfigs().getMap();
     }
+
     /**
      *
      *
@@ -1050,6 +1076,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetConfigs().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1078,6 +1105,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableConfigs().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1096,12 +1124,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableConfigs().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableConfigs() {
       bitField0_ |= 0x00000008;
       return internalGetMutableConfigs().getMutableMap();
     }
+
     /**
      *
      *
@@ -1124,6 +1154,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.StopInstanceRequest)
     StopInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StopInstanceRequest.newBuilder() to construct.
   private StopInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int DISCARD_LOCAL_SSD_FIELD_NUMBER = 319517903;
   private boolean discardLocalSsd_ = false;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
   public boolean hasDiscardLocalSsd() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -301,6 +312,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -532,6 +544,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -778,6 +791,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private boolean discardLocalSsd_;
+
     /**
      *
      *
@@ -793,6 +807,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
     public boolean hasDiscardLocalSsd() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -808,6 +823,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
     public boolean getDiscardLocalSsd() {
       return discardLocalSsd_;
     }
+
     /**
      *
      *
@@ -827,6 +843,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +863,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object instance_ = "";
+
     /**
      *
      *
@@ -868,6 +886,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -890,6 +909,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -911,6 +931,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +949,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +974,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -976,6 +999,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1000,6 +1024,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1048,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1042,6 +1068,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1095,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1082,6 +1110,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1104,6 +1133,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1126,6 +1156,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1147,6 +1178,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1196,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1188,6 +1221,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1212,6 +1246,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1236,6 +1271,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1259,6 +1295,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1278,6 +1315,7 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

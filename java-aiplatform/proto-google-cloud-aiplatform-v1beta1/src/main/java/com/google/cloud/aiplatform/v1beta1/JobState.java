@@ -164,6 +164,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int JOB_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -174,6 +175,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_QUEUED = 1;</code>
    */
   public static final int JOB_STATE_QUEUED_VALUE = 1;
+
   /**
    *
    *
@@ -184,6 +186,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_PENDING = 2;</code>
    */
   public static final int JOB_STATE_PENDING_VALUE = 2;
+
   /**
    *
    *
@@ -194,6 +197,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_RUNNING = 3;</code>
    */
   public static final int JOB_STATE_RUNNING_VALUE = 3;
+
   /**
    *
    *
@@ -204,6 +208,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_SUCCEEDED = 4;</code>
    */
   public static final int JOB_STATE_SUCCEEDED_VALUE = 4;
+
   /**
    *
    *
@@ -214,6 +219,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_FAILED = 5;</code>
    */
   public static final int JOB_STATE_FAILED_VALUE = 5;
+
   /**
    *
    *
@@ -225,6 +231,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_CANCELLING = 6;</code>
    */
   public static final int JOB_STATE_CANCELLING_VALUE = 6;
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_CANCELLED = 7;</code>
    */
   public static final int JOB_STATE_CANCELLED_VALUE = 7;
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_PAUSED = 8;</code>
    */
   public static final int JOB_STATE_PAUSED_VALUE = 8;
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_EXPIRED = 9;</code>
    */
   public static final int JOB_STATE_EXPIRED_VALUE = 9;
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_UPDATING = 10;</code>
    */
   public static final int JOB_STATE_UPDATING_VALUE = 10;
+
   /**
    *
    *

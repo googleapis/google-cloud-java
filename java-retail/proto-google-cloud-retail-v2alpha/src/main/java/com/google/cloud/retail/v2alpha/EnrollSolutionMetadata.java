@@ -34,6 +34,7 @@ public final class EnrollSolutionMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.EnrollSolutionMetadata)
     EnrollSolutionMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EnrollSolutionMetadata.newBuilder() to construct.
   private EnrollSolutionMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class EnrollSolutionMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface GkeClusterOrBuilder
    * @return The resourceLink.
    */
   java.lang.String getResourceLink();
+
   /**
    *
    *

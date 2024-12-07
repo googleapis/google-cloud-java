@@ -33,6 +33,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest)
     RefreshRuntimeTokenInternalRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RefreshRuntimeTokenInternalRequest.newBuilder() to construct.
   private RefreshRuntimeTokenInternalRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmId_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -344,6 +349,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -547,6 +553,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -572,6 +579,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -597,6 +605,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -621,6 +630,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
     }
 
     private java.lang.Object vmId_ = "";
+
     /**
      *
      *
@@ -691,6 +703,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class RefreshRuntimeTokenInternalRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

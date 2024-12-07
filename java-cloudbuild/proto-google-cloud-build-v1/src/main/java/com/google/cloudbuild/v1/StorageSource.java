@@ -33,6 +33,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.StorageSource)
     StorageSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StorageSource.newBuilder() to construct.
   private StorageSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * <code>SOURCE_FETCHER_UNSPECIFIED = 0;</code>
      */
     public static final int SOURCE_FETCHER_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * <code>GSUTIL = 1;</code>
      */
     public static final int GSUTIL_VALUE = 1;
+
     /**
      *
      *
@@ -226,6 +229,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bucket_ = "";
+
   /**
    *
    *
@@ -251,6 +255,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -281,6 +286,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object object_ = "";
+
   /**
    *
    *
@@ -307,6 +313,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -336,6 +343,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GENERATION_FIELD_NUMBER = 3;
   private long generation_ = 0L;
+
   /**
    *
    *
@@ -355,6 +363,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_FETCHER_FIELD_NUMBER = 5;
   private int sourceFetcher_ = 0;
+
   /**
    *
    *
@@ -372,6 +381,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
   public int getSourceFetcherValue() {
     return sourceFetcher_;
   }
+
   /**
    *
    *
@@ -583,6 +593,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -807,6 +818,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object bucket_ = "";
+
     /**
      *
      *
@@ -831,6 +843,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -855,6 +868,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -878,6 +892,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +912,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +939,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object object_ = "";
+
     /**
      *
      *
@@ -948,6 +965,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -973,6 +991,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -997,6 +1016,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1037,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1065,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long generation_;
+
     /**
      *
      *
@@ -1060,6 +1082,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     public long getGeneration() {
       return generation_;
     }
+
     /**
      *
      *
@@ -1080,6 +1103,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1100,6 +1124,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sourceFetcher_ = 0;
+
     /**
      *
      *
@@ -1117,6 +1142,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     public int getSourceFetcherValue() {
       return sourceFetcher_;
     }
+
     /**
      *
      *
@@ -1137,6 +1163,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1185,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloudbuild.v1.StorageSource.SourceFetcher.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1181,6 +1209,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

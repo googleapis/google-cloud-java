@@ -33,6 +33,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.Location)
     LocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Location.newBuilder() to construct.
   private Location(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -200,6 +201,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>LOCATION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int LOCATION_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -210,6 +212,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>COUNTRY = 1;</code>
      */
     public static final int COUNTRY_VALUE = 1;
+
     /**
      *
      *
@@ -220,6 +223,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>ADMINISTRATIVE_AREA = 2;</code>
      */
     public static final int ADMINISTRATIVE_AREA_VALUE = 2;
+
     /**
      *
      *
@@ -230,6 +234,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>SUB_ADMINISTRATIVE_AREA = 3;</code>
      */
     public static final int SUB_ADMINISTRATIVE_AREA_VALUE = 3;
+
     /**
      *
      *
@@ -240,6 +245,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>LOCALITY = 4;</code>
      */
     public static final int LOCALITY_VALUE = 4;
+
     /**
      *
      *
@@ -250,6 +256,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>POSTAL_CODE = 5;</code>
      */
     public static final int POSTAL_CODE_VALUE = 5;
+
     /**
      *
      *
@@ -264,6 +271,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>SUB_LOCALITY = 6;</code>
      */
     public static final int SUB_LOCALITY_VALUE = 6;
+
     /**
      *
      *
@@ -274,6 +282,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>SUB_LOCALITY_1 = 7;</code>
      */
     public static final int SUB_LOCALITY_1_VALUE = 7;
+
     /**
      *
      *
@@ -284,6 +293,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>SUB_LOCALITY_2 = 8;</code>
      */
     public static final int SUB_LOCALITY_2_VALUE = 8;
+
     /**
      *
      *
@@ -294,6 +304,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>NEIGHBORHOOD = 9;</code>
      */
     public static final int NEIGHBORHOOD_VALUE = 9;
+
     /**
      *
      *
@@ -407,6 +418,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int LOCATION_TYPE_FIELD_NUMBER = 1;
   private int locationType_ = 0;
+
   /**
    *
    *
@@ -427,6 +439,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   public int getLocationTypeValue() {
     return locationType_;
   }
+
   /**
    *
    *
@@ -452,6 +465,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POSTAL_ADDRESS_FIELD_NUMBER = 2;
   private com.google.type.PostalAddress postalAddress_;
+
   /**
    *
    *
@@ -470,6 +484,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPostalAddress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -490,6 +505,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.PostalAddress.getDefaultInstance()
         : postalAddress_;
   }
+
   /**
    *
    *
@@ -511,6 +527,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAT_LNG_FIELD_NUMBER = 3;
   private com.google.type.LatLng latLng_;
+
   /**
    *
    *
@@ -526,6 +543,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLatLng() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -541,6 +559,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getLatLng() {
     return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
   }
+
   /**
    *
    *
@@ -557,6 +576,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RADIUS_MILES_FIELD_NUMBER = 4;
   private double radiusMiles_ = 0D;
+
   /**
    *
    *
@@ -777,6 +797,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1019,6 +1040,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int locationType_ = 0;
+
     /**
      *
      *
@@ -1039,6 +1061,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public int getLocationTypeValue() {
       return locationType_;
     }
+
     /**
      *
      *
@@ -1062,6 +1085,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1110,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.talent.v4.Location.LocationType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1112,6 +1137,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1141,6 +1167,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
             com.google.type.PostalAddress.Builder,
             com.google.type.PostalAddressOrBuilder>
         postalAddressBuilder_;
+
     /**
      *
      *
@@ -1158,6 +1185,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPostalAddress() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1181,6 +1209,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         return postalAddressBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1206,6 +1235,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1228,6 +1258,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1258,6 +1289,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1280,6 +1312,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1297,6 +1330,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPostalAddressFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1318,6 +1352,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
             : postalAddress_;
       }
     }
+
     /**
      *
      *
@@ -1351,6 +1386,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         latLngBuilder_;
+
     /**
      *
      *
@@ -1365,6 +1401,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatLng() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1383,6 +1420,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         return latLngBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1405,6 +1443,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1463,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1451,6 +1491,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1470,6 +1511,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1484,6 +1526,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLatLngFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1500,6 +1543,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
       }
     }
+
     /**
      *
      *
@@ -1524,6 +1568,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double radiusMiles_;
+
     /**
      *
      *
@@ -1543,6 +1588,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public double getRadiusMiles() {
       return radiusMiles_;
     }
+
     /**
      *
      *
@@ -1566,6 +1612,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

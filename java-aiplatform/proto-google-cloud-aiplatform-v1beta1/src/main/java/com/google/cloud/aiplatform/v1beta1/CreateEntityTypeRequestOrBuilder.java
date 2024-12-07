@@ -40,6 +40,7 @@ public interface CreateEntityTypeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateEntityTypeRequestOrBuilder
    * @return Whether the entityType field is set.
    */
   boolean hasEntityType();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateEntityTypeRequestOrBuilder
    * @return The entityType.
    */
   com.google.cloud.aiplatform.v1beta1.EntityType getEntityType();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateEntityTypeRequestOrBuilder
    * @return The entityTypeId.
    */
   java.lang.String getEntityTypeId();
+
   /**
    *
    *

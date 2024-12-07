@@ -41,6 +41,7 @@ public interface GetReferenceImageRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

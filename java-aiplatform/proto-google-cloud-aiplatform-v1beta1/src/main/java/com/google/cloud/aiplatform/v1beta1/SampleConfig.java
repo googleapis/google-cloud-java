@@ -34,6 +34,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SampleConfig)
     SampleConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SampleConfig.newBuilder() to construct.
   private SampleConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,6 +109,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>SAMPLE_STRATEGY_UNSPECIFIED = 0;</code>
      */
     public static final int SAMPLE_STRATEGY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -216,6 +218,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
     private InitialBatchSampleSizeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -262,6 +265,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
     private FollowingBatchSampleSizeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -293,6 +297,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INITIAL_BATCH_SAMPLE_PERCENTAGE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -308,6 +313,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInitialBatchSamplePercentage() {
     return initialBatchSampleSizeCase_ == 1;
   }
+
   /**
    *
    *
@@ -328,6 +334,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FOLLOWING_BATCH_SAMPLE_PERCENTAGE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -344,6 +351,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFollowingBatchSamplePercentage() {
     return followingBatchSampleSizeCase_ == 3;
   }
+
   /**
    *
    *
@@ -366,6 +374,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SAMPLE_STRATEGY_FIELD_NUMBER = 5;
   private int sampleStrategy_ = 0;
+
   /**
    *
    *
@@ -382,6 +391,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
   public int getSampleStrategyValue() {
     return sampleStrategy_;
   }
+
   /**
    *
    *
@@ -620,6 +630,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -890,6 +901,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInitialBatchSamplePercentage() {
       return initialBatchSampleSizeCase_ == 1;
     }
+
     /**
      *
      *
@@ -907,6 +919,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -926,6 +939,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +975,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFollowingBatchSamplePercentage() {
       return followingBatchSampleSizeCase_ == 3;
     }
+
     /**
      *
      *
@@ -979,6 +994,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -999,6 +1015,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1038,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sampleStrategy_ = 0;
+
     /**
      *
      *
@@ -1038,6 +1056,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
     public int getSampleStrategyValue() {
       return sampleStrategy_;
     }
+
     /**
      *
      *
@@ -1058,6 +1077,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1100,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1104,6 +1125,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

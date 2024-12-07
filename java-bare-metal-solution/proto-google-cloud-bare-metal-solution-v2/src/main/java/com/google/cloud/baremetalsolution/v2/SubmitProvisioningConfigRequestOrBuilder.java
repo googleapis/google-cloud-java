@@ -39,6 +39,7 @@ public interface SubmitProvisioningConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SubmitProvisioningConfigRequestOrBuilder
    * @return Whether the provisioningConfig field is set.
    */
   boolean hasProvisioningConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface SubmitProvisioningConfigRequestOrBuilder
    * @return The provisioningConfig.
    */
   com.google.cloud.baremetalsolution.v2.ProvisioningConfig getProvisioningConfig();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface SubmitProvisioningConfigRequestOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
+
   /**
    *
    *

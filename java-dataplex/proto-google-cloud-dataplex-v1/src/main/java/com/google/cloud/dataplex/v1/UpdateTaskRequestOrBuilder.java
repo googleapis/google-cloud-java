@@ -37,6 +37,7 @@ public interface UpdateTaskRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface UpdateTaskRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface UpdateTaskRequestOrBuilder
    * @return Whether the task field is set.
    */
   boolean hasTask();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface UpdateTaskRequestOrBuilder
    * @return The task.
    */
   com.google.cloud.dataplex.v1.Task getTask();
+
   /**
    *
    *

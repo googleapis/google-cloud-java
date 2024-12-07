@@ -38,6 +38,7 @@ public interface UpdateConversationProfileRequestOrBuilder
    * @return Whether the conversationProfile field is set.
    */
   boolean hasConversationProfile();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateConversationProfileRequestOrBuilder
    * @return The conversationProfile.
    */
   com.google.cloud.dialogflow.v2beta1.ConversationProfile getConversationProfile();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateConversationProfileRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface UpdateConversationProfileRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

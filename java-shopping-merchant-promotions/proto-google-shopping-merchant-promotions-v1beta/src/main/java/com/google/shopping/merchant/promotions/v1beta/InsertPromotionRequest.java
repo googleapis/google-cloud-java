@@ -33,6 +33,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.promotions.v1beta.InsertPromotionRequest)
     InsertPromotionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertPromotionRequest.newBuilder() to construct.
   private InsertPromotionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
 
   public static final int PROMOTION_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.promotions.v1beta.Promotion promotion_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
   public boolean hasPromotion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
         ? com.google.shopping.merchant.promotions.v1beta.Promotion.getDefaultInstance()
         : promotion_;
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataSource_ = "";
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -415,6 +423,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -650,6 +659,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -673,6 +683,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -696,6 +707,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -718,6 +730,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +749,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +780,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
             com.google.shopping.merchant.promotions.v1beta.Promotion.Builder,
             com.google.shopping.merchant.promotions.v1beta.PromotionOrBuilder>
         promotionBuilder_;
+
     /**
      *
      *
@@ -782,6 +797,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
     public boolean hasPromotion() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
         return promotionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +868,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +899,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +921,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +938,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getPromotionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -938,6 +960,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
             : promotion_;
       }
     }
+
     /**
      *
      *
@@ -967,6 +990,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object dataSource_ = "";
+
     /**
      *
      *
@@ -992,6 +1016,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1017,6 +1042,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1041,6 +1067,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1088,7 @@ public final class InsertPromotionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

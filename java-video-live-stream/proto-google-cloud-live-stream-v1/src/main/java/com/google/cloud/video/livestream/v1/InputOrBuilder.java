@@ -37,6 +37,7 @@ public interface InputOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface InputOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface InputOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface InputOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface InputOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface InputOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -147,9 +153,11 @@ public interface InputOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -160,6 +168,7 @@ public interface InputOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -174,6 +183,7 @@ public interface InputOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -197,6 +207,7 @@ public interface InputOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -225,6 +236,7 @@ public interface InputOrBuilder
    * @return The enum numeric value on the wire for tier.
    */
   int getTierValue();
+
   /**
    *
    *
@@ -258,6 +270,7 @@ public interface InputOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -288,6 +301,7 @@ public interface InputOrBuilder
    * @return Whether the preprocessingConfig field is set.
    */
   boolean hasPreprocessingConfig();
+
   /**
    *
    *
@@ -300,6 +314,7 @@ public interface InputOrBuilder
    * @return The preprocessingConfig.
    */
   com.google.cloud.video.livestream.v1.PreprocessingConfig getPreprocessingConfig();
+
   /**
    *
    *
@@ -324,6 +339,7 @@ public interface InputOrBuilder
    * @return Whether the securityRules field is set.
    */
   boolean hasSecurityRules();
+
   /**
    *
    *
@@ -336,6 +352,7 @@ public interface InputOrBuilder
    * @return The securityRules.
    */
   com.google.cloud.video.livestream.v1.Input.SecurityRule getSecurityRules();
+
   /**
    *
    *
@@ -362,6 +379,7 @@ public interface InputOrBuilder
    * @return Whether the inputStreamProperty field is set.
    */
   boolean hasInputStreamProperty();
+
   /**
    *
    *
@@ -377,6 +395,7 @@ public interface InputOrBuilder
    * @return The inputStreamProperty.
    */
   com.google.cloud.video.livestream.v1.InputStreamProperty getInputStreamProperty();
+
   /**
    *
    *

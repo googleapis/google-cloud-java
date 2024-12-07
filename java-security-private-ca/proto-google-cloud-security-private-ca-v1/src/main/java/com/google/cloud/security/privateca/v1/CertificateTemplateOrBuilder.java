@@ -40,6 +40,7 @@ public interface CertificateTemplateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public interface CertificateTemplateOrBuilder
    * @return Whether the maximumLifetime field is set.
    */
   boolean hasMaximumLifetime();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface CertificateTemplateOrBuilder
    * @return The maximumLifetime.
    */
   com.google.protobuf.Duration getMaximumLifetime();
+
   /**
    *
    *
@@ -159,6 +162,7 @@ public interface CertificateTemplateOrBuilder
    * @return Whether the predefinedValues field is set.
    */
   boolean hasPredefinedValues();
+
   /**
    *
    *
@@ -181,6 +185,7 @@ public interface CertificateTemplateOrBuilder
    * @return The predefinedValues.
    */
   com.google.cloud.security.privateca.v1.X509Parameters getPredefinedValues();
+
   /**
    *
    *
@@ -219,6 +224,7 @@ public interface CertificateTemplateOrBuilder
    * @return Whether the identityConstraints field is set.
    */
   boolean hasIdentityConstraints();
+
   /**
    *
    *
@@ -236,6 +242,7 @@ public interface CertificateTemplateOrBuilder
    * @return The identityConstraints.
    */
   com.google.cloud.security.privateca.v1.CertificateIdentityConstraints getIdentityConstraints();
+
   /**
    *
    *
@@ -283,6 +290,7 @@ public interface CertificateTemplateOrBuilder
    * @return Whether the passthroughExtensions field is set.
    */
   boolean hasPassthroughExtensions();
+
   /**
    *
    *
@@ -313,6 +321,7 @@ public interface CertificateTemplateOrBuilder
    * @return The passthroughExtensions.
    */
   com.google.cloud.security.privateca.v1.CertificateExtensionConstraints getPassthroughExtensions();
+
   /**
    *
    *
@@ -356,6 +365,7 @@ public interface CertificateTemplateOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -385,6 +395,7 @@ public interface CertificateTemplateOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -400,6 +411,7 @@ public interface CertificateTemplateOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -429,6 +441,7 @@ public interface CertificateTemplateOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -444,6 +457,7 @@ public interface CertificateTemplateOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -468,6 +482,7 @@ public interface CertificateTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -478,9 +493,11 @@ public interface CertificateTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -491,6 +508,7 @@ public interface CertificateTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -505,6 +523,7 @@ public interface CertificateTemplateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

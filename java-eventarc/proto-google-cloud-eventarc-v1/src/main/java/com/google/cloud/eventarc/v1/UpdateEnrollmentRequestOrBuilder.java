@@ -38,6 +38,7 @@ public interface UpdateEnrollmentRequestOrBuilder
    * @return Whether the enrollment field is set.
    */
   boolean hasEnrollment();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateEnrollmentRequestOrBuilder
    * @return The enrollment.
    */
   com.google.cloud.eventarc.v1.Enrollment getEnrollment();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateEnrollmentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateEnrollmentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

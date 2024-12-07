@@ -37,6 +37,7 @@ public interface InstanceGroupsListInstancesRequestOrBuilder
    * @return Whether the instanceState field is set.
    */
   boolean hasInstanceState();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface InstanceGroupsListInstancesRequestOrBuilder
    * @return The instanceState.
    */
   java.lang.String getInstanceState();
+
   /**
    *
    *

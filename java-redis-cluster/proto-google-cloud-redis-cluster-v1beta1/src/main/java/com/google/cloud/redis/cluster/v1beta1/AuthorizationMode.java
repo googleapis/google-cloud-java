@@ -72,6 +72,7 @@ public enum AuthorizationMode implements com.google.protobuf.ProtocolMessageEnum
    * <code>AUTH_MODE_UNSPECIFIED = 0;</code>
    */
   public static final int AUTH_MODE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum AuthorizationMode implements com.google.protobuf.ProtocolMessageEnum
    * <code>AUTH_MODE_IAM_AUTH = 1;</code>
    */
   public static final int AUTH_MODE_IAM_AUTH_VALUE = 1;
+
   /**
    *
    *

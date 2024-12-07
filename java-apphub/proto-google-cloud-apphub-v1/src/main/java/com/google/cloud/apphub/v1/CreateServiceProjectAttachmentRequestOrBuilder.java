@@ -40,6 +40,7 @@ public interface CreateServiceProjectAttachmentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface CreateServiceProjectAttachmentRequestOrBuilder
    * @return The serviceProjectAttachmentId.
    */
   java.lang.String getServiceProjectAttachmentId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreateServiceProjectAttachmentRequestOrBuilder
    * @return Whether the serviceProjectAttachment field is set.
    */
   boolean hasServiceProjectAttachment();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateServiceProjectAttachmentRequestOrBuilder
    * @return The serviceProjectAttachment.
    */
   com.google.cloud.apphub.v1.ServiceProjectAttachment getServiceProjectAttachment();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface CreateServiceProjectAttachmentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

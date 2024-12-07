@@ -45,6 +45,7 @@ public interface DeleteCompanyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

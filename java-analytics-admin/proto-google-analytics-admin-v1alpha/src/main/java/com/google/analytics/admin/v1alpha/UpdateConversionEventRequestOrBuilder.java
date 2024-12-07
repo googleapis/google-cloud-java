@@ -39,6 +39,7 @@ public interface UpdateConversionEventRequestOrBuilder
    * @return Whether the conversionEvent field is set.
    */
   boolean hasConversionEvent();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateConversionEventRequestOrBuilder
    * @return The conversionEvent.
    */
   com.google.analytics.admin.v1alpha.ConversionEvent getConversionEvent();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface UpdateConversionEventRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateConversionEventRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface MembershipStateOrBuilder
    */
   java.util.List<com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessage>
       getAnalysisMessagesList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface MembershipStateOrBuilder
    * </code>
    */
   com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessage getAnalysisMessages(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface MembershipStateOrBuilder
    * </code>
    */
   int getAnalysisMessagesCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface MembershipStateOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageOrBuilder>
       getAnalysisMessagesOrBuilderList();
+
   /**
    *
    *

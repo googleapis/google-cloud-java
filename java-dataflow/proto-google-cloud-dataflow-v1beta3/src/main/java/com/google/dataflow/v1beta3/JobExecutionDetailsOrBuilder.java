@@ -34,6 +34,7 @@ public interface JobExecutionDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StageSummary stages = 1;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.StageSummary> getStagesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface JobExecutionDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StageSummary stages = 1;</code>
    */
   com.google.dataflow.v1beta3.StageSummary getStages(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface JobExecutionDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StageSummary stages = 1;</code>
    */
   int getStagesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface JobExecutionDetailsOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.StageSummaryOrBuilder>
       getStagesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface JobExecutionDetailsOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

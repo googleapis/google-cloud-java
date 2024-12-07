@@ -34,6 +34,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions)
     SecurityPolicyRuleMatcherExprOptionsRecaptchaOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions.newBuilder() to construct.
   private SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList actionTokenSiteKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
   public com.google.protobuf.ProtocolStringList getActionTokenSiteKeysList() {
     return actionTokenSiteKeys_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
   public int getActionTokenSiteKeysCount() {
     return actionTokenSiteKeys_.size();
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
   public java.lang.String getActionTokenSiteKeys(int index) {
     return actionTokenSiteKeys_.get(index);
   }
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sessionTokenSiteKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
   public com.google.protobuf.ProtocolStringList getSessionTokenSiteKeysList() {
     return sessionTokenSiteKeys_;
   }
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
   public int getSessionTokenSiteKeysCount() {
     return sessionTokenSiteKeys_.size();
   }
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
   public java.lang.String getSessionTokenSiteKeys(int index) {
     return sessionTokenSiteKeys_.get(index);
   }
+
   /**
    *
    *
@@ -388,6 +397,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -625,6 +635,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       actionTokenSiteKeys_.makeImmutable();
       return actionTokenSiteKeys_;
     }
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
     public int getActionTokenSiteKeysCount() {
       return actionTokenSiteKeys_.size();
     }
+
     /**
      *
      *
@@ -669,6 +682,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
     public java.lang.String getActionTokenSiteKeys(int index) {
       return actionTokenSiteKeys_.get(index);
     }
+
     /**
      *
      *
@@ -684,6 +698,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
     public com.google.protobuf.ByteString getActionTokenSiteKeysBytes(int index) {
       return actionTokenSiteKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -707,6 +722,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +745,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +765,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +784,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +818,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -814,6 +834,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       sessionTokenSiteKeys_.makeImmutable();
       return sessionTokenSiteKeys_;
     }
+
     /**
      *
      *
@@ -828,6 +849,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
     public int getSessionTokenSiteKeysCount() {
       return sessionTokenSiteKeys_.size();
     }
+
     /**
      *
      *
@@ -843,6 +865,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
     public java.lang.String getSessionTokenSiteKeys(int index) {
       return sessionTokenSiteKeys_.get(index);
     }
+
     /**
      *
      *
@@ -858,6 +881,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
     public com.google.protobuf.ByteString getSessionTokenSiteKeysBytes(int index) {
       return sessionTokenSiteKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -881,6 +905,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +928,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +948,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +967,7 @@ public final class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       onChanged();
       return this;
     }
+
     /**
      *
      *

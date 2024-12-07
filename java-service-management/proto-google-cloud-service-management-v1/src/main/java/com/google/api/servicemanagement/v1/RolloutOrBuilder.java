@@ -44,6 +44,7 @@ public interface RolloutOrBuilder
    * @return The rolloutId.
    */
   java.lang.String getRolloutId();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface RolloutOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface RolloutOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface RolloutOrBuilder
    * @return The createdBy.
    */
   java.lang.String getCreatedBy();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface RolloutOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public interface RolloutOrBuilder
    * @return Whether the trafficPercentStrategy field is set.
    */
   boolean hasTrafficPercentStrategy();
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public interface RolloutOrBuilder
    * @return The trafficPercentStrategy.
    */
   com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy getTrafficPercentStrategy();
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public interface RolloutOrBuilder
    * @return Whether the deleteServiceStrategy field is set.
    */
   boolean hasDeleteServiceStrategy();
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public interface RolloutOrBuilder
    * @return The deleteServiceStrategy.
    */
   com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy getDeleteServiceStrategy();
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public interface RolloutOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
+
   /**
    *
    *

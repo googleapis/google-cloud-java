@@ -33,6 +33,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.GetInstanceHealthResponse)
     GetInstanceHealthResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetInstanceHealthResponse.newBuilder() to construct.
   private GetInstanceHealthResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -154,6 +155,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * <code>HEALTH_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int HEALTH_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -166,6 +168,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * <code>HEALTHY = 1;</code>
      */
     public static final int HEALTHY_VALUE = 1;
+
     /**
      *
      *
@@ -178,6 +181,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * <code>UNHEALTHY = 2;</code>
      */
     public static final int UNHEALTHY_VALUE = 2;
+
     /**
      *
      *
@@ -189,6 +193,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * <code>AGENT_NOT_INSTALLED = 3;</code>
      */
     public static final int AGENT_NOT_INSTALLED_VALUE = 3;
+
     /**
      *
      *
@@ -292,6 +297,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
 
   public static final int HEALTH_STATE_FIELD_NUMBER = 1;
   private int healthState_ = 0;
+
   /**
    *
    *
@@ -309,6 +315,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
   public int getHealthStateValue() {
     return healthState_;
   }
+
   /**
    *
    *
@@ -357,6 +364,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
   public int getHealthInfoCount() {
     return internalGetHealthInfo().getMap().size();
   }
+
   /**
    *
    *
@@ -382,12 +390,14 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
     }
     return internalGetHealthInfo().getMap().containsKey(key);
   }
+
   /** Use {@link #getHealthInfoMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getHealthInfo() {
     return getHealthInfoMap();
   }
+
   /**
    *
    *
@@ -410,6 +420,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
   public java.util.Map<java.lang.String, java.lang.String> getHealthInfoMap() {
     return internalGetHealthInfo().getMap();
   }
+
   /**
    *
    *
@@ -439,6 +450,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
     java.util.Map<java.lang.String, java.lang.String> map = internalGetHealthInfo().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -652,6 +664,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -875,6 +888,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int healthState_ = 0;
+
     /**
      *
      *
@@ -892,6 +906,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
     public int getHealthStateValue() {
       return healthState_;
     }
+
     /**
      *
      *
@@ -912,6 +927,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +950,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
           ? com.google.cloud.notebooks.v1.GetInstanceHealthResponse.HealthState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -958,6 +975,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1024,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
     public int getHealthInfoCount() {
       return internalGetHealthInfo().getMap().size();
     }
+
     /**
      *
      *
@@ -1031,12 +1050,14 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
       }
       return internalGetHealthInfo().getMap().containsKey(key);
     }
+
     /** Use {@link #getHealthInfoMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHealthInfo() {
       return getHealthInfoMap();
     }
+
     /**
      *
      *
@@ -1059,6 +1080,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
     public java.util.Map<java.lang.String, java.lang.String> getHealthInfoMap() {
       return internalGetHealthInfo().getMap();
     }
+
     /**
      *
      *
@@ -1088,6 +1110,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHealthInfo().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1123,6 +1146,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
       internalGetMutableHealthInfo().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1148,12 +1172,14 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
       internalGetMutableHealthInfo().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableHealthInfo() {
       bitField0_ |= 0x00000002;
       return internalGetMutableHealthInfo().getMutableMap();
     }
+
     /**
      *
      *
@@ -1183,6 +1209,7 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

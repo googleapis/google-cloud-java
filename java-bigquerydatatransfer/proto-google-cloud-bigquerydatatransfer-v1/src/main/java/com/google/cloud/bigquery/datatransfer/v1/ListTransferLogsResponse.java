@@ -33,6 +33,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse)
     ListTransferLogsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListTransferLogsResponse.newBuilder() to construct.
   private ListTransferLogsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage>
       transferMessages_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       getTransferMessagesList() {
     return transferMessages_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       getTransferMessagesOrBuilderList() {
     return transferMessages_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
   public int getTransferMessagesCount() {
     return transferMessages_.size();
   }
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
   public com.google.cloud.bigquery.datatransfer.v1.TransferMessage getTransferMessages(int index) {
     return transferMessages_.get(index);
   }
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -378,6 +386,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -667,6 +676,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
         return transferMessagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -685,6 +695,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
         return transferMessagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -704,6 +715,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
         return transferMessagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -729,6 +741,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +765,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +817,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +840,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +888,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +910,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +932,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +948,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
         getTransferMessagesBuilder(int index) {
       return getTransferMessagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -946,6 +968,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
         return transferMessagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -966,6 +989,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(transferMessages_);
       }
     }
+
     /**
      *
      *
@@ -983,6 +1007,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
           .addBuilder(
               com.google.cloud.bigquery.datatransfer.v1.TransferMessage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1001,6 +1026,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
               index,
               com.google.cloud.bigquery.datatransfer.v1.TransferMessage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1038,6 +1064,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1063,6 +1090,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1088,6 +1116,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1112,6 +1141,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1132,6 +1162,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

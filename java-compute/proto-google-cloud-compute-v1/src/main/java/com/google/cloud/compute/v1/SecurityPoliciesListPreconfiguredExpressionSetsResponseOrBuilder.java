@@ -32,6 +32,7 @@ public interface SecurityPoliciesListPreconfiguredExpressionSetsResponseOrBuilde
    * @return Whether the preconfiguredExpressionSets field is set.
    */
   boolean hasPreconfiguredExpressionSets();
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
@@ -40,6 +41,7 @@ public interface SecurityPoliciesListPreconfiguredExpressionSetsResponseOrBuilde
    * @return The preconfiguredExpressionSets.
    */
   com.google.cloud.compute.v1.SecurityPoliciesWafConfig getPreconfiguredExpressionSets();
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;

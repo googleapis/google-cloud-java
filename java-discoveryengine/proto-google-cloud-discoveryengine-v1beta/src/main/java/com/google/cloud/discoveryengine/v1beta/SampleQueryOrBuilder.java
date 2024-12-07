@@ -36,6 +36,7 @@ public interface SampleQueryOrBuilder
    * @return Whether the queryEntry field is set.
    */
   boolean hasQueryEntry();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SampleQueryOrBuilder
    * @return The queryEntry.
    */
   com.google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry getQueryEntry();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface SampleQueryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface SampleQueryOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface SampleQueryOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

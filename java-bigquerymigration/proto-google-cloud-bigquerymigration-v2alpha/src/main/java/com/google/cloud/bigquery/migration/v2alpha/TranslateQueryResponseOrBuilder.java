@@ -39,6 +39,7 @@ public interface TranslateQueryResponseOrBuilder
    * @return The translationJob.
    */
   java.lang.String getTranslationJob();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface TranslateQueryResponseOrBuilder
    * @return The translatedQuery.
    */
   java.lang.String getTranslatedQuery();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface TranslateQueryResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2alpha.SqlTranslationError errors = 2;</code>
    */
   java.util.List<com.google.cloud.bigquery.migration.v2alpha.SqlTranslationError> getErrorsList();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface TranslateQueryResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2alpha.SqlTranslationError errors = 2;</code>
    */
   com.google.cloud.bigquery.migration.v2alpha.SqlTranslationError getErrors(int index);
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface TranslateQueryResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2alpha.SqlTranslationError errors = 2;</code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface TranslateQueryResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2alpha.SqlTranslationErrorOrBuilder>
       getErrorsOrBuilderList();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface TranslateQueryResponseOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.migration.v2alpha.SqlTranslationWarning>
       getWarningsList();
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public interface TranslateQueryResponseOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.migration.v2alpha.SqlTranslationWarning getWarnings(int index);
+
   /**
    *
    *
@@ -170,6 +178,7 @@ public interface TranslateQueryResponseOrBuilder
    * </code>
    */
   int getWarningsCount();
+
   /**
    *
    *
@@ -184,6 +193,7 @@ public interface TranslateQueryResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.bigquery.migration.v2alpha.SqlTranslationWarningOrBuilder>
       getWarningsOrBuilderList();
+
   /**
    *
    *

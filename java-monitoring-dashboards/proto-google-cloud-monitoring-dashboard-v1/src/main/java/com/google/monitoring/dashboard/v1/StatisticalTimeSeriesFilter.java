@@ -35,6 +35,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter)
     StatisticalTimeSeriesFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StatisticalTimeSeriesFilter.newBuilder() to construct.
   private StatisticalTimeSeriesFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,6 +109,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
      * <code>METHOD_UNSPECIFIED = 0;</code>
      */
     public static final int METHOD_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -204,6 +206,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
 
   public static final int RANKING_METHOD_FIELD_NUMBER = 1;
   private int rankingMethod_ = 0;
+
   /**
    *
    *
@@ -224,6 +227,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
   public int getRankingMethodValue() {
     return rankingMethod_;
   }
+
   /**
    *
    *
@@ -252,6 +256,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
 
   public static final int NUM_TIME_SERIES_FIELD_NUMBER = 2;
   private int numTimeSeries_ = 0;
+
   /**
    *
    *
@@ -441,6 +446,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -641,6 +647,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
     private int bitField0_;
 
     private int rankingMethod_ = 0;
+
     /**
      *
      *
@@ -661,6 +668,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
     public int getRankingMethodValue() {
       return rankingMethod_;
     }
+
     /**
      *
      *
@@ -684,6 +692,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +719,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
           ? com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -737,6 +747,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +772,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
     }
 
     private int numTimeSeries_;
+
     /**
      *
      *
@@ -776,6 +788,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
     public int getNumTimeSeries() {
       return numTimeSeries_;
     }
+
     /**
      *
      *
@@ -795,6 +808,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

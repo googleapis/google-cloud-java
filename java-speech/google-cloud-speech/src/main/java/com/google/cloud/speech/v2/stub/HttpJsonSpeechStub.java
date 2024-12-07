@@ -1890,7 +1890,8 @@ public class HttpJsonSpeechStub extends SpeechStub {
   public BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamingRecognizeCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamingRecognizeCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override

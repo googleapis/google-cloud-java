@@ -43,6 +43,7 @@ public interface StartupConfigOrBuilder
    * @return Whether the requiredRegistrationFraction field is set.
    */
   boolean hasRequiredRegistrationFraction();
+
   /**
    *
    *

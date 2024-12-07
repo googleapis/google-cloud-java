@@ -93,7 +93,8 @@ public class MockShippingSettingsServiceImpl extends ShippingSettingsServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method InsertShippingSettings, expected %s or %s",
+                  "Unrecognized response type %s for method InsertShippingSettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ShippingSettings.class.getName(),
                   Exception.class.getName())));

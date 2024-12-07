@@ -33,6 +33,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.ListOccurrencesResponse)
     ListOccurrencesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListOccurrencesResponse.newBuilder() to construct.
   private ListOccurrencesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1beta1.Occurrence> occurrences_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
   public java.util.List<io.grafeas.v1beta1.Occurrence> getOccurrencesList() {
     return occurrences_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       getOccurrencesOrBuilderList() {
     return occurrences_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
   public int getOccurrencesCount() {
     return occurrences_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
   public io.grafeas.v1beta1.Occurrence getOccurrences(int index) {
     return occurrences_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -633,6 +642,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
         return occurrencesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -649,6 +659,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
         return occurrencesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -665,6 +676,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
         return occurrencesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -687,6 +699,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +743,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +766,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +786,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +807,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +828,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +848,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +868,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +881,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
     public io.grafeas.v1beta1.Occurrence.Builder getOccurrencesBuilder(int index) {
       return getOccurrencesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -876,6 +898,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
         return occurrencesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -893,6 +916,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(occurrences_);
       }
     }
+
     /**
      *
      *
@@ -906,6 +930,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       return getOccurrencesFieldBuilder()
           .addBuilder(io.grafeas.v1beta1.Occurrence.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -919,6 +944,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       return getOccurrencesFieldBuilder()
           .addBuilder(index, io.grafeas.v1beta1.Occurrence.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -950,6 +976,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -974,6 +1001,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -998,6 +1026,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1021,6 +1050,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1070,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

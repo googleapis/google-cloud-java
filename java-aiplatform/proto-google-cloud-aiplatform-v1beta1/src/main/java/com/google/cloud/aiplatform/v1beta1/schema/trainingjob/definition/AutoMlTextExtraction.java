@@ -35,6 +35,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtraction)
     AutoMlTextExtractionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlTextExtraction.newBuilder() to construct.
   private AutoMlTextExtraction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
   private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlTextExtractionInputs
       inputs_;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
   public boolean hasInputs() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
             .AutoMlTextExtractionInputs.getDefaultInstance()
         : inputs_;
   }
+
   /**
    *
    *
@@ -319,6 +323,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -551,6 +556,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlTextExtractionInputsOrBuilder>
         inputsBuilder_;
+
     /**
      *
      *
@@ -567,6 +573,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
     public boolean hasInputs() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -592,6 +599,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
         return inputsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -618,6 +626,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +651,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +685,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +707,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +726,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -737,6 +750,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
             : inputs_;
       }
     }
+
     /**
      *
      *

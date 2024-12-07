@@ -34,6 +34,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DataRedactionSettings)
     DataRedactionSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataRedactionSettings.newBuilder() to construct.
   private DataRedactionSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
 
   public static final int EMAIL_REDACTION_ENABLED_FIELD_NUMBER = 2;
   private boolean emailRedactionEnabled_ = false;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
 
   public static final int QUERY_PARAMETER_REDACTION_ENABLED_FIELD_NUMBER = 3;
   private boolean queryParameterRedactionEnabled_ = false;
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList queryParameterKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getQueryParameterKeysList() {
     return queryParameterKeys_;
   }
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
   public int getQueryParameterKeysCount() {
     return queryParameterKeys_.size();
   }
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
   public java.lang.String getQueryParameterKeys(int index) {
     return queryParameterKeys_.get(index);
   }
+
   /**
    *
    *
@@ -440,6 +449,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -673,6 +683,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -698,6 +709,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -723,6 +735,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -747,6 +760,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +781,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +809,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
     }
 
     private boolean emailRedactionEnabled_;
+
     /**
      *
      *
@@ -810,6 +826,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
     public boolean getEmailRedactionEnabled() {
       return emailRedactionEnabled_;
     }
+
     /**
      *
      *
@@ -830,6 +847,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +868,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
     }
 
     private boolean queryParameterRedactionEnabled_;
+
     /**
      *
      *
@@ -869,6 +888,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
     public boolean getQueryParameterRedactionEnabled() {
       return queryParameterRedactionEnabled_;
     }
+
     /**
      *
      *
@@ -892,6 +912,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +944,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -942,6 +964,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
       queryParameterKeys_.makeImmutable();
       return queryParameterKeys_;
     }
+
     /**
      *
      *
@@ -960,6 +983,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
     public int getQueryParameterKeysCount() {
       return queryParameterKeys_.size();
     }
+
     /**
      *
      *
@@ -979,6 +1003,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
     public java.lang.String getQueryParameterKeys(int index) {
       return queryParameterKeys_.get(index);
     }
+
     /**
      *
      *
@@ -998,6 +1023,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getQueryParameterKeysBytes(int index) {
       return queryParameterKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1025,6 +1051,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1078,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1074,6 +1102,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1125,7 @@ public final class DataRedactionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -44,6 +44,7 @@ public interface UpdateCatalogRequestOrBuilder
    * @return Whether the catalog field is set.
    */
   boolean hasCatalog();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface UpdateCatalogRequestOrBuilder
    * @return The catalog.
    */
   com.google.cloud.retail.v2.Catalog getCatalog();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface UpdateCatalogRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface UpdateCatalogRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

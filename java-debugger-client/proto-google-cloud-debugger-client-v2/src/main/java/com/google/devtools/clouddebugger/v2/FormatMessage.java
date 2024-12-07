@@ -33,6 +33,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.clouddebugger.v2.FormatMessage)
     FormatMessageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FormatMessage.newBuilder() to construct.
   private FormatMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object format_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList parameters_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getParametersList() {
     return parameters_;
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
   public int getParametersCount() {
     return parameters_.size();
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getParameters(int index) {
     return parameters_.get(index);
   }
+
   /**
    *
    *
@@ -370,6 +377,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -576,6 +584,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object format_ = "";
+
     /**
      *
      *
@@ -606,6 +615,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -636,6 +646,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -665,6 +676,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +743,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -745,6 +759,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       parameters_.makeImmutable();
       return parameters_;
     }
+
     /**
      *
      *
@@ -759,6 +774,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
     public int getParametersCount() {
       return parameters_.size();
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getParameters(int index) {
       return parameters_.get(index);
     }
+
     /**
      *
      *
@@ -789,6 +806,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getParametersBytes(int index) {
       return parameters_.getByteString(index);
     }
+
     /**
      *
      *
@@ -812,6 +830,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +853,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +873,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +892,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

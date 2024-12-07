@@ -40,6 +40,7 @@ public interface DocumentSchemaOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface DocumentSchemaOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DocumentSchemaOrBuilder
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.PropertyDefinition>
       getPropertyDefinitionsList();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface DocumentSchemaOrBuilder
    * </code>
    */
   com.google.cloud.contentwarehouse.v1.PropertyDefinition getPropertyDefinitions(int index);
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface DocumentSchemaOrBuilder
    * </code>
    */
   int getPropertyDefinitionsCount();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface DocumentSchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.PropertyDefinitionOrBuilder>
       getPropertyDefinitionsOrBuilderList();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface DocumentSchemaOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public interface DocumentSchemaOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public interface DocumentSchemaOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -219,6 +228,7 @@ public interface DocumentSchemaOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -243,6 +253,7 @@ public interface DocumentSchemaOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

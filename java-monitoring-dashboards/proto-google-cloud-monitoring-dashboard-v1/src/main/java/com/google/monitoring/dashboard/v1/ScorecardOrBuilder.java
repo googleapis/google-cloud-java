@@ -39,6 +39,7 @@ public interface ScorecardOrBuilder
    * @return Whether the timeSeriesQuery field is set.
    */
   boolean hasTimeSeriesQuery();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ScorecardOrBuilder
    * @return The timeSeriesQuery.
    */
   com.google.monitoring.dashboard.v1.TimeSeriesQuery getTimeSeriesQuery();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface ScorecardOrBuilder
    * @return Whether the gaugeView field is set.
    */
   boolean hasGaugeView();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface ScorecardOrBuilder
    * @return The gaugeView.
    */
   com.google.monitoring.dashboard.v1.Scorecard.GaugeView getGaugeView();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface ScorecardOrBuilder
    * @return Whether the sparkChartView field is set.
    */
   boolean hasSparkChartView();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface ScorecardOrBuilder
    * @return The sparkChartView.
    */
   com.google.monitoring.dashboard.v1.Scorecard.SparkChartView getSparkChartView();
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface ScorecardOrBuilder
    * @return Whether the blankView field is set.
    */
   boolean hasBlankView();
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public interface ScorecardOrBuilder
    * @return The blankView.
    */
   com.google.protobuf.Empty getBlankView();
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public interface ScorecardOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 6;</code>
    */
   java.util.List<com.google.monitoring.dashboard.v1.Threshold> getThresholdsList();
+
   /**
    *
    *
@@ -270,6 +279,7 @@ public interface ScorecardOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 6;</code>
    */
   com.google.monitoring.dashboard.v1.Threshold getThresholds(int index);
+
   /**
    *
    *
@@ -317,6 +327,7 @@ public interface ScorecardOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 6;</code>
    */
   int getThresholdsCount();
+
   /**
    *
    *
@@ -365,6 +376,7 @@ public interface ScorecardOrBuilder
    */
   java.util.List<? extends com.google.monitoring.dashboard.v1.ThresholdOrBuilder>
       getThresholdsOrBuilderList();
+
   /**
    *
    *

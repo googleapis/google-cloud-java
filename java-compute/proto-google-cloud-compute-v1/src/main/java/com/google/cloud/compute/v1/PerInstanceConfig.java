@@ -32,6 +32,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PerInstanceConfig)
     PerInstanceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PerInstanceConfig.newBuilder() to construct.
   private PerInstanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -157,6 +158,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
+
     /**
      *
      *
@@ -167,6 +169,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>APPLYING = 352003508;</code>
      */
     public static final int APPLYING_VALUE = 352003508;
+
     /**
      *
      *
@@ -177,6 +180,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>DELETING = 528602024;</code>
      */
     public static final int DELETING_VALUE = 528602024;
+
     /**
      *
      *
@@ -187,6 +191,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>EFFECTIVE = 244201863;</code>
      */
     public static final int EFFECTIVE_VALUE = 244201863;
+
     /**
      *
      *
@@ -197,6 +202,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>NONE = 2402104;</code>
      */
     public static final int NONE_VALUE = 2402104;
+
     /**
      *
      *
@@ -207,6 +213,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNAPPLIED = 483935140;</code>
      */
     public static final int UNAPPLIED_VALUE = 483935140;
+
     /**
      *
      *
@@ -314,6 +321,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
+
   /**
    *
    *
@@ -329,6 +337,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -352,6 +361,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -380,6 +390,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -395,6 +406,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -418,6 +430,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -444,6 +457,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int PRESERVED_STATE_FIELD_NUMBER = 2634026;
   private com.google.cloud.compute.v1.PreservedState preservedState_;
+
   /**
    *
    *
@@ -459,6 +473,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasPreservedState() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -476,6 +491,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.compute.v1.PreservedState.getDefaultInstance()
         : preservedState_;
   }
+
   /**
    *
    *
@@ -496,6 +512,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
+
   /**
    *
    *
@@ -512,6 +529,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -536,6 +554,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -768,6 +787,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1013,6 +1033,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object fingerprint_ = "";
+
     /**
      *
      *
@@ -1027,6 +1048,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1049,6 +1071,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1071,6 +1094,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1116,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1134,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1159,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1147,6 +1174,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1169,6 +1197,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1191,6 +1220,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1242,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1260,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1258,6 +1290,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.compute.v1.PreservedState.Builder,
             com.google.cloud.compute.v1.PreservedStateOrBuilder>
         preservedStateBuilder_;
+
     /**
      *
      *
@@ -1272,6 +1305,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasPreservedState() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1292,6 +1326,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         return preservedStateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1314,6 +1349,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1370,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1398,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1380,6 +1418,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1394,6 +1433,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getPreservedStateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1412,6 +1452,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
             : preservedState_;
       }
     }
+
     /**
      *
      *
@@ -1439,6 +1480,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object status_ = "";
+
     /**
      *
      *
@@ -1454,6 +1496,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1477,6 +1520,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1500,6 +1544,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1522,6 +1567,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1540,6 +1586,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

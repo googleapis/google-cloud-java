@@ -32,6 +32,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.CacheInvalidationRule)
     CacheInvalidationRuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CacheInvalidationRule.newBuilder() to construct.
   private CacheInvalidationRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object host_ = "";
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
   public boolean hasHost() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
+
   /**
    * <code>optional string path = 3433509;</code>
    *
@@ -143,6 +148,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
   public boolean hasPath() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    * <code>optional string path = 3433509;</code>
    *
@@ -160,6 +166,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    * <code>optional string path = 3433509;</code>
    *
@@ -356,6 +363,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -558,6 +566,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object host_ = "";
+
     /**
      *
      *
@@ -572,6 +581,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     public boolean hasHost() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -594,6 +604,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -616,6 +627,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -637,6 +649,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +667,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +692,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object path_ = "";
+
     /**
      * <code>optional string path = 3433509;</code>
      *
@@ -686,6 +701,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     public boolean hasPath() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>optional string path = 3433509;</code>
      *
@@ -702,6 +718,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>optional string path = 3433509;</code>
      *
@@ -718,6 +735,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>optional string path = 3433509;</code>
      *
@@ -733,6 +751,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string path = 3433509;</code>
      *
@@ -744,6 +763,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string path = 3433509;</code>
      *

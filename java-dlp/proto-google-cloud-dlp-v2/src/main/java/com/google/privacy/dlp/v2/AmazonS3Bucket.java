@@ -33,6 +33,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.AmazonS3Bucket)
     AmazonS3BucketOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AmazonS3Bucket.newBuilder() to construct.
   private AmazonS3Bucket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int AWS_ACCOUNT_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.AwsAccount awsAccount_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAwsAccount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
         ? com.google.privacy.dlp.v2.AwsAccount.getDefaultInstance()
         : awsAccount_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bucketName_ = "";
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -337,6 +343,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -554,6 +561,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.AwsAccount.Builder,
             com.google.privacy.dlp.v2.AwsAccountOrBuilder>
         awsAccountBuilder_;
+
     /**
      *
      *
@@ -568,6 +576,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAwsAccount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -588,6 +597,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
         return awsAccountBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -610,6 +620,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +640,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +668,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +703,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAwsAccountFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -707,6 +722,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
             : awsAccount_;
       }
     }
+
     /**
      *
      *
@@ -734,6 +750,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object bucketName_ = "";
+
     /**
      *
      *
@@ -756,6 +773,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -778,6 +796,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -799,6 +818,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +836,7 @@ public final class AmazonS3Bucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.JupyterConfig)
     JupyterConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use JupyterConfig.newBuilder() to construct.
   private JupyterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>KERNEL_UNSPECIFIED = 0;</code>
      */
     public static final int KERNEL_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>PYTHON = 1;</code>
      */
     public static final int PYTHON_VALUE = 1;
+
     /**
      *
      *
@@ -223,6 +226,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KERNEL_FIELD_NUMBER = 1;
   private int kernel_ = 0;
+
   /**
    *
    *
@@ -240,6 +244,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
   public int getKernelValue() {
     return kernel_;
   }
+
   /**
    *
    *
@@ -264,6 +269,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -287,6 +293,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -481,6 +488,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -677,6 +685,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int kernel_ = 0;
+
     /**
      *
      *
@@ -694,6 +703,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
     public int getKernelValue() {
       return kernel_;
     }
+
     /**
      *
      *
@@ -714,6 +724,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +746,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dataproc.v1.JupyterConfig.Kernel.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -758,6 +770,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +792,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -801,6 +815,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -823,6 +838,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -844,6 +860,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +878,7 @@ public final class JupyterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

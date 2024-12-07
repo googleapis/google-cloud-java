@@ -33,6 +33,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.BatchCreateOccurrencesRequest)
     BatchCreateOccurrencesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateOccurrencesRequest.newBuilder() to construct.
   private BatchCreateOccurrencesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1beta1.Occurrence> occurrences_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
   public java.util.List<io.grafeas.v1beta1.Occurrence> getOccurrencesList() {
     return occurrences_;
   }
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       getOccurrencesOrBuilderList() {
     return occurrences_;
   }
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
   public int getOccurrencesCount() {
     return occurrences_.size();
   }
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
   public io.grafeas.v1beta1.Occurrence getOccurrences(int index) {
     return occurrences_.get(index);
   }
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -602,6 +611,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -625,6 +635,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -670,6 +682,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +701,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
         return occurrencesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -760,6 +775,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
         return occurrencesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -776,6 +792,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
         return occurrencesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -798,6 +815,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +836,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +882,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +902,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +923,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +944,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +964,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +984,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -971,6 +997,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
     public io.grafeas.v1beta1.Occurrence.Builder getOccurrencesBuilder(int index) {
       return getOccurrencesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -987,6 +1014,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
         return occurrencesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1032,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(occurrences_);
       }
     }
+
     /**
      *
      *
@@ -1017,6 +1046,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       return getOccurrencesFieldBuilder()
           .addBuilder(io.grafeas.v1beta1.Occurrence.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1030,6 +1060,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       return getOccurrencesFieldBuilder()
           .addBuilder(index, io.grafeas.v1beta1.Occurrence.getDefaultInstance());
     }
+
     /**
      *
      *

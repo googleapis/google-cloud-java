@@ -33,6 +33,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.ExportDataRequest)
     ExportDataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportDataRequest.newBuilder() to construct.
   private ExportDataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.automl.v1.OutputConfig outputConfig_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.automl.v1.OutputConfig.getDefaultInstance()
         : outputConfig_;
   }
+
   /**
    *
    *
@@ -348,6 +354,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -561,6 +568,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -585,6 +593,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -609,6 +618,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -632,6 +642,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +662,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +694,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.automl.v1.OutputConfig.Builder,
             com.google.cloud.automl.v1.OutputConfigOrBuilder>
         outputConfigBuilder_;
+
     /**
      *
      *
@@ -698,6 +711,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -720,6 +734,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         return outputConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -744,6 +759,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +782,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +812,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +834,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +851,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -852,6 +872,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
             : outputConfig_;
       }
     }
+
     /**
      *
      *

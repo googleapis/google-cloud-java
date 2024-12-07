@@ -35,6 +35,7 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.MapProperty)
     MapPropertyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MapProperty.newBuilder() to construct.
   private MapProperty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -106,6 +107,7 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
   public int getFieldsCount() {
     return internalGetFields().getMap().size();
   }
+
   /**
    *
    *
@@ -122,12 +124,14 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetFields().getMap().containsKey(key);
   }
+
   /** Use {@link #getFieldsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.contentwarehouse.v1.Value> getFields() {
     return getFieldsMap();
   }
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
       getFieldsMap() {
     return internalGetFields().getMap();
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
         internalGetFields().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -353,6 +359,7 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -625,6 +632,7 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
     public int getFieldsCount() {
       return internalGetFields().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -641,12 +649,14 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetFields().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getFieldsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.contentwarehouse.v1.Value> getFields() {
       return getFieldsMap();
     }
+
     /**
      *
      *
@@ -661,6 +671,7 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
         getFieldsMap() {
       return internalGetFields().getImmutableMap();
     }
+
     /**
      *
      *
@@ -682,6 +693,7 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableFields().ensureBuilderMap();
       return map.containsKey(key) ? fieldsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableFields().clear();
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +738,7 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableFields().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.contentwarehouse.v1.Value>
@@ -732,6 +746,7 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return internalGetMutableFields().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -753,6 +768,7 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class MapProperty extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface CreateNodeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateNodeRequestOrBuilder
    * @return The nodeId.
    */
   java.lang.String getNodeId();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface CreateNodeRequestOrBuilder
    * @return Whether the node field is set.
    */
   boolean hasNode();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface CreateNodeRequestOrBuilder
    * @return The node.
    */
   com.google.cloud.tpu.v2.Node getNode();
+
   /**
    *
    *

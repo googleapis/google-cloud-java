@@ -36,6 +36,7 @@ public interface BigQueryOutputResultOrBuilder
    * @return The datasetId.
    */
   java.lang.String getDatasetId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface BigQueryOutputResultOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
+
   /**
    *
    *

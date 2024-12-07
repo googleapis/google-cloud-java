@@ -36,6 +36,7 @@ public interface ListWorkflowTemplatesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.WorkflowTemplate> getTemplatesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListWorkflowTemplatesResponseOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.WorkflowTemplate getTemplates(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListWorkflowTemplatesResponseOrBuilder
    * </code>
    */
   int getTemplatesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ListWorkflowTemplatesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder>
       getTemplatesOrBuilderList();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface ListWorkflowTemplatesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface ListWorkflowTemplatesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface ListWorkflowTemplatesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public interface ListWorkflowTemplatesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.CreateSpokeRequest)
     CreateSpokeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateSpokeRequest.newBuilder() to construct.
   private CreateSpokeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object spokeId_ = "";
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int SPOKE_FIELD_NUMBER = 3;
   private com.google.cloud.networkconnectivity.v1.Spoke spoke_;
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasSpoke() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.networkconnectivity.v1.Spoke.getDefaultInstance()
         : spoke_;
   }
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -269,6 +278,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -498,6 +508,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -742,6 +753,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -766,6 +778,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -790,6 +803,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -813,6 +827,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +847,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +874,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object spokeId_ = "";
+
     /**
      *
      *
@@ -880,6 +897,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -902,6 +920,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -923,6 +942,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +960,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +990,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.networkconnectivity.v1.Spoke.Builder,
             com.google.cloud.networkconnectivity.v1.SpokeOrBuilder>
         spokeBuilder_;
+
     /**
      *
      *
@@ -985,6 +1007,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSpoke() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1007,6 +1030,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
         return spokeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1055,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1077,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1107,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1129,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1146,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSpokeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1138,6 +1167,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
             : spoke_;
       }
     }
+
     /**
      *
      *
@@ -1167,6 +1197,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1202,6 +1233,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1237,6 +1269,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1271,6 +1304,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1301,6 +1335,7 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

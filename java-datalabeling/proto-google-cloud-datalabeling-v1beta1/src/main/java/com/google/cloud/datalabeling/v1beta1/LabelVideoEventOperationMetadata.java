@@ -33,6 +33,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata)
     LabelVideoEventOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LabelVideoEventOperationMetadata.newBuilder() to construct.
   private LabelVideoEventOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
   private int bitField0_;
   public static final int BASIC_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basicConfig_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
   public boolean hasBasicConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
         ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
         : basicConfig_;
   }
+
   /**
    *
    *
@@ -280,6 +284,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -492,6 +497,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
         basicConfigBuilder_;
+
     /**
      *
      *
@@ -506,6 +512,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
     public boolean hasBasicConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -526,6 +533,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
         return basicConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -549,6 +557,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -569,6 +578,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -599,6 +609,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -618,6 +629,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +645,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
       onChanged();
       return getBasicConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -652,6 +665,7 @@ public final class LabelVideoEventOperationMetadata extends com.google.protobuf.
             : basicConfig_;
       }
     }
+
     /**
      *
      *

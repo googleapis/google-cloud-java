@@ -45,6 +45,7 @@ public interface ListAzureNodePoolsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -100,6 +101,7 @@ public interface ListAzureNodePoolsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

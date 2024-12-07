@@ -33,6 +33,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ApplicationConfigs)
     ApplicationConfigsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ApplicationConfigs.newBuilder() to construct.
   private ApplicationConfigs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
      * @return The channel.
      */
     java.lang.String getChannel();
+
     /**
      *
      *
@@ -114,6 +116,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
      * @return Whether the minimalDeliveryInterval field is set.
      */
     boolean hasMinimalDeliveryInterval();
+
     /**
      *
      *
@@ -129,6 +132,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
      * @return The minimalDeliveryInterval.
      */
     com.google.protobuf.Duration getMinimalDeliveryInterval();
+
     /**
      *
      *
@@ -143,6 +147,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.DurationOrBuilder getMinimalDeliveryIntervalOrBuilder();
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ApplicationConfigs.EventDeliveryConfig)
       EventDeliveryConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EventDeliveryConfig.newBuilder() to construct.
     private EventDeliveryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -192,6 +198,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object channel_ = "";
+
     /**
      *
      *
@@ -218,6 +225,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -247,6 +255,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
 
     public static final int MINIMAL_DELIVERY_INTERVAL_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration minimalDeliveryInterval_;
+
     /**
      *
      *
@@ -265,6 +274,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
     public boolean hasMinimalDeliveryInterval() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -285,6 +295,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
           ? com.google.protobuf.Duration.getDefaultInstance()
           : minimalDeliveryInterval_;
     }
+
     /**
      *
      *
@@ -482,6 +493,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object channel_ = "";
+
       /**
        *
        *
@@ -734,6 +747,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -759,6 +773,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -783,6 +798,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -803,6 +819,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -835,6 +852,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           minimalDeliveryIntervalBuilder_;
+
       /**
        *
        *
@@ -852,6 +870,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       public boolean hasMinimalDeliveryInterval() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -875,6 +894,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
           return minimalDeliveryIntervalBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -900,6 +920,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -923,6 +944,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -953,6 +975,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -975,6 +998,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -992,6 +1016,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getMinimalDeliveryIntervalFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1013,6 +1038,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
               : minimalDeliveryInterval_;
         }
       }
+
       /**
        *
        *
@@ -1114,6 +1140,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.Node> nodes_;
+
   /**
    *
    *
@@ -1127,6 +1154,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.visionai.v1.Node> getNodesList() {
     return nodes_;
   }
+
   /**
    *
    *
@@ -1141,6 +1169,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       getNodesOrBuilderList() {
     return nodes_;
   }
+
   /**
    *
    *
@@ -1154,6 +1183,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
   public int getNodesCount() {
     return nodes_.size();
   }
+
   /**
    *
    *
@@ -1167,6 +1197,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.visionai.v1.Node getNodes(int index) {
     return nodes_.get(index);
   }
+
   /**
    *
    *
@@ -1183,6 +1214,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
 
   public static final int EVENT_DELIVERY_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.visionai.v1.ApplicationConfigs.EventDeliveryConfig eventDeliveryConfig_;
+
   /**
    *
    *
@@ -1200,6 +1232,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
   public boolean hasEventDeliveryConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1220,6 +1253,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.visionai.v1.ApplicationConfigs.EventDeliveryConfig.getDefaultInstance()
         : eventDeliveryConfig_;
   }
+
   /**
    *
    *
@@ -1414,6 +1448,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1709,6 +1744,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         return nodesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1725,6 +1761,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         return nodesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1741,6 +1778,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         return nodesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1763,6 +1801,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1782,6 +1821,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1804,6 +1844,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1826,6 +1867,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1845,6 +1887,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1864,6 +1907,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1884,6 +1928,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1903,6 +1948,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1922,6 +1968,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1934,6 +1981,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.visionai.v1.Node.Builder getNodesBuilder(int index) {
       return getNodesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1950,6 +1998,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         return nodesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1967,6 +2016,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(nodes_);
       }
     }
+
     /**
      *
      *
@@ -1980,6 +2030,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       return getNodesFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.Node.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1993,6 +2044,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       return getNodesFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.Node.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2030,6 +2082,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
             com.google.cloud.visionai.v1.ApplicationConfigs.EventDeliveryConfig.Builder,
             com.google.cloud.visionai.v1.ApplicationConfigs.EventDeliveryConfigOrBuilder>
         eventDeliveryConfigBuilder_;
+
     /**
      *
      *
@@ -2046,6 +2099,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
     public boolean hasEventDeliveryConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2070,6 +2124,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
         return eventDeliveryConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2095,6 +2150,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2118,6 +2174,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2150,6 +2207,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2171,6 +2229,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2188,6 +2247,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getEventDeliveryConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2210,6 +2270,7 @@ public final class ApplicationConfigs extends com.google.protobuf.GeneratedMessa
             : eventDeliveryConfig_;
       }
     }
+
     /**
      *
      *

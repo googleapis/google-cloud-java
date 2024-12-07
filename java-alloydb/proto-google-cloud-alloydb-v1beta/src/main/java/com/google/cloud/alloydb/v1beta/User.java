@@ -33,6 +33,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.User)
     UserOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use User.newBuilder() to construct.
   private User(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
      * <code>USER_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int USER_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
      * <code>ALLOYDB_BUILT_IN = 1;</code>
      */
     public static final int ALLOYDB_BUILT_IN_VALUE = 1;
+
     /**
      *
      *
@@ -229,6 +232,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -253,6 +257,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -282,6 +287,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object password_ = "";
+
   /**
    *
    *
@@ -305,6 +311,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -334,6 +341,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList databaseRoles_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -349,6 +357,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDatabaseRolesList() {
     return databaseRoles_;
   }
+
   /**
    *
    *
@@ -364,6 +373,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
   public int getDatabaseRolesCount() {
     return databaseRoles_.size();
   }
+
   /**
    *
    *
@@ -380,6 +390,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDatabaseRoles(int index) {
     return databaseRoles_.get(index);
   }
+
   /**
    *
    *
@@ -399,6 +410,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USER_TYPE_FIELD_NUMBER = 5;
   private int userType_ = 0;
+
   /**
    *
    *
@@ -416,6 +428,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
   public int getUserTypeValue() {
     return userType_;
   }
+
   /**
    *
    *
@@ -438,6 +451,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KEEP_EXTRA_ROLES_FIELD_NUMBER = 6;
   private boolean keepExtraRoles_ = false;
+
   /**
    *
    *
@@ -657,6 +671,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -902,6 +917,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -925,6 +941,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -948,6 +965,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -970,6 +988,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1007,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1033,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object password_ = "";
+
     /**
      *
      *
@@ -1035,6 +1056,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1079,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1078,6 +1101,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1119,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1152,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1143,6 +1169,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       databaseRoles_.makeImmutable();
       return databaseRoles_;
     }
+
     /**
      *
      *
@@ -1158,6 +1185,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     public int getDatabaseRolesCount() {
       return databaseRoles_.size();
     }
+
     /**
      *
      *
@@ -1174,6 +1202,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDatabaseRoles(int index) {
       return databaseRoles_.get(index);
     }
+
     /**
      *
      *
@@ -1190,6 +1219,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDatabaseRolesBytes(int index) {
       return databaseRoles_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1214,6 +1244,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1268,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1257,6 +1289,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1309,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1302,6 +1336,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int userType_ = 0;
+
     /**
      *
      *
@@ -1319,6 +1354,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     public int getUserTypeValue() {
       return userType_;
     }
+
     /**
      *
      *
@@ -1339,6 +1375,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1395,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.alloydb.v1beta.User.UserType.forNumber(userType_);
       return result == null ? com.google.cloud.alloydb.v1beta.User.UserType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1381,6 +1419,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1402,6 +1441,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean keepExtraRoles_;
+
     /**
      *
      *
@@ -1418,6 +1458,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     public boolean getKeepExtraRoles() {
       return keepExtraRoles_;
     }
+
     /**
      *
      *
@@ -1438,6 +1479,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

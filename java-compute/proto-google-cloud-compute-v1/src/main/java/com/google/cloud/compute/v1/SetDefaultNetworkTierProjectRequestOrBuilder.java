@@ -38,6 +38,7 @@ public interface SetDefaultNetworkTierProjectRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SetDefaultNetworkTierProjectRequestOrBuilder
    * @return Whether the projectsSetDefaultNetworkTierRequestResource field is set.
    */
   boolean hasProjectsSetDefaultNetworkTierRequestResource();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface SetDefaultNetworkTierProjectRequestOrBuilder
    */
   com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest
       getProjectsSetDefaultNetworkTierRequestResource();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface SetDefaultNetworkTierProjectRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface SetDefaultNetworkTierProjectRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

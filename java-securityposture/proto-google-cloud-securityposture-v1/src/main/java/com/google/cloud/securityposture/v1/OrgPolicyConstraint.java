@@ -33,6 +33,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.securityposture.v1.OrgPolicyConstraint)
     OrgPolicyConstraintOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OrgPolicyConstraint.newBuilder() to construct.
   private OrgPolicyConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cannedConstraintId_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securityposture.v1.PolicyRule> policyRules_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.securityposture.v1.PolicyRule> getPolicyRulesList() {
     return policyRules_;
   }
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       getPolicyRulesOrBuilderList() {
     return policyRules_;
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
   public int getPolicyRulesCount() {
     return policyRules_.size();
   }
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
   public com.google.cloud.securityposture.v1.PolicyRule getPolicyRules(int index) {
     return policyRules_.get(index);
   }
+
   /**
    *
    *
@@ -368,6 +376,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -613,6 +622,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object cannedConstraintId_ = "";
+
     /**
      *
      *
@@ -635,6 +645,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +708,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +767,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
         return policyRulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
         return policyRulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -789,6 +805,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
         return policyRulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -813,6 +830,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +853,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +878,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +903,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +926,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +949,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +972,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +994,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1016,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1031,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
     public com.google.cloud.securityposture.v1.PolicyRule.Builder getPolicyRulesBuilder(int index) {
       return getPolicyRulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1024,6 +1051,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
         return policyRulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1043,6 +1071,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(policyRules_);
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1087,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       return getPolicyRulesFieldBuilder()
           .addBuilder(com.google.cloud.securityposture.v1.PolicyRule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1073,6 +1103,7 @@ public final class OrgPolicyConstraint extends com.google.protobuf.GeneratedMess
       return getPolicyRulesFieldBuilder()
           .addBuilder(index, com.google.cloud.securityposture.v1.PolicyRule.getDefaultInstance());
     }
+
     /**
      *
      *

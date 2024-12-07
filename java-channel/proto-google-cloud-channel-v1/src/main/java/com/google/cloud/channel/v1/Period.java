@@ -33,6 +33,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.Period)
     PeriodOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Period.newBuilder() to construct.
   private Period(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DURATION_FIELD_NUMBER = 1;
   private int duration_ = 0;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERIOD_TYPE_FIELD_NUMBER = 2;
   private int periodType_ = 0;
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
   public int getPeriodTypeValue() {
     return periodType_;
   }
+
   /**
    *
    *
@@ -282,6 +286,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -475,6 +480,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int duration_;
+
     /**
      *
      *
@@ -490,6 +496,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
     public int getDuration() {
       return duration_;
     }
+
     /**
      *
      *
@@ -509,6 +516,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -528,6 +536,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int periodType_ = 0;
+
     /**
      *
      *
@@ -543,6 +552,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
     public int getPeriodTypeValue() {
       return periodType_;
     }
+
     /**
      *
      *
@@ -561,6 +571,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -578,6 +589,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.channel.v1.PeriodType.forNumber(periodType_);
       return result == null ? com.google.cloud.channel.v1.PeriodType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -599,6 +611,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

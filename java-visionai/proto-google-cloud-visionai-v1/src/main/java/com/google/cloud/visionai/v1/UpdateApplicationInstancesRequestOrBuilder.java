@@ -40,6 +40,7 @@ public interface UpdateApplicationInstancesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface UpdateApplicationInstancesRequestOrBuilder
   java.util.List<
           com.google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance>
       getApplicationInstancesList();
+
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -72,12 +74,14 @@ public interface UpdateApplicationInstancesRequestOrBuilder
    */
   com.google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance
       getApplicationInstances(int index);
+
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
    * </code>
    */
   int getApplicationInstancesCount();
+
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -88,6 +92,7 @@ public interface UpdateApplicationInstancesRequestOrBuilder
               com.google.cloud.visionai.v1.UpdateApplicationInstancesRequest
                   .UpdateApplicationInstanceOrBuilder>
       getApplicationInstancesOrBuilderList();
+
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -120,6 +125,7 @@ public interface UpdateApplicationInstancesRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.PersonBlurConfig)
     PersonBlurConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PersonBlurConfig.newBuilder() to construct.
   private PersonBlurConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,6 +117,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
      * <code>PERSON_BLUR_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int PERSON_BLUR_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
      * <code>FULL_OCCULUSION = 1;</code>
      */
     public static final int FULL_OCCULUSION_VALUE = 1;
+
     /**
      *
      *
@@ -222,6 +225,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int PERSON_BLUR_TYPE_FIELD_NUMBER = 1;
   private int personBlurType_ = 0;
+
   /**
    *
    *
@@ -237,6 +241,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
   public int getPersonBlurTypeValue() {
     return personBlurType_;
   }
+
   /**
    *
    *
@@ -259,6 +264,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int FACES_ONLY_FIELD_NUMBER = 2;
   private boolean facesOnly_ = false;
+
   /**
    *
    *
@@ -447,6 +453,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -641,6 +648,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int personBlurType_ = 0;
+
     /**
      *
      *
@@ -656,6 +664,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
     public int getPersonBlurTypeValue() {
       return personBlurType_;
     }
+
     /**
      *
      *
@@ -674,6 +683,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +703,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.visionai.v1.PersonBlurConfig.PersonBlurType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -715,6 +726,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +746,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean facesOnly_;
+
     /**
      *
      *
@@ -749,6 +762,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
     public boolean getFacesOnly() {
       return facesOnly_;
     }
+
     /**
      *
      *
@@ -768,6 +782,7 @@ public final class PersonBlurConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

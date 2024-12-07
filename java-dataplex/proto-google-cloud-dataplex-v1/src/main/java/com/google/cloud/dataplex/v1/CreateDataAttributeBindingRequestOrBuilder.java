@@ -39,6 +39,7 @@ public interface CreateDataAttributeBindingRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface CreateDataAttributeBindingRequestOrBuilder
    * @return The dataAttributeBindingId.
    */
   java.lang.String getDataAttributeBindingId();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface CreateDataAttributeBindingRequestOrBuilder
    * @return Whether the dataAttributeBinding field is set.
    */
   boolean hasDataAttributeBinding();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface CreateDataAttributeBindingRequestOrBuilder
    * @return The dataAttributeBinding.
    */
   com.google.cloud.dataplex.v1.DataAttributeBinding getDataAttributeBinding();
+
   /**
    *
    *

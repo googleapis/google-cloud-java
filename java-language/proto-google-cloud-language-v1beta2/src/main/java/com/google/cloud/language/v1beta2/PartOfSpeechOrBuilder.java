@@ -36,6 +36,7 @@ public interface PartOfSpeechOrBuilder
    * @return The enum numeric value on the wire for tag.
    */
   int getTagValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PartOfSpeechOrBuilder
    * @return The enum numeric value on the wire for aspect.
    */
   int getAspectValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface PartOfSpeechOrBuilder
    * @return The enum numeric value on the wire for case.
    */
   int getCaseValue();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface PartOfSpeechOrBuilder
    * @return The enum numeric value on the wire for form.
    */
   int getFormValue();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface PartOfSpeechOrBuilder
    * @return The enum numeric value on the wire for gender.
    */
   int getGenderValue();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface PartOfSpeechOrBuilder
    * @return The enum numeric value on the wire for mood.
    */
   int getMoodValue();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface PartOfSpeechOrBuilder
    * @return The enum numeric value on the wire for number.
    */
   int getNumberValue();
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public interface PartOfSpeechOrBuilder
    * @return The enum numeric value on the wire for person.
    */
   int getPersonValue();
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public interface PartOfSpeechOrBuilder
    * @return The enum numeric value on the wire for proper.
    */
   int getProperValue();
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public interface PartOfSpeechOrBuilder
    * @return The enum numeric value on the wire for reciprocity.
    */
   int getReciprocityValue();
+
   /**
    *
    *
@@ -286,6 +296,7 @@ public interface PartOfSpeechOrBuilder
    * @return The enum numeric value on the wire for tense.
    */
   int getTenseValue();
+
   /**
    *
    *
@@ -311,6 +322,7 @@ public interface PartOfSpeechOrBuilder
    * @return The enum numeric value on the wire for voice.
    */
   int getVoiceValue();
+
   /**
    *
    *

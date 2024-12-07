@@ -38,6 +38,7 @@ public interface InputAudioConfigOrBuilder
    * @return The enum numeric value on the wire for audioEncoding.
    */
   int getAudioEncodingValue();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface InputAudioConfigOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -144,6 +146,7 @@ public interface InputAudioConfigOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<java.lang.String> getPhraseHintsList();
+
   /**
    *
    *
@@ -168,6 +171,7 @@ public interface InputAudioConfigOrBuilder
    */
   @java.lang.Deprecated
   int getPhraseHintsCount();
+
   /**
    *
    *
@@ -193,6 +197,7 @@ public interface InputAudioConfigOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getPhraseHints(int index);
+
   /**
    *
    *
@@ -233,6 +238,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.SpeechContext> getSpeechContextsList();
+
   /**
    *
    *
@@ -247,6 +253,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
    */
   com.google.cloud.dialogflow.v2beta1.SpeechContext getSpeechContexts(int index);
+
   /**
    *
    *
@@ -261,6 +268,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
    */
   int getSpeechContextsCount();
+
   /**
    *
    *
@@ -276,6 +284,7 @@ public interface InputAudioConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SpeechContextOrBuilder>
       getSpeechContextsOrBuilderList();
+
   /**
    *
    *
@@ -305,6 +314,7 @@ public interface InputAudioConfigOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
@@ -333,6 +343,7 @@ public interface InputAudioConfigOrBuilder
    * @return The enum numeric value on the wire for modelVariant.
    */
   int getModelVariantValue();
+
   /**
    *
    *
@@ -399,6 +410,7 @@ public interface InputAudioConfigOrBuilder
    * @return Whether the bargeInConfig field is set.
    */
   boolean hasBargeInConfig();
+
   /**
    *
    *
@@ -411,6 +423,7 @@ public interface InputAudioConfigOrBuilder
    * @return The bargeInConfig.
    */
   com.google.cloud.dialogflow.v2beta1.BargeInConfig getBargeInConfig();
+
   /**
    *
    *
@@ -448,6 +461,7 @@ public interface InputAudioConfigOrBuilder
    * @return Whether the defaultNoSpeechTimeout field is set.
    */
   boolean hasDefaultNoSpeechTimeout();
+
   /**
    *
    *
@@ -461,6 +475,7 @@ public interface InputAudioConfigOrBuilder
    * @return The defaultNoSpeechTimeout.
    */
   com.google.protobuf.Duration getDefaultNoSpeechTimeout();
+
   /**
    *
    *
@@ -485,6 +500,7 @@ public interface InputAudioConfigOrBuilder
    * @return A list containing the phraseSets.
    */
   java.util.List<java.lang.String> getPhraseSetsList();
+
   /**
    *
    *
@@ -497,6 +513,7 @@ public interface InputAudioConfigOrBuilder
    * @return The count of phraseSets.
    */
   int getPhraseSetsCount();
+
   /**
    *
    *
@@ -510,6 +527,7 @@ public interface InputAudioConfigOrBuilder
    * @return The phraseSets at the given index.
    */
   java.lang.String getPhraseSets(int index);
+
   /**
    *
    *

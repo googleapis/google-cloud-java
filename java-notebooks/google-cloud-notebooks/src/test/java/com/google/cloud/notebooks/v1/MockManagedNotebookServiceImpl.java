@@ -303,7 +303,8 @@ public class MockManagedNotebookServiceImpl extends ManagedNotebookServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RefreshRuntimeTokenInternal, expected %s or %s",
+                  "Unrecognized response type %s for method RefreshRuntimeTokenInternal, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RefreshRuntimeTokenInternalResponse.class.getName(),
                   Exception.class.getName())));

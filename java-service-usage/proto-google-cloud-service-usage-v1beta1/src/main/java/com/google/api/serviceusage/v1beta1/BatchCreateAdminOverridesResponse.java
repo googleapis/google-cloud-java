@@ -33,6 +33,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.BatchCreateAdminOverridesResponse)
     BatchCreateAdminOverridesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateAdminOverridesResponse.newBuilder() to construct.
   private BatchCreateAdminOverridesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1beta1.QuotaOverride> overrides_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
   public java.util.List<com.google.api.serviceusage.v1beta1.QuotaOverride> getOverridesList() {
     return overrides_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
       getOverridesOrBuilderList() {
     return overrides_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
   public int getOverridesCount() {
     return overrides_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
   public com.google.api.serviceusage.v1beta1.QuotaOverride getOverrides(int index) {
     return overrides_.get(index);
   }
+
   /**
    *
    *
@@ -299,6 +305,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -569,6 +576,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
         return overridesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -585,6 +593,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
         return overridesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -601,6 +610,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
         return overridesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +678,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +702,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +723,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +744,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +765,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +785,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +805,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +819,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
         int index) {
       return getOverridesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -817,6 +837,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
         return overridesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -834,6 +855,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
         return java.util.Collections.unmodifiableList(overrides_);
       }
     }
+
     /**
      *
      *
@@ -847,6 +869,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
       return getOverridesFieldBuilder()
           .addBuilder(com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -862,6 +885,7 @@ public final class BatchCreateAdminOverridesResponse extends com.google.protobuf
           .addBuilder(
               index, com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance());
     }
+
     /**
      *
      *

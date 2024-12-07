@@ -48,6 +48,7 @@ public interface TimeBasedScheduleOrBuilder
    * @return The schedule.
    */
   java.lang.String getSchedule();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface TimeBasedScheduleOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface TimeBasedScheduleOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface TimeBasedScheduleOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface TimeBasedScheduleOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

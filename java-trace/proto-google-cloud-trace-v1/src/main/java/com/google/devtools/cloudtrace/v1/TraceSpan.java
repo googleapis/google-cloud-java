@@ -37,6 +37,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v1.TraceSpan)
     TraceSpanOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TraceSpan.newBuilder() to construct.
   private TraceSpan(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,6 +137,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * <code>SPAN_KIND_UNSPECIFIED = 0;</code>
      */
     public static final int SPAN_KIND_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -147,6 +149,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * <code>RPC_SERVER = 1;</code>
      */
     public static final int RPC_SERVER_VALUE = 1;
+
     /**
      *
      *
@@ -245,6 +248,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SPAN_ID_FIELD_NUMBER = 1;
   private long spanId_ = 0L;
+
   /**
    *
    *
@@ -264,6 +268,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KIND_FIELD_NUMBER = 2;
   private int kind_ = 0;
+
   /**
    *
    *
@@ -281,6 +286,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
   public int getKindValue() {
     return kind_;
   }
+
   /**
    *
    *
@@ -307,6 +313,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -336,6 +343,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -368,6 +376,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -383,6 +392,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -398,6 +408,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -414,6 +425,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -429,6 +441,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -444,6 +457,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -460,6 +474,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARENT_SPAN_ID_FIELD_NUMBER = 6;
   private long parentSpanId_ = 0L;
+
   /**
    *
    *
@@ -502,6 +517,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -552,12 +568,14 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -605,6 +623,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -659,6 +678,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -947,6 +967,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1262,6 +1283,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long spanId_;
+
     /**
      *
      *
@@ -1278,6 +1300,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     public long getSpanId() {
       return spanId_;
     }
+
     /**
      *
      *
@@ -1298,6 +1321,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1342,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int kind_ = 0;
+
     /**
      *
      *
@@ -1335,6 +1360,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     public int getKindValue() {
       return kind_;
     }
+
     /**
      *
      *
@@ -1355,6 +1381,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1376,6 +1403,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1399,6 +1427,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1420,6 +1449,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1448,6 +1478,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1476,6 +1507,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1503,6 +1535,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1526,6 +1559,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1561,6 +1595,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -1575,6 +1610,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1593,6 +1629,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1615,6 +1652,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1634,6 +1672,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1661,6 +1700,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1680,6 +1720,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1694,6 +1735,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1710,6 +1752,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1742,6 +1785,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1756,6 +1800,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1774,6 +1819,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1796,6 +1842,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1815,6 +1862,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1842,6 +1890,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1861,6 +1910,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1875,6 +1925,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1891,6 +1942,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1918,6 +1970,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long parentSpanId_;
+
     /**
      *
      *
@@ -1933,6 +1986,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     public long getParentSpanId() {
       return parentSpanId_;
     }
+
     /**
      *
      *
@@ -1952,6 +2006,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1995,6 +2050,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2045,12 +2101,14 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2098,6 +2156,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2152,6 +2211,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2212,6 +2272,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2262,12 +2323,14 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2322,6 +2385,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *

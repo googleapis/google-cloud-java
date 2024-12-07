@@ -38,6 +38,7 @@ public interface CreateTargetProjectRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateTargetProjectRequestOrBuilder
    * @return The targetProjectId.
    */
   java.lang.String getTargetProjectId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface CreateTargetProjectRequestOrBuilder
    * @return Whether the targetProject field is set.
    */
   boolean hasTargetProject();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CreateTargetProjectRequestOrBuilder
    * @return The targetProject.
    */
   com.google.cloud.vmmigration.v1.TargetProject getTargetProject();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface CreateTargetProjectRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

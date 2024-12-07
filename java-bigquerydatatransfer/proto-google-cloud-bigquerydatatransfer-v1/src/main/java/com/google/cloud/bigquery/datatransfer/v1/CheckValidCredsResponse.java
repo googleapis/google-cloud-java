@@ -33,6 +33,7 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse)
     CheckValidCredsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CheckValidCredsResponse.newBuilder() to construct.
   private CheckValidCredsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
 
   public static final int HAS_VALID_CREDS_FIELD_NUMBER = 1;
   private boolean hasValidCreds_ = false;
+
   /**
    *
    *
@@ -240,6 +242,7 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -427,6 +430,7 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
     private int bitField0_;
 
     private boolean hasValidCreds_;
+
     /**
      *
      *
@@ -442,6 +446,7 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
     public boolean getHasValidCreds() {
       return hasValidCreds_;
     }
+
     /**
      *
      *
@@ -461,6 +466,7 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

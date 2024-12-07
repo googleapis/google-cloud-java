@@ -40,6 +40,7 @@ public interface GetHardwareGroupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -59,6 +59,7 @@ public interface ModelMonitoringSchemaOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringSchema.FieldSchema>
       getFeatureFieldsList();
+
   /**
    *
    *
@@ -93,6 +94,7 @@ public interface ModelMonitoringSchemaOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringSchema.FieldSchema getFeatureFields(int index);
+
   /**
    *
    *
@@ -127,6 +129,7 @@ public interface ModelMonitoringSchemaOrBuilder
    * </code>
    */
   int getFeatureFieldsCount();
+
   /**
    *
    *
@@ -163,6 +166,7 @@ public interface ModelMonitoringSchemaOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.ModelMonitoringSchema.FieldSchemaOrBuilder>
       getFeatureFieldsOrBuilderList();
+
   /**
    *
    *
@@ -220,6 +224,7 @@ public interface ModelMonitoringSchemaOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringSchema.FieldSchema>
       getPredictionFieldsList();
+
   /**
    *
    *
@@ -241,6 +246,7 @@ public interface ModelMonitoringSchemaOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringSchema.FieldSchema getPredictionFields(
       int index);
+
   /**
    *
    *
@@ -261,6 +267,7 @@ public interface ModelMonitoringSchemaOrBuilder
    * </code>
    */
   int getPredictionFieldsCount();
+
   /**
    *
    *
@@ -283,6 +290,7 @@ public interface ModelMonitoringSchemaOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.ModelMonitoringSchema.FieldSchemaOrBuilder>
       getPredictionFieldsOrBuilderList();
+
   /**
    *
    *
@@ -318,6 +326,7 @@ public interface ModelMonitoringSchemaOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringSchema.FieldSchema>
       getGroundTruthFieldsList();
+
   /**
    *
    *
@@ -331,6 +340,7 @@ public interface ModelMonitoringSchemaOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringSchema.FieldSchema getGroundTruthFields(
       int index);
+
   /**
    *
    *
@@ -343,6 +353,7 @@ public interface ModelMonitoringSchemaOrBuilder
    * </code>
    */
   int getGroundTruthFieldsCount();
+
   /**
    *
    *
@@ -357,6 +368,7 @@ public interface ModelMonitoringSchemaOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.ModelMonitoringSchema.FieldSchemaOrBuilder>
       getGroundTruthFieldsOrBuilderList();
+
   /**
    *
    *

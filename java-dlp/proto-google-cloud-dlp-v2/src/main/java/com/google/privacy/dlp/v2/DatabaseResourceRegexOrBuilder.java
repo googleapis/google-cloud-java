@@ -37,6 +37,7 @@ public interface DatabaseResourceRegexOrBuilder
    * @return The projectIdRegex.
    */
   java.lang.String getProjectIdRegex();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DatabaseResourceRegexOrBuilder
    * @return The instanceRegex.
    */
   java.lang.String getInstanceRegex();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface DatabaseResourceRegexOrBuilder
    * @return The databaseRegex.
    */
   java.lang.String getDatabaseRegex();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface DatabaseResourceRegexOrBuilder
    * @return The databaseResourceNameRegex.
    */
   java.lang.String getDatabaseResourceNameRegex();
+
   /**
    *
    *

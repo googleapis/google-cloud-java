@@ -36,6 +36,7 @@ public interface RecordKeyOrBuilder
    * @return Whether the datastoreKey field is set.
    */
   boolean hasDatastoreKey();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RecordKeyOrBuilder
    * @return The datastoreKey.
    */
   com.google.privacy.dlp.v2.DatastoreKey getDatastoreKey();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface RecordKeyOrBuilder
    * @return Whether the bigQueryKey field is set.
    */
   boolean hasBigQueryKey();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface RecordKeyOrBuilder
    * @return The bigQueryKey.
    */
   com.google.privacy.dlp.v2.BigQueryKey getBigQueryKey();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface RecordKeyOrBuilder
    * @return A list containing the idValues.
    */
   java.util.List<java.lang.String> getIdValuesList();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface RecordKeyOrBuilder
    * @return The count of idValues.
    */
   int getIdValuesCount();
+
   /**
    *
    *
@@ -134,6 +140,7 @@ public interface RecordKeyOrBuilder
    * @return The idValues at the given index.
    */
   java.lang.String getIdValues(int index);
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface GetWorkflowInvocationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

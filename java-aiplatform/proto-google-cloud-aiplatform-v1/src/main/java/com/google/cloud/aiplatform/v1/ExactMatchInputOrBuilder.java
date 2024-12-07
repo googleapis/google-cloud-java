@@ -38,6 +38,7 @@ public interface ExactMatchInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ExactMatchInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1.ExactMatchSpec getMetricSpec();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ExactMatchInputOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.ExactMatchInstance> getInstancesList();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ExactMatchInputOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.ExactMatchInstance getInstances(int index);
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ExactMatchInputOrBuilder
    * </code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface ExactMatchInputOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ExactMatchInstanceOrBuilder>
       getInstancesOrBuilderList();
+
   /**
    *
    *

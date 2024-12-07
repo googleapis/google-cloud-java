@@ -40,6 +40,7 @@ public interface UpdateInspectTemplateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface UpdateInspectTemplateRequestOrBuilder
    * @return Whether the inspectTemplate field is set.
    */
   boolean hasInspectTemplate();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface UpdateInspectTemplateRequestOrBuilder
    * @return The inspectTemplate.
    */
   com.google.privacy.dlp.v2.InspectTemplate getInspectTemplate();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface UpdateInspectTemplateRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface UpdateInspectTemplateRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

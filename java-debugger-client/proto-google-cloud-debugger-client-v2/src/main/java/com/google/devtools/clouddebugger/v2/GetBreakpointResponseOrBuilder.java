@@ -37,6 +37,7 @@ public interface GetBreakpointResponseOrBuilder
    * @return Whether the breakpoint field is set.
    */
   boolean hasBreakpoint();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface GetBreakpointResponseOrBuilder
    * @return The breakpoint.
    */
   com.google.devtools.clouddebugger.v2.Breakpoint getBreakpoint();
+
   /**
    *
    *

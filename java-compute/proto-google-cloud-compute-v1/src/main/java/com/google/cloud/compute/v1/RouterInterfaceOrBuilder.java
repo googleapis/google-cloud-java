@@ -36,6 +36,7 @@ public interface RouterInterfaceOrBuilder
    * @return Whether the ipRange field is set.
    */
   boolean hasIpRange();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RouterInterfaceOrBuilder
    * @return The ipRange.
    */
   java.lang.String getIpRange();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface RouterInterfaceOrBuilder
    * @return Whether the ipVersion field is set.
    */
   boolean hasIpVersion();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface RouterInterfaceOrBuilder
    * @return The ipVersion.
    */
   java.lang.String getIpVersion();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface RouterInterfaceOrBuilder
    * @return Whether the linkedInterconnectAttachment field is set.
    */
   boolean hasLinkedInterconnectAttachment();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface RouterInterfaceOrBuilder
    * @return The linkedInterconnectAttachment.
    */
   java.lang.String getLinkedInterconnectAttachment();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface RouterInterfaceOrBuilder
    * @return Whether the linkedVpnTunnel field is set.
    */
   boolean hasLinkedVpnTunnel();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface RouterInterfaceOrBuilder
    * @return The linkedVpnTunnel.
    */
   java.lang.String getLinkedVpnTunnel();
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public interface RouterInterfaceOrBuilder
    * @return Whether the managementType field is set.
    */
   boolean hasManagementType();
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public interface RouterInterfaceOrBuilder
    * @return The managementType.
    */
   java.lang.String getManagementType();
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public interface RouterInterfaceOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -239,6 +250,7 @@ public interface RouterInterfaceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -264,6 +276,7 @@ public interface RouterInterfaceOrBuilder
    * @return Whether the privateIpAddress field is set.
    */
   boolean hasPrivateIpAddress();
+
   /**
    *
    *
@@ -276,6 +289,7 @@ public interface RouterInterfaceOrBuilder
    * @return The privateIpAddress.
    */
   java.lang.String getPrivateIpAddress();
+
   /**
    *
    *
@@ -301,6 +315,7 @@ public interface RouterInterfaceOrBuilder
    * @return Whether the redundantInterface field is set.
    */
   boolean hasRedundantInterface();
+
   /**
    *
    *
@@ -313,6 +328,7 @@ public interface RouterInterfaceOrBuilder
    * @return The redundantInterface.
    */
   java.lang.String getRedundantInterface();
+
   /**
    *
    *
@@ -338,6 +354,7 @@ public interface RouterInterfaceOrBuilder
    * @return Whether the subnetwork field is set.
    */
   boolean hasSubnetwork();
+
   /**
    *
    *
@@ -350,6 +367,7 @@ public interface RouterInterfaceOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *

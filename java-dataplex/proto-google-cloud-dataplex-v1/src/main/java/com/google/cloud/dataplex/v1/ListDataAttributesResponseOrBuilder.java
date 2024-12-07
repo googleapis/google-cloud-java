@@ -34,6 +34,7 @@ public interface ListDataAttributesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataAttribute data_attributes = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.DataAttribute> getDataAttributesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDataAttributesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataAttribute data_attributes = 1;</code>
    */
   com.google.cloud.dataplex.v1.DataAttribute getDataAttributes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDataAttributesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataAttribute data_attributes = 1;</code>
    */
   int getDataAttributesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDataAttributesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.DataAttributeOrBuilder>
       getDataAttributesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListDataAttributesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListDataAttributesResponseOrBuilder
    * @return A list containing the unreachableLocations.
    */
   java.util.List<java.lang.String> getUnreachableLocationsList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListDataAttributesResponseOrBuilder
    * @return The count of unreachableLocations.
    */
   int getUnreachableLocationsCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListDataAttributesResponseOrBuilder
    * @return The unreachableLocations at the given index.
    */
   java.lang.String getUnreachableLocations(int index);
+
   /**
    *
    *

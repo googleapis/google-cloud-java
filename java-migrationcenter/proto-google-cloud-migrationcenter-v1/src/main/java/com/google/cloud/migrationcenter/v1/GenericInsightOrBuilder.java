@@ -52,6 +52,7 @@ public interface GenericInsightOrBuilder
    * @return The defaultMessage.
    */
   java.lang.String getDefaultMessage();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface GenericInsightOrBuilder
    * @return A list containing the additionalInformation.
    */
   java.util.List<java.lang.String> getAdditionalInformationList();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface GenericInsightOrBuilder
    * @return The count of additionalInformation.
    */
   int getAdditionalInformationCount();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface GenericInsightOrBuilder
    * @return The additionalInformation at the given index.
    */
   java.lang.String getAdditionalInformation(int index);
+
   /**
    *
    *

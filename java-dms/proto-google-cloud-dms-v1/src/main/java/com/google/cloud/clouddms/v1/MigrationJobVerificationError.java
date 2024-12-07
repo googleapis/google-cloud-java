@@ -33,6 +33,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.MigrationJobVerificationError)
     MigrationJobVerificationErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MigrationJobVerificationError.newBuilder() to construct.
   private MigrationJobVerificationError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -374,6 +375,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>ERROR_CODE_UNSPECIFIED = 0;</code>
      */
     public static final int ERROR_CODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -384,6 +386,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>CONNECTION_FAILURE = 1;</code>
      */
     public static final int CONNECTION_FAILURE_VALUE = 1;
+
     /**
      *
      *
@@ -394,6 +397,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>AUTHENTICATION_FAILURE = 2;</code>
      */
     public static final int AUTHENTICATION_FAILURE_VALUE = 2;
+
     /**
      *
      *
@@ -404,6 +408,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>INVALID_CONNECTION_PROFILE_CONFIG = 3;</code>
      */
     public static final int INVALID_CONNECTION_PROFILE_CONFIG_VALUE = 3;
+
     /**
      *
      *
@@ -414,6 +419,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>VERSION_INCOMPATIBILITY = 4;</code>
      */
     public static final int VERSION_INCOMPATIBILITY_VALUE = 4;
+
     /**
      *
      *
@@ -424,6 +430,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>CONNECTION_PROFILE_TYPES_INCOMPATIBILITY = 5;</code>
      */
     public static final int CONNECTION_PROFILE_TYPES_INCOMPATIBILITY_VALUE = 5;
+
     /**
      *
      *
@@ -434,6 +441,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>NO_PGLOGICAL_INSTALLED = 7;</code>
      */
     public static final int NO_PGLOGICAL_INSTALLED_VALUE = 7;
+
     /**
      *
      *
@@ -444,6 +452,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>PGLOGICAL_NODE_ALREADY_EXISTS = 8;</code>
      */
     public static final int PGLOGICAL_NODE_ALREADY_EXISTS_VALUE = 8;
+
     /**
      *
      *
@@ -454,6 +463,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>INVALID_WAL_LEVEL = 9;</code>
      */
     public static final int INVALID_WAL_LEVEL_VALUE = 9;
+
     /**
      *
      *
@@ -465,6 +475,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>INVALID_SHARED_PRELOAD_LIBRARY = 10;</code>
      */
     public static final int INVALID_SHARED_PRELOAD_LIBRARY_VALUE = 10;
+
     /**
      *
      *
@@ -475,6 +486,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>INSUFFICIENT_MAX_REPLICATION_SLOTS = 11;</code>
      */
     public static final int INSUFFICIENT_MAX_REPLICATION_SLOTS_VALUE = 11;
+
     /**
      *
      *
@@ -485,6 +497,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>INSUFFICIENT_MAX_WAL_SENDERS = 12;</code>
      */
     public static final int INSUFFICIENT_MAX_WAL_SENDERS_VALUE = 12;
+
     /**
      *
      *
@@ -495,6 +508,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>INSUFFICIENT_MAX_WORKER_PROCESSES = 13;</code>
      */
     public static final int INSUFFICIENT_MAX_WORKER_PROCESSES_VALUE = 13;
+
     /**
      *
      *
@@ -506,6 +520,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>UNSUPPORTED_EXTENSIONS = 14;</code>
      */
     public static final int UNSUPPORTED_EXTENSIONS_VALUE = 14;
+
     /**
      *
      *
@@ -516,6 +531,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>UNSUPPORTED_MIGRATION_TYPE = 15;</code>
      */
     public static final int UNSUPPORTED_MIGRATION_TYPE_VALUE = 15;
+
     /**
      *
      *
@@ -526,6 +542,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>INVALID_RDS_LOGICAL_REPLICATION = 16;</code>
      */
     public static final int INVALID_RDS_LOGICAL_REPLICATION_VALUE = 16;
+
     /**
      *
      *
@@ -536,6 +553,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>UNSUPPORTED_GTID_MODE = 17;</code>
      */
     public static final int UNSUPPORTED_GTID_MODE_VALUE = 17;
+
     /**
      *
      *
@@ -547,6 +565,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>UNSUPPORTED_TABLE_DEFINITION = 18;</code>
      */
     public static final int UNSUPPORTED_TABLE_DEFINITION_VALUE = 18;
+
     /**
      *
      *
@@ -557,6 +576,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>UNSUPPORTED_DEFINER = 19;</code>
      */
     public static final int UNSUPPORTED_DEFINER_VALUE = 19;
+
     /**
      *
      *
@@ -567,6 +587,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>CANT_RESTART_RUNNING_MIGRATION = 21;</code>
      */
     public static final int CANT_RESTART_RUNNING_MIGRATION_VALUE = 21;
+
     /**
      *
      *
@@ -577,6 +598,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>SOURCE_ALREADY_SETUP = 23;</code>
      */
     public static final int SOURCE_ALREADY_SETUP_VALUE = 23;
+
     /**
      *
      *
@@ -588,6 +610,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>TABLES_WITH_LIMITED_SUPPORT = 24;</code>
      */
     public static final int TABLES_WITH_LIMITED_SUPPORT_VALUE = 24;
+
     /**
      *
      *
@@ -598,6 +621,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>UNSUPPORTED_DATABASE_LOCALE = 25;</code>
      */
     public static final int UNSUPPORTED_DATABASE_LOCALE_VALUE = 25;
+
     /**
      *
      *
@@ -608,6 +632,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>UNSUPPORTED_DATABASE_FDW_CONFIG = 26;</code>
      */
     public static final int UNSUPPORTED_DATABASE_FDW_CONFIG_VALUE = 26;
+
     /**
      *
      *
@@ -618,6 +643,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>ERROR_RDBMS = 27;</code>
      */
     public static final int ERROR_RDBMS_VALUE = 27;
+
     /**
      *
      *
@@ -629,6 +655,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>SOURCE_SIZE_EXCEEDS_THRESHOLD = 28;</code>
      */
     public static final int SOURCE_SIZE_EXCEEDS_THRESHOLD_VALUE = 28;
+
     /**
      *
      *
@@ -640,6 +667,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>EXISTING_CONFLICTING_DATABASES = 29;</code>
      */
     public static final int EXISTING_CONFLICTING_DATABASES_VALUE = 29;
+
     /**
      *
      *
@@ -788,6 +816,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
 
   public static final int ERROR_CODE_FIELD_NUMBER = 1;
   private int errorCode_ = 0;
+
   /**
    *
    *
@@ -805,6 +834,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
   public int getErrorCodeValue() {
     return errorCode_;
   }
+
   /**
    *
    *
@@ -831,6 +861,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorMessage_ = "";
+
   /**
    *
    *
@@ -855,6 +886,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -884,6 +916,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorDetailMessage_ = "";
+
   /**
    *
    *
@@ -907,6 +940,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -1115,6 +1149,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1327,6 +1362,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
     private int bitField0_;
 
     private int errorCode_ = 0;
+
     /**
      *
      *
@@ -1344,6 +1380,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
     public int getErrorCodeValue() {
       return errorCode_;
     }
+
     /**
      *
      *
@@ -1364,6 +1401,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1386,6 +1424,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
           ? com.google.cloud.clouddms.v1.MigrationJobVerificationError.ErrorCode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1410,6 +1449,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1431,6 +1471,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
     }
 
     private java.lang.Object errorMessage_ = "";
+
     /**
      *
      *
@@ -1454,6 +1495,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1477,6 +1519,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1499,6 +1542,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1517,6 +1561,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1542,6 +1587,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
     }
 
     private java.lang.Object errorDetailMessage_ = "";
+
     /**
      *
      *
@@ -1564,6 +1610,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1586,6 +1633,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1607,6 +1655,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1624,6 +1673,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

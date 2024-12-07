@@ -38,6 +38,7 @@ public interface RowOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.Value> getCellsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface RowOrBuilder
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.Value getCells(int index);
+
   /**
    *
    *
@@ -66,6 +68,7 @@ public interface RowOrBuilder
    * </code>
    */
   int getCellsCount();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface RowOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.ValueOrBuilder>
       getCellsOrBuilderList();
+
   /**
    *
    *

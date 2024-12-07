@@ -38,6 +38,7 @@ public interface CustomConfigOrBuilder
    * @return Whether the predicate field is set.
    */
   boolean hasPredicate();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CustomConfigOrBuilder
    * @return The predicate.
    */
   com.google.type.Expr getPredicate();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface CustomConfigOrBuilder
    * @return Whether the customOutput field is set.
    */
   boolean hasCustomOutput();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface CustomConfigOrBuilder
    * @return The customOutput.
    */
   com.google.cloud.securitycentermanagement.v1.CustomConfig.CustomOutputSpec getCustomOutput();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface CustomConfigOrBuilder
    * @return Whether the resourceSelector field is set.
    */
   boolean hasResourceSelector();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface CustomConfigOrBuilder
    * @return The resourceSelector.
    */
   com.google.cloud.securitycentermanagement.v1.CustomConfig.ResourceSelector getResourceSelector();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface CustomConfigOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface CustomConfigOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public interface CustomConfigOrBuilder
    * @return The recommendation.
    */
   java.lang.String getRecommendation();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface ExampleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ExampleOrBuilder
    * @return Whether the playbookInput field is set.
    */
   boolean hasPlaybookInput();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ExampleOrBuilder
    * @return The playbookInput.
    */
   com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput getPlaybookInput();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface ExampleOrBuilder
    * @return Whether the playbookOutput field is set.
    */
   boolean hasPlaybookOutput();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface ExampleOrBuilder
    * @return The playbookOutput.
    */
   com.google.cloud.dialogflow.cx.v3beta1.PlaybookOutput getPlaybookOutput();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface ExampleOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Action> getActionsList();
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public interface ExampleOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Action getActions(int index);
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public interface ExampleOrBuilder
    * </code>
    */
   int getActionsCount();
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public interface ExampleOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ActionOrBuilder>
       getActionsOrBuilderList();
+
   /**
    *
    *
@@ -214,6 +223,7 @@ public interface ExampleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -240,6 +250,7 @@ public interface ExampleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -281,6 +292,7 @@ public interface ExampleOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -294,6 +306,7 @@ public interface ExampleOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -319,6 +332,7 @@ public interface ExampleOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -332,6 +346,7 @@ public interface ExampleOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -358,6 +373,7 @@ public interface ExampleOrBuilder
    * @return The enum numeric value on the wire for conversationState.
    */
   int getConversationStateValue();
+
   /**
    *
    *
@@ -388,6 +404,7 @@ public interface ExampleOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface DeleteIdentityAwareProxyClientRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

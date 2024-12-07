@@ -36,6 +36,7 @@ public interface SourceTargetMappingOrBuilder
    * @return Whether the sourceSpec field is set.
    */
   boolean hasSourceSpec();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SourceTargetMappingOrBuilder
    * @return The sourceSpec.
    */
   com.google.cloud.bigquery.migration.v2.SourceSpec getSourceSpec();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface SourceTargetMappingOrBuilder
    * @return Whether the targetSpec field is set.
    */
   boolean hasTargetSpec();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface SourceTargetMappingOrBuilder
    * @return The targetSpec.
    */
   com.google.cloud.bigquery.migration.v2.TargetSpec getTargetSpec();
+
   /**
    *
    *

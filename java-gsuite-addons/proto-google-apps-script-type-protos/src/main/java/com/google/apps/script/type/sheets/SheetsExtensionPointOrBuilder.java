@@ -36,6 +36,7 @@ public interface SheetsExtensionPointOrBuilder
    * @return The runFunction.
    */
   java.lang.String getRunFunction();
+
   /**
    *
    *

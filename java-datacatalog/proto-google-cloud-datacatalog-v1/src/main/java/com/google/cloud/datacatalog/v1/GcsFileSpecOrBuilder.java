@@ -36,6 +36,7 @@ public interface GcsFileSpecOrBuilder
    * @return The filePath.
    */
   java.lang.String getFilePath();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface GcsFileSpecOrBuilder
    * @return Whether the gcsTimestamps field is set.
    */
   boolean hasGcsTimestamps();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface GcsFileSpecOrBuilder
    * @return The gcsTimestamps.
    */
   com.google.cloud.datacatalog.v1.SystemTimestamps getGcsTimestamps();
+
   /**
    *
    *

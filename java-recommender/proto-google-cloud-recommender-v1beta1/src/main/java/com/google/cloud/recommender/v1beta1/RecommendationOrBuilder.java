@@ -36,6 +36,7 @@ public interface RecommendationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface RecommendationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface RecommendationOrBuilder
    * @return The recommenderSubtype.
    */
   java.lang.String getRecommenderSubtype();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface RecommendationOrBuilder
    * @return Whether the lastRefreshTime field is set.
    */
   boolean hasLastRefreshTime();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface RecommendationOrBuilder
    * @return The lastRefreshTime.
    */
   com.google.protobuf.Timestamp getLastRefreshTime();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface RecommendationOrBuilder
    * @return Whether the primaryImpact field is set.
    */
   boolean hasPrimaryImpact();
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public interface RecommendationOrBuilder
    * @return The primaryImpact.
    */
   com.google.cloud.recommender.v1beta1.Impact getPrimaryImpact();
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public interface RecommendationOrBuilder
    * <code>repeated .google.cloud.recommender.v1beta1.Impact additional_impact = 6;</code>
    */
   java.util.List<com.google.cloud.recommender.v1beta1.Impact> getAdditionalImpactList();
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public interface RecommendationOrBuilder
    * <code>repeated .google.cloud.recommender.v1beta1.Impact additional_impact = 6;</code>
    */
   com.google.cloud.recommender.v1beta1.Impact getAdditionalImpact(int index);
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public interface RecommendationOrBuilder
    * <code>repeated .google.cloud.recommender.v1beta1.Impact additional_impact = 6;</code>
    */
   int getAdditionalImpactCount();
+
   /**
    *
    *
@@ -242,6 +252,7 @@ public interface RecommendationOrBuilder
    */
   java.util.List<? extends com.google.cloud.recommender.v1beta1.ImpactOrBuilder>
       getAdditionalImpactOrBuilderList();
+
   /**
    *
    *
@@ -267,6 +278,7 @@ public interface RecommendationOrBuilder
    * @return The enum numeric value on the wire for priority.
    */
   int getPriorityValue();
+
   /**
    *
    *
@@ -292,6 +304,7 @@ public interface RecommendationOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
+
   /**
    *
    *
@@ -304,6 +317,7 @@ public interface RecommendationOrBuilder
    * @return The content.
    */
   com.google.cloud.recommender.v1beta1.RecommendationContent getContent();
+
   /**
    *
    *
@@ -327,6 +341,7 @@ public interface RecommendationOrBuilder
    * @return Whether the stateInfo field is set.
    */
   boolean hasStateInfo();
+
   /**
    *
    *
@@ -339,6 +354,7 @@ public interface RecommendationOrBuilder
    * @return The stateInfo.
    */
   com.google.cloud.recommender.v1beta1.RecommendationStateInfo getStateInfo();
+
   /**
    *
    *
@@ -363,6 +379,7 @@ public interface RecommendationOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -390,6 +407,7 @@ public interface RecommendationOrBuilder
    */
   java.util.List<com.google.cloud.recommender.v1beta1.Recommendation.InsightReference>
       getAssociatedInsightsList();
+
   /**
    *
    *
@@ -403,6 +421,7 @@ public interface RecommendationOrBuilder
    */
   com.google.cloud.recommender.v1beta1.Recommendation.InsightReference getAssociatedInsights(
       int index);
+
   /**
    *
    *
@@ -415,6 +434,7 @@ public interface RecommendationOrBuilder
    * </code>
    */
   int getAssociatedInsightsCount();
+
   /**
    *
    *
@@ -429,6 +449,7 @@ public interface RecommendationOrBuilder
   java.util.List<
           ? extends com.google.cloud.recommender.v1beta1.Recommendation.InsightReferenceOrBuilder>
       getAssociatedInsightsOrBuilderList();
+
   /**
    *
    *
@@ -458,6 +479,7 @@ public interface RecommendationOrBuilder
    * @return The xorGroupId.
    */
   java.lang.String getXorGroupId();
+
   /**
    *
    *

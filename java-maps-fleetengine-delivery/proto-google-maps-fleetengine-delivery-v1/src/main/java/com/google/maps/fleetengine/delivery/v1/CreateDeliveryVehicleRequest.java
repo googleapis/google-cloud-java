@@ -33,6 +33,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.CreateDeliveryVehicleRequest)
     CreateDeliveryVehicleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDeliveryVehicleRequest.newBuilder() to construct.
   private CreateDeliveryVehicleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int HEADER_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader header_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
   public boolean hasHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
         ? com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader.getDefaultInstance()
         : header_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deliveryVehicleId_ = "";
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
 
   public static final int DELIVERY_VEHICLE_FIELD_NUMBER = 5;
   private com.google.maps.fleetengine.delivery.v1.DeliveryVehicle deliveryVehicle_;
+
   /**
    *
    *
@@ -269,6 +278,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
   public boolean hasDeliveryVehicle() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -296,6 +306,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
         ? com.google.maps.fleetengine.delivery.v1.DeliveryVehicle.getDefaultInstance()
         : deliveryVehicle_;
   }
+
   /**
    *
    *
@@ -521,6 +532,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -781,6 +793,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
             com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader.Builder,
             com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeaderOrBuilder>
         headerBuilder_;
+
     /**
      *
      *
@@ -797,6 +810,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -819,6 +833,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
         return headerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -843,6 +858,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +881,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +914,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +936,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +954,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -956,6 +976,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
             : header_;
       }
     }
+
     /**
      *
      *
@@ -985,6 +1006,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1008,6 +1030,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1054,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1053,6 +1077,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1096,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1122,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object deliveryVehicleId_ = "";
+
     /**
      *
      *
@@ -1126,6 +1153,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1156,6 +1184,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1185,6 +1214,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1210,6 +1240,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1247,6 +1278,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
             com.google.maps.fleetengine.delivery.v1.DeliveryVehicle.Builder,
             com.google.maps.fleetengine.delivery.v1.DeliveryVehicleOrBuilder>
         deliveryVehicleBuilder_;
+
     /**
      *
      *
@@ -1271,6 +1303,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
     public boolean hasDeliveryVehicle() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1301,6 +1334,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
         return deliveryVehicleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1334,6 +1368,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1364,6 +1399,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1403,6 +1439,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1432,6 +1469,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1457,6 +1495,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return getDeliveryVehicleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1486,6 +1525,7 @@ public final class CreateDeliveryVehicleRequest extends com.google.protobuf.Gene
             : deliveryVehicle_;
       }
     }
+
     /**
      *
      *

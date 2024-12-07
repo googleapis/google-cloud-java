@@ -39,6 +39,7 @@ public interface DeleteSearchAds360LinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

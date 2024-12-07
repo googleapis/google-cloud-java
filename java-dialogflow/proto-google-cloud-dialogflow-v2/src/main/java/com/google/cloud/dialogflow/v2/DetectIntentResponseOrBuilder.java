@@ -37,6 +37,7 @@ public interface DetectIntentResponseOrBuilder
    * @return The responseId.
    */
   java.lang.String getResponseId();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface DetectIntentResponseOrBuilder
    * @return Whether the queryResult field is set.
    */
   boolean hasQueryResult();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface DetectIntentResponseOrBuilder
    * @return The queryResult.
    */
   com.google.cloud.dialogflow.v2.QueryResult getQueryResult();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface DetectIntentResponseOrBuilder
    * @return Whether the webhookStatus field is set.
    */
   boolean hasWebhookStatus();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface DetectIntentResponseOrBuilder
    * @return The webhookStatus.
    */
   com.google.rpc.Status getWebhookStatus();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface DetectIntentResponseOrBuilder
    * @return Whether the outputAudioConfig field is set.
    */
   boolean hasOutputAudioConfig();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface DetectIntentResponseOrBuilder
    * @return The outputAudioConfig.
    */
   com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig();
+
   /**
    *
    *

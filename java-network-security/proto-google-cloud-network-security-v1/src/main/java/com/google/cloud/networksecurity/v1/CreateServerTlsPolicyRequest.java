@@ -33,6 +33,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.networksecurity.v1.CreateServerTlsPolicyRequest)
     CreateServerTlsPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateServerTlsPolicyRequest.newBuilder() to construct.
   private CreateServerTlsPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serverTlsPolicyId_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
 
   public static final int SERVER_TLS_POLICY_FIELD_NUMBER = 3;
   private com.google.cloud.networksecurity.v1.ServerTlsPolicy serverTlsPolicy_;
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
   public boolean hasServerTlsPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
         ? com.google.cloud.networksecurity.v1.ServerTlsPolicy.getDefaultInstance()
         : serverTlsPolicy_;
   }
+
   /**
    *
    *
@@ -417,6 +425,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -650,6 +659,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -675,6 +685,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -700,6 +711,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -724,6 +736,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +757,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +785,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object serverTlsPolicyId_ = "";
+
     /**
      *
      *
@@ -795,6 +810,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -819,6 +835,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -842,6 +859,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +879,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +911,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
             com.google.cloud.networksecurity.v1.ServerTlsPolicy.Builder,
             com.google.cloud.networksecurity.v1.ServerTlsPolicyOrBuilder>
         serverTlsPolicyBuilder_;
+
     /**
      *
      *
@@ -908,6 +928,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
     public boolean hasServerTlsPolicy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -930,6 +951,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
         return serverTlsPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -954,6 +976,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +999,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1030,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1052,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1069,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return getServerTlsPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1064,6 +1091,7 @@ public final class CreateServerTlsPolicyRequest extends com.google.protobuf.Gene
             : serverTlsPolicy_;
       }
     }
+
     /**
      *
      *

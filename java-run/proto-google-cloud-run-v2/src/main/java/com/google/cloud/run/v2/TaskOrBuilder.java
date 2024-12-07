@@ -36,6 +36,7 @@ public interface TaskOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface TaskOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface TaskOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -122,9 +125,11 @@ public interface TaskOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface TaskOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface TaskOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface TaskOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -203,9 +211,11 @@ public interface TaskOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -220,6 +230,7 @@ public interface TaskOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -238,6 +249,7 @@ public interface TaskOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -268,6 +280,7 @@ public interface TaskOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -283,6 +296,7 @@ public interface TaskOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -313,6 +327,7 @@ public interface TaskOrBuilder
    * @return Whether the scheduledTime field is set.
    */
   boolean hasScheduledTime();
+
   /**
    *
    *
@@ -329,6 +344,7 @@ public interface TaskOrBuilder
    * @return The scheduledTime.
    */
   com.google.protobuf.Timestamp getScheduledTime();
+
   /**
    *
    *
@@ -359,6 +375,7 @@ public interface TaskOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -374,6 +391,7 @@ public interface TaskOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -403,6 +421,7 @@ public interface TaskOrBuilder
    * @return Whether the completionTime field is set.
    */
   boolean hasCompletionTime();
+
   /**
    *
    *
@@ -418,6 +437,7 @@ public interface TaskOrBuilder
    * @return The completionTime.
    */
   com.google.protobuf.Timestamp getCompletionTime();
+
   /**
    *
    *
@@ -445,6 +465,7 @@ public interface TaskOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -458,6 +479,7 @@ public interface TaskOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -484,6 +506,7 @@ public interface TaskOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -498,6 +521,7 @@ public interface TaskOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -526,6 +550,7 @@ public interface TaskOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -541,6 +566,7 @@ public interface TaskOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -569,6 +595,7 @@ public interface TaskOrBuilder
    * @return The job.
    */
   java.lang.String getJob();
+
   /**
    *
    *
@@ -598,6 +625,7 @@ public interface TaskOrBuilder
    * @return The execution.
    */
   java.lang.String getExecution();
+
   /**
    *
    *
@@ -624,6 +652,7 @@ public interface TaskOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 14;</code>
    */
   java.util.List<com.google.cloud.run.v2.Container> getContainersList();
+
   /**
    *
    *
@@ -635,6 +664,7 @@ public interface TaskOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 14;</code>
    */
   com.google.cloud.run.v2.Container getContainers(int index);
+
   /**
    *
    *
@@ -646,6 +676,7 @@ public interface TaskOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 14;</code>
    */
   int getContainersCount();
+
   /**
    *
    *
@@ -657,6 +688,7 @@ public interface TaskOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 14;</code>
    */
   java.util.List<? extends com.google.cloud.run.v2.ContainerOrBuilder> getContainersOrBuilderList();
+
   /**
    *
    *
@@ -679,6 +711,7 @@ public interface TaskOrBuilder
    * <code>repeated .google.cloud.run.v2.Volume volumes = 15;</code>
    */
   java.util.List<com.google.cloud.run.v2.Volume> getVolumesList();
+
   /**
    *
    *
@@ -689,6 +722,7 @@ public interface TaskOrBuilder
    * <code>repeated .google.cloud.run.v2.Volume volumes = 15;</code>
    */
   com.google.cloud.run.v2.Volume getVolumes(int index);
+
   /**
    *
    *
@@ -699,6 +733,7 @@ public interface TaskOrBuilder
    * <code>repeated .google.cloud.run.v2.Volume volumes = 15;</code>
    */
   int getVolumesCount();
+
   /**
    *
    *
@@ -709,6 +744,7 @@ public interface TaskOrBuilder
    * <code>repeated .google.cloud.run.v2.Volume volumes = 15;</code>
    */
   java.util.List<? extends com.google.cloud.run.v2.VolumeOrBuilder> getVolumesOrBuilderList();
+
   /**
    *
    *
@@ -747,6 +783,7 @@ public interface TaskOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
+
   /**
    *
    *
@@ -761,6 +798,7 @@ public interface TaskOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
+
   /**
    *
    *
@@ -789,6 +827,7 @@ public interface TaskOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -817,6 +856,7 @@ public interface TaskOrBuilder
    * @return The enum numeric value on the wire for executionEnvironment.
    */
   int getExecutionEnvironmentValue();
+
   /**
    *
    *
@@ -858,6 +898,7 @@ public interface TaskOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.run.v2.Condition> getConditionsList();
+
   /**
    *
    *
@@ -871,6 +912,7 @@ public interface TaskOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.Condition getConditions(int index);
+
   /**
    *
    *
@@ -884,6 +926,7 @@ public interface TaskOrBuilder
    * </code>
    */
   int getConditionsCount();
+
   /**
    *
    *
@@ -897,6 +940,7 @@ public interface TaskOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.run.v2.ConditionOrBuilder> getConditionsOrBuilderList();
+
   /**
    *
    *
@@ -966,6 +1010,7 @@ public interface TaskOrBuilder
    * @return Whether the lastAttemptResult field is set.
    */
   boolean hasLastAttemptResult();
+
   /**
    *
    *
@@ -980,6 +1025,7 @@ public interface TaskOrBuilder
    * @return The lastAttemptResult.
    */
   com.google.cloud.run.v2.TaskAttemptResult getLastAttemptResult();
+
   /**
    *
    *
@@ -1009,6 +1055,7 @@ public interface TaskOrBuilder
    * @return The encryptionKey.
    */
   java.lang.String getEncryptionKey();
+
   /**
    *
    *
@@ -1042,6 +1089,7 @@ public interface TaskOrBuilder
    * @return Whether the vpcAccess field is set.
    */
   boolean hasVpcAccess();
+
   /**
    *
    *
@@ -1058,6 +1106,7 @@ public interface TaskOrBuilder
    * @return The vpcAccess.
    */
   com.google.cloud.run.v2.VpcAccess getVpcAccess();
+
   /**
    *
    *
@@ -1086,6 +1135,7 @@ public interface TaskOrBuilder
    * @return The logUri.
    */
   java.lang.String getLogUri();
+
   /**
    *
    *
@@ -1126,6 +1176,7 @@ public interface TaskOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

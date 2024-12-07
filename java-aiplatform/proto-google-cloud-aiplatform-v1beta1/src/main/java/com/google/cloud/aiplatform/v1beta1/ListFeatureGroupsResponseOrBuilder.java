@@ -34,6 +34,7 @@ public interface ListFeatureGroupsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureGroup feature_groups = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureGroup> getFeatureGroupsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListFeatureGroupsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureGroup feature_groups = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.FeatureGroup getFeatureGroups(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListFeatureGroupsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureGroup feature_groups = 1;</code>
    */
   int getFeatureGroupsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListFeatureGroupsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.FeatureGroupOrBuilder>
       getFeatureGroupsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListFeatureGroupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

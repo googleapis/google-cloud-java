@@ -33,6 +33,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.ListBuildsResponse)
     ListBuildsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListBuildsResponse.newBuilder() to construct.
   private ListBuildsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.Build> builds_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloudbuild.v1.Build> getBuildsList() {
     return builds_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       getBuildsOrBuilderList() {
     return builds_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
   public int getBuildsCount() {
     return builds_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloudbuild.v1.Build getBuilds(int index) {
     return builds_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -631,6 +640,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
         return buildsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -647,6 +657,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
         return buildsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
         return buildsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -704,6 +717,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +763,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +783,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +803,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +824,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +844,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +864,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +877,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloudbuild.v1.Build.Builder getBuildsBuilder(int index) {
       return getBuildsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -872,6 +894,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
         return buildsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -889,6 +912,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(builds_);
       }
     }
+
     /**
      *
      *
@@ -902,6 +926,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       return getBuildsFieldBuilder()
           .addBuilder(com.google.cloudbuild.v1.Build.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -915,6 +940,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       return getBuildsFieldBuilder()
           .addBuilder(index, com.google.cloudbuild.v1.Build.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -946,6 +972,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -969,6 +996,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -992,6 +1020,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1043,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1062,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

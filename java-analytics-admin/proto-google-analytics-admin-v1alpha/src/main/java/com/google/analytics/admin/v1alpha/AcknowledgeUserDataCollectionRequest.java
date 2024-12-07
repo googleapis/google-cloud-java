@@ -34,6 +34,7 @@ public final class AcknowledgeUserDataCollectionRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest)
     AcknowledgeUserDataCollectionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AcknowledgeUserDataCollectionRequest.newBuilder() to construct.
   private AcknowledgeUserDataCollectionRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class AcknowledgeUserDataCollectionRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object property_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class AcknowledgeUserDataCollectionRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class AcknowledgeUserDataCollectionRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object acknowledgement_ = "";
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class AcknowledgeUserDataCollectionRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -356,6 +361,7 @@ public final class AcknowledgeUserDataCollectionRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -565,6 +571,7 @@ public final class AcknowledgeUserDataCollectionRequest
     private int bitField0_;
 
     private java.lang.Object property_ = "";
+
     /**
      *
      *
@@ -589,6 +596,7 @@ public final class AcknowledgeUserDataCollectionRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -613,6 +621,7 @@ public final class AcknowledgeUserDataCollectionRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -636,6 +645,7 @@ public final class AcknowledgeUserDataCollectionRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +665,7 @@ public final class AcknowledgeUserDataCollectionRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class AcknowledgeUserDataCollectionRequest
     }
 
     private java.lang.Object acknowledgement_ = "";
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class AcknowledgeUserDataCollectionRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -739,6 +752,7 @@ public final class AcknowledgeUserDataCollectionRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -767,6 +781,7 @@ public final class AcknowledgeUserDataCollectionRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +806,7 @@ public final class AcknowledgeUserDataCollectionRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.TimeSeriesQuery)
     TimeSeriesQueryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TimeSeriesQuery.newBuilder() to construct.
   private TimeSeriesQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,6 +122,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TIME_SERIES_FILTER_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
   public boolean hasTimeSeriesFilter() {
     return sourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.monitoring.dashboard.v1.TimeSeriesFilter.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TIME_SERIES_FILTER_RATIO_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
   public boolean hasTimeSeriesFilterRatio() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TIME_SERIES_QUERY_LANGUAGE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
   public boolean hasTimeSeriesQueryLanguage() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -268,6 +278,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -297,6 +308,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PROMETHEUS_QUERY_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -311,6 +323,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
   public boolean hasPrometheusQuery() {
     return sourceCase_ == 6;
   }
+
   /**
    *
    *
@@ -338,6 +351,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -370,6 +384,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object unitOverride_ = "";
+
   /**
    *
    *
@@ -397,6 +412,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -427,6 +443,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
 
   public static final int OUTPUT_FULL_DURATION_FIELD_NUMBER = 7;
   private boolean outputFullDuration_ = false;
+
   /**
    *
    *
@@ -682,6 +699,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -976,6 +994,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
             com.google.monitoring.dashboard.v1.TimeSeriesFilter.Builder,
             com.google.monitoring.dashboard.v1.TimeSeriesFilterOrBuilder>
         timeSeriesFilterBuilder_;
+
     /**
      *
      *
@@ -991,6 +1010,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasTimeSeriesFilter() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -1016,6 +1036,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         return com.google.monitoring.dashboard.v1.TimeSeriesFilter.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1038,6 +1059,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1080,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1115,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1141,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1130,6 +1155,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         getTimeSeriesFilterBuilder() {
       return getTimeSeriesFilterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1151,6 +1177,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         return com.google.monitoring.dashboard.v1.TimeSeriesFilter.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1216,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
             com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.Builder,
             com.google.monitoring.dashboard.v1.TimeSeriesFilterRatioOrBuilder>
         timeSeriesFilterRatioBuilder_;
+
     /**
      *
      *
@@ -1205,6 +1233,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasTimeSeriesFilterRatio() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -1231,6 +1260,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         return com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1255,6 +1285,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1307,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1311,6 +1343,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1370,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1351,6 +1385,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         getTimeSeriesFilterRatioBuilder() {
       return getTimeSeriesFilterRatioFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1373,6 +1408,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         return com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1458,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasTimeSeriesQueryLanguage() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -1450,6 +1487,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1478,6 +1516,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1499,6 +1538,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1518,6 +1558,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1556,6 +1597,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasPrometheusQuery() {
       return sourceCase_ == 6;
     }
+
     /**
      *
      *
@@ -1584,6 +1626,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1612,6 +1655,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1633,6 +1677,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1697,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1676,6 +1722,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object unitOverride_ = "";
+
     /**
      *
      *
@@ -1702,6 +1749,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1728,6 +1776,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1753,6 +1802,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1774,6 +1824,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1853,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean outputFullDuration_;
+
     /**
      *
      *
@@ -1823,6 +1875,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     public boolean getOutputFullDuration() {
       return outputFullDuration_;
     }
+
     /**
      *
      *
@@ -1848,6 +1901,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -309,7 +309,8 @@ public class ProjectDataProfileName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               projectDataProfileName.pathTemplate, ORGANIZATION_LOCATION_PROJECT_DATA_PROFILE),
-          "toBuilder is only supported when ProjectDataProfileName has the pattern of organizations/{organization}/locations/{location}/projectDataProfiles/{project_data_profile}");
+          "toBuilder is only supported when ProjectDataProfileName has the pattern of"
+              + " organizations/{organization}/locations/{location}/projectDataProfiles/{project_data_profile}");
       this.organization = projectDataProfileName.organization;
       this.location = projectDataProfileName.location;
       this.projectDataProfile = projectDataProfileName.projectDataProfile;

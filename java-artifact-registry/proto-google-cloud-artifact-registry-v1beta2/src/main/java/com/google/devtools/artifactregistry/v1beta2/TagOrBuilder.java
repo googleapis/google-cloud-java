@@ -40,6 +40,7 @@ public interface TagOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface TagOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface DeleteReportConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -90,6 +91,7 @@ public interface DeleteReportConfigRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

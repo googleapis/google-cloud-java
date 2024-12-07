@@ -33,6 +33,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectOutageNotification)
     InterconnectOutageNotificationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InterconnectOutageNotification.newBuilder() to construct.
   private InterconnectOutageNotification(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -142,6 +143,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>UNDEFINED_ISSUE_TYPE = 0;</code>
      */
     public static final int UNDEFINED_ISSUE_TYPE_VALUE = 0;
+
     /**
      *
      *
@@ -152,6 +154,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>IT_OUTAGE = 175779973;</code>
      */
     public static final int IT_OUTAGE_VALUE = 175779973;
+
     /**
      *
      *
@@ -162,6 +165,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>IT_PARTIAL_OUTAGE = 92103971;</code>
      */
     public static final int IT_PARTIAL_OUTAGE_VALUE = 92103971;
+
     /**
      *
      *
@@ -172,6 +176,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>OUTAGE = 195285745;</code>
      */
     public static final int OUTAGE_VALUE = 195285745;
+
     /**
      *
      *
@@ -325,6 +330,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>UNDEFINED_SOURCE = 0;</code>
      */
     public static final int UNDEFINED_SOURCE_VALUE = 0;
+
     /**
      *
      *
@@ -335,6 +341,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>GOOGLE = 497439289;</code>
      */
     public static final int GOOGLE_VALUE = 497439289;
+
     /**
      *
      *
@@ -514,6 +521,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
+
     /**
      *
      *
@@ -524,6 +532,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>ACTIVE = 314733318;</code>
      */
     public static final int ACTIVE_VALUE = 314733318;
+
     /**
      *
      *
@@ -534,6 +543,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>CANCELLED = 41957681;</code>
      */
     public static final int CANCELLED_VALUE = 41957681;
+
     /**
      *
      *
@@ -544,6 +554,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>COMPLETED = 309921323;</code>
      */
     public static final int COMPLETED_VALUE = 309921323;
+
     /**
      *
      *
@@ -554,6 +565,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>NS_ACTIVE = 252563136;</code>
      */
     public static final int NS_ACTIVE_VALUE = 252563136;
+
     /**
      *
      *
@@ -662,6 +674,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList affectedCircuits_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -676,6 +689,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   public com.google.protobuf.ProtocolStringList getAffectedCircuitsList() {
     return affectedCircuits_;
   }
+
   /**
    *
    *
@@ -690,6 +704,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   public int getAffectedCircuitsCount() {
     return affectedCircuits_.size();
   }
+
   /**
    *
    *
@@ -705,6 +720,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   public java.lang.String getAffectedCircuits(int index) {
     return affectedCircuits_.get(index);
   }
+
   /**
    *
    *
@@ -725,6 +741,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -740,6 +757,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -763,6 +781,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -789,6 +808,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
 
   public static final int END_TIME_FIELD_NUMBER = 114938801;
   private long endTime_ = 0L;
+
   /**
    *
    *
@@ -804,6 +824,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -824,6 +845,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object issueType_ = "";
+
   /**
    *
    *
@@ -840,6 +862,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   public boolean hasIssueType() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -864,6 +887,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -893,6 +917,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -908,6 +933,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   public boolean hasName() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -931,6 +957,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -959,6 +986,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object source_ = "";
+
   /**
    *
    *
@@ -975,6 +1003,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   public boolean hasSource() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -999,6 +1028,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -1026,6 +1056,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
 
   public static final int START_TIME_FIELD_NUMBER = 37467274;
   private long startTime_ = 0L;
+
   /**
    *
    *
@@ -1041,6 +1072,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -1061,6 +1093,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
+
   /**
    *
    *
@@ -1077,6 +1110,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   public boolean hasState() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -1101,6 +1135,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -1392,6 +1427,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1701,6 +1737,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -1716,6 +1753,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       affectedCircuits_.makeImmutable();
       return affectedCircuits_;
     }
+
     /**
      *
      *
@@ -1730,6 +1768,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public int getAffectedCircuitsCount() {
       return affectedCircuits_.size();
     }
+
     /**
      *
      *
@@ -1745,6 +1784,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public java.lang.String getAffectedCircuits(int index) {
       return affectedCircuits_.get(index);
     }
+
     /**
      *
      *
@@ -1760,6 +1800,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getAffectedCircuitsBytes(int index) {
       return affectedCircuits_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1783,6 +1824,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1805,6 +1847,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1824,6 +1867,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1842,6 +1886,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1867,6 +1912,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1881,6 +1927,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1903,6 +1950,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1925,6 +1973,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1946,6 +1995,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1963,6 +2013,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1987,6 +2038,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
 
     private long endTime_;
+
     /**
      *
      *
@@ -2002,6 +2054,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2017,6 +2070,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public long getEndTime() {
       return endTime_;
     }
+
     /**
      *
      *
@@ -2036,6 +2090,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2055,6 +2110,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
 
     private java.lang.Object issueType_ = "";
+
     /**
      *
      *
@@ -2070,6 +2126,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public boolean hasIssueType() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2093,6 +2150,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2116,6 +2174,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2138,6 +2197,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2156,6 +2216,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2181,6 +2242,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2195,6 +2257,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public boolean hasName() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2217,6 +2280,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2239,6 +2303,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2260,6 +2325,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2277,6 +2343,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2301,6 +2368,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
 
     private java.lang.Object source_ = "";
+
     /**
      *
      *
@@ -2316,6 +2384,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public boolean hasSource() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2339,6 +2408,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2362,6 +2432,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2384,6 +2455,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2402,6 +2474,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2427,6 +2500,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
 
     private long startTime_;
+
     /**
      *
      *
@@ -2442,6 +2516,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2457,6 +2532,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public long getStartTime() {
       return startTime_;
     }
+
     /**
      *
      *
@@ -2476,6 +2552,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2495,6 +2572,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
 
     private java.lang.Object state_ = "";
+
     /**
      *
      *
@@ -2510,6 +2588,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public boolean hasState() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2533,6 +2612,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2556,6 +2636,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2578,6 +2659,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2596,6 +2678,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

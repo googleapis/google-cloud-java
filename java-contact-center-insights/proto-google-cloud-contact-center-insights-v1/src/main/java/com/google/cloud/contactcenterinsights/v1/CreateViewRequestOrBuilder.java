@@ -41,6 +41,7 @@ public interface CreateViewRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface CreateViewRequestOrBuilder
    * @return Whether the view field is set.
    */
   boolean hasView();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CreateViewRequestOrBuilder
    * @return The view.
    */
   com.google.cloud.contactcenterinsights.v1.View getView();
+
   /**
    *
    *

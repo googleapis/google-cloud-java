@@ -36,6 +36,7 @@ public interface ActionOrBuilder
    * @return Whether the saveFindings field is set.
    */
   boolean hasSaveFindings();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ActionOrBuilder
    * @return The saveFindings.
    */
   com.google.privacy.dlp.v2.Action.SaveFindings getSaveFindings();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ActionOrBuilder
    * @return Whether the pubSub field is set.
    */
   boolean hasPubSub();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ActionOrBuilder
    * @return The pubSub.
    */
   com.google.privacy.dlp.v2.Action.PublishToPubSub getPubSub();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface ActionOrBuilder
    * @return Whether the publishSummaryToCscc field is set.
    */
   boolean hasPublishSummaryToCscc();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ActionOrBuilder
    * @return The publishSummaryToCscc.
    */
   com.google.privacy.dlp.v2.Action.PublishSummaryToCscc getPublishSummaryToCscc();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface ActionOrBuilder
    * @return Whether the publishFindingsToCloudDataCatalog field is set.
    */
   boolean hasPublishFindingsToCloudDataCatalog();
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public interface ActionOrBuilder
    */
   com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
       getPublishFindingsToCloudDataCatalog();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface ActionOrBuilder
    * @return Whether the deidentify field is set.
    */
   boolean hasDeidentify();
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public interface ActionOrBuilder
    * @return The deidentify.
    */
   com.google.privacy.dlp.v2.Action.Deidentify getDeidentify();
+
   /**
    *
    *
@@ -221,6 +231,7 @@ public interface ActionOrBuilder
    * @return Whether the jobNotificationEmails field is set.
    */
   boolean hasJobNotificationEmails();
+
   /**
    *
    *
@@ -235,6 +246,7 @@ public interface ActionOrBuilder
    * @return The jobNotificationEmails.
    */
   com.google.privacy.dlp.v2.Action.JobNotificationEmails getJobNotificationEmails();
+
   /**
    *
    *
@@ -261,6 +273,7 @@ public interface ActionOrBuilder
    * @return Whether the publishToStackdriver field is set.
    */
   boolean hasPublishToStackdriver();
+
   /**
    *
    *
@@ -273,6 +286,7 @@ public interface ActionOrBuilder
    * @return The publishToStackdriver.
    */
   com.google.privacy.dlp.v2.Action.PublishToStackdriver getPublishToStackdriver();
+
   /**
    *
    *

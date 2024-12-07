@@ -40,6 +40,7 @@ public interface GetNotificationChannelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

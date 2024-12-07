@@ -37,6 +37,7 @@ public interface ConfidentialInstanceConfigOrBuilder
    * @return Whether the confidentialInstanceType field is set.
    */
   boolean hasConfidentialInstanceType();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ConfidentialInstanceConfigOrBuilder
    * @return The confidentialInstanceType.
    */
   java.lang.String getConfidentialInstanceType();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ConfidentialInstanceConfigOrBuilder
    * @return Whether the enableConfidentialCompute field is set.
    */
   boolean hasEnableConfidentialCompute();
+
   /**
    *
    *

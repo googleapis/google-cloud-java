@@ -37,6 +37,7 @@ public interface OfferOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface OfferOrBuilder
    * @return Whether the marketingInfo field is set.
    */
   boolean hasMarketingInfo();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface OfferOrBuilder
    * @return The marketingInfo.
    */
   com.google.cloud.channel.v1.MarketingInfo getMarketingInfo();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface OfferOrBuilder
    * @return Whether the sku field is set.
    */
   boolean hasSku();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface OfferOrBuilder
    * @return The sku.
    */
   com.google.cloud.channel.v1.Sku getSku();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface OfferOrBuilder
    * @return Whether the plan field is set.
    */
   boolean hasPlan();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface OfferOrBuilder
    * @return The plan.
    */
   com.google.cloud.channel.v1.Plan getPlan();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface OfferOrBuilder
    * @return Whether the constraints field is set.
    */
   boolean hasConstraints();
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public interface OfferOrBuilder
    * @return The constraints.
    */
   com.google.cloud.channel.v1.Constraints getConstraints();
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public interface OfferOrBuilder
    * <code>repeated .google.cloud.channel.v1.PriceByResource price_by_resources = 6;</code>
    */
   java.util.List<com.google.cloud.channel.v1.PriceByResource> getPriceByResourcesList();
+
   /**
    *
    *
@@ -211,6 +221,7 @@ public interface OfferOrBuilder
    * <code>repeated .google.cloud.channel.v1.PriceByResource price_by_resources = 6;</code>
    */
   com.google.cloud.channel.v1.PriceByResource getPriceByResources(int index);
+
   /**
    *
    *
@@ -221,6 +232,7 @@ public interface OfferOrBuilder
    * <code>repeated .google.cloud.channel.v1.PriceByResource price_by_resources = 6;</code>
    */
   int getPriceByResourcesCount();
+
   /**
    *
    *
@@ -232,6 +244,7 @@ public interface OfferOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.PriceByResourceOrBuilder>
       getPriceByResourcesOrBuilderList();
+
   /**
    *
    *
@@ -255,6 +268,7 @@ public interface OfferOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -267,6 +281,7 @@ public interface OfferOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -291,6 +306,7 @@ public interface OfferOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -304,6 +320,7 @@ public interface OfferOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -326,6 +343,7 @@ public interface OfferOrBuilder
    * <code>repeated .google.cloud.channel.v1.ParameterDefinition parameter_definitions = 9;</code>
    */
   java.util.List<com.google.cloud.channel.v1.ParameterDefinition> getParameterDefinitionsList();
+
   /**
    *
    *
@@ -336,6 +354,7 @@ public interface OfferOrBuilder
    * <code>repeated .google.cloud.channel.v1.ParameterDefinition parameter_definitions = 9;</code>
    */
   com.google.cloud.channel.v1.ParameterDefinition getParameterDefinitions(int index);
+
   /**
    *
    *
@@ -346,6 +365,7 @@ public interface OfferOrBuilder
    * <code>repeated .google.cloud.channel.v1.ParameterDefinition parameter_definitions = 9;</code>
    */
   int getParameterDefinitionsCount();
+
   /**
    *
    *
@@ -357,6 +377,7 @@ public interface OfferOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.ParameterDefinitionOrBuilder>
       getParameterDefinitionsOrBuilderList();
+
   /**
    *
    *
@@ -381,6 +402,7 @@ public interface OfferOrBuilder
    * @return The dealCode.
    */
   java.lang.String getDealCode();
+
   /**
    *
    *

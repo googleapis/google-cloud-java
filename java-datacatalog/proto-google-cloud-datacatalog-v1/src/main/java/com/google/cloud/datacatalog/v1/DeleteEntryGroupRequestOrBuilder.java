@@ -38,6 +38,7 @@ public interface DeleteEntryGroupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.DeployPolicyNotificationEvent)
     DeployPolicyNotificationEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeployPolicyNotificationEvent.newBuilder() to construct.
   private DeployPolicyNotificationEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deployPolicy_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deployPolicyUid_ = "";
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
 
   public static final int TYPE_FIELD_NUMBER = 4;
   private int type_ = 0;
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -444,6 +453,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -673,6 +683,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -696,6 +707,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -719,6 +731,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -741,6 +754,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +773,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +799,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
     }
 
     private java.lang.Object deployPolicy_ = "";
+
     /**
      *
      *
@@ -806,6 +822,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -849,6 +867,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +885,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
     }
 
     private java.lang.Object deployPolicyUid_ = "";
+
     /**
      *
      *
@@ -912,6 +933,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -934,6 +956,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -955,6 +978,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +996,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1021,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1011,6 +1037,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1029,6 +1056,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1073,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
       com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.forNumber(type_);
       return result == null ? com.google.cloud.deploy.v1.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1066,6 +1095,7 @@ public final class DeployPolicyNotificationEvent extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

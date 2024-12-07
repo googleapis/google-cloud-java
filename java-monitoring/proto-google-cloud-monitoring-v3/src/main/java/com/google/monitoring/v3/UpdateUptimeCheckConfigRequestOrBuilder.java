@@ -39,6 +39,7 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder
    * @return Whether the uptimeCheckConfig field is set.
    */
   boolean hasUptimeCheckConfig();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder
    * @return The uptimeCheckConfig.
    */
   com.google.monitoring.v3.UptimeCheckConfig getUptimeCheckConfig();
+
   /**
    *
    *

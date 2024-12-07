@@ -38,6 +38,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.Secret)
     SecretOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Secret.newBuilder() to construct.
   private Secret(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -104,6 +105,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     private ExpirationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -140,6 +142,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -165,6 +168,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -193,6 +197,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPLICATION_FIELD_NUMBER = 2;
   private com.google.cloud.secretmanager.v1.Replication replication_;
+
   /**
    *
    *
@@ -213,6 +218,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReplication() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -235,6 +241,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.secretmanager.v1.Replication.getDefaultInstance()
         : replication_;
   }
+
   /**
    *
    *
@@ -258,6 +265,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -275,6 +283,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -292,6 +301,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -334,6 +344,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -360,12 +371,14 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -389,6 +402,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -419,6 +433,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -454,6 +469,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.secretmanager.v1.Topic> topics_;
+
   /**
    *
    *
@@ -470,6 +486,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.secretmanager.v1.Topic> getTopicsList() {
     return topics_;
   }
+
   /**
    *
    *
@@ -487,6 +504,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       getTopicsOrBuilderList() {
     return topics_;
   }
+
   /**
    *
    *
@@ -503,6 +521,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public int getTopicsCount() {
     return topics_.size();
   }
+
   /**
    *
    *
@@ -519,6 +538,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.secretmanager.v1.Topic getTopics(int index) {
     return topics_.get(index);
   }
+
   /**
    *
    *
@@ -537,6 +557,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -555,6 +576,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpireTime() {
     return expirationCase_ == 6;
   }
+
   /**
    *
    *
@@ -576,6 +598,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -597,6 +620,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TTL_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -613,6 +637,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTtl() {
     return expirationCase_ == 7;
   }
+
   /**
    *
    *
@@ -632,6 +657,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Duration.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -654,6 +680,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -678,6 +705,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -705,6 +733,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROTATION_FIELD_NUMBER = 9;
   private com.google.cloud.secretmanager.v1.Rotation rotation_;
+
   /**
    *
    *
@@ -724,6 +753,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRotation() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -745,6 +775,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.secretmanager.v1.Rotation.getDefaultInstance()
         : rotation_;
   }
+
   /**
    *
    *
@@ -793,6 +824,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public int getVersionAliasesCount() {
     return internalGetVersionAliases().getMap().size();
   }
+
   /**
    *
    *
@@ -820,12 +852,14 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetVersionAliases().getMap().containsKey(key);
   }
+
   /** Use {@link #getVersionAliasesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Long> getVersionAliases() {
     return getVersionAliasesMap();
   }
+
   /**
    *
    *
@@ -850,6 +884,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.Long> getVersionAliasesMap() {
     return internalGetVersionAliases().getMap();
   }
+
   /**
    *
    *
@@ -878,6 +913,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetVersionAliases().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -937,6 +973,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
+
   /**
    *
    *
@@ -965,12 +1002,14 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
+
   /**
    *
    *
@@ -996,6 +1035,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
+
   /**
    *
    *
@@ -1028,6 +1068,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1063,6 +1104,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VERSION_DESTROY_TTL_FIELD_NUMBER = 14;
   private com.google.protobuf.Duration versionDestroyTtl_;
+
   /**
    *
    *
@@ -1085,6 +1127,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVersionDestroyTtl() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1109,6 +1152,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : versionDestroyTtl_;
   }
+
   /**
    *
    *
@@ -1134,6 +1178,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOMER_MANAGED_ENCRYPTION_FIELD_NUMBER = 15;
   private com.google.cloud.secretmanager.v1.CustomerManagedEncryption customerManagedEncryption_;
+
   /**
    *
    *
@@ -1159,6 +1204,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomerManagedEncryption() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1187,6 +1233,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.secretmanager.v1.CustomerManagedEncryption.getDefaultInstance()
         : customerManagedEncryption_;
   }
+
   /**
    *
    *
@@ -1555,6 +1602,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2082,6 +2130,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2106,6 +2155,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2130,6 +2180,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2153,6 +2204,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2172,6 +2224,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2203,6 +2256,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.secretmanager.v1.Replication.Builder,
             com.google.cloud.secretmanager.v1.ReplicationOrBuilder>
         replicationBuilder_;
+
     /**
      *
      *
@@ -2222,6 +2276,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReplication() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2247,6 +2302,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return replicationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2274,6 +2330,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2299,6 +2356,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2331,6 +2389,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2355,6 +2414,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2374,6 +2434,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReplicationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2397,6 +2458,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             : replication_;
       }
     }
+
     /**
      *
      *
@@ -2434,6 +2496,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2451,6 +2514,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2474,6 +2538,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2499,6 +2564,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2521,6 +2587,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2551,6 +2618,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2573,6 +2641,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2590,6 +2659,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2611,6 +2681,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2665,6 +2736,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2691,12 +2763,14 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2720,6 +2794,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2750,6 +2825,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2786,6 +2862,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2812,12 +2889,14 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2848,6 +2927,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -2908,6 +2988,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return topicsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2927,6 +3008,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return topicsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2946,6 +3028,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return topicsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2971,6 +3054,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2994,6 +3078,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3019,6 +3104,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3044,6 +3130,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3066,6 +3153,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3089,6 +3177,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3112,6 +3201,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3134,6 +3224,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3156,6 +3247,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3171,6 +3263,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.secretmanager.v1.Topic.Builder getTopicsBuilder(int index) {
       return getTopicsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3190,6 +3283,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return topicsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3210,6 +3304,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(topics_);
       }
     }
+
     /**
      *
      *
@@ -3226,6 +3321,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       return getTopicsFieldBuilder()
           .addBuilder(com.google.cloud.secretmanager.v1.Topic.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3242,6 +3338,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       return getTopicsFieldBuilder()
           .addBuilder(index, com.google.cloud.secretmanager.v1.Topic.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3280,6 +3377,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -3298,6 +3396,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpireTime() {
       return expirationCase_ == 6;
     }
+
     /**
      *
      *
@@ -3326,6 +3425,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3351,6 +3451,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3373,6 +3474,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3407,6 +3509,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3435,6 +3538,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3450,6 +3554,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3473,6 +3578,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3512,6 +3618,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         ttlBuilder_;
+
     /**
      *
      *
@@ -3528,6 +3635,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTtl() {
       return expirationCase_ == 7;
     }
+
     /**
      *
      *
@@ -3554,6 +3662,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3577,6 +3686,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3597,6 +3707,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3629,6 +3740,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3655,6 +3767,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3668,6 +3781,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Duration.Builder getTtlBuilder() {
       return getTtlFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3689,6 +3803,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3722,6 +3837,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -3745,6 +3861,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3768,6 +3885,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3790,6 +3908,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3808,6 +3927,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3838,6 +3958,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.secretmanager.v1.Rotation.Builder,
             com.google.cloud.secretmanager.v1.RotationOrBuilder>
         rotationBuilder_;
+
     /**
      *
      *
@@ -3856,6 +3977,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRotation() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3880,6 +4002,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return rotationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3906,6 +4029,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3929,6 +4053,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3960,6 +4085,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3983,6 +4109,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4001,6 +4128,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4023,6 +4151,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             : rotation_;
       }
     }
+
     /**
      *
      *
@@ -4081,6 +4210,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public int getVersionAliasesCount() {
       return internalGetVersionAliases().getMap().size();
     }
+
     /**
      *
      *
@@ -4109,12 +4239,14 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetVersionAliases().getMap().containsKey(key);
     }
+
     /** Use {@link #getVersionAliasesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getVersionAliases() {
       return getVersionAliasesMap();
     }
+
     /**
      *
      *
@@ -4140,6 +4272,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.Long> getVersionAliasesMap() {
       return internalGetVersionAliases().getMap();
     }
+
     /**
      *
      *
@@ -4169,6 +4302,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetVersionAliases().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -4207,6 +4341,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableVersionAliases().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -4235,12 +4370,14 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableVersionAliases().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getMutableVersionAliases() {
       bitField0_ |= 0x00000200;
       return internalGetMutableVersionAliases().getMutableMap();
     }
+
     /**
      *
      *
@@ -4271,6 +4408,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       return this;
     }
+
     /**
      *
      *
@@ -4326,6 +4464,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
+
     /**
      *
      *
@@ -4354,12 +4493,14 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
+
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
+
     /**
      *
      *
@@ -4385,6 +4526,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
+
     /**
      *
      *
@@ -4417,6 +4559,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -4455,6 +4598,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -4483,12 +4627,14 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000400;
       return internalGetMutableAnnotations().getMutableMap();
     }
+
     /**
      *
      *
@@ -4521,6 +4667,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000400;
       return this;
     }
+
     /**
      *
      *
@@ -4554,6 +4701,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         versionDestroyTtlBuilder_;
+
     /**
      *
      *
@@ -4575,6 +4723,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVersionDestroyTtl() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -4602,6 +4751,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return versionDestroyTtlBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4631,6 +4781,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4657,6 +4808,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4691,6 +4843,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4717,6 +4870,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4738,6 +4892,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVersionDestroyTtlFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4763,6 +4918,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             : versionDestroyTtl_;
       }
     }
+
     /**
      *
      *
@@ -4802,6 +4958,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder,
             com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder>
         customerManagedEncryptionBuilder_;
+
     /**
      *
      *
@@ -4826,6 +4983,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomerManagedEncryption() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -4857,6 +5015,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return customerManagedEncryptionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4890,6 +5049,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4920,6 +5080,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4960,6 +5121,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4989,6 +5151,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5014,6 +5177,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomerManagedEncryptionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5043,6 +5207,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             : customerManagedEncryption_;
       }
     }
+
     /**
      *
      *

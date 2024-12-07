@@ -37,6 +37,7 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return Whether the recognitionResult field is set.
    */
   boolean hasRecognitionResult();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return The recognitionResult.
    */
   com.google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult getRecognitionResult();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return Whether the detectIntentResponse field is set.
    */
   boolean hasDetectIntentResponse();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return The detectIntentResponse.
    */
   com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse getDetectIntentResponse();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return Whether the debuggingInfo field is set.
    */
   boolean hasDebuggingInfo();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return The debuggingInfo.
    */
   com.google.cloud.dialogflow.cx.v3beta1.CloudConversationDebuggingInfo getDebuggingInfo();
+
   /**
    *
    *

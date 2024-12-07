@@ -33,6 +33,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.DatabaseInstanceEntity)
     DatabaseInstanceEntityOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DatabaseInstanceEntity.newBuilder() to construct.
   private DatabaseInstanceEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int CUSTOM_FEATURES_FIELD_NUMBER = 1;
   private com.google.protobuf.Struct customFeatures_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
   public boolean hasCustomFeatures() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.Struct.getDefaultInstance()
         : customFeatures_;
   }
+
   /**
    *
    *
@@ -276,6 +280,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -480,6 +485,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         customFeaturesBuilder_;
+
     /**
      *
      *
@@ -494,6 +500,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
     public boolean hasCustomFeatures() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -514,6 +521,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
         return customFeaturesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -536,6 +544,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -555,6 +564,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -582,6 +592,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -601,6 +612,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -615,6 +627,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
       onChanged();
       return getCustomFeaturesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -633,6 +646,7 @@ public final class DatabaseInstanceEntity extends com.google.protobuf.GeneratedM
             : customFeatures_;
       }
     }
+
     /**
      *
      *

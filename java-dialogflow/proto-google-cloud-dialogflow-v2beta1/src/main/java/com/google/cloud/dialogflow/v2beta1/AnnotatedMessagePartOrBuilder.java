@@ -36,6 +36,7 @@ public interface AnnotatedMessagePartOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface AnnotatedMessagePartOrBuilder
    * @return The entityType.
    */
   java.lang.String getEntityType();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface AnnotatedMessagePartOrBuilder
    * @return Whether the formattedValue field is set.
    */
   boolean hasFormattedValue();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface AnnotatedMessagePartOrBuilder
    * @return The formattedValue.
    */
   com.google.protobuf.Value getFormattedValue();
+
   /**
    *
    *

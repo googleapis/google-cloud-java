@@ -39,6 +39,7 @@ public interface UpdateExplanationDatasetRequestOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface UpdateExplanationDatasetRequestOrBuilder
    * @return Whether the examples field is set.
    */
   boolean hasExamples();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateExplanationDatasetRequestOrBuilder
    * @return The examples.
    */
   com.google.cloud.aiplatform.v1.Examples getExamples();
+
   /**
    *
    *

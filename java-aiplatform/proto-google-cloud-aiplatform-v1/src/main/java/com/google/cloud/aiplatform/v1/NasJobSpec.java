@@ -33,6 +33,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NasJobSpec)
     NasJobSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NasJobSpec.newBuilder() to construct.
   private NasJobSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for multiTrialAlgorithm.
      */
     int getMultiTrialAlgorithmValue();
+
     /**
      *
      *
@@ -115,6 +117,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metric field is set.
      */
     boolean hasMetric();
+
     /**
      *
      *
@@ -129,6 +132,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return The metric.
      */
     com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.MetricSpec getMetric();
+
     /**
      *
      *
@@ -157,6 +161,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the searchTrialSpec field is set.
      */
     boolean hasSearchTrialSpec();
+
     /**
      *
      *
@@ -172,6 +177,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.SearchTrialSpec
         getSearchTrialSpec();
+
     /**
      *
      *
@@ -202,6 +208,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the trainTrialSpec field is set.
      */
     boolean hasTrainTrialSpec();
+
     /**
      *
      *
@@ -219,6 +226,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.TrainTrialSpec
         getTrainTrialSpec();
+
     /**
      *
      *
@@ -235,6 +243,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.TrainTrialSpecOrBuilder
         getTrainTrialSpecOrBuilder();
   }
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec)
       MultiTrialAlgorithmSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MultiTrialAlgorithmSpec.newBuilder() to construct.
     private MultiTrialAlgorithmSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -335,6 +345,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
        * <code>MULTI_TRIAL_ALGORITHM_UNSPECIFIED = 0;</code>
        */
       public static final int MULTI_TRIAL_ALGORITHM_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -346,6 +357,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
        * <code>REINFORCEMENT_LEARNING = 1;</code>
        */
       public static final int REINFORCEMENT_LEARNING_VALUE = 1;
+
       /**
        *
        *
@@ -463,6 +475,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
        * @return The metricId.
        */
       java.lang.String getMetricId();
+
       /**
        *
        *
@@ -490,6 +503,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
        * @return The enum numeric value on the wire for goal.
        */
       int getGoalValue();
+
       /**
        *
        *
@@ -506,6 +520,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.MetricSpec.GoalType
           getGoal();
     }
+
     /**
      *
      *
@@ -521,6 +536,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.MetricSpec)
         MetricSpecOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use MetricSpec.newBuilder() to construct.
       private MetricSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -607,6 +623,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
          * <code>GOAL_TYPE_UNSPECIFIED = 0;</code>
          */
         public static final int GOAL_TYPE_UNSPECIFIED_VALUE = 0;
+
         /**
          *
          *
@@ -617,6 +634,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
          * <code>MAXIMIZE = 1;</code>
          */
         public static final int MAXIMIZE_VALUE = 1;
+
         /**
          *
          *
@@ -719,6 +737,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object metricId_ = "";
+
       /**
        *
        *
@@ -742,6 +761,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -768,6 +788,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
 
       public static final int GOAL_FIELD_NUMBER = 2;
       private int goal_ = 0;
+
       /**
        *
        *
@@ -785,6 +806,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       public int getGoalValue() {
         return goal_;
       }
+
       /**
        *
        *
@@ -997,6 +1019,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1214,6 +1237,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object metricId_ = "";
+
         /**
          *
          *
@@ -1236,6 +1260,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1258,6 +1283,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1279,6 +1305,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1296,6 +1323,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1320,6 +1348,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int goal_ = 0;
+
         /**
          *
          *
@@ -1337,6 +1366,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         public int getGoalValue() {
           return goal_;
         }
+
         /**
          *
          *
@@ -1357,6 +1387,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1382,6 +1413,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
                   .GoalType.UNRECOGNIZED
               : result;
         }
+
         /**
          *
          *
@@ -1407,6 +1439,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1516,6 +1549,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the searchTrialJobSpec field is set.
        */
       boolean hasSearchTrialJobSpec();
+
       /**
        *
        *
@@ -1531,6 +1565,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
        * @return The searchTrialJobSpec.
        */
       com.google.cloud.aiplatform.v1.CustomJobSpec getSearchTrialJobSpec();
+
       /**
        *
        *
@@ -1589,6 +1624,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
        */
       int getMaxFailedTrialCount();
     }
+
     /**
      *
      *
@@ -1604,6 +1640,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.SearchTrialSpec)
         SearchTrialSpecOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use SearchTrialSpec.newBuilder() to construct.
       private SearchTrialSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1637,6 +1674,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
       public static final int SEARCH_TRIAL_JOB_SPEC_FIELD_NUMBER = 1;
       private com.google.cloud.aiplatform.v1.CustomJobSpec searchTrialJobSpec_;
+
       /**
        *
        *
@@ -1655,6 +1693,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSearchTrialJobSpec() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1675,6 +1714,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.aiplatform.v1.CustomJobSpec.getDefaultInstance()
             : searchTrialJobSpec_;
       }
+
       /**
        *
        *
@@ -1697,6 +1737,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
 
       public static final int MAX_TRIAL_COUNT_FIELD_NUMBER = 2;
       private int maxTrialCount_ = 0;
+
       /**
        *
        *
@@ -1716,6 +1757,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
 
       public static final int MAX_PARALLEL_TRIAL_COUNT_FIELD_NUMBER = 3;
       private int maxParallelTrialCount_ = 0;
+
       /**
        *
        *
@@ -1734,6 +1776,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
 
       public static final int MAX_FAILED_TRIAL_COUNT_FIELD_NUMBER = 4;
       private int maxFailedTrialCount_ = 0;
+
       /**
        *
        *
@@ -1971,6 +2014,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2240,6 +2284,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1.CustomJobSpec.Builder,
                 com.google.cloud.aiplatform.v1.CustomJobSpecOrBuilder>
             searchTrialJobSpecBuilder_;
+
         /**
          *
          *
@@ -2257,6 +2302,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         public boolean hasSearchTrialJobSpec() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -2280,6 +2326,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
             return searchTrialJobSpecBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -2305,6 +2352,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2328,6 +2376,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2359,6 +2408,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -2381,6 +2431,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2398,6 +2449,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getSearchTrialJobSpecFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2420,6 +2472,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
                 : searchTrialJobSpec_;
           }
         }
+
         /**
          *
          *
@@ -2450,6 +2503,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int maxTrialCount_;
+
         /**
          *
          *
@@ -2466,6 +2520,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         public int getMaxTrialCount() {
           return maxTrialCount_;
         }
+
         /**
          *
          *
@@ -2486,6 +2541,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2506,6 +2562,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int maxParallelTrialCount_;
+
         /**
          *
          *
@@ -2522,6 +2579,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         public int getMaxParallelTrialCount() {
           return maxParallelTrialCount_;
         }
+
         /**
          *
          *
@@ -2542,6 +2600,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2562,6 +2621,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int maxFailedTrialCount_;
+
         /**
          *
          *
@@ -2581,6 +2641,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         public int getMaxFailedTrialCount() {
           return maxFailedTrialCount_;
         }
+
         /**
          *
          *
@@ -2604,6 +2665,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2716,6 +2778,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the trainTrialJobSpec field is set.
        */
       boolean hasTrainTrialJobSpec();
+
       /**
        *
        *
@@ -2731,6 +2794,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
        * @return The trainTrialJobSpec.
        */
       com.google.cloud.aiplatform.v1.CustomJobSpec getTrainTrialJobSpec();
+
       /**
        *
        *
@@ -2774,6 +2838,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
        */
       int getFrequency();
     }
+
     /**
      *
      *
@@ -2789,6 +2854,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.TrainTrialSpec)
         TrainTrialSpecOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use TrainTrialSpec.newBuilder() to construct.
       private TrainTrialSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2822,6 +2888,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
       public static final int TRAIN_TRIAL_JOB_SPEC_FIELD_NUMBER = 1;
       private com.google.cloud.aiplatform.v1.CustomJobSpec trainTrialJobSpec_;
+
       /**
        *
        *
@@ -2840,6 +2907,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTrainTrialJobSpec() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2860,6 +2928,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.aiplatform.v1.CustomJobSpec.getDefaultInstance()
             : trainTrialJobSpec_;
       }
+
       /**
        *
        *
@@ -2881,6 +2950,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
 
       public static final int MAX_PARALLEL_TRIAL_COUNT_FIELD_NUMBER = 2;
       private int maxParallelTrialCount_ = 0;
+
       /**
        *
        *
@@ -2899,6 +2969,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
 
       public static final int FREQUENCY_FIELD_NUMBER = 3;
       private int frequency_ = 0;
+
       /**
        *
        *
@@ -3114,6 +3185,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -3370,6 +3442,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1.CustomJobSpec.Builder,
                 com.google.cloud.aiplatform.v1.CustomJobSpecOrBuilder>
             trainTrialJobSpecBuilder_;
+
         /**
          *
          *
@@ -3387,6 +3460,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         public boolean hasTrainTrialJobSpec() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -3410,6 +3484,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
             return trainTrialJobSpecBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -3435,6 +3510,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3458,6 +3534,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3489,6 +3566,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -3511,6 +3589,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3528,6 +3607,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getTrainTrialJobSpecFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -3550,6 +3630,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
                 : trainTrialJobSpec_;
           }
         }
+
         /**
          *
          *
@@ -3580,6 +3661,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int maxParallelTrialCount_;
+
         /**
          *
          *
@@ -3596,6 +3678,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         public int getMaxParallelTrialCount() {
           return maxParallelTrialCount_;
         }
+
         /**
          *
          *
@@ -3616,6 +3699,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3636,6 +3720,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int frequency_;
+
         /**
          *
          *
@@ -3654,6 +3739,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         public int getFrequency() {
           return frequency_;
         }
+
         /**
          *
          *
@@ -3676,6 +3762,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3769,6 +3856,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int MULTI_TRIAL_ALGORITHM_FIELD_NUMBER = 1;
     private int multiTrialAlgorithm_ = 0;
+
     /**
      *
      *
@@ -3787,6 +3875,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     public int getMultiTrialAlgorithmValue() {
       return multiTrialAlgorithm_;
     }
+
     /**
      *
      *
@@ -3815,6 +3904,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
 
     public static final int METRIC_FIELD_NUMBER = 2;
     private com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.MetricSpec metric_;
+
     /**
      *
      *
@@ -3832,6 +3922,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetric() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3853,6 +3944,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : metric_;
     }
+
     /**
      *
      *
@@ -3876,6 +3968,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     public static final int SEARCH_TRIAL_SPEC_FIELD_NUMBER = 3;
     private com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.SearchTrialSpec
         searchTrialSpec_;
+
     /**
      *
      *
@@ -3893,6 +3986,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSearchTrialSpec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3914,6 +4008,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : searchTrialSpec_;
     }
+
     /**
      *
      *
@@ -3938,6 +4033,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     public static final int TRAIN_TRIAL_SPEC_FIELD_NUMBER = 4;
     private com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.TrainTrialSpec
         trainTrialSpec_;
+
     /**
      *
      *
@@ -3957,6 +4053,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTrainTrialSpec() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3980,6 +4077,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : trainTrialSpec_;
     }
+
     /**
      *
      *
@@ -4212,6 +4310,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4475,6 +4574,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int multiTrialAlgorithm_ = 0;
+
       /**
        *
        *
@@ -4493,6 +4593,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       public int getMultiTrialAlgorithmValue() {
         return multiTrialAlgorithm_;
       }
+
       /**
        *
        *
@@ -4514,6 +4615,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4540,6 +4642,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -4566,6 +4669,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4593,6 +4697,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.MetricSpec.Builder,
               com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.MetricSpecOrBuilder>
           metricBuilder_;
+
       /**
        *
        *
@@ -4609,6 +4714,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMetric() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -4633,6 +4739,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           return metricBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4658,6 +4765,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4681,6 +4789,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4713,6 +4822,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4734,6 +4844,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4751,6 +4862,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMetricFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4773,6 +4885,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
               : metric_;
         }
       }
+
       /**
        *
        *
@@ -4811,6 +4924,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec
                   .SearchTrialSpecOrBuilder>
           searchTrialSpecBuilder_;
+
       /**
        *
        *
@@ -4827,6 +4941,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSearchTrialSpec() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -4851,6 +4966,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           return searchTrialSpecBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4876,6 +4992,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4899,6 +5016,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4931,6 +5049,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4952,6 +5071,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4970,6 +5090,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getSearchTrialSpecFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4993,6 +5114,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
               : searchTrialSpec_;
         }
       }
+
       /**
        *
        *
@@ -5034,6 +5156,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec
                   .TrainTrialSpecOrBuilder>
           trainTrialSpecBuilder_;
+
       /**
        *
        *
@@ -5052,6 +5175,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTrainTrialSpec() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -5078,6 +5202,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
           return trainTrialSpecBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5105,6 +5230,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5130,6 +5256,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5164,6 +5291,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5187,6 +5315,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5207,6 +5336,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getTrainTrialSpecFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5232,6 +5362,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
               : trainTrialSpec_;
         }
       }
+
       /**
        *
        *
@@ -5349,6 +5480,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     private NasAlgorithmSpecCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5380,6 +5512,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MULTI_TRIAL_ALGORITHM_SPEC_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -5397,6 +5530,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMultiTrialAlgorithmSpec() {
     return nasAlgorithmSpecCase_ == 2;
   }
+
   /**
    *
    *
@@ -5418,6 +5552,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5442,6 +5577,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resumeNasJobId_ = "";
+
   /**
    *
    *
@@ -5468,6 +5604,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5499,6 +5636,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object searchSpaceSpec_ = "";
+
   /**
    *
    *
@@ -5522,6 +5660,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5741,6 +5880,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5989,6 +6129,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpec.Builder,
             com.google.cloud.aiplatform.v1.NasJobSpec.MultiTrialAlgorithmSpecOrBuilder>
         multiTrialAlgorithmSpecBuilder_;
+
     /**
      *
      *
@@ -6006,6 +6147,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMultiTrialAlgorithmSpec() {
       return nasAlgorithmSpecCase_ == 2;
     }
+
     /**
      *
      *
@@ -6037,6 +6179,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6062,6 +6205,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       nasAlgorithmSpecCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -6084,6 +6228,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       nasAlgorithmSpecCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -6122,6 +6267,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       nasAlgorithmSpecCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -6149,6 +6295,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6164,6 +6311,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         getMultiTrialAlgorithmSpecBuilder() {
       return getMultiTrialAlgorithmSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6189,6 +6337,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6228,6 +6377,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resumeNasJobId_ = "";
+
     /**
      *
      *
@@ -6253,6 +6403,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6278,6 +6429,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6302,6 +6454,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6322,6 +6475,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6349,6 +6503,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object searchSpaceSpec_ = "";
+
     /**
      *
      *
@@ -6371,6 +6526,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6393,6 +6549,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6414,6 +6571,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6431,6 +6589,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

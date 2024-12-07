@@ -33,6 +33,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.apps.meet.v2.CreateSpaceRequest)
     CreateSpaceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateSpaceRequest.newBuilder() to construct.
   private CreateSpaceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int SPACE_FIELD_NUMBER = 1;
   private com.google.apps.meet.v2.Space space_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasSpace() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
   public com.google.apps.meet.v2.Space getSpace() {
     return space_ == null ? com.google.apps.meet.v2.Space.getDefaultInstance() : space_;
   }
+
   /**
    *
    *
@@ -275,6 +279,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -477,6 +482,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
             com.google.apps.meet.v2.Space.Builder,
             com.google.apps.meet.v2.SpaceOrBuilder>
         spaceBuilder_;
+
     /**
      *
      *
@@ -492,6 +498,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSpace() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -511,6 +518,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
         return spaceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -534,6 +542,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -554,6 +563,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -582,6 +592,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -602,6 +613,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -617,6 +629,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSpaceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -634,6 +647,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
         return space_ == null ? com.google.apps.meet.v2.Space.getDefaultInstance() : space_;
       }
     }
+
     /**
      *
      *

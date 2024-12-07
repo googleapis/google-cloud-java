@@ -48,6 +48,7 @@ public interface FaceAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.FaceSegment segments = 2;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1.FaceSegment> getSegmentsList();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface FaceAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.FaceSegment segments = 2;</code>
    */
   com.google.cloud.videointelligence.v1.FaceSegment getSegments(int index);
+
   /**
    *
    *
@@ -68,6 +70,7 @@ public interface FaceAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.FaceSegment segments = 2;</code>
    */
   int getSegmentsCount();
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface FaceAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.FaceSegmentOrBuilder>
       getSegmentsOrBuilderList();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface FaceAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.FaceFrame frames = 3;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1.FaceFrame> getFramesList();
+
   /**
    *
    *
@@ -110,6 +115,7 @@ public interface FaceAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.FaceFrame frames = 3;</code>
    */
   com.google.cloud.videointelligence.v1.FaceFrame getFrames(int index);
+
   /**
    *
    *
@@ -120,6 +126,7 @@ public interface FaceAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.FaceFrame frames = 3;</code>
    */
   int getFramesCount();
+
   /**
    *
    *
@@ -131,6 +138,7 @@ public interface FaceAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.FaceFrameOrBuilder>
       getFramesOrBuilderList();
+
   /**
    *
    *

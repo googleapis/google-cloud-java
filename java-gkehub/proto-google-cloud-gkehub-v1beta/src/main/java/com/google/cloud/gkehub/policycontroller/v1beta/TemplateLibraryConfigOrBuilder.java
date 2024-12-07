@@ -39,6 +39,7 @@ public interface TemplateLibraryConfigOrBuilder
    * @return The enum numeric value on the wire for installation.
    */
   int getInstallationValue();
+
   /**
    *
    *

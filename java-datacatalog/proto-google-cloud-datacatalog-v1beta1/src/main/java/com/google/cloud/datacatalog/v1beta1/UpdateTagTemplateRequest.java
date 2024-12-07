@@ -34,6 +34,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest)
     UpdateTagTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateTagTemplateRequest.newBuilder() to construct.
   private UpdateTagTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int TAG_TEMPLATE_FIELD_NUMBER = 1;
   private com.google.cloud.datacatalog.v1beta1.TagTemplate tagTemplate_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
   public boolean hasTagTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
         ? com.google.cloud.datacatalog.v1beta1.TagTemplate.getDefaultInstance()
         : tagTemplate_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -359,6 +366,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -586,6 +594,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
             com.google.cloud.datacatalog.v1beta1.TagTemplate.Builder,
             com.google.cloud.datacatalog.v1beta1.TagTemplateOrBuilder>
         tagTemplateBuilder_;
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
     public boolean hasTagTemplate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
         return tagTemplateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +682,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +713,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +752,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return getTagTemplateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -757,6 +773,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
             : tagTemplate_;
       }
     }
+
     /**
      *
      *
@@ -791,6 +808,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -810,6 +828,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -835,6 +854,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -862,6 +882,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +907,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +940,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +965,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +985,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -984,6 +1009,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
+
     /**
      *
      *

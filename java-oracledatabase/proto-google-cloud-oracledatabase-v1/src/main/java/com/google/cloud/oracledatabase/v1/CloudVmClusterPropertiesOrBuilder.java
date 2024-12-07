@@ -36,6 +36,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The ocid.
    */
   java.lang.String getOcid();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The enum numeric value on the wire for licenseType.
    */
   int getLicenseTypeValue();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The giVersion.
    */
   java.lang.String getGiVersion();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return Whether the timeZone field is set.
    */
   boolean hasTimeZone();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The timeZone.
    */
   com.google.type.TimeZone getTimeZone();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return A list containing the sshPublicKeys.
    */
   java.util.List<java.lang.String> getSshPublicKeysList();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The count of sshPublicKeys.
    */
   int getSshPublicKeysCount();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The sshPublicKeys at the given index.
    */
   java.lang.String getSshPublicKeys(int index);
+
   /**
    *
    *
@@ -214,6 +222,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The shape.
    */
   java.lang.String getShape();
+
   /**
    *
    *
@@ -306,6 +315,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The enum numeric value on the wire for diskRedundancy.
    */
   int getDiskRedundancyValue();
+
   /**
    *
    *
@@ -359,6 +369,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The hostnamePrefix.
    */
   java.lang.String getHostnamePrefix();
+
   /**
    *
    *
@@ -386,6 +397,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return Whether the diagnosticsDataCollectionOptions field is set.
    */
   boolean hasDiagnosticsDataCollectionOptions();
+
   /**
    *
    *
@@ -400,6 +412,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The diagnosticsDataCollectionOptions.
    */
   com.google.cloud.oracledatabase.v1.DataCollectionOptions getDiagnosticsDataCollectionOptions();
+
   /**
    *
    *
@@ -428,6 +441,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -483,6 +497,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The domain.
    */
   java.lang.String getDomain();
+
   /**
    *
    *
@@ -510,6 +525,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The scanDns.
    */
   java.lang.String getScanDns();
+
   /**
    *
    *
@@ -538,6 +554,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
+
   /**
    *
    *
@@ -578,6 +595,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The systemVersion.
    */
   java.lang.String getSystemVersion();
+
   /**
    *
    *
@@ -603,6 +621,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return A list containing the scanIpIds.
    */
   java.util.List<java.lang.String> getScanIpIdsList();
+
   /**
    *
    *
@@ -615,6 +634,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The count of scanIpIds.
    */
   int getScanIpIdsCount();
+
   /**
    *
    *
@@ -628,6 +648,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The scanIpIds at the given index.
    */
   java.lang.String getScanIpIds(int index);
+
   /**
    *
    *
@@ -654,6 +675,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The scanDnsRecordId.
    */
   java.lang.String getScanDnsRecordId();
+
   /**
    *
    *
@@ -679,6 +701,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The ociUrl.
    */
   java.lang.String getOciUrl();
+
   /**
    *
    *
@@ -704,6 +727,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return A list containing the dbServerOcids.
    */
   java.util.List<java.lang.String> getDbServerOcidsList();
+
   /**
    *
    *
@@ -716,6 +740,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The count of dbServerOcids.
    */
   int getDbServerOcidsCount();
+
   /**
    *
    *
@@ -729,6 +754,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The dbServerOcids at the given index.
    */
   java.lang.String getDbServerOcids(int index);
+
   /**
    *
    *
@@ -755,6 +781,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The compartmentId.
    */
   java.lang.String getCompartmentId();
+
   /**
    *
    *
@@ -780,6 +807,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The dnsListenerIp.
    */
   java.lang.String getDnsListenerIp();
+
   /**
    *
    *
@@ -805,6 +833,7 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The clusterName.
    */
   java.lang.String getClusterName();
+
   /**
    *
    *

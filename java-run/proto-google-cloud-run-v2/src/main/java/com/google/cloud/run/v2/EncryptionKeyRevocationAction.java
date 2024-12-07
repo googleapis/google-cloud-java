@@ -72,6 +72,7 @@ public enum EncryptionKeyRevocationAction implements com.google.protobuf.Protoco
    * <code>ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED = 0;</code>
    */
   public static final int ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum EncryptionKeyRevocationAction implements com.google.protobuf.Protoco
    * <code>PREVENT_NEW = 1;</code>
    */
   public static final int PREVENT_NEW_VALUE = 1;
+
   /**
    *
    *

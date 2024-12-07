@@ -127,6 +127,7 @@ public enum ResourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RESOURCE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int RESOURCE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -137,6 +138,7 @@ public enum ResourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SEAT = 1;</code>
    */
   public static final int SEAT_VALUE = 1;
+
   /**
    *
    *
@@ -147,6 +149,7 @@ public enum ResourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MAU = 2;</code>
    */
   public static final int MAU_VALUE = 2;
+
   /**
    *
    *
@@ -157,6 +160,7 @@ public enum ResourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GB = 3;</code>
    */
   public static final int GB_VALUE = 3;
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public enum ResourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LICENSED_USER = 4;</code>
    */
   public static final int LICENSED_USER_VALUE = 4;
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public enum ResourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MINUTES = 5;</code>
    */
   public static final int MINUTES_VALUE = 5;
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public enum ResourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IAAS_USAGE = 6;</code>
    */
   public static final int IAAS_USAGE_VALUE = 6;
+
   /**
    *
    *

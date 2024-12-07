@@ -33,6 +33,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.QuestionAnsweringCorrectnessInput)
     QuestionAnsweringCorrectnessInputOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QuestionAnsweringCorrectnessInput.newBuilder() to construct.
   private QuestionAnsweringCorrectnessInput(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
   private int bitField0_;
   public static final int METRIC_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.QuestionAnsweringCorrectnessSpec metricSpec_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
   public boolean hasMetricSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
         ? com.google.cloud.aiplatform.v1.QuestionAnsweringCorrectnessSpec.getDefaultInstance()
         : metricSpec_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
 
   public static final int INSTANCE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.QuestionAnsweringCorrectnessInstance instance_;
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
         ? com.google.cloud.aiplatform.v1.QuestionAnsweringCorrectnessInstance.getDefaultInstance()
         : instance_;
   }
+
   /**
    *
    *
@@ -356,6 +363,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -582,6 +590,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
             com.google.cloud.aiplatform.v1.QuestionAnsweringCorrectnessSpec.Builder,
             com.google.cloud.aiplatform.v1.QuestionAnsweringCorrectnessSpecOrBuilder>
         metricSpecBuilder_;
+
     /**
      *
      *
@@ -598,6 +607,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
     public boolean hasMetricSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -620,6 +630,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
         return metricSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -645,6 +656,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +679,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +712,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +734,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +752,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
       onChanged();
       return getMetricSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -758,6 +774,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
             : metricSpec_;
       }
     }
+
     /**
      *
      *
@@ -792,6 +809,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
             com.google.cloud.aiplatform.v1.QuestionAnsweringCorrectnessInstance.Builder,
             com.google.cloud.aiplatform.v1.QuestionAnsweringCorrectnessInstanceOrBuilder>
         instanceBuilder_;
+
     /**
      *
      *
@@ -808,6 +826,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -831,6 +850,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
         return instanceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -856,6 +876,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +900,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +933,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +955,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +973,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -971,6 +996,7 @@ public final class QuestionAnsweringCorrectnessInput extends com.google.protobuf
             : instance_;
       }
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface DeleteActiveDirectoryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

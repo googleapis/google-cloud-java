@@ -36,6 +36,7 @@ public interface MoveFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   java.lang.String getFirewallPolicy();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface MoveFirewallPolicyRequestOrBuilder
    * @return The parentId.
    */
   java.lang.String getParentId();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface MoveFirewallPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface MoveFirewallPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

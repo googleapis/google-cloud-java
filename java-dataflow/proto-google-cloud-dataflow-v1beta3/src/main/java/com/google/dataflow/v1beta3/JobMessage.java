@@ -33,6 +33,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.JobMessage)
     JobMessageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use JobMessage.newBuilder() to construct.
   private JobMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp time_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getTime() {
     return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object messageText_ = "";
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MESSAGE_IMPORTANCE_FIELD_NUMBER = 4;
   private int messageImportance_ = 0;
+
   /**
    *
    *
@@ -231,6 +240,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
   public int getMessageImportanceValue() {
     return messageImportance_;
   }
+
   /**
    *
    *
@@ -443,6 +453,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -683,6 +694,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -705,6 +717,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -727,6 +740,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -748,6 +762,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +780,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timeBuilder_;
+
     /**
      *
      *
@@ -808,6 +825,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -826,6 +844,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
         return timeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -848,6 +867,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +887,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +915,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +935,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +950,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -943,6 +967,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
         return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
       }
     }
+
     /**
      *
      *
@@ -970,6 +995,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object messageText_ = "";
+
     /**
      *
      *
@@ -992,6 +1018,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1041,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1035,6 +1063,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1081,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1106,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int messageImportance_ = 0;
+
     /**
      *
      *
@@ -1091,6 +1122,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
     public int getMessageImportanceValue() {
       return messageImportance_;
     }
+
     /**
      *
      *
@@ -1109,6 +1141,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1161,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
           ? com.google.dataflow.v1beta3.JobMessageImportance.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1149,6 +1183,7 @@ public final class JobMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

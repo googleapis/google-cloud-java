@@ -38,6 +38,7 @@ public interface CreateInterconnectAttachmentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateInterconnectAttachmentRequestOrBuilder
    * @return The interconnectAttachmentId.
    */
   java.lang.String getInterconnectAttachmentId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateInterconnectAttachmentRequestOrBuilder
    * @return Whether the interconnectAttachment field is set.
    */
   boolean hasInterconnectAttachment();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateInterconnectAttachmentRequestOrBuilder
    * @return The interconnectAttachment.
    */
   com.google.cloud.edgenetwork.v1.InterconnectAttachment getInterconnectAttachment();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface CreateInterconnectAttachmentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

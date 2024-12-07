@@ -38,6 +38,7 @@ public interface RenderMetadataOrBuilder
    * @return Whether the cloudRun field is set.
    */
   boolean hasCloudRun();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface RenderMetadataOrBuilder
    * @return The cloudRun.
    */
   com.google.cloud.deploy.v1.CloudRunRenderMetadata getCloudRun();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface RenderMetadataOrBuilder
    * @return Whether the custom field is set.
    */
   boolean hasCustom();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface RenderMetadataOrBuilder
    * @return The custom.
    */
   com.google.cloud.deploy.v1.CustomMetadata getCustom();
+
   /**
    *
    *

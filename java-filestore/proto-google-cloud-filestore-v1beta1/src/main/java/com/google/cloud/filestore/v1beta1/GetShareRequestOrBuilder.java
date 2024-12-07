@@ -39,6 +39,7 @@ public interface GetShareRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

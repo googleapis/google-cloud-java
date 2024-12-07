@@ -34,6 +34,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringOutputSpec)
     ModelMonitoringOutputSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ModelMonitoringOutputSpec.newBuilder() to construct.
   private ModelMonitoringOutputSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int GCS_BASE_DIRECTORY_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GcsDestination gcsBaseDirectory_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
   public boolean hasGcsBaseDirectory() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
         ? com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance()
         : gcsBaseDirectory_;
   }
+
   /**
    *
    *
@@ -279,6 +283,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -488,6 +493,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
             com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>
         gcsBaseDirectoryBuilder_;
+
     /**
      *
      *
@@ -502,6 +508,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
     public boolean hasGcsBaseDirectory() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -522,6 +529,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
         return gcsBaseDirectoryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -544,6 +552,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -564,6 +573,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -592,6 +602,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -611,6 +622,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -625,6 +637,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
       onChanged();
       return getGcsBaseDirectoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -644,6 +657,7 @@ public final class ModelMonitoringOutputSpec extends com.google.protobuf.Generat
             : gcsBaseDirectory_;
       }
     }
+
     /**
      *
      *

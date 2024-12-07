@@ -38,6 +38,7 @@ public interface UpdateTaskRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateTaskRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader getHeader();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface UpdateTaskRequestOrBuilder
    * @return Whether the task field is set.
    */
   boolean hasTask();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface UpdateTaskRequestOrBuilder
    * @return The task.
    */
   com.google.maps.fleetengine.delivery.v1.Task getTask();
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public interface UpdateTaskRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public interface UpdateTaskRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

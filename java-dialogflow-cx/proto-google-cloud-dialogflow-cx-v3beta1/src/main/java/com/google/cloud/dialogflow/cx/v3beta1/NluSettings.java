@@ -33,6 +33,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.NluSettings)
     NluSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NluSettings.newBuilder() to construct.
   private NluSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>MODEL_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MODEL_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>MODEL_TYPE_STANDARD = 1;</code>
      */
     public static final int MODEL_TYPE_STANDARD_VALUE = 1;
+
     /**
      *
      *
@@ -278,6 +281,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>MODEL_TRAINING_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODEL_TRAINING_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -289,6 +293,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>MODEL_TRAINING_MODE_AUTOMATIC = 1;</code>
      */
     public static final int MODEL_TRAINING_MODE_AUTOMATIC_VALUE = 1;
+
     /**
      *
      *
@@ -391,6 +396,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
   private int modelType_ = 0;
+
   /**
    *
    *
@@ -406,6 +412,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
   public int getModelTypeValue() {
     return modelType_;
   }
+
   /**
    *
    *
@@ -428,6 +435,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLASSIFICATION_THRESHOLD_FIELD_NUMBER = 3;
   private float classificationThreshold_ = 0F;
+
   /**
    *
    *
@@ -452,6 +460,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MODEL_TRAINING_MODE_FIELD_NUMBER = 4;
   private int modelTrainingMode_ = 0;
+
   /**
    *
    *
@@ -469,6 +478,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
   public int getModelTrainingModeValue() {
     return modelTrainingMode_;
   }
+
   /**
    *
    *
@@ -681,6 +691,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -889,6 +900,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int modelType_ = 0;
+
     /**
      *
      *
@@ -904,6 +916,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     public int getModelTypeValue() {
       return modelType_;
     }
+
     /**
      *
      *
@@ -922,6 +935,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +955,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -963,6 +978,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +998,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float classificationThreshold_;
+
     /**
      *
      *
@@ -1003,6 +1020,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     public float getClassificationThreshold() {
       return classificationThreshold_;
     }
+
     /**
      *
      *
@@ -1028,6 +1046,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1072,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int modelTrainingMode_ = 0;
+
     /**
      *
      *
@@ -1070,6 +1090,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     public int getModelTrainingModeValue() {
       return modelTrainingMode_;
     }
+
     /**
      *
      *
@@ -1090,6 +1111,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1135,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelTrainingMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1137,6 +1160,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

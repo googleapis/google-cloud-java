@@ -36,6 +36,7 @@ public interface VolumeSnapshotOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface VolumeSnapshotOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface VolumeSnapshotOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface VolumeSnapshotOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface VolumeSnapshotOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface VolumeSnapshotOrBuilder
    * @return The storageVolume.
    */
   java.lang.String getStorageVolume();
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public interface VolumeSnapshotOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

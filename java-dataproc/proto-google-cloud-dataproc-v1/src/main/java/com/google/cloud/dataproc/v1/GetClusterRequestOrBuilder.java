@@ -37,6 +37,7 @@ public interface GetClusterRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GetClusterRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface GetClusterRequestOrBuilder
    * @return The clusterName.
    */
   java.lang.String getClusterName();
+
   /**
    *
    *

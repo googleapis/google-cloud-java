@@ -34,6 +34,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.RepricingCondition)
     RepricingConditionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RepricingCondition.newBuilder() to construct.
   private RepricingCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
     private ConditionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -109,6 +111,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SKU_GROUP_CONDITION_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
   public boolean hasSkuGroupCondition() {
     return conditionCase_ == 1;
   }
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.channel.v1.SkuGroupCondition.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -333,6 +338,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -552,6 +558,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
             com.google.cloud.channel.v1.SkuGroupCondition.Builder,
             com.google.cloud.channel.v1.SkuGroupConditionOrBuilder>
         skuGroupConditionBuilder_;
+
     /**
      *
      *
@@ -567,6 +574,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
     public boolean hasSkuGroupCondition() {
       return conditionCase_ == 1;
     }
+
     /**
      *
      *
@@ -592,6 +600,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.channel.v1.SkuGroupCondition.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
       conditionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -634,6 +644,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
       conditionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
       conditionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +703,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -703,6 +716,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.channel.v1.SkuGroupCondition.Builder getSkuGroupConditionBuilder() {
       return getSkuGroupConditionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -723,6 +737,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.channel.v1.SkuGroupCondition.getDefaultInstance();
       }
     }
+
     /**
      *
      *

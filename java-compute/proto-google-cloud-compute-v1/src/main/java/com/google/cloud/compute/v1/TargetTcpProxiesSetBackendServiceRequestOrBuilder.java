@@ -36,6 +36,7 @@ public interface TargetTcpProxiesSetBackendServiceRequestOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TargetTcpProxiesSetBackendServiceRequestOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *

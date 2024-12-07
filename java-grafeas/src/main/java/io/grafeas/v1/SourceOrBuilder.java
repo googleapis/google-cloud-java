@@ -38,6 +38,7 @@ public interface SourceOrBuilder
    * @return The artifactStorageSourceUri.
    */
   java.lang.String getArtifactStorageSourceUri();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SourceOrBuilder
    * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
    */
   int getFileHashesCount();
+
   /**
    *
    *
@@ -86,9 +88,11 @@ public interface SourceOrBuilder
    * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
    */
   boolean containsFileHashes(java.lang.String key);
+
   /** Use {@link #getFileHashesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> getFileHashes();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface SourceOrBuilder
    * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
    */
   java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> getFileHashesMap();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface SourceOrBuilder
       java.lang.String key,
       /* nullable */
       io.grafeas.v1.FileHashes defaultValue);
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public interface SourceOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public interface SourceOrBuilder
    * @return The context.
    */
   io.grafeas.v1.SourceContext getContext();
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public interface SourceOrBuilder
    * <code>repeated .grafeas.v1.SourceContext additional_contexts = 4;</code>
    */
   java.util.List<io.grafeas.v1.SourceContext> getAdditionalContextsList();
+
   /**
    *
    *
@@ -206,6 +215,7 @@ public interface SourceOrBuilder
    * <code>repeated .grafeas.v1.SourceContext additional_contexts = 4;</code>
    */
   io.grafeas.v1.SourceContext getAdditionalContexts(int index);
+
   /**
    *
    *
@@ -219,6 +229,7 @@ public interface SourceOrBuilder
    * <code>repeated .grafeas.v1.SourceContext additional_contexts = 4;</code>
    */
   int getAdditionalContextsCount();
+
   /**
    *
    *
@@ -233,6 +244,7 @@ public interface SourceOrBuilder
    */
   java.util.List<? extends io.grafeas.v1.SourceContextOrBuilder>
       getAdditionalContextsOrBuilderList();
+
   /**
    *
    *

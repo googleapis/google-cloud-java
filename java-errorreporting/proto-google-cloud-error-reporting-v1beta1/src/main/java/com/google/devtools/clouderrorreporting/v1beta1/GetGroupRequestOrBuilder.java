@@ -56,6 +56,7 @@ public interface GetGroupRequestOrBuilder
    * @return The groupName.
    */
   java.lang.String getGroupName();
+
   /**
    *
    *

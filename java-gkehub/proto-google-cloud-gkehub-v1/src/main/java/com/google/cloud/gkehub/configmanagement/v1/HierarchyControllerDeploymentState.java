@@ -33,6 +33,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1.HierarchyControllerDeploymentState)
     HierarchyControllerDeploymentStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HierarchyControllerDeploymentState.newBuilder() to construct.
   private HierarchyControllerDeploymentState(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
 
   public static final int HNC_FIELD_NUMBER = 1;
   private int hnc_ = 0;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
   public int getHncValue() {
     return hnc_;
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
 
   public static final int EXTENSION_FIELD_NUMBER = 2;
   private int extension_ = 0;
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
   public int getExtensionValue() {
     return extension_;
   }
+
   /**
    *
    *
@@ -325,6 +330,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -533,6 +539,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
     private int bitField0_;
 
     private int hnc_ = 0;
+
     /**
      *
      *
@@ -548,6 +555,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
     public int getHncValue() {
       return hnc_;
     }
+
     /**
      *
      *
@@ -566,6 +574,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
           ? com.google.cloud.gkehub.configmanagement.v1.DeploymentState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -606,6 +616,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -625,6 +636,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
     }
 
     private int extension_ = 0;
+
     /**
      *
      *
@@ -640,6 +652,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
     public int getExtensionValue() {
       return extension_;
     }
+
     /**
      *
      *
@@ -658,6 +671,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +691,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
           ? com.google.cloud.gkehub.configmanagement.v1.DeploymentState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -698,6 +713,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

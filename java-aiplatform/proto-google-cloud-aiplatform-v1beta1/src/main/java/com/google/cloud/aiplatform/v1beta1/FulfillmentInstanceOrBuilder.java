@@ -36,6 +36,7 @@ public interface FulfillmentInstanceOrBuilder
    * @return Whether the prediction field is set.
    */
   boolean hasPrediction();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FulfillmentInstanceOrBuilder
    * @return The prediction.
    */
   java.lang.String getPrediction();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface FulfillmentInstanceOrBuilder
    * @return Whether the instruction field is set.
    */
   boolean hasInstruction();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface FulfillmentInstanceOrBuilder
    * @return The instruction.
    */
   java.lang.String getInstruction();
+
   /**
    *
    *

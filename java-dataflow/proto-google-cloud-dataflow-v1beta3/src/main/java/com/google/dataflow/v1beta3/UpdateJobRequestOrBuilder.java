@@ -36,6 +36,7 @@ public interface UpdateJobRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface UpdateJobRequestOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UpdateJobRequestOrBuilder
    * @return Whether the job field is set.
    */
   boolean hasJob();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateJobRequestOrBuilder
    * @return The job.
    */
   com.google.dataflow.v1beta3.Job getJob();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface UpdateJobRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

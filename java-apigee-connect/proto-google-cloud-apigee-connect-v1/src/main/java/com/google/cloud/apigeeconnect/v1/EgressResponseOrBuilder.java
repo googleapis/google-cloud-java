@@ -36,6 +36,7 @@ public interface EgressResponseOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface EgressResponseOrBuilder
    * @return Whether the httpResponse field is set.
    */
   boolean hasHttpResponse();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface EgressResponseOrBuilder
    * @return The httpResponse.
    */
   com.google.cloud.apigeeconnect.v1.HttpResponse getHttpResponse();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface EgressResponseOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface EgressResponseOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface EgressResponseOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface EgressResponseOrBuilder
    * @return The traceId.
    */
   java.lang.String getTraceId();
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public interface EgressResponseOrBuilder
    * @return The enum numeric value on the wire for endpoint.
    */
   int getEndpointValue();
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public interface EgressResponseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

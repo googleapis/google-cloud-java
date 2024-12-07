@@ -35,6 +35,7 @@ public interface ListChannelGroupsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ChannelGroup channel_groups = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.ChannelGroup> getChannelGroupsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListChannelGroupsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ChannelGroup channel_groups = 1;</code>
    */
   com.google.analytics.admin.v1alpha.ChannelGroup getChannelGroups(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListChannelGroupsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ChannelGroup channel_groups = 1;</code>
    */
   int getChannelGroupsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListChannelGroupsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.ChannelGroupOrBuilder>
       getChannelGroupsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListChannelGroupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

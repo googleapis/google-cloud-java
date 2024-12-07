@@ -41,6 +41,7 @@ public interface CreateNodePoolRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface CreateNodePoolRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface CreateNodePoolRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public interface CreateNodePoolRequestOrBuilder
    * @return Whether the nodePool field is set.
    */
   boolean hasNodePool();
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public interface CreateNodePoolRequestOrBuilder
    * @return The nodePool.
    */
   com.google.container.v1.NodePool getNodePool();
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public interface CreateNodePoolRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

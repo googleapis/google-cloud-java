@@ -34,6 +34,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig)
     SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig.newBuilder() to construct.
   private SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -121,24 +122,34 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
      * <code>UNDEFINED_ENFORCE_ON_KEY_TYPE = 0;</code>
      */
     public static final int UNDEFINED_ENFORCE_ON_KEY_TYPE_VALUE = 0;
+
     /** <code>ALL = 64897;</code> */
     public static final int ALL_VALUE = 64897;
+
     /** <code>HTTP_COOKIE = 494981627;</code> */
     public static final int HTTP_COOKIE_VALUE = 494981627;
+
     /** <code>HTTP_HEADER = 91597348;</code> */
     public static final int HTTP_HEADER_VALUE = 91597348;
+
     /** <code>HTTP_PATH = 311503228;</code> */
     public static final int HTTP_PATH_VALUE = 311503228;
+
     /** <code>IP = 2343;</code> */
     public static final int IP_VALUE = 2343;
+
     /** <code>REGION_CODE = 79559768;</code> */
     public static final int REGION_CODE_VALUE = 79559768;
+
     /** <code>SNI = 82254;</code> */
     public static final int SNI_VALUE = 82254;
+
     /** <code>TLS_JA3_FINGERPRINT = 327127933;</code> */
     public static final int TLS_JA3_FINGERPRINT_VALUE = 327127933;
+
     /** <code>USER_IP = 34009627;</code> */
     public static final int USER_IP_VALUE = 34009627;
+
     /** <code>XFF_IP = 438707118;</code> */
     public static final int XFF_IP_VALUE = 438707118;
 
@@ -251,6 +262,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object enforceOnKeyName_ = "";
+
   /**
    *
    *
@@ -266,6 +278,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
   public boolean hasEnforceOnKeyName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -289,6 +302,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
       return s;
     }
   }
+
   /**
    *
    *
@@ -317,6 +331,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object enforceOnKeyType_ = "";
+
   /**
    *
    *
@@ -333,6 +348,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
   public boolean hasEnforceOnKeyType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -357,6 +373,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
       return s;
     }
   }
+
   /**
    *
    *
@@ -571,6 +588,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -790,6 +808,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
     private int bitField0_;
 
     private java.lang.Object enforceOnKeyName_ = "";
+
     /**
      *
      *
@@ -804,6 +823,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
     public boolean hasEnforceOnKeyName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -826,6 +846,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -848,6 +869,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -869,6 +891,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +909,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +934,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
     }
 
     private java.lang.Object enforceOnKeyType_ = "";
+
     /**
      *
      *
@@ -925,6 +950,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
     public boolean hasEnforceOnKeyType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -948,6 +974,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -971,6 +998,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -993,6 +1021,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1040,7 @@ public final class SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *

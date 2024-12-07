@@ -37,6 +37,7 @@ public interface RejoinUserEventsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface RejoinUserEventsRequestOrBuilder
    * @return The enum numeric value on the wire for userEventRejoinScope.
    */
   int getUserEventRejoinScopeValue();
+
   /**
    *
    *

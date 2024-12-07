@@ -36,6 +36,7 @@ public interface TableReferenceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TableReferenceOrBuilder
    * @return The datasetId.
    */
   java.lang.String getDatasetId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface TableReferenceOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
+
   /**
    *
    *

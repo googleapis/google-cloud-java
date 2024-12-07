@@ -37,6 +37,7 @@ public interface BatchRunTestCasesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.TestCaseResult results = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.TestCaseResult> getResultsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface BatchRunTestCasesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.TestCaseResult results = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3.TestCaseResult getResults(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface BatchRunTestCasesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.TestCaseResult results = 1;</code>
    */
   int getResultsCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface BatchRunTestCasesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.TestCaseResultOrBuilder>
       getResultsOrBuilderList();
+
   /**
    *
    *

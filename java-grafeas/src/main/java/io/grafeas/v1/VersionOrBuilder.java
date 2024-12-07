@@ -51,6 +51,7 @@ public interface VersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface VersionOrBuilder
    * @return The revision.
    */
   java.lang.String getRevision();
+
   /**
    *
    *
@@ -121,6 +123,7 @@ public interface VersionOrBuilder
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
+
   /**
    *
    *
@@ -148,6 +151,7 @@ public interface VersionOrBuilder
    * @return The fullName.
    */
   java.lang.String getFullName();
+
   /**
    *
    *

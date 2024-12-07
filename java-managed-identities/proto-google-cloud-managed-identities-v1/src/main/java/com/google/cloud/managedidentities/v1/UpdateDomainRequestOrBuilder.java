@@ -42,6 +42,7 @@ public interface UpdateDomainRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdateDomainRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface UpdateDomainRequestOrBuilder
    * @return Whether the domain field is set.
    */
   boolean hasDomain();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface UpdateDomainRequestOrBuilder
    * @return The domain.
    */
   com.google.cloud.managedidentities.v1.Domain getDomain();
+
   /**
    *
    *

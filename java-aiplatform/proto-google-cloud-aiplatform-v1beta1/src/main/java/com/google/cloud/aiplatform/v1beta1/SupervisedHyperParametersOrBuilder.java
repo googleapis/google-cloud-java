@@ -65,6 +65,7 @@ public interface SupervisedHyperParametersOrBuilder
    * @return The enum numeric value on the wire for adapterSize.
    */
   int getAdapterSizeValue();
+
   /**
    *
    *

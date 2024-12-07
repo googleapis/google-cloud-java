@@ -31,6 +31,7 @@ public interface StatefulPolicyOrBuilder
    * @return Whether the preservedState field is set.
    */
   boolean hasPreservedState();
+
   /**
    * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
    * </code>
@@ -38,6 +39,7 @@ public interface StatefulPolicyOrBuilder
    * @return The preservedState.
    */
   com.google.cloud.compute.v1.StatefulPolicyPreservedState getPreservedState();
+
   /**
    * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
    * </code>

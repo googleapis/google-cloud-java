@@ -41,6 +41,7 @@ public interface ProductSetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface ProductSetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface ProductSetOrBuilder
    * @return Whether the indexTime field is set.
    */
   boolean hasIndexTime();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface ProductSetOrBuilder
    * @return The indexTime.
    */
   com.google.protobuf.Timestamp getIndexTime();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface ProductSetOrBuilder
    * @return Whether the indexError field is set.
    */
   boolean hasIndexError();
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public interface ProductSetOrBuilder
    * @return The indexError.
    */
   com.google.rpc.Status getIndexError();
+
   /**
    *
    *

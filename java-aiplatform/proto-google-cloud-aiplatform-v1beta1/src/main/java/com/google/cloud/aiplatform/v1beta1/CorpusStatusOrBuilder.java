@@ -38,6 +38,7 @@ public interface CorpusStatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CorpusStatusOrBuilder
    * @return The errorStatus.
    */
   java.lang.String getErrorStatus();
+
   /**
    *
    *

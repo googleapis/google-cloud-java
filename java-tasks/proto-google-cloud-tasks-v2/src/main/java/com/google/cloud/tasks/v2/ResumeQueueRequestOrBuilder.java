@@ -39,6 +39,7 @@ public interface ResumeQueueRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

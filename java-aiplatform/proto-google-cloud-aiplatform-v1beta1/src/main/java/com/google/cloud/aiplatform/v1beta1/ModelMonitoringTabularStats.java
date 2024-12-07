@@ -34,6 +34,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringTabularStats)
     ModelMonitoringTabularStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ModelMonitoringTabularStats.newBuilder() to construct.
   private ModelMonitoringTabularStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object statsName_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object objectiveType_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint>
       dataPoints_;
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       getDataPointsList() {
     return dataPoints_;
   }
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       getDataPointsOrBuilderList() {
     return dataPoints_;
   }
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
   public int getDataPointsCount() {
     return dataPoints_.size();
   }
+
   /**
    *
    *
@@ -243,6 +252,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       int index) {
     return dataPoints_.get(index);
   }
+
   /**
    *
    *
@@ -440,6 +450,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -706,6 +717,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object statsName_ = "";
+
     /**
      *
      *
@@ -728,6 +740,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -750,6 +763,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -771,6 +785,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +803,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +828,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
     }
 
     private java.lang.Object objectiveType_ = "";
+
     /**
      *
      *
@@ -837,6 +854,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -862,6 +880,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -886,6 +905,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +926,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +991,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
         return dataPointsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -989,6 +1011,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
         return dataPointsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1032,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
         return dataPointsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1035,6 +1059,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1084,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1111,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1138,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1162,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1187,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1183,6 +1213,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1236,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1259,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1276,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
         getDataPointsBuilder(int index) {
       return getDataPointsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1263,6 +1297,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
         return dataPointsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1284,6 +1319,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(dataPoints_);
       }
     }
+
     /**
      *
      *
@@ -1303,6 +1339,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1323,6 +1360,7 @@ public final class ModelMonitoringTabularStats extends com.google.protobuf.Gener
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint
                   .getDefaultInstance());
     }
+
     /**
      *
      *

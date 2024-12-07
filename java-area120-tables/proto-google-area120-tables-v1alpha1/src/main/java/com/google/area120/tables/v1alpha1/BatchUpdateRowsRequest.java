@@ -33,6 +33,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.BatchUpdateRowsRequest)
     BatchUpdateRowsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchUpdateRowsRequest.newBuilder() to construct.
   private BatchUpdateRowsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.area120.tables.v1alpha1.UpdateRowRequest> requests_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.area120.tables.v1alpha1.UpdateRowRequest> getRequestsList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       getRequestsOrBuilderList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
   public int getRequestsCount() {
     return requests_.size();
   }
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
   public com.google.area120.tables.v1alpha1.UpdateRowRequest getRequests(int index) {
     return requests_.get(index);
   }
+
   /**
    *
    *
@@ -380,6 +388,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -626,6 +635,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -649,6 +659,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +787,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
         return requestsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -793,6 +808,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
         return requestsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -813,6 +829,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
         return requestsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -840,6 +857,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +882,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +909,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +937,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +962,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +987,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -989,6 +1012,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1036,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1060,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1078,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
         int index) {
       return getRequestsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1073,6 +1100,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
         return requestsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1094,6 +1122,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(requests_);
       }
     }
+
     /**
      *
      *
@@ -1111,6 +1140,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       return getRequestsFieldBuilder()
           .addBuilder(com.google.area120.tables.v1alpha1.UpdateRowRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1130,6 +1160,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.area120.tables.v1alpha1.UpdateRowRequest.getDefaultInstance());
     }
+
     /**
      *
      *

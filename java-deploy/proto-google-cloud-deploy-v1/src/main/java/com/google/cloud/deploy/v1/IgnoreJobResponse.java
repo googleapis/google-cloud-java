@@ -33,6 +33,7 @@ public final class IgnoreJobResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.IgnoreJobResponse)
     IgnoreJobResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IgnoreJobResponse.newBuilder() to construct.
   private IgnoreJobResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class IgnoreJobResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

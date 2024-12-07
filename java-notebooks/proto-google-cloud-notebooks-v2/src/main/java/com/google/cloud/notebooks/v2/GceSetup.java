@@ -34,6 +34,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v2.GceSetup)
     GceSetupOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GceSetup.newBuilder() to construct.
   private GceSetup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,6 +100,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     private ImageCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -135,6 +137,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
+
   /**
    *
    *
@@ -159,6 +162,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +192,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.notebooks.v2.AcceleratorConfig> acceleratorConfigs_;
+
   /**
    *
    *
@@ -208,6 +213,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       getAcceleratorConfigsList() {
     return acceleratorConfigs_;
   }
+
   /**
    *
    *
@@ -228,6 +234,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       getAcceleratorConfigsOrBuilderList() {
     return acceleratorConfigs_;
   }
+
   /**
    *
    *
@@ -247,6 +254,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public int getAcceleratorConfigsCount() {
     return acceleratorConfigs_.size();
   }
+
   /**
    *
    *
@@ -266,6 +274,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.notebooks.v2.AcceleratorConfig getAcceleratorConfigs(int index) {
     return acceleratorConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -291,6 +300,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.notebooks.v2.ServiceAccount> serviceAccounts_;
+
   /**
    *
    *
@@ -307,6 +317,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.notebooks.v2.ServiceAccount> getServiceAccountsList() {
     return serviceAccounts_;
   }
+
   /**
    *
    *
@@ -324,6 +335,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       getServiceAccountsOrBuilderList() {
     return serviceAccounts_;
   }
+
   /**
    *
    *
@@ -340,6 +352,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public int getServiceAccountsCount() {
     return serviceAccounts_.size();
   }
+
   /**
    *
    *
@@ -356,6 +369,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.notebooks.v2.ServiceAccount getServiceAccounts(int index) {
     return serviceAccounts_.get(index);
   }
+
   /**
    *
    *
@@ -375,6 +389,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VM_IMAGE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -392,6 +407,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVmImage() {
     return imageCase_ == 4;
   }
+
   /**
    *
    *
@@ -412,6 +428,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.notebooks.v2.VmImage.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -432,6 +449,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTAINER_IMAGE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -449,6 +467,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContainerImage() {
     return imageCase_ == 5;
   }
+
   /**
    *
    *
@@ -469,6 +488,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.notebooks.v2.ContainerImage.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -490,6 +510,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BOOT_DISK_FIELD_NUMBER = 6;
   private com.google.cloud.notebooks.v2.BootDisk bootDisk_;
+
   /**
    *
    *
@@ -507,6 +528,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBootDisk() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -526,6 +548,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.notebooks.v2.BootDisk.getDefaultInstance()
         : bootDisk_;
   }
+
   /**
    *
    *
@@ -548,6 +571,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.notebooks.v2.DataDisk> dataDisks_;
+
   /**
    *
    *
@@ -564,6 +588,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.notebooks.v2.DataDisk> getDataDisksList() {
     return dataDisks_;
   }
+
   /**
    *
    *
@@ -581,6 +606,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       getDataDisksOrBuilderList() {
     return dataDisks_;
   }
+
   /**
    *
    *
@@ -597,6 +623,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public int getDataDisksCount() {
     return dataDisks_.size();
   }
+
   /**
    *
    *
@@ -613,6 +640,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.notebooks.v2.DataDisk getDataDisks(int index) {
     return dataDisks_.get(index);
   }
+
   /**
    *
    *
@@ -632,6 +660,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER = 8;
   private com.google.cloud.notebooks.v2.ShieldedInstanceConfig shieldedInstanceConfig_;
+
   /**
    *
    *
@@ -651,6 +680,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasShieldedInstanceConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -672,6 +702,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.notebooks.v2.ShieldedInstanceConfig.getDefaultInstance()
         : shieldedInstanceConfig_;
   }
+
   /**
    *
    *
@@ -697,6 +728,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.notebooks.v2.NetworkInterface> networkInterfaces_;
+
   /**
    *
    *
@@ -713,6 +745,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.notebooks.v2.NetworkInterface> getNetworkInterfacesList() {
     return networkInterfaces_;
   }
+
   /**
    *
    *
@@ -730,6 +763,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       getNetworkInterfacesOrBuilderList() {
     return networkInterfaces_;
   }
+
   /**
    *
    *
@@ -746,6 +780,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public int getNetworkInterfacesCount() {
     return networkInterfaces_.size();
   }
+
   /**
    *
    *
@@ -762,6 +797,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.notebooks.v2.NetworkInterface getNetworkInterfaces(int index) {
     return networkInterfaces_.get(index);
   }
+
   /**
    *
    *
@@ -782,6 +818,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISABLE_PUBLIC_IP_FIELD_NUMBER = 10;
   private boolean disablePublicIp_ = false;
+
   /**
    *
    *
@@ -803,6 +840,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -818,6 +856,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getTagsList() {
     return tags_;
   }
+
   /**
    *
    *
@@ -833,6 +872,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public int getTagsCount() {
     return tags_.size();
   }
+
   /**
    *
    *
@@ -849,6 +889,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTags(int index) {
     return tags_.get(index);
   }
+
   /**
    *
    *
@@ -892,6 +933,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public int getMetadataCount() {
     return internalGetMetadata().getMap().size();
   }
+
   /**
    *
    *
@@ -908,12 +950,14 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
+
   /**
    *
    *
@@ -927,6 +971,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
+
   /**
    *
    *
@@ -947,6 +992,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -970,6 +1016,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_IP_FORWARDING_FIELD_NUMBER = 13;
   private boolean enableIpForwarding_ = false;
+
   /**
    *
    *
@@ -989,6 +1036,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GPU_DRIVER_CONFIG_FIELD_NUMBER = 14;
   private com.google.cloud.notebooks.v2.GPUDriverConfig gpuDriverConfig_;
+
   /**
    *
    *
@@ -1006,6 +1054,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGpuDriverConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1025,6 +1074,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.notebooks.v2.GPUDriverConfig.getDefaultInstance()
         : gpuDriverConfig_;
   }
+
   /**
    *
    *
@@ -1380,6 +1430,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2020,6 +2071,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object machineType_ = "";
+
     /**
      *
      *
@@ -2043,6 +2095,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2066,6 +2119,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2088,6 +2142,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2106,6 +2161,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2171,6 +2227,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return acceleratorConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2193,6 +2250,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return acceleratorConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2215,6 +2273,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return acceleratorConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2244,6 +2303,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2270,6 +2330,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2298,6 +2359,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2327,6 +2389,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2353,6 +2416,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2379,6 +2443,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2405,6 +2470,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2430,6 +2496,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2455,6 +2522,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2474,6 +2542,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getAcceleratorConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2497,6 +2566,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return acceleratorConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2520,6 +2590,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(acceleratorConfigs_);
       }
     }
+
     /**
      *
      *
@@ -2539,6 +2610,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       return getAcceleratorConfigsFieldBuilder()
           .addBuilder(com.google.cloud.notebooks.v2.AcceleratorConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2559,6 +2631,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       return getAcceleratorConfigsFieldBuilder()
           .addBuilder(index, com.google.cloud.notebooks.v2.AcceleratorConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2635,6 +2708,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return serviceAccountsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2654,6 +2728,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return serviceAccountsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2673,6 +2748,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return serviceAccountsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2699,6 +2775,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2722,6 +2799,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2747,6 +2825,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2773,6 +2852,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2796,6 +2876,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2819,6 +2900,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2842,6 +2924,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2864,6 +2947,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2886,6 +2970,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2902,6 +2987,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getServiceAccountsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2922,6 +3008,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return serviceAccountsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2942,6 +3029,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(serviceAccounts_);
       }
     }
+
     /**
      *
      *
@@ -2958,6 +3046,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       return getServiceAccountsFieldBuilder()
           .addBuilder(com.google.cloud.notebooks.v2.ServiceAccount.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2975,6 +3064,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       return getServiceAccountsFieldBuilder()
           .addBuilder(index, com.google.cloud.notebooks.v2.ServiceAccount.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3017,6 +3107,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.notebooks.v2.VmImage.Builder,
             com.google.cloud.notebooks.v2.VmImageOrBuilder>
         vmImageBuilder_;
+
     /**
      *
      *
@@ -3034,6 +3125,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVmImage() {
       return imageCase_ == 4;
     }
+
     /**
      *
      *
@@ -3061,6 +3153,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.notebooks.v2.VmImage.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3085,6 +3178,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       imageCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -3106,6 +3200,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       imageCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -3140,6 +3235,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       imageCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -3167,6 +3263,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3181,6 +3278,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.notebooks.v2.VmImage.Builder getVmImageBuilder() {
       return getVmImageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3203,6 +3301,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.notebooks.v2.VmImage.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3241,6 +3340,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.notebooks.v2.ContainerImage.Builder,
             com.google.cloud.notebooks.v2.ContainerImageOrBuilder>
         containerImageBuilder_;
+
     /**
      *
      *
@@ -3258,6 +3358,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContainerImage() {
       return imageCase_ == 5;
     }
+
     /**
      *
      *
@@ -3285,6 +3386,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.notebooks.v2.ContainerImage.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3309,6 +3411,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       imageCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3331,6 +3434,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       imageCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3365,6 +3469,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       imageCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3392,6 +3497,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3406,6 +3512,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.notebooks.v2.ContainerImage.Builder getContainerImageBuilder() {
       return getContainerImageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3428,6 +3535,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.notebooks.v2.ContainerImage.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3469,6 +3577,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.notebooks.v2.BootDisk.Builder,
             com.google.cloud.notebooks.v2.BootDiskOrBuilder>
         bootDiskBuilder_;
+
     /**
      *
      *
@@ -3485,6 +3594,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBootDisk() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3507,6 +3617,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return bootDiskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3531,6 +3642,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3552,6 +3664,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3581,6 +3694,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3602,6 +3716,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3618,6 +3733,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBootDiskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3638,6 +3754,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
             : bootDisk_;
       }
     }
+
     /**
      *
      *
@@ -3701,6 +3818,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return dataDisksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3720,6 +3838,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return dataDisksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3739,6 +3858,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return dataDisksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3764,6 +3884,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3787,6 +3908,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3812,6 +3934,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3837,6 +3960,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3859,6 +3983,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3882,6 +4007,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3905,6 +4031,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3927,6 +4054,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3949,6 +4077,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3964,6 +4093,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.notebooks.v2.DataDisk.Builder getDataDisksBuilder(int index) {
       return getDataDisksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3983,6 +4113,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return dataDisksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4003,6 +4134,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(dataDisks_);
       }
     }
+
     /**
      *
      *
@@ -4019,6 +4151,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       return getDataDisksFieldBuilder()
           .addBuilder(com.google.cloud.notebooks.v2.DataDisk.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4035,6 +4168,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       return getDataDisksFieldBuilder()
           .addBuilder(index, com.google.cloud.notebooks.v2.DataDisk.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4075,6 +4209,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.notebooks.v2.ShieldedInstanceConfig.Builder,
             com.google.cloud.notebooks.v2.ShieldedInstanceConfigOrBuilder>
         shieldedInstanceConfigBuilder_;
+
     /**
      *
      *
@@ -4093,6 +4228,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasShieldedInstanceConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -4117,6 +4253,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return shieldedInstanceConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4144,6 +4281,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4168,6 +4306,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4201,6 +4340,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4224,6 +4364,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4243,6 +4384,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getShieldedInstanceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4266,6 +4408,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
             : shieldedInstanceConfig_;
       }
     }
+
     /**
      *
      *
@@ -4334,6 +4477,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return networkInterfacesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4353,6 +4497,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return networkInterfacesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4372,6 +4517,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return networkInterfacesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4398,6 +4544,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4421,6 +4568,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4446,6 +4594,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4472,6 +4621,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4495,6 +4645,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4518,6 +4669,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4541,6 +4693,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4563,6 +4716,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4585,6 +4739,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4601,6 +4756,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getNetworkInterfacesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4621,6 +4777,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return networkInterfacesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4641,6 +4798,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(networkInterfaces_);
       }
     }
+
     /**
      *
      *
@@ -4657,6 +4815,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       return getNetworkInterfacesFieldBuilder()
           .addBuilder(com.google.cloud.notebooks.v2.NetworkInterface.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4674,6 +4833,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       return getNetworkInterfacesFieldBuilder()
           .addBuilder(index, com.google.cloud.notebooks.v2.NetworkInterface.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4712,6 +4872,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean disablePublicIp_;
+
     /**
      *
      *
@@ -4727,6 +4888,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisablePublicIp() {
       return disablePublicIp_;
     }
+
     /**
      *
      *
@@ -4746,6 +4908,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4773,6 +4936,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000400;
     }
+
     /**
      *
      *
@@ -4789,6 +4953,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       tags_.makeImmutable();
       return tags_;
     }
+
     /**
      *
      *
@@ -4804,6 +4969,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public int getTagsCount() {
       return tags_.size();
     }
+
     /**
      *
      *
@@ -4820,6 +4986,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
+
     /**
      *
      *
@@ -4836,6 +5003,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTagsBytes(int index) {
       return tags_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4860,6 +5028,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4883,6 +5052,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4903,6 +5073,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4922,6 +5093,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4973,6 +5145,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
+
     /**
      *
      *
@@ -4990,12 +5163,14 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
+
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
+
     /**
      *
      *
@@ -5010,6 +5185,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
+
     /**
      *
      *
@@ -5031,6 +5207,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -5058,6 +5235,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -5075,12 +5253,14 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       bitField0_ |= 0x00000800;
       return internalGetMutableMetadata().getMutableMap();
     }
+
     /**
      *
      *
@@ -5102,6 +5282,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000800;
       return this;
     }
+
     /**
      *
      *
@@ -5119,6 +5300,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enableIpForwarding_;
+
     /**
      *
      *
@@ -5135,6 +5317,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableIpForwarding() {
       return enableIpForwarding_;
     }
+
     /**
      *
      *
@@ -5155,6 +5338,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5180,6 +5364,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.notebooks.v2.GPUDriverConfig.Builder,
             com.google.cloud.notebooks.v2.GPUDriverConfigOrBuilder>
         gpuDriverConfigBuilder_;
+
     /**
      *
      *
@@ -5196,6 +5381,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGpuDriverConfig() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -5218,6 +5404,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
         return gpuDriverConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5242,6 +5429,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5264,6 +5452,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5294,6 +5483,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5315,6 +5505,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5331,6 +5522,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGpuDriverConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5351,6 +5543,7 @@ public final class GceSetup extends com.google.protobuf.GeneratedMessageV3
             : gpuDriverConfig_;
       }
     }
+
     /**
      *
      *

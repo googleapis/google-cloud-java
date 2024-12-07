@@ -33,6 +33,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CreateTensorboardOperationMetadata)
     CreateTensorboardOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateTensorboardOperationMetadata.newBuilder() to construct.
   private CreateTensorboardOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.GenericOperationMetadata genericMetadata_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
         ? com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
+
   /**
    *
    *
@@ -280,6 +284,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -489,6 +494,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
             com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
+
     /**
      *
      *
@@ -503,6 +509,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -523,6 +530,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
         return genericMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -546,6 +554,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -566,6 +575,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -595,6 +605,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +625,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +641,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -648,6 +661,7 @@ public final class CreateTensorboardOperationMetadata extends com.google.protobu
             : genericMetadata_;
       }
     }
+
     /**
      *
      *

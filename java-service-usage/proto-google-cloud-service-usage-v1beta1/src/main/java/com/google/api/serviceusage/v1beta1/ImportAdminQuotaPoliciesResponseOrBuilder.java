@@ -34,6 +34,7 @@ public interface ImportAdminQuotaPoliciesResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.AdminQuotaPolicy policies = 1;</code>
    */
   java.util.List<com.google.api.serviceusage.v1beta1.AdminQuotaPolicy> getPoliciesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ImportAdminQuotaPoliciesResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.AdminQuotaPolicy policies = 1;</code>
    */
   com.google.api.serviceusage.v1beta1.AdminQuotaPolicy getPolicies(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ImportAdminQuotaPoliciesResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.AdminQuotaPolicy policies = 1;</code>
    */
   int getPoliciesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ImportAdminQuotaPoliciesResponseOrBuilder
    */
   java.util.List<? extends com.google.api.serviceusage.v1beta1.AdminQuotaPolicyOrBuilder>
       getPoliciesOrBuilderList();
+
   /**
    *
    *

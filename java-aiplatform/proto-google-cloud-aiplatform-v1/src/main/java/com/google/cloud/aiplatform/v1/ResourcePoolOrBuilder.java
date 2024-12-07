@@ -38,6 +38,7 @@ public interface ResourcePoolOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ResourcePoolOrBuilder
    * @return Whether the machineSpec field is set.
    */
   boolean hasMachineSpec();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ResourcePoolOrBuilder
    * @return The machineSpec.
    */
   com.google.cloud.aiplatform.v1.MachineSpec getMachineSpec();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface ResourcePoolOrBuilder
    * @return Whether the replicaCount field is set.
    */
   boolean hasReplicaCount();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface ResourcePoolOrBuilder
    * @return Whether the diskSpec field is set.
    */
   boolean hasDiskSpec();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface ResourcePoolOrBuilder
    * @return The diskSpec.
    */
   com.google.cloud.aiplatform.v1.DiskSpec getDiskSpec();
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public interface ResourcePoolOrBuilder
    * @return Whether the autoscalingSpec field is set.
    */
   boolean hasAutoscalingSpec();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface ResourcePoolOrBuilder
    * @return The autoscalingSpec.
    */
   com.google.cloud.aiplatform.v1.ResourcePool.AutoscalingSpec getAutoscalingSpec();
+
   /**
    *
    *

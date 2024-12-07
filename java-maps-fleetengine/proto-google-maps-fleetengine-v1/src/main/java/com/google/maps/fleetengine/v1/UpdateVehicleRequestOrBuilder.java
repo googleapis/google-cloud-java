@@ -36,6 +36,7 @@ public interface UpdateVehicleRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateVehicleRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.v1.RequestHeader getHeader();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface UpdateVehicleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface UpdateVehicleRequestOrBuilder
    * @return Whether the vehicle field is set.
    */
   boolean hasVehicle();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface UpdateVehicleRequestOrBuilder
    * @return The vehicle.
    */
   com.google.maps.fleetengine.v1.Vehicle getVehicle();
+
   /**
    *
    *
@@ -189,6 +194,7 @@ public interface UpdateVehicleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public interface UpdateVehicleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

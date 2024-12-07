@@ -37,6 +37,7 @@ public interface SuggestionDenyListEntryOrBuilder
    * @return The blockPhrase.
    */
   java.lang.String getBlockPhrase();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface SuggestionDenyListEntryOrBuilder
    * @return The enum numeric value on the wire for matchOperator.
    */
   int getMatchOperatorValue();
+
   /**
    *
    *

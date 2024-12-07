@@ -38,6 +38,7 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the singleTargetDataset field is set.
    */
   boolean hasSingleTargetDataset();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface BigQueryDestinationConfigOrBuilder
    */
   com.google.cloud.datastream.v1.BigQueryDestinationConfig.SingleTargetDataset
       getSingleTargetDataset();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the sourceHierarchyDatasets field is set.
    */
   boolean hasSourceHierarchyDatasets();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface BigQueryDestinationConfigOrBuilder
    */
   com.google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets
       getSourceHierarchyDatasets();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the dataFreshness field is set.
    */
   boolean hasDataFreshness();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return The dataFreshness.
    */
   com.google.protobuf.Duration getDataFreshness();
+
   /**
    *
    *

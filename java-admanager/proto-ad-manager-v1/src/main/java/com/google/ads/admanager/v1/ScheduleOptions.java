@@ -33,6 +33,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ScheduleOptions)
     ScheduleOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ScheduleOptions.newBuilder() to construct.
   private ScheduleOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * <code>NEVER = 0;</code>
      */
     public static final int NEVER_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * <code>ALWAYS = 1;</code>
      */
     public static final int ALWAYS_VALUE = 1;
+
     /**
      *
      *
@@ -227,6 +230,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int SCHEDULE_FIELD_NUMBER = 1;
   private com.google.ads.admanager.v1.Schedule schedule_;
+
   /**
    *
    *
@@ -242,6 +246,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
   public boolean hasSchedule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -259,6 +264,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
         ? com.google.ads.admanager.v1.Schedule.getDefaultInstance()
         : schedule_;
   }
+
   /**
    *
    *
@@ -277,6 +283,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
 
   public static final int DELIVERY_CONDITION_FIELD_NUMBER = 2;
   private int deliveryCondition_ = 0;
+
   /**
    *
    *
@@ -292,6 +299,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
   public int getDeliveryConditionValue() {
     return deliveryCondition_;
   }
+
   /**
    *
    *
@@ -316,6 +324,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.Report.Flag> flags_;
+
   /**
    *
    *
@@ -332,6 +341,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.ads.admanager.v1.Report.Flag> getFlagsList() {
     return flags_;
   }
+
   /**
    *
    *
@@ -349,6 +359,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       getFlagsOrBuilderList() {
     return flags_;
   }
+
   /**
    *
    *
@@ -365,6 +376,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
   public int getFlagsCount() {
     return flags_.size();
   }
+
   /**
    *
    *
@@ -381,6 +393,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
   public com.google.ads.admanager.v1.Report.Flag getFlags(int index) {
     return flags_.get(index);
   }
+
   /**
    *
    *
@@ -584,6 +597,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -860,6 +874,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
             com.google.ads.admanager.v1.Schedule.Builder,
             com.google.ads.admanager.v1.ScheduleOrBuilder>
         scheduleBuilder_;
+
     /**
      *
      *
@@ -874,6 +889,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
     public boolean hasSchedule() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -894,6 +910,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
         return scheduleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -916,6 +933,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +953,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +981,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1001,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1016,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getScheduleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1013,6 +1035,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
             : schedule_;
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1063,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
     }
 
     private int deliveryCondition_ = 0;
+
     /**
      *
      *
@@ -1056,6 +1080,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
     public int getDeliveryConditionValue() {
       return deliveryCondition_;
     }
+
     /**
      *
      *
@@ -1075,6 +1100,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1122,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
           ? com.google.ads.admanager.v1.ScheduleOptions.DeliveryCondition.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1119,6 +1146,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1201,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
         return flagsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1192,6 +1221,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
         return flagsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1211,6 +1241,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
         return flagsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1236,6 +1267,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1291,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1284,6 +1317,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1309,6 +1343,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1331,6 +1366,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1354,6 +1390,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1414,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1399,6 +1437,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1421,6 +1460,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1436,6 +1476,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
     public com.google.ads.admanager.v1.Report.Flag.Builder getFlagsBuilder(int index) {
       return getFlagsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1455,6 +1496,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
         return flagsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1475,6 +1517,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(flags_);
       }
     }
+
     /**
      *
      *
@@ -1491,6 +1534,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       return getFlagsFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.Report.Flag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1507,6 +1551,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       return getFlagsFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.Report.Flag.getDefaultInstance());
     }
+
     /**
      *
      *

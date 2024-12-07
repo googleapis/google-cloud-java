@@ -33,6 +33,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetLabelsImageRequest)
     SetLabelsImageRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetLabelsImageRequest.newBuilder() to construct.
   private SetLabelsImageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int GLOBAL_SET_LABELS_REQUEST_RESOURCE_FIELD_NUMBER = 319917189;
   private com.google.cloud.compute.v1.GlobalSetLabelsRequest globalSetLabelsRequestResource_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
   public boolean hasGlobalSetLabelsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.compute.v1.GlobalSetLabelsRequest.getDefaultInstance()
         : globalSetLabelsRequestResource_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -414,6 +422,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -652,6 +661,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.GlobalSetLabelsRequest.Builder,
             com.google.cloud.compute.v1.GlobalSetLabelsRequestOrBuilder>
         globalSetLabelsRequestResourceBuilder_;
+
     /**
      *
      *
@@ -668,6 +678,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
     public boolean hasGlobalSetLabelsRequestResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -690,6 +701,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
         return globalSetLabelsRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +750,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +782,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +804,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +822,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getGlobalSetLabelsRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -827,6 +844,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
             : globalSetLabelsRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -856,6 +874,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -880,6 +899,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -904,6 +924,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -927,6 +948,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +968,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +995,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -994,6 +1018,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1016,6 +1041,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1063,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1081,7 @@ public final class SetLabelsImageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface ActionOutputOrBuilder
    * @return The actionId.
    */
   java.lang.String getActionId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ActionOutputOrBuilder
    * @return The enum numeric value on the wire for actionState.
    */
   int getActionStateValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ActionOutputOrBuilder
    * @return The outputMessage.
    */
   java.lang.String getOutputMessage();
+
   /**
    *
    *

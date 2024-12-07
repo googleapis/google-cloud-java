@@ -37,6 +37,7 @@ public interface HumanAgentAssistantEventOrBuilder
    * @return The conversation.
    */
   java.lang.String getConversation();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface HumanAgentAssistantEventOrBuilder
    * @return The participant.
    */
   java.lang.String getParticipant();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface HumanAgentAssistantEventOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult suggestion_results = 5;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.SuggestionResult> getSuggestionResultsList();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface HumanAgentAssistantEventOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult suggestion_results = 5;</code>
    */
   com.google.cloud.dialogflow.v2.SuggestionResult getSuggestionResults(int index);
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface HumanAgentAssistantEventOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult suggestion_results = 5;</code>
    */
   int getSuggestionResultsCount();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface HumanAgentAssistantEventOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.SuggestionResultOrBuilder>
       getSuggestionResultsOrBuilderList();
+
   /**
    *
    *

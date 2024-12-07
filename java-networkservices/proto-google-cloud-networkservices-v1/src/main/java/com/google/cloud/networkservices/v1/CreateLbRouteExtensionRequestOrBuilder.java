@@ -39,6 +39,7 @@ public interface CreateLbRouteExtensionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateLbRouteExtensionRequestOrBuilder
    * @return The lbRouteExtensionId.
    */
   java.lang.String getLbRouteExtensionId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateLbRouteExtensionRequestOrBuilder
    * @return Whether the lbRouteExtension field is set.
    */
   boolean hasLbRouteExtension();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateLbRouteExtensionRequestOrBuilder
    * @return The lbRouteExtension.
    */
   com.google.cloud.networkservices.v1.LbRouteExtension getLbRouteExtension();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public interface CreateLbRouteExtensionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

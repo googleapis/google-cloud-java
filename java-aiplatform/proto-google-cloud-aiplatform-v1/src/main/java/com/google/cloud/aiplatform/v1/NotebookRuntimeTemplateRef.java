@@ -33,6 +33,7 @@ public final class NotebookRuntimeTemplateRef extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NotebookRuntimeTemplateRef)
     NotebookRuntimeTemplateRefOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NotebookRuntimeTemplateRef.newBuilder() to construct.
   private NotebookRuntimeTemplateRef(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class NotebookRuntimeTemplateRef extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object notebookRuntimeTemplate_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class NotebookRuntimeTemplateRef extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -278,6 +281,7 @@ public final class NotebookRuntimeTemplateRef extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -462,6 +466,7 @@ public final class NotebookRuntimeTemplateRef extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object notebookRuntimeTemplate_ = "";
+
     /**
      *
      *
@@ -486,6 +491,7 @@ public final class NotebookRuntimeTemplateRef extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -510,6 +516,7 @@ public final class NotebookRuntimeTemplateRef extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -533,6 +540,7 @@ public final class NotebookRuntimeTemplateRef extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -552,6 +560,7 @@ public final class NotebookRuntimeTemplateRef extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.PurgeDocumentsResponse)
     PurgeDocumentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PurgeDocumentsResponse.newBuilder() to construct.
   private PurgeDocumentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
 
   public static final int PURGE_COUNT_FIELD_NUMBER = 1;
   private long purgeCount_ = 0L;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList purgeSample_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getPurgeSampleList() {
     return purgeSample_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
   public int getPurgeSampleCount() {
     return purgeSample_.size();
   }
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
   public java.lang.String getPurgeSample(int index) {
     return purgeSample_.get(index);
   }
+
   /**
    *
    *
@@ -332,6 +338,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -542,6 +549,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private long purgeCount_;
+
     /**
      *
      *
@@ -557,6 +565,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
     public long getPurgeCount() {
       return purgeCount_;
     }
+
     /**
      *
      *
@@ -576,6 +585,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -603,6 +613,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -620,6 +631,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       purgeSample_.makeImmutable();
       return purgeSample_;
     }
+
     /**
      *
      *
@@ -636,6 +648,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
     public int getPurgeSampleCount() {
       return purgeSample_.size();
     }
+
     /**
      *
      *
@@ -653,6 +666,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
     public java.lang.String getPurgeSample(int index) {
       return purgeSample_.get(index);
     }
+
     /**
      *
      *
@@ -670,6 +684,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getPurgeSampleBytes(int index) {
       return purgeSample_.getByteString(index);
     }
+
     /**
      *
      *
@@ -695,6 +710,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +735,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +757,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +778,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface DeploymentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface DeploymentOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface DeploymentOrBuilder
    * @return The sourceBlueprintRevision.
    */
   java.lang.String getSourceBlueprintRevision();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface DeploymentOrBuilder
    * @return Whether the revisionCreateTime field is set.
    */
   boolean hasRevisionCreateTime();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface DeploymentOrBuilder
    * @return The revisionCreateTime.
    */
   com.google.protobuf.Timestamp getRevisionCreateTime();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface DeploymentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public interface DeploymentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public interface DeploymentOrBuilder
    * @return The repository.
    */
   java.lang.String getRepository();
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public interface DeploymentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.telcoautomation.v1alpha1.File> getFilesList();
+
   /**
    *
    *
@@ -257,6 +266,7 @@ public interface DeploymentOrBuilder
    * </code>
    */
   com.google.cloud.telcoautomation.v1alpha1.File getFiles(int index);
+
   /**
    *
    *
@@ -272,6 +282,7 @@ public interface DeploymentOrBuilder
    * </code>
    */
   int getFilesCount();
+
   /**
    *
    *
@@ -288,6 +299,7 @@ public interface DeploymentOrBuilder
    */
   java.util.List<? extends com.google.cloud.telcoautomation.v1alpha1.FileOrBuilder>
       getFilesOrBuilderList();
+
   /**
    *
    *
@@ -315,6 +327,7 @@ public interface DeploymentOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -326,9 +339,11 @@ public interface DeploymentOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -340,6 +355,7 @@ public interface DeploymentOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -355,6 +371,7 @@ public interface DeploymentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -380,6 +397,7 @@ public interface DeploymentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -393,6 +411,7 @@ public interface DeploymentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -418,6 +437,7 @@ public interface DeploymentOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -431,6 +451,7 @@ public interface DeploymentOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -456,6 +477,7 @@ public interface DeploymentOrBuilder
    * @return The sourceProvider.
    */
   java.lang.String getSourceProvider();
+
   /**
    *
    *
@@ -487,6 +509,7 @@ public interface DeploymentOrBuilder
    * @return The workloadCluster.
    */
   java.lang.String getWorkloadCluster();
+
   /**
    *
    *
@@ -520,6 +543,7 @@ public interface DeploymentOrBuilder
    * @return The enum numeric value on the wire for deploymentLevel.
    */
   int getDeploymentLevelValue();
+
   /**
    *
    *

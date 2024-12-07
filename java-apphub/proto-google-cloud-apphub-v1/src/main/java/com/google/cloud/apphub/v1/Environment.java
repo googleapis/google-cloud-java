@@ -33,6 +33,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.Environment)
     EnvironmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Environment.newBuilder() to construct.
   private Environment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,6 +137,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -146,6 +148,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>PRODUCTION = 1;</code>
      */
     public static final int PRODUCTION_VALUE = 1;
+
     /**
      *
      *
@@ -156,6 +159,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>STAGING = 2;</code>
      */
     public static final int STAGING_VALUE = 2;
+
     /**
      *
      *
@@ -166,6 +170,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>TEST = 3;</code>
      */
     public static final int TEST_VALUE = 3;
+
     /**
      *
      *
@@ -266,6 +271,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
+
   /**
    *
    *
@@ -283,6 +289,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -461,6 +468,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -642,6 +650,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -659,6 +668,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -679,6 +689,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +709,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.apphub.v1.Environment.Type.forNumber(type_);
       return result == null ? com.google.cloud.apphub.v1.Environment.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -721,6 +733,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

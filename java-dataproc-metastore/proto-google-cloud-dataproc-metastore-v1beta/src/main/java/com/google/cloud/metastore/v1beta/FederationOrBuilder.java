@@ -38,6 +38,7 @@ public interface FederationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface FederationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface FederationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface FederationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface FederationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface FederationOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -149,9 +155,11 @@ public interface FederationOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface FederationOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -176,6 +185,7 @@ public interface FederationOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -200,6 +210,7 @@ public interface FederationOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -230,6 +241,7 @@ public interface FederationOrBuilder
    * </code>
    */
   int getBackendMetastoresCount();
+
   /**
    *
    *
@@ -246,10 +258,12 @@ public interface FederationOrBuilder
    * </code>
    */
   boolean containsBackendMetastores(int key);
+
   /** Use {@link #getBackendMetastoresMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.Integer, com.google.cloud.metastore.v1beta.BackendMetastore>
       getBackendMetastores();
+
   /**
    *
    *
@@ -267,6 +281,7 @@ public interface FederationOrBuilder
    */
   java.util.Map<java.lang.Integer, com.google.cloud.metastore.v1beta.BackendMetastore>
       getBackendMetastoresMap();
+
   /**
    *
    *
@@ -287,6 +302,7 @@ public interface FederationOrBuilder
       int key,
       /* nullable */
       com.google.cloud.metastore.v1beta.BackendMetastore defaultValue);
+
   /**
    *
    *
@@ -316,6 +332,7 @@ public interface FederationOrBuilder
    * @return The endpointUri.
    */
   java.lang.String getEndpointUri();
+
   /**
    *
    *
@@ -343,6 +360,7 @@ public interface FederationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -371,6 +389,7 @@ public interface FederationOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
+
   /**
    *
    *
@@ -398,6 +417,7 @@ public interface FederationOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *

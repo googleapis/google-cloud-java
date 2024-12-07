@@ -33,6 +33,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest)
     RegionInstanceGroupsSetNamedPortsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionInstanceGroupsSetNamedPortsRequest.newBuilder() to construct.
   private RegionInstanceGroupsSetNamedPortsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NamedPort> namedPorts_;
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
   public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
     return namedPorts_;
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       getNamedPortsOrBuilderList() {
     return namedPorts_;
   }
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
   public int getNamedPortsCount() {
     return namedPorts_.size();
   }
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
   public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
     return namedPorts_.get(index);
   }
+
   /**
    *
    *
@@ -381,6 +390,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -635,6 +645,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
     private int bitField0_;
 
     private java.lang.Object fingerprint_ = "";
+
     /**
      *
      *
@@ -649,6 +660,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -671,6 +683,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -693,6 +706,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -714,6 +728,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +746,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +802,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
         return namedPortsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -802,6 +819,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
         return namedPortsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -818,6 +836,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
         return namedPortsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +880,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +903,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +926,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +946,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +967,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +988,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1008,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1001,6 +1028,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1041,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
     public com.google.cloud.compute.v1.NamedPort.Builder getNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1029,6 +1058,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
         return namedPortsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1076,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
         return java.util.Collections.unmodifiableList(namedPorts_);
       }
     }
+
     /**
      *
      *
@@ -1059,6 +1090,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       return getNamedPortsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NamedPort.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1072,6 +1104,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
       return getNamedPortsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NamedPort.getDefaultInstance());
     }
+
     /**
      *
      *

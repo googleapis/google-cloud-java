@@ -50,6 +50,7 @@ public interface TextClassificationConfigOrBuilder
    * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface TextClassificationConfigOrBuilder
    * @return Whether the sentimentConfig field is set.
    */
   boolean hasSentimentConfig();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface TextClassificationConfigOrBuilder
    * @return The sentimentConfig.
    */
   com.google.cloud.datalabeling.v1beta1.SentimentConfig getSentimentConfig();
+
   /**
    *
    *

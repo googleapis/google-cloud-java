@@ -33,6 +33,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3beta1.CreateGlossaryRequest)
     CreateGlossaryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateGlossaryRequest.newBuilder() to construct.
   private CreateGlossaryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
 
   public static final int GLOSSARY_FIELD_NUMBER = 2;
   private com.google.cloud.translate.v3beta1.Glossary glossary_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
   public boolean hasGlossary() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.translate.v3beta1.Glossary.getDefaultInstance()
         : glossary_;
   }
+
   /**
    *
    *
@@ -349,6 +355,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -562,6 +569,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -586,6 +594,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -610,6 +619,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -633,6 +643,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -652,6 +663,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.translate.v3beta1.Glossary.Builder,
             com.google.cloud.translate.v3beta1.GlossaryOrBuilder>
         glossaryBuilder_;
+
     /**
      *
      *
@@ -699,6 +712,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
     public boolean hasGlossary() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
         return glossaryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -745,6 +760,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +783,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +813,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +835,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +852,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getGlossaryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -853,6 +873,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
             : glossary_;
       }
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return The verb.
    */
   java.lang.String getVerb();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return The apiVersion.
    */
   java.lang.String getApiVersion();
+
   /**
    *
    *

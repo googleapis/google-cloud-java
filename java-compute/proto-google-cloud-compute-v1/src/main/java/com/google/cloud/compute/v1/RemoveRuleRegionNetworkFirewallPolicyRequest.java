@@ -34,6 +34,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RemoveRuleRegionNetworkFirewallPolicyRequest)
     RemoveRuleRegionNetworkFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RemoveRuleRegionNetworkFirewallPolicyRequest.newBuilder() to construct.
   private RemoveRuleRegionNetworkFirewallPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firewallPolicy_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
 
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_ = 0;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
   public boolean hasPriority() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -267,6 +276,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -282,6 +292,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -305,6 +316,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -537,6 +549,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -793,6 +806,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
     private int bitField0_;
 
     private java.lang.Object firewallPolicy_ = "";
+
     /**
      *
      *
@@ -815,6 +829,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -837,6 +852,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -858,6 +874,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +917,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
     }
 
     private int priority_;
+
     /**
      *
      *
@@ -914,6 +933,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
     public boolean hasPriority() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -929,6 +949,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
     public int getPriority() {
       return priority_;
     }
+
     /**
      *
      *
@@ -948,6 +969,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +989,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -991,6 +1014,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1039,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1038,6 +1063,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1083,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1110,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1107,6 +1135,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1131,6 +1160,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1154,6 +1184,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1204,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1199,6 +1231,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1213,6 +1246,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1235,6 +1269,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1257,6 +1292,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1278,6 +1314,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1332,7 @@ public final class RemoveRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

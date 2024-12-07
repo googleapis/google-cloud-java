@@ -38,6 +38,7 @@ public interface ShotChangeDetectionConfigOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.UpdateCryptoKeyRequest)
     UpdateCryptoKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateCryptoKeyRequest.newBuilder() to construct.
   private UpdateCryptoKeyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int CRYPTO_KEY_FIELD_NUMBER = 1;
   private com.google.cloud.kms.v1.CryptoKey cryptoKey_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
   public boolean hasCryptoKey() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
   public com.google.cloud.kms.v1.CryptoKey getCryptoKey() {
     return cryptoKey_ == null ? com.google.cloud.kms.v1.CryptoKey.getDefaultInstance() : cryptoKey_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -339,6 +346,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -561,6 +569,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.kms.v1.CryptoKey.Builder,
             com.google.cloud.kms.v1.CryptoKeyOrBuilder>
         cryptoKeyBuilder_;
+
     /**
      *
      *
@@ -577,6 +586,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     public boolean hasCryptoKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -599,6 +609,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
         return cryptoKeyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -623,6 +634,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +656,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +686,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +708,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +725,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getCryptoKeyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -730,6 +746,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
             : cryptoKey_;
       }
     }
+
     /**
      *
      *
@@ -764,6 +781,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -779,6 +797,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -800,6 +819,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -823,6 +843,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +864,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +893,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +914,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +930,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -925,6 +950,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
             : updateMask_;
       }
     }
+
     /**
      *
      *

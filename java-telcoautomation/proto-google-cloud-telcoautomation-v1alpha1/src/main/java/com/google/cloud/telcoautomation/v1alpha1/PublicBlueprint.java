@@ -38,6 +38,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1alpha1.PublicBlueprint)
     PublicBlueprintOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PublicBlueprint.newBuilder() to construct.
   private PublicBlueprint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -227,6 +234,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
 
   public static final int DEPLOYMENT_LEVEL_FIELD_NUMBER = 4;
   private int deploymentLevel_ = 0;
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
   public int getDeploymentLevelValue() {
     return deploymentLevel_;
   }
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceProvider_ = "";
+
   /**
    *
    *
@@ -291,6 +301,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -317,6 +328,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
 
   public static final int ROLLBACK_SUPPORT_FIELD_NUMBER = 15;
   private boolean rollbackSupport_ = false;
+
   /**
    *
    *
@@ -543,6 +555,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -803,6 +816,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -825,6 +839,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -847,6 +862,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -868,6 +884,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +902,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -909,6 +927,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -931,6 +950,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -953,6 +973,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -974,6 +995,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1013,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1015,6 +1038,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1037,6 +1061,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1059,6 +1084,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1106,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1124,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1149,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
     }
 
     private int deploymentLevel_ = 0;
+
     /**
      *
      *
@@ -1137,6 +1166,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
     public int getDeploymentLevelValue() {
       return deploymentLevel_;
     }
+
     /**
      *
      *
@@ -1156,6 +1186,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1176,6 +1207,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.telcoautomation.v1alpha1.DeploymentLevel.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1199,6 +1231,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1219,6 +1252,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object sourceProvider_ = "";
+
     /**
      *
      *
@@ -1241,6 +1275,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1263,6 +1298,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1284,6 +1320,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1301,6 +1338,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1325,6 +1363,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean rollbackSupport_;
+
     /**
      *
      *
@@ -1341,6 +1380,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
     public boolean getRollbackSupport() {
       return rollbackSupport_;
     }
+
     /**
      *
      *
@@ -1361,6 +1401,7 @@ public final class PublicBlueprint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

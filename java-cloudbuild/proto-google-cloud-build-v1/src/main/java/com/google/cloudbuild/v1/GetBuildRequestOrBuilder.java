@@ -37,6 +37,7 @@ public interface GetBuildRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GetBuildRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface GetBuildRequestOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *

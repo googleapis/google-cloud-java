@@ -33,6 +33,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.appengine.v1.BatchUpdateIngressRulesResponse)
     BatchUpdateIngressRulesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchUpdateIngressRulesResponse.newBuilder() to construct.
   private BatchUpdateIngressRulesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.appengine.v1.firewall.FirewallRule> ingressRules_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
   public java.util.List<com.google.appengine.v1.firewall.FirewallRule> getIngressRulesList() {
     return ingressRules_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
       getIngressRulesOrBuilderList() {
     return ingressRules_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
   public int getIngressRulesCount() {
     return ingressRules_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
   public com.google.appengine.v1.firewall.FirewallRule getIngressRules(int index) {
     return ingressRules_.get(index);
   }
+
   /**
    *
    *
@@ -298,6 +304,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -560,6 +567,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
         return ingressRulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -576,6 +584,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
         return ingressRulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -592,6 +601,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
         return ingressRulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -614,6 +624,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -634,6 +645,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +668,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +691,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +712,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +733,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +754,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +774,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +794,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +807,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
     public com.google.appengine.v1.firewall.FirewallRule.Builder getIngressRulesBuilder(int index) {
       return getIngressRulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -805,6 +825,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
         return ingressRulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -822,6 +843,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(ingressRules_);
       }
     }
+
     /**
      *
      *
@@ -835,6 +857,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
       return getIngressRulesFieldBuilder()
           .addBuilder(com.google.appengine.v1.firewall.FirewallRule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -848,6 +871,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
       return getIngressRulesFieldBuilder()
           .addBuilder(index, com.google.appengine.v1.firewall.FirewallRule.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.TaskAttribute)
     TaskAttributeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TaskAttribute.newBuilder() to construct.
   private TaskAttribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
     private TaskAttributeValueCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,6 +122,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStringValue() {
     return taskAttributeValueCase_ == 2;
   }
+
   /**
    *
    *
@@ -209,6 +215,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -238,6 +245,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -253,6 +261,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoolValue() {
     return taskAttributeValueCase_ == 3;
   }
+
   /**
    *
    *
@@ -273,6 +282,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NUMBER_VALUE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -288,6 +298,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNumberValue() {
     return taskAttributeValueCase_ == 4;
   }
+
   /**
    *
    *
@@ -523,6 +534,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -772,6 +784,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object key_ = "";
+
     /**
      *
      *
@@ -794,6 +807,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -816,6 +830,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -837,6 +852,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +870,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +909,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStringValue() {
       return taskAttributeValueCase_ == 2;
     }
+
     /**
      *
      *
@@ -920,6 +938,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -948,6 +967,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -969,6 +989,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1009,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1047,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoolValue() {
       return taskAttributeValueCase_ == 3;
     }
+
     /**
      *
      *
@@ -1042,6 +1065,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
+
     /**
      *
      *
@@ -1061,6 +1085,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1120,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNumberValue() {
       return taskAttributeValueCase_ == 4;
     }
+
     /**
      *
      *
@@ -1112,6 +1138,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
       }
       return 0D;
     }
+
     /**
      *
      *
@@ -1131,6 +1158,7 @@ public final class TaskAttribute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

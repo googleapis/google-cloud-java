@@ -36,6 +36,7 @@ public interface BatchOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface BatchOperationMetadataOrBuilder
    * @return The stateDescription.
    */
   java.lang.String getStateDescription();
+
   /**
    *
    *
@@ -125,6 +127,7 @@ public interface BatchOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public interface BatchOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public interface BatchOperationMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public interface BatchOperationMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public interface BatchOperationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public interface BatchOperationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

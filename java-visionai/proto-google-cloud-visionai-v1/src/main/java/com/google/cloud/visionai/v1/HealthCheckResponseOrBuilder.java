@@ -49,6 +49,7 @@ public interface HealthCheckResponseOrBuilder
    * @return The reason.
    */
   java.lang.String getReason();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface HealthCheckResponseOrBuilder
    * @return Whether the clusterInfo field is set.
    */
   boolean hasClusterInfo();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface HealthCheckResponseOrBuilder
    * @return The clusterInfo.
    */
   com.google.cloud.visionai.v1.ClusterInfo getClusterInfo();
+
   /**
    *
    *

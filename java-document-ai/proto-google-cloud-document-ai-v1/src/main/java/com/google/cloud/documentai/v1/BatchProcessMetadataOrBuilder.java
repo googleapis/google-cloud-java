@@ -36,6 +36,7 @@ public interface BatchProcessMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface BatchProcessMetadataOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface BatchProcessMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface BatchProcessMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface BatchProcessMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface BatchProcessMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface BatchProcessMetadataOrBuilder
    */
   java.util.List<com.google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus>
       getIndividualProcessStatusesList();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface BatchProcessMetadataOrBuilder
    */
   com.google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus
       getIndividualProcessStatuses(int index);
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface BatchProcessMetadataOrBuilder
    * </code>
    */
   int getIndividualProcessStatusesCount();
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public interface BatchProcessMetadataOrBuilder
           ? extends
               com.google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatusOrBuilder>
       getIndividualProcessStatusesOrBuilderList();
+
   /**
    *
    *

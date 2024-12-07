@@ -36,6 +36,7 @@ public interface NodePoolOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface NodePoolOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface NodePoolOrBuilder
    * @return The config.
    */
   com.google.container.v1.NodeConfig getConfig();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface NodePoolOrBuilder
    * @return A list containing the locations.
    */
   java.util.List<java.lang.String> getLocationsList();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface NodePoolOrBuilder
    * @return The count of locations.
    */
   int getLocationsCount();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface NodePoolOrBuilder
    * @return The locations at the given index.
    */
   java.lang.String getLocations(int index);
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public interface NodePoolOrBuilder
    * @return Whether the networkConfig field is set.
    */
   boolean hasNetworkConfig();
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public interface NodePoolOrBuilder
    * @return The networkConfig.
    */
   com.google.container.v1.NodeNetworkConfig getNetworkConfig();
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public interface NodePoolOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -264,6 +273,7 @@ public interface NodePoolOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -296,6 +306,7 @@ public interface NodePoolOrBuilder
    * @return A list containing the instanceGroupUrls.
    */
   java.util.List<java.lang.String> getInstanceGroupUrlsList();
+
   /**
    *
    *
@@ -313,6 +324,7 @@ public interface NodePoolOrBuilder
    * @return The count of instanceGroupUrls.
    */
   int getInstanceGroupUrlsCount();
+
   /**
    *
    *
@@ -331,6 +343,7 @@ public interface NodePoolOrBuilder
    * @return The instanceGroupUrls at the given index.
    */
   java.lang.String getInstanceGroupUrls(int index);
+
   /**
    *
    *
@@ -364,6 +377,7 @@ public interface NodePoolOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *
@@ -398,6 +412,7 @@ public interface NodePoolOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getStatusMessage();
+
   /**
    *
    *
@@ -431,6 +446,7 @@ public interface NodePoolOrBuilder
    * @return Whether the autoscaling field is set.
    */
   boolean hasAutoscaling();
+
   /**
    *
    *
@@ -444,6 +460,7 @@ public interface NodePoolOrBuilder
    * @return The autoscaling.
    */
   com.google.container.v1.NodePoolAutoscaling getAutoscaling();
+
   /**
    *
    *
@@ -468,6 +485,7 @@ public interface NodePoolOrBuilder
    * @return Whether the management field is set.
    */
   boolean hasManagement();
+
   /**
    *
    *
@@ -480,6 +498,7 @@ public interface NodePoolOrBuilder
    * @return The management.
    */
   com.google.container.v1.NodeManagement getManagement();
+
   /**
    *
    *
@@ -504,6 +523,7 @@ public interface NodePoolOrBuilder
    * @return Whether the maxPodsConstraint field is set.
    */
   boolean hasMaxPodsConstraint();
+
   /**
    *
    *
@@ -517,6 +537,7 @@ public interface NodePoolOrBuilder
    * @return The maxPodsConstraint.
    */
   com.google.container.v1.MaxPodsConstraint getMaxPodsConstraint();
+
   /**
    *
    *
@@ -539,6 +560,7 @@ public interface NodePoolOrBuilder
    * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
    */
   java.util.List<com.google.container.v1.StatusCondition> getConditionsList();
+
   /**
    *
    *
@@ -549,6 +571,7 @@ public interface NodePoolOrBuilder
    * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
    */
   com.google.container.v1.StatusCondition getConditions(int index);
+
   /**
    *
    *
@@ -559,6 +582,7 @@ public interface NodePoolOrBuilder
    * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
    */
   int getConditionsCount();
+
   /**
    *
    *
@@ -570,6 +594,7 @@ public interface NodePoolOrBuilder
    */
   java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
       getConditionsOrBuilderList();
+
   /**
    *
    *
@@ -606,6 +631,7 @@ public interface NodePoolOrBuilder
    * @return Whether the upgradeSettings field is set.
    */
   boolean hasUpgradeSettings();
+
   /**
    *
    *
@@ -618,6 +644,7 @@ public interface NodePoolOrBuilder
    * @return The upgradeSettings.
    */
   com.google.container.v1.NodePool.UpgradeSettings getUpgradeSettings();
+
   /**
    *
    *
@@ -641,6 +668,7 @@ public interface NodePoolOrBuilder
    * @return Whether the placementPolicy field is set.
    */
   boolean hasPlacementPolicy();
+
   /**
    *
    *
@@ -653,6 +681,7 @@ public interface NodePoolOrBuilder
    * @return The placementPolicy.
    */
   com.google.container.v1.NodePool.PlacementPolicy getPlacementPolicy();
+
   /**
    *
    *
@@ -679,6 +708,7 @@ public interface NodePoolOrBuilder
    * @return Whether the updateInfo field is set.
    */
   boolean hasUpdateInfo();
+
   /**
    *
    *
@@ -694,6 +724,7 @@ public interface NodePoolOrBuilder
    * @return The updateInfo.
    */
   com.google.container.v1.NodePool.UpdateInfo getUpdateInfo();
+
   /**
    *
    *
@@ -722,6 +753,7 @@ public interface NodePoolOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -749,6 +781,7 @@ public interface NodePoolOrBuilder
    * @return Whether the queuedProvisioning field is set.
    */
   boolean hasQueuedProvisioning();
+
   /**
    *
    *
@@ -761,6 +794,7 @@ public interface NodePoolOrBuilder
    * @return The queuedProvisioning.
    */
   com.google.container.v1.NodePool.QueuedProvisioning getQueuedProvisioning();
+
   /**
    *
    *
@@ -784,6 +818,7 @@ public interface NodePoolOrBuilder
    * @return Whether the bestEffortProvisioning field is set.
    */
   boolean hasBestEffortProvisioning();
+
   /**
    *
    *
@@ -796,6 +831,7 @@ public interface NodePoolOrBuilder
    * @return The bestEffortProvisioning.
    */
   com.google.container.v1.BestEffortProvisioning getBestEffortProvisioning();
+
   /**
    *
    *

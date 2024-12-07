@@ -34,6 +34,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.UpdateEnvironmentRequest)
     UpdateEnvironmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateEnvironmentRequest.newBuilder() to construct.
   private UpdateEnvironmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int ENVIRONMENT_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2.Environment environment_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
   public boolean hasEnvironment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
         ? com.google.cloud.dialogflow.v2.Environment.getDefaultInstance()
         : environment_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
 
   public static final int ALLOW_LOAD_TO_DRAFT_AND_DISCARD_CHANGES_FIELD_NUMBER = 3;
   private boolean allowLoadToDraftAndDiscardChanges_ = false;
+
   /**
    *
    *
@@ -384,6 +392,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -621,6 +630,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
             com.google.cloud.dialogflow.v2.Environment.Builder,
             com.google.cloud.dialogflow.v2.EnvironmentOrBuilder>
         environmentBuilder_;
+
     /**
      *
      *
@@ -637,6 +647,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
     public boolean hasEnvironment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -659,6 +670,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
         return environmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +770,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +787,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -791,6 +808,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
             : environment_;
       }
     }
+
     /**
      *
      *
@@ -825,6 +843,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -861,6 +881,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -884,6 +905,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +926,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +955,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +976,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +992,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -986,6 +1012,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1041,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
     }
 
     private boolean allowLoadToDraftAndDiscardChanges_;
+
     /**
      *
      *
@@ -1034,6 +1062,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
     public boolean getAllowLoadToDraftAndDiscardChanges() {
       return allowLoadToDraftAndDiscardChanges_;
     }
+
     /**
      *
      *
@@ -1058,6 +1087,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

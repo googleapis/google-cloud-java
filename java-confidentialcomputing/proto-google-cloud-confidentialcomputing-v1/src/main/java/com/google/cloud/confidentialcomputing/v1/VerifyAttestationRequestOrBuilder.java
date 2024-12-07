@@ -38,6 +38,7 @@ public interface VerifyAttestationRequestOrBuilder
    * @return Whether the tdCcel field is set.
    */
   boolean hasTdCcel();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface VerifyAttestationRequestOrBuilder
    * @return The tdCcel.
    */
   com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation getTdCcel();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface VerifyAttestationRequestOrBuilder
    * @return Whether the sevSnpAttestation field is set.
    */
   boolean hasSevSnpAttestation();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface VerifyAttestationRequestOrBuilder
    * @return The sevSnpAttestation.
    */
   com.google.cloud.confidentialcomputing.v1.SevSnpAttestation getSevSnpAttestation();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface VerifyAttestationRequestOrBuilder
    * @return The challenge.
    */
   java.lang.String getChallenge();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface VerifyAttestationRequestOrBuilder
    * @return Whether the gcpCredentials field is set.
    */
   boolean hasGcpCredentials();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface VerifyAttestationRequestOrBuilder
    * @return The gcpCredentials.
    */
   com.google.cloud.confidentialcomputing.v1.GcpCredentials getGcpCredentials();
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public interface VerifyAttestationRequestOrBuilder
    * @return Whether the tpmAttestation field is set.
    */
   boolean hasTpmAttestation();
+
   /**
    *
    *
@@ -214,6 +222,7 @@ public interface VerifyAttestationRequestOrBuilder
    * @return The tpmAttestation.
    */
   com.google.cloud.confidentialcomputing.v1.TpmAttestation getTpmAttestation();
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public interface VerifyAttestationRequestOrBuilder
    * @return Whether the confidentialSpaceInfo field is set.
    */
   boolean hasConfidentialSpaceInfo();
+
   /**
    *
    *
@@ -256,6 +266,7 @@ public interface VerifyAttestationRequestOrBuilder
    * @return The confidentialSpaceInfo.
    */
   com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo getConfidentialSpaceInfo();
+
   /**
    *
    *
@@ -285,6 +296,7 @@ public interface VerifyAttestationRequestOrBuilder
    * @return Whether the tokenOptions field is set.
    */
   boolean hasTokenOptions();
+
   /**
    *
    *
@@ -300,6 +312,7 @@ public interface VerifyAttestationRequestOrBuilder
    * @return The tokenOptions.
    */
   com.google.cloud.confidentialcomputing.v1.TokenOptions getTokenOptions();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListSettingsResponseOrBuilder
    * <code>repeated .google.cloud.resourcesettings.v1.Setting settings = 1;</code>
    */
   java.util.List<com.google.cloud.resourcesettings.v1.Setting> getSettingsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSettingsResponseOrBuilder
    * <code>repeated .google.cloud.resourcesettings.v1.Setting settings = 1;</code>
    */
   com.google.cloud.resourcesettings.v1.Setting getSettings(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSettingsResponseOrBuilder
    * <code>repeated .google.cloud.resourcesettings.v1.Setting settings = 1;</code>
    */
   int getSettingsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSettingsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.resourcesettings.v1.SettingOrBuilder>
       getSettingsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListSettingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

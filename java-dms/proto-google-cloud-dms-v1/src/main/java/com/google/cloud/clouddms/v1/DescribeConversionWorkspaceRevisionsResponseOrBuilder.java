@@ -34,6 +34,7 @@ public interface DescribeConversionWorkspaceRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ConversionWorkspace revisions = 1;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.ConversionWorkspace> getRevisionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface DescribeConversionWorkspaceRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ConversionWorkspace revisions = 1;</code>
    */
   com.google.cloud.clouddms.v1.ConversionWorkspace getRevisions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface DescribeConversionWorkspaceRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ConversionWorkspace revisions = 1;</code>
    */
   int getRevisionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface DescribeConversionWorkspaceRevisionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.ConversionWorkspaceOrBuilder>
       getRevisionsOrBuilderList();
+
   /**
    *
    *

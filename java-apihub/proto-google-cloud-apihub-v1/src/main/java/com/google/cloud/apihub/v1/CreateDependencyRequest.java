@@ -35,6 +35,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.CreateDependencyRequest)
     CreateDependencyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDependencyRequest.newBuilder() to construct.
   private CreateDependencyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dependencyId_ = "";
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
 
   public static final int DEPENDENCY_FIELD_NUMBER = 3;
   private com.google.cloud.apihub.v1.Dependency dependency_;
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
   public boolean hasDependency() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -227,6 +234,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
         ? com.google.cloud.apihub.v1.Dependency.getDefaultInstance()
         : dependency_;
   }
+
   /**
    *
    *
@@ -427,6 +435,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -657,6 +666,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -682,6 +692,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -707,6 +718,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -731,6 +743,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +764,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +792,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object dependencyId_ = "";
+
     /**
      *
      *
@@ -807,6 +822,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -864,6 +881,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +906,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +943,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
             com.google.cloud.apihub.v1.Dependency.Builder,
             com.google.cloud.apihub.v1.DependencyOrBuilder>
         dependencyBuilder_;
+
     /**
      *
      *
@@ -940,6 +960,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
     public boolean hasDependency() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -962,6 +983,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
         return dependencyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -986,6 +1008,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1030,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1060,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1082,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1099,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
       onChanged();
       return getDependencyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1093,6 +1120,7 @@ public final class CreateDependencyRequest extends com.google.protobuf.Generated
             : dependency_;
       }
     }
+
     /**
      *
      *

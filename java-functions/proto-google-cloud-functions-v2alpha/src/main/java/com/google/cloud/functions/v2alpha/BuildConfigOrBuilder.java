@@ -31,6 +31,7 @@ public interface BuildConfigOrBuilder
    * @return Whether the automaticUpdatePolicy field is set.
    */
   boolean hasAutomaticUpdatePolicy();
+
   /**
    * <code>.google.cloud.functions.v2alpha.AutomaticUpdatePolicy automatic_update_policy = 40;
    * </code>
@@ -38,6 +39,7 @@ public interface BuildConfigOrBuilder
    * @return The automaticUpdatePolicy.
    */
   com.google.cloud.functions.v2alpha.AutomaticUpdatePolicy getAutomaticUpdatePolicy();
+
   /**
    * <code>.google.cloud.functions.v2alpha.AutomaticUpdatePolicy automatic_update_policy = 40;
    * </code>
@@ -51,12 +53,14 @@ public interface BuildConfigOrBuilder
    * @return Whether the onDeployUpdatePolicy field is set.
    */
   boolean hasOnDeployUpdatePolicy();
+
   /**
    * <code>.google.cloud.functions.v2alpha.OnDeployUpdatePolicy on_deploy_update_policy = 41;</code>
    *
    * @return The onDeployUpdatePolicy.
    */
   com.google.cloud.functions.v2alpha.OnDeployUpdatePolicy getOnDeployUpdatePolicy();
+
   /**
    * <code>.google.cloud.functions.v2alpha.OnDeployUpdatePolicy on_deploy_update_policy = 41;</code>
    */
@@ -78,6 +82,7 @@ public interface BuildConfigOrBuilder
    * @return The build.
    */
   java.lang.String getBuild();
+
   /**
    *
    *
@@ -110,6 +115,7 @@ public interface BuildConfigOrBuilder
    * @return The runtime.
    */
   java.lang.String getRuntime();
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public interface BuildConfigOrBuilder
    * @return The entryPoint.
    */
   java.lang.String getEntryPoint();
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public interface BuildConfigOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
+
   /**
    *
    *
@@ -186,6 +194,7 @@ public interface BuildConfigOrBuilder
    * @return The source.
    */
   com.google.cloud.functions.v2alpha.Source getSource();
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public interface BuildConfigOrBuilder
    * @return Whether the sourceProvenance field is set.
    */
   boolean hasSourceProvenance();
+
   /**
    *
    *
@@ -225,6 +235,7 @@ public interface BuildConfigOrBuilder
    * @return The sourceProvenance.
    */
   com.google.cloud.functions.v2alpha.SourceProvenance getSourceProvenance();
+
   /**
    *
    *
@@ -261,6 +272,7 @@ public interface BuildConfigOrBuilder
    * @return The workerPool.
    */
   java.lang.String getWorkerPool();
+
   /**
    *
    *
@@ -295,6 +307,7 @@ public interface BuildConfigOrBuilder
    * <code>map&lt;string, string&gt; environment_variables = 6;</code>
    */
   int getEnvironmentVariablesCount();
+
   /**
    *
    *
@@ -305,9 +318,11 @@ public interface BuildConfigOrBuilder
    * <code>map&lt;string, string&gt; environment_variables = 6;</code>
    */
   boolean containsEnvironmentVariables(java.lang.String key);
+
   /** Use {@link #getEnvironmentVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariables();
+
   /**
    *
    *
@@ -318,6 +333,7 @@ public interface BuildConfigOrBuilder
    * <code>map&lt;string, string&gt; environment_variables = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariablesMap();
+
   /**
    *
    *
@@ -332,6 +348,7 @@ public interface BuildConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -361,6 +378,7 @@ public interface BuildConfigOrBuilder
    * @return The enum numeric value on the wire for dockerRegistry.
    */
   int getDockerRegistryValue();
+
   /**
    *
    *
@@ -403,6 +421,7 @@ public interface BuildConfigOrBuilder
    * @return The dockerRepository.
    */
   java.lang.String getDockerRepository();
+
   /**
    *
    *
@@ -440,6 +459,7 @@ public interface BuildConfigOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *

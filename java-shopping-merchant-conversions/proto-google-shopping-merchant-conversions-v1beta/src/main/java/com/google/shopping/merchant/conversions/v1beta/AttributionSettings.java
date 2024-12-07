@@ -34,6 +34,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.conversions.v1beta.AttributionSettings)
     AttributionSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AttributionSettings.newBuilder() to construct.
   private AttributionSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -171,6 +172,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>ATTRIBUTION_MODEL_UNSPECIFIED = 0;</code>
      */
     public static final int ATTRIBUTION_MODEL_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -181,6 +183,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>CROSS_CHANNEL_LAST_CLICK = 1;</code>
      */
     public static final int CROSS_CHANNEL_LAST_CLICK_VALUE = 1;
+
     /**
      *
      *
@@ -191,6 +194,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>ADS_PREFERRED_LAST_CLICK = 2;</code>
      */
     public static final int ADS_PREFERRED_LAST_CLICK_VALUE = 2;
+
     /**
      *
      *
@@ -201,6 +205,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>CROSS_CHANNEL_DATA_DRIVEN = 5;</code>
      */
     public static final int CROSS_CHANNEL_DATA_DRIVEN_VALUE = 5;
+
     /**
      *
      *
@@ -211,6 +216,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>CROSS_CHANNEL_FIRST_CLICK = 6;</code>
      */
     public static final int CROSS_CHANNEL_FIRST_CLICK_VALUE = 6;
+
     /**
      *
      *
@@ -221,6 +227,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>CROSS_CHANNEL_LINEAR = 7;</code>
      */
     public static final int CROSS_CHANNEL_LINEAR_VALUE = 7;
+
     /**
      *
      *
@@ -231,6 +238,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <code>CROSS_CHANNEL_POSITION_BASED = 8;</code>
      */
     public static final int CROSS_CHANNEL_POSITION_BASED_VALUE = 8;
+
     /**
      *
      *
@@ -356,6 +364,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -383,6 +392,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      */
     boolean getReport();
   }
+
   /**
    *
    *
@@ -398,6 +408,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.conversions.v1beta.AttributionSettings.ConversionType)
       ConversionTypeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConversionType.newBuilder() to construct.
     private ConversionType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -434,6 +445,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -457,6 +469,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -483,6 +496,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
 
     public static final int REPORT_FIELD_NUMBER = 2;
     private boolean report_ = false;
+
     /**
      *
      *
@@ -679,6 +693,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -899,6 +914,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -921,6 +937,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -943,6 +960,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -964,6 +982,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -981,6 +1000,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1005,6 +1025,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       }
 
       private boolean report_;
+
       /**
        *
        *
@@ -1021,6 +1042,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       public boolean getReport() {
         return report_;
       }
+
       /**
        *
        *
@@ -1041,6 +1063,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1131,6 +1154,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
 
   public static final int ATTRIBUTION_LOOKBACK_WINDOW_DAYS_FIELD_NUMBER = 1;
   private int attributionLookbackWindowDays_ = 0;
+
   /**
    *
    *
@@ -1151,6 +1175,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
 
   public static final int ATTRIBUTION_MODEL_FIELD_NUMBER = 2;
   private int attributionModel_ = 0;
+
   /**
    *
    *
@@ -1168,6 +1193,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   public int getAttributionModelValue() {
     return attributionModel_;
   }
+
   /**
    *
    *
@@ -1199,6 +1225,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   private java.util.List<
           com.google.shopping.merchant.conversions.v1beta.AttributionSettings.ConversionType>
       conversionType_;
+
   /**
    *
    *
@@ -1218,6 +1245,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       getConversionTypeList() {
     return conversionType_;
   }
+
   /**
    *
    *
@@ -1239,6 +1267,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       getConversionTypeOrBuilderList() {
     return conversionType_;
   }
+
   /**
    *
    *
@@ -1256,6 +1285,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   public int getConversionTypeCount() {
     return conversionType_.size();
   }
+
   /**
    *
    *
@@ -1274,6 +1304,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       getConversionType(int index) {
     return conversionType_.get(index);
   }
+
   /**
    *
    *
@@ -1482,6 +1513,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1749,6 +1781,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int attributionLookbackWindowDays_;
+
     /**
      *
      *
@@ -1766,6 +1799,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     public int getAttributionLookbackWindowDays() {
       return attributionLookbackWindowDays_;
     }
+
     /**
      *
      *
@@ -1787,6 +1821,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1808,6 +1843,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     }
 
     private int attributionModel_ = 0;
+
     /**
      *
      *
@@ -1825,6 +1861,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     public int getAttributionModelValue() {
       return attributionModel_;
     }
+
     /**
      *
      *
@@ -1845,6 +1882,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1869,6 +1907,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1894,6 +1933,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1958,6 +1998,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         return conversionTypeBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1978,6 +2019,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         return conversionTypeBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1999,6 +2041,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         return conversionTypeBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2027,6 +2070,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2053,6 +2097,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2080,6 +2125,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2108,6 +2154,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2133,6 +2180,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2159,6 +2207,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2187,6 +2236,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2210,6 +2260,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2233,6 +2284,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2251,6 +2303,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         getConversionTypeBuilder(int index) {
       return getConversionTypeFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2273,6 +2326,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         return conversionTypeBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2297,6 +2351,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(conversionType_);
       }
     }
+
     /**
      *
      *
@@ -2318,6 +2373,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
               com.google.shopping.merchant.conversions.v1beta.AttributionSettings.ConversionType
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2340,6 +2396,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
               com.google.shopping.merchant.conversions.v1beta.AttributionSettings.ConversionType
                   .getDefaultInstance());
     }
+
     /**
      *
      *

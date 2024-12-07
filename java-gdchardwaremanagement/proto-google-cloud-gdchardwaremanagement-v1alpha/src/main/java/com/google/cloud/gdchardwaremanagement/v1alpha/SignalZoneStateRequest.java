@@ -33,6 +33,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest)
     SignalZoneStateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SignalZoneStateRequest.newBuilder() to construct.
   private SignalZoneStateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * <code>READY_FOR_SITE_TURNUP = 1 [deprecated = true];</code>
      */
     public static final StateSignal READY_FOR_SITE_TURNUP = FACTORY_TURNUP_CHECKS_PASSED;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * <code>STATE_SIGNAL_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_SIGNAL_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +143,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * <code>FACTORY_TURNUP_CHECKS_PASSED = 1;</code>
      */
     public static final int FACTORY_TURNUP_CHECKS_PASSED_VALUE = 1;
+
     /**
      *
      *
@@ -150,6 +154,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * <code>READY_FOR_SITE_TURNUP = 1 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int READY_FOR_SITE_TURNUP_VALUE = 1;
+
     /**
      *
      *
@@ -311,6 +316,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * <code>PROVISIONING_STATE_SIGNAL_UNSPECIFIED = 0;</code>
      */
     public static final int PROVISIONING_STATE_SIGNAL_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -321,6 +327,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * <code>PROVISIONING_IN_PROGRESS = 1;</code>
      */
     public static final int PROVISIONING_IN_PROGRESS_VALUE = 1;
+
     /**
      *
      *
@@ -424,6 +431,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -450,6 +458,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -481,6 +490,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -507,6 +517,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -536,6 +547,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
 
   public static final int STATE_SIGNAL_FIELD_NUMBER = 3;
   private int stateSignal_ = 0;
+
   /**
    *
    *
@@ -554,6 +566,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
   public int getStateSignalValue() {
     return stateSignal_;
   }
+
   /**
    *
    *
@@ -582,6 +595,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
 
   public static final int PROVISIONING_STATE_SIGNAL_FIELD_NUMBER = 4;
   private int provisioningStateSignal_ = 0;
+
   /**
    *
    *
@@ -600,6 +614,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
   public int getProvisioningStateSignalValue() {
     return provisioningStateSignal_;
   }
+
   /**
    *
    *
@@ -828,6 +843,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1060,6 +1076,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1085,6 +1102,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1110,6 +1128,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1134,6 +1153,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1174,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1202,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1206,6 +1228,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1231,6 +1254,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1255,6 +1279,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1275,6 +1300,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1302,6 +1328,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     }
 
     private int stateSignal_ = 0;
+
     /**
      *
      *
@@ -1320,6 +1347,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     public int getStateSignalValue() {
       return stateSignal_;
     }
+
     /**
      *
      *
@@ -1341,6 +1369,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1366,6 +1395,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1391,6 +1421,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1413,6 +1444,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     }
 
     private int provisioningStateSignal_ = 0;
+
     /**
      *
      *
@@ -1431,6 +1463,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     public int getProvisioningStateSignalValue() {
       return provisioningStateSignal_;
     }
+
     /**
      *
      *
@@ -1452,6 +1485,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1479,6 +1513,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
               .ProvisioningStateSignal.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1506,6 +1541,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

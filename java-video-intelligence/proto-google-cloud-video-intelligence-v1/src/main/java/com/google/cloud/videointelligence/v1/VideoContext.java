@@ -33,6 +33,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.VideoContext)
     VideoContextOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VideoContext.newBuilder() to construct.
   private VideoContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.VideoSegment> segments_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.videointelligence.v1.VideoSegment> getSegmentsList() {
     return segments_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       getSegmentsOrBuilderList() {
     return segments_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public int getSegmentsCount() {
     return segments_.size();
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.videointelligence.v1.VideoSegment getSegments(int index) {
     return segments_.get(index);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LABEL_DETECTION_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.videointelligence.v1.LabelDetectionConfig labelDetectionConfig_;
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLabelDetectionConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.videointelligence.v1.LabelDetectionConfig.getDefaultInstance()
         : labelDetectionConfig_;
   }
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public static final int SHOT_CHANGE_DETECTION_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig
       shotChangeDetectionConfig_;
+
   /**
    *
    *
@@ -220,6 +230,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasShotChangeDetectionConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -240,6 +251,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.getDefaultInstance()
         : shotChangeDetectionConfig_;
   }
+
   /**
    *
    *
@@ -262,6 +274,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public static final int EXPLICIT_CONTENT_DETECTION_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig
       explicitContentDetectionConfig_;
+
   /**
    *
    *
@@ -279,6 +292,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExplicitContentDetectionConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -299,6 +313,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.getDefaultInstance()
         : explicitContentDetectionConfig_;
   }
+
   /**
    *
    *
@@ -320,6 +335,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FACE_DETECTION_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.videointelligence.v1.FaceDetectionConfig faceDetectionConfig_;
+
   /**
    *
    *
@@ -335,6 +351,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFaceDetectionConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -352,6 +369,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.videointelligence.v1.FaceDetectionConfig.getDefaultInstance()
         : faceDetectionConfig_;
   }
+
   /**
    *
    *
@@ -372,6 +390,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public static final int SPEECH_TRANSCRIPTION_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig
       speechTranscriptionConfig_;
+
   /**
    *
    *
@@ -389,6 +408,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpeechTranscriptionConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -409,6 +429,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.getDefaultInstance()
         : speechTranscriptionConfig_;
   }
+
   /**
    *
    *
@@ -430,6 +451,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TEXT_DETECTION_CONFIG_FIELD_NUMBER = 8;
   private com.google.cloud.videointelligence.v1.TextDetectionConfig textDetectionConfig_;
+
   /**
    *
    *
@@ -445,6 +467,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTextDetectionConfig() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -462,6 +485,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.videointelligence.v1.TextDetectionConfig.getDefaultInstance()
         : textDetectionConfig_;
   }
+
   /**
    *
    *
@@ -481,6 +505,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERSON_DETECTION_CONFIG_FIELD_NUMBER = 11;
   private com.google.cloud.videointelligence.v1.PersonDetectionConfig personDetectionConfig_;
+
   /**
    *
    *
@@ -497,6 +522,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPersonDetectionConfig() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -515,6 +541,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.videointelligence.v1.PersonDetectionConfig.getDefaultInstance()
         : personDetectionConfig_;
   }
+
   /**
    *
    *
@@ -535,6 +562,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OBJECT_TRACKING_CONFIG_FIELD_NUMBER = 13;
   private com.google.cloud.videointelligence.v1.ObjectTrackingConfig objectTrackingConfig_;
+
   /**
    *
    *
@@ -551,6 +579,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasObjectTrackingConfig() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -569,6 +598,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.videointelligence.v1.ObjectTrackingConfig.getDefaultInstance()
         : objectTrackingConfig_;
   }
+
   /**
    *
    *
@@ -873,6 +903,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1334,6 +1365,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         return segmentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1352,6 +1384,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         return segmentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1370,6 +1403,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         return segmentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1395,6 +1429,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1452,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1441,6 +1477,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1503,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1488,6 +1526,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1510,6 +1549,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1532,6 +1572,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1553,6 +1594,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1574,6 +1616,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1589,6 +1632,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSegmentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1608,6 +1652,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         return segmentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1627,6 +1672,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(segments_);
       }
     }
+
     /**
      *
      *
@@ -1642,6 +1688,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       return getSegmentsFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1.VideoSegment.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1659,6 +1706,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.videointelligence.v1.VideoSegment.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1698,6 +1746,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.LabelDetectionConfig.Builder,
             com.google.cloud.videointelligence.v1.LabelDetectionConfigOrBuilder>
         labelDetectionConfigBuilder_;
+
     /**
      *
      *
@@ -1713,6 +1762,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLabelDetectionConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1734,6 +1784,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         return labelDetectionConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1758,6 +1809,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1779,6 +1831,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1810,6 +1863,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1830,6 +1884,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1846,6 +1901,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLabelDetectionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1866,6 +1922,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             : labelDetectionConfig_;
       }
     }
+
     /**
      *
      *
@@ -1900,6 +1957,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.Builder,
             com.google.cloud.videointelligence.v1.ShotChangeDetectionConfigOrBuilder>
         shotChangeDetectionConfigBuilder_;
+
     /**
      *
      *
@@ -1916,6 +1974,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasShotChangeDetectionConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1939,6 +1998,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         return shotChangeDetectionConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1964,6 +2024,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1986,6 +2047,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2018,6 +2080,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2039,6 +2102,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2056,6 +2120,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getShotChangeDetectionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2077,6 +2142,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             : shotChangeDetectionConfig_;
       }
     }
+
     /**
      *
      *
@@ -2112,6 +2178,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.Builder,
             com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfigOrBuilder>
         explicitContentDetectionConfigBuilder_;
+
     /**
      *
      *
@@ -2128,6 +2195,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExplicitContentDetectionConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2152,6 +2220,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         return explicitContentDetectionConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2177,6 +2246,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2200,6 +2270,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2232,6 +2303,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2253,6 +2325,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2270,6 +2343,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExplicitContentDetectionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2292,6 +2366,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             : explicitContentDetectionConfig_;
       }
     }
+
     /**
      *
      *
@@ -2326,6 +2401,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder,
             com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder>
         faceDetectionConfigBuilder_;
+
     /**
      *
      *
@@ -2341,6 +2417,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFaceDetectionConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2362,6 +2439,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         return faceDetectionConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2386,6 +2464,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2407,6 +2486,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2437,6 +2517,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2457,6 +2538,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2473,6 +2555,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFaceDetectionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2493,6 +2576,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             : faceDetectionConfig_;
       }
     }
+
     /**
      *
      *
@@ -2527,6 +2611,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder,
             com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder>
         speechTranscriptionConfigBuilder_;
+
     /**
      *
      *
@@ -2543,6 +2628,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpeechTranscriptionConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2566,6 +2652,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         return speechTranscriptionConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2591,6 +2678,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2613,6 +2701,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2645,6 +2734,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2666,6 +2756,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2683,6 +2774,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSpeechTranscriptionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2704,6 +2796,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             : speechTranscriptionConfig_;
       }
     }
+
     /**
      *
      *
@@ -2738,6 +2831,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.TextDetectionConfig.Builder,
             com.google.cloud.videointelligence.v1.TextDetectionConfigOrBuilder>
         textDetectionConfigBuilder_;
+
     /**
      *
      *
@@ -2753,6 +2847,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextDetectionConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2774,6 +2869,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         return textDetectionConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2798,6 +2894,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2819,6 +2916,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2849,6 +2947,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2869,6 +2968,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2885,6 +2985,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTextDetectionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2905,6 +3006,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             : textDetectionConfig_;
       }
     }
+
     /**
      *
      *
@@ -2938,6 +3040,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.PersonDetectionConfig.Builder,
             com.google.cloud.videointelligence.v1.PersonDetectionConfigOrBuilder>
         personDetectionConfigBuilder_;
+
     /**
      *
      *
@@ -2953,6 +3056,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPersonDetectionConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2974,6 +3078,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         return personDetectionConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2998,6 +3103,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3019,6 +3125,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3050,6 +3157,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3070,6 +3178,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3086,6 +3195,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPersonDetectionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3106,6 +3216,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             : personDetectionConfig_;
       }
     }
+
     /**
      *
      *
@@ -3139,6 +3250,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.ObjectTrackingConfig.Builder,
             com.google.cloud.videointelligence.v1.ObjectTrackingConfigOrBuilder>
         objectTrackingConfigBuilder_;
+
     /**
      *
      *
@@ -3154,6 +3266,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasObjectTrackingConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3175,6 +3288,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         return objectTrackingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3199,6 +3313,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3220,6 +3335,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3251,6 +3367,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3271,6 +3388,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3287,6 +3405,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getObjectTrackingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3307,6 +3426,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             : objectTrackingConfig_;
       }
     }
+
     /**
      *
      *

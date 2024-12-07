@@ -38,6 +38,7 @@ public interface CreateCustomMetricRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateCustomMetricRequestOrBuilder
    * @return Whether the customMetric field is set.
    */
   boolean hasCustomMetric();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateCustomMetricRequestOrBuilder
    * @return The customMetric.
    */
   com.google.analytics.admin.v1beta.CustomMetric getCustomMetric();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface ConversationDatasetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ConversationDatasetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface ConversationDatasetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface ConversationDatasetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface ConversationDatasetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface ConversationDatasetOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface ConversationDatasetOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.dialogflow.v2.InputConfig getInputConfig();
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public interface ConversationDatasetOrBuilder
    * @return Whether the conversationInfo field is set.
    */
   boolean hasConversationInfo();
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public interface ConversationDatasetOrBuilder
    * @return The conversationInfo.
    */
   com.google.cloud.dialogflow.v2.ConversationInfo getConversationInfo();
+
   /**
    *
    *
@@ -250,6 +259,7 @@ public interface ConversationDatasetOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public interface ConversationDatasetOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *

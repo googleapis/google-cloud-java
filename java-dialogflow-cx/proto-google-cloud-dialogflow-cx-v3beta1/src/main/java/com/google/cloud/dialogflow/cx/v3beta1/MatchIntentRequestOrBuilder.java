@@ -50,6 +50,7 @@ public interface MatchIntentRequestOrBuilder
    * @return The session.
    */
   java.lang.String getSession();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface MatchIntentRequestOrBuilder
    * @return Whether the queryParams field is set.
    */
   boolean hasQueryParams();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface MatchIntentRequestOrBuilder
    * @return The queryParams.
    */
   com.google.cloud.dialogflow.cx.v3beta1.QueryParameters getQueryParams();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface MatchIntentRequestOrBuilder
    * @return Whether the queryInput field is set.
    */
   boolean hasQueryInput();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface MatchIntentRequestOrBuilder
    * @return The queryInput.
    */
   com.google.cloud.dialogflow.cx.v3beta1.QueryInput getQueryInput();
+
   /**
    *
    *

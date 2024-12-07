@@ -33,6 +33,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest)
     InstanceGroupManagersDeleteInstancesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupManagersDeleteInstancesRequest.newBuilder() to construct.
   private InstanceGroupManagersDeleteInstancesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instances_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
   public com.google.protobuf.ProtocolStringList getInstancesList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
   public int getInstancesCount() {
     return instances_.size();
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
   public java.lang.String getInstances(int index) {
     return instances_.get(index);
   }
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
 
   public static final int SKIP_INSTANCES_ON_VALIDATION_ERROR_FIELD_NUMBER = 40631073;
   private boolean skipInstancesOnValidationError_ = false;
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
   public boolean hasSkipInstancesOnValidationError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -350,6 +357,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -574,6 +582,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -589,6 +598,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
       instances_.makeImmutable();
       return instances_;
     }
+
     /**
      *
      *
@@ -603,6 +613,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
     public int getInstancesCount() {
       return instances_.size();
     }
+
     /**
      *
      *
@@ -618,6 +629,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
     public java.lang.String getInstances(int index) {
       return instances_.get(index);
     }
+
     /**
      *
      *
@@ -633,6 +645,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
     public com.google.protobuf.ByteString getInstancesBytes(int index) {
       return instances_.getByteString(index);
     }
+
     /**
      *
      *
@@ -656,6 +669,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +692,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +712,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +731,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +757,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
     }
 
     private boolean skipInstancesOnValidationError_;
+
     /**
      *
      *
@@ -755,6 +773,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
     public boolean hasSkipInstancesOnValidationError() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -770,6 +789,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
     public boolean getSkipInstancesOnValidationError() {
       return skipInstancesOnValidationError_;
     }
+
     /**
      *
      *
@@ -789,6 +809,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface ListInterconnectAttachmentsResponseOrBuilder
    */
   java.util.List<com.google.cloud.edgenetwork.v1.InterconnectAttachment>
       getInterconnectAttachmentsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListInterconnectAttachmentsResponseOrBuilder
    * </code>
    */
   com.google.cloud.edgenetwork.v1.InterconnectAttachment getInterconnectAttachments(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListInterconnectAttachmentsResponseOrBuilder
    * </code>
    */
   int getInterconnectAttachmentsCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListInterconnectAttachmentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgenetwork.v1.InterconnectAttachmentOrBuilder>
       getInterconnectAttachmentsOrBuilderList();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface ListInterconnectAttachmentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface ListInterconnectAttachmentsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public interface ListInterconnectAttachmentsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -150,6 +157,7 @@ public interface ListInterconnectAttachmentsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

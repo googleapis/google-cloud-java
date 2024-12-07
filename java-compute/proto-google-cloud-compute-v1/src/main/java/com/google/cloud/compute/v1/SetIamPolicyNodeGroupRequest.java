@@ -33,6 +33,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetIamPolicyNodeGroupRequest)
     SetIamPolicyNodeGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetIamPolicyNodeGroupRequest.newBuilder() to construct.
   private SetIamPolicyNodeGroupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
 
   public static final int ZONE_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 382082107;
   private com.google.cloud.compute.v1.ZoneSetPolicyRequest zoneSetPolicyRequestResource_;
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
   public boolean hasZoneSetPolicyRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -257,6 +266,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
         ? com.google.cloud.compute.v1.ZoneSetPolicyRequest.getDefaultInstance()
         : zoneSetPolicyRequestResource_;
   }
+
   /**
    *
    *
@@ -471,6 +481,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -718,6 +729,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -740,6 +752,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -762,6 +775,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -783,6 +797,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +815,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +840,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -846,6 +863,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -868,6 +886,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -889,6 +908,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +926,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +951,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -952,6 +974,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -974,6 +997,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -995,6 +1019,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1037,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1067,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.ZoneSetPolicyRequest.Builder,
             com.google.cloud.compute.v1.ZoneSetPolicyRequestOrBuilder>
         zoneSetPolicyRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1057,6 +1084,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
     public boolean hasZoneSetPolicyRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1079,6 +1107,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
         return zoneSetPolicyRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1104,6 +1133,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1156,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1188,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1210,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1228,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return getZoneSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1216,6 +1250,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
             : zoneSetPolicyRequestResource_;
       }
     }
+
     /**
      *
      *

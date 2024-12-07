@@ -34,6 +34,7 @@ public final class TestIamPermissionsRegionDiskRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TestIamPermissionsRegionDiskRequest)
     TestIamPermissionsRegionDiskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TestIamPermissionsRegionDiskRequest.newBuilder() to construct.
   private TestIamPermissionsRegionDiskRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class TestIamPermissionsRegionDiskRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class TestIamPermissionsRegionDiskRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class TestIamPermissionsRegionDiskRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class TestIamPermissionsRegionDiskRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class TestIamPermissionsRegionDiskRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class TestIamPermissionsRegionDiskRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class TestIamPermissionsRegionDiskRequest
 
   public static final int TEST_PERMISSIONS_REQUEST_RESOURCE_FIELD_NUMBER = 439214758;
   private com.google.cloud.compute.v1.TestPermissionsRequest testPermissionsRequestResource_;
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public final class TestIamPermissionsRegionDiskRequest
   public boolean hasTestPermissionsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -259,6 +268,7 @@ public final class TestIamPermissionsRegionDiskRequest
         ? com.google.cloud.compute.v1.TestPermissionsRequest.getDefaultInstance()
         : testPermissionsRequestResource_;
   }
+
   /**
    *
    *
@@ -474,6 +484,7 @@ public final class TestIamPermissionsRegionDiskRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -726,6 +737,7 @@ public final class TestIamPermissionsRegionDiskRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -748,6 +760,7 @@ public final class TestIamPermissionsRegionDiskRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class TestIamPermissionsRegionDiskRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -791,6 +805,7 @@ public final class TestIamPermissionsRegionDiskRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +823,7 @@ public final class TestIamPermissionsRegionDiskRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +848,7 @@ public final class TestIamPermissionsRegionDiskRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -854,6 +871,7 @@ public final class TestIamPermissionsRegionDiskRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -876,6 +894,7 @@ public final class TestIamPermissionsRegionDiskRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -897,6 +916,7 @@ public final class TestIamPermissionsRegionDiskRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +934,7 @@ public final class TestIamPermissionsRegionDiskRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +959,7 @@ public final class TestIamPermissionsRegionDiskRequest
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -960,6 +982,7 @@ public final class TestIamPermissionsRegionDiskRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -982,6 +1005,7 @@ public final class TestIamPermissionsRegionDiskRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1027,7 @@ public final class TestIamPermissionsRegionDiskRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1045,7 @@ public final class TestIamPermissionsRegionDiskRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1049,6 +1075,7 @@ public final class TestIamPermissionsRegionDiskRequest
             com.google.cloud.compute.v1.TestPermissionsRequest.Builder,
             com.google.cloud.compute.v1.TestPermissionsRequestOrBuilder>
         testPermissionsRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1065,6 +1092,7 @@ public final class TestIamPermissionsRegionDiskRequest
     public boolean hasTestPermissionsRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1087,6 +1115,7 @@ public final class TestIamPermissionsRegionDiskRequest
         return testPermissionsRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1112,6 +1141,7 @@ public final class TestIamPermissionsRegionDiskRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1164,7 @@ public final class TestIamPermissionsRegionDiskRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1196,7 @@ public final class TestIamPermissionsRegionDiskRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1186,6 +1218,7 @@ public final class TestIamPermissionsRegionDiskRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1236,7 @@ public final class TestIamPermissionsRegionDiskRequest
       onChanged();
       return getTestPermissionsRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1224,6 +1258,7 @@ public final class TestIamPermissionsRegionDiskRequest
             : testPermissionsRequestResource_;
       }
     }
+
     /**
      *
      *

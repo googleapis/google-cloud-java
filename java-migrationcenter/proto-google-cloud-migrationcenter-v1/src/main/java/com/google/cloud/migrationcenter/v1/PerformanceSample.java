@@ -33,6 +33,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.PerformanceSample)
     PerformanceSampleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PerformanceSample.newBuilder() to construct.
   private PerformanceSample(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int SAMPLE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp sampleTime_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
   public boolean hasSampleTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getSampleTime() {
     return sampleTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : sampleTime_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
 
   public static final int MEMORY_FIELD_NUMBER = 2;
   private com.google.cloud.migrationcenter.v1.MemoryUsageSample memory_;
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
   public boolean hasMemory() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.migrationcenter.v1.MemoryUsageSample.getDefaultInstance()
         : memory_;
   }
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
 
   public static final int CPU_FIELD_NUMBER = 3;
   private com.google.cloud.migrationcenter.v1.CpuUsageSample cpu_;
+
   /**
    *
    *
@@ -178,6 +186,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
   public boolean hasCpu() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -195,6 +204,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.migrationcenter.v1.CpuUsageSample.getDefaultInstance()
         : cpu_;
   }
+
   /**
    *
    *
@@ -213,6 +223,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
 
   public static final int NETWORK_FIELD_NUMBER = 4;
   private com.google.cloud.migrationcenter.v1.NetworkUsageSample network_;
+
   /**
    *
    *
@@ -228,6 +239,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
   public boolean hasNetwork() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -245,6 +257,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.migrationcenter.v1.NetworkUsageSample.getDefaultInstance()
         : network_;
   }
+
   /**
    *
    *
@@ -263,6 +276,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
 
   public static final int DISK_FIELD_NUMBER = 5;
   private com.google.cloud.migrationcenter.v1.DiskUsageSample disk_;
+
   /**
    *
    *
@@ -278,6 +292,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
   public boolean hasDisk() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -295,6 +310,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.migrationcenter.v1.DiskUsageSample.getDefaultInstance()
         : disk_;
   }
+
   /**
    *
    *
@@ -532,6 +548,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -811,6 +828,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         sampleTimeBuilder_;
+
     /**
      *
      *
@@ -826,6 +844,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
     public boolean hasSampleTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -847,6 +866,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
         return sampleTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -870,6 +890,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +911,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +940,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +961,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +977,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSampleTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -972,6 +997,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
             : sampleTime_;
       }
     }
+
     /**
      *
      *
@@ -1005,6 +1031,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
             com.google.cloud.migrationcenter.v1.MemoryUsageSample.Builder,
             com.google.cloud.migrationcenter.v1.MemoryUsageSampleOrBuilder>
         memoryBuilder_;
+
     /**
      *
      *
@@ -1019,6 +1046,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
     public boolean hasMemory() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1039,6 +1067,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
         return memoryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1090,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1111,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1140,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1160,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1175,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getMemoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1160,6 +1194,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
             : memory_;
       }
     }
+
     /**
      *
      *
@@ -1192,6 +1227,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
             com.google.cloud.migrationcenter.v1.CpuUsageSample.Builder,
             com.google.cloud.migrationcenter.v1.CpuUsageSampleOrBuilder>
         cpuBuilder_;
+
     /**
      *
      *
@@ -1206,6 +1242,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
     public boolean hasCpu() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1226,6 +1263,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
         return cpuBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1248,6 +1286,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1268,6 +1307,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1335,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1355,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1328,6 +1370,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCpuFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1346,6 +1389,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
             : cpu_;
       }
     }
+
     /**
      *
      *
@@ -1378,6 +1422,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
             com.google.cloud.migrationcenter.v1.NetworkUsageSample.Builder,
             com.google.cloud.migrationcenter.v1.NetworkUsageSampleOrBuilder>
         networkBuilder_;
+
     /**
      *
      *
@@ -1392,6 +1437,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1412,6 +1458,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
         return networkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1434,6 +1481,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1454,6 +1502,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1482,6 +1531,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1501,6 +1551,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1515,6 +1566,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getNetworkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1533,6 +1585,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
             : network_;
       }
     }
+
     /**
      *
      *
@@ -1565,6 +1618,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
             com.google.cloud.migrationcenter.v1.DiskUsageSample.Builder,
             com.google.cloud.migrationcenter.v1.DiskUsageSampleOrBuilder>
         diskBuilder_;
+
     /**
      *
      *
@@ -1579,6 +1633,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
     public boolean hasDisk() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1599,6 +1654,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
         return diskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1621,6 +1677,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1641,6 +1698,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1668,6 +1726,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1687,6 +1746,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1701,6 +1761,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getDiskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1719,6 +1780,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
             : disk_;
       }
     }
+
     /**
      *
      *

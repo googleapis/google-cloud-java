@@ -44,6 +44,7 @@ public interface ListAwsClustersRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -98,6 +99,7 @@ public interface ListAwsClustersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

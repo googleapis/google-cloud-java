@@ -34,6 +34,7 @@ public final class QueryEligibleBillingAccountsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.QueryEligibleBillingAccountsResponse)
     QueryEligibleBillingAccountsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryEligibleBillingAccountsResponse.newBuilder() to construct.
   private QueryEligibleBillingAccountsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class QueryEligibleBillingAccountsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.SkuPurchaseGroup> skuPurchaseGroups_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class QueryEligibleBillingAccountsResponse
   public java.util.List<com.google.cloud.channel.v1.SkuPurchaseGroup> getSkuPurchaseGroupsList() {
     return skuPurchaseGroups_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class QueryEligibleBillingAccountsResponse
       getSkuPurchaseGroupsOrBuilderList() {
     return skuPurchaseGroups_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class QueryEligibleBillingAccountsResponse
   public int getSkuPurchaseGroupsCount() {
     return skuPurchaseGroups_.size();
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class QueryEligibleBillingAccountsResponse
   public com.google.cloud.channel.v1.SkuPurchaseGroup getSkuPurchaseGroups(int index) {
     return skuPurchaseGroups_.get(index);
   }
+
   /**
    *
    *
@@ -315,6 +321,7 @@ public final class QueryEligibleBillingAccountsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -585,6 +592,7 @@ public final class QueryEligibleBillingAccountsResponse
         return skuPurchaseGroupsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -604,6 +612,7 @@ public final class QueryEligibleBillingAccountsResponse
         return skuPurchaseGroupsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -623,6 +632,7 @@ public final class QueryEligibleBillingAccountsResponse
         return skuPurchaseGroupsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -649,6 +659,7 @@ public final class QueryEligibleBillingAccountsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class QueryEligibleBillingAccountsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class QueryEligibleBillingAccountsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class QueryEligibleBillingAccountsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +760,7 @@ public final class QueryEligibleBillingAccountsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +784,7 @@ public final class QueryEligibleBillingAccountsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class QueryEligibleBillingAccountsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +831,7 @@ public final class QueryEligibleBillingAccountsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class QueryEligibleBillingAccountsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +871,7 @@ public final class QueryEligibleBillingAccountsResponse
         int index) {
       return getSkuPurchaseGroupsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -872,6 +892,7 @@ public final class QueryEligibleBillingAccountsResponse
         return skuPurchaseGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -892,6 +913,7 @@ public final class QueryEligibleBillingAccountsResponse
         return java.util.Collections.unmodifiableList(skuPurchaseGroups_);
       }
     }
+
     /**
      *
      *
@@ -908,6 +930,7 @@ public final class QueryEligibleBillingAccountsResponse
       return getSkuPurchaseGroupsFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.SkuPurchaseGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -925,6 +948,7 @@ public final class QueryEligibleBillingAccountsResponse
       return getSkuPurchaseGroupsFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.SkuPurchaseGroup.getDefaultInstance());
     }
+
     /**
      *
      *

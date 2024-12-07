@@ -41,6 +41,7 @@ public interface CreateFederationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface CreateFederationRequestOrBuilder
    * @return The federationId.
    */
   java.lang.String getFederationId();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface CreateFederationRequestOrBuilder
    * @return Whether the federation field is set.
    */
   boolean hasFederation();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface CreateFederationRequestOrBuilder
    * @return The federation.
    */
   com.google.cloud.metastore.v1alpha.Federation getFederation();
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public interface CreateFederationRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

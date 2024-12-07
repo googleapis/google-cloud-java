@@ -34,6 +34,7 @@ public interface ListStoredInfoTypesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.StoredInfoType stored_info_types = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.StoredInfoType> getStoredInfoTypesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListStoredInfoTypesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.StoredInfoType stored_info_types = 1;</code>
    */
   com.google.privacy.dlp.v2.StoredInfoType getStoredInfoTypes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListStoredInfoTypesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.StoredInfoType stored_info_types = 1;</code>
    */
   int getStoredInfoTypesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListStoredInfoTypesResponseOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.StoredInfoTypeOrBuilder>
       getStoredInfoTypesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListStoredInfoTypesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

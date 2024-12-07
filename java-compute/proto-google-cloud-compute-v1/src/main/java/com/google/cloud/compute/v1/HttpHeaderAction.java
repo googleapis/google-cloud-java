@@ -33,6 +33,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HttpHeaderAction)
     HttpHeaderActionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HttpHeaderAction.newBuilder() to construct.
   private HttpHeaderAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HttpHeaderOption> requestHeadersToAdd_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.compute.v1.HttpHeaderOption> getRequestHeadersToAddList() {
     return requestHeadersToAdd_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       getRequestHeadersToAddOrBuilderList() {
     return requestHeadersToAdd_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   public int getRequestHeadersToAddCount() {
     return requestHeadersToAdd_.size();
   }
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.compute.v1.HttpHeaderOption getRequestHeadersToAdd(int index) {
     return requestHeadersToAdd_.get(index);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList requestHeadersToRemove_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getRequestHeadersToRemoveList() {
     return requestHeadersToRemove_;
   }
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   public int getRequestHeadersToRemoveCount() {
     return requestHeadersToRemove_.size();
   }
+
   /**
    *
    *
@@ -191,6 +200,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   public java.lang.String getRequestHeadersToRemove(int index) {
     return requestHeadersToRemove_.get(index);
   }
+
   /**
    *
    *
@@ -211,6 +221,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HttpHeaderOption> responseHeadersToAdd_;
+
   /**
    *
    *
@@ -226,6 +237,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       getResponseHeadersToAddList() {
     return responseHeadersToAdd_;
   }
+
   /**
    *
    *
@@ -241,6 +253,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       getResponseHeadersToAddOrBuilderList() {
     return responseHeadersToAdd_;
   }
+
   /**
    *
    *
@@ -255,6 +268,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   public int getResponseHeadersToAddCount() {
     return responseHeadersToAdd_.size();
   }
+
   /**
    *
    *
@@ -269,6 +283,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.compute.v1.HttpHeaderOption getResponseHeadersToAdd(int index) {
     return responseHeadersToAdd_.get(index);
   }
+
   /**
    *
    *
@@ -290,6 +305,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList responseHeadersToRemove_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -304,6 +320,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getResponseHeadersToRemoveList() {
     return responseHeadersToRemove_;
   }
+
   /**
    *
    *
@@ -318,6 +335,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   public int getResponseHeadersToRemoveCount() {
     return responseHeadersToRemove_.size();
   }
+
   /**
    *
    *
@@ -333,6 +351,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   public java.lang.String getResponseHeadersToRemove(int index) {
     return responseHeadersToRemove_.get(index);
   }
+
   /**
    *
    *
@@ -561,6 +580,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -924,6 +944,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         return requestHeadersToAddBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -941,6 +962,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         return requestHeadersToAddBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         return requestHeadersToAddBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -982,6 +1005,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1003,6 +1027,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1051,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1076,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1098,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1120,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1142,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1163,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1184,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1199,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         int index) {
       return getRequestHeadersToAddFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1185,6 +1218,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         return requestHeadersToAddBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1203,6 +1237,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(requestHeadersToAdd_);
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1252,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       return getRequestHeadersToAddFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.HttpHeaderOption.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1232,6 +1268,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       return getRequestHeadersToAddFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.HttpHeaderOption.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1277,6 +1314,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1292,6 +1330,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       requestHeadersToRemove_.makeImmutable();
       return requestHeadersToRemove_;
     }
+
     /**
      *
      *
@@ -1306,6 +1345,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
     public int getRequestHeadersToRemoveCount() {
       return requestHeadersToRemove_.size();
     }
+
     /**
      *
      *
@@ -1321,6 +1361,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
     public java.lang.String getRequestHeadersToRemove(int index) {
       return requestHeadersToRemove_.get(index);
     }
+
     /**
      *
      *
@@ -1336,6 +1377,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getRequestHeadersToRemoveBytes(int index) {
       return requestHeadersToRemove_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1359,6 +1401,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1381,6 +1424,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1444,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1418,6 +1463,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1478,6 +1524,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         return responseHeadersToAddBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1495,6 +1542,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         return responseHeadersToAddBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1512,6 +1560,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         return responseHeadersToAddBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1536,6 +1585,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1557,6 +1607,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1580,6 +1631,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1604,6 +1656,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1625,6 +1678,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1646,6 +1700,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1667,6 +1722,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1687,6 +1743,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1707,6 +1764,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1721,6 +1779,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         int index) {
       return getResponseHeadersToAddFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1739,6 +1798,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         return responseHeadersToAddBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1757,6 +1817,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(responseHeadersToAdd_);
       }
     }
+
     /**
      *
      *
@@ -1771,6 +1832,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       return getResponseHeadersToAddFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.HttpHeaderOption.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1786,6 +1848,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       return getResponseHeadersToAddFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.HttpHeaderOption.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1831,6 +1894,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1846,6 +1910,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       responseHeadersToRemove_.makeImmutable();
       return responseHeadersToRemove_;
     }
+
     /**
      *
      *
@@ -1860,6 +1925,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
     public int getResponseHeadersToRemoveCount() {
       return responseHeadersToRemove_.size();
     }
+
     /**
      *
      *
@@ -1875,6 +1941,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
     public java.lang.String getResponseHeadersToRemove(int index) {
       return responseHeadersToRemove_.get(index);
     }
+
     /**
      *
      *
@@ -1890,6 +1957,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getResponseHeadersToRemoveBytes(int index) {
       return responseHeadersToRemove_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1913,6 +1981,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1935,6 +2004,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1954,6 +2024,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1972,6 +2043,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

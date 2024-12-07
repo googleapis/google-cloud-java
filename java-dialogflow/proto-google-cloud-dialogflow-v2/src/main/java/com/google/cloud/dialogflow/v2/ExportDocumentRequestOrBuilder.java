@@ -40,6 +40,7 @@ public interface ExportDocumentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ExportDocumentRequestOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ExportDocumentRequestOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.dialogflow.v2.GcsDestination getGcsDestination();
+
   /**
    *
    *

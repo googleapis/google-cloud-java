@@ -38,6 +38,7 @@ public interface CreateSearchAds360LinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateSearchAds360LinkRequestOrBuilder
    * @return Whether the searchAds360Link field is set.
    */
   boolean hasSearchAds360Link();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateSearchAds360LinkRequestOrBuilder
    * @return The searchAds360Link.
    */
   com.google.analytics.admin.v1alpha.SearchAds360Link getSearchAds360Link();
+
   /**
    *
    *

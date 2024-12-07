@@ -33,6 +33,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.ListAutonomousDbVersionsResponse)
     ListAutonomousDbVersionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListAutonomousDbVersionsResponse.newBuilder() to construct.
   private ListAutonomousDbVersionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oracledatabase.v1.AutonomousDbVersion>
       autonomousDbVersions_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       getAutonomousDbVersionsList() {
     return autonomousDbVersions_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       getAutonomousDbVersionsOrBuilderList() {
     return autonomousDbVersions_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
   public int getAutonomousDbVersionsCount() {
     return autonomousDbVersions_.size();
   }
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
   public com.google.cloud.oracledatabase.v1.AutonomousDbVersion getAutonomousDbVersions(int index) {
     return autonomousDbVersions_.get(index);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -368,6 +376,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -657,6 +666,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
         return autonomousDbVersionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -675,6 +685,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
         return autonomousDbVersionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -694,6 +705,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
         return autonomousDbVersionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -719,6 +731,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +754,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +780,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +806,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +829,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +852,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +876,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +898,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +920,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +936,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
         getAutonomousDbVersionsBuilder(int index) {
       return getAutonomousDbVersionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -934,6 +956,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
         return autonomousDbVersionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -953,6 +976,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(autonomousDbVersions_);
       }
     }
+
     /**
      *
      *
@@ -969,6 +993,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       return getAutonomousDbVersionsFieldBuilder()
           .addBuilder(com.google.cloud.oracledatabase.v1.AutonomousDbVersion.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -986,6 +1011,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
           .addBuilder(
               index, com.google.cloud.oracledatabase.v1.AutonomousDbVersion.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1023,6 +1049,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1045,6 +1072,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1067,6 +1095,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1088,6 +1117,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1135,7 @@ public final class ListAutonomousDbVersionsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.RecognitionAudio)
     RecognitionAudioOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RecognitionAudio.newBuilder() to construct.
   private RecognitionAudio(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
     private AudioSourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,6 +116,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CONTENT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
   public boolean hasContent() {
     return audioSourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int URI_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
   public boolean hasUri() {
     return audioSourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -430,6 +437,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -670,6 +678,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
     public boolean hasContent() {
       return audioSourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -689,6 +698,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -712,6 +722,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +767,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
     public boolean hasUri() {
       return audioSourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -791,6 +803,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -826,6 +839,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -854,6 +868,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +895,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *

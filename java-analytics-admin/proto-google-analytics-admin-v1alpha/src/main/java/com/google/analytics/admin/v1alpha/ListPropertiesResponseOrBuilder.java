@@ -34,6 +34,7 @@ public interface ListPropertiesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.Property properties = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.Property> getPropertiesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListPropertiesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.Property properties = 1;</code>
    */
   com.google.analytics.admin.v1alpha.Property getProperties(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListPropertiesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.Property properties = 1;</code>
    */
   int getPropertiesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListPropertiesResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.PropertyOrBuilder>
       getPropertiesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListPropertiesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

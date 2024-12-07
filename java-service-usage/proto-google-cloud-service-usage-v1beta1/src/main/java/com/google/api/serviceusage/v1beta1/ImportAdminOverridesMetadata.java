@@ -35,6 +35,7 @@ public final class ImportAdminOverridesMetadata extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.ImportAdminOverridesMetadata)
     ImportAdminOverridesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportAdminOverridesMetadata.newBuilder() to construct.
   private ImportAdminOverridesMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,6 +215,7 @@ public final class ImportAdminOverridesMetadata extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

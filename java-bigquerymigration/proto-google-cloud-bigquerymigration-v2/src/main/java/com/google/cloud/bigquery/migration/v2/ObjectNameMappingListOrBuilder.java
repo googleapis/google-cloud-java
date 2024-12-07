@@ -34,6 +34,7 @@ public interface ObjectNameMappingListOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2.ObjectNameMapping name_map = 1;</code>
    */
   java.util.List<com.google.cloud.bigquery.migration.v2.ObjectNameMapping> getNameMapList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ObjectNameMappingListOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2.ObjectNameMapping name_map = 1;</code>
    */
   com.google.cloud.bigquery.migration.v2.ObjectNameMapping getNameMap(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ObjectNameMappingListOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2.ObjectNameMapping name_map = 1;</code>
    */
   int getNameMapCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ObjectNameMappingListOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2.ObjectNameMappingOrBuilder>
       getNameMapOrBuilderList();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface AttributesOrBuilder
    * @return Whether the criticality field is set.
    */
   boolean hasCriticality();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AttributesOrBuilder
    * @return The criticality.
    */
   com.google.cloud.apphub.v1.Criticality getCriticality();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface AttributesOrBuilder
    * @return Whether the environment field is set.
    */
   boolean hasEnvironment();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface AttributesOrBuilder
    * @return The environment.
    */
   com.google.cloud.apphub.v1.Environment getEnvironment();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.apphub.v1.ContactInfo> getDeveloperOwnersList();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   com.google.cloud.apphub.v1.ContactInfo getDeveloperOwners(int index);
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   int getDeveloperOwnersCount();
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public interface AttributesOrBuilder
    */
   java.util.List<? extends com.google.cloud.apphub.v1.ContactInfoOrBuilder>
       getDeveloperOwnersOrBuilderList();
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.apphub.v1.ContactInfo> getOperatorOwnersList();
+
   /**
    *
    *
@@ -192,6 +201,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   com.google.cloud.apphub.v1.ContactInfo getOperatorOwners(int index);
+
   /**
    *
    *
@@ -204,6 +214,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   int getOperatorOwnersCount();
+
   /**
    *
    *
@@ -217,6 +228,7 @@ public interface AttributesOrBuilder
    */
   java.util.List<? extends com.google.cloud.apphub.v1.ContactInfoOrBuilder>
       getOperatorOwnersOrBuilderList();
+
   /**
    *
    *
@@ -243,6 +255,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.apphub.v1.ContactInfo> getBusinessOwnersList();
+
   /**
    *
    *
@@ -256,6 +269,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   com.google.cloud.apphub.v1.ContactInfo getBusinessOwners(int index);
+
   /**
    *
    *
@@ -269,6 +283,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   int getBusinessOwnersCount();
+
   /**
    *
    *
@@ -283,6 +298,7 @@ public interface AttributesOrBuilder
    */
   java.util.List<? extends com.google.cloud.apphub.v1.ContactInfoOrBuilder>
       getBusinessOwnersOrBuilderList();
+
   /**
    *
    *

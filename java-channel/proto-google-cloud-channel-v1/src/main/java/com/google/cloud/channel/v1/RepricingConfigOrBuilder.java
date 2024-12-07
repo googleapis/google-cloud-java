@@ -51,6 +51,7 @@ public interface RepricingConfigOrBuilder
    * @return Whether the entitlementGranularity field is set.
    */
   boolean hasEntitlementGranularity();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface RepricingConfigOrBuilder
    * @return The entitlementGranularity.
    */
   com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity getEntitlementGranularity();
+
   /**
    *
    *
@@ -127,6 +129,7 @@ public interface RepricingConfigOrBuilder
    */
   @java.lang.Deprecated
   boolean hasChannelPartnerGranularity();
+
   /**
    *
    *
@@ -150,6 +153,7 @@ public interface RepricingConfigOrBuilder
   @java.lang.Deprecated
   com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity
       getChannelPartnerGranularity();
+
   /**
    *
    *
@@ -184,6 +188,7 @@ public interface RepricingConfigOrBuilder
    * @return Whether the effectiveInvoiceMonth field is set.
    */
   boolean hasEffectiveInvoiceMonth();
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public interface RepricingConfigOrBuilder
    * @return The effectiveInvoiceMonth.
    */
   com.google.type.Date getEffectiveInvoiceMonth();
+
   /**
    *
    *
@@ -225,6 +231,7 @@ public interface RepricingConfigOrBuilder
    * @return Whether the adjustment field is set.
    */
   boolean hasAdjustment();
+
   /**
    *
    *
@@ -239,6 +246,7 @@ public interface RepricingConfigOrBuilder
    * @return The adjustment.
    */
   com.google.cloud.channel.v1.RepricingAdjustment getAdjustment();
+
   /**
    *
    *
@@ -268,6 +276,7 @@ public interface RepricingConfigOrBuilder
    * @return The enum numeric value on the wire for rebillingBasis.
    */
   int getRebillingBasisValue();
+
   /**
    *
    *
@@ -297,6 +306,7 @@ public interface RepricingConfigOrBuilder
    * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
    */
   java.util.List<com.google.cloud.channel.v1.ConditionalOverride> getConditionalOverridesList();
+
   /**
    *
    *
@@ -309,6 +319,7 @@ public interface RepricingConfigOrBuilder
    * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
    */
   com.google.cloud.channel.v1.ConditionalOverride getConditionalOverrides(int index);
+
   /**
    *
    *
@@ -321,6 +332,7 @@ public interface RepricingConfigOrBuilder
    * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
    */
   int getConditionalOverridesCount();
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public interface RepricingConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.ConditionalOverrideOrBuilder>
       getConditionalOverridesOrBuilderList();
+
   /**
    *
    *

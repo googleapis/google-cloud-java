@@ -44,6 +44,7 @@ public interface TagTemplateFieldOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface TagTemplateFieldOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface TagTemplateFieldOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface TagTemplateFieldOrBuilder
    * @return The type.
    */
   com.google.cloud.datacatalog.v1beta1.FieldType getType();
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public interface TagTemplateFieldOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

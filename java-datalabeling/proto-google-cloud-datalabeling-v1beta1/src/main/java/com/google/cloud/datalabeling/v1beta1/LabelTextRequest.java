@@ -33,6 +33,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.LabelTextRequest)
     LabelTextRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LabelTextRequest.newBuilder() to construct.
   private LabelTextRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -101,6 +102,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
 
     /** <code>FEATURE_UNSPECIFIED = 0;</code> */
     public static final int FEATURE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -111,6 +113,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * <code>TEXT_CLASSIFICATION = 1;</code>
      */
     public static final int TEXT_CLASSIFICATION_VALUE = 1;
+
     /**
      *
      *
@@ -225,6 +228,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     private RequestConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -258,6 +262,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TEXT_CLASSIFICATION_CONFIG_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -277,6 +282,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasTextClassificationConfig() {
     return requestConfigCase_ == 4;
   }
+
   /**
    *
    *
@@ -300,6 +306,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.datalabeling.v1beta1.TextClassificationConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -323,6 +330,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TEXT_ENTITY_EXTRACTION_CONFIG_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -342,6 +350,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasTextEntityExtractionConfig() {
     return requestConfigCase_ == 5;
   }
+
   /**
    *
    *
@@ -365,6 +374,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -391,6 +401,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -417,6 +428,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -446,6 +458,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int BASIC_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basicConfig_;
+
   /**
    *
    *
@@ -463,6 +476,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasBasicConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -482,6 +496,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
         : basicConfig_;
   }
+
   /**
    *
    *
@@ -503,6 +518,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int FEATURE_FIELD_NUMBER = 6;
   private int feature_ = 0;
+
   /**
    *
    *
@@ -520,6 +536,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
   public int getFeatureValue() {
     return feature_;
   }
+
   /**
    *
    *
@@ -772,6 +789,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1067,6 +1085,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
             com.google.cloud.datalabeling.v1beta1.TextClassificationConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.TextClassificationConfigOrBuilder>
         textClassificationConfigBuilder_;
+
     /**
      *
      *
@@ -1086,6 +1105,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasTextClassificationConfig() {
       return requestConfigCase_ == 4;
     }
+
     /**
      *
      *
@@ -1116,6 +1136,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.datalabeling.v1beta1.TextClassificationConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1143,6 +1164,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       requestConfigCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1189,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       requestConfigCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1230,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       requestConfigCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1236,6 +1260,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1253,6 +1278,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
         getTextClassificationConfigBuilder() {
       return getTextClassificationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1278,6 +1304,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.datalabeling.v1beta1.TextClassificationConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1321,6 +1348,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
             com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfigOrBuilder>
         textEntityExtractionConfigBuilder_;
+
     /**
      *
      *
@@ -1340,6 +1368,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasTextEntityExtractionConfig() {
       return requestConfigCase_ == 5;
     }
+
     /**
      *
      *
@@ -1372,6 +1401,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1399,6 +1429,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       requestConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1423,6 +1454,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       requestConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1495,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       requestConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1492,6 +1525,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1509,6 +1543,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
         getTextEntityExtractionConfigBuilder() {
       return getTextEntityExtractionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1535,6 +1570,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1574,6 +1610,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1599,6 +1636,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1624,6 +1662,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1648,6 +1687,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1668,6 +1708,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1700,6 +1741,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
         basicConfigBuilder_;
+
     /**
      *
      *
@@ -1716,6 +1758,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasBasicConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1738,6 +1781,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
         return basicConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1763,6 +1807,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1785,6 +1830,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1817,6 +1863,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1838,6 +1885,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1855,6 +1903,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getBasicConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1876,6 +1925,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
             : basicConfig_;
       }
     }
+
     /**
      *
      *
@@ -1905,6 +1955,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private int feature_ = 0;
+
     /**
      *
      *
@@ -1922,6 +1973,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     public int getFeatureValue() {
       return feature_;
     }
+
     /**
      *
      *
@@ -1942,6 +1994,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1963,6 +2016,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1987,6 +2041,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

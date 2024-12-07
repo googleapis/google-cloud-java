@@ -39,6 +39,7 @@ public interface GetAssetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

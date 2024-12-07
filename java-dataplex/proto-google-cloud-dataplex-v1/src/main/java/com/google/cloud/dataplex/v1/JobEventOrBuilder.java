@@ -36,6 +36,7 @@ public interface JobEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface JobEventOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface JobEventOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface JobEventOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface JobEventOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface JobEventOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface JobEventOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public interface JobEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public interface JobEventOrBuilder
    * @return The enum numeric value on the wire for service.
    */
   int getServiceValue();
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public interface JobEventOrBuilder
    * @return The serviceJob.
    */
   java.lang.String getServiceJob();
+
   /**
    *
    *
@@ -269,6 +279,7 @@ public interface JobEventOrBuilder
    * @return The enum numeric value on the wire for executionTrigger.
    */
   int getExecutionTriggerValue();
+
   /**
    *
    *

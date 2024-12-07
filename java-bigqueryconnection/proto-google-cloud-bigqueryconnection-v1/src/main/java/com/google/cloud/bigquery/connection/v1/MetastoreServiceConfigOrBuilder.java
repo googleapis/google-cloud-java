@@ -42,6 +42,7 @@ public interface MetastoreServiceConfigOrBuilder
    * @return The metastoreService.
    */
   java.lang.String getMetastoreService();
+
   /**
    *
    *

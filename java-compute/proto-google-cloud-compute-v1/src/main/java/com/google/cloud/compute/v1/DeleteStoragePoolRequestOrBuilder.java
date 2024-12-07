@@ -38,6 +38,7 @@ public interface DeleteStoragePoolRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface DeleteStoragePoolRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface DeleteStoragePoolRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface DeleteStoragePoolRequestOrBuilder
    * @return The storagePool.
    */
   java.lang.String getStoragePool();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface DeleteStoragePoolRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

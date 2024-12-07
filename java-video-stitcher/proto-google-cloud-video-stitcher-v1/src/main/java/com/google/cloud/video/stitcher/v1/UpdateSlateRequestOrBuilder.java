@@ -38,6 +38,7 @@ public interface UpdateSlateRequestOrBuilder
    * @return Whether the slate field is set.
    */
   boolean hasSlate();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateSlateRequestOrBuilder
    * @return The slate.
    */
   com.google.cloud.video.stitcher.v1.Slate getSlate();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateSlateRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateSlateRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

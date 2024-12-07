@@ -37,6 +37,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The ocid.
    */
   java.lang.String getOcid();
+
   /**
    *
    *
@@ -120,6 +121,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return Whether the maintenanceWindow field is set.
    */
   boolean hasMaintenanceWindow();
+
   /**
    *
    *
@@ -134,6 +136,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The maintenanceWindow.
    */
   com.google.cloud.oracledatabase.v1.MaintenanceWindow getMaintenanceWindow();
+
   /**
    *
    *
@@ -161,6 +164,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -189,6 +193,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The shape.
    */
   java.lang.String getShape();
+
   /**
    *
    *
@@ -215,6 +220,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The ociUrl.
    */
   java.lang.String getOciUrl();
+
   /**
    *
    *
@@ -374,6 +380,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The dbServerVersion.
    */
   java.lang.String getDbServerVersion();
+
   /**
    *
    *
@@ -401,6 +408,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The storageServerVersion.
    */
   java.lang.String getStorageServerVersion();
+
   /**
    *
    *
@@ -427,6 +435,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The nextMaintenanceRunId.
    */
   java.lang.String getNextMaintenanceRunId();
+
   /**
    *
    *
@@ -454,6 +463,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return Whether the nextMaintenanceRunTime field is set.
    */
   boolean hasNextMaintenanceRunTime();
+
   /**
    *
    *
@@ -468,6 +478,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The nextMaintenanceRunTime.
    */
   com.google.protobuf.Timestamp getNextMaintenanceRunTime();
+
   /**
    *
    *
@@ -495,6 +506,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return Whether the nextSecurityMaintenanceRunTime field is set.
    */
   boolean hasNextSecurityMaintenanceRunTime();
+
   /**
    *
    *
@@ -509,6 +521,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The nextSecurityMaintenanceRunTime.
    */
   com.google.protobuf.Timestamp getNextSecurityMaintenanceRunTime();
+
   /**
    *
    *
@@ -534,6 +547,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.oracledatabase.v1.CustomerContact> getCustomerContactsList();
+
   /**
    *
    *
@@ -546,6 +560,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * </code>
    */
   com.google.cloud.oracledatabase.v1.CustomerContact getCustomerContacts(int index);
+
   /**
    *
    *
@@ -558,6 +573,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * </code>
    */
   int getCustomerContactsCount();
+
   /**
    *
    *
@@ -571,6 +587,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.oracledatabase.v1.CustomerContactOrBuilder>
       getCustomerContactsOrBuilderList();
+
   /**
    *
    *
@@ -599,6 +616,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The monthlyStorageServerVersion.
    */
   java.lang.String getMonthlyStorageServerVersion();
+
   /**
    *
    *
@@ -628,6 +646,7 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The monthlyDbServerVersion.
    */
   java.lang.String getMonthlyDbServerVersion();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface DeleteGcpUserAccessBindingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

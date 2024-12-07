@@ -40,6 +40,7 @@ public interface GetEntitlementRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

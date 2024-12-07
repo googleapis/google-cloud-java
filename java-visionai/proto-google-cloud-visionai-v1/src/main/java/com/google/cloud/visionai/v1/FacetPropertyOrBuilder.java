@@ -37,6 +37,7 @@ public interface FacetPropertyOrBuilder
    * @return Whether the fixedRangeBucketSpec field is set.
    */
   boolean hasFixedRangeBucketSpec();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface FacetPropertyOrBuilder
    * @return The fixedRangeBucketSpec.
    */
   com.google.cloud.visionai.v1.FacetProperty.FixedRangeBucketSpec getFixedRangeBucketSpec();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface FacetPropertyOrBuilder
    * @return Whether the customRangeBucketSpec field is set.
    */
   boolean hasCustomRangeBucketSpec();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface FacetPropertyOrBuilder
    * @return The customRangeBucketSpec.
    */
   com.google.cloud.visionai.v1.FacetProperty.CustomRangeBucketSpec getCustomRangeBucketSpec();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface FacetPropertyOrBuilder
    * @return Whether the datetimeBucketSpec field is set.
    */
   boolean hasDatetimeBucketSpec();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface FacetPropertyOrBuilder
    * @return The datetimeBucketSpec.
    */
   com.google.cloud.visionai.v1.FacetProperty.DateTimeBucketSpec getDatetimeBucketSpec();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface FacetPropertyOrBuilder
    * @return A list containing the mappedFields.
    */
   java.util.List<java.lang.String> getMappedFieldsList();
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public interface FacetPropertyOrBuilder
    * @return The count of mappedFields.
    */
   int getMappedFieldsCount();
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public interface FacetPropertyOrBuilder
    * @return The mappedFields at the given index.
    */
   java.lang.String getMappedFields(int index);
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public interface FacetPropertyOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -296,6 +306,7 @@ public interface FacetPropertyOrBuilder
    * @return The enum numeric value on the wire for bucketType.
    */
   int getBucketTypeValue();
+
   /**
    *
    *

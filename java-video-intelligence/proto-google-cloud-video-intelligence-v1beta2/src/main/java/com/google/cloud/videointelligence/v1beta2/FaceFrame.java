@@ -33,6 +33,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1beta2.FaceFrame)
     FaceFrameOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FaceFrame.newBuilder() to construct.
   private FaceFrame(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1beta2.NormalizedBoundingBox>
       normalizedBoundingBoxes_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       getNormalizedBoundingBoxesList() {
     return normalizedBoundingBoxes_;
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       getNormalizedBoundingBoxesOrBuilderList() {
     return normalizedBoundingBoxes_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
   public int getNormalizedBoundingBoxesCount() {
     return normalizedBoundingBoxes_.size();
   }
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       getNormalizedBoundingBoxes(int index) {
     return normalizedBoundingBoxes_.get(index);
   }
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_OFFSET_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration timeOffset_;
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
+
   /**
    *
    *
@@ -387,6 +396,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -688,6 +698,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
         return normalizedBoundingBoxesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -708,6 +719,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
         return normalizedBoundingBoxesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -729,6 +741,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
         return normalizedBoundingBoxesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -756,6 +769,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +795,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +823,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +851,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +876,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +902,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +929,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -933,6 +953,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +977,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +995,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
         getNormalizedBoundingBoxesBuilder(int index) {
       return getNormalizedBoundingBoxesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -994,6 +1017,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
         return normalizedBoundingBoxesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1016,6 +1040,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(normalizedBoundingBoxes_);
       }
     }
+
     /**
      *
      *
@@ -1036,6 +1061,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.videointelligence.v1beta2.NormalizedBoundingBox
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1057,6 +1083,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.videointelligence.v1beta2.NormalizedBoundingBox
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1101,6 +1128,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeOffsetBuilder_;
+
     /**
      *
      *
@@ -1116,6 +1144,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeOffset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1137,6 +1166,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
         return timeOffsetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1190,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1180,6 +1211,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1240,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1228,6 +1261,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1277,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1262,6 +1297,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
             : timeOffset_;
       }
     }
+
     /**
      *
      *

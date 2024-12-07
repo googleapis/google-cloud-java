@@ -34,6 +34,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.BatchRecognizeMetadata)
     BatchRecognizeMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchRecognizeMetadata.newBuilder() to construct.
   private BatchRecognizeMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -110,6 +111,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
   public int getTranscriptionMetadataCount() {
     return internalGetTranscriptionMetadata().getMap().size();
   }
+
   /**
    *
    *
@@ -128,6 +130,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
     }
     return internalGetTranscriptionMetadata().getMap().containsKey(key);
   }
+
   /** Use {@link #getTranscriptionMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -136,6 +139,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
       getTranscriptionMetadata() {
     return getTranscriptionMetadataMap();
   }
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
       getTranscriptionMetadataMap() {
     return internalGetTranscriptionMetadata().getMap();
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
         map = internalGetTranscriptionMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -376,6 +382,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -653,6 +660,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
     public int getTranscriptionMetadataCount() {
       return internalGetTranscriptionMetadata().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -671,6 +679,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
       }
       return internalGetTranscriptionMetadata().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getTranscriptionMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -679,6 +688,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
         getTranscriptionMetadata() {
       return getTranscriptionMetadataMap();
     }
+
     /**
      *
      *
@@ -696,6 +706,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
         getTranscriptionMetadataMap() {
       return internalGetTranscriptionMetadata().getImmutableMap();
     }
+
     /**
      *
      *
@@ -724,6 +735,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
           ? transcriptionMetadataConverter.build(map.get(key))
           : defaultValue;
     }
+
     /**
      *
      *
@@ -756,6 +768,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
       internalGetMutableTranscriptionMetadata().clear();
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +787,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
       internalGetMutableTranscriptionMetadata().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -782,6 +796,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000001;
       return internalGetMutableTranscriptionMetadata().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -806,6 +821,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +848,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

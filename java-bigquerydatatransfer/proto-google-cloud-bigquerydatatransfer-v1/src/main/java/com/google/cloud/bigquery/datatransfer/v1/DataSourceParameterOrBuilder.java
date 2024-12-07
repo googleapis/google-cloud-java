@@ -36,6 +36,7 @@ public interface DataSourceParameterOrBuilder
    * @return The paramId.
    */
   java.lang.String getParamId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DataSourceParameterOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface DataSourceParameterOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface DataSourceParameterOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public interface DataSourceParameterOrBuilder
    * @return The validationRegex.
    */
   java.lang.String getValidationRegex();
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public interface DataSourceParameterOrBuilder
    * @return A list containing the allowedValues.
    */
   java.util.List<java.lang.String> getAllowedValuesList();
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public interface DataSourceParameterOrBuilder
    * @return The count of allowedValues.
    */
   int getAllowedValuesCount();
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public interface DataSourceParameterOrBuilder
    * @return The allowedValues at the given index.
    */
   java.lang.String getAllowedValues(int index);
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public interface DataSourceParameterOrBuilder
    * @return Whether the minValue field is set.
    */
   boolean hasMinValue();
+
   /**
    *
    *
@@ -250,6 +259,7 @@ public interface DataSourceParameterOrBuilder
    * @return The minValue.
    */
   com.google.protobuf.DoubleValue getMinValue();
+
   /**
    *
    *
@@ -273,6 +283,7 @@ public interface DataSourceParameterOrBuilder
    * @return Whether the maxValue field is set.
    */
   boolean hasMaxValue();
+
   /**
    *
    *
@@ -285,6 +296,7 @@ public interface DataSourceParameterOrBuilder
    * @return The maxValue.
    */
   com.google.protobuf.DoubleValue getMaxValue();
+
   /**
    *
    *
@@ -306,6 +318,7 @@ public interface DataSourceParameterOrBuilder
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
    */
   java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter> getFieldsList();
+
   /**
    *
    *
@@ -316,6 +329,7 @@ public interface DataSourceParameterOrBuilder
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
    */
   com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter getFields(int index);
+
   /**
    *
    *
@@ -326,6 +340,7 @@ public interface DataSourceParameterOrBuilder
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
    */
   int getFieldsCount();
+
   /**
    *
    *
@@ -337,6 +352,7 @@ public interface DataSourceParameterOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>
       getFieldsOrBuilderList();
+
   /**
    *
    *
@@ -362,6 +378,7 @@ public interface DataSourceParameterOrBuilder
    * @return The validationDescription.
    */
   java.lang.String getValidationDescription();
+
   /**
    *
    *
@@ -388,6 +405,7 @@ public interface DataSourceParameterOrBuilder
    * @return The validationHelpUrl.
    */
   java.lang.String getValidationHelpUrl();
+
   /**
    *
    *

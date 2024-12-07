@@ -39,6 +39,7 @@ public interface CreateStudyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateStudyRequestOrBuilder
    * @return Whether the study field is set.
    */
   boolean hasStudy();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateStudyRequestOrBuilder
    * @return The study.
    */
   com.google.cloud.aiplatform.v1.Study getStudy();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface AwsSourceDetailsOrBuilder
    * @return Whether the accessKeyCreds field is set.
    */
   boolean hasAccessKeyCreds();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface AwsSourceDetailsOrBuilder
    * @return The accessKeyCreds.
    */
   com.google.cloud.vmmigration.v1.AwsSourceDetails.AccessKeyCredentials getAccessKeyCreds();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface AwsSourceDetailsOrBuilder
    * @return The awsRegion.
    */
   java.lang.String getAwsRegion();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface AwsSourceDetailsOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface AwsSourceDetailsOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface AwsSourceDetailsOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface AwsSourceDetailsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.AwsSourceDetails.Tag> getInventoryTagListList();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface AwsSourceDetailsOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.AwsSourceDetails.Tag getInventoryTagList(int index);
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public interface AwsSourceDetailsOrBuilder
    * </code>
    */
   int getInventoryTagListCount();
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public interface AwsSourceDetailsOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.AwsSourceDetails.TagOrBuilder>
       getInventoryTagListOrBuilderList();
+
   /**
    *
    *
@@ -226,6 +236,7 @@ public interface AwsSourceDetailsOrBuilder
    * @return A list containing the inventorySecurityGroupNames.
    */
   java.util.List<java.lang.String> getInventorySecurityGroupNamesList();
+
   /**
    *
    *
@@ -239,6 +250,7 @@ public interface AwsSourceDetailsOrBuilder
    * @return The count of inventorySecurityGroupNames.
    */
   int getInventorySecurityGroupNamesCount();
+
   /**
    *
    *
@@ -253,6 +265,7 @@ public interface AwsSourceDetailsOrBuilder
    * @return The inventorySecurityGroupNames at the given index.
    */
   java.lang.String getInventorySecurityGroupNames(int index);
+
   /**
    *
    *
@@ -281,6 +294,7 @@ public interface AwsSourceDetailsOrBuilder
    * <code>map&lt;string, string&gt; migration_resources_user_tags = 8;</code>
    */
   int getMigrationResourcesUserTagsCount();
+
   /**
    *
    *
@@ -294,9 +308,11 @@ public interface AwsSourceDetailsOrBuilder
    * <code>map&lt;string, string&gt; migration_resources_user_tags = 8;</code>
    */
   boolean containsMigrationResourcesUserTags(java.lang.String key);
+
   /** Use {@link #getMigrationResourcesUserTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMigrationResourcesUserTags();
+
   /**
    *
    *
@@ -310,6 +326,7 @@ public interface AwsSourceDetailsOrBuilder
    * <code>map&lt;string, string&gt; migration_resources_user_tags = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMigrationResourcesUserTagsMap();
+
   /**
    *
    *
@@ -327,6 +344,7 @@ public interface AwsSourceDetailsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -354,6 +372,7 @@ public interface AwsSourceDetailsOrBuilder
    * @return The publicIp.
    */
   java.lang.String getPublicIp();
+
   /**
    *
    *

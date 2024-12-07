@@ -39,6 +39,7 @@ public interface DeployJobRunMetadataOrBuilder
    * @return Whether the cloudRun field is set.
    */
   boolean hasCloudRun();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface DeployJobRunMetadataOrBuilder
    * @return The cloudRun.
    */
   com.google.cloud.deploy.v1.CloudRunMetadata getCloudRun();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface DeployJobRunMetadataOrBuilder
    * @return Whether the customTarget field is set.
    */
   boolean hasCustomTarget();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface DeployJobRunMetadataOrBuilder
    * @return The customTarget.
    */
   com.google.cloud.deploy.v1.CustomTargetDeployMetadata getCustomTarget();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface DeployJobRunMetadataOrBuilder
    * @return Whether the custom field is set.
    */
   boolean hasCustom();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface DeployJobRunMetadataOrBuilder
    * @return The custom.
    */
   com.google.cloud.deploy.v1.CustomMetadata getCustom();
+
   /**
    *
    *

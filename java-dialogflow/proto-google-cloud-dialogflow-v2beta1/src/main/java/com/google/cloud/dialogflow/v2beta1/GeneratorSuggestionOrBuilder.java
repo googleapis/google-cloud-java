@@ -38,6 +38,7 @@ public interface GeneratorSuggestionOrBuilder
    * @return Whether the summarySuggestion field is set.
    */
   boolean hasSummarySuggestion();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface GeneratorSuggestionOrBuilder
    * @return The summarySuggestion.
    */
   com.google.cloud.dialogflow.v2beta1.SummarySuggestion getSummarySuggestion();
+
   /**
    *
    *

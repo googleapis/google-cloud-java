@@ -33,6 +33,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.CollectUserEventRequest)
     CollectUserEventRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CollectUserEventRequest.newBuilder() to construct.
   private CollectUserEventRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userEvent_ = "";
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
 
   public static final int ETS_FIELD_NUMBER = 4;
   private long ets_ = 0L;
+
   /**
    *
    *
@@ -438,6 +446,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -672,6 +681,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -697,6 +707,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -722,6 +733,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -746,6 +758,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +779,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +807,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object userEvent_ = "";
+
     /**
      *
      *
@@ -815,6 +830,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -837,6 +853,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -858,6 +875,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +893,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +918,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -924,6 +944,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -949,6 +970,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -973,6 +995,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1016,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1044,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     }
 
     private long ets_;
+
     /**
      *
      *
@@ -1037,6 +1062,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     public long getEts() {
       return ets_;
     }
+
     /**
      *
      *
@@ -1058,6 +1084,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

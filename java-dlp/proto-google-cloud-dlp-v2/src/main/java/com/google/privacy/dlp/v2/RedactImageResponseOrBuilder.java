@@ -51,6 +51,7 @@ public interface RedactImageResponseOrBuilder
    * @return The extractedText.
    */
   java.lang.String getExtractedText();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface RedactImageResponseOrBuilder
    * @return Whether the inspectResult field is set.
    */
   boolean hasInspectResult();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface RedactImageResponseOrBuilder
    * @return The inspectResult.
    */
   com.google.privacy.dlp.v2.InspectResult getInspectResult();
+
   /**
    *
    *

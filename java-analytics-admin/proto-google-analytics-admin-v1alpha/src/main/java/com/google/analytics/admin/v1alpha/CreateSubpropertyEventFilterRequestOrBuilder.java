@@ -39,6 +39,7 @@ public interface CreateSubpropertyEventFilterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateSubpropertyEventFilterRequestOrBuilder
    * @return Whether the subpropertyEventFilter field is set.
    */
   boolean hasSubpropertyEventFilter();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateSubpropertyEventFilterRequestOrBuilder
    * @return The subpropertyEventFilter.
    */
   com.google.analytics.admin.v1alpha.SubpropertyEventFilter getSubpropertyEventFilter();
+
   /**
    *
    *

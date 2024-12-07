@@ -38,6 +38,7 @@ public interface ProductOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ProductOrBuilder
    * @return The enum numeric value on the wire for channel.
    */
   int getChannelValue();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface ProductOrBuilder
    * @return The offerId.
    */
   java.lang.String getOfferId();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface ProductOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public interface ProductOrBuilder
    * @return The feedLabel.
    */
   java.lang.String getFeedLabel();
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public interface ProductOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
+
   /**
    *
    *
@@ -224,6 +230,7 @@ public interface ProductOrBuilder
    * @return Whether the versionNumber field is set.
    */
   boolean hasVersionNumber();
+
   /**
    *
    *
@@ -263,6 +270,7 @@ public interface ProductOrBuilder
    * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
+
   /**
    *
    *
@@ -277,6 +285,7 @@ public interface ProductOrBuilder
    * @return The attributes.
    */
   com.google.shopping.merchant.products.v1beta.Attributes getAttributes();
+
   /**
    *
    *
@@ -307,6 +316,7 @@ public interface ProductOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList();
+
   /**
    *
    *
@@ -324,6 +334,7 @@ public interface ProductOrBuilder
    * </code>
    */
   com.google.shopping.type.CustomAttribute getCustomAttributes(int index);
+
   /**
    *
    *
@@ -341,6 +352,7 @@ public interface ProductOrBuilder
    * </code>
    */
   int getCustomAttributesCount();
+
   /**
    *
    *
@@ -359,6 +371,7 @@ public interface ProductOrBuilder
    */
   java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
       getCustomAttributesOrBuilderList();
+
   /**
    *
    *
@@ -392,6 +405,7 @@ public interface ProductOrBuilder
    * @return Whether the productStatus field is set.
    */
   boolean hasProductStatus();
+
   /**
    *
    *
@@ -407,6 +421,7 @@ public interface ProductOrBuilder
    * @return The productStatus.
    */
   com.google.shopping.merchant.products.v1beta.ProductStatus getProductStatus();
+
   /**
    *
    *

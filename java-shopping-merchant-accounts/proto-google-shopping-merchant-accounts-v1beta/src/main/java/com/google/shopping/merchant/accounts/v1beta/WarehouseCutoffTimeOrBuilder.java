@@ -38,6 +38,7 @@ public interface WarehouseCutoffTimeOrBuilder
    * @return Whether the hour field is set.
    */
   boolean hasHour();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface WarehouseCutoffTimeOrBuilder
    * @return Whether the minute field is set.
    */
   boolean hasMinute();
+
   /**
    *
    *

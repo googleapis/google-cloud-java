@@ -39,6 +39,7 @@ public interface CreateSipTrunkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateSipTrunkRequestOrBuilder
    * @return Whether the sipTrunk field is set.
    */
   boolean hasSipTrunk();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateSipTrunkRequestOrBuilder
    * @return The sipTrunk.
    */
   com.google.cloud.dialogflow.v2beta1.SipTrunk getSipTrunk();
+
   /**
    *
    *

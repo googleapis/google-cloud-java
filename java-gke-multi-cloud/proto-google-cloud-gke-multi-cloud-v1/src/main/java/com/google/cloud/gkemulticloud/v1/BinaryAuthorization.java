@@ -33,6 +33,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.BinaryAuthorization)
     BinaryAuthorizationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BinaryAuthorization.newBuilder() to construct.
   private BinaryAuthorization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>EVALUATION_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int EVALUATION_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -226,6 +229,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
 
   public static final int EVALUATION_MODE_FIELD_NUMBER = 1;
   private int evaluationMode_ = 0;
+
   /**
    *
    *
@@ -243,6 +247,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
   public int getEvaluationModeValue() {
     return evaluationMode_;
   }
+
   /**
    *
    *
@@ -432,6 +437,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -614,6 +620,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int evaluationMode_ = 0;
+
     /**
      *
      *
@@ -631,6 +638,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     public int getEvaluationModeValue() {
       return evaluationMode_;
     }
+
     /**
      *
      *
@@ -651,6 +659,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +683,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.gkemulticloud.v1.BinaryAuthorization.EvaluationMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -698,6 +708,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

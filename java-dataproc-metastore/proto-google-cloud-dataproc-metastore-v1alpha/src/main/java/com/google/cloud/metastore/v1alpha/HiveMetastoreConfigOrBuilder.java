@@ -36,6 +36,7 @@ public interface HiveMetastoreConfigOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface HiveMetastoreConfigOrBuilder
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
    */
   int getConfigOverridesCount();
+
   /**
    *
    *
@@ -77,9 +79,11 @@ public interface HiveMetastoreConfigOrBuilder
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
    */
   boolean containsConfigOverrides(java.lang.String key);
+
   /** Use {@link #getConfigOverridesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getConfigOverrides();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface HiveMetastoreConfigOrBuilder
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getConfigOverridesMap();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface HiveMetastoreConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface HiveMetastoreConfigOrBuilder
    * @return Whether the kerberosConfig field is set.
    */
   boolean hasKerberosConfig();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface HiveMetastoreConfigOrBuilder
    * @return The kerberosConfig.
    */
   com.google.cloud.metastore.v1alpha.KerberosConfig getKerberosConfig();
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public interface HiveMetastoreConfigOrBuilder
    * @return The enum numeric value on the wire for endpointProtocol.
    */
   int getEndpointProtocolValue();
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public interface HiveMetastoreConfigOrBuilder
    * </code>
    */
   int getAuxiliaryVersionsCount();
+
   /**
    *
    *
@@ -243,10 +253,12 @@ public interface HiveMetastoreConfigOrBuilder
    * </code>
    */
   boolean containsAuxiliaryVersions(java.lang.String key);
+
   /** Use {@link #getAuxiliaryVersionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
       getAuxiliaryVersions();
+
   /**
    *
    *
@@ -267,6 +279,7 @@ public interface HiveMetastoreConfigOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
       getAuxiliaryVersionsMap();
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public interface HiveMetastoreConfigOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig defaultValue);
+
   /**
    *
    *

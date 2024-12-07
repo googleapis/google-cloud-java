@@ -42,6 +42,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.BreakRule)
     BreakRuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BreakRule.newBuilder() to construct.
   private BreakRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,6 +93,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the earliestStartTime field is set.
      */
     boolean hasEarliestStartTime();
+
     /**
      *
      *
@@ -106,6 +108,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      * @return The earliestStartTime.
      */
     com.google.protobuf.Timestamp getEarliestStartTime();
+
     /**
      *
      *
@@ -133,6 +136,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the latestStartTime field is set.
      */
     boolean hasLatestStartTime();
+
     /**
      *
      *
@@ -147,6 +151,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      * @return The latestStartTime.
      */
     com.google.protobuf.Timestamp getLatestStartTime();
+
     /**
      *
      *
@@ -173,6 +178,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the minDuration field is set.
      */
     boolean hasMinDuration();
+
     /**
      *
      *
@@ -186,6 +192,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      * @return The minDuration.
      */
     com.google.protobuf.Duration getMinDuration();
+
     /**
      *
      *
@@ -198,6 +205,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getMinDurationOrBuilder();
   }
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.BreakRule.BreakRequest)
       BreakRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BreakRequest.newBuilder() to construct.
     private BreakRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -247,6 +256,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int EARLIEST_START_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp earliestStartTime_;
+
     /**
      *
      *
@@ -264,6 +274,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEarliestStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -283,6 +294,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : earliestStartTime_;
     }
+
     /**
      *
      *
@@ -303,6 +315,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LATEST_START_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp latestStartTime_;
+
     /**
      *
      *
@@ -320,6 +333,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatestStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -339,6 +353,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : latestStartTime_;
     }
+
     /**
      *
      *
@@ -359,6 +374,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MIN_DURATION_FIELD_NUMBER = 3;
     private com.google.protobuf.Duration minDuration_;
+
     /**
      *
      *
@@ -375,6 +391,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinDuration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -393,6 +410,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : minDuration_;
     }
+
     /**
      *
      *
@@ -604,6 +622,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -862,6 +881,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           earliestStartTimeBuilder_;
+
       /**
        *
        *
@@ -878,6 +898,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEarliestStartTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -900,6 +921,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           return earliestStartTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -924,6 +946,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -945,6 +968,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -974,6 +998,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -995,6 +1020,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1011,6 +1037,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEarliestStartTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1031,6 +1058,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               : earliestStartTime_;
         }
       }
+
       /**
        *
        *
@@ -1065,6 +1093,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           latestStartTimeBuilder_;
+
       /**
        *
        *
@@ -1081,6 +1110,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLatestStartTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1103,6 +1133,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           return latestStartTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1127,6 +1158,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1148,6 +1180,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1177,6 +1210,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1198,6 +1232,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1214,6 +1249,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getLatestStartTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1234,6 +1270,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               : latestStartTime_;
         }
       }
+
       /**
        *
        *
@@ -1268,6 +1305,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           minDurationBuilder_;
+
       /**
        *
        *
@@ -1283,6 +1321,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMinDuration() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1304,6 +1343,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           return minDurationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1327,6 +1367,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1347,6 +1388,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1375,6 +1417,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1395,6 +1438,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1410,6 +1454,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMinDurationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1429,6 +1474,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               : minDuration_;
         }
       }
+
       /**
        *
        *
@@ -1541,6 +1587,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the minBreakDuration field is set.
      */
     boolean hasMinBreakDuration();
+
     /**
      *
      *
@@ -1556,6 +1603,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      * @return The minBreakDuration.
      */
     com.google.protobuf.Duration getMinBreakDuration();
+
     /**
      *
      *
@@ -1586,6 +1634,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maxInterBreakDuration field is set.
      */
     boolean hasMaxInterBreakDuration();
+
     /**
      *
      *
@@ -1602,6 +1651,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      * @return The maxInterBreakDuration.
      */
     com.google.protobuf.Duration getMaxInterBreakDuration();
+
     /**
      *
      *
@@ -1617,6 +1667,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getMaxInterBreakDurationOrBuilder();
   }
+
   /**
    *
    *
@@ -1663,6 +1714,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.BreakRule.FrequencyConstraint)
       FrequencyConstraintOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FrequencyConstraint.newBuilder() to construct.
     private FrequencyConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1694,6 +1746,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int MIN_BREAK_DURATION_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration minBreakDuration_;
+
     /**
      *
      *
@@ -1712,6 +1765,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinBreakDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1732,6 +1786,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : minBreakDuration_;
     }
+
     /**
      *
      *
@@ -1753,6 +1808,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MAX_INTER_BREAK_DURATION_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration maxInterBreakDuration_;
+
     /**
      *
      *
@@ -1772,6 +1828,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxInterBreakDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1793,6 +1850,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : maxInterBreakDuration_;
     }
+
     /**
      *
      *
@@ -1995,6 +2053,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2267,6 +2326,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           minBreakDurationBuilder_;
+
       /**
        *
        *
@@ -2284,6 +2344,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMinBreakDuration() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2307,6 +2368,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           return minBreakDurationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2332,6 +2394,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2354,6 +2417,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2384,6 +2448,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2406,6 +2471,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2423,6 +2489,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMinBreakDurationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2444,6 +2511,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               : minBreakDuration_;
         }
       }
+
       /**
        *
        *
@@ -2479,6 +2547,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           maxInterBreakDurationBuilder_;
+
       /**
        *
        *
@@ -2497,6 +2566,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMaxInterBreakDuration() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2521,6 +2591,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           return maxInterBreakDurationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2547,6 +2618,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2571,6 +2643,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2602,6 +2675,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2625,6 +2699,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2643,6 +2718,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMaxInterBreakDurationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2665,6 +2741,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               : maxInterBreakDuration_;
         }
       }
+
       /**
        *
        *
@@ -2767,6 +2844,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routeoptimization.v1.BreakRule.BreakRequest>
       breakRequests_;
+
   /**
    *
    *
@@ -2782,6 +2860,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       getBreakRequestsList() {
     return breakRequests_;
   }
+
   /**
    *
    *
@@ -2798,6 +2877,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       getBreakRequestsOrBuilderList() {
     return breakRequests_;
   }
+
   /**
    *
    *
@@ -2812,6 +2892,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
   public int getBreakRequestsCount() {
     return breakRequests_.size();
   }
+
   /**
    *
    *
@@ -2826,6 +2907,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.routeoptimization.v1.BreakRule.BreakRequest getBreakRequests(int index) {
     return breakRequests_.get(index);
   }
+
   /**
    *
    *
@@ -2847,6 +2929,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routeoptimization.v1.BreakRule.FrequencyConstraint>
       frequencyConstraints_;
+
   /**
    *
    *
@@ -2864,6 +2947,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       getFrequencyConstraintsList() {
     return frequencyConstraints_;
   }
+
   /**
    *
    *
@@ -2882,6 +2966,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       getFrequencyConstraintsOrBuilderList() {
     return frequencyConstraints_;
   }
+
   /**
    *
    *
@@ -2898,6 +2983,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
   public int getFrequencyConstraintsCount() {
     return frequencyConstraints_.size();
   }
+
   /**
    *
    *
@@ -2915,6 +3001,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return frequencyConstraints_.get(index);
   }
+
   /**
    *
    *
@@ -3106,6 +3193,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3436,6 +3524,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         return breakRequestsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3453,6 +3542,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         return breakRequestsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3470,6 +3560,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         return breakRequestsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3494,6 +3585,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3516,6 +3608,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3540,6 +3633,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3564,6 +3658,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3585,6 +3680,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3607,6 +3703,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3629,6 +3726,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3649,6 +3747,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3669,6 +3768,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3683,6 +3783,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         getBreakRequestsBuilder(int index) {
       return getBreakRequestsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3701,6 +3802,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         return breakRequestsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3720,6 +3822,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(breakRequests_);
       }
     }
+
     /**
      *
      *
@@ -3736,6 +3839,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.maps.routeoptimization.v1.BreakRule.BreakRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3753,6 +3857,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.maps.routeoptimization.v1.BreakRule.BreakRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3827,6 +3932,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         return frequencyConstraintsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3846,6 +3952,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         return frequencyConstraintsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3866,6 +3973,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         return frequencyConstraintsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3892,6 +4000,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3917,6 +4026,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3943,6 +4053,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3969,6 +4080,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3993,6 +4105,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4018,6 +4131,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4043,6 +4157,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4065,6 +4180,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4087,6 +4203,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4103,6 +4220,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         getFrequencyConstraintsBuilder(int index) {
       return getFrequencyConstraintsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4123,6 +4241,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         return frequencyConstraintsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4144,6 +4263,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(frequencyConstraints_);
       }
     }
+
     /**
      *
      *
@@ -4163,6 +4283,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               com.google.maps.routeoptimization.v1.BreakRule.FrequencyConstraint
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4183,6 +4304,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               com.google.maps.routeoptimization.v1.BreakRule.FrequencyConstraint
                   .getDefaultInstance());
     }
+
     /**
      *
      *

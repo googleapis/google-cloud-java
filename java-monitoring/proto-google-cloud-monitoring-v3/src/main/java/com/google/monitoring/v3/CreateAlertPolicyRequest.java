@@ -33,6 +33,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.CreateAlertPolicyRequest)
     CreateAlertPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateAlertPolicyRequest.newBuilder() to construct.
   private CreateAlertPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
 
   public static final int ALERT_POLICY_FIELD_NUMBER = 2;
   private com.google.monitoring.v3.AlertPolicy alertPolicy_;
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
   public boolean hasAlertPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
         ? com.google.monitoring.v3.AlertPolicy.getDefaultInstance()
         : alertPolicy_;
   }
+
   /**
    *
    *
@@ -378,6 +384,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -592,6 +599,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -628,6 +636,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -664,6 +673,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -699,6 +709,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +741,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +785,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
             com.google.monitoring.v3.AlertPolicy.Builder,
             com.google.monitoring.v3.AlertPolicyOrBuilder>
         alertPolicyBuilder_;
+
     /**
      *
      *
@@ -791,6 +804,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
     public boolean hasAlertPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -815,6 +829,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
         return alertPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -841,6 +856,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +880,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +912,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +936,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +955,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
       onChanged();
       return getAlertPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -958,6 +978,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
             : alertPolicy_;
       }
     }
+
     /**
      *
      *

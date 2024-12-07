@@ -38,6 +38,7 @@ public interface CalculateIssueModelStatsRequestOrBuilder
    * @return The issueModel.
    */
   java.lang.String getIssueModel();
+
   /**
    *
    *

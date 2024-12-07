@@ -36,6 +36,7 @@ public interface ApiOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ApiOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ApiOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface ApiOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface ApiOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface ApiOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface ApiOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface ApiOrBuilder
    * @return The availability.
    */
   java.lang.String getAvailability();
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public interface ApiOrBuilder
    * @return The recommendedVersion.
    */
   java.lang.String getRecommendedVersion();
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public interface ApiOrBuilder
    * @return The recommendedDeployment.
    */
   java.lang.String getRecommendedDeployment();
+
   /**
    *
    *
@@ -279,6 +289,7 @@ public interface ApiOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -300,9 +311,11 @@ public interface ApiOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -324,6 +337,7 @@ public interface ApiOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -349,6 +363,7 @@ public interface ApiOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -385,6 +400,7 @@ public interface ApiOrBuilder
    * <code>map&lt;string, string&gt; annotations = 10;</code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -399,9 +415,11 @@ public interface ApiOrBuilder
    * <code>map&lt;string, string&gt; annotations = 10;</code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -416,6 +434,7 @@ public interface ApiOrBuilder
    * <code>map&lt;string, string&gt; annotations = 10;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -434,6 +453,7 @@ public interface ApiOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

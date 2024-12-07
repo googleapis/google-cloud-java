@@ -39,6 +39,7 @@ public interface ResolveAppConnectionsResponseOrBuilder
           com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse
               .AppConnectionDetails>
       getAppConnectionDetailsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ResolveAppConnectionsResponseOrBuilder
    */
   com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse.AppConnectionDetails
       getAppConnectionDetails(int index);
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface ResolveAppConnectionsResponseOrBuilder
    * </code>
    */
   int getAppConnectionDetailsCount();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface ResolveAppConnectionsResponseOrBuilder
               com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse
                   .AppConnectionDetailsOrBuilder>
       getAppConnectionDetailsOrBuilderList();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface ResolveAppConnectionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface ResolveAppConnectionsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface ResolveAppConnectionsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface ResolveAppConnectionsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface IapSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface IapSettingsOrBuilder
    * @return Whether the accessSettings field is set.
    */
   boolean hasAccessSettings();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface IapSettingsOrBuilder
    * @return The accessSettings.
    */
   com.google.cloud.iap.v1.AccessSettings getAccessSettings();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface IapSettingsOrBuilder
    * @return Whether the applicationSettings field is set.
    */
   boolean hasApplicationSettings();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface IapSettingsOrBuilder
    * @return The applicationSettings.
    */
   com.google.cloud.iap.v1.ApplicationSettings getApplicationSettings();
+
   /**
    *
    *

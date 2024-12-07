@@ -33,6 +33,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BulkInsertRegionInstanceRequest)
     BulkInsertRegionInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BulkInsertRegionInstanceRequest.newBuilder() to construct.
   private BulkInsertRegionInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
   public static final int BULK_INSERT_INSTANCE_RESOURCE_RESOURCE_FIELD_NUMBER = 41427278;
   private com.google.cloud.compute.v1.BulkInsertInstanceResource
       bulkInsertInstanceResourceResource_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
   public boolean hasBulkInsertInstanceResourceResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
         ? com.google.cloud.compute.v1.BulkInsertInstanceResource.getDefaultInstance()
         : bulkInsertInstanceResourceResource_;
   }
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -278,6 +288,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -503,6 +514,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -758,6 +770,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.BulkInsertInstanceResource.Builder,
             com.google.cloud.compute.v1.BulkInsertInstanceResourceOrBuilder>
         bulkInsertInstanceResourceResourceBuilder_;
+
     /**
      *
      *
@@ -774,6 +787,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
     public boolean hasBulkInsertInstanceResourceResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -797,6 +811,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
         return bulkInsertInstanceResourceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -822,6 +837,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +860,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +914,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +932,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       onChanged();
       return getBulkInsertInstanceResourceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -934,6 +954,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
             : bulkInsertInstanceResourceResource_;
       }
     }
+
     /**
      *
      *
@@ -963,6 +984,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -987,6 +1009,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1011,6 +1034,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1034,6 +1058,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1078,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1105,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1103,6 +1130,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1127,6 +1155,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1179,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1169,6 +1199,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1226,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1209,6 +1241,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1231,6 +1264,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1253,6 +1287,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1274,6 +1309,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1291,6 +1327,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

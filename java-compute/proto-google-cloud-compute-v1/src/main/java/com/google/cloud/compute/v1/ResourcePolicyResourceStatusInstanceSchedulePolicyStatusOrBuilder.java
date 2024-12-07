@@ -36,6 +36,7 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    * @return Whether the lastRunStartTime field is set.
    */
   boolean hasLastRunStartTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    * @return The lastRunStartTime.
    */
   java.lang.String getLastRunStartTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    * @return Whether the nextRunStartTime field is set.
    */
   boolean hasNextRunStartTime();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    * @return The nextRunStartTime.
    */
   java.lang.String getNextRunStartTime();
+
   /**
    *
    *

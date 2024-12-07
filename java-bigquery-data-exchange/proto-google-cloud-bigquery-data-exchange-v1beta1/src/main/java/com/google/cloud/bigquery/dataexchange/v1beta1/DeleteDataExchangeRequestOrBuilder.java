@@ -39,6 +39,7 @@ public interface DeleteDataExchangeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

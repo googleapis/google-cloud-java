@@ -33,6 +33,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.container.v1.NodePoolLoggingConfig)
     NodePoolLoggingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NodePoolLoggingConfig.newBuilder() to construct.
   private NodePoolLoggingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int VARIANT_CONFIG_FIELD_NUMBER = 1;
   private com.google.container.v1.LoggingVariantConfig variantConfig_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
   public boolean hasVariantConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
         ? com.google.container.v1.LoggingVariantConfig.getDefaultInstance()
         : variantConfig_;
   }
+
   /**
    *
    *
@@ -276,6 +280,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -479,6 +484,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
             com.google.container.v1.LoggingVariantConfig.Builder,
             com.google.container.v1.LoggingVariantConfigOrBuilder>
         variantConfigBuilder_;
+
     /**
      *
      *
@@ -493,6 +499,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
     public boolean hasVariantConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -513,6 +520,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
         return variantConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -535,6 +543,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -555,6 +564,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -583,6 +593,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -602,6 +613,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -616,6 +628,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return getVariantConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -634,6 +647,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
             : variantConfig_;
       }
     }
+
     /**
      *
      *

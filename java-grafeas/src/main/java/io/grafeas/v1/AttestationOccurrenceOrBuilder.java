@@ -52,6 +52,7 @@ public interface AttestationOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
   java.util.List<io.grafeas.v1.Signature> getSignaturesList();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AttestationOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
   io.grafeas.v1.Signature getSignatures(int index);
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface AttestationOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
   int getSignaturesCount();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface AttestationOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
   java.util.List<? extends io.grafeas.v1.SignatureOrBuilder> getSignaturesOrBuilderList();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface AttestationOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
    */
   java.util.List<io.grafeas.v1.Jwt> getJwtsList();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface AttestationOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
    */
   io.grafeas.v1.Jwt getJwts(int index);
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface AttestationOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
    */
   int getJwtsCount();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface AttestationOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
    */
   java.util.List<? extends io.grafeas.v1.JwtOrBuilder> getJwtsOrBuilderList();
+
   /**
    *
    *

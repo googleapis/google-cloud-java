@@ -36,6 +36,7 @@ public interface WorkspaceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

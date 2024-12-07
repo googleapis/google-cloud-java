@@ -37,6 +37,7 @@ public interface DiscoveryEndpointOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface DiscoveryEndpointOrBuilder
    * @return Whether the pscConfig field is set.
    */
   boolean hasPscConfig();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DiscoveryEndpointOrBuilder
    * @return The pscConfig.
    */
   com.google.cloud.redis.cluster.v1.PscConfig getPscConfig();
+
   /**
    *
    *

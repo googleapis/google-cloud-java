@@ -36,6 +36,7 @@ public interface PostgresqlSourceConfigOrBuilder
    * @return Whether the includeObjects field is set.
    */
   boolean hasIncludeObjects();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PostgresqlSourceConfigOrBuilder
    * @return The includeObjects.
    */
   com.google.cloud.datastream.v1.PostgresqlRdbms getIncludeObjects();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface PostgresqlSourceConfigOrBuilder
    * @return Whether the excludeObjects field is set.
    */
   boolean hasExcludeObjects();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface PostgresqlSourceConfigOrBuilder
    * @return The excludeObjects.
    */
   com.google.cloud.datastream.v1.PostgresqlRdbms getExcludeObjects();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface PostgresqlSourceConfigOrBuilder
    * @return The replicationSlot.
    */
   java.lang.String getReplicationSlot();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface PostgresqlSourceConfigOrBuilder
    * @return The publication.
    */
   java.lang.String getPublication();
+
   /**
    *
    *

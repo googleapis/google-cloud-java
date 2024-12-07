@@ -38,6 +38,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    * @return Whether the encryptionKey field is set.
    */
   boolean hasEncryptionKey();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    * @return The encryptionKey.
    */
   com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry getEncryptionKey();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    * @return Whether the signingKey field is set.
    */
   boolean hasSigningKey();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    * @return The signingKey.
    */
   com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry getSigningKey();
+
   /**
    *
    *

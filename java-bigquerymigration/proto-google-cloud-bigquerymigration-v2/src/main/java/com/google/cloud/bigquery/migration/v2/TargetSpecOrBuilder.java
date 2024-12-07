@@ -38,6 +38,7 @@ public interface TargetSpecOrBuilder
    * @return The relativePath.
    */
   java.lang.String getRelativePath();
+
   /**
    *
    *

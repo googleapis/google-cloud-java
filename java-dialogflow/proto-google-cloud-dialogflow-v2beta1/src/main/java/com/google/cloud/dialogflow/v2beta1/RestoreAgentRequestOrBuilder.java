@@ -40,6 +40,7 @@ public interface RestoreAgentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface RestoreAgentRequestOrBuilder
    * @return Whether the agentUri field is set.
    */
   boolean hasAgentUri();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface RestoreAgentRequestOrBuilder
    * @return The agentUri.
    */
   java.lang.String getAgentUri();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface RestoreAgentRequestOrBuilder
    * @return Whether the agentContent field is set.
    */
   boolean hasAgentContent();
+
   /**
    *
    *

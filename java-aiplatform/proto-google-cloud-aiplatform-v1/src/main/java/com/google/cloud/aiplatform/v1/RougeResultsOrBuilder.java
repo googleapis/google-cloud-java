@@ -36,6 +36,7 @@ public interface RougeResultsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.RougeMetricValue> getRougeMetricValuesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RougeResultsOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.RougeMetricValue getRougeMetricValues(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface RougeResultsOrBuilder
    * </code>
    */
   int getRougeMetricValuesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface RougeResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.RougeMetricValueOrBuilder>
       getRougeMetricValuesOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.chat.v1.SearchSpacesResponse)
     SearchSpacesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchSpacesResponse.newBuilder() to construct.
   private SearchSpacesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.chat.v1.Space> spaces_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.chat.v1.Space> getSpacesList() {
     return spaces_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<? extends com.google.chat.v1.SpaceOrBuilder> getSpacesOrBuilderList() {
     return spaces_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
   public int getSpacesCount() {
     return spaces_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
   public com.google.chat.v1.Space getSpaces(int index) {
     return spaces_.get(index);
   }
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
+
   /**
    *
    *
@@ -384,6 +393,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -669,6 +679,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
         return spacesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -685,6 +696,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
         return spacesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
         return spacesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +756,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +779,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +802,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +842,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +862,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +882,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +902,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +915,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
     public com.google.chat.v1.Space.Builder getSpacesBuilder(int index) {
       return getSpacesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -909,6 +932,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
         return spacesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -925,6 +949,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(spaces_);
       }
     }
+
     /**
      *
      *
@@ -937,6 +962,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
     public com.google.chat.v1.Space.Builder addSpacesBuilder() {
       return getSpacesFieldBuilder().addBuilder(com.google.chat.v1.Space.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -950,6 +976,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       return getSpacesFieldBuilder()
           .addBuilder(index, com.google.chat.v1.Space.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -981,6 +1008,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1004,6 +1032,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1027,6 +1056,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1079,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1067,6 +1098,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1124,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
     }
 
     private int totalSize_;
+
     /**
      *
      *
@@ -1108,6 +1141,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
     public int getTotalSize() {
       return totalSize_;
     }
+
     /**
      *
      *
@@ -1128,6 +1162,7 @@ public final class SearchSpacesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

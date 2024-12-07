@@ -38,6 +38,7 @@ public interface ImportSuggestionDenyListEntriesRequestOrBuilder
    * @return Whether the inlineSource field is set.
    */
   boolean hasInlineSource();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface ImportSuggestionDenyListEntriesRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1.ImportSuggestionDenyListEntriesRequest.InlineSource
       getInlineSource();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ImportSuggestionDenyListEntriesRequestOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface ImportSuggestionDenyListEntriesRequestOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.discoveryengine.v1.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface ImportSuggestionDenyListEntriesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

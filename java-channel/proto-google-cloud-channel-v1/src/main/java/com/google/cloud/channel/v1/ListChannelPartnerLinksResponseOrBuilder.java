@@ -34,6 +34,7 @@ public interface ListChannelPartnerLinksResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.ChannelPartnerLink channel_partner_links = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.ChannelPartnerLink> getChannelPartnerLinksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListChannelPartnerLinksResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.ChannelPartnerLink channel_partner_links = 1;</code>
    */
   com.google.cloud.channel.v1.ChannelPartnerLink getChannelPartnerLinks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListChannelPartnerLinksResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.ChannelPartnerLink channel_partner_links = 1;</code>
    */
   int getChannelPartnerLinksCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListChannelPartnerLinksResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.ChannelPartnerLinkOrBuilder>
       getChannelPartnerLinksOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface ListChannelPartnerLinksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

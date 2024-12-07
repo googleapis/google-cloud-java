@@ -40,6 +40,7 @@ public interface GetAccountRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

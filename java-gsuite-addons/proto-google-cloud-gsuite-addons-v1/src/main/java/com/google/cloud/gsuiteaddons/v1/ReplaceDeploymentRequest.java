@@ -33,6 +33,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest)
     ReplaceDeploymentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReplaceDeploymentRequest.newBuilder() to construct.
   private ReplaceDeploymentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int DEPLOYMENT_FIELD_NUMBER = 2;
   private com.google.cloud.gsuiteaddons.v1.Deployment deployment_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
   public boolean hasDeployment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
         ? com.google.cloud.gsuiteaddons.v1.Deployment.getDefaultInstance()
         : deployment_;
   }
+
   /**
    *
    *
@@ -283,6 +287,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -486,6 +491,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
             com.google.cloud.gsuiteaddons.v1.Deployment.Builder,
             com.google.cloud.gsuiteaddons.v1.DeploymentOrBuilder>
         deploymentBuilder_;
+
     /**
      *
      *
@@ -502,6 +508,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
     public boolean hasDeployment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -524,6 +531,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
         return deploymentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -548,6 +556,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -570,6 +579,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -599,6 +609,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -620,6 +631,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +648,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
       onChanged();
       return getDeploymentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -656,6 +669,7 @@ public final class ReplaceDeploymentRequest extends com.google.protobuf.Generate
             : deployment_;
       }
     }
+
     /**
      *
      *

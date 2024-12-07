@@ -37,6 +37,7 @@ public interface TabularClassificationPredictionResultOrBuilder
    * @return A list containing the classes.
    */
   java.util.List<java.lang.String> getClassesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface TabularClassificationPredictionResultOrBuilder
    * @return The count of classes.
    */
   int getClassesCount();
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface TabularClassificationPredictionResultOrBuilder
    * @return The classes at the given index.
    */
   java.lang.String getClasses(int index);
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface TabularClassificationPredictionResultOrBuilder
    * @return A list containing the scores.
    */
   java.util.List<java.lang.Float> getScoresList();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface TabularClassificationPredictionResultOrBuilder
    * @return The count of scores.
    */
   int getScoresCount();
+
   /**
    *
    *

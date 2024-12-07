@@ -37,6 +37,7 @@ public interface AppPlatformEventBodyOrBuilder
    * @return The eventMessage.
    */
   java.lang.String getEventMessage();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface AppPlatformEventBodyOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface AppPlatformEventBodyOrBuilder
    * @return The payload.
    */
   com.google.protobuf.Struct getPayload();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface AppPlatformEventBodyOrBuilder
    * @return The eventId.
    */
   java.lang.String getEventId();
+
   /**
    *
    *

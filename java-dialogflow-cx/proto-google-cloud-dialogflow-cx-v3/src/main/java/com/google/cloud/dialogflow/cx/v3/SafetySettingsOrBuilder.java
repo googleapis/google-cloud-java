@@ -34,6 +34,7 @@ public interface SafetySettingsOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.SafetySettings.Phrase banned_phrases = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.SafetySettings.Phrase> getBannedPhrasesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SafetySettingsOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.SafetySettings.Phrase banned_phrases = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3.SafetySettings.Phrase getBannedPhrases(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SafetySettingsOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.SafetySettings.Phrase banned_phrases = 1;</code>
    */
   int getBannedPhrasesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SafetySettingsOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.SafetySettings.PhraseOrBuilder>
       getBannedPhrasesOrBuilderList();
+
   /**
    *
    *

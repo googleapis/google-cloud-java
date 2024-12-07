@@ -35,6 +35,7 @@ public final class BatchVerifyTargetSitesResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.BatchVerifyTargetSitesResponse)
     BatchVerifyTargetSitesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchVerifyTargetSitesResponse.newBuilder() to construct.
   private BatchVerifyTargetSitesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,6 +217,7 @@ public final class BatchVerifyTargetSitesResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

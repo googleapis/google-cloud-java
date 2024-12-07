@@ -37,6 +37,7 @@ public interface MembershipSpecOrBuilder
    * @return Whether the policyControllerHubConfig field is set.
    */
   boolean hasPolicyControllerHubConfig();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface MembershipSpecOrBuilder
    * @return The policyControllerHubConfig.
    */
   com.google.cloud.gkehub.policycontroller.v1beta.HubConfig getPolicyControllerHubConfig();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface MembershipSpecOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

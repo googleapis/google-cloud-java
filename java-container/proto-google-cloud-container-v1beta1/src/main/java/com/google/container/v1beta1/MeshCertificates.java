@@ -33,6 +33,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.MeshCertificates)
     MeshCertificatesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MeshCertificates.newBuilder() to construct.
   private MeshCertificates(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int ENABLE_CERTIFICATES_FIELD_NUMBER = 1;
   private com.google.protobuf.BoolValue enableCertificates_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
   public boolean hasEnableCertificates() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : enableCertificates_;
   }
+
   /**
    *
    *
@@ -300,6 +304,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -506,6 +511,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         enableCertificatesBuilder_;
+
     /**
      *
      *
@@ -528,6 +534,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
     public boolean hasEnableCertificates() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -556,6 +563,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
         return enableCertificatesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -586,6 +594,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -613,6 +622,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +658,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getEnableCertificatesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
             : enableCertificates_;
       }
     }
+
     /**
      *
      *

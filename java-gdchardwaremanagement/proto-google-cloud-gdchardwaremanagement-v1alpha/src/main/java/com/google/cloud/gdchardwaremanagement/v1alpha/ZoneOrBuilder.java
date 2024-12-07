@@ -37,6 +37,7 @@ public interface ZoneOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ZoneOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ZoneOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface ZoneOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface ZoneOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface ZoneOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -151,9 +157,11 @@ public interface ZoneOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -166,6 +174,7 @@ public interface ZoneOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -182,6 +191,7 @@ public interface ZoneOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -207,6 +217,7 @@ public interface ZoneOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -234,6 +245,7 @@ public interface ZoneOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -261,6 +273,7 @@ public interface ZoneOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Contact> getContactsList();
+
   /**
    *
    *
@@ -273,6 +286,7 @@ public interface ZoneOrBuilder
    * </code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Contact getContacts(int index);
+
   /**
    *
    *
@@ -285,6 +299,7 @@ public interface ZoneOrBuilder
    * </code>
    */
   int getContactsCount();
+
   /**
    *
    *
@@ -298,6 +313,7 @@ public interface ZoneOrBuilder
    */
   java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.ContactOrBuilder>
       getContactsOrBuilderList();
+
   /**
    *
    *
@@ -324,6 +340,7 @@ public interface ZoneOrBuilder
    * @return The ciqUri.
    */
   java.lang.String getCiqUri();
+
   /**
    *
    *
@@ -352,6 +369,7 @@ public interface ZoneOrBuilder
    * @return Whether the networkConfig field is set.
    */
   boolean hasNetworkConfig();
+
   /**
    *
    *
@@ -366,6 +384,7 @@ public interface ZoneOrBuilder
    * @return The networkConfig.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.ZoneNetworkConfig getNetworkConfig();
+
   /**
    *
    *
@@ -392,6 +411,7 @@ public interface ZoneOrBuilder
    * @return The globallyUniqueId.
    */
   java.lang.String getGloballyUniqueId();
+
   /**
    *
    *
@@ -418,6 +438,7 @@ public interface ZoneOrBuilder
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig>
       getSubscriptionConfigsList();
+
   /**
    *
    *
@@ -431,6 +452,7 @@ public interface ZoneOrBuilder
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig getSubscriptionConfigs(
       int index);
+
   /**
    *
    *
@@ -443,6 +465,7 @@ public interface ZoneOrBuilder
    * </code>
    */
   int getSubscriptionConfigsCount();
+
   /**
    *
    *
@@ -457,6 +480,7 @@ public interface ZoneOrBuilder
   java.util.List<
           ? extends com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfigOrBuilder>
       getSubscriptionConfigsOrBuilderList();
+
   /**
    *
    *
@@ -485,6 +509,7 @@ public interface ZoneOrBuilder
    * @return The enum numeric value on the wire for provisioningState.
    */
   int getProvisioningStateValue();
+
   /**
    *
    *

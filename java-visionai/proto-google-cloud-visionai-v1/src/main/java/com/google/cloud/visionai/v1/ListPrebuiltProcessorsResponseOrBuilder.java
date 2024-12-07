@@ -34,6 +34,7 @@ public interface ListPrebuiltProcessorsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Processor processors = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Processor> getProcessorsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListPrebuiltProcessorsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Processor processors = 1;</code>
    */
   com.google.cloud.visionai.v1.Processor getProcessors(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListPrebuiltProcessorsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Processor processors = 1;</code>
    */
   int getProcessorsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListPrebuiltProcessorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.ProcessorOrBuilder>
       getProcessorsOrBuilderList();
+
   /**
    *
    *

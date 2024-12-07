@@ -36,6 +36,7 @@ public interface ReviewDocumentRequestOrBuilder
    * @return Whether the inlineDocument field is set.
    */
   boolean hasInlineDocument();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ReviewDocumentRequestOrBuilder
    * @return The inlineDocument.
    */
   com.google.cloud.documentai.v1.Document getInlineDocument();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ReviewDocumentRequestOrBuilder
    * @return The humanReviewConfig.
    */
   java.lang.String getHumanReviewConfig();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface ReviewDocumentRequestOrBuilder
    * @return The enum numeric value on the wire for priority.
    */
   int getPriorityValue();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface ReviewDocumentRequestOrBuilder
    * @return Whether the documentSchema field is set.
    */
   boolean hasDocumentSchema();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface ReviewDocumentRequestOrBuilder
    * @return The documentSchema.
    */
   com.google.cloud.documentai.v1.DocumentSchema getDocumentSchema();
+
   /**
    *
    *

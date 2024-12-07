@@ -32,6 +32,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NodeGroupsDeleteNodesRequest)
     NodeGroupsDeleteNodesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NodeGroupsDeleteNodesRequest.newBuilder() to construct.
   private NodeGroupsDeleteNodesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList nodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getNodesList() {
     return nodes_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
   public int getNodesCount() {
     return nodes_.size();
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
   public java.lang.String getNodes(int index) {
     return nodes_.get(index);
   }
+
   /**
    *
    *
@@ -293,6 +298,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -491,6 +497,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -506,6 +513,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
       nodes_.makeImmutable();
       return nodes_;
     }
+
     /**
      *
      *
@@ -520,6 +528,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
     public int getNodesCount() {
       return nodes_.size();
     }
+
     /**
      *
      *
@@ -535,6 +544,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
     public java.lang.String getNodes(int index) {
       return nodes_.get(index);
     }
+
     /**
      *
      *
@@ -550,6 +560,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getNodesBytes(int index) {
       return nodes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -573,6 +584,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -595,6 +607,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +627,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +646,7 @@ public final class NodeGroupsDeleteNodesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

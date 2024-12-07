@@ -36,6 +36,7 @@ public interface AuditLogConfigOrBuilder
    * @return A list containing the exemptedMembers.
    */
   java.util.List<java.lang.String> getExemptedMembersList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AuditLogConfigOrBuilder
    * @return The count of exemptedMembers.
    */
   int getExemptedMembersCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface AuditLogConfigOrBuilder
    * @return The exemptedMembers at the given index.
    */
   java.lang.String getExemptedMembers(int index);
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface AuditLogConfigOrBuilder
    * @return Whether the ignoreChildExemptions field is set.
    */
   boolean hasIgnoreChildExemptions();
+
   /**
    * <code>optional bool ignore_child_exemptions = 70141850;</code>
    *
@@ -101,6 +105,7 @@ public interface AuditLogConfigOrBuilder
    * @return Whether the logType field is set.
    */
   boolean hasLogType();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface AuditLogConfigOrBuilder
    * @return The logType.
    */
   java.lang.String getLogType();
+
   /**
    *
    *

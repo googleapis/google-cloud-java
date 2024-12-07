@@ -36,6 +36,7 @@ public interface AddPeeringNetworkRequestOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AddPeeringNetworkRequestOrBuilder
    * @return Whether the networksAddPeeringRequestResource field is set.
    */
   boolean hasNetworksAddPeeringRequestResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface AddPeeringNetworkRequestOrBuilder
    * @return The networksAddPeeringRequestResource.
    */
   com.google.cloud.compute.v1.NetworksAddPeeringRequest getNetworksAddPeeringRequestResource();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface AddPeeringNetworkRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface AddPeeringNetworkRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface AddPeeringNetworkRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

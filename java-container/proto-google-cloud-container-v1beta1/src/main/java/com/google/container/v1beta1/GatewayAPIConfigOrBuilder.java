@@ -36,6 +36,7 @@ public interface GatewayAPIConfigOrBuilder
    * @return The enum numeric value on the wire for channel.
    */
   int getChannelValue();
+
   /**
    *
    *

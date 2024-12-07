@@ -39,6 +39,7 @@ public interface ClusterNetworkingOrBuilder
    * @return A list containing the clusterIpv4CidrBlocks.
    */
   java.util.List<java.lang.String> getClusterIpv4CidrBlocksList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ClusterNetworkingOrBuilder
    * @return The count of clusterIpv4CidrBlocks.
    */
   int getClusterIpv4CidrBlocksCount();
+
   /**
    *
    *
@@ -70,6 +72,7 @@ public interface ClusterNetworkingOrBuilder
    * @return The clusterIpv4CidrBlocks at the given index.
    */
   java.lang.String getClusterIpv4CidrBlocks(int index);
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface ClusterNetworkingOrBuilder
    * @return A list containing the servicesIpv4CidrBlocks.
    */
   java.util.List<java.lang.String> getServicesIpv4CidrBlocksList();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface ClusterNetworkingOrBuilder
    * @return The count of servicesIpv4CidrBlocks.
    */
   int getServicesIpv4CidrBlocksCount();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface ClusterNetworkingOrBuilder
    * @return The servicesIpv4CidrBlocks at the given index.
    */
   java.lang.String getServicesIpv4CidrBlocks(int index);
+
   /**
    *
    *

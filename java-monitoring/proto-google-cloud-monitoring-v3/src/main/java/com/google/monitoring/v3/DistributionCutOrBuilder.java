@@ -38,6 +38,7 @@ public interface DistributionCutOrBuilder
    * @return The distributionFilter.
    */
   java.lang.String getDistributionFilter();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface DistributionCutOrBuilder
    * @return Whether the range field is set.
    */
   boolean hasRange();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface DistributionCutOrBuilder
    * @return The range.
    */
   com.google.monitoring.v3.Range getRange();
+
   /**
    *
    *

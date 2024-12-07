@@ -38,6 +38,7 @@ public interface UpdateBusinessInfoRequestOrBuilder
    * @return Whether the businessInfo field is set.
    */
   boolean hasBusinessInfo();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateBusinessInfoRequestOrBuilder
    * @return The businessInfo.
    */
   com.google.shopping.merchant.accounts.v1beta.BusinessInfo getBusinessInfo();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateBusinessInfoRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateBusinessInfoRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

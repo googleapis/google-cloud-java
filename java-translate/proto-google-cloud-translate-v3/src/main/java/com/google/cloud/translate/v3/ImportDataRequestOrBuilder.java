@@ -37,6 +37,7 @@ public interface ImportDataRequestOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ImportDataRequestOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ImportDataRequestOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.translate.v3.DatasetInputConfig getInputConfig();
+
   /**
    *
    *

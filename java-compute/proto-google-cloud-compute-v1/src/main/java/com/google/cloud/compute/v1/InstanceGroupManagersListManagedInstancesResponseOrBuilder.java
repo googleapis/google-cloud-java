@@ -34,6 +34,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ManagedInstance> getManagedInstancesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
    */
   com.google.cloud.compute.v1.ManagedInstance getManagedInstances(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
    */
   int getManagedInstancesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ManagedInstanceOrBuilder>
       getManagedInstancesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

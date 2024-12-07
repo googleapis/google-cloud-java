@@ -43,6 +43,7 @@ public interface AppEngineHttpRequestOrBuilder
    * @return The enum numeric value on the wire for httpMethod.
    */
   int getHttpMethodValue();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface AppEngineHttpRequestOrBuilder
    * @return Whether the appEngineRouting field is set.
    */
   boolean hasAppEngineRouting();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface AppEngineHttpRequestOrBuilder
    * @return The appEngineRouting.
    */
   com.google.cloud.tasks.v2.AppEngineRouting getAppEngineRouting();
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public interface AppEngineHttpRequestOrBuilder
    * @return The relativeUri.
    */
   java.lang.String getRelativeUri();
+
   /**
    *
    *
@@ -203,6 +207,7 @@ public interface AppEngineHttpRequestOrBuilder
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
   int getHeadersCount();
+
   /**
    *
    *
@@ -255,9 +260,11 @@ public interface AppEngineHttpRequestOrBuilder
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
   boolean containsHeaders(java.lang.String key);
+
   /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getHeaders();
+
   /**
    *
    *
@@ -310,6 +317,7 @@ public interface AppEngineHttpRequestOrBuilder
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
+
   /**
    *
    *
@@ -366,6 +374,7 @@ public interface AppEngineHttpRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

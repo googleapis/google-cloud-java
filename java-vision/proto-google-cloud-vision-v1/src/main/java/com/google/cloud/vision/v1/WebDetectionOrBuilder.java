@@ -34,6 +34,7 @@ public interface WebDetectionOrBuilder
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebEntity web_entities = 1;</code>
    */
   java.util.List<com.google.cloud.vision.v1.WebDetection.WebEntity> getWebEntitiesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface WebDetectionOrBuilder
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebEntity web_entities = 1;</code>
    */
   com.google.cloud.vision.v1.WebDetection.WebEntity getWebEntities(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface WebDetectionOrBuilder
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebEntity web_entities = 1;</code>
    */
   int getWebEntitiesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface WebDetectionOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder>
       getWebEntitiesOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface WebDetectionOrBuilder
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
    */
   java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getFullMatchingImagesList();
+
   /**
    *
    *
@@ -98,6 +103,7 @@ public interface WebDetectionOrBuilder
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
    */
   com.google.cloud.vision.v1.WebDetection.WebImage getFullMatchingImages(int index);
+
   /**
    *
    *
@@ -109,6 +115,7 @@ public interface WebDetectionOrBuilder
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
    */
   int getFullMatchingImagesCount();
+
   /**
    *
    *
@@ -121,6 +128,7 @@ public interface WebDetectionOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
       getFullMatchingImagesOrBuilderList();
+
   /**
    *
    *
@@ -147,6 +155,7 @@ public interface WebDetectionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getPartialMatchingImagesList();
+
   /**
    *
    *
@@ -160,6 +169,7 @@ public interface WebDetectionOrBuilder
    * </code>
    */
   com.google.cloud.vision.v1.WebDetection.WebImage getPartialMatchingImages(int index);
+
   /**
    *
    *
@@ -173,6 +183,7 @@ public interface WebDetectionOrBuilder
    * </code>
    */
   int getPartialMatchingImagesCount();
+
   /**
    *
    *
@@ -187,6 +198,7 @@ public interface WebDetectionOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
       getPartialMatchingImagesOrBuilderList();
+
   /**
    *
    *
@@ -213,6 +225,7 @@ public interface WebDetectionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vision.v1.WebDetection.WebPage> getPagesWithMatchingImagesList();
+
   /**
    *
    *
@@ -224,6 +237,7 @@ public interface WebDetectionOrBuilder
    * </code>
    */
   com.google.cloud.vision.v1.WebDetection.WebPage getPagesWithMatchingImages(int index);
+
   /**
    *
    *
@@ -235,6 +249,7 @@ public interface WebDetectionOrBuilder
    * </code>
    */
   int getPagesWithMatchingImagesCount();
+
   /**
    *
    *
@@ -247,6 +262,7 @@ public interface WebDetectionOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder>
       getPagesWithMatchingImagesOrBuilderList();
+
   /**
    *
    *
@@ -271,6 +287,7 @@ public interface WebDetectionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getVisuallySimilarImagesList();
+
   /**
    *
    *
@@ -282,6 +299,7 @@ public interface WebDetectionOrBuilder
    * </code>
    */
   com.google.cloud.vision.v1.WebDetection.WebImage getVisuallySimilarImages(int index);
+
   /**
    *
    *
@@ -293,6 +311,7 @@ public interface WebDetectionOrBuilder
    * </code>
    */
   int getVisuallySimilarImagesCount();
+
   /**
    *
    *
@@ -305,6 +324,7 @@ public interface WebDetectionOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
       getVisuallySimilarImagesOrBuilderList();
+
   /**
    *
    *
@@ -329,6 +349,7 @@ public interface WebDetectionOrBuilder
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
    */
   java.util.List<com.google.cloud.vision.v1.WebDetection.WebLabel> getBestGuessLabelsList();
+
   /**
    *
    *
@@ -340,6 +361,7 @@ public interface WebDetectionOrBuilder
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
    */
   com.google.cloud.vision.v1.WebDetection.WebLabel getBestGuessLabels(int index);
+
   /**
    *
    *
@@ -351,6 +373,7 @@ public interface WebDetectionOrBuilder
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
    */
   int getBestGuessLabelsCount();
+
   /**
    *
    *
@@ -363,6 +386,7 @@ public interface WebDetectionOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder>
       getBestGuessLabelsOrBuilderList();
+
   /**
    *
    *

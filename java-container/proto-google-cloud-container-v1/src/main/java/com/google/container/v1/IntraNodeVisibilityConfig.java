@@ -34,6 +34,7 @@ public final class IntraNodeVisibilityConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.container.v1.IntraNodeVisibilityConfig)
     IntraNodeVisibilityConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IntraNodeVisibilityConfig.newBuilder() to construct.
   private IntraNodeVisibilityConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class IntraNodeVisibilityConfig extends com.google.protobuf.Generat
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -239,6 +241,7 @@ public final class IntraNodeVisibilityConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -422,6 +425,7 @@ public final class IntraNodeVisibilityConfig extends com.google.protobuf.Generat
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -437,6 +441,7 @@ public final class IntraNodeVisibilityConfig extends com.google.protobuf.Generat
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -456,6 +461,7 @@ public final class IntraNodeVisibilityConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

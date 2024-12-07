@@ -41,6 +41,7 @@ public interface UpdateClusterRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateClusterRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateClusterRequestOrBuilder
    * @return Whether the cluster field is set.
    */
   boolean hasCluster();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateClusterRequestOrBuilder
    * @return The cluster.
    */
   com.google.cloud.alloydb.v1alpha.Cluster getCluster();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface UpdateClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

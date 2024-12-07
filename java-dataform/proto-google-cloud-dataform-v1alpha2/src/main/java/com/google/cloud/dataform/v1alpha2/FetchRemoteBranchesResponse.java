@@ -33,6 +33,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.FetchRemoteBranchesResponse)
     FetchRemoteBranchesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchRemoteBranchesResponse.newBuilder() to construct.
   private FetchRemoteBranchesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList branches_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getBranchesList() {
     return branches_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
   public int getBranchesCount() {
     return branches_.size();
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
   public java.lang.String getBranches(int index) {
     return branches_.get(index);
   }
+
   /**
    *
    *
@@ -294,6 +299,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -496,6 +502,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -511,6 +518,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
       branches_.makeImmutable();
       return branches_;
     }
+
     /**
      *
      *
@@ -525,6 +533,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
     public int getBranchesCount() {
       return branches_.size();
     }
+
     /**
      *
      *
@@ -540,6 +549,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
     public java.lang.String getBranches(int index) {
       return branches_.get(index);
     }
+
     /**
      *
      *
@@ -555,6 +565,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getBranchesBytes(int index) {
       return branches_.getByteString(index);
     }
+
     /**
      *
      *
@@ -578,6 +589,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -600,6 +612,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -619,6 +632,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -637,6 +651,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.TimestampValue)
     TimestampValueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TimestampValue.newBuilder() to construct.
   private TimestampValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
     private ValueCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIMESTAMP_VALUE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimestampValue() {
     return valueCase_ == 1;
   }
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_VALUE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTextValue() {
     return valueCase_ == 2;
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -424,6 +432,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -656,6 +665,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timestampValueBuilder_;
+
     /**
      *
      *
@@ -671,6 +681,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimestampValue() {
       return valueCase_ == 1;
     }
+
     /**
      *
      *
@@ -696,6 +707,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -718,6 +730,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +750,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +781,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +807,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp.Builder getTimestampValueBuilder() {
       return getTimestampValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -824,6 +841,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -872,6 +890,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextValue() {
       return valueCase_ == 2;
     }
+
     /**
      *
      *
@@ -902,6 +921,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -932,6 +952,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -955,6 +976,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +998,7 @@ public final class TimestampValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *

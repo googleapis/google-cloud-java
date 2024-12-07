@@ -37,6 +37,7 @@ public interface GetDomainMappingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

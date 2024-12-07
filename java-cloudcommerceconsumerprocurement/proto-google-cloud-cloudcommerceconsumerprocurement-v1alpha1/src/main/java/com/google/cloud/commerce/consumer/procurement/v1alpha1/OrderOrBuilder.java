@@ -38,6 +38,7 @@ public interface OrderOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface OrderOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface OrderOrBuilder
    */
   java.util.List<com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItem>
       getLineItemsList();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface OrderOrBuilder
    * </code>
    */
   com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItem getLineItems(int index);
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface OrderOrBuilder
    * </code>
    */
   int getLineItemsCount();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface OrderOrBuilder
   java.util.List<
           ? extends com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemOrBuilder>
       getLineItemsOrBuilderList();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface OrderOrBuilder
    */
   java.util.List<com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItem>
       getCancelledLineItemsList();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface OrderOrBuilder
    * </code>
    */
   com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItem getCancelledLineItems(int index);
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public interface OrderOrBuilder
    * </code>
    */
   int getCancelledLineItemsCount();
+
   /**
    *
    *
@@ -194,6 +203,7 @@ public interface OrderOrBuilder
   java.util.List<
           ? extends com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemOrBuilder>
       getCancelledLineItemsOrBuilderList();
+
   /**
    *
    *
@@ -221,6 +231,7 @@ public interface OrderOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -234,6 +245,7 @@ public interface OrderOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -259,6 +271,7 @@ public interface OrderOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -272,6 +285,7 @@ public interface OrderOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -296,6 +310,7 @@ public interface OrderOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

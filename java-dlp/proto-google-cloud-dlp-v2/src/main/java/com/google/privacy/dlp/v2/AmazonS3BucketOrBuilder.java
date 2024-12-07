@@ -36,6 +36,7 @@ public interface AmazonS3BucketOrBuilder
    * @return Whether the awsAccount field is set.
    */
   boolean hasAwsAccount();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AmazonS3BucketOrBuilder
    * @return The awsAccount.
    */
   com.google.privacy.dlp.v2.AwsAccount getAwsAccount();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface AmazonS3BucketOrBuilder
    * @return The bucketName.
    */
   java.lang.String getBucketName();
+
   /**
    *
    *

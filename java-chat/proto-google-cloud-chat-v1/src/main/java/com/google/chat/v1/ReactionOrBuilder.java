@@ -38,6 +38,7 @@ public interface ReactionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ReactionOrBuilder
    * @return Whether the user field is set.
    */
   boolean hasUser();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ReactionOrBuilder
    * @return The user.
    */
   com.google.chat.v1.User getUser();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface ReactionOrBuilder
    * @return Whether the emoji field is set.
    */
   boolean hasEmoji();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface ReactionOrBuilder
    * @return The emoji.
    */
   com.google.chat.v1.Emoji getEmoji();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface LookupRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface LookupRequestOrBuilder
    * @return A list containing the ids.
    */
   java.util.List<java.lang.String> getIdsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface LookupRequestOrBuilder
    * @return The count of ids.
    */
   int getIdsCount();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface LookupRequestOrBuilder
    * @return The ids at the given index.
    */
   java.lang.String getIds(int index);
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface LookupRequestOrBuilder
    * @return A list containing the languages.
    */
   java.util.List<java.lang.String> getLanguagesList();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface LookupRequestOrBuilder
    * @return The count of languages.
    */
   int getLanguagesCount();
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public interface LookupRequestOrBuilder
    * @return The languages at the given index.
    */
   java.lang.String getLanguages(int index);
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface IssueModelResultOrBuilder
    * @return The issueModel.
    */
   java.lang.String getIssueModel();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface IssueModelResultOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.IssueAssignment issues = 2;</code>
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.IssueAssignment> getIssuesList();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface IssueModelResultOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.IssueAssignment issues = 2;</code>
    */
   com.google.cloud.contactcenterinsights.v1.IssueAssignment getIssues(int index);
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface IssueModelResultOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.IssueAssignment issues = 2;</code>
    */
   int getIssuesCount();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface IssueModelResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.IssueAssignmentOrBuilder>
       getIssuesOrBuilderList();
+
   /**
    *
    *

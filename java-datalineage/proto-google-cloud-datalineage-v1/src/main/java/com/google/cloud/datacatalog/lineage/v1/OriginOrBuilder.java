@@ -40,6 +40,7 @@ public interface OriginOrBuilder
    * @return The enum numeric value on the wire for sourceType.
    */
   int getSourceTypeValue();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface OriginOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

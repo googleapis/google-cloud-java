@@ -38,6 +38,7 @@ public interface TrustConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface TrustConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface TrustConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface TrustConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface TrustConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface TrustConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -149,9 +155,11 @@ public interface TrustConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface TrustConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -176,6 +185,7 @@ public interface TrustConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface TrustConfigOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -226,6 +237,7 @@ public interface TrustConfigOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -258,6 +270,7 @@ public interface TrustConfigOrBuilder
    */
   java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
       getTrustStoresList();
+
   /**
    *
    *
@@ -274,6 +287,7 @@ public interface TrustConfigOrBuilder
    * </code>
    */
   com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore getTrustStores(int index);
+
   /**
    *
    *
@@ -290,6 +304,7 @@ public interface TrustConfigOrBuilder
    * </code>
    */
   int getTrustStoresCount();
+
   /**
    *
    *
@@ -307,6 +322,7 @@ public interface TrustConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder>
       getTrustStoresOrBuilderList();
+
   /**
    *
    *

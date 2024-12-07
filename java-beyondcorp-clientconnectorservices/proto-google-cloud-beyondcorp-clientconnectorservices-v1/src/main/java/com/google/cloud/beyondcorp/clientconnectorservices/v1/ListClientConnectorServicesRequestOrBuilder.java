@@ -39,6 +39,7 @@ public interface ListClientConnectorServicesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface ListClientConnectorServicesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface ListClientConnectorServicesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface ListClientConnectorServicesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

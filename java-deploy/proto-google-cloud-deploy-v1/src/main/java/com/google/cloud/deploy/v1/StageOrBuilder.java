@@ -41,6 +41,7 @@ public interface StageOrBuilder
    * @return The targetId.
    */
   java.lang.String getTargetId();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface StageOrBuilder
    * @return A list containing the profiles.
    */
   java.util.List<java.lang.String> getProfilesList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface StageOrBuilder
    * @return The count of profiles.
    */
   int getProfilesCount();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface StageOrBuilder
    * @return The profiles at the given index.
    */
   java.lang.String getProfiles(int index);
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface StageOrBuilder
    * @return Whether the strategy field is set.
    */
   boolean hasStrategy();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface StageOrBuilder
    * @return The strategy.
    */
   com.google.cloud.deploy.v1.Strategy getStrategy();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface StageOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.DeployParameters> getDeployParametersList();
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface StageOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.DeployParameters getDeployParameters(int index);
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public interface StageOrBuilder
    * </code>
    */
   int getDeployParametersCount();
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public interface StageOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.DeployParametersOrBuilder>
       getDeployParametersOrBuilderList();
+
   /**
    *
    *

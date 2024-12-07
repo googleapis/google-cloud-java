@@ -34,6 +34,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BatchCreateFeaturesResponse)
     BatchCreateFeaturesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateFeaturesResponse.newBuilder() to construct.
   private BatchCreateFeaturesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Feature> features_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Feature> getFeaturesList() {
     return features_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
       getFeaturesOrBuilderList() {
     return features_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
   public int getFeaturesCount() {
     return features_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
   public com.google.cloud.aiplatform.v1beta1.Feature getFeatures(int index) {
     return features_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +303,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -563,6 +570,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
         return featuresBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -579,6 +587,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
         return featuresBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -595,6 +604,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
         return featuresBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -617,6 +627,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +694,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +715,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +736,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +757,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +777,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +797,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +810,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1beta1.Feature.Builder getFeaturesBuilder(int index) {
       return getFeaturesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -807,6 +827,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
         return featuresBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -824,6 +845,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(features_);
       }
     }
+
     /**
      *
      *
@@ -837,6 +859,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
       return getFeaturesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Feature.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -850,6 +873,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
       return getFeaturesFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Feature.getDefaultInstance());
     }
+
     /**
      *
      *

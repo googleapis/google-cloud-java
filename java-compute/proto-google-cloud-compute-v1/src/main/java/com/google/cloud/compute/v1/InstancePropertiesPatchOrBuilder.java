@@ -34,6 +34,7 @@ public interface InstancePropertiesPatchOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -44,9 +45,11 @@ public interface InstancePropertiesPatchOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -57,6 +60,7 @@ public interface InstancePropertiesPatchOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -71,6 +75,7 @@ public interface InstancePropertiesPatchOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -92,6 +97,7 @@ public interface InstancePropertiesPatchOrBuilder
    * <code>map&lt;string, string&gt; metadata = 86866735;</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -102,9 +108,11 @@ public interface InstancePropertiesPatchOrBuilder
    * <code>map&lt;string, string&gt; metadata = 86866735;</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -115,6 +123,7 @@ public interface InstancePropertiesPatchOrBuilder
    * <code>map&lt;string, string&gt; metadata = 86866735;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -129,6 +138,7 @@ public interface InstancePropertiesPatchOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

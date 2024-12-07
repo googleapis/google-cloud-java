@@ -41,6 +41,7 @@ public interface BatchCreateFeaturesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface BatchCreateFeaturesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.CreateFeatureRequest> getRequestsList();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface BatchCreateFeaturesRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.CreateFeatureRequest getRequests(int index);
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface BatchCreateFeaturesRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface BatchCreateFeaturesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.CreateFeatureRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface GetOrchestrationClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

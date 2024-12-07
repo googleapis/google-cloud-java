@@ -38,6 +38,7 @@ public interface FetchDatasetErrorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface FetchDatasetErrorsResponseOrBuilder
    * <code>repeated .google.rpc.Status errors = 3;</code>
    */
   java.util.List<com.google.rpc.Status> getErrorsList();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface FetchDatasetErrorsResponseOrBuilder
    * <code>repeated .google.rpc.Status errors = 3;</code>
    */
   com.google.rpc.Status getErrors(int index);
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface FetchDatasetErrorsResponseOrBuilder
    * <code>repeated .google.rpc.Status errors = 3;</code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface FetchDatasetErrorsResponseOrBuilder
    * <code>repeated .google.rpc.Status errors = 3;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorsOrBuilderList();
+
   /**
    *
    *

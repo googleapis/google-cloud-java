@@ -33,6 +33,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.ListGiVersionsResponse)
     ListGiVersionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListGiVersionsResponse.newBuilder() to construct.
   private ListGiVersionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oracledatabase.v1.GiVersion> giVersions_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.oracledatabase.v1.GiVersion> getGiVersionsList() {
     return giVersions_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       getGiVersionsOrBuilderList() {
     return giVersions_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
   public int getGiVersionsCount() {
     return giVersions_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.oracledatabase.v1.GiVersion getGiVersions(int index) {
     return giVersions_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -357,6 +365,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -634,6 +643,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
         return giVersionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
         return giVersionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
         return giVersionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -688,6 +700,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +744,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +788,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +809,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +830,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +850,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +870,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +883,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.oracledatabase.v1.GiVersion.Builder getGiVersionsBuilder(int index) {
       return getGiVersionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -878,6 +900,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
         return giVersionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -895,6 +918,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(giVersions_);
       }
     }
+
     /**
      *
      *
@@ -908,6 +932,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       return getGiVersionsFieldBuilder()
           .addBuilder(com.google.cloud.oracledatabase.v1.GiVersion.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -921,6 +946,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       return getGiVersionsFieldBuilder()
           .addBuilder(index, com.google.cloud.oracledatabase.v1.GiVersion.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -953,6 +979,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -975,6 +1002,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -997,6 +1025,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1047,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1065,7 @@ public final class ListGiVersionsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

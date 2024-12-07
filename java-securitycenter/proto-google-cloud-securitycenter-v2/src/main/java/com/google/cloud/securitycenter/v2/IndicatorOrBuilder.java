@@ -36,6 +36,7 @@ public interface IndicatorOrBuilder
    * @return A list containing the ipAddresses.
    */
   java.util.List<java.lang.String> getIpAddressesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface IndicatorOrBuilder
    * @return The count of ipAddresses.
    */
   int getIpAddressesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface IndicatorOrBuilder
    * @return The ipAddresses at the given index.
    */
   java.lang.String getIpAddresses(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface IndicatorOrBuilder
    * @return A list containing the domains.
    */
   java.util.List<java.lang.String> getDomainsList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface IndicatorOrBuilder
    * @return The count of domains.
    */
   int getDomainsCount();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface IndicatorOrBuilder
    * @return The domains at the given index.
    */
   java.lang.String getDomains(int index);
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public interface IndicatorOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.Indicator.ProcessSignature> getSignaturesList();
+
   /**
    *
    *
@@ -150,6 +157,7 @@ public interface IndicatorOrBuilder
    * </code>
    */
   com.google.cloud.securitycenter.v2.Indicator.ProcessSignature getSignatures(int index);
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface IndicatorOrBuilder
    * </code>
    */
   int getSignaturesCount();
+
   /**
    *
    *
@@ -175,6 +184,7 @@ public interface IndicatorOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.Indicator.ProcessSignatureOrBuilder>
       getSignaturesOrBuilderList();
+
   /**
    *
    *
@@ -201,6 +211,7 @@ public interface IndicatorOrBuilder
    * @return A list containing the uris.
    */
   java.util.List<java.lang.String> getUrisList();
+
   /**
    *
    *
@@ -213,6 +224,7 @@ public interface IndicatorOrBuilder
    * @return The count of uris.
    */
   int getUrisCount();
+
   /**
    *
    *
@@ -226,6 +238,7 @@ public interface IndicatorOrBuilder
    * @return The uris at the given index.
    */
   java.lang.String getUris(int index);
+
   /**
    *
    *

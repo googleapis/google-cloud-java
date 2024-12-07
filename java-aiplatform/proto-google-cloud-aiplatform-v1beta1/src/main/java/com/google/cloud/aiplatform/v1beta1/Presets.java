@@ -33,6 +33,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Presets)
     PresetsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Presets.newBuilder() to construct.
   private Presets(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -107,6 +108,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      * <code>PRECISE = 0;</code>
      */
     public static final int PRECISE_VALUE = 0;
+
     /**
      *
      *
@@ -262,6 +264,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      * <code>MODALITY_UNSPECIFIED = 0;</code>
      */
     public static final int MODALITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -272,6 +275,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      * <code>IMAGE = 1;</code>
      */
     public static final int IMAGE_VALUE = 1;
+
     /**
      *
      *
@@ -282,6 +286,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      * <code>TEXT = 2;</code>
      */
     public static final int TEXT_VALUE = 2;
+
     /**
      *
      *
@@ -381,6 +386,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int QUERY_FIELD_NUMBER = 1;
   private int query_ = 0;
+
   /**
    *
    *
@@ -397,6 +403,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQuery() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -413,6 +420,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
   public int getQueryValue() {
     return query_;
   }
+
   /**
    *
    *
@@ -434,6 +442,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MODALITY_FIELD_NUMBER = 2;
   private int modality_ = 0;
+
   /**
    *
    *
@@ -452,6 +461,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
   public int getModalityValue() {
     return modality_;
   }
+
   /**
    *
    *
@@ -650,6 +660,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -847,6 +858,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int query_ = 0;
+
     /**
      *
      *
@@ -863,6 +875,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQuery() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -879,6 +892,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
     public int getQueryValue() {
       return query_;
     }
+
     /**
      *
      *
@@ -898,6 +912,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +933,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1beta1.Presets.Query.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -940,6 +956,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +977,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int modality_ = 0;
+
     /**
      *
      *
@@ -978,6 +996,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
     public int getModalityValue() {
       return modality_;
     }
+
     /**
      *
      *
@@ -999,6 +1018,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1041,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1beta1.Presets.Modality.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1045,6 +1066,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

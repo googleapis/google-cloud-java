@@ -42,6 +42,7 @@ public interface FulfillmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface FulfillmentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface FulfillmentOrBuilder
    * @return Whether the genericWebService field is set.
    */
   boolean hasGenericWebService();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface FulfillmentOrBuilder
    * @return The genericWebService.
    */
   com.google.cloud.dialogflow.v2.Fulfillment.GenericWebService getGenericWebService();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface FulfillmentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Fulfillment.Feature> getFeaturesList();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface FulfillmentOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.Fulfillment.Feature getFeatures(int index);
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public interface FulfillmentOrBuilder
    * </code>
    */
   int getFeaturesCount();
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public interface FulfillmentOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.Fulfillment.FeatureOrBuilder>
       getFeaturesOrBuilderList();
+
   /**
    *
    *

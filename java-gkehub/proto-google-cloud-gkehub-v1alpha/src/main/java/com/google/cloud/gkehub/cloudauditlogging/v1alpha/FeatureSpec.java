@@ -33,6 +33,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec)
     FeatureSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FeatureSpec.newBuilder() to construct.
   private FeatureSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowlistedServiceAccounts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAllowlistedServiceAccountsList() {
     return allowlistedServiceAccounts_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
   public int getAllowlistedServiceAccountsCount() {
     return allowlistedServiceAccounts_.size();
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAllowlistedServiceAccounts(int index) {
     return allowlistedServiceAccounts_.get(index);
   }
+
   /**
    *
    *
@@ -312,6 +317,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -515,6 +521,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       allowlistedServiceAccounts_.makeImmutable();
       return allowlistedServiceAccounts_;
     }
+
     /**
      *
      *
@@ -552,6 +560,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     public int getAllowlistedServiceAccountsCount() {
       return allowlistedServiceAccounts_.size();
     }
+
     /**
      *
      *
@@ -571,6 +580,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAllowlistedServiceAccounts(int index) {
       return allowlistedServiceAccounts_.get(index);
     }
+
     /**
      *
      *
@@ -590,6 +600,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAllowlistedServiceAccountsBytes(int index) {
       return allowlistedServiceAccounts_.getByteString(index);
     }
+
     /**
      *
      *
@@ -617,6 +628,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -643,6 +655,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +679,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +702,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.container.v1.SecurityPostureConfig)
     SecurityPostureConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPostureConfig.newBuilder() to construct.
   private SecurityPostureConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,6 +129,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      * <code>MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -138,6 +140,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      * <code>BASIC = 2;</code>
      */
     public static final int BASIC_VALUE = 2;
+
     /**
      *
      *
@@ -308,6 +312,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      * <code>VULNERABILITY_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int VULNERABILITY_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -318,6 +323,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      * <code>VULNERABILITY_DISABLED = 1;</code>
      */
     public static final int VULNERABILITY_DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -328,6 +334,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      * <code>VULNERABILITY_BASIC = 2;</code>
      */
     public static final int VULNERABILITY_BASIC_VALUE = 2;
+
     /**
      *
      *
@@ -431,6 +438,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int MODE_FIELD_NUMBER = 1;
   private int mode_ = 0;
+
   /**
    *
    *
@@ -446,6 +454,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
   public boolean hasMode() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -461,6 +470,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
   public int getModeValue() {
     return mode_;
   }
+
   /**
    *
    *
@@ -483,6 +493,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
 
   public static final int VULNERABILITY_MODE_FIELD_NUMBER = 2;
   private int vulnerabilityMode_ = 0;
+
   /**
    *
    *
@@ -500,6 +511,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
   public boolean hasVulnerabilityMode() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -517,6 +529,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
   public int getVulnerabilityModeValue() {
     return vulnerabilityMode_;
   }
+
   /**
    *
    *
@@ -718,6 +731,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -917,6 +931,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int mode_ = 0;
+
     /**
      *
      *
@@ -932,6 +947,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
     public boolean hasMode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -947,6 +963,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
     public int getModeValue() {
       return mode_;
     }
+
     /**
      *
      *
@@ -965,6 +982,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1002,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
           ? com.google.container.v1.SecurityPostureConfig.Mode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1005,6 +1024,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1024,6 +1044,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
     }
 
     private int vulnerabilityMode_ = 0;
+
     /**
      *
      *
@@ -1041,6 +1062,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
     public boolean hasVulnerabilityMode() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1058,6 +1080,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
     public int getVulnerabilityModeValue() {
       return vulnerabilityMode_;
     }
+
     /**
      *
      *
@@ -1078,6 +1101,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1100,6 +1124,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
           ? com.google.container.v1.SecurityPostureConfig.VulnerabilityMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1124,6 +1149,7 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

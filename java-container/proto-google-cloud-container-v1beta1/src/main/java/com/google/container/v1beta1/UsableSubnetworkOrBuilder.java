@@ -37,6 +37,7 @@ public interface UsableSubnetworkOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface UsableSubnetworkOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface UsableSubnetworkOrBuilder
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface UsableSubnetworkOrBuilder
    */
   java.util.List<com.google.container.v1beta1.UsableSubnetworkSecondaryRange>
       getSecondaryIpRangesList();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface UsableSubnetworkOrBuilder
    * </code>
    */
   com.google.container.v1beta1.UsableSubnetworkSecondaryRange getSecondaryIpRanges(int index);
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface UsableSubnetworkOrBuilder
    * </code>
    */
   int getSecondaryIpRangesCount();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface UsableSubnetworkOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.UsableSubnetworkSecondaryRangeOrBuilder>
       getSecondaryIpRangesOrBuilderList();
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public interface UsableSubnetworkOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TransformationErrorHandling)
     TransformationErrorHandlingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransformationErrorHandling.newBuilder() to construct.
   private TransformationErrorHandling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.TransformationErrorHandling.ThrowError)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TransformationErrorHandling.ThrowError)
       ThrowErrorOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ThrowError.newBuilder() to construct.
     private ThrowError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -267,6 +270,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -505,6 +509,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformed)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -522,6 +527,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformed)
       LeaveUntransformedOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use LeaveUntransformed.newBuilder() to construct.
     private LeaveUntransformed(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -710,6 +716,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -969,6 +976,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
     private ModeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1002,6 +1010,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
   }
 
   public static final int THROW_ERROR_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1017,6 +1026,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
   public boolean hasThrowError() {
     return modeCase_ == 1;
   }
+
   /**
    *
    *
@@ -1035,6 +1045,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
     }
     return com.google.privacy.dlp.v2.TransformationErrorHandling.ThrowError.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1054,6 +1065,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
   }
 
   public static final int LEAVE_UNTRANSFORMED_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1071,6 +1083,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
   public boolean hasLeaveUntransformed() {
     return modeCase_ == 2;
   }
+
   /**
    *
    *
@@ -1093,6 +1106,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
     return com.google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformed
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1306,6 +1320,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1549,6 +1564,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.TransformationErrorHandling.ThrowError.Builder,
             com.google.privacy.dlp.v2.TransformationErrorHandling.ThrowErrorOrBuilder>
         throwErrorBuilder_;
+
     /**
      *
      *
@@ -1564,6 +1580,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
     public boolean hasThrowError() {
       return modeCase_ == 1;
     }
+
     /**
      *
      *
@@ -1591,6 +1608,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1614,6 +1632,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       modeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1634,6 +1653,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       modeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1669,6 +1689,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       modeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1694,6 +1715,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1707,6 +1729,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
         getThrowErrorBuilder() {
       return getThrowErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1729,6 +1752,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1768,6 +1792,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformed.Builder,
             com.google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformedOrBuilder>
         leaveUntransformedBuilder_;
+
     /**
      *
      *
@@ -1785,6 +1810,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
     public boolean hasLeaveUntransformed() {
       return modeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1815,6 +1841,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1840,6 +1867,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       modeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1863,6 +1891,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       modeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1901,6 +1930,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       modeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1928,6 +1958,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1943,6 +1974,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
         getLeaveUntransformedBuilder() {
       return getLeaveUntransformedFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1967,6 +1999,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

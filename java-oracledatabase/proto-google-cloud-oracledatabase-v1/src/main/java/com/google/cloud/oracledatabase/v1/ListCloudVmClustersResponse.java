@@ -33,6 +33,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.ListCloudVmClustersResponse)
     ListCloudVmClustersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListCloudVmClustersResponse.newBuilder() to construct.
   private ListCloudVmClustersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oracledatabase.v1.CloudVmCluster> cloudVmClusters_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       getCloudVmClustersList() {
     return cloudVmClusters_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       getCloudVmClustersOrBuilderList() {
     return cloudVmClusters_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
   public int getCloudVmClustersCount() {
     return cloudVmClusters_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
   public com.google.cloud.oracledatabase.v1.CloudVmCluster getCloudVmClusters(int index) {
     return cloudVmClusters_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -359,6 +367,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -642,6 +651,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
         return cloudVmClustersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
         return cloudVmClustersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -674,6 +685,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
         return cloudVmClustersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +777,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +798,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +819,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +840,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +880,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +894,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
         int index) {
       return getCloudVmClustersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -890,6 +912,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
         return cloudVmClustersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -907,6 +930,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(cloudVmClusters_);
       }
     }
+
     /**
      *
      *
@@ -920,6 +944,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       return getCloudVmClustersFieldBuilder()
           .addBuilder(com.google.cloud.oracledatabase.v1.CloudVmCluster.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -935,6 +960,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
           .addBuilder(
               index, com.google.cloud.oracledatabase.v1.CloudVmCluster.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -970,6 +996,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -992,6 +1019,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1042,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1035,6 +1064,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1082,7 @@ public final class ListCloudVmClustersResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

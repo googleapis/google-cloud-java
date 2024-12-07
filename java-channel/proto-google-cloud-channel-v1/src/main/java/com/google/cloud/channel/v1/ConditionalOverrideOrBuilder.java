@@ -38,6 +38,7 @@ public interface ConditionalOverrideOrBuilder
    * @return Whether the adjustment field is set.
    */
   boolean hasAdjustment();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ConditionalOverrideOrBuilder
    * @return The adjustment.
    */
   com.google.cloud.channel.v1.RepricingAdjustment getAdjustment();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ConditionalOverrideOrBuilder
    * @return The enum numeric value on the wire for rebillingBasis.
    */
   int getRebillingBasisValue();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface ConditionalOverrideOrBuilder
    * @return Whether the repricingCondition field is set.
    */
   boolean hasRepricingCondition();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface ConditionalOverrideOrBuilder
    * @return The repricingCondition.
    */
   com.google.cloud.channel.v1.RepricingCondition getRepricingCondition();
+
   /**
    *
    *

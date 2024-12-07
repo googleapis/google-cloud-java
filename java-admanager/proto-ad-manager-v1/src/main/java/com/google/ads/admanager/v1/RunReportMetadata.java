@@ -33,6 +33,7 @@ public final class RunReportMetadata extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.RunReportMetadata)
     RunReportMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RunReportMetadata.newBuilder() to construct.
   private RunReportMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class RunReportMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int PERCENT_COMPLETE_FIELD_NUMBER = 2;
   private int percentComplete_ = 0;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class RunReportMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object report_ = "";
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class RunReportMetadata extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -301,6 +305,7 @@ public final class RunReportMetadata extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -497,6 +502,7 @@ public final class RunReportMetadata extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int percentComplete_;
+
     /**
      *
      *
@@ -513,6 +519,7 @@ public final class RunReportMetadata extends com.google.protobuf.GeneratedMessag
     public int getPercentComplete() {
       return percentComplete_;
     }
+
     /**
      *
      *
@@ -533,6 +540,7 @@ public final class RunReportMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class RunReportMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object report_ = "";
+
     /**
      *
      *
@@ -575,6 +584,7 @@ public final class RunReportMetadata extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -597,6 +607,7 @@ public final class RunReportMetadata extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -618,6 +629,7 @@ public final class RunReportMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -635,6 +647,7 @@ public final class RunReportMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

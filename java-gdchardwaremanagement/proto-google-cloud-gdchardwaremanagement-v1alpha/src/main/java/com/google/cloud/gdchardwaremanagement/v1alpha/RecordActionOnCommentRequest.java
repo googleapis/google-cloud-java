@@ -33,6 +33,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest)
     RecordActionOnCommentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RecordActionOnCommentRequest.newBuilder() to construct.
   private RecordActionOnCommentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,6 +120,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
      * <code>ACTION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ACTION_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
      * <code>READ = 1;</code>
      */
     public static final int READ_VALUE = 1;
+
     /**
      *
      *
@@ -230,6 +233,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -257,6 +261,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -287,6 +292,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
 
   public static final int ACTION_TYPE_FIELD_NUMBER = 2;
   private int actionType_ = 0;
+
   /**
    *
    *
@@ -304,6 +310,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
   public int getActionTypeValue() {
     return actionType_;
   }
+
   /**
    *
    *
@@ -511,6 +518,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -719,6 +727,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -745,6 +754,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -771,6 +781,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -796,6 +807,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +829,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +858,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
     }
 
     private int actionType_ = 0;
+
     /**
      *
      *
@@ -862,6 +876,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
     public int getActionTypeValue() {
       return actionType_;
     }
+
     /**
      *
      *
@@ -882,6 +897,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +923,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -932,6 +949,7 @@ public final class RecordActionOnCommentRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

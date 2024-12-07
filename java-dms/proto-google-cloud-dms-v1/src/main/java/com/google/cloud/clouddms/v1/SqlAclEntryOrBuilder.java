@@ -36,6 +36,7 @@ public interface SqlAclEntryOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SqlAclEntryOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SqlAclEntryOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface SqlAclEntryOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface SqlAclEntryOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface SqlAclEntryOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
+
   /**
    *
    *

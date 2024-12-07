@@ -40,6 +40,7 @@ public interface PrivateCloudOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface PrivateCloudOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface PrivateCloudOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface PrivateCloudOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface PrivateCloudOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface PrivateCloudOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface PrivateCloudOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public interface PrivateCloudOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public interface PrivateCloudOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public interface PrivateCloudOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public interface PrivateCloudOrBuilder
    * @return Whether the networkConfig field is set.
    */
   boolean hasNetworkConfig();
+
   /**
    *
    *
@@ -268,6 +279,7 @@ public interface PrivateCloudOrBuilder
    * @return The networkConfig.
    */
   com.google.cloud.vmwareengine.v1.NetworkConfig getNetworkConfig();
+
   /**
    *
    *
@@ -300,6 +312,7 @@ public interface PrivateCloudOrBuilder
    * @return Whether the managementCluster field is set.
    */
   boolean hasManagementCluster();
+
   /**
    *
    *
@@ -319,6 +332,7 @@ public interface PrivateCloudOrBuilder
    * @return The managementCluster.
    */
   com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster getManagementCluster();
+
   /**
    *
    *
@@ -350,6 +364,7 @@ public interface PrivateCloudOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -376,6 +391,7 @@ public interface PrivateCloudOrBuilder
    * @return Whether the hcx field is set.
    */
   boolean hasHcx();
+
   /**
    *
    *
@@ -389,6 +405,7 @@ public interface PrivateCloudOrBuilder
    * @return The hcx.
    */
   com.google.cloud.vmwareengine.v1.Hcx getHcx();
+
   /**
    *
    *
@@ -414,6 +431,7 @@ public interface PrivateCloudOrBuilder
    * @return Whether the nsx field is set.
    */
   boolean hasNsx();
+
   /**
    *
    *
@@ -427,6 +445,7 @@ public interface PrivateCloudOrBuilder
    * @return The nsx.
    */
   com.google.cloud.vmwareengine.v1.Nsx getNsx();
+
   /**
    *
    *
@@ -453,6 +472,7 @@ public interface PrivateCloudOrBuilder
    * @return Whether the vcenter field is set.
    */
   boolean hasVcenter();
+
   /**
    *
    *
@@ -467,6 +487,7 @@ public interface PrivateCloudOrBuilder
    * @return The vcenter.
    */
   com.google.cloud.vmwareengine.v1.Vcenter getVcenter();
+
   /**
    *
    *
@@ -492,6 +513,7 @@ public interface PrivateCloudOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -519,6 +541,7 @@ public interface PrivateCloudOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

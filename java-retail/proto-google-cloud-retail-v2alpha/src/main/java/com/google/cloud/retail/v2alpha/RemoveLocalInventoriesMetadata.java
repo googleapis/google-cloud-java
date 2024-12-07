@@ -36,6 +36,7 @@ public final class RemoveLocalInventoriesMetadata extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.RemoveLocalInventoriesMetadata)
     RemoveLocalInventoriesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RemoveLocalInventoriesMetadata.newBuilder() to construct.
   private RemoveLocalInventoriesMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,6 +217,7 @@ public final class RemoveLocalInventoriesMetadata extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface GetPageRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface GetPageRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

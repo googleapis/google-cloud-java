@@ -39,6 +39,7 @@ public interface GetApiVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

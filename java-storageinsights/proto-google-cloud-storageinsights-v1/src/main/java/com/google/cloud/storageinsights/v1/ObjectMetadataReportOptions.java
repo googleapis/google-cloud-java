@@ -34,6 +34,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.storageinsights.v1.ObjectMetadataReportOptions)
     ObjectMetadataReportOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ObjectMetadataReportOptions.newBuilder() to construct.
   private ObjectMetadataReportOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     private FilterCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -126,6 +128,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     private DestinationOptionsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -161,6 +164,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList metadataFields_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -175,6 +179,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getMetadataFieldsList() {
     return metadataFields_;
   }
+
   /**
    *
    *
@@ -189,6 +194,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
   public int getMetadataFieldsCount() {
     return metadataFields_.size();
   }
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
   public java.lang.String getMetadataFields(int index) {
     return metadataFields_.get(index);
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
   }
 
   public static final int STORAGE_FILTERS_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
   public boolean hasStorageFilters() {
     return filterCase_ == 2;
   }
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     }
     return com.google.cloud.storageinsights.v1.CloudStorageFilters.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -273,6 +283,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
   }
 
   public static final int STORAGE_DESTINATION_OPTIONS_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -290,6 +301,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
   public boolean hasStorageDestinationOptions() {
     return destinationOptionsCase_ == 3;
   }
+
   /**
    *
    *
@@ -312,6 +324,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     }
     return com.google.cloud.storageinsights.v1.CloudStorageDestinationOptions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -553,6 +566,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -845,6 +859,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -860,6 +875,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       metadataFields_.makeImmutable();
       return metadataFields_;
     }
+
     /**
      *
      *
@@ -874,6 +890,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     public int getMetadataFieldsCount() {
       return metadataFields_.size();
     }
+
     /**
      *
      *
@@ -889,6 +906,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     public java.lang.String getMetadataFields(int index) {
       return metadataFields_.get(index);
     }
+
     /**
      *
      *
@@ -904,6 +922,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getMetadataFieldsBytes(int index) {
       return metadataFields_.getByteString(index);
     }
+
     /**
      *
      *
@@ -927,6 +946,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +969,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +989,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1008,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1015,6 +1038,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
             com.google.cloud.storageinsights.v1.CloudStorageFilters.Builder,
             com.google.cloud.storageinsights.v1.CloudStorageFiltersOrBuilder>
         storageFiltersBuilder_;
+
     /**
      *
      *
@@ -1030,6 +1054,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     public boolean hasStorageFilters() {
       return filterCase_ == 2;
     }
+
     /**
      *
      *
@@ -1055,6 +1080,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
         return com.google.cloud.storageinsights.v1.CloudStorageFilters.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1078,6 +1104,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       filterCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1098,6 +1125,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       filterCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1132,6 +1160,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       filterCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1186,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1200,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
         getStorageFiltersBuilder() {
       return getStorageFiltersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1191,6 +1222,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
         return com.google.cloud.storageinsights.v1.CloudStorageFilters.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1229,6 +1261,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
             com.google.cloud.storageinsights.v1.CloudStorageDestinationOptions.Builder,
             com.google.cloud.storageinsights.v1.CloudStorageDestinationOptionsOrBuilder>
         storageDestinationOptionsBuilder_;
+
     /**
      *
      *
@@ -1246,6 +1279,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     public boolean hasStorageDestinationOptions() {
       return destinationOptionsCase_ == 3;
     }
+
     /**
      *
      *
@@ -1277,6 +1311,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1302,6 +1337,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       destinationOptionsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1325,6 +1361,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       destinationOptionsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1400,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       destinationOptionsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1390,6 +1428,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1405,6 +1444,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
         getStorageDestinationOptionsBuilder() {
       return getStorageDestinationOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1430,6 +1470,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

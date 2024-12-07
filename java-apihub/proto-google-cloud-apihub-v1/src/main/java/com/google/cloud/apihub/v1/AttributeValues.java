@@ -33,6 +33,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.AttributeValues)
     AttributeValuesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AttributeValues.newBuilder() to construct.
   private AttributeValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     java.util.List<com.google.cloud.apihub.v1.Attribute.AllowedValue> getValuesList();
+
     /**
      *
      *
@@ -92,6 +94,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     com.google.cloud.apihub.v1.Attribute.AllowedValue getValues(int index);
+
     /**
      *
      *
@@ -104,6 +107,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     int getValuesCount();
+
     /**
      *
      *
@@ -117,6 +121,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
      */
     java.util.List<? extends com.google.cloud.apihub.v1.Attribute.AllowedValueOrBuilder>
         getValuesOrBuilderList();
+
     /**
      *
      *
@@ -130,6 +135,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
      */
     com.google.cloud.apihub.v1.Attribute.AllowedValueOrBuilder getValuesOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.AttributeValues.EnumAttributeValues)
       EnumAttributeValuesOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EnumAttributeValues.newBuilder() to construct.
     private EnumAttributeValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -178,6 +185,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.apihub.v1.Attribute.AllowedValue> values_;
+
     /**
      *
      *
@@ -193,6 +201,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     public java.util.List<com.google.cloud.apihub.v1.Attribute.AllowedValue> getValuesList() {
       return values_;
     }
+
     /**
      *
      *
@@ -209,6 +218,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         getValuesOrBuilderList() {
       return values_;
     }
+
     /**
      *
      *
@@ -224,6 +234,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     public int getValuesCount() {
       return values_.size();
     }
+
     /**
      *
      *
@@ -239,6 +250,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.apihub.v1.Attribute.AllowedValue getValues(int index) {
       return values_.get(index);
     }
+
     /**
      *
      *
@@ -419,6 +431,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -691,6 +704,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
           return valuesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -709,6 +723,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
           return valuesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -727,6 +742,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
           return valuesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -751,6 +767,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -773,6 +790,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -797,6 +815,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -821,6 +840,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -843,6 +863,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -865,6 +886,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -887,6 +909,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -908,6 +931,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -929,6 +953,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -943,6 +968,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.apihub.v1.Attribute.AllowedValue.Builder getValuesBuilder(int index) {
         return getValuesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -962,6 +988,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
           return valuesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -981,6 +1008,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
           return java.util.Collections.unmodifiableList(values_);
         }
       }
+
       /**
        *
        *
@@ -996,6 +1024,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         return getValuesFieldBuilder()
             .addBuilder(com.google.cloud.apihub.v1.Attribute.AllowedValue.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1012,6 +1041,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
             .addBuilder(
                 index, com.google.cloud.apihub.v1.Attribute.AllowedValue.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1130,6 +1160,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the values.
      */
     java.util.List<java.lang.String> getValuesList();
+
     /**
      *
      *
@@ -1143,6 +1174,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
      * @return The count of values.
      */
     int getValuesCount();
+
     /**
      *
      *
@@ -1157,6 +1189,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
      * @return The values at the given index.
      */
     java.lang.String getValues(int index);
+
     /**
      *
      *
@@ -1172,6 +1205,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getValuesBytes(int index);
   }
+
   /**
    *
    *
@@ -1186,6 +1220,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.AttributeValues.StringAttributeValues)
       StringAttributeValuesOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StringAttributeValues.newBuilder() to construct.
     private StringAttributeValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1221,6 +1256,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList values_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -1236,6 +1272,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ProtocolStringList getValuesList() {
       return values_;
     }
+
     /**
      *
      *
@@ -1251,6 +1288,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     public int getValuesCount() {
       return values_.size();
     }
+
     /**
      *
      *
@@ -1267,6 +1305,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
+
     /**
      *
      *
@@ -1453,6 +1492,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1662,6 +1702,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -1678,6 +1719,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         values_.makeImmutable();
         return values_;
       }
+
       /**
        *
        *
@@ -1693,6 +1735,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       public int getValuesCount() {
         return values_.size();
       }
+
       /**
        *
        *
@@ -1709,6 +1752,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       public java.lang.String getValues(int index) {
         return values_.get(index);
       }
+
       /**
        *
        *
@@ -1725,6 +1769,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       public com.google.protobuf.ByteString getValuesBytes(int index) {
         return values_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1749,6 +1794,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1772,6 +1818,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1792,6 +1839,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1811,6 +1859,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1921,6 +1970,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     private ValueCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1956,6 +2006,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ENUM_VALUES_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1972,6 +2023,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
   public boolean hasEnumValues() {
     return valueCase_ == 2;
   }
+
   /**
    *
    *
@@ -1991,6 +2043,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.apihub.v1.AttributeValues.EnumAttributeValues.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2011,6 +2064,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int STRING_VALUES_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -2027,6 +2081,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
   public boolean hasStringValues() {
     return valueCase_ == 3;
   }
+
   /**
    *
    *
@@ -2046,6 +2101,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2066,6 +2122,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int JSON_VALUES_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -2082,6 +2139,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
   public boolean hasJsonValues() {
     return valueCase_ == 4;
   }
+
   /**
    *
    *
@@ -2101,6 +2159,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2124,6 +2183,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attribute_ = "";
+
   /**
    *
    *
@@ -2150,6 +2210,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -2393,6 +2454,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2659,6 +2721,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.apihub.v1.AttributeValues.EnumAttributeValues.Builder,
             com.google.cloud.apihub.v1.AttributeValues.EnumAttributeValuesOrBuilder>
         enumValuesBuilder_;
+
     /**
      *
      *
@@ -2675,6 +2738,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     public boolean hasEnumValues() {
       return valueCase_ == 2;
     }
+
     /**
      *
      *
@@ -2701,6 +2765,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.apihub.v1.AttributeValues.EnumAttributeValues.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2725,6 +2790,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2746,6 +2812,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2782,6 +2849,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2808,6 +2876,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2822,6 +2891,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         getEnumValuesBuilder() {
       return getEnumValuesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2844,6 +2914,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.apihub.v1.AttributeValues.EnumAttributeValues.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2884,6 +2955,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.Builder,
             com.google.cloud.apihub.v1.AttributeValues.StringAttributeValuesOrBuilder>
         stringValuesBuilder_;
+
     /**
      *
      *
@@ -2900,6 +2972,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     public boolean hasStringValues() {
       return valueCase_ == 3;
     }
+
     /**
      *
      *
@@ -2928,6 +3001,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2952,6 +3026,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2973,6 +3048,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -3009,6 +3085,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -3035,6 +3112,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3049,6 +3127,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         getStringValuesBuilder() {
       return getStringValuesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3072,6 +3151,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3112,6 +3192,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.Builder,
             com.google.cloud.apihub.v1.AttributeValues.StringAttributeValuesOrBuilder>
         jsonValuesBuilder_;
+
     /**
      *
      *
@@ -3128,6 +3209,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     public boolean hasJsonValues() {
       return valueCase_ == 4;
     }
+
     /**
      *
      *
@@ -3156,6 +3238,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3180,6 +3263,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -3201,6 +3285,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -3237,6 +3322,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -3263,6 +3349,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3277,6 +3364,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         getJsonValuesBuilder() {
       return getJsonValuesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3300,6 +3388,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3336,6 +3425,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object attribute_ = "";
+
     /**
      *
      *
@@ -3361,6 +3451,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3386,6 +3477,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3410,6 +3502,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3430,6 +3523,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.CreateEvaluationJobRequest)
     CreateEvaluationJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateEvaluationJobRequest.newBuilder() to construct.
   private CreateEvaluationJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
 
   public static final int JOB_FIELD_NUMBER = 2;
   private com.google.cloud.datalabeling.v1beta1.EvaluationJob job_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
   public boolean hasJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
         ? com.google.cloud.datalabeling.v1beta1.EvaluationJob.getDefaultInstance()
         : job_;
   }
+
   /**
    *
    *
@@ -351,6 +357,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -568,6 +575,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -593,6 +601,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -618,6 +627,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -642,6 +652,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
             com.google.cloud.datalabeling.v1beta1.EvaluationJob.Builder,
             com.google.cloud.datalabeling.v1beta1.EvaluationJobOrBuilder>
         jobBuilder_;
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
     public boolean hasJob() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -732,6 +746,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
         return jobBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -756,6 +771,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +794,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +824,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +846,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +863,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
       onChanged();
       return getJobFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -864,6 +884,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
             : job_;
       }
     }
+
     /**
      *
      *

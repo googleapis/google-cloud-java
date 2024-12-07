@@ -35,6 +35,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.WarehouseCutoffTime)
     WarehouseCutoffTimeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WarehouseCutoffTime.newBuilder() to construct.
   private WarehouseCutoffTime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int HOUR_FIELD_NUMBER = 1;
   private int hour_ = 0;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
   public boolean hasHour() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
 
   public static final int MINUTE_FIELD_NUMBER = 2;
   private int minute_ = 0;
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
   public boolean hasMinute() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -317,6 +322,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -522,6 +528,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int hour_;
+
     /**
      *
      *
@@ -539,6 +546,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
     public boolean hasHour() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -556,6 +564,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
     public int getHour() {
       return hour_;
     }
+
     /**
      *
      *
@@ -577,6 +586,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -598,6 +608,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
     }
 
     private int minute_;
+
     /**
      *
      *
@@ -615,6 +626,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
     public boolean hasMinute() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -632,6 +644,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
     public int getMinute() {
       return minute_;
     }
+
     /**
      *
      *
@@ -653,6 +666,7 @@ public final class WarehouseCutoffTime extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

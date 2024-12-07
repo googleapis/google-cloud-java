@@ -36,6 +36,7 @@ public interface BatteryInfoOrBuilder
    * @return The enum numeric value on the wire for batteryStatus.
    */
   int getBatteryStatusValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface BatteryInfoOrBuilder
    * @return The enum numeric value on the wire for powerSource.
    */
   int getPowerSourceValue();
+
   /**
    *
    *

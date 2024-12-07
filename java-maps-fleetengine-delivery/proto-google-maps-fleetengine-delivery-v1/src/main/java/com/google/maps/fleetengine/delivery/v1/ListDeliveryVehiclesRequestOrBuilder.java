@@ -38,6 +38,7 @@ public interface ListDeliveryVehiclesRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ListDeliveryVehiclesRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader getHeader();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ListDeliveryVehiclesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface ListDeliveryVehiclesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -175,6 +179,7 @@ public interface ListDeliveryVehiclesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -218,6 +223,7 @@ public interface ListDeliveryVehiclesRequestOrBuilder
    * @return Whether the viewport field is set.
    */
   boolean hasViewport();
+
   /**
    *
    *
@@ -231,6 +237,7 @@ public interface ListDeliveryVehiclesRequestOrBuilder
    * @return The viewport.
    */
   com.google.geo.type.Viewport getViewport();
+
   /**
    *
    *

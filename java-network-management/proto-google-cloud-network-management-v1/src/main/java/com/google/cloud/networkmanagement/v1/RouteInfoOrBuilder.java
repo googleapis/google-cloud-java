@@ -36,6 +36,7 @@ public interface RouteInfoOrBuilder
    * @return The enum numeric value on the wire for routeType.
    */
   int getRouteTypeValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RouteInfoOrBuilder
    * @return The enum numeric value on the wire for nextHopType.
    */
   int getNextHopTypeValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface RouteInfoOrBuilder
    * @return The enum numeric value on the wire for routeScope.
    */
   int getRouteScopeValue();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface RouteInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface RouteInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface RouteInfoOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface RouteInfoOrBuilder
    * @return The destIpRange.
    */
   java.lang.String getDestIpRange();
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public interface RouteInfoOrBuilder
    * @return The nextHop.
    */
   java.lang.String getNextHop();
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public interface RouteInfoOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
+
   /**
    *
    *
@@ -274,6 +283,7 @@ public interface RouteInfoOrBuilder
    * @return A list containing the instanceTags.
    */
   java.util.List<java.lang.String> getInstanceTagsList();
+
   /**
    *
    *
@@ -286,6 +296,7 @@ public interface RouteInfoOrBuilder
    * @return The count of instanceTags.
    */
   int getInstanceTagsCount();
+
   /**
    *
    *
@@ -299,6 +310,7 @@ public interface RouteInfoOrBuilder
    * @return The instanceTags at the given index.
    */
   java.lang.String getInstanceTags(int index);
+
   /**
    *
    *
@@ -325,6 +337,7 @@ public interface RouteInfoOrBuilder
    * @return The srcIpRange.
    */
   java.lang.String getSrcIpRange();
+
   /**
    *
    *
@@ -350,6 +363,7 @@ public interface RouteInfoOrBuilder
    * @return A list containing the destPortRanges.
    */
   java.util.List<java.lang.String> getDestPortRangesList();
+
   /**
    *
    *
@@ -362,6 +376,7 @@ public interface RouteInfoOrBuilder
    * @return The count of destPortRanges.
    */
   int getDestPortRangesCount();
+
   /**
    *
    *
@@ -375,6 +390,7 @@ public interface RouteInfoOrBuilder
    * @return The destPortRanges at the given index.
    */
   java.lang.String getDestPortRanges(int index);
+
   /**
    *
    *
@@ -401,6 +417,7 @@ public interface RouteInfoOrBuilder
    * @return A list containing the srcPortRanges.
    */
   java.util.List<java.lang.String> getSrcPortRangesList();
+
   /**
    *
    *
@@ -413,6 +430,7 @@ public interface RouteInfoOrBuilder
    * @return The count of srcPortRanges.
    */
   int getSrcPortRangesCount();
+
   /**
    *
    *
@@ -426,6 +444,7 @@ public interface RouteInfoOrBuilder
    * @return The srcPortRanges at the given index.
    */
   java.lang.String getSrcPortRanges(int index);
+
   /**
    *
    *
@@ -452,6 +471,7 @@ public interface RouteInfoOrBuilder
    * @return A list containing the protocols.
    */
   java.util.List<java.lang.String> getProtocolsList();
+
   /**
    *
    *
@@ -464,6 +484,7 @@ public interface RouteInfoOrBuilder
    * @return The count of protocols.
    */
   int getProtocolsCount();
+
   /**
    *
    *
@@ -477,6 +498,7 @@ public interface RouteInfoOrBuilder
    * @return The protocols at the given index.
    */
   java.lang.String getProtocols(int index);
+
   /**
    *
    *
@@ -503,6 +525,7 @@ public interface RouteInfoOrBuilder
    * @return Whether the nccHubUri field is set.
    */
   boolean hasNccHubUri();
+
   /**
    *
    *
@@ -515,6 +538,7 @@ public interface RouteInfoOrBuilder
    * @return The nccHubUri.
    */
   java.lang.String getNccHubUri();
+
   /**
    *
    *
@@ -540,6 +564,7 @@ public interface RouteInfoOrBuilder
    * @return Whether the nccSpokeUri field is set.
    */
   boolean hasNccSpokeUri();
+
   /**
    *
    *
@@ -552,6 +577,7 @@ public interface RouteInfoOrBuilder
    * @return The nccSpokeUri.
    */
   java.lang.String getNccSpokeUri();
+
   /**
    *
    *
@@ -578,6 +604,7 @@ public interface RouteInfoOrBuilder
    * @return Whether the advertisedRouteSourceRouterUri field is set.
    */
   boolean hasAdvertisedRouteSourceRouterUri();
+
   /**
    *
    *
@@ -591,6 +618,7 @@ public interface RouteInfoOrBuilder
    * @return The advertisedRouteSourceRouterUri.
    */
   java.lang.String getAdvertisedRouteSourceRouterUri();
+
   /**
    *
    *
@@ -620,6 +648,7 @@ public interface RouteInfoOrBuilder
    * @return Whether the advertisedRouteNextHopUri field is set.
    */
   boolean hasAdvertisedRouteNextHopUri();
+
   /**
    *
    *
@@ -635,6 +664,7 @@ public interface RouteInfoOrBuilder
    * @return The advertisedRouteNextHopUri.
    */
   java.lang.String getAdvertisedRouteNextHopUri();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface ListRecurringAudienceListsResponseOrBuilder
    */
   java.util.List<com.google.analytics.data.v1alpha.RecurringAudienceList>
       getRecurringAudienceListsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListRecurringAudienceListsResponseOrBuilder
    * </code>
    */
   com.google.analytics.data.v1alpha.RecurringAudienceList getRecurringAudienceLists(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListRecurringAudienceListsResponseOrBuilder
    * </code>
    */
   int getRecurringAudienceListsCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListRecurringAudienceListsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.RecurringAudienceListOrBuilder>
       getRecurringAudienceListsOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ListRecurringAudienceListsResponseOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface ListRecurringAudienceListsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

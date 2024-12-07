@@ -36,6 +36,7 @@ public interface SegmentParameterFilterExpressionListOrBuilder
    */
   java.util.List<com.google.analytics.data.v1alpha.SegmentParameterFilterExpression>
       getExpressionsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface SegmentParameterFilterExpressionListOrBuilder
    * </code>
    */
   com.google.analytics.data.v1alpha.SegmentParameterFilterExpression getExpressions(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface SegmentParameterFilterExpressionListOrBuilder
    * </code>
    */
   int getExpressionsCount();
+
   /**
    *
    *
@@ -71,6 +74,7 @@ public interface SegmentParameterFilterExpressionListOrBuilder
   java.util.List<
           ? extends com.google.analytics.data.v1alpha.SegmentParameterFilterExpressionOrBuilder>
       getExpressionsOrBuilderList();
+
   /**
    *
    *

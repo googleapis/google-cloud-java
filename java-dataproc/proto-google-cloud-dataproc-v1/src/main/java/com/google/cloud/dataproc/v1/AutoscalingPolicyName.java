@@ -303,7 +303,8 @@ public class AutoscalingPolicyName implements ResourceName {
     private Builder(AutoscalingPolicyName autoscalingPolicyName) {
       Preconditions.checkArgument(
           Objects.equals(autoscalingPolicyName.pathTemplate, PROJECT_LOCATION_AUTOSCALING_POLICY),
-          "toBuilder is only supported when AutoscalingPolicyName has the pattern of projects/{project}/locations/{location}/autoscalingPolicies/{autoscaling_policy}");
+          "toBuilder is only supported when AutoscalingPolicyName has the pattern of"
+              + " projects/{project}/locations/{location}/autoscalingPolicies/{autoscaling_policy}");
       this.project = autoscalingPolicyName.project;
       this.location = autoscalingPolicyName.location;
       this.autoscalingPolicy = autoscalingPolicyName.autoscalingPolicy;

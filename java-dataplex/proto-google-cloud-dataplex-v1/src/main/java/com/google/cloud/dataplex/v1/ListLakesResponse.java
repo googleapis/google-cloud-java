@@ -33,6 +33,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.ListLakesResponse)
     ListLakesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListLakesResponse.newBuilder() to construct.
   private ListLakesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataplex.v1.Lake> lakes_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.dataplex.v1.Lake> getLakesList() {
     return lakes_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       getLakesOrBuilderList() {
     return lakes_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
   public int getLakesCount() {
     return lakes_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.dataplex.v1.Lake getLakes(int index) {
     return lakes_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachableLocations_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getUnreachableLocationsList() {
     return unreachableLocations_;
   }
+
   /**
    *
    *
@@ -222,6 +232,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
   public int getUnreachableLocationsCount() {
     return unreachableLocations_.size();
   }
+
   /**
    *
    *
@@ -237,6 +248,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
   public java.lang.String getUnreachableLocations(int index) {
     return unreachableLocations_.get(index);
   }
+
   /**
    *
    *
@@ -440,6 +452,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -736,6 +749,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
         return lakesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
         return lakesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
         return lakesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -790,6 +806,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +849,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +872,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +892,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +912,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +933,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +953,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +973,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +986,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataplex.v1.Lake.Builder getLakesBuilder(int index) {
       return getLakesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -977,6 +1003,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
         return lakesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -994,6 +1021,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(lakes_);
       }
     }
+
     /**
      *
      *
@@ -1007,6 +1035,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       return getLakesFieldBuilder()
           .addBuilder(com.google.cloud.dataplex.v1.Lake.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1020,6 +1049,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       return getLakesFieldBuilder()
           .addBuilder(index, com.google.cloud.dataplex.v1.Lake.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1051,6 +1081,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1074,6 +1105,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1129,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1119,6 +1152,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1171,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1205,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1185,6 +1221,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       unreachableLocations_.makeImmutable();
       return unreachableLocations_;
     }
+
     /**
      *
      *
@@ -1199,6 +1236,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
     public int getUnreachableLocationsCount() {
       return unreachableLocations_.size();
     }
+
     /**
      *
      *
@@ -1214,6 +1252,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
     public java.lang.String getUnreachableLocations(int index) {
       return unreachableLocations_.get(index);
     }
+
     /**
      *
      *
@@ -1229,6 +1268,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getUnreachableLocationsBytes(int index) {
       return unreachableLocations_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1252,6 +1292,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1315,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1335,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1311,6 +1354,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

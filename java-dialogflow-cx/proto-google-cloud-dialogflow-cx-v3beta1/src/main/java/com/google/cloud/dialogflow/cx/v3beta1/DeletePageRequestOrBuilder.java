@@ -40,6 +40,7 @@ public interface DeletePageRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * @return Whether the abandoning field is set.
    */
   boolean hasAbandoning();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * @return Whether the creating field is set.
    */
   boolean hasCreating();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * @return Whether the creatingWithoutRetries field is set.
    */
   boolean hasCreatingWithoutRetries();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * @return Whether the deleting field is set.
    */
   boolean hasDeleting();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * @return Whether the none field is set.
    */
   boolean hasNone();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * @return Whether the recreating field is set.
    */
   boolean hasRecreating();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * @return Whether the refreshing field is set.
    */
   boolean hasRefreshing();
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * @return Whether the restarting field is set.
    */
   boolean hasRestarting();
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * @return Whether the resuming field is set.
    */
   boolean hasResuming();
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * @return Whether the starting field is set.
    */
   boolean hasStarting();
+
   /**
    *
    *
@@ -286,6 +296,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * @return Whether the stopping field is set.
    */
   boolean hasStopping();
+
   /**
    *
    *
@@ -311,6 +322,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * @return Whether the suspending field is set.
    */
   boolean hasSuspending();
+
   /**
    *
    *
@@ -336,6 +348,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * @return Whether the verifying field is set.
    */
   boolean hasVerifying();
+
   /**
    *
    *

@@ -44,6 +44,7 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * @return Whether the sessionEntityType field is set.
    */
   boolean hasSessionEntityType();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * @return The sessionEntityType.
    */
   com.google.cloud.dialogflow.cx.v3beta1.SessionEntityType getSessionEntityType();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

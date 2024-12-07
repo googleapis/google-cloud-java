@@ -36,6 +36,7 @@ public interface UpdateActiveBreakpointRequestOrBuilder
    * @return The debuggeeId.
    */
   java.lang.String getDebuggeeId();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface UpdateActiveBreakpointRequestOrBuilder
    * @return Whether the breakpoint field is set.
    */
   boolean hasBreakpoint();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface UpdateActiveBreakpointRequestOrBuilder
    * @return The breakpoint.
    */
   com.google.devtools.clouddebugger.v2.Breakpoint getBreakpoint();
+
   /**
    *
    *

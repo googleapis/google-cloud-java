@@ -113,6 +113,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -123,6 +124,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STRING = 1;</code>
    */
   public static final int STRING_VALUE = 1;
+
   /**
    *
    *
@@ -133,6 +135,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NUMBER = 2;</code>
    */
   public static final int NUMBER_VALUE = 2;
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INTEGER = 3;</code>
    */
   public static final int INTEGER_VALUE = 3;
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BOOLEAN = 4;</code>
    */
   public static final int BOOLEAN_VALUE = 4;
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ARRAY = 5;</code>
    */
   public static final int ARRAY_VALUE = 5;
+
   /**
    *
    *

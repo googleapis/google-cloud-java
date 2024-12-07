@@ -35,6 +35,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest)
     FetchFeatureValuesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchFeatureValuesRequest.newBuilder() to construct.
   private FetchFeatureValuesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * <code>FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int FORMAT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * <code>KEY_VALUE = 1;</code>
      */
     public static final int KEY_VALUE_VALUE = 1;
+
     /**
      *
      *
@@ -245,6 +248,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
     private EntityIdCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -276,6 +280,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
   }
 
   public static final int ID_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -294,6 +299,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
   public boolean hasId() {
     return entityIdCase_ == 3;
   }
+
   /**
    *
    *
@@ -325,6 +331,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -361,6 +368,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object featureView_ = "";
+
   /**
    *
    *
@@ -387,6 +395,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -416,6 +425,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
 
   public static final int DATA_KEY_FIELD_NUMBER = 6;
   private com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey dataKey_;
+
   /**
    *
    *
@@ -433,6 +443,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
   public boolean hasDataKey() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -452,6 +463,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
         ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()
         : dataKey_;
   }
+
   /**
    *
    *
@@ -472,6 +484,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
 
   public static final int DATA_FORMAT_FIELD_NUMBER = 7;
   private int dataFormat_ = 0;
+
   /**
    *
    *
@@ -491,6 +504,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
   public int getDataFormatValue() {
     return dataFormat_;
   }
+
   /**
    *
    *
@@ -517,6 +531,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
 
   public static final int FORMAT_FIELD_NUMBER = 5;
   private int format_ = 0;
+
   /**
    *
    *
@@ -539,6 +554,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
   public int getFormatValue() {
     return format_;
   }
+
   /**
    *
    *
@@ -790,6 +806,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1095,6 +1112,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
     public boolean hasId() {
       return entityIdCase_ == 3;
     }
+
     /**
      *
      *
@@ -1127,6 +1145,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1178,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1184,6 +1204,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1228,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1257,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object featureView_ = "";
+
     /**
      *
      *
@@ -1260,6 +1283,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1285,6 +1309,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1309,6 +1334,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1329,6 +1355,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1388,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder,
             com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>
         dataKeyBuilder_;
+
     /**
      *
      *
@@ -1377,6 +1405,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
     public boolean hasDataKey() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1399,6 +1428,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
         return dataKeyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1423,6 +1453,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1445,6 +1476,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1475,6 +1507,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1496,6 +1529,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1512,6 +1546,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       onChanged();
       return getDataKeyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1532,6 +1567,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
             : dataKey_;
       }
     }
+
     /**
      *
      *
@@ -1561,6 +1597,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
     }
 
     private int dataFormat_ = 0;
+
     /**
      *
      *
@@ -1580,6 +1617,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
     public int getDataFormatValue() {
       return dataFormat_;
     }
+
     /**
      *
      *
@@ -1602,6 +1640,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1625,6 +1664,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
           ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1650,6 +1690,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1673,6 +1714,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
     }
 
     private int format_ = 0;
+
     /**
      *
      *
@@ -1695,6 +1737,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
     public int getFormatValue() {
       return format_;
     }
+
     /**
      *
      *
@@ -1720,6 +1763,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1746,6 +1790,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
           ? com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1775,6 +1820,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

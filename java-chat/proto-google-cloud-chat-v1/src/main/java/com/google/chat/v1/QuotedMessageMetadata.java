@@ -33,6 +33,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.chat.v1.QuotedMessageMetadata)
     QuotedMessageMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QuotedMessageMetadata.newBuilder() to construct.
   private QuotedMessageMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp lastUpdateTime_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasLastUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastUpdateTime_;
   }
+
   /**
    *
    *
@@ -354,6 +360,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -567,6 +574,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -593,6 +601,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -619,6 +628,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -644,6 +654,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +676,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastUpdateTimeBuilder_;
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasLastUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
         return lastUpdateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -763,6 +778,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +832,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +855,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +873,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getLastUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
             : lastUpdateTime_;
       }
     }
+
     /**
      *
      *

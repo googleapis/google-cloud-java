@@ -38,6 +38,7 @@ public interface ExecutableCodeOrBuilder
    * @return The enum numeric value on the wire for language.
    */
   int getLanguageValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ExecutableCodeOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
+
   /**
    *
    *

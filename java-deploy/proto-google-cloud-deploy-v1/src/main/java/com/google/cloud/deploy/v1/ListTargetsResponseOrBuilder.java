@@ -34,6 +34,7 @@ public interface ListTargetsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Target targets = 1;</code>
    */
   java.util.List<com.google.cloud.deploy.v1.Target> getTargetsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTargetsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Target targets = 1;</code>
    */
   com.google.cloud.deploy.v1.Target getTargets(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTargetsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Target targets = 1;</code>
    */
   int getTargetsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListTargetsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Target targets = 1;</code>
    */
   java.util.List<? extends com.google.cloud.deploy.v1.TargetOrBuilder> getTargetsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListTargetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface ListTargetsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -126,6 +132,7 @@ public interface ListTargetsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -139,6 +146,7 @@ public interface ListTargetsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

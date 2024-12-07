@@ -40,6 +40,7 @@ public interface GetDefinitionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

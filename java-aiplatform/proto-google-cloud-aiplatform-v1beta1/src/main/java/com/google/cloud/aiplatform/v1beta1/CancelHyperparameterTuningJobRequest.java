@@ -35,6 +35,7 @@ public final class CancelHyperparameterTuningJobRequest
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest)
     CancelHyperparameterTuningJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CancelHyperparameterTuningJobRequest.newBuilder() to construct.
   private CancelHyperparameterTuningJobRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class CancelHyperparameterTuningJobRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class CancelHyperparameterTuningJobRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -287,6 +290,7 @@ public final class CancelHyperparameterTuningJobRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -482,6 +486,7 @@ public final class CancelHyperparameterTuningJobRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -508,6 +513,7 @@ public final class CancelHyperparameterTuningJobRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -534,6 +540,7 @@ public final class CancelHyperparameterTuningJobRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -559,6 +566,7 @@ public final class CancelHyperparameterTuningJobRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -580,6 +588,7 @@ public final class CancelHyperparameterTuningJobRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

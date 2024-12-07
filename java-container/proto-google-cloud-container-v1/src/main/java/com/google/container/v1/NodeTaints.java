@@ -34,6 +34,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1.NodeTaints)
     NodeTaintsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NodeTaints.newBuilder() to construct.
   private NodeTaints(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1.NodeTaint> taints_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.container.v1.NodeTaint> getTaintsList() {
     return taints_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
       getTaintsOrBuilderList() {
     return taints_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
   public int getTaintsCount() {
     return taints_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
   public com.google.container.v1.NodeTaint getTaints(int index) {
     return taints_.get(index);
   }
+
   /**
    *
    *
@@ -294,6 +300,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -553,6 +560,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
         return taintsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -569,6 +577,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
         return taintsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
         return taintsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -607,6 +617,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -626,6 +637,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +660,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +683,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +703,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +723,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +744,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +764,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +784,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +797,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1.NodeTaint.Builder getTaintsBuilder(int index) {
       return getTaintsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -794,6 +814,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
         return taintsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -811,6 +832,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(taints_);
       }
     }
+
     /**
      *
      *
@@ -824,6 +846,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
       return getTaintsFieldBuilder()
           .addBuilder(com.google.container.v1.NodeTaint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -837,6 +860,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
       return getTaintsFieldBuilder()
           .addBuilder(index, com.google.container.v1.NodeTaint.getDefaultInstance());
     }
+
     /**
      *
      *

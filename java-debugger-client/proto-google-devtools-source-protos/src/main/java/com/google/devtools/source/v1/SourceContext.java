@@ -34,6 +34,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.source.v1.SourceContext)
     SourceContextOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SourceContext.newBuilder() to construct.
   private SourceContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     private ContextCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,6 +120,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_REPO_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudRepo() {
     return contextCase_ == 1;
   }
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.devtools.source.v1.CloudRepoSourceContext.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_WORKSPACE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudWorkspace() {
     return contextCase_ == 2;
   }
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.devtools.source.v1.CloudWorkspaceSourceContext.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -221,6 +229,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GERRIT_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGerrit() {
     return contextCase_ == 3;
   }
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.devtools.source.v1.GerritSourceContext.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -272,6 +283,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GIT_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -287,6 +299,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGit() {
     return contextCase_ == 6;
   }
+
   /**
    *
    *
@@ -305,6 +318,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.devtools.source.v1.GitSourceContext.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -541,6 +555,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -810,6 +825,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.source.v1.CloudRepoSourceContext.Builder,
             com.google.devtools.source.v1.CloudRepoSourceContextOrBuilder>
         cloudRepoBuilder_;
+
     /**
      *
      *
@@ -825,6 +841,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudRepo() {
       return contextCase_ == 1;
     }
+
     /**
      *
      *
@@ -850,6 +867,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.source.v1.CloudRepoSourceContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -872,6 +890,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +911,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +945,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +971,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +984,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.source.v1.CloudRepoSourceContext.Builder getCloudRepoBuilder() {
       return getCloudRepoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -982,6 +1005,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.source.v1.CloudRepoSourceContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1044,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.source.v1.CloudWorkspaceSourceContext.Builder,
             com.google.devtools.source.v1.CloudWorkspaceSourceContextOrBuilder>
         cloudWorkspaceBuilder_;
+
     /**
      *
      *
@@ -1035,6 +1060,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudWorkspace() {
       return contextCase_ == 2;
     }
+
     /**
      *
      *
@@ -1060,6 +1086,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.source.v1.CloudWorkspaceSourceContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1083,6 +1110,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1131,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1166,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1162,6 +1192,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1206,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         getCloudWorkspaceBuilder() {
       return getCloudWorkspaceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1196,6 +1228,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.source.v1.CloudWorkspaceSourceContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1234,6 +1267,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.source.v1.GerritSourceContext.Builder,
             com.google.devtools.source.v1.GerritSourceContextOrBuilder>
         gerritBuilder_;
+
     /**
      *
      *
@@ -1249,6 +1283,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGerrit() {
       return contextCase_ == 3;
     }
+
     /**
      *
      *
@@ -1274,6 +1309,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.source.v1.GerritSourceContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1296,6 +1332,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1316,6 +1353,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1386,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1373,6 +1412,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1385,6 +1425,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.source.v1.GerritSourceContext.Builder getGerritBuilder() {
       return getGerritFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1405,6 +1446,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.source.v1.GerritSourceContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1443,6 +1485,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.source.v1.GitSourceContext.Builder,
             com.google.devtools.source.v1.GitSourceContextOrBuilder>
         gitBuilder_;
+
     /**
      *
      *
@@ -1458,6 +1501,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGit() {
       return contextCase_ == 6;
     }
+
     /**
      *
      *
@@ -1483,6 +1527,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.source.v1.GitSourceContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1505,6 +1550,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1524,6 +1570,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1556,6 +1603,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1581,6 +1629,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1593,6 +1642,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.source.v1.GitSourceContext.Builder getGitBuilder() {
       return getGitFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1613,6 +1663,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.source.v1.GitSourceContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *

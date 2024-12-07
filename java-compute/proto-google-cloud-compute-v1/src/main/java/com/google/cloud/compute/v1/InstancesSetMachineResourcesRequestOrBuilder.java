@@ -35,6 +35,7 @@ public interface InstancesSetMachineResourcesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface InstancesSetMachineResourcesRequestOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface InstancesSetMachineResourcesRequestOrBuilder
    * </code>
    */
   int getGuestAcceleratorsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface InstancesSetMachineResourcesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
       getGuestAcceleratorsOrBuilderList();
+
   /**
    *
    *

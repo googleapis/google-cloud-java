@@ -26,6 +26,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.Subject)
     SubjectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Subject.newBuilder() to construct.
   private Subject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    * <code>string name = 1;</code>
    *
@@ -86,6 +88,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    * <code>string name = 1;</code>
    *
@@ -130,6 +133,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   public int getDigestCount() {
     return internalGetDigest().getMap().size();
   }
+
   /**
    *
    *
@@ -149,12 +153,14 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetDigest().getMap().containsKey(key);
   }
+
   /** Use {@link #getDigestMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getDigest() {
     return getDigestMap();
   }
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
     return internalGetDigest().getMap();
   }
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -392,6 +400,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code grafeas.v1.Subject} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -604,6 +613,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      * <code>string name = 1;</code>
      *
@@ -620,6 +630,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>string name = 1;</code>
      *
@@ -636,6 +647,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>string name = 1;</code>
      *
@@ -651,6 +663,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>string name = 1;</code>
      *
@@ -662,6 +675,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>string name = 1;</code>
      *
@@ -704,6 +718,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     public int getDigestCount() {
       return internalGetDigest().getMap().size();
     }
+
     /**
      *
      *
@@ -723,12 +738,14 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetDigest().getMap().containsKey(key);
     }
+
     /** Use {@link #getDigestMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDigest() {
       return getDigestMap();
     }
+
     /**
      *
      *
@@ -745,6 +762,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
       return internalGetDigest().getMap();
     }
+
     /**
      *
      *
@@ -768,6 +786,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -797,6 +816,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDigest().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -816,12 +836,14 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDigest().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDigest() {
       bitField0_ |= 0x00000002;
       return internalGetMutableDigest().getMutableMap();
     }
+
     /**
      *
      *
@@ -845,6 +867,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

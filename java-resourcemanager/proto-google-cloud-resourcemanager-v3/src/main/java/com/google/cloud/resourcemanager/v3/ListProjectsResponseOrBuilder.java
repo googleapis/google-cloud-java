@@ -34,6 +34,7 @@ public interface ListProjectsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.Project projects = 1;</code>
    */
   java.util.List<com.google.cloud.resourcemanager.v3.Project> getProjectsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListProjectsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.Project projects = 1;</code>
    */
   com.google.cloud.resourcemanager.v3.Project getProjects(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListProjectsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.Project projects = 1;</code>
    */
   int getProjectsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListProjectsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.resourcemanager.v3.ProjectOrBuilder>
       getProjectsOrBuilderList();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface ListProjectsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

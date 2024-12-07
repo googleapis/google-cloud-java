@@ -33,6 +33,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AnnotationMatchingResult)
     AnnotationMatchingResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotationMatchingResult.newBuilder() to construct.
   private AnnotationMatchingResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int CRITERIA_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.Criteria criteria_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
   public boolean hasCriteria() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
         ? com.google.cloud.visionai.v1.Criteria.getDefaultInstance()
         : criteria_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.Annotation> matchedAnnotations_;
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.visionai.v1.Annotation> getMatchedAnnotationsList() {
     return matchedAnnotations_;
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       getMatchedAnnotationsOrBuilderList() {
     return matchedAnnotations_;
   }
+
   /**
    *
    *
@@ -161,6 +168,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
   public int getMatchedAnnotationsCount() {
     return matchedAnnotations_.size();
   }
+
   /**
    *
    *
@@ -174,6 +182,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
   public com.google.cloud.visionai.v1.Annotation getMatchedAnnotations(int index) {
     return matchedAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -191,6 +200,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
 
   public static final int STATUS_FIELD_NUMBER = 3;
   private com.google.rpc.Status status_;
+
   /**
    *
    *
@@ -208,6 +218,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -225,6 +236,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
+
   /**
    *
    *
@@ -432,6 +444,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -716,6 +729,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
             com.google.cloud.visionai.v1.Criteria.Builder,
             com.google.cloud.visionai.v1.CriteriaOrBuilder>
         criteriaBuilder_;
+
     /**
      *
      *
@@ -731,6 +745,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
     public boolean hasCriteria() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
         return criteriaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -775,6 +791,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +812,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +841,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +862,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       onChanged();
       return getCriteriaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -877,6 +898,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
             : criteria_;
       }
     }
+
     /**
      *
      *
@@ -937,6 +959,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
         return matchedAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -953,6 +976,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
         return matchedAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -969,6 +993,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
         return matchedAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -991,6 +1016,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1037,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1060,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1083,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1075,6 +1104,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1125,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1146,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1166,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1186,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1199,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
     public com.google.cloud.visionai.v1.Annotation.Builder getMatchedAnnotationsBuilder(int index) {
       return getMatchedAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1182,6 +1217,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
         return matchedAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1199,6 +1235,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(matchedAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1249,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       return getMatchedAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.Annotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1225,6 +1263,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       return getMatchedAnnotationsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.Annotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1263,6 +1302,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -1279,6 +1319,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1299,6 +1340,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1323,6 +1365,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1387,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1373,6 +1417,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1394,6 +1439,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1410,6 +1456,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1428,6 +1475,7 @@ public final class AnnotationMatchingResult extends com.google.protobuf.Generate
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
+
     /**
      *
      *

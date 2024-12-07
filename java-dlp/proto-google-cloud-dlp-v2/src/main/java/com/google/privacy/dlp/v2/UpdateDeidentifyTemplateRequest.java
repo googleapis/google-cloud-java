@@ -33,6 +33,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest)
     UpdateDeidentifyTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateDeidentifyTemplateRequest.newBuilder() to construct.
   private UpdateDeidentifyTemplateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
 
   public static final int DEIDENTIFY_TEMPLATE_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DeidentifyTemplate deidentifyTemplate_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
   public boolean hasDeidentifyTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
         ? com.google.privacy.dlp.v2.DeidentifyTemplate.getDefaultInstance()
         : deidentifyTemplate_;
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -410,6 +419,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +656,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -673,6 +684,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -726,6 +739,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +762,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +797,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
             com.google.privacy.dlp.v2.DeidentifyTemplate.Builder,
             com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder>
         deidentifyTemplateBuilder_;
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
     public boolean hasDeidentifyTemplate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
         return deidentifyTemplateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -838,6 +856,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +877,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +906,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +926,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +941,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return getDeidentifyTemplateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -937,6 +960,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
             : deidentifyTemplate_;
       }
     }
+
     /**
      *
      *
@@ -969,6 +993,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -983,6 +1008,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1003,6 +1029,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1052,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1072,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1100,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1120,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1135,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1122,6 +1154,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
             : updateMask_;
       }
     }
+
     /**
      *
      *

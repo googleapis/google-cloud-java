@@ -44,6 +44,7 @@ public interface ExportDataConfigOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ExportDataConfigOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.aiplatform.v1.GcsDestination getGcsDestination();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface ExportDataConfigOrBuilder
    * @return Whether the fractionSplit field is set.
    */
   boolean hasFractionSplit();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface ExportDataConfigOrBuilder
    * @return The fractionSplit.
    */
   com.google.cloud.aiplatform.v1.ExportFractionSplit getFractionSplit();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface ExportDataConfigOrBuilder
    * @return Whether the filterSplit field is set.
    */
   boolean hasFilterSplit();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface ExportDataConfigOrBuilder
    * @return The filterSplit.
    */
   com.google.cloud.aiplatform.v1.ExportFilterSplit getFilterSplit();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface ExportDataConfigOrBuilder
    * @return The annotationsFilter.
    */
   java.lang.String getAnnotationsFilter();
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public interface ExportDataConfigOrBuilder
    * @return The savedQueryId.
    */
   java.lang.String getSavedQueryId();
+
   /**
    *
    *
@@ -281,6 +289,7 @@ public interface ExportDataConfigOrBuilder
    * @return The annotationSchemaUri.
    */
   java.lang.String getAnnotationSchemaUri();
+
   /**
    *
    *
@@ -328,6 +337,7 @@ public interface ExportDataConfigOrBuilder
    * @return The enum numeric value on the wire for exportUse.
    */
   int getExportUseValue();
+
   /**
    *
    *

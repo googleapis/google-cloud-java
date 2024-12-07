@@ -47,6 +47,7 @@ public interface TranslateDocumentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface TranslateDocumentRequestOrBuilder
    * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
+
   /**
    *
    *
@@ -119,6 +121,7 @@ public interface TranslateDocumentRequestOrBuilder
    * @return The targetLanguageCode.
    */
   java.lang.String getTargetLanguageCode();
+
   /**
    *
    *
@@ -147,6 +150,7 @@ public interface TranslateDocumentRequestOrBuilder
    * @return Whether the documentInputConfig field is set.
    */
   boolean hasDocumentInputConfig();
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public interface TranslateDocumentRequestOrBuilder
    * @return The documentInputConfig.
    */
   com.google.cloud.translate.v3.DocumentInputConfig getDocumentInputConfig();
+
   /**
    *
    *
@@ -192,6 +197,7 @@ public interface TranslateDocumentRequestOrBuilder
    * @return Whether the documentOutputConfig field is set.
    */
   boolean hasDocumentOutputConfig();
+
   /**
    *
    *
@@ -210,6 +216,7 @@ public interface TranslateDocumentRequestOrBuilder
    * @return The documentOutputConfig.
    */
   com.google.cloud.translate.v3.DocumentOutputConfig getDocumentOutputConfig();
+
   /**
    *
    *
@@ -251,6 +258,7 @@ public interface TranslateDocumentRequestOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
@@ -292,6 +300,7 @@ public interface TranslateDocumentRequestOrBuilder
    * @return Whether the glossaryConfig field is set.
    */
   boolean hasGlossaryConfig();
+
   /**
    *
    *
@@ -308,6 +317,7 @@ public interface TranslateDocumentRequestOrBuilder
    * @return The glossaryConfig.
    */
   com.google.cloud.translate.v3.TranslateTextGlossaryConfig getGlossaryConfig();
+
   /**
    *
    *
@@ -341,6 +351,7 @@ public interface TranslateDocumentRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -359,9 +370,11 @@ public interface TranslateDocumentRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -380,6 +393,7 @@ public interface TranslateDocumentRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -402,6 +416,7 @@ public interface TranslateDocumentRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -436,6 +451,7 @@ public interface TranslateDocumentRequestOrBuilder
    * @return The customizedAttribution.
    */
   java.lang.String getCustomizedAttribution();
+
   /**
    *
    *

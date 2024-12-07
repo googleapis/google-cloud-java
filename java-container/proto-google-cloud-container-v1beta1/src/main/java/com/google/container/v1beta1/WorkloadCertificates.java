@@ -33,6 +33,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.WorkloadCertificates)
     WorkloadCertificatesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WorkloadCertificates.newBuilder() to construct.
   private WorkloadCertificates(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int ENABLE_CERTIFICATES_FIELD_NUMBER = 1;
   private com.google.protobuf.BoolValue enableCertificates_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
   public boolean hasEnableCertificates() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : enableCertificates_;
   }
+
   /**
    *
    *
@@ -300,6 +304,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -507,6 +512,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         enableCertificatesBuilder_;
+
     /**
      *
      *
@@ -529,6 +535,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
     public boolean hasEnableCertificates() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -557,6 +564,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
         return enableCertificatesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -587,6 +595,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -649,6 +659,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +687,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
       onChanged();
       return getEnableCertificatesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
             : enableCertificates_;
       }
     }
+
     /**
      *
      *

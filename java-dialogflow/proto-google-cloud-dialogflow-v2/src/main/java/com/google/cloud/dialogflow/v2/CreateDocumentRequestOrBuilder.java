@@ -40,6 +40,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return The document.
    */
   com.google.cloud.dialogflow.v2.Document getDocument();
+
   /**
    *
    *

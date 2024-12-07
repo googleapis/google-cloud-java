@@ -39,6 +39,7 @@ public interface CreateAssessmentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateAssessmentRequestOrBuilder
    * @return Whether the assessment field is set.
    */
   boolean hasAssessment();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateAssessmentRequestOrBuilder
    * @return The assessment.
    */
   com.google.recaptchaenterprise.v1beta1.Assessment getAssessment();
+
   /**
    *
    *

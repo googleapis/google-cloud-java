@@ -39,6 +39,7 @@ public interface CreateBackupVaultRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateBackupVaultRequestOrBuilder
    * @return The backupVaultId.
    */
   java.lang.String getBackupVaultId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreateBackupVaultRequestOrBuilder
    * @return Whether the backupVault field is set.
    */
   boolean hasBackupVault();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateBackupVaultRequestOrBuilder
    * @return The backupVault.
    */
   com.google.cloud.netapp.v1.BackupVault getBackupVault();
+
   /**
    *
    *

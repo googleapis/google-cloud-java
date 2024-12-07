@@ -34,6 +34,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.NetworkConfig)
     NetworkConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkConfig.newBuilder() to construct.
   private NetworkConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object managementCidr_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmwareEngineNetwork_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmwareEngineNetworkCanonical_ = "";
+
   /**
    *
    *
@@ -209,6 +215,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -238,6 +245,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MANAGEMENT_IP_ADDRESS_LAYOUT_VERSION_FIELD_NUMBER = 8;
   private int managementIpAddressLayoutVersion_ = 0;
+
   /**
    *
    *
@@ -267,6 +275,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dnsServerIp_ = "";
+
   /**
    *
    *
@@ -293,6 +302,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -521,6 +531,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -763,6 +774,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object managementCidr_ = "";
+
     /**
      *
      *
@@ -785,6 +797,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -807,6 +820,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -828,6 +842,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +860,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +885,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object vmwareEngineNetwork_ = "";
+
     /**
      *
      *
@@ -896,6 +913,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -923,6 +941,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -949,6 +968,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -971,6 +991,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1021,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object vmwareEngineNetworkCanonical_ = "";
+
     /**
      *
      *
@@ -1025,6 +1047,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1050,6 +1073,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1074,6 +1098,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1119,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1147,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int managementIpAddressLayoutVersion_;
+
     /**
      *
      *
@@ -1145,6 +1172,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public int getManagementIpAddressLayoutVersion() {
       return managementIpAddressLayoutVersion_;
     }
+
     /**
      *
      *
@@ -1173,6 +1201,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1230,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dnsServerIp_ = "";
+
     /**
      *
      *
@@ -1226,6 +1256,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1251,6 +1282,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1275,6 +1307,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1328,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

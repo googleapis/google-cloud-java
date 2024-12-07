@@ -43,6 +43,7 @@ public interface AcceleratorOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

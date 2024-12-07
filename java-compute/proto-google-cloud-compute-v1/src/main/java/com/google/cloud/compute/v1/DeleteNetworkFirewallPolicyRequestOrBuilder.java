@@ -36,6 +36,7 @@ public interface DeleteNetworkFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   java.lang.String getFirewallPolicy();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DeleteNetworkFirewallPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DeleteNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface DeleteNetworkFirewallPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

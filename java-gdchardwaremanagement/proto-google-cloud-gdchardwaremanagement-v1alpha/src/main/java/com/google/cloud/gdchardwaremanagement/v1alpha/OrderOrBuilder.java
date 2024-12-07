@@ -37,6 +37,7 @@ public interface OrderOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface OrderOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface OrderOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface OrderOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface OrderOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface OrderOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface OrderOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -176,9 +183,11 @@ public interface OrderOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -191,6 +200,7 @@ public interface OrderOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -207,6 +217,7 @@ public interface OrderOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -235,6 +246,7 @@ public interface OrderOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public interface OrderOrBuilder
    * @return Whether the organizationContact field is set.
    */
   boolean hasOrganizationContact();
+
   /**
    *
    *
@@ -279,6 +292,7 @@ public interface OrderOrBuilder
    * @return The organizationContact.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact getOrganizationContact();
+
   /**
    *
    *
@@ -307,6 +321,7 @@ public interface OrderOrBuilder
    * @return A list containing the targetWorkloads.
    */
   java.util.List<java.lang.String> getTargetWorkloadsList();
+
   /**
    *
    *
@@ -321,6 +336,7 @@ public interface OrderOrBuilder
    * @return The count of targetWorkloads.
    */
   int getTargetWorkloadsCount();
+
   /**
    *
    *
@@ -336,6 +352,7 @@ public interface OrderOrBuilder
    * @return The targetWorkloads at the given index.
    */
   java.lang.String getTargetWorkloads(int index);
+
   /**
    *
    *
@@ -365,6 +382,7 @@ public interface OrderOrBuilder
    * @return The customerMotivation.
    */
   java.lang.String getCustomerMotivation();
+
   /**
    *
    *
@@ -394,6 +412,7 @@ public interface OrderOrBuilder
    * @return Whether the fulfillmentTime field is set.
    */
   boolean hasFulfillmentTime();
+
   /**
    *
    *
@@ -409,6 +428,7 @@ public interface OrderOrBuilder
    * @return The fulfillmentTime.
    */
   com.google.protobuf.Timestamp getFulfillmentTime();
+
   /**
    *
    *
@@ -438,6 +458,7 @@ public interface OrderOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
+
   /**
    *
    *
@@ -466,6 +487,7 @@ public interface OrderOrBuilder
    * @return The orderFormUri.
    */
   java.lang.String getOrderFormUri();
+
   /**
    *
    *
@@ -493,6 +515,7 @@ public interface OrderOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -522,6 +545,7 @@ public interface OrderOrBuilder
    * @return Whether the submitTime field is set.
    */
   boolean hasSubmitTime();
+
   /**
    *
    *
@@ -536,6 +560,7 @@ public interface OrderOrBuilder
    * @return The submitTime.
    */
   com.google.protobuf.Timestamp getSubmitTime();
+
   /**
    *
    *
@@ -561,6 +586,7 @@ public interface OrderOrBuilder
    * @return The billingId.
    */
   java.lang.String getBillingId();
+
   /**
    *
    *
@@ -588,6 +614,7 @@ public interface OrderOrBuilder
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.HardwareLocation>
       getExistingHardwareList();
+
   /**
    *
    *
@@ -601,6 +628,7 @@ public interface OrderOrBuilder
    * </code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.HardwareLocation getExistingHardware(int index);
+
   /**
    *
    *
@@ -614,6 +642,7 @@ public interface OrderOrBuilder
    * </code>
    */
   int getExistingHardwareCount();
+
   /**
    *
    *
@@ -628,6 +657,7 @@ public interface OrderOrBuilder
    */
   java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.HardwareLocationOrBuilder>
       getExistingHardwareOrBuilderList();
+
   /**
    *
    *

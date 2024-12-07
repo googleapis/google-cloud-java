@@ -33,6 +33,7 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest)
     GetSubscriptionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetSubscriptionRequest.newBuilder() to construct.
   private GetSubscriptionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -280,6 +283,7 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -468,6 +472,7 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -493,6 +498,7 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -518,6 +524,7 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -542,6 +549,7 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -562,6 +570,7 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

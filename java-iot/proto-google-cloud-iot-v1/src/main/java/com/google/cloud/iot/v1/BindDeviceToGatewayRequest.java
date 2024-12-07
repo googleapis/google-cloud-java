@@ -33,6 +33,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.BindDeviceToGatewayRequest)
     BindDeviceToGatewayRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BindDeviceToGatewayRequest.newBuilder() to construct.
   private BindDeviceToGatewayRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gatewayId_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deviceId_ = "";
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -407,6 +414,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -621,6 +629,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -646,6 +655,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -671,6 +681,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -695,6 +706,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +755,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object gatewayId_ = "";
+
     /**
      *
      *
@@ -765,6 +779,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -788,6 +803,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -810,6 +826,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +871,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object deviceId_ = "";
+
     /**
      *
      *
@@ -877,6 +896,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -901,6 +921,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -924,6 +945,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +965,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

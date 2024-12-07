@@ -37,6 +37,7 @@ public interface AnalyzeAssetMetadataOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus>
       getAnalysisStatusList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface AnalyzeAssetMetadataOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus getAnalysisStatus(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface AnalyzeAssetMetadataOrBuilder
    * </code>
    */
   int getAnalysisStatusCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface AnalyzeAssetMetadataOrBuilder
   java.util.List<
           ? extends com.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatusOrBuilder>
       getAnalysisStatusOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface AnalyzeAssetMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface AnalyzeAssetMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public interface AnalyzeAssetMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -148,6 +155,7 @@ public interface AnalyzeAssetMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

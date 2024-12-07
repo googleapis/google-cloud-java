@@ -33,6 +33,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertSubnetworkRequest)
     InsertSubnetworkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertSubnetworkRequest.newBuilder() to construct.
   private InsertSubnetworkRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
 
   public static final int SUBNETWORK_RESOURCE_FIELD_NUMBER = 42233151;
   private com.google.cloud.compute.v1.Subnetwork subnetworkResource_;
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
   public boolean hasSubnetworkResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
         ? com.google.cloud.compute.v1.Subnetwork.getDefaultInstance()
         : subnetworkResource_;
   }
+
   /**
    *
    *
@@ -496,6 +507,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -744,6 +756,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -768,6 +781,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -792,6 +806,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -815,6 +830,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +850,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +877,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -884,6 +902,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -908,6 +927,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -931,6 +951,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +971,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +998,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -990,6 +1013,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1012,6 +1036,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1034,6 +1059,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1081,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1099,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1129,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.Subnetwork.Builder,
             com.google.cloud.compute.v1.SubnetworkOrBuilder>
         subnetworkResourceBuilder_;
+
     /**
      *
      *
@@ -1117,6 +1146,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
     public boolean hasSubnetworkResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1139,6 +1169,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
         return subnetworkResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1163,6 +1194,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1185,6 +1217,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1214,6 +1247,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1269,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1251,6 +1286,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       onChanged();
       return getSubnetworkResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1271,6 +1307,7 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
             : subnetworkResource_;
       }
     }
+
     /**
      *
      *

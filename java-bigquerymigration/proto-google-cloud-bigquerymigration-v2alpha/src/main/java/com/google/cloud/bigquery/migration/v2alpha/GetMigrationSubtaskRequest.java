@@ -33,6 +33,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.GetMigrationSubtaskRequest)
     GetMigrationSubtaskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetMigrationSubtaskRequest.newBuilder() to construct.
   private GetMigrationSubtaskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
 
   public static final int READ_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask readMask_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
   public boolean hasReadMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
   public com.google.protobuf.FieldMask getReadMask() {
     return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
   }
+
   /**
    *
    *
@@ -345,6 +351,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -566,6 +573,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -591,6 +599,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -616,6 +625,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -640,6 +650,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +671,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         readMaskBuilder_;
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
     public boolean hasReadMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
         return readMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -749,6 +764,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +785,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +814,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +835,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +851,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
       onChanged();
       return getReadMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -849,6 +869,7 @@ public final class GetMigrationSubtaskRequest extends com.google.protobuf.Genera
         return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
       }
     }
+
     /**
      *
      *

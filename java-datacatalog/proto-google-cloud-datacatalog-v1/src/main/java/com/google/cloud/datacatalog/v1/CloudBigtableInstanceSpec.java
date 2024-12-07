@@ -35,6 +35,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.CloudBigtableInstanceSpec)
     CloudBigtableInstanceSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudBigtableInstanceSpec.newBuilder() to construct.
   private CloudBigtableInstanceSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
      * @return The displayName.
      */
     java.lang.String getDisplayName();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
      * @return The location.
      */
     java.lang.String getLocation();
+
     /**
      *
      *
@@ -132,6 +135,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
      * @return The type.
      */
     java.lang.String getType();
+
     /**
      *
      *
@@ -157,6 +161,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
      * @return The linkedResource.
      */
     java.lang.String getLinkedResource();
+
     /**
      *
      *
@@ -170,6 +175,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
      */
     com.google.protobuf.ByteString getLinkedResourceBytes();
   }
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.CloudBigtableInstanceSpec.CloudBigtableClusterSpec)
       CloudBigtableClusterSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CloudBigtableClusterSpec.newBuilder() to construct.
     private CloudBigtableClusterSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -224,6 +231,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -247,6 +255,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -275,6 +284,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -298,6 +308,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -326,6 +337,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -349,6 +361,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -377,6 +390,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object linkedResource_ = "";
+
     /**
      *
      *
@@ -400,6 +414,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -621,6 +636,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -873,6 +889,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       private int bitField0_;
 
       private java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -895,6 +912,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -917,6 +935,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -938,6 +957,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -955,6 +975,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -979,6 +1000,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       }
 
       private java.lang.Object location_ = "";
+
       /**
        *
        *
@@ -1001,6 +1023,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1023,6 +1046,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1044,6 +1068,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1061,6 +1086,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1085,6 +1111,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       }
 
       private java.lang.Object type_ = "";
+
       /**
        *
        *
@@ -1107,6 +1134,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1129,6 +1157,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1150,6 +1179,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1167,6 +1197,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1191,6 +1222,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       }
 
       private java.lang.Object linkedResource_ = "";
+
       /**
        *
        *
@@ -1213,6 +1245,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1235,6 +1268,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1256,6 +1290,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1273,6 +1308,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1371,6 +1407,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
   private java.util.List<
           com.google.cloud.datacatalog.v1.CloudBigtableInstanceSpec.CloudBigtableClusterSpec>
       cloudBigtableClusterSpecs_;
+
   /**
    *
    *
@@ -1388,6 +1425,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       getCloudBigtableClusterSpecsList() {
     return cloudBigtableClusterSpecs_;
   }
+
   /**
    *
    *
@@ -1407,6 +1445,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       getCloudBigtableClusterSpecsOrBuilderList() {
     return cloudBigtableClusterSpecs_;
   }
+
   /**
    *
    *
@@ -1422,6 +1461,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
   public int getCloudBigtableClusterSpecsCount() {
     return cloudBigtableClusterSpecs_.size();
   }
+
   /**
    *
    *
@@ -1438,6 +1478,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       getCloudBigtableClusterSpecs(int index) {
     return cloudBigtableClusterSpecs_.get(index);
   }
+
   /**
    *
    *
@@ -1620,6 +1661,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1897,6 +1939,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         return cloudBigtableClusterSpecsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1915,6 +1958,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         return cloudBigtableClusterSpecsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1934,6 +1978,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         return cloudBigtableClusterSpecsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1960,6 +2005,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1984,6 +2030,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2009,6 +2056,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2035,6 +2083,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2058,6 +2107,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2082,6 +2132,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2108,6 +2159,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2129,6 +2181,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2150,6 +2203,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2166,6 +2220,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         getCloudBigtableClusterSpecsBuilder(int index) {
       return getCloudBigtableClusterSpecsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2186,6 +2241,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         return cloudBigtableClusterSpecsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2208,6 +2264,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(cloudBigtableClusterSpecs_);
       }
     }
+
     /**
      *
      *
@@ -2227,6 +2284,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
               com.google.cloud.datacatalog.v1.CloudBigtableInstanceSpec.CloudBigtableClusterSpec
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2247,6 +2305,7 @@ public final class CloudBigtableInstanceSpec extends com.google.protobuf.Generat
               com.google.cloud.datacatalog.v1.CloudBigtableInstanceSpec.CloudBigtableClusterSpec
                   .getDefaultInstance());
     }
+
     /**
      *
      *

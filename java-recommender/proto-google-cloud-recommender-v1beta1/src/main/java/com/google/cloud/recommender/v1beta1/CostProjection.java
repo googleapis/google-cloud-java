@@ -33,6 +33,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1beta1.CostProjection)
     CostProjectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CostProjection.newBuilder() to construct.
   private CostProjection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int COST_FIELD_NUMBER = 1;
   private com.google.type.Money cost_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCost() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Money getCost() {
     return cost_ == null ? com.google.type.Money.getDefaultInstance() : cost_;
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DURATION_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration duration_;
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDuration() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getDuration() {
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
+
   /**
    *
    *
@@ -347,6 +354,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -567,6 +575,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         costBuilder_;
+
     /**
      *
      *
@@ -586,6 +595,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCost() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
         return costBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -636,6 +647,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +672,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +705,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +730,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +750,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCostFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -756,6 +772,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
         return cost_ == null ? com.google.type.Money.getDefaultInstance() : cost_;
       }
     }
+
     /**
      *
      *
@@ -790,6 +807,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         durationBuilder_;
+
     /**
      *
      *
@@ -804,6 +822,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -822,6 +841,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
         return durationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -844,6 +864,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +884,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +912,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -909,6 +932,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +947,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -939,6 +964,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
         return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
       }
     }
+
     /**
      *
      *

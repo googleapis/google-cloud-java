@@ -42,6 +42,7 @@ public interface GetServicePerimeterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

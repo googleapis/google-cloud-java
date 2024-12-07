@@ -33,6 +33,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Accepted)
     AcceptedOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Accepted.newBuilder() to construct.
   private Accepted(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object termsOfService_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object acceptedBy_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALID_UNTIL_FIELD_NUMBER = 3;
   private com.google.type.Date validUntil_;
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
   public boolean hasValidUntil() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Date getValidUntil() {
     return validUntil_ == null ? com.google.type.Date.getDefaultInstance() : validUntil_;
   }
+
   /**
    *
    *
@@ -415,6 +423,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -643,6 +652,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object termsOfService_ = "";
+
     /**
      *
      *
@@ -666,6 +676,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -689,6 +700,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -711,6 +723,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +742,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object acceptedBy_ = "";
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -822,6 +839,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +858,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +887,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         validUntilBuilder_;
+
     /**
      *
      *
@@ -887,6 +907,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValidUntil() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -910,6 +931,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
         return validUntilBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -937,6 +959,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +984,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1017,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1042,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1062,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getValidUntilFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1057,6 +1084,7 @@ public final class Accepted extends com.google.protobuf.GeneratedMessageV3
         return validUntil_ == null ? com.google.type.Date.getDefaultInstance() : validUntil_;
       }
     }
+
     /**
      *
      *

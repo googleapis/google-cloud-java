@@ -33,6 +33,7 @@ public final class RackSpace extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.RackSpace)
     RackSpaceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RackSpace.newBuilder() to construct.
   private RackSpace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class RackSpace extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_RACK_UNIT_FIELD_NUMBER = 1;
   private int startRackUnit_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class RackSpace extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_RACK_UNIT_FIELD_NUMBER = 2;
   private int endRackUnit_ = 0;
+
   /**
    *
    *
@@ -266,6 +269,7 @@ public final class RackSpace extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -461,6 +465,7 @@ public final class RackSpace extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int startRackUnit_;
+
     /**
      *
      *
@@ -476,6 +481,7 @@ public final class RackSpace extends com.google.protobuf.GeneratedMessageV3
     public int getStartRackUnit() {
       return startRackUnit_;
     }
+
     /**
      *
      *
@@ -495,6 +501,7 @@ public final class RackSpace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -514,6 +521,7 @@ public final class RackSpace extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int endRackUnit_;
+
     /**
      *
      *
@@ -529,6 +537,7 @@ public final class RackSpace extends com.google.protobuf.GeneratedMessageV3
     public int getEndRackUnit() {
       return endRackUnit_;
     }
+
     /**
      *
      *
@@ -548,6 +557,7 @@ public final class RackSpace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

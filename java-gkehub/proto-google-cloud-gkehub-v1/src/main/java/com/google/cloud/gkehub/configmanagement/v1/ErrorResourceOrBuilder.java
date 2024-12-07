@@ -36,6 +36,7 @@ public interface ErrorResourceOrBuilder
    * @return The sourcePath.
    */
   java.lang.String getSourcePath();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ErrorResourceOrBuilder
    * @return The resourceName.
    */
   java.lang.String getResourceName();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ErrorResourceOrBuilder
    * @return The resourceNamespace.
    */
   java.lang.String getResourceNamespace();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface ErrorResourceOrBuilder
    * @return Whether the resourceGvk field is set.
    */
   boolean hasResourceGvk();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface ErrorResourceOrBuilder
    * @return The resourceGvk.
    */
   com.google.cloud.gkehub.configmanagement.v1.GroupVersionKind getResourceGvk();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface LockDocumentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface LockDocumentRequestOrBuilder
    * @return The collectionId.
    */
   java.lang.String getCollectionId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface LockDocumentRequestOrBuilder
    * @return Whether the lockingUser field is set.
    */
   boolean hasLockingUser();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface LockDocumentRequestOrBuilder
    * @return The lockingUser.
    */
   com.google.cloud.contentwarehouse.v1.UserInfo getLockingUser();
+
   /**
    *
    *

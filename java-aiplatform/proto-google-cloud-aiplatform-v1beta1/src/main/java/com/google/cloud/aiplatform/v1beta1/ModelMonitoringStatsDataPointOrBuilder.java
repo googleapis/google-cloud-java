@@ -38,6 +38,7 @@ public interface ModelMonitoringStatsDataPointOrBuilder
    * @return Whether the currentStats field is set.
    */
   boolean hasCurrentStats();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ModelMonitoringStatsDataPointOrBuilder
    * @return The currentStats.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValue getCurrentStats();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface ModelMonitoringStatsDataPointOrBuilder
    * @return Whether the baselineStats field is set.
    */
   boolean hasBaselineStats();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface ModelMonitoringStatsDataPointOrBuilder
    * @return The baselineStats.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValue getBaselineStats();
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public interface ModelMonitoringStatsDataPointOrBuilder
    * @return The modelMonitoringJob.
    */
   java.lang.String getModelMonitoringJob();
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public interface ModelMonitoringStatsDataPointOrBuilder
    * @return The schedule.
    */
   java.lang.String getSchedule();
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface ModelMonitoringStatsDataPointOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public interface ModelMonitoringStatsDataPointOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public interface ModelMonitoringStatsDataPointOrBuilder
    * @return The algorithm.
    */
   java.lang.String getAlgorithm();
+
   /**
    *
    *

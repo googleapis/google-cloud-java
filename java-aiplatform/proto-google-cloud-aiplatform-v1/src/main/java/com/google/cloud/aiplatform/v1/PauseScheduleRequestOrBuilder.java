@@ -40,6 +40,7 @@ public interface PauseScheduleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

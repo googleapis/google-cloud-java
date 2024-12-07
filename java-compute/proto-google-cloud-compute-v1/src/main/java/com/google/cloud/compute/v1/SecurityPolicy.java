@@ -33,6 +33,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicy)
     SecurityPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicy.newBuilder() to construct.
   private SecurityPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -124,10 +125,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
+
     /** <code>CLOUD_ARMOR = 260640373;</code> */
     public static final int CLOUD_ARMOR_VALUE = 260640373;
+
     /** <code>CLOUD_ARMOR_EDGE = 250728775;</code> */
     public static final int CLOUD_ARMOR_EDGE_VALUE = 250728775;
+
     /** <code>CLOUD_ARMOR_NETWORK = 488527428;</code> */
     public static final int CLOUD_ARMOR_NETWORK_VALUE = 488527428;
 
@@ -220,6 +224,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int ADAPTIVE_PROTECTION_CONFIG_FIELD_NUMBER = 150240735;
   private com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig
       adaptiveProtectionConfig_;
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -231,6 +236,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdaptiveProtectionConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -245,6 +251,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig.getDefaultInstance()
         : adaptiveProtectionConfig_;
   }
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -260,6 +267,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ADVANCED_OPTIONS_CONFIG_FIELD_NUMBER = 449276352;
   private com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advancedOptionsConfig_;
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -271,6 +279,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdvancedOptionsConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -285,6 +294,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.getDefaultInstance()
         : advancedOptionsConfig_;
   }
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -302,6 +312,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
+
   /**
    *
    *
@@ -317,6 +328,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -340,6 +352,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -366,6 +379,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DDOS_PROTECTION_CONFIG_FIELD_NUMBER = 50315853;
   private com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddosProtectionConfig_;
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -377,6 +391,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDdosProtectionConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -390,6 +405,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.getDefaultInstance()
         : ddosProtectionConfig_;
   }
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -407,6 +423,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -422,6 +439,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -445,6 +463,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -473,6 +492,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
+
   /**
    *
    *
@@ -488,6 +508,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -511,6 +532,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -537,6 +559,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
+
   /**
    *
    *
@@ -552,6 +575,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -572,6 +596,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -587,6 +612,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKind() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -610,6 +636,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -638,6 +665,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object labelFingerprint_ = "";
+
   /**
    *
    *
@@ -653,6 +681,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLabelFingerprint() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -676,6 +705,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -726,6 +756,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -742,12 +773,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -761,6 +794,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -781,6 +815,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -806,6 +841,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -821,6 +857,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -844,6 +881,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -870,6 +908,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RECAPTCHA_OPTIONS_CONFIG_FIELD_NUMBER = 519006811;
   private com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptchaOptionsConfig_;
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -881,6 +920,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRecaptchaOptionsConfig() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -895,6 +935,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.getDefaultInstance()
         : recaptchaOptionsConfig_;
   }
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -912,6 +953,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -927,6 +969,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -950,6 +993,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -978,6 +1022,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.SecurityPolicyRule> rules_;
+
   /**
    *
    *
@@ -991,6 +1036,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.compute.v1.SecurityPolicyRule> getRulesList() {
     return rules_;
   }
+
   /**
    *
    *
@@ -1005,6 +1051,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       getRulesOrBuilderList() {
     return rules_;
   }
+
   /**
    *
    *
@@ -1018,6 +1065,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getRulesCount() {
     return rules_.size();
   }
+
   /**
    *
    *
@@ -1031,6 +1079,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.SecurityPolicyRule getRules(int index) {
     return rules_.get(index);
   }
+
   /**
    *
    *
@@ -1049,6 +1098,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -1064,6 +1114,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00001000) != 0);
   }
+
   /**
    *
    *
@@ -1087,6 +1138,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1115,6 +1167,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -1131,6 +1184,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasType() {
     return ((bitField0_ & 0x00002000) != 0);
   }
+
   /**
    *
    *
@@ -1155,6 +1209,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1185,6 +1240,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.SecurityPolicyUserDefinedField>
       userDefinedFields_;
+
   /**
    *
    *
@@ -1201,6 +1257,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       getUserDefinedFieldsList() {
     return userDefinedFields_;
   }
+
   /**
    *
    *
@@ -1218,6 +1275,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       getUserDefinedFieldsOrBuilderList() {
     return userDefinedFields_;
   }
+
   /**
    *
    *
@@ -1233,6 +1291,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getUserDefinedFieldsCount() {
     return userDefinedFields_.size();
   }
+
   /**
    *
    *
@@ -1249,6 +1308,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return userDefinedFields_.get(index);
   }
+
   /**
    *
    *
@@ -1663,6 +1723,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2257,6 +2318,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig.Builder,
             com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigOrBuilder>
         adaptiveProtectionConfigBuilder_;
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -2267,6 +2329,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdaptiveProtectionConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -2285,6 +2348,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return adaptiveProtectionConfigBuilder_.getMessage();
       }
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -2304,6 +2368,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -2321,6 +2386,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -2347,6 +2413,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -2362,6 +2429,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -2373,6 +2441,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAdaptiveProtectionConfigFieldBuilder().getBuilder();
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -2389,6 +2458,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             : adaptiveProtectionConfig_;
       }
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -2417,6 +2487,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.Builder,
             com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigOrBuilder>
         advancedOptionsConfigBuilder_;
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -2427,6 +2498,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdvancedOptionsConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -2444,6 +2516,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return advancedOptionsConfigBuilder_.getMessage();
       }
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -2463,6 +2536,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -2479,6 +2553,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -2505,6 +2580,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -2520,6 +2596,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -2531,6 +2608,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAdvancedOptionsConfigFieldBuilder().getBuilder();
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -2546,6 +2624,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             : advancedOptionsConfig_;
       }
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -2569,6 +2648,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object creationTimestamp_ = "";
+
     /**
      *
      *
@@ -2583,6 +2663,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2605,6 +2686,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2627,6 +2709,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2648,6 +2731,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2665,6 +2749,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2694,6 +2779,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.Builder,
             com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfigOrBuilder>
         ddosProtectionConfigBuilder_;
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -2704,6 +2790,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDdosProtectionConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -2721,6 +2808,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return ddosProtectionConfigBuilder_.getMessage();
       }
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -2740,6 +2828,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -2756,6 +2845,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -2782,6 +2872,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -2797,6 +2888,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -2808,6 +2900,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDdosProtectionConfigFieldBuilder().getBuilder();
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -2823,6 +2916,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             : ddosProtectionConfig_;
       }
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -2846,6 +2940,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2860,6 +2955,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2882,6 +2978,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2904,6 +3001,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2925,6 +3023,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2942,6 +3041,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2966,6 +3066,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fingerprint_ = "";
+
     /**
      *
      *
@@ -2980,6 +3081,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3002,6 +3104,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3024,6 +3127,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3045,6 +3149,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3062,6 +3167,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3086,6 +3192,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long id_;
+
     /**
      *
      *
@@ -3101,6 +3208,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3116,6 +3224,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public long getId() {
       return id_;
     }
+
     /**
      *
      *
@@ -3135,6 +3244,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3154,6 +3264,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -3168,6 +3279,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKind() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3190,6 +3302,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3212,6 +3325,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3233,6 +3347,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3250,6 +3365,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3274,6 +3390,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object labelFingerprint_ = "";
+
     /**
      *
      *
@@ -3288,6 +3405,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLabelFingerprint() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3310,6 +3428,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3332,6 +3451,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3353,6 +3473,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3370,6 +3491,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3418,6 +3540,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -3434,12 +3557,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -3453,6 +3578,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -3473,6 +3599,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3499,6 +3626,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3515,12 +3643,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000200;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -3541,6 +3671,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       return this;
     }
+
     /**
      *
      *
@@ -3557,6 +3688,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3571,6 +3703,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3593,6 +3726,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3615,6 +3749,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3636,6 +3771,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3653,6 +3789,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3683,6 +3820,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.Builder,
             com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfigOrBuilder>
         recaptchaOptionsConfigBuilder_;
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -3693,6 +3831,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRecaptchaOptionsConfig() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -3710,6 +3849,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return recaptchaOptionsConfigBuilder_.getMessage();
       }
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -3729,6 +3869,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -3745,6 +3886,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -3771,6 +3913,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -3786,6 +3929,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -3797,6 +3941,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRecaptchaOptionsConfigFieldBuilder().getBuilder();
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -3812,6 +3957,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             : recaptchaOptionsConfig_;
       }
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -3835,6 +3981,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -3849,6 +3996,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRegion() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -3871,6 +4019,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3893,6 +4042,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3914,6 +4064,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3931,6 +4082,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3986,6 +4138,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return rulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4002,6 +4155,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return rulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4018,6 +4172,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return rulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4040,6 +4195,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4060,6 +4216,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4082,6 +4239,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4104,6 +4262,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4124,6 +4283,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4144,6 +4304,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4164,6 +4325,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4183,6 +4345,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4202,6 +4365,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4214,6 +4378,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.SecurityPolicyRule.Builder getRulesBuilder(int index) {
       return getRulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4230,6 +4395,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return rulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4247,6 +4413,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(rules_);
       }
     }
+
     /**
      *
      *
@@ -4260,6 +4427,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return getRulesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.SecurityPolicyRule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4273,6 +4441,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return getRulesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.SecurityPolicyRule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4305,6 +4474,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -4319,6 +4489,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -4341,6 +4512,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4363,6 +4535,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4384,6 +4557,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4401,6 +4575,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4425,6 +4600,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -4440,6 +4616,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasType() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -4463,6 +4640,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4486,6 +4664,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4508,6 +4687,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4526,6 +4706,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4587,6 +4768,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return userDefinedFieldsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4605,6 +4787,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return userDefinedFieldsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4624,6 +4807,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return userDefinedFieldsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4649,6 +4833,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4672,6 +4857,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4697,6 +4883,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4722,6 +4909,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4744,6 +4932,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4767,6 +4956,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4790,6 +4980,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4811,6 +5002,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4832,6 +5024,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4847,6 +5040,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         getUserDefinedFieldsBuilder(int index) {
       return getUserDefinedFieldsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4866,6 +5060,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return userDefinedFieldsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4886,6 +5081,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(userDefinedFields_);
       }
     }
+
     /**
      *
      *
@@ -4903,6 +5099,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4921,6 +5118,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.getDefaultInstance());
     }
+
     /**
      *
      *

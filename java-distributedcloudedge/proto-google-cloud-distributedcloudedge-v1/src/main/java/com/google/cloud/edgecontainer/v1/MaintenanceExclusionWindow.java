@@ -33,6 +33,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.MaintenanceExclusionWindow)
     MaintenanceExclusionWindowOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MaintenanceExclusionWindow.newBuilder() to construct.
   private MaintenanceExclusionWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int WINDOW_FIELD_NUMBER = 1;
   private com.google.cloud.edgecontainer.v1.TimeWindow window_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
   public boolean hasWindow() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
         ? com.google.cloud.edgecontainer.v1.TimeWindow.getDefaultInstance()
         : window_;
   }
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -345,6 +351,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -566,6 +573,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
             com.google.cloud.edgecontainer.v1.TimeWindow.Builder,
             com.google.cloud.edgecontainer.v1.TimeWindowOrBuilder>
         windowBuilder_;
+
     /**
      *
      *
@@ -582,6 +590,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
     public boolean hasWindow() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -604,6 +613,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
         return windowBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -628,6 +638,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -649,6 +660,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +712,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +729,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
       onChanged();
       return getWindowFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -735,6 +750,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
             : window_;
       }
     }
+
     /**
      *
      *
@@ -764,6 +780,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
     }
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -786,6 +803,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -808,6 +826,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -829,6 +848,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +866,7 @@ public final class MaintenanceExclusionWindow extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

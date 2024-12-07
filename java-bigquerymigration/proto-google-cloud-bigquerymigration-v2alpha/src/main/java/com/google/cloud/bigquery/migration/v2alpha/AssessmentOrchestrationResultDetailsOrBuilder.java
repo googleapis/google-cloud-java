@@ -36,6 +36,7 @@ public interface AssessmentOrchestrationResultDetailsOrBuilder
    * @return The outputTablesSchemaVersion.
    */
   java.lang.String getOutputTablesSchemaVersion();
+
   /**
    *
    *

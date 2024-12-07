@@ -34,6 +34,7 @@ public final class ContainerThreatDetectionSettings extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.ContainerThreatDetectionSettings)
     ContainerThreatDetectionSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ContainerThreatDetectionSettings.newBuilder() to construct.
   private ContainerThreatDetectionSettings(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -223,6 +224,7 @@ public final class ContainerThreatDetectionSettings extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

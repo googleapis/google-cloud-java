@@ -38,6 +38,7 @@ public interface ListWorkstationConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface ListWorkstationConfigsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

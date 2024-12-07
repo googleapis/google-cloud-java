@@ -33,6 +33,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Connection)
     ConnectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Connection.newBuilder() to construct.
   private Connection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -148,6 +149,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>PROTOCOL_UNSPECIFIED = 0;</code>
      */
     public static final int PROTOCOL_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -158,6 +160,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>ICMP = 1;</code>
      */
     public static final int ICMP_VALUE = 1;
+
     /**
      *
      *
@@ -168,6 +171,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>TCP = 6;</code>
      */
     public static final int TCP_VALUE = 6;
+
     /**
      *
      *
@@ -178,6 +182,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>UDP = 17;</code>
      */
     public static final int UDP_VALUE = 17;
+
     /**
      *
      *
@@ -188,6 +193,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>GRE = 47;</code>
      */
     public static final int GRE_VALUE = 47;
+
     /**
      *
      *
@@ -292,6 +298,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destinationIp_ = "";
+
   /**
    *
    *
@@ -316,6 +323,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -343,6 +351,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESTINATION_PORT_FIELD_NUMBER = 2;
   private int destinationPort_ = 0;
+
   /**
    *
    *
@@ -364,6 +373,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceIp_ = "";
+
   /**
    *
    *
@@ -387,6 +397,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -413,6 +424,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_PORT_FIELD_NUMBER = 4;
   private int sourcePort_ = 0;
+
   /**
    *
    *
@@ -431,6 +443,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROTOCOL_FIELD_NUMBER = 5;
   private int protocol_ = 0;
+
   /**
    *
    *
@@ -446,6 +459,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public int getProtocolValue() {
     return protocol_;
   }
+
   /**
    *
    *
@@ -665,6 +679,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -902,6 +917,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object destinationIp_ = "";
+
     /**
      *
      *
@@ -925,6 +941,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -948,6 +965,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -970,6 +988,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1007,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1033,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int destinationPort_;
+
     /**
      *
      *
@@ -1029,6 +1050,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public int getDestinationPort() {
       return destinationPort_;
     }
+
     /**
      *
      *
@@ -1049,6 +1071,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1092,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceIp_ = "";
+
     /**
      *
      *
@@ -1091,6 +1115,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1113,6 +1138,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1134,6 +1160,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1151,6 +1178,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1203,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sourcePort_;
+
     /**
      *
      *
@@ -1190,6 +1219,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public int getSourcePort() {
       return sourcePort_;
     }
+
     /**
      *
      *
@@ -1209,6 +1239,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1228,6 +1259,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int protocol_ = 0;
+
     /**
      *
      *
@@ -1243,6 +1275,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public int getProtocolValue() {
       return protocol_;
     }
+
     /**
      *
      *
@@ -1261,6 +1294,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1280,6 +1314,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.securitycenter.v1.Connection.Protocol.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1301,6 +1336,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

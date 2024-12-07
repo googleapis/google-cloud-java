@@ -38,6 +38,7 @@ public interface PhoneFraudAssessmentOrBuilder
    * @return Whether the smsTollFraudVerdict field is set.
    */
   boolean hasSmsTollFraudVerdict();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface PhoneFraudAssessmentOrBuilder
    * @return The smsTollFraudVerdict.
    */
   com.google.recaptchaenterprise.v1.SmsTollFraudVerdict getSmsTollFraudVerdict();
+
   /**
    *
    *

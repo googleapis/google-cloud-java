@@ -39,6 +39,7 @@ public interface StreamingFetchFeatureValuesRequestOrBuilder
    * @return The featureView.
    */
   java.lang.String getFeatureView();
+
   /**
    *
    *
@@ -57,13 +58,17 @@ public interface StreamingFetchFeatureValuesRequestOrBuilder
 
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
   java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey> getDataKeysList();
+
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
   com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey getDataKeys(int index);
+
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
   int getDataKeysCount();
+
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>
       getDataKeysOrBuilderList();
+
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
   com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder getDataKeysOrBuilder(int index);
 
@@ -79,6 +84,7 @@ public interface StreamingFetchFeatureValuesRequestOrBuilder
    * @return The enum numeric value on the wire for dataFormat.
    */
   int getDataFormatValue();
+
   /**
    *
    *

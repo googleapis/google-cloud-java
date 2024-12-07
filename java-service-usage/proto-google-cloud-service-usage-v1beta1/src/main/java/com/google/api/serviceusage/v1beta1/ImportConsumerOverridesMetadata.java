@@ -35,6 +35,7 @@ public final class ImportConsumerOverridesMetadata extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.ImportConsumerOverridesMetadata)
     ImportConsumerOverridesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportConsumerOverridesMetadata.newBuilder() to construct.
   private ImportConsumerOverridesMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,6 +217,7 @@ public final class ImportConsumerOverridesMetadata extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1.Impact)
     ImpactOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Impact.newBuilder() to construct.
   private Impact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -156,6 +157,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * <code>CATEGORY_UNSPECIFIED = 0;</code>
      */
     public static final int CATEGORY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -166,6 +168,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * <code>COST = 1;</code>
      */
     public static final int COST_VALUE = 1;
+
     /**
      *
      *
@@ -176,6 +179,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * <code>SECURITY = 2;</code>
      */
     public static final int SECURITY_VALUE = 2;
+
     /**
      *
      *
@@ -186,6 +190,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * <code>PERFORMANCE = 3;</code>
      */
     public static final int PERFORMANCE_VALUE = 3;
+
     /**
      *
      *
@@ -196,6 +201,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * <code>MANAGEABILITY = 4;</code>
      */
     public static final int MANAGEABILITY_VALUE = 4;
+
     /**
      *
      *
@@ -206,6 +212,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * <code>SUSTAINABILITY = 5;</code>
      */
     public static final int SUSTAINABILITY_VALUE = 5;
+
     /**
      *
      *
@@ -327,6 +334,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     private ProjectionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -365,6 +373,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CATEGORY_FIELD_NUMBER = 1;
   private int category_ = 0;
+
   /**
    *
    *
@@ -380,6 +389,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
   public int getCategoryValue() {
     return category_;
   }
+
   /**
    *
    *
@@ -399,6 +409,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COST_PROJECTION_FIELD_NUMBER = 100;
+
   /**
    *
    *
@@ -414,6 +425,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCostProjection() {
     return projectionCase_ == 100;
   }
+
   /**
    *
    *
@@ -432,6 +444,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.recommender.v1.CostProjection.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -450,6 +463,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECURITY_PROJECTION_FIELD_NUMBER = 101;
+
   /**
    *
    *
@@ -465,6 +479,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSecurityProjection() {
     return projectionCase_ == 101;
   }
+
   /**
    *
    *
@@ -483,6 +498,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.recommender.v1.SecurityProjection.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -502,6 +518,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUSTAINABILITY_PROJECTION_FIELD_NUMBER = 102;
+
   /**
    *
    *
@@ -518,6 +535,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSustainabilityProjection() {
     return projectionCase_ == 102;
   }
+
   /**
    *
    *
@@ -537,6 +555,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.recommender.v1.SustainabilityProjection.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -557,6 +576,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RELIABILITY_PROJECTION_FIELD_NUMBER = 103;
+
   /**
    *
    *
@@ -572,6 +592,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReliabilityProjection() {
     return projectionCase_ == 103;
   }
+
   /**
    *
    *
@@ -590,6 +611,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.recommender.v1.ReliabilityProjection.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -839,6 +861,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1119,6 +1142,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int category_ = 0;
+
     /**
      *
      *
@@ -1134,6 +1158,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     public int getCategoryValue() {
       return category_;
     }
+
     /**
      *
      *
@@ -1152,6 +1177,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1169,6 +1195,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.recommender.v1.Impact.Category.forNumber(category_);
       return result == null ? com.google.cloud.recommender.v1.Impact.Category.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1190,6 +1217,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1213,6 +1241,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.recommender.v1.CostProjection.Builder,
             com.google.cloud.recommender.v1.CostProjectionOrBuilder>
         costProjectionBuilder_;
+
     /**
      *
      *
@@ -1228,6 +1257,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCostProjection() {
       return projectionCase_ == 100;
     }
+
     /**
      *
      *
@@ -1253,6 +1283,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.recommender.v1.CostProjection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1275,6 +1306,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       projectionCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1327,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       projectionCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1360,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       projectionCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1352,6 +1386,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1364,6 +1399,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommender.v1.CostProjection.Builder getCostProjectionBuilder() {
       return getCostProjectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1384,6 +1420,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.recommender.v1.CostProjection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1459,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.recommender.v1.SecurityProjection.Builder,
             com.google.cloud.recommender.v1.SecurityProjectionOrBuilder>
         securityProjectionBuilder_;
+
     /**
      *
      *
@@ -1437,6 +1475,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSecurityProjection() {
       return projectionCase_ == 101;
     }
+
     /**
      *
      *
@@ -1462,6 +1501,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.recommender.v1.SecurityProjection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1484,6 +1524,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       projectionCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1504,6 +1545,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       projectionCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1538,6 +1580,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       projectionCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1563,6 +1606,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1576,6 +1620,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         getSecurityProjectionBuilder() {
       return getSecurityProjectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1597,6 +1642,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.recommender.v1.SecurityProjection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1635,6 +1681,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.recommender.v1.SustainabilityProjection.Builder,
             com.google.cloud.recommender.v1.SustainabilityProjectionOrBuilder>
         sustainabilityProjectionBuilder_;
+
     /**
      *
      *
@@ -1651,6 +1698,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSustainabilityProjection() {
       return projectionCase_ == 102;
     }
+
     /**
      *
      *
@@ -1677,6 +1725,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.recommender.v1.SustainabilityProjection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1701,6 +1750,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       projectionCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -1722,6 +1772,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       projectionCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -1757,6 +1808,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       projectionCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -1783,6 +1835,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1797,6 +1850,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         getSustainabilityProjectionBuilder() {
       return getSustainabilityProjectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1819,6 +1873,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.recommender.v1.SustainabilityProjection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1859,6 +1914,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.recommender.v1.ReliabilityProjection.Builder,
             com.google.cloud.recommender.v1.ReliabilityProjectionOrBuilder>
         reliabilityProjectionBuilder_;
+
     /**
      *
      *
@@ -1874,6 +1930,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReliabilityProjection() {
       return projectionCase_ == 103;
     }
+
     /**
      *
      *
@@ -1899,6 +1956,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.recommender.v1.ReliabilityProjection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1922,6 +1980,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       projectionCase_ = 103;
       return this;
     }
+
     /**
      *
      *
@@ -1942,6 +2001,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       projectionCase_ = 103;
       return this;
     }
+
     /**
      *
      *
@@ -1976,6 +2036,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       projectionCase_ = 103;
       return this;
     }
+
     /**
      *
      *
@@ -2001,6 +2062,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2014,6 +2076,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         getReliabilityProjectionBuilder() {
       return getReliabilityProjectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2035,6 +2098,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.recommender.v1.ReliabilityProjection.getDefaultInstance();
       }
     }
+
     /**
      *
      *

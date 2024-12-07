@@ -34,6 +34,7 @@ public interface ListAutomationsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
    */
   java.util.List<com.google.cloud.deploy.v1.Automation> getAutomationsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListAutomationsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
    */
   com.google.cloud.deploy.v1.Automation getAutomations(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListAutomationsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
    */
   int getAutomationsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListAutomationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.AutomationOrBuilder>
       getAutomationsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListAutomationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListAutomationsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListAutomationsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListAutomationsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

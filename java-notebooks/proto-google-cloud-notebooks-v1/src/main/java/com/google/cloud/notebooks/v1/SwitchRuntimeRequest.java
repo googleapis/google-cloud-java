@@ -33,6 +33,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.SwitchRuntimeRequest)
     SwitchRuntimeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SwitchRuntimeRequest.newBuilder() to construct.
   private SwitchRuntimeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
 
   public static final int ACCELERATOR_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig acceleratorConfig_;
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
   public boolean hasAcceleratorConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig.getDefaultInstance()
         : acceleratorConfig_;
   }
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -463,6 +473,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -710,6 +721,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -733,6 +745,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -756,6 +769,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -778,6 +792,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +811,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +837,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object machineType_ = "";
+
     /**
      *
      *
@@ -843,6 +860,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -865,6 +883,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -886,6 +905,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +923,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +953,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig.Builder,
             com.google.cloud.notebooks.v1.RuntimeAcceleratorConfigOrBuilder>
         acceleratorConfigBuilder_;
+
     /**
      *
      *
@@ -946,6 +968,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
     public boolean hasAcceleratorConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -966,6 +989,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         return acceleratorConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -989,6 +1013,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1009,6 +1034,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1064,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1084,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1100,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getAcceleratorConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1091,6 +1120,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
             : acceleratorConfig_;
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1148,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1140,6 +1171,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1162,6 +1194,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1183,6 +1216,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1234,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

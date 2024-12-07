@@ -38,6 +38,7 @@ public interface ComputeRoutesResponseOrBuilder
    * <code>repeated .google.maps.routing.v2.Route routes = 1;</code>
    */
   java.util.List<com.google.maps.routing.v2.Route> getRoutesList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ComputeRoutesResponseOrBuilder
    * <code>repeated .google.maps.routing.v2.Route routes = 1;</code>
    */
   com.google.maps.routing.v2.Route getRoutes(int index);
+
   /**
    *
    *
@@ -66,6 +68,7 @@ public interface ComputeRoutesResponseOrBuilder
    * <code>repeated .google.maps.routing.v2.Route routes = 1;</code>
    */
   int getRoutesCount();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface ComputeRoutesResponseOrBuilder
    * <code>repeated .google.maps.routing.v2.Route routes = 1;</code>
    */
   java.util.List<? extends com.google.maps.routing.v2.RouteOrBuilder> getRoutesOrBuilderList();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ComputeRoutesResponseOrBuilder
    * @return Whether the fallbackInfo field is set.
    */
   boolean hasFallbackInfo();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface ComputeRoutesResponseOrBuilder
    * @return The fallbackInfo.
    */
   com.google.maps.routing.v2.FallbackInfo getFallbackInfo();
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface ComputeRoutesResponseOrBuilder
    * @return Whether the geocodingResults field is set.
    */
   boolean hasGeocodingResults();
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public interface ComputeRoutesResponseOrBuilder
    * @return The geocodingResults.
    */
   com.google.maps.routing.v2.GeocodingResults getGeocodingResults();
+
   /**
    *
    *

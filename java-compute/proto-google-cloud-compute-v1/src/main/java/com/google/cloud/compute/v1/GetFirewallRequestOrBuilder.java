@@ -36,6 +36,7 @@ public interface GetFirewallRequestOrBuilder
    * @return The firewall.
    */
   java.lang.String getFirewall();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetFirewallRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface CertificateIssuanceConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface CertificateIssuanceConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface CertificateIssuanceConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CertificateIssuanceConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface CertificateIssuanceConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface CertificateIssuanceConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -149,9 +155,11 @@ public interface CertificateIssuanceConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface CertificateIssuanceConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -176,6 +185,7 @@ public interface CertificateIssuanceConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface CertificateIssuanceConfigOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -227,6 +238,7 @@ public interface CertificateIssuanceConfigOrBuilder
    * @return Whether the certificateAuthorityConfig field is set.
    */
   boolean hasCertificateAuthorityConfig();
+
   /**
    *
    *
@@ -243,6 +255,7 @@ public interface CertificateIssuanceConfigOrBuilder
    */
   com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig.CertificateAuthorityConfig
       getCertificateAuthorityConfig();
+
   /**
    *
    *
@@ -271,6 +284,7 @@ public interface CertificateIssuanceConfigOrBuilder
    * @return Whether the lifetime field is set.
    */
   boolean hasLifetime();
+
   /**
    *
    *
@@ -283,6 +297,7 @@ public interface CertificateIssuanceConfigOrBuilder
    * @return The lifetime.
    */
   com.google.protobuf.Duration getLifetime();
+
   /**
    *
    *
@@ -323,6 +338,7 @@ public interface CertificateIssuanceConfigOrBuilder
    * @return The enum numeric value on the wire for keyAlgorithm.
    */
   int getKeyAlgorithmValue();
+
   /**
    *
    *

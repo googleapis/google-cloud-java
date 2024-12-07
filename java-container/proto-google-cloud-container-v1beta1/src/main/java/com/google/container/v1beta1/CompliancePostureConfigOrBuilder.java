@@ -36,6 +36,7 @@ public interface CompliancePostureConfigOrBuilder
    * @return Whether the mode field is set.
    */
   boolean hasMode();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CompliancePostureConfigOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface CompliancePostureConfigOrBuilder
    */
   java.util.List<com.google.container.v1beta1.CompliancePostureConfig.ComplianceStandard>
       getComplianceStandardsList();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface CompliancePostureConfigOrBuilder
    */
   com.google.container.v1beta1.CompliancePostureConfig.ComplianceStandard getComplianceStandards(
       int index);
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface CompliancePostureConfigOrBuilder
    * </code>
    */
   int getComplianceStandardsCount();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface CompliancePostureConfigOrBuilder
           ? extends
               com.google.container.v1beta1.CompliancePostureConfig.ComplianceStandardOrBuilder>
       getComplianceStandardsOrBuilderList();
+
   /**
    *
    *

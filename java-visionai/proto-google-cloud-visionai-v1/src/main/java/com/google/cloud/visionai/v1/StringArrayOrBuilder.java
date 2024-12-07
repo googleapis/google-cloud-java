@@ -36,6 +36,7 @@ public interface StringArrayOrBuilder
    * @return A list containing the txtValues.
    */
   java.util.List<java.lang.String> getTxtValuesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface StringArrayOrBuilder
    * @return The count of txtValues.
    */
   int getTxtValuesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface StringArrayOrBuilder
    * @return The txtValues at the given index.
    */
   java.lang.String getTxtValues(int index);
+
   /**
    *
    *

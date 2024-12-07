@@ -37,6 +37,7 @@ public interface CompanionAdsOrBuilder
    * @return The enum numeric value on the wire for displayRequirement.
    */
   int getDisplayRequirementValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CompanionAdsOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Companion companions = 2;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.Companion> getCompanionsList();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface CompanionAdsOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Companion companions = 2;</code>
    */
   com.google.cloud.video.stitcher.v1.Companion getCompanions(int index);
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface CompanionAdsOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Companion companions = 2;</code>
    */
   int getCompanionsCount();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface CompanionAdsOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.CompanionOrBuilder>
       getCompanionsOrBuilderList();
+
   /**
    *
    *

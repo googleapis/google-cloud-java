@@ -41,6 +41,7 @@ public interface AzureControlPlaneOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface AzureControlPlaneOrBuilder
    * @return The subnetId.
    */
   java.lang.String getSubnetId();
+
   /**
    *
    *
@@ -119,6 +121,7 @@ public interface AzureControlPlaneOrBuilder
    * @return The vmSize.
    */
   java.lang.String getVmSize();
+
   /**
    *
    *
@@ -152,6 +155,7 @@ public interface AzureControlPlaneOrBuilder
    * @return Whether the sshConfig field is set.
    */
   boolean hasSshConfig();
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public interface AzureControlPlaneOrBuilder
    * @return The sshConfig.
    */
   com.google.cloud.gkemulticloud.v1.AzureSshConfig getSshConfig();
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public interface AzureControlPlaneOrBuilder
    * @return Whether the rootVolume field is set.
    */
   boolean hasRootVolume();
+
   /**
    *
    *
@@ -215,6 +221,7 @@ public interface AzureControlPlaneOrBuilder
    * @return The rootVolume.
    */
   com.google.cloud.gkemulticloud.v1.AzureDiskTemplate getRootVolume();
+
   /**
    *
    *
@@ -249,6 +256,7 @@ public interface AzureControlPlaneOrBuilder
    * @return Whether the mainVolume field is set.
    */
   boolean hasMainVolume();
+
   /**
    *
    *
@@ -267,6 +275,7 @@ public interface AzureControlPlaneOrBuilder
    * @return The mainVolume.
    */
   com.google.cloud.gkemulticloud.v1.AzureDiskTemplate getMainVolume();
+
   /**
    *
    *
@@ -298,6 +307,7 @@ public interface AzureControlPlaneOrBuilder
    * @return Whether the databaseEncryption field is set.
    */
   boolean hasDatabaseEncryption();
+
   /**
    *
    *
@@ -312,6 +322,7 @@ public interface AzureControlPlaneOrBuilder
    * @return The databaseEncryption.
    */
   com.google.cloud.gkemulticloud.v1.AzureDatabaseEncryption getDatabaseEncryption();
+
   /**
    *
    *
@@ -340,6 +351,7 @@ public interface AzureControlPlaneOrBuilder
    * @return Whether the proxyConfig field is set.
    */
   boolean hasProxyConfig();
+
   /**
    *
    *
@@ -354,6 +366,7 @@ public interface AzureControlPlaneOrBuilder
    * @return The proxyConfig.
    */
   com.google.cloud.gkemulticloud.v1.AzureProxyConfig getProxyConfig();
+
   /**
    *
    *
@@ -381,6 +394,7 @@ public interface AzureControlPlaneOrBuilder
    * @return Whether the configEncryption field is set.
    */
   boolean hasConfigEncryption();
+
   /**
    *
    *
@@ -395,6 +409,7 @@ public interface AzureControlPlaneOrBuilder
    * @return The configEncryption.
    */
   com.google.cloud.gkemulticloud.v1.AzureConfigEncryption getConfigEncryption();
+
   /**
    *
    *
@@ -419,6 +434,7 @@ public interface AzureControlPlaneOrBuilder
    * <code>map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -430,9 +446,11 @@ public interface AzureControlPlaneOrBuilder
    * <code>map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsTags(java.lang.String key);
+
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTags();
+
   /**
    *
    *
@@ -444,6 +462,7 @@ public interface AzureControlPlaneOrBuilder
    * <code>map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
   /**
    *
    *
@@ -459,6 +478,7 @@ public interface AzureControlPlaneOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -487,6 +507,7 @@ public interface AzureControlPlaneOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.ReplicaPlacement> getReplicaPlacementsList();
+
   /**
    *
    *
@@ -503,6 +524,7 @@ public interface AzureControlPlaneOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.ReplicaPlacement getReplicaPlacements(int index);
+
   /**
    *
    *
@@ -519,6 +541,7 @@ public interface AzureControlPlaneOrBuilder
    * </code>
    */
   int getReplicaPlacementsCount();
+
   /**
    *
    *
@@ -536,6 +559,7 @@ public interface AzureControlPlaneOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.ReplicaPlacementOrBuilder>
       getReplicaPlacementsOrBuilderList();
+
   /**
    *
    *
@@ -570,6 +594,7 @@ public interface AzureControlPlaneOrBuilder
    * @return The endpointSubnetId.
    */
   java.lang.String getEndpointSubnetId();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ApplicationConfigsOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Node nodes = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Node> getNodesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ApplicationConfigsOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Node nodes = 1;</code>
    */
   com.google.cloud.visionai.v1.Node getNodes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ApplicationConfigsOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Node nodes = 1;</code>
    */
   int getNodesCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ApplicationConfigsOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Node nodes = 1;</code>
    */
   java.util.List<? extends com.google.cloud.visionai.v1.NodeOrBuilder> getNodesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ApplicationConfigsOrBuilder
    * @return Whether the eventDeliveryConfig field is set.
    */
   boolean hasEventDeliveryConfig();
+
   /**
    *
    *
@@ -103,6 +108,7 @@ public interface ApplicationConfigsOrBuilder
    * @return The eventDeliveryConfig.
    */
   com.google.cloud.visionai.v1.ApplicationConfigs.EventDeliveryConfig getEventDeliveryConfig();
+
   /**
    *
    *

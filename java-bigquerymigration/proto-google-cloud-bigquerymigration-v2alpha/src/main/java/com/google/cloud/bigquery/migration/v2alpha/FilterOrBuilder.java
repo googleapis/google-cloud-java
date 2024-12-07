@@ -36,6 +36,7 @@ public interface FilterOrBuilder
    * @return A list containing the inputFileExclusionPrefixes.
    */
   java.util.List<java.lang.String> getInputFileExclusionPrefixesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FilterOrBuilder
    * @return The count of inputFileExclusionPrefixes.
    */
   int getInputFileExclusionPrefixesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface FilterOrBuilder
    * @return The inputFileExclusionPrefixes at the given index.
    */
   java.lang.String getInputFileExclusionPrefixes(int index);
+
   /**
    *
    *

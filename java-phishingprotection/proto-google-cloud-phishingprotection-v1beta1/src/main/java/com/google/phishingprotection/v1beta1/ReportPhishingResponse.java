@@ -33,6 +33,7 @@ public final class ReportPhishingResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.phishingprotection.v1beta1.ReportPhishingResponse)
     ReportPhishingResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReportPhishingResponse.newBuilder() to construct.
   private ReportPhishingResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class ReportPhishingResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface MultiCloudClusterOrBuilder
    * @return The resourceLink.
    */
   java.lang.String getResourceLink();
+
   /**
    *
    *

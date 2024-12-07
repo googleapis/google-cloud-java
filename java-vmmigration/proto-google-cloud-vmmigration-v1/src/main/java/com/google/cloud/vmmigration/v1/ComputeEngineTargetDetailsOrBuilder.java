@@ -36,6 +36,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The vmName.
    */
   java.lang.String getVmName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The machineTypeSeries.
    */
   java.lang.String getMachineTypeSeries();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return A list containing the networkTags.
    */
   java.util.List<java.lang.String> getNetworkTagsList();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The count of networkTags.
    */
   int getNetworkTagsCount();
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The networkTags at the given index.
    */
   java.lang.String getNetworkTags(int index);
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.NetworkInterface network_interfaces = 7;</code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.NetworkInterface> getNetworkInterfacesList();
+
   /**
    *
    *
@@ -220,6 +229,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.NetworkInterface network_interfaces = 7;</code>
    */
   com.google.cloud.vmmigration.v1.NetworkInterface getNetworkInterfaces(int index);
+
   /**
    *
    *
@@ -230,6 +240,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.NetworkInterface network_interfaces = 7;</code>
    */
   int getNetworkInterfacesCount();
+
   /**
    *
    *
@@ -241,6 +252,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.NetworkInterfaceOrBuilder>
       getNetworkInterfacesOrBuilderList();
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The enum numeric value on the wire for diskType.
    */
   int getDiskTypeValue();
+
   /**
    *
    *
@@ -313,6 +327,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -323,9 +338,11 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -336,6 +353,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -350,6 +368,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -373,6 +392,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The enum numeric value on the wire for licenseType.
    */
   int getLicenseTypeValue();
+
   /**
    *
    *
@@ -398,6 +418,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return Whether the appliedLicense field is set.
    */
   boolean hasAppliedLicense();
+
   /**
    *
    *
@@ -410,6 +431,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The appliedLicense.
    */
   com.google.cloud.vmmigration.v1.AppliedLicense getAppliedLicense();
+
   /**
    *
    *
@@ -433,6 +455,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return Whether the computeScheduling field is set.
    */
   boolean hasComputeScheduling();
+
   /**
    *
    *
@@ -445,6 +468,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The computeScheduling.
    */
   com.google.cloud.vmmigration.v1.ComputeScheduling getComputeScheduling();
+
   /**
    *
    *
@@ -482,6 +506,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The enum numeric value on the wire for bootOption.
    */
   int getBootOptionValue();
+
   /**
    *
    *
@@ -505,6 +530,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * <code>map&lt;string, string&gt; metadata = 16;</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -515,9 +541,11 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * <code>map&lt;string, string&gt; metadata = 16;</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -528,6 +556,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * <code>map&lt;string, string&gt; metadata = 16;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -542,6 +571,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -565,6 +595,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return A list containing the additionalLicenses.
    */
   java.util.List<java.lang.String> getAdditionalLicensesList();
+
   /**
    *
    *
@@ -577,6 +608,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The count of additionalLicenses.
    */
   int getAdditionalLicensesCount();
+
   /**
    *
    *
@@ -590,6 +622,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The additionalLicenses at the given index.
    */
   java.lang.String getAdditionalLicenses(int index);
+
   /**
    *
    *
@@ -616,6 +649,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
+
   /**
    *
    *

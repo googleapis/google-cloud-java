@@ -37,6 +37,7 @@ public interface ListRollupPropertySourceLinksResponseOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
       getRollupPropertySourceLinksList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListRollupPropertySourceLinksResponseOrBuilder
    */
   com.google.analytics.admin.v1alpha.RollupPropertySourceLink getRollupPropertySourceLinks(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ListRollupPropertySourceLinksResponseOrBuilder
    * </code>
    */
   int getRollupPropertySourceLinksCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface ListRollupPropertySourceLinksResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.RollupPropertySourceLinkOrBuilder>
       getRollupPropertySourceLinksOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface ListRollupPropertySourceLinksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

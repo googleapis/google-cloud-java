@@ -74,6 +74,7 @@ public enum MigratingVmView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MIGRATING_VM_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int MIGRATING_VM_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public enum MigratingVmView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MIGRATING_VM_VIEW_BASIC = 1;</code>
    */
   public static final int MIGRATING_VM_VIEW_BASIC_VALUE = 1;
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface CloudArmorOrBuilder
    * @return Whether the securityPolicy field is set.
    */
   boolean hasSecurityPolicy();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CloudArmorOrBuilder
    * @return The securityPolicy.
    */
   com.google.cloud.securitycenter.v1.SecurityPolicy getSecurityPolicy();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface CloudArmorOrBuilder
    * @return Whether the requests field is set.
    */
   boolean hasRequests();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface CloudArmorOrBuilder
    * @return The requests.
    */
   com.google.cloud.securitycenter.v1.Requests getRequests();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface CloudArmorOrBuilder
    * @return Whether the adaptiveProtection field is set.
    */
   boolean hasAdaptiveProtection();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface CloudArmorOrBuilder
    * @return The adaptiveProtection.
    */
   com.google.cloud.securitycenter.v1.AdaptiveProtection getAdaptiveProtection();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface CloudArmorOrBuilder
    * @return Whether the attack field is set.
    */
   boolean hasAttack();
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public interface CloudArmorOrBuilder
    * @return The attack.
    */
   com.google.cloud.securitycenter.v1.Attack getAttack();
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface CloudArmorOrBuilder
    * @return The threatVector.
    */
   java.lang.String getThreatVector();
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public interface CloudArmorOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public interface CloudArmorOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *

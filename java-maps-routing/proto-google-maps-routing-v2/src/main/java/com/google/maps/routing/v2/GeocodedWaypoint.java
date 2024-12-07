@@ -35,6 +35,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.GeocodedWaypoint)
     GeocodedWaypointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GeocodedWaypoint.newBuilder() to construct.
   private GeocodedWaypoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int GEOCODER_STATUS_FIELD_NUMBER = 1;
   private com.google.rpc.Status geocoderStatus_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
   public boolean hasGeocoderStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
   public com.google.rpc.Status getGeocoderStatus() {
     return geocoderStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : geocoderStatus_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
 
   public static final int INTERMEDIATE_WAYPOINT_REQUEST_INDEX_FIELD_NUMBER = 2;
   private int intermediateWaypointRequestIndex_ = 0;
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
   public boolean hasIntermediateWaypointRequestIndex() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList type_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getTypeList() {
     return type_;
   }
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
   public int getTypeCount() {
     return type_.size();
   }
+
   /**
    *
    *
@@ -204,6 +213,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
   public java.lang.String getType(int index) {
     return type_.get(index);
   }
+
   /**
    *
    *
@@ -224,6 +234,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
 
   public static final int PARTIAL_MATCH_FIELD_NUMBER = 4;
   private boolean partialMatch_ = false;
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object placeId_ = "";
+
   /**
    *
    *
@@ -270,6 +282,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -510,6 +523,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -777,6 +791,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         geocoderStatusBuilder_;
+
     /**
      *
      *
@@ -791,6 +806,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     public boolean hasGeocoderStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -811,6 +827,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
         return geocoderStatusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +870,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +898,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +918,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +933,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getGeocoderStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -930,6 +952,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
             : geocoderStatus_;
       }
     }
+
     /**
      *
      *
@@ -955,6 +978,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     }
 
     private int intermediateWaypointRequestIndex_;
+
     /**
      *
      *
@@ -972,6 +996,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     public boolean hasIntermediateWaypointRequestIndex() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -989,6 +1014,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     public int getIntermediateWaypointRequestIndex() {
       return intermediateWaypointRequestIndex_;
     }
+
     /**
      *
      *
@@ -1010,6 +1036,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1066,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1056,6 +1084,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       type_.makeImmutable();
       return type_;
     }
+
     /**
      *
      *
@@ -1072,6 +1101,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     public int getTypeCount() {
       return type_.size();
     }
+
     /**
      *
      *
@@ -1089,6 +1119,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     public java.lang.String getType(int index) {
       return type_.get(index);
     }
+
     /**
      *
      *
@@ -1106,6 +1137,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getTypeBytes(int index) {
       return type_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1131,6 +1163,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1188,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1176,6 +1210,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1231,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1223,6 +1259,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean partialMatch_;
+
     /**
      *
      *
@@ -1241,6 +1278,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     public boolean getPartialMatch() {
       return partialMatch_;
     }
+
     /**
      *
      *
@@ -1263,6 +1301,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1285,6 +1324,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object placeId_ = "";
+
     /**
      *
      *
@@ -1307,6 +1347,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1329,6 +1370,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1350,6 +1392,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1367,6 +1410,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

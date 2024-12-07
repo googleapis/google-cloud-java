@@ -38,6 +38,7 @@ public interface GetGitRepositoryLinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

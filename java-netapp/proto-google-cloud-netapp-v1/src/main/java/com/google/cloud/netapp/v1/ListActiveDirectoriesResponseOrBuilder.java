@@ -34,6 +34,7 @@ public interface ListActiveDirectoriesResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.ActiveDirectory active_directories = 1;</code>
    */
   java.util.List<com.google.cloud.netapp.v1.ActiveDirectory> getActiveDirectoriesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListActiveDirectoriesResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.ActiveDirectory active_directories = 1;</code>
    */
   com.google.cloud.netapp.v1.ActiveDirectory getActiveDirectories(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListActiveDirectoriesResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.ActiveDirectory active_directories = 1;</code>
    */
   int getActiveDirectoriesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListActiveDirectoriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.netapp.v1.ActiveDirectoryOrBuilder>
       getActiveDirectoriesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListActiveDirectoriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListActiveDirectoriesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListActiveDirectoriesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListActiveDirectoriesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

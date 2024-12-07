@@ -39,6 +39,7 @@ public interface GetAttestorRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface UpdateSshPublicKeyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface UpdateSshPublicKeyRequestOrBuilder
    * @return Whether the sshPublicKey field is set.
    */
   boolean hasSshPublicKey();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateSshPublicKeyRequestOrBuilder
    * @return The sshPublicKey.
    */
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface UpdateSshPublicKeyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface UpdateSshPublicKeyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

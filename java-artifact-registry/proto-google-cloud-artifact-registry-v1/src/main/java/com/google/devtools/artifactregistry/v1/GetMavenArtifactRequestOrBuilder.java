@@ -38,6 +38,7 @@ public interface GetMavenArtifactRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

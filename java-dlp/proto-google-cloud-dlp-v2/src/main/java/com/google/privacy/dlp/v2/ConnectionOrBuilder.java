@@ -37,6 +37,7 @@ public interface ConnectionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ConnectionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface ConnectionOrBuilder
    * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface ConnectionOrBuilder
    * </code>
    */
   com.google.privacy.dlp.v2.Error getErrors(int index);
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface ConnectionOrBuilder
    * </code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface ConnectionOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> getErrorsOrBuilderList();
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public interface ConnectionOrBuilder
    * @return Whether the cloudSql field is set.
    */
   boolean hasCloudSql();
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public interface ConnectionOrBuilder
    * @return The cloudSql.
    */
   com.google.privacy.dlp.v2.CloudSqlProperties getCloudSql();
+
   /**
    *
    *

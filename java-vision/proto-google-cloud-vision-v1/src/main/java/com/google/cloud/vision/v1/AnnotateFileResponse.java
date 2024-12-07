@@ -34,6 +34,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.AnnotateFileResponse)
     AnnotateFileResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotateFileResponse.newBuilder() to construct.
   private AnnotateFileResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int INPUT_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1.InputConfig inputConfig_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.vision.v1.InputConfig.getDefaultInstance()
         : inputConfig_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.AnnotateImageResponse> responses_;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.vision.v1.AnnotateImageResponse> getResponsesList() {
     return responses_;
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       getResponsesOrBuilderList() {
     return responses_;
   }
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
   public int getResponsesCount() {
     return responses_.size();
   }
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.vision.v1.AnnotateImageResponse getResponses(int index) {
     return responses_.get(index);
   }
+
   /**
    *
    *
@@ -194,6 +203,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
 
   public static final int TOTAL_PAGES_FIELD_NUMBER = 3;
   private int totalPages_ = 0;
+
   /**
    *
    *
@@ -212,6 +222,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
 
   public static final int ERROR_FIELD_NUMBER = 4;
   private com.google.rpc.Status error_;
+
   /**
    *
    *
@@ -228,6 +239,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
   public boolean hasError() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -244,6 +256,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
+
   /**
    *
    *
@@ -457,6 +470,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -757,6 +771,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.vision.v1.InputConfig.Builder,
             com.google.cloud.vision.v1.InputConfigOrBuilder>
         inputConfigBuilder_;
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -791,6 +807,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         return inputConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -813,6 +830,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +878,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +898,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +913,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -910,6 +932,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
             : inputConfig_;
       }
     }
+
     /**
      *
      *
@@ -970,6 +993,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         return responsesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -987,6 +1011,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         return responsesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1029,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         return responsesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1027,6 +1053,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1075,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1099,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1123,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1145,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1167,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1189,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1210,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1197,6 +1231,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1210,6 +1245,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.vision.v1.AnnotateImageResponse.Builder getResponsesBuilder(int index) {
       return getResponsesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1228,6 +1264,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         return responsesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1246,6 +1283,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(responses_);
       }
     }
+
     /**
      *
      *
@@ -1260,6 +1298,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       return getResponsesFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.AnnotateImageResponse.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1274,6 +1313,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       return getResponsesFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.AnnotateImageResponse.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1307,6 +1347,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     }
 
     private int totalPages_;
+
     /**
      *
      *
@@ -1322,6 +1363,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     public int getTotalPages() {
       return totalPages_;
     }
+
     /**
      *
      *
@@ -1341,6 +1383,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1406,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -1378,6 +1422,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     public boolean hasError() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1397,6 +1442,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1420,6 +1466,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1487,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1468,6 +1516,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1488,6 +1537,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1503,6 +1553,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1520,6 +1571,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
+
     /**
      *
      *

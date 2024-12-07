@@ -34,6 +34,7 @@ public interface ListProcessesResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Process processes = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Process> getProcessesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListProcessesResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Process processes = 1;</code>
    */
   com.google.cloud.visionai.v1.Process getProcesses(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListProcessesResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Process processes = 1;</code>
    */
   int getProcessesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListProcessesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.ProcessOrBuilder>
       getProcessesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListProcessesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListProcessesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListProcessesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListProcessesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface CloudSqlCredentialOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CloudSqlCredentialOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
+
   /**
    *
    *

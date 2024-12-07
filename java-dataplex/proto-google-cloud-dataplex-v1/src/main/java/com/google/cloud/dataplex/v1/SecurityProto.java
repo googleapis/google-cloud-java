@@ -45,14 +45,17 @@ public final class SecurityProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n\'google/cloud/dataplex/v1/security.prot"
-          + "o\022\030google.cloud.dataplex.v1\032\037google/api/"
-          + "field_behavior.proto\"U\n\022ResourceAccessSp"
-          + "ec\022\024\n\007readers\030\001 \003(\tB\003\340A\001\022\024\n\007writers\030\002 \003("
-          + "\tB\003\340A\001\022\023\n\006owners\030\003 \003(\tB\003\340A\001\"&\n\016DataAcces"
-          + "sSpec\022\024\n\007readers\030\001 \003(\tB\003\340A\001Bi\n\034com.googl"
-          + "e.cloud.dataplex.v1B\rSecurityProtoP\001Z8cl"
-          + "oud.google.com/go/dataplex/apiv1/dataple"
+      "\n"
+          + "\'google/cloud/dataplex/v1/security.prot"
+          + "o\022\030google.cloud.dataplex.v1\032\037google/api/field_behavior.proto\"U\n"
+          + "\022ResourceAccessSpec\022\024\n"
+          + "\007readers\030\001 \003(\tB\003\340A\001\022\024\n"
+          + "\007writers\030\002 \003(\tB\003\340A\001\022\023\n"
+          + "\006owners\030\003 \003(\tB\003\340A\001\"&\n"
+          + "\016DataAccessSpec\022\024\n"
+          + "\007readers\030\001 \003(\tB\003\340A\001Bi\n"
+          + "\034com.google.cloud.dataplex.v1B\r"
+          + "SecurityProtoP\001Z8cloud.google.com/go/dataplex/apiv1/dataple"
           + "xpb;dataplexpbb\006proto3"
     };
     descriptor =

@@ -51,6 +51,7 @@ public interface CustomFieldOptionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

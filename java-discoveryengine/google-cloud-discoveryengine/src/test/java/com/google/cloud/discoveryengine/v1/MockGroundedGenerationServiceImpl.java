@@ -75,7 +75,8 @@ public class MockGroundedGenerationServiceImpl extends GroundedGenerationService
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamGenerateGroundedContent, expected %s or %s",
+                          "Unrecognized response type %s for method StreamGenerateGroundedContent,"
+                              + " expected %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           GenerateGroundedContentResponse.class.getName(),
                           Exception.class.getName())));
@@ -110,7 +111,8 @@ public class MockGroundedGenerationServiceImpl extends GroundedGenerationService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateGroundedContent, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateGroundedContent, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateGroundedContentResponse.class.getName(),
                   Exception.class.getName())));

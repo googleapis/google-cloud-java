@@ -38,6 +38,7 @@ public interface InsertGlobalForwardingRuleRequestOrBuilder
    * @return Whether the forwardingRuleResource field is set.
    */
   boolean hasForwardingRuleResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InsertGlobalForwardingRuleRequestOrBuilder
    * @return The forwardingRuleResource.
    */
   com.google.cloud.compute.v1.ForwardingRule getForwardingRuleResource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface InsertGlobalForwardingRuleRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface InsertGlobalForwardingRuleRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface InsertGlobalForwardingRuleRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

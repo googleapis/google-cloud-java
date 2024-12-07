@@ -36,6 +36,7 @@ public interface StopBackfillJobResponseOrBuilder
    * @return Whether the object field is set.
    */
   boolean hasObject();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface StopBackfillJobResponseOrBuilder
    * @return The object.
    */
   com.google.cloud.datastream.v1.StreamObject getObject();
+
   /**
    *
    *

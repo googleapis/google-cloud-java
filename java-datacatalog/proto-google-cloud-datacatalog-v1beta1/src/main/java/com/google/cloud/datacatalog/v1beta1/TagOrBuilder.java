@@ -41,6 +41,7 @@ public interface TagOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface TagOrBuilder
    * @return The template.
    */
   java.lang.String getTemplate();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface TagOrBuilder
    * @return The templateDisplayName.
    */
   java.lang.String getTemplateDisplayName();
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public interface TagOrBuilder
    * @return Whether the column field is set.
    */
   boolean hasColumn();
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public interface TagOrBuilder
    * @return The column.
    */
   java.lang.String getColumn();
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public interface TagOrBuilder
    * </code>
    */
   int getFieldsCount();
+
   /**
    *
    *
@@ -202,9 +208,11 @@ public interface TagOrBuilder
    * </code>
    */
   boolean containsFields(java.lang.String key);
+
   /** Use {@link #getFieldsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1beta1.TagField> getFields();
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public interface TagOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1beta1.TagField> getFieldsMap();
+
   /**
    *
    *
@@ -237,6 +246,7 @@ public interface TagOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.datacatalog.v1beta1.TagField defaultValue);
+
   /**
    *
    *

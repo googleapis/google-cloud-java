@@ -47,6 +47,7 @@ public interface OrganizationImpactOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface OrganizationImpactOrBuilder
    * @return A list containing the events.
    */
   java.util.List<java.lang.String> getEventsList();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface OrganizationImpactOrBuilder
    * @return The count of events.
    */
   int getEventsCount();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface OrganizationImpactOrBuilder
    * @return The events at the given index.
    */
   java.lang.String getEvents(int index);
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface OrganizationImpactOrBuilder
    * @return Whether the asset field is set.
    */
   boolean hasAsset();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface OrganizationImpactOrBuilder
    * @return The asset.
    */
   com.google.cloud.servicehealth.v1.Asset getAsset();
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public interface OrganizationImpactOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public interface OrganizationImpactOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

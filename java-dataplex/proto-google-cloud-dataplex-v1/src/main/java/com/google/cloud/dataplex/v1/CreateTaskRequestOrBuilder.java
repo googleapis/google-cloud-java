@@ -39,6 +39,7 @@ public interface CreateTaskRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateTaskRequestOrBuilder
    * @return The taskId.
    */
   java.lang.String getTaskId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface CreateTaskRequestOrBuilder
    * @return Whether the task field is set.
    */
   boolean hasTask();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CreateTaskRequestOrBuilder
    * @return The task.
    */
   com.google.cloud.dataplex.v1.Task getTask();
+
   /**
    *
    *

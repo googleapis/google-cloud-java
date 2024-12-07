@@ -38,6 +38,7 @@ public interface UpdateSpecialistPoolRequestOrBuilder
    * @return Whether the specialistPool field is set.
    */
   boolean hasSpecialistPool();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateSpecialistPoolRequestOrBuilder
    * @return The specialistPool.
    */
   com.google.cloud.aiplatform.v1.SpecialistPool getSpecialistPool();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateSpecialistPoolRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateSpecialistPoolRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

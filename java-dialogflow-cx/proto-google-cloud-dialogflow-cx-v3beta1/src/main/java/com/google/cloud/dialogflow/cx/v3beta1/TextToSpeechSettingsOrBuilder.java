@@ -52,6 +52,7 @@ public interface TextToSpeechSettingsOrBuilder
    * </code>
    */
   int getSynthesizeSpeechConfigsCount();
+
   /**
    *
    *
@@ -80,10 +81,12 @@ public interface TextToSpeechSettingsOrBuilder
    * </code>
    */
   boolean containsSynthesizeSpeechConfigs(java.lang.String key);
+
   /** Use {@link #getSynthesizeSpeechConfigsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig>
       getSynthesizeSpeechConfigs();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface TextToSpeechSettingsOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig>
       getSynthesizeSpeechConfigsMap();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface TextToSpeechSettingsOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig defaultValue);
+
   /**
    *
    *

@@ -72,6 +72,7 @@ public enum StackType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STACK_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int STACK_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum StackType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IPV4 = 1;</code>
    */
   public static final int IPV4_VALUE = 1;
+
   /**
    *
    *

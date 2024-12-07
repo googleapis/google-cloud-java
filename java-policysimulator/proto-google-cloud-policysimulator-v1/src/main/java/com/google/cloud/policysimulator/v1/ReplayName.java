@@ -345,7 +345,8 @@ public class ReplayName implements ResourceName {
     private Builder(ReplayName replayName) {
       Preconditions.checkArgument(
           Objects.equals(replayName.pathTemplate, PROJECT_LOCATION_REPLAY),
-          "toBuilder is only supported when ReplayName has the pattern of projects/{project}/locations/{location}/replays/{replay}");
+          "toBuilder is only supported when ReplayName has the pattern of"
+              + " projects/{project}/locations/{location}/replays/{replay}");
       this.project = replayName.project;
       this.location = replayName.location;
       this.replay = replayName.replay;

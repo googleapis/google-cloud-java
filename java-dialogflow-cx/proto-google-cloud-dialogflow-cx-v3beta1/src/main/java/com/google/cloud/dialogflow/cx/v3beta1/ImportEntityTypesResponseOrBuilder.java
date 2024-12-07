@@ -38,6 +38,7 @@ public interface ImportEntityTypesResponseOrBuilder
    * @return A list containing the entityTypes.
    */
   java.util.List<java.lang.String> getEntityTypesList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ImportEntityTypesResponseOrBuilder
    * @return The count of entityTypes.
    */
   int getEntityTypesCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface ImportEntityTypesResponseOrBuilder
    * @return The entityTypes at the given index.
    */
   java.lang.String getEntityTypes(int index);
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface ImportEntityTypesResponseOrBuilder
    * @return Whether the conflictingResources field is set.
    */
   boolean hasConflictingResources();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface ImportEntityTypesResponseOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesResponse.ConflictingResources
       getConflictingResources();
+
   /**
    *
    *

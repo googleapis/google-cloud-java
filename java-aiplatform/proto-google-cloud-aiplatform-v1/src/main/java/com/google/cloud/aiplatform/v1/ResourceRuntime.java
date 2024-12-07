@@ -33,6 +33,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ResourceRuntime)
     ResourceRuntimeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceRuntime.newBuilder() to construct.
   private ResourceRuntime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,6 +100,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
   public int getAccessUrisCount() {
     return internalGetAccessUris().getMap().size();
   }
+
   /**
    *
    *
@@ -121,12 +123,14 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetAccessUris().getMap().containsKey(key);
   }
+
   /** Use {@link #getAccessUrisMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAccessUris() {
     return getAccessUrisMap();
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getAccessUrisMap() {
     return internalGetAccessUris().getMap();
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAccessUris().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -366,6 +372,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -602,6 +609,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     public int getAccessUrisCount() {
       return internalGetAccessUris().getMap().size();
     }
+
     /**
      *
      *
@@ -624,12 +632,14 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetAccessUris().getMap().containsKey(key);
     }
+
     /** Use {@link #getAccessUrisMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAccessUris() {
       return getAccessUrisMap();
     }
+
     /**
      *
      *
@@ -649,6 +659,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getAccessUrisMap() {
       return internalGetAccessUris().getMap();
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAccessUris().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
       internalGetMutableAccessUris().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -729,12 +742,14 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
       internalGetMutableAccessUris().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAccessUris() {
       bitField0_ |= 0x00000001;
       return internalGetMutableAccessUris().getMutableMap();
     }
+
     /**
      *
      *
@@ -761,6 +776,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

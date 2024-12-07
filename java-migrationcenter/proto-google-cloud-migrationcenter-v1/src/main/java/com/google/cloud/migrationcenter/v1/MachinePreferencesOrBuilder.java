@@ -36,6 +36,7 @@ public interface MachinePreferencesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.MachineSeries> getAllowedMachineSeriesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MachinePreferencesOrBuilder
    * </code>
    */
   com.google.cloud.migrationcenter.v1.MachineSeries getAllowedMachineSeries(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface MachinePreferencesOrBuilder
    * </code>
    */
   int getAllowedMachineSeriesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface MachinePreferencesOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.MachineSeriesOrBuilder>
       getAllowedMachineSeriesOrBuilderList();
+
   /**
    *
    *

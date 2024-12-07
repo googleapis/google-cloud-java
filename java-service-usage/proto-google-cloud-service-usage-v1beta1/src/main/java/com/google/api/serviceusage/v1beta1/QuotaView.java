@@ -80,6 +80,7 @@ public enum QuotaView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>QUOTA_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int QUOTA_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -90,6 +91,7 @@ public enum QuotaView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BASIC = 1;</code>
    */
   public static final int BASIC_VALUE = 1;
+
   /**
    *
    *

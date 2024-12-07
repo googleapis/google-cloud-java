@@ -33,6 +33,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.StorageProperties)
     StoragePropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StorageProperties.newBuilder() to construct.
   private StorageProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList filePattern_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getFilePatternList() {
     return filePattern_;
   }
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
   public int getFilePatternCount() {
     return filePattern_.size();
   }
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
   public java.lang.String getFilePattern(int index) {
     return filePattern_.get(index);
   }
+
   /**
    *
    *
@@ -208,6 +213,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fileType_ = "";
+
   /**
    *
    *
@@ -231,6 +237,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -430,6 +437,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -644,6 +652,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -678,6 +687,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       filePattern_.makeImmutable();
       return filePattern_;
     }
+
     /**
      *
      *
@@ -711,6 +721,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
     public int getFilePatternCount() {
       return filePattern_.size();
     }
+
     /**
      *
      *
@@ -745,6 +756,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
     public java.lang.String getFilePattern(int index) {
       return filePattern_.get(index);
     }
+
     /**
      *
      *
@@ -779,6 +791,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getFilePatternBytes(int index) {
       return filePattern_.getByteString(index);
     }
+
     /**
      *
      *
@@ -821,6 +834,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +876,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +915,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +953,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +998,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object fileType_ = "";
+
     /**
      *
      *
@@ -1003,6 +1021,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1044,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1066,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1084,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

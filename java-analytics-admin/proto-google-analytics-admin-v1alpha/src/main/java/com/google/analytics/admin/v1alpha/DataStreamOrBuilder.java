@@ -37,6 +37,7 @@ public interface DataStreamOrBuilder
    * @return Whether the webStreamData field is set.
    */
   boolean hasWebStreamData();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface DataStreamOrBuilder
    * @return The webStreamData.
    */
   com.google.analytics.admin.v1alpha.DataStream.WebStreamData getWebStreamData();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface DataStreamOrBuilder
    * @return Whether the androidAppStreamData field is set.
    */
   boolean hasAndroidAppStreamData();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface DataStreamOrBuilder
    * @return The androidAppStreamData.
    */
   com.google.analytics.admin.v1alpha.DataStream.AndroidAppStreamData getAndroidAppStreamData();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface DataStreamOrBuilder
    * @return Whether the iosAppStreamData field is set.
    */
   boolean hasIosAppStreamData();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface DataStreamOrBuilder
    * @return The iosAppStreamData.
    */
   com.google.analytics.admin.v1alpha.DataStream.IosAppStreamData getIosAppStreamData();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface DataStreamOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public interface DataStreamOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public interface DataStreamOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -253,6 +262,7 @@ public interface DataStreamOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public interface DataStreamOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -291,6 +302,7 @@ public interface DataStreamOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -304,6 +316,7 @@ public interface DataStreamOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

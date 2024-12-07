@@ -36,6 +36,7 @@ public interface StatefulPolicyPreservedStateOrBuilder
    * </code>
    */
   int getDisksCount();
+
   /**
    *
    *
@@ -48,11 +49,13 @@ public interface StatefulPolicyPreservedStateOrBuilder
    * </code>
    */
   boolean containsDisks(java.lang.String key);
+
   /** Use {@link #getDisksMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice>
       getDisks();
+
   /**
    *
    *
@@ -67,6 +70,7 @@ public interface StatefulPolicyPreservedStateOrBuilder
   java.util.Map<
           java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice>
       getDisksMap();
+
   /**
    *
    *
@@ -83,6 +87,7 @@ public interface StatefulPolicyPreservedStateOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice defaultValue);
+
   /**
    *
    *
@@ -109,6 +114,7 @@ public interface StatefulPolicyPreservedStateOrBuilder
    * </code>
    */
   int getExternalIPsCount();
+
   /**
    *
    *
@@ -121,10 +127,12 @@ public interface StatefulPolicyPreservedStateOrBuilder
    * </code>
    */
   boolean containsExternalIPs(java.lang.String key);
+
   /** Use {@link #getExternalIPsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp>
       getExternalIPs();
+
   /**
    *
    *
@@ -138,6 +146,7 @@ public interface StatefulPolicyPreservedStateOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp>
       getExternalIPsMap();
+
   /**
    *
    *
@@ -154,6 +163,7 @@ public interface StatefulPolicyPreservedStateOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp defaultValue);
+
   /**
    *
    *
@@ -180,6 +190,7 @@ public interface StatefulPolicyPreservedStateOrBuilder
    * </code>
    */
   int getInternalIPsCount();
+
   /**
    *
    *
@@ -192,10 +203,12 @@ public interface StatefulPolicyPreservedStateOrBuilder
    * </code>
    */
   boolean containsInternalIPs(java.lang.String key);
+
   /** Use {@link #getInternalIPsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp>
       getInternalIPs();
+
   /**
    *
    *
@@ -209,6 +222,7 @@ public interface StatefulPolicyPreservedStateOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp>
       getInternalIPsMap();
+
   /**
    *
    *
@@ -225,6 +239,7 @@ public interface StatefulPolicyPreservedStateOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp defaultValue);
+
   /**
    *
    *

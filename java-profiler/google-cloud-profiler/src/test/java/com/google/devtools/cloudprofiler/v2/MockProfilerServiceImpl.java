@@ -93,7 +93,8 @@ public class MockProfilerServiceImpl extends ProfilerServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateOfflineProfile, expected %s or %s",
+                  "Unrecognized response type %s for method CreateOfflineProfile, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Profile.class.getName(),
                   Exception.class.getName())));

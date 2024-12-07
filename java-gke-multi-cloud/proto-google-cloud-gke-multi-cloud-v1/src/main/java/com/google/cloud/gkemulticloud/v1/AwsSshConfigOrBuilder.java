@@ -36,6 +36,7 @@ public interface AwsSshConfigOrBuilder
    * @return The ec2KeyPair.
    */
   java.lang.String getEc2KeyPair();
+
   /**
    *
    *

@@ -25,6 +25,7 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.memcache.v1.ZoneMetadata)
     ZoneMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ZoneMetadata.newBuilder() to construct.
   private ZoneMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -203,6 +204,7 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.memcache.v1.ZoneMetadata} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements

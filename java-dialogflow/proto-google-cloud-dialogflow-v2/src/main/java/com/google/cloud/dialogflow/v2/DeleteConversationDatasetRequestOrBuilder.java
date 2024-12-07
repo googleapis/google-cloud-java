@@ -40,6 +40,7 @@ public interface DeleteConversationDatasetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

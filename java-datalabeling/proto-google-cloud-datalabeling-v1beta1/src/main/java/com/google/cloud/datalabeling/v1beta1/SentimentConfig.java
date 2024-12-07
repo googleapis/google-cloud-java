@@ -33,6 +33,7 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.SentimentConfig)
     SentimentConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SentimentConfig.newBuilder() to construct.
   private SentimentConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int ENABLE_LABEL_SENTIMENT_SELECTION_FIELD_NUMBER = 1;
   private boolean enableLabelSentimentSelection_ = false;
+
   /**
    *
    *
@@ -244,6 +246,7 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -426,6 +429,7 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private boolean enableLabelSentimentSelection_;
+
     /**
      *
      *
@@ -443,6 +447,7 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
     public boolean getEnableLabelSentimentSelection() {
       return enableLabelSentimentSelection_;
     }
+
     /**
      *
      *
@@ -464,6 +469,7 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

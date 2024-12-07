@@ -38,6 +38,7 @@ public interface BulkInsertRegionDiskRequestOrBuilder
    * @return Whether the bulkInsertDiskResourceResource field is set.
    */
   boolean hasBulkInsertDiskResourceResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface BulkInsertRegionDiskRequestOrBuilder
    * @return The bulkInsertDiskResourceResource.
    */
   com.google.cloud.compute.v1.BulkInsertDiskResource getBulkInsertDiskResourceResource();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface BulkInsertRegionDiskRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface BulkInsertRegionDiskRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface BulkInsertRegionDiskRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface BulkInsertRegionDiskRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

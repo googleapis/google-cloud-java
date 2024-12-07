@@ -38,6 +38,7 @@ public interface LakeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface InputAudioConfigOrBuilder
    * @return The enum numeric value on the wire for audioEncoding.
    */
   int getAudioEncodingValue();
+
   /**
    *
    *
@@ -105,6 +106,7 @@ public interface InputAudioConfigOrBuilder
    * @return A list containing the phraseHints.
    */
   java.util.List<java.lang.String> getPhraseHintsList();
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public interface InputAudioConfigOrBuilder
    * @return The count of phraseHints.
    */
   int getPhraseHintsCount();
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public interface InputAudioConfigOrBuilder
    * @return The phraseHints at the given index.
    */
   java.lang.String getPhraseHints(int index);
+
   /**
    *
    *
@@ -174,6 +178,7 @@ public interface InputAudioConfigOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
@@ -203,6 +208,7 @@ public interface InputAudioConfigOrBuilder
    * @return The enum numeric value on the wire for modelVariant.
    */
   int getModelVariantValue();
+
   /**
    *
    *
@@ -249,6 +255,7 @@ public interface InputAudioConfigOrBuilder
    * @return Whether the bargeInConfig field is set.
    */
   boolean hasBargeInConfig();
+
   /**
    *
    *
@@ -261,6 +268,7 @@ public interface InputAudioConfigOrBuilder
    * @return The bargeInConfig.
    */
   com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig getBargeInConfig();
+
   /**
    *
    *

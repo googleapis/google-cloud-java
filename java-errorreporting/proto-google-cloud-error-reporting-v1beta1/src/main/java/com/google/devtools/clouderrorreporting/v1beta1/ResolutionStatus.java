@@ -96,6 +96,7 @@ public enum ResolutionStatus implements com.google.protobuf.ProtocolMessageEnum 
    * <code>RESOLUTION_STATUS_UNSPECIFIED = 0;</code>
    */
   public static final int RESOLUTION_STATUS_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -107,6 +108,7 @@ public enum ResolutionStatus implements com.google.protobuf.ProtocolMessageEnum 
    * <code>OPEN = 1;</code>
    */
   public static final int OPEN_VALUE = 1;
+
   /**
    *
    *
@@ -117,6 +119,7 @@ public enum ResolutionStatus implements com.google.protobuf.ProtocolMessageEnum 
    * <code>ACKNOWLEDGED = 2;</code>
    */
   public static final int ACKNOWLEDGED_VALUE = 2;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public enum ResolutionStatus implements com.google.protobuf.ProtocolMessageEnum 
    * <code>RESOLVED = 3;</code>
    */
   public static final int RESOLVED_VALUE = 3;
+
   /**
    *
    *

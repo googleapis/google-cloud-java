@@ -38,6 +38,7 @@ public interface UpdateHomepageRequestOrBuilder
    * @return Whether the homepage field is set.
    */
   boolean hasHomepage();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateHomepageRequestOrBuilder
    * @return The homepage.
    */
   com.google.shopping.merchant.accounts.v1beta.Homepage getHomepage();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateHomepageRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateHomepageRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

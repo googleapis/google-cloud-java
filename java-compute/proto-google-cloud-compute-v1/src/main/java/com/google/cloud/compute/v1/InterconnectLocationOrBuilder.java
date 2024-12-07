@@ -36,6 +36,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the address field is set.
    */
   boolean hasAddress();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InterconnectLocationOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the availabilityZone field is set.
    */
   boolean hasAvailabilityZone();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface InterconnectLocationOrBuilder
    * @return The availabilityZone.
    */
   java.lang.String getAvailabilityZone();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface InterconnectLocationOrBuilder
    * @return A list containing the availableFeatures.
    */
   java.util.List<java.lang.String> getAvailableFeaturesList();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface InterconnectLocationOrBuilder
    * @return The count of availableFeatures.
    */
   int getAvailableFeaturesCount();
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public interface InterconnectLocationOrBuilder
    * @return The availableFeatures at the given index.
    */
   java.lang.String getAvailableFeatures(int index);
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public interface InterconnectLocationOrBuilder
    * @return A list containing the availableLinkTypes.
    */
   java.util.List<java.lang.String> getAvailableLinkTypesList();
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public interface InterconnectLocationOrBuilder
    * @return The count of availableLinkTypes.
    */
   int getAvailableLinkTypesCount();
+
   /**
    *
    *
@@ -193,6 +202,7 @@ public interface InterconnectLocationOrBuilder
    * @return The availableLinkTypes at the given index.
    */
   java.lang.String getAvailableLinkTypes(int index);
+
   /**
    *
    *
@@ -220,6 +230,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the city field is set.
    */
   boolean hasCity();
+
   /**
    *
    *
@@ -232,6 +243,7 @@ public interface InterconnectLocationOrBuilder
    * @return The city.
    */
   java.lang.String getCity();
+
   /**
    *
    *
@@ -258,6 +270,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the continent field is set.
    */
   boolean hasContinent();
+
   /**
    *
    *
@@ -271,6 +284,7 @@ public interface InterconnectLocationOrBuilder
    * @return The continent.
    */
   java.lang.String getContinent();
+
   /**
    *
    *
@@ -297,6 +311,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -309,6 +324,7 @@ public interface InterconnectLocationOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -334,6 +350,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -346,6 +363,7 @@ public interface InterconnectLocationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -371,6 +389,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the facilityProvider field is set.
    */
   boolean hasFacilityProvider();
+
   /**
    *
    *
@@ -383,6 +402,7 @@ public interface InterconnectLocationOrBuilder
    * @return The facilityProvider.
    */
   java.lang.String getFacilityProvider();
+
   /**
    *
    *
@@ -408,6 +428,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the facilityProviderFacilityId field is set.
    */
   boolean hasFacilityProviderFacilityId();
+
   /**
    *
    *
@@ -420,6 +441,7 @@ public interface InterconnectLocationOrBuilder
    * @return The facilityProviderFacilityId.
    */
   java.lang.String getFacilityProviderFacilityId();
+
   /**
    *
    *
@@ -445,6 +467,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -470,6 +493,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -482,6 +506,7 @@ public interface InterconnectLocationOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -507,6 +532,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -519,6 +545,7 @@ public interface InterconnectLocationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -544,6 +571,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the peeringdbFacilityId field is set.
    */
   boolean hasPeeringdbFacilityId();
+
   /**
    *
    *
@@ -556,6 +584,7 @@ public interface InterconnectLocationOrBuilder
    * @return The peeringdbFacilityId.
    */
   java.lang.String getPeeringdbFacilityId();
+
   /**
    *
    *
@@ -581,6 +610,7 @@ public interface InterconnectLocationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectLocationRegionInfo> getRegionInfosList();
+
   /**
    *
    *
@@ -593,6 +623,7 @@ public interface InterconnectLocationOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectLocationRegionInfo getRegionInfos(int index);
+
   /**
    *
    *
@@ -605,6 +636,7 @@ public interface InterconnectLocationOrBuilder
    * </code>
    */
   int getRegionInfosCount();
+
   /**
    *
    *
@@ -618,6 +650,7 @@ public interface InterconnectLocationOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InterconnectLocationRegionInfoOrBuilder>
       getRegionInfosOrBuilderList();
+
   /**
    *
    *
@@ -644,6 +677,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -656,6 +690,7 @@ public interface InterconnectLocationOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -682,6 +717,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -695,6 +731,7 @@ public interface InterconnectLocationOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -721,6 +758,7 @@ public interface InterconnectLocationOrBuilder
    * @return Whether the supportsPzs field is set.
    */
   boolean hasSupportsPzs();
+
   /**
    *
    *

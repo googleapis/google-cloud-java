@@ -39,6 +39,7 @@ public interface ResourceSelectorOrBuilder
    * @return Whether the groupKind field is set.
    */
   boolean hasGroupKind();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ResourceSelectorOrBuilder
    * @return The groupKind.
    */
   com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getGroupKind();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ResourceSelectorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface ResourceSelectorOrBuilder
    * @return The namespace.
    */
   java.lang.String getNamespace();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface ResourceSelectorOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -160,9 +165,11 @@ public interface ResourceSelectorOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface ResourceSelectorOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public interface ResourceSelectorOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

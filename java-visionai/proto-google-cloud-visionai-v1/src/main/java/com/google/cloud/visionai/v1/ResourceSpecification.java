@@ -38,6 +38,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ResourceSpecification)
     ResourceSpecificationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceSpecification.newBuilder() to construct.
   private ResourceSpecification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,6 +76,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpu_ = "";
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -146,6 +149,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpuLimits_ = "";
+
   /**
    *
    *
@@ -175,6 +179,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -209,6 +214,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object memory_ = "";
+
   /**
    *
    *
@@ -238,6 +244,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -272,6 +279,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object memoryLimits_ = "";
+
   /**
    *
    *
@@ -301,6 +309,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -333,6 +342,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
 
   public static final int GPUS_FIELD_NUMBER = 3;
   private int gpus_ = 0;
+
   /**
    *
    *
@@ -351,6 +361,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
 
   public static final int LATENCY_BUDGET_MS_FIELD_NUMBER = 4;
   private int latencyBudgetMs_ = 0;
+
   /**
    *
    *
@@ -577,6 +588,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -837,6 +849,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object cpu_ = "";
+
     /**
      *
      *
@@ -869,6 +882,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -901,6 +915,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -932,6 +947,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +975,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1010,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object cpuLimits_ = "";
+
     /**
      *
      *
@@ -1021,6 +1039,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1068,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1076,6 +1096,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1120,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1151,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object memory_ = "";
+
     /**
      *
      *
@@ -1157,6 +1180,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1185,6 +1209,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1237,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1261,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1265,6 +1292,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object memoryLimits_ = "";
+
     /**
      *
      *
@@ -1293,6 +1321,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1321,6 +1350,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1348,6 +1378,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1402,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1401,6 +1433,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
     }
 
     private int gpus_;
+
     /**
      *
      *
@@ -1416,6 +1449,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
     public int getGpus() {
       return gpus_;
     }
+
     /**
      *
      *
@@ -1435,6 +1469,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1454,6 +1489,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
     }
 
     private int latencyBudgetMs_;
+
     /**
      *
      *
@@ -1475,6 +1511,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
     public int getLatencyBudgetMs() {
       return latencyBudgetMs_;
     }
+
     /**
      *
      *
@@ -1500,6 +1537,7 @@ public final class ResourceSpecification extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -41,6 +41,7 @@ public interface ListSKAdNetworkConversionValueSchemasRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface ListSKAdNetworkConversionValueSchemasRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

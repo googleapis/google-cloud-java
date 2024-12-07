@@ -142,6 +142,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int JOB_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -152,6 +153,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_PENDING = 9;</code>
    */
   public static final int JOB_STATE_PENDING_VALUE = 9;
+
   /**
    *
    *
@@ -162,6 +164,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_RUNNING = 1;</code>
    */
   public static final int JOB_STATE_RUNNING_VALUE = 1;
+
   /**
    *
    *
@@ -172,6 +175,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_SUCCEEDED = 2;</code>
    */
   public static final int JOB_STATE_SUCCEEDED_VALUE = 2;
+
   /**
    *
    *
@@ -182,6 +186,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_FAILED = 3;</code>
    */
   public static final int JOB_STATE_FAILED_VALUE = 3;
+
   /**
    *
    *
@@ -192,6 +197,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_CANCELLED = 4;</code>
    */
   public static final int JOB_STATE_CANCELLED_VALUE = 4;
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_KNOWLEDGE_EXTRACTION = 5;</code>
    */
   public static final int JOB_STATE_KNOWLEDGE_EXTRACTION_VALUE = 5;
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_RECON_PREPROCESSING = 6;</code>
    */
   public static final int JOB_STATE_RECON_PREPROCESSING_VALUE = 6;
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_CLUSTERING = 7;</code>
    */
   public static final int JOB_STATE_CLUSTERING_VALUE = 7;
+
   /**
    *
    *

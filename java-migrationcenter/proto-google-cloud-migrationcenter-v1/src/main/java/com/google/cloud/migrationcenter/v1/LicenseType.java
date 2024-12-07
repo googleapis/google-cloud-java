@@ -74,6 +74,7 @@ public enum LicenseType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LICENSE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int LICENSE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public enum LicenseType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LICENSE_TYPE_DEFAULT = 1;</code>
    */
   public static final int LICENSE_TYPE_DEFAULT_VALUE = 1;
+
   /**
    *
    *

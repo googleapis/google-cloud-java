@@ -38,6 +38,7 @@ public interface EstimateDataSizeRequestOrBuilder
    * @return Whether the websiteDataSource field is set.
    */
   boolean hasWebsiteDataSource();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface EstimateDataSizeRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.WebsiteDataSource
       getWebsiteDataSource();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface EstimateDataSizeRequestOrBuilder
    * @return Whether the fileDataSource field is set.
    */
   boolean hasFileDataSource();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface EstimateDataSizeRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.FileDataSource
       getFileDataSource();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface EstimateDataSizeRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

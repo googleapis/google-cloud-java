@@ -38,6 +38,7 @@ public interface WindowsBasedSliOrBuilder
    * @return Whether the goodBadMetricFilter field is set.
    */
   boolean hasGoodBadMetricFilter();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface WindowsBasedSliOrBuilder
    * @return The goodBadMetricFilter.
    */
   java.lang.String getGoodBadMetricFilter();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface WindowsBasedSliOrBuilder
    * @return Whether the goodTotalRatioThreshold field is set.
    */
   boolean hasGoodTotalRatioThreshold();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface WindowsBasedSliOrBuilder
    * @return The goodTotalRatioThreshold.
    */
   com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold getGoodTotalRatioThreshold();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface WindowsBasedSliOrBuilder
    * @return Whether the metricMeanInRange field is set.
    */
   boolean hasMetricMeanInRange();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface WindowsBasedSliOrBuilder
    * @return The metricMeanInRange.
    */
   com.google.monitoring.v3.WindowsBasedSli.MetricRange getMetricMeanInRange();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface WindowsBasedSliOrBuilder
    * @return Whether the metricSumInRange field is set.
    */
   boolean hasMetricSumInRange();
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public interface WindowsBasedSliOrBuilder
    * @return The metricSumInRange.
    */
   com.google.monitoring.v3.WindowsBasedSli.MetricRange getMetricSumInRange();
+
   /**
    *
    *
@@ -198,6 +206,7 @@ public interface WindowsBasedSliOrBuilder
    * @return Whether the windowPeriod field is set.
    */
   boolean hasWindowPeriod();
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public interface WindowsBasedSliOrBuilder
    * @return The windowPeriod.
    */
   com.google.protobuf.Duration getWindowPeriod();
+
   /**
    *
    *

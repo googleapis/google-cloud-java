@@ -34,6 +34,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.SignedEntity)
     SignedEntityOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SignedEntity.newBuilder() to construct.
   private SignedEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.confidentialcomputing.v1.ContainerImageSignature>
       containerImageSignatures_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
       getContainerImageSignaturesList() {
     return containerImageSignatures_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
       getContainerImageSignaturesOrBuilderList() {
     return containerImageSignatures_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
   public int getContainerImageSignaturesCount() {
     return containerImageSignatures_.size();
   }
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
       getContainerImageSignatures(int index) {
     return containerImageSignatures_.get(index);
   }
+
   /**
    *
    *
@@ -320,6 +326,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -591,6 +598,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
         return containerImageSignaturesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -610,6 +618,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
         return containerImageSignaturesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -630,6 +639,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
         return containerImageSignaturesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -656,6 +666,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +691,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +769,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +843,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +883,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
         getContainerImageSignaturesBuilder(int index) {
       return getContainerImageSignaturesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -884,6 +904,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
         return containerImageSignaturesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -905,6 +926,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(containerImageSignatures_);
       }
     }
+
     /**
      *
      *
@@ -924,6 +946,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.confidentialcomputing.v1.ContainerImageSignature
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -944,6 +967,7 @@ public final class SignedEntity extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.confidentialcomputing.v1.ContainerImageSignature
                   .getDefaultInstance());
     }
+
     /**
      *
      *

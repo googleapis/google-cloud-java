@@ -35,6 +35,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.CustomClass)
     CustomClassOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomClass.newBuilder() to construct.
   private CustomClass(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      * @return The value.
      */
     java.lang.String getValue();
+
     /**
      *
      *
@@ -97,6 +99,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getValueBytes();
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.CustomClass.ClassItem)
       ClassItemOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ClassItem.newBuilder() to construct.
     private ClassItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -145,6 +149,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object value_ = "";
+
     /**
      *
      *
@@ -168,6 +173,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -353,6 +359,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -540,6 +547,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object value_ = "";
+
       /**
        *
        *
@@ -562,6 +570,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -584,6 +593,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -605,6 +615,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -622,6 +633,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -713,6 +725,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -736,6 +749,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -764,6 +778,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customClassId_ = "";
+
   /**
    *
    *
@@ -788,6 +803,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -817,6 +833,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem> items_;
+
   /**
    *
    *
@@ -830,6 +847,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem> getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -844,6 +862,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -857,6 +876,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -870,6 +890,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -1064,6 +1085,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1325,6 +1347,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1347,6 +1370,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1369,6 +1393,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1390,6 +1415,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1407,6 +1433,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1431,6 +1458,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object customClassId_ = "";
+
     /**
      *
      *
@@ -1454,6 +1482,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1477,6 +1506,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1499,6 +1529,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1517,6 +1548,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1607,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1591,6 +1624,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1607,6 +1641,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1630,6 +1665,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1651,6 +1687,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1673,6 +1710,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1696,6 +1734,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1716,6 +1755,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1737,6 +1777,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1758,6 +1799,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1777,6 +1819,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1796,6 +1839,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1809,6 +1853,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1826,6 +1871,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1844,6 +1890,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -1857,6 +1904,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1872,6 +1920,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem.getDefaultInstance());
     }
+
     /**
      *
      *

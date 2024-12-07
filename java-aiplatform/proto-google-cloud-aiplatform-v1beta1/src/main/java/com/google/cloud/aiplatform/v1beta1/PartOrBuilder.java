@@ -36,6 +36,7 @@ public interface PartOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PartOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface PartOrBuilder
    * @return Whether the inlineData field is set.
    */
   boolean hasInlineData();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface PartOrBuilder
    * @return The inlineData.
    */
   com.google.cloud.aiplatform.v1beta1.Blob getInlineData();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface PartOrBuilder
    * @return Whether the fileData field is set.
    */
   boolean hasFileData();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface PartOrBuilder
    * @return The fileData.
    */
   com.google.cloud.aiplatform.v1beta1.FileData getFileData();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface PartOrBuilder
    * @return Whether the functionCall field is set.
    */
   boolean hasFunctionCall();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface PartOrBuilder
    * @return The functionCall.
    */
   com.google.cloud.aiplatform.v1beta1.FunctionCall getFunctionCall();
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public interface PartOrBuilder
    * @return Whether the functionResponse field is set.
    */
   boolean hasFunctionResponse();
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public interface PartOrBuilder
    * @return The functionResponse.
    */
   com.google.cloud.aiplatform.v1beta1.FunctionResponse getFunctionResponse();
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public interface PartOrBuilder
    * @return Whether the executableCode field is set.
    */
   boolean hasExecutableCode();
+
   /**
    *
    *
@@ -268,6 +279,7 @@ public interface PartOrBuilder
    * @return The executableCode.
    */
   com.google.cloud.aiplatform.v1beta1.ExecutableCode getExecutableCode();
+
   /**
    *
    *
@@ -295,6 +307,7 @@ public interface PartOrBuilder
    * @return Whether the codeExecutionResult field is set.
    */
   boolean hasCodeExecutionResult();
+
   /**
    *
    *
@@ -309,6 +322,7 @@ public interface PartOrBuilder
    * @return The codeExecutionResult.
    */
   com.google.cloud.aiplatform.v1beta1.CodeExecutionResult getCodeExecutionResult();
+
   /**
    *
    *
@@ -338,6 +352,7 @@ public interface PartOrBuilder
    * @return Whether the videoMetadata field is set.
    */
   boolean hasVideoMetadata();
+
   /**
    *
    *
@@ -353,6 +368,7 @@ public interface PartOrBuilder
    * @return The videoMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.VideoMetadata getVideoMetadata();
+
   /**
    *
    *

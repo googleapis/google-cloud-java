@@ -34,6 +34,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StreamingReadFeatureValuesRequest)
     StreamingReadFeatureValuesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingReadFeatureValuesRequest.newBuilder() to construct.
   private StreamingReadFeatureValuesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entityType_ = "";
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList entityIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
   public com.google.protobuf.ProtocolStringList getEntityIdsList() {
     return entityIds_;
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
   public int getEntityIdsCount() {
     return entityIds_.size();
   }
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
   public java.lang.String getEntityIds(int index) {
     return entityIds_.get(index);
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
 
   public static final int FEATURE_SELECTOR_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.FeatureSelector featureSelector_;
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
   public boolean hasFeatureSelector() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
         ? com.google.cloud.aiplatform.v1beta1.FeatureSelector.getDefaultInstance()
         : featureSelector_;
   }
+
   /**
    *
    *
@@ -455,6 +465,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -699,6 +710,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object entityType_ = "";
+
     /**
      *
      *
@@ -728,6 +740,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -757,6 +770,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -785,6 +799,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +864,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -865,6 +882,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       entityIds_.makeImmutable();
       return entityIds_;
     }
+
     /**
      *
      *
@@ -881,6 +899,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
     public int getEntityIdsCount() {
       return entityIds_.size();
     }
+
     /**
      *
      *
@@ -898,6 +917,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
     public java.lang.String getEntityIds(int index) {
       return entityIds_.get(index);
     }
+
     /**
      *
      *
@@ -915,6 +935,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
     public com.google.protobuf.ByteString getEntityIdsBytes(int index) {
       return entityIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -940,6 +961,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +986,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1008,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1029,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1062,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
             com.google.cloud.aiplatform.v1beta1.FeatureSelector.Builder,
             com.google.cloud.aiplatform.v1beta1.FeatureSelectorOrBuilder>
         featureSelectorBuilder_;
+
     /**
      *
      *
@@ -1054,6 +1080,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
     public boolean hasFeatureSelector() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1077,6 +1104,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
         return featureSelectorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1102,6 +1130,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1154,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1186,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1209,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1227,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       onChanged();
       return getFeatureSelectorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1217,6 +1250,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
             : featureSelector_;
       }
     }
+
     /**
      *
      *

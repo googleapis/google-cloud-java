@@ -33,6 +33,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.WorkflowInvocation)
     WorkflowInvocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WorkflowInvocation.newBuilder() to construct.
   private WorkflowInvocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -149,6 +150,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -159,6 +161,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * <code>RUNNING = 1;</code>
      */
     public static final int RUNNING_VALUE = 1;
+
     /**
      *
      *
@@ -169,6 +172,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * <code>SUCCEEDED = 2;</code>
      */
     public static final int SUCCEEDED_VALUE = 2;
+
     /**
      *
      *
@@ -179,6 +183,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * <code>CANCELLED = 3;</code>
      */
     public static final int CANCELLED_VALUE = 3;
+
     /**
      *
      *
@@ -189,6 +194,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
+
     /**
      *
      *
@@ -309,6 +315,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     java.util.List<com.google.cloud.dataform.v1alpha2.Target> getIncludedTargetsList();
+
     /**
      *
      *
@@ -321,6 +328,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     com.google.cloud.dataform.v1alpha2.Target getIncludedTargets(int index);
+
     /**
      *
      *
@@ -333,6 +341,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     int getIncludedTargetsCount();
+
     /**
      *
      *
@@ -346,6 +355,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      */
     java.util.List<? extends com.google.cloud.dataform.v1alpha2.TargetOrBuilder>
         getIncludedTargetsOrBuilderList();
+
     /**
      *
      *
@@ -371,6 +381,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * @return A list containing the includedTags.
      */
     java.util.List<java.lang.String> getIncludedTagsList();
+
     /**
      *
      *
@@ -383,6 +394,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * @return The count of includedTags.
      */
     int getIncludedTagsCount();
+
     /**
      *
      *
@@ -396,6 +408,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * @return The includedTags at the given index.
      */
     java.lang.String getIncludedTags(int index);
+
     /**
      *
      *
@@ -455,6 +468,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      */
     boolean getFullyRefreshIncrementalTablesEnabled();
   }
+
   /**
    *
    *
@@ -471,6 +485,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.WorkflowInvocation.InvocationConfig)
       InvocationConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use InvocationConfig.newBuilder() to construct.
     private InvocationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -506,6 +521,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dataform.v1alpha2.Target> includedTargets_;
+
     /**
      *
      *
@@ -521,6 +537,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     public java.util.List<com.google.cloud.dataform.v1alpha2.Target> getIncludedTargetsList() {
       return includedTargets_;
     }
+
     /**
      *
      *
@@ -537,6 +554,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         getIncludedTargetsOrBuilderList() {
       return includedTargets_;
     }
+
     /**
      *
      *
@@ -552,6 +570,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     public int getIncludedTargetsCount() {
       return includedTargets_.size();
     }
+
     /**
      *
      *
@@ -567,6 +586,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dataform.v1alpha2.Target getIncludedTargets(int index) {
       return includedTargets_.get(index);
     }
+
     /**
      *
      *
@@ -589,6 +609,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList includedTags_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -603,6 +624,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ProtocolStringList getIncludedTagsList() {
       return includedTags_;
     }
+
     /**
      *
      *
@@ -617,6 +639,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     public int getIncludedTagsCount() {
       return includedTags_.size();
     }
+
     /**
      *
      *
@@ -632,6 +655,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     public java.lang.String getIncludedTags(int index) {
       return includedTags_.get(index);
     }
+
     /**
      *
      *
@@ -650,6 +674,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
 
     public static final int TRANSITIVE_DEPENDENCIES_INCLUDED_FIELD_NUMBER = 3;
     private boolean transitiveDependenciesIncluded_ = false;
+
     /**
      *
      *
@@ -670,6 +695,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
 
     public static final int TRANSITIVE_DEPENDENTS_INCLUDED_FIELD_NUMBER = 4;
     private boolean transitiveDependentsIncluded_ = false;
+
     /**
      *
      *
@@ -690,6 +716,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
 
     public static final int FULLY_REFRESH_INCREMENTAL_TABLES_ENABLED_FIELD_NUMBER = 5;
     private boolean fullyRefreshIncrementalTablesEnabled_ = false;
+
     /**
      *
      *
@@ -930,6 +957,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1270,6 +1298,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
           return includedTargetsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1288,6 +1317,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
           return includedTargetsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1306,6 +1336,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
           return includedTargetsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1331,6 +1362,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1353,6 +1385,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1377,6 +1410,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1402,6 +1436,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1424,6 +1459,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1446,6 +1482,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1468,6 +1505,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1489,6 +1527,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1510,6 +1549,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1525,6 +1565,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
           int index) {
         return getIncludedTargetsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1544,6 +1585,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
           return includedTargetsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1563,6 +1605,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
           return java.util.Collections.unmodifiableList(includedTargets_);
         }
       }
+
       /**
        *
        *
@@ -1578,6 +1621,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         return getIncludedTargetsFieldBuilder()
             .addBuilder(com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1594,6 +1638,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         return getIncludedTargetsFieldBuilder()
             .addBuilder(index, com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1639,6 +1684,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -1654,6 +1700,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         includedTags_.makeImmutable();
         return includedTags_;
       }
+
       /**
        *
        *
@@ -1668,6 +1715,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       public int getIncludedTagsCount() {
         return includedTags_.size();
       }
+
       /**
        *
        *
@@ -1683,6 +1731,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       public java.lang.String getIncludedTags(int index) {
         return includedTags_.get(index);
       }
+
       /**
        *
        *
@@ -1698,6 +1747,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       public com.google.protobuf.ByteString getIncludedTagsBytes(int index) {
         return includedTags_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1721,6 +1771,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1743,6 +1794,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1762,6 +1814,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1780,6 +1833,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1805,6 +1859,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       }
 
       private boolean transitiveDependenciesIncluded_;
+
       /**
        *
        *
@@ -1822,6 +1877,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       public boolean getTransitiveDependenciesIncluded() {
         return transitiveDependenciesIncluded_;
       }
+
       /**
        *
        *
@@ -1843,6 +1899,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1864,6 +1921,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       }
 
       private boolean transitiveDependentsIncluded_;
+
       /**
        *
        *
@@ -1881,6 +1939,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       public boolean getTransitiveDependentsIncluded() {
         return transitiveDependentsIncluded_;
       }
+
       /**
        *
        *
@@ -1902,6 +1961,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1923,6 +1983,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       }
 
       private boolean fullyRefreshIncrementalTablesEnabled_;
+
       /**
        *
        *
@@ -1940,6 +2001,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       public boolean getFullyRefreshIncrementalTablesEnabled() {
         return fullyRefreshIncrementalTablesEnabled_;
       }
+
       /**
        *
        *
@@ -1961,6 +2023,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2054,6 +2117,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2077,6 +2141,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -2105,6 +2170,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object compilationResult_ = "";
+
   /**
    *
    *
@@ -2131,6 +2197,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -2160,6 +2227,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
 
   public static final int INVOCATION_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.dataform.v1alpha2.WorkflowInvocation.InvocationConfig invocationConfig_;
+
   /**
    *
    *
@@ -2177,6 +2245,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
   public boolean hasInvocationConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2198,6 +2267,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance()
         : invocationConfig_;
   }
+
   /**
    *
    *
@@ -2220,6 +2290,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    *
    *
@@ -2237,6 +2308,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -2261,6 +2333,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
 
   public static final int INVOCATION_TIMING_FIELD_NUMBER = 5;
   private com.google.type.Interval invocationTiming_;
+
   /**
    *
    *
@@ -2277,6 +2350,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
   public boolean hasInvocationTiming() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2295,6 +2369,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         ? com.google.type.Interval.getDefaultInstance()
         : invocationTiming_;
   }
+
   /**
    *
    *
@@ -2522,6 +2597,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2786,6 +2862,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2808,6 +2885,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2830,6 +2908,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2851,6 +2930,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2868,6 +2948,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2892,6 +2973,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object compilationResult_ = "";
+
     /**
      *
      *
@@ -2917,6 +2999,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2942,6 +3025,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2966,6 +3050,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2986,6 +3071,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3019,6 +3105,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
             com.google.cloud.dataform.v1alpha2.WorkflowInvocation.InvocationConfig.Builder,
             com.google.cloud.dataform.v1alpha2.WorkflowInvocation.InvocationConfigOrBuilder>
         invocationConfigBuilder_;
+
     /**
      *
      *
@@ -3035,6 +3122,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     public boolean hasInvocationConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3059,6 +3147,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         return invocationConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3084,6 +3173,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3107,6 +3197,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3139,6 +3230,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3160,6 +3252,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3177,6 +3270,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getInvocationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3199,6 +3293,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
             : invocationConfig_;
       }
     }
+
     /**
      *
      *
@@ -3228,6 +3323,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3245,6 +3341,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3265,6 +3362,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3286,6 +3384,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.dataform.v1alpha2.WorkflowInvocation.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3309,6 +3408,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3335,6 +3435,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
             com.google.type.Interval.Builder,
             com.google.type.IntervalOrBuilder>
         invocationTimingBuilder_;
+
     /**
      *
      *
@@ -3351,6 +3452,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     public boolean hasInvocationTiming() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3373,6 +3475,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         return invocationTimingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3397,6 +3500,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3418,6 +3522,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3447,6 +3552,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3468,6 +3574,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3484,6 +3591,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getInvocationTimingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3504,6 +3612,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
             : invocationTiming_;
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1p1beta1.GroupAssetsResponse)
     GroupAssetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GroupAssetsResponse.newBuilder() to construct.
   private GroupAssetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1p1beta1.GroupResult> groupByResults_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       getGroupByResultsList() {
     return groupByResults_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       getGroupByResultsOrBuilderList() {
     return groupByResults_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
   public int getGroupByResultsCount() {
     return groupByResults_.size();
   }
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.securitycenter.v1p1beta1.GroupResult getGroupByResults(int index) {
     return groupByResults_.get(index);
   }
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
 
   public static final int READ_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp readTime_;
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
   public boolean hasReadTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -222,6 +232,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -249,6 +260,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 4;
   private int totalSize_ = 0;
+
   /**
    *
    *
@@ -459,6 +471,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -788,6 +801,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
         return groupByResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -807,6 +821,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
         return groupByResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -826,6 +841,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
         return groupByResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -852,6 +868,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +918,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +945,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +969,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +993,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1018,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1041,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1064,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1081,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
         int index) {
       return getGroupByResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1076,6 +1102,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
         return groupByResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1123,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(groupByResults_);
       }
     }
+
     /**
      *
      *
@@ -1113,6 +1141,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       return getGroupByResultsFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v1p1beta1.GroupResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1131,6 +1160,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.cloud.securitycenter.v1p1beta1.GroupResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1174,6 +1204,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
+
     /**
      *
      *
@@ -1188,6 +1219,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
     public boolean hasReadTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1206,6 +1238,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
         return readTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1228,6 +1261,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1247,6 +1281,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1309,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1329,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1307,6 +1344,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1323,6 +1361,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
         return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
       }
     }
+
     /**
      *
      *
@@ -1350,6 +1389,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1373,6 +1413,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1396,6 +1437,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1418,6 +1460,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1436,6 +1479,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1461,6 +1505,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private int totalSize_;
+
     /**
      *
      *
@@ -1476,6 +1521,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
     public int getTotalSize() {
       return totalSize_;
     }
+
     /**
      *
      *
@@ -1495,6 +1541,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

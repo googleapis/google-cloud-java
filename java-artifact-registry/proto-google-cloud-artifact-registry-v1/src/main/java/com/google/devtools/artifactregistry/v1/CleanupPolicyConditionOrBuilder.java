@@ -38,6 +38,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return Whether the tagState field is set.
    */
   boolean hasTagState();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return The enum numeric value on the wire for tagState.
    */
   int getTagStateValue();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return A list containing the tagPrefixes.
    */
   java.util.List<java.lang.String> getTagPrefixesList();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return The count of tagPrefixes.
    */
   int getTagPrefixesCount();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return The tagPrefixes at the given index.
    */
   java.lang.String getTagPrefixes(int index);
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return A list containing the versionNamePrefixes.
    */
   java.util.List<java.lang.String> getVersionNamePrefixesList();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return The count of versionNamePrefixes.
    */
   int getVersionNamePrefixesCount();
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return The versionNamePrefixes at the given index.
    */
   java.lang.String getVersionNamePrefixes(int index);
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return A list containing the packageNamePrefixes.
    */
   java.util.List<java.lang.String> getPackageNamePrefixesList();
+
   /**
    *
    *
@@ -193,6 +202,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return The count of packageNamePrefixes.
    */
   int getPackageNamePrefixesCount();
+
   /**
    *
    *
@@ -206,6 +216,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return The packageNamePrefixes at the given index.
    */
   java.lang.String getPackageNamePrefixes(int index);
+
   /**
    *
    *
@@ -232,6 +243,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return Whether the olderThan field is set.
    */
   boolean hasOlderThan();
+
   /**
    *
    *
@@ -244,6 +256,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return The olderThan.
    */
   com.google.protobuf.Duration getOlderThan();
+
   /**
    *
    *
@@ -267,6 +280,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return Whether the newerThan field is set.
    */
   boolean hasNewerThan();
+
   /**
    *
    *
@@ -279,6 +293,7 @@ public interface CleanupPolicyConditionOrBuilder
    * @return The newerThan.
    */
   com.google.protobuf.Duration getNewerThan();
+
   /**
    *
    *

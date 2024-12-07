@@ -34,6 +34,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.TaggedEntry)
     TaggedEntryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TaggedEntry.newBuilder() to construct.
   private TaggedEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
     private EntryCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int V1_ENTRY_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasV1Entry() {
     return entryCase_ == 1;
   }
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1.Entry.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.Tag> presentTags_;
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datacatalog.v1.Tag> getPresentTagsList() {
     return presentTags_;
   }
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       getPresentTagsOrBuilderList() {
     return presentTags_;
   }
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
   public int getPresentTagsCount() {
     return presentTags_.size();
   }
+
   /**
    *
    *
@@ -231,6 +240,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datacatalog.v1.Tag getPresentTags(int index) {
     return presentTags_.get(index);
   }
+
   /**
    *
    *
@@ -252,6 +262,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.Tag> absentTags_;
+
   /**
    *
    *
@@ -268,6 +279,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datacatalog.v1.Tag> getAbsentTagsList() {
     return absentTags_;
   }
+
   /**
    *
    *
@@ -285,6 +297,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       getAbsentTagsOrBuilderList() {
     return absentTags_;
   }
+
   /**
    *
    *
@@ -301,6 +314,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
   public int getAbsentTagsCount() {
     return absentTags_.size();
   }
+
   /**
    *
    *
@@ -317,6 +331,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datacatalog.v1.Tag getAbsentTags(int index) {
     return absentTags_.get(index);
   }
+
   /**
    *
    *
@@ -530,6 +545,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -864,6 +880,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.Entry.Builder,
             com.google.cloud.datacatalog.v1.EntryOrBuilder>
         v1EntryBuilder_;
+
     /**
      *
      *
@@ -879,6 +896,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasV1Entry() {
       return entryCase_ == 1;
     }
+
     /**
      *
      *
@@ -904,6 +922,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.Entry.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -926,6 +945,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       entryCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +965,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       entryCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +998,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       entryCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1024,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1037,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.Entry.Builder getV1EntryBuilder() {
       return getV1EntryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1034,6 +1058,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.Entry.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1100,6 +1125,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
         return presentTagsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1119,6 +1145,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
         return presentTagsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1138,6 +1165,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
         return presentTagsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1163,6 +1191,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1186,6 +1215,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1241,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1236,6 +1267,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1258,6 +1290,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1314,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1338,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1326,6 +1361,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1384,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1400,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.Tag.Builder getPresentTagsBuilder(int index) {
       return getPresentTagsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1382,6 +1420,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
         return presentTagsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1402,6 +1441,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(presentTags_);
       }
     }
+
     /**
      *
      *
@@ -1418,6 +1458,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       return getPresentTagsFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1.Tag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1434,6 +1475,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       return getPresentTagsFieldBuilder()
           .addBuilder(index, com.google.cloud.datacatalog.v1.Tag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1502,6 +1544,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
         return absentTagsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1521,6 +1564,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
         return absentTagsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1540,6 +1584,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
         return absentTagsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1565,6 +1610,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1588,6 +1634,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1613,6 +1660,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1686,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1660,6 +1709,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1683,6 +1733,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1706,6 +1757,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1728,6 +1780,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1750,6 +1803,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1765,6 +1819,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.Tag.Builder getAbsentTagsBuilder(int index) {
       return getAbsentTagsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1784,6 +1839,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
         return absentTagsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1804,6 +1860,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(absentTags_);
       }
     }
+
     /**
      *
      *
@@ -1820,6 +1877,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       return getAbsentTagsFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1.Tag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1836,6 +1894,7 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
       return getAbsentTagsFieldBuilder()
           .addBuilder(index, com.google.cloud.datacatalog.v1.Tag.getDefaultInstance());
     }
+
     /**
      *
      *

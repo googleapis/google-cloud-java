@@ -33,6 +33,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ListProductsResponse)
     ListProductsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListProductsResponse.newBuilder() to construct.
   private ListProductsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.Product> products_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.channel.v1.Product> getProductsList() {
     return products_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       getProductsOrBuilderList() {
     return products_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
   public int getProductsCount() {
     return products_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.channel.v1.Product getProducts(int index) {
     return products_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -356,6 +364,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -632,6 +641,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
         return productsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -648,6 +658,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
         return productsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -664,6 +675,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
         return productsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +719,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +742,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +765,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +785,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +806,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +827,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +847,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +867,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +880,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.channel.v1.Product.Builder getProductsBuilder(int index) {
       return getProductsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -875,6 +897,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
         return productsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -892,6 +915,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(products_);
       }
     }
+
     /**
      *
      *
@@ -905,6 +929,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       return getProductsFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.Product.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -918,6 +943,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       return getProductsFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.Product.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -949,6 +975,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -971,6 +998,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -993,6 +1021,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1043,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1061,7 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

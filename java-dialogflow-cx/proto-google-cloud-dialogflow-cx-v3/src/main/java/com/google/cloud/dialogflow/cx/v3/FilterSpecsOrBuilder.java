@@ -41,6 +41,7 @@ public interface FilterSpecsOrBuilder
    * @return A list containing the dataStores.
    */
   java.util.List<java.lang.String> getDataStoresList();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface FilterSpecsOrBuilder
    * @return The count of dataStores.
    */
   int getDataStoresCount();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface FilterSpecsOrBuilder
    * @return The dataStores at the given index.
    */
   java.lang.String getDataStores(int index);
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface FilterSpecsOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

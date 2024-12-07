@@ -38,6 +38,7 @@ public interface GetTableSpecRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface GetTableSpecRequestOrBuilder
    * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface GetTableSpecRequestOrBuilder
    * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
+
   /**
    *
    *

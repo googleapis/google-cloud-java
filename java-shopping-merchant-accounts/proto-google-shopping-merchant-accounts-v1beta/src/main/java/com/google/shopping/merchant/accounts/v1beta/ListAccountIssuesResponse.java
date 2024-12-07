@@ -33,6 +33,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.ListAccountIssuesResponse)
     ListAccountIssuesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListAccountIssuesResponse.newBuilder() to construct.
   private ListAccountIssuesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.AccountIssue> accountIssues_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       getAccountIssuesList() {
     return accountIssues_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       getAccountIssuesOrBuilderList() {
     return accountIssues_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
   public int getAccountIssuesCount() {
     return accountIssues_.size();
   }
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
   public com.google.shopping.merchant.accounts.v1beta.AccountIssue getAccountIssues(int index) {
     return accountIssues_.get(index);
   }
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -368,6 +376,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -657,6 +666,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
         return accountIssuesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -674,6 +684,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
         return accountIssuesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -691,6 +702,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
         return accountIssuesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +750,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +775,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +800,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +822,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +868,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +889,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +925,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
         getAccountIssuesBuilder(int index) {
       return getAccountIssuesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -922,6 +944,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
         return accountIssuesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -941,6 +964,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(accountIssues_);
       }
     }
+
     /**
      *
      *
@@ -957,6 +981,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
           .addBuilder(
               com.google.shopping.merchant.accounts.v1beta.AccountIssue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -974,6 +999,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
               index,
               com.google.shopping.merchant.accounts.v1beta.AccountIssue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1010,6 +1036,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1033,6 +1060,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1084,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1078,6 +1107,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1126,7 @@ public final class ListAccountIssuesResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

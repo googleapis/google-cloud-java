@@ -37,6 +37,7 @@ public interface RegisterInstanceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface RegisterInstanceRequestOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
+
   /**
    *
    *

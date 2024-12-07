@@ -33,6 +33,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SummarySuggestion)
     SummarySuggestionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SummarySuggestion.newBuilder() to construct.
   private SummarySuggestion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
      * @return The section.
      */
     java.lang.String getSection();
+
     /**
      *
      *
@@ -105,6 +107,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
      * @return The summary.
      */
     java.lang.String getSummary();
+
     /**
      *
      *
@@ -118,6 +121,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getSummaryBytes();
   }
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SummarySuggestion.SummarySection)
       SummarySectionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SummarySection.newBuilder() to construct.
     private SummarySection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -167,6 +172,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object section_ = "";
+
     /**
      *
      *
@@ -190,6 +196,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
+
     /**
      *
      *
@@ -218,6 +225,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object summary_ = "";
+
     /**
      *
      *
@@ -241,6 +249,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
+
     /**
      *
      *
@@ -436,6 +445,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -646,6 +656,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object section_ = "";
+
       /**
        *
        *
@@ -668,6 +679,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -690,6 +702,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -711,6 +724,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -728,6 +742,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -752,6 +767,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object summary_ = "";
+
       /**
        *
        *
@@ -774,6 +790,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -796,6 +813,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -817,6 +835,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -834,6 +853,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -929,6 +949,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.SummarySuggestion.SummarySection>
       summarySections_;
+
   /**
    *
    *
@@ -945,6 +966,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       getSummarySectionsList() {
     return summarySections_;
   }
+
   /**
    *
    *
@@ -962,6 +984,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       getSummarySectionsOrBuilderList() {
     return summarySections_;
   }
+
   /**
    *
    *
@@ -977,6 +1000,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
   public int getSummarySectionsCount() {
     return summarySections_.size();
   }
+
   /**
    *
    *
@@ -993,6 +1017,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       int index) {
     return summarySections_.get(index);
   }
+
   /**
    *
    *
@@ -1172,6 +1197,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1441,6 +1467,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
         return summarySectionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1459,6 +1486,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
         return summarySectionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1478,6 +1506,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
         return summarySectionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1503,6 +1532,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1527,6 +1557,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1552,6 +1583,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1577,6 +1609,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1600,6 +1633,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1624,6 +1658,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1648,6 +1683,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1669,6 +1705,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1690,6 +1727,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1705,6 +1743,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
         getSummarySectionsBuilder(int index) {
       return getSummarySectionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1724,6 +1763,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
         return summarySectionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1744,6 +1784,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(summarySections_);
       }
     }
+
     /**
      *
      *
@@ -1762,6 +1803,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
               com.google.cloud.dialogflow.v2beta1.SummarySuggestion.SummarySection
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1781,6 +1823,7 @@ public final class SummarySuggestion extends com.google.protobuf.GeneratedMessag
               com.google.cloud.dialogflow.v2beta1.SummarySuggestion.SummarySection
                   .getDefaultInstance());
     }
+
     /**
      *
      *

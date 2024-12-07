@@ -33,6 +33,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.GeoLocationArray)
     GeoLocationArrayOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GeoLocationArray.newBuilder() to construct.
   private GeoLocationArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.CircleArea> circleAreas_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.visionai.v1.CircleArea> getCircleAreasList() {
     return circleAreas_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
       getCircleAreasOrBuilderList() {
     return circleAreas_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
   public int getCircleAreasCount() {
     return circleAreas_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.visionai.v1.CircleArea getCircleAreas(int index) {
     return circleAreas_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -555,6 +562,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
         return circleAreasBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -571,6 +579,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
         return circleAreasBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
         return circleAreasBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +640,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +663,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +686,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +706,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +727,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +748,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +768,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +788,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +801,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.visionai.v1.CircleArea.Builder getCircleAreasBuilder(int index) {
       return getCircleAreasFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -798,6 +818,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
         return circleAreasBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -815,6 +836,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(circleAreas_);
       }
     }
+
     /**
      *
      *
@@ -828,6 +850,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
       return getCircleAreasFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.CircleArea.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -841,6 +864,7 @@ public final class GeoLocationArray extends com.google.protobuf.GeneratedMessage
       return getCircleAreasFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.CircleArea.getDefaultInstance());
     }
+
     /**
      *
      *

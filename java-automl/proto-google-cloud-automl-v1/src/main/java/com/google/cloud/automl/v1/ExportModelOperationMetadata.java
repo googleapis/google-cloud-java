@@ -33,6 +33,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.ExportModelOperationMetadata)
     ExportModelOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportModelOperationMetadata.newBuilder() to construct.
   private ExportModelOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      * @return The gcsOutputDirectory.
      */
     java.lang.String getGcsOutputDirectory();
+
     /**
      *
      *
@@ -93,6 +95,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      */
     com.google.protobuf.ByteString getGcsOutputDirectoryBytes();
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.ExportModelOperationMetadata.ExportModelOutputInfo)
       ExportModelOutputInfoOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ExportModelOutputInfo.newBuilder() to construct.
     private ExportModelOutputInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -144,6 +148,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object gcsOutputDirectory_ = "";
+
     /**
      *
      *
@@ -168,6 +173,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
         return s;
       }
     }
+
     /**
      *
      *
@@ -362,6 +368,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -565,6 +572,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
       private int bitField0_;
 
       private java.lang.Object gcsOutputDirectory_ = "";
+
       /**
        *
        *
@@ -588,6 +596,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -611,6 +620,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -633,6 +643,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -651,6 +662,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -747,6 +759,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int OUTPUT_INFO_FIELD_NUMBER = 2;
   private com.google.cloud.automl.v1.ExportModelOperationMetadata.ExportModelOutputInfo outputInfo_;
+
   /**
    *
    *
@@ -765,6 +778,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
   public boolean hasOutputInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -787,6 +801,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
             .getDefaultInstance()
         : outputInfo_;
   }
+
   /**
    *
    *
@@ -973,6 +988,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1177,6 +1193,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
             com.google.cloud.automl.v1.ExportModelOperationMetadata.ExportModelOutputInfo.Builder,
             com.google.cloud.automl.v1.ExportModelOperationMetadata.ExportModelOutputInfoOrBuilder>
         outputInfoBuilder_;
+
     /**
      *
      *
@@ -1194,6 +1211,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
     public boolean hasOutputInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1219,6 +1237,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
         return outputInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1245,6 +1264,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1269,6 +1289,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1302,6 +1323,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1346,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1342,6 +1365,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
       onChanged();
       return getOutputInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1365,6 +1389,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
             : outputInfo_;
       }
     }
+
     /**
      *
      *

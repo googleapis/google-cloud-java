@@ -50,6 +50,7 @@ public interface LongRunningRecognizeMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface LongRunningRecognizeMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface LongRunningRecognizeMetadataOrBuilder
    * @return Whether the lastUpdateTime field is set.
    */
   boolean hasLastUpdateTime();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface LongRunningRecognizeMetadataOrBuilder
    * @return The lastUpdateTime.
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface LongRunningRecognizeMetadataOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface LongRunningRecognizeMetadataOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface LongRunningRecognizeMetadataOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig getOutputConfig();
+
   /**
    *
    *

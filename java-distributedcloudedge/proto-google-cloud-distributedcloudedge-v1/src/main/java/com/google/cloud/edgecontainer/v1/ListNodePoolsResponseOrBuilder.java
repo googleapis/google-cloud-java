@@ -34,6 +34,7 @@ public interface ListNodePoolsResponseOrBuilder
    * <code>repeated .google.cloud.edgecontainer.v1.NodePool node_pools = 1;</code>
    */
   java.util.List<com.google.cloud.edgecontainer.v1.NodePool> getNodePoolsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListNodePoolsResponseOrBuilder
    * <code>repeated .google.cloud.edgecontainer.v1.NodePool node_pools = 1;</code>
    */
   com.google.cloud.edgecontainer.v1.NodePool getNodePools(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListNodePoolsResponseOrBuilder
    * <code>repeated .google.cloud.edgecontainer.v1.NodePool node_pools = 1;</code>
    */
   int getNodePoolsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListNodePoolsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgecontainer.v1.NodePoolOrBuilder>
       getNodePoolsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListNodePoolsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListNodePoolsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListNodePoolsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListNodePoolsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

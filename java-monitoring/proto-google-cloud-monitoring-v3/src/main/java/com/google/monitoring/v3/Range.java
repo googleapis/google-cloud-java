@@ -33,6 +33,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.Range)
     RangeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Range.newBuilder() to construct.
   private Range(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -62,6 +63,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_FIELD_NUMBER = 1;
   private double min_ = 0D;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_FIELD_NUMBER = 2;
   private double max_ = 0D;
+
   /**
    *
    *
@@ -268,6 +271,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -460,6 +464,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double min_;
+
     /**
      *
      *
@@ -475,6 +480,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
     public double getMin() {
       return min_;
     }
+
     /**
      *
      *
@@ -494,6 +500,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -513,6 +520,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double max_;
+
     /**
      *
      *
@@ -528,6 +536,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
     public double getMax() {
       return max_;
     }
+
     /**
      *
      *
@@ -547,6 +556,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -42,6 +42,7 @@ public interface BatchCreateEntitiesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface BatchCreateEntitiesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> getEntitiesList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface BatchCreateEntitiesRequestOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.EntityType.Entity getEntities(int index);
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface BatchCreateEntitiesRequestOrBuilder
    * </code>
    */
   int getEntitiesCount();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface BatchCreateEntitiesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface BatchCreateEntitiesRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

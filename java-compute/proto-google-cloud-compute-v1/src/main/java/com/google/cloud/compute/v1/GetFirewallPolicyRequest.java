@@ -33,6 +33,7 @@ public final class GetFirewallPolicyRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetFirewallPolicyRequest)
     GetFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetFirewallPolicyRequest.newBuilder() to construct.
   private GetFirewallPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GetFirewallPolicyRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firewallPolicy_ = "";
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class GetFirewallPolicyRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -273,6 +276,7 @@ public final class GetFirewallPolicyRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -457,6 +461,7 @@ public final class GetFirewallPolicyRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object firewallPolicy_ = "";
+
     /**
      *
      *
@@ -479,6 +484,7 @@ public final class GetFirewallPolicyRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -501,6 +507,7 @@ public final class GetFirewallPolicyRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -522,6 +529,7 @@ public final class GetFirewallPolicyRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -539,6 +547,7 @@ public final class GetFirewallPolicyRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface ReportRuntimeEventRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ReportRuntimeEventRequestOrBuilder
    * @return The vmId.
    */
   java.lang.String getVmId();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface ReportRuntimeEventRequestOrBuilder
    * @return Whether the event field is set.
    */
   boolean hasEvent();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface ReportRuntimeEventRequestOrBuilder
    * @return The event.
    */
   com.google.cloud.notebooks.v1.Event getEvent();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface ProvisionCloudIdentityRequestOrBuilder
    * @return The customer.
    */
   java.lang.String getCustomer();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ProvisionCloudIdentityRequestOrBuilder
    * @return Whether the cloudIdentityInfo field is set.
    */
   boolean hasCloudIdentityInfo();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ProvisionCloudIdentityRequestOrBuilder
    * @return The cloudIdentityInfo.
    */
   com.google.cloud.channel.v1.CloudIdentityInfo getCloudIdentityInfo();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface ProvisionCloudIdentityRequestOrBuilder
    * @return Whether the user field is set.
    */
   boolean hasUser();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface ProvisionCloudIdentityRequestOrBuilder
    * @return The user.
    */
   com.google.cloud.channel.v1.AdminUser getUser();
+
   /**
    *
    *

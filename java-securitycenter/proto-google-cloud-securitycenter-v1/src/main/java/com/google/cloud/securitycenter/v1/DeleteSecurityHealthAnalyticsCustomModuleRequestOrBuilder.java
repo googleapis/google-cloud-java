@@ -42,6 +42,7 @@ public interface DeleteSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface GetRecurringAudienceListRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.TensorboardTensor)
     TensorboardTensorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TensorboardTensor.newBuilder() to construct.
   private TensorboardTensor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
 
   public static final int VALUE_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
 
   public static final int VERSION_NUMBER_FIELD_NUMBER = 2;
   private int versionNumber_ = 0;
+
   /**
    *
    *
@@ -269,6 +272,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -464,6 +468,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -480,6 +485,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -502,6 +508,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -522,6 +529,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
     }
 
     private int versionNumber_;
+
     /**
      *
      *
@@ -538,6 +546,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
     public int getVersionNumber() {
       return versionNumber_;
     }
+
     /**
      *
      *
@@ -558,6 +567,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

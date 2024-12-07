@@ -33,6 +33,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.ListStreamObjectsResponse)
     ListStreamObjectsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListStreamObjectsResponse.newBuilder() to construct.
   private ListStreamObjectsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.StreamObject> streamObjects_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.datastream.v1.StreamObject> getStreamObjectsList() {
     return streamObjects_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       getStreamObjectsOrBuilderList() {
     return streamObjects_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
   public int getStreamObjectsCount() {
     return streamObjects_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
   public com.google.cloud.datastream.v1.StreamObject getStreamObjects(int index) {
     return streamObjects_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -357,6 +365,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -634,6 +643,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
         return streamObjectsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
         return streamObjectsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
         return streamObjectsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -688,6 +700,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +744,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +788,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +809,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +830,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +850,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +870,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +883,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
     public com.google.cloud.datastream.v1.StreamObject.Builder getStreamObjectsBuilder(int index) {
       return getStreamObjectsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -879,6 +901,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
         return streamObjectsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -896,6 +919,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(streamObjects_);
       }
     }
+
     /**
      *
      *
@@ -909,6 +933,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       return getStreamObjectsFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1.StreamObject.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -922,6 +947,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       return getStreamObjectsFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1.StreamObject.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -957,6 +983,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -979,6 +1006,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1029,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1022,6 +1051,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1069,7 @@ public final class ListStreamObjectsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

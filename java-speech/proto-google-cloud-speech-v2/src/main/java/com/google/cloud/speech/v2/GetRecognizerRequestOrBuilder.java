@@ -39,6 +39,7 @@ public interface GetRecognizerRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ListRagCorporaResponse)
     ListRagCorporaResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListRagCorporaResponse.newBuilder() to construct.
   private ListRagCorporaResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.RagCorpus> ragCorpora_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.aiplatform.v1beta1.RagCorpus> getRagCorporaList() {
     return ragCorpora_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       getRagCorporaOrBuilderList() {
     return ragCorpora_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
   public int getRagCorporaCount() {
     return ragCorpora_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.aiplatform.v1beta1.RagCorpus getRagCorpora(int index) {
     return ragCorpora_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -364,6 +372,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -642,6 +651,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
         return ragCorporaBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
         return ragCorporaBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -674,6 +685,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
         return ragCorporaBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +729,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +775,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +796,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +891,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.aiplatform.v1beta1.RagCorpus.Builder getRagCorporaBuilder(int index) {
       return getRagCorporaFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -887,6 +909,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
         return ragCorporaBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -904,6 +927,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(ragCorpora_);
       }
     }
+
     /**
      *
      *
@@ -917,6 +941,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       return getRagCorporaFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.RagCorpus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -930,6 +955,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       return getRagCorporaFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.RagCorpus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -962,6 +988,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -987,6 +1014,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1012,6 +1040,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1036,6 +1065,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1086,7 @@ public final class ListRagCorporaResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

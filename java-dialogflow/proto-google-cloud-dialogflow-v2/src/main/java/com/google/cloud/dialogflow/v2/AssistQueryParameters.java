@@ -33,6 +33,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.AssistQueryParameters)
     AssistQueryParametersOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AssistQueryParameters.newBuilder() to construct.
   private AssistQueryParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -102,6 +103,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
   public int getDocumentsMetadataFiltersCount() {
     return internalGetDocumentsMetadataFilters().getMap().size();
   }
+
   /**
    *
    *
@@ -134,12 +136,14 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
     }
     return internalGetDocumentsMetadataFilters().getMap().containsKey(key);
   }
+
   /** Use {@link #getDocumentsMetadataFiltersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getDocumentsMetadataFilters() {
     return getDocumentsMetadataFiltersMap();
   }
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
   public java.util.Map<java.lang.String, java.lang.String> getDocumentsMetadataFiltersMap() {
     return internalGetDocumentsMetadataFilters().getMap();
   }
+
   /**
    *
    *
@@ -206,6 +211,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
         internalGetDocumentsMetadataFilters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -416,6 +422,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -659,6 +666,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
     public int getDocumentsMetadataFiltersCount() {
       return internalGetDocumentsMetadataFilters().getMap().size();
     }
+
     /**
      *
      *
@@ -691,12 +699,14 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
       }
       return internalGetDocumentsMetadataFilters().getMap().containsKey(key);
     }
+
     /** Use {@link #getDocumentsMetadataFiltersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDocumentsMetadataFilters() {
       return getDocumentsMetadataFiltersMap();
     }
+
     /**
      *
      *
@@ -726,6 +736,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
     public java.util.Map<java.lang.String, java.lang.String> getDocumentsMetadataFiltersMap() {
       return internalGetDocumentsMetadataFilters().getMap();
     }
+
     /**
      *
      *
@@ -763,6 +774,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
           internalGetDocumentsMetadataFilters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -806,6 +818,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
       internalGetMutableDocumentsMetadataFilters().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -838,12 +851,14 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
       internalGetMutableDocumentsMetadataFilters().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDocumentsMetadataFilters() {
       bitField0_ |= 0x00000001;
       return internalGetMutableDocumentsMetadataFilters().getMutableMap();
     }
+
     /**
      *
      *
@@ -880,6 +895,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface DeleteNodeGroupRequestOrBuilder
    * @return The nodeGroup.
    */
   java.lang.String getNodeGroup();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DeleteNodeGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DeleteNodeGroupRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface DeleteNodeGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface DeleteNodeGroupRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

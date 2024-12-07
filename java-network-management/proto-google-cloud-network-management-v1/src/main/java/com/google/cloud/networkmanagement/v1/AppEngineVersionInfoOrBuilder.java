@@ -36,6 +36,7 @@ public interface AppEngineVersionInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AppEngineVersionInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface AppEngineVersionInfoOrBuilder
    * @return The runtime.
    */
   java.lang.String getRuntime();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface AppEngineVersionInfoOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
+
   /**
    *
    *

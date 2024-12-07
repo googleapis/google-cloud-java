@@ -54,6 +54,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.billing.budgets.v1.ThresholdRule)
     ThresholdRuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ThresholdRule.newBuilder() to construct.
   private ThresholdRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -142,6 +143,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * <code>BASIS_UNSPECIFIED = 0;</code>
      */
     public static final int BASIS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -152,6 +154,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * <code>CURRENT_SPEND = 1;</code>
      */
     public static final int CURRENT_SPEND_VALUE = 1;
+
     /**
      *
      *
@@ -255,6 +258,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int THRESHOLD_PERCENT_FIELD_NUMBER = 1;
   private double thresholdPercent_ = 0D;
+
   /**
    *
    *
@@ -275,6 +279,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPEND_BASIS_FIELD_NUMBER = 2;
   private int spendBasis_ = 0;
+
   /**
    *
    *
@@ -293,6 +298,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
   public int getSpendBasisValue() {
     return spendBasis_;
   }
+
   /**
    *
    *
@@ -490,6 +496,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -706,6 +713,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double thresholdPercent_;
+
     /**
      *
      *
@@ -723,6 +731,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
     public double getThresholdPercent() {
       return thresholdPercent_;
     }
+
     /**
      *
      *
@@ -744,6 +753,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +775,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int spendBasis_ = 0;
+
     /**
      *
      *
@@ -783,6 +794,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
     public int getSpendBasisValue() {
       return spendBasis_;
     }
+
     /**
      *
      *
@@ -804,6 +816,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +839,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.billing.budgets.v1.ThresholdRule.Basis.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -850,6 +864,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

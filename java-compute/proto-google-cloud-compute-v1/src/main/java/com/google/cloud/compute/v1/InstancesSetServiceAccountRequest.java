@@ -32,6 +32,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstancesSetServiceAccountRequest)
     InstancesSetServiceAccountRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstancesSetServiceAccountRequest.newBuilder() to construct.
   private InstancesSetServiceAccountRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object email_ = "";
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
   public boolean hasEmail() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList scopes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
   public com.google.protobuf.ProtocolStringList getScopesList() {
     return scopes_;
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
   public int getScopesCount() {
     return scopes_.size();
   }
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
   public java.lang.String getScopes(int index) {
     return scopes_.get(index);
   }
+
   /**
    *
    *
@@ -376,6 +384,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -587,6 +596,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object email_ = "";
+
     /**
      *
      *
@@ -601,6 +611,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     public boolean hasEmail() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -623,6 +634,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -645,6 +657,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -666,6 +679,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +697,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +730,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -730,6 +746,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
       scopes_.makeImmutable();
       return scopes_;
     }
+
     /**
      *
      *
@@ -744,6 +761,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     public int getScopesCount() {
       return scopes_.size();
     }
+
     /**
      *
      *
@@ -759,6 +777,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     public java.lang.String getScopes(int index) {
       return scopes_.get(index);
     }
+
     /**
      *
      *
@@ -774,6 +793,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     public com.google.protobuf.ByteString getScopesBytes(int index) {
       return scopes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -797,6 +817,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +840,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +860,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +879,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

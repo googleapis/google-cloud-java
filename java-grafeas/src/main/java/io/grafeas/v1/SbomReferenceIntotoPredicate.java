@@ -34,6 +34,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:grafeas.v1.SbomReferenceIntotoPredicate)
     SbomReferenceIntotoPredicateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SbomReferenceIntotoPredicate.newBuilder() to construct.
   private SbomReferenceIntotoPredicate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object referrerId_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -256,6 +263,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
   public int getDigestCount() {
     return internalGetDigest().getMap().size();
   }
+
   /**
    *
    *
@@ -272,12 +280,14 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
     }
     return internalGetDigest().getMap().containsKey(key);
   }
+
   /** Use {@link #getDigestMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getDigest() {
     return getDigestMap();
   }
+
   /**
    *
    *
@@ -291,6 +301,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
   public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
     return internalGetDigest().getMap();
   }
+
   /**
    *
    *
@@ -311,6 +322,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -526,6 +538,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -778,6 +791,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object referrerId_ = "";
+
     /**
      *
      *
@@ -800,6 +814,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -822,6 +837,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -843,6 +859,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +877,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +902,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -906,6 +925,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -928,6 +948,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -949,6 +970,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +988,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1013,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
     }
 
     private java.lang.Object mimeType_ = "";
+
     /**
      *
      *
@@ -1012,6 +1036,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1034,6 +1059,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1081,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1099,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1148,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
     public int getDigestCount() {
       return internalGetDigest().getMap().size();
     }
+
     /**
      *
      *
@@ -1136,12 +1165,14 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       }
       return internalGetDigest().getMap().containsKey(key);
     }
+
     /** Use {@link #getDigestMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDigest() {
       return getDigestMap();
     }
+
     /**
      *
      *
@@ -1155,6 +1186,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
     public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
       return internalGetDigest().getMap();
     }
+
     /**
      *
      *
@@ -1175,6 +1207,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1201,6 +1234,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       internalGetMutableDigest().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1217,12 +1251,14 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       internalGetMutableDigest().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDigest() {
       bitField0_ |= 0x00000008;
       return internalGetMutableDigest().getMutableMap();
     }
+
     /**
      *
      *
@@ -1243,6 +1279,7 @@ public final class SbomReferenceIntotoPredicate extends com.google.protobuf.Gene
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *

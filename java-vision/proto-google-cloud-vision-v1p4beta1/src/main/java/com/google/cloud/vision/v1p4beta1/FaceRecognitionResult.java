@@ -33,6 +33,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.FaceRecognitionResult)
     FaceRecognitionResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FaceRecognitionResult.newBuilder() to construct.
   private FaceRecognitionResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int CELEBRITY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p4beta1.Celebrity celebrity_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
   public boolean hasCelebrity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.vision.v1p4beta1.Celebrity.getDefaultInstance()
         : celebrity_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -308,6 +313,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -524,6 +530,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
             com.google.cloud.vision.v1p4beta1.Celebrity.Builder,
             com.google.cloud.vision.v1p4beta1.CelebrityOrBuilder>
         celebrityBuilder_;
+
     /**
      *
      *
@@ -539,6 +546,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
     public boolean hasCelebrity() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -560,6 +568,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
         return celebrityBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -583,6 +592,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -604,6 +614,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +643,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -652,6 +664,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +680,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCelebrityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -686,6 +700,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
             : celebrity_;
       }
     }
+
     /**
      *
      *
@@ -714,6 +729,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -729,6 +745,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -748,6 +765,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

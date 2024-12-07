@@ -33,6 +33,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.biglake.v1alpha1.ListLocksResponse)
     ListLocksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListLocksResponse.newBuilder() to construct.
   private ListLocksResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.biglake.v1alpha1.Lock> locks_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.bigquery.biglake.v1alpha1.Lock> getLocksList() {
     return locks_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       getLocksOrBuilderList() {
     return locks_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
   public int getLocksCount() {
     return locks_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.bigquery.biglake.v1alpha1.Lock getLocks(int index) {
     return locks_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -359,6 +367,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -639,6 +648,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
         return locksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -655,6 +665,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
         return locksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -671,6 +682,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
         return locksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -693,6 +705,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +726,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +749,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +772,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +793,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +814,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +835,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +855,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +875,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +888,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.bigquery.biglake.v1alpha1.Lock.Builder getLocksBuilder(int index) {
       return getLocksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -883,6 +905,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
         return locksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -900,6 +923,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(locks_);
       }
     }
+
     /**
      *
      *
@@ -913,6 +937,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       return getLocksFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.biglake.v1alpha1.Lock.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -926,6 +951,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       return getLocksFieldBuilder()
           .addBuilder(index, com.google.cloud.bigquery.biglake.v1alpha1.Lock.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -958,6 +984,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -981,6 +1008,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1032,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1055,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1074,7 @@ public final class ListLocksResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -84,6 +84,7 @@ public interface ClassificationEvaluationMetricsOrBuilder
    */
   java.util.List<com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry>
       getConfidenceMetricsEntryList();
+
   /**
    *
    *
@@ -103,6 +104,7 @@ public interface ClassificationEvaluationMetricsOrBuilder
    */
   com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry
       getConfidenceMetricsEntry(int index);
+
   /**
    *
    *
@@ -121,6 +123,7 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * </code>
    */
   int getConfidenceMetricsEntryCount();
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public interface ClassificationEvaluationMetricsOrBuilder
               com.google.cloud.automl.v1.ClassificationEvaluationMetrics
                   .ConfidenceMetricsEntryOrBuilder>
       getConfidenceMetricsEntryOrBuilderList();
+
   /**
    *
    *
@@ -180,6 +184,7 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * @return Whether the confusionMatrix field is set.
    */
   boolean hasConfusionMatrix();
+
   /**
    *
    *
@@ -197,6 +202,7 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * @return The confusionMatrix.
    */
   com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix getConfusionMatrix();
+
   /**
    *
    *
@@ -226,6 +232,7 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * @return A list containing the annotationSpecId.
    */
   java.util.List<java.lang.String> getAnnotationSpecIdList();
+
   /**
    *
    *
@@ -238,6 +245,7 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * @return The count of annotationSpecId.
    */
   int getAnnotationSpecIdCount();
+
   /**
    *
    *
@@ -251,6 +259,7 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * @return The annotationSpecId at the given index.
    */
   java.lang.String getAnnotationSpecId(int index);
+
   /**
    *
    *

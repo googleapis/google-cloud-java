@@ -117,7 +117,8 @@ public class MockTextToSpeechImpl extends TextToSpeechImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamingSynthesize, expected %s or %s",
+                          "Unrecognized response type %s for method StreamingSynthesize, expected"
+                              + " %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamingSynthesizeResponse.class.getName(),
                           Exception.class.getName())));

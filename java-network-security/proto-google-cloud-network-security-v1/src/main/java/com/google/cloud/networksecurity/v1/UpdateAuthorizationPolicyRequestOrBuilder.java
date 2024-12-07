@@ -41,6 +41,7 @@ public interface UpdateAuthorizationPolicyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateAuthorizationPolicyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateAuthorizationPolicyRequestOrBuilder
    * @return Whether the authorizationPolicy field is set.
    */
   boolean hasAuthorizationPolicy();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateAuthorizationPolicyRequestOrBuilder
    * @return The authorizationPolicy.
    */
   com.google.cloud.networksecurity.v1.AuthorizationPolicy getAuthorizationPolicy();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface RollbackInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface RollbackInstanceRequestOrBuilder
    * @return The targetSnapshot.
    */
   java.lang.String getTargetSnapshot();
+
   /**
    *
    *

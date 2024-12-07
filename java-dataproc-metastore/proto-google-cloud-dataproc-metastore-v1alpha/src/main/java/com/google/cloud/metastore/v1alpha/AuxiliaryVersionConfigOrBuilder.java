@@ -37,6 +37,7 @@ public interface AuxiliaryVersionConfigOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AuxiliaryVersionConfigOrBuilder
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
    */
   int getConfigOverridesCount();
+
   /**
    *
    *
@@ -79,9 +81,11 @@ public interface AuxiliaryVersionConfigOrBuilder
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
    */
   boolean containsConfigOverrides(java.lang.String key);
+
   /** Use {@link #getConfigOverridesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getConfigOverrides();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface AuxiliaryVersionConfigOrBuilder
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getConfigOverridesMap();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface AuxiliaryVersionConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public interface AuxiliaryVersionConfigOrBuilder
    * @return Whether the networkConfig field is set.
    */
   boolean hasNetworkConfig();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface AuxiliaryVersionConfigOrBuilder
    * @return The networkConfig.
    */
   com.google.cloud.metastore.v1alpha.NetworkConfig getNetworkConfig();
+
   /**
    *
    *

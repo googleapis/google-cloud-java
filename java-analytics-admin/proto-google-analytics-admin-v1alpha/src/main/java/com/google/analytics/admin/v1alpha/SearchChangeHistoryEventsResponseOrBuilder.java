@@ -36,6 +36,7 @@ public interface SearchChangeHistoryEventsResponseOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.ChangeHistoryEvent>
       getChangeHistoryEventsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface SearchChangeHistoryEventsResponseOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.ChangeHistoryEvent getChangeHistoryEvents(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface SearchChangeHistoryEventsResponseOrBuilder
    * </code>
    */
   int getChangeHistoryEventsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface SearchChangeHistoryEventsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.ChangeHistoryEventOrBuilder>
       getChangeHistoryEventsOrBuilderList();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface SearchChangeHistoryEventsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

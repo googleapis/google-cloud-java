@@ -34,6 +34,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.SkuPurchaseGroup)
     SkuPurchaseGroupOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SkuPurchaseGroup.newBuilder() to construct.
   private SkuPurchaseGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList skus_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getSkusList() {
     return skus_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
   public int getSkusCount() {
     return skus_.size();
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
   public java.lang.String getSkus(int index) {
     return skus_.get(index);
   }
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.BillingAccountPurchaseInfo>
       billingAccountPurchaseInfos_;
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       getBillingAccountPurchaseInfosList() {
     return billingAccountPurchaseInfos_;
   }
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       getBillingAccountPurchaseInfosOrBuilderList() {
     return billingAccountPurchaseInfos_;
   }
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
   public int getBillingAccountPurchaseInfosCount() {
     return billingAccountPurchaseInfos_.size();
   }
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       int index) {
     return billingAccountPurchaseInfos_.get(index);
   }
+
   /**
    *
    *
@@ -398,6 +408,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -659,6 +670,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -675,6 +687,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       skus_.makeImmutable();
       return skus_;
     }
+
     /**
      *
      *
@@ -690,6 +703,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
     public int getSkusCount() {
       return skus_.size();
     }
+
     /**
      *
      *
@@ -706,6 +720,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
     public java.lang.String getSkus(int index) {
       return skus_.get(index);
     }
+
     /**
      *
      *
@@ -722,6 +737,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getSkusBytes(int index) {
       return skus_.getByteString(index);
     }
+
     /**
      *
      *
@@ -746,6 +762,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +786,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +807,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +827,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +890,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
         return billingAccountPurchaseInfosBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -888,6 +909,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
         return billingAccountPurchaseInfosBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -907,6 +929,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
         return billingAccountPurchaseInfosBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -932,6 +955,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +978,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1004,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1030,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1053,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1076,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1101,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1123,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1114,6 +1145,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1161,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
         getBillingAccountPurchaseInfosBuilder(int index) {
       return getBillingAccountPurchaseInfosFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1148,6 +1181,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
         return billingAccountPurchaseInfosBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1167,6 +1201,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(billingAccountPurchaseInfos_);
       }
     }
+
     /**
      *
      *
@@ -1183,6 +1218,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
       return getBillingAccountPurchaseInfosFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.BillingAccountPurchaseInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1200,6 +1236,7 @@ public final class SkuPurchaseGroup extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               index, com.google.cloud.channel.v1.BillingAccountPurchaseInfo.getDefaultInstance());
     }
+
     /**
      *
      *

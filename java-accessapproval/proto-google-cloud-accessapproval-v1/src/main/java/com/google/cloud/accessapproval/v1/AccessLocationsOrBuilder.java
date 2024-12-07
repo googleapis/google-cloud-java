@@ -49,6 +49,7 @@ public interface AccessLocationsOrBuilder
    * @return The principalOfficeCountry.
    */
   java.lang.String getPrincipalOfficeCountry();
+
   /**
    *
    *
@@ -100,6 +101,7 @@ public interface AccessLocationsOrBuilder
    * @return The principalPhysicalLocationCountry.
    */
   java.lang.String getPrincipalPhysicalLocationCountry();
+
   /**
    *
    *

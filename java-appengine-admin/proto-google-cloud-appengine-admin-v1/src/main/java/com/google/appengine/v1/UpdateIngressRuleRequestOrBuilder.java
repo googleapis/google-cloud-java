@@ -37,6 +37,7 @@ public interface UpdateIngressRuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface UpdateIngressRuleRequestOrBuilder
    * @return Whether the rule field is set.
    */
   boolean hasRule();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface UpdateIngressRuleRequestOrBuilder
    * @return The rule.
    */
   com.google.appengine.v1.firewall.FirewallRule getRule();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface UpdateIngressRuleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface UpdateIngressRuleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

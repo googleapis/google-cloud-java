@@ -280,7 +280,8 @@ public class AssetName implements ResourceName {
     private Builder(AssetName assetName) {
       Preconditions.checkArgument(
           Objects.equals(assetName.pathTemplate, ORGANIZATION_ASSET),
-          "toBuilder is only supported when AssetName has the pattern of organizations/{organization}/assets/{asset}");
+          "toBuilder is only supported when AssetName has the pattern of"
+              + " organizations/{organization}/assets/{asset}");
       this.organization = assetName.organization;
       this.asset = assetName.asset;
     }

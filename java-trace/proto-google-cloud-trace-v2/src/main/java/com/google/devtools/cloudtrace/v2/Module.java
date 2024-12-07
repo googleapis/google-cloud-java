@@ -33,6 +33,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.Module)
     ModuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Module.newBuilder() to construct.
   private Module(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int MODULE_FIELD_NUMBER = 1;
   private com.google.devtools.cloudtrace.v2.TruncatableString module_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
   public boolean hasModule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
         : module_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BUILD_ID_FIELD_NUMBER = 2;
   private com.google.devtools.cloudtrace.v2.TruncatableString buildId_;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBuildId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
         : buildId_;
   }
+
   /**
    *
    *
@@ -345,6 +352,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -566,6 +574,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
             com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder>
         moduleBuilder_;
+
     /**
      *
      *
@@ -581,6 +590,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
     public boolean hasModule() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -602,6 +612,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
         return moduleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -625,6 +636,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +658,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +709,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +725,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getModuleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -729,6 +745,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
             : module_;
       }
     }
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
             com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder>
         buildIdBuilder_;
+
     /**
      *
      *
@@ -777,6 +795,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBuildId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -798,6 +817,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
         return buildIdBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -821,6 +841,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +863,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +893,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +914,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +930,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBuildIdFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -925,6 +950,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
             : buildId_;
       }
     }
+
     /**
      *
      *

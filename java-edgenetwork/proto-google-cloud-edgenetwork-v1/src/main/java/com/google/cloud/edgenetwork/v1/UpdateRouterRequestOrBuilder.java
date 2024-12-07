@@ -41,6 +41,7 @@ public interface UpdateRouterRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateRouterRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UpdateRouterRequestOrBuilder
    * @return Whether the router field is set.
    */
   boolean hasRouter();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateRouterRequestOrBuilder
    * @return The router.
    */
   com.google.cloud.edgenetwork.v1.Router getRouter();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface UpdateRouterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

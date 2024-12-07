@@ -36,6 +36,7 @@ public interface ModelMonitoringStatsOrBuilder
    * @return Whether the tabularStats field is set.
    */
   boolean hasTabularStats();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ModelMonitoringStatsOrBuilder
    * @return The tabularStats.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringTabularStats getTabularStats();
+
   /**
    *
    *

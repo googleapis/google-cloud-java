@@ -36,6 +36,7 @@ public interface GetInstanceGroupRequestOrBuilder
    * @return The instanceGroup.
    */
   java.lang.String getInstanceGroup();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetInstanceGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetInstanceGroupRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

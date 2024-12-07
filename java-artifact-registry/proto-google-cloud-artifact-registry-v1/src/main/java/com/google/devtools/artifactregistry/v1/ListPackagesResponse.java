@@ -33,6 +33,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.ListPackagesResponse)
     ListPackagesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListPackagesResponse.newBuilder() to construct.
   private ListPackagesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1.Package> packages_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.devtools.artifactregistry.v1.Package> getPackagesList() {
     return packages_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       getPackagesOrBuilderList() {
     return packages_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
   public int getPackagesCount() {
     return packages_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
   public com.google.devtools.artifactregistry.v1.Package getPackages(int index) {
     return packages_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -359,6 +367,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -640,6 +649,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
         return packagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -656,6 +666,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
         return packagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
         return packagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +773,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +794,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +815,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +836,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +856,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +876,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +889,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
     public com.google.devtools.artifactregistry.v1.Package.Builder getPackagesBuilder(int index) {
       return getPackagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -885,6 +907,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
         return packagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -902,6 +925,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(packages_);
       }
     }
+
     /**
      *
      *
@@ -915,6 +939,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       return getPackagesFieldBuilder()
           .addBuilder(com.google.devtools.artifactregistry.v1.Package.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -928,6 +953,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       return getPackagesFieldBuilder()
           .addBuilder(index, com.google.devtools.artifactregistry.v1.Package.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -960,6 +986,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -983,6 +1010,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1006,6 +1034,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1057,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1076,7 @@ public final class ListPackagesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

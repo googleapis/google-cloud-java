@@ -33,6 +33,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.ImportCompletionDataRequest)
     ImportCompletionDataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportCompletionDataRequest.newBuilder() to construct.
   private ImportCompletionDataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
 
   public static final int INPUT_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2alpha.CompletionDataInputConfig inputConfig_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
         ? com.google.cloud.retail.v2alpha.CompletionDataInputConfig.getDefaultInstance()
         : inputConfig_;
   }
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object notificationPubsubTopic_ = "";
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -423,6 +431,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -652,6 +661,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -678,6 +688,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -704,6 +715,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -729,6 +741,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +763,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +797,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
             com.google.cloud.retail.v2alpha.CompletionDataInputConfig.Builder,
             com.google.cloud.retail.v2alpha.CompletionDataInputConfigOrBuilder>
         inputConfigBuilder_;
+
     /**
      *
      *
@@ -799,6 +814,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -821,6 +837,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
         return inputConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -845,6 +862,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +885,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +917,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +939,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +957,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -957,6 +979,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
             : inputConfig_;
       }
     }
+
     /**
      *
      *
@@ -986,6 +1009,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object notificationPubsubTopic_ = "";
+
     /**
      *
      *
@@ -1012,6 +1036,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1038,6 +1063,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1089,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1111,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

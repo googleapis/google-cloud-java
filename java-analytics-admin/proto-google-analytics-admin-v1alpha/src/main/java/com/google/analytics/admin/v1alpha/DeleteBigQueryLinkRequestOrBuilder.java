@@ -39,6 +39,7 @@ public interface DeleteBigQueryLinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

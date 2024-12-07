@@ -34,6 +34,7 @@ public interface TargetPoolsAddInstanceRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstanceReference instances = 29097598;</code>
    */
   java.util.List<com.google.cloud.compute.v1.InstanceReference> getInstancesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface TargetPoolsAddInstanceRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstanceReference instances = 29097598;</code>
    */
   com.google.cloud.compute.v1.InstanceReference getInstances(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface TargetPoolsAddInstanceRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstanceReference instances = 29097598;</code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface TargetPoolsAddInstanceRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InstanceReferenceOrBuilder>
       getInstancesOrBuilderList();
+
   /**
    *
    *

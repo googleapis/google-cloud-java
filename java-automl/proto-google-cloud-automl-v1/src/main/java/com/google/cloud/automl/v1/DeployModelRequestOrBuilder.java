@@ -38,6 +38,7 @@ public interface DeployModelRequestOrBuilder
    * @return Whether the imageObjectDetectionModelDeploymentMetadata field is set.
    */
   boolean hasImageObjectDetectionModelDeploymentMetadata();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface DeployModelRequestOrBuilder
    */
   com.google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata
       getImageObjectDetectionModelDeploymentMetadata();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface DeployModelRequestOrBuilder
    * @return Whether the imageClassificationModelDeploymentMetadata field is set.
    */
   boolean hasImageClassificationModelDeploymentMetadata();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface DeployModelRequestOrBuilder
    */
   com.google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata
       getImageClassificationModelDeploymentMetadata();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface DeployModelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

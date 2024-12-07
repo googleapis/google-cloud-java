@@ -36,6 +36,7 @@ public interface RepricingConditionOrBuilder
    * @return Whether the skuGroupCondition field is set.
    */
   boolean hasSkuGroupCondition();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RepricingConditionOrBuilder
    * @return The skuGroupCondition.
    */
   com.google.cloud.channel.v1.SkuGroupCondition getSkuGroupCondition();
+
   /**
    *
    *

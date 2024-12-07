@@ -34,6 +34,7 @@ public interface SslPoliciesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.SslPolicy ssl_policies = 209941027;</code>
    */
   java.util.List<com.google.cloud.compute.v1.SslPolicy> getSslPoliciesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SslPoliciesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.SslPolicy ssl_policies = 209941027;</code>
    */
   com.google.cloud.compute.v1.SslPolicy getSslPolicies(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SslPoliciesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.SslPolicy ssl_policies = 209941027;</code>
    */
   int getSslPoliciesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SslPoliciesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.SslPolicyOrBuilder>
       getSslPoliciesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface SslPoliciesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface SslPoliciesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

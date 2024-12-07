@@ -36,6 +36,7 @@ public interface RetrieveRegisterParametersResponseOrBuilder
    * @return Whether the registerParameters field is set.
    */
   boolean hasRegisterParameters();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RetrieveRegisterParametersResponseOrBuilder
    * @return The registerParameters.
    */
   com.google.cloud.domains.v1.RegisterParameters getRegisterParameters();
+
   /**
    *
    *

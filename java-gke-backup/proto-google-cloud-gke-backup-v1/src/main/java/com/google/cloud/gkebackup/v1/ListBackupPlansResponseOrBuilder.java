@@ -34,6 +34,7 @@ public interface ListBackupPlansResponseOrBuilder
    * <code>repeated .google.cloud.gkebackup.v1.BackupPlan backup_plans = 1;</code>
    */
   java.util.List<com.google.cloud.gkebackup.v1.BackupPlan> getBackupPlansList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListBackupPlansResponseOrBuilder
    * <code>repeated .google.cloud.gkebackup.v1.BackupPlan backup_plans = 1;</code>
    */
   com.google.cloud.gkebackup.v1.BackupPlan getBackupPlans(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListBackupPlansResponseOrBuilder
    * <code>repeated .google.cloud.gkebackup.v1.BackupPlan backup_plans = 1;</code>
    */
   int getBackupPlansCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListBackupPlansResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkebackup.v1.BackupPlanOrBuilder>
       getBackupPlansOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface ListBackupPlansResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface ListBackupPlansResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -133,6 +139,7 @@ public interface ListBackupPlansResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -146,6 +153,7 @@ public interface ListBackupPlansResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -43,6 +43,7 @@ public interface ExplainedPolicyOrBuilder
    * @return The enum numeric value on the wire for access.
    */
   int getAccessValue();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface ExplainedPolicyOrBuilder
    * @return The fullResourceName.
    */
   java.lang.String getFullResourceName();
+
   /**
    *
    *
@@ -120,6 +122,7 @@ public interface ExplainedPolicyOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface ExplainedPolicyOrBuilder
    * @return The policy.
    */
   com.google.iam.v1.Policy getPolicy();
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public interface ExplainedPolicyOrBuilder
    */
   java.util.List<com.google.cloud.policysimulator.v1.BindingExplanation>
       getBindingExplanationsList();
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public interface ExplainedPolicyOrBuilder
    * </code>
    */
   com.google.cloud.policysimulator.v1.BindingExplanation getBindingExplanations(int index);
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public interface ExplainedPolicyOrBuilder
    * </code>
    */
   int getBindingExplanationsCount();
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public interface ExplainedPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.policysimulator.v1.BindingExplanationOrBuilder>
       getBindingExplanationsOrBuilderList();
+
   /**
    *
    *
@@ -252,6 +260,7 @@ public interface ExplainedPolicyOrBuilder
    * @return The enum numeric value on the wire for relevance.
    */
   int getRelevanceValue();
+
   /**
    *
    *

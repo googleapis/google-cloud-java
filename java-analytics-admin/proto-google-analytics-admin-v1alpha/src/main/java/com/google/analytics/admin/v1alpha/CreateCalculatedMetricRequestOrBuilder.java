@@ -39,6 +39,7 @@ public interface CreateCalculatedMetricRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface CreateCalculatedMetricRequestOrBuilder
    * @return The calculatedMetricId.
    */
   java.lang.String getCalculatedMetricId();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface CreateCalculatedMetricRequestOrBuilder
    * @return Whether the calculatedMetric field is set.
    */
   boolean hasCalculatedMetric();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface CreateCalculatedMetricRequestOrBuilder
    * @return The calculatedMetric.
    */
   com.google.analytics.admin.v1alpha.CalculatedMetric getCalculatedMetric();
+
   /**
    *
    *

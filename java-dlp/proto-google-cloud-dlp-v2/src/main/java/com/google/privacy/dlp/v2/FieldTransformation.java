@@ -33,6 +33,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.FieldTransformation)
     FieldTransformationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FieldTransformation.newBuilder() to construct.
   private FieldTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     private TransformationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FieldId> fields_;
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.privacy.dlp.v2.FieldId> getFieldsList() {
     return fields_;
   }
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       getFieldsOrBuilderList() {
     return fields_;
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
   public int getFieldsCount() {
     return fields_.size();
   }
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
   public com.google.privacy.dlp.v2.FieldId getFields(int index) {
     return fields_.get(index);
   }
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
 
   public static final int CONDITION_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.RecordCondition condition_;
+
   /**
    *
    *
@@ -234,6 +242,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
   public boolean hasCondition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -259,6 +268,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         ? com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance()
         : condition_;
   }
+
   /**
    *
    *
@@ -284,6 +294,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PRIMITIVE_TRANSFORMATION_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -299,6 +310,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
   public boolean hasPrimitiveTransformation() {
     return transformationCase_ == 4;
   }
+
   /**
    *
    *
@@ -317,6 +329,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     }
     return com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -336,6 +349,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INFO_TYPE_TRANSFORMATIONS_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -352,6 +366,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
   public boolean hasInfoTypeTransformations() {
     return transformationCase_ == 5;
   }
+
   /**
    *
    *
@@ -371,6 +386,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     }
     return com.google.privacy.dlp.v2.InfoTypeTransformations.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -604,6 +620,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -962,6 +979,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         return fieldsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -983,6 +1001,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         return fieldsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1023,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         return fieldsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1051,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1076,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1104,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1132,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1157,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1182,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1208,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1233,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1230,6 +1258,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1247,6 +1276,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.FieldId.Builder getFieldsBuilder(int index) {
       return getFieldsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1268,6 +1298,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         return fieldsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1321,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(fields_);
       }
     }
+
     /**
      *
      *
@@ -1308,6 +1340,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       return getFieldsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1326,6 +1359,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       return getFieldsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1367,6 +1401,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.RecordCondition.Builder,
             com.google.privacy.dlp.v2.RecordConditionOrBuilder>
         conditionBuilder_;
+
     /**
      *
      *
@@ -1389,6 +1424,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     public boolean hasCondition() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1417,6 +1453,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         return conditionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1447,6 +1484,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1474,6 +1512,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1509,6 +1548,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1536,6 +1576,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1558,6 +1599,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1584,6 +1626,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
             : condition_;
       }
     }
+
     /**
      *
      *
@@ -1623,6 +1666,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.PrimitiveTransformation.Builder,
             com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder>
         primitiveTransformationBuilder_;
+
     /**
      *
      *
@@ -1638,6 +1682,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     public boolean hasPrimitiveTransformation() {
       return transformationCase_ == 4;
     }
+
     /**
      *
      *
@@ -1663,6 +1708,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1686,6 +1732,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       transformationCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1706,6 +1753,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       transformationCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1740,6 +1788,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       transformationCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1765,6 +1814,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1778,6 +1828,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         getPrimitiveTransformationBuilder() {
       return getPrimitiveTransformationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1799,6 +1850,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1837,6 +1889,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.InfoTypeTransformations.Builder,
             com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder>
         infoTypeTransformationsBuilder_;
+
     /**
      *
      *
@@ -1853,6 +1906,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     public boolean hasInfoTypeTransformations() {
       return transformationCase_ == 5;
     }
+
     /**
      *
      *
@@ -1879,6 +1933,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.InfoTypeTransformations.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1903,6 +1958,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       transformationCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1924,6 +1980,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       transformationCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1959,6 +2016,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       transformationCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1985,6 +2043,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1999,6 +2058,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         getInfoTypeTransformationsBuilder() {
       return getInfoTypeTransformationsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2021,6 +2081,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.InfoTypeTransformations.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface BulkInsertDiskResourceOrBuilder
    * @return Whether the sourceConsistencyGroupPolicy field is set.
    */
   boolean hasSourceConsistencyGroupPolicy();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BulkInsertDiskResourceOrBuilder
    * @return The sourceConsistencyGroupPolicy.
    */
   java.lang.String getSourceConsistencyGroupPolicy();
+
   /**
    *
    *

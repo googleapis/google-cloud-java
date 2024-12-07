@@ -37,6 +37,7 @@ public interface SBOMReferenceNoteOrBuilder
    * @return The format.
    */
   java.lang.String getFormat();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SBOMReferenceNoteOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

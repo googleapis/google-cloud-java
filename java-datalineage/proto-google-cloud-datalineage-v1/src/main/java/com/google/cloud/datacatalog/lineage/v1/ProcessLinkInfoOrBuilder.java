@@ -37,6 +37,7 @@ public interface ProcessLinkInfoOrBuilder
    * @return The link.
    */
   java.lang.String getLink();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ProcessLinkInfoOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ProcessLinkInfoOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ProcessLinkInfoOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ProcessLinkInfoOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3beta1.GetSupportedLanguagesRequest)
     GetSupportedLanguagesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetSupportedLanguagesRequest.newBuilder() to construct.
   private GetSupportedLanguagesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -148,6 +151,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayLanguageCode_ = "";
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -203,6 +208,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
+
   /**
    *
    *
@@ -238,6 +244,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -452,6 +459,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -670,6 +678,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -706,6 +715,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -742,6 +752,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -777,6 +788,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +820,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +859,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object displayLanguageCode_ = "";
+
     /**
      *
      *
@@ -870,6 +884,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -894,6 +909,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -917,6 +933,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +953,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +980,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -996,6 +1015,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1050,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1084,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1114,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

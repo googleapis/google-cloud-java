@@ -41,6 +41,7 @@ public interface UpdateEventRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateEventRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UpdateEventRequestOrBuilder
    * @return Whether the event field is set.
    */
   boolean hasEvent();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateEventRequestOrBuilder
    * @return The event.
    */
   com.google.cloud.visionai.v1.Event getEvent();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface UpdateEventRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

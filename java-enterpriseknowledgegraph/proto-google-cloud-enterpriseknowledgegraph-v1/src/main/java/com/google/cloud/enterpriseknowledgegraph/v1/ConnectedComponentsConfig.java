@@ -33,6 +33,7 @@ public final class ConnectedComponentsConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.ConnectedComponentsConfig)
     ConnectedComponentsConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConnectedComponentsConfig.newBuilder() to construct.
   private ConnectedComponentsConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class ConnectedComponentsConfig extends com.google.protobuf.Generat
 
   public static final int WEIGHT_THRESHOLD_FIELD_NUMBER = 1;
   private float weightThreshold_ = 0F;
+
   /**
    *
    *
@@ -241,6 +243,7 @@ public final class ConnectedComponentsConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -431,6 +434,7 @@ public final class ConnectedComponentsConfig extends com.google.protobuf.Generat
     private int bitField0_;
 
     private float weightThreshold_;
+
     /**
      *
      *
@@ -446,6 +450,7 @@ public final class ConnectedComponentsConfig extends com.google.protobuf.Generat
     public float getWeightThreshold() {
       return weightThreshold_;
     }
+
     /**
      *
      *
@@ -465,6 +470,7 @@ public final class ConnectedComponentsConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

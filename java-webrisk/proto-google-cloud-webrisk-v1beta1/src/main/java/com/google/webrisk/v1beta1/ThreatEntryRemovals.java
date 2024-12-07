@@ -33,6 +33,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1beta1.ThreatEntryRemovals)
     ThreatEntryRemovalsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ThreatEntryRemovals.newBuilder() to construct.
   private ThreatEntryRemovals(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int RAW_INDICES_FIELD_NUMBER = 1;
   private com.google.webrisk.v1beta1.RawIndices rawIndices_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
   public boolean hasRawIndices() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
         ? com.google.webrisk.v1beta1.RawIndices.getDefaultInstance()
         : rawIndices_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
 
   public static final int RICE_INDICES_FIELD_NUMBER = 2;
   private com.google.webrisk.v1beta1.RiceDeltaEncoding riceIndices_;
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
   public boolean hasRiceIndices() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
         ? com.google.webrisk.v1beta1.RiceDeltaEncoding.getDefaultInstance()
         : riceIndices_;
   }
+
   /**
    *
    *
@@ -349,6 +356,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +579,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
             com.google.webrisk.v1beta1.RawIndices.Builder,
             com.google.webrisk.v1beta1.RawIndicesOrBuilder>
         rawIndicesBuilder_;
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
     public boolean hasRawIndices() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -605,6 +615,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
         return rawIndicesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -627,6 +638,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +658,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +686,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +706,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +721,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRawIndicesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -724,6 +740,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
             : rawIndices_;
       }
     }
+
     /**
      *
      *
@@ -756,6 +773,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
             com.google.webrisk.v1beta1.RiceDeltaEncoding.Builder,
             com.google.webrisk.v1beta1.RiceDeltaEncodingOrBuilder>
         riceIndicesBuilder_;
+
     /**
      *
      *
@@ -773,6 +791,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
     public boolean hasRiceIndices() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -796,6 +815,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
         return riceIndicesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -821,6 +841,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +865,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +896,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +919,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +937,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRiceIndicesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -934,6 +959,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
             : riceIndices_;
       }
     }
+
     /**
      *
      *

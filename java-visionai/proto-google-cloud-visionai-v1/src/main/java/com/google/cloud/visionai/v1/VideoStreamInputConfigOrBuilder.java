@@ -33,6 +33,7 @@ public interface VideoStreamInputConfigOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<java.lang.String> getStreamsList();
+
   /**
    * <code>repeated string streams = 1 [deprecated = true];</code>
    *
@@ -42,6 +43,7 @@ public interface VideoStreamInputConfigOrBuilder
    */
   @java.lang.Deprecated
   int getStreamsCount();
+
   /**
    * <code>repeated string streams = 1 [deprecated = true];</code>
    *
@@ -52,6 +54,7 @@ public interface VideoStreamInputConfigOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getStreams(int index);
+
   /**
    * <code>repeated string streams = 1 [deprecated = true];</code>
    *
@@ -70,6 +73,7 @@ public interface VideoStreamInputConfigOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.cloud.visionai.v1.StreamWithAnnotation> getStreamsWithAnnotationList();
+
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.StreamWithAnnotation streams_with_annotation = 2 [deprecated = true];
@@ -77,6 +81,7 @@ public interface VideoStreamInputConfigOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.visionai.v1.StreamWithAnnotation getStreamsWithAnnotation(int index);
+
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.StreamWithAnnotation streams_with_annotation = 2 [deprecated = true];
@@ -84,6 +89,7 @@ public interface VideoStreamInputConfigOrBuilder
    */
   @java.lang.Deprecated
   int getStreamsWithAnnotationCount();
+
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.StreamWithAnnotation streams_with_annotation = 2 [deprecated = true];
@@ -92,6 +98,7 @@ public interface VideoStreamInputConfigOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.visionai.v1.StreamWithAnnotationOrBuilder>
       getStreamsWithAnnotationOrBuilderList();
+
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.StreamWithAnnotation streams_with_annotation = 2 [deprecated = true];

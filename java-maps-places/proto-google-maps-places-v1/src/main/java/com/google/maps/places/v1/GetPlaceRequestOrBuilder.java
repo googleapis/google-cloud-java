@@ -38,6 +38,7 @@ public interface GetPlaceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface GetPlaceRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface GetPlaceRequestOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
+
   /**
    *
    *
@@ -164,6 +167,7 @@ public interface GetPlaceRequestOrBuilder
    * @return The sessionToken.
    */
   java.lang.String getSessionToken();
+
   /**
    *
    *

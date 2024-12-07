@@ -40,6 +40,7 @@ public interface PostureTemplateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface PostureTemplateOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface PostureTemplateOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface PostureTemplateOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface PostureTemplateOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.securityposture.v1.PolicySet> getPolicySetsList();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface PostureTemplateOrBuilder
    * </code>
    */
   com.google.cloud.securityposture.v1.PolicySet getPolicySets(int index);
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface PostureTemplateOrBuilder
    * </code>
    */
   int getPolicySetsCount();
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public interface PostureTemplateOrBuilder
    */
   java.util.List<? extends com.google.cloud.securityposture.v1.PolicySetOrBuilder>
       getPolicySetsOrBuilderList();
+
   /**
    *
    *

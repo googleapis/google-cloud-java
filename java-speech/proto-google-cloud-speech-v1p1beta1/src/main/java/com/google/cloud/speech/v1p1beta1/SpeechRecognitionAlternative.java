@@ -33,6 +33,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative)
     SpeechRecognitionAlternativeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpeechRecognitionAlternative.newBuilder() to construct.
   private SpeechRecognitionAlternative(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object transcript_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1p1beta1.WordInfo> words_;
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.speech.v1p1beta1.WordInfo> getWordsList() {
     return words_;
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       getWordsOrBuilderList() {
     return words_;
   }
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
   public int getWordsCount() {
     return words_.size();
   }
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
   public com.google.cloud.speech.v1p1beta1.WordInfo getWords(int index) {
     return words_.get(index);
   }
+
   /**
    *
    *
@@ -407,6 +416,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -668,6 +678,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object transcript_ = "";
+
     /**
      *
      *
@@ -693,6 +704,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -718,6 +730,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -742,6 +755,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +776,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +804,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -810,6 +826,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -835,6 +852,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +911,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
         return wordsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -911,6 +930,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
         return wordsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -929,6 +949,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
         return wordsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -953,6 +974,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +997,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1022,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1047,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1069,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1092,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1115,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1137,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1130,6 +1159,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1174,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
     public com.google.cloud.speech.v1p1beta1.WordInfo.Builder getWordsBuilder(int index) {
       return getWordsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1162,6 +1193,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
         return wordsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1181,6 +1213,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(words_);
       }
     }
+
     /**
      *
      *
@@ -1196,6 +1229,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       return getWordsFieldBuilder()
           .addBuilder(com.google.cloud.speech.v1p1beta1.WordInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1211,6 +1245,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       return getWordsFieldBuilder()
           .addBuilder(index, com.google.cloud.speech.v1p1beta1.WordInfo.getDefaultInstance());
     }
+
     /**
      *
      *

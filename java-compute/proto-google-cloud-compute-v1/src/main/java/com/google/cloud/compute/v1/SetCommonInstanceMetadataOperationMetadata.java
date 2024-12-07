@@ -33,6 +33,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata)
     SetCommonInstanceMetadataOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetCommonInstanceMetadataOperationMetadata.newBuilder() to construct.
   private SetCommonInstanceMetadataOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -81,6 +82,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientOperationId_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
   public boolean hasClientOperationId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +192,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
   public int getPerLocationOperationsCount() {
     return internalGetPerLocationOperations().getMap().size();
   }
+
   /**
    *
    *
@@ -206,6 +211,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
     }
     return internalGetPerLocationOperations().getMap().containsKey(key);
   }
+
   /** Use {@link #getPerLocationOperationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -216,6 +222,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
       getPerLocationOperations() {
     return getPerLocationOperationsMap();
   }
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
       getPerLocationOperationsMap() {
     return internalGetPerLocationOperations().getMap();
   }
+
   /**
    *
    *
@@ -265,6 +273,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
         map = internalGetPerLocationOperations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -491,6 +500,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -731,6 +741,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
     private int bitField0_;
 
     private java.lang.Object clientOperationId_ = "";
+
     /**
      *
      *
@@ -745,6 +756,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
     public boolean hasClientOperationId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -767,6 +779,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -789,6 +802,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -810,6 +824,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +842,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +953,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
     public int getPerLocationOperationsCount() {
       return internalGetPerLocationOperations().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -955,6 +972,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
       }
       return internalGetPerLocationOperations().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getPerLocationOperationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -965,6 +983,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
         getPerLocationOperations() {
       return getPerLocationOperationsMap();
     }
+
     /**
      *
      *
@@ -984,6 +1003,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
         getPerLocationOperationsMap() {
       return internalGetPerLocationOperations().getImmutableMap();
     }
+
     /**
      *
      *
@@ -1016,6 +1036,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
           ? perLocationOperationsConverter.build(map.get(key))
           : defaultValue;
     }
+
     /**
      *
      *
@@ -1050,6 +1071,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
       internalGetMutablePerLocationOperations().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1090,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
       internalGetMutablePerLocationOperations().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -1078,6 +1101,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
       bitField0_ |= 0x00000002;
       return internalGetMutablePerLocationOperations().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1104,6 +1128,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1159,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

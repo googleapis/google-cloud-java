@@ -39,6 +39,7 @@ public interface JobQueryOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface JobQueryOrBuilder
    * @return The queryLanguageCode.
    */
   java.lang.String getQueryLanguageCode();
+
   /**
    *
    *
@@ -123,6 +125,7 @@ public interface JobQueryOrBuilder
    * @return A list containing the companies.
    */
   java.util.List<java.lang.String> getCompaniesList();
+
   /**
    *
    *
@@ -150,6 +153,7 @@ public interface JobQueryOrBuilder
    * @return The count of companies.
    */
   int getCompaniesCount();
+
   /**
    *
    *
@@ -178,6 +182,7 @@ public interface JobQueryOrBuilder
    * @return The companies at the given index.
    */
   java.lang.String getCompanies(int index);
+
   /**
    *
    *
@@ -230,6 +235,7 @@ public interface JobQueryOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 3;</code>
    */
   java.util.List<com.google.cloud.talent.v4beta1.LocationFilter> getLocationFiltersList();
+
   /**
    *
    *
@@ -253,6 +259,7 @@ public interface JobQueryOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 3;</code>
    */
   com.google.cloud.talent.v4beta1.LocationFilter getLocationFilters(int index);
+
   /**
    *
    *
@@ -276,6 +283,7 @@ public interface JobQueryOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 3;</code>
    */
   int getLocationFiltersCount();
+
   /**
    *
    *
@@ -300,6 +308,7 @@ public interface JobQueryOrBuilder
    */
   java.util.List<? extends com.google.cloud.talent.v4beta1.LocationFilterOrBuilder>
       getLocationFiltersOrBuilderList();
+
   /**
    *
    *
@@ -343,6 +352,7 @@ public interface JobQueryOrBuilder
    * @return A list containing the jobCategories.
    */
   java.util.List<com.google.cloud.talent.v4beta1.JobCategory> getJobCategoriesList();
+
   /**
    *
    *
@@ -362,6 +372,7 @@ public interface JobQueryOrBuilder
    * @return The count of jobCategories.
    */
   int getJobCategoriesCount();
+
   /**
    *
    *
@@ -382,6 +393,7 @@ public interface JobQueryOrBuilder
    * @return The jobCategories at the given index.
    */
   com.google.cloud.talent.v4beta1.JobCategory getJobCategories(int index);
+
   /**
    *
    *
@@ -401,6 +413,7 @@ public interface JobQueryOrBuilder
    * @return A list containing the enum numeric values on the wire for jobCategories.
    */
   java.util.List<java.lang.Integer> getJobCategoriesValueList();
+
   /**
    *
    *
@@ -442,6 +455,7 @@ public interface JobQueryOrBuilder
    * @return Whether the commuteFilter field is set.
    */
   boolean hasCommuteFilter();
+
   /**
    *
    *
@@ -462,6 +476,7 @@ public interface JobQueryOrBuilder
    * @return The commuteFilter.
    */
   com.google.cloud.talent.v4beta1.CommuteFilter getCommuteFilter();
+
   /**
    *
    *
@@ -518,6 +533,7 @@ public interface JobQueryOrBuilder
    * @return A list containing the companyDisplayNames.
    */
   java.util.List<java.lang.String> getCompanyDisplayNamesList();
+
   /**
    *
    *
@@ -555,6 +571,7 @@ public interface JobQueryOrBuilder
    * @return The count of companyDisplayNames.
    */
   int getCompanyDisplayNamesCount();
+
   /**
    *
    *
@@ -593,6 +610,7 @@ public interface JobQueryOrBuilder
    * @return The companyDisplayNames at the given index.
    */
   java.lang.String getCompanyDisplayNames(int index);
+
   /**
    *
    *
@@ -648,6 +666,7 @@ public interface JobQueryOrBuilder
    * @return Whether the compensationFilter field is set.
    */
   boolean hasCompensationFilter();
+
   /**
    *
    *
@@ -664,6 +683,7 @@ public interface JobQueryOrBuilder
    * @return The compensationFilter.
    */
   com.google.cloud.talent.v4beta1.CompensationFilter getCompensationFilter();
+
   /**
    *
    *
@@ -713,6 +733,7 @@ public interface JobQueryOrBuilder
    * @return The customAttributeFilter.
    */
   java.lang.String getCustomAttributeFilter();
+
   /**
    *
    *
@@ -785,6 +806,7 @@ public interface JobQueryOrBuilder
    * @return A list containing the employmentTypes.
    */
   java.util.List<com.google.cloud.talent.v4beta1.EmploymentType> getEmploymentTypesList();
+
   /**
    *
    *
@@ -805,6 +827,7 @@ public interface JobQueryOrBuilder
    * @return The count of employmentTypes.
    */
   int getEmploymentTypesCount();
+
   /**
    *
    *
@@ -826,6 +849,7 @@ public interface JobQueryOrBuilder
    * @return The employmentTypes at the given index.
    */
   com.google.cloud.talent.v4beta1.EmploymentType getEmploymentTypes(int index);
+
   /**
    *
    *
@@ -846,6 +870,7 @@ public interface JobQueryOrBuilder
    * @return A list containing the enum numeric values on the wire for employmentTypes.
    */
   java.util.List<java.lang.Integer> getEmploymentTypesValueList();
+
   /**
    *
    *
@@ -891,6 +916,7 @@ public interface JobQueryOrBuilder
    * @return A list containing the languageCodes.
    */
   java.util.List<java.lang.String> getLanguageCodesList();
+
   /**
    *
    *
@@ -914,6 +940,7 @@ public interface JobQueryOrBuilder
    * @return The count of languageCodes.
    */
   int getLanguageCodesCount();
+
   /**
    *
    *
@@ -938,6 +965,7 @@ public interface JobQueryOrBuilder
    * @return The languageCodes at the given index.
    */
   java.lang.String getLanguageCodes(int index);
+
   /**
    *
    *
@@ -976,6 +1004,7 @@ public interface JobQueryOrBuilder
    * @return Whether the publishTimeRange field is set.
    */
   boolean hasPublishTimeRange();
+
   /**
    *
    *
@@ -989,6 +1018,7 @@ public interface JobQueryOrBuilder
    * @return The publishTimeRange.
    */
   com.google.cloud.talent.v4beta1.TimestampRange getPublishTimeRange();
+
   /**
    *
    *
@@ -1015,6 +1045,7 @@ public interface JobQueryOrBuilder
    * @return A list containing the excludedJobs.
    */
   java.util.List<java.lang.String> getExcludedJobsList();
+
   /**
    *
    *
@@ -1029,6 +1060,7 @@ public interface JobQueryOrBuilder
    * @return The count of excludedJobs.
    */
   int getExcludedJobsCount();
+
   /**
    *
    *
@@ -1044,6 +1076,7 @@ public interface JobQueryOrBuilder
    * @return The excludedJobs at the given index.
    */
   java.lang.String getExcludedJobs(int index);
+
   /**
    *
    *

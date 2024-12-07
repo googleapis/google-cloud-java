@@ -37,6 +37,7 @@ public interface AuthorizationPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AuthorizationPolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface AuthorizationPolicyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface AuthorizationPolicyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface AuthorizationPolicyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface AuthorizationPolicyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface AuthorizationPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -172,9 +179,11 @@ public interface AuthorizationPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -185,6 +194,7 @@ public interface AuthorizationPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface AuthorizationPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -225,6 +236,7 @@ public interface AuthorizationPolicyOrBuilder
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
+
   /**
    *
    *
@@ -256,6 +268,7 @@ public interface AuthorizationPolicyOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule> getRulesList();
+
   /**
    *
    *
@@ -271,6 +284,7 @@ public interface AuthorizationPolicyOrBuilder
    * </code>
    */
   com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule getRules(int index);
+
   /**
    *
    *
@@ -286,6 +300,7 @@ public interface AuthorizationPolicyOrBuilder
    * </code>
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -302,6 +317,7 @@ public interface AuthorizationPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.networksecurity.v1.AuthorizationPolicy.RuleOrBuilder>
       getRulesOrBuilderList();
+
   /**
    *
    *

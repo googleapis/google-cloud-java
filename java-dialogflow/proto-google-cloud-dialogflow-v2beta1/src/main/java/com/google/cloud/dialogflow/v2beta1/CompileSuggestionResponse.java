@@ -35,6 +35,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.CompileSuggestionResponse)
     CompileSuggestionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompileSuggestionResponse.newBuilder() to construct.
   private CompileSuggestionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int SUGGESTION_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2beta1.Suggestion suggestion_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
   public boolean hasSuggestion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
         ? com.google.cloud.dialogflow.v2beta1.Suggestion.getDefaultInstance()
         : suggestion_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
   private int contextSize_ = 0;
+
   /**
    *
    *
@@ -381,6 +388,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -616,6 +624,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
             com.google.cloud.dialogflow.v2beta1.Suggestion.Builder,
             com.google.cloud.dialogflow.v2beta1.SuggestionOrBuilder>
         suggestionBuilder_;
+
     /**
      *
      *
@@ -630,6 +639,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
     public boolean hasSuggestion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
         return suggestionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +732,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
       onChanged();
       return getSuggestionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -770,6 +786,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
             : suggestion_;
       }
     }
+
     /**
      *
      *
@@ -797,6 +814,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object latestMessage_ = "";
+
     /**
      *
      *
@@ -823,6 +841,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -849,6 +868,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -874,6 +894,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +916,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +945,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
     }
 
     private int contextSize_;
+
     /**
      *
      *
@@ -943,6 +966,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
     public int getContextSize() {
       return contextSize_;
     }
+
     /**
      *
      *
@@ -967,6 +991,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.UpdateDataStoreRequest)
     UpdateDataStoreRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateDataStoreRequest.newBuilder() to construct.
   private UpdateDataStoreRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int DATA_STORE_FIELD_NUMBER = 1;
   private com.google.cloud.discoveryengine.v1.DataStore dataStore_;
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
   public boolean hasDataStore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.discoveryengine.v1.DataStore.getDefaultInstance()
         : dataStore_;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -381,6 +388,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -605,6 +613,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.discoveryengine.v1.DataStore.Builder,
             com.google.cloud.discoveryengine.v1.DataStoreOrBuilder>
         dataStoreBuilder_;
+
     /**
      *
      *
@@ -629,6 +638,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
     public boolean hasDataStore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -659,6 +669,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
         return dataStoreBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -691,6 +702,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +733,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +771,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +801,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getDataStoreFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -839,6 +855,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
             : dataStore_;
       }
     }
+
     /**
      *
      *
@@ -881,6 +898,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -899,6 +917,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -923,6 +942,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -949,6 +969,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +993,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1003,6 +1025,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1049,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1068,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1066,6 +1091,7 @@ public final class UpdateDataStoreRequest extends com.google.protobuf.GeneratedM
             : updateMask_;
       }
     }
+
     /**
      *
      *

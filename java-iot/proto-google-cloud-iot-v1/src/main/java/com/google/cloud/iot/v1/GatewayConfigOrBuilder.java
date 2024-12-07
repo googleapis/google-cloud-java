@@ -36,6 +36,7 @@ public interface GatewayConfigOrBuilder
    * @return The enum numeric value on the wire for gatewayType.
    */
   int getGatewayTypeValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface GatewayConfigOrBuilder
    * @return The enum numeric value on the wire for gatewayAuthMethod.
    */
   int getGatewayAuthMethodValue();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface GatewayConfigOrBuilder
    * @return The lastAccessedGatewayId.
    */
   java.lang.String getLastAccessedGatewayId();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface GatewayConfigOrBuilder
    * @return Whether the lastAccessedGatewayTime field is set.
    */
   boolean hasLastAccessedGatewayTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface GatewayConfigOrBuilder
    * @return The lastAccessedGatewayTime.
    */
   com.google.protobuf.Timestamp getLastAccessedGatewayTime();
+
   /**
    *
    *

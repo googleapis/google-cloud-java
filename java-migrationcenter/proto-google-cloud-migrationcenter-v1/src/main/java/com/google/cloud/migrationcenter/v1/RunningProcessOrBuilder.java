@@ -49,6 +49,7 @@ public interface RunningProcessOrBuilder
    * @return The exePath.
    */
   java.lang.String getExePath();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface RunningProcessOrBuilder
    * @return The cmdline.
    */
   java.lang.String getCmdline();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface RunningProcessOrBuilder
    * @return The user.
    */
   java.lang.String getUser();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface RunningProcessOrBuilder
    * <code>map&lt;string, string&gt; attributes = 100;</code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -132,9 +136,11 @@ public interface RunningProcessOrBuilder
    * <code>map&lt;string, string&gt; attributes = 100;</code>
    */
   boolean containsAttributes(java.lang.String key);
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAttributes();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface RunningProcessOrBuilder
    * <code>map&lt;string, string&gt; attributes = 100;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface RunningProcessOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

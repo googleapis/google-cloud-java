@@ -40,6 +40,7 @@ public interface CreateReleaseRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateReleaseRequestOrBuilder
    * @return The releaseId.
    */
   java.lang.String getReleaseId();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface CreateReleaseRequestOrBuilder
    * @return Whether the release field is set.
    */
   boolean hasRelease();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateReleaseRequestOrBuilder
    * @return The release.
    */
   com.google.cloud.deploy.v1.Release getRelease();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface CreateReleaseRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public interface CreateReleaseRequestOrBuilder
    * @return A list containing the overrideDeployPolicy.
    */
   java.util.List<java.lang.String> getOverrideDeployPolicyList();
+
   /**
    *
    *
@@ -213,6 +219,7 @@ public interface CreateReleaseRequestOrBuilder
    * @return The count of overrideDeployPolicy.
    */
   int getOverrideDeployPolicyCount();
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public interface CreateReleaseRequestOrBuilder
    * @return The overrideDeployPolicy at the given index.
    */
   java.lang.String getOverrideDeployPolicy(int index);
+
   /**
    *
    *

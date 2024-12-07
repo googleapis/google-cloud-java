@@ -37,6 +37,7 @@ public interface DistanceLimitOrBuilder
    * @return Whether the maxMeters field is set.
    */
   boolean hasMaxMeters();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface DistanceLimitOrBuilder
    * @return Whether the softMaxMeters field is set.
    */
   boolean hasSoftMaxMeters();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface DistanceLimitOrBuilder
    * @return Whether the costPerKilometerBelowSoftMax field is set.
    */
   boolean hasCostPerKilometerBelowSoftMax();
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public interface DistanceLimitOrBuilder
    * @return Whether the costPerKilometerAboveSoftMax field is set.
    */
   boolean hasCostPerKilometerAboveSoftMax();
+
   /**
    *
    *

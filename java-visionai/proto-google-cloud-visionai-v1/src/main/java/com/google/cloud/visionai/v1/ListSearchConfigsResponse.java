@@ -33,6 +33,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ListSearchConfigsResponse)
     ListSearchConfigsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListSearchConfigsResponse.newBuilder() to construct.
   private ListSearchConfigsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.SearchConfig> searchConfigs_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.visionai.v1.SearchConfig> getSearchConfigsList() {
     return searchConfigs_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       getSearchConfigsOrBuilderList() {
     return searchConfigs_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
   public int getSearchConfigsCount() {
     return searchConfigs_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
   public com.google.cloud.visionai.v1.SearchConfig getSearchConfigs(int index) {
     return searchConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -359,6 +367,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -636,6 +645,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
         return searchConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
         return searchConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
         return searchConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +746,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +811,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +852,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +872,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +885,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
     public com.google.cloud.visionai.v1.SearchConfig.Builder getSearchConfigsBuilder(int index) {
       return getSearchConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -880,6 +902,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
         return searchConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -897,6 +920,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(searchConfigs_);
       }
     }
+
     /**
      *
      *
@@ -910,6 +934,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       return getSearchConfigsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.SearchConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -923,6 +948,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       return getSearchConfigsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.SearchConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -958,6 +984,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -981,6 +1008,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1032,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1055,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1074,7 @@ public final class ListSearchConfigsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

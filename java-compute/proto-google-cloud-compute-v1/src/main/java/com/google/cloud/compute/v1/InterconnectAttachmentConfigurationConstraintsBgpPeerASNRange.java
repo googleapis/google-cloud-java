@@ -34,6 +34,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange)
     InterconnectAttachmentConfigurationConstraintsBgpPeerASNRangeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange.newBuilder() to construct.
   private InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
   private int bitField0_;
   public static final int MAX_FIELD_NUMBER = 107876;
   private int max_ = 0;
+
   /**
    * <code>optional uint32 max = 107876;</code>
    *
@@ -77,6 +79,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
   public boolean hasMax() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>optional uint32 max = 107876;</code>
    *
@@ -89,6 +92,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
 
   public static final int MIN_FIELD_NUMBER = 108114;
   private int min_ = 0;
+
   /**
    * <code>optional uint32 min = 108114;</code>
    *
@@ -98,6 +102,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
   public boolean hasMin() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    * <code>optional uint32 min = 108114;</code>
    *
@@ -312,6 +317,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -534,6 +540,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
     private int bitField0_;
 
     private int max_;
+
     /**
      * <code>optional uint32 max = 107876;</code>
      *
@@ -543,6 +550,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
     public boolean hasMax() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>optional uint32 max = 107876;</code>
      *
@@ -552,6 +560,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
     public int getMax() {
       return max_;
     }
+
     /**
      * <code>optional uint32 max = 107876;</code>
      *
@@ -565,6 +574,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
       onChanged();
       return this;
     }
+
     /**
      * <code>optional uint32 max = 107876;</code>
      *
@@ -578,6 +588,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
     }
 
     private int min_;
+
     /**
      * <code>optional uint32 min = 108114;</code>
      *
@@ -587,6 +598,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
     public boolean hasMin() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>optional uint32 min = 108114;</code>
      *
@@ -596,6 +608,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
     public int getMin() {
       return min_;
     }
+
     /**
      * <code>optional uint32 min = 108114;</code>
      *
@@ -609,6 +622,7 @@ public final class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
       onChanged();
       return this;
     }
+
     /**
      * <code>optional uint32 min = 108114;</code>
      *

@@ -35,6 +35,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.CreateDataStoreRequest)
     CreateDataStoreRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDataStoreRequest.newBuilder() to construct.
   private CreateDataStoreRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
 
   public static final int DATA_STORE_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1beta.DataStore dataStore_;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
   public boolean hasDataStore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.discoveryengine.v1beta.DataStore.getDefaultInstance()
         : dataStore_;
   }
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataStoreId_ = "";
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -250,6 +258,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
 
   public static final int CREATE_ADVANCED_SITE_SEARCH_FIELD_NUMBER = 4;
   private boolean createAdvancedSiteSearch_ = false;
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
 
   public static final int SKIP_DEFAULT_SCHEMA_CREATION_FIELD_NUMBER = 7;
   private boolean skipDefaultSchemaCreation_ = false;
+
   /**
    *
    *
@@ -496,6 +506,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -755,6 +766,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -780,6 +792,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -805,6 +818,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -829,6 +843,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +864,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +897,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.discoveryengine.v1beta.DataStore.Builder,
             com.google.cloud.discoveryengine.v1beta.DataStoreOrBuilder>
         dataStoreBuilder_;
+
     /**
      *
      *
@@ -898,6 +915,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     public boolean hasDataStore() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -921,6 +939,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
         return dataStoreBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -946,6 +965,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +989,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1021,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1044,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1062,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getDataStoreFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1060,6 +1084,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
             : dataStore_;
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1115,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object dataStoreId_ = "";
+
     /**
      *
      *
@@ -1119,6 +1145,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1148,6 +1175,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1176,6 +1204,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1229,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1231,6 +1261,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean createAdvancedSiteSearch_;
+
     /**
      *
      *
@@ -1250,6 +1281,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     public boolean getCreateAdvancedSiteSearch() {
       return createAdvancedSiteSearch_;
     }
+
     /**
      *
      *
@@ -1273,6 +1305,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1329,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean skipDefaultSchemaCreation_;
+
     /**
      *
      *
@@ -1318,6 +1352,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     public boolean getSkipDefaultSchemaCreation() {
       return skipDefaultSchemaCreation_;
     }
+
     /**
      *
      *
@@ -1344,6 +1379,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

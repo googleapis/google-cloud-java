@@ -36,6 +36,7 @@ public interface SubscriptionConfigOrBuilder
    * @return The subscriptionId.
    */
   java.lang.String getSubscriptionId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface SubscriptionConfigOrBuilder
    * @return The billingId.
    */
   java.lang.String getBillingId();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface SubscriptionConfigOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification)
     PasswordLeakVerificationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PasswordLeakVerification.newBuilder() to construct.
   private PasswordLeakVerification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
   public static final int HASHED_USER_CREDENTIALS_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString hashedUserCredentials_ =
       com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
 
   public static final int CREDENTIALS_LEAKED_FIELD_NUMBER = 2;
   private boolean credentialsLeaked_ = false;
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object canonicalizedUsername_ = "";
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -336,6 +341,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -551,6 +557,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
 
     private com.google.protobuf.ByteString hashedUserCredentials_ =
         com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -567,6 +574,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getHashedUserCredentials() {
       return hashedUserCredentials_;
     }
+
     /**
      *
      *
@@ -589,6 +597,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -609,6 +618,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
     }
 
     private boolean credentialsLeaked_;
+
     /**
      *
      *
@@ -625,6 +635,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
     public boolean getCredentialsLeaked() {
       return credentialsLeaked_;
     }
+
     /**
      *
      *
@@ -645,6 +656,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +677,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
     }
 
     private java.lang.Object canonicalizedUsername_ = "";
+
     /**
      *
      *
@@ -689,6 +702,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -713,6 +727,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -736,6 +751,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +771,7 @@ public final class PasswordLeakVerification extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

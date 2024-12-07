@@ -36,6 +36,7 @@ public interface ExecutionOrBuilder
    * @return Whether the executionTemplate field is set.
    */
   boolean hasExecutionTemplate();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ExecutionOrBuilder
    * @return The executionTemplate.
    */
   com.google.cloud.notebooks.v1.ExecutionTemplate getExecutionTemplate();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface ExecutionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface ExecutionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface ExecutionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface ExecutionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface ExecutionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface ExecutionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public interface ExecutionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public interface ExecutionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -255,6 +265,7 @@ public interface ExecutionOrBuilder
    * @return The outputNotebookFile.
    */
   java.lang.String getOutputNotebookFile();
+
   /**
    *
    *
@@ -280,6 +291,7 @@ public interface ExecutionOrBuilder
    * @return The jobUri.
    */
   java.lang.String getJobUri();
+
   /**
    *
    *

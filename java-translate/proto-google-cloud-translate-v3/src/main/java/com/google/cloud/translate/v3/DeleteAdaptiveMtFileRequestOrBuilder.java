@@ -39,6 +39,7 @@ public interface DeleteAdaptiveMtFileRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

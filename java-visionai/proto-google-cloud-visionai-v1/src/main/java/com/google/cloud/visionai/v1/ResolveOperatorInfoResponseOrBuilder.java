@@ -34,6 +34,7 @@ public interface ResolveOperatorInfoResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Operator operators = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Operator> getOperatorsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ResolveOperatorInfoResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Operator operators = 1;</code>
    */
   com.google.cloud.visionai.v1.Operator getOperators(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ResolveOperatorInfoResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Operator operators = 1;</code>
    */
   int getOperatorsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ResolveOperatorInfoResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.OperatorOrBuilder>
       getOperatorsOrBuilderList();
+
   /**
    *
    *

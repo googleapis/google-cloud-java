@@ -36,6 +36,7 @@ public interface GetAcceleratorTypeRequestOrBuilder
    * @return The acceleratorType.
    */
   java.lang.String getAcceleratorType();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetAcceleratorTypeRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetAcceleratorTypeRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

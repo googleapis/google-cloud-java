@@ -48,6 +48,7 @@ public interface GetMetadataRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

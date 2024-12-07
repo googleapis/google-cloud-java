@@ -33,6 +33,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.CreateSavedQueryRequest)
     CreateSavedQueryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateSavedQueryRequest.newBuilder() to construct.
   private CreateSavedQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
 
   public static final int SAVED_QUERY_FIELD_NUMBER = 2;
   private com.google.cloud.asset.v1.SavedQuery savedQuery_;
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
   public boolean hasSavedQuery() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
         ? com.google.cloud.asset.v1.SavedQuery.getDefaultInstance()
         : savedQuery_;
   }
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object savedQueryId_ = "";
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -436,6 +444,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -664,6 +673,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -692,6 +702,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -720,6 +731,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -747,6 +759,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +819,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
             com.google.cloud.asset.v1.SavedQuery.Builder,
             com.google.cloud.asset.v1.SavedQueryOrBuilder>
         savedQueryBuilder_;
+
     /**
      *
      *
@@ -822,6 +837,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
     public boolean hasSavedQuery() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -845,6 +861,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
         return savedQueryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -870,6 +887,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +910,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +941,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +964,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +982,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       onChanged();
       return getSavedQueryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -982,6 +1004,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
             : savedQuery_;
       }
     }
+
     /**
      *
      *
@@ -1012,6 +1035,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object savedQueryId_ = "";
+
     /**
      *
      *
@@ -1042,6 +1066,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1072,6 +1097,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1101,6 +1127,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1153,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

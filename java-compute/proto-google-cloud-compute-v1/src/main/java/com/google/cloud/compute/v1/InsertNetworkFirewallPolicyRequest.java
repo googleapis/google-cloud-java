@@ -33,6 +33,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertNetworkFirewallPolicyRequest)
     InsertNetworkFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertNetworkFirewallPolicyRequest.newBuilder() to construct.
   private InsertNetworkFirewallPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
   private int bitField0_;
   public static final int FIREWALL_POLICY_RESOURCE_FIELD_NUMBER = 495049532;
   private com.google.cloud.compute.v1.FirewallPolicy firewallPolicyResource_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
   public boolean hasFirewallPolicyResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
         ? com.google.cloud.compute.v1.FirewallPolicy.getDefaultInstance()
         : firewallPolicyResource_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -433,6 +442,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -674,6 +684,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
             com.google.cloud.compute.v1.FirewallPolicy.Builder,
             com.google.cloud.compute.v1.FirewallPolicyOrBuilder>
         firewallPolicyResourceBuilder_;
+
     /**
      *
      *
@@ -690,6 +701,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
     public boolean hasFirewallPolicyResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -712,6 +724,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
         return firewallPolicyResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -736,6 +749,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +772,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +803,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +825,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +842,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
       onChanged();
       return getFirewallPolicyResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -846,6 +864,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
             : firewallPolicyResource_;
       }
     }
+
     /**
      *
      *
@@ -875,6 +894,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -899,6 +919,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -923,6 +944,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -946,6 +968,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +988,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1015,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1005,6 +1030,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1027,6 +1053,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1076,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1070,6 +1098,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1116,7 @@ public final class InsertNetworkFirewallPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface PivotHeaderOrBuilder
    */
   java.util.List<com.google.analytics.data.v1beta.PivotDimensionHeader>
       getPivotDimensionHeadersList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface PivotHeaderOrBuilder
    * </code>
    */
   com.google.analytics.data.v1beta.PivotDimensionHeader getPivotDimensionHeaders(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface PivotHeaderOrBuilder
    * </code>
    */
   int getPivotDimensionHeadersCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface PivotHeaderOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.PivotDimensionHeaderOrBuilder>
       getPivotDimensionHeadersOrBuilderList();
+
   /**
    *
    *

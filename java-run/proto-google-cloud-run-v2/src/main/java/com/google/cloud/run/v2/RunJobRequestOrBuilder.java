@@ -40,6 +40,7 @@ public interface RunJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public interface RunJobRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface RunJobRequestOrBuilder
    * @return Whether the overrides field is set.
    */
   boolean hasOverrides();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface RunJobRequestOrBuilder
    * @return The overrides.
    */
   com.google.cloud.run.v2.RunJobRequest.Overrides getOverrides();
+
   /**
    *
    *

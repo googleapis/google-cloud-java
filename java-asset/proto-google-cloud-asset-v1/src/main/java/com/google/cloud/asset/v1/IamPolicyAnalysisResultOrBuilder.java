@@ -40,6 +40,7 @@ public interface IamPolicyAnalysisResultOrBuilder
    * @return The attachedResourceFullName.
    */
   java.lang.String getAttachedResourceFullName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface IamPolicyAnalysisResultOrBuilder
    * @return Whether the iamBinding field is set.
    */
   boolean hasIamBinding();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface IamPolicyAnalysisResultOrBuilder
    * @return The iamBinding.
    */
   com.google.iam.v1.Binding getIamBinding();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface IamPolicyAnalysisResultOrBuilder
    */
   java.util.List<com.google.cloud.asset.v1.IamPolicyAnalysisResult.AccessControlList>
       getAccessControlListsList();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface IamPolicyAnalysisResultOrBuilder
    */
   com.google.cloud.asset.v1.IamPolicyAnalysisResult.AccessControlList getAccessControlLists(
       int index);
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface IamPolicyAnalysisResultOrBuilder
    * </code>
    */
   int getAccessControlListsCount();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface IamPolicyAnalysisResultOrBuilder
   java.util.List<
           ? extends com.google.cloud.asset.v1.IamPolicyAnalysisResult.AccessControlListOrBuilder>
       getAccessControlListsOrBuilderList();
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public interface IamPolicyAnalysisResultOrBuilder
    * @return Whether the identityList field is set.
    */
   boolean hasIdentityList();
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public interface IamPolicyAnalysisResultOrBuilder
    * @return The identityList.
    */
   com.google.cloud.asset.v1.IamPolicyAnalysisResult.IdentityList getIdentityList();
+
   /**
    *
    *

@@ -42,6 +42,7 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    * @return Whether the uptimeCheckConfig field is set.
    */
   boolean hasUptimeCheckConfig();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    * @return The uptimeCheckConfig.
    */
   com.google.monitoring.v3.UptimeCheckConfig getUptimeCheckConfig();
+
   /**
    *
    *

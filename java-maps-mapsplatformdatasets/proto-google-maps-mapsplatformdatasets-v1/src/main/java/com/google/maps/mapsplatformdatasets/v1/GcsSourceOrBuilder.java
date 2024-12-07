@@ -36,6 +36,7 @@ public interface GcsSourceOrBuilder
    * @return The inputUri.
    */
   java.lang.String getInputUri();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface GcsSourceOrBuilder
    * @return The enum numeric value on the wire for fileFormat.
    */
   int getFileFormatValue();
+
   /**
    *
    *

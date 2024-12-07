@@ -36,6 +36,7 @@ public interface SummarizationSectionOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface SummarizationSectionOrBuilder
    * @return The definition.
    */
   java.lang.String getDefinition();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface SummarizationSectionOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

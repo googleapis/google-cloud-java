@@ -40,6 +40,7 @@ public interface PercentageAdjustmentOrBuilder
    * @return Whether the percentage field is set.
    */
   boolean hasPercentage();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface PercentageAdjustmentOrBuilder
    * @return The percentage.
    */
   com.google.type.Decimal getPercentage();
+
   /**
    *
    *

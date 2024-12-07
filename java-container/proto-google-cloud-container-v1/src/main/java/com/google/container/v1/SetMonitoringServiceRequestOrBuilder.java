@@ -41,6 +41,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -151,6 +154,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * @return The monitoringService.
    */
   java.lang.String getMonitoringService();
+
   /**
    *
    *
@@ -187,6 +191,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

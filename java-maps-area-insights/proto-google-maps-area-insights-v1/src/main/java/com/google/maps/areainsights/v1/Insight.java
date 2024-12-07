@@ -126,6 +126,7 @@ public enum Insight implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INSIGHT_UNSPECIFIED = 0;</code>
    */
   public static final int INSIGHT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -162,6 +163,7 @@ public enum Insight implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INSIGHT_COUNT = 1;</code>
    */
   public static final int INSIGHT_COUNT_VALUE = 1;
+
   /**
    *
    *

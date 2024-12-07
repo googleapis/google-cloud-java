@@ -33,6 +33,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.NodeGroupOperationMetadata)
     NodeGroupOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NodeGroupOperationMetadata.newBuilder() to construct.
   private NodeGroupOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -154,6 +155,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
      * <code>NODE_GROUP_OPERATION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int NODE_GROUP_OPERATION_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -164,6 +166,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
      * <code>CREATE = 1;</code>
      */
     public static final int CREATE_VALUE = 1;
+
     /**
      *
      *
@@ -174,6 +177,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
      * <code>UPDATE = 2;</code>
      */
     public static final int UPDATE_VALUE = 2;
+
     /**
      *
      *
@@ -184,6 +188,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
      * <code>DELETE = 3;</code>
      */
     public static final int DELETE_VALUE = 3;
+
     /**
      *
      *
@@ -292,6 +297,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodeGroupId_ = "";
+
   /**
    *
    *
@@ -315,6 +321,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -343,6 +350,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterUuid_ = "";
+
   /**
    *
    *
@@ -366,6 +374,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -392,6 +401,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
 
   public static final int STATUS_FIELD_NUMBER = 3;
   private com.google.cloud.dataproc.v1.ClusterOperationStatus status_;
+
   /**
    *
    *
@@ -409,6 +419,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -428,6 +439,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         ? com.google.cloud.dataproc.v1.ClusterOperationStatus.getDefaultInstance()
         : status_;
   }
+
   /**
    *
    *
@@ -450,6 +462,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.ClusterOperationStatus> statusHistory_;
+
   /**
    *
    *
@@ -466,6 +479,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       getStatusHistoryList() {
     return statusHistory_;
   }
+
   /**
    *
    *
@@ -482,6 +496,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       getStatusHistoryOrBuilderList() {
     return statusHistory_;
   }
+
   /**
    *
    *
@@ -497,6 +512,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
   public int getStatusHistoryCount() {
     return statusHistory_.size();
   }
+
   /**
    *
    *
@@ -512,6 +528,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
   public com.google.cloud.dataproc.v1.ClusterOperationStatus getStatusHistory(int index) {
     return statusHistory_.get(index);
   }
+
   /**
    *
    *
@@ -531,6 +548,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
 
   public static final int OPERATION_TYPE_FIELD_NUMBER = 5;
   private int operationType_ = 0;
+
   /**
    *
    *
@@ -548,6 +566,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
   public int getOperationTypeValue() {
     return operationType_;
   }
+
   /**
    *
    *
@@ -577,6 +596,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -600,6 +620,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -650,6 +671,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -666,12 +688,14 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -685,6 +709,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -705,6 +730,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -731,6 +757,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList warnings_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -745,6 +772,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getWarningsList() {
     return warnings_;
   }
+
   /**
    *
    *
@@ -759,6 +787,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
   public int getWarningsCount() {
     return warnings_.size();
   }
+
   /**
    *
    *
@@ -774,6 +803,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
   public java.lang.String getWarnings(int index) {
     return warnings_.get(index);
   }
+
   /**
    *
    *
@@ -1041,6 +1071,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1423,6 +1454,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object nodeGroupId_ = "";
+
     /**
      *
      *
@@ -1445,6 +1477,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1467,6 +1500,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1488,6 +1522,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1505,6 +1540,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1529,6 +1565,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     }
 
     private java.lang.Object clusterUuid_ = "";
+
     /**
      *
      *
@@ -1551,6 +1588,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1573,6 +1611,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1594,6 +1633,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1611,6 +1651,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1640,6 +1681,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
             com.google.cloud.dataproc.v1.ClusterOperationStatus.Builder,
             com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -1656,6 +1698,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1678,6 +1721,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1702,6 +1746,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1724,6 +1769,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1754,6 +1800,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1775,6 +1822,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1791,6 +1839,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1811,6 +1860,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
             : status_;
       }
     }
+
     /**
      *
      *
@@ -1876,6 +1926,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         return statusHistoryBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1894,6 +1945,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         return statusHistoryBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1912,6 +1964,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         return statusHistoryBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1937,6 +1990,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1959,6 +2013,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1983,6 +2038,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2008,6 +2064,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2030,6 +2087,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2052,6 +2110,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2074,6 +2133,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2095,6 +2155,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2116,6 +2177,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2131,6 +2193,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         int index) {
       return getStatusHistoryFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2150,6 +2213,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         return statusHistoryBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2169,6 +2233,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(statusHistory_);
       }
     }
+
     /**
      *
      *
@@ -2184,6 +2249,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       return getStatusHistoryFieldBuilder()
           .addBuilder(com.google.cloud.dataproc.v1.ClusterOperationStatus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2201,6 +2267,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.cloud.dataproc.v1.ClusterOperationStatus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2238,6 +2305,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     }
 
     private int operationType_ = 0;
+
     /**
      *
      *
@@ -2255,6 +2323,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     public int getOperationTypeValue() {
       return operationType_;
     }
+
     /**
      *
      *
@@ -2275,6 +2344,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2299,6 +2369,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2323,6 +2394,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2344,6 +2416,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2366,6 +2439,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2388,6 +2462,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2409,6 +2484,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2426,6 +2502,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2474,6 +2551,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2491,12 +2569,14 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2511,6 +2591,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2532,6 +2613,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2559,6 +2641,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2576,12 +2659,14 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2603,6 +2688,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -2628,6 +2714,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000080;
     }
+
     /**
      *
      *
@@ -2643,6 +2730,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       warnings_.makeImmutable();
       return warnings_;
     }
+
     /**
      *
      *
@@ -2657,6 +2745,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     public int getWarningsCount() {
       return warnings_.size();
     }
+
     /**
      *
      *
@@ -2672,6 +2761,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     public java.lang.String getWarnings(int index) {
       return warnings_.get(index);
     }
+
     /**
      *
      *
@@ -2687,6 +2777,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getWarningsBytes(int index) {
       return warnings_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2710,6 +2801,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2732,6 +2824,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2751,6 +2844,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2769,6 +2863,7 @@ public final class NodeGroupOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

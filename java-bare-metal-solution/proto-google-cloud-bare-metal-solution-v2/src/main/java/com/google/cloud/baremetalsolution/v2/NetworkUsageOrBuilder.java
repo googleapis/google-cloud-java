@@ -36,6 +36,7 @@ public interface NetworkUsageOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NetworkUsageOrBuilder
    * @return The network.
    */
   com.google.cloud.baremetalsolution.v2.Network getNetwork();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface NetworkUsageOrBuilder
    * @return A list containing the usedIps.
    */
   java.util.List<java.lang.String> getUsedIpsList();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface NetworkUsageOrBuilder
    * @return The count of usedIps.
    */
   int getUsedIpsCount();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface NetworkUsageOrBuilder
    * @return The usedIps at the given index.
    */
   java.lang.String getUsedIps(int index);
+
   /**
    *
    *

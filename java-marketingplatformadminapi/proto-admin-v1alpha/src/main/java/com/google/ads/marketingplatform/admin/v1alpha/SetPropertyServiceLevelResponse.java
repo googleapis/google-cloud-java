@@ -33,6 +33,7 @@ public final class SetPropertyServiceLevelResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.marketingplatform.admin.v1alpha.SetPropertyServiceLevelResponse)
     SetPropertyServiceLevelResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetPropertyServiceLevelResponse.newBuilder() to construct.
   private SetPropertyServiceLevelResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -222,6 +223,7 @@ public final class SetPropertyServiceLevelResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

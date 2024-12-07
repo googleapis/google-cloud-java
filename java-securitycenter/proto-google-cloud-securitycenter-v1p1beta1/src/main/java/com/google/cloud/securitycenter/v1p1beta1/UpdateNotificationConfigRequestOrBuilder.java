@@ -38,6 +38,7 @@ public interface UpdateNotificationConfigRequestOrBuilder
    * @return Whether the notificationConfig field is set.
    */
   boolean hasNotificationConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateNotificationConfigRequestOrBuilder
    * @return The notificationConfig.
    */
   com.google.cloud.securitycenter.v1p1beta1.NotificationConfig getNotificationConfig();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateNotificationConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface UpdateNotificationConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

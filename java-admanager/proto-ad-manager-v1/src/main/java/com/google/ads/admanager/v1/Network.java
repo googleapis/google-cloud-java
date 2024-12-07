@@ -33,6 +33,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.Network)
     NetworkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Network.newBuilder() to construct.
   private Network(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkCode_ = "";
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object propertyCode_ = "";
+
   /**
    *
    *
@@ -252,6 +260,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -280,6 +289,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timeZone_ = "";
+
   /**
    *
    *
@@ -304,6 +314,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -333,6 +344,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object currencyCode_ = "";
+
   /**
    *
    *
@@ -356,6 +368,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -385,6 +398,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList secondaryCurrencyCodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -401,6 +415,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSecondaryCurrencyCodesList() {
     return secondaryCurrencyCodes_;
   }
+
   /**
    *
    *
@@ -417,6 +432,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   public int getSecondaryCurrencyCodesCount() {
     return secondaryCurrencyCodes_.size();
   }
+
   /**
    *
    *
@@ -434,6 +450,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSecondaryCurrencyCodes(int index) {
     return secondaryCurrencyCodes_.get(index);
   }
+
   /**
    *
    *
@@ -456,6 +473,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object effectiveRootAdUnit_ = "";
+
   /**
    *
    *
@@ -483,6 +501,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -513,6 +532,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TEST_NETWORK_FIELD_NUMBER = 10;
   private boolean testNetwork_ = false;
+
   /**
    *
    *
@@ -531,6 +551,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NETWORK_ID_FIELD_NUMBER = 11;
   private long networkId_ = 0L;
+
   /**
    *
    *
@@ -794,6 +815,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1114,6 +1136,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1137,6 +1160,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1184,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1182,6 +1207,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1226,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1225,6 +1252,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1247,6 +1275,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1269,6 +1298,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1320,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1307,6 +1338,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1331,6 +1363,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object networkCode_ = "";
+
     /**
      *
      *
@@ -1353,6 +1386,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1375,6 +1409,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1396,6 +1431,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1413,6 +1449,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1437,6 +1474,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object propertyCode_ = "";
+
     /**
      *
      *
@@ -1459,6 +1497,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1481,6 +1520,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1502,6 +1542,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1519,6 +1560,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1543,6 +1585,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object timeZone_ = "";
+
     /**
      *
      *
@@ -1566,6 +1609,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1589,6 +1633,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1611,6 +1656,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1629,6 +1675,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1654,6 +1701,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object currencyCode_ = "";
+
     /**
      *
      *
@@ -1676,6 +1724,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1698,6 +1747,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1719,6 +1769,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1736,6 +1787,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1769,6 +1821,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -1786,6 +1839,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       secondaryCurrencyCodes_.makeImmutable();
       return secondaryCurrencyCodes_;
     }
+
     /**
      *
      *
@@ -1802,6 +1856,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public int getSecondaryCurrencyCodesCount() {
       return secondaryCurrencyCodes_.size();
     }
+
     /**
      *
      *
@@ -1819,6 +1874,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSecondaryCurrencyCodes(int index) {
       return secondaryCurrencyCodes_.get(index);
     }
+
     /**
      *
      *
@@ -1836,6 +1892,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSecondaryCurrencyCodesBytes(int index) {
       return secondaryCurrencyCodes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1861,6 +1918,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1885,6 +1943,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1906,6 +1965,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1926,6 +1986,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1953,6 +2014,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object effectiveRootAdUnit_ = "";
+
     /**
      *
      *
@@ -1979,6 +2041,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2005,6 +2068,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2030,6 +2094,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2051,6 +2116,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2079,6 +2145,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean testNetwork_;
+
     /**
      *
      *
@@ -2094,6 +2161,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public boolean getTestNetwork() {
       return testNetwork_;
     }
+
     /**
      *
      *
@@ -2113,6 +2181,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2132,6 +2201,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long networkId_;
+
     /**
      *
      *
@@ -2147,6 +2217,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public long getNetworkId() {
       return networkId_;
     }
+
     /**
      *
      *
@@ -2166,6 +2237,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

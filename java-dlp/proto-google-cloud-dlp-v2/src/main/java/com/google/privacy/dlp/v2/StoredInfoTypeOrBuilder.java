@@ -36,6 +36,7 @@ public interface StoredInfoTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface StoredInfoTypeOrBuilder
    * @return Whether the currentVersion field is set.
    */
   boolean hasCurrentVersion();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface StoredInfoTypeOrBuilder
    * @return The currentVersion.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeVersion getCurrentVersion();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface StoredInfoTypeOrBuilder
    * <code>repeated .google.privacy.dlp.v2.StoredInfoTypeVersion pending_versions = 3;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.StoredInfoTypeVersion> getPendingVersionsList();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface StoredInfoTypeOrBuilder
    * <code>repeated .google.privacy.dlp.v2.StoredInfoTypeVersion pending_versions = 3;</code>
    */
   com.google.privacy.dlp.v2.StoredInfoTypeVersion getPendingVersions(int index);
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface StoredInfoTypeOrBuilder
    * <code>repeated .google.privacy.dlp.v2.StoredInfoTypeVersion pending_versions = 3;</code>
    */
   int getPendingVersionsCount();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface StoredInfoTypeOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.StoredInfoTypeVersionOrBuilder>
       getPendingVersionsOrBuilderList();
+
   /**
    *
    *

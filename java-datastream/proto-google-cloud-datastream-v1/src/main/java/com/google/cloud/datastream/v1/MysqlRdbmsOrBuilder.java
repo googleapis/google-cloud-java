@@ -34,6 +34,7 @@ public interface MysqlRdbmsOrBuilder
    * <code>repeated .google.cloud.datastream.v1.MysqlDatabase mysql_databases = 1;</code>
    */
   java.util.List<com.google.cloud.datastream.v1.MysqlDatabase> getMysqlDatabasesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface MysqlRdbmsOrBuilder
    * <code>repeated .google.cloud.datastream.v1.MysqlDatabase mysql_databases = 1;</code>
    */
   com.google.cloud.datastream.v1.MysqlDatabase getMysqlDatabases(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface MysqlRdbmsOrBuilder
    * <code>repeated .google.cloud.datastream.v1.MysqlDatabase mysql_databases = 1;</code>
    */
   int getMysqlDatabasesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface MysqlRdbmsOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1.MysqlDatabaseOrBuilder>
       getMysqlDatabasesOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl)
     WebServerNetworkAccessControlOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WebServerNetworkAccessControl.newBuilder() to construct.
   private WebServerNetworkAccessControl(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,6 +89,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
      * @return The value.
      */
     java.lang.String getValue();
+
     /**
      *
      *
@@ -121,6 +123,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
      * @return The description.
      */
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -135,6 +138,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
      */
     com.google.protobuf.ByteString getDescriptionBytes();
   }
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl.AllowedIpRange)
       AllowedIpRangeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AllowedIpRange.newBuilder() to construct.
     private AllowedIpRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -187,6 +192,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object value_ = "";
+
     /**
      *
      *
@@ -217,6 +223,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         return s;
       }
     }
+
     /**
      *
      *
@@ -252,6 +259,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -276,6 +284,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         return s;
       }
     }
+
     /**
      *
      *
@@ -497,6 +506,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -729,6 +739,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       private int bitField0_;
 
       private java.lang.Object value_ = "";
+
       /**
        *
        *
@@ -758,6 +769,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -787,6 +799,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -815,6 +828,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -839,6 +853,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -870,6 +885,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       }
 
       private java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -893,6 +909,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -916,6 +933,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -938,6 +956,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -956,6 +975,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1059,6 +1079,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
           com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl
               .AllowedIpRange>
       allowedIpRanges_;
+
   /**
    *
    *
@@ -1077,6 +1098,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       getAllowedIpRangesList() {
     return allowedIpRanges_;
   }
+
   /**
    *
    *
@@ -1096,6 +1118,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       getAllowedIpRangesOrBuilderList() {
     return allowedIpRanges_;
   }
+
   /**
    *
    *
@@ -1111,6 +1134,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
   public int getAllowedIpRangesCount() {
     return allowedIpRanges_.size();
   }
+
   /**
    *
    *
@@ -1128,6 +1152,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       getAllowedIpRanges(int index) {
     return allowedIpRanges_.get(index);
   }
+
   /**
    *
    *
@@ -1316,6 +1341,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1608,6 +1634,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         return allowedIpRangesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1626,6 +1653,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         return allowedIpRangesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1646,6 +1674,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         return allowedIpRangesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1674,6 +1703,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1699,6 +1729,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1726,6 +1757,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1754,6 +1786,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1778,6 +1811,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1803,6 +1837,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1829,6 +1864,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1850,6 +1886,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1871,6 +1908,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1887,6 +1925,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         getAllowedIpRangesBuilder(int index) {
       return getAllowedIpRangesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1907,6 +1946,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         return allowedIpRangesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1929,6 +1969,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(allowedIpRanges_);
       }
     }
+
     /**
      *
      *
@@ -1948,6 +1989,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
               com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl
                   .AllowedIpRange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1968,6 +2010,7 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
               com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl
                   .AllowedIpRange.getDefaultInstance());
     }
+
     /**
      *
      *

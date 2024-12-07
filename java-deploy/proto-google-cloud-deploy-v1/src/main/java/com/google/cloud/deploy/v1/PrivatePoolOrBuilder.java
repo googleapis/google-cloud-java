@@ -39,6 +39,7 @@ public interface PrivatePoolOrBuilder
    * @return The workerPool.
    */
   java.lang.String getWorkerPool();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface PrivatePoolOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface PrivatePoolOrBuilder
    * @return The artifactStorage.
    */
   java.lang.String getArtifactStorage();
+
   /**
    *
    *

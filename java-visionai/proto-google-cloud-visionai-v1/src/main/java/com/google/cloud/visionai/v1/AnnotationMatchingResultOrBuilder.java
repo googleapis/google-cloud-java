@@ -37,6 +37,7 @@ public interface AnnotationMatchingResultOrBuilder
    * @return Whether the criteria field is set.
    */
   boolean hasCriteria();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface AnnotationMatchingResultOrBuilder
    * @return The criteria.
    */
   com.google.cloud.visionai.v1.Criteria getCriteria();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface AnnotationMatchingResultOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Annotation matched_annotations = 2;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Annotation> getMatchedAnnotationsList();
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface AnnotationMatchingResultOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Annotation matched_annotations = 2;</code>
    */
   com.google.cloud.visionai.v1.Annotation getMatchedAnnotations(int index);
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface AnnotationMatchingResultOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Annotation matched_annotations = 2;</code>
    */
   int getMatchedAnnotationsCount();
+
   /**
    *
    *
@@ -103,6 +108,7 @@ public interface AnnotationMatchingResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.AnnotationOrBuilder>
       getMatchedAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -128,6 +134,7 @@ public interface AnnotationMatchingResultOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -142,6 +149,7 @@ public interface AnnotationMatchingResultOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
+
   /**
    *
    *

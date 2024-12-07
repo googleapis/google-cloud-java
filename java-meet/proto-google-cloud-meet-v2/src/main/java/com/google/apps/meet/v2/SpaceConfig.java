@@ -33,6 +33,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.apps.meet.v2.SpaceConfig)
     SpaceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpaceConfig.newBuilder() to construct.
   private SpaceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,6 +134,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCESS_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ACCESS_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -144,6 +146,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>OPEN = 1;</code>
      */
     public static final int OPEN_VALUE = 1;
+
     /**
      *
      *
@@ -155,6 +158,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>TRUSTED = 2;</code>
      */
     public static final int TRUSTED_VALUE = 2;
+
     /**
      *
      *
@@ -307,6 +311,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ENTRY_POINT_ACCESS_UNSPECIFIED = 0;</code>
      */
     public static final int ENTRY_POINT_ACCESS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -317,6 +322,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ALL = 1;</code>
      */
     public static final int ALL_VALUE = 1;
+
     /**
      *
      *
@@ -417,6 +423,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCESS_TYPE_FIELD_NUMBER = 1;
   private int accessType_ = 0;
+
   /**
    *
    *
@@ -434,6 +441,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAccessTypeValue() {
     return accessType_;
   }
+
   /**
    *
    *
@@ -456,6 +464,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENTRY_POINT_ACCESS_FIELD_NUMBER = 2;
   private int entryPointAccess_ = 0;
+
   /**
    *
    *
@@ -473,6 +482,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
   public int getEntryPointAccessValue() {
     return entryPointAccess_;
   }
+
   /**
    *
    *
@@ -667,6 +677,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -860,6 +871,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int accessType_ = 0;
+
     /**
      *
      *
@@ -877,6 +889,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public int getAccessTypeValue() {
       return accessType_;
     }
+
     /**
      *
      *
@@ -897,6 +910,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +930,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.apps.meet.v2.SpaceConfig.AccessType.forNumber(accessType_);
       return result == null ? com.google.apps.meet.v2.SpaceConfig.AccessType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -939,6 +954,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +976,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int entryPointAccess_ = 0;
+
     /**
      *
      *
@@ -977,6 +994,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public int getEntryPointAccessValue() {
       return entryPointAccess_;
     }
+
     /**
      *
      *
@@ -997,6 +1015,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1037,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.apps.meet.v2.SpaceConfig.EntryPointAccess.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1041,6 +1061,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return The trackingId.
    */
   java.lang.String getTrackingId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return Whether the vehicleLocation field is set.
    */
   boolean hasVehicleLocation();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return The vehicleLocation.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation getVehicleLocation();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface TaskTrackingInfoOrBuilder
    * <code>repeated .google.type.LatLng route_polyline_points = 4;</code>
    */
   java.util.List<com.google.type.LatLng> getRoutePolylinePointsList();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface TaskTrackingInfoOrBuilder
    * <code>repeated .google.type.LatLng route_polyline_points = 4;</code>
    */
   com.google.type.LatLng getRoutePolylinePoints(int index);
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public interface TaskTrackingInfoOrBuilder
    * <code>repeated .google.type.LatLng route_polyline_points = 4;</code>
    */
   int getRoutePolylinePointsCount();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface TaskTrackingInfoOrBuilder
    * <code>repeated .google.type.LatLng route_polyline_points = 4;</code>
    */
   java.util.List<? extends com.google.type.LatLngOrBuilder> getRoutePolylinePointsOrBuilderList();
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return Whether the remainingStopCount field is set.
    */
   boolean hasRemainingStopCount();
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return The remainingStopCount.
    */
   com.google.protobuf.Int32Value getRemainingStopCount();
+
   /**
    *
    *
@@ -233,6 +243,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return Whether the remainingDrivingDistanceMeters field is set.
    */
   boolean hasRemainingDrivingDistanceMeters();
+
   /**
    *
    *
@@ -245,6 +256,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return The remainingDrivingDistanceMeters.
    */
   com.google.protobuf.Int32Value getRemainingDrivingDistanceMeters();
+
   /**
    *
    *
@@ -269,6 +281,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return Whether the estimatedArrivalTime field is set.
    */
   boolean hasEstimatedArrivalTime();
+
   /**
    *
    *
@@ -282,6 +295,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return The estimatedArrivalTime.
    */
   com.google.protobuf.Timestamp getEstimatedArrivalTime();
+
   /**
    *
    *
@@ -306,6 +320,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return Whether the estimatedTaskCompletionTime field is set.
    */
   boolean hasEstimatedTaskCompletionTime();
+
   /**
    *
    *
@@ -318,6 +333,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return The estimatedTaskCompletionTime.
    */
   com.google.protobuf.Timestamp getEstimatedTaskCompletionTime();
+
   /**
    *
    *
@@ -341,6 +357,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -366,6 +383,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return The enum numeric value on the wire for taskOutcome.
    */
   int getTaskOutcomeValue();
+
   /**
    *
    *
@@ -392,6 +410,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return Whether the taskOutcomeTime field is set.
    */
   boolean hasTaskOutcomeTime();
+
   /**
    *
    *
@@ -405,6 +424,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return The taskOutcomeTime.
    */
   com.google.protobuf.Timestamp getTaskOutcomeTime();
+
   /**
    *
    *
@@ -431,6 +451,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return Whether the plannedLocation field is set.
    */
   boolean hasPlannedLocation();
+
   /**
    *
    *
@@ -445,6 +466,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return The plannedLocation.
    */
   com.google.maps.fleetengine.delivery.v1.LocationInfo getPlannedLocation();
+
   /**
    *
    *
@@ -470,6 +492,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return Whether the targetTimeWindow field is set.
    */
   boolean hasTargetTimeWindow();
+
   /**
    *
    *
@@ -482,6 +505,7 @@ public interface TaskTrackingInfoOrBuilder
    * @return The targetTimeWindow.
    */
   com.google.maps.fleetengine.delivery.v1.TimeWindow getTargetTimeWindow();
+
   /**
    *
    *
@@ -503,6 +527,7 @@ public interface TaskTrackingInfoOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.TaskAttribute attributes = 14;</code>
    */
   java.util.List<com.google.maps.fleetengine.delivery.v1.TaskAttribute> getAttributesList();
+
   /**
    *
    *
@@ -513,6 +538,7 @@ public interface TaskTrackingInfoOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.TaskAttribute attributes = 14;</code>
    */
   com.google.maps.fleetengine.delivery.v1.TaskAttribute getAttributes(int index);
+
   /**
    *
    *
@@ -523,6 +549,7 @@ public interface TaskTrackingInfoOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.TaskAttribute attributes = 14;</code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -534,6 +561,7 @@ public interface TaskTrackingInfoOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.delivery.v1.TaskAttributeOrBuilder>
       getAttributesOrBuilderList();
+
   /**
    *
    *

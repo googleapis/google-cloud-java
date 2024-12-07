@@ -52,6 +52,7 @@ public interface SearchFoldersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -108,6 +109,7 @@ public interface SearchFoldersRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *

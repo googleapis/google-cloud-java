@@ -32,6 +32,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DiskAsyncReplication)
     DiskAsyncReplicationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiskAsyncReplication.newBuilder() to construct.
   private DiskAsyncReplication(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object consistencyGroupPolicy_ = "";
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
   public boolean hasConsistencyGroupPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object consistencyGroupPolicyId_ = "";
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
   public boolean hasConsistencyGroupPolicyId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object disk_ = "";
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
   public boolean hasDisk() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -268,6 +278,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object diskId_ = "";
+
   /**
    *
    *
@@ -283,6 +294,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
   public boolean hasDiskId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -306,6 +318,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -541,6 +554,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -775,6 +789,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object consistencyGroupPolicy_ = "";
+
     /**
      *
      *
@@ -789,6 +804,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
     public boolean hasConsistencyGroupPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -811,6 +827,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +890,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +915,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object consistencyGroupPolicyId_ = "";
+
     /**
      *
      *
@@ -909,6 +930,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
     public boolean hasConsistencyGroupPolicyId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -931,6 +953,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -953,6 +976,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -974,6 +998,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1016,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1015,6 +1041,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object disk_ = "";
+
     /**
      *
      *
@@ -1029,6 +1056,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
     public boolean hasDisk() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1051,6 +1079,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1073,6 +1102,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1094,6 +1124,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1142,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1167,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object diskId_ = "";
+
     /**
      *
      *
@@ -1149,6 +1182,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
     public boolean hasDiskId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1171,6 +1205,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1193,6 +1228,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1214,6 +1250,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1231,6 +1268,7 @@ public final class DiskAsyncReplication extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

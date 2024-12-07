@@ -34,6 +34,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzeIamPolicyRequest)
     AnalyzeIamPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnalyzeIamPolicyRequest.newBuilder() to construct.
   private AnalyzeIamPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int ANALYSIS_QUERY_FIELD_NUMBER = 1;
   private com.google.cloud.asset.v1.IamPolicyAnalysisQuery analysisQuery_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
   public boolean hasAnalysisQuery() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
         ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.getDefaultInstance()
         : analysisQuery_;
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object savedAnalysisQuery_ = "";
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
 
   public static final int EXECUTION_TIMEOUT_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration executionTimeout_;
+
   /**
    *
    *
@@ -231,6 +238,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
   public boolean hasExecutionTimeout() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -260,6 +268,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
         ? com.google.protobuf.Duration.getDefaultInstance()
         : executionTimeout_;
   }
+
   /**
    *
    *
@@ -475,6 +484,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -716,6 +726,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
             com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Builder,
             com.google.cloud.asset.v1.IamPolicyAnalysisQueryOrBuilder>
         analysisQueryBuilder_;
+
     /**
      *
      *
@@ -732,6 +743,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
     public boolean hasAnalysisQuery() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -754,6 +766,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
         return analysisQueryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -778,6 +791,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +814,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +845,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +867,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +884,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return getAnalysisQueryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -887,6 +905,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
             : analysisQuery_;
       }
     }
+
     /**
      *
      *
@@ -916,6 +935,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object savedAnalysisQuery_ = "";
+
     /**
      *
      *
@@ -953,6 +973,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -990,6 +1011,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1048,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1081,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1126,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         executionTimeoutBuilder_;
+
     /**
      *
      *
@@ -1128,6 +1153,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
     public boolean hasExecutionTimeout() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1160,6 +1186,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
         return executionTimeoutBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1194,6 +1221,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1225,6 +1253,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1293,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1325,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1321,6 +1352,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return getExecutionTimeoutFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1351,6 +1383,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
             : executionTimeout_;
       }
     }
+
     /**
      *
      *

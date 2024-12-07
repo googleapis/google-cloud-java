@@ -34,6 +34,7 @@ public interface ListSourcesResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Source sources = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.Source> getSourcesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSourcesResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Source sources = 1;</code>
    */
   com.google.cloud.securitycenter.v2.Source getSources(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSourcesResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Source sources = 1;</code>
    */
   int getSourcesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.SourceOrBuilder>
       getSourcesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListSourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

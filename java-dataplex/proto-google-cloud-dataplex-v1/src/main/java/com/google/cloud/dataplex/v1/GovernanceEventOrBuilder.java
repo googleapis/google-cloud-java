@@ -36,6 +36,7 @@ public interface GovernanceEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GovernanceEventOrBuilder
    * @return The enum numeric value on the wire for eventType.
    */
   int getEventTypeValue();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface GovernanceEventOrBuilder
    * @return Whether the entity field is set.
    */
   boolean hasEntity();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface GovernanceEventOrBuilder
    * @return The entity.
    */
   com.google.cloud.dataplex.v1.GovernanceEvent.Entity getEntity();
+
   /**
    *
    *

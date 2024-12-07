@@ -33,6 +33,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.BatchWriteSpansRequest)
     BatchWriteSpansRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchWriteSpansRequest.newBuilder() to construct.
   private BatchWriteSpansRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.cloudtrace.v2.Span> spans_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.devtools.cloudtrace.v2.Span> getSpansList() {
     return spans_;
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       getSpansOrBuilderList() {
     return spans_;
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
   public int getSpansCount() {
     return spans_.size();
   }
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
   public com.google.devtools.cloudtrace.v2.Span getSpans(int index) {
     return spans_.get(index);
   }
+
   /**
    *
    *
@@ -378,6 +386,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -623,6 +632,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -648,6 +658,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -673,6 +684,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +792,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
         return spansBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -797,6 +812,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
         return spansBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -816,6 +832,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
         return spansBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -841,6 +858,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +882,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +908,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +934,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +957,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +981,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1005,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1028,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1051,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1067,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
     public com.google.devtools.cloudtrace.v2.Span.Builder getSpansBuilder(int index) {
       return getSpansFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1060,6 +1087,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
         return spansBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1108,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(spans_);
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1125,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       return getSpansFieldBuilder()
           .addBuilder(com.google.devtools.cloudtrace.v2.Span.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1112,6 +1142,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       return getSpansFieldBuilder()
           .addBuilder(index, com.google.devtools.cloudtrace.v2.Span.getDefaultInstance());
     }
+
     /**
      *
      *

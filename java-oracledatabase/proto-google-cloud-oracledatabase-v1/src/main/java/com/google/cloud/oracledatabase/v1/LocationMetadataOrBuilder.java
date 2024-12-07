@@ -36,6 +36,7 @@ public interface LocationMetadataOrBuilder
    * @return A list containing the gcpOracleZones.
    */
   java.util.List<java.lang.String> getGcpOracleZonesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LocationMetadataOrBuilder
    * @return The count of gcpOracleZones.
    */
   int getGcpOracleZonesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface LocationMetadataOrBuilder
    * @return The gcpOracleZones at the given index.
    */
   java.lang.String getGcpOracleZones(int index);
+
   /**
    *
    *

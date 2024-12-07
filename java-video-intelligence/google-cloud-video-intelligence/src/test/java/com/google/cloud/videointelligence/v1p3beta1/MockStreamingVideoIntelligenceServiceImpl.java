@@ -76,7 +76,8 @@ public class MockStreamingVideoIntelligenceServiceImpl
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamingAnnotateVideo, expected %s or %s",
+                          "Unrecognized response type %s for method StreamingAnnotateVideo,"
+                              + " expected %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamingAnnotateVideoResponse.class.getName(),
                           Exception.class.getName())));

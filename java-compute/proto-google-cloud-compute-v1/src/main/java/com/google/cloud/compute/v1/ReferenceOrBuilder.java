@@ -36,6 +36,7 @@ public interface ReferenceOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ReferenceOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ReferenceOrBuilder
    * @return Whether the referenceType field is set.
    */
   boolean hasReferenceType();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ReferenceOrBuilder
    * @return The referenceType.
    */
   java.lang.String getReferenceType();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ReferenceOrBuilder
    * @return Whether the referrer field is set.
    */
   boolean hasReferrer();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface ReferenceOrBuilder
    * @return The referrer.
    */
   java.lang.String getReferrer();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface ReferenceOrBuilder
    * @return Whether the target field is set.
    */
   boolean hasTarget();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface ReferenceOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
+
   /**
    *
    *

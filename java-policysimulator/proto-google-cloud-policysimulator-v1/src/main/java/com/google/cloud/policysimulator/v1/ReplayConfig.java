@@ -34,6 +34,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.policysimulator.v1.ReplayConfig)
     ReplayConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReplayConfig.newBuilder() to construct.
   private ReplayConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,6 +128,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LOG_SOURCE_UNSPECIFIED = 0;</code>
      */
     public static final int LOG_SOURCE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -250,6 +252,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
   public int getPolicyOverlayCount() {
     return internalGetPolicyOverlay().getMap().size();
   }
+
   /**
    *
    *
@@ -279,12 +282,14 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetPolicyOverlay().getMap().containsKey(key);
   }
+
   /** Use {@link #getPolicyOverlayMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.iam.v1.Policy> getPolicyOverlay() {
     return getPolicyOverlayMap();
   }
+
   /**
    *
    *
@@ -311,6 +316,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, com.google.iam.v1.Policy> getPolicyOverlayMap() {
     return internalGetPolicyOverlay().getMap();
   }
+
   /**
    *
    *
@@ -345,6 +351,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
         internalGetPolicyOverlay().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -382,6 +389,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOG_SOURCE_FIELD_NUMBER = 2;
   private int logSource_ = 0;
+
   /**
    *
    *
@@ -398,6 +406,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
   public int getLogSourceValue() {
     return logSource_;
   }
+
   /**
    *
    *
@@ -599,6 +608,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -880,6 +890,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
     public int getPolicyOverlayCount() {
       return internalGetPolicyOverlay().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -909,12 +920,14 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetPolicyOverlay().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getPolicyOverlayMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.iam.v1.Policy> getPolicyOverlay() {
       return getPolicyOverlayMap();
     }
+
     /**
      *
      *
@@ -941,6 +954,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, com.google.iam.v1.Policy> getPolicyOverlayMap() {
       return internalGetPolicyOverlay().getImmutableMap();
     }
+
     /**
      *
      *
@@ -975,6 +989,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
           internalGetMutablePolicyOverlay().ensureBuilderMap();
       return map.containsKey(key) ? policyOverlayConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1015,6 +1030,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutablePolicyOverlay().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1044,12 +1060,14 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutablePolicyOverlay().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.iam.v1.Policy> getMutablePolicyOverlay() {
       bitField0_ |= 0x00000001;
       return internalGetMutablePolicyOverlay().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1083,6 +1101,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1116,6 +1135,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1174,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int logSource_ = 0;
+
     /**
      *
      *
@@ -1170,6 +1191,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
     public int getLogSourceValue() {
       return logSource_;
     }
+
     /**
      *
      *
@@ -1189,6 +1211,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1232,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.policysimulator.v1.ReplayConfig.LogSource.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1231,6 +1255,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

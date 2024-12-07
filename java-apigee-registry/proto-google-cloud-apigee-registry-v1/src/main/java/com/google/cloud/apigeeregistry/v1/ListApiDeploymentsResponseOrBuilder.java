@@ -34,6 +34,7 @@ public interface ListApiDeploymentsResponseOrBuilder
    * <code>repeated .google.cloud.apigeeregistry.v1.ApiDeployment api_deployments = 1;</code>
    */
   java.util.List<com.google.cloud.apigeeregistry.v1.ApiDeployment> getApiDeploymentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListApiDeploymentsResponseOrBuilder
    * <code>repeated .google.cloud.apigeeregistry.v1.ApiDeployment api_deployments = 1;</code>
    */
   com.google.cloud.apigeeregistry.v1.ApiDeployment getApiDeployments(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListApiDeploymentsResponseOrBuilder
    * <code>repeated .google.cloud.apigeeregistry.v1.ApiDeployment api_deployments = 1;</code>
    */
   int getApiDeploymentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListApiDeploymentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apigeeregistry.v1.ApiDeploymentOrBuilder>
       getApiDeploymentsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListApiDeploymentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

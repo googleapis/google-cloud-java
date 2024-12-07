@@ -38,6 +38,7 @@ public interface UpdateReleaseConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateReleaseConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateReleaseConfigRequestOrBuilder
    * @return Whether the releaseConfig field is set.
    */
   boolean hasReleaseConfig();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface UpdateReleaseConfigRequestOrBuilder
    * @return The releaseConfig.
    */
   com.google.cloud.dataform.v1beta1.ReleaseConfig getReleaseConfig();
+
   /**
    *
    *

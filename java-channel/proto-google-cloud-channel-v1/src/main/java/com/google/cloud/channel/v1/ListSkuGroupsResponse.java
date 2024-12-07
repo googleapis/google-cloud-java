@@ -33,6 +33,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ListSkuGroupsResponse)
     ListSkuGroupsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListSkuGroupsResponse.newBuilder() to construct.
   private ListSkuGroupsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.SkuGroup> skuGroups_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.channel.v1.SkuGroup> getSkuGroupsList() {
     return skuGroups_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       getSkuGroupsOrBuilderList() {
     return skuGroups_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
   public int getSkuGroupsCount() {
     return skuGroups_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.channel.v1.SkuGroup getSkuGroups(int index) {
     return skuGroups_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -636,6 +645,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
         return skuGroupsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
         return skuGroupsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
         return skuGroupsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +746,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +789,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +810,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +831,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +851,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +871,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +884,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.channel.v1.SkuGroup.Builder getSkuGroupsBuilder(int index) {
       return getSkuGroupsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -879,6 +901,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
         return skuGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -896,6 +919,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(skuGroups_);
       }
     }
+
     /**
      *
      *
@@ -909,6 +933,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       return getSkuGroupsFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.SkuGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -922,6 +947,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       return getSkuGroupsFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.SkuGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -953,6 +979,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -977,6 +1004,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1029,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1053,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1073,7 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

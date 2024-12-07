@@ -39,6 +39,7 @@ public interface CreateApiConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateApiConfigRequestOrBuilder
    * @return The apiConfigId.
    */
   java.lang.String getApiConfigId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateApiConfigRequestOrBuilder
    * @return Whether the apiConfig field is set.
    */
   boolean hasApiConfig();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateApiConfigRequestOrBuilder
    * @return The apiConfig.
    */
   com.google.cloud.apigateway.v1.ApiConfig getApiConfig();
+
   /**
    *
    *

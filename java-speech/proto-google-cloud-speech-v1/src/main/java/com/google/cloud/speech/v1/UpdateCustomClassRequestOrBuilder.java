@@ -49,6 +49,7 @@ public interface UpdateCustomClassRequestOrBuilder
    * @return Whether the customClass field is set.
    */
   boolean hasCustomClass();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface UpdateCustomClassRequestOrBuilder
    * @return The customClass.
    */
   com.google.cloud.speech.v1.CustomClass getCustomClass();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface UpdateCustomClassRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface UpdateCustomClassRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

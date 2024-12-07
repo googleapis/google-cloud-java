@@ -82,6 +82,7 @@ public enum RolePermissionInclusionState implements com.google.protobuf.Protocol
    * <code>ROLE_PERMISSION_INCLUSION_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int ROLE_PERMISSION_INCLUSION_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum RolePermissionInclusionState implements com.google.protobuf.Protocol
    * <code>ROLE_PERMISSION_INCLUDED = 1;</code>
    */
   public static final int ROLE_PERMISSION_INCLUDED_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum RolePermissionInclusionState implements com.google.protobuf.Protocol
    * <code>ROLE_PERMISSION_NOT_INCLUDED = 2;</code>
    */
   public static final int ROLE_PERMISSION_NOT_INCLUDED_VALUE = 2;
+
   /**
    *
    *

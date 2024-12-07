@@ -37,6 +37,7 @@ public interface CreateConversationModelOperationMetadataOrBuilder
    * @return The conversationModel.
    */
   java.lang.String getConversationModel();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface CreateConversationModelOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface CreateConversationModelOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CreateConversationModelOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

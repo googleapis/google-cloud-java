@@ -36,6 +36,7 @@ public interface PromoteMigrationJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

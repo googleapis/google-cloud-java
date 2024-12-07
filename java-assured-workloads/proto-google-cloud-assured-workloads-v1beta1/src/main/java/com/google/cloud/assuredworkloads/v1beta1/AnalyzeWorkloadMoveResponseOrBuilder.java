@@ -37,6 +37,7 @@ public interface AnalyzeWorkloadMoveResponseOrBuilder
    * @return A list containing the blockers.
    */
   java.util.List<java.lang.String> getBlockersList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface AnalyzeWorkloadMoveResponseOrBuilder
    * @return The count of blockers.
    */
   int getBlockersCount();
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface AnalyzeWorkloadMoveResponseOrBuilder
    * @return The blockers at the given index.
    */
   java.lang.String getBlockers(int index);
+
   /**
    *
    *

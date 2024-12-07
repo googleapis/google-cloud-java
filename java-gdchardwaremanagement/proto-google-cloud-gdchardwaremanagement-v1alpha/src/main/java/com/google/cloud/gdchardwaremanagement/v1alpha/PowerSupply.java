@@ -72,6 +72,7 @@ public enum PowerSupply implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POWER_SUPPLY_UNSPECIFIED = 0;</code>
    */
   public static final int POWER_SUPPLY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum PowerSupply implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POWER_SUPPLY_AC = 1;</code>
    */
   public static final int POWER_SUPPLY_AC_VALUE = 1;
+
   /**
    *
    *

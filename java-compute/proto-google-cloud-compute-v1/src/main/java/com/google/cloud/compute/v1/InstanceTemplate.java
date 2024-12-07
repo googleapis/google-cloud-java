@@ -33,6 +33,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceTemplate)
     InstanceTemplateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceTemplate.newBuilder() to construct.
   private InstanceTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasId() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasKind() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -277,6 +288,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -305,6 +317,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -320,6 +333,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasName() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -343,6 +357,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -369,6 +384,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int PROPERTIES_FIELD_NUMBER = 147688755;
   private com.google.cloud.compute.v1.InstanceProperties properties_;
+
   /**
    *
    *
@@ -384,6 +400,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasProperties() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -401,6 +418,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.compute.v1.InstanceProperties.getDefaultInstance()
         : properties_;
   }
+
   /**
    *
    *
@@ -421,6 +439,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -436,6 +455,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -459,6 +479,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -487,6 +508,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -502,6 +524,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -525,6 +548,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -553,6 +577,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceInstance_ = "";
+
   /**
    *
    *
@@ -568,6 +593,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasSourceInstance() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -591,6 +617,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -617,6 +644,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int SOURCE_INSTANCE_PARAMS_FIELD_NUMBER = 135342156;
   private com.google.cloud.compute.v1.SourceInstanceParams sourceInstanceParams_;
+
   /**
    *
    *
@@ -634,6 +662,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasSourceInstanceParams() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -653,6 +682,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.compute.v1.SourceInstanceParams.getDefaultInstance()
         : sourceInstanceParams_;
   }
+
   /**
    *
    *
@@ -965,6 +995,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1311,6 +1342,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
+
     /**
      *
      *
@@ -1325,6 +1357,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1347,6 +1380,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1369,6 +1403,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1390,6 +1425,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1407,6 +1443,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1431,6 +1468,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1445,6 +1483,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1467,6 +1506,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1489,6 +1529,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1510,6 +1551,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1527,6 +1569,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1551,6 +1594,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private long id_;
+
     /**
      *
      *
@@ -1566,6 +1610,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1581,6 +1626,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     public long getId() {
       return id_;
     }
+
     /**
      *
      *
@@ -1600,6 +1646,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1619,6 +1666,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1633,6 +1681,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasKind() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1655,6 +1704,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1677,6 +1727,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1698,6 +1749,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1715,6 +1767,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1739,6 +1792,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1753,6 +1807,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasName() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1775,6 +1830,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1797,6 +1853,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1818,6 +1875,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1835,6 +1893,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1864,6 +1923,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
             com.google.cloud.compute.v1.InstanceProperties.Builder,
             com.google.cloud.compute.v1.InstancePropertiesOrBuilder>
         propertiesBuilder_;
+
     /**
      *
      *
@@ -1878,6 +1938,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasProperties() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1898,6 +1959,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return propertiesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1920,6 +1982,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1940,6 +2003,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1967,6 +2031,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1986,6 +2051,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2000,6 +2066,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getPropertiesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2018,6 +2085,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
             : properties_;
       }
     }
+
     /**
      *
      *
@@ -2045,6 +2113,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -2059,6 +2128,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasRegion() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2081,6 +2151,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2103,6 +2174,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2124,6 +2196,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2141,6 +2214,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2165,6 +2239,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -2179,6 +2254,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2201,6 +2277,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2223,6 +2300,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2244,6 +2322,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2261,6 +2340,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2285,6 +2365,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object sourceInstance_ = "";
+
     /**
      *
      *
@@ -2299,6 +2380,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasSourceInstance() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2321,6 +2403,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2343,6 +2426,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2364,6 +2448,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2381,6 +2466,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2410,6 +2496,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
             com.google.cloud.compute.v1.SourceInstanceParams.Builder,
             com.google.cloud.compute.v1.SourceInstanceParamsOrBuilder>
         sourceInstanceParamsBuilder_;
+
     /**
      *
      *
@@ -2426,6 +2513,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasSourceInstanceParams() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2448,6 +2536,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         return sourceInstanceParamsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2472,6 +2561,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2494,6 +2584,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2525,6 +2616,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2546,6 +2638,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2563,6 +2656,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getSourceInstanceParamsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2584,6 +2678,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
             : sourceInstanceParams_;
       }
     }
+
     /**
      *
      *

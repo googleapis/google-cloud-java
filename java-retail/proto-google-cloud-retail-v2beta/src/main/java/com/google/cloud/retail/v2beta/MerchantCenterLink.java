@@ -35,6 +35,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.MerchantCenterLink)
     MerchantCenterLinkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MerchantCenterLink.newBuilder() to construct.
   private MerchantCenterLink(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
 
   public static final int MERCHANT_CENTER_ACCOUNT_ID_FIELD_NUMBER = 1;
   private long merchantCenterAccountId_ = 0L;
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object branchId_ = "";
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList destinations_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getDestinationsList() {
     return destinations_;
   }
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
   public int getDestinationsCount() {
     return destinations_.size();
   }
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
   public java.lang.String getDestinations(int index) {
     return destinations_.get(index);
   }
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
+
   /**
    *
    *
@@ -271,6 +280,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -305,6 +315,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -335,6 +346,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -370,6 +382,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.MerchantCenterFeedFilter> feeds_;
+
   /**
    *
    *
@@ -385,6 +398,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.retail.v2beta.MerchantCenterFeedFilter> getFeedsList() {
     return feeds_;
   }
+
   /**
    *
    *
@@ -401,6 +415,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       getFeedsOrBuilderList() {
     return feeds_;
   }
+
   /**
    *
    *
@@ -416,6 +431,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
   public int getFeedsCount() {
     return feeds_.size();
   }
+
   /**
    *
    *
@@ -431,6 +447,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.retail.v2beta.MerchantCenterFeedFilter getFeeds(int index) {
     return feeds_.get(index);
   }
+
   /**
    *
    *
@@ -661,6 +678,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -974,6 +992,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private long merchantCenterAccountId_;
+
     /**
      *
      *
@@ -991,6 +1010,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     public long getMerchantCenterAccountId() {
       return merchantCenterAccountId_;
     }
+
     /**
      *
      *
@@ -1012,6 +1032,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1054,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object branchId_ = "";
+
     /**
      *
      *
@@ -1060,6 +1082,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1087,6 +1110,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1113,6 +1137,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1160,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1172,6 +1198,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1193,6 +1220,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       destinations_.makeImmutable();
       return destinations_;
     }
+
     /**
      *
      *
@@ -1213,6 +1241,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     public int getDestinationsCount() {
       return destinations_.size();
     }
+
     /**
      *
      *
@@ -1234,6 +1263,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     public java.lang.String getDestinations(int index) {
       return destinations_.get(index);
     }
+
     /**
      *
      *
@@ -1255,6 +1285,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getDestinationsBytes(int index) {
       return destinations_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1284,6 +1315,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1344,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1370,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1395,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1392,6 +1427,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object regionCode_ = "";
+
     /**
      *
      *
@@ -1420,6 +1456,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1448,6 +1485,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1475,6 +1513,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1498,6 +1537,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1528,6 +1568,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -1557,6 +1598,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1586,6 +1628,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1614,6 +1657,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1682,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1704,6 +1749,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
         return feedsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1722,6 +1768,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
         return feedsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1740,6 +1787,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
         return feedsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1765,6 +1813,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1788,6 +1837,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1812,6 +1862,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1837,6 +1888,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1859,6 +1911,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1882,6 +1935,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1905,6 +1959,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1926,6 +1981,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1947,6 +2003,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1962,6 +2019,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
         int index) {
       return getFeedsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1981,6 +2039,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
         return feedsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2001,6 +2060,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(feeds_);
       }
     }
+
     /**
      *
      *
@@ -2016,6 +2076,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       return getFeedsFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2beta.MerchantCenterFeedFilter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2033,6 +2094,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.retail.v2beta.MerchantCenterFeedFilter.getDefaultInstance());
     }
+
     /**
      *
      *

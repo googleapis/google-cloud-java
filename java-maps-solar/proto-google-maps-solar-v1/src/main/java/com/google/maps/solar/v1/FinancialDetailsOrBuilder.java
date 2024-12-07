@@ -51,6 +51,7 @@ public interface FinancialDetailsOrBuilder
    * @return Whether the remainingLifetimeUtilityBill field is set.
    */
   boolean hasRemainingLifetimeUtilityBill();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface FinancialDetailsOrBuilder
    * @return The remainingLifetimeUtilityBill.
    */
   com.google.type.Money getRemainingLifetimeUtilityBill();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface FinancialDetailsOrBuilder
    * @return Whether the federalIncentive field is set.
    */
   boolean hasFederalIncentive();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface FinancialDetailsOrBuilder
    * @return The federalIncentive.
    */
   com.google.type.Money getFederalIncentive();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface FinancialDetailsOrBuilder
    * @return Whether the stateIncentive field is set.
    */
   boolean hasStateIncentive();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface FinancialDetailsOrBuilder
    * @return The stateIncentive.
    */
   com.google.type.Money getStateIncentive();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface FinancialDetailsOrBuilder
    * @return Whether the utilityIncentive field is set.
    */
   boolean hasUtilityIncentive();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface FinancialDetailsOrBuilder
    * @return The utilityIncentive.
    */
   com.google.type.Money getUtilityIncentive();
+
   /**
    *
    *
@@ -204,6 +212,7 @@ public interface FinancialDetailsOrBuilder
    * @return Whether the lifetimeSrecTotal field is set.
    */
   boolean hasLifetimeSrecTotal();
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public interface FinancialDetailsOrBuilder
    * @return The lifetimeSrecTotal.
    */
   com.google.type.Money getLifetimeSrecTotal();
+
   /**
    *
    *
@@ -244,6 +254,7 @@ public interface FinancialDetailsOrBuilder
    * @return Whether the costOfElectricityWithoutSolar field is set.
    */
   boolean hasCostOfElectricityWithoutSolar();
+
   /**
    *
    *
@@ -257,6 +268,7 @@ public interface FinancialDetailsOrBuilder
    * @return The costOfElectricityWithoutSolar.
    */
   com.google.type.Money getCostOfElectricityWithoutSolar();
+
   /**
    *
    *
@@ -295,6 +307,7 @@ public interface FinancialDetailsOrBuilder
    * @return Whether the solarPercentage field is set.
    */
   boolean hasSolarPercentage();
+
   /**
    *
    *
@@ -323,6 +336,7 @@ public interface FinancialDetailsOrBuilder
    * @return Whether the percentageExportedToGrid field is set.
    */
   boolean hasPercentageExportedToGrid();
+
   /**
    *
    *

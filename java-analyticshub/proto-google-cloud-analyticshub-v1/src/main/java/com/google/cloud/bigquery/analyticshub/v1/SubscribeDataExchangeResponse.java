@@ -33,6 +33,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeResponse)
     SubscribeDataExchangeResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SubscribeDataExchangeResponse.newBuilder() to construct.
   private SubscribeDataExchangeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
   private com.google.cloud.bigquery.analyticshub.v1.Subscription subscription_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
   public boolean hasSubscription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
         ? com.google.cloud.bigquery.analyticshub.v1.Subscription.getDefaultInstance()
         : subscription_;
   }
+
   /**
    *
    *
@@ -279,6 +283,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -493,6 +498,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
             com.google.cloud.bigquery.analyticshub.v1.Subscription.Builder,
             com.google.cloud.bigquery.analyticshub.v1.SubscriptionOrBuilder>
         subscriptionBuilder_;
+
     /**
      *
      *
@@ -507,6 +513,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
     public boolean hasSubscription() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -527,6 +534,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
         return subscriptionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -549,6 +557,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -569,6 +578,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -597,6 +607,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -616,6 +627,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +642,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
       onChanged();
       return getSubscriptionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -649,6 +662,7 @@ public final class SubscribeDataExchangeResponse extends com.google.protobuf.Gen
             : subscription_;
       }
     }
+
     /**
      *
      *

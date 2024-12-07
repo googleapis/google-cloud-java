@@ -36,6 +36,7 @@ public interface NamespacedNamesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkebackup.v1.NamespacedName> getNamespacedNamesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NamespacedNamesOrBuilder
    * </code>
    */
   com.google.cloud.gkebackup.v1.NamespacedName getNamespacedNames(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface NamespacedNamesOrBuilder
    * </code>
    */
   int getNamespacedNamesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface NamespacedNamesOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkebackup.v1.NamespacedNameOrBuilder>
       getNamespacedNamesOrBuilderList();
+
   /**
    *
    *

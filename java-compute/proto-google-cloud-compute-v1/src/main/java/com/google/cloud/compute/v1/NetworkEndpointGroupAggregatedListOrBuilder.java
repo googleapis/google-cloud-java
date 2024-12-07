@@ -36,6 +36,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -85,10 +88,12 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.NetworkEndpointGroupsScopedList>
       getItems();
+
   /**
    *
    *
@@ -102,6 +107,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.NetworkEndpointGroupsScopedList>
       getItemsMap();
+
   /**
    *
    *
@@ -118,6 +124,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.NetworkEndpointGroupsScopedList defaultValue);
+
   /**
    *
    *
@@ -143,6 +150,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -155,6 +163,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -180,6 +189,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -192,6 +202,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -217,6 +228,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -229,6 +241,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -254,6 +267,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
+
   /**
    *
    *
@@ -266,6 +280,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
+
   /**
    *
    *
@@ -279,6 +294,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
+
   /**
    *
    *
@@ -305,6 +321,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -317,6 +334,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.ListBrandsResponse)
     ListBrandsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListBrandsResponse.newBuilder() to construct.
   private ListBrandsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.iap.v1.Brand> brands_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.iap.v1.Brand> getBrandsList() {
     return brands_;
   }
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<? extends com.google.cloud.iap.v1.BrandOrBuilder> getBrandsOrBuilderList() {
     return brands_;
   }
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
   public int getBrandsCount() {
     return brands_.size();
   }
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.iap.v1.Brand getBrands(int index) {
     return brands_.get(index);
   }
+
   /**
    *
    *
@@ -294,6 +300,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -552,6 +559,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
         return brandsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -568,6 +576,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
         return brandsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -584,6 +593,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
         return brandsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -606,6 +616,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -625,6 +636,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -647,6 +659,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -669,6 +682,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +702,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +722,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +743,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +763,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +783,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +796,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.iap.v1.Brand.Builder getBrandsBuilder(int index) {
       return getBrandsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -793,6 +813,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
         return brandsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -810,6 +831,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(brands_);
       }
     }
+
     /**
      *
      *
@@ -822,6 +844,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.iap.v1.Brand.Builder addBrandsBuilder() {
       return getBrandsFieldBuilder().addBuilder(com.google.cloud.iap.v1.Brand.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -835,6 +858,7 @@ public final class ListBrandsResponse extends com.google.protobuf.GeneratedMessa
       return getBrandsFieldBuilder()
           .addBuilder(index, com.google.cloud.iap.v1.Brand.getDefaultInstance());
     }
+
     /**
      *
      *

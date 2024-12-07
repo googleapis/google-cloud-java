@@ -56,6 +56,7 @@ public interface MetricOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public interface MetricOrBuilder
    * @return The expression.
    */
   java.lang.String getExpression();
+
   /**
    *
    *

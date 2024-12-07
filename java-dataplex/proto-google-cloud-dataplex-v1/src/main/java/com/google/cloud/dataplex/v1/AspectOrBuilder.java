@@ -36,6 +36,7 @@ public interface AspectOrBuilder
    * @return The aspectType.
    */
   java.lang.String getAspectType();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AspectOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface AspectOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface AspectOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface AspectOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface AspectOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface AspectOrBuilder
    * @return Whether the data field is set.
    */
   boolean hasData();
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface AspectOrBuilder
    * @return The data.
    */
   com.google.protobuf.Struct getData();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public interface AspectOrBuilder
    * @return Whether the aspectSource field is set.
    */
   boolean hasAspectSource();
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public interface AspectOrBuilder
    * @return The aspectSource.
    */
   com.google.cloud.dataplex.v1.AspectSource getAspectSource();
+
   /**
    *
    *

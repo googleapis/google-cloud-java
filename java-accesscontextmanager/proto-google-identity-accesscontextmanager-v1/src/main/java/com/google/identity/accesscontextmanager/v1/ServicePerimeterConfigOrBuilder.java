@@ -37,6 +37,7 @@ public interface ServicePerimeterConfigOrBuilder
    * @return A list containing the resources.
    */
   java.util.List<java.lang.String> getResourcesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ServicePerimeterConfigOrBuilder
    * @return The count of resources.
    */
   int getResourcesCount();
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface ServicePerimeterConfigOrBuilder
    * @return The resources at the given index.
    */
   java.lang.String getResources(int index);
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ServicePerimeterConfigOrBuilder
    * @return A list containing the accessLevels.
    */
   java.util.List<java.lang.String> getAccessLevelsList();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface ServicePerimeterConfigOrBuilder
    * @return The count of accessLevels.
    */
   int getAccessLevelsCount();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface ServicePerimeterConfigOrBuilder
    * @return The accessLevels at the given index.
    */
   java.lang.String getAccessLevels(int index);
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface ServicePerimeterConfigOrBuilder
    * @return A list containing the restrictedServices.
    */
   java.util.List<java.lang.String> getRestrictedServicesList();
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public interface ServicePerimeterConfigOrBuilder
    * @return The count of restrictedServices.
    */
   int getRestrictedServicesCount();
+
   /**
    *
    *
@@ -204,6 +212,7 @@ public interface ServicePerimeterConfigOrBuilder
    * @return The restrictedServices at the given index.
    */
   java.lang.String getRestrictedServices(int index);
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public interface ServicePerimeterConfigOrBuilder
    * @return Whether the vpcAccessibleServices field is set.
    */
   boolean hasVpcAccessibleServices();
+
   /**
    *
    *
@@ -250,6 +260,7 @@ public interface ServicePerimeterConfigOrBuilder
    */
   com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.VpcAccessibleServices
       getVpcAccessibleServices();
+
   /**
    *
    *
@@ -284,6 +295,7 @@ public interface ServicePerimeterConfigOrBuilder
    */
   java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy>
       getIngressPoliciesList();
+
   /**
    *
    *
@@ -304,6 +316,7 @@ public interface ServicePerimeterConfigOrBuilder
    */
   com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy
       getIngressPolicies(int index);
+
   /**
    *
    *
@@ -323,6 +336,7 @@ public interface ServicePerimeterConfigOrBuilder
    * </code>
    */
   int getIngressPoliciesCount();
+
   /**
    *
    *
@@ -346,6 +360,7 @@ public interface ServicePerimeterConfigOrBuilder
               com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
                   .IngressPolicyOrBuilder>
       getIngressPoliciesOrBuilderList();
+
   /**
    *
    *
@@ -387,6 +402,7 @@ public interface ServicePerimeterConfigOrBuilder
    */
   java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy>
       getEgressPoliciesList();
+
   /**
    *
    *
@@ -407,6 +423,7 @@ public interface ServicePerimeterConfigOrBuilder
    */
   com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy getEgressPolicies(
       int index);
+
   /**
    *
    *
@@ -426,6 +443,7 @@ public interface ServicePerimeterConfigOrBuilder
    * </code>
    */
   int getEgressPoliciesCount();
+
   /**
    *
    *
@@ -449,6 +467,7 @@ public interface ServicePerimeterConfigOrBuilder
               com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
                   .EgressPolicyOrBuilder>
       getEgressPoliciesOrBuilderList();
+
   /**
    *
    *

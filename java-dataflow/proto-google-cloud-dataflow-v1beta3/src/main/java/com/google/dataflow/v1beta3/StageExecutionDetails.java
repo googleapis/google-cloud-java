@@ -33,6 +33,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.StageExecutionDetails)
     StageExecutionDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StageExecutionDetails.newBuilder() to construct.
   private StageExecutionDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.WorkerDetails> workers_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.dataflow.v1beta3.WorkerDetails> getWorkersList() {
     return workers_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       getWorkersOrBuilderList() {
     return workers_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
   public int getWorkersCount() {
     return workers_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
   public com.google.dataflow.v1beta3.WorkerDetails getWorkers(int index) {
     return workers_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -636,6 +645,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
         return workersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
         return workersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
         return workersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +746,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +789,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +810,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +831,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +851,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +871,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +884,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
     public com.google.dataflow.v1beta3.WorkerDetails.Builder getWorkersBuilder(int index) {
       return getWorkersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -879,6 +901,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
         return workersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -896,6 +919,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(workers_);
       }
     }
+
     /**
      *
      *
@@ -909,6 +933,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       return getWorkersFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.WorkerDetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -922,6 +947,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       return getWorkersFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.WorkerDetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -954,6 +980,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -978,6 +1005,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1030,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1054,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1074,7 @@ public final class StageExecutionDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

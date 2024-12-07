@@ -37,6 +37,7 @@ public interface CompletionInfoOrBuilder
    * @return The selectedSuggestion.
    */
   java.lang.String getSelectedSuggestion();
+
   /**
    *
    *

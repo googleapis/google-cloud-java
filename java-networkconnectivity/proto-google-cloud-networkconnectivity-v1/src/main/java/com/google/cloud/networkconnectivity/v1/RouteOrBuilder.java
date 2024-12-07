@@ -38,6 +38,7 @@ public interface RouteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface RouteOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface RouteOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface RouteOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface RouteOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface RouteOrBuilder
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface RouteOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public interface RouteOrBuilder
    * @return Whether the nextHopVpcNetwork field is set.
    */
   boolean hasNextHopVpcNetwork();
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public interface RouteOrBuilder
    * @return The nextHopVpcNetwork.
    */
   com.google.cloud.networkconnectivity.v1.NextHopVpcNetwork getNextHopVpcNetwork();
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public interface RouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -251,9 +261,11 @@ public interface RouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -266,6 +278,7 @@ public interface RouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -282,6 +295,7 @@ public interface RouteOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -307,6 +321,7 @@ public interface RouteOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -335,6 +350,7 @@ public interface RouteOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -365,6 +381,7 @@ public interface RouteOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -395,6 +412,7 @@ public interface RouteOrBuilder
    * @return The spoke.
    */
   java.lang.String getSpoke();
+
   /**
    *
    *
@@ -425,6 +443,7 @@ public interface RouteOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

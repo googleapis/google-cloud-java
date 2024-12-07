@@ -257,7 +257,8 @@ public class SecurityHealthAnalyticsSettingsName implements ResourceName {
     private Builder(SecurityHealthAnalyticsSettingsName securityHealthAnalyticsSettingsName) {
       Preconditions.checkArgument(
           Objects.equals(securityHealthAnalyticsSettingsName.pathTemplate, ORGANIZATION),
-          "toBuilder is only supported when SecurityHealthAnalyticsSettingsName has the pattern of organizations/{organization}/securityHealthAnalyticsSettings");
+          "toBuilder is only supported when SecurityHealthAnalyticsSettingsName has the pattern of"
+              + " organizations/{organization}/securityHealthAnalyticsSettings");
       this.organization = securityHealthAnalyticsSettingsName.organization;
     }
 

@@ -33,6 +33,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p1beta1.CropHintsAnnotation)
     CropHintsAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CropHintsAnnotation.newBuilder() to construct.
   private CropHintsAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p1beta1.CropHint> cropHints_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.vision.v1p1beta1.CropHint> getCropHintsList() {
     return cropHints_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
       getCropHintsOrBuilderList() {
     return cropHints_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
   public int getCropHintsCount() {
     return cropHints_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
   public com.google.cloud.vision.v1p1beta1.CropHint getCropHints(int index) {
     return cropHints_.get(index);
   }
+
   /**
    *
    *
@@ -296,6 +302,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -558,6 +565,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
         return cropHintsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -574,6 +582,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
         return cropHintsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -590,6 +599,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
         return cropHintsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -612,6 +622,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +643,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +689,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +710,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +731,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +752,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +772,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +792,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +805,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
     public com.google.cloud.vision.v1p1beta1.CropHint.Builder getCropHintsBuilder(int index) {
       return getCropHintsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -802,6 +822,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
         return cropHintsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -819,6 +840,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(cropHints_);
       }
     }
+
     /**
      *
      *
@@ -832,6 +854,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
       return getCropHintsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1p1beta1.CropHint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -845,6 +868,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
       return getCropHintsFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1p1beta1.CropHint.getDefaultInstance());
     }
+
     /**
      *
      *

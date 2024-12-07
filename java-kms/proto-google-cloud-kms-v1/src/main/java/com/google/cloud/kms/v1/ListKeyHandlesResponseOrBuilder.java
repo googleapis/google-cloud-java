@@ -34,6 +34,7 @@ public interface ListKeyHandlesResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.KeyHandle key_handles = 1;</code>
    */
   java.util.List<com.google.cloud.kms.v1.KeyHandle> getKeyHandlesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListKeyHandlesResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.KeyHandle key_handles = 1;</code>
    */
   com.google.cloud.kms.v1.KeyHandle getKeyHandles(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListKeyHandlesResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.KeyHandle key_handles = 1;</code>
    */
   int getKeyHandlesCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListKeyHandlesResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.KeyHandle key_handles = 1;</code>
    */
   java.util.List<? extends com.google.cloud.kms.v1.KeyHandleOrBuilder> getKeyHandlesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListKeyHandlesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

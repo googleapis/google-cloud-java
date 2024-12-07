@@ -39,6 +39,7 @@ public interface CreateDnsAuthorizationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateDnsAuthorizationRequestOrBuilder
    * @return The dnsAuthorizationId.
    */
   java.lang.String getDnsAuthorizationId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface CreateDnsAuthorizationRequestOrBuilder
    * @return Whether the dnsAuthorization field is set.
    */
   boolean hasDnsAuthorization();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateDnsAuthorizationRequestOrBuilder
    * @return The dnsAuthorization.
    */
   com.google.cloud.certificatemanager.v1.DnsAuthorization getDnsAuthorization();
+
   /**
    *
    *

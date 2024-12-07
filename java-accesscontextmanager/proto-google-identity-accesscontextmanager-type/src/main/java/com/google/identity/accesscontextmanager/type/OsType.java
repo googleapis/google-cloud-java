@@ -113,6 +113,7 @@ public enum OsType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OS_UNSPECIFIED = 0;</code>
    */
   public static final int OS_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -123,6 +124,7 @@ public enum OsType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DESKTOP_MAC = 1;</code>
    */
   public static final int DESKTOP_MAC_VALUE = 1;
+
   /**
    *
    *
@@ -133,6 +135,7 @@ public enum OsType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DESKTOP_WINDOWS = 2;</code>
    */
   public static final int DESKTOP_WINDOWS_VALUE = 2;
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public enum OsType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DESKTOP_LINUX = 3;</code>
    */
   public static final int DESKTOP_LINUX_VALUE = 3;
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public enum OsType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DESKTOP_CHROME_OS = 6;</code>
    */
   public static final int DESKTOP_CHROME_OS_VALUE = 6;
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public enum OsType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ANDROID = 4;</code>
    */
   public static final int ANDROID_VALUE = 4;
+
   /**
    *
    *

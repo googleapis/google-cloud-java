@@ -72,6 +72,7 @@ public enum ResourceState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RESOURCE_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int RESOURCE_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum ResourceState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RESOURCE_STATE_LOCK_DOWN = 1;</code>
    */
   public static final int RESOURCE_STATE_LOCK_DOWN_VALUE = 1;
+
   /**
    *
    *

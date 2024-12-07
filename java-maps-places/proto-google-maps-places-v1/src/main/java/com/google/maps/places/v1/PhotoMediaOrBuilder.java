@@ -37,6 +37,7 @@ public interface PhotoMediaOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PhotoMediaOrBuilder
    * @return The photoUri.
    */
   java.lang.String getPhotoUri();
+
   /**
    *
    *

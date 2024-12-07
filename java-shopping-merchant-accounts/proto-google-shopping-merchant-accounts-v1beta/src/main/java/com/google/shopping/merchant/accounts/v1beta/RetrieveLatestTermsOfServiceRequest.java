@@ -35,6 +35,7 @@ public final class RetrieveLatestTermsOfServiceRequest
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.RetrieveLatestTermsOfServiceRequest)
     RetrieveLatestTermsOfServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RetrieveLatestTermsOfServiceRequest.newBuilder() to construct.
   private RetrieveLatestTermsOfServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class RetrieveLatestTermsOfServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class RetrieveLatestTermsOfServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class RetrieveLatestTermsOfServiceRequest
 
   public static final int KIND_FIELD_NUMBER = 2;
   private int kind_ = 0;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class RetrieveLatestTermsOfServiceRequest
   public int getKindValue() {
     return kind_;
   }
+
   /**
    *
    *
@@ -347,6 +352,7 @@ public final class RetrieveLatestTermsOfServiceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -561,6 +567,7 @@ public final class RetrieveLatestTermsOfServiceRequest
     private int bitField0_;
 
     private java.lang.Object regionCode_ = "";
+
     /**
      *
      *
@@ -585,6 +592,7 @@ public final class RetrieveLatestTermsOfServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -609,6 +617,7 @@ public final class RetrieveLatestTermsOfServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -632,6 +641,7 @@ public final class RetrieveLatestTermsOfServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +661,7 @@ public final class RetrieveLatestTermsOfServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class RetrieveLatestTermsOfServiceRequest
     }
 
     private int kind_ = 0;
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class RetrieveLatestTermsOfServiceRequest
     public int getKindValue() {
       return kind_;
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class RetrieveLatestTermsOfServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +749,7 @@ public final class RetrieveLatestTermsOfServiceRequest
           ? com.google.shopping.merchant.accounts.v1beta.TermsOfServiceKind.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -758,6 +773,7 @@ public final class RetrieveLatestTermsOfServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

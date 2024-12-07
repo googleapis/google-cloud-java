@@ -45,6 +45,7 @@ public interface ExtensionPrivateServiceConnectConfigOrBuilder
    * @return The serviceDirectory.
    */
   java.lang.String getServiceDirectory();
+
   /**
    *
    *

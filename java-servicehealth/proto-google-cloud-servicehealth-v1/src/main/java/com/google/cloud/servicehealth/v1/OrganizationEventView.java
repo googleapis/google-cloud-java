@@ -74,6 +74,7 @@ public enum OrganizationEventView implements com.google.protobuf.ProtocolMessage
    * <code>ORGANIZATION_EVENT_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int ORGANIZATION_EVENT_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public enum OrganizationEventView implements com.google.protobuf.ProtocolMessage
    * <code>ORGANIZATION_EVENT_VIEW_BASIC = 1;</code>
    */
   public static final int ORGANIZATION_EVENT_VIEW_BASIC_VALUE = 1;
+
   /**
    *
    *

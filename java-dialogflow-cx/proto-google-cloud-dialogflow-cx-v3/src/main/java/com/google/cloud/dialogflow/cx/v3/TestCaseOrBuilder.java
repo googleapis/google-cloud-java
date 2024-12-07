@@ -39,6 +39,7 @@ public interface TestCaseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface TestCaseOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface TestCaseOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface TestCaseOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface TestCaseOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface TestCaseOrBuilder
    * @return The notes.
    */
   java.lang.String getNotes();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface TestCaseOrBuilder
    * @return Whether the testConfig field is set.
    */
   boolean hasTestConfig();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface TestCaseOrBuilder
    * @return The testConfig.
    */
   com.google.cloud.dialogflow.cx.v3.TestConfig getTestConfig();
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public interface TestCaseOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.ConversationTurn>
       getTestCaseConversationTurnsList();
+
   /**
    *
    *
@@ -230,6 +239,7 @@ public interface TestCaseOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3.ConversationTurn getTestCaseConversationTurns(int index);
+
   /**
    *
    *
@@ -244,6 +254,7 @@ public interface TestCaseOrBuilder
    * </code>
    */
   int getTestCaseConversationTurnsCount();
+
   /**
    *
    *
@@ -259,6 +270,7 @@ public interface TestCaseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.ConversationTurnOrBuilder>
       getTestCaseConversationTurnsOrBuilderList();
+
   /**
    *
    *
@@ -289,6 +301,7 @@ public interface TestCaseOrBuilder
    * @return Whether the creationTime field is set.
    */
   boolean hasCreationTime();
+
   /**
    *
    *
@@ -303,6 +316,7 @@ public interface TestCaseOrBuilder
    * @return The creationTime.
    */
   com.google.protobuf.Timestamp getCreationTime();
+
   /**
    *
    *
@@ -328,6 +342,7 @@ public interface TestCaseOrBuilder
    * @return Whether the lastTestResult field is set.
    */
   boolean hasLastTestResult();
+
   /**
    *
    *
@@ -340,6 +355,7 @@ public interface TestCaseOrBuilder
    * @return The lastTestResult.
    */
   com.google.cloud.dialogflow.cx.v3.TestCaseResult getLastTestResult();
+
   /**
    *
    *

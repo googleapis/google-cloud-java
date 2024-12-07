@@ -44,6 +44,7 @@ public interface CustomAttributeOrBuilder
    * @return A list containing the text.
    */
   java.util.List<java.lang.String> getTextList();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface CustomAttributeOrBuilder
    * @return The count of text.
    */
   int getTextCount();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CustomAttributeOrBuilder
    * @return The text at the given index.
    */
   java.lang.String getText(int index);
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface CustomAttributeOrBuilder
    * @return A list containing the numbers.
    */
   java.util.List<java.lang.Double> getNumbersList();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface CustomAttributeOrBuilder
    * @return The count of numbers.
    */
   int getNumbersCount();
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public interface CustomAttributeOrBuilder
    */
   @java.lang.Deprecated
   boolean hasSearchable();
+
   /**
    *
    *
@@ -250,6 +256,7 @@ public interface CustomAttributeOrBuilder
    */
   @java.lang.Deprecated
   boolean hasIndexable();
+
   /**
    *
    *

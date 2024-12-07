@@ -39,6 +39,7 @@ public interface AutonomousDatabaseStandbySummaryOrBuilder
    * @return Whether the lagTimeDuration field is set.
    */
   boolean hasLagTimeDuration();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface AutonomousDatabaseStandbySummaryOrBuilder
    * @return The lagTimeDuration.
    */
   com.google.protobuf.Duration getLagTimeDuration();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface AutonomousDatabaseStandbySummaryOrBuilder
    * @return The lifecycleDetails.
    */
   java.lang.String getLifecycleDetails();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface AutonomousDatabaseStandbySummaryOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface AutonomousDatabaseStandbySummaryOrBuilder
    * @return Whether the dataGuardRoleChangedTime field is set.
    */
   boolean hasDataGuardRoleChangedTime();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface AutonomousDatabaseStandbySummaryOrBuilder
    * @return The dataGuardRoleChangedTime.
    */
   com.google.protobuf.Timestamp getDataGuardRoleChangedTime();
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public interface AutonomousDatabaseStandbySummaryOrBuilder
    * @return Whether the disasterRecoveryRoleChangedTime field is set.
    */
   boolean hasDisasterRecoveryRoleChangedTime();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface AutonomousDatabaseStandbySummaryOrBuilder
    * @return The disasterRecoveryRoleChangedTime.
    */
   com.google.protobuf.Timestamp getDisasterRecoveryRoleChangedTime();
+
   /**
    *
    *

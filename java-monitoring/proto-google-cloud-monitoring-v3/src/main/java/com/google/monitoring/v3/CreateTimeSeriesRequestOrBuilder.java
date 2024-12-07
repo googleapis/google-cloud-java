@@ -42,6 +42,7 @@ public interface CreateTimeSeriesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface CreateTimeSeriesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.monitoring.v3.TimeSeries> getTimeSeriesList();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface CreateTimeSeriesRequestOrBuilder
    * </code>
    */
   com.google.monitoring.v3.TimeSeries getTimeSeries(int index);
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface CreateTimeSeriesRequestOrBuilder
    * </code>
    */
   int getTimeSeriesCount();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface CreateTimeSeriesRequestOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.TimeSeriesOrBuilder>
       getTimeSeriesOrBuilderList();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface GetVpcFlowLogsConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

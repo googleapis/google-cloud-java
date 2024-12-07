@@ -39,6 +39,7 @@ public interface ExportTestCasesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface ExportTestCasesRequestOrBuilder
    * @return Whether the gcsUri field is set.
    */
   boolean hasGcsUri();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface ExportTestCasesRequestOrBuilder
    * @return The gcsUri.
    */
   java.lang.String getGcsUri();
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public interface ExportTestCasesRequestOrBuilder
    * @return The enum numeric value on the wire for dataFormat.
    */
   int getDataFormatValue();
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public interface ExportTestCasesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

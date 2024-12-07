@@ -37,6 +37,7 @@ public interface ConversionValuesOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ConversionValuesOrBuilder
    * @return Whether the fineValue field is set.
    */
   boolean hasFineValue();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface ConversionValuesOrBuilder
    * @return The enum numeric value on the wire for coarseValue.
    */
   int getCoarseValueValue();
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public interface ConversionValuesOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.EventMapping event_mappings = 4;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.EventMapping> getEventMappingsList();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface ConversionValuesOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.EventMapping event_mappings = 4;</code>
    */
   com.google.analytics.admin.v1alpha.EventMapping getEventMappings(int index);
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface ConversionValuesOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.EventMapping event_mappings = 4;</code>
    */
   int getEventMappingsCount();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface ConversionValuesOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.EventMappingOrBuilder>
       getEventMappingsOrBuilderList();
+
   /**
    *
    *

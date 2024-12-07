@@ -33,6 +33,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ReceiveEventsResponse)
     ReceiveEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReceiveEventsResponse.newBuilder() to construct.
   private ReceiveEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
     private ResponseCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int EVENT_UPDATE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
   public boolean hasEventUpdate() {
     return responseCase_ == 1;
   }
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.visionai.v1.EventUpdate.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CONTROL_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
   public boolean hasControl() {
     return responseCase_ == 2;
   }
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.visionai.v1.ReceiveEventsControlResponse.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -401,6 +409,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -636,6 +645,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.visionai.v1.EventUpdate.Builder,
             com.google.cloud.visionai.v1.EventUpdateOrBuilder>
         eventUpdateBuilder_;
+
     /**
      *
      *
@@ -651,6 +661,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
     public boolean hasEventUpdate() {
       return responseCase_ == 1;
     }
+
     /**
      *
      *
@@ -676,6 +687,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
         return com.google.cloud.visionai.v1.EventUpdate.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +764,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +790,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +803,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.visionai.v1.EventUpdate.Builder getEventUpdateBuilder() {
       return getEventUpdateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -807,6 +824,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
         return com.google.cloud.visionai.v1.EventUpdate.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -845,6 +863,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.visionai.v1.ReceiveEventsControlResponse.Builder,
             com.google.cloud.visionai.v1.ReceiveEventsControlResponseOrBuilder>
         controlBuilder_;
+
     /**
      *
      *
@@ -860,6 +879,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
     public boolean hasControl() {
       return responseCase_ == 2;
     }
+
     /**
      *
      *
@@ -885,6 +905,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
         return com.google.cloud.visionai.v1.ReceiveEventsControlResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -907,6 +928,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +949,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +983,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1009,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1022,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.visionai.v1.ReceiveEventsControlResponse.Builder getControlBuilder() {
       return getControlFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1018,6 +1044,7 @@ public final class ReceiveEventsResponse extends com.google.protobuf.GeneratedMe
         return com.google.cloud.visionai.v1.ReceiveEventsControlResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Content)
     ContentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Content.newBuilder() to construct.
   private Content(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object role_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Part> parts_;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.aiplatform.v1.Part> getPartsList() {
     return parts_;
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       getPartsOrBuilderList() {
     return parts_;
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
   public int getPartsCount() {
     return parts_.size();
   }
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.Part getParts(int index) {
     return parts_.get(index);
   }
+
   /**
    *
    *
@@ -380,6 +388,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -627,6 +636,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object role_ = "";
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +734,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +796,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
         return partsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -801,6 +816,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
         return partsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -820,6 +836,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
         return partsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -845,6 +862,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +886,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +912,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +938,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +961,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +985,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1009,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1032,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1055,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1071,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.Part.Builder getPartsBuilder(int index) {
       return getPartsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1064,6 +1091,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
         return partsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1112,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(parts_);
       }
     }
+
     /**
      *
      *
@@ -1100,6 +1129,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       return getPartsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.Part.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1116,6 +1146,7 @@ public final class Content extends com.google.protobuf.GeneratedMessageV3
       return getPartsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.Part.getDefaultInstance());
     }
+
     /**
      *
      *

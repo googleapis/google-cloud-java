@@ -34,6 +34,7 @@ public final class PublishChannelConnectionEventsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsResponse)
     PublishChannelConnectionEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PublishChannelConnectionEventsResponse.newBuilder() to construct.
   private PublishChannelConnectionEventsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -223,6 +224,7 @@ public final class PublishChannelConnectionEventsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

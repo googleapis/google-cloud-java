@@ -33,6 +33,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1.AwsProperties)
     AwsPropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AwsProperties.newBuilder() to construct.
   private AwsProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     private AuthenticationMethodCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CROSS_ACCOUNT_ROLE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCrossAccountRole() {
     return authenticationMethodCase_ == 2;
   }
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACCESS_ROLE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccessRole() {
     return authenticationMethodCase_ == 3;
   }
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.connection.v1.AwsAccessRole.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -429,6 +437,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -665,6 +674,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole.Builder,
             com.google.cloud.bigquery.connection.v1.AwsCrossAccountRoleOrBuilder>
         crossAccountRoleBuilder_;
+
     /**
      *
      *
@@ -687,6 +697,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCrossAccountRole() {
       return authenticationMethodCase_ == 2;
     }
+
     /**
      *
      *
@@ -720,6 +731,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -748,6 +760,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       authenticationMethodCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +786,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       authenticationMethodCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +828,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       authenticationMethodCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +859,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +878,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
         getCrossAccountRoleBuilder() {
       return getCrossAccountRoleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -889,6 +906,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -932,6 +950,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.connection.v1.AwsAccessRole.Builder,
             com.google.cloud.bigquery.connection.v1.AwsAccessRoleOrBuilder>
         accessRoleBuilder_;
+
     /**
      *
      *
@@ -948,6 +967,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessRole() {
       return authenticationMethodCase_ == 3;
     }
+
     /**
      *
      *
@@ -974,6 +994,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.AwsAccessRole.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -997,6 +1018,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       authenticationMethodCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1040,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       authenticationMethodCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1075,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       authenticationMethodCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1102,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1116,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.connection.v1.AwsAccessRole.Builder getAccessRoleBuilder() {
       return getAccessRoleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1112,6 +1138,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.AwsAccessRole.getDefaultInstance();
       }
     }
+
     /**
      *
      *

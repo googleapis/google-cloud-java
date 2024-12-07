@@ -33,6 +33,7 @@ public final class ReceiveEventsControlResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ReceiveEventsControlResponse)
     ReceiveEventsControlResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReceiveEventsControlResponse.newBuilder() to construct.
   private ReceiveEventsControlResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class ReceiveEventsControlResponse extends com.google.protobuf.Gene
     private ControlCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class ReceiveEventsControlResponse extends com.google.protobuf.Gene
   }
 
   public static final int HEARTBEAT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class ReceiveEventsControlResponse extends com.google.protobuf.Gene
   public boolean hasHeartbeat() {
     return controlCase_ == 1;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class ReceiveEventsControlResponse extends com.google.protobuf.Gene
   }
 
   public static final int WRITES_DONE_REQUEST_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class ReceiveEventsControlResponse extends com.google.protobuf.Gene
   public boolean hasWritesDoneRequest() {
     return controlCase_ == 2;
   }
+
   /**
    *
    *
@@ -386,6 +392,7 @@ public final class ReceiveEventsControlResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -619,6 +626,7 @@ public final class ReceiveEventsControlResponse extends com.google.protobuf.Gene
     public boolean hasHeartbeat() {
       return controlCase_ == 1;
     }
+
     /**
      *
      *
@@ -636,6 +644,7 @@ public final class ReceiveEventsControlResponse extends com.google.protobuf.Gene
       }
       return false;
     }
+
     /**
      *
      *
@@ -655,6 +664,7 @@ public final class ReceiveEventsControlResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +707,7 @@ public final class ReceiveEventsControlResponse extends com.google.protobuf.Gene
     public boolean hasWritesDoneRequest() {
       return controlCase_ == 2;
     }
+
     /**
      *
      *
@@ -722,6 +733,7 @@ public final class ReceiveEventsControlResponse extends com.google.protobuf.Gene
       }
       return false;
     }
+
     /**
      *
      *
@@ -749,6 +761,7 @@ public final class ReceiveEventsControlResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.CleanupPolicyMostRecentVersions)
     CleanupPolicyMostRecentVersionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CleanupPolicyMostRecentVersions.newBuilder() to construct.
   private CleanupPolicyMostRecentVersions(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList packageNamePrefixes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
   public com.google.protobuf.ProtocolStringList getPackageNamePrefixesList() {
     return packageNamePrefixes_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
   public int getPackageNamePrefixesCount() {
     return packageNamePrefixes_.size();
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
   public java.lang.String getPackageNamePrefixes(int index) {
     return packageNamePrefixes_.get(index);
   }
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
 
   public static final int KEEP_COUNT_FIELD_NUMBER = 2;
   private int keepCount_ = 0;
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
   public boolean hasKeepCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -345,6 +352,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +579,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -586,6 +595,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
       packageNamePrefixes_.makeImmutable();
       return packageNamePrefixes_;
     }
+
     /**
      *
      *
@@ -600,6 +610,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
     public int getPackageNamePrefixesCount() {
       return packageNamePrefixes_.size();
     }
+
     /**
      *
      *
@@ -615,6 +626,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
     public java.lang.String getPackageNamePrefixes(int index) {
       return packageNamePrefixes_.get(index);
     }
+
     /**
      *
      *
@@ -630,6 +642,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
     public com.google.protobuf.ByteString getPackageNamePrefixesBytes(int index) {
       return packageNamePrefixes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -653,6 +666,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +689,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +709,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +728,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +754,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
     }
 
     private int keepCount_;
+
     /**
      *
      *
@@ -752,6 +770,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
     public boolean hasKeepCount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -767,6 +786,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
     public int getKeepCount() {
       return keepCount_;
     }
+
     /**
      *
      *
@@ -786,6 +806,7 @@ public final class CleanupPolicyMostRecentVersions extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

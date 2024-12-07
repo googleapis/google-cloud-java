@@ -36,6 +36,7 @@ public interface CoherenceInstanceOrBuilder
    * @return Whether the prediction field is set.
    */
   boolean hasPrediction();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CoherenceInstanceOrBuilder
    * @return The prediction.
    */
   java.lang.String getPrediction();
+
   /**
    *
    *

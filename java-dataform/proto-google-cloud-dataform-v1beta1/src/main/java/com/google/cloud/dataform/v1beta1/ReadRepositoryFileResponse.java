@@ -33,6 +33,7 @@ public final class ReadRepositoryFileResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.ReadRepositoryFileResponse)
     ReadRepositoryFileResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReadRepositoryFileResponse.newBuilder() to construct.
   private ReadRepositoryFileResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ReadRepositoryFileResponse extends com.google.protobuf.Genera
 
   public static final int CONTENTS_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString contents_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -241,6 +243,7 @@ public final class ReadRepositoryFileResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -426,6 +429,7 @@ public final class ReadRepositoryFileResponse extends com.google.protobuf.Genera
     private int bitField0_;
 
     private com.google.protobuf.ByteString contents_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -441,6 +445,7 @@ public final class ReadRepositoryFileResponse extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getContents() {
       return contents_;
     }
+
     /**
      *
      *
@@ -462,6 +467,7 @@ public final class ReadRepositoryFileResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

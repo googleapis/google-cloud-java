@@ -33,6 +33,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.functions.v1.HttpsTrigger)
     HttpsTriggerOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HttpsTrigger.newBuilder() to construct.
   private HttpsTrigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -125,6 +126,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
      * <code>SECURITY_LEVEL_UNSPECIFIED = 0;</code>
      */
     public static final int SECURITY_LEVEL_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -137,6 +139,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
      * <code>SECURE_ALWAYS = 1;</code>
      */
     public static final int SECURE_ALWAYS_VALUE = 1;
+
     /**
      *
      *
@@ -237,6 +240,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object url_ = "";
+
   /**
    *
    *
@@ -260,6 +264,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -286,6 +291,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SECURITY_LEVEL_FIELD_NUMBER = 2;
   private int securityLevel_ = 0;
+
   /**
    *
    *
@@ -301,6 +307,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
   public int getSecurityLevelValue() {
     return securityLevel_;
   }
+
   /**
    *
    *
@@ -493,6 +500,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -689,6 +697,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object url_ = "";
+
     /**
      *
      *
@@ -711,6 +720,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -733,6 +743,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -754,6 +765,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +783,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +808,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int securityLevel_ = 0;
+
     /**
      *
      *
@@ -810,6 +824,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
     public int getSecurityLevelValue() {
       return securityLevel_;
     }
+
     /**
      *
      *
@@ -828,6 +843,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +863,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -869,6 +886,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

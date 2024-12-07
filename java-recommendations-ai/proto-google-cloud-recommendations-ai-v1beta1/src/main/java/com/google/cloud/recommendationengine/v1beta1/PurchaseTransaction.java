@@ -33,6 +33,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.PurchaseTransaction)
     PurchaseTransactionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PurchaseTransaction.newBuilder() to construct.
   private PurchaseTransaction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
 
   public static final int REVENUE_FIELD_NUMBER = 2;
   private float revenue_ = 0F;
+
   /**
    *
    *
@@ -176,6 +180,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   public int getTaxesCount() {
     return internalGetTaxes().getMap().size();
   }
+
   /**
    *
    *
@@ -192,12 +197,14 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     }
     return internalGetTaxes().getMap().containsKey(key);
   }
+
   /** Use {@link #getTaxesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Float> getTaxes() {
     return getTaxesMap();
   }
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   public java.util.Map<java.lang.String, java.lang.Float> getTaxesMap() {
     return internalGetTaxes().getMap();
   }
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     java.util.Map<java.lang.String, java.lang.Float> map = internalGetTaxes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -275,6 +284,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   public int getCostsCount() {
     return internalGetCosts().getMap().size();
   }
+
   /**
    *
    *
@@ -301,12 +311,14 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     }
     return internalGetCosts().getMap().containsKey(key);
   }
+
   /** Use {@link #getCostsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Float> getCosts() {
     return getCostsMap();
   }
+
   /**
    *
    *
@@ -330,6 +342,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   public java.util.Map<java.lang.String, java.lang.Float> getCostsMap() {
     return internalGetCosts().getMap();
   }
+
   /**
    *
    *
@@ -357,6 +370,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     java.util.Map<java.lang.String, java.lang.Float> map = internalGetCosts().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -392,6 +406,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object currencyCode_ = "";
+
   /**
    *
    *
@@ -416,6 +431,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -655,6 +671,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -930,6 +947,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -952,6 +970,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -974,6 +993,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -995,6 +1015,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1033,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1058,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     }
 
     private float revenue_;
+
     /**
      *
      *
@@ -1054,6 +1077,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     public float getRevenue() {
       return revenue_;
     }
+
     /**
      *
      *
@@ -1076,6 +1100,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1147,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     public int getTaxesCount() {
       return internalGetTaxes().getMap().size();
     }
+
     /**
      *
      *
@@ -1138,12 +1164,14 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       }
       return internalGetTaxes().getMap().containsKey(key);
     }
+
     /** Use {@link #getTaxesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Float> getTaxes() {
       return getTaxesMap();
     }
+
     /**
      *
      *
@@ -1157,6 +1185,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     public java.util.Map<java.lang.String, java.lang.Float> getTaxesMap() {
       return internalGetTaxes().getMap();
     }
+
     /**
      *
      *
@@ -1174,6 +1203,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       java.util.Map<java.lang.String, java.lang.Float> map = internalGetTaxes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1200,6 +1230,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       internalGetMutableTaxes().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1216,12 +1247,14 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       internalGetMutableTaxes().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Float> getMutableTaxes() {
       bitField0_ |= 0x00000004;
       return internalGetMutableTaxes().getMutableMap();
     }
+
     /**
      *
      *
@@ -1240,6 +1273,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -1280,6 +1314,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     public int getCostsCount() {
       return internalGetCosts().getMap().size();
     }
+
     /**
      *
      *
@@ -1306,12 +1341,14 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       }
       return internalGetCosts().getMap().containsKey(key);
     }
+
     /** Use {@link #getCostsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Float> getCosts() {
       return getCostsMap();
     }
+
     /**
      *
      *
@@ -1335,6 +1372,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     public java.util.Map<java.lang.String, java.lang.Float> getCostsMap() {
       return internalGetCosts().getMap();
     }
+
     /**
      *
      *
@@ -1362,6 +1400,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       java.util.Map<java.lang.String, java.lang.Float> map = internalGetCosts().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1398,6 +1437,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       internalGetMutableCosts().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1424,12 +1464,14 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       internalGetMutableCosts().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Float> getMutableCosts() {
       bitField0_ |= 0x00000008;
       return internalGetMutableCosts().getMutableMap();
     }
+
     /**
      *
      *
@@ -1458,6 +1500,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -1484,6 +1527,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object currencyCode_ = "";
+
     /**
      *
      *
@@ -1507,6 +1551,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1530,6 +1575,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1552,6 +1598,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1570,6 +1617,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

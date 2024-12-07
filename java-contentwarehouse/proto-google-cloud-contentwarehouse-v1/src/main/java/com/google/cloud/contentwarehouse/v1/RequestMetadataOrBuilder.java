@@ -36,6 +36,7 @@ public interface RequestMetadataOrBuilder
    * @return Whether the userInfo field is set.
    */
   boolean hasUserInfo();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RequestMetadataOrBuilder
    * @return The userInfo.
    */
   com.google.cloud.contentwarehouse.v1.UserInfo getUserInfo();
+
   /**
    *
    *

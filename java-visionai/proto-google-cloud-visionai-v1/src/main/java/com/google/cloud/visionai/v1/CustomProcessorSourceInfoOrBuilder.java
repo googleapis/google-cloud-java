@@ -36,6 +36,7 @@ public interface CustomProcessorSourceInfoOrBuilder
    * @return Whether the vertexModel field is set.
    */
   boolean hasVertexModel();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CustomProcessorSourceInfoOrBuilder
    * @return The vertexModel.
    */
   java.lang.String getVertexModel();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface CustomProcessorSourceInfoOrBuilder
    * @return Whether the productRecognizerArtifact field is set.
    */
   boolean hasProductRecognizerArtifact();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface CustomProcessorSourceInfoOrBuilder
    */
   com.google.cloud.visionai.v1.CustomProcessorSourceInfo.ProductRecognizerArtifact
       getProductRecognizerArtifact();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface CustomProcessorSourceInfoOrBuilder
    * @return The enum numeric value on the wire for sourceType.
    */
   int getSourceTypeValue();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface CustomProcessorSourceInfoOrBuilder
    * </code>
    */
   int getAdditionalInfoCount();
+
   /**
    *
    *
@@ -155,9 +161,11 @@ public interface CustomProcessorSourceInfoOrBuilder
    * </code>
    */
   boolean containsAdditionalInfo(java.lang.String key);
+
   /** Use {@link #getAdditionalInfoMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAdditionalInfo();
+
   /**
    *
    *
@@ -171,6 +179,7 @@ public interface CustomProcessorSourceInfoOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAdditionalInfoMap();
+
   /**
    *
    *
@@ -188,6 +197,7 @@ public interface CustomProcessorSourceInfoOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -218,6 +228,7 @@ public interface CustomProcessorSourceInfoOrBuilder
    * @return Whether the modelSchema field is set.
    */
   boolean hasModelSchema();
+
   /**
    *
    *
@@ -234,6 +245,7 @@ public interface CustomProcessorSourceInfoOrBuilder
    * @return The modelSchema.
    */
   com.google.cloud.visionai.v1.CustomProcessorSourceInfo.ModelSchema getModelSchema();
+
   /**
    *
    *

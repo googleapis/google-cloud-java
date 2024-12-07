@@ -33,6 +33,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.devtools.source.v1.CloudWorkspaceSourceContext)
     CloudWorkspaceSourceContextOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudWorkspaceSourceContext.newBuilder() to construct.
   private CloudWorkspaceSourceContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int WORKSPACE_ID_FIELD_NUMBER = 1;
   private com.google.devtools.source.v1.CloudWorkspaceId workspaceId_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
   public boolean hasWorkspaceId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
         ? com.google.devtools.source.v1.CloudWorkspaceId.getDefaultInstance()
         : workspaceId_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object snapshotId_ = "";
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -341,6 +347,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -560,6 +567,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
             com.google.devtools.source.v1.CloudWorkspaceId.Builder,
             com.google.devtools.source.v1.CloudWorkspaceIdOrBuilder>
         workspaceIdBuilder_;
+
     /**
      *
      *
@@ -574,6 +582,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
     public boolean hasWorkspaceId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
         return workspaceIdBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +647,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -664,6 +676,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +711,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
       onChanged();
       return getWorkspaceIdFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -715,6 +730,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
             : workspaceId_;
       }
     }
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
     }
 
     private java.lang.Object snapshotId_ = "";
+
     /**
      *
      *
@@ -765,6 +782,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -788,6 +806,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -810,6 +829,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +848,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

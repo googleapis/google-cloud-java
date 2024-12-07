@@ -36,6 +36,7 @@ public interface ContainerSpecOrBuilder
    * @return The image.
    */
   java.lang.String getImage();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ContainerSpecOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ContainerSpecOrBuilder
    * @return The metadata.
    */
   com.google.dataflow.v1beta3.TemplateMetadata getMetadata();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ContainerSpecOrBuilder
    * @return Whether the sdkInfo field is set.
    */
   boolean hasSdkInfo();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface ContainerSpecOrBuilder
    * @return The sdkInfo.
    */
   com.google.dataflow.v1beta3.SDKInfo getSdkInfo();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface ContainerSpecOrBuilder
    * @return Whether the defaultEnvironment field is set.
    */
   boolean hasDefaultEnvironment();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface ContainerSpecOrBuilder
    * @return The defaultEnvironment.
    */
   com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment getDefaultEnvironment();
+
   /**
    *
    *

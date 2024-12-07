@@ -33,6 +33,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.CustomErrorResponsePolicy)
     CustomErrorResponsePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomErrorResponsePolicy.newBuilder() to construct.
   private CustomErrorResponsePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
   private java.util.List<
           com.google.cloud.compute.v1.CustomErrorResponsePolicyCustomErrorResponseRule>
       errorResponseRules_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       getErrorResponseRulesList() {
     return errorResponseRules_;
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       getErrorResponseRulesOrBuilderList() {
     return errorResponseRules_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
   public int getErrorResponseRulesCount() {
     return errorResponseRules_.size();
   }
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       getErrorResponseRules(int index) {
     return errorResponseRules_.get(index);
   }
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorService_ = "";
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
   public boolean hasErrorService() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -398,6 +407,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -687,6 +697,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
         return errorResponseRulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -705,6 +716,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
         return errorResponseRulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -724,6 +736,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
         return errorResponseRulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -750,6 +763,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +788,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +814,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +841,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +865,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +890,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +916,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +938,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +960,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +976,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
         getErrorResponseRulesBuilder(int index) {
       return getErrorResponseRulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -973,6 +996,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
         return errorResponseRulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -995,6 +1019,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(errorResponseRules_);
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
               com.google.cloud.compute.v1.CustomErrorResponsePolicyCustomErrorResponseRule
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1032,6 +1058,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
               com.google.cloud.compute.v1.CustomErrorResponsePolicyCustomErrorResponseRule
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1072,6 +1099,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
     }
 
     private java.lang.Object errorService_ = "";
+
     /**
      *
      *
@@ -1086,6 +1114,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
     public boolean hasErrorService() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1108,6 +1137,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1130,6 +1160,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1151,6 +1182,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1200,7 @@ public final class CustomErrorResponsePolicy extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -40,6 +40,7 @@ public interface UpdateMigratingVmRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateMigratingVmRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateMigratingVmRequestOrBuilder
    * @return Whether the migratingVm field is set.
    */
   boolean hasMigratingVm();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpdateMigratingVmRequestOrBuilder
    * @return The migratingVm.
    */
   com.google.cloud.vmmigration.v1.MigratingVm getMigratingVm();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface UpdateMigratingVmRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

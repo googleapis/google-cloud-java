@@ -297,7 +297,8 @@ public class DataStoreName implements ResourceName {
     private Builder(DataStoreName dataStoreName) {
       Preconditions.checkArgument(
           Objects.equals(dataStoreName.pathTemplate, PROJECT_LOCATION_DATA_STORE),
-          "toBuilder is only supported when DataStoreName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}");
+          "toBuilder is only supported when DataStoreName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}");
       this.project = dataStoreName.project;
       this.location = dataStoreName.location;
       this.dataStore = dataStoreName.dataStore;

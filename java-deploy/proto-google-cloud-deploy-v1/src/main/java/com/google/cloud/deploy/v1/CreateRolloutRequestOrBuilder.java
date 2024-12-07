@@ -40,6 +40,7 @@ public interface CreateRolloutRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateRolloutRequestOrBuilder
    * @return The rolloutId.
    */
   java.lang.String getRolloutId();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface CreateRolloutRequestOrBuilder
    * @return Whether the rollout field is set.
    */
   boolean hasRollout();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateRolloutRequestOrBuilder
    * @return The rollout.
    */
   com.google.cloud.deploy.v1.Rollout getRollout();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface CreateRolloutRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public interface CreateRolloutRequestOrBuilder
    * @return A list containing the overrideDeployPolicy.
    */
   java.util.List<java.lang.String> getOverrideDeployPolicyList();
+
   /**
    *
    *
@@ -213,6 +219,7 @@ public interface CreateRolloutRequestOrBuilder
    * @return The count of overrideDeployPolicy.
    */
   int getOverrideDeployPolicyCount();
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public interface CreateRolloutRequestOrBuilder
    * @return The overrideDeployPolicy at the given index.
    */
   java.lang.String getOverrideDeployPolicy(int index);
+
   /**
    *
    *
@@ -259,6 +267,7 @@ public interface CreateRolloutRequestOrBuilder
    * @return The startingPhaseId.
    */
   java.lang.String getStartingPhaseId();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ProductInputConfigOrBuilder
    * @return Whether the productInlineSource field is set.
    */
   boolean hasProductInlineSource();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ProductInputConfigOrBuilder
    * @return The productInlineSource.
    */
   com.google.cloud.retail.v2beta.ProductInlineSource getProductInlineSource();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ProductInputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ProductInputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.retail.v2beta.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface ProductInputConfigOrBuilder
    * @return Whether the bigQuerySource field is set.
    */
   boolean hasBigQuerySource();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ProductInputConfigOrBuilder
    * @return The bigQuerySource.
    */
   com.google.cloud.retail.v2beta.BigQuerySource getBigQuerySource();
+
   /**
    *
    *

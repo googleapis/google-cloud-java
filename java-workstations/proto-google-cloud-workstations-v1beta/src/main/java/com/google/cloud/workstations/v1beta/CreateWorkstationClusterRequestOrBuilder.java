@@ -38,6 +38,7 @@ public interface CreateWorkstationClusterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateWorkstationClusterRequestOrBuilder
    * @return The workstationClusterId.
    */
   java.lang.String getWorkstationClusterId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface CreateWorkstationClusterRequestOrBuilder
    * @return Whether the workstationCluster field is set.
    */
   boolean hasWorkstationCluster();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CreateWorkstationClusterRequestOrBuilder
    * @return The workstationCluster.
    */
   com.google.cloud.workstations.v1beta.WorkstationCluster getWorkstationCluster();
+
   /**
    *
    *

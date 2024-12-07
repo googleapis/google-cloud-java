@@ -33,6 +33,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DisplayDevice)
     DisplayDeviceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DisplayDevice.newBuilder() to construct.
   private DisplayDevice(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ENABLE_DISPLAY_FIELD_NUMBER = 14266886;
   private boolean enableDisplay_ = false;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnableDisplay() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -259,6 +262,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -443,6 +447,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean enableDisplay_;
+
     /**
      *
      *
@@ -458,6 +463,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnableDisplay() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -473,6 +479,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableDisplay() {
       return enableDisplay_;
     }
+
     /**
      *
      *
@@ -492,6 +499,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

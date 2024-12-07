@@ -36,6 +36,7 @@ public interface PropertyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PropertyOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *

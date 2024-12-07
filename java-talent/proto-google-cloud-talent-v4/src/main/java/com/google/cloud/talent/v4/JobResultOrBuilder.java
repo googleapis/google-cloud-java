@@ -41,6 +41,7 @@ public interface JobResultOrBuilder
    * @return Whether the job field is set.
    */
   boolean hasJob();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface JobResultOrBuilder
    * @return The job.
    */
   com.google.cloud.talent.v4.Job getJob();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface JobResultOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface JobResultOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface AccessPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AccessPolicyOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface AccessPolicyOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface AccessPolicyOrBuilder
    * @return A list containing the scopes.
    */
   java.util.List<java.lang.String> getScopesList();
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public interface AccessPolicyOrBuilder
    * @return The count of scopes.
    */
   int getScopesCount();
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public interface AccessPolicyOrBuilder
    * @return The scopes at the given index.
    */
   java.lang.String getScopes(int index);
+
   /**
    *
    *
@@ -220,6 +226,7 @@ public interface AccessPolicyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public interface AccessPolicyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -255,6 +263,7 @@ public interface AccessPolicyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -267,6 +276,7 @@ public interface AccessPolicyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -293,6 +303,7 @@ public interface AccessPolicyOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

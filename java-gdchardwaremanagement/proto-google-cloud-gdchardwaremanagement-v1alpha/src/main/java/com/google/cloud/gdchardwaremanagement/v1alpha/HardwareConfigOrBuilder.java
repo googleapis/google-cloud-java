@@ -41,6 +41,7 @@ public interface HardwareConfigOrBuilder
    * @return The sku.
    */
   java.lang.String getSku();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface HardwareConfigOrBuilder
    * @return The enum numeric value on the wire for powerSupply.
    */
   int getPowerSupplyValue();
+
   /**
    *
    *

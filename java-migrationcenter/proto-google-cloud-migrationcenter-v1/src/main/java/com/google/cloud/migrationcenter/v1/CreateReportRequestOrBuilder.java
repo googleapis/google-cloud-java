@@ -38,6 +38,7 @@ public interface CreateReportRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateReportRequestOrBuilder
    * @return The reportId.
    */
   java.lang.String getReportId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface CreateReportRequestOrBuilder
    * @return Whether the report field is set.
    */
   boolean hasReport();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateReportRequestOrBuilder
    * @return The report.
    */
   com.google.cloud.migrationcenter.v1.Report getReport();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface CreateReportRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface AccessControlEntryOrBuilder
    * @return A list containing the principals.
    */
   java.util.List<java.lang.String> getPrincipalsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AccessControlEntryOrBuilder
    * @return The count of principals.
    */
   int getPrincipalsCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface AccessControlEntryOrBuilder
    * @return The principals at the given index.
    */
   java.lang.String getPrincipals(int index);
+
   /**
    *
    *

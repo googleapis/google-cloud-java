@@ -36,6 +36,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.AutomationRun)
     AutomationRunOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutomationRun.newBuilder() to construct.
   private AutomationRun(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -166,6 +167,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -176,6 +178,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 1;</code>
      */
     public static final int SUCCEEDED_VALUE = 1;
+
     /**
      *
      *
@@ -186,6 +189,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLED = 2;</code>
      */
     public static final int CANCELLED_VALUE = 2;
+
     /**
      *
      *
@@ -196,6 +200,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 3;</code>
      */
     public static final int FAILED_VALUE = 3;
+
     /**
      *
      *
@@ -206,6 +211,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * <code>IN_PROGRESS = 4;</code>
      */
     public static final int IN_PROGRESS_VALUE = 4;
+
     /**
      *
      *
@@ -216,6 +222,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 5;</code>
      */
     public static final int PENDING_VALUE = 5;
+
     /**
      *
      *
@@ -338,6 +345,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     private OperationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -378,6 +386,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -402,6 +411,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -429,6 +439,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -445,6 +456,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -461,6 +473,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -478,6 +491,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -494,6 +508,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -510,6 +525,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -529,6 +545,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -555,6 +572,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -586,6 +604,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
+
   /**
    *
    *
@@ -610,6 +629,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -637,6 +657,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTOMATION_SNAPSHOT_FIELD_NUMBER = 6;
   private com.google.cloud.deploy.v1.Automation automationSnapshot_;
+
   /**
    *
    *
@@ -655,6 +676,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAutomationSnapshot() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -675,6 +697,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.deploy.v1.Automation.getDefaultInstance()
         : automationSnapshot_;
   }
+
   /**
    *
    *
@@ -698,6 +721,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetId_ = "";
+
   /**
    *
    *
@@ -723,6 +747,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -751,6 +776,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_ = 0;
+
   /**
    *
    *
@@ -768,6 +794,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -792,6 +819,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stateDescription_ = "";
+
   /**
    *
    *
@@ -816,6 +844,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -843,6 +872,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POLICY_VIOLATION_FIELD_NUMBER = 10;
   private com.google.cloud.deploy.v1.PolicyViolation policyViolation_;
+
   /**
    *
    *
@@ -861,6 +891,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPolicyViolation() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -881,6 +912,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.deploy.v1.PolicyViolation.getDefaultInstance()
         : policyViolation_;
   }
+
   /**
    *
    *
@@ -902,6 +934,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp expireTime_;
+
   /**
    *
    *
@@ -919,6 +952,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -936,6 +970,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
+
   /**
    *
    *
@@ -956,6 +991,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ruleId_ = "";
+
   /**
    *
    *
@@ -979,6 +1015,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1007,6 +1044,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object automationId_ = "";
+
   /**
    *
    *
@@ -1030,6 +1068,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1055,6 +1094,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROMOTE_RELEASE_OPERATION_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -1072,6 +1112,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPromoteReleaseOperation() {
     return operationCase_ == 13;
   }
+
   /**
    *
    *
@@ -1092,6 +1133,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.PromoteReleaseOperation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1113,6 +1155,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADVANCE_ROLLOUT_OPERATION_FIELD_NUMBER = 14;
+
   /**
    *
    *
@@ -1130,6 +1173,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdvanceRolloutOperation() {
     return operationCase_ == 14;
   }
+
   /**
    *
    *
@@ -1150,6 +1194,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.AdvanceRolloutOperation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1171,6 +1216,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPAIR_ROLLOUT_OPERATION_FIELD_NUMBER = 17;
+
   /**
    *
    *
@@ -1188,6 +1234,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRepairRolloutOperation() {
     return operationCase_ == 17;
   }
+
   /**
    *
    *
@@ -1208,6 +1255,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.RepairRolloutOperation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1229,6 +1277,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIMED_PROMOTE_RELEASE_OPERATION_FIELD_NUMBER = 19;
+
   /**
    *
    *
@@ -1247,6 +1296,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimedPromoteReleaseOperation() {
     return operationCase_ == 19;
   }
+
   /**
    *
    *
@@ -1268,6 +1318,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1291,6 +1342,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WAIT_UNTIL_TIME_FIELD_NUMBER = 16;
   private com.google.protobuf.Timestamp waitUntilTime_;
+
   /**
    *
    *
@@ -1309,6 +1361,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWaitUntilTime() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -1329,6 +1382,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : waitUntilTime_;
   }
+
   /**
    *
    *
@@ -1723,6 +1777,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2242,6 +2297,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2265,6 +2321,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2288,6 +2345,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2310,6 +2368,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2328,6 +2387,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2358,6 +2418,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2374,6 +2435,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2396,6 +2458,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2420,6 +2483,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2441,6 +2505,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2470,6 +2535,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2491,6 +2557,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2507,6 +2574,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2527,6 +2595,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2561,6 +2630,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2577,6 +2647,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2599,6 +2670,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2623,6 +2695,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2644,6 +2717,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2673,6 +2747,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2694,6 +2769,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2710,6 +2786,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2730,6 +2807,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2759,6 +2837,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -2784,6 +2863,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2809,6 +2889,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2833,6 +2914,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2853,6 +2935,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2880,6 +2963,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceAccount_ = "";
+
     /**
      *
      *
@@ -2903,6 +2987,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2926,6 +3011,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2948,6 +3034,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2966,6 +3053,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2996,6 +3084,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.Automation.Builder,
             com.google.cloud.deploy.v1.AutomationOrBuilder>
         automationSnapshotBuilder_;
+
     /**
      *
      *
@@ -3013,6 +3102,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAutomationSnapshot() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3036,6 +3126,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return automationSnapshotBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3061,6 +3152,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3084,6 +3176,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3114,6 +3207,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3136,6 +3230,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3153,6 +3248,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAutomationSnapshotFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3174,6 +3270,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             : automationSnapshot_;
       }
     }
+
     /**
      *
      *
@@ -3204,6 +3301,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object targetId_ = "";
+
     /**
      *
      *
@@ -3228,6 +3326,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3252,6 +3351,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3275,6 +3375,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3294,6 +3395,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3320,6 +3422,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3337,6 +3440,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3357,6 +3461,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3376,6 +3481,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.deploy.v1.AutomationRun.State.forNumber(state_);
       return result == null ? com.google.cloud.deploy.v1.AutomationRun.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3399,6 +3505,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3420,6 +3527,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object stateDescription_ = "";
+
     /**
      *
      *
@@ -3443,6 +3551,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3466,6 +3575,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3488,6 +3598,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3506,6 +3617,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3536,6 +3648,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.PolicyViolation.Builder,
             com.google.cloud.deploy.v1.PolicyViolationOrBuilder>
         policyViolationBuilder_;
+
     /**
      *
      *
@@ -3553,6 +3666,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPolicyViolation() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3576,6 +3690,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return policyViolationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3601,6 +3716,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3624,6 +3740,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3655,6 +3772,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3677,6 +3795,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3694,6 +3813,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPolicyViolationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3715,6 +3835,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             : policyViolation_;
       }
     }
+
     /**
      *
      *
@@ -3750,6 +3871,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -3767,6 +3889,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3790,6 +3913,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return expireTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3815,6 +3939,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3837,6 +3962,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3867,6 +3993,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3889,6 +4016,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3906,6 +4034,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3927,6 +4056,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             : expireTime_;
       }
     }
+
     /**
      *
      *
@@ -3957,6 +4087,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ruleId_ = "";
+
     /**
      *
      *
@@ -3979,6 +4110,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4001,6 +4133,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4022,6 +4155,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4039,6 +4173,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4063,6 +4198,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object automationId_ = "";
+
     /**
      *
      *
@@ -4085,6 +4221,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4107,6 +4244,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4128,6 +4266,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4145,6 +4284,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4173,6 +4313,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.PromoteReleaseOperation.Builder,
             com.google.cloud.deploy.v1.PromoteReleaseOperationOrBuilder>
         promoteReleaseOperationBuilder_;
+
     /**
      *
      *
@@ -4190,6 +4331,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPromoteReleaseOperation() {
       return operationCase_ == 13;
     }
+
     /**
      *
      *
@@ -4217,6 +4359,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.PromoteReleaseOperation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4242,6 +4385,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4264,6 +4408,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4300,6 +4445,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4327,6 +4473,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4342,6 +4489,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         getPromoteReleaseOperationBuilder() {
       return getPromoteReleaseOperationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4365,6 +4513,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.PromoteReleaseOperation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4405,6 +4554,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.AdvanceRolloutOperation.Builder,
             com.google.cloud.deploy.v1.AdvanceRolloutOperationOrBuilder>
         advanceRolloutOperationBuilder_;
+
     /**
      *
      *
@@ -4422,6 +4572,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdvanceRolloutOperation() {
       return operationCase_ == 14;
     }
+
     /**
      *
      *
@@ -4449,6 +4600,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.AdvanceRolloutOperation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4474,6 +4626,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4496,6 +4649,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4532,6 +4686,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4559,6 +4714,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4574,6 +4730,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         getAdvanceRolloutOperationBuilder() {
       return getAdvanceRolloutOperationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4597,6 +4754,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.AdvanceRolloutOperation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4637,6 +4795,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.RepairRolloutOperation.Builder,
             com.google.cloud.deploy.v1.RepairRolloutOperationOrBuilder>
         repairRolloutOperationBuilder_;
+
     /**
      *
      *
@@ -4654,6 +4813,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRepairRolloutOperation() {
       return operationCase_ == 17;
     }
+
     /**
      *
      *
@@ -4681,6 +4841,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.RepairRolloutOperation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4706,6 +4867,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -4728,6 +4890,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -4764,6 +4927,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -4791,6 +4955,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4806,6 +4971,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         getRepairRolloutOperationBuilder() {
       return getRepairRolloutOperationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4829,6 +4995,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.RepairRolloutOperation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4869,6 +5036,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.Builder,
             com.google.cloud.deploy.v1.TimedPromoteReleaseOperationOrBuilder>
         timedPromoteReleaseOperationBuilder_;
+
     /**
      *
      *
@@ -4887,6 +5055,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimedPromoteReleaseOperation() {
       return operationCase_ == 19;
     }
+
     /**
      *
      *
@@ -4916,6 +5085,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4942,6 +5112,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -4965,6 +5136,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -5002,6 +5174,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -5030,6 +5203,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5046,6 +5220,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         getTimedPromoteReleaseOperationBuilder() {
       return getTimedPromoteReleaseOperationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5070,6 +5245,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5112,6 +5288,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         waitUntilTimeBuilder_;
+
     /**
      *
      *
@@ -5129,6 +5306,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWaitUntilTime() {
       return ((bitField0_ & 0x00020000) != 0);
     }
+
     /**
      *
      *
@@ -5152,6 +5330,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         return waitUntilTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5177,6 +5356,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5199,6 +5379,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5229,6 +5410,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5251,6 +5433,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5268,6 +5451,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWaitUntilTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5289,6 +5473,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             : waitUntilTime_;
       }
     }
+
     /**
      *
      *

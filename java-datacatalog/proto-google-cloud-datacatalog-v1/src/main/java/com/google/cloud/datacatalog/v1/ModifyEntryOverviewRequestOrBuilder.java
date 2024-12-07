@@ -38,6 +38,7 @@ public interface ModifyEntryOverviewRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ModifyEntryOverviewRequestOrBuilder
    * @return Whether the entryOverview field is set.
    */
   boolean hasEntryOverview();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ModifyEntryOverviewRequestOrBuilder
    * @return The entryOverview.
    */
   com.google.cloud.datacatalog.v1.EntryOverview getEntryOverview();
+
   /**
    *
    *

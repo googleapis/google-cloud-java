@@ -34,6 +34,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.CloudLoggingEntry)
     CloudLoggingEntryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudLoggingEntry.newBuilder() to construct.
   private CloudLoggingEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object insertId_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object logId_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceContainer_ = "";
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -230,6 +237,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
 
   public static final int TIMESTAMP_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp timestamp_;
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
   public boolean hasTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getTimestamp() {
     return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
   }
+
   /**
    *
    *
@@ -465,6 +475,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -709,6 +720,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object insertId_ = "";
+
     /**
      *
      *
@@ -731,6 +743,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -753,6 +766,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -774,6 +788,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +806,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +831,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object logId_ = "";
+
     /**
      *
      *
@@ -840,6 +857,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -865,6 +883,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -889,6 +908,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -909,6 +929,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +957,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object resourceContainer_ = "";
+
     /**
      *
      *
@@ -959,6 +981,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -982,6 +1005,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1028,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1047,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1078,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timestampBuilder_;
+
     /**
      *
      *
@@ -1066,6 +1093,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
     public boolean hasTimestamp() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1084,6 +1112,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
         return timestampBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1106,6 +1135,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1155,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1183,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1203,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1185,6 +1218,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTimestampFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1201,6 +1235,7 @@ public final class CloudLoggingEntry extends com.google.protobuf.GeneratedMessag
         return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
       }
     }
+
     /**
      *
      *

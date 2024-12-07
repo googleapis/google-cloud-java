@@ -36,6 +36,7 @@ public interface GetStoragePoolTypeRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetStoragePoolTypeRequestOrBuilder
    * @return The storagePoolType.
    */
   java.lang.String getStoragePoolType();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetStoragePoolTypeRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

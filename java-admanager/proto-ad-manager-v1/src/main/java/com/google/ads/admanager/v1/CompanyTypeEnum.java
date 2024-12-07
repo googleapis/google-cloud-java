@@ -34,6 +34,7 @@ public final class CompanyTypeEnum extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CompanyTypeEnum)
     CompanyTypeEnumOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompanyTypeEnum.newBuilder() to construct.
   private CompanyTypeEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -146,6 +147,7 @@ public final class CompanyTypeEnum extends com.google.protobuf.GeneratedMessageV
      * <code>COMPANY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int COMPANY_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -156,6 +158,7 @@ public final class CompanyTypeEnum extends com.google.protobuf.GeneratedMessageV
      * <code>ADVERTISER = 1;</code>
      */
     public static final int ADVERTISER_VALUE = 1;
+
     /**
      *
      *
@@ -166,6 +169,7 @@ public final class CompanyTypeEnum extends com.google.protobuf.GeneratedMessageV
      * <code>HOUSE_ADVERTISER = 2;</code>
      */
     public static final int HOUSE_ADVERTISER_VALUE = 2;
+
     /**
      *
      *
@@ -177,6 +181,7 @@ public final class CompanyTypeEnum extends com.google.protobuf.GeneratedMessageV
      * <code>AGENCY = 3;</code>
      */
     public static final int AGENCY_VALUE = 3;
+
     /**
      *
      *
@@ -187,6 +192,7 @@ public final class CompanyTypeEnum extends com.google.protobuf.GeneratedMessageV
      * <code>HOUSE_AGENCY = 4;</code>
      */
     public static final int HOUSE_AGENCY_VALUE = 4;
+
     /**
      *
      *
@@ -437,6 +443,7 @@ public final class CompanyTypeEnum extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

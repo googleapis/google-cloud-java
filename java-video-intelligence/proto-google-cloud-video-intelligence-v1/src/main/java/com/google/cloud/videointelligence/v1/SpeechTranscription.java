@@ -33,6 +33,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.SpeechTranscription)
     SpeechTranscriptionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpeechTranscription.newBuilder() to construct.
   private SpeechTranscription(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.SpeechRecognitionAlternative>
       alternatives_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       getAlternativesList() {
     return alternatives_;
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       getAlternativesOrBuilderList() {
     return alternatives_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
   public int getAlternativesCount() {
     return alternatives_.size();
   }
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       int index) {
     return alternatives_.get(index);
   }
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -391,6 +399,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -676,6 +685,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
         return alternativesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -697,6 +707,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
         return alternativesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -719,6 +730,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
         return alternativesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -747,6 +759,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +787,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +816,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +845,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +872,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +900,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +928,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +953,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +978,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +997,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
         getAlternativesBuilder(int index) {
       return getAlternativesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -998,6 +1020,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
         return alternativesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1021,6 +1044,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(alternatives_);
       }
     }
+
     /**
      *
      *
@@ -1042,6 +1066,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
               com.google.cloud.videointelligence.v1.SpeechRecognitionAlternative
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1064,6 +1089,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
               com.google.cloud.videointelligence.v1.SpeechRecognitionAlternative
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1102,6 +1128,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -1126,6 +1153,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1178,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1202,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1222,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

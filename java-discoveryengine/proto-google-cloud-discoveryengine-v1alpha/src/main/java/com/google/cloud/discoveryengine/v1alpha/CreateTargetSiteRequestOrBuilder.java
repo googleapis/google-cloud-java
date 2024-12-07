@@ -40,6 +40,7 @@ public interface CreateTargetSiteRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface CreateTargetSiteRequestOrBuilder
    * @return Whether the targetSite field is set.
    */
   boolean hasTargetSite();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CreateTargetSiteRequestOrBuilder
    * @return The targetSite.
    */
   com.google.cloud.discoveryengine.v1alpha.TargetSite getTargetSite();
+
   /**
    *
    *

@@ -32,6 +32,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AutoscalersScopedList)
     AutoscalersScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoscalersScopedList.newBuilder() to construct.
   private AutoscalersScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Autoscaler> autoscalers_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.compute.v1.Autoscaler> getAutoscalersList() {
     return autoscalers_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       getAutoscalersOrBuilderList() {
     return autoscalers_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
   public int getAutoscalersCount() {
     return autoscalers_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
   public com.google.cloud.compute.v1.Autoscaler getAutoscalers(int index) {
     return autoscalers_.get(index);
   }
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +174,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -356,6 +365,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -647,6 +657,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
         return autoscalersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
         return autoscalersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -679,6 +691,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
         return autoscalersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -701,6 +714,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +758,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +781,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +801,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +822,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +843,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +863,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +883,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +896,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.Autoscaler.Builder getAutoscalersBuilder(int index) {
       return getAutoscalersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -890,6 +913,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
         return autoscalersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -907,6 +931,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(autoscalers_);
       }
     }
+
     /**
      *
      *
@@ -920,6 +945,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       return getAutoscalersFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Autoscaler.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -933,6 +959,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       return getAutoscalersFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Autoscaler.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -970,6 +997,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -984,6 +1012,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1004,6 +1033,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1056,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1076,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1104,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1124,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1139,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1123,6 +1158,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
             : warning_;
       }
     }
+
     /**
      *
      *

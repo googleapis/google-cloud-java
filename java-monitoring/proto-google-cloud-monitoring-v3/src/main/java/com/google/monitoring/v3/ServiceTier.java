@@ -86,6 +86,7 @@ public enum ServiceTier implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SERVICE_TIER_UNSPECIFIED = 0;</code>
    */
   public static final int SERVICE_TIER_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -100,6 +101,7 @@ public enum ServiceTier implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SERVICE_TIER_BASIC = 1;</code>
    */
   public static final int SERVICE_TIER_BASIC_VALUE = 1;
+
   /**
    *
    *

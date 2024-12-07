@@ -34,6 +34,7 @@ public interface ListBackupVaultsResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.BackupVault backup_vaults = 1;</code>
    */
   java.util.List<com.google.cloud.netapp.v1.BackupVault> getBackupVaultsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListBackupVaultsResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.BackupVault backup_vaults = 1;</code>
    */
   com.google.cloud.netapp.v1.BackupVault getBackupVaults(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListBackupVaultsResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.BackupVault backup_vaults = 1;</code>
    */
   int getBackupVaultsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListBackupVaultsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.netapp.v1.BackupVaultOrBuilder>
       getBackupVaultsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListBackupVaultsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListBackupVaultsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListBackupVaultsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListBackupVaultsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

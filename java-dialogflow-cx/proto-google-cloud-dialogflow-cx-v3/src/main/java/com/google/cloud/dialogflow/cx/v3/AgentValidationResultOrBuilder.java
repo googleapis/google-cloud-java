@@ -38,6 +38,7 @@ public interface AgentValidationResultOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AgentValidationResultOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.FlowValidationResult>
       getFlowValidationResultsList();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface AgentValidationResultOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3.FlowValidationResult getFlowValidationResults(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface AgentValidationResultOrBuilder
    * </code>
    */
   int getFlowValidationResultsCount();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface AgentValidationResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.FlowValidationResultOrBuilder>
       getFlowValidationResultsOrBuilderList();
+
   /**
    *
    *

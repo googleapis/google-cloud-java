@@ -41,6 +41,7 @@ public interface GroupFindingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -95,6 +96,7 @@ public interface GroupFindingsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -154,6 +156,7 @@ public interface GroupFindingsRequestOrBuilder
    * @return The groupBy.
    */
   java.lang.String getGroupBy();
+
   /**
    *
    *
@@ -192,6 +195,7 @@ public interface GroupFindingsRequestOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -207,6 +211,7 @@ public interface GroupFindingsRequestOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *
@@ -235,6 +240,7 @@ public interface GroupFindingsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

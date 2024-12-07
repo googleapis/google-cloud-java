@@ -37,6 +37,7 @@ public interface AppPlatformCloudFunctionRequestOrBuilder
    * @return Whether the appPlatformMetadata field is set.
    */
   boolean hasAppPlatformMetadata();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface AppPlatformCloudFunctionRequestOrBuilder
    * @return The appPlatformMetadata.
    */
   com.google.cloud.visionai.v1.AppPlatformMetadata getAppPlatformMetadata();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface AppPlatformCloudFunctionRequestOrBuilder
   java.util.List<
           com.google.cloud.visionai.v1.AppPlatformCloudFunctionRequest.StructedInputAnnotation>
       getAnnotationsList();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface AppPlatformCloudFunctionRequestOrBuilder
    */
   com.google.cloud.visionai.v1.AppPlatformCloudFunctionRequest.StructedInputAnnotation
       getAnnotations(int index);
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface AppPlatformCloudFunctionRequestOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface AppPlatformCloudFunctionRequestOrBuilder
               com.google.cloud.visionai.v1.AppPlatformCloudFunctionRequest
                   .StructedInputAnnotationOrBuilder>
       getAnnotationsOrBuilderList();
+
   /**
    *
    *

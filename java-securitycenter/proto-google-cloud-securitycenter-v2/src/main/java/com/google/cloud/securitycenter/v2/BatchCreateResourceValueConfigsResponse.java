@@ -34,6 +34,7 @@ public final class BatchCreateResourceValueConfigsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.BatchCreateResourceValueConfigsResponse)
     BatchCreateResourceValueConfigsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateResourceValueConfigsResponse.newBuilder() to construct.
   private BatchCreateResourceValueConfigsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class BatchCreateResourceValueConfigsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.ResourceValueConfig>
       resourceValueConfigs_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class BatchCreateResourceValueConfigsResponse
       getResourceValueConfigsList() {
     return resourceValueConfigs_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class BatchCreateResourceValueConfigsResponse
       getResourceValueConfigsOrBuilderList() {
     return resourceValueConfigs_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class BatchCreateResourceValueConfigsResponse
   public int getResourceValueConfigsCount() {
     return resourceValueConfigs_.size();
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class BatchCreateResourceValueConfigsResponse
   public com.google.cloud.securitycenter.v2.ResourceValueConfig getResourceValueConfigs(int index) {
     return resourceValueConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -315,6 +321,7 @@ public final class BatchCreateResourceValueConfigsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -593,6 +600,7 @@ public final class BatchCreateResourceValueConfigsResponse
         return resourceValueConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -611,6 +619,7 @@ public final class BatchCreateResourceValueConfigsResponse
         return resourceValueConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -630,6 +639,7 @@ public final class BatchCreateResourceValueConfigsResponse
         return resourceValueConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -655,6 +665,7 @@ public final class BatchCreateResourceValueConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class BatchCreateResourceValueConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -702,6 +714,7 @@ public final class BatchCreateResourceValueConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +740,7 @@ public final class BatchCreateResourceValueConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class BatchCreateResourceValueConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class BatchCreateResourceValueConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class BatchCreateResourceValueConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +832,7 @@ public final class BatchCreateResourceValueConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class BatchCreateResourceValueConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +870,7 @@ public final class BatchCreateResourceValueConfigsResponse
         getResourceValueConfigsBuilder(int index) {
       return getResourceValueConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -870,6 +890,7 @@ public final class BatchCreateResourceValueConfigsResponse
         return resourceValueConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -889,6 +910,7 @@ public final class BatchCreateResourceValueConfigsResponse
         return java.util.Collections.unmodifiableList(resourceValueConfigs_);
       }
     }
+
     /**
      *
      *
@@ -905,6 +927,7 @@ public final class BatchCreateResourceValueConfigsResponse
       return getResourceValueConfigsFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v2.ResourceValueConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -922,6 +945,7 @@ public final class BatchCreateResourceValueConfigsResponse
           .addBuilder(
               index, com.google.cloud.securitycenter.v2.ResourceValueConfig.getDefaultInstance());
     }
+
     /**
      *
      *

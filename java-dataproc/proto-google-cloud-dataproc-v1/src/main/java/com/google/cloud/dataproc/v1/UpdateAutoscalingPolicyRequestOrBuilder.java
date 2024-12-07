@@ -38,6 +38,7 @@ public interface UpdateAutoscalingPolicyRequestOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateAutoscalingPolicyRequestOrBuilder
    * @return The policy.
    */
   com.google.cloud.dataproc.v1.AutoscalingPolicy getPolicy();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.KerberosConfig)
     KerberosConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use KerberosConfig.newBuilder() to construct.
   private KerberosConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_KERBEROS_FIELD_NUMBER = 1;
   private boolean enableKerberos_ = false;
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rootPrincipalPasswordUri_ = "";
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyUri_ = "";
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keystoreUri_ = "";
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -259,6 +267,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object truststoreUri_ = "";
+
   /**
    *
    *
@@ -284,6 +293,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -314,6 +324,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keystorePasswordUri_ = "";
+
   /**
    *
    *
@@ -339,6 +350,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -369,6 +381,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyPasswordUri_ = "";
+
   /**
    *
    *
@@ -394,6 +407,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -424,6 +438,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object truststorePasswordUri_ = "";
+
   /**
    *
    *
@@ -449,6 +464,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -479,6 +495,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object crossRealmTrustRealm_ = "";
+
   /**
    *
    *
@@ -503,6 +520,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -532,6 +550,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object crossRealmTrustKdc_ = "";
+
   /**
    *
    *
@@ -556,6 +575,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -585,6 +605,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object crossRealmTrustAdminServer_ = "";
+
   /**
    *
    *
@@ -610,6 +631,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -640,6 +662,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object crossRealmTrustSharedPasswordUri_ = "";
+
   /**
    *
    *
@@ -667,6 +690,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -699,6 +723,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kdcDbKeyUri_ = "";
+
   /**
    *
    *
@@ -723,6 +748,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -750,6 +776,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TGT_LIFETIME_HOURS_FIELD_NUMBER = 14;
   private int tgtLifetimeHours_ = 0;
+
   /**
    *
    *
@@ -772,6 +799,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object realm_ = "";
+
   /**
    *
    *
@@ -796,6 +824,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1113,6 +1142,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1502,6 +1532,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean enableKerberos_;
+
     /**
      *
      *
@@ -1518,6 +1549,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableKerberos() {
       return enableKerberos_;
     }
+
     /**
      *
      *
@@ -1538,6 +1570,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1558,6 +1591,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object rootPrincipalPasswordUri_ = "";
+
     /**
      *
      *
@@ -1582,6 +1616,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1606,6 +1641,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1629,6 +1665,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1648,6 +1685,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1674,6 +1712,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kmsKeyUri_ = "";
+
     /**
      *
      *
@@ -1697,6 +1736,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1720,6 +1760,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1742,6 +1783,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1760,6 +1802,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1785,6 +1828,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object keystoreUri_ = "";
+
     /**
      *
      *
@@ -1809,6 +1853,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1833,6 +1878,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1856,6 +1902,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1875,6 +1922,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1901,6 +1949,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object truststoreUri_ = "";
+
     /**
      *
      *
@@ -1925,6 +1974,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1949,6 +1999,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1972,6 +2023,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1991,6 +2043,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2017,6 +2070,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object keystorePasswordUri_ = "";
+
     /**
      *
      *
@@ -2041,6 +2095,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2065,6 +2120,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2088,6 +2144,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2107,6 +2164,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2133,6 +2191,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object keyPasswordUri_ = "";
+
     /**
      *
      *
@@ -2157,6 +2216,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2181,6 +2241,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2204,6 +2265,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2223,6 +2285,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2249,6 +2312,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object truststorePasswordUri_ = "";
+
     /**
      *
      *
@@ -2273,6 +2337,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2297,6 +2362,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2320,6 +2386,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2339,6 +2406,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2365,6 +2433,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object crossRealmTrustRealm_ = "";
+
     /**
      *
      *
@@ -2388,6 +2457,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2411,6 +2481,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2433,6 +2504,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2451,6 +2523,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2476,6 +2549,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object crossRealmTrustKdc_ = "";
+
     /**
      *
      *
@@ -2499,6 +2573,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2522,6 +2597,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2544,6 +2620,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2562,6 +2639,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2587,6 +2665,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object crossRealmTrustAdminServer_ = "";
+
     /**
      *
      *
@@ -2611,6 +2690,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2635,6 +2715,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2658,6 +2739,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2677,6 +2759,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2703,6 +2786,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object crossRealmTrustSharedPasswordUri_ = "";
+
     /**
      *
      *
@@ -2729,6 +2813,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2755,6 +2840,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2780,6 +2866,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2802,6 +2889,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2830,6 +2918,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kdcDbKeyUri_ = "";
+
     /**
      *
      *
@@ -2853,6 +2942,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2876,6 +2966,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2898,6 +2989,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2916,6 +3008,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2941,6 +3034,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int tgtLifetimeHours_;
+
     /**
      *
      *
@@ -2958,6 +3052,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     public int getTgtLifetimeHours() {
       return tgtLifetimeHours_;
     }
+
     /**
      *
      *
@@ -2979,6 +3074,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3000,6 +3096,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object realm_ = "";
+
     /**
      *
      *
@@ -3023,6 +3120,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3046,6 +3144,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3068,6 +3167,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3086,6 +3186,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

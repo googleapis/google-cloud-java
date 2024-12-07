@@ -79,6 +79,7 @@ public interface AnnotatorSelectorOrBuilder
    * @return A list containing the phraseMatchers.
    */
   java.util.List<java.lang.String> getPhraseMatchersList();
+
   /**
    *
    *
@@ -95,6 +96,7 @@ public interface AnnotatorSelectorOrBuilder
    * @return The count of phraseMatchers.
    */
   int getPhraseMatchersCount();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface AnnotatorSelectorOrBuilder
    * @return The phraseMatchers at the given index.
    */
   java.lang.String getPhraseMatchers(int index);
+
   /**
    *
    *
@@ -199,6 +202,7 @@ public interface AnnotatorSelectorOrBuilder
    * @return A list containing the issueModels.
    */
   java.util.List<java.lang.String> getIssueModelsList();
+
   /**
    *
    *
@@ -215,6 +219,7 @@ public interface AnnotatorSelectorOrBuilder
    * @return The count of issueModels.
    */
   int getIssueModelsCount();
+
   /**
    *
    *
@@ -232,6 +237,7 @@ public interface AnnotatorSelectorOrBuilder
    * @return The issueModels at the given index.
    */
   java.lang.String getIssueModels(int index);
+
   /**
    *
    *
@@ -277,6 +283,7 @@ public interface AnnotatorSelectorOrBuilder
    * @return Whether the summarizationConfig field is set.
    */
   boolean hasSummarizationConfig();
+
   /**
    *
    *
@@ -292,6 +299,7 @@ public interface AnnotatorSelectorOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
       getSummarizationConfig();
+
   /**
    *
    *
@@ -331,6 +339,7 @@ public interface AnnotatorSelectorOrBuilder
    * @return Whether the qaConfig field is set.
    */
   boolean hasQaConfig();
+
   /**
    *
    *
@@ -343,6 +352,7 @@ public interface AnnotatorSelectorOrBuilder
    * @return The qaConfig.
    */
   com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig getQaConfig();
+
   /**
    *
    *

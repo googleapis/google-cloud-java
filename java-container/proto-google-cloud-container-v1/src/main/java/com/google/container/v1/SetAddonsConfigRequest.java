@@ -33,6 +33,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.container.v1.SetAddonsConfigRequest)
     SetAddonsConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetAddonsConfigRequest.newBuilder() to construct.
   private SetAddonsConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
+
   /**
    *
    *
@@ -222,6 +228,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -252,6 +259,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
 
   public static final int ADDONS_CONFIG_FIELD_NUMBER = 4;
   private com.google.container.v1.AddonsConfig addonsConfig_;
+
   /**
    *
    *
@@ -270,6 +278,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
   public boolean hasAddonsConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -290,6 +299,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
         ? com.google.container.v1.AddonsConfig.getDefaultInstance()
         : addonsConfig_;
   }
+
   /**
    *
    *
@@ -313,6 +323,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -337,6 +348,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -562,6 +574,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -820,6 +833,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -847,6 +861,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -874,6 +889,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -900,6 +916,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +939,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -951,6 +969,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -979,6 +998,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1007,6 +1027,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1034,6 +1055,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1079,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1110,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object clusterId_ = "";
+
     /**
      *
      *
@@ -1113,6 +1137,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1139,6 +1164,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1164,6 +1190,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1185,6 +1212,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1246,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
             com.google.container.v1.AddonsConfig.Builder,
             com.google.container.v1.AddonsConfigOrBuilder>
         addonsConfigBuilder_;
+
     /**
      *
      *
@@ -1235,6 +1264,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
     public boolean hasAddonsConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1258,6 +1288,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
         return addonsConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1283,6 +1314,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1337,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1335,6 +1368,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1357,6 +1391,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1409,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getAddonsConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1395,6 +1431,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
             : addonsConfig_;
       }
     }
+
     /**
      *
      *
@@ -1425,6 +1462,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1448,6 +1486,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1471,6 +1510,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1493,6 +1533,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1511,6 +1552,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

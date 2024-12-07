@@ -36,6 +36,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return A list containing the affectedCircuits.
    */
   java.util.List<java.lang.String> getAffectedCircuitsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return The count of affectedCircuits.
    */
   int getAffectedCircuitsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return The affectedCircuits at the given index.
    */
   java.lang.String getAffectedCircuits(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return Whether the issueType field is set.
    */
   boolean hasIssueType();
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return The issueType.
    */
   java.lang.String getIssueType();
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
+
   /**
    *
    *
@@ -240,6 +251,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
+
   /**
    *
    *
@@ -266,6 +278,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -292,6 +305,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -305,6 +319,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * @return The state.
    */
   java.lang.String getState();
+
   /**
    *
    *

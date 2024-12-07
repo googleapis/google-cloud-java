@@ -40,6 +40,7 @@ public interface LabelTextRequestOrBuilder
    * @return Whether the textClassificationConfig field is set.
    */
   boolean hasTextClassificationConfig();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface LabelTextRequestOrBuilder
    * @return The textClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.TextClassificationConfig getTextClassificationConfig();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface LabelTextRequestOrBuilder
    * @return Whether the textEntityExtractionConfig field is set.
    */
   boolean hasTextEntityExtractionConfig();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface LabelTextRequestOrBuilder
    * @return The textEntityExtractionConfig.
    */
   com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig getTextEntityExtractionConfig();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface LabelTextRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public interface LabelTextRequestOrBuilder
    * @return Whether the basicConfig field is set.
    */
   boolean hasBasicConfig();
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public interface LabelTextRequestOrBuilder
    * @return The basicConfig.
    */
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig();
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public interface LabelTextRequestOrBuilder
    * @return The enum numeric value on the wire for feature.
    */
   int getFeatureValue();
+
   /**
    *
    *

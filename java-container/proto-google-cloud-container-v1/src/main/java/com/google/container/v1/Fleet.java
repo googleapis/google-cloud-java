@@ -33,6 +33,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1.Fleet)
     FleetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Fleet.newBuilder() to construct.
   private Fleet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object membership_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRE_REGISTERED_FIELD_NUMBER = 3;
   private boolean preRegistered_ = false;
+
   /**
    *
    *
@@ -367,6 +373,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -576,6 +583,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -600,6 +608,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -624,6 +633,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -647,6 +657,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object membership_ = "";
+
     /**
      *
      *
@@ -716,6 +729,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -740,6 +754,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -763,6 +778,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +798,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +825,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean preRegistered_;
+
     /**
      *
      *
@@ -824,6 +842,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
     public boolean getPreRegistered() {
       return preRegistered_;
     }
+
     /**
      *
      *
@@ -844,6 +863,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

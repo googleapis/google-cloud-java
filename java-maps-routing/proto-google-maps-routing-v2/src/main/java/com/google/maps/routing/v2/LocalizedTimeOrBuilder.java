@@ -36,6 +36,7 @@ public interface LocalizedTimeOrBuilder
    * @return Whether the time field is set.
    */
   boolean hasTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LocalizedTimeOrBuilder
    * @return The time.
    */
   com.google.type.LocalizedText getTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface LocalizedTimeOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
+
   /**
    *
    *

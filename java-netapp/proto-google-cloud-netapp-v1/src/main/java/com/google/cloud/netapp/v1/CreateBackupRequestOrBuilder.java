@@ -39,6 +39,7 @@ public interface CreateBackupRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateBackupRequestOrBuilder
    * @return The backupId.
    */
   java.lang.String getBackupId();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface CreateBackupRequestOrBuilder
    * @return Whether the backup field is set.
    */
   boolean hasBackup();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateBackupRequestOrBuilder
    * @return The backup.
    */
   com.google.cloud.netapp.v1.Backup getBackup();
+
   /**
    *
    *

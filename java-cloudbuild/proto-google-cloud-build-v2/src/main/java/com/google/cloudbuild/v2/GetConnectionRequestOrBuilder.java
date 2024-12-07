@@ -39,6 +39,7 @@ public interface GetConnectionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.QueryAssetsOutputConfig)
     QueryAssetsOutputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryAssetsOutputConfig.newBuilder() to construct.
   private QueryAssetsOutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      * @return The dataset.
      */
     java.lang.String getDataset();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      * @return The table.
      */
     java.lang.String getTable();
+
     /**
      *
      *
@@ -144,6 +147,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      * @return The writeDisposition.
      */
     java.lang.String getWriteDisposition();
+
     /**
      *
      *
@@ -167,6 +171,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getWriteDispositionBytes();
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination)
       BigQueryDestinationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BigQueryDestination.newBuilder() to construct.
     private BigQueryDestination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -217,6 +223,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataset_ = "";
+
     /**
      *
      *
@@ -241,6 +248,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -270,6 +278,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object table_ = "";
+
     /**
      *
      *
@@ -295,6 +304,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -325,6 +335,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object writeDisposition_ = "";
+
     /**
      *
      *
@@ -358,6 +369,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -572,6 +584,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -799,6 +812,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object dataset_ = "";
+
       /**
        *
        *
@@ -822,6 +836,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -845,6 +860,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -867,6 +883,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -885,6 +902,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -910,6 +928,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
       }
 
       private java.lang.Object table_ = "";
+
       /**
        *
        *
@@ -934,6 +953,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -958,6 +978,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -981,6 +1002,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1000,6 +1022,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1026,6 +1049,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
       }
 
       private java.lang.Object writeDisposition_ = "";
+
       /**
        *
        *
@@ -1058,6 +1082,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1090,6 +1115,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1121,6 +1147,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1148,6 +1175,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1253,6 +1281,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
   public static final int BIGQUERY_DESTINATION_FIELD_NUMBER = 1;
   private com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination
       bigqueryDestination_;
+
   /**
    *
    *
@@ -1270,6 +1299,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
   public boolean hasBigqueryDestination() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1290,6 +1320,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         ? com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination.getDefaultInstance()
         : bigqueryDestination_;
   }
+
   /**
    *
    *
@@ -1473,6 +1504,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1681,6 +1713,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
             com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination.Builder,
             com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestinationOrBuilder>
         bigqueryDestinationBuilder_;
+
     /**
      *
      *
@@ -1697,6 +1730,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
     public boolean hasBigqueryDestination() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1721,6 +1755,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         return bigqueryDestinationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1746,6 +1781,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1769,6 +1805,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1801,6 +1838,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1822,6 +1860,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1839,6 +1878,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
       onChanged();
       return getBigqueryDestinationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1861,6 +1901,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
             : bigqueryDestination_;
       }
     }
+
     /**
      *
      *

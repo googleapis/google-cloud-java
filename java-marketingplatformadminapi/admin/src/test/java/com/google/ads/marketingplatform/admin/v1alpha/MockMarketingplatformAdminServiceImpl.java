@@ -95,7 +95,8 @@ public class MockMarketingplatformAdminServiceImpl extends MarketingplatformAdmi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAnalyticsAccountLinks, expected %s or %s",
+                  "Unrecognized response type %s for method ListAnalyticsAccountLinks, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAnalyticsAccountLinksResponse.class.getName(),
                   Exception.class.getName())));
@@ -117,7 +118,8 @@ public class MockMarketingplatformAdminServiceImpl extends MarketingplatformAdmi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateAnalyticsAccountLink, expected %s or %s",
+                  "Unrecognized response type %s for method CreateAnalyticsAccountLink, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AnalyticsAccountLink.class.getName(),
                   Exception.class.getName())));
@@ -138,7 +140,8 @@ public class MockMarketingplatformAdminServiceImpl extends MarketingplatformAdmi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteAnalyticsAccountLink, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteAnalyticsAccountLink, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -160,7 +163,8 @@ public class MockMarketingplatformAdminServiceImpl extends MarketingplatformAdmi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SetPropertyServiceLevel, expected %s or %s",
+                  "Unrecognized response type %s for method SetPropertyServiceLevel, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SetPropertyServiceLevelResponse.class.getName(),
                   Exception.class.getName())));

@@ -36,6 +36,7 @@ public interface CompilationResultOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CompilationResultOrBuilder
    * @return Whether the gitCommitish field is set.
    */
   boolean hasGitCommitish();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CompilationResultOrBuilder
    * @return The gitCommitish.
    */
   java.lang.String getGitCommitish();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface CompilationResultOrBuilder
    * @return Whether the workspace field is set.
    */
   boolean hasWorkspace();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface CompilationResultOrBuilder
    * @return The workspace.
    */
   java.lang.String getWorkspace();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface CompilationResultOrBuilder
    * @return Whether the releaseConfig field is set.
    */
   boolean hasReleaseConfig();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface CompilationResultOrBuilder
    * @return The releaseConfig.
    */
   java.lang.String getReleaseConfig();
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public interface CompilationResultOrBuilder
    * @return Whether the codeCompilationConfig field is set.
    */
   boolean hasCodeCompilationConfig();
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public interface CompilationResultOrBuilder
    * @return The codeCompilationConfig.
    */
   com.google.cloud.dataform.v1beta1.CodeCompilationConfig getCodeCompilationConfig();
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public interface CompilationResultOrBuilder
    * @return The resolvedGitCommitSha.
    */
   java.lang.String getResolvedGitCommitSha();
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public interface CompilationResultOrBuilder
    * @return The dataformCoreVersion.
    */
   java.lang.String getDataformCoreVersion();
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public interface CompilationResultOrBuilder
    */
   java.util.List<com.google.cloud.dataform.v1beta1.CompilationResult.CompilationError>
       getCompilationErrorsList();
+
   /**
    *
    *
@@ -319,6 +331,7 @@ public interface CompilationResultOrBuilder
    */
   com.google.cloud.dataform.v1beta1.CompilationResult.CompilationError getCompilationErrors(
       int index);
+
   /**
    *
    *
@@ -331,6 +344,7 @@ public interface CompilationResultOrBuilder
    * </code>
    */
   int getCompilationErrorsCount();
+
   /**
    *
    *
@@ -345,6 +359,7 @@ public interface CompilationResultOrBuilder
   java.util.List<
           ? extends com.google.cloud.dataform.v1beta1.CompilationResult.CompilationErrorOrBuilder>
       getCompilationErrorsOrBuilderList();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.ImportDocumentsResponse)
     ImportDocumentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportDocumentsResponse.newBuilder() to construct.
   private ImportDocumentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
     return errorSamples_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList() {
     return errorSamples_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
   public int getErrorSamplesCount() {
     return errorSamples_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
   public com.google.rpc.Status getErrorSamples(int index) {
     return errorSamples_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
 
   public static final int ERROR_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1.ImportErrorConfig errorConfig_;
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
   public boolean hasErrorConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -171,6 +179,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
         ? com.google.cloud.discoveryengine.v1.ImportErrorConfig.getDefaultInstance()
         : errorConfig_;
   }
+
   /**
    *
    *
@@ -363,6 +372,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -654,6 +664,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
         return errorSamplesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -670,6 +681,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
         return errorSamplesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
         return errorSamplesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +741,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +764,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +787,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +807,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +827,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +847,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +867,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +887,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +900,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
     public com.google.rpc.Status.Builder getErrorSamplesBuilder(int index) {
       return getErrorSamplesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -894,6 +917,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
         return errorSamplesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -910,6 +934,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(errorSamples_);
       }
     }
+
     /**
      *
      *
@@ -922,6 +947,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
     public com.google.rpc.Status.Builder addErrorSamplesBuilder() {
       return getErrorSamplesFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -935,6 +961,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       return getErrorSamplesFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -969,6 +996,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
             com.google.cloud.discoveryengine.v1.ImportErrorConfig.Builder,
             com.google.cloud.discoveryengine.v1.ImportErrorConfigOrBuilder>
         errorConfigBuilder_;
+
     /**
      *
      *
@@ -983,6 +1011,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
     public boolean hasErrorConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1003,6 +1032,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
         return errorConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1055,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1076,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1105,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1125,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1140,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1125,6 +1160,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
             : errorConfig_;
       }
     }
+
     /**
      *
      *

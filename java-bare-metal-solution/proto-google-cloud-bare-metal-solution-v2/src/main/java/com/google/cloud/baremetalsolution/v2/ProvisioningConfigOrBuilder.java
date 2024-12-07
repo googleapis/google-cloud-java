@@ -37,6 +37,7 @@ public interface ProvisioningConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ProvisioningConfigOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.InstanceConfig instances = 2;</code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.InstanceConfig> getInstancesList();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ProvisioningConfigOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.InstanceConfig instances = 2;</code>
    */
   com.google.cloud.baremetalsolution.v2.InstanceConfig getInstances(int index);
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface ProvisioningConfigOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.InstanceConfig instances = 2;</code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface ProvisioningConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.InstanceConfigOrBuilder>
       getInstancesOrBuilderList();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ProvisioningConfigOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.NetworkConfig networks = 3;</code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.NetworkConfig> getNetworksList();
+
   /**
    *
    *
@@ -123,6 +129,7 @@ public interface ProvisioningConfigOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.NetworkConfig networks = 3;</code>
    */
   com.google.cloud.baremetalsolution.v2.NetworkConfig getNetworks(int index);
+
   /**
    *
    *
@@ -133,6 +140,7 @@ public interface ProvisioningConfigOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.NetworkConfig networks = 3;</code>
    */
   int getNetworksCount();
+
   /**
    *
    *
@@ -144,6 +152,7 @@ public interface ProvisioningConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.NetworkConfigOrBuilder>
       getNetworksOrBuilderList();
+
   /**
    *
    *
@@ -165,6 +174,7 @@ public interface ProvisioningConfigOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.VolumeConfig volumes = 4;</code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.VolumeConfig> getVolumesList();
+
   /**
    *
    *
@@ -175,6 +185,7 @@ public interface ProvisioningConfigOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.VolumeConfig volumes = 4;</code>
    */
   com.google.cloud.baremetalsolution.v2.VolumeConfig getVolumes(int index);
+
   /**
    *
    *
@@ -185,6 +196,7 @@ public interface ProvisioningConfigOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.VolumeConfig volumes = 4;</code>
    */
   int getVolumesCount();
+
   /**
    *
    *
@@ -196,6 +208,7 @@ public interface ProvisioningConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.VolumeConfigOrBuilder>
       getVolumesOrBuilderList();
+
   /**
    *
    *
@@ -219,6 +232,7 @@ public interface ProvisioningConfigOrBuilder
    * @return The ticketId.
    */
   java.lang.String getTicketId();
+
   /**
    *
    *
@@ -245,6 +259,7 @@ public interface ProvisioningConfigOrBuilder
    * @return The handoverServiceAccount.
    */
   java.lang.String getHandoverServiceAccount();
+
   /**
    *
    *
@@ -275,6 +290,7 @@ public interface ProvisioningConfigOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getEmail();
+
   /**
    *
    *
@@ -306,6 +322,7 @@ public interface ProvisioningConfigOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -334,6 +351,7 @@ public interface ProvisioningConfigOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -361,6 +379,7 @@ public interface ProvisioningConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -374,6 +393,7 @@ public interface ProvisioningConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -398,6 +418,7 @@ public interface ProvisioningConfigOrBuilder
    * @return The cloudConsoleUri.
    */
   java.lang.String getCloudConsoleUri();
+
   /**
    *
    *
@@ -436,6 +457,7 @@ public interface ProvisioningConfigOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
+
   /**
    *
    *
@@ -461,6 +483,7 @@ public interface ProvisioningConfigOrBuilder
    * @return The customId.
    */
   java.lang.String getCustomId();
+
   /**
    *
    *

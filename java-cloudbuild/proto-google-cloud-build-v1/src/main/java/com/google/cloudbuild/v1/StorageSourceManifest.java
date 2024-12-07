@@ -35,6 +35,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.StorageSourceManifest)
     StorageSourceManifestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StorageSourceManifest.newBuilder() to construct.
   private StorageSourceManifest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bucket_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object object_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
 
   public static final int GENERATION_FIELD_NUMBER = 3;
   private long generation_ = 0L;
+
   /**
    *
    *
@@ -372,6 +378,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -585,6 +592,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object bucket_ = "";
+
     /**
      *
      *
@@ -609,6 +617,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -633,6 +642,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -656,6 +666,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object object_ = "";
+
     /**
      *
      *
@@ -725,6 +738,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -772,6 +787,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +807,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +834,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
     }
 
     private long generation_;
+
     /**
      *
      *
@@ -833,6 +851,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
     public long getGeneration() {
       return generation_;
     }
+
     /**
      *
      *
@@ -853,6 +872,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

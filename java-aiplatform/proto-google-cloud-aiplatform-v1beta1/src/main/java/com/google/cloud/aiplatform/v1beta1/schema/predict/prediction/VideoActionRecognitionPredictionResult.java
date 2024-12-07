@@ -35,6 +35,7 @@ public final class VideoActionRecognitionPredictionResult
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.predict.prediction.VideoActionRecognitionPredictionResult)
     VideoActionRecognitionPredictionResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VideoActionRecognitionPredictionResult.newBuilder() to construct.
   private VideoActionRecognitionPredictionResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -76,6 +77,7 @@ public final class VideoActionRecognitionPredictionResult
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class VideoActionRecognitionPredictionResult
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class VideoActionRecognitionPredictionResult
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class VideoActionRecognitionPredictionResult
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class VideoActionRecognitionPredictionResult
 
   public static final int TIME_SEGMENT_START_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration timeSegmentStart_;
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class VideoActionRecognitionPredictionResult
   public boolean hasTimeSegmentStart() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public final class VideoActionRecognitionPredictionResult
         ? com.google.protobuf.Duration.getDefaultInstance()
         : timeSegmentStart_;
   }
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public final class VideoActionRecognitionPredictionResult
 
   public static final int TIME_SEGMENT_END_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration timeSegmentEnd_;
+
   /**
    *
    *
@@ -253,6 +262,7 @@ public final class VideoActionRecognitionPredictionResult
   public boolean hasTimeSegmentEnd() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -273,6 +283,7 @@ public final class VideoActionRecognitionPredictionResult
         ? com.google.protobuf.Duration.getDefaultInstance()
         : timeSegmentEnd_;
   }
+
   /**
    *
    *
@@ -294,6 +305,7 @@ public final class VideoActionRecognitionPredictionResult
 
   public static final int CONFIDENCE_FIELD_NUMBER = 6;
   private com.google.protobuf.FloatValue confidence_;
+
   /**
    *
    *
@@ -310,6 +322,7 @@ public final class VideoActionRecognitionPredictionResult
   public boolean hasConfidence() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -326,6 +339,7 @@ public final class VideoActionRecognitionPredictionResult
   public com.google.protobuf.FloatValue getConfidence() {
     return confidence_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : confidence_;
   }
+
   /**
    *
    *
@@ -579,6 +593,7 @@ public final class VideoActionRecognitionPredictionResult
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -881,6 +896,7 @@ public final class VideoActionRecognitionPredictionResult
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -903,6 +919,7 @@ public final class VideoActionRecognitionPredictionResult
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -925,6 +942,7 @@ public final class VideoActionRecognitionPredictionResult
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -946,6 +964,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +982,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1007,7 @@ public final class VideoActionRecognitionPredictionResult
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1009,6 +1030,7 @@ public final class VideoActionRecognitionPredictionResult
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1053,7 @@ public final class VideoActionRecognitionPredictionResult
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1052,6 +1075,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1093,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1098,6 +1123,7 @@ public final class VideoActionRecognitionPredictionResult
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeSegmentStartBuilder_;
+
     /**
      *
      *
@@ -1115,6 +1141,7 @@ public final class VideoActionRecognitionPredictionResult
     public boolean hasTimeSegmentStart() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1138,6 +1165,7 @@ public final class VideoActionRecognitionPredictionResult
         return timeSegmentStartBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1163,6 +1191,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1185,6 +1214,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1215,6 +1245,7 @@ public final class VideoActionRecognitionPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1268,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1286,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return getTimeSegmentStartFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1275,6 +1308,7 @@ public final class VideoActionRecognitionPredictionResult
             : timeSegmentStart_;
       }
     }
+
     /**
      *
      *
@@ -1310,6 +1344,7 @@ public final class VideoActionRecognitionPredictionResult
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeSegmentEndBuilder_;
+
     /**
      *
      *
@@ -1327,6 +1362,7 @@ public final class VideoActionRecognitionPredictionResult
     public boolean hasTimeSegmentEnd() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1350,6 +1386,7 @@ public final class VideoActionRecognitionPredictionResult
         return timeSegmentEndBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1375,6 +1412,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1397,6 +1435,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1427,6 +1466,7 @@ public final class VideoActionRecognitionPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -1449,6 +1489,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1507,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return getTimeSegmentEndFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1487,6 +1529,7 @@ public final class VideoActionRecognitionPredictionResult
             : timeSegmentEnd_;
       }
     }
+
     /**
      *
      *
@@ -1522,6 +1565,7 @@ public final class VideoActionRecognitionPredictionResult
             com.google.protobuf.FloatValue.Builder,
             com.google.protobuf.FloatValueOrBuilder>
         confidenceBuilder_;
+
     /**
      *
      *
@@ -1537,6 +1581,7 @@ public final class VideoActionRecognitionPredictionResult
     public boolean hasConfidence() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1558,6 +1603,7 @@ public final class VideoActionRecognitionPredictionResult
         return confidenceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1581,6 +1627,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1601,6 +1648,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1629,6 +1677,7 @@ public final class VideoActionRecognitionPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -1649,6 +1698,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1664,6 +1714,7 @@ public final class VideoActionRecognitionPredictionResult
       onChanged();
       return getConfidenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1683,6 +1734,7 @@ public final class VideoActionRecognitionPredictionResult
             : confidence_;
       }
     }
+
     /**
      *
      *

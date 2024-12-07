@@ -36,6 +36,7 @@ public interface LinkableGitRepositoryOrBuilder
    * @return The cloneUri.
    */
   java.lang.String getCloneUri();
+
   /**
    *
    *

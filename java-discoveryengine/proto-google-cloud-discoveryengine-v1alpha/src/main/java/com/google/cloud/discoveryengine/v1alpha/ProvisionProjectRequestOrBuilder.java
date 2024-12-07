@@ -40,6 +40,7 @@ public interface ProvisionProjectRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface ProvisionProjectRequestOrBuilder
    * @return The dataUseTermsVersion.
    */
   java.lang.String getDataUseTermsVersion();
+
   /**
    *
    *

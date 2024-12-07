@@ -33,6 +33,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.FetchStaticIpsResponse)
     FetchStaticIpsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchStaticIpsResponse.newBuilder() to construct.
   private FetchStaticIpsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList staticIps_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getStaticIpsList() {
     return staticIps_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
   public int getStaticIpsCount() {
     return staticIps_.size();
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
   public java.lang.String getStaticIps(int index) {
     return staticIps_.get(index);
   }
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -356,6 +363,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -570,6 +578,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       staticIps_.makeImmutable();
       return staticIps_;
     }
+
     /**
      *
      *
@@ -599,6 +609,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
     public int getStaticIpsCount() {
       return staticIps_.size();
     }
+
     /**
      *
      *
@@ -614,6 +625,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
     public java.lang.String getStaticIps(int index) {
       return staticIps_.get(index);
     }
+
     /**
      *
      *
@@ -629,6 +641,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getStaticIpsBytes(int index) {
       return staticIps_.getByteString(index);
     }
+
     /**
      *
      *
@@ -652,6 +665,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +688,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +708,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +727,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +753,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -759,6 +777,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -782,6 +801,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -804,6 +824,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +843,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest)
     BatchGetDocumentsMetadataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchGetDocumentsMetadataRequest.newBuilder() to construct.
   private BatchGetDocumentsMetadataRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -83,6 +84,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
      * @return A list containing the uris.
      */
     java.util.List<java.lang.String> getUrisList();
+
     /**
      *
      *
@@ -95,6 +97,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
      * @return The count of uris.
      */
     int getUrisCount();
+
     /**
      *
      *
@@ -108,6 +111,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
      * @return The uris at the given index.
      */
     java.lang.String getUris(int index);
+
     /**
      *
      *
@@ -122,6 +126,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
      */
     com.google.protobuf.ByteString getUrisBytes(int index);
   }
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest.UrisMatcher)
       UrisMatcherOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UrisMatcher.newBuilder() to construct.
     private UrisMatcher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -175,6 +181,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList uris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -189,6 +196,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     public com.google.protobuf.ProtocolStringList getUrisList() {
       return uris_;
     }
+
     /**
      *
      *
@@ -203,6 +211,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     public int getUrisCount() {
       return uris_.size();
     }
+
     /**
      *
      *
@@ -218,6 +227,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     public java.lang.String getUris(int index) {
       return uris_.get(index);
     }
+
     /**
      *
      *
@@ -424,6 +434,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -663,6 +675,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         uris_.makeImmutable();
         return uris_;
       }
+
       /**
        *
        *
@@ -677,6 +690,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       public int getUrisCount() {
         return uris_.size();
       }
+
       /**
        *
        *
@@ -692,6 +706,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       public java.lang.String getUris(int index) {
         return uris_.get(index);
       }
+
       /**
        *
        *
@@ -707,6 +722,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       public com.google.protobuf.ByteString getUrisBytes(int index) {
         return uris_.getByteString(index);
       }
+
       /**
        *
        *
@@ -730,6 +746,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -752,6 +769,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -771,6 +789,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -789,6 +808,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -905,6 +925,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
      * @return A list containing the fhirResources.
      */
     java.util.List<java.lang.String> getFhirResourcesList();
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
      * @return The count of fhirResources.
      */
     int getFhirResourcesCount();
+
     /**
      *
      *
@@ -938,6 +960,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
      * @return The fhirResources at the given index.
      */
     java.lang.String getFhirResources(int index);
+
     /**
      *
      *
@@ -956,6 +979,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
      */
     com.google.protobuf.ByteString getFhirResourcesBytes(int index);
   }
+
   /**
    *
    *
@@ -972,6 +996,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest.FhirMatcher)
       FhirMatcherOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FhirMatcher.newBuilder() to construct.
     private FhirMatcher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1009,6 +1034,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList fhirResources_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -1027,6 +1053,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     public com.google.protobuf.ProtocolStringList getFhirResourcesList() {
       return fhirResources_;
     }
+
     /**
      *
      *
@@ -1045,6 +1072,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     public int getFhirResourcesCount() {
       return fhirResources_.size();
     }
+
     /**
      *
      *
@@ -1064,6 +1092,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     public java.lang.String getFhirResources(int index) {
       return fhirResources_.get(index);
     }
+
     /**
      *
      *
@@ -1274,6 +1303,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1498,6 +1528,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -1517,6 +1548,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         fhirResources_.makeImmutable();
         return fhirResources_;
       }
+
       /**
        *
        *
@@ -1535,6 +1567,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       public int getFhirResourcesCount() {
         return fhirResources_.size();
       }
+
       /**
        *
        *
@@ -1554,6 +1587,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       public java.lang.String getFhirResources(int index) {
         return fhirResources_.get(index);
       }
+
       /**
        *
        *
@@ -1573,6 +1607,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       public com.google.protobuf.ByteString getFhirResourcesBytes(int index) {
         return fhirResources_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1600,6 +1635,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1626,6 +1662,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1649,6 +1686,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1671,6 +1709,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1789,6 +1828,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
      * @return Whether the urisMatcher field is set.
      */
     boolean hasUrisMatcher();
+
     /**
      *
      *
@@ -1804,6 +1844,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
      */
     com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest.UrisMatcher
         getUrisMatcher();
+
     /**
      *
      *
@@ -1832,6 +1873,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
      * @return Whether the fhirMatcher field is set.
      */
     boolean hasFhirMatcher();
+
     /**
      *
      *
@@ -1847,6 +1889,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
      */
     com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest.FhirMatcher
         getFhirMatcher();
+
     /**
      *
      *
@@ -1864,6 +1907,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest.Matcher.MatcherCase
         getMatcherCase();
   }
+
   /**
    *
    *
@@ -1880,6 +1924,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest.Matcher)
       MatcherOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Matcher.newBuilder() to construct.
     private Matcher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1927,6 +1972,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       private MatcherCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1960,6 +2006,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     }
 
     public static final int URIS_MATCHER_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -1977,6 +2024,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     public boolean hasUrisMatcher() {
       return matcherCase_ == 1;
     }
+
     /**
      *
      *
@@ -2001,6 +2049,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       return com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest.UrisMatcher
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2026,6 +2075,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     }
 
     public static final int FHIR_MATCHER_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -2043,6 +2093,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     public boolean hasFhirMatcher() {
       return matcherCase_ == 2;
     }
+
     /**
      *
      *
@@ -2067,6 +2118,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       return com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest.FhirMatcher
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2303,6 +2355,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2562,6 +2615,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
               com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest
                   .UrisMatcherOrBuilder>
           urisMatcherBuilder_;
+
       /**
        *
        *
@@ -2579,6 +2633,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       public boolean hasUrisMatcher() {
         return matcherCase_ == 1;
       }
+
       /**
        *
        *
@@ -2611,6 +2666,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
               .UrisMatcher.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2637,6 +2693,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         matcherCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2661,6 +2718,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         matcherCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2702,6 +2760,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         matcherCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2729,6 +2788,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -2745,6 +2805,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
           getUrisMatcherBuilder() {
         return getUrisMatcherFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2772,6 +2833,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
               .UrisMatcher.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2823,6 +2885,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
               com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest
                   .FhirMatcherOrBuilder>
           fhirMatcherBuilder_;
+
       /**
        *
        *
@@ -2840,6 +2903,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       public boolean hasFhirMatcher() {
         return matcherCase_ == 2;
       }
+
       /**
        *
        *
@@ -2872,6 +2936,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
               .FhirMatcher.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2898,6 +2963,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         matcherCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -2922,6 +2988,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         matcherCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -2963,6 +3030,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         matcherCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -2990,6 +3058,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -3006,6 +3075,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
           getFhirMatcherBuilder() {
         return getFhirMatcherFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3033,6 +3103,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
               .FhirMatcher.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3151,6 +3222,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -3177,6 +3249,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -3206,6 +3279,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
 
   public static final int MATCHER_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest.Matcher matcher_;
+
   /**
    *
    *
@@ -3224,6 +3298,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
   public boolean hasMatcher() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3246,6 +3321,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
             .getDefaultInstance()
         : matcher_;
   }
+
   /**
    *
    *
@@ -3443,6 +3519,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3668,6 +3745,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -3693,6 +3771,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3718,6 +3797,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3742,6 +3822,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3762,6 +3843,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3797,6 +3879,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
             com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest
                 .MatcherOrBuilder>
         matcherBuilder_;
+
     /**
      *
      *
@@ -3814,6 +3897,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     public boolean hasMatcher() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3839,6 +3923,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         return matcherBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3865,6 +3950,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3889,6 +3975,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3922,6 +4009,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -3944,6 +4032,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3962,6 +4051,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
       onChanged();
       return getMatcherFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3985,6 +4075,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
             : matcher_;
       }
     }
+
     /**
      *
      *

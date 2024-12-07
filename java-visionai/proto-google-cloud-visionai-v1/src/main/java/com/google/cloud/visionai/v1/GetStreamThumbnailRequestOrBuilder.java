@@ -36,6 +36,7 @@ public interface GetStreamThumbnailRequestOrBuilder
    * @return The stream.
    */
   java.lang.String getStream();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetStreamThumbnailRequestOrBuilder
    * @return The gcsObjectName.
    */
   java.lang.String getGcsObjectName();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface GetStreamThumbnailRequestOrBuilder
    * @return The event.
    */
   java.lang.String getEvent();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface GetStreamThumbnailRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

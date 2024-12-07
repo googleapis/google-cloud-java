@@ -37,6 +37,7 @@ public interface AccessBindingOrBuilder
    * @return Whether the user field is set.
    */
   boolean hasUser();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface AccessBindingOrBuilder
    * @return The user.
    */
   java.lang.String getUser();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface AccessBindingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface AccessBindingOrBuilder
    * @return A list containing the roles.
    */
   java.util.List<java.lang.String> getRolesList();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface AccessBindingOrBuilder
    * @return The count of roles.
    */
   int getRolesCount();
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public interface AccessBindingOrBuilder
    * @return The roles at the given index.
    */
   java.lang.String getRoles(int index);
+
   /**
    *
    *

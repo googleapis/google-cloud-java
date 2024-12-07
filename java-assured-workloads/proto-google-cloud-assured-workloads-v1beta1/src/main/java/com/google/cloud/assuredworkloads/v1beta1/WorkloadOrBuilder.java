@@ -40,6 +40,7 @@ public interface WorkloadOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface WorkloadOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface WorkloadOrBuilder
    */
   java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo>
       getResourcesList();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface WorkloadOrBuilder
    * </code>
    */
   com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo getResources(int index);
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface WorkloadOrBuilder
    * </code>
    */
   int getResourcesCount();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface WorkloadOrBuilder
    */
   java.util.List<? extends com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfoOrBuilder>
       getResourcesOrBuilderList();
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public interface WorkloadOrBuilder
    * @return The enum numeric value on the wire for complianceRegime.
    */
   int getComplianceRegimeValue();
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public interface WorkloadOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public interface WorkloadOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public interface WorkloadOrBuilder
    * @return The billingAccount.
    */
   java.lang.String getBillingAccount();
+
   /**
    *
    *
@@ -297,6 +307,7 @@ public interface WorkloadOrBuilder
    */
   @java.lang.Deprecated
   boolean hasIl4Settings();
+
   /**
    *
    *
@@ -314,6 +325,7 @@ public interface WorkloadOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings getIl4Settings();
+
   /**
    *
    *
@@ -345,6 +357,7 @@ public interface WorkloadOrBuilder
    */
   @java.lang.Deprecated
   boolean hasCjisSettings();
+
   /**
    *
    *
@@ -362,6 +375,7 @@ public interface WorkloadOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings getCjisSettings();
+
   /**
    *
    *
@@ -394,6 +408,7 @@ public interface WorkloadOrBuilder
    */
   @java.lang.Deprecated
   boolean hasFedrampHighSettings();
+
   /**
    *
    *
@@ -411,6 +426,7 @@ public interface WorkloadOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings getFedrampHighSettings();
+
   /**
    *
    *
@@ -443,6 +459,7 @@ public interface WorkloadOrBuilder
    */
   @java.lang.Deprecated
   boolean hasFedrampModerateSettings();
+
   /**
    *
    *
@@ -461,6 +478,7 @@ public interface WorkloadOrBuilder
   @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings
       getFedrampModerateSettings();
+
   /**
    *
    *
@@ -489,6 +507,7 @@ public interface WorkloadOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -513,6 +532,7 @@ public interface WorkloadOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -523,9 +543,11 @@ public interface WorkloadOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -536,6 +558,7 @@ public interface WorkloadOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -550,6 +573,7 @@ public interface WorkloadOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -579,6 +603,7 @@ public interface WorkloadOrBuilder
    * @return The provisionedResourcesParent.
    */
   java.lang.String getProvisionedResourcesParent();
+
   /**
    *
    *
@@ -619,6 +644,7 @@ public interface WorkloadOrBuilder
    */
   @java.lang.Deprecated
   boolean hasKmsSettings();
+
   /**
    *
    *
@@ -640,6 +666,7 @@ public interface WorkloadOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings getKmsSettings();
+
   /**
    *
    *
@@ -673,6 +700,7 @@ public interface WorkloadOrBuilder
    */
   java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>
       getResourceSettingsList();
+
   /**
    *
    *
@@ -688,6 +716,7 @@ public interface WorkloadOrBuilder
    */
   com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings getResourceSettings(
       int index);
+
   /**
    *
    *
@@ -702,6 +731,7 @@ public interface WorkloadOrBuilder
    * </code>
    */
   int getResourceSettingsCount();
+
   /**
    *
    *
@@ -718,6 +748,7 @@ public interface WorkloadOrBuilder
   java.util.List<
           ? extends com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder>
       getResourceSettingsOrBuilderList();
+
   /**
    *
    *
@@ -748,6 +779,7 @@ public interface WorkloadOrBuilder
    * @return The enum numeric value on the wire for kajEnrollmentState.
    */
   int getKajEnrollmentStateValue();
+
   /**
    *
    *
@@ -793,6 +825,7 @@ public interface WorkloadOrBuilder
    * @return Whether the saaEnrollmentResponse field is set.
    */
   boolean hasSaaEnrollmentResponse();
+
   /**
    *
    *
@@ -810,6 +843,7 @@ public interface WorkloadOrBuilder
    */
   com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
       getSaaEnrollmentResponse();
+
   /**
    *
    *
@@ -843,6 +877,7 @@ public interface WorkloadOrBuilder
    * @return A list containing the compliantButDisallowedServices.
    */
   java.util.List<java.lang.String> getCompliantButDisallowedServicesList();
+
   /**
    *
    *
@@ -860,6 +895,7 @@ public interface WorkloadOrBuilder
    * @return The count of compliantButDisallowedServices.
    */
   int getCompliantButDisallowedServicesCount();
+
   /**
    *
    *
@@ -878,6 +914,7 @@ public interface WorkloadOrBuilder
    * @return The compliantButDisallowedServices at the given index.
    */
   java.lang.String getCompliantButDisallowedServices(int index);
+
   /**
    *
    *

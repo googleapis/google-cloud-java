@@ -38,6 +38,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.DockerImage)
     DockerImageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DockerImage.newBuilder() to construct.
   private DockerImage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -201,6 +206,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -215,6 +221,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getTagsList() {
     return tags_;
   }
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
   public int getTagsCount() {
     return tags_.size();
   }
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTags(int index) {
     return tags_.get(index);
   }
+
   /**
    *
    *
@@ -262,6 +271,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMAGE_SIZE_BYTES_FIELD_NUMBER = 4;
   private long imageSizeBytes_ = 0L;
+
   /**
    *
    *
@@ -282,6 +292,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPLOAD_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp uploadTime_;
+
   /**
    *
    *
@@ -297,6 +308,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUploadTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -312,6 +324,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUploadTime() {
     return uploadTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : uploadTime_;
   }
+
   /**
    *
    *
@@ -330,6 +343,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mediaType_ = "";
+
   /**
    *
    *
@@ -356,6 +370,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -385,6 +400,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BUILD_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp buildTime_;
+
   /**
    *
    *
@@ -404,6 +420,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBuildTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -423,6 +440,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getBuildTime() {
     return buildTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : buildTime_;
   }
+
   /**
    *
    *
@@ -443,6 +461,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -459,6 +478,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -475,6 +495,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -734,6 +755,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1055,6 +1077,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1086,6 +1109,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1141,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1147,6 +1172,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1199,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1233,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1230,6 +1258,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1254,6 +1283,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1277,6 +1307,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1327,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1330,6 +1362,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1345,6 +1378,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       tags_.makeImmutable();
       return tags_;
     }
+
     /**
      *
      *
@@ -1359,6 +1393,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     public int getTagsCount() {
       return tags_.size();
     }
+
     /**
      *
      *
@@ -1374,6 +1409,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
+
     /**
      *
      *
@@ -1389,6 +1425,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTagsBytes(int index) {
       return tags_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1412,6 +1449,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1434,6 +1472,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1453,6 +1492,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1471,6 +1511,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1496,6 +1537,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long imageSizeBytes_;
+
     /**
      *
      *
@@ -1513,6 +1555,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     public long getImageSizeBytes() {
       return imageSizeBytes_;
     }
+
     /**
      *
      *
@@ -1534,6 +1577,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1560,6 +1604,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         uploadTimeBuilder_;
+
     /**
      *
      *
@@ -1574,6 +1619,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUploadTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1594,6 +1640,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         return uploadTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1616,6 +1663,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1635,6 +1683,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1662,6 +1711,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1681,6 +1731,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1695,6 +1746,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUploadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1713,6 +1765,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
             : uploadTime_;
       }
     }
+
     /**
      *
      *
@@ -1740,6 +1793,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object mediaType_ = "";
+
     /**
      *
      *
@@ -1765,6 +1819,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1790,6 +1845,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1814,6 +1870,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1834,6 +1891,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1866,6 +1924,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         buildTimeBuilder_;
+
     /**
      *
      *
@@ -1884,6 +1943,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBuildTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1906,6 +1966,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         return buildTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1932,6 +1993,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1955,6 +2017,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1986,6 +2049,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2009,6 +2073,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2027,6 +2092,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBuildTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2047,6 +2113,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         return buildTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : buildTime_;
       }
     }
+
     /**
      *
      *
@@ -2083,6 +2150,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2099,6 +2167,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2121,6 +2190,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2145,6 +2215,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2166,6 +2237,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2195,6 +2267,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2216,6 +2289,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2232,6 +2306,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2252,6 +2327,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *

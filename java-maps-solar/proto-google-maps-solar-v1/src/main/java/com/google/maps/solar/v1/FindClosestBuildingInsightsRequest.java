@@ -33,6 +33,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.FindClosestBuildingInsightsRequest)
     FindClosestBuildingInsightsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FindClosestBuildingInsightsRequest.newBuilder() to construct.
   private FindClosestBuildingInsightsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
   private int bitField0_;
   public static final int LOCATION_FIELD_NUMBER = 1;
   private com.google.type.LatLng location_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
   public boolean hasLocation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
   public com.google.type.LatLng getLocation() {
     return location_ == null ? com.google.type.LatLng.getDefaultInstance() : location_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
 
   public static final int REQUIRED_QUALITY_FIELD_NUMBER = 3;
   private int requiredQuality_ = 0;
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
   public int getRequiredQualityValue() {
     return requiredQuality_;
   }
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
 
   public static final int EXACT_QUALITY_REQUIRED_FIELD_NUMBER = 4;
   private boolean exactQualityRequired_ = false;
+
   /**
    *
    *
@@ -365,6 +372,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -592,6 +600,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         locationBuilder_;
+
     /**
      *
      *
@@ -607,6 +616,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -626,6 +636,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
         return locationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -649,6 +660,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -669,6 +681,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +710,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +731,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +747,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -749,6 +765,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
         return location_ == null ? com.google.type.LatLng.getDefaultInstance() : location_;
       }
     }
+
     /**
      *
      *
@@ -774,6 +791,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     }
 
     private int requiredQuality_ = 0;
+
     /**
      *
      *
@@ -793,6 +811,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     public int getRequiredQualityValue() {
       return requiredQuality_;
     }
+
     /**
      *
      *
@@ -815,6 +834,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +856,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
           com.google.maps.solar.v1.ImageryQuality.forNumber(requiredQuality_);
       return result == null ? com.google.maps.solar.v1.ImageryQuality.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -861,6 +882,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +906,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     }
 
     private boolean exactQualityRequired_;
+
     /**
      *
      *
@@ -904,6 +927,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     public boolean getExactQualityRequired() {
       return exactQualityRequired_;
     }
+
     /**
      *
      *
@@ -928,6 +952,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

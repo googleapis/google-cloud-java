@@ -36,6 +36,7 @@ public final class RetrieveForApplicationTermsOfServiceAgreementStateRequest
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.RetrieveForApplicationTermsOfServiceAgreementStateRequest)
     RetrieveForApplicationTermsOfServiceAgreementStateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RetrieveForApplicationTermsOfServiceAgreementStateRequest.newBuilder() to construct.
   private RetrieveForApplicationTermsOfServiceAgreementStateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class RetrieveForApplicationTermsOfServiceAgreementStateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class RetrieveForApplicationTermsOfServiceAgreementStateRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -313,6 +316,7 @@ public final class RetrieveForApplicationTermsOfServiceAgreementStateRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -529,6 +533,7 @@ public final class RetrieveForApplicationTermsOfServiceAgreementStateRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -554,6 +559,7 @@ public final class RetrieveForApplicationTermsOfServiceAgreementStateRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -579,6 +585,7 @@ public final class RetrieveForApplicationTermsOfServiceAgreementStateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -603,6 +610,7 @@ public final class RetrieveForApplicationTermsOfServiceAgreementStateRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -623,6 +631,7 @@ public final class RetrieveForApplicationTermsOfServiceAgreementStateRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

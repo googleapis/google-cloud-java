@@ -37,6 +37,7 @@ public interface AccessQuotaOrBuilder
    * @return Whether the tokensPerDay field is set.
    */
   boolean hasTokensPerDay();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface AccessQuotaOrBuilder
    * @return The tokensPerDay.
    */
   com.google.analytics.admin.v1alpha.AccessQuotaStatus getTokensPerDay();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface AccessQuotaOrBuilder
    * @return Whether the tokensPerHour field is set.
    */
   boolean hasTokensPerHour();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface AccessQuotaOrBuilder
    * @return The tokensPerHour.
    */
   com.google.analytics.admin.v1alpha.AccessQuotaStatus getTokensPerHour();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface AccessQuotaOrBuilder
    * @return Whether the concurrentRequests field is set.
    */
   boolean hasConcurrentRequests();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface AccessQuotaOrBuilder
    * @return The concurrentRequests.
    */
   com.google.analytics.admin.v1alpha.AccessQuotaStatus getConcurrentRequests();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface AccessQuotaOrBuilder
    * @return Whether the serverErrorsPerProjectPerHour field is set.
    */
   boolean hasServerErrorsPerProjectPerHour();
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public interface AccessQuotaOrBuilder
    * @return The serverErrorsPerProjectPerHour.
    */
   com.google.analytics.admin.v1alpha.AccessQuotaStatus getServerErrorsPerProjectPerHour();
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public interface AccessQuotaOrBuilder
    * @return Whether the tokensPerProjectPerHour field is set.
    */
   boolean hasTokensPerProjectPerHour();
+
   /**
    *
    *
@@ -210,6 +219,7 @@ public interface AccessQuotaOrBuilder
    * @return The tokensPerProjectPerHour.
    */
   com.google.analytics.admin.v1alpha.AccessQuotaStatus getTokensPerProjectPerHour();
+
   /**
    *
    *

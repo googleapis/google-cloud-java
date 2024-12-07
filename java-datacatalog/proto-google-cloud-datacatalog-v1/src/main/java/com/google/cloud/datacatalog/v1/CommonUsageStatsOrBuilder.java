@@ -36,6 +36,7 @@ public interface CommonUsageStatsOrBuilder
    * @return Whether the viewCount field is set.
    */
   boolean hasViewCount();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse)
     ListGitRepositoryLinksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListGitRepositoryLinksResponse.newBuilder() to construct.
   private ListGitRepositoryLinksResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.developerconnect.v1.GitRepositoryLink>
       gitRepositoryLinks_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       getGitRepositoryLinksList() {
     return gitRepositoryLinks_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       getGitRepositoryLinksOrBuilderList() {
     return gitRepositoryLinks_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
   public int getGitRepositoryLinksCount() {
     return gitRepositoryLinks_.size();
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
   public com.google.cloud.developerconnect.v1.GitRepositoryLink getGitRepositoryLinks(int index) {
     return gitRepositoryLinks_.get(index);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -229,6 +239,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -244,6 +255,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -449,6 +461,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -759,6 +772,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
         return gitRepositoryLinksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -776,6 +790,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
         return gitRepositoryLinksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -793,6 +808,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
         return gitRepositoryLinksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -817,6 +833,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +855,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +880,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +905,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +949,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +972,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +993,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1029,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
         getGitRepositoryLinksBuilder(int index) {
       return getGitRepositoryLinksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1022,6 +1048,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
         return gitRepositoryLinksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1067,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(gitRepositoryLinks_);
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1083,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       return getGitRepositoryLinksFieldBuilder()
           .addBuilder(com.google.cloud.developerconnect.v1.GitRepositoryLink.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1071,6 +1100,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
           .addBuilder(
               index, com.google.cloud.developerconnect.v1.GitRepositoryLink.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1107,6 +1137,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1129,6 +1160,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1151,6 +1183,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1205,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1223,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1221,6 +1256,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1236,6 +1272,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -1250,6 +1287,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1265,6 +1303,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1280,6 +1319,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1303,6 +1343,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1325,6 +1366,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1386,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1405,7 @@ public final class ListGitRepositoryLinksResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

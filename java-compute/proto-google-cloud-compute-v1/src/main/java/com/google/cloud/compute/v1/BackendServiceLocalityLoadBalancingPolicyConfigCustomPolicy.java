@@ -35,6 +35,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy)
     BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy.newBuilder() to construct.
   private BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,6 +75,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object data_ = "";
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
   public boolean hasData() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
       return s;
     }
   }
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
   public boolean hasName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
       return s;
     }
   }
+
   /**
    *
    *
@@ -403,6 +410,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -628,6 +636,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
     private int bitField0_;
 
     private java.lang.Object data_ = "";
+
     /**
      *
      *
@@ -642,6 +651,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
     public boolean hasData() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -664,6 +674,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -686,6 +697,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +762,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -762,6 +777,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
     public boolean hasName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -784,6 +800,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -827,6 +845,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +863,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -42,6 +42,7 @@ public interface GetFeatureRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

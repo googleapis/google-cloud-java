@@ -33,6 +33,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.PropertyMetadata)
     PropertyMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PropertyMetadata.newBuilder() to construct.
   private PropertyMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int INACTIVE_FIELD_NUMBER = 3;
   private boolean inactive_ = false;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int FIELD_EXTRACTION_METADATA_FIELD_NUMBER = 9;
   private com.google.cloud.documentai.v1beta3.FieldExtractionMetadata fieldExtractionMetadata_;
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
   public boolean hasFieldExtractionMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.documentai.v1beta3.FieldExtractionMetadata.getDefaultInstance()
         : fieldExtractionMetadata_;
   }
+
   /**
    *
    *
@@ -308,6 +313,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -523,6 +529,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private boolean inactive_;
+
     /**
      *
      *
@@ -538,6 +545,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
     public boolean getInactive() {
       return inactive_;
     }
+
     /**
      *
      *
@@ -557,6 +565,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,6 +590,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
             com.google.cloud.documentai.v1beta3.FieldExtractionMetadata.Builder,
             com.google.cloud.documentai.v1beta3.FieldExtractionMetadataOrBuilder>
         fieldExtractionMetadataBuilder_;
+
     /**
      *
      *
@@ -596,6 +606,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
     public boolean hasFieldExtractionMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -618,6 +629,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
         return fieldExtractionMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -642,6 +654,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +676,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +708,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +729,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +746,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getFieldExtractionMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -750,6 +767,7 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
             : fieldExtractionMetadata_;
       }
     }
+
     /**
      *
      *

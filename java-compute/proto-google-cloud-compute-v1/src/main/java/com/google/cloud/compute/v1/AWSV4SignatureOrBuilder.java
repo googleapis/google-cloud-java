@@ -36,6 +36,7 @@ public interface AWSV4SignatureOrBuilder
    * @return Whether the accessKey field is set.
    */
   boolean hasAccessKey();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AWSV4SignatureOrBuilder
    * @return The accessKey.
    */
   java.lang.String getAccessKey();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface AWSV4SignatureOrBuilder
    * @return Whether the accessKeyId field is set.
    */
   boolean hasAccessKeyId();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface AWSV4SignatureOrBuilder
    * @return The accessKeyId.
    */
   java.lang.String getAccessKeyId();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface AWSV4SignatureOrBuilder
    * @return Whether the accessKeyVersion field is set.
    */
   boolean hasAccessKeyVersion();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface AWSV4SignatureOrBuilder
    * @return The accessKeyVersion.
    */
   java.lang.String getAccessKeyVersion();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface AWSV4SignatureOrBuilder
    * @return Whether the originRegion field is set.
    */
   boolean hasOriginRegion();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface AWSV4SignatureOrBuilder
    * @return The originRegion.
    */
   java.lang.String getOriginRegion();
+
   /**
    *
    *

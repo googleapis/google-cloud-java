@@ -35,6 +35,7 @@ public final class StopNotebookRuntimeOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StopNotebookRuntimeOperationMetadata)
     StopNotebookRuntimeOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StopNotebookRuntimeOperationMetadata.newBuilder() to construct.
   private StopNotebookRuntimeOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class StopNotebookRuntimeOperationMetadata
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata genericMetadata_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class StopNotebookRuntimeOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class StopNotebookRuntimeOperationMetadata
         ? com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
+
   /**
    *
    *
@@ -283,6 +287,7 @@ public final class StopNotebookRuntimeOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -498,6 +503,7 @@ public final class StopNotebookRuntimeOperationMetadata
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
+
     /**
      *
      *
@@ -512,6 +518,7 @@ public final class StopNotebookRuntimeOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -532,6 +539,7 @@ public final class StopNotebookRuntimeOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -555,6 +563,7 @@ public final class StopNotebookRuntimeOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -575,6 +584,7 @@ public final class StopNotebookRuntimeOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -605,6 +615,7 @@ public final class StopNotebookRuntimeOperationMetadata
       }
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class StopNotebookRuntimeOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -639,6 +651,7 @@ public final class StopNotebookRuntimeOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -658,6 +671,7 @@ public final class StopNotebookRuntimeOperationMetadata
             : genericMetadata_;
       }
     }
+
     /**
      *
      *

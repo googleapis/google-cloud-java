@@ -94,6 +94,7 @@ public enum SolutionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SOLUTION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int SOLUTION_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -104,6 +105,7 @@ public enum SolutionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SOLUTION_TYPE_RECOMMENDATION = 1;</code>
    */
   public static final int SOLUTION_TYPE_RECOMMENDATION_VALUE = 1;
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public enum SolutionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SOLUTION_TYPE_SEARCH = 2;</code>
    */
   public static final int SOLUTION_TYPE_SEARCH_VALUE = 2;
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public enum SolutionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SOLUTION_TYPE_CHAT = 3;</code>
    */
   public static final int SOLUTION_TYPE_CHAT_VALUE = 3;
+
   /**
    *
    *

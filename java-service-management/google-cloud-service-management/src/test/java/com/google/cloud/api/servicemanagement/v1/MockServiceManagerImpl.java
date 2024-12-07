@@ -326,7 +326,8 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateServiceRollout, expected %s or %s",
+                  "Unrecognized response type %s for method CreateServiceRollout, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -348,7 +349,8 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateConfigReport, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateConfigReport, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateConfigReportResponse.class.getName(),
                   Exception.class.getName())));

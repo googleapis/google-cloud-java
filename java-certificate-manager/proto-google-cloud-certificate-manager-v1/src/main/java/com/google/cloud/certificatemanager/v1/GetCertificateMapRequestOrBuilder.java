@@ -39,6 +39,7 @@ public interface GetCertificateMapRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -75,7 +75,8 @@ public class MockStorageTransferServiceImpl extends StorageTransferServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetGoogleServiceAccount, expected %s or %s",
+                  "Unrecognized response type %s for method GetGoogleServiceAccount, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   TransferTypes.GoogleServiceAccount.class.getName(),
                   Exception.class.getName())));
@@ -184,7 +185,8 @@ public class MockStorageTransferServiceImpl extends StorageTransferServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method PauseTransferOperation, expected %s or %s",
+                  "Unrecognized response type %s for method PauseTransferOperation, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -206,7 +208,8 @@ public class MockStorageTransferServiceImpl extends StorageTransferServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ResumeTransferOperation, expected %s or %s",
+                  "Unrecognized response type %s for method ResumeTransferOperation, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

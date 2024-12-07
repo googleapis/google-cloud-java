@@ -33,6 +33,7 @@ public final class AcknowledgeViolationResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse)
     AcknowledgeViolationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AcknowledgeViolationResponse.newBuilder() to construct.
   private AcknowledgeViolationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class AcknowledgeViolationResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

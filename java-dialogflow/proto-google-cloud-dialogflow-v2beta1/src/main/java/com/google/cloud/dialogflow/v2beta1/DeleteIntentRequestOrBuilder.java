@@ -44,6 +44,7 @@ public interface DeleteIntentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

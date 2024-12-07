@@ -36,6 +36,7 @@ public interface ScreenshotOrBuilder
    * @return Whether the contents field is set.
    */
   boolean hasContents();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ScreenshotOrBuilder
    * @return The contents.
    */
   java.lang.String getContents();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ScreenshotOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ScreenshotOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *

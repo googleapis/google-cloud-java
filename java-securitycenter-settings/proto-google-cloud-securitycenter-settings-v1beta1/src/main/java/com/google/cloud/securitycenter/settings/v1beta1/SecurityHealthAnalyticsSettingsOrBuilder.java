@@ -38,6 +38,7 @@ public interface SecurityHealthAnalyticsSettingsOrBuilder
    * @return Whether the nonOrgIamMemberSettings field is set.
    */
   boolean hasNonOrgIamMemberSettings();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface SecurityHealthAnalyticsSettingsOrBuilder
   com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
           .NonOrgIamMemberSettings
       getNonOrgIamMemberSettings();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface SecurityHealthAnalyticsSettingsOrBuilder
    * @return Whether the adminServiceAccountSettings field is set.
    */
   boolean hasAdminServiceAccountSettings();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface SecurityHealthAnalyticsSettingsOrBuilder
   com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
           .AdminServiceAccountSettings
       getAdminServiceAccountSettings();
+
   /**
    *
    *

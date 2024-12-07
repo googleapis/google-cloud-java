@@ -33,6 +33,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.EventConfig)
     EventConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EventConfig.newBuilder() to construct.
   private EventConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList annotationSpecSets_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAnnotationSpecSetsList() {
     return annotationSpecSets_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAnnotationSpecSetsCount() {
     return annotationSpecSets_.size();
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAnnotationSpecSets(int index) {
     return annotationSpecSets_.get(index);
   }
+
   /**
    *
    *
@@ -305,6 +310,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -504,6 +510,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -522,6 +529,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
       annotationSpecSets_.makeImmutable();
       return annotationSpecSets_;
     }
+
     /**
      *
      *
@@ -539,6 +547,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
     public int getAnnotationSpecSetsCount() {
       return annotationSpecSets_.size();
     }
+
     /**
      *
      *
@@ -557,6 +566,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAnnotationSpecSets(int index) {
       return annotationSpecSets_.get(index);
     }
+
     /**
      *
      *
@@ -575,6 +585,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAnnotationSpecSetsBytes(int index) {
       return annotationSpecSets_.getByteString(index);
     }
+
     /**
      *
      *
@@ -601,6 +612,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -626,6 +638,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +661,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -669,6 +683,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

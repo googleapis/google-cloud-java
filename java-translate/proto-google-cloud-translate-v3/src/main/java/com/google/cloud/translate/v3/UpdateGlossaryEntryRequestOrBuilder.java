@@ -38,6 +38,7 @@ public interface UpdateGlossaryEntryRequestOrBuilder
    * @return Whether the glossaryEntry field is set.
    */
   boolean hasGlossaryEntry();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateGlossaryEntryRequestOrBuilder
    * @return The glossaryEntry.
    */
   com.google.cloud.translate.v3.GlossaryEntry getGlossaryEntry();
+
   /**
    *
    *

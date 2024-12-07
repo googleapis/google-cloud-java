@@ -33,6 +33,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.CreateWorkerPoolRequest)
     CreateWorkerPoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateWorkerPoolRequest.newBuilder() to construct.
   private CreateWorkerPoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
 
   public static final int WORKER_POOL_FIELD_NUMBER = 2;
   private com.google.cloudbuild.v1.WorkerPool workerPool_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
   public boolean hasWorkerPool() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
         ? com.google.cloudbuild.v1.WorkerPool.getDefaultInstance()
         : workerPool_;
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerPoolId_ = "";
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -451,6 +460,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -692,6 +702,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -717,6 +728,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -742,6 +754,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -766,6 +779,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +800,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
             com.google.cloudbuild.v1.WorkerPool.Builder,
             com.google.cloudbuild.v1.WorkerPoolOrBuilder>
         workerPoolBuilder_;
+
     /**
      *
      *
@@ -834,6 +850,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
     public boolean hasWorkerPool() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -856,6 +873,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
         return workerPoolBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -880,6 +898,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +920,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +950,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -951,6 +972,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +989,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return getWorkerPoolFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -987,6 +1010,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
             : workerPool_;
       }
     }
+
     /**
      *
      *
@@ -1016,6 +1040,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object workerPoolId_ = "";
+
     /**
      *
      *
@@ -1044,6 +1069,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1072,6 +1098,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1099,6 +1126,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1150,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1181,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1168,6 +1198,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1188,6 +1219,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

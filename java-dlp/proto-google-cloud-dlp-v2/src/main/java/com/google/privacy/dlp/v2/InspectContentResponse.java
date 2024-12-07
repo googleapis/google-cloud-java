@@ -33,6 +33,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectContentResponse)
     InspectContentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InspectContentResponse.newBuilder() to construct.
   private InspectContentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int RESULT_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.InspectResult result_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
   public boolean hasResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
   public com.google.privacy.dlp.v2.InspectResult getResult() {
     return result_ == null ? com.google.privacy.dlp.v2.InspectResult.getDefaultInstance() : result_;
   }
+
   /**
    *
    *
@@ -272,6 +276,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -475,6 +480,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
             com.google.privacy.dlp.v2.InspectResult.Builder,
             com.google.privacy.dlp.v2.InspectResultOrBuilder>
         resultBuilder_;
+
     /**
      *
      *
@@ -489,6 +495,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
     public boolean hasResult() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -509,6 +516,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
         return resultBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -531,6 +539,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -550,6 +559,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -577,6 +587,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -596,6 +607,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -610,6 +622,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -628,6 +641,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
             : result_;
       }
     }
+
     /**
      *
      *

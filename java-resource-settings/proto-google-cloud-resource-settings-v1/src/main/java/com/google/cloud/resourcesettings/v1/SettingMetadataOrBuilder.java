@@ -36,6 +36,7 @@ public interface SettingMetadataOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SettingMetadataOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface SettingMetadataOrBuilder
    * @return The enum numeric value on the wire for dataType.
    */
   int getDataTypeValue();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface SettingMetadataOrBuilder
    * @return Whether the defaultValue field is set.
    */
   boolean hasDefaultValue();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface SettingMetadataOrBuilder
    * @return The defaultValue.
    */
   com.google.cloud.resourcesettings.v1.Value getDefaultValue();
+
   /**
    *
    *

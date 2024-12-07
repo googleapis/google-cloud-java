@@ -34,6 +34,7 @@ public interface ListPolicyTagsResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
    */
   java.util.List<com.google.cloud.datacatalog.v1.PolicyTag> getPolicyTagsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListPolicyTagsResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
    */
   com.google.cloud.datacatalog.v1.PolicyTag getPolicyTags(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListPolicyTagsResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
    */
   int getPolicyTagsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListPolicyTagsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1.PolicyTagOrBuilder>
       getPolicyTagsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListPolicyTagsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

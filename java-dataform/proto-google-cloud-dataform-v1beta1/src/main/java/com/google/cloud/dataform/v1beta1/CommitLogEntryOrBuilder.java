@@ -36,6 +36,7 @@ public interface CommitLogEntryOrBuilder
    * @return Whether the commitTime field is set.
    */
   boolean hasCommitTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CommitLogEntryOrBuilder
    * @return The commitTime.
    */
   com.google.protobuf.Timestamp getCommitTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface CommitLogEntryOrBuilder
    * @return The commitSha.
    */
   java.lang.String getCommitSha();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface CommitLogEntryOrBuilder
    * @return Whether the author field is set.
    */
   boolean hasAuthor();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface CommitLogEntryOrBuilder
    * @return The author.
    */
   com.google.cloud.dataform.v1beta1.CommitAuthor getAuthor();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface CommitLogEntryOrBuilder
    * @return The commitMessage.
    */
   java.lang.String getCommitMessage();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface EmptyDirVolumeSourceOrBuilder
    * @return The enum numeric value on the wire for medium.
    */
   int getMediumValue();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface EmptyDirVolumeSourceOrBuilder
    * @return The sizeLimit.
    */
   java.lang.String getSizeLimit();
+
   /**
    *
    *

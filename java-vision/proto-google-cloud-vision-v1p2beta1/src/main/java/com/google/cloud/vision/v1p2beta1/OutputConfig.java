@@ -33,6 +33,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p2beta1.OutputConfig)
     OutputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OutputConfig.newBuilder() to construct.
   private OutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int GCS_DESTINATION_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p2beta1.GcsDestination gcsDestination_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsDestination() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1p2beta1.GcsDestination.getDefaultInstance()
         : gcsDestination_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BATCH_SIZE_FIELD_NUMBER = 2;
   private int batchSize_ = 0;
+
   /**
    *
    *
@@ -312,6 +317,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -528,6 +534,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p2beta1.GcsDestination.Builder,
             com.google.cloud.vision.v1p2beta1.GcsDestinationOrBuilder>
         gcsDestinationBuilder_;
+
     /**
      *
      *
@@ -542,6 +549,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsDestination() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -562,6 +570,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
         return gcsDestinationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -584,6 +593,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -604,6 +614,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +643,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +663,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +678,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGcsDestinationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -683,6 +697,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
             : gcsDestination_;
       }
     }
+
     /**
      *
      *
@@ -710,6 +725,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int batchSize_;
+
     /**
      *
      *
@@ -734,6 +750,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     public int getBatchSize() {
       return batchSize_;
     }
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.container.v1.ControlPlaneEndpointsConfig)
     ControlPlaneEndpointsConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ControlPlaneEndpointsConfig.newBuilder() to construct.
   private ControlPlaneEndpointsConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      * @return The endpoint.
      */
     java.lang.String getEndpoint();
+
     /**
      *
      *
@@ -112,6 +114,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      * @return Whether the allowExternalTraffic field is set.
      */
     boolean hasAllowExternalTraffic();
+
     /**
      *
      *
@@ -126,6 +129,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      */
     boolean getAllowExternalTraffic();
   }
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.container.v1.ControlPlaneEndpointsConfig.DNSEndpointConfig)
       DNSEndpointConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DNSEndpointConfig.newBuilder() to construct.
     private DNSEndpointConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -175,6 +180,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object endpoint_ = "";
+
     /**
      *
      *
@@ -202,6 +208,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -232,6 +239,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
 
     public static final int ALLOW_EXTERNAL_TRAFFIC_FIELD_NUMBER = 3;
     private boolean allowExternalTraffic_ = false;
+
     /**
      *
      *
@@ -248,6 +256,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
     public boolean hasAllowExternalTraffic() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -441,6 +450,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -654,6 +664,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       private int bitField0_;
 
       private java.lang.Object endpoint_ = "";
+
       /**
        *
        *
@@ -680,6 +691,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -706,6 +718,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -731,6 +744,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -752,6 +766,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -780,6 +795,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       }
 
       private boolean allowExternalTraffic_;
+
       /**
        *
        *
@@ -796,6 +812,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       public boolean hasAllowExternalTraffic() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -812,6 +829,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       public boolean getAllowExternalTraffic() {
         return allowExternalTraffic_;
       }
+
       /**
        *
        *
@@ -832,6 +850,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -936,6 +955,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      * @return Whether the enabled field is set.
      */
     boolean hasEnabled();
+
     /**
      *
      *
@@ -964,6 +984,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      * @return Whether the enablePublicEndpoint field is set.
      */
     boolean hasEnablePublicEndpoint();
+
     /**
      *
      *
@@ -996,6 +1017,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      * @return Whether the globalAccess field is set.
      */
     boolean hasGlobalAccess();
+
     /**
      *
      *
@@ -1030,6 +1052,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      * @return Whether the authorizedNetworksConfig field is set.
      */
     boolean hasAuthorizedNetworksConfig();
+
     /**
      *
      *
@@ -1047,6 +1070,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      * @return The authorizedNetworksConfig.
      */
     com.google.container.v1.MasterAuthorizedNetworksConfig getAuthorizedNetworksConfig();
+
     /**
      *
      *
@@ -1077,6 +1101,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      * @return The publicEndpoint.
      */
     java.lang.String getPublicEndpoint();
+
     /**
      *
      *
@@ -1104,6 +1129,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      * @return The privateEndpoint.
      */
     java.lang.String getPrivateEndpoint();
+
     /**
      *
      *
@@ -1134,6 +1160,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      * @return The privateEndpointSubnetwork.
      */
     java.lang.String getPrivateEndpointSubnetwork();
+
     /**
      *
      *
@@ -1151,6 +1178,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      */
     com.google.protobuf.ByteString getPrivateEndpointSubnetworkBytes();
   }
+
   /**
    *
    *
@@ -1165,6 +1193,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig)
       IPEndpointsConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IPEndpointsConfig.newBuilder() to construct.
     private IPEndpointsConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1200,6 +1229,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
     private int bitField0_;
     public static final int ENABLED_FIELD_NUMBER = 1;
     private boolean enabled_ = false;
+
     /**
      *
      *
@@ -1215,6 +1245,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
     public boolean hasEnabled() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1233,6 +1264,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
 
     public static final int ENABLE_PUBLIC_ENDPOINT_FIELD_NUMBER = 2;
     private boolean enablePublicEndpoint_ = false;
+
     /**
      *
      *
@@ -1251,6 +1283,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
     public boolean hasEnablePublicEndpoint() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1272,6 +1305,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
 
     public static final int GLOBAL_ACCESS_FIELD_NUMBER = 3;
     private boolean globalAccess_ = false;
+
     /**
      *
      *
@@ -1291,6 +1325,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
     public boolean hasGlobalAccess() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1313,6 +1348,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
 
     public static final int AUTHORIZED_NETWORKS_CONFIG_FIELD_NUMBER = 4;
     private com.google.container.v1.MasterAuthorizedNetworksConfig authorizedNetworksConfig_;
+
     /**
      *
      *
@@ -1333,6 +1369,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
     public boolean hasAuthorizedNetworksConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1355,6 +1392,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
           ? com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance()
           : authorizedNetworksConfig_;
     }
+
     /**
      *
      *
@@ -1381,6 +1419,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object publicEndpoint_ = "";
+
     /**
      *
      *
@@ -1405,6 +1444,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -1434,6 +1474,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object privateEndpoint_ = "";
+
     /**
      *
      *
@@ -1458,6 +1499,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -1487,6 +1529,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object privateEndpointSubnetwork_ = "";
+
     /**
      *
      *
@@ -1514,6 +1557,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -1783,6 +1827,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2085,6 +2130,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       private int bitField0_;
 
       private boolean enabled_;
+
       /**
        *
        *
@@ -2100,6 +2146,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       public boolean hasEnabled() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2115,6 +2162,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       public boolean getEnabled() {
         return enabled_;
       }
+
       /**
        *
        *
@@ -2134,6 +2182,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2153,6 +2202,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       }
 
       private boolean enablePublicEndpoint_;
+
       /**
        *
        *
@@ -2171,6 +2221,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       public boolean hasEnablePublicEndpoint() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2189,6 +2240,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       public boolean getEnablePublicEndpoint() {
         return enablePublicEndpoint_;
       }
+
       /**
        *
        *
@@ -2211,6 +2263,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2233,6 +2286,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       }
 
       private boolean globalAccess_;
+
       /**
        *
        *
@@ -2252,6 +2306,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       public boolean hasGlobalAccess() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -2271,6 +2326,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       public boolean getGlobalAccess() {
         return globalAccess_;
       }
+
       /**
        *
        *
@@ -2294,6 +2350,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2322,6 +2379,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
               com.google.container.v1.MasterAuthorizedNetworksConfig.Builder,
               com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder>
           authorizedNetworksConfigBuilder_;
+
       /**
        *
        *
@@ -2341,6 +2399,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       public boolean hasAuthorizedNetworksConfig() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -2366,6 +2425,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
           return authorizedNetworksConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2394,6 +2454,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2419,6 +2480,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2453,6 +2515,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         }
         return this;
       }
+
       /**
        *
        *
@@ -2477,6 +2540,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2497,6 +2561,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return getAuthorizedNetworksConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2521,6 +2586,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
               : authorizedNetworksConfig_;
         }
       }
+
       /**
        *
        *
@@ -2553,6 +2619,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       }
 
       private java.lang.Object publicEndpoint_ = "";
+
       /**
        *
        *
@@ -2576,6 +2643,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2599,6 +2667,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2621,6 +2690,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2639,6 +2709,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2664,6 +2735,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       }
 
       private java.lang.Object privateEndpoint_ = "";
+
       /**
        *
        *
@@ -2687,6 +2759,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2710,6 +2783,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2732,6 +2806,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2750,6 +2825,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2775,6 +2851,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       }
 
       private java.lang.Object privateEndpointSubnetwork_ = "";
+
       /**
        *
        *
@@ -2801,6 +2878,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2827,6 +2905,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2852,6 +2931,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2873,6 +2953,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2971,6 +3052,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int DNS_ENDPOINT_CONFIG_FIELD_NUMBER = 1;
   private com.google.container.v1.ControlPlaneEndpointsConfig.DNSEndpointConfig dnsEndpointConfig_;
+
   /**
    *
    *
@@ -2988,6 +3070,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
   public boolean hasDnsEndpointConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3008,6 +3091,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         ? com.google.container.v1.ControlPlaneEndpointsConfig.DNSEndpointConfig.getDefaultInstance()
         : dnsEndpointConfig_;
   }
+
   /**
    *
    *
@@ -3029,6 +3113,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
 
   public static final int IP_ENDPOINTS_CONFIG_FIELD_NUMBER = 3;
   private com.google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig ipEndpointsConfig_;
+
   /**
    *
    *
@@ -3046,6 +3131,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
   public boolean hasIpEndpointsConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3066,6 +3152,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         ? com.google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.getDefaultInstance()
         : ipEndpointsConfig_;
   }
+
   /**
    *
    *
@@ -3263,6 +3350,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3494,6 +3582,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
             com.google.container.v1.ControlPlaneEndpointsConfig.DNSEndpointConfig.Builder,
             com.google.container.v1.ControlPlaneEndpointsConfig.DNSEndpointConfigOrBuilder>
         dnsEndpointConfigBuilder_;
+
     /**
      *
      *
@@ -3510,6 +3599,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
     public boolean hasDnsEndpointConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3534,6 +3624,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         return dnsEndpointConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3559,6 +3650,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3582,6 +3674,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3614,6 +3707,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -3635,6 +3729,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3652,6 +3747,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       onChanged();
       return getDnsEndpointConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3674,6 +3770,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
             : dnsEndpointConfig_;
       }
     }
+
     /**
      *
      *
@@ -3709,6 +3806,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
             com.google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.Builder,
             com.google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfigOrBuilder>
         ipEndpointsConfigBuilder_;
+
     /**
      *
      *
@@ -3725,6 +3823,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
     public boolean hasIpEndpointsConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3749,6 +3848,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         return ipEndpointsConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3774,6 +3874,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3797,6 +3898,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3829,6 +3931,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -3850,6 +3953,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3867,6 +3971,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       onChanged();
       return getIpEndpointsConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3889,6 +3994,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
             : ipEndpointsConfig_;
       }
     }
+
     /**
      *
      *

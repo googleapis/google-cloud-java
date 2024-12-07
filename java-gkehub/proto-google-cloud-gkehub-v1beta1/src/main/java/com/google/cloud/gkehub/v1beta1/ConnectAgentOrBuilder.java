@@ -39,6 +39,7 @@ public interface ConnectAgentOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getName();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface ConnectAgentOrBuilder
    * @return The namespace.
    */
   java.lang.String getNamespace();
+
   /**
    *
    *

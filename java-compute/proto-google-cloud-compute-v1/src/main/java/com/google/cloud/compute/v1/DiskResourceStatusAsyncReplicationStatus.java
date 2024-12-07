@@ -33,6 +33,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus)
     DiskResourceStatusAsyncReplicationStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiskResourceStatusAsyncReplicationStatus.newBuilder() to construct.
   private DiskResourceStatusAsyncReplicationStatus(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -148,6 +149,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
+
     /**
      *
      *
@@ -158,6 +160,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
      * <code>ACTIVE = 314733318;</code>
      */
     public static final int ACTIVE_VALUE = 314733318;
+
     /**
      *
      *
@@ -168,6 +171,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
      * <code>CREATED = 135924424;</code>
      */
     public static final int CREATED_VALUE = 135924424;
+
     /**
      *
      *
@@ -178,8 +182,10 @@ public final class DiskResourceStatusAsyncReplicationStatus
      * <code>STARTING = 488820800;</code>
      */
     public static final int STARTING_VALUE = 488820800;
+
     /** <code>STATE_UNSPECIFIED = 470755401;</code> */
     public static final int STATE_UNSPECIFIED_VALUE = 470755401;
+
     /**
      *
      *
@@ -190,6 +196,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
      * <code>STOPPED = 444276141;</code>
      */
     public static final int STOPPED_VALUE = 444276141;
+
     /**
      *
      *
@@ -299,6 +306,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
+
   /**
    *
    *
@@ -315,6 +323,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
   public boolean hasState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -339,6 +348,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
       return s;
     }
   }
+
   /**
    *
    *
@@ -530,6 +540,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -723,6 +734,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
     private int bitField0_;
 
     private java.lang.Object state_ = "";
+
     /**
      *
      *
@@ -738,6 +750,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
     public boolean hasState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -761,6 +774,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -784,6 +798,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -806,6 +821,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +840,7 @@ public final class DiskResourceStatusAsyncReplicationStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *

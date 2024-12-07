@@ -36,6 +36,7 @@ public interface IssueAssignmentOrBuilder
    * @return The issue.
    */
   java.lang.String getIssue();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface IssueAssignmentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

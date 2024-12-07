@@ -37,6 +37,7 @@ public interface ConfidentialSpaceInfoOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.confidentialcomputing.v1.SignedEntity> getSignedEntitiesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ConfidentialSpaceInfoOrBuilder
    * </code>
    */
   com.google.cloud.confidentialcomputing.v1.SignedEntity getSignedEntities(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface ConfidentialSpaceInfoOrBuilder
    * </code>
    */
   int getSignedEntitiesCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface ConfidentialSpaceInfoOrBuilder
    */
   java.util.List<? extends com.google.cloud.confidentialcomputing.v1.SignedEntityOrBuilder>
       getSignedEntitiesOrBuilderList();
+
   /**
    *
    *

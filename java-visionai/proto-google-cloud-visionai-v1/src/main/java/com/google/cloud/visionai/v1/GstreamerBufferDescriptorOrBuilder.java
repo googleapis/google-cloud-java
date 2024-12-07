@@ -36,6 +36,7 @@ public interface GstreamerBufferDescriptorOrBuilder
    * @return The capsString.
    */
   java.lang.String getCapsString();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface GstreamerBufferDescriptorOrBuilder
    * @return Whether the ptsTime field is set.
    */
   boolean hasPtsTime();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GstreamerBufferDescriptorOrBuilder
    * @return The ptsTime.
    */
   com.google.protobuf.Timestamp getPtsTime();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface GstreamerBufferDescriptorOrBuilder
    * @return Whether the dtsTime field is set.
    */
   boolean hasDtsTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface GstreamerBufferDescriptorOrBuilder
    * @return The dtsTime.
    */
   com.google.protobuf.Timestamp getDtsTime();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface GstreamerBufferDescriptorOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface GstreamerBufferDescriptorOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *

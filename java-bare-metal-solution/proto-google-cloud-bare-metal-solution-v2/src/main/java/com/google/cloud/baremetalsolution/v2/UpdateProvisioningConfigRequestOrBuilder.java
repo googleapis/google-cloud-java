@@ -38,6 +38,7 @@ public interface UpdateProvisioningConfigRequestOrBuilder
    * @return Whether the provisioningConfig field is set.
    */
   boolean hasProvisioningConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateProvisioningConfigRequestOrBuilder
    * @return The provisioningConfig.
    */
   com.google.cloud.baremetalsolution.v2.ProvisioningConfig getProvisioningConfig();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateProvisioningConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface UpdateProvisioningConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface UpdateProvisioningConfigRequestOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
+
   /**
    *
    *

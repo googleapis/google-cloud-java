@@ -35,6 +35,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.ScanRunWarningTrace)
     ScanRunWarningTraceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ScanRunWarningTrace.newBuilder() to construct.
   private ScanRunWarningTrace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -155,6 +156,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * <code>CODE_UNSPECIFIED = 0;</code>
      */
     public static final int CODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -167,6 +169,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * <code>INSUFFICIENT_CRAWL_RESULTS = 1;</code>
      */
     public static final int INSUFFICIENT_CRAWL_RESULTS_VALUE = 1;
+
     /**
      *
      *
@@ -178,6 +181,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * <code>TOO_MANY_CRAWL_RESULTS = 2;</code>
      */
     public static final int TOO_MANY_CRAWL_RESULTS_VALUE = 2;
+
     /**
      *
      *
@@ -190,6 +194,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * <code>TOO_MANY_FUZZ_TASKS = 3;</code>
      */
     public static final int TOO_MANY_FUZZ_TASKS_VALUE = 3;
+
     /**
      *
      *
@@ -200,6 +205,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * <code>BLOCKED_BY_IAP = 4;</code>
      */
     public static final int BLOCKED_BY_IAP_VALUE = 4;
+
     /**
      *
      *
@@ -304,6 +310,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
 
   public static final int CODE_FIELD_NUMBER = 1;
   private int code_ = 0;
+
   /**
    *
    *
@@ -319,6 +326,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
   public int getCodeValue() {
     return code_;
   }
+
   /**
    *
    *
@@ -503,6 +511,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -687,6 +696,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int code_ = 0;
+
     /**
      *
      *
@@ -702,6 +712,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
     public int getCodeValue() {
       return code_;
     }
+
     /**
      *
      *
@@ -720,6 +731,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +751,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.Code.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -760,6 +773,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

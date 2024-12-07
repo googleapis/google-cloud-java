@@ -34,6 +34,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.GetAnnotationSpecRequest)
     GetAnnotationSpecRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetAnnotationSpecRequest.newBuilder() to construct.
   private GetAnnotationSpecRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
 
   public static final int READ_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask readMask_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
   public boolean hasReadMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getReadMask() {
     return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
   }
+
   /**
    *
    *
@@ -344,6 +350,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -558,6 +565,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -584,6 +592,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -610,6 +619,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -635,6 +645,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +667,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +701,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         readMaskBuilder_;
+
     /**
      *
      *
@@ -703,6 +716,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
     public boolean hasReadMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
         return readMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -743,6 +758,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +778,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +806,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +826,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +841,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
       onChanged();
       return getReadMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -838,6 +858,7 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
         return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
       }
     }
+
     /**
      *
      *

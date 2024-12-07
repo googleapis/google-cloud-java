@@ -36,6 +36,7 @@ public interface CustomerServiceOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CustomerServiceOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface CustomerServiceOrBuilder
    * @return Whether the email field is set.
    */
   boolean hasEmail();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface CustomerServiceOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface CustomerServiceOrBuilder
    * @return Whether the phone field is set.
    */
   boolean hasPhone();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface CustomerServiceOrBuilder
    * @return The phone.
    */
   com.google.type.PhoneNumber getPhone();
+
   /**
    *
    *

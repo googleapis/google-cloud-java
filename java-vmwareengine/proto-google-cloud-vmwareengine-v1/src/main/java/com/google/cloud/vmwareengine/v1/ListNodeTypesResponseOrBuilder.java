@@ -34,6 +34,7 @@ public interface ListNodeTypesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.NodeType node_types = 1;</code>
    */
   java.util.List<com.google.cloud.vmwareengine.v1.NodeType> getNodeTypesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListNodeTypesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.NodeType node_types = 1;</code>
    */
   com.google.cloud.vmwareengine.v1.NodeType getNodeTypes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListNodeTypesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.NodeType node_types = 1;</code>
    */
   int getNodeTypesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListNodeTypesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.NodeTypeOrBuilder>
       getNodeTypesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListNodeTypesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface ListNodeTypesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface ListNodeTypesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -143,6 +150,7 @@ public interface ListNodeTypesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

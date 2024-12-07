@@ -38,6 +38,7 @@ public interface UpdateServingConfigRequestOrBuilder
    * @return Whether the servingConfig field is set.
    */
   boolean hasServingConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateServingConfigRequestOrBuilder
    * @return The servingConfig.
    */
   com.google.cloud.discoveryengine.v1beta.ServingConfig getServingConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface UpdateServingConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface UpdateServingConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

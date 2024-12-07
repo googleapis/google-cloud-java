@@ -33,6 +33,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.devtools.clouddebugger.v2.UpdateActiveBreakpointRequest)
     UpdateActiveBreakpointRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateActiveBreakpointRequest.newBuilder() to construct.
   private UpdateActiveBreakpointRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object debuggeeId_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
 
   public static final int BREAKPOINT_FIELD_NUMBER = 2;
   private com.google.devtools.clouddebugger.v2.Breakpoint breakpoint_;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
   public boolean hasBreakpoint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
         ? com.google.devtools.clouddebugger.v2.Breakpoint.getDefaultInstance()
         : breakpoint_;
   }
+
   /**
    *
    *
@@ -352,6 +358,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -572,6 +579,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object debuggeeId_ = "";
+
     /**
      *
      *
@@ -594,6 +602,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -616,6 +625,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -637,6 +647,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +665,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
             com.google.devtools.clouddebugger.v2.Breakpoint.Builder,
             com.google.devtools.clouddebugger.v2.BreakpointOrBuilder>
         breakpointBuilder_;
+
     /**
      *
      *
@@ -701,6 +714,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
     public boolean hasBreakpoint() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
         return breakpointBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -751,6 +766,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +791,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +824,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +848,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +867,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
       onChanged();
       return getBreakpointFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -870,6 +890,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
             : breakpoint_;
       }
     }
+
     /**
      *
      *

@@ -52,6 +52,7 @@ public interface SoleTenancyPreferencesOrBuilder
    * @return The enum numeric value on the wire for hostMaintenancePolicy.
    */
   int getHostMaintenancePolicyValue();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface SoleTenancyPreferencesOrBuilder
    * @return The enum numeric value on the wire for commitmentPlan.
    */
   int getCommitmentPlanValue();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface SoleTenancyPreferencesOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.SoleTenantNodeType node_types = 4;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.SoleTenantNodeType> getNodeTypesList();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface SoleTenancyPreferencesOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.SoleTenantNodeType node_types = 4;</code>
    */
   com.google.cloud.migrationcenter.v1.SoleTenantNodeType getNodeTypes(int index);
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface SoleTenancyPreferencesOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.SoleTenantNodeType node_types = 4;</code>
    */
   int getNodeTypesCount();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface SoleTenancyPreferencesOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.SoleTenantNodeTypeOrBuilder>
       getNodeTypesOrBuilderList();
+
   /**
    *
    *

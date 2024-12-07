@@ -73,6 +73,7 @@ public enum MqttState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MQTT_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int MQTT_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public enum MqttState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MQTT_ENABLED = 1;</code>
    */
   public static final int MQTT_ENABLED_VALUE = 1;
+
   /**
    *
    *

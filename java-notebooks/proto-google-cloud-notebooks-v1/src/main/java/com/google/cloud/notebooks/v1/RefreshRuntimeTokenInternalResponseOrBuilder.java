@@ -36,6 +36,7 @@ public interface RefreshRuntimeTokenInternalResponseOrBuilder
    * @return The accessToken.
    */
   java.lang.String getAccessToken();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface RefreshRuntimeTokenInternalResponseOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface RefreshRuntimeTokenInternalResponseOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *

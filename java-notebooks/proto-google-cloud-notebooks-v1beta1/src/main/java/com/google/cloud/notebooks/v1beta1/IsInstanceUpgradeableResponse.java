@@ -33,6 +33,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1beta1.IsInstanceUpgradeableResponse)
     IsInstanceUpgradeableResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IsInstanceUpgradeableResponse.newBuilder() to construct.
   private IsInstanceUpgradeableResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
 
   public static final int UPGRADEABLE_FIELD_NUMBER = 1;
   private boolean upgradeable_ = false;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object upgradeVersion_ = "";
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object upgradeInfo_ = "";
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object upgradeImage_ = "";
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -429,6 +437,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -660,6 +669,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     private int bitField0_;
 
     private boolean upgradeable_;
+
     /**
      *
      *
@@ -675,6 +685,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     public boolean getUpgradeable() {
       return upgradeable_;
     }
+
     /**
      *
      *
@@ -694,6 +705,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +725,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object upgradeVersion_ = "";
+
     /**
      *
      *
@@ -736,6 +749,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -759,6 +773,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -781,6 +796,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +815,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +841,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object upgradeInfo_ = "";
+
     /**
      *
      *
@@ -846,6 +864,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -868,6 +887,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -889,6 +909,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +927,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +952,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object upgradeImage_ = "";
+
     /**
      *
      *
@@ -954,6 +977,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -978,6 +1002,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1026,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1046,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

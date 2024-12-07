@@ -38,6 +38,7 @@ public interface CreateDatasetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateDatasetRequestOrBuilder
    * @return Whether the dataset field is set.
    */
   boolean hasDataset();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateDatasetRequestOrBuilder
    * @return The dataset.
    */
   com.google.cloud.automl.v1beta1.Dataset getDataset();
+
   /**
    *
    *

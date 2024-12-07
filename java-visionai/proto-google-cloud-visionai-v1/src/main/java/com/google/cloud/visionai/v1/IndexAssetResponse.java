@@ -33,6 +33,7 @@ public final class IndexAssetResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.IndexAssetResponse)
     IndexAssetResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IndexAssetResponse.newBuilder() to construct.
   private IndexAssetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class IndexAssetResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

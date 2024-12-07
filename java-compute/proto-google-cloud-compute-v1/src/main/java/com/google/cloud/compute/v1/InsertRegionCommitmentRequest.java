@@ -33,6 +33,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertRegionCommitmentRequest)
     InsertRegionCommitmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertRegionCommitmentRequest.newBuilder() to construct.
   private InsertRegionCommitmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int COMMITMENT_RESOURCE_FIELD_NUMBER = 244240888;
   private com.google.cloud.compute.v1.Commitment commitmentResource_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
   public boolean hasCommitmentResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
         ? com.google.cloud.compute.v1.Commitment.getDefaultInstance()
         : commitmentResource_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -274,6 +284,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -497,6 +508,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -750,6 +762,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.Commitment.Builder,
             com.google.cloud.compute.v1.CommitmentOrBuilder>
         commitmentResourceBuilder_;
+
     /**
      *
      *
@@ -766,6 +779,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
     public boolean hasCommitmentResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -788,6 +802,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
         return commitmentResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -812,6 +827,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +850,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +880,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +902,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +919,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       onChanged();
       return getCommitmentResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -920,6 +940,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
             : commitmentResource_;
       }
     }
+
     /**
      *
      *
@@ -949,6 +970,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -973,6 +995,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -997,6 +1020,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1044,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1064,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1091,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1089,6 +1116,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1113,6 +1141,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1136,6 +1165,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1185,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1212,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1195,6 +1227,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1217,6 +1250,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1239,6 +1273,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1260,6 +1295,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1313,7 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

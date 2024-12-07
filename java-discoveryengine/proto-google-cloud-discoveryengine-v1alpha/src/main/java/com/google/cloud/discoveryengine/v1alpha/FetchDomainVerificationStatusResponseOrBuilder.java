@@ -34,6 +34,7 @@ public interface FetchDomainVerificationStatusResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.TargetSite target_sites = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.TargetSite> getTargetSitesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface FetchDomainVerificationStatusResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.TargetSite target_sites = 1;</code>
    */
   com.google.cloud.discoveryengine.v1alpha.TargetSite getTargetSites(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface FetchDomainVerificationStatusResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.TargetSite target_sites = 1;</code>
    */
   int getTargetSitesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface FetchDomainVerificationStatusResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.TargetSiteOrBuilder>
       getTargetSitesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface FetchDomainVerificationStatusResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

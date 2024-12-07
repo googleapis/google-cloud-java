@@ -36,6 +36,7 @@ public interface RebaseTunedModelOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RebaseTunedModelOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1.GenericOperationMetadata getGenericMetadata();
+
   /**
    *
    *

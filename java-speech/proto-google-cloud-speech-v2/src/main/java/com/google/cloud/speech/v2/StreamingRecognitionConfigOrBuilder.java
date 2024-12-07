@@ -43,6 +43,7 @@ public interface StreamingRecognitionConfigOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface StreamingRecognitionConfigOrBuilder
    * @return The config.
    */
   com.google.cloud.speech.v2.RecognitionConfig getConfig();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface StreamingRecognitionConfigOrBuilder
    * @return Whether the configMask field is set.
    */
   boolean hasConfigMask();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface StreamingRecognitionConfigOrBuilder
    * @return The configMask.
    */
   com.google.protobuf.FieldMask getConfigMask();
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public interface StreamingRecognitionConfigOrBuilder
    * @return Whether the streamingFeatures field is set.
    */
   boolean hasStreamingFeatures();
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public interface StreamingRecognitionConfigOrBuilder
    * @return The streamingFeatures.
    */
   com.google.cloud.speech.v2.StreamingRecognitionFeatures getStreamingFeatures();
+
   /**
    *
    *

@@ -44,6 +44,7 @@ public interface QuotaOverrideOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -110,6 +111,7 @@ public interface QuotaOverrideOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 3;</code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -141,9 +143,11 @@ public interface QuotaOverrideOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 3;</code>
    */
   boolean containsDimensions(java.lang.String key);
+
   /** Use {@link #getDimensionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDimensions();
+
   /**
    *
    *
@@ -175,6 +179,7 @@ public interface QuotaOverrideOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDimensionsMap();
+
   /**
    *
    *
@@ -210,6 +215,7 @@ public interface QuotaOverrideOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -257,6 +263,7 @@ public interface QuotaOverrideOrBuilder
    * @return The metric.
    */
   java.lang.String getMetric();
+
   /**
    *
    *
@@ -290,6 +297,7 @@ public interface QuotaOverrideOrBuilder
    * @return The unit.
    */
   java.lang.String getUnit();
+
   /**
    *
    *
@@ -322,6 +330,7 @@ public interface QuotaOverrideOrBuilder
    * @return The adminOverrideAncestor.
    */
   java.lang.String getAdminOverrideAncestor();
+
   /**
    *
    *

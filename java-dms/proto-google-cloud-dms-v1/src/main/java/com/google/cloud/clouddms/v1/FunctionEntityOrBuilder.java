@@ -36,6 +36,7 @@ public interface FunctionEntityOrBuilder
    * @return The sqlCode.
    */
   java.lang.String getSqlCode();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface FunctionEntityOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface FunctionEntityOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
+
   /**
    *
    *

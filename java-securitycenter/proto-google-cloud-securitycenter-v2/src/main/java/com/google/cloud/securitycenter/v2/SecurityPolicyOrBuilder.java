@@ -37,6 +37,7 @@ public interface SecurityPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface SecurityPolicyOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

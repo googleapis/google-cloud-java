@@ -34,6 +34,7 @@ public final class GetAssociationFirewallPolicyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetAssociationFirewallPolicyRequest)
     GetAssociationFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetAssociationFirewallPolicyRequest.newBuilder() to construct.
   private GetAssociationFirewallPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class GetAssociationFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firewallPolicy_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class GetAssociationFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class GetAssociationFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class GetAssociationFirewallPolicyRequest
   public boolean hasName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class GetAssociationFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -358,6 +364,7 @@ public final class GetAssociationFirewallPolicyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -564,6 +571,7 @@ public final class GetAssociationFirewallPolicyRequest
     private int bitField0_;
 
     private java.lang.Object firewallPolicy_ = "";
+
     /**
      *
      *
@@ -586,6 +594,7 @@ public final class GetAssociationFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -608,6 +617,7 @@ public final class GetAssociationFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -629,6 +639,7 @@ public final class GetAssociationFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +657,7 @@ public final class GetAssociationFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +682,7 @@ public final class GetAssociationFirewallPolicyRequest
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -684,6 +697,7 @@ public final class GetAssociationFirewallPolicyRequest
     public boolean hasName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -706,6 +720,7 @@ public final class GetAssociationFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -728,6 +743,7 @@ public final class GetAssociationFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -749,6 +765,7 @@ public final class GetAssociationFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +783,7 @@ public final class GetAssociationFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

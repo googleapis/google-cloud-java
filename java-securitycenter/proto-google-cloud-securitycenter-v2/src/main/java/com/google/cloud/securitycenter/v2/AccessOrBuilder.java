@@ -43,6 +43,7 @@ public interface AccessOrBuilder
    * @return The principalEmail.
    */
   java.lang.String getPrincipalEmail();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface AccessOrBuilder
    * @return The callerIp.
    */
   java.lang.String getCallerIp();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface AccessOrBuilder
    * @return Whether the callerIpGeo field is set.
    */
   boolean hasCallerIpGeo();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface AccessOrBuilder
    * @return The callerIpGeo.
    */
   com.google.cloud.securitycenter.v2.Geolocation getCallerIpGeo();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface AccessOrBuilder
    * @return The userAgentFamily.
    */
   java.lang.String getUserAgentFamily();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface AccessOrBuilder
    * @return The userAgent.
    */
   java.lang.String getUserAgent();
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public interface AccessOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public interface AccessOrBuilder
    * @return The methodName.
    */
   java.lang.String getMethodName();
+
   /**
    *
    *
@@ -246,6 +254,7 @@ public interface AccessOrBuilder
    * @return The principalSubject.
    */
   java.lang.String getPrincipalSubject();
+
   /**
    *
    *
@@ -282,6 +291,7 @@ public interface AccessOrBuilder
    * @return The serviceAccountKeyName.
    */
   java.lang.String getServiceAccountKeyName();
+
   /**
    *
    *
@@ -317,6 +327,7 @@ public interface AccessOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v2.ServiceAccountDelegationInfo>
       getServiceAccountDelegationInfoList();
+
   /**
    *
    *
@@ -335,6 +346,7 @@ public interface AccessOrBuilder
    */
   com.google.cloud.securitycenter.v2.ServiceAccountDelegationInfo getServiceAccountDelegationInfo(
       int index);
+
   /**
    *
    *
@@ -352,6 +364,7 @@ public interface AccessOrBuilder
    * </code>
    */
   int getServiceAccountDelegationInfoCount();
+
   /**
    *
    *
@@ -370,6 +383,7 @@ public interface AccessOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.ServiceAccountDelegationInfoOrBuilder>
       getServiceAccountDelegationInfoOrBuilderList();
+
   /**
    *
    *
@@ -404,6 +418,7 @@ public interface AccessOrBuilder
    * @return The userName.
    */
   java.lang.String getUserName();
+
   /**
    *
    *

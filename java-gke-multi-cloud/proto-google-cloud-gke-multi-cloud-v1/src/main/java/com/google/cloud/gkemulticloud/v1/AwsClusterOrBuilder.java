@@ -42,6 +42,7 @@ public interface AwsClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface AwsClusterOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface AwsClusterOrBuilder
    * @return Whether the networking field is set.
    */
   boolean hasNetworking();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface AwsClusterOrBuilder
    * @return The networking.
    */
   com.google.cloud.gkemulticloud.v1.AwsClusterNetworking getNetworking();
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public interface AwsClusterOrBuilder
    * @return The awsRegion.
    */
   java.lang.String getAwsRegion();
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public interface AwsClusterOrBuilder
    * @return Whether the controlPlane field is set.
    */
   boolean hasControlPlane();
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public interface AwsClusterOrBuilder
    * @return The controlPlane.
    */
   com.google.cloud.gkemulticloud.v1.AwsControlPlane getControlPlane();
+
   /**
    *
    *
@@ -219,6 +226,7 @@ public interface AwsClusterOrBuilder
    * @return Whether the authorization field is set.
    */
   boolean hasAuthorization();
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public interface AwsClusterOrBuilder
    * @return The authorization.
    */
   com.google.cloud.gkemulticloud.v1.AwsAuthorization getAuthorization();
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public interface AwsClusterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -287,6 +297,7 @@ public interface AwsClusterOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
+
   /**
    *
    *
@@ -312,6 +323,7 @@ public interface AwsClusterOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -351,6 +363,7 @@ public interface AwsClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -364,6 +377,7 @@ public interface AwsClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -389,6 +403,7 @@ public interface AwsClusterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -402,6 +417,7 @@ public interface AwsClusterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -430,6 +446,7 @@ public interface AwsClusterOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -466,6 +483,7 @@ public interface AwsClusterOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -485,9 +503,11 @@ public interface AwsClusterOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -507,6 +527,7 @@ public interface AwsClusterOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -530,6 +551,7 @@ public interface AwsClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -564,6 +586,7 @@ public interface AwsClusterOrBuilder
    * @return Whether the workloadIdentityConfig field is set.
    */
   boolean hasWorkloadIdentityConfig();
+
   /**
    *
    *
@@ -578,6 +601,7 @@ public interface AwsClusterOrBuilder
    * @return The workloadIdentityConfig.
    */
   com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig getWorkloadIdentityConfig();
+
   /**
    *
    *
@@ -604,6 +628,7 @@ public interface AwsClusterOrBuilder
    * @return The clusterCaCertificate.
    */
   java.lang.String getClusterCaCertificate();
+
   /**
    *
    *
@@ -631,6 +656,7 @@ public interface AwsClusterOrBuilder
    * @return Whether the fleet field is set.
    */
   boolean hasFleet();
+
   /**
    *
    *
@@ -645,6 +671,7 @@ public interface AwsClusterOrBuilder
    * @return The fleet.
    */
   com.google.cloud.gkemulticloud.v1.Fleet getFleet();
+
   /**
    *
    *
@@ -672,6 +699,7 @@ public interface AwsClusterOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
+
   /**
    *
    *
@@ -686,6 +714,7 @@ public interface AwsClusterOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.gkemulticloud.v1.LoggingConfig getLoggingConfig();
+
   /**
    *
    *
@@ -711,6 +740,7 @@ public interface AwsClusterOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AwsClusterError> getErrorsList();
+
   /**
    *
    *
@@ -723,6 +753,7 @@ public interface AwsClusterOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AwsClusterError getErrors(int index);
+
   /**
    *
    *
@@ -735,6 +766,7 @@ public interface AwsClusterOrBuilder
    * </code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -748,6 +780,7 @@ public interface AwsClusterOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AwsClusterErrorOrBuilder>
       getErrorsOrBuilderList();
+
   /**
    *
    *
@@ -775,6 +808,7 @@ public interface AwsClusterOrBuilder
    * @return Whether the monitoringConfig field is set.
    */
   boolean hasMonitoringConfig();
+
   /**
    *
    *
@@ -789,6 +823,7 @@ public interface AwsClusterOrBuilder
    * @return The monitoringConfig.
    */
   com.google.cloud.gkemulticloud.v1.MonitoringConfig getMonitoringConfig();
+
   /**
    *
    *
@@ -816,6 +851,7 @@ public interface AwsClusterOrBuilder
    * @return Whether the binaryAuthorization field is set.
    */
   boolean hasBinaryAuthorization();
+
   /**
    *
    *
@@ -830,6 +866,7 @@ public interface AwsClusterOrBuilder
    * @return The binaryAuthorization.
    */
   com.google.cloud.gkemulticloud.v1.BinaryAuthorization getBinaryAuthorization();
+
   /**
    *
    *

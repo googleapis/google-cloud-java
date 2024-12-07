@@ -34,6 +34,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig)
     ServicePerimeterConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServicePerimeterConfig.newBuilder() to construct.
   private ServicePerimeterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -137,6 +138,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * <code>IDENTITY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int IDENTITY_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -147,6 +149,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * <code>ANY_IDENTITY = 1;</code>
      */
     public static final int ANY_IDENTITY_VALUE = 1;
+
     /**
      *
      *
@@ -157,6 +160,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * <code>ANY_USER_ACCOUNT = 2;</code>
      */
     public static final int ANY_USER_ACCOUNT_VALUE = 2;
+
     /**
      *
      *
@@ -289,6 +293,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return A list containing the allowedServices.
      */
     java.util.List<java.lang.String> getAllowedServicesList();
+
     /**
      *
      *
@@ -304,6 +309,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The count of allowedServices.
      */
     int getAllowedServicesCount();
+
     /**
      *
      *
@@ -320,6 +326,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The allowedServices at the given index.
      */
     java.lang.String getAllowedServices(int index);
+
     /**
      *
      *
@@ -337,6 +344,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getAllowedServicesBytes(int index);
   }
+
   /**
    *
    *
@@ -353,6 +361,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.VpcAccessibleServices)
       VpcAccessibleServicesOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use VpcAccessibleServices.newBuilder() to construct.
     private VpcAccessibleServices(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -387,6 +396,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
     public static final int ENABLE_RESTRICTION_FIELD_NUMBER = 1;
     private boolean enableRestriction_ = false;
+
     /**
      *
      *
@@ -409,6 +419,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList allowedServices_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -426,6 +437,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ProtocolStringList getAllowedServicesList() {
       return allowedServices_;
     }
+
     /**
      *
      *
@@ -443,6 +455,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getAllowedServicesCount() {
       return allowedServices_.size();
     }
+
     /**
      *
      *
@@ -461,6 +474,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public java.lang.String getAllowedServices(int index) {
       return allowedServices_.get(index);
     }
+
     /**
      *
      *
@@ -682,6 +696,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -916,6 +931,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private boolean enableRestriction_;
+
       /**
        *
        *
@@ -932,6 +948,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public boolean getEnableRestriction() {
         return enableRestriction_;
       }
+
       /**
        *
        *
@@ -952,6 +969,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -980,6 +998,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -998,6 +1017,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         allowedServices_.makeImmutable();
         return allowedServices_;
       }
+
       /**
        *
        *
@@ -1015,6 +1035,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public int getAllowedServicesCount() {
         return allowedServices_.size();
       }
+
       /**
        *
        *
@@ -1033,6 +1054,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public java.lang.String getAllowedServices(int index) {
         return allowedServices_.get(index);
       }
+
       /**
        *
        *
@@ -1051,6 +1073,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ByteString getAllowedServicesBytes(int index) {
         return allowedServices_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1077,6 +1100,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1102,6 +1126,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1124,6 +1149,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1145,6 +1171,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1264,6 +1291,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return Whether the method field is set.
      */
     boolean hasMethod();
+
     /**
      *
      *
@@ -1280,6 +1308,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The method.
      */
     java.lang.String getMethod();
+
     /**
      *
      *
@@ -1311,6 +1340,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return Whether the permission field is set.
      */
     boolean hasPermission();
+
     /**
      *
      *
@@ -1325,6 +1355,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The permission.
      */
     java.lang.String getPermission();
+
     /**
      *
      *
@@ -1343,6 +1374,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelector.KindCase
         getKindCase();
   }
+
   /**
    *
    *
@@ -1359,6 +1391,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelector)
       MethodSelectorOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MethodSelector.newBuilder() to construct.
     private MethodSelector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1406,6 +1439,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       private KindCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1439,6 +1473,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int METHOD_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -1457,6 +1492,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public boolean hasMethod() {
       return kindCase_ == 1;
     }
+
     /**
      *
      *
@@ -1488,6 +1524,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -1521,6 +1558,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int PERMISSION_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -1537,6 +1575,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public boolean hasPermission() {
       return kindCase_ == 2;
     }
+
     /**
      *
      *
@@ -1566,6 +1605,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -1792,6 +1832,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2059,6 +2100,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public boolean hasMethod() {
         return kindCase_ == 1;
       }
+
       /**
        *
        *
@@ -2091,6 +2133,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2123,6 +2166,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2148,6 +2192,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2171,6 +2216,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -2215,6 +2261,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public boolean hasPermission() {
         return kindCase_ == 2;
       }
+
       /**
        *
        *
@@ -2245,6 +2292,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2275,6 +2323,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2298,6 +2347,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2319,6 +2369,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -2437,6 +2488,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The serviceName.
      */
     java.lang.String getServiceName();
+
     /**
      *
      *
@@ -2475,6 +2527,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     java.util.List<
             com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelector>
         getMethodSelectorsList();
+
     /**
      *
      *
@@ -2492,6 +2545,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      */
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelector
         getMethodSelectors(int index);
+
     /**
      *
      *
@@ -2508,6 +2562,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * </code>
      */
     int getMethodSelectorsCount();
+
     /**
      *
      *
@@ -2528,6 +2583,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
                     .MethodSelectorOrBuilder>
         getMethodSelectorsOrBuilderList();
+
     /**
      *
      *
@@ -2546,6 +2602,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelectorOrBuilder
         getMethodSelectorsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -2561,6 +2618,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation)
       ApiOperationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ApiOperation.newBuilder() to construct.
     private ApiOperation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2597,6 +2655,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object serviceName_ = "";
+
     /**
      *
      *
@@ -2627,6 +2686,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -2664,6 +2724,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     private java.util.List<
             com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelector>
         methodSelectors_;
+
     /**
      *
      *
@@ -2685,6 +2746,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getMethodSelectorsList() {
       return methodSelectors_;
     }
+
     /**
      *
      *
@@ -2708,6 +2770,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getMethodSelectorsOrBuilderList() {
       return methodSelectors_;
     }
+
     /**
      *
      *
@@ -2727,6 +2790,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getMethodSelectorsCount() {
       return methodSelectors_.size();
     }
+
     /**
      *
      *
@@ -2747,6 +2811,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getMethodSelectors(int index) {
       return methodSelectors_.get(index);
     }
+
     /**
      *
      *
@@ -2950,6 +3015,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3218,6 +3284,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object serviceName_ = "";
+
       /**
        *
        *
@@ -3247,6 +3314,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3276,6 +3344,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3304,6 +3373,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3328,6 +3398,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3404,6 +3475,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return methodSelectorsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -3426,6 +3498,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return methodSelectorsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -3449,6 +3522,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return methodSelectorsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -3479,6 +3553,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -3507,6 +3582,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -3536,6 +3612,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -3566,6 +3643,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -3593,6 +3671,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -3621,6 +3700,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -3651,6 +3731,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -3676,6 +3757,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -3701,6 +3783,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -3721,6 +3804,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           getMethodSelectorsBuilder(int index) {
         return getMethodSelectorsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3745,6 +3829,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return methodSelectorsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3771,6 +3856,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return java.util.Collections.unmodifiableList(methodSelectors_);
         }
       }
+
       /**
        *
        *
@@ -3794,6 +3880,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelector
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3818,6 +3905,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelector
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3967,6 +4055,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return Whether the accessLevel field is set.
      */
     boolean hasAccessLevel();
+
     /**
      *
      *
@@ -3996,6 +4085,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The accessLevel.
      */
     java.lang.String getAccessLevel();
+
     /**
      *
      *
@@ -4044,6 +4134,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return Whether the resource field is set.
      */
     boolean hasResource();
+
     /**
      *
      *
@@ -4062,6 +4153,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The resource.
      */
     java.lang.String getResource();
+
     /**
      *
      *
@@ -4084,6 +4176,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource.SourceCase
         getSourceCase();
   }
+
   /**
    *
    *
@@ -4101,6 +4194,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource)
       IngressSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IngressSource.newBuilder() to construct.
     private IngressSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4148,6 +4242,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       private SourceCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -4181,6 +4276,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int ACCESS_LEVEL_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -4212,6 +4308,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public boolean hasAccessLevel() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -4256,6 +4353,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -4302,6 +4400,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int RESOURCE_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -4322,6 +4421,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public boolean hasResource() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -4355,6 +4455,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -4585,6 +4686,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4864,6 +4966,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public boolean hasAccessLevel() {
         return sourceCase_ == 1;
       }
+
       /**
        *
        *
@@ -4909,6 +5012,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4954,6 +5058,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4992,6 +5097,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5028,6 +5134,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -5089,6 +5196,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public boolean hasResource() {
         return sourceCase_ == 2;
       }
+
       /**
        *
        *
@@ -5123,6 +5231,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5157,6 +5266,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5184,6 +5294,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5209,6 +5320,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -5327,6 +5439,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      */
     java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource>
         getSourcesList();
+
     /**
      *
      *
@@ -5342,6 +5455,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      */
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource getSources(
         int index);
+
     /**
      *
      *
@@ -5356,6 +5470,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * </code>
      */
     int getSourcesCount();
+
     /**
      *
      *
@@ -5374,6 +5489,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
                     .IngressSourceOrBuilder>
         getSourcesOrBuilderList();
+
     /**
      *
      *
@@ -5404,6 +5520,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return A list containing the identities.
      */
     java.util.List<java.lang.String> getIdentitiesList();
+
     /**
      *
      *
@@ -5418,6 +5535,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The count of identities.
      */
     int getIdentitiesCount();
+
     /**
      *
      *
@@ -5433,6 +5551,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The identities at the given index.
      */
     java.lang.String getIdentities(int index);
+
     /**
      *
      *
@@ -5465,6 +5584,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for identityType.
      */
     int getIdentityTypeValue();
+
     /**
      *
      *
@@ -5483,6 +5603,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
         getIdentityType();
   }
+
   /**
    *
    *
@@ -5502,6 +5623,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressFrom)
       IngressFromOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IngressFrom.newBuilder() to construct.
     private IngressFrom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5541,6 +5663,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     private java.util.List<
             com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource>
         sources_;
+
     /**
      *
      *
@@ -5560,6 +5683,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getSourcesList() {
       return sources_;
     }
+
     /**
      *
      *
@@ -5581,6 +5705,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getSourcesOrBuilderList() {
       return sources_;
     }
+
     /**
      *
      *
@@ -5598,6 +5723,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getSourcesCount() {
       return sources_.size();
     }
+
     /**
      *
      *
@@ -5616,6 +5742,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getSources(int index) {
       return sources_.get(index);
     }
+
     /**
      *
      *
@@ -5640,6 +5767,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList identities_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -5656,6 +5784,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ProtocolStringList getIdentitiesList() {
       return identities_;
     }
+
     /**
      *
      *
@@ -5672,6 +5801,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getIdentitiesCount() {
       return identities_.size();
     }
+
     /**
      *
      *
@@ -5689,6 +5819,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public java.lang.String getIdentities(int index) {
       return identities_.get(index);
     }
+
     /**
      *
      *
@@ -5709,6 +5840,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
     public static final int IDENTITY_TYPE_FIELD_NUMBER = 3;
     private int identityType_ = 0;
+
     /**
      *
      *
@@ -5728,6 +5860,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getIdentityTypeValue() {
       return identityType_;
     }
+
     /**
      *
      *
@@ -5957,6 +6090,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6292,6 +6426,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return sourcesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -6312,6 +6447,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return sourcesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -6333,6 +6469,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return sourcesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -6361,6 +6498,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -6387,6 +6525,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -6414,6 +6553,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -6442,6 +6582,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -6467,6 +6608,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -6493,6 +6635,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -6521,6 +6664,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -6544,6 +6688,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -6567,6 +6712,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -6585,6 +6731,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           getSourcesBuilder(int index) {
         return getSourcesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -6607,6 +6754,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return sourcesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -6631,6 +6779,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return java.util.Collections.unmodifiableList(sources_);
         }
       }
+
       /**
        *
        *
@@ -6652,6 +6801,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -6674,6 +6824,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -6724,6 +6875,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -6741,6 +6893,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         identities_.makeImmutable();
         return identities_;
       }
+
       /**
        *
        *
@@ -6757,6 +6910,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public int getIdentitiesCount() {
         return identities_.size();
       }
+
       /**
        *
        *
@@ -6774,6 +6928,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public java.lang.String getIdentities(int index) {
         return identities_.get(index);
       }
+
       /**
        *
        *
@@ -6791,6 +6946,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ByteString getIdentitiesBytes(int index) {
         return identities_.getByteString(index);
       }
+
       /**
        *
        *
@@ -6816,6 +6972,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6840,6 +6997,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6861,6 +7019,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6881,6 +7040,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6908,6 +7068,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
 
       private int identityType_ = 0;
+
       /**
        *
        *
@@ -6927,6 +7088,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public int getIdentityTypeValue() {
         return identityType_;
       }
+
       /**
        *
        *
@@ -6949,6 +7111,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6975,6 +7138,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -7001,6 +7165,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7116,6 +7281,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      */
     java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
         getOperationsList();
+
     /**
      *
      *
@@ -7135,6 +7301,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      */
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation getOperations(
         int index);
+
     /**
      *
      *
@@ -7153,6 +7320,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * </code>
      */
     int getOperationsCount();
+
     /**
      *
      *
@@ -7175,6 +7343,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
                     .ApiOperationOrBuilder>
         getOperationsOrBuilderList();
+
     /**
      *
      *
@@ -7214,6 +7383,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return A list containing the resources.
      */
     java.util.List<java.lang.String> getResourcesList();
+
     /**
      *
      *
@@ -7233,6 +7403,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The count of resources.
      */
     int getResourcesCount();
+
     /**
      *
      *
@@ -7253,6 +7424,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The resources at the given index.
      */
     java.lang.String getResources(int index);
+
     /**
      *
      *
@@ -7274,6 +7446,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getResourcesBytes(int index);
   }
+
   /**
    *
    *
@@ -7295,6 +7468,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressTo)
       IngressToOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IngressTo.newBuilder() to construct.
     private IngressTo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7333,6 +7507,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     private java.util.List<
             com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
         operations_;
+
     /**
      *
      *
@@ -7356,6 +7531,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getOperationsList() {
       return operations_;
     }
+
     /**
      *
      *
@@ -7381,6 +7557,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getOperationsOrBuilderList() {
       return operations_;
     }
+
     /**
      *
      *
@@ -7402,6 +7579,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getOperationsCount() {
       return operations_.size();
     }
+
     /**
      *
      *
@@ -7424,6 +7602,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getOperations(int index) {
       return operations_.get(index);
     }
+
     /**
      *
      *
@@ -7452,6 +7631,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList resources_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -7473,6 +7653,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ProtocolStringList getResourcesList() {
       return resources_;
     }
+
     /**
      *
      *
@@ -7494,6 +7675,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getResourcesCount() {
       return resources_.size();
     }
+
     /**
      *
      *
@@ -7516,6 +7698,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public java.lang.String getResources(int index) {
       return resources_.get(index);
     }
+
     /**
      *
      *
@@ -7726,6 +7909,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -8051,6 +8235,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return operationsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -8075,6 +8260,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return operationsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -8100,6 +8286,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return operationsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -8132,6 +8319,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -8162,6 +8350,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -8193,6 +8382,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -8225,6 +8415,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -8254,6 +8445,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -8284,6 +8476,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -8316,6 +8509,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -8343,6 +8537,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -8370,6 +8565,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -8391,6 +8587,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           getOperationsBuilder(int index) {
         return getOperationsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -8417,6 +8614,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return operationsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -8445,6 +8643,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return java.util.Collections.unmodifiableList(operations_);
         }
       }
+
       /**
        *
        *
@@ -8469,6 +8668,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -8494,6 +8694,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -8548,6 +8749,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -8570,6 +8772,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         resources_.makeImmutable();
         return resources_;
       }
+
       /**
        *
        *
@@ -8591,6 +8794,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public int getResourcesCount() {
         return resources_.size();
       }
+
       /**
        *
        *
@@ -8613,6 +8817,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public java.lang.String getResources(int index) {
         return resources_.get(index);
       }
+
       /**
        *
        *
@@ -8635,6 +8840,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ByteString getResourcesBytes(int index) {
         return resources_.getByteString(index);
       }
+
       /**
        *
        *
@@ -8665,6 +8871,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8694,6 +8901,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8720,6 +8928,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8745,6 +8954,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8867,6 +9077,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return Whether the ingressFrom field is set.
      */
     boolean hasIngressFrom();
+
     /**
      *
      *
@@ -8884,6 +9095,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The ingressFrom.
      */
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressFrom getIngressFrom();
+
     /**
      *
      *
@@ -8919,6 +9131,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return Whether the ingressTo field is set.
      */
     boolean hasIngressTo();
+
     /**
      *
      *
@@ -8937,6 +9150,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The ingressTo.
      */
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressTo getIngressTo();
+
     /**
      *
      *
@@ -8955,6 +9169,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressToOrBuilder
         getIngressToOrBuilder();
   }
+
   /**
    *
    *
@@ -8989,6 +9204,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy)
       IngressPolicyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IngressPolicy.newBuilder() to construct.
     private IngressPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9023,6 +9239,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public static final int INGRESS_FROM_FIELD_NUMBER = 1;
     private com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressFrom
         ingressFrom_;
+
     /**
      *
      *
@@ -9043,6 +9260,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public boolean hasIngressFrom() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -9067,6 +9285,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               .getDefaultInstance()
           : ingressFrom_;
     }
+
     /**
      *
      *
@@ -9092,6 +9311,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
     public static final int INGRESS_TO_FIELD_NUMBER = 2;
     private com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressTo ingressTo_;
+
     /**
      *
      *
@@ -9113,6 +9333,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public boolean hasIngressTo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -9138,6 +9359,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               .getDefaultInstance()
           : ingressTo_;
     }
+
     /**
      *
      *
@@ -9351,6 +9573,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -9616,6 +9839,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
                   .IngressFromOrBuilder>
           ingressFromBuilder_;
+
       /**
        *
        *
@@ -9635,6 +9859,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public boolean hasIngressFrom() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -9662,6 +9887,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return ingressFromBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -9690,6 +9916,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9716,6 +9943,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9751,6 +9979,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -9775,6 +10004,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9795,6 +10025,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return getIngressFromFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -9820,6 +10051,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               : ingressFrom_;
         }
       }
+
       /**
        *
        *
@@ -9861,6 +10093,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressTo.Builder,
               com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressToOrBuilder>
           ingressToBuilder_;
+
       /**
        *
        *
@@ -9881,6 +10114,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public boolean hasIngressTo() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -9909,6 +10143,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return ingressToBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -9938,6 +10173,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9965,6 +10201,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10001,6 +10238,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -10026,6 +10264,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10047,6 +10286,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return getIngressToFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -10073,6 +10313,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               : ingressTo_;
         }
       }
+
       /**
        *
        *
@@ -10194,6 +10435,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return A list containing the identities.
      */
     java.util.List<java.lang.String> getIdentitiesList();
+
     /**
      *
      *
@@ -10208,6 +10450,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The count of identities.
      */
     int getIdentitiesCount();
+
     /**
      *
      *
@@ -10223,6 +10466,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The identities at the given index.
      */
     java.lang.String getIdentities(int index);
+
     /**
      *
      *
@@ -10255,6 +10499,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for identityType.
      */
     int getIdentityTypeValue();
+
     /**
      *
      *
@@ -10273,6 +10518,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
         getIdentityType();
   }
+
   /**
    *
    *
@@ -10297,6 +10543,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
       EgressFromOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EgressFrom.newBuilder() to construct.
     private EgressFrom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10334,6 +10581,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList identities_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -10350,6 +10598,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ProtocolStringList getIdentitiesList() {
       return identities_;
     }
+
     /**
      *
      *
@@ -10366,6 +10615,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getIdentitiesCount() {
       return identities_.size();
     }
+
     /**
      *
      *
@@ -10383,6 +10633,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public java.lang.String getIdentities(int index) {
       return identities_.get(index);
     }
+
     /**
      *
      *
@@ -10403,6 +10654,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
     public static final int IDENTITY_TYPE_FIELD_NUMBER = 2;
     private int identityType_ = 0;
+
     /**
      *
      *
@@ -10422,6 +10674,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getIdentityTypeValue() {
       return identityType_;
     }
+
     /**
      *
      *
@@ -10640,6 +10893,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -10879,6 +11133,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -10896,6 +11151,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         identities_.makeImmutable();
         return identities_;
       }
+
       /**
        *
        *
@@ -10912,6 +11168,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public int getIdentitiesCount() {
         return identities_.size();
       }
+
       /**
        *
        *
@@ -10929,6 +11186,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public java.lang.String getIdentities(int index) {
         return identities_.get(index);
       }
+
       /**
        *
        *
@@ -10946,6 +11204,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ByteString getIdentitiesBytes(int index) {
         return identities_.getByteString(index);
       }
+
       /**
        *
        *
@@ -10971,6 +11230,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10995,6 +11255,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11016,6 +11277,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11036,6 +11298,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11063,6 +11326,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
 
       private int identityType_ = 0;
+
       /**
        *
        *
@@ -11082,6 +11346,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public int getIdentityTypeValue() {
         return identityType_;
       }
+
       /**
        *
        *
@@ -11104,6 +11369,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11130,6 +11396,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -11156,6 +11423,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11271,6 +11539,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return A list containing the resources.
      */
     java.util.List<java.lang.String> getResourcesList();
+
     /**
      *
      *
@@ -11290,6 +11559,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The count of resources.
      */
     int getResourcesCount();
+
     /**
      *
      *
@@ -11310,6 +11580,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The resources at the given index.
      */
     java.lang.String getResources(int index);
+
     /**
      *
      *
@@ -11349,6 +11620,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      */
     java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
         getOperationsList();
+
     /**
      *
      *
@@ -11367,6 +11639,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      */
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation getOperations(
         int index);
+
     /**
      *
      *
@@ -11384,6 +11657,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * </code>
      */
     int getOperationsCount();
+
     /**
      *
      *
@@ -11405,6 +11679,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
                     .ApiOperationOrBuilder>
         getOperationsOrBuilderList();
+
     /**
      *
      *
@@ -11441,6 +11716,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return A list containing the externalResources.
      */
     java.util.List<java.lang.String> getExternalResourcesList();
+
     /**
      *
      *
@@ -11458,6 +11734,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The count of externalResources.
      */
     int getExternalResourcesCount();
+
     /**
      *
      *
@@ -11476,6 +11753,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The externalResources at the given index.
      */
     java.lang.String getExternalResources(int index);
+
     /**
      *
      *
@@ -11495,6 +11773,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getExternalResourcesBytes(int index);
   }
+
   /**
    *
    *
@@ -11523,6 +11802,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)
       EgressToOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EgressTo.newBuilder() to construct.
     private EgressTo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11561,6 +11841,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList resources_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -11582,6 +11863,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ProtocolStringList getResourcesList() {
       return resources_;
     }
+
     /**
      *
      *
@@ -11603,6 +11885,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getResourcesCount() {
       return resources_.size();
     }
+
     /**
      *
      *
@@ -11625,6 +11908,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public java.lang.String getResources(int index) {
       return resources_.get(index);
     }
+
     /**
      *
      *
@@ -11654,6 +11938,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     private java.util.List<
             com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
         operations_;
+
     /**
      *
      *
@@ -11676,6 +11961,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getOperationsList() {
       return operations_;
     }
+
     /**
      *
      *
@@ -11700,6 +11986,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getOperationsOrBuilderList() {
       return operations_;
     }
+
     /**
      *
      *
@@ -11720,6 +12007,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getOperationsCount() {
       return operations_.size();
     }
+
     /**
      *
      *
@@ -11741,6 +12029,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getOperations(int index) {
       return operations_.get(index);
     }
+
     /**
      *
      *
@@ -11768,6 +12057,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList externalResources_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -11787,6 +12077,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ProtocolStringList getExternalResourcesList() {
       return externalResources_;
     }
+
     /**
      *
      *
@@ -11806,6 +12097,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getExternalResourcesCount() {
       return externalResources_.size();
     }
+
     /**
      *
      *
@@ -11826,6 +12118,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public java.lang.String getExternalResources(int index) {
       return externalResources_.get(index);
     }
+
     /**
      *
      *
@@ -12049,6 +12342,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -12363,6 +12657,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -12385,6 +12680,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         resources_.makeImmutable();
         return resources_;
       }
+
       /**
        *
        *
@@ -12406,6 +12702,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public int getResourcesCount() {
         return resources_.size();
       }
+
       /**
        *
        *
@@ -12428,6 +12725,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public java.lang.String getResources(int index) {
         return resources_.get(index);
       }
+
       /**
        *
        *
@@ -12450,6 +12748,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ByteString getResourcesBytes(int index) {
         return resources_.getByteString(index);
       }
+
       /**
        *
        *
@@ -12480,6 +12779,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12509,6 +12809,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12535,6 +12836,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12560,6 +12862,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12638,6 +12941,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return operationsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -12661,6 +12965,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return operationsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -12685,6 +12990,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return operationsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -12716,6 +13022,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -12745,6 +13052,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -12775,6 +13083,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -12806,6 +13115,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -12834,6 +13144,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -12863,6 +13174,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -12894,6 +13206,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -12920,6 +13233,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -12946,6 +13260,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -12966,6 +13281,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           getOperationsBuilder(int index) {
         return getOperationsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -12991,6 +13307,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return operationsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -13018,6 +13335,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return java.util.Collections.unmodifiableList(operations_);
         }
       }
+
       /**
        *
        *
@@ -13041,6 +13359,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -13065,6 +13384,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
                 com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -13118,6 +13438,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
@@ -13138,6 +13459,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         externalResources_.makeImmutable();
         return externalResources_;
       }
+
       /**
        *
        *
@@ -13157,6 +13479,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public int getExternalResourcesCount() {
         return externalResources_.size();
       }
+
       /**
        *
        *
@@ -13177,6 +13500,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public java.lang.String getExternalResources(int index) {
         return externalResources_.get(index);
       }
+
       /**
        *
        *
@@ -13197,6 +13521,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ByteString getExternalResourcesBytes(int index) {
         return externalResources_.getByteString(index);
       }
+
       /**
        *
        *
@@ -13225,6 +13550,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13252,6 +13578,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13276,6 +13603,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13299,6 +13627,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13417,6 +13746,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return Whether the egressFrom field is set.
      */
     boolean hasEgressFrom();
+
     /**
      *
      *
@@ -13433,6 +13763,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The egressFrom.
      */
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom getEgressFrom();
+
     /**
      *
      *
@@ -13466,6 +13797,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return Whether the egressTo field is set.
      */
     boolean hasEgressTo();
+
     /**
      *
      *
@@ -13483,6 +13815,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return The egressTo.
      */
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo getEgressTo();
+
     /**
      *
      *
@@ -13500,6 +13833,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressToOrBuilder
         getEgressToOrBuilder();
   }
+
   /**
    *
    *
@@ -13542,6 +13876,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy)
       EgressPolicyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EgressPolicy.newBuilder() to construct.
     private EgressPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -13575,6 +13910,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public static final int EGRESS_FROM_FIELD_NUMBER = 1;
     private com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
         egressFrom_;
+
     /**
      *
      *
@@ -13594,6 +13930,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public boolean hasEgressFrom() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -13617,6 +13954,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               .getDefaultInstance()
           : egressFrom_;
     }
+
     /**
      *
      *
@@ -13641,6 +13979,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
     public static final int EGRESS_TO_FIELD_NUMBER = 2;
     private com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo egressTo_;
+
     /**
      *
      *
@@ -13661,6 +14000,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public boolean hasEgressTo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -13685,6 +14025,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               .getDefaultInstance()
           : egressTo_;
     }
+
     /**
      *
      *
@@ -13896,6 +14237,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -14168,6 +14510,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
                   .EgressFromOrBuilder>
           egressFromBuilder_;
+
       /**
        *
        *
@@ -14186,6 +14529,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public boolean hasEgressFrom() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -14212,6 +14556,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return egressFromBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -14239,6 +14584,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14264,6 +14610,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14298,6 +14645,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -14321,6 +14669,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14340,6 +14689,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return getEgressFromFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -14364,6 +14714,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               : egressFrom_;
         }
       }
+
       /**
        *
        *
@@ -14402,6 +14753,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo.Builder,
               com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressToOrBuilder>
           egressToBuilder_;
+
       /**
        *
        *
@@ -14422,6 +14774,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public boolean hasEgressTo() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -14450,6 +14803,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           return egressToBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -14479,6 +14833,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14506,6 +14861,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14542,6 +14898,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -14567,6 +14924,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14588,6 +14946,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return getEgressToFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -14614,6 +14973,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               : egressTo_;
         }
       }
+
       /**
        *
        *
@@ -14722,6 +15082,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resources_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -14737,6 +15098,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getResourcesList() {
     return resources_;
   }
+
   /**
    *
    *
@@ -14752,6 +15114,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public int getResourcesCount() {
     return resources_.size();
   }
+
   /**
    *
    *
@@ -14768,6 +15131,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public java.lang.String getResources(int index) {
     return resources_.get(index);
   }
+
   /**
    *
    *
@@ -14790,6 +15154,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList accessLevels_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -14811,6 +15176,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getAccessLevelsList() {
     return accessLevels_;
   }
+
   /**
    *
    *
@@ -14832,6 +15198,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public int getAccessLevelsCount() {
     return accessLevels_.size();
   }
+
   /**
    *
    *
@@ -14854,6 +15221,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public java.lang.String getAccessLevels(int index) {
     return accessLevels_.get(index);
   }
+
   /**
    *
    *
@@ -14882,6 +15250,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList restrictedServices_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -14899,6 +15268,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getRestrictedServicesList() {
     return restrictedServices_;
   }
+
   /**
    *
    *
@@ -14916,6 +15286,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public int getRestrictedServicesCount() {
     return restrictedServices_.size();
   }
+
   /**
    *
    *
@@ -14934,6 +15305,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public java.lang.String getRestrictedServices(int index) {
     return restrictedServices_.get(index);
   }
+
   /**
    *
    *
@@ -14956,6 +15328,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public static final int VPC_ACCESSIBLE_SERVICES_FIELD_NUMBER = 10;
   private com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.VpcAccessibleServices
       vpcAccessibleServices_;
+
   /**
    *
    *
@@ -14973,6 +15346,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public boolean hasVpcAccessibleServices() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -14994,6 +15368,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : vpcAccessibleServices_;
   }
+
   /**
    *
    *
@@ -15021,6 +15396,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   private java.util.List<
           com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy>
       ingressPolicies_;
+
   /**
    *
    *
@@ -15045,6 +15421,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       getIngressPoliciesList() {
     return ingressPolicies_;
   }
+
   /**
    *
    *
@@ -15071,6 +15448,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       getIngressPoliciesOrBuilderList() {
     return ingressPolicies_;
   }
+
   /**
    *
    *
@@ -15093,6 +15471,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public int getIngressPoliciesCount() {
     return ingressPolicies_.size();
   }
+
   /**
    *
    *
@@ -15116,6 +15495,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       getIngressPolicies(int index) {
     return ingressPolicies_.get(index);
   }
+
   /**
    *
    *
@@ -15146,6 +15526,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   private java.util.List<
           com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy>
       egressPolicies_;
+
   /**
    *
    *
@@ -15170,6 +15551,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       getEgressPoliciesList() {
     return egressPolicies_;
   }
+
   /**
    *
    *
@@ -15196,6 +15578,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       getEgressPoliciesOrBuilderList() {
     return egressPolicies_;
   }
+
   /**
    *
    *
@@ -15218,6 +15601,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public int getEgressPoliciesCount() {
     return egressPolicies_.size();
   }
+
   /**
    *
    *
@@ -15241,6 +15625,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       getEgressPolicies(int index) {
     return egressPolicies_.get(index);
   }
+
   /**
    *
    *
@@ -15502,6 +15887,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -15909,6 +16295,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -15925,6 +16312,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       resources_.makeImmutable();
       return resources_;
     }
+
     /**
      *
      *
@@ -15940,6 +16328,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getResourcesCount() {
       return resources_.size();
     }
+
     /**
      *
      *
@@ -15956,6 +16345,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public java.lang.String getResources(int index) {
       return resources_.get(index);
     }
+
     /**
      *
      *
@@ -15972,6 +16362,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getResourcesBytes(int index) {
       return resources_.getByteString(index);
     }
+
     /**
      *
      *
@@ -15996,6 +16387,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16019,6 +16411,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16039,6 +16432,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16058,6 +16452,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16092,6 +16487,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -16114,6 +16510,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       accessLevels_.makeImmutable();
       return accessLevels_;
     }
+
     /**
      *
      *
@@ -16135,6 +16532,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getAccessLevelsCount() {
       return accessLevels_.size();
     }
+
     /**
      *
      *
@@ -16157,6 +16555,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public java.lang.String getAccessLevels(int index) {
       return accessLevels_.get(index);
     }
+
     /**
      *
      *
@@ -16179,6 +16578,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getAccessLevelsBytes(int index) {
       return accessLevels_.getByteString(index);
     }
+
     /**
      *
      *
@@ -16209,6 +16609,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16238,6 +16639,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16264,6 +16666,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16289,6 +16692,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16329,6 +16733,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -16347,6 +16752,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       restrictedServices_.makeImmutable();
       return restrictedServices_;
     }
+
     /**
      *
      *
@@ -16364,6 +16770,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public int getRestrictedServicesCount() {
       return restrictedServices_.size();
     }
+
     /**
      *
      *
@@ -16382,6 +16789,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public java.lang.String getRestrictedServices(int index) {
       return restrictedServices_.get(index);
     }
+
     /**
      *
      *
@@ -16400,6 +16808,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getRestrictedServicesBytes(int index) {
       return restrictedServices_.getByteString(index);
     }
+
     /**
      *
      *
@@ -16426,6 +16835,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16451,6 +16861,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16473,6 +16884,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16494,6 +16906,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16531,6 +16944,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
             com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
                 .VpcAccessibleServicesOrBuilder>
         vpcAccessibleServicesBuilder_;
+
     /**
      *
      *
@@ -16547,6 +16961,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public boolean hasVpcAccessibleServices() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -16571,6 +16986,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return vpcAccessibleServicesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -16597,6 +17013,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16621,6 +17038,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16654,6 +17072,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -16675,6 +17094,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16693,6 +17113,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getVpcAccessibleServicesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -16716,6 +17137,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
             : vpcAccessibleServices_;
       }
     }
+
     /**
      *
      *
@@ -16799,6 +17221,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return ingressPoliciesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -16824,6 +17247,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return ingressPoliciesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -16850,6 +17274,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return ingressPoliciesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -16883,6 +17308,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -16914,6 +17340,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -16946,6 +17373,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -16979,6 +17407,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17009,6 +17438,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17040,6 +17470,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17073,6 +17504,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17101,6 +17533,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17129,6 +17562,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17151,6 +17585,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getIngressPoliciesBuilder(int index) {
       return getIngressPoliciesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -17177,6 +17612,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return ingressPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -17206,6 +17642,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(ingressPolicies_);
       }
     }
+
     /**
      *
      *
@@ -17231,6 +17668,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -17257,6 +17695,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -17354,6 +17793,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return egressPoliciesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -17379,6 +17819,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return egressPoliciesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -17405,6 +17846,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return egressPoliciesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -17438,6 +17880,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17469,6 +17912,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17501,6 +17945,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17534,6 +17979,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17564,6 +18010,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17595,6 +18042,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17627,6 +18075,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17655,6 +18104,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17683,6 +18133,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -17705,6 +18156,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         getEgressPoliciesBuilder(int index) {
       return getEgressPoliciesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -17731,6 +18183,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return egressPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -17760,6 +18213,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(egressPolicies_);
       }
     }
+
     /**
      *
      *
@@ -17785,6 +18239,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -17811,6 +18266,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy
                   .getDefaultInstance());
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DocumentLocation)
     DocumentLocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DocumentLocation.newBuilder() to construct.
   private DocumentLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
 
   public static final int FILE_OFFSET_FIELD_NUMBER = 1;
   private long fileOffset_ = 0L;
+
   /**
    *
    *
@@ -239,6 +241,7 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -420,6 +423,7 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private long fileOffset_;
+
     /**
      *
      *
@@ -436,6 +440,7 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
     public long getFileOffset() {
       return fileOffset_;
     }
+
     /**
      *
      *
@@ -456,6 +461,7 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

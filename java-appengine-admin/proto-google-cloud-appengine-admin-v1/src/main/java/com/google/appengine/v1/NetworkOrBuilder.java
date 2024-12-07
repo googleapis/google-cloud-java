@@ -38,6 +38,7 @@ public interface NetworkOrBuilder
    * @return A list containing the forwardedPorts.
    */
   java.util.List<java.lang.String> getForwardedPortsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface NetworkOrBuilder
    * @return The count of forwardedPorts.
    */
   int getForwardedPortsCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface NetworkOrBuilder
    * @return The forwardedPorts at the given index.
    */
   java.lang.String getForwardedPorts(int index);
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface NetworkOrBuilder
    * @return The instanceTag.
    */
   java.lang.String getInstanceTag();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface NetworkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public interface NetworkOrBuilder
    * @return The subnetworkName.
    */
   java.lang.String getSubnetworkName();
+
   /**
    *
    *

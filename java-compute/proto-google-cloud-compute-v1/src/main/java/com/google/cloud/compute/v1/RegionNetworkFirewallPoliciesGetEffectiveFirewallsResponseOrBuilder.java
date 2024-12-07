@@ -39,6 +39,7 @@ public interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseOrBui
           com.google.cloud.compute.v1
               .RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFirewallPolicy>
       getFirewallPolicysList();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseOrBui
   com.google.cloud.compute.v1
           .RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       getFirewallPolicys(int index);
+
   /**
    *
    *
@@ -65,6 +67,7 @@ public interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseOrBui
    * </code>
    */
   int getFirewallPolicysCount();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseOrBui
               com.google.cloud.compute.v1
                   .RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrBuilder>
       getFirewallPolicysOrBuilderList();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseOrBui
    * <code>repeated .google.cloud.compute.v1.Firewall firewalls = 272245619;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Firewall> getFirewallsList();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseOrBui
    * <code>repeated .google.cloud.compute.v1.Firewall firewalls = 272245619;</code>
    */
   com.google.cloud.compute.v1.Firewall getFirewalls(int index);
+
   /**
    *
    *
@@ -126,6 +132,7 @@ public interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseOrBui
    * <code>repeated .google.cloud.compute.v1.Firewall firewalls = 272245619;</code>
    */
   int getFirewallsCount();
+
   /**
    *
    *
@@ -137,6 +144,7 @@ public interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseOrBui
    */
   java.util.List<? extends com.google.cloud.compute.v1.FirewallOrBuilder>
       getFirewallsOrBuilderList();
+
   /**
    *
    *

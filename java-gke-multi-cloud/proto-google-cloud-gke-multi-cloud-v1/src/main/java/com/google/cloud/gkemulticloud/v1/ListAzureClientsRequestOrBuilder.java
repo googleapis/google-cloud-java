@@ -44,6 +44,7 @@ public interface ListAzureClientsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -98,6 +99,7 @@ public interface ListAzureClientsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

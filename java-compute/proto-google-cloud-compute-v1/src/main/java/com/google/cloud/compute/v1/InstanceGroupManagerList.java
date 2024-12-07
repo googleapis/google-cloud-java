@@ -33,6 +33,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerList)
     InstanceGroupManagerListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupManagerList.newBuilder() to construct.
   private InstanceGroupManagerList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InstanceGroupManager> items_;
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.compute.v1.InstanceGroupManager> getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
   public com.google.cloud.compute.v1.InstanceGroupManager getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -224,6 +234,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -275,6 +287,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -313,6 +327,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -341,6 +356,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -356,6 +372,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -379,6 +396,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -405,6 +423,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -420,6 +439,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -435,6 +455,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -680,6 +701,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1005,6 +1027,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1019,6 +1042,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1041,6 +1065,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1088,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1110,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1128,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1184,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1201,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1188,6 +1218,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1210,6 +1241,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1230,6 +1262,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1285,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1308,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1294,6 +1329,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1350,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1371,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1353,6 +1391,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1411,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1384,6 +1424,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.InstanceGroupManager.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1400,6 +1441,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1417,6 +1459,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -1430,6 +1473,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.InstanceGroupManager.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1443,6 +1487,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       return getItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.InstanceGroupManager.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1475,6 +1520,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1489,6 +1535,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1511,6 +1558,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1533,6 +1581,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1554,6 +1603,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1571,6 +1621,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1595,6 +1646,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1609,6 +1661,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1631,6 +1684,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1653,6 +1707,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1674,6 +1729,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1691,6 +1747,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1715,6 +1772,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -1729,6 +1787,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1751,6 +1810,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1773,6 +1833,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1794,6 +1855,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1811,6 +1873,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1840,6 +1903,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -1854,6 +1918,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1874,6 +1939,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1896,6 +1962,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1915,6 +1982,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1942,6 +2010,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1961,6 +2030,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1975,6 +2045,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1993,6 +2064,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
             : warning_;
       }
     }
+
     /**
      *
      *

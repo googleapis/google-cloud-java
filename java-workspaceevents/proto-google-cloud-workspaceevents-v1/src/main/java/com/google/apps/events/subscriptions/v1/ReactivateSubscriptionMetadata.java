@@ -33,6 +33,7 @@ public final class ReactivateSubscriptionMetadata extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.apps.events.subscriptions.v1.ReactivateSubscriptionMetadata)
     ReactivateSubscriptionMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReactivateSubscriptionMetadata.newBuilder() to construct.
   private ReactivateSubscriptionMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -214,6 +215,7 @@ public final class ReactivateSubscriptionMetadata extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

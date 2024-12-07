@@ -35,6 +35,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest)
     RenameTagTemplateFieldEnumValueRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RenameTagTemplateFieldEnumValueRequest.newBuilder() to construct.
   private RenameTagTemplateFieldEnumValueRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object newEnumValueDisplayName_ = "";
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -356,6 +361,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -567,6 +573,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -593,6 +600,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -619,6 +627,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -644,6 +653,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +675,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +704,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
     }
 
     private java.lang.Object newEnumValueDisplayName_ = "";
+
     /**
      *
      *
@@ -717,6 +729,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -741,6 +754,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -764,6 +778,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +798,7 @@ public final class RenameTagTemplateFieldEnumValueRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface ChangeReportOrBuilder
    * <code>repeated .google.api.ConfigChange config_changes = 1;</code>
    */
   java.util.List<com.google.api.ConfigChange> getConfigChangesList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ChangeReportOrBuilder
    * <code>repeated .google.api.ConfigChange config_changes = 1;</code>
    */
   com.google.api.ConfigChange getConfigChanges(int index);
+
   /**
    *
    *
@@ -66,6 +68,7 @@ public interface ChangeReportOrBuilder
    * <code>repeated .google.api.ConfigChange config_changes = 1;</code>
    */
   int getConfigChangesCount();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface ChangeReportOrBuilder
    * <code>repeated .google.api.ConfigChange config_changes = 1;</code>
    */
   java.util.List<? extends com.google.api.ConfigChangeOrBuilder> getConfigChangesOrBuilderList();
+
   /**
    *
    *

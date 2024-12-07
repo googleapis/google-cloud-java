@@ -36,6 +36,7 @@ public interface GetNodeTemplateRequestOrBuilder
    * @return The nodeTemplate.
    */
   java.lang.String getNodeTemplate();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetNodeTemplateRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetNodeTemplateRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

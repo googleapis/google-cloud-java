@@ -34,6 +34,7 @@ public interface ListGroupsResponseOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.Group groups = 1;</code>
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.Group> getGroupsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListGroupsResponseOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.Group groups = 1;</code>
    */
   com.google.cloud.networkconnectivity.v1.Group getGroups(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListGroupsResponseOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.Group groups = 1;</code>
    */
   int getGroupsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListGroupsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkconnectivity.v1.GroupOrBuilder>
       getGroupsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListGroupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface ListGroupsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface ListGroupsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -142,6 +149,7 @@ public interface ListGroupsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

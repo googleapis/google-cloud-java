@@ -33,6 +33,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest)
     UpgradeInstanceInternalRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpgradeInstanceInternalRequest.newBuilder() to construct.
   private UpgradeInstanceInternalRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmId_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -341,6 +346,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -545,6 +551,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -568,6 +575,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -591,6 +599,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -613,6 +622,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +641,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +667,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object vmId_ = "";
+
     /**
      *
      *
@@ -679,6 +691,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -702,6 +715,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -724,6 +738,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +757,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public interface ListFindingsResponseOrBuilder
    * <code>repeated .google.cloud.websecurityscanner.v1beta.Finding findings = 1;</code>
    */
   java.util.List<com.google.cloud.websecurityscanner.v1beta.Finding> getFindingsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListFindingsResponseOrBuilder
    * <code>repeated .google.cloud.websecurityscanner.v1beta.Finding findings = 1;</code>
    */
   com.google.cloud.websecurityscanner.v1beta.Finding getFindings(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListFindingsResponseOrBuilder
    * <code>repeated .google.cloud.websecurityscanner.v1beta.Finding findings = 1;</code>
    */
   int getFindingsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListFindingsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.websecurityscanner.v1beta.FindingOrBuilder>
       getFindingsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListFindingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

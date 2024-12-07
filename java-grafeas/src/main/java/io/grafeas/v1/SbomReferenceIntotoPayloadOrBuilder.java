@@ -37,6 +37,7 @@ public interface SbomReferenceIntotoPayloadOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface SbomReferenceIntotoPayloadOrBuilder
    * @return The predicateType.
    */
   java.lang.String getPredicateType();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface SbomReferenceIntotoPayloadOrBuilder
    * <code>repeated .grafeas.v1.Subject subject = 3;</code>
    */
   java.util.List<io.grafeas.v1.Subject> getSubjectList();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface SbomReferenceIntotoPayloadOrBuilder
    * <code>repeated .grafeas.v1.Subject subject = 3;</code>
    */
   io.grafeas.v1.Subject getSubject(int index);
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface SbomReferenceIntotoPayloadOrBuilder
    * <code>repeated .grafeas.v1.Subject subject = 3;</code>
    */
   int getSubjectCount();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface SbomReferenceIntotoPayloadOrBuilder
    * <code>repeated .grafeas.v1.Subject subject = 3;</code>
    */
   java.util.List<? extends io.grafeas.v1.SubjectOrBuilder> getSubjectOrBuilderList();
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public interface SbomReferenceIntotoPayloadOrBuilder
    * @return Whether the predicate field is set.
    */
   boolean hasPredicate();
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public interface SbomReferenceIntotoPayloadOrBuilder
    * @return The predicate.
    */
   io.grafeas.v1.SbomReferenceIntotoPredicate getPredicate();
+
   /**
    *
    *

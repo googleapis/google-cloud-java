@@ -34,6 +34,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties)
     BulkInsertInstanceResourcePerInstancePropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BulkInsertInstanceResourcePerInstanceProperties.newBuilder() to construct.
   private BulkInsertInstanceResourcePerInstanceProperties(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostname_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
   public boolean hasHostname() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
   public boolean hasName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
       return s;
     }
   }
+
   /**
    *
    *
@@ -386,6 +393,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -600,6 +608,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
     private int bitField0_;
 
     private java.lang.Object hostname_ = "";
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
     public boolean hasHostname() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -636,6 +646,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -658,6 +669,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -679,6 +691,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +709,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +734,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -734,6 +749,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
     public boolean hasName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -756,6 +772,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -778,6 +795,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -799,6 +817,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +835,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *

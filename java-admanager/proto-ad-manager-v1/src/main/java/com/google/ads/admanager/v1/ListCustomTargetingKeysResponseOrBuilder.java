@@ -34,6 +34,7 @@ public interface ListCustomTargetingKeysResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.CustomTargetingKey custom_targeting_keys = 1;</code>
    */
   java.util.List<com.google.ads.admanager.v1.CustomTargetingKey> getCustomTargetingKeysList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCustomTargetingKeysResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.CustomTargetingKey custom_targeting_keys = 1;</code>
    */
   com.google.ads.admanager.v1.CustomTargetingKey getCustomTargetingKeys(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCustomTargetingKeysResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.CustomTargetingKey custom_targeting_keys = 1;</code>
    */
   int getCustomTargetingKeysCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCustomTargetingKeysResponseOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.CustomTargetingKeyOrBuilder>
       getCustomTargetingKeysOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListCustomTargetingKeysResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

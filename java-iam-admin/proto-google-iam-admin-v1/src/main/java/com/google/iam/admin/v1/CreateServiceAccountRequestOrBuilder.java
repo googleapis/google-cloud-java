@@ -39,6 +39,7 @@ public interface CreateServiceAccountRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreateServiceAccountRequestOrBuilder
    * @return The accountId.
    */
   java.lang.String getAccountId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface CreateServiceAccountRequestOrBuilder
    * @return Whether the serviceAccount field is set.
    */
   boolean hasServiceAccount();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateServiceAccountRequestOrBuilder
    * @return The serviceAccount.
    */
   com.google.iam.admin.v1.ServiceAccount getServiceAccount();
+
   /**
    *
    *

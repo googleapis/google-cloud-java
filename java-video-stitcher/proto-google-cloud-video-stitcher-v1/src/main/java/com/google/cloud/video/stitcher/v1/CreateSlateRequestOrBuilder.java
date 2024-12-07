@@ -39,6 +39,7 @@ public interface CreateSlateRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreateSlateRequestOrBuilder
    * @return The slateId.
    */
   java.lang.String getSlateId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface CreateSlateRequestOrBuilder
    * @return Whether the slate field is set.
    */
   boolean hasSlate();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateSlateRequestOrBuilder
    * @return The slate.
    */
   com.google.cloud.video.stitcher.v1.Slate getSlate();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface CreateSlateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

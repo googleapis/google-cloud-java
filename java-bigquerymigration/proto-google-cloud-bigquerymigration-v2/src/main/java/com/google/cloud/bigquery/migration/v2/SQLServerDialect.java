@@ -33,6 +33,7 @@ public final class SQLServerDialect extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.SQLServerDialect)
     SQLServerDialectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SQLServerDialect.newBuilder() to construct.
   private SQLServerDialect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class SQLServerDialect extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

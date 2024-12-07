@@ -36,6 +36,7 @@ public interface OperatorStateOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface OperatorStateOrBuilder
    * @return The enum numeric value on the wire for deploymentState.
    */
   int getDeploymentStateValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface OperatorStateOrBuilder
    * <code>repeated .google.cloud.gkehub.configmanagement.v1alpha.InstallError errors = 3;</code>
    */
   java.util.List<com.google.cloud.gkehub.configmanagement.v1alpha.InstallError> getErrorsList();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface OperatorStateOrBuilder
    * <code>repeated .google.cloud.gkehub.configmanagement.v1alpha.InstallError errors = 3;</code>
    */
   com.google.cloud.gkehub.configmanagement.v1alpha.InstallError getErrors(int index);
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface OperatorStateOrBuilder
    * <code>repeated .google.cloud.gkehub.configmanagement.v1alpha.InstallError errors = 3;</code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface OperatorStateOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkehub.configmanagement.v1alpha.InstallErrorOrBuilder>
       getErrorsOrBuilderList();
+
   /**
    *
    *

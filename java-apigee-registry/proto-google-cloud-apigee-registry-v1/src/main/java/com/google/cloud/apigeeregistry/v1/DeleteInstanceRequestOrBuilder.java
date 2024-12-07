@@ -39,6 +39,7 @@ public interface DeleteInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

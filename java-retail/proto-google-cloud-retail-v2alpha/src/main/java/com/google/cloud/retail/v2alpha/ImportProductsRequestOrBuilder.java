@@ -42,6 +42,7 @@ public interface ImportProductsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface ImportProductsRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface ImportProductsRequestOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface ImportProductsRequestOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.retail.v2alpha.ProductInputConfig getInputConfig();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface ImportProductsRequestOrBuilder
    * @return Whether the errorsConfig field is set.
    */
   boolean hasErrorsConfig();
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface ImportProductsRequestOrBuilder
    * @return The errorsConfig.
    */
   com.google.cloud.retail.v2alpha.ImportErrorsConfig getErrorsConfig();
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface ImportProductsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public interface ImportProductsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public interface ImportProductsRequestOrBuilder
    * @return The enum numeric value on the wire for reconciliationMode.
    */
   int getReconciliationModeValue();
+
   /**
    *
    *
@@ -269,6 +278,7 @@ public interface ImportProductsRequestOrBuilder
    * @return The notificationPubsubTopic.
    */
   java.lang.String getNotificationPubsubTopic();
+
   /**
    *
    *

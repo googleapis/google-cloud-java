@@ -33,6 +33,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.CreateSessionTemplateRequest)
     CreateSessionTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateSessionTemplateRequest.newBuilder() to construct.
   private CreateSessionTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
 
   public static final int SESSION_TEMPLATE_FIELD_NUMBER = 3;
   private com.google.cloud.dataproc.v1.SessionTemplate sessionTemplate_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
   public boolean hasSessionTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
         ? com.google.cloud.dataproc.v1.SessionTemplate.getDefaultInstance()
         : sessionTemplate_;
   }
+
   /**
    *
    *
@@ -349,6 +355,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -563,6 +570,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -587,6 +595,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -611,6 +620,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -634,6 +644,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -653,6 +664,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -684,6 +696,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
             com.google.cloud.dataproc.v1.SessionTemplate.Builder,
             com.google.cloud.dataproc.v1.SessionTemplateOrBuilder>
         sessionTemplateBuilder_;
+
     /**
      *
      *
@@ -700,6 +713,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
     public boolean hasSessionTemplate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -722,6 +736,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
         return sessionTemplateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -746,6 +761,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +784,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +815,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +837,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +854,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return getSessionTemplateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -855,6 +875,7 @@ public final class CreateSessionTemplateRequest extends com.google.protobuf.Gene
             : sessionTemplate_;
       }
     }
+
     /**
      *
      *

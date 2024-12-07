@@ -33,6 +33,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold)
     SecurityPolicyRuleRateLimitOptionsThresholdOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyRuleRateLimitOptionsThreshold.newBuilder() to construct.
   private SecurityPolicyRuleRateLimitOptionsThreshold(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
   private int bitField0_;
   public static final int COUNT_FIELD_NUMBER = 94851343;
   private int count_ = 0;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
   public boolean hasCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
 
   public static final int INTERVAL_SEC_FIELD_NUMBER = 41084375;
   private int intervalSec_ = 0;
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
   public boolean hasIntervalSec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -309,6 +314,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -517,6 +523,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
     private int bitField0_;
 
     private int count_;
+
     /**
      *
      *
@@ -532,6 +539,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
     public boolean hasCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -547,6 +555,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
     public int getCount() {
       return count_;
     }
+
     /**
      *
      *
@@ -566,6 +575,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -585,6 +595,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
     }
 
     private int intervalSec_;
+
     /**
      *
      *
@@ -600,6 +611,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
     public boolean hasIntervalSec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -615,6 +627,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
     public int getIntervalSec() {
       return intervalSec_;
     }
+
     /**
      *
      *
@@ -634,6 +647,7 @@ public final class SecurityPolicyRuleRateLimitOptionsThreshold
       onChanged();
       return this;
     }
+
     /**
      *
      *

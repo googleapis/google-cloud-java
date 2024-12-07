@@ -42,6 +42,7 @@ public interface FilterSplitOrBuilder
    * @return The trainingFilter.
    */
   java.lang.String getTrainingFilter();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface FilterSplitOrBuilder
    * @return The validationFilter.
    */
   java.lang.String getValidationFilter();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface FilterSplitOrBuilder
    * @return The testFilter.
    */
   java.lang.String getTestFilter();
+
   /**
    *
    *

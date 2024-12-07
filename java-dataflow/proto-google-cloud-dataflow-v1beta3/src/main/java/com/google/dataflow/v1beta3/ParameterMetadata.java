@@ -33,6 +33,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.ParameterMetadata)
     ParameterMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ParameterMetadata.newBuilder() to construct.
   private ParameterMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object label_ = "";
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object helpText_ = "";
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int IS_OPTIONAL_FIELD_NUMBER = 4;
   private boolean isOptional_ = false;
+
   /**
    *
    *
@@ -255,6 +263,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList regexes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -269,6 +278,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getRegexesList() {
     return regexes_;
   }
+
   /**
    *
    *
@@ -283,6 +293,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   public int getRegexesCount() {
     return regexes_.size();
   }
+
   /**
    *
    *
@@ -298,6 +309,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   public java.lang.String getRegexes(int index) {
     return regexes_.get(index);
   }
+
   /**
    *
    *
@@ -316,6 +328,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int PARAM_TYPE_FIELD_NUMBER = 6;
   private int paramType_ = 0;
+
   /**
    *
    *
@@ -332,6 +345,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   public int getParamTypeValue() {
     return paramType_;
   }
+
   /**
    *
    *
@@ -379,6 +393,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   public int getCustomMetadataCount() {
     return internalGetCustomMetadata().getMap().size();
   }
+
   /**
    *
    *
@@ -395,12 +410,14 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     }
     return internalGetCustomMetadata().getMap().containsKey(key);
   }
+
   /** Use {@link #getCustomMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getCustomMetadata() {
     return getCustomMetadataMap();
   }
+
   /**
    *
    *
@@ -414,6 +431,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getCustomMetadataMap() {
     return internalGetCustomMetadata().getMap();
   }
+
   /**
    *
    *
@@ -434,6 +452,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetCustomMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -683,6 +702,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -985,6 +1005,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1007,6 +1028,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1029,6 +1051,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1050,6 +1073,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1067,6 +1091,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1116,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object label_ = "";
+
     /**
      *
      *
@@ -1113,6 +1139,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1135,6 +1162,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1156,6 +1184,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1202,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1197,6 +1227,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object helpText_ = "";
+
     /**
      *
      *
@@ -1219,6 +1250,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1241,6 +1273,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1262,6 +1295,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1279,6 +1313,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1303,6 +1338,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean isOptional_;
+
     /**
      *
      *
@@ -1318,6 +1354,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     public boolean getIsOptional() {
       return isOptional_;
     }
+
     /**
      *
      *
@@ -1337,6 +1374,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1364,6 +1402,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -1379,6 +1418,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       regexes_.makeImmutable();
       return regexes_;
     }
+
     /**
      *
      *
@@ -1393,6 +1433,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     public int getRegexesCount() {
       return regexes_.size();
     }
+
     /**
      *
      *
@@ -1408,6 +1449,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     public java.lang.String getRegexes(int index) {
       return regexes_.get(index);
     }
+
     /**
      *
      *
@@ -1423,6 +1465,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getRegexesBytes(int index) {
       return regexes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1446,6 +1489,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1468,6 +1512,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1487,6 +1532,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1505,6 +1551,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1530,6 +1577,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private int paramType_ = 0;
+
     /**
      *
      *
@@ -1546,6 +1594,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     public int getParamTypeValue() {
       return paramType_;
     }
+
     /**
      *
      *
@@ -1565,6 +1614,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1583,6 +1633,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
           com.google.dataflow.v1beta3.ParameterType.forNumber(paramType_);
       return result == null ? com.google.dataflow.v1beta3.ParameterType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1605,6 +1656,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1704,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     public int getCustomMetadataCount() {
       return internalGetCustomMetadata().getMap().size();
     }
+
     /**
      *
      *
@@ -1668,12 +1721,14 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       }
       return internalGetCustomMetadata().getMap().containsKey(key);
     }
+
     /** Use {@link #getCustomMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getCustomMetadata() {
       return getCustomMetadataMap();
     }
+
     /**
      *
      *
@@ -1687,6 +1742,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getCustomMetadataMap() {
       return internalGetCustomMetadata().getMap();
     }
+
     /**
      *
      *
@@ -1707,6 +1763,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetCustomMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1733,6 +1790,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       internalGetMutableCustomMetadata().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1749,12 +1807,14 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       internalGetMutableCustomMetadata().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableCustomMetadata() {
       bitField0_ |= 0x00000040;
       return internalGetMutableCustomMetadata().getMutableMap();
     }
+
     /**
      *
      *
@@ -1775,6 +1835,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *

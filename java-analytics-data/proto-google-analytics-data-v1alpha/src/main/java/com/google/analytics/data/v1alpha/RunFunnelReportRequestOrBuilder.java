@@ -43,6 +43,7 @@ public interface RunFunnelReportRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface RunFunnelReportRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.data.v1alpha.DateRange> getDateRangesList();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface RunFunnelReportRequestOrBuilder
    * </code>
    */
   com.google.analytics.data.v1alpha.DateRange getDateRanges(int index);
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface RunFunnelReportRequestOrBuilder
    * </code>
    */
   int getDateRangesCount();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface RunFunnelReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.DateRangeOrBuilder>
       getDateRangesOrBuilderList();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface RunFunnelReportRequestOrBuilder
    * @return Whether the funnel field is set.
    */
   boolean hasFunnel();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface RunFunnelReportRequestOrBuilder
    * @return The funnel.
    */
   com.google.analytics.data.v1alpha.Funnel getFunnel();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface RunFunnelReportRequestOrBuilder
    * @return Whether the funnelBreakdown field is set.
    */
   boolean hasFunnelBreakdown();
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public interface RunFunnelReportRequestOrBuilder
    * @return The funnelBreakdown.
    */
   com.google.analytics.data.v1alpha.FunnelBreakdown getFunnelBreakdown();
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public interface RunFunnelReportRequestOrBuilder
    * @return Whether the funnelNextAction field is set.
    */
   boolean hasFunnelNextAction();
+
   /**
    *
    *
@@ -279,6 +289,7 @@ public interface RunFunnelReportRequestOrBuilder
    * @return The funnelNextAction.
    */
   com.google.analytics.data.v1alpha.FunnelNextAction getFunnelNextAction();
+
   /**
    *
    *
@@ -315,6 +326,7 @@ public interface RunFunnelReportRequestOrBuilder
    * @return The enum numeric value on the wire for funnelVisualizationType.
    */
   int getFunnelVisualizationTypeValue();
+
   /**
    *
    *
@@ -353,6 +365,7 @@ public interface RunFunnelReportRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.data.v1alpha.Segment> getSegmentsList();
+
   /**
    *
    *
@@ -373,6 +386,7 @@ public interface RunFunnelReportRequestOrBuilder
    * </code>
    */
   com.google.analytics.data.v1alpha.Segment getSegments(int index);
+
   /**
    *
    *
@@ -393,6 +407,7 @@ public interface RunFunnelReportRequestOrBuilder
    * </code>
    */
   int getSegmentsCount();
+
   /**
    *
    *
@@ -414,6 +429,7 @@ public interface RunFunnelReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.SegmentOrBuilder>
       getSegmentsOrBuilderList();
+
   /**
    *
    *
@@ -470,6 +486,7 @@ public interface RunFunnelReportRequestOrBuilder
    * @return Whether the dimensionFilter field is set.
    */
   boolean hasDimensionFilter();
+
   /**
    *
    *
@@ -487,6 +504,7 @@ public interface RunFunnelReportRequestOrBuilder
    * @return The dimensionFilter.
    */
   com.google.analytics.data.v1alpha.FilterExpression getDimensionFilter();
+
   /**
    *
    *

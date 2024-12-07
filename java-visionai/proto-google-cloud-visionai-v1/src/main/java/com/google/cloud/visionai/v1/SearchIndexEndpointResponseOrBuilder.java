@@ -34,6 +34,7 @@ public interface SearchIndexEndpointResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchResultItem search_result_items = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.SearchResultItem> getSearchResultItemsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SearchIndexEndpointResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchResultItem search_result_items = 1;</code>
    */
   com.google.cloud.visionai.v1.SearchResultItem getSearchResultItems(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SearchIndexEndpointResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchResultItem search_result_items = 1;</code>
    */
   int getSearchResultItemsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SearchIndexEndpointResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.SearchResultItemOrBuilder>
       getSearchResultItemsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface SearchIndexEndpointResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

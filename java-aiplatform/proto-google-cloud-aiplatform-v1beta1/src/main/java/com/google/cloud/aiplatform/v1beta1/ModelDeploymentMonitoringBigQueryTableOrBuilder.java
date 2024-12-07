@@ -38,6 +38,7 @@ public interface ModelDeploymentMonitoringBigQueryTableOrBuilder
    * @return The enum numeric value on the wire for logSource.
    */
   int getLogSourceValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ModelDeploymentMonitoringBigQueryTableOrBuilder
    * @return The enum numeric value on the wire for logType.
    */
   int getLogTypeValue();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface ModelDeploymentMonitoringBigQueryTableOrBuilder
    * @return The bigqueryTablePath.
    */
   java.lang.String getBigqueryTablePath();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface ModelDeploymentMonitoringBigQueryTableOrBuilder
    * @return The requestResponseLoggingSchemaVersion.
    */
   java.lang.String getRequestResponseLoggingSchemaVersion();
+
   /**
    *
    *

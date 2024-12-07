@@ -36,6 +36,7 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    * @return Whether the certificate field is set.
    */
   boolean hasCertificate();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    * @return The certificate.
    */
   java.lang.String getCertificate();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    * @return Whether the privateKey field is set.
    */
   boolean hasPrivateKey();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    * @return The privateKey.
    */
   java.lang.String getPrivateKey();
+
   /**
    *
    *

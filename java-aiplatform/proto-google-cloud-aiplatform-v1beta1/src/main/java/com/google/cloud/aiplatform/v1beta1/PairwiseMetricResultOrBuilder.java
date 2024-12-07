@@ -38,6 +38,7 @@ public interface PairwiseMetricResultOrBuilder
    * @return The enum numeric value on the wire for pairwiseChoice.
    */
   int getPairwiseChoiceValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface PairwiseMetricResultOrBuilder
    * @return The explanation.
    */
   java.lang.String getExplanation();
+
   /**
    *
    *

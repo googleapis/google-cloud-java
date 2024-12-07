@@ -36,6 +36,7 @@ public interface FeedbackLabelOrBuilder
    * @return Whether the label field is set.
    */
   boolean hasLabel();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FeedbackLabelOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface FeedbackLabelOrBuilder
    * @return Whether the qaAnswerLabel field is set.
    */
   boolean hasQaAnswerLabel();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface FeedbackLabelOrBuilder
    * @return The qaAnswerLabel.
    */
   com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValue getQaAnswerLabel();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface FeedbackLabelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface FeedbackLabelOrBuilder
    * @return The labeledResource.
    */
   java.lang.String getLabeledResource();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface FeedbackLabelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface FeedbackLabelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public interface FeedbackLabelOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface FeedbackLabelOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

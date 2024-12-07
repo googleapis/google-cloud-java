@@ -33,6 +33,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.GuestInstalledApplicationList)
     GuestInstalledApplicationListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GuestInstalledApplicationList.newBuilder() to construct.
   private GuestInstalledApplicationList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.GuestInstalledApplication> entries_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
       getEntriesList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
       getEntriesOrBuilderList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
   public int getEntriesCount() {
     return entries_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
   public com.google.cloud.migrationcenter.v1.GuestInstalledApplication getEntries(int index) {
     return entries_.get(index);
   }
+
   /**
    *
    *
@@ -300,6 +306,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -570,6 +577,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
         return entriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -586,6 +594,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
         return entriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
         return entriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -625,6 +635,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +657,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +680,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +704,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +725,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +747,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +769,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +789,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +809,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +823,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
         int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -821,6 +841,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -839,6 +860,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(entries_);
       }
     }
+
     /**
      *
      *
@@ -854,6 +876,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
           .addBuilder(
               com.google.cloud.migrationcenter.v1.GuestInstalledApplication.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -870,6 +893,7 @@ public final class GuestInstalledApplicationList extends com.google.protobuf.Gen
               index,
               com.google.cloud.migrationcenter.v1.GuestInstalledApplication.getDefaultInstance());
     }
+
     /**
      *
      *

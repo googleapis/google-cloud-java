@@ -51,6 +51,7 @@ public interface AuthenticatorGroupsConfigOrBuilder
    * @return The securityGroup.
    */
   java.lang.String getSecurityGroup();
+
   /**
    *
    *

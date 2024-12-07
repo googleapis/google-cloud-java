@@ -38,6 +38,7 @@ public interface AnalysisResultOrBuilder
    * @return Whether the callAnalysisMetadata field is set.
    */
   boolean hasCallAnalysisMetadata();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface AnalysisResultOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.AnalysisResult.CallAnalysisMetadata
       getCallAnalysisMetadata();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface AnalysisResultOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface AnalysisResultOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

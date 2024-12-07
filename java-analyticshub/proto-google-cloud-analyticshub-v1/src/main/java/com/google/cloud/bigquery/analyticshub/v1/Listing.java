@@ -36,6 +36,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing)
     ListingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Listing.newBuilder() to construct.
   private Listing(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,6 +120,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -269,42 +271,61 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>CATEGORY_UNSPECIFIED = 0;</code> */
     public static final int CATEGORY_UNSPECIFIED_VALUE = 0;
+
     /** <code>CATEGORY_OTHERS = 1;</code> */
     public static final int CATEGORY_OTHERS_VALUE = 1;
+
     /** <code>CATEGORY_ADVERTISING_AND_MARKETING = 2;</code> */
     public static final int CATEGORY_ADVERTISING_AND_MARKETING_VALUE = 2;
+
     /** <code>CATEGORY_COMMERCE = 3;</code> */
     public static final int CATEGORY_COMMERCE_VALUE = 3;
+
     /** <code>CATEGORY_CLIMATE_AND_ENVIRONMENT = 4;</code> */
     public static final int CATEGORY_CLIMATE_AND_ENVIRONMENT_VALUE = 4;
+
     /** <code>CATEGORY_DEMOGRAPHICS = 5;</code> */
     public static final int CATEGORY_DEMOGRAPHICS_VALUE = 5;
+
     /** <code>CATEGORY_ECONOMICS = 6;</code> */
     public static final int CATEGORY_ECONOMICS_VALUE = 6;
+
     /** <code>CATEGORY_EDUCATION = 7;</code> */
     public static final int CATEGORY_EDUCATION_VALUE = 7;
+
     /** <code>CATEGORY_ENERGY = 8;</code> */
     public static final int CATEGORY_ENERGY_VALUE = 8;
+
     /** <code>CATEGORY_FINANCIAL = 9;</code> */
     public static final int CATEGORY_FINANCIAL_VALUE = 9;
+
     /** <code>CATEGORY_GAMING = 10;</code> */
     public static final int CATEGORY_GAMING_VALUE = 10;
+
     /** <code>CATEGORY_GEOSPATIAL = 11;</code> */
     public static final int CATEGORY_GEOSPATIAL_VALUE = 11;
+
     /** <code>CATEGORY_HEALTHCARE_AND_LIFE_SCIENCE = 12;</code> */
     public static final int CATEGORY_HEALTHCARE_AND_LIFE_SCIENCE_VALUE = 12;
+
     /** <code>CATEGORY_MEDIA = 13;</code> */
     public static final int CATEGORY_MEDIA_VALUE = 13;
+
     /** <code>CATEGORY_PUBLIC_SECTOR = 14;</code> */
     public static final int CATEGORY_PUBLIC_SECTOR_VALUE = 14;
+
     /** <code>CATEGORY_RETAIL = 15;</code> */
     public static final int CATEGORY_RETAIL_VALUE = 15;
+
     /** <code>CATEGORY_SPORTS = 16;</code> */
     public static final int CATEGORY_SPORTS_VALUE = 16;
+
     /** <code>CATEGORY_SCIENCE_AND_RESEARCH = 17;</code> */
     public static final int CATEGORY_SCIENCE_AND_RESEARCH_VALUE = 17;
+
     /** <code>CATEGORY_TRANSPORTATION_AND_LOGISTICS = 18;</code> */
     public static final int CATEGORY_TRANSPORTATION_AND_LOGISTICS_VALUE = 18;
+
     /** <code>CATEGORY_TRAVEL_AND_TOURISM = 19;</code> */
     public static final int CATEGORY_TRAVEL_AND_TOURISM_VALUE = 19;
 
@@ -445,6 +466,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return The dataset.
      */
     java.lang.String getDataset();
+
     /**
      *
      *
@@ -476,6 +498,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
                 .SelectedResource>
         getSelectedResourcesList();
+
     /**
      *
      *
@@ -491,6 +514,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
         getSelectedResources(int index);
+
     /**
      *
      *
@@ -505,6 +529,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getSelectedResourcesCount();
+
     /**
      *
      *
@@ -523,6 +548,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
                     .SelectedResourceOrBuilder>
         getSelectedResourcesOrBuilderList();
+
     /**
      *
      *
@@ -555,6 +581,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the restrictedExportPolicy field is set.
      */
     boolean hasRestrictedExportPolicy();
+
     /**
      *
      *
@@ -571,6 +598,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy
         getRestrictedExportPolicy();
+
     /**
      *
      *
@@ -587,6 +615,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             .RestrictedExportPolicyOrBuilder
         getRestrictedExportPolicyOrBuilder();
   }
+
   /**
    *
    *
@@ -607,6 +636,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource)
       BigQueryDatasetSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BigQueryDatasetSource.newBuilder() to construct.
     private BigQueryDatasetSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -661,6 +691,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the table field is set.
        */
       boolean hasTable();
+
       /**
        *
        *
@@ -678,6 +709,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return The table.
        */
       java.lang.String getTable();
+
       /**
        *
        *
@@ -700,6 +732,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
               .ResourceCase
           getResourceCase();
     }
+
     /**
      *
      *
@@ -715,6 +748,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource)
         SelectedResourceOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use SelectedResource.newBuilder() to construct.
       private SelectedResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -761,6 +795,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         private ResourceCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -792,6 +827,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TABLE_FIELD_NUMBER = 1;
+
       /**
        *
        *
@@ -811,6 +847,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTable() {
         return resourceCase_ == 1;
       }
+
       /**
        *
        *
@@ -843,6 +880,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -1077,6 +1115,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1338,6 +1377,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         public boolean hasTable() {
           return resourceCase_ == 1;
         }
+
         /**
          *
          *
@@ -1371,6 +1411,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1404,6 +1445,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1430,6 +1472,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1454,6 +1497,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -1572,6 +1616,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the enabled field is set.
        */
       boolean hasEnabled();
+
       /**
        *
        *
@@ -1585,6 +1630,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return The enabled.
        */
       com.google.protobuf.BoolValue getEnabled();
+
       /**
        *
        *
@@ -1612,6 +1658,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the restrictDirectTableAccess field is set.
        */
       boolean hasRestrictDirectTableAccess();
+
       /**
        *
        *
@@ -1627,6 +1674,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return The restrictDirectTableAccess.
        */
       com.google.protobuf.BoolValue getRestrictDirectTableAccess();
+
       /**
        *
        *
@@ -1656,6 +1704,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the restrictQueryResult field is set.
        */
       boolean hasRestrictQueryResult();
+
       /**
        *
        *
@@ -1671,6 +1720,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return The restrictQueryResult.
        */
       com.google.protobuf.BoolValue getRestrictQueryResult();
+
       /**
        *
        *
@@ -1685,6 +1735,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.BoolValueOrBuilder getRestrictQueryResultOrBuilder();
     }
+
     /**
      *
      *
@@ -1701,6 +1752,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy)
         RestrictedExportPolicyOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use RestrictedExportPolicy.newBuilder() to construct.
       private RestrictedExportPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1734,6 +1786,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
       public static final int ENABLED_FIELD_NUMBER = 1;
       private com.google.protobuf.BoolValue enabled_;
+
       /**
        *
        *
@@ -1750,6 +1803,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEnabled() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1766,6 +1820,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.BoolValue getEnabled() {
         return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
       }
+
       /**
        *
        *
@@ -1783,6 +1838,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
       public static final int RESTRICT_DIRECT_TABLE_ACCESS_FIELD_NUMBER = 2;
       private com.google.protobuf.BoolValue restrictDirectTableAccess_;
+
       /**
        *
        *
@@ -1801,6 +1857,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRestrictDirectTableAccess() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1821,6 +1878,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             ? com.google.protobuf.BoolValue.getDefaultInstance()
             : restrictDirectTableAccess_;
       }
+
       /**
        *
        *
@@ -1842,6 +1900,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
       public static final int RESTRICT_QUERY_RESULT_FIELD_NUMBER = 3;
       private com.google.protobuf.BoolValue restrictQueryResult_;
+
       /**
        *
        *
@@ -1860,6 +1919,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRestrictQueryResult() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1880,6 +1940,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             ? com.google.protobuf.BoolValue.getDefaultInstance()
             : restrictQueryResult_;
       }
+
       /**
        *
        *
@@ -2126,6 +2187,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2409,6 +2471,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.BoolValue.Builder,
                 com.google.protobuf.BoolValueOrBuilder>
             enabledBuilder_;
+
         /**
          *
          *
@@ -2424,6 +2487,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         public boolean hasEnabled() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -2443,6 +2507,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             return enabledBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -2466,6 +2531,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2486,6 +2552,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2514,6 +2581,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -2534,6 +2602,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2549,6 +2618,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getEnabledFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2566,6 +2636,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
           }
         }
+
         /**
          *
          *
@@ -2599,6 +2670,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.BoolValue.Builder,
                 com.google.protobuf.BoolValueOrBuilder>
             restrictDirectTableAccessBuilder_;
+
         /**
          *
          *
@@ -2616,6 +2688,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         public boolean hasRestrictDirectTableAccess() {
           return ((bitField0_ & 0x00000002) != 0);
         }
+
         /**
          *
          *
@@ -2639,6 +2712,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             return restrictDirectTableAccessBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -2664,6 +2738,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2687,6 +2762,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2718,6 +2794,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -2740,6 +2817,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2757,6 +2835,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getRestrictDirectTableAccessFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2778,6 +2857,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 : restrictDirectTableAccess_;
           }
         }
+
         /**
          *
          *
@@ -2813,6 +2893,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.BoolValue.Builder,
                 com.google.protobuf.BoolValueOrBuilder>
             restrictQueryResultBuilder_;
+
         /**
          *
          *
@@ -2830,6 +2911,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         public boolean hasRestrictQueryResult() {
           return ((bitField0_ & 0x00000004) != 0);
         }
+
         /**
          *
          *
@@ -2853,6 +2935,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             return restrictQueryResultBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -2878,6 +2961,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2901,6 +2985,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2931,6 +3016,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -2953,6 +3039,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2970,6 +3057,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getRestrictQueryResultFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2991,6 +3079,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 : restrictQueryResult_;
           }
         }
+
         /**
          *
          *
@@ -3097,6 +3186,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataset_ = "";
+
     /**
      *
      *
@@ -3121,6 +3211,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3153,6 +3244,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
                 .SelectedResource>
         selectedResources_;
+
     /**
      *
      *
@@ -3173,6 +3265,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         getSelectedResourcesList() {
       return selectedResources_;
     }
+
     /**
      *
      *
@@ -3194,6 +3287,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         getSelectedResourcesOrBuilderList() {
       return selectedResources_;
     }
+
     /**
      *
      *
@@ -3211,6 +3305,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public int getSelectedResourcesCount() {
       return selectedResources_.size();
     }
+
     /**
      *
      *
@@ -3229,6 +3324,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         getSelectedResources(int index) {
       return selectedResources_.get(index);
     }
+
     /**
      *
      *
@@ -3253,6 +3349,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     private com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
             .RestrictedExportPolicy
         restrictedExportPolicy_;
+
     /**
      *
      *
@@ -3271,6 +3368,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRestrictedExportPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3294,6 +3392,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
               .RestrictedExportPolicy.getDefaultInstance()
           : restrictedExportPolicy_;
     }
+
     /**
      *
      *
@@ -3507,6 +3606,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3810,6 +3910,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object dataset_ = "";
+
       /**
        *
        *
@@ -3833,6 +3934,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3856,6 +3958,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3878,6 +3981,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3896,6 +4000,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3967,6 +4072,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return selectedResourcesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -3987,6 +4093,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return selectedResourcesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -4009,6 +4116,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return selectedResourcesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -4038,6 +4146,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4065,6 +4174,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4093,6 +4203,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4122,6 +4233,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4148,6 +4260,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4175,6 +4288,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4203,6 +4317,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4226,6 +4341,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4249,6 +4365,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4267,6 +4384,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           getSelectedResourcesBuilder(int index) {
         return getSelectedResourcesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -4289,6 +4407,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return selectedResourcesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -4313,6 +4432,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(selectedResources_);
         }
       }
+
       /**
        *
        *
@@ -4334,6 +4454,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
                     .SelectedResource.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4356,6 +4477,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
                     .SelectedResource.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4413,6 +4535,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
                   .RestrictedExportPolicyOrBuilder>
           restrictedExportPolicyBuilder_;
+
       /**
        *
        *
@@ -4430,6 +4553,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRestrictedExportPolicy() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -4456,6 +4580,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return restrictedExportPolicyBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4484,6 +4609,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4509,6 +4635,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4544,6 +4671,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4566,6 +4694,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4585,6 +4714,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getRestrictedExportPolicyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4609,6 +4739,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
               : restrictedExportPolicy_;
         }
       }
+
       /**
        *
        *
@@ -4759,6 +4890,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getRestrictQueryResult();
   }
+
   /**
    *
    *
@@ -4774,6 +4906,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig)
       RestrictedExportConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RestrictedExportConfig.newBuilder() to construct.
     private RestrictedExportConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4805,6 +4938,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENABLED_FIELD_NUMBER = 3;
     private boolean enabled_ = false;
+
     /**
      *
      *
@@ -4823,6 +4957,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RESTRICT_DIRECT_TABLE_ACCESS_FIELD_NUMBER = 1;
     private boolean restrictDirectTableAccess_ = false;
+
     /**
      *
      *
@@ -4843,6 +4978,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RESTRICT_QUERY_RESULT_FIELD_NUMBER = 2;
     private boolean restrictQueryResult_ = false;
+
     /**
      *
      *
@@ -5047,6 +5183,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5270,6 +5407,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean enabled_;
+
       /**
        *
        *
@@ -5285,6 +5423,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnabled() {
         return enabled_;
       }
+
       /**
        *
        *
@@ -5304,6 +5443,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5323,6 +5463,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean restrictDirectTableAccess_;
+
       /**
        *
        *
@@ -5340,6 +5481,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean getRestrictDirectTableAccess() {
         return restrictDirectTableAccess_;
       }
+
       /**
        *
        *
@@ -5361,6 +5503,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5382,6 +5525,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean restrictQueryResult_;
+
       /**
        *
        *
@@ -5398,6 +5542,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean getRestrictQueryResult() {
         return restrictQueryResult_;
       }
+
       /**
        *
        *
@@ -5418,6 +5563,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5522,6 +5668,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5553,6 +5700,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BIGQUERY_DATASET_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -5570,6 +5718,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBigqueryDataset() {
     return sourceCase_ == 6;
   }
+
   /**
    *
    *
@@ -5592,6 +5741,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5617,6 +5767,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -5641,6 +5792,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5670,6 +5822,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -5696,6 +5849,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5727,6 +5881,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -5753,6 +5908,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5784,6 +5940,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object primaryContact_ = "";
+
   /**
    *
    *
@@ -5808,6 +5965,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5837,6 +5995,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object documentation_ = "";
+
   /**
    *
    *
@@ -5860,6 +6019,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5886,6 +6046,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 7;
   private int state_ = 0;
+
   /**
    *
    *
@@ -5903,6 +6064,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -5927,6 +6089,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ICON_FIELD_NUMBER = 8;
   private com.google.protobuf.ByteString icon_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -5949,6 +6112,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_PROVIDER_FIELD_NUMBER = 9;
   private com.google.cloud.bigquery.analyticshub.v1.DataProvider dataProvider_;
+
   /**
    *
    *
@@ -5966,6 +6130,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataProvider() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -5985,6 +6150,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.bigquery.analyticshub.v1.DataProvider.getDefaultInstance()
         : dataProvider_;
   }
+
   /**
    *
    *
@@ -6023,6 +6189,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -6043,6 +6210,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.bigquery.analyticshub.v1.Listing.Category>(
         categories_, categories_converter_);
   }
+
   /**
    *
    *
@@ -6060,6 +6228,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public int getCategoriesCount() {
     return categories_.size();
   }
+
   /**
    *
    *
@@ -6078,6 +6247,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.bigquery.analyticshub.v1.Listing.Category getCategories(int index) {
     return categories_converter_.convert(categories_.get(index));
   }
+
   /**
    *
    *
@@ -6095,6 +6265,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getCategoriesValueList() {
     return categories_;
   }
+
   /**
    *
    *
@@ -6118,6 +6289,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PUBLISHER_FIELD_NUMBER = 11;
   private com.google.cloud.bigquery.analyticshub.v1.Publisher publisher_;
+
   /**
    *
    *
@@ -6136,6 +6308,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPublisher() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -6156,6 +6329,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.bigquery.analyticshub.v1.Publisher.getDefaultInstance()
         : publisher_;
   }
+
   /**
    *
    *
@@ -6179,6 +6353,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestAccess_ = "";
+
   /**
    *
    *
@@ -6204,6 +6379,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -6233,6 +6409,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public static final int RESTRICTED_EXPORT_CONFIG_FIELD_NUMBER = 13;
   private com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig
       restrictedExportConfig_;
+
   /**
    *
    *
@@ -6251,6 +6428,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRestrictedExportConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -6273,6 +6451,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : restrictedExportConfig_;
   }
+
   /**
    *
    *
@@ -6296,6 +6475,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISCOVERY_TYPE_FIELD_NUMBER = 14;
   private int discoveryType_ = 0;
+
   /**
    *
    *
@@ -6313,6 +6493,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiscoveryType() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -6330,6 +6511,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public int getDiscoveryTypeValue() {
     return discoveryType_;
   }
+
   /**
    *
    *
@@ -6683,6 +6865,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -7147,6 +7330,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Builder,
             com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSourceOrBuilder>
         bigqueryDatasetBuilder_;
+
     /**
      *
      *
@@ -7164,6 +7348,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBigqueryDataset() {
       return sourceCase_ == 6;
     }
+
     /**
      *
      *
@@ -7194,6 +7379,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7219,6 +7405,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -7242,6 +7429,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -7280,6 +7468,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -7307,6 +7496,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7322,6 +7512,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         getBigqueryDatasetBuilder() {
       return getBigqueryDatasetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7346,6 +7537,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7384,6 +7576,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -7407,6 +7600,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7430,6 +7624,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7452,6 +7647,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7470,6 +7666,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7495,6 +7692,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -7520,6 +7718,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7545,6 +7744,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7569,6 +7769,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7589,6 +7790,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7616,6 +7818,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -7641,6 +7844,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7666,6 +7870,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7690,6 +7895,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7710,6 +7916,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7737,6 +7944,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object primaryContact_ = "";
+
     /**
      *
      *
@@ -7760,6 +7968,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7783,6 +7992,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7805,6 +8015,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7823,6 +8034,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7848,6 +8060,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object documentation_ = "";
+
     /**
      *
      *
@@ -7870,6 +8083,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7892,6 +8106,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7913,6 +8128,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7930,6 +8146,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7954,6 +8171,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -7971,6 +8189,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -7991,6 +8210,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8012,6 +8232,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.analyticshub.v1.Listing.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -8035,6 +8256,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8056,6 +8278,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString icon_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -8075,6 +8298,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getIcon() {
       return icon_;
     }
+
     /**
      *
      *
@@ -8100,6 +8324,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8128,6 +8353,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.DataProvider.Builder,
             com.google.cloud.bigquery.analyticshub.v1.DataProviderOrBuilder>
         dataProviderBuilder_;
+
     /**
      *
      *
@@ -8144,6 +8370,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataProvider() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -8166,6 +8393,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return dataProviderBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8190,6 +8418,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8212,6 +8441,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8242,6 +8472,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8263,6 +8494,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8279,6 +8511,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDataProviderFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8300,6 +8533,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             : dataProvider_;
       }
     }
+
     /**
      *
      *
@@ -8336,6 +8570,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000200;
       }
     }
+
     /**
      *
      *
@@ -8355,6 +8590,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.bigquery.analyticshub.v1.Listing.Category>(
           categories_, categories_converter_);
     }
+
     /**
      *
      *
@@ -8371,6 +8607,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public int getCategoriesCount() {
       return categories_.size();
     }
+
     /**
      *
      *
@@ -8388,6 +8625,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.analyticshub.v1.Listing.Category getCategories(int index) {
       return categories_converter_.convert(categories_.get(index));
     }
+
     /**
      *
      *
@@ -8413,6 +8651,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8436,6 +8675,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8460,6 +8700,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8479,6 +8720,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8495,6 +8737,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getCategoriesValueList() {
       return java.util.Collections.unmodifiableList(categories_);
     }
+
     /**
      *
      *
@@ -8512,6 +8755,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public int getCategoriesValue(int index) {
       return categories_.get(index);
     }
+
     /**
      *
      *
@@ -8533,6 +8777,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8553,6 +8798,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8582,6 +8828,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.Publisher.Builder,
             com.google.cloud.bigquery.analyticshub.v1.PublisherOrBuilder>
         publisherBuilder_;
+
     /**
      *
      *
@@ -8599,6 +8846,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPublisher() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -8622,6 +8870,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return publisherBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8647,6 +8896,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8670,6 +8920,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8701,6 +8952,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8723,6 +8975,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8740,6 +8993,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPublisherFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8761,6 +9015,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             : publisher_;
       }
     }
+
     /**
      *
      *
@@ -8791,6 +9046,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object requestAccess_ = "";
+
     /**
      *
      *
@@ -8815,6 +9071,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8839,6 +9096,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8862,6 +9120,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8881,6 +9140,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8913,6 +9173,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig.Builder,
             com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfigOrBuilder>
         restrictedExportConfigBuilder_;
+
     /**
      *
      *
@@ -8930,6 +9191,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRestrictedExportConfig() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -8955,6 +9217,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return restrictedExportConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8981,6 +9244,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9005,6 +9269,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9038,6 +9303,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9060,6 +9326,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9078,6 +9345,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRestrictedExportConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9101,6 +9369,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             : restrictedExportConfig_;
       }
     }
+
     /**
      *
      *
@@ -9131,6 +9400,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int discoveryType_ = 0;
+
     /**
      *
      *
@@ -9148,6 +9418,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDiscoveryType() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -9165,6 +9436,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public int getDiscoveryTypeValue() {
       return discoveryType_;
     }
+
     /**
      *
      *
@@ -9185,6 +9457,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9206,6 +9479,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.analyticshub.v1.DiscoveryType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -9229,6 +9503,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.CustomTuningModel)
     CustomTuningModelOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomTuningModel.newBuilder() to construct.
   private CustomTuningModel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -181,6 +182,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * <code>MODEL_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int MODEL_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -191,6 +193,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * <code>TRAINING_PAUSED = 1;</code>
      */
     public static final int TRAINING_PAUSED_VALUE = 1;
+
     /**
      *
      *
@@ -201,6 +204,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * <code>TRAINING = 2;</code>
      */
     public static final int TRAINING_VALUE = 2;
+
     /**
      *
      *
@@ -211,6 +215,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * <code>TRAINING_COMPLETE = 3;</code>
      */
     public static final int TRAINING_COMPLETE_VALUE = 3;
+
     /**
      *
      *
@@ -221,6 +226,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * <code>READY_FOR_SERVING = 4;</code>
      */
     public static final int READY_FOR_SERVING_VALUE = 4;
+
     /**
      *
      *
@@ -231,6 +237,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * <code>TRAINING_FAILED = 5;</code>
      */
     public static final int TRAINING_FAILED_VALUE = 5;
+
     /**
      *
      *
@@ -241,6 +248,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * <code>NO_IMPROVEMENT = 6;</code>
      */
     public static final int NO_IMPROVEMENT_VALUE = 6;
+
     /**
      *
      *
@@ -352,6 +360,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -382,6 +391,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -417,6 +427,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -440,6 +451,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -466,6 +478,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
 
   public static final int MODEL_VERSION_FIELD_NUMBER = 3;
   private long modelVersion_ = 0L;
+
   /**
    *
    *
@@ -484,6 +497,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
 
   public static final int MODEL_STATE_FIELD_NUMBER = 4;
   private int modelState_ = 0;
+
   /**
    *
    *
@@ -499,6 +513,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
   public int getModelStateValue() {
     return modelState_;
   }
+
   /**
    *
    *
@@ -521,6 +536,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -539,6 +555,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -557,6 +574,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -574,6 +592,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
 
   public static final int TRAINING_START_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp trainingStartTime_;
+
   /**
    *
    *
@@ -589,6 +608,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
   public boolean hasTrainingStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -606,6 +626,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : trainingStartTime_;
   }
+
   /**
    *
    *
@@ -648,6 +669,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
   public int getMetricsCount() {
     return internalGetMetrics().getMap().size();
   }
+
   /**
    *
    *
@@ -664,12 +686,14 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     }
     return internalGetMetrics().getMap().containsKey(key);
   }
+
   /** Use {@link #getMetricsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Double> getMetrics() {
     return getMetricsMap();
   }
+
   /**
    *
    *
@@ -683,6 +707,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.Double> getMetricsMap() {
     return internalGetMetrics().getMap();
   }
+
   /**
    *
    *
@@ -700,6 +725,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.Double> map = internalGetMetrics().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -725,6 +751,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorMessage_ = "";
+
   /**
    *
    *
@@ -749,6 +776,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1021,6 +1049,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1354,6 +1383,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1383,6 +1413,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1412,6 +1443,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1440,6 +1472,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1464,6 +1497,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1495,6 +1529,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1517,6 +1552,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1539,6 +1575,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1560,6 +1597,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1577,6 +1615,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1601,6 +1640,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     }
 
     private long modelVersion_;
+
     /**
      *
      *
@@ -1616,6 +1656,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     public long getModelVersion() {
       return modelVersion_;
     }
+
     /**
      *
      *
@@ -1635,6 +1676,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1654,6 +1696,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     }
 
     private int modelState_ = 0;
+
     /**
      *
      *
@@ -1670,6 +1713,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     public int getModelStateValue() {
       return modelState_;
     }
+
     /**
      *
      *
@@ -1689,6 +1733,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1710,6 +1755,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.discoveryengine.v1beta.CustomTuningModel.ModelState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1733,6 +1779,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1758,6 +1805,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1775,6 +1823,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1798,6 +1847,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1821,6 +1871,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1841,6 +1892,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1869,6 +1921,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1889,6 +1942,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1904,6 +1958,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1923,6 +1978,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1955,6 +2011,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         trainingStartTimeBuilder_;
+
     /**
      *
      *
@@ -1969,6 +2026,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     public boolean hasTrainingStartTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1989,6 +2047,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         return trainingStartTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2011,6 +2070,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2030,6 +2090,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2057,6 +2118,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2076,6 +2138,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2090,6 +2153,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTrainingStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2108,6 +2172,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
             : trainingStartTime_;
       }
     }
+
     /**
      *
      *
@@ -2159,6 +2224,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     public int getMetricsCount() {
       return internalGetMetrics().getMap().size();
     }
+
     /**
      *
      *
@@ -2175,12 +2241,14 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       }
       return internalGetMetrics().getMap().containsKey(key);
     }
+
     /** Use {@link #getMetricsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Double> getMetrics() {
       return getMetricsMap();
     }
+
     /**
      *
      *
@@ -2194,6 +2262,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.Double> getMetricsMap() {
       return internalGetMetrics().getMap();
     }
+
     /**
      *
      *
@@ -2211,6 +2280,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetMetrics().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2237,6 +2307,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       internalGetMutableMetrics().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2253,12 +2324,14 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       internalGetMutableMetrics().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Double> getMutableMetrics() {
       bitField0_ |= 0x00000040;
       return internalGetMutableMetrics().getMutableMap();
     }
+
     /**
      *
      *
@@ -2277,6 +2350,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -2293,6 +2367,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object errorMessage_ = "";
+
     /**
      *
      *
@@ -2316,6 +2391,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2339,6 +2415,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2361,6 +2438,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2379,6 +2457,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

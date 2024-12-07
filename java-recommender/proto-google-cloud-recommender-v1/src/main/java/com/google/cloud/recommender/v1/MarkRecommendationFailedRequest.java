@@ -33,6 +33,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1.MarkRecommendationFailedRequest)
     MarkRecommendationFailedRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MarkRecommendationFailedRequest.newBuilder() to construct.
   private MarkRecommendationFailedRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -81,6 +82,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -160,6 +163,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
   public int getStateMetadataCount() {
     return internalGetStateMetadata().getMap().size();
   }
+
   /**
    *
    *
@@ -179,12 +183,14 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
     }
     return internalGetStateMetadata().getMap().containsKey(key);
   }
+
   /** Use {@link #getStateMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getStateMetadata() {
     return getStateMetadataMap();
   }
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
   public java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap() {
     return internalGetStateMetadata().getMap();
   }
+
   /**
    *
    *
@@ -224,6 +231,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
     java.util.Map<java.lang.String, java.lang.String> map = internalGetStateMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -252,6 +260,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -275,6 +284,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -485,6 +495,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -729,6 +740,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -753,6 +765,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -777,6 +790,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -800,6 +814,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +834,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +888,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
     public int getStateMetadataCount() {
       return internalGetStateMetadata().getMap().size();
     }
+
     /**
      *
      *
@@ -891,12 +908,14 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
       }
       return internalGetStateMetadata().getMap().containsKey(key);
     }
+
     /** Use {@link #getStateMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getStateMetadata() {
       return getStateMetadataMap();
     }
+
     /**
      *
      *
@@ -913,6 +932,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
     public java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap() {
       return internalGetStateMetadata().getMap();
     }
+
     /**
      *
      *
@@ -936,6 +956,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
       java.util.Map<java.lang.String, java.lang.String> map = internalGetStateMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -965,6 +986,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
       internalGetMutableStateMetadata().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -984,12 +1006,14 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
       internalGetMutableStateMetadata().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableStateMetadata() {
       bitField0_ |= 0x00000002;
       return internalGetMutableStateMetadata().getMutableMap();
     }
+
     /**
      *
      *
@@ -1013,6 +1037,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1057,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -1054,6 +1080,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1076,6 +1103,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1125,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1114,6 +1143,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

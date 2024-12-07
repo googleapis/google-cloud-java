@@ -39,6 +39,7 @@ public interface CreateMeasurementProtocolSecretRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateMeasurementProtocolSecretRequestOrBuilder
    * @return Whether the measurementProtocolSecret field is set.
    */
   boolean hasMeasurementProtocolSecret();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateMeasurementProtocolSecretRequestOrBuilder
    * @return The measurementProtocolSecret.
    */
   com.google.analytics.admin.v1beta.MeasurementProtocolSecret getMeasurementProtocolSecret();
+
   /**
    *
    *

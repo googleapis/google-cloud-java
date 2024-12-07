@@ -33,6 +33,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.ListCustomClassesResponse)
     ListCustomClassesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListCustomClassesResponse.newBuilder() to construct.
   private ListCustomClassesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass> customClasses_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass> getCustomClassesList() {
     return customClasses_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       getCustomClassesOrBuilderList() {
     return customClasses_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
   public int getCustomClassesCount() {
     return customClasses_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
   public com.google.cloud.speech.v1p1beta1.CustomClass getCustomClasses(int index) {
     return customClasses_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -637,6 +646,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
         return customClassesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -653,6 +663,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
         return customClassesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -669,6 +680,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
         return customClassesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +772,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +793,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +814,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +835,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +855,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +875,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +889,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
         int index) {
       return getCustomClassesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -885,6 +907,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
         return customClassesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -902,6 +925,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(customClasses_);
       }
     }
+
     /**
      *
      *
@@ -915,6 +939,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       return getCustomClassesFieldBuilder()
           .addBuilder(com.google.cloud.speech.v1p1beta1.CustomClass.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -929,6 +954,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       return getCustomClassesFieldBuilder()
           .addBuilder(index, com.google.cloud.speech.v1p1beta1.CustomClass.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -964,6 +990,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -987,6 +1014,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1010,6 +1038,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1032,6 +1061,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1080,7 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface InstanceOrBuilder
    * @return Whether the vmImage field is set.
    */
   boolean hasVmImage();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface InstanceOrBuilder
    * @return The vmImage.
    */
   com.google.cloud.notebooks.v1beta1.VmImage getVmImage();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface InstanceOrBuilder
    * @return Whether the containerImage field is set.
    */
   boolean hasContainerImage();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface InstanceOrBuilder
    * @return The containerImage.
    */
   com.google.cloud.notebooks.v1beta1.ContainerImage getContainerImage();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface InstanceOrBuilder
    * @return The postStartupScript.
    */
   java.lang.String getPostStartupScript();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface InstanceOrBuilder
    * @return The proxyUri.
    */
   java.lang.String getProxyUri();
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public interface InstanceOrBuilder
    * @return A list containing the instanceOwners.
    */
   java.util.List<java.lang.String> getInstanceOwnersList();
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public interface InstanceOrBuilder
    * @return The count of instanceOwners.
    */
   int getInstanceOwnersCount();
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public interface InstanceOrBuilder
    * @return The instanceOwners at the given index.
    */
   java.lang.String getInstanceOwners(int index);
+
   /**
    *
    *
@@ -261,6 +271,7 @@ public interface InstanceOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -295,6 +306,7 @@ public interface InstanceOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
@@ -325,6 +337,7 @@ public interface InstanceOrBuilder
    * @return Whether the acceleratorConfig field is set.
    */
   boolean hasAcceleratorConfig();
+
   /**
    *
    *
@@ -340,6 +353,7 @@ public interface InstanceOrBuilder
    * @return The acceleratorConfig.
    */
   com.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig getAcceleratorConfig();
+
   /**
    *
    *
@@ -369,6 +383,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -413,6 +428,7 @@ public interface InstanceOrBuilder
    * @return The customGpuDriverPath.
    */
   java.lang.String getCustomGpuDriverPath();
+
   /**
    *
    *
@@ -442,6 +458,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for bootDiskType.
    */
   int getBootDiskTypeValue();
+
   /**
    *
    *
@@ -488,6 +505,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for dataDiskType.
    */
   int getDataDiskTypeValue();
+
   /**
    *
    *
@@ -546,6 +564,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for diskEncryption.
    */
   int getDiskEncryptionValue();
+
   /**
    *
    *
@@ -579,6 +598,7 @@ public interface InstanceOrBuilder
    * @return The kmsKey.
    */
   java.lang.String getKmsKey();
+
   /**
    *
    *
@@ -638,6 +658,7 @@ public interface InstanceOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -667,6 +688,7 @@ public interface InstanceOrBuilder
    * @return The subnet.
    */
   java.lang.String getSubnet();
+
   /**
    *
    *
@@ -693,6 +715,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 21;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -704,9 +727,11 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 21;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -718,6 +743,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 21;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -733,6 +759,7 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -755,6 +782,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; metadata = 22;</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -765,9 +793,11 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; metadata = 22;</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -778,6 +808,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; metadata = 22;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -792,6 +823,7 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -818,6 +850,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for nicType.
    */
   int getNicTypeValue();
+
   /**
    *
    *
@@ -851,6 +884,7 @@ public interface InstanceOrBuilder
    * @return Whether the reservationAffinity field is set.
    */
   boolean hasReservationAffinity();
+
   /**
    *
    *
@@ -868,6 +902,7 @@ public interface InstanceOrBuilder
    * @return The reservationAffinity.
    */
   com.google.cloud.notebooks.v1beta1.ReservationAffinity getReservationAffinity();
+
   /**
    *
    *
@@ -911,6 +946,7 @@ public interface InstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -924,6 +960,7 @@ public interface InstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -949,6 +986,7 @@ public interface InstanceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -962,6 +1000,7 @@ public interface InstanceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

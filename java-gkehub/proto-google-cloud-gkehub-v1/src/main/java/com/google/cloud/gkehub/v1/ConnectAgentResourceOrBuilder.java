@@ -36,6 +36,7 @@ public interface ConnectAgentResourceOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ConnectAgentResourceOrBuilder
    * @return The type.
    */
   com.google.cloud.gkehub.v1.TypeMeta getType();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ConnectAgentResourceOrBuilder
    * @return The manifest.
    */
   java.lang.String getManifest();
+
   /**
    *
    *

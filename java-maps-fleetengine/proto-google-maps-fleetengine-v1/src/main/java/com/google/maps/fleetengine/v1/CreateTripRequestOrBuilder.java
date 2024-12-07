@@ -36,6 +36,7 @@ public interface CreateTripRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CreateTripRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.v1.RequestHeader getHeader();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface CreateTripRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateTripRequestOrBuilder
    * @return The tripId.
    */
   java.lang.String getTripId();
+
   /**
    *
    *
@@ -181,6 +185,7 @@ public interface CreateTripRequestOrBuilder
    * @return Whether the trip field is set.
    */
   boolean hasTrip();
+
   /**
    *
    *
@@ -227,6 +232,7 @@ public interface CreateTripRequestOrBuilder
    * @return The trip.
    */
   com.google.maps.fleetengine.v1.Trip getTrip();
+
   /**
    *
    *

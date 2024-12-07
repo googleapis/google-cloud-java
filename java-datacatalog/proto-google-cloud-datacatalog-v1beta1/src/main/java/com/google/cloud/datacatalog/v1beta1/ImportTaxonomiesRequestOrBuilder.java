@@ -39,6 +39,7 @@ public interface ImportTaxonomiesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ImportTaxonomiesRequestOrBuilder
    * @return Whether the inlineSource field is set.
    */
   boolean hasInlineSource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ImportTaxonomiesRequestOrBuilder
    * @return The inlineSource.
    */
   com.google.cloud.datacatalog.v1beta1.InlineSource getInlineSource();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.appengine.v1.CreateIngressRuleRequest)
     CreateIngressRuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateIngressRuleRequest.newBuilder() to construct.
   private CreateIngressRuleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
 
   public static final int RULE_FIELD_NUMBER = 2;
   private com.google.appengine.v1.firewall.FirewallRule rule_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
   public boolean hasRule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
         ? com.google.appengine.v1.firewall.FirewallRule.getDefaultInstance()
         : rule_;
   }
+
   /**
    *
    *
@@ -367,6 +373,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -580,6 +587,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -603,6 +611,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -626,6 +635,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -648,6 +658,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
             com.google.appengine.v1.firewall.FirewallRule.Builder,
             com.google.appengine.v1.firewall.FirewallRuleOrBuilder>
         ruleBuilder_;
+
     /**
      *
      *
@@ -719,6 +732,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
     public boolean hasRule() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -748,6 +762,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
         return ruleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +823,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +860,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +889,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +913,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return getRuleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -921,6 +941,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
             : rule_;
       }
     }
+
     /**
      *
      *

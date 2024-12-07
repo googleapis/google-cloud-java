@@ -36,6 +36,7 @@ public interface ExfiltrationOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.ExfilResource sources = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.ExfilResource> getSourcesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ExfiltrationOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.ExfilResource sources = 1;</code>
    */
   com.google.cloud.securitycenter.v2.ExfilResource getSources(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ExfiltrationOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.ExfilResource sources = 1;</code>
    */
   int getSourcesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ExfiltrationOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.ExfilResourceOrBuilder>
       getSourcesOrBuilderList();
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface ExfiltrationOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.ExfilResource targets = 2;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.ExfilResource> getTargetsList();
+
   /**
    *
    *
@@ -108,6 +113,7 @@ public interface ExfiltrationOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.ExfilResource targets = 2;</code>
    */
   com.google.cloud.securitycenter.v2.ExfilResource getTargets(int index);
+
   /**
    *
    *
@@ -119,6 +125,7 @@ public interface ExfiltrationOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.ExfilResource targets = 2;</code>
    */
   int getTargetsCount();
+
   /**
    *
    *
@@ -131,6 +138,7 @@ public interface ExfiltrationOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.ExfilResourceOrBuilder>
       getTargetsOrBuilderList();
+
   /**
    *
    *

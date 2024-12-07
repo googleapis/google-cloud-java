@@ -36,6 +36,7 @@ public interface DnsPeeringOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DnsPeeringOrBuilder
    * @return The domain.
    */
   java.lang.String getDomain();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface DnsPeeringOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface DnsPeeringOrBuilder
    * @return The targetProject.
    */
   java.lang.String getTargetProject();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface DnsPeeringOrBuilder
    * @return The targetNetwork.
    */
   java.lang.String getTargetNetwork();
+
   /**
    *
    *

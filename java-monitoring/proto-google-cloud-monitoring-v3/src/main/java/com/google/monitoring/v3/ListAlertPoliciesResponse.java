@@ -33,6 +33,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListAlertPoliciesResponse)
     ListAlertPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListAlertPoliciesResponse.newBuilder() to construct.
   private ListAlertPoliciesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.AlertPolicy> alertPolicies_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.monitoring.v3.AlertPolicy> getAlertPoliciesList() {
     return alertPolicies_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       getAlertPoliciesOrBuilderList() {
     return alertPolicies_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
   public int getAlertPoliciesCount() {
     return alertPolicies_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
   public com.google.monitoring.v3.AlertPolicy getAlertPolicies(int index) {
     return alertPolicies_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 4;
   private int totalSize_ = 0;
+
   /**
    *
    *
@@ -388,6 +397,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -678,6 +688,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
         return alertPoliciesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -694,6 +705,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
         return alertPoliciesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
         return alertPoliciesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +789,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +832,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +853,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +874,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +894,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +914,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +927,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
     public com.google.monitoring.v3.AlertPolicy.Builder getAlertPoliciesBuilder(int index) {
       return getAlertPoliciesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -921,6 +944,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
         return alertPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -938,6 +962,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(alertPolicies_);
       }
     }
+
     /**
      *
      *
@@ -951,6 +976,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       return getAlertPoliciesFieldBuilder()
           .addBuilder(com.google.monitoring.v3.AlertPolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -964,6 +990,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       return getAlertPoliciesFieldBuilder()
           .addBuilder(index, com.google.monitoring.v3.AlertPolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -999,6 +1026,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1023,6 +1051,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1047,6 +1076,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1070,6 +1100,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1120,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1147,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
     }
 
     private int totalSize_;
+
     /**
      *
      *
@@ -1131,6 +1164,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
     public int getTotalSize() {
       return totalSize_;
     }
+
     /**
      *
      *
@@ -1151,6 +1185,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

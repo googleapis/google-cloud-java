@@ -33,6 +33,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.ListGlossariesResponse)
     ListGlossariesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListGlossariesResponse.newBuilder() to construct.
   private ListGlossariesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3.Glossary> glossaries_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.translate.v3.Glossary> getGlossariesList() {
     return glossaries_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       getGlossariesOrBuilderList() {
     return glossaries_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
   public int getGlossariesCount() {
     return glossaries_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.translate.v3.Glossary getGlossaries(int index) {
     return glossaries_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -636,6 +645,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
         return glossariesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
         return glossariesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
         return glossariesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +746,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +789,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +810,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +831,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +851,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +871,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +884,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.translate.v3.Glossary.Builder getGlossariesBuilder(int index) {
       return getGlossariesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -879,6 +901,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
         return glossariesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -896,6 +919,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(glossaries_);
       }
     }
+
     /**
      *
      *
@@ -909,6 +933,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       return getGlossariesFieldBuilder()
           .addBuilder(com.google.cloud.translate.v3.Glossary.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -922,6 +947,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       return getGlossariesFieldBuilder()
           .addBuilder(index, com.google.cloud.translate.v3.Glossary.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -954,6 +980,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -978,6 +1005,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1030,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1054,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1074,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

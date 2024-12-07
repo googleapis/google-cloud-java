@@ -36,6 +36,7 @@ public interface LoggingVariantConfigOrBuilder
    * @return The enum numeric value on the wire for variant.
    */
   int getVariantValue();
+
   /**
    *
    *

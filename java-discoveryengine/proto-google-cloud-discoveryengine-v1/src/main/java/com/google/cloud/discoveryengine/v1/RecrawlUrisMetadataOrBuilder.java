@@ -36,6 +36,7 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return A list containing the invalidUris.
    */
   java.util.List<java.lang.String> getInvalidUrisList();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The count of invalidUris.
    */
   int getInvalidUrisCount();
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The invalidUris at the given index.
    */
   java.lang.String getInvalidUris(int index);
+
   /**
    *
    *

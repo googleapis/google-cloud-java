@@ -38,6 +38,7 @@ public interface UpdateFlowRequestOrBuilder
    * @return Whether the flow field is set.
    */
   boolean hasFlow();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateFlowRequestOrBuilder
    * @return The flow.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Flow getFlow();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateFlowRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateFlowRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface UpdateFlowRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

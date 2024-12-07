@@ -36,6 +36,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Exfiltration)
     ExfiltrationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Exfiltration.newBuilder() to construct.
   private Exfiltration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.ExfilResource> sources_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.securitycenter.v1.ExfilResource> getSourcesList() {
     return sources_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       getSourcesOrBuilderList() {
     return sources_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
   public int getSourcesCount() {
     return sources_.size();
   }
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v1.ExfilResource getSources(int index) {
     return sources_.get(index);
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.ExfilResource> targets_;
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.securitycenter.v1.ExfilResource> getTargetsList() {
     return targets_;
   }
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       getTargetsOrBuilderList() {
     return targets_;
   }
+
   /**
    *
    *
@@ -195,6 +204,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
   public int getTargetsCount() {
     return targets_.size();
   }
+
   /**
    *
    *
@@ -209,6 +219,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v1.ExfilResource getTargets(int index) {
     return targets_.get(index);
   }
+
   /**
    *
    *
@@ -226,6 +237,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOTAL_EXFILTRATED_BYTES_FIELD_NUMBER = 3;
   private long totalExfiltratedBytes_ = 0L;
+
   /**
    *
    *
@@ -423,6 +435,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -761,6 +774,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
         return sourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -779,6 +793,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
         return sourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -797,6 +812,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
         return sourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -821,6 +837,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +860,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +885,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +910,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +933,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +956,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +979,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1001,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1023,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.ExfilResource.Builder getSourcesBuilder(int index) {
       return getSourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1032,6 +1058,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
         return sourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1051,6 +1078,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(sources_);
       }
     }
+
     /**
      *
      *
@@ -1066,6 +1094,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       return getSourcesFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v1.ExfilResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1081,6 +1110,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       return getSourcesFieldBuilder()
           .addBuilder(index, com.google.cloud.securitycenter.v1.ExfilResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1148,6 +1178,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
         return targetsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1165,6 +1196,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
         return targetsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1182,6 +1214,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
         return targetsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1205,6 +1238,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1226,6 +1260,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1249,6 +1284,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1272,6 +1308,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1330,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1352,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1335,6 +1374,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1395,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1416,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1430,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.ExfilResource.Builder getTargetsBuilder(int index) {
       return getTargetsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1406,6 +1449,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
         return targetsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1424,6 +1468,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(targets_);
       }
     }
+
     /**
      *
      *
@@ -1438,6 +1483,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       return getTargetsFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v1.ExfilResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1452,6 +1498,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       return getTargetsFieldBuilder()
           .addBuilder(index, com.google.cloud.securitycenter.v1.ExfilResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1485,6 +1532,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long totalExfiltratedBytes_;
+
     /**
      *
      *
@@ -1500,6 +1548,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
     public long getTotalExfiltratedBytes() {
       return totalExfiltratedBytes_;
     }
+
     /**
      *
      *
@@ -1519,6 +1568,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

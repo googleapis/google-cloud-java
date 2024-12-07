@@ -38,6 +38,7 @@ public interface AvailableUpdatesOrBuilder
    * @return Whether the newDeployableAppliance field is set.
    */
   boolean hasNewDeployableAppliance();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AvailableUpdatesOrBuilder
    * @return The newDeployableAppliance.
    */
   com.google.cloud.vmmigration.v1.ApplianceVersion getNewDeployableAppliance();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface AvailableUpdatesOrBuilder
    * @return Whether the inPlaceUpdate field is set.
    */
   boolean hasInPlaceUpdate();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface AvailableUpdatesOrBuilder
    * @return The inPlaceUpdate.
    */
   com.google.cloud.vmmigration.v1.ApplianceVersion getInPlaceUpdate();
+
   /**
    *
    *

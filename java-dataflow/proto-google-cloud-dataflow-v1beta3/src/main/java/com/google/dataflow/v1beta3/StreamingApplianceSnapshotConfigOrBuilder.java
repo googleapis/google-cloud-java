@@ -36,6 +36,7 @@ public interface StreamingApplianceSnapshotConfigOrBuilder
    * @return The snapshotId.
    */
   java.lang.String getSnapshotId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface StreamingApplianceSnapshotConfigOrBuilder
    * @return The importStateEndpoint.
    */
   java.lang.String getImportStateEndpoint();
+
   /**
    *
    *

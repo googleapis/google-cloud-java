@@ -41,6 +41,7 @@ public interface SecretKeySelectorOrBuilder
    * @return The secret.
    */
   java.lang.String getSecret();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface SecretKeySelectorOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

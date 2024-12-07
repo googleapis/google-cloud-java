@@ -38,6 +38,7 @@ public interface UpdatePageRequestOrBuilder
    * @return Whether the page field is set.
    */
   boolean hasPage();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdatePageRequestOrBuilder
    * @return The page.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Page getPage();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface UpdatePageRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public interface UpdatePageRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface UpdatePageRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

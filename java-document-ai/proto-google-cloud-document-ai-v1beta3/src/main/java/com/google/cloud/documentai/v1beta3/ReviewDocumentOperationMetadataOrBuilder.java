@@ -36,6 +36,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * @return Whether the commonMetadata field is set.
    */
   boolean hasCommonMetadata();
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * @return The commonMetadata.
    */
   com.google.cloud.documentai.v1beta3.CommonOperationMetadata getCommonMetadata();
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * @return The questionId.
    */
   java.lang.String getQuestionId();
+
   /**
    *
    *

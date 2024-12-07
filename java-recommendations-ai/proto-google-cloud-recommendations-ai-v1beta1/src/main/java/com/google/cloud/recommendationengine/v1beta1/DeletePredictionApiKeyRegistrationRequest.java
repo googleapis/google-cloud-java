@@ -35,6 +35,7 @@ public final class DeletePredictionApiKeyRegistrationRequest
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.DeletePredictionApiKeyRegistrationRequest)
     DeletePredictionApiKeyRegistrationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeletePredictionApiKeyRegistrationRequest.newBuilder() to construct.
   private DeletePredictionApiKeyRegistrationRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class DeletePredictionApiKeyRegistrationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class DeletePredictionApiKeyRegistrationRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -307,6 +310,7 @@ public final class DeletePredictionApiKeyRegistrationRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -513,6 +517,7 @@ public final class DeletePredictionApiKeyRegistrationRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -538,6 +543,7 @@ public final class DeletePredictionApiKeyRegistrationRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -563,6 +569,7 @@ public final class DeletePredictionApiKeyRegistrationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -587,6 +594,7 @@ public final class DeletePredictionApiKeyRegistrationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -607,6 +615,7 @@ public final class DeletePredictionApiKeyRegistrationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

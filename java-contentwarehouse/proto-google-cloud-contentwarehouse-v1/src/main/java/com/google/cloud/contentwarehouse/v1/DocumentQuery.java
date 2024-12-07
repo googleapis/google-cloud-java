@@ -25,6 +25,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.DocumentQuery)
     DocumentQueryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DocumentQuery.newBuilder() to construct.
   private DocumentQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
+
   /**
    *
    *
@@ -134,6 +136,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -203,6 +206,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_NL_QUERY_FIELD_NUMBER = 12;
   private boolean isNlQuery_ = false;
+
   /**
    *
    *
@@ -229,6 +233,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customPropertyFilter_ = "";
+
   /**
    *
    *
@@ -273,6 +278,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -322,6 +328,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.TimeFilter> timeFilters_;
+
   /**
    *
    *
@@ -336,6 +343,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.contentwarehouse.v1.TimeFilter> getTimeFiltersList() {
     return timeFilters_;
   }
+
   /**
    *
    *
@@ -351,6 +359,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       getTimeFiltersOrBuilderList() {
     return timeFilters_;
   }
+
   /**
    *
    *
@@ -365,6 +374,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public int getTimeFiltersCount() {
     return timeFilters_.size();
   }
+
   /**
    *
    *
@@ -379,6 +389,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.contentwarehouse.v1.TimeFilter getTimeFilters(int index) {
     return timeFilters_.get(index);
   }
+
   /**
    *
    *
@@ -400,6 +411,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList documentSchemaNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -423,6 +435,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDocumentSchemaNamesList() {
     return documentSchemaNames_;
   }
+
   /**
    *
    *
@@ -446,6 +459,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public int getDocumentSchemaNamesCount() {
     return documentSchemaNames_.size();
   }
+
   /**
    *
    *
@@ -470,6 +484,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDocumentSchemaNames(int index) {
     return documentSchemaNames_.get(index);
   }
+
   /**
    *
    *
@@ -499,6 +514,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.PropertyFilter> propertyFilter_;
+
   /**
    *
    *
@@ -515,6 +531,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       getPropertyFilterList() {
     return propertyFilter_;
   }
+
   /**
    *
    *
@@ -531,6 +548,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       getPropertyFilterOrBuilderList() {
     return propertyFilter_;
   }
+
   /**
    *
    *
@@ -546,6 +564,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public int getPropertyFilterCount() {
     return propertyFilter_.size();
   }
+
   /**
    *
    *
@@ -561,6 +580,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.contentwarehouse.v1.PropertyFilter getPropertyFilter(int index) {
     return propertyFilter_.get(index);
   }
+
   /**
    *
    *
@@ -580,6 +600,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FILE_TYPE_FILTER_FIELD_NUMBER = 8;
   private com.google.cloud.contentwarehouse.v1.FileTypeFilter fileTypeFilter_;
+
   /**
    *
    *
@@ -600,6 +621,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFileTypeFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -622,6 +644,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contentwarehouse.v1.FileTypeFilter.getDefaultInstance()
         : fileTypeFilter_;
   }
+
   /**
    *
    *
@@ -647,6 +670,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object folderNameFilter_ = "";
+
   /**
    *
    *
@@ -672,6 +696,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -703,6 +728,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList documentNameFilter_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -719,6 +745,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDocumentNameFilterList() {
     return documentNameFilter_;
   }
+
   /**
    *
    *
@@ -735,6 +762,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public int getDocumentNameFilterCount() {
     return documentNameFilter_.size();
   }
+
   /**
    *
    *
@@ -752,6 +780,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDocumentNameFilter(int index) {
     return documentNameFilter_.get(index);
   }
+
   /**
    *
    *
@@ -775,6 +804,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList queryContext_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -795,6 +825,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getQueryContextList() {
     return queryContext_;
   }
+
   /**
    *
    *
@@ -815,6 +846,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public int getQueryContextCount() {
     return queryContext_.size();
   }
+
   /**
    *
    *
@@ -836,6 +868,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getQueryContext(int index) {
     return queryContext_.get(index);
   }
+
   /**
    *
    *
@@ -863,6 +896,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList documentCreatorFilter_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -882,6 +916,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDocumentCreatorFilterList() {
     return documentCreatorFilter_;
   }
+
   /**
    *
    *
@@ -901,6 +936,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public int getDocumentCreatorFilterCount() {
     return documentCreatorFilter_.size();
   }
+
   /**
    *
    *
@@ -921,6 +957,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDocumentCreatorFilter(int index) {
     return documentCreatorFilter_.get(index);
   }
+
   /**
    *
    *
@@ -944,6 +981,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOM_WEIGHTS_METADATA_FIELD_NUMBER = 13;
   private com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata customWeightsMetadata_;
+
   /**
    *
    *
@@ -964,6 +1002,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomWeightsMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -986,6 +1025,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata.getDefaultInstance()
         : customWeightsMetadata_;
   }
+
   /**
    *
    *
@@ -1310,6 +1350,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.contentwarehouse.v1.DocumentQuery} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -1791,6 +1832,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object query_ = "";
+
     /**
      *
      *
@@ -1856,6 +1898,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1921,6 +1964,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1985,6 +2029,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2045,6 +2090,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2112,6 +2158,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isNlQuery_;
+
     /**
      *
      *
@@ -2133,6 +2180,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsNlQuery() {
       return isNlQuery_;
     }
+
     /**
      *
      *
@@ -2158,6 +2206,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2183,6 +2232,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object customPropertyFilter_ = "";
+
     /**
      *
      *
@@ -2226,6 +2276,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2269,6 +2320,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2311,6 +2363,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2349,6 +2402,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2427,6 +2481,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return timeFiltersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2444,6 +2499,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return timeFiltersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2461,6 +2517,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return timeFiltersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2485,6 +2542,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2506,6 +2564,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2529,6 +2588,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2553,6 +2613,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2574,6 +2635,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2595,6 +2657,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2616,6 +2679,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2636,6 +2700,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2656,6 +2721,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2670,6 +2736,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getTimeFiltersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2688,6 +2755,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return timeFiltersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2706,6 +2774,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(timeFilters_);
       }
     }
+
     /**
      *
      *
@@ -2720,6 +2789,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       return getTimeFiltersFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.TimeFilter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2735,6 +2805,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       return getTimeFiltersFieldBuilder()
           .addBuilder(index, com.google.cloud.contentwarehouse.v1.TimeFilter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2776,6 +2847,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -2800,6 +2872,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       documentSchemaNames_.makeImmutable();
       return documentSchemaNames_;
     }
+
     /**
      *
      *
@@ -2823,6 +2896,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public int getDocumentSchemaNamesCount() {
       return documentSchemaNames_.size();
     }
+
     /**
      *
      *
@@ -2847,6 +2921,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDocumentSchemaNames(int index) {
       return documentSchemaNames_.get(index);
     }
+
     /**
      *
      *
@@ -2871,6 +2946,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDocumentSchemaNamesBytes(int index) {
       return documentSchemaNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2903,6 +2979,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2934,6 +3011,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2962,6 +3040,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2989,6 +3068,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3059,6 +3139,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return propertyFilterBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3077,6 +3158,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return propertyFilterBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3095,6 +3177,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return propertyFilterBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3120,6 +3203,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3142,6 +3226,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3166,6 +3251,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3191,6 +3277,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3213,6 +3300,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3235,6 +3323,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3257,6 +3346,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3278,6 +3368,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3299,6 +3390,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3314,6 +3406,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getPropertyFilterFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3333,6 +3426,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return propertyFilterBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3352,6 +3446,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(propertyFilter_);
       }
     }
+
     /**
      *
      *
@@ -3367,6 +3462,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       return getPropertyFilterFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.PropertyFilter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3384,6 +3480,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.contentwarehouse.v1.PropertyFilter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3426,6 +3523,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.FileTypeFilter.Builder,
             com.google.cloud.contentwarehouse.v1.FileTypeFilterOrBuilder>
         fileTypeFilterBuilder_;
+
     /**
      *
      *
@@ -3445,6 +3543,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFileTypeFilter() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3470,6 +3569,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return fileTypeFilterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3497,6 +3597,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3522,6 +3623,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3555,6 +3657,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3579,6 +3682,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3598,6 +3702,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFileTypeFilterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3622,6 +3727,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
             : fileTypeFilter_;
       }
     }
+
     /**
      *
      *
@@ -3654,6 +3760,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object folderNameFilter_ = "";
+
     /**
      *
      *
@@ -3678,6 +3785,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3702,6 +3810,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3725,6 +3834,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3744,6 +3854,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3778,6 +3889,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
+
     /**
      *
      *
@@ -3795,6 +3907,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       documentNameFilter_.makeImmutable();
       return documentNameFilter_;
     }
+
     /**
      *
      *
@@ -3811,6 +3924,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public int getDocumentNameFilterCount() {
       return documentNameFilter_.size();
     }
+
     /**
      *
      *
@@ -3828,6 +3942,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDocumentNameFilter(int index) {
       return documentNameFilter_.get(index);
     }
+
     /**
      *
      *
@@ -3845,6 +3960,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDocumentNameFilterBytes(int index) {
       return documentNameFilter_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3870,6 +3986,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3894,6 +4011,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3915,6 +4033,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3935,6 +4054,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3970,6 +4090,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000200;
     }
+
     /**
      *
      *
@@ -3991,6 +4112,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       queryContext_.makeImmutable();
       return queryContext_;
     }
+
     /**
      *
      *
@@ -4011,6 +4133,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public int getQueryContextCount() {
       return queryContext_.size();
     }
+
     /**
      *
      *
@@ -4032,6 +4155,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getQueryContext(int index) {
       return queryContext_.get(index);
     }
+
     /**
      *
      *
@@ -4053,6 +4177,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getQueryContextBytes(int index) {
       return queryContext_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4082,6 +4207,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4110,6 +4236,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4135,6 +4262,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4159,6 +4287,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4199,6 +4328,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000400;
     }
+
     /**
      *
      *
@@ -4219,6 +4349,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       documentCreatorFilter_.makeImmutable();
       return documentCreatorFilter_;
     }
+
     /**
      *
      *
@@ -4238,6 +4369,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public int getDocumentCreatorFilterCount() {
       return documentCreatorFilter_.size();
     }
+
     /**
      *
      *
@@ -4258,6 +4390,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDocumentCreatorFilter(int index) {
       return documentCreatorFilter_.get(index);
     }
+
     /**
      *
      *
@@ -4278,6 +4411,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDocumentCreatorFilterBytes(int index) {
       return documentCreatorFilter_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4306,6 +4440,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4333,6 +4468,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4357,6 +4493,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4380,6 +4517,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4415,6 +4553,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata.Builder,
             com.google.cloud.contentwarehouse.v1.CustomWeightsMetadataOrBuilder>
         customWeightsMetadataBuilder_;
+
     /**
      *
      *
@@ -4434,6 +4573,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomWeightsMetadata() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -4459,6 +4599,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         return customWeightsMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4487,6 +4628,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4512,6 +4654,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4547,6 +4690,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4571,6 +4715,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4591,6 +4736,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomWeightsMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4615,6 +4761,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
             : customWeightsMetadata_;
       }
     }
+
     /**
      *
      *

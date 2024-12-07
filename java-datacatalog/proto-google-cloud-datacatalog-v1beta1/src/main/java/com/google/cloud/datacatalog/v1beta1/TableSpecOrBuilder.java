@@ -42,6 +42,7 @@ public interface TableSpecOrBuilder
    * @return The groupedEntry.
    */
   java.lang.String getGroupedEntry();
+
   /**
    *
    *

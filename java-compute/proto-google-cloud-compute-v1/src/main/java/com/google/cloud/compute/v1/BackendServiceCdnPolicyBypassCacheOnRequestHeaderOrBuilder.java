@@ -36,6 +36,7 @@ public interface BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder
    * @return Whether the headerName field is set.
    */
   boolean hasHeaderName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder
    * @return The headerName.
    */
   java.lang.String getHeaderName();
+
   /**
    *
    *

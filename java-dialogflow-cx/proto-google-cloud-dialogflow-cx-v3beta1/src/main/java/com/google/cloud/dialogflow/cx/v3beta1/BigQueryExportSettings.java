@@ -33,6 +33,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.BigQueryExportSettings)
     BigQueryExportSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigQueryExportSettings.newBuilder() to construct.
   private BigQueryExportSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bigqueryTable_ = "";
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -303,6 +307,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -503,6 +508,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -518,6 +524,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -537,6 +544,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -556,6 +564,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object bigqueryTable_ = "";
+
     /**
      *
      *
@@ -579,6 +588,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -602,6 +612,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +654,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

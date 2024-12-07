@@ -37,6 +37,7 @@ public interface EnvVarOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface EnvVarOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface EnvVarOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface EnvVarOrBuilder
    * @return Whether the valueSource field is set.
    */
   boolean hasValueSource();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface EnvVarOrBuilder
    * @return The valueSource.
    */
   com.google.cloud.run.v2.EnvVarSource getValueSource();
+
   /**
    *
    *

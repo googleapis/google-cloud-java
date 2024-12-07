@@ -34,6 +34,7 @@ public interface CommitmentsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Commitment> getCommitmentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface CommitmentsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
    */
   com.google.cloud.compute.v1.Commitment getCommitments(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface CommitmentsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
    */
   int getCommitmentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface CommitmentsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.CommitmentOrBuilder>
       getCommitmentsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface CommitmentsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface CommitmentsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

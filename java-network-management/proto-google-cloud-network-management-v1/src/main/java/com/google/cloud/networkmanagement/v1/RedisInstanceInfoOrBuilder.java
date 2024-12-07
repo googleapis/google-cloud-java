@@ -36,6 +36,7 @@ public interface RedisInstanceInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RedisInstanceInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface RedisInstanceInfoOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface RedisInstanceInfoOrBuilder
    * @return The primaryEndpointIp.
    */
   java.lang.String getPrimaryEndpointIp();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface RedisInstanceInfoOrBuilder
    * @return The readEndpointIp.
    */
   java.lang.String getReadEndpointIp();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface RedisInstanceInfoOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

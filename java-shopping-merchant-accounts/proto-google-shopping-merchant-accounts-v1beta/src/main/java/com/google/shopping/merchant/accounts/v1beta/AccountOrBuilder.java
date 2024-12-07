@@ -37,6 +37,7 @@ public interface AccountOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface AccountOrBuilder
    * @return The accountName.
    */
   java.lang.String getAccountName();
+
   /**
    *
    *
@@ -139,6 +141,7 @@ public interface AccountOrBuilder
    * @return Whether the timeZone field is set.
    */
   boolean hasTimeZone();
+
   /**
    *
    *
@@ -157,6 +160,7 @@ public interface AccountOrBuilder
    * @return The timeZone.
    */
   com.google.type.TimeZone getTimeZone();
+
   /**
    *
    *
@@ -187,6 +191,7 @@ public interface AccountOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

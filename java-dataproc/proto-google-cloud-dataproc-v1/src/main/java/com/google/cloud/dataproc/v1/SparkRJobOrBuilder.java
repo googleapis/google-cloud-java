@@ -37,6 +37,7 @@ public interface SparkRJobOrBuilder
    * @return The mainRFileUri.
    */
   java.lang.String getMainRFileUri();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface SparkRJobOrBuilder
    * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface SparkRJobOrBuilder
    * @return The count of args.
    */
   int getArgsCount();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface SparkRJobOrBuilder
    * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface SparkRJobOrBuilder
    * @return A list containing the fileUris.
    */
   java.util.List<java.lang.String> getFileUrisList();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface SparkRJobOrBuilder
    * @return The count of fileUris.
    */
   int getFileUrisCount();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface SparkRJobOrBuilder
    * @return The fileUris at the given index.
    */
   java.lang.String getFileUris(int index);
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public interface SparkRJobOrBuilder
    * @return A list containing the archiveUris.
    */
   java.util.List<java.lang.String> getArchiveUrisList();
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public interface SparkRJobOrBuilder
    * @return The count of archiveUris.
    */
   int getArchiveUrisCount();
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public interface SparkRJobOrBuilder
    * @return The archiveUris at the given index.
    */
   java.lang.String getArchiveUris(int index);
+
   /**
    *
    *
@@ -238,6 +248,7 @@ public interface SparkRJobOrBuilder
    * </code>
    */
   int getPropertiesCount();
+
   /**
    *
    *
@@ -252,9 +263,11 @@ public interface SparkRJobOrBuilder
    * </code>
    */
   boolean containsProperties(java.lang.String key);
+
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getProperties();
+
   /**
    *
    *
@@ -269,6 +282,7 @@ public interface SparkRJobOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
+
   /**
    *
    *
@@ -287,6 +301,7 @@ public interface SparkRJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -316,6 +331,7 @@ public interface SparkRJobOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
+
   /**
    *
    *
@@ -330,6 +346,7 @@ public interface SparkRJobOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig();
+
   /**
    *
    *

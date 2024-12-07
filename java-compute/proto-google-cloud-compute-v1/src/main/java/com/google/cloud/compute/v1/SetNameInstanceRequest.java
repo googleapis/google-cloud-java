@@ -33,6 +33,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetNameInstanceRequest)
     SetNameInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetNameInstanceRequest.newBuilder() to construct.
   private SetNameInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
 
   public static final int INSTANCES_SET_NAME_REQUEST_RESOURCE_FIELD_NUMBER = 272080980;
   private com.google.cloud.compute.v1.InstancesSetNameRequest instancesSetNameRequestResource_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
   public boolean hasInstancesSetNameRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.compute.v1.InstancesSetNameRequest.getDefaultInstance()
         : instancesSetNameRequestResource_;
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -234,6 +242,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -272,6 +282,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -300,6 +311,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -325,6 +337,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -560,6 +573,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -824,6 +838,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
+
     /**
      *
      *
@@ -846,6 +861,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -868,6 +884,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -889,6 +906,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +924,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +954,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.InstancesSetNameRequest.Builder,
             com.google.cloud.compute.v1.InstancesSetNameRequestOrBuilder>
         instancesSetNameRequestResourceBuilder_;
+
     /**
      *
      *
@@ -951,6 +971,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
     public boolean hasInstancesSetNameRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -974,6 +995,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
         return instancesSetNameRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -999,6 +1021,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1044,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1076,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1098,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1116,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getInstancesSetNameRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1111,6 +1138,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
             : instancesSetNameRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1140,6 +1168,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1164,6 +1193,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1188,6 +1218,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1211,6 +1242,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1230,6 +1262,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1289,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1270,6 +1304,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1292,6 +1327,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1314,6 +1350,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1335,6 +1372,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1352,6 +1390,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1376,6 +1415,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1400,6 +1440,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1424,6 +1465,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1447,6 +1489,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1509,7 @@ public final class SetNameInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

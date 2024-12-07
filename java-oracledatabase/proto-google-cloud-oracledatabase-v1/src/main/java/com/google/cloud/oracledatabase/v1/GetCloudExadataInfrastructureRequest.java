@@ -34,6 +34,7 @@ public final class GetCloudExadataInfrastructureRequest
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest)
     GetCloudExadataInfrastructureRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetCloudExadataInfrastructureRequest.newBuilder() to construct.
   private GetCloudExadataInfrastructureRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class GetCloudExadataInfrastructureRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class GetCloudExadataInfrastructureRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -285,6 +288,7 @@ public final class GetCloudExadataInfrastructureRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -479,6 +483,7 @@ public final class GetCloudExadataInfrastructureRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -505,6 +510,7 @@ public final class GetCloudExadataInfrastructureRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -531,6 +537,7 @@ public final class GetCloudExadataInfrastructureRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -556,6 +563,7 @@ public final class GetCloudExadataInfrastructureRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -577,6 +585,7 @@ public final class GetCloudExadataInfrastructureRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

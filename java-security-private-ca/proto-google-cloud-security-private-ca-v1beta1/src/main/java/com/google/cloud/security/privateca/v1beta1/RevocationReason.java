@@ -143,6 +143,7 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    * <code>REVOCATION_REASON_UNSPECIFIED = 0;</code>
    */
   public static final int REVOCATION_REASON_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -153,6 +154,7 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    * <code>KEY_COMPROMISE = 1;</code>
    */
   public static final int KEY_COMPROMISE_VALUE = 1;
+
   /**
    *
    *
@@ -164,6 +166,7 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    * <code>CERTIFICATE_AUTHORITY_COMPROMISE = 2;</code>
    */
   public static final int CERTIFICATE_AUTHORITY_COMPROMISE_VALUE = 2;
+
   /**
    *
    *
@@ -174,6 +177,7 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    * <code>AFFILIATION_CHANGED = 3;</code>
    */
   public static final int AFFILIATION_CHANGED_VALUE = 3;
+
   /**
    *
    *
@@ -184,6 +188,7 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    * <code>SUPERSEDED = 4;</code>
    */
   public static final int SUPERSEDED_VALUE = 4;
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    * <code>CESSATION_OF_OPERATION = 5;</code>
    */
   public static final int CESSATION_OF_OPERATION_VALUE = 5;
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    * <code>CERTIFICATE_HOLD = 6;</code>
    */
   public static final int CERTIFICATE_HOLD_VALUE = 6;
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    * <code>PRIVILEGE_WITHDRAWN = 7;</code>
    */
   public static final int PRIVILEGE_WITHDRAWN_VALUE = 7;
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class ListGlobalOrganizationOperationsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ListGlobalOrganizationOperationsRequest)
     ListGlobalOrganizationOperationsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListGlobalOrganizationOperationsRequest.newBuilder() to construct.
   private ListGlobalOrganizationOperationsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class ListGlobalOrganizationOperationsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class ListGlobalOrganizationOperationsRequest
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class ListGlobalOrganizationOperationsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class ListGlobalOrganizationOperationsRequest
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
   private int maxResults_ = 0;
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class ListGlobalOrganizationOperationsRequest
   public boolean hasMaxResults() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class ListGlobalOrganizationOperationsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public final class ListGlobalOrganizationOperationsRequest
   public boolean hasOrderBy() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public final class ListGlobalOrganizationOperationsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public final class ListGlobalOrganizationOperationsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public final class ListGlobalOrganizationOperationsRequest
   public boolean hasPageToken() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -276,6 +287,7 @@ public final class ListGlobalOrganizationOperationsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -304,6 +316,7 @@ public final class ListGlobalOrganizationOperationsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parentId_ = "";
+
   /**
    *
    *
@@ -319,6 +332,7 @@ public final class ListGlobalOrganizationOperationsRequest
   public boolean hasParentId() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -342,6 +356,7 @@ public final class ListGlobalOrganizationOperationsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -368,6 +383,7 @@ public final class ListGlobalOrganizationOperationsRequest
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_ = false;
+
   /**
    *
    *
@@ -383,6 +399,7 @@ public final class ListGlobalOrganizationOperationsRequest
   public boolean hasReturnPartialSuccess() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -636,6 +653,7 @@ public final class ListGlobalOrganizationOperationsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -906,6 +924,7 @@ public final class ListGlobalOrganizationOperationsRequest
     private int bitField0_;
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -920,6 +939,7 @@ public final class ListGlobalOrganizationOperationsRequest
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -942,6 +962,7 @@ public final class ListGlobalOrganizationOperationsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -964,6 +985,7 @@ public final class ListGlobalOrganizationOperationsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -985,6 +1007,7 @@ public final class ListGlobalOrganizationOperationsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1025,7 @@ public final class ListGlobalOrganizationOperationsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1050,7 @@ public final class ListGlobalOrganizationOperationsRequest
     }
 
     private int maxResults_;
+
     /**
      *
      *
@@ -1041,6 +1066,7 @@ public final class ListGlobalOrganizationOperationsRequest
     public boolean hasMaxResults() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1056,6 +1082,7 @@ public final class ListGlobalOrganizationOperationsRequest
     public int getMaxResults() {
       return maxResults_;
     }
+
     /**
      *
      *
@@ -1075,6 +1102,7 @@ public final class ListGlobalOrganizationOperationsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1122,7 @@ public final class ListGlobalOrganizationOperationsRequest
     }
 
     private java.lang.Object orderBy_ = "";
+
     /**
      *
      *
@@ -1108,6 +1137,7 @@ public final class ListGlobalOrganizationOperationsRequest
     public boolean hasOrderBy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1130,6 +1160,7 @@ public final class ListGlobalOrganizationOperationsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1152,6 +1183,7 @@ public final class ListGlobalOrganizationOperationsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1205,7 @@ public final class ListGlobalOrganizationOperationsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1190,6 +1223,7 @@ public final class ListGlobalOrganizationOperationsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1214,6 +1248,7 @@ public final class ListGlobalOrganizationOperationsRequest
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1228,6 +1263,7 @@ public final class ListGlobalOrganizationOperationsRequest
     public boolean hasPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1250,6 +1286,7 @@ public final class ListGlobalOrganizationOperationsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1272,6 +1309,7 @@ public final class ListGlobalOrganizationOperationsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1293,6 +1331,7 @@ public final class ListGlobalOrganizationOperationsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1310,6 +1349,7 @@ public final class ListGlobalOrganizationOperationsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1374,7 @@ public final class ListGlobalOrganizationOperationsRequest
     }
 
     private java.lang.Object parentId_ = "";
+
     /**
      *
      *
@@ -1348,6 +1389,7 @@ public final class ListGlobalOrganizationOperationsRequest
     public boolean hasParentId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1370,6 +1412,7 @@ public final class ListGlobalOrganizationOperationsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1392,6 +1435,7 @@ public final class ListGlobalOrganizationOperationsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1413,6 +1457,7 @@ public final class ListGlobalOrganizationOperationsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1430,6 +1475,7 @@ public final class ListGlobalOrganizationOperationsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1454,6 +1500,7 @@ public final class ListGlobalOrganizationOperationsRequest
     }
 
     private boolean returnPartialSuccess_;
+
     /**
      *
      *
@@ -1469,6 +1516,7 @@ public final class ListGlobalOrganizationOperationsRequest
     public boolean hasReturnPartialSuccess() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1484,6 +1532,7 @@ public final class ListGlobalOrganizationOperationsRequest
     public boolean getReturnPartialSuccess() {
       return returnPartialSuccess_;
     }
+
     /**
      *
      *
@@ -1503,6 +1552,7 @@ public final class ListGlobalOrganizationOperationsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

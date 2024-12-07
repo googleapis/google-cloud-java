@@ -37,6 +37,7 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * @return The config.
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig getConfig();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * @return Whether the expr field is set.
    */
   boolean hasExpr();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * @return The expr.
    */
   com.google.cloud.compute.v1.Expr getExpr();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * @return Whether the exprOptions field is set.
    */
   boolean hasExprOptions();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * @return The exprOptions.
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptions getExprOptions();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * @return Whether the versionedExpr field is set.
    */
   boolean hasVersionedExpr();
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * @return The versionedExpr.
    */
   java.lang.String getVersionedExpr();
+
   /**
    *
    *

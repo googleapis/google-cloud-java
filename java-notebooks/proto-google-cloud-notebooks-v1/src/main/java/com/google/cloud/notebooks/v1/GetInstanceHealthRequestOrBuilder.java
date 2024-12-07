@@ -39,6 +39,7 @@ public interface GetInstanceHealthRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

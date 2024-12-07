@@ -33,6 +33,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.SearchBackgroundJobsRequest)
     SearchBackgroundJobsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchBackgroundJobsRequest.newBuilder() to construct.
   private SearchBackgroundJobsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversionWorkspace_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
 
   public static final int RETURN_MOST_RECENT_PER_JOB_TYPE_FIELD_NUMBER = 2;
   private boolean returnMostRecentPerJobType_ = false;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
 
   public static final int MAX_SIZE_FIELD_NUMBER = 3;
   private int maxSize_ = 0;
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
 
   public static final int COMPLETED_UNTIL_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp completedUntilTime_;
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
   public boolean hasCompletedUntilTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : completedUntilTime_;
   }
+
   /**
    *
    *
@@ -414,6 +422,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -657,6 +666,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object conversionWorkspace_ = "";
+
     /**
      *
      *
@@ -683,6 +693,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -709,6 +720,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -734,6 +746,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +768,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +797,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
     }
 
     private boolean returnMostRecentPerJobType_;
+
     /**
      *
      *
@@ -799,6 +814,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
     public boolean getReturnMostRecentPerJobType() {
       return returnMostRecentPerJobType_;
     }
+
     /**
      *
      *
@@ -819,6 +835,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +856,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
     }
 
     private int maxSize_;
+
     /**
      *
      *
@@ -857,6 +875,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
     public int getMaxSize() {
       return maxSize_;
     }
+
     /**
      *
      *
@@ -879,6 +898,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +926,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         completedUntilTimeBuilder_;
+
     /**
      *
      *
@@ -923,6 +944,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
     public boolean hasCompletedUntilTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -946,6 +968,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
         return completedUntilTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -971,6 +994,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1017,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1048,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1071,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1089,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
       onChanged();
       return getCompletedUntilTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1083,6 +1111,7 @@ public final class SearchBackgroundJobsRequest extends com.google.protobuf.Gener
             : completedUntilTime_;
       }
     }
+
     /**
      *
      *

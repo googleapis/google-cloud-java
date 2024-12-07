@@ -47,6 +47,7 @@ public interface GetAutoscalingPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

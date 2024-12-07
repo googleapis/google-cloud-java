@@ -37,6 +37,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig)
     MasterAuthorizedNetworksConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MasterAuthorizedNetworksConfig.newBuilder() to construct.
   private MasterAuthorizedNetworksConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -87,6 +88,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
      * @return The displayName.
      */
     java.lang.String getDisplayName();
+
     /**
      *
      *
@@ -112,6 +114,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
      * @return The cidrBlock.
      */
     java.lang.String getCidrBlock();
+
     /**
      *
      *
@@ -125,6 +128,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
      */
     com.google.protobuf.ByteString getCidrBlockBytes();
   }
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig.CidrBlock)
       CidrBlockOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CidrBlock.newBuilder() to construct.
     private CidrBlock(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -177,6 +182,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -200,6 +206,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         return s;
       }
     }
+
     /**
      *
      *
@@ -228,6 +235,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object cidrBlock_ = "";
+
     /**
      *
      *
@@ -251,6 +259,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         return s;
       }
     }
+
     /**
      *
      *
@@ -472,6 +481,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -704,6 +714,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       private int bitField0_;
 
       private java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -726,6 +737,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -748,6 +760,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -769,6 +782,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -786,6 +800,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -810,6 +825,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       }
 
       private java.lang.Object cidrBlock_ = "";
+
       /**
        *
        *
@@ -832,6 +848,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -854,6 +871,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -875,6 +893,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -892,6 +911,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -989,6 +1009,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -1012,6 +1033,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
           com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
               .CidrBlock>
       cidrBlocks_;
+
   /**
    *
    *
@@ -1031,6 +1053,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       getCidrBlocksList() {
     return cidrBlocks_;
   }
+
   /**
    *
    *
@@ -1051,6 +1074,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       getCidrBlocksOrBuilderList() {
     return cidrBlocks_;
   }
+
   /**
    *
    *
@@ -1067,6 +1091,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
   public int getCidrBlocksCount() {
     return cidrBlocks_.size();
   }
+
   /**
    *
    *
@@ -1085,6 +1110,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       getCidrBlocks(int index) {
     return cidrBlocks_.get(index);
   }
+
   /**
    *
    *
@@ -1296,6 +1322,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1567,6 +1594,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -1582,6 +1610,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -1601,6 +1630,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1665,6 +1695,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         return cidrBlocksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1684,6 +1715,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         return cidrBlocksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1705,6 +1737,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         return cidrBlocksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1734,6 +1767,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1760,6 +1794,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1788,6 +1823,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1817,6 +1853,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1842,6 +1879,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1868,6 +1906,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1895,6 +1934,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1917,6 +1957,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1939,6 +1980,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1956,6 +1998,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         getCidrBlocksBuilder(int index) {
       return getCidrBlocksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1977,6 +2020,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         return cidrBlocksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2000,6 +2044,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(cidrBlocks_);
       }
     }
+
     /**
      *
      *
@@ -2020,6 +2065,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
               com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
                   .CidrBlock.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2041,6 +2087,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
               com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
                   .CidrBlock.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ListInstancesInstanceGroupsRequest)
     ListInstancesInstanceGroupsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListInstancesInstanceGroupsRequest.newBuilder() to construct.
   private ListInstancesInstanceGroupsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,6 +75,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroup_ = "";
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
   public static final int INSTANCE_GROUPS_LIST_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER = 476255263;
   private com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest
       instanceGroupsListInstancesRequestResource_;
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
   public boolean hasInstanceGroupsListInstancesRequestResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         ? com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest.getDefaultInstance()
         : instanceGroupsListInstancesRequestResource_;
   }
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
   private int maxResults_ = 0;
+
   /**
    *
    *
@@ -263,6 +273,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
   public boolean hasMaxResults() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -283,6 +294,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
+
   /**
    *
    *
@@ -298,6 +310,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
   public boolean hasOrderBy() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -321,6 +334,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -349,6 +363,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -364,6 +379,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
   public boolean hasPageToken() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -387,6 +403,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -415,6 +432,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -438,6 +456,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -464,6 +483,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_ = false;
+
   /**
    *
    *
@@ -479,6 +499,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
   public boolean hasReturnPartialSuccess() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -499,6 +520,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -522,6 +544,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -813,6 +836,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1141,6 +1165,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -1155,6 +1180,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1177,6 +1203,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1199,6 +1226,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1248,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1266,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1261,6 +1291,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     }
 
     private java.lang.Object instanceGroup_ = "";
+
     /**
      *
      *
@@ -1283,6 +1314,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1305,6 +1337,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1326,6 +1359,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1377,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1373,6 +1408,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
             com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest.Builder,
             com.google.cloud.compute.v1.InstanceGroupsListInstancesRequestOrBuilder>
         instanceGroupsListInstancesRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1389,6 +1425,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     public boolean hasInstanceGroupsListInstancesRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1412,6 +1449,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         return instanceGroupsListInstancesRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1437,6 +1475,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1459,6 +1498,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1491,6 +1531,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -1512,6 +1553,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1529,6 +1571,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return getInstanceGroupsListInstancesRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1550,6 +1593,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
             : instanceGroupsListInstancesRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1579,6 +1623,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     }
 
     private int maxResults_;
+
     /**
      *
      *
@@ -1594,6 +1639,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     public boolean hasMaxResults() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1609,6 +1655,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     public int getMaxResults() {
       return maxResults_;
     }
+
     /**
      *
      *
@@ -1628,6 +1675,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1647,6 +1695,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     }
 
     private java.lang.Object orderBy_ = "";
+
     /**
      *
      *
@@ -1661,6 +1710,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     public boolean hasOrderBy() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1683,6 +1733,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1705,6 +1756,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1726,6 +1778,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1743,6 +1796,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1767,6 +1821,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1781,6 +1836,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     public boolean hasPageToken() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1803,6 +1859,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1825,6 +1882,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1846,6 +1904,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1863,6 +1922,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1887,6 +1947,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1909,6 +1970,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1931,6 +1993,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1952,6 +2015,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1969,6 +2033,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1993,6 +2058,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     }
 
     private boolean returnPartialSuccess_;
+
     /**
      *
      *
@@ -2008,6 +2074,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     public boolean hasReturnPartialSuccess() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2023,6 +2090,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     public boolean getReturnPartialSuccess() {
       return returnPartialSuccess_;
     }
+
     /**
      *
      *
@@ -2042,6 +2110,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2061,6 +2130,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -2083,6 +2153,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2105,6 +2176,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2126,6 +2198,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2143,6 +2216,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

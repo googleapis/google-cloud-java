@@ -34,6 +34,7 @@ public interface BreakRuleOrBuilder
    * <code>repeated .google.cloud.optimization.v1.BreakRule.BreakRequest break_requests = 1;</code>
    */
   java.util.List<com.google.cloud.optimization.v1.BreakRule.BreakRequest> getBreakRequestsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BreakRuleOrBuilder
    * <code>repeated .google.cloud.optimization.v1.BreakRule.BreakRequest break_requests = 1;</code>
    */
   com.google.cloud.optimization.v1.BreakRule.BreakRequest getBreakRequests(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BreakRuleOrBuilder
    * <code>repeated .google.cloud.optimization.v1.BreakRule.BreakRequest break_requests = 1;</code>
    */
   int getBreakRequestsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BreakRuleOrBuilder
    */
   java.util.List<? extends com.google.cloud.optimization.v1.BreakRule.BreakRequestOrBuilder>
       getBreakRequestsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface BreakRuleOrBuilder
    */
   java.util.List<com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint>
       getFrequencyConstraintsList();
+
   /**
    *
    *
@@ -104,6 +109,7 @@ public interface BreakRuleOrBuilder
    * </code>
    */
   com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint getFrequencyConstraints(int index);
+
   /**
    *
    *
@@ -117,6 +123,7 @@ public interface BreakRuleOrBuilder
    * </code>
    */
   int getFrequencyConstraintsCount();
+
   /**
    *
    *
@@ -131,6 +138,7 @@ public interface BreakRuleOrBuilder
    */
   java.util.List<? extends com.google.cloud.optimization.v1.BreakRule.FrequencyConstraintOrBuilder>
       getFrequencyConstraintsOrBuilderList();
+
   /**
    *
    *

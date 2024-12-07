@@ -33,6 +33,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.IamPolicySearchResult)
     IamPolicySearchResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IamPolicySearchResult.newBuilder() to construct.
   private IamPolicySearchResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,6 +91,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * </code>
      */
     int getMatchedPermissionsCount();
+
     /**
      *
      *
@@ -108,12 +110,14 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * </code>
      */
     boolean containsMatchedPermissions(java.lang.String key);
+
     /** Use {@link #getMatchedPermissionsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<
             java.lang.String,
             com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions>
         getMatchedPermissions();
+
     /**
      *
      *
@@ -135,6 +139,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             java.lang.String,
             com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions>
         getMatchedPermissionsMap();
+
     /**
      *
      *
@@ -158,6 +163,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             java.lang.String key,
             /* nullable */
             com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions defaultValue);
+
     /**
      *
      *
@@ -178,6 +184,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
         getMatchedPermissionsOrThrow(java.lang.String key);
   }
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.IamPolicySearchResult.Explanation)
       ExplanationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Explanation.newBuilder() to construct.
     private Explanation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -249,6 +257,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * @return A list containing the permissions.
        */
       java.util.List<java.lang.String> getPermissionsList();
+
       /**
        *
        *
@@ -261,6 +270,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * @return The count of permissions.
        */
       int getPermissionsCount();
+
       /**
        *
        *
@@ -274,6 +284,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * @return The permissions at the given index.
        */
       java.lang.String getPermissions(int index);
+
       /**
        *
        *
@@ -288,6 +299,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        */
       com.google.protobuf.ByteString getPermissionsBytes(int index);
     }
+
     /**
      *
      *
@@ -302,6 +314,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions)
         PermissionsOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Permissions.newBuilder() to construct.
       private Permissions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -338,6 +351,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList permissions_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -352,6 +366,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       public com.google.protobuf.ProtocolStringList getPermissionsList() {
         return permissions_;
       }
+
       /**
        *
        *
@@ -366,6 +381,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       public int getPermissionsCount() {
         return permissions_.size();
       }
+
       /**
        *
        *
@@ -381,6 +397,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       public java.lang.String getPermissions(int index) {
         return permissions_.get(index);
       }
+
       /**
        *
        *
@@ -574,6 +591,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -787,6 +805,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           }
           bitField0_ |= 0x00000001;
         }
+
         /**
          *
          *
@@ -802,6 +821,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           permissions_.makeImmutable();
           return permissions_;
         }
+
         /**
          *
          *
@@ -816,6 +836,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         public int getPermissionsCount() {
           return permissions_.size();
         }
+
         /**
          *
          *
@@ -831,6 +852,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         public java.lang.String getPermissions(int index) {
           return permissions_.get(index);
         }
+
         /**
          *
          *
@@ -846,6 +868,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         public com.google.protobuf.ByteString getPermissionsBytes(int index) {
           return permissions_.getByteString(index);
         }
+
         /**
          *
          *
@@ -869,6 +892,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -891,6 +915,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -910,6 +935,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -928,6 +954,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1060,6 +1087,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public int getMatchedPermissionsCount() {
       return internalGetMatchedPermissions().getMap().size();
     }
+
     /**
      *
      *
@@ -1084,6 +1112,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
       return internalGetMatchedPermissions().getMap().containsKey(key);
     }
+
     /** Use {@link #getMatchedPermissionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1093,6 +1122,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         getMatchedPermissions() {
       return getMatchedPermissionsMap();
     }
+
     /**
      *
      *
@@ -1117,6 +1147,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         getMatchedPermissionsMap() {
       return internalGetMatchedPermissions().getMap();
     }
+
     /**
      *
      *
@@ -1149,6 +1180,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           map = internalGetMatchedPermissions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1360,6 +1392,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1645,6 +1678,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       public int getMatchedPermissionsCount() {
         return internalGetMatchedPermissions().ensureBuilderMap().size();
       }
+
       /**
        *
        *
@@ -1669,6 +1703,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         }
         return internalGetMatchedPermissions().ensureBuilderMap().containsKey(key);
       }
+
       /** Use {@link #getMatchedPermissionsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -1678,6 +1713,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           getMatchedPermissions() {
         return getMatchedPermissionsMap();
       }
+
       /**
        *
        *
@@ -1702,6 +1738,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           getMatchedPermissionsMap() {
         return internalGetMatchedPermissions().getImmutableMap();
       }
+
       /**
        *
        *
@@ -1737,6 +1774,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             ? matchedPermissionsConverter.build(map.get(key))
             : defaultValue;
       }
+
       /**
        *
        *
@@ -1775,6 +1813,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         internalGetMutableMatchedPermissions().clear();
         return this;
       }
+
       /**
        *
        *
@@ -1799,6 +1838,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         internalGetMutableMatchedPermissions().ensureBuilderMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<
@@ -1808,6 +1848,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000001;
         return internalGetMutableMatchedPermissions().ensureMessageMap();
       }
+
       /**
        *
        *
@@ -1838,6 +1879,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000001;
         return this;
       }
+
       /**
        *
        *
@@ -1872,6 +1914,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000001;
         return this;
       }
+
       /**
        *
        *
@@ -1983,6 +2026,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -2015,6 +2059,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -2052,6 +2097,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object assetType_ = "";
+
   /**
    *
    *
@@ -2080,6 +2126,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -2113,6 +2160,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -2144,6 +2192,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -2181,6 +2230,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList folders_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2203,6 +2253,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getFoldersList() {
     return folders_;
   }
+
   /**
    *
    *
@@ -2225,6 +2276,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   public int getFoldersCount() {
     return folders_.size();
   }
+
   /**
    *
    *
@@ -2248,6 +2300,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   public java.lang.String getFolders(int index) {
     return folders_.get(index);
   }
+
   /**
    *
    *
@@ -2276,6 +2329,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object organization_ = "";
+
   /**
    *
    *
@@ -2307,6 +2361,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -2341,6 +2396,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
 
   public static final int POLICY_FIELD_NUMBER = 3;
   private com.google.iam.v1.Policy policy_;
+
   /**
    *
    *
@@ -2369,6 +2425,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   public boolean hasPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2397,6 +2454,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   public com.google.iam.v1.Policy getPolicy() {
     return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
   }
+
   /**
    *
    *
@@ -2426,6 +2484,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
 
   public static final int EXPLANATION_FIELD_NUMBER = 4;
   private com.google.cloud.asset.v1.IamPolicySearchResult.Explanation explanation_;
+
   /**
    *
    *
@@ -2442,6 +2501,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   public boolean hasExplanation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2460,6 +2520,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.getDefaultInstance()
         : explanation_;
   }
+
   /**
    *
    *
@@ -2708,6 +2769,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3008,6 +3070,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -3039,6 +3102,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3070,6 +3134,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3100,6 +3165,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3126,6 +3192,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3159,6 +3226,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object assetType_ = "";
+
     /**
      *
      *
@@ -3186,6 +3254,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3213,6 +3282,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3239,6 +3309,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3261,6 +3332,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3290,6 +3362,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -3320,6 +3393,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3350,6 +3424,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3379,6 +3454,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3404,6 +3480,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3444,6 +3521,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -3467,6 +3545,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       folders_.makeImmutable();
       return folders_;
     }
+
     /**
      *
      *
@@ -3489,6 +3568,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public int getFoldersCount() {
       return folders_.size();
     }
+
     /**
      *
      *
@@ -3512,6 +3592,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public java.lang.String getFolders(int index) {
       return folders_.get(index);
     }
+
     /**
      *
      *
@@ -3535,6 +3616,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getFoldersBytes(int index) {
       return folders_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3566,6 +3648,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3596,6 +3679,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3623,6 +3707,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3649,6 +3734,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3682,6 +3768,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object organization_ = "";
+
     /**
      *
      *
@@ -3712,6 +3799,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3742,6 +3830,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3771,6 +3860,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3796,6 +3886,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3833,6 +3924,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             com.google.iam.v1.Policy.Builder,
             com.google.iam.v1.PolicyOrBuilder>
         policyBuilder_;
+
     /**
      *
      *
@@ -3860,6 +3952,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3891,6 +3984,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return policyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3926,6 +4020,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3958,6 +4053,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3998,6 +4094,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -4030,6 +4127,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4057,6 +4155,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4086,6 +4185,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
       }
     }
+
     /**
      *
      *
@@ -4130,6 +4230,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Builder,
             com.google.cloud.asset.v1.IamPolicySearchResult.ExplanationOrBuilder>
         explanationBuilder_;
+
     /**
      *
      *
@@ -4145,6 +4246,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public boolean hasExplanation() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -4166,6 +4268,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return explanationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4190,6 +4293,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4211,6 +4315,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4242,6 +4347,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -4262,6 +4368,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4278,6 +4385,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return getExplanationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4298,6 +4406,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             : explanation_;
       }
     }
+
     /**
      *
      *

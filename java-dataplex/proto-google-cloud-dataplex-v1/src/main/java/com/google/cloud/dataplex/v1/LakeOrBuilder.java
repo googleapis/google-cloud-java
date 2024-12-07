@@ -39,6 +39,7 @@ public interface LakeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface LakeOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface LakeOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface LakeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface LakeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface LakeOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface LakeOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public interface LakeOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -203,9 +211,11 @@ public interface LakeOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -216,6 +226,7 @@ public interface LakeOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -230,6 +241,7 @@ public interface LakeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -253,6 +265,7 @@ public interface LakeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -279,6 +292,7 @@ public interface LakeOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -307,6 +321,7 @@ public interface LakeOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -337,6 +352,7 @@ public interface LakeOrBuilder
    * @return Whether the metastore field is set.
    */
   boolean hasMetastore();
+
   /**
    *
    *
@@ -352,6 +368,7 @@ public interface LakeOrBuilder
    * @return The metastore.
    */
   com.google.cloud.dataplex.v1.Lake.Metastore getMetastore();
+
   /**
    *
    *
@@ -380,6 +397,7 @@ public interface LakeOrBuilder
    * @return Whether the assetStatus field is set.
    */
   boolean hasAssetStatus();
+
   /**
    *
    *
@@ -394,6 +412,7 @@ public interface LakeOrBuilder
    * @return The assetStatus.
    */
   com.google.cloud.dataplex.v1.AssetStatus getAssetStatus();
+
   /**
    *
    *
@@ -421,6 +440,7 @@ public interface LakeOrBuilder
    * @return Whether the metastoreStatus field is set.
    */
   boolean hasMetastoreStatus();
+
   /**
    *
    *
@@ -435,6 +455,7 @@ public interface LakeOrBuilder
    * @return The metastoreStatus.
    */
   com.google.cloud.dataplex.v1.Lake.MetastoreStatus getMetastoreStatus();
+
   /**
    *
    *

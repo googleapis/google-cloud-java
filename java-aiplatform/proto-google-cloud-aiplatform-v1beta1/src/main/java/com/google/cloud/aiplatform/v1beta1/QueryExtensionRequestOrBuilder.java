@@ -40,6 +40,7 @@ public interface QueryExtensionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface QueryExtensionRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface QueryExtensionRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Content getContents(int index);
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface QueryExtensionRequestOrBuilder
    * </code>
    */
   int getContentsCount();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface QueryExtensionRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
       getContentsOrBuilderList();
+
   /**
    *
    *

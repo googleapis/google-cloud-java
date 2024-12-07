@@ -33,6 +33,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.OtherCloudResourceCollection)
     OtherCloudResourceCollectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OtherCloudResourceCollection.newBuilder() to construct.
   private OtherCloudResourceCollection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
     private PatternCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
   }
 
   public static final int INCLUDE_REGEXES_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
   public boolean hasIncludeRegexes() {
     return patternCase_ == 1;
   }
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
     }
     return com.google.privacy.dlp.v2.OtherCloudResourceRegexes.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -333,6 +338,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -551,6 +557,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.OtherCloudResourceRegexes.Builder,
             com.google.privacy.dlp.v2.OtherCloudResourceRegexesOrBuilder>
         includeRegexesBuilder_;
+
     /**
      *
      *
@@ -566,6 +573,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
     public boolean hasIncludeRegexes() {
       return patternCase_ == 1;
     }
+
     /**
      *
      *
@@ -591,6 +599,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.OtherCloudResourceRegexes.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -613,6 +622,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
       patternCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +643,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
       patternCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
       patternCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +703,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -703,6 +716,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
     public com.google.privacy.dlp.v2.OtherCloudResourceRegexes.Builder getIncludeRegexesBuilder() {
       return getIncludeRegexesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -724,6 +738,7 @@ public final class OtherCloudResourceCollection extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.OtherCloudResourceRegexes.getDefaultInstance();
       }
     }
+
     /**
      *
      *

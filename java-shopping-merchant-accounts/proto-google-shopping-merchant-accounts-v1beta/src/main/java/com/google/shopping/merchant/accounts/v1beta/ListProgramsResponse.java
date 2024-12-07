@@ -33,6 +33,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.ListProgramsResponse)
     ListProgramsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListProgramsResponse.newBuilder() to construct.
   private ListProgramsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.Program> programs_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.shopping.merchant.accounts.v1beta.Program> getProgramsList() {
     return programs_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       getProgramsOrBuilderList() {
     return programs_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
   public int getProgramsCount() {
     return programs_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
   public com.google.shopping.merchant.accounts.v1beta.Program getPrograms(int index) {
     return programs_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -361,6 +369,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -645,6 +654,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
         return programsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -661,6 +671,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
         return programsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
         return programsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +733,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +756,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +780,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +843,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +863,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +883,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +897,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
         int index) {
       return getProgramsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -893,6 +915,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
         return programsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -910,6 +933,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(programs_);
       }
     }
+
     /**
      *
      *
@@ -923,6 +947,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       return getProgramsFieldBuilder()
           .addBuilder(com.google.shopping.merchant.accounts.v1beta.Program.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -938,6 +963,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
           .addBuilder(
               index, com.google.shopping.merchant.accounts.v1beta.Program.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -970,6 +996,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -993,6 +1020,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1016,6 +1044,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1038,6 +1067,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1086,7 @@ public final class ListProgramsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

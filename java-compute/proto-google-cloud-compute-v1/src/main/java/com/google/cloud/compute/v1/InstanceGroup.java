@@ -33,6 +33,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroup)
     InstanceGroupOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroup.newBuilder() to construct.
   private InstanceGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -274,6 +284,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
+
   /**
    *
    *
@@ -289,6 +300,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -309,6 +321,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -324,6 +337,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKind() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -347,6 +361,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -375,6 +390,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -390,6 +406,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -413,6 +430,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -441,6 +459,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NamedPort> namedPorts_;
+
   /**
    *
    *
@@ -454,6 +473,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
     return namedPorts_;
   }
+
   /**
    *
    *
@@ -468,6 +488,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       getNamedPortsOrBuilderList() {
     return namedPorts_;
   }
+
   /**
    *
    *
@@ -481,6 +502,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public int getNamedPortsCount() {
     return namedPorts_.size();
   }
+
   /**
    *
    *
@@ -494,6 +516,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
     return namedPorts_.get(index);
   }
+
   /**
    *
    *
@@ -512,6 +535,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -527,6 +551,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNetwork() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -550,6 +575,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -578,6 +604,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -593,6 +620,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -616,6 +644,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -644,6 +673,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -659,6 +689,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -682,6 +713,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -708,6 +740,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIZE_FIELD_NUMBER = 3530753;
   private int size_ = 0;
+
   /**
    *
    *
@@ -723,6 +756,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSize() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -743,6 +777,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetwork_ = "";
+
   /**
    *
    *
@@ -758,6 +793,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSubnetwork() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -781,6 +817,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -809,6 +846,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -824,6 +862,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasZone() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -847,6 +886,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1202,6 +1242,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1620,6 +1661,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
+
     /**
      *
      *
@@ -1634,6 +1676,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1656,6 +1699,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1678,6 +1722,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1699,6 +1744,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1716,6 +1762,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1740,6 +1787,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1754,6 +1802,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1776,6 +1825,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1798,6 +1848,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1819,6 +1870,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1836,6 +1888,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1860,6 +1913,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fingerprint_ = "";
+
     /**
      *
      *
@@ -1874,6 +1928,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1896,6 +1951,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1918,6 +1974,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1939,6 +1996,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1956,6 +2014,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1980,6 +2039,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long id_;
+
     /**
      *
      *
@@ -1995,6 +2055,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2010,6 +2071,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public long getId() {
       return id_;
     }
+
     /**
      *
      *
@@ -2029,6 +2091,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2048,6 +2111,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -2062,6 +2126,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKind() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2084,6 +2149,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2106,6 +2172,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2127,6 +2194,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2144,6 +2212,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2168,6 +2237,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2182,6 +2252,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2204,6 +2275,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2226,6 +2298,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2247,6 +2320,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2264,6 +2338,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2319,6 +2394,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return namedPortsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2335,6 +2411,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return namedPortsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2351,6 +2428,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return namedPortsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2373,6 +2451,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2393,6 +2472,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2415,6 +2495,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2437,6 +2518,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2456,6 +2538,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2476,6 +2559,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2496,6 +2580,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2515,6 +2600,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2534,6 +2620,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2546,6 +2633,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.NamedPort.Builder getNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2562,6 +2650,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return namedPortsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2579,6 +2668,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(namedPorts_);
       }
     }
+
     /**
      *
      *
@@ -2592,6 +2682,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       return getNamedPortsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NamedPort.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2605,6 +2696,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       return getNamedPortsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NamedPort.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2637,6 +2729,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -2651,6 +2744,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2673,6 +2767,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2695,6 +2790,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2716,6 +2812,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2733,6 +2830,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2757,6 +2855,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -2771,6 +2870,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRegion() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2793,6 +2893,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2815,6 +2916,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2836,6 +2938,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2853,6 +2956,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2877,6 +2981,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -2891,6 +2996,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2913,6 +3019,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2935,6 +3042,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2956,6 +3064,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2973,6 +3082,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2997,6 +3107,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int size_;
+
     /**
      *
      *
@@ -3012,6 +3123,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSize() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3027,6 +3139,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public int getSize() {
       return size_;
     }
+
     /**
      *
      *
@@ -3046,6 +3159,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3065,6 +3179,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object subnetwork_ = "";
+
     /**
      *
      *
@@ -3079,6 +3194,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSubnetwork() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3101,6 +3217,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3123,6 +3240,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3144,6 +3262,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3161,6 +3280,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3185,6 +3305,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -3199,6 +3320,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasZone() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -3221,6 +3343,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3243,6 +3366,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3264,6 +3388,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3281,6 +3406,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

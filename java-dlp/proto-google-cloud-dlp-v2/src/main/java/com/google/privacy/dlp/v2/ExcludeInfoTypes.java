@@ -33,6 +33,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ExcludeInfoTypes)
     ExcludeInfoTypesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExcludeInfoTypes.newBuilder() to construct.
   private ExcludeInfoTypes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.InfoType> infoTypes_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList() {
     return infoTypes_;
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
       getInfoTypesOrBuilderList() {
     return infoTypes_;
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
   public int getInfoTypesCount() {
     return infoTypes_.size();
   }
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
   public com.google.privacy.dlp.v2.InfoType getInfoTypes(int index) {
     return infoTypes_.get(index);
   }
+
   /**
    *
    *
@@ -330,6 +336,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -596,6 +603,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
         return infoTypesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -619,6 +627,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
         return infoTypesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -642,6 +651,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
         return infoTypesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -671,6 +681,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +709,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +739,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +769,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +796,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +879,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +906,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +926,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypesBuilder(int index) {
       return getInfoTypesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -930,6 +950,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
         return infoTypesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -954,6 +975,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(infoTypes_);
       }
     }
+
     /**
      *
      *
@@ -974,6 +996,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
       return getInfoTypesFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.InfoType.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -994,6 +1017,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
       return getInfoTypesFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.InfoType.getDefaultInstance());
     }
+
     /**
      *
      *

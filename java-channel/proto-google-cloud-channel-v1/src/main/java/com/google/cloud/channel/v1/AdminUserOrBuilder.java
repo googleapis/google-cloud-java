@@ -36,6 +36,7 @@ public interface AdminUserOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AdminUserOrBuilder
    * @return The givenName.
    */
   java.lang.String getGivenName();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface AdminUserOrBuilder
    * @return The familyName.
    */
   java.lang.String getFamilyName();
+
   /**
    *
    *

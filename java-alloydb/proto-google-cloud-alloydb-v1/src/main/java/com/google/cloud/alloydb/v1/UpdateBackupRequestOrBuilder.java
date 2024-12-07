@@ -41,6 +41,7 @@ public interface UpdateBackupRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateBackupRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UpdateBackupRequestOrBuilder
    * @return Whether the backup field is set.
    */
   boolean hasBackup();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateBackupRequestOrBuilder
    * @return The backup.
    */
   com.google.cloud.alloydb.v1.Backup getBackup();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface UpdateBackupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

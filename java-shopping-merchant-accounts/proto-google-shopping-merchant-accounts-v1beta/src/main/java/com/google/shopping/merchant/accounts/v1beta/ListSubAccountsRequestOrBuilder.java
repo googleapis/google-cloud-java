@@ -39,6 +39,7 @@ public interface ListSubAccountsRequestOrBuilder
    * @return The provider.
    */
   java.lang.String getProvider();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface ListSubAccountsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

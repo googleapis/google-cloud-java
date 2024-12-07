@@ -44,6 +44,7 @@ public interface AutoscalingConfigOrBuilder
    * @return The policyUri.
    */
   java.lang.String getPolicyUri();
+
   /**
    *
    *

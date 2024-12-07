@@ -33,6 +33,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.TpuConfig)
     TpuConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TpuConfig.newBuilder() to construct.
   private TpuConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USE_SERVICE_NETWORKING_FIELD_NUMBER = 2;
   private boolean useServiceNetworking_ = false;
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipv4CidrBlock_ = "";
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -326,6 +331,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -535,6 +541,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -550,6 +557,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -569,6 +577,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -588,6 +597,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean useServiceNetworking_;
+
     /**
      *
      *
@@ -603,6 +613,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getUseServiceNetworking() {
       return useServiceNetworking_;
     }
+
     /**
      *
      *
@@ -622,6 +633,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -641,6 +653,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ipv4CidrBlock_ = "";
+
     /**
      *
      *
@@ -663,6 +676,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -685,6 +699,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -706,6 +721,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +739,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

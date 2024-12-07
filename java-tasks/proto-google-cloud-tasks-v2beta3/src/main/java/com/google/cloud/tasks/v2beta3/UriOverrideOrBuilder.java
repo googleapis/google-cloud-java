@@ -39,6 +39,7 @@ public interface UriOverrideOrBuilder
    * @return Whether the scheme field is set.
    */
   boolean hasScheme();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UriOverrideOrBuilder
    * @return The enum numeric value on the wire for scheme.
    */
   int getSchemeValue();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UriOverrideOrBuilder
    * @return Whether the host field is set.
    */
   boolean hasHost();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface UriOverrideOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface UriOverrideOrBuilder
    * @return Whether the port field is set.
    */
   boolean hasPort();
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public interface UriOverrideOrBuilder
    * @return Whether the pathOverride field is set.
    */
   boolean hasPathOverride();
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public interface UriOverrideOrBuilder
    * @return The pathOverride.
    */
   com.google.cloud.tasks.v2beta3.PathOverride getPathOverride();
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public interface UriOverrideOrBuilder
    * @return Whether the queryOverride field is set.
    */
   boolean hasQueryOverride();
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public interface UriOverrideOrBuilder
    * @return The queryOverride.
    */
   com.google.cloud.tasks.v2beta3.QueryOverride getQueryOverride();
+
   /**
    *
    *
@@ -262,6 +271,7 @@ public interface UriOverrideOrBuilder
    * @return The enum numeric value on the wire for uriOverrideEnforceMode.
    */
   int getUriOverrideEnforceModeValue();
+
   /**
    *
    *

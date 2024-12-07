@@ -33,6 +33,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.Entitlement)
     EntitlementOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Entitlement.newBuilder() to construct.
   private Entitlement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,6 +129,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -138,6 +140,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCOUNT_NOT_LINKED = 1;</code>
      */
     public static final int ACCOUNT_NOT_LINKED_VALUE = 1;
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCOUNT_NOT_ACTIVE = 2;</code>
      */
     public static final int ACCOUNT_NOT_ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -249,6 +253,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -273,6 +278,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -300,6 +306,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLOUD_ACCOUNT_DETAILS_FIELD_NUMBER = 2;
   private com.google.cloud.oracledatabase.v1.CloudAccountDetails cloudAccountDetails_;
+
   /**
    *
    *
@@ -315,6 +322,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudAccountDetails() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -332,6 +340,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.oracledatabase.v1.CloudAccountDetails.getDefaultInstance()
         : cloudAccountDetails_;
   }
+
   /**
    *
    *
@@ -353,6 +362,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entitlementId_ = "";
+
   /**
    *
    *
@@ -376,6 +386,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -402,6 +413,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    *
    *
@@ -419,6 +431,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -634,6 +647,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -878,6 +892,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -901,6 +916,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -924,6 +940,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -946,6 +963,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +982,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -994,6 +1013,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.oracledatabase.v1.CloudAccountDetails.Builder,
             com.google.cloud.oracledatabase.v1.CloudAccountDetailsOrBuilder>
         cloudAccountDetailsBuilder_;
+
     /**
      *
      *
@@ -1008,6 +1028,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudAccountDetails() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1028,6 +1049,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return cloudAccountDetailsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1051,6 +1073,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1094,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1100,6 +1124,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1144,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1160,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCloudAccountDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1153,6 +1180,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             : cloudAccountDetails_;
       }
     }
+
     /**
      *
      *
@@ -1180,6 +1208,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object entitlementId_ = "";
+
     /**
      *
      *
@@ -1202,6 +1231,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1224,6 +1254,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1245,6 +1276,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1294,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1286,6 +1319,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1303,6 +1337,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1323,6 +1358,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1380,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.oracledatabase.v1.Entitlement.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1367,6 +1404,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

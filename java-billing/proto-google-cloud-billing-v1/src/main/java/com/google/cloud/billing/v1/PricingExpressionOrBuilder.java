@@ -37,6 +37,7 @@ public interface PricingExpressionOrBuilder
    * @return The usageUnit.
    */
   java.lang.String getUsageUnit();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface PricingExpressionOrBuilder
    * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
    */
   java.util.List<com.google.cloud.billing.v1.PricingExpression.TierRate> getTieredRatesList();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface PricingExpressionOrBuilder
    * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
    */
   com.google.cloud.billing.v1.PricingExpression.TierRate getTieredRates(int index);
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface PricingExpressionOrBuilder
    * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
    */
   int getTieredRatesCount();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface PricingExpressionOrBuilder
    */
   java.util.List<? extends com.google.cloud.billing.v1.PricingExpression.TierRateOrBuilder>
       getTieredRatesOrBuilderList();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface PricingExpressionOrBuilder
    * @return The usageUnitDescription.
    */
   java.lang.String getUsageUnitDescription();
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface PricingExpressionOrBuilder
    * @return The baseUnit.
    */
   java.lang.String getBaseUnit();
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public interface PricingExpressionOrBuilder
    * @return The baseUnitDescription.
    */
   java.lang.String getBaseUnitDescription();
+
   /**
    *
    *

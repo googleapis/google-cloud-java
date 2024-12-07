@@ -45,6 +45,7 @@ public interface AgentAssistantFeedbackOrBuilder
    * @return The enum numeric value on the wire for answerRelevance.
    */
   int getAnswerRelevanceValue();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface AgentAssistantFeedbackOrBuilder
    * @return The enum numeric value on the wire for documentCorrectness.
    */
   int getDocumentCorrectnessValue();
+
   /**
    *
    *
@@ -132,6 +134,7 @@ public interface AgentAssistantFeedbackOrBuilder
    * @return The enum numeric value on the wire for documentEfficiency.
    */
   int getDocumentEfficiencyValue();
+
   /**
    *
    *
@@ -167,6 +170,7 @@ public interface AgentAssistantFeedbackOrBuilder
    * @return Whether the summarizationFeedback field is set.
    */
   boolean hasSummarizationFeedback();
+
   /**
    *
    *
@@ -182,6 +186,7 @@ public interface AgentAssistantFeedbackOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedback
       getSummarizationFeedback();
+
   /**
    *
    *
@@ -210,6 +215,7 @@ public interface AgentAssistantFeedbackOrBuilder
    * @return Whether the knowledgeSearchFeedback field is set.
    */
   boolean hasKnowledgeSearchFeedback();
+
   /**
    *
    *
@@ -225,6 +231,7 @@ public interface AgentAssistantFeedbackOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeSearchFeedback
       getKnowledgeSearchFeedback();
+
   /**
    *
    *
@@ -253,6 +260,7 @@ public interface AgentAssistantFeedbackOrBuilder
    * @return Whether the knowledgeAssistFeedback field is set.
    */
   boolean hasKnowledgeAssistFeedback();
+
   /**
    *
    *
@@ -268,6 +276,7 @@ public interface AgentAssistantFeedbackOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeAssistFeedback
       getKnowledgeAssistFeedback();
+
   /**
    *
    *

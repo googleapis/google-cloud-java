@@ -39,6 +39,7 @@ public interface UpdateCryptoKeyPrimaryVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface UpdateCryptoKeyPrimaryVersionRequestOrBuilder
    * @return The cryptoKeyVersionId.
    */
   java.lang.String getCryptoKeyVersionId();
+
   /**
    *
    *

@@ -52,6 +52,7 @@ public interface StandardOrBuilder
    * @return Whether the predeploy field is set.
    */
   boolean hasPredeploy();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface StandardOrBuilder
    * @return The predeploy.
    */
   com.google.cloud.deploy.v1.Predeploy getPredeploy();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface StandardOrBuilder
    * @return Whether the postdeploy field is set.
    */
   boolean hasPostdeploy();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface StandardOrBuilder
    * @return The postdeploy.
    */
   com.google.cloud.deploy.v1.Postdeploy getPostdeploy();
+
   /**
    *
    *

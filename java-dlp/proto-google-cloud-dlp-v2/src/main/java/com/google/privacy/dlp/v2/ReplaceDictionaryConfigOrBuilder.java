@@ -38,6 +38,7 @@ public interface ReplaceDictionaryConfigOrBuilder
    * @return Whether the wordList field is set.
    */
   boolean hasWordList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ReplaceDictionaryConfigOrBuilder
    * @return The wordList.
    */
   com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList getWordList();
+
   /**
    *
    *

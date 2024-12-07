@@ -37,6 +37,7 @@ public interface InputStreamPropertyOrBuilder
    * @return Whether the lastEstablishTime field is set.
    */
   boolean hasLastEstablishTime();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface InputStreamPropertyOrBuilder
    * @return The lastEstablishTime.
    */
   com.google.protobuf.Timestamp getLastEstablishTime();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface InputStreamPropertyOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.VideoStreamProperty video_streams = 2;</code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.VideoStreamProperty> getVideoStreamsList();
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface InputStreamPropertyOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.VideoStreamProperty video_streams = 2;</code>
    */
   com.google.cloud.video.livestream.v1.VideoStreamProperty getVideoStreams(int index);
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface InputStreamPropertyOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.VideoStreamProperty video_streams = 2;</code>
    */
   int getVideoStreamsCount();
+
   /**
    *
    *
@@ -103,6 +108,7 @@ public interface InputStreamPropertyOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.VideoStreamPropertyOrBuilder>
       getVideoStreamsOrBuilderList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface InputStreamPropertyOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.AudioStreamProperty audio_streams = 3;</code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.AudioStreamProperty> getAudioStreamsList();
+
   /**
    *
    *
@@ -135,6 +142,7 @@ public interface InputStreamPropertyOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.AudioStreamProperty audio_streams = 3;</code>
    */
   com.google.cloud.video.livestream.v1.AudioStreamProperty getAudioStreams(int index);
+
   /**
    *
    *
@@ -145,6 +153,7 @@ public interface InputStreamPropertyOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.AudioStreamProperty audio_streams = 3;</code>
    */
   int getAudioStreamsCount();
+
   /**
    *
    *
@@ -156,6 +165,7 @@ public interface InputStreamPropertyOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.AudioStreamPropertyOrBuilder>
       getAudioStreamsOrBuilderList();
+
   /**
    *
    *

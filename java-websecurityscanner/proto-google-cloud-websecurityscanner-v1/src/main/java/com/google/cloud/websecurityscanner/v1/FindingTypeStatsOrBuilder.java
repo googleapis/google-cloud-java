@@ -36,6 +36,7 @@ public interface FindingTypeStatsOrBuilder
    * @return The findingType.
    */
   java.lang.String getFindingType();
+
   /**
    *
    *

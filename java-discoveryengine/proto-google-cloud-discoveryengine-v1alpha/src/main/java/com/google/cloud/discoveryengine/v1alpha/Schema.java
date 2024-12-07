@@ -33,6 +33,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.Schema)
     SchemaOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Schema.newBuilder() to construct.
   private Schema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     private SchemaCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,6 +116,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRUCT_SCHEMA_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStructSchema() {
     return schemaCase_ == 2;
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Struct.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int JSON_SCHEMA_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasJsonSchema() {
     return schemaCase_ == 3;
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -265,6 +274,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -297,6 +307,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1alpha.FieldConfig> fieldConfigs_;
+
   /**
    *
    *
@@ -313,6 +324,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       getFieldConfigsList() {
     return fieldConfigs_;
   }
+
   /**
    *
    *
@@ -329,6 +341,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       getFieldConfigsOrBuilderList() {
     return fieldConfigs_;
   }
+
   /**
    *
    *
@@ -344,6 +357,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public int getFieldConfigsCount() {
     return fieldConfigs_.size();
   }
+
   /**
    *
    *
@@ -359,6 +373,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.discoveryengine.v1alpha.FieldConfig getFieldConfigs(int index) {
     return fieldConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -583,6 +598,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -892,6 +908,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         structSchemaBuilder_;
+
     /**
      *
      *
@@ -907,6 +924,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStructSchema() {
       return schemaCase_ == 2;
     }
+
     /**
      *
      *
@@ -932,6 +950,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Struct.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -954,6 +973,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +993,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1003,6 +1024,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1050,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1063,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Struct.Builder getStructSchemaBuilder() {
       return getStructSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1060,6 +1084,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Struct.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1106,6 +1131,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasJsonSchema() {
       return schemaCase_ == 3;
     }
+
     /**
      *
      *
@@ -1134,6 +1160,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1162,6 +1189,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1183,6 +1211,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1202,6 +1231,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1226,6 +1256,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1252,6 +1283,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1278,6 +1310,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1303,6 +1336,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1358,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1423,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return fieldConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1406,6 +1442,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return fieldConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1424,6 +1461,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return fieldConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1449,6 +1487,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1471,6 +1510,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1495,6 +1535,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1520,6 +1561,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1542,6 +1584,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1564,6 +1607,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1586,6 +1630,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1607,6 +1652,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1628,6 +1674,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1643,6 +1690,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getFieldConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1662,6 +1710,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return fieldConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1681,6 +1730,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(fieldConfigs_);
       }
     }
+
     /**
      *
      *
@@ -1696,6 +1746,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return getFieldConfigsFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1alpha.FieldConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1713,6 +1764,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.discoveryengine.v1alpha.FieldConfig.getDefaultInstance());
     }
+
     /**
      *
      *

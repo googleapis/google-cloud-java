@@ -38,6 +38,7 @@ public interface ArtifactResultOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ArtifactResultOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.FileHashes file_hash = 2;</code>
    */
   java.util.List<com.google.cloudbuild.v1.FileHashes> getFileHashList();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ArtifactResultOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.FileHashes file_hash = 2;</code>
    */
   com.google.cloudbuild.v1.FileHashes getFileHash(int index);
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ArtifactResultOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.FileHashes file_hash = 2;</code>
    */
   int getFileHashCount();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface ArtifactResultOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.FileHashes file_hash = 2;</code>
    */
   java.util.List<? extends com.google.cloudbuild.v1.FileHashesOrBuilder> getFileHashOrBuilderList();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface EnableInteractiveSerialConsoleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

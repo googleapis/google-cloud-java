@@ -33,6 +33,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.UpdateTlsRouteRequest)
     UpdateTlsRouteRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateTlsRouteRequest.newBuilder() to construct.
   private UpdateTlsRouteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
 
   public static final int TLS_ROUTE_FIELD_NUMBER = 2;
   private com.google.cloud.networkservices.v1.TlsRoute tlsRoute_;
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
   public boolean hasTlsRoute() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.networkservices.v1.TlsRoute.getDefaultInstance()
         : tlsRoute_;
   }
+
   /**
    *
    *
@@ -358,6 +365,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -580,6 +588,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -599,6 +608,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -651,6 +662,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +687,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +745,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +765,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -773,6 +789,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -810,6 +827,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.networkservices.v1.TlsRoute.Builder,
             com.google.cloud.networkservices.v1.TlsRouteOrBuilder>
         tlsRouteBuilder_;
+
     /**
      *
      *
@@ -826,6 +844,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
     public boolean hasTlsRoute() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -848,6 +867,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
         return tlsRouteBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -872,6 +892,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +915,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +945,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +967,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +984,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getTlsRouteFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -980,6 +1005,7 @@ public final class UpdateTlsRouteRequest extends com.google.protobuf.GeneratedMe
             : tlsRoute_;
       }
     }
+
     /**
      *
      *

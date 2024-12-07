@@ -36,6 +36,7 @@ public interface ModelMonitoringAlertOrBuilder
    * @return The statsName.
    */
   java.lang.String getStatsName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ModelMonitoringAlertOrBuilder
    * @return The objectiveType.
    */
   java.lang.String getObjectiveType();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface ModelMonitoringAlertOrBuilder
    * @return Whether the alertTime field is set.
    */
   boolean hasAlertTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ModelMonitoringAlertOrBuilder
    * @return The alertTime.
    */
   com.google.protobuf.Timestamp getAlertTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface ModelMonitoringAlertOrBuilder
    * @return Whether the anomaly field is set.
    */
   boolean hasAnomaly();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface ModelMonitoringAlertOrBuilder
    * @return The anomaly.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringAnomaly getAnomaly();
+
   /**
    *
    *

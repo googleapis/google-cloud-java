@@ -35,6 +35,7 @@ public interface OperationGroupOrBuilder
    * <code>repeated .google.cloud.recommender.v1.Operation operations = 1;</code>
    */
   java.util.List<com.google.cloud.recommender.v1.Operation> getOperationsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface OperationGroupOrBuilder
    * <code>repeated .google.cloud.recommender.v1.Operation operations = 1;</code>
    */
   com.google.cloud.recommender.v1.Operation getOperations(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface OperationGroupOrBuilder
    * <code>repeated .google.cloud.recommender.v1.Operation operations = 1;</code>
    */
   int getOperationsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface OperationGroupOrBuilder
    */
   java.util.List<? extends com.google.cloud.recommender.v1.OperationOrBuilder>
       getOperationsOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.Snapshot)
     SnapshotOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Snapshot.newBuilder() to construct.
   private Snapshot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceJobId_ = "";
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATION_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp creationTime_;
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreationTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -257,6 +266,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : creationTime_;
   }
+
   /**
    *
    *
@@ -275,6 +285,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TTL_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration ttl_;
+
   /**
    *
    *
@@ -290,6 +301,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTtl() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -305,6 +317,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getTtl() {
     return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
   }
+
   /**
    *
    *
@@ -321,6 +334,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_ = 0;
+
   /**
    *
    *
@@ -336,6 +350,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -358,6 +373,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.PubsubSnapshotMetadata> pubsubMetadata_;
+
   /**
    *
    *
@@ -372,6 +388,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       getPubsubMetadataList() {
     return pubsubMetadata_;
   }
+
   /**
    *
    *
@@ -386,6 +403,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       getPubsubMetadataOrBuilderList() {
     return pubsubMetadata_;
   }
+
   /**
    *
    *
@@ -399,6 +417,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public int getPubsubMetadataCount() {
     return pubsubMetadata_.size();
   }
+
   /**
    *
    *
@@ -412,6 +431,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.PubsubSnapshotMetadata getPubsubMetadata(int index) {
     return pubsubMetadata_.get(index);
   }
+
   /**
    *
    *
@@ -431,6 +451,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -454,6 +475,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -480,6 +502,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISK_SIZE_BYTES_FIELD_NUMBER = 9;
   private long diskSizeBytes_ = 0L;
+
   /**
    *
    *
@@ -501,6 +524,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -524,6 +548,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -798,6 +823,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1177,6 +1203,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1199,6 +1226,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1221,6 +1249,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1242,6 +1271,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1289,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1314,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -1305,6 +1337,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1327,6 +1360,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1348,6 +1382,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1400,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1389,6 +1425,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceJobId_ = "";
+
     /**
      *
      *
@@ -1411,6 +1448,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1433,6 +1471,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1454,6 +1493,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1471,6 +1511,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1500,6 +1541,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         creationTimeBuilder_;
+
     /**
      *
      *
@@ -1514,6 +1556,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreationTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1534,6 +1577,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return creationTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1556,6 +1600,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1620,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1602,6 +1648,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1621,6 +1668,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1635,6 +1683,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreationTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1653,6 +1702,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             : creationTime_;
       }
     }
+
     /**
      *
      *
@@ -1685,6 +1735,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         ttlBuilder_;
+
     /**
      *
      *
@@ -1699,6 +1750,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTtl() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1717,6 +1769,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return ttlBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1739,6 +1792,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1758,6 +1812,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1785,6 +1840,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1804,6 +1860,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1818,6 +1875,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTtlFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1834,6 +1892,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
       }
     }
+
     /**
      *
      *
@@ -1860,6 +1919,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1875,6 +1935,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1893,6 +1954,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1910,6 +1972,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
           com.google.dataflow.v1beta3.SnapshotState.forNumber(state_);
       return result == null ? com.google.dataflow.v1beta3.SnapshotState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1931,6 +1994,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1984,6 +2048,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return pubsubMetadataBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2000,6 +2065,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return pubsubMetadataBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2016,6 +2082,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return pubsubMetadataBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2039,6 +2106,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2059,6 +2127,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2081,6 +2150,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2104,6 +2174,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2124,6 +2195,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2144,6 +2216,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2164,6 +2237,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2183,6 +2257,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2202,6 +2277,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2215,6 +2291,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getPubsubMetadataFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2232,6 +2309,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return pubsubMetadataBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2249,6 +2327,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(pubsubMetadata_);
       }
     }
+
     /**
      *
      *
@@ -2262,6 +2341,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return getPubsubMetadataFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.PubsubSnapshotMetadata.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2277,6 +2357,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.dataflow.v1beta3.PubsubSnapshotMetadata.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2312,6 +2393,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2334,6 +2416,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2356,6 +2439,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2377,6 +2461,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2394,6 +2479,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2418,6 +2504,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long diskSizeBytes_;
+
     /**
      *
      *
@@ -2434,6 +2521,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public long getDiskSizeBytes() {
       return diskSizeBytes_;
     }
+
     /**
      *
      *
@@ -2454,6 +2542,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2474,6 +2563,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -2496,6 +2586,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2518,6 +2609,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2539,6 +2631,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2556,6 +2649,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

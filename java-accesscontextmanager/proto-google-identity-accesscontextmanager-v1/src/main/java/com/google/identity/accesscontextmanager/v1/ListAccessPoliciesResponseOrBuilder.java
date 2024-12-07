@@ -35,6 +35,7 @@ public interface ListAccessPoliciesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.identity.accesscontextmanager.v1.AccessPolicy> getAccessPoliciesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListAccessPoliciesResponseOrBuilder
    * </code>
    */
   com.google.identity.accesscontextmanager.v1.AccessPolicy getAccessPolicies(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListAccessPoliciesResponseOrBuilder
    * </code>
    */
   int getAccessPoliciesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListAccessPoliciesResponseOrBuilder
    */
   java.util.List<? extends com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder>
       getAccessPoliciesOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListAccessPoliciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

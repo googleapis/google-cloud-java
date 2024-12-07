@@ -33,6 +33,7 @@ public final class PacketMirroringMirroredResourceInfo
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PacketMirroringMirroredResourceInfo)
     PacketMirroringMirroredResourceInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PacketMirroringMirroredResourceInfo.newBuilder() to construct.
   private PacketMirroringMirroredResourceInfo(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class PacketMirroringMirroredResourceInfo
   private java.util.List<
           com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoInstanceInfo>
       instances_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class PacketMirroringMirroredResourceInfo
       getInstancesList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class PacketMirroringMirroredResourceInfo
       getInstancesOrBuilderList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class PacketMirroringMirroredResourceInfo
   public int getInstancesCount() {
     return instances_.size();
   }
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class PacketMirroringMirroredResourceInfo
       int index) {
     return instances_.get(index);
   }
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public final class PacketMirroringMirroredResourceInfo
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo>
       subnetworks_;
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public final class PacketMirroringMirroredResourceInfo
       getSubnetworksList() {
     return subnetworks_;
   }
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public final class PacketMirroringMirroredResourceInfo
       getSubnetworksOrBuilderList() {
     return subnetworks_;
   }
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public final class PacketMirroringMirroredResourceInfo
   public int getSubnetworksCount() {
     return subnetworks_.size();
   }
+
   /**
    *
    *
@@ -224,6 +234,7 @@ public final class PacketMirroringMirroredResourceInfo
       int index) {
     return subnetworks_.get(index);
   }
+
   /**
    *
    *
@@ -246,6 +257,7 @@ public final class PacketMirroringMirroredResourceInfo
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -260,6 +272,7 @@ public final class PacketMirroringMirroredResourceInfo
   public com.google.protobuf.ProtocolStringList getTagsList() {
     return tags_;
   }
+
   /**
    *
    *
@@ -274,6 +287,7 @@ public final class PacketMirroringMirroredResourceInfo
   public int getTagsCount() {
     return tags_.size();
   }
+
   /**
    *
    *
@@ -289,6 +303,7 @@ public final class PacketMirroringMirroredResourceInfo
   public java.lang.String getTags(int index) {
     return tags_.get(index);
   }
+
   /**
    *
    *
@@ -495,6 +510,7 @@ public final class PacketMirroringMirroredResourceInfo
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -849,6 +865,7 @@ public final class PacketMirroringMirroredResourceInfo
         return instancesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -867,6 +884,7 @@ public final class PacketMirroringMirroredResourceInfo
         return instancesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -886,6 +904,7 @@ public final class PacketMirroringMirroredResourceInfo
         return instancesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -912,6 +931,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +956,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +982,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1009,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1033,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1058,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1084,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1106,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1128,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1116,6 +1144,7 @@ public final class PacketMirroringMirroredResourceInfo
         getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1135,6 +1164,7 @@ public final class PacketMirroringMirroredResourceInfo
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1157,6 +1187,7 @@ public final class PacketMirroringMirroredResourceInfo
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
+
     /**
      *
      *
@@ -1175,6 +1206,7 @@ public final class PacketMirroringMirroredResourceInfo
               com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoInstanceInfo
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1194,6 +1226,7 @@ public final class PacketMirroringMirroredResourceInfo
               com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoInstanceInfo
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1268,6 +1301,7 @@ public final class PacketMirroringMirroredResourceInfo
         return subnetworksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1286,6 +1320,7 @@ public final class PacketMirroringMirroredResourceInfo
         return subnetworksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1305,6 +1340,7 @@ public final class PacketMirroringMirroredResourceInfo
         return subnetworksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1331,6 +1367,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1392,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1380,6 +1418,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1406,6 +1445,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1429,6 +1469,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1453,6 +1494,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1477,6 +1519,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1498,6 +1541,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1519,6 +1563,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       return this;
     }
+
     /**
      *
      *
@@ -1534,6 +1579,7 @@ public final class PacketMirroringMirroredResourceInfo
         getSubnetworksBuilder(int index) {
       return getSubnetworksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1553,6 +1599,7 @@ public final class PacketMirroringMirroredResourceInfo
         return subnetworksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1574,6 +1621,7 @@ public final class PacketMirroringMirroredResourceInfo
         return java.util.Collections.unmodifiableList(subnetworks_);
       }
     }
+
     /**
      *
      *
@@ -1592,6 +1640,7 @@ public final class PacketMirroringMirroredResourceInfo
               com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1611,6 +1660,7 @@ public final class PacketMirroringMirroredResourceInfo
               com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1654,6 +1704,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1669,6 +1720,7 @@ public final class PacketMirroringMirroredResourceInfo
       tags_.makeImmutable();
       return tags_;
     }
+
     /**
      *
      *
@@ -1683,6 +1735,7 @@ public final class PacketMirroringMirroredResourceInfo
     public int getTagsCount() {
       return tags_.size();
     }
+
     /**
      *
      *
@@ -1698,6 +1751,7 @@ public final class PacketMirroringMirroredResourceInfo
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
+
     /**
      *
      *
@@ -1713,6 +1767,7 @@ public final class PacketMirroringMirroredResourceInfo
     public com.google.protobuf.ByteString getTagsBytes(int index) {
       return tags_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1736,6 +1791,7 @@ public final class PacketMirroringMirroredResourceInfo
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1758,6 +1814,7 @@ public final class PacketMirroringMirroredResourceInfo
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1777,6 +1834,7 @@ public final class PacketMirroringMirroredResourceInfo
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1795,6 +1853,7 @@ public final class PacketMirroringMirroredResourceInfo
       onChanged();
       return this;
     }
+
     /**
      *
      *

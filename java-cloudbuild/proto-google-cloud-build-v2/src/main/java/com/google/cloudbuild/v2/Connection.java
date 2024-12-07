@@ -34,6 +34,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v2.Connection)
     ConnectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Connection.newBuilder() to construct.
   private Connection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -98,6 +99,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     private ConnectionConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -140,6 +142,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -164,6 +167,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -191,6 +195,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -207,6 +212,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -223,6 +229,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -240,6 +247,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -256,6 +264,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -288,6 +298,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GITHUB_CONFIG_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -303,6 +314,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGithubConfig() {
     return connectionConfigCase_ == 5;
   }
+
   /**
    *
    *
@@ -321,6 +333,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloudbuild.v2.GitHubConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -339,6 +352,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GITHUB_ENTERPRISE_CONFIG_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -355,6 +369,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGithubEnterpriseConfig() {
     return connectionConfigCase_ == 6;
   }
+
   /**
    *
    *
@@ -374,6 +389,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloudbuild.v2.GitHubEnterpriseConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -394,6 +410,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GITLAB_CONFIG_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -410,6 +427,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGitlabConfig() {
     return connectionConfigCase_ == 7;
   }
+
   /**
    *
    *
@@ -429,6 +447,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloudbuild.v2.GitLabConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -448,6 +467,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BITBUCKET_DATA_CENTER_CONFIG_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -465,6 +485,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBitbucketDataCenterConfig() {
     return connectionConfigCase_ == 8;
   }
+
   /**
    *
    *
@@ -485,6 +506,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloudbuild.v2.BitbucketDataCenterConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -506,6 +528,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BITBUCKET_CLOUD_CONFIG_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -521,6 +544,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBitbucketCloudConfig() {
     return connectionConfigCase_ == 9;
   }
+
   /**
    *
    *
@@ -539,6 +563,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloudbuild.v2.BitbucketCloudConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -558,6 +583,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INSTALLATION_STATE_FIELD_NUMBER = 12;
   private com.google.cloudbuild.v2.InstallationState installationState_;
+
   /**
    *
    *
@@ -575,6 +601,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInstallationState() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -594,6 +621,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloudbuild.v2.InstallationState.getDefaultInstance()
         : installationState_;
   }
+
   /**
    *
    *
@@ -614,6 +642,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISABLED_FIELD_NUMBER = 13;
   private boolean disabled_ = false;
+
   /**
    *
    *
@@ -634,6 +663,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RECONCILING_FIELD_NUMBER = 14;
   private boolean reconciling_ = false;
+
   /**
    *
    *
@@ -678,6 +708,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
+
   /**
    *
    *
@@ -694,12 +725,14 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
+
   /**
    *
    *
@@ -713,6 +746,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
+
   /**
    *
    *
@@ -733,6 +767,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -758,6 +793,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -783,6 +819,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1138,6 +1175,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1590,6 +1628,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1613,6 +1652,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1636,6 +1676,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1658,6 +1699,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1676,6 +1718,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1706,6 +1749,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1722,6 +1766,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1744,6 +1789,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1768,6 +1814,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1789,6 +1836,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1818,6 +1866,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1839,6 +1888,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1855,6 +1905,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1875,6 +1926,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1909,6 +1961,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1925,6 +1978,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1947,6 +2001,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1971,6 +2026,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1992,6 +2048,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2021,6 +2078,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2042,6 +2100,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2058,6 +2117,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2078,6 +2138,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2111,6 +2172,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v2.GitHubConfig.Builder,
             com.google.cloudbuild.v2.GitHubConfigOrBuilder>
         githubConfigBuilder_;
+
     /**
      *
      *
@@ -2126,6 +2188,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGithubConfig() {
       return connectionConfigCase_ == 5;
     }
+
     /**
      *
      *
@@ -2151,6 +2214,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloudbuild.v2.GitHubConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2173,6 +2237,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2192,6 +2257,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2224,6 +2290,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2249,6 +2316,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2261,6 +2329,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v2.GitHubConfig.Builder getGithubConfigBuilder() {
       return getGithubConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2281,6 +2350,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloudbuild.v2.GitHubConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2319,6 +2389,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v2.GitHubEnterpriseConfig.Builder,
             com.google.cloudbuild.v2.GitHubEnterpriseConfigOrBuilder>
         githubEnterpriseConfigBuilder_;
+
     /**
      *
      *
@@ -2335,6 +2406,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGithubEnterpriseConfig() {
       return connectionConfigCase_ == 6;
     }
+
     /**
      *
      *
@@ -2361,6 +2433,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloudbuild.v2.GitHubEnterpriseConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2385,6 +2458,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2406,6 +2480,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2441,6 +2516,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2467,6 +2543,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2481,6 +2558,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         getGithubEnterpriseConfigBuilder() {
       return getGithubEnterpriseConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2503,6 +2581,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloudbuild.v2.GitHubEnterpriseConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2542,6 +2621,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v2.GitLabConfig.Builder,
             com.google.cloudbuild.v2.GitLabConfigOrBuilder>
         gitlabConfigBuilder_;
+
     /**
      *
      *
@@ -2558,6 +2638,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGitlabConfig() {
       return connectionConfigCase_ == 7;
     }
+
     /**
      *
      *
@@ -2584,6 +2665,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloudbuild.v2.GitLabConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2607,6 +2689,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2627,6 +2710,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2660,6 +2744,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2686,6 +2771,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2699,6 +2785,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v2.GitLabConfig.Builder getGitlabConfigBuilder() {
       return getGitlabConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2720,6 +2807,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloudbuild.v2.GitLabConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2759,6 +2847,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v2.BitbucketDataCenterConfig.Builder,
             com.google.cloudbuild.v2.BitbucketDataCenterConfigOrBuilder>
         bitbucketDataCenterConfigBuilder_;
+
     /**
      *
      *
@@ -2776,6 +2865,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBitbucketDataCenterConfig() {
       return connectionConfigCase_ == 8;
     }
+
     /**
      *
      *
@@ -2803,6 +2893,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloudbuild.v2.BitbucketDataCenterConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2828,6 +2919,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2850,6 +2942,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2886,6 +2979,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2913,6 +3007,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2928,6 +3023,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         getBitbucketDataCenterConfigBuilder() {
       return getBitbucketDataCenterConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2951,6 +3047,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloudbuild.v2.BitbucketDataCenterConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2992,6 +3089,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v2.BitbucketCloudConfig.Builder,
             com.google.cloudbuild.v2.BitbucketCloudConfigOrBuilder>
         bitbucketCloudConfigBuilder_;
+
     /**
      *
      *
@@ -3007,6 +3105,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBitbucketCloudConfig() {
       return connectionConfigCase_ == 9;
     }
+
     /**
      *
      *
@@ -3032,6 +3131,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloudbuild.v2.BitbucketCloudConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3054,6 +3154,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3074,6 +3175,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3107,6 +3209,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       connectionConfigCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3132,6 +3235,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3144,6 +3248,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v2.BitbucketCloudConfig.Builder getBitbucketCloudConfigBuilder() {
       return getBitbucketCloudConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3165,6 +3270,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloudbuild.v2.BitbucketCloudConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3204,6 +3310,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v2.InstallationState.Builder,
             com.google.cloudbuild.v2.InstallationStateOrBuilder>
         installationStateBuilder_;
+
     /**
      *
      *
@@ -3220,6 +3327,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInstallationState() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3242,6 +3350,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return installationStateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3266,6 +3375,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3288,6 +3398,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3318,6 +3429,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3339,6 +3451,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3355,6 +3468,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInstallationStateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3375,6 +3489,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             : installationState_;
       }
     }
+
     /**
      *
      *
@@ -3404,6 +3519,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean disabled_;
+
     /**
      *
      *
@@ -3421,6 +3537,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisabled() {
       return disabled_;
     }
+
     /**
      *
      *
@@ -3442,6 +3559,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3463,6 +3581,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean reconciling_;
+
     /**
      *
      *
@@ -3479,6 +3598,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean getReconciling() {
       return reconciling_;
     }
+
     /**
      *
      *
@@ -3499,6 +3619,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3546,6 +3667,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
+
     /**
      *
      *
@@ -3562,12 +3684,14 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
+
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
+
     /**
      *
      *
@@ -3581,6 +3705,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
+
     /**
      *
      *
@@ -3601,6 +3726,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3627,6 +3753,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3643,12 +3770,14 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000800;
       return internalGetMutableAnnotations().getMutableMap();
     }
+
     /**
      *
      *
@@ -3669,6 +3798,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000800;
       return this;
     }
+
     /**
      *
      *
@@ -3685,6 +3815,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -3709,6 +3840,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3733,6 +3865,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3756,6 +3889,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3775,6 +3909,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

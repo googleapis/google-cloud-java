@@ -33,6 +33,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1alpha1.ManagementConfig)
     ManagementConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ManagementConfig.newBuilder() to construct.
   private ManagementConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
     private OneofConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int STANDARD_MANAGEMENT_CONFIG_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasStandardManagementConfig() {
     return oneofConfigCase_ == 1;
   }
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.telcoautomation.v1alpha1.StandardManagementConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FULL_MANAGEMENT_CONFIG_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasFullManagementConfig() {
     return oneofConfigCase_ == 2;
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.telcoautomation.v1alpha1.FullManagementConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -420,6 +428,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -658,6 +667,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.telcoautomation.v1alpha1.StandardManagementConfig.Builder,
             com.google.cloud.telcoautomation.v1alpha1.StandardManagementConfigOrBuilder>
         standardManagementConfigBuilder_;
+
     /**
      *
      *
@@ -675,6 +685,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasStandardManagementConfig() {
       return oneofConfigCase_ == 1;
     }
+
     /**
      *
      *
@@ -705,6 +716,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -730,6 +742,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
       oneofConfigCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +766,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
       oneofConfigCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +805,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
       oneofConfigCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +849,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
         getStandardManagementConfigBuilder() {
       return getStandardManagementConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -857,6 +874,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -899,6 +917,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.telcoautomation.v1alpha1.FullManagementConfig.Builder,
             com.google.cloud.telcoautomation.v1alpha1.FullManagementConfigOrBuilder>
         fullManagementConfigBuilder_;
+
     /**
      *
      *
@@ -916,6 +935,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasFullManagementConfig() {
       return oneofConfigCase_ == 2;
     }
+
     /**
      *
      *
@@ -944,6 +964,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.telcoautomation.v1alpha1.FullManagementConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -969,6 +990,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
       oneofConfigCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1013,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
       oneofConfigCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1051,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
       oneofConfigCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1079,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1095,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
         getFullManagementConfigBuilder() {
       return getFullManagementConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1093,6 +1119,7 @@ public final class ManagementConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.telcoautomation.v1alpha1.FullManagementConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *

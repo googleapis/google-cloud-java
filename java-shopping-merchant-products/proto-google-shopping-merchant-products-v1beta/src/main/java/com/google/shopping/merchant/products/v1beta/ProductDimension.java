@@ -33,6 +33,7 @@ public final class ProductDimension extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.ProductDimension)
     ProductDimensionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProductDimension.newBuilder() to construct.
   private ProductDimension(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ProductDimension extends com.google.protobuf.GeneratedMessage
 
   public static final int VALUE_FIELD_NUMBER = 1;
   private double value_ = 0D;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class ProductDimension extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object unit_ = "";
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class ProductDimension extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -311,6 +315,7 @@ public final class ProductDimension extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -511,6 +516,7 @@ public final class ProductDimension extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private double value_;
+
     /**
      *
      *
@@ -527,6 +533,7 @@ public final class ProductDimension extends com.google.protobuf.GeneratedMessage
     public double getValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -547,6 +554,7 @@ public final class ProductDimension extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -567,6 +575,7 @@ public final class ProductDimension extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object unit_ = "";
+
     /**
      *
      *
@@ -592,6 +601,7 @@ public final class ProductDimension extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -617,6 +627,7 @@ public final class ProductDimension extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -641,6 +652,7 @@ public final class ProductDimension extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +673,7 @@ public final class ProductDimension extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

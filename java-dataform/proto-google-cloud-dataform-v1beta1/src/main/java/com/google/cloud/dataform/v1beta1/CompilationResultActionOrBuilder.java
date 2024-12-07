@@ -36,6 +36,7 @@ public interface CompilationResultActionOrBuilder
    * @return Whether the target field is set.
    */
   boolean hasTarget();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CompilationResultActionOrBuilder
    * @return The target.
    */
   com.google.cloud.dataform.v1beta1.Target getTarget();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface CompilationResultActionOrBuilder
    * @return Whether the canonicalTarget field is set.
    */
   boolean hasCanonicalTarget();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface CompilationResultActionOrBuilder
    * @return The canonicalTarget.
    */
   com.google.cloud.dataform.v1beta1.Target getCanonicalTarget();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface CompilationResultActionOrBuilder
    * @return The filePath.
    */
   java.lang.String getFilePath();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface CompilationResultActionOrBuilder
    * @return Whether the relation field is set.
    */
   boolean hasRelation();
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public interface CompilationResultActionOrBuilder
    * @return The relation.
    */
   com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation getRelation();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface CompilationResultActionOrBuilder
    * @return Whether the operations field is set.
    */
   boolean hasOperations();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface CompilationResultActionOrBuilder
    * @return The operations.
    */
   com.google.cloud.dataform.v1beta1.CompilationResultAction.Operations getOperations();
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public interface CompilationResultActionOrBuilder
    * @return Whether the assertion field is set.
    */
   boolean hasAssertion();
+
   /**
    *
    *
@@ -220,6 +230,7 @@ public interface CompilationResultActionOrBuilder
    * @return The assertion.
    */
   com.google.cloud.dataform.v1beta1.CompilationResultAction.Assertion getAssertion();
+
   /**
    *
    *
@@ -245,6 +256,7 @@ public interface CompilationResultActionOrBuilder
    * @return Whether the declaration field is set.
    */
   boolean hasDeclaration();
+
   /**
    *
    *
@@ -258,6 +270,7 @@ public interface CompilationResultActionOrBuilder
    * @return The declaration.
    */
   com.google.cloud.dataform.v1beta1.CompilationResultAction.Declaration getDeclaration();
+
   /**
    *
    *

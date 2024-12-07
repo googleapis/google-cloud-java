@@ -38,6 +38,7 @@ public interface CaPoolOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CaPoolOrBuilder
    * @return The enum numeric value on the wire for tier.
    */
   int getTierValue();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface CaPoolOrBuilder
    * @return Whether the issuancePolicy field is set.
    */
   boolean hasIssuancePolicy();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface CaPoolOrBuilder
    * @return The issuancePolicy.
    */
   com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy getIssuancePolicy();
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public interface CaPoolOrBuilder
    * @return Whether the publishingOptions field is set.
    */
   boolean hasPublishingOptions();
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public interface CaPoolOrBuilder
    * @return The publishingOptions.
    */
   com.google.cloud.security.privateca.v1.CaPool.PublishingOptions getPublishingOptions();
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public interface CaPoolOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -217,9 +224,11 @@ public interface CaPoolOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -230,6 +239,7 @@ public interface CaPoolOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -244,6 +254,7 @@ public interface CaPoolOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

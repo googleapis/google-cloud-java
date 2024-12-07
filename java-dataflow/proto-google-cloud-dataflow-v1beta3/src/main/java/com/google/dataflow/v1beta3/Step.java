@@ -57,6 +57,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.Step)
     StepOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Step.newBuilder() to construct.
   private Step(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,6 +93,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROPERTIES_FIELD_NUMBER = 3;
   private com.google.protobuf.Struct properties_;
+
   /**
    *
    *
@@ -211,6 +217,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProperties() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Struct getProperties() {
     return properties_ == null ? com.google.protobuf.Struct.getDefaultInstance() : properties_;
   }
+
   /**
    *
    *
@@ -424,6 +432,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -674,6 +683,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -696,6 +706,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -718,6 +729,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -739,6 +751,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +769,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -803,6 +818,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -826,6 +842,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -848,6 +865,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +884,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +915,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         propertiesBuilder_;
+
     /**
      *
      *
@@ -912,6 +932,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProperties() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -932,6 +953,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return propertiesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -956,6 +978,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +1000,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1030,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1052,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1069,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPropertiesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1061,6 +1088,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return properties_ == null ? com.google.protobuf.Struct.getDefaultInstance() : properties_;
       }
     }
+
     /**
      *
      *

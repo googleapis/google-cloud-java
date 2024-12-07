@@ -41,6 +41,7 @@ public interface UpdatePostureRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdatePostureRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdatePostureRequestOrBuilder
    * @return Whether the posture field is set.
    */
   boolean hasPosture();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdatePostureRequestOrBuilder
    * @return The posture.
    */
   com.google.cloud.securityposture.v1.Posture getPosture();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface UpdatePostureRequestOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *

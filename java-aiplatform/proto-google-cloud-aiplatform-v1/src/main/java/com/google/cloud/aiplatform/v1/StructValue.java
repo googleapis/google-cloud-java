@@ -33,6 +33,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.StructValue)
     StructValueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StructValue.newBuilder() to construct.
   private StructValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.StructFieldValue> values_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.aiplatform.v1.StructFieldValue> getValuesList() {
     return values_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
       getValuesOrBuilderList() {
     return values_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
   public int getValuesCount() {
     return values_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.StructFieldValue getValues(int index) {
     return values_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -555,6 +562,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -571,6 +579,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +640,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +663,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +686,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +707,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +728,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +749,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +769,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +789,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +802,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.StructFieldValue.Builder getValuesBuilder(int index) {
       return getValuesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -799,6 +819,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -816,6 +837,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(values_);
       }
     }
+
     /**
      *
      *
@@ -829,6 +851,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
       return getValuesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.StructFieldValue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -842,6 +865,7 @@ public final class StructValue extends com.google.protobuf.GeneratedMessageV3
       return getValuesFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.StructFieldValue.getDefaultInstance());
     }
+
     /**
      *
      *

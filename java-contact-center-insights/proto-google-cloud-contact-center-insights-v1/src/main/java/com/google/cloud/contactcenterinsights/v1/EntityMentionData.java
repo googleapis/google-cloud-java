@@ -34,6 +34,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.EntityMentionData)
     EntityMentionDataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EntityMentionData.newBuilder() to construct.
   private EntityMentionData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
      * <code>MENTION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MENTION_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
      * <code>PROPER = 1;</code>
      */
     public static final int PROPER_VALUE = 1;
+
     /**
      *
      *
@@ -229,6 +232,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entityUniqueId_ = "";
+
   /**
    *
    *
@@ -253,6 +257,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -280,6 +285,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -317,6 +324,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
 
   public static final int SENTIMENT_FIELD_NUMBER = 3;
   private com.google.cloud.contactcenterinsights.v1.SentimentData sentiment_;
+
   /**
    *
    *
@@ -332,6 +340,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
   public boolean hasSentiment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -349,6 +358,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.contactcenterinsights.v1.SentimentData.getDefaultInstance()
         : sentiment_;
   }
+
   /**
    *
    *
@@ -554,6 +564,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -781,6 +792,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object entityUniqueId_ = "";
+
     /**
      *
      *
@@ -804,6 +816,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -827,6 +840,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -849,6 +863,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +882,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +908,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -907,6 +924,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -925,6 +943,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +963,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.contactcenterinsights.v1.EntityMentionData.MentionType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -966,6 +986,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1011,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
             com.google.cloud.contactcenterinsights.v1.SentimentData.Builder,
             com.google.cloud.contactcenterinsights.v1.SentimentDataOrBuilder>
         sentimentBuilder_;
+
     /**
      *
      *
@@ -1004,6 +1026,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
     public boolean hasSentiment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1024,6 +1047,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
         return sentimentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1070,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1091,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1120,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1140,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1155,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSentimentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1146,6 +1175,7 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
             : sentiment_;
       }
     }
+
     /**
      *
      *

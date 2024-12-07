@@ -36,6 +36,7 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * @return Whether the annotationSpec field is set.
    */
   boolean hasAnnotationSpec();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * @return The annotationSpec.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * @return Whether the timeSegment field is set.
    */
   boolean hasTimeSegment();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * @return The timeSegment.
    */
   com.google.cloud.datalabeling.v1beta1.TimeSegment getTimeSegment();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame>
       getObjectTrackingFramesList();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * </code>
    */
   com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame getObjectTrackingFrames(int index);
+
   /**
    *
    *
@@ -131,6 +137,7 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * </code>
    */
   int getObjectTrackingFramesCount();
+
   /**
    *
    *
@@ -144,6 +151,7 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrameOrBuilder>
       getObjectTrackingFramesOrBuilderList();
+
   /**
    *
    *

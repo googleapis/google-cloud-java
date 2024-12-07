@@ -37,6 +37,7 @@ public interface FullManagementConfigOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface FullManagementConfigOrBuilder
    * @return The subnet.
    */
   java.lang.String getSubnet();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface FullManagementConfigOrBuilder
    * @return The masterIpv4CidrBlock.
    */
   java.lang.String getMasterIpv4CidrBlock();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface FullManagementConfigOrBuilder
    * @return The clusterCidrBlock.
    */
   java.lang.String getClusterCidrBlock();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface FullManagementConfigOrBuilder
    * @return The servicesCidrBlock.
    */
   java.lang.String getServicesCidrBlock();
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public interface FullManagementConfigOrBuilder
    * @return The clusterNamedRange.
    */
   java.lang.String getClusterNamedRange();
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public interface FullManagementConfigOrBuilder
    * @return The servicesNamedRange.
    */
   java.lang.String getServicesNamedRange();
+
   /**
    *
    *
@@ -245,6 +252,7 @@ public interface FullManagementConfigOrBuilder
    * @return Whether the masterAuthorizedNetworksConfig field is set.
    */
   boolean hasMasterAuthorizedNetworksConfig();
+
   /**
    *
    *
@@ -262,6 +270,7 @@ public interface FullManagementConfigOrBuilder
    */
   com.google.cloud.telcoautomation.v1.MasterAuthorizedNetworksConfig
       getMasterAuthorizedNetworksConfig();
+
   /**
    *
    *

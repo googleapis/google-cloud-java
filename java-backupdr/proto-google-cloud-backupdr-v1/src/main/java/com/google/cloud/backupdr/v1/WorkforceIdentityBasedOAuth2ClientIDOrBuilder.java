@@ -37,6 +37,7 @@ public interface WorkforceIdentityBasedOAuth2ClientIDOrBuilder
    * @return The firstPartyOauth2ClientId.
    */
   java.lang.String getFirstPartyOauth2ClientId();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface WorkforceIdentityBasedOAuth2ClientIDOrBuilder
    * @return The thirdPartyOauth2ClientId.
    */
   java.lang.String getThirdPartyOauth2ClientId();
+
   /**
    *
    *

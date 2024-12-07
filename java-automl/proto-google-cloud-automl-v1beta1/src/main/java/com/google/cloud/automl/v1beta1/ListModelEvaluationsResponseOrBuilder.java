@@ -34,6 +34,7 @@ public interface ListModelEvaluationsResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.ModelEvaluation model_evaluation = 1;</code>
    */
   java.util.List<com.google.cloud.automl.v1beta1.ModelEvaluation> getModelEvaluationList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListModelEvaluationsResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.ModelEvaluation model_evaluation = 1;</code>
    */
   com.google.cloud.automl.v1beta1.ModelEvaluation getModelEvaluation(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListModelEvaluationsResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.ModelEvaluation model_evaluation = 1;</code>
    */
   int getModelEvaluationCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListModelEvaluationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1beta1.ModelEvaluationOrBuilder>
       getModelEvaluationOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListModelEvaluationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

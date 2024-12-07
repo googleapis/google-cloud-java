@@ -33,6 +33,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.RequestMetadata)
     RequestMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RequestMetadata.newBuilder() to construct.
   private RequestMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stream_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object event_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object series_ = "";
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object leaseId_ = "";
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -276,6 +285,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object owner_ = "";
+
   /**
    *
    *
@@ -299,6 +309,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -325,6 +336,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
 
   public static final int LEASE_TERM_FIELD_NUMBER = 6;
   private com.google.protobuf.Duration leaseTerm_;
+
   /**
    *
    *
@@ -343,6 +355,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
   public boolean hasLeaseTerm() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -361,6 +374,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Duration getLeaseTerm() {
     return leaseTerm_ == null ? com.google.protobuf.Duration.getDefaultInstance() : leaseTerm_;
   }
+
   /**
    *
    *
@@ -587,6 +601,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -859,6 +874,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object stream_ = "";
+
     /**
      *
      *
@@ -881,6 +897,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -903,6 +920,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -924,6 +942,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +960,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +985,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object event_ = "";
+
     /**
      *
      *
@@ -987,6 +1008,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1031,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1053,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1071,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1096,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object series_ = "";
+
     /**
      *
      *
@@ -1093,6 +1119,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1142,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1136,6 +1164,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1182,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1207,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object leaseId_ = "";
+
     /**
      *
      *
@@ -1199,6 +1230,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1221,6 +1253,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1242,6 +1275,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1293,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1318,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object owner_ = "";
+
     /**
      *
      *
@@ -1305,6 +1341,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1327,6 +1364,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1348,6 +1386,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1404,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1394,6 +1434,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         leaseTermBuilder_;
+
     /**
      *
      *
@@ -1411,6 +1452,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     public boolean hasLeaseTerm() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1432,6 +1474,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return leaseTermBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1457,6 +1500,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1479,6 +1523,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1509,6 +1554,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1531,6 +1577,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1548,6 +1595,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getLeaseTermFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1567,6 +1615,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return leaseTerm_ == null ? com.google.protobuf.Duration.getDefaultInstance() : leaseTerm_;
       }
     }
+
     /**
      *
      *

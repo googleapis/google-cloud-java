@@ -34,6 +34,7 @@ public interface ListSpecsResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
    */
   java.util.List<com.google.cloud.apihub.v1.Spec> getSpecsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSpecsResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
    */
   com.google.cloud.apihub.v1.Spec getSpecs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSpecsResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
    */
   int getSpecsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListSpecsResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
    */
   java.util.List<? extends com.google.cloud.apihub.v1.SpecOrBuilder> getSpecsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListSpecsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

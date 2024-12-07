@@ -33,6 +33,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.StackTrace)
     StackTraceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StackTrace.newBuilder() to construct.
   private StackTrace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the functionName field is set.
      */
     boolean hasFunctionName();
+
     /**
      *
      *
@@ -92,6 +94,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * @return The functionName.
      */
     com.google.devtools.cloudtrace.v2.TruncatableString getFunctionName();
+
     /**
      *
      *
@@ -119,6 +122,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the originalFunctionName field is set.
      */
     boolean hasOriginalFunctionName();
+
     /**
      *
      *
@@ -134,6 +138,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * @return The originalFunctionName.
      */
     com.google.devtools.cloudtrace.v2.TruncatableString getOriginalFunctionName();
+
     /**
      *
      *
@@ -161,6 +166,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fileName field is set.
      */
     boolean hasFileName();
+
     /**
      *
      *
@@ -174,6 +180,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * @return The fileName.
      */
     com.google.devtools.cloudtrace.v2.TruncatableString getFileName();
+
     /**
      *
      *
@@ -225,6 +232,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the loadModule field is set.
      */
     boolean hasLoadModule();
+
     /**
      *
      *
@@ -237,6 +245,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * @return The loadModule.
      */
     com.google.devtools.cloudtrace.v2.Module getLoadModule();
+
     /**
      *
      *
@@ -260,6 +269,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceVersion field is set.
      */
     boolean hasSourceVersion();
+
     /**
      *
      *
@@ -272,6 +282,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * @return The sourceVersion.
      */
     com.google.devtools.cloudtrace.v2.TruncatableString getSourceVersion();
+
     /**
      *
      *
@@ -283,6 +294,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getSourceVersionOrBuilder();
   }
+
   /**
    *
    *
@@ -297,6 +309,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.StackTrace.StackFrame)
       StackFrameOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StackFrame.newBuilder() to construct.
     private StackFrame(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -328,6 +341,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int FUNCTION_NAME_FIELD_NUMBER = 1;
     private com.google.devtools.cloudtrace.v2.TruncatableString functionName_;
+
     /**
      *
      *
@@ -344,6 +358,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFunctionName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -362,6 +377,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
           : functionName_;
     }
+
     /**
      *
      *
@@ -381,6 +397,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ORIGINAL_FUNCTION_NAME_FIELD_NUMBER = 2;
     private com.google.devtools.cloudtrace.v2.TruncatableString originalFunctionName_;
+
     /**
      *
      *
@@ -399,6 +416,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOriginalFunctionName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -419,6 +437,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
           : originalFunctionName_;
     }
+
     /**
      *
      *
@@ -441,6 +460,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
     public static final int FILE_NAME_FIELD_NUMBER = 3;
     private com.google.devtools.cloudtrace.v2.TruncatableString fileName_;
+
     /**
      *
      *
@@ -457,6 +477,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFileName() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -475,6 +496,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
           : fileName_;
     }
+
     /**
      *
      *
@@ -494,6 +516,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LINE_NUMBER_FIELD_NUMBER = 4;
     private long lineNumber_ = 0L;
+
     /**
      *
      *
@@ -512,6 +535,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COLUMN_NUMBER_FIELD_NUMBER = 5;
     private long columnNumber_ = 0L;
+
     /**
      *
      *
@@ -531,6 +555,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LOAD_MODULE_FIELD_NUMBER = 6;
     private com.google.devtools.cloudtrace.v2.Module loadModule_;
+
     /**
      *
      *
@@ -546,6 +571,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoadModule() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -563,6 +589,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.cloudtrace.v2.Module.getDefaultInstance()
           : loadModule_;
     }
+
     /**
      *
      *
@@ -581,6 +608,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SOURCE_VERSION_FIELD_NUMBER = 7;
     private com.google.devtools.cloudtrace.v2.TruncatableString sourceVersion_;
+
     /**
      *
      *
@@ -596,6 +624,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceVersion() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -613,6 +642,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
           : sourceVersion_;
     }
+
     /**
      *
      *
@@ -871,6 +901,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1186,6 +1217,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
               com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder>
           functionNameBuilder_;
+
       /**
        *
        *
@@ -1201,6 +1233,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public boolean hasFunctionName() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1222,6 +1255,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           return functionNameBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1245,6 +1279,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1266,6 +1301,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1295,6 +1331,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1315,6 +1352,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1330,6 +1368,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getFunctionNameFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1350,6 +1389,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               : functionName_;
         }
       }
+
       /**
        *
        *
@@ -1383,6 +1423,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
               com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder>
           originalFunctionNameBuilder_;
+
       /**
        *
        *
@@ -1400,6 +1441,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOriginalFunctionName() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1423,6 +1465,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           return originalFunctionNameBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1449,6 +1492,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1472,6 +1516,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1504,6 +1549,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1526,6 +1572,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1544,6 +1591,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOriginalFunctionNameFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1566,6 +1614,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               : originalFunctionName_;
         }
       }
+
       /**
        *
        *
@@ -1601,6 +1650,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
               com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder>
           fileNameBuilder_;
+
       /**
        *
        *
@@ -1616,6 +1666,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public boolean hasFileName() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1637,6 +1688,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           return fileNameBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1660,6 +1712,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1681,6 +1734,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1710,6 +1764,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1730,6 +1785,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1745,6 +1801,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getFileNameFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1764,6 +1821,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               : fileName_;
         }
       }
+
       /**
        *
        *
@@ -1792,6 +1850,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long lineNumber_;
+
       /**
        *
        *
@@ -1807,6 +1866,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public long getLineNumber() {
         return lineNumber_;
       }
+
       /**
        *
        *
@@ -1826,6 +1886,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1845,6 +1906,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long columnNumber_;
+
       /**
        *
        *
@@ -1861,6 +1923,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public long getColumnNumber() {
         return columnNumber_;
       }
+
       /**
        *
        *
@@ -1881,6 +1944,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1906,6 +1970,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               com.google.devtools.cloudtrace.v2.Module.Builder,
               com.google.devtools.cloudtrace.v2.ModuleOrBuilder>
           loadModuleBuilder_;
+
       /**
        *
        *
@@ -1920,6 +1985,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLoadModule() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -1940,6 +2006,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           return loadModuleBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1962,6 +2029,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1982,6 +2050,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2009,6 +2078,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2028,6 +2098,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2042,6 +2113,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getLoadModuleFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2060,6 +2132,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               : loadModule_;
         }
       }
+
       /**
        *
        *
@@ -2092,6 +2165,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
               com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder>
           sourceVersionBuilder_;
+
       /**
        *
        *
@@ -2106,6 +2180,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSourceVersion() {
         return ((bitField0_ & 0x00000040) != 0);
       }
+
       /**
        *
        *
@@ -2126,6 +2201,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           return sourceVersionBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2148,6 +2224,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2168,6 +2245,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2196,6 +2274,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2215,6 +2294,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2229,6 +2309,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getSourceVersionFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2248,6 +2329,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               : sourceVersion_;
         }
       }
+
       /**
        *
        *
@@ -2353,6 +2435,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.devtools.cloudtrace.v2.StackTrace.StackFrame frame = 1;</code>
      */
     java.util.List<com.google.devtools.cloudtrace.v2.StackTrace.StackFrame> getFrameList();
+
     /**
      *
      *
@@ -2363,6 +2446,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.devtools.cloudtrace.v2.StackTrace.StackFrame frame = 1;</code>
      */
     com.google.devtools.cloudtrace.v2.StackTrace.StackFrame getFrame(int index);
+
     /**
      *
      *
@@ -2373,6 +2457,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.devtools.cloudtrace.v2.StackTrace.StackFrame frame = 1;</code>
      */
     int getFrameCount();
+
     /**
      *
      *
@@ -2384,6 +2469,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.devtools.cloudtrace.v2.StackTrace.StackFrameOrBuilder>
         getFrameOrBuilderList();
+
     /**
      *
      *
@@ -2410,6 +2496,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      */
     int getDroppedFramesCount();
   }
+
   /**
    *
    *
@@ -2424,6 +2511,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.StackTrace.StackFrames)
       StackFramesOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StackFrames.newBuilder() to construct.
     private StackFrames(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2458,6 +2546,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.devtools.cloudtrace.v2.StackTrace.StackFrame> frame_;
+
     /**
      *
      *
@@ -2471,6 +2560,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.devtools.cloudtrace.v2.StackTrace.StackFrame> getFrameList() {
       return frame_;
     }
+
     /**
      *
      *
@@ -2486,6 +2576,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         getFrameOrBuilderList() {
       return frame_;
     }
+
     /**
      *
      *
@@ -2499,6 +2590,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     public int getFrameCount() {
       return frame_.size();
     }
+
     /**
      *
      *
@@ -2512,6 +2604,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v2.StackTrace.StackFrame getFrame(int index) {
       return frame_.get(index);
     }
+
     /**
      *
      *
@@ -2529,6 +2622,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DROPPED_FRAMES_COUNT_FIELD_NUMBER = 2;
     private int droppedFramesCount_ = 0;
+
     /**
      *
      *
@@ -2719,6 +2813,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3000,6 +3095,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           return frameBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -3016,6 +3112,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           return frameBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -3032,6 +3129,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           return frameBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -3055,6 +3153,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3076,6 +3175,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3098,6 +3198,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3121,6 +3222,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3141,6 +3243,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3162,6 +3265,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3183,6 +3287,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3202,6 +3307,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3221,6 +3327,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3234,6 +3341,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return getFrameFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3251,6 +3359,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           return frameBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3269,6 +3378,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(frame_);
         }
       }
+
       /**
        *
        *
@@ -3283,6 +3393,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 com.google.devtools.cloudtrace.v2.StackTrace.StackFrame.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3299,6 +3410,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
                 index,
                 com.google.devtools.cloudtrace.v2.StackTrace.StackFrame.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3331,6 +3443,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int droppedFramesCount_;
+
       /**
        *
        *
@@ -3348,6 +3461,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public int getDroppedFramesCount() {
         return droppedFramesCount_;
       }
+
       /**
        *
        *
@@ -3369,6 +3483,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3456,6 +3571,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int STACK_FRAMES_FIELD_NUMBER = 1;
   private com.google.devtools.cloudtrace.v2.StackTrace.StackFrames stackFrames_;
+
   /**
    *
    *
@@ -3471,6 +3587,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStackFrames() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3488,6 +3605,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.cloudtrace.v2.StackTrace.StackFrames.getDefaultInstance()
         : stackFrames_;
   }
+
   /**
    *
    *
@@ -3507,6 +3625,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STACK_TRACE_HASH_ID_FIELD_NUMBER = 2;
   private long stackTraceHashId_ = 0L;
+
   /**
    *
    *
@@ -3704,6 +3823,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3920,6 +4040,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.cloudtrace.v2.StackTrace.StackFrames.Builder,
             com.google.devtools.cloudtrace.v2.StackTrace.StackFramesOrBuilder>
         stackFramesBuilder_;
+
     /**
      *
      *
@@ -3934,6 +4055,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStackFrames() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3954,6 +4076,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         return stackFramesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3976,6 +4099,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3996,6 +4120,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4025,6 +4150,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4044,6 +4170,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4059,6 +4186,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStackFramesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4078,6 +4206,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
             : stackFrames_;
       }
     }
+
     /**
      *
      *
@@ -4105,6 +4234,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long stackTraceHashId_;
+
     /**
      *
      *
@@ -4128,6 +4258,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     public long getStackTraceHashId() {
       return stackTraceHashId_;
     }
+
     /**
      *
      *
@@ -4155,6 +4286,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface SnapshotSettingsOrBuilder
    * @return Whether the storageLocation field is set.
    */
   boolean hasStorageLocation();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface SnapshotSettingsOrBuilder
    * @return The storageLocation.
    */
   com.google.cloud.compute.v1.SnapshotSettingsStorageLocationSettings getStorageLocation();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class TestIamPermissionsStoragePoolRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TestIamPermissionsStoragePoolRequest)
     TestIamPermissionsStoragePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TestIamPermissionsStoragePoolRequest.newBuilder() to construct.
   private TestIamPermissionsStoragePoolRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class TestIamPermissionsStoragePoolRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class TestIamPermissionsStoragePoolRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class TestIamPermissionsStoragePoolRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class TestIamPermissionsStoragePoolRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class TestIamPermissionsStoragePoolRequest
 
   public static final int TEST_PERMISSIONS_REQUEST_RESOURCE_FIELD_NUMBER = 439214758;
   private com.google.cloud.compute.v1.TestPermissionsRequest testPermissionsRequestResource_;
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class TestIamPermissionsStoragePoolRequest
   public boolean hasTestPermissionsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class TestIamPermissionsStoragePoolRequest
         ? com.google.cloud.compute.v1.TestPermissionsRequest.getDefaultInstance()
         : testPermissionsRequestResource_;
   }
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public final class TestIamPermissionsStoragePoolRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class TestIamPermissionsStoragePoolRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -474,6 +484,7 @@ public final class TestIamPermissionsStoragePoolRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -726,6 +737,7 @@ public final class TestIamPermissionsStoragePoolRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -748,6 +760,7 @@ public final class TestIamPermissionsStoragePoolRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class TestIamPermissionsStoragePoolRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -791,6 +805,7 @@ public final class TestIamPermissionsStoragePoolRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +823,7 @@ public final class TestIamPermissionsStoragePoolRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +848,7 @@ public final class TestIamPermissionsStoragePoolRequest
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -854,6 +871,7 @@ public final class TestIamPermissionsStoragePoolRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -876,6 +894,7 @@ public final class TestIamPermissionsStoragePoolRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -897,6 +916,7 @@ public final class TestIamPermissionsStoragePoolRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +934,7 @@ public final class TestIamPermissionsStoragePoolRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +964,7 @@ public final class TestIamPermissionsStoragePoolRequest
             com.google.cloud.compute.v1.TestPermissionsRequest.Builder,
             com.google.cloud.compute.v1.TestPermissionsRequestOrBuilder>
         testPermissionsRequestResourceBuilder_;
+
     /**
      *
      *
@@ -959,6 +981,7 @@ public final class TestIamPermissionsStoragePoolRequest
     public boolean hasTestPermissionsRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -981,6 +1004,7 @@ public final class TestIamPermissionsStoragePoolRequest
         return testPermissionsRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1006,6 +1030,7 @@ public final class TestIamPermissionsStoragePoolRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1053,7 @@ public final class TestIamPermissionsStoragePoolRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1085,7 @@ public final class TestIamPermissionsStoragePoolRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1107,7 @@ public final class TestIamPermissionsStoragePoolRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1125,7 @@ public final class TestIamPermissionsStoragePoolRequest
       onChanged();
       return getTestPermissionsRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1118,6 +1147,7 @@ public final class TestIamPermissionsStoragePoolRequest
             : testPermissionsRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1147,6 +1177,7 @@ public final class TestIamPermissionsStoragePoolRequest
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1169,6 +1200,7 @@ public final class TestIamPermissionsStoragePoolRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1191,6 +1223,7 @@ public final class TestIamPermissionsStoragePoolRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1245,7 @@ public final class TestIamPermissionsStoragePoolRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1263,7 @@ public final class TestIamPermissionsStoragePoolRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

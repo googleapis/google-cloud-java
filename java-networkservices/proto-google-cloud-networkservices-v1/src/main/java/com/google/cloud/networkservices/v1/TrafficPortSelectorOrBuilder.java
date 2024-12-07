@@ -39,6 +39,7 @@ public interface TrafficPortSelectorOrBuilder
    * @return A list containing the ports.
    */
   java.util.List<java.lang.String> getPortsList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface TrafficPortSelectorOrBuilder
    * @return The count of ports.
    */
   int getPortsCount();
+
   /**
    *
    *
@@ -70,6 +72,7 @@ public interface TrafficPortSelectorOrBuilder
    * @return The ports at the given index.
    */
   java.lang.String getPorts(int index);
+
   /**
    *
    *

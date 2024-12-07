@@ -35,6 +35,7 @@ public final class AirflowMetadataRetentionPolicyConfig
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig)
     AirflowMetadataRetentionPolicyConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AirflowMetadataRetentionPolicyConfig.newBuilder() to construct.
   private AirflowMetadataRetentionPolicyConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -122,6 +123,7 @@ public final class AirflowMetadataRetentionPolicyConfig
      * <code>RETENTION_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int RETENTION_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -132,6 +134,7 @@ public final class AirflowMetadataRetentionPolicyConfig
      * <code>RETENTION_MODE_ENABLED = 1;</code>
      */
     public static final int RETENTION_MODE_ENABLED_VALUE = 1;
+
     /**
      *
      *
@@ -231,6 +234,7 @@ public final class AirflowMetadataRetentionPolicyConfig
 
   public static final int RETENTION_MODE_FIELD_NUMBER = 1;
   private int retentionMode_ = 0;
+
   /**
    *
    *
@@ -248,6 +252,7 @@ public final class AirflowMetadataRetentionPolicyConfig
   public int getRetentionModeValue() {
     return retentionMode_;
   }
+
   /**
    *
    *
@@ -278,6 +283,7 @@ public final class AirflowMetadataRetentionPolicyConfig
 
   public static final int RETENTION_DAYS_FIELD_NUMBER = 2;
   private int retentionDays_ = 0;
+
   /**
    *
    *
@@ -491,6 +497,7 @@ public final class AirflowMetadataRetentionPolicyConfig
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -707,6 +714,7 @@ public final class AirflowMetadataRetentionPolicyConfig
     private int bitField0_;
 
     private int retentionMode_ = 0;
+
     /**
      *
      *
@@ -724,6 +732,7 @@ public final class AirflowMetadataRetentionPolicyConfig
     public int getRetentionModeValue() {
       return retentionMode_;
     }
+
     /**
      *
      *
@@ -744,6 +753,7 @@ public final class AirflowMetadataRetentionPolicyConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +781,7 @@ public final class AirflowMetadataRetentionPolicyConfig
               .RetentionMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -797,6 +808,7 @@ public final class AirflowMetadataRetentionPolicyConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +830,7 @@ public final class AirflowMetadataRetentionPolicyConfig
     }
 
     private int retentionDays_;
+
     /**
      *
      *
@@ -833,6 +846,7 @@ public final class AirflowMetadataRetentionPolicyConfig
     public int getRetentionDays() {
       return retentionDays_;
     }
+
     /**
      *
      *
@@ -852,6 +866,7 @@ public final class AirflowMetadataRetentionPolicyConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *

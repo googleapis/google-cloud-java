@@ -38,6 +38,7 @@ public interface BatchDedicatedResourcesOrBuilder
    * @return Whether the machineSpec field is set.
    */
   boolean hasMachineSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface BatchDedicatedResourcesOrBuilder
    * @return The machineSpec.
    */
   com.google.cloud.aiplatform.v1beta1.MachineSpec getMachineSpec();
+
   /**
    *
    *

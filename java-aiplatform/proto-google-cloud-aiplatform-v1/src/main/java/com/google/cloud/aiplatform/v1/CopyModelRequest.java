@@ -34,6 +34,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CopyModelRequest)
     CopyModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CopyModelRequest.newBuilder() to construct.
   private CopyModelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
     private DestinationModelCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,6 +118,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MODEL_ID_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasModelId() {
     return destinationModelCase_ == 4;
   }
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PARENT_MODEL_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -216,6 +222,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasParentModel() {
     return destinationModelCase_ == 5;
   }
+
   /**
    *
    *
@@ -247,6 +254,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -283,6 +291,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -309,6 +318,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -340,6 +350,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceModel_ = "";
+
   /**
    *
    *
@@ -367,6 +378,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -397,6 +409,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+
   /**
    *
    *
@@ -413,6 +426,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasEncryptionSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -431,6 +445,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
         : encryptionSpec_;
   }
+
   /**
    *
    *
@@ -665,6 +680,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -969,6 +985,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasModelId() {
       return destinationModelCase_ == 4;
     }
+
     /**
      *
      *
@@ -1001,6 +1018,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1051,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1077,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1101,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1148,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasParentModel() {
       return destinationModelCase_ == 5;
     }
+
     /**
      *
      *
@@ -1159,6 +1181,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1191,6 +1214,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1216,6 +1240,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1264,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1293,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1292,6 +1319,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1317,6 +1345,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1341,6 +1370,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1391,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1419,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object sourceModel_ = "";
+
     /**
      *
      *
@@ -1414,6 +1446,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1440,6 +1473,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1465,6 +1499,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1486,6 +1521,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1519,6 +1555,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
             com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
         encryptionSpecBuilder_;
+
     /**
      *
      *
@@ -1534,6 +1571,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasEncryptionSpec() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1555,6 +1593,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
         return encryptionSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1578,6 +1617,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1599,6 +1639,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1628,6 +1669,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1648,6 +1690,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1663,6 +1706,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1682,6 +1726,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
             : encryptionSpec_;
       }
     }
+
     /**
      *
      *

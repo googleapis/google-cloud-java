@@ -36,6 +36,7 @@ public interface ImagePayloadOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface ImagePayloadOrBuilder
    * @return The imageUri.
    */
   java.lang.String getImageUri();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface ImagePayloadOrBuilder
    * @return The signedUri.
    */
   java.lang.String getSignedUri();
+
   /**
    *
    *

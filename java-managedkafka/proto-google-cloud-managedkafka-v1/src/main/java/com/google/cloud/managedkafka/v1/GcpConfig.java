@@ -34,6 +34,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.GcpConfig)
     GcpConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GcpConfig.newBuilder() to construct.
   private GcpConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ACCESS_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.managedkafka.v1.AccessConfig accessConfig_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccessConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.managedkafka.v1.AccessConfig.getDefaultInstance()
         : accessConfig_;
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKey_ = "";
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -355,6 +361,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -574,6 +581,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.managedkafka.v1.AccessConfig.Builder,
             com.google.cloud.managedkafka.v1.AccessConfigOrBuilder>
         accessConfigBuilder_;
+
     /**
      *
      *
@@ -590,6 +598,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -612,6 +621,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
         return accessConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -636,6 +646,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +669,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +700,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +722,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAccessConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -745,6 +760,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
             : accessConfig_;
       }
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kmsKey_ = "";
+
     /**
      *
      *
@@ -801,6 +818,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -828,6 +846,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -854,6 +873,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +896,7 @@ public final class GcpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

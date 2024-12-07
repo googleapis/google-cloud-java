@@ -50,6 +50,7 @@ public interface GetMembershipRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

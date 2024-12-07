@@ -73,6 +73,7 @@ public enum SearchTier implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SEARCH_TIER_UNSPECIFIED = 0;</code>
    */
   public static final int SEARCH_TIER_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public enum SearchTier implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SEARCH_TIER_STANDARD = 1;</code>
    */
   public static final int SEARCH_TIER_STANDARD_VALUE = 1;
+
   /**
    *
    *

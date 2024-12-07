@@ -36,6 +36,7 @@ public interface UploadRagFileResponseOrBuilder
    * @return Whether the ragFile field is set.
    */
   boolean hasRagFile();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UploadRagFileResponseOrBuilder
    * @return The ragFile.
    */
   com.google.cloud.aiplatform.v1beta1.RagFile getRagFile();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface UploadRagFileResponseOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface UploadRagFileResponseOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *

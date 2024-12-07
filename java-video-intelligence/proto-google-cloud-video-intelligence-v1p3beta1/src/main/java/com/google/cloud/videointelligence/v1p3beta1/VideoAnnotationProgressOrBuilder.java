@@ -37,6 +37,7 @@ public interface VideoAnnotationProgressOrBuilder
    * @return The inputUri.
    */
   java.lang.String getInputUri();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface VideoAnnotationProgressOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface VideoAnnotationProgressOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface VideoAnnotationProgressOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface VideoAnnotationProgressOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface VideoAnnotationProgressOrBuilder
    * @return The enum numeric value on the wire for feature.
    */
   int getFeatureValue();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface VideoAnnotationProgressOrBuilder
    * @return Whether the segment field is set.
    */
   boolean hasSegment();
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public interface VideoAnnotationProgressOrBuilder
    * @return The segment.
    */
   com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment();
+
   /**
    *
    *

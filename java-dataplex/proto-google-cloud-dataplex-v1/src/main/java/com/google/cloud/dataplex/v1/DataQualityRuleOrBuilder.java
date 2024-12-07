@@ -37,6 +37,7 @@ public interface DataQualityRuleOrBuilder
    * @return Whether the rangeExpectation field is set.
    */
   boolean hasRangeExpectation();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface DataQualityRuleOrBuilder
    * @return The rangeExpectation.
    */
   com.google.cloud.dataplex.v1.DataQualityRule.RangeExpectation getRangeExpectation();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface DataQualityRuleOrBuilder
    * @return Whether the nonNullExpectation field is set.
    */
   boolean hasNonNullExpectation();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface DataQualityRuleOrBuilder
    * @return The nonNullExpectation.
    */
   com.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation getNonNullExpectation();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface DataQualityRuleOrBuilder
    * @return Whether the setExpectation field is set.
    */
   boolean hasSetExpectation();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface DataQualityRuleOrBuilder
    * @return The setExpectation.
    */
   com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation getSetExpectation();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface DataQualityRuleOrBuilder
    * @return Whether the regexExpectation field is set.
    */
   boolean hasRegexExpectation();
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public interface DataQualityRuleOrBuilder
    * @return The regexExpectation.
    */
   com.google.cloud.dataplex.v1.DataQualityRule.RegexExpectation getRegexExpectation();
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public interface DataQualityRuleOrBuilder
    * @return Whether the uniquenessExpectation field is set.
    */
   boolean hasUniquenessExpectation();
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public interface DataQualityRuleOrBuilder
    * @return The uniquenessExpectation.
    */
   com.google.cloud.dataplex.v1.DataQualityRule.UniquenessExpectation getUniquenessExpectation();
+
   /**
    *
    *
@@ -236,6 +246,7 @@ public interface DataQualityRuleOrBuilder
    * @return Whether the statisticRangeExpectation field is set.
    */
   boolean hasStatisticRangeExpectation();
+
   /**
    *
    *
@@ -252,6 +263,7 @@ public interface DataQualityRuleOrBuilder
    */
   com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation
       getStatisticRangeExpectation();
+
   /**
    *
    *
@@ -282,6 +294,7 @@ public interface DataQualityRuleOrBuilder
    * @return Whether the rowConditionExpectation field is set.
    */
   boolean hasRowConditionExpectation();
+
   /**
    *
    *
@@ -297,6 +310,7 @@ public interface DataQualityRuleOrBuilder
    * @return The rowConditionExpectation.
    */
   com.google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectation getRowConditionExpectation();
+
   /**
    *
    *
@@ -327,6 +341,7 @@ public interface DataQualityRuleOrBuilder
    * @return Whether the tableConditionExpectation field is set.
    */
   boolean hasTableConditionExpectation();
+
   /**
    *
    *
@@ -343,6 +358,7 @@ public interface DataQualityRuleOrBuilder
    */
   com.google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation
       getTableConditionExpectation();
+
   /**
    *
    *
@@ -371,6 +387,7 @@ public interface DataQualityRuleOrBuilder
    * @return Whether the sqlAssertion field is set.
    */
   boolean hasSqlAssertion();
+
   /**
    *
    *
@@ -384,6 +401,7 @@ public interface DataQualityRuleOrBuilder
    * @return The sqlAssertion.
    */
   com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion getSqlAssertion();
+
   /**
    *
    *
@@ -408,6 +426,7 @@ public interface DataQualityRuleOrBuilder
    * @return The column.
    */
   java.lang.String getColumn();
+
   /**
    *
    *
@@ -458,6 +477,7 @@ public interface DataQualityRuleOrBuilder
    * @return The dimension.
    */
   java.lang.String getDimension();
+
   /**
    *
    *
@@ -510,6 +530,7 @@ public interface DataQualityRuleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -543,6 +564,7 @@ public interface DataQualityRuleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

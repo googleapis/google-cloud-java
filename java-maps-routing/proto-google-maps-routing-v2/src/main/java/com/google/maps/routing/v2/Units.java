@@ -74,6 +74,7 @@ public enum Units implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNITS_UNSPECIFIED = 0;</code>
    */
   public static final int UNITS_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public enum Units implements com.google.protobuf.ProtocolMessageEnum {
    * <code>METRIC = 1;</code>
    */
   public static final int METRIC_VALUE = 1;
+
   /**
    *
    *

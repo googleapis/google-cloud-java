@@ -36,6 +36,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.ListDescendantEventThreatDetectionCustomModulesResponse)
     ListDescendantEventThreatDetectionCustomModulesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDescendantEventThreatDetectionCustomModulesResponse.newBuilder() to construct.
   private ListDescendantEventThreatDetectionCustomModulesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -76,6 +77,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
   private java.util.List<
           com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule>
       eventThreatDetectionCustomModules_;
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       getEventThreatDetectionCustomModulesList() {
     return eventThreatDetectionCustomModules_;
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       getEventThreatDetectionCustomModulesOrBuilderList() {
     return eventThreatDetectionCustomModules_;
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
   public int getEventThreatDetectionCustomModulesCount() {
     return eventThreatDetectionCustomModules_.size();
   }
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       getEventThreatDetectionCustomModules(int index) {
     return eventThreatDetectionCustomModules_.get(index);
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -414,6 +422,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -737,6 +746,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
         return eventThreatDetectionCustomModulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -755,6 +765,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
         return eventThreatDetectionCustomModulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -774,6 +785,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
         return eventThreatDetectionCustomModulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -800,6 +812,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +837,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +863,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +890,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +914,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +939,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +966,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +988,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1010,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1026,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
         getEventThreatDetectionCustomModulesBuilder(int index) {
       return getEventThreatDetectionCustomModulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1024,6 +1046,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
         return eventThreatDetectionCustomModulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1069,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
         return java.util.Collections.unmodifiableList(eventThreatDetectionCustomModules_);
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1088,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
               com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1083,6 +1108,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
               com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1123,6 +1149,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1146,6 +1173,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1169,6 +1197,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1191,6 +1220,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1239,7 @@ public final class ListDescendantEventThreatDetectionCustomModulesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

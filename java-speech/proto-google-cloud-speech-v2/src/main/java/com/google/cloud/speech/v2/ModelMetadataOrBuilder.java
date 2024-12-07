@@ -34,6 +34,7 @@ public interface ModelMetadataOrBuilder
    * <code>map&lt;string, .google.cloud.speech.v2.ModelFeatures&gt; model_features = 1;</code>
    */
   int getModelFeaturesCount();
+
   /**
    *
    *
@@ -44,9 +45,11 @@ public interface ModelMetadataOrBuilder
    * <code>map&lt;string, .google.cloud.speech.v2.ModelFeatures&gt; model_features = 1;</code>
    */
   boolean containsModelFeatures(java.lang.String key);
+
   /** Use {@link #getModelFeaturesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.speech.v2.ModelFeatures> getModelFeatures();
+
   /**
    *
    *
@@ -57,6 +60,7 @@ public interface ModelMetadataOrBuilder
    * <code>map&lt;string, .google.cloud.speech.v2.ModelFeatures&gt; model_features = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.speech.v2.ModelFeatures> getModelFeaturesMap();
+
   /**
    *
    *
@@ -71,6 +75,7 @@ public interface ModelMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.speech.v2.ModelFeatures defaultValue);
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class PublishChannelConnectionEventsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsRequest)
     PublishChannelConnectionEventsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PublishChannelConnectionEventsRequest.newBuilder() to construct.
   private PublishChannelConnectionEventsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class PublishChannelConnectionEventsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object channelConnection_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class PublishChannelConnectionEventsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class PublishChannelConnectionEventsRequest
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Any> events_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class PublishChannelConnectionEventsRequest
   public java.util.List<com.google.protobuf.Any> getEventsList() {
     return events_;
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class PublishChannelConnectionEventsRequest
   public java.util.List<? extends com.google.protobuf.AnyOrBuilder> getEventsOrBuilderList() {
     return events_;
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class PublishChannelConnectionEventsRequest
   public int getEventsCount() {
     return events_.size();
   }
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class PublishChannelConnectionEventsRequest
   public com.google.protobuf.Any getEvents(int index) {
     return events_.get(index);
   }
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public final class PublishChannelConnectionEventsRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList textEvents_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -219,6 +228,7 @@ public final class PublishChannelConnectionEventsRequest
   public com.google.protobuf.ProtocolStringList getTextEventsList() {
     return textEvents_;
   }
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public final class PublishChannelConnectionEventsRequest
   public int getTextEventsCount() {
     return textEvents_.size();
   }
+
   /**
    *
    *
@@ -256,6 +267,7 @@ public final class PublishChannelConnectionEventsRequest
   public java.lang.String getTextEvents(int index) {
     return textEvents_.get(index);
   }
+
   /**
    *
    *
@@ -470,6 +482,7 @@ public final class PublishChannelConnectionEventsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -748,6 +761,7 @@ public final class PublishChannelConnectionEventsRequest
     private int bitField0_;
 
     private java.lang.Object channelConnection_ = "";
+
     /**
      *
      *
@@ -771,6 +785,7 @@ public final class PublishChannelConnectionEventsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -794,6 +809,7 @@ public final class PublishChannelConnectionEventsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -816,6 +832,7 @@ public final class PublishChannelConnectionEventsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class PublishChannelConnectionEventsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +908,7 @@ public final class PublishChannelConnectionEventsRequest
         return eventsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -907,6 +926,7 @@ public final class PublishChannelConnectionEventsRequest
         return eventsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -924,6 +944,7 @@ public final class PublishChannelConnectionEventsRequest
         return eventsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -947,6 +968,7 @@ public final class PublishChannelConnectionEventsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +989,7 @@ public final class PublishChannelConnectionEventsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1013,7 @@ public final class PublishChannelConnectionEventsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1037,7 @@ public final class PublishChannelConnectionEventsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1058,7 @@ public final class PublishChannelConnectionEventsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1079,7 @@ public final class PublishChannelConnectionEventsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1100,7 @@ public final class PublishChannelConnectionEventsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1121,7 @@ public final class PublishChannelConnectionEventsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1142,7 @@ public final class PublishChannelConnectionEventsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1156,7 @@ public final class PublishChannelConnectionEventsRequest
     public com.google.protobuf.Any.Builder getEventsBuilder(int index) {
       return getEventsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1143,6 +1174,7 @@ public final class PublishChannelConnectionEventsRequest
         return eventsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1192,7 @@ public final class PublishChannelConnectionEventsRequest
         return java.util.Collections.unmodifiableList(events_);
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1206,7 @@ public final class PublishChannelConnectionEventsRequest
     public com.google.protobuf.Any.Builder addEventsBuilder() {
       return getEventsFieldBuilder().addBuilder(com.google.protobuf.Any.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1187,6 +1221,7 @@ public final class PublishChannelConnectionEventsRequest
       return getEventsFieldBuilder()
           .addBuilder(index, com.google.protobuf.Any.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1227,6 +1262,7 @@ public final class PublishChannelConnectionEventsRequest
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1246,6 +1282,7 @@ public final class PublishChannelConnectionEventsRequest
       textEvents_.makeImmutable();
       return textEvents_;
     }
+
     /**
      *
      *
@@ -1264,6 +1301,7 @@ public final class PublishChannelConnectionEventsRequest
     public int getTextEventsCount() {
       return textEvents_.size();
     }
+
     /**
      *
      *
@@ -1283,6 +1321,7 @@ public final class PublishChannelConnectionEventsRequest
     public java.lang.String getTextEvents(int index) {
       return textEvents_.get(index);
     }
+
     /**
      *
      *
@@ -1302,6 +1341,7 @@ public final class PublishChannelConnectionEventsRequest
     public com.google.protobuf.ByteString getTextEventsBytes(int index) {
       return textEvents_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1329,6 +1369,7 @@ public final class PublishChannelConnectionEventsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1396,7 @@ public final class PublishChannelConnectionEventsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1378,6 +1420,7 @@ public final class PublishChannelConnectionEventsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1443,7 @@ public final class PublishChannelConnectionEventsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

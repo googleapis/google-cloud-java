@@ -32,6 +32,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TargetPoolsAddInstanceRequest)
     TargetPoolsAddInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TargetPoolsAddInstanceRequest.newBuilder() to construct.
   private TargetPoolsAddInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InstanceReference> instances_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
   public java.util.List<com.google.cloud.compute.v1.InstanceReference> getInstancesList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
       getInstancesOrBuilderList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
   public int getInstancesCount() {
     return instances_.size();
   }
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
   public com.google.cloud.compute.v1.InstanceReference getInstances(int index) {
     return instances_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -556,6 +563,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
         return instancesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -572,6 +580,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
         return instancesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -588,6 +597,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
         return instancesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -610,6 +620,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -652,6 +664,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +687,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +708,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +729,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +750,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +770,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +790,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +803,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.InstanceReference.Builder getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -800,6 +820,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -817,6 +838,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
+
     /**
      *
      *
@@ -830,6 +852,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
       return getInstancesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.InstanceReference.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -843,6 +866,7 @@ public final class TargetPoolsAddInstanceRequest extends com.google.protobuf.Gen
       return getInstancesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.InstanceReference.getDefaultInstance());
     }
+
     /**
      *
      *

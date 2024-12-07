@@ -36,6 +36,7 @@ public interface ValueValidationOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.String> getValuesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ValueValidationOrBuilder
    * @return The count of values.
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ValueValidationOrBuilder
    * @return The values at the given index.
    */
   java.lang.String getValues(int index);
+
   /**
    *
    *

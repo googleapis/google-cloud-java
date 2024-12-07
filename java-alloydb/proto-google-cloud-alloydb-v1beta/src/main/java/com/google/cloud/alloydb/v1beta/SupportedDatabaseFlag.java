@@ -37,6 +37,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.SupportedDatabaseFlag)
     SupportedDatabaseFlagOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SupportedDatabaseFlag.newBuilder() to construct.
   private SupportedDatabaseFlag(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -145,6 +146,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * <code>VALUE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int VALUE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -155,6 +157,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * <code>STRING = 1;</code>
      */
     public static final int STRING_VALUE = 1;
+
     /**
      *
      *
@@ -165,6 +168,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * <code>INTEGER = 2;</code>
      */
     public static final int INTEGER_VALUE = 2;
+
     /**
      *
      *
@@ -175,6 +179,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * <code>FLOAT = 3;</code>
      */
     public static final int FLOAT_VALUE = 3;
+
     /**
      *
      *
@@ -293,6 +298,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * @return A list containing the allowedValues.
      */
     java.util.List<java.lang.String> getAllowedValuesList();
+
     /**
      *
      *
@@ -306,6 +312,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * @return The count of allowedValues.
      */
     int getAllowedValuesCount();
+
     /**
      *
      *
@@ -320,6 +327,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * @return The allowedValues at the given index.
      */
     java.lang.String getAllowedValues(int index);
+
     /**
      *
      *
@@ -335,6 +343,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getAllowedValuesBytes(int index);
   }
+
   /**
    *
    *
@@ -349,6 +358,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.SupportedDatabaseFlag.StringRestrictions)
       StringRestrictionsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StringRestrictions.newBuilder() to construct.
     private StringRestrictions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -385,6 +395,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList allowedValues_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -400,6 +411,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ProtocolStringList getAllowedValuesList() {
       return allowedValues_;
     }
+
     /**
      *
      *
@@ -415,6 +427,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public int getAllowedValuesCount() {
       return allowedValues_.size();
     }
+
     /**
      *
      *
@@ -431,6 +444,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public java.lang.String getAllowedValues(int index) {
       return allowedValues_.get(index);
     }
+
     /**
      *
      *
@@ -623,6 +637,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -836,6 +851,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -852,6 +868,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         allowedValues_.makeImmutable();
         return allowedValues_;
       }
+
       /**
        *
        *
@@ -867,6 +884,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       public int getAllowedValuesCount() {
         return allowedValues_.size();
       }
+
       /**
        *
        *
@@ -883,6 +901,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       public java.lang.String getAllowedValues(int index) {
         return allowedValues_.get(index);
       }
+
       /**
        *
        *
@@ -899,6 +918,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       public com.google.protobuf.ByteString getAllowedValuesBytes(int index) {
         return allowedValues_.getByteString(index);
       }
+
       /**
        *
        *
@@ -923,6 +943,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -946,6 +967,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -966,6 +988,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -985,6 +1008,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1095,6 +1119,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * @return Whether the minValue field is set.
      */
     boolean hasMinValue();
+
     /**
      *
      *
@@ -1107,6 +1132,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * @return The minValue.
      */
     com.google.protobuf.Int64Value getMinValue();
+
     /**
      *
      *
@@ -1130,6 +1156,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * @return Whether the maxValue field is set.
      */
     boolean hasMaxValue();
+
     /**
      *
      *
@@ -1142,6 +1169,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * @return The maxValue.
      */
     com.google.protobuf.Int64Value getMaxValue();
+
     /**
      *
      *
@@ -1153,6 +1181,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.Int64ValueOrBuilder getMaxValueOrBuilder();
   }
+
   /**
    *
    *
@@ -1167,6 +1196,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.SupportedDatabaseFlag.IntegerRestrictions)
       IntegerRestrictionsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IntegerRestrictions.newBuilder() to construct.
     private IntegerRestrictions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1199,6 +1229,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     private int bitField0_;
     public static final int MIN_VALUE_FIELD_NUMBER = 1;
     private com.google.protobuf.Int64Value minValue_;
+
     /**
      *
      *
@@ -1214,6 +1245,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public boolean hasMinValue() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1229,6 +1261,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.Int64Value getMinValue() {
       return minValue_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : minValue_;
     }
+
     /**
      *
      *
@@ -1245,6 +1278,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
 
     public static final int MAX_VALUE_FIELD_NUMBER = 2;
     private com.google.protobuf.Int64Value maxValue_;
+
     /**
      *
      *
@@ -1260,6 +1294,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public boolean hasMaxValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1275,6 +1310,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.Int64Value getMaxValue() {
       return maxValue_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : maxValue_;
     }
+
     /**
      *
      *
@@ -1476,6 +1512,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1712,6 +1749,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
               com.google.protobuf.Int64Value.Builder,
               com.google.protobuf.Int64ValueOrBuilder>
           minValueBuilder_;
+
       /**
        *
        *
@@ -1726,6 +1764,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       public boolean hasMinValue() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1746,6 +1785,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
           return minValueBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1768,6 +1808,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1787,6 +1828,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1814,6 +1856,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -1833,6 +1876,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1847,6 +1891,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         onChanged();
         return getMinValueFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1865,6 +1910,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
               : minValue_;
         }
       }
+
       /**
        *
        *
@@ -1897,6 +1943,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
               com.google.protobuf.Int64Value.Builder,
               com.google.protobuf.Int64ValueOrBuilder>
           maxValueBuilder_;
+
       /**
        *
        *
@@ -1911,6 +1958,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       public boolean hasMaxValue() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1931,6 +1979,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
           return maxValueBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1953,6 +2002,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1972,6 +2022,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1999,6 +2050,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -2018,6 +2070,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2032,6 +2085,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         onChanged();
         return getMaxValueFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2050,6 +2104,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
               : maxValue_;
         }
       }
+
       /**
        *
        *
@@ -2161,6 +2216,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     private RestrictionsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2194,6 +2250,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
   }
 
   public static final int STRING_RESTRICTIONS_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -2211,6 +2268,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
   public boolean hasStringRestrictions() {
     return restrictionsCase_ == 7;
   }
+
   /**
    *
    *
@@ -2234,6 +2292,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     return com.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.StringRestrictions
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2257,6 +2316,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
   }
 
   public static final int INTEGER_RESTRICTIONS_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -2274,6 +2334,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
   public boolean hasIntegerRestrictions() {
     return restrictionsCase_ == 8;
   }
+
   /**
    *
    *
@@ -2297,6 +2358,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     return com.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.IntegerRestrictions
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2323,6 +2385,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2348,6 +2411,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -2378,6 +2442,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object flagName_ = "";
+
   /**
    *
    *
@@ -2402,6 +2467,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -2429,6 +2495,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
 
   public static final int VALUE_TYPE_FIELD_NUMBER = 3;
   private int valueType_ = 0;
+
   /**
    * <code>.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.ValueType value_type = 3;</code>
    *
@@ -2438,6 +2505,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
   public int getValueTypeValue() {
     return valueType_;
   }
+
   /**
    * <code>.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.ValueType value_type = 3;</code>
    *
@@ -2454,6 +2522,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
 
   public static final int ACCEPTS_MULTIPLE_VALUES_FIELD_NUMBER = 4;
   private boolean acceptsMultipleValues_ = false;
+
   /**
    *
    *
@@ -2489,6 +2558,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
                   : result;
             }
           };
+
   /**
    *
    *
@@ -2507,6 +2577,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         java.lang.Integer, com.google.cloud.alloydb.v1beta.DatabaseVersion>(
         supportedDbVersions_, supportedDbVersions_converter_);
   }
+
   /**
    *
    *
@@ -2522,6 +2593,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
   public int getSupportedDbVersionsCount() {
     return supportedDbVersions_.size();
   }
+
   /**
    *
    *
@@ -2538,6 +2610,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
   public com.google.cloud.alloydb.v1beta.DatabaseVersion getSupportedDbVersions(int index) {
     return supportedDbVersions_converter_.convert(supportedDbVersions_.get(index));
   }
+
   /**
    *
    *
@@ -2553,6 +2626,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
   public java.util.List<java.lang.Integer> getSupportedDbVersionsValueList() {
     return supportedDbVersions_;
   }
+
   /**
    *
    *
@@ -2574,6 +2648,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
 
   public static final int REQUIRES_DB_RESTART_FIELD_NUMBER = 6;
   private boolean requiresDbRestart_ = false;
+
   /**
    *
    *
@@ -2867,6 +2942,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3218,6 +3294,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
             com.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.StringRestrictions.Builder,
             com.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.StringRestrictionsOrBuilder>
         stringRestrictionsBuilder_;
+
     /**
      *
      *
@@ -3235,6 +3312,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public boolean hasStringRestrictions() {
       return restrictionsCase_ == 7;
     }
+
     /**
      *
      *
@@ -3266,6 +3344,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3291,6 +3370,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       restrictionsCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3314,6 +3394,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       restrictionsCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3352,6 +3433,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       restrictionsCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3379,6 +3461,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3394,6 +3477,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         getStringRestrictionsBuilder() {
       return getStringRestrictionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3419,6 +3503,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3462,6 +3547,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
             com.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.IntegerRestrictions.Builder,
             com.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.IntegerRestrictionsOrBuilder>
         integerRestrictionsBuilder_;
+
     /**
      *
      *
@@ -3479,6 +3565,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public boolean hasIntegerRestrictions() {
       return restrictionsCase_ == 8;
     }
+
     /**
      *
      *
@@ -3510,6 +3597,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3535,6 +3623,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       restrictionsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3558,6 +3647,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       restrictionsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3596,6 +3686,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       restrictionsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3623,6 +3714,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3638,6 +3730,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         getIntegerRestrictionsBuilder() {
       return getIntegerRestrictionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3663,6 +3756,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3702,6 +3796,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3726,6 +3821,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3750,6 +3846,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3773,6 +3870,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3792,6 +3890,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3818,6 +3917,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object flagName_ = "";
+
     /**
      *
      *
@@ -3841,6 +3941,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3864,6 +3965,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3886,6 +3988,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3904,6 +4007,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3929,6 +4033,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     }
 
     private int valueType_ = 0;
+
     /**
      * <code>.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.ValueType value_type = 3;</code>
      *
@@ -3938,6 +4043,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public int getValueTypeValue() {
       return valueType_;
     }
+
     /**
      * <code>.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.ValueType value_type = 3;</code>
      *
@@ -3950,6 +4056,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      * <code>.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.ValueType value_type = 3;</code>
      *
@@ -3963,6 +4070,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.ValueType.UNRECOGNIZED
           : result;
     }
+
     /**
      * <code>.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.ValueType value_type = 3;</code>
      *
@@ -3979,6 +4087,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      * <code>.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.ValueType value_type = 3;</code>
      *
@@ -3992,6 +4101,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     }
 
     private boolean acceptsMultipleValues_;
+
     /**
      *
      *
@@ -4008,6 +4118,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public boolean getAcceptsMultipleValues() {
       return acceptsMultipleValues_;
     }
+
     /**
      *
      *
@@ -4028,6 +4139,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4056,6 +4168,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000040;
       }
     }
+
     /**
      *
      *
@@ -4073,6 +4186,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
           java.lang.Integer, com.google.cloud.alloydb.v1beta.DatabaseVersion>(
           supportedDbVersions_, supportedDbVersions_converter_);
     }
+
     /**
      *
      *
@@ -4087,6 +4201,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public int getSupportedDbVersionsCount() {
       return supportedDbVersions_.size();
     }
+
     /**
      *
      *
@@ -4102,6 +4217,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public com.google.cloud.alloydb.v1beta.DatabaseVersion getSupportedDbVersions(int index) {
       return supportedDbVersions_converter_.convert(supportedDbVersions_.get(index));
     }
+
     /**
      *
      *
@@ -4125,6 +4241,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4146,6 +4263,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4167,6 +4285,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4184,6 +4303,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4198,6 +4318,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public java.util.List<java.lang.Integer> getSupportedDbVersionsValueList() {
       return java.util.Collections.unmodifiableList(supportedDbVersions_);
     }
+
     /**
      *
      *
@@ -4213,6 +4334,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public int getSupportedDbVersionsValue(int index) {
       return supportedDbVersions_.get(index);
     }
+
     /**
      *
      *
@@ -4232,6 +4354,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4250,6 +4373,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4272,6 +4396,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     }
 
     private boolean requiresDbRestart_;
+
     /**
      *
      *
@@ -4290,6 +4415,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public boolean getRequiresDbRestart() {
       return requiresDbRestart_;
     }
+
     /**
      *
      *
@@ -4312,6 +4438,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

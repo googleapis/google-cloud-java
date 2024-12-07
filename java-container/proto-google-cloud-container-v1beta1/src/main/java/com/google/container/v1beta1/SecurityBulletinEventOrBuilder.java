@@ -38,6 +38,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return The resourceTypeAffected.
    */
   java.lang.String getResourceTypeAffected();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return The bulletinId.
    */
   java.lang.String getBulletinId();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return A list containing the cveIds.
    */
   java.util.List<java.lang.String> getCveIdsList();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return The count of cveIds.
    */
   int getCveIdsCount();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return The cveIds at the given index.
    */
   java.lang.String getCveIds(int index);
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return The severity.
    */
   java.lang.String getSeverity();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return The bulletinUri.
    */
   java.lang.String getBulletinUri();
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return The briefDescription.
    */
   java.lang.String getBriefDescription();
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return A list containing the affectedSupportedMinors.
    */
   java.util.List<java.lang.String> getAffectedSupportedMinorsList();
+
   /**
    *
    *
@@ -230,6 +239,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return The count of affectedSupportedMinors.
    */
   int getAffectedSupportedMinorsCount();
+
   /**
    *
    *
@@ -243,6 +253,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return The affectedSupportedMinors at the given index.
    */
   java.lang.String getAffectedSupportedMinors(int index);
+
   /**
    *
    *
@@ -269,6 +280,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return A list containing the patchedVersions.
    */
   java.util.List<java.lang.String> getPatchedVersionsList();
+
   /**
    *
    *
@@ -281,6 +293,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return The count of patchedVersions.
    */
   int getPatchedVersionsCount();
+
   /**
    *
    *
@@ -294,6 +307,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return The patchedVersions at the given index.
    */
   java.lang.String getPatchedVersions(int index);
+
   /**
    *
    *
@@ -324,6 +338,7 @@ public interface SecurityBulletinEventOrBuilder
    * @return The suggestedUpgradeTarget.
    */
   java.lang.String getSuggestedUpgradeTarget();
+
   /**
    *
    *

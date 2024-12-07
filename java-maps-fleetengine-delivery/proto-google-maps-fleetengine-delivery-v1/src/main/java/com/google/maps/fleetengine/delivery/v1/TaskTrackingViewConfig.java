@@ -34,6 +34,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.TaskTrackingViewConfig)
     TaskTrackingViewConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TaskTrackingViewConfig.newBuilder() to construct.
   private TaskTrackingViewConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
      * @return Whether the remainingStopCountThreshold field is set.
      */
     boolean hasRemainingStopCountThreshold();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
      * @return Whether the durationUntilEstimatedArrivalTimeThreshold field is set.
      */
     boolean hasDurationUntilEstimatedArrivalTimeThreshold();
+
     /**
      *
      *
@@ -120,6 +123,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
      * @return The durationUntilEstimatedArrivalTimeThreshold.
      */
     com.google.protobuf.Duration getDurationUntilEstimatedArrivalTimeThreshold();
+
     /**
      *
      *
@@ -146,6 +150,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
      * @return Whether the remainingDrivingDistanceMetersThreshold field is set.
      */
     boolean hasRemainingDrivingDistanceMetersThreshold();
+
     /**
      *
      *
@@ -174,6 +179,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
      * @return Whether the always field is set.
      */
     boolean hasAlways();
+
     /**
      *
      *
@@ -201,6 +207,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
      * @return Whether the never field is set.
      */
     boolean hasNever();
+
     /**
      *
      *
@@ -219,6 +226,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             .VisibilityOptionCase
         getVisibilityOptionCase();
   }
+
   /**
    *
    *
@@ -234,6 +242,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.TaskTrackingViewConfig.VisibilityOption)
       VisibilityOptionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use VisibilityOption.newBuilder() to construct.
     private VisibilityOption(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -283,6 +292,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       private VisibilityOptionCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -322,6 +332,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int REMAINING_STOP_COUNT_THRESHOLD_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -338,6 +349,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     public boolean hasRemainingStopCountThreshold() {
       return visibilityOptionCase_ == 1;
     }
+
     /**
      *
      *
@@ -359,6 +371,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int DURATION_UNTIL_ESTIMATED_ARRIVAL_TIME_THRESHOLD_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -375,6 +388,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     public boolean hasDurationUntilEstimatedArrivalTimeThreshold() {
       return visibilityOptionCase_ == 2;
     }
+
     /**
      *
      *
@@ -394,6 +408,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       }
       return com.google.protobuf.Duration.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -414,6 +429,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int REMAINING_DRIVING_DISTANCE_METERS_THRESHOLD_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -431,6 +447,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     public boolean hasRemainingDrivingDistanceMetersThreshold() {
       return visibilityOptionCase_ == 3;
     }
+
     /**
      *
      *
@@ -453,6 +470,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int ALWAYS_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -469,6 +487,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     public boolean hasAlways() {
       return visibilityOptionCase_ == 4;
     }
+
     /**
      *
      *
@@ -490,6 +509,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int NEVER_FIELD_NUMBER = 5;
+
     /**
      *
      *
@@ -506,6 +526,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     public boolean hasNever() {
       return visibilityOptionCase_ == 5;
     }
+
     /**
      *
      *
@@ -773,6 +794,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1071,6 +1093,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       public boolean hasRemainingStopCountThreshold() {
         return visibilityOptionCase_ == 1;
       }
+
       /**
        *
        *
@@ -1089,6 +1112,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         }
         return 0;
       }
+
       /**
        *
        *
@@ -1109,6 +1133,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1135,6 +1160,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           durationUntilEstimatedArrivalTimeThresholdBuilder_;
+
       /**
        *
        *
@@ -1151,6 +1177,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       public boolean hasDurationUntilEstimatedArrivalTimeThreshold() {
         return visibilityOptionCase_ == 2;
       }
+
       /**
        *
        *
@@ -1177,6 +1204,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
           return com.google.protobuf.Duration.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1201,6 +1229,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         visibilityOptionCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1222,6 +1251,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         visibilityOptionCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1256,6 +1286,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         visibilityOptionCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1282,6 +1313,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1296,6 +1328,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
           getDurationUntilEstimatedArrivalTimeThresholdBuilder() {
         return getDurationUntilEstimatedArrivalTimeThresholdFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1319,6 +1352,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
           return com.google.protobuf.Duration.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1369,6 +1403,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       public boolean hasRemainingDrivingDistanceMetersThreshold() {
         return visibilityOptionCase_ == 3;
       }
+
       /**
        *
        *
@@ -1388,6 +1423,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         }
         return 0;
       }
+
       /**
        *
        *
@@ -1409,6 +1445,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1446,6 +1483,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       public boolean hasAlways() {
         return visibilityOptionCase_ == 4;
       }
+
       /**
        *
        *
@@ -1464,6 +1502,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         }
         return false;
       }
+
       /**
        *
        *
@@ -1484,6 +1523,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1520,6 +1560,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       public boolean hasNever() {
         return visibilityOptionCase_ == 5;
       }
+
       /**
        *
        *
@@ -1538,6 +1579,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         }
         return false;
       }
+
       /**
        *
        *
@@ -1558,6 +1600,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1652,6 +1695,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
   public static final int ROUTE_POLYLINE_POINTS_VISIBILITY_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.VisibilityOption
       routePolylinePointsVisibility_;
+
   /**
    *
    *
@@ -1671,6 +1715,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
   public boolean hasRoutePolylinePointsVisibility() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1694,6 +1739,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : routePolylinePointsVisibility_;
   }
+
   /**
    *
    *
@@ -1719,6 +1765,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
   public static final int ESTIMATED_ARRIVAL_TIME_VISIBILITY_FIELD_NUMBER = 2;
   private com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.VisibilityOption
       estimatedArrivalTimeVisibility_;
+
   /**
    *
    *
@@ -1738,6 +1785,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
   public boolean hasEstimatedArrivalTimeVisibility() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1761,6 +1809,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : estimatedArrivalTimeVisibility_;
   }
+
   /**
    *
    *
@@ -1786,6 +1835,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
   public static final int ESTIMATED_TASK_COMPLETION_TIME_VISIBILITY_FIELD_NUMBER = 3;
   private com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.VisibilityOption
       estimatedTaskCompletionTimeVisibility_;
+
   /**
    *
    *
@@ -1805,6 +1855,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
   public boolean hasEstimatedTaskCompletionTimeVisibility() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1828,6 +1879,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : estimatedTaskCompletionTimeVisibility_;
   }
+
   /**
    *
    *
@@ -1853,6 +1905,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
   public static final int REMAINING_DRIVING_DISTANCE_VISIBILITY_FIELD_NUMBER = 4;
   private com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.VisibilityOption
       remainingDrivingDistanceVisibility_;
+
   /**
    *
    *
@@ -1872,6 +1925,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
   public boolean hasRemainingDrivingDistanceVisibility() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1895,6 +1949,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : remainingDrivingDistanceVisibility_;
   }
+
   /**
    *
    *
@@ -1920,6 +1975,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
   public static final int REMAINING_STOP_COUNT_VISIBILITY_FIELD_NUMBER = 5;
   private com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.VisibilityOption
       remainingStopCountVisibility_;
+
   /**
    *
    *
@@ -1939,6 +1995,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
   public boolean hasRemainingStopCountVisibility() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1962,6 +2019,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : remainingStopCountVisibility_;
   }
+
   /**
    *
    *
@@ -1987,6 +2045,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
   public static final int VEHICLE_LOCATION_VISIBILITY_FIELD_NUMBER = 6;
   private com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.VisibilityOption
       vehicleLocationVisibility_;
+
   /**
    *
    *
@@ -2006,6 +2065,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
   public boolean hasVehicleLocationVisibility() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -2029,6 +2089,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : vehicleLocationVisibility_;
   }
+
   /**
    *
    *
@@ -2308,6 +2369,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2640,6 +2702,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig
                 .VisibilityOptionOrBuilder>
         routePolylinePointsVisibilityBuilder_;
+
     /**
      *
      *
@@ -2658,6 +2721,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     public boolean hasRoutePolylinePointsVisibility() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2684,6 +2748,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         return routePolylinePointsVisibilityBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2711,6 +2776,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2736,6 +2802,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2770,6 +2837,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2793,6 +2861,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2812,6 +2881,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getRoutePolylinePointsVisibilityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2836,6 +2906,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             : routePolylinePointsVisibility_;
       }
     }
+
     /**
      *
      *
@@ -2877,6 +2948,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig
                 .VisibilityOptionOrBuilder>
         estimatedArrivalTimeVisibilityBuilder_;
+
     /**
      *
      *
@@ -2895,6 +2967,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     public boolean hasEstimatedArrivalTimeVisibility() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2921,6 +2994,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         return estimatedArrivalTimeVisibilityBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2948,6 +3022,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2973,6 +3048,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3007,6 +3083,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3030,6 +3107,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3049,6 +3127,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getEstimatedArrivalTimeVisibilityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3073,6 +3152,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             : estimatedArrivalTimeVisibility_;
       }
     }
+
     /**
      *
      *
@@ -3114,6 +3194,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig
                 .VisibilityOptionOrBuilder>
         estimatedTaskCompletionTimeVisibilityBuilder_;
+
     /**
      *
      *
@@ -3132,6 +3213,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     public boolean hasEstimatedTaskCompletionTimeVisibility() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3158,6 +3240,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         return estimatedTaskCompletionTimeVisibilityBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3185,6 +3268,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3210,6 +3294,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3244,6 +3329,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3267,6 +3353,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3286,6 +3373,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getEstimatedTaskCompletionTimeVisibilityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3310,6 +3398,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             : estimatedTaskCompletionTimeVisibility_;
       }
     }
+
     /**
      *
      *
@@ -3351,6 +3440,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig
                 .VisibilityOptionOrBuilder>
         remainingDrivingDistanceVisibilityBuilder_;
+
     /**
      *
      *
@@ -3369,6 +3459,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     public boolean hasRemainingDrivingDistanceVisibility() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -3395,6 +3486,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         return remainingDrivingDistanceVisibilityBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3422,6 +3514,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3447,6 +3540,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3481,6 +3575,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3504,6 +3599,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3523,6 +3619,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getRemainingDrivingDistanceVisibilityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3547,6 +3644,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             : remainingDrivingDistanceVisibility_;
       }
     }
+
     /**
      *
      *
@@ -3588,6 +3686,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig
                 .VisibilityOptionOrBuilder>
         remainingStopCountVisibilityBuilder_;
+
     /**
      *
      *
@@ -3606,6 +3705,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     public boolean hasRemainingStopCountVisibility() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3632,6 +3732,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         return remainingStopCountVisibilityBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3659,6 +3760,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3684,6 +3786,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3718,6 +3821,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3741,6 +3845,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3760,6 +3865,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getRemainingStopCountVisibilityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3784,6 +3890,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             : remainingStopCountVisibility_;
       }
     }
+
     /**
      *
      *
@@ -3825,6 +3932,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig
                 .VisibilityOptionOrBuilder>
         vehicleLocationVisibilityBuilder_;
+
     /**
      *
      *
@@ -3843,6 +3951,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
     public boolean hasVehicleLocationVisibility() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3869,6 +3978,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
         return vehicleLocationVisibilityBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3896,6 +4006,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3921,6 +4032,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3955,6 +4067,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3978,6 +4091,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3997,6 +4111,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getVehicleLocationVisibilityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4021,6 +4136,7 @@ public final class TaskTrackingViewConfig extends com.google.protobuf.GeneratedM
             : vehicleLocationVisibility_;
       }
     }
+
     /**
      *
      *

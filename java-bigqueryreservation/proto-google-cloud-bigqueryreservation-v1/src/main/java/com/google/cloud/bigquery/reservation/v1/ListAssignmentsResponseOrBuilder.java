@@ -34,6 +34,7 @@ public interface ListAssignmentsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.reservation.v1.Assignment assignments = 1;</code>
    */
   java.util.List<com.google.cloud.bigquery.reservation.v1.Assignment> getAssignmentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListAssignmentsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.reservation.v1.Assignment assignments = 1;</code>
    */
   com.google.cloud.bigquery.reservation.v1.Assignment getAssignments(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListAssignmentsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.reservation.v1.Assignment assignments = 1;</code>
    */
   int getAssignmentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListAssignmentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.reservation.v1.AssignmentOrBuilder>
       getAssignmentsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListAssignmentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

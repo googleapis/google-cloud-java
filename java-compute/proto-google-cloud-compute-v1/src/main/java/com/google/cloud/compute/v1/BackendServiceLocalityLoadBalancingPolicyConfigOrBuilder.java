@@ -32,6 +32,7 @@ public interface BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder
    * @return Whether the customPolicy field is set.
    */
   boolean hasCustomPolicy();
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -41,6 +42,7 @@ public interface BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder
    */
   com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
       getCustomPolicy();
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -57,6 +59,7 @@ public interface BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;
@@ -65,6 +68,7 @@ public interface BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder
    * @return The policy.
    */
   com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy getPolicy();
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;

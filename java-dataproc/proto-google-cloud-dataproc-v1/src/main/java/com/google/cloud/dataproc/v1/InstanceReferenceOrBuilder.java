@@ -36,6 +36,7 @@ public interface InstanceReferenceOrBuilder
    * @return The instanceName.
    */
   java.lang.String getInstanceName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface InstanceReferenceOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface InstanceReferenceOrBuilder
    * @return The publicKey.
    */
   java.lang.String getPublicKey();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface InstanceReferenceOrBuilder
    * @return The publicEciesKey.
    */
   java.lang.String getPublicEciesKey();
+
   /**
    *
    *

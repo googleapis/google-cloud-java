@@ -30,12 +30,14 @@ public interface NetworksUpdatePeeringRequestOrBuilder
    * @return Whether the networkPeering field is set.
    */
   boolean hasNetworkPeering();
+
   /**
    * <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
    *
    * @return The networkPeering.
    */
   com.google.cloud.compute.v1.NetworkPeering getNetworkPeering();
+
   /** <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code> */
   com.google.cloud.compute.v1.NetworkPeeringOrBuilder getNetworkPeeringOrBuilder();
 }

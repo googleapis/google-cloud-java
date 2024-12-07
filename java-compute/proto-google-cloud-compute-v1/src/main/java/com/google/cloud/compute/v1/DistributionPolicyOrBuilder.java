@@ -37,6 +37,7 @@ public interface DistributionPolicyOrBuilder
    * @return Whether the targetShape field is set.
    */
   boolean hasTargetShape();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface DistributionPolicyOrBuilder
    * @return The targetShape.
    */
   java.lang.String getTargetShape();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface DistributionPolicyOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration> getZonesList();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface DistributionPolicyOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration getZones(int index);
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface DistributionPolicyOrBuilder
    * </code>
    */
   int getZonesCount();
+
   /**
    *
    *
@@ -109,6 +114,7 @@ public interface DistributionPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.DistributionPolicyZoneConfigurationOrBuilder>
       getZonesOrBuilderList();
+
   /**
    *
    *

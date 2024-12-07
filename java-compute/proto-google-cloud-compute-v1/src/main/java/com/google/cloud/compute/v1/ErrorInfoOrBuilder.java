@@ -36,6 +36,7 @@ public interface ErrorInfoOrBuilder
    * @return Whether the domain field is set.
    */
   boolean hasDomain();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ErrorInfoOrBuilder
    * @return The domain.
    */
   java.lang.String getDomain();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ErrorInfoOrBuilder
    * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
    */
   int getMetadatasCount();
+
   /**
    *
    *
@@ -81,9 +84,11 @@ public interface ErrorInfoOrBuilder
    * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
    */
   boolean containsMetadatas(java.lang.String key);
+
   /** Use {@link #getMetadatasMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadatas();
+
   /**
    *
    *
@@ -94,6 +99,7 @@ public interface ErrorInfoOrBuilder
    * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadatasMap();
+
   /**
    *
    *
@@ -108,6 +114,7 @@ public interface ErrorInfoOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -131,6 +138,7 @@ public interface ErrorInfoOrBuilder
    * @return Whether the reason field is set.
    */
   boolean hasReason();
+
   /**
    *
    *
@@ -143,6 +151,7 @@ public interface ErrorInfoOrBuilder
    * @return The reason.
    */
   java.lang.String getReason();
+
   /**
    *
    *

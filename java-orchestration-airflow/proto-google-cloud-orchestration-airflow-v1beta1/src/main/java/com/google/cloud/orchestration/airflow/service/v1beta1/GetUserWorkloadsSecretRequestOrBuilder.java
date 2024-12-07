@@ -39,6 +39,7 @@ public interface GetUserWorkloadsSecretRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface BfdStatusPacketCountsOrBuilder
    * @return Whether the numRx field is set.
    */
   boolean hasNumRx();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface BfdStatusPacketCountsOrBuilder
    * @return Whether the numRxRejected field is set.
    */
   boolean hasNumRxRejected();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface BfdStatusPacketCountsOrBuilder
    * @return Whether the numRxSuccessful field is set.
    */
   boolean hasNumRxSuccessful();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface BfdStatusPacketCountsOrBuilder
    * @return Whether the numTx field is set.
    */
   boolean hasNumTx();
+
   /**
    *
    *

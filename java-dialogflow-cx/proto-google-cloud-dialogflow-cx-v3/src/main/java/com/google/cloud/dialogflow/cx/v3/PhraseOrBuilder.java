@@ -36,6 +36,7 @@ public interface PhraseOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *

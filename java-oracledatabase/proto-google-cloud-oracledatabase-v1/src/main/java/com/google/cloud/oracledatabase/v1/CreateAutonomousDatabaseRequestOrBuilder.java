@@ -39,6 +39,7 @@ public interface CreateAutonomousDatabaseRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreateAutonomousDatabaseRequestOrBuilder
    * @return The autonomousDatabaseId.
    */
   java.lang.String getAutonomousDatabaseId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface CreateAutonomousDatabaseRequestOrBuilder
    * @return Whether the autonomousDatabase field is set.
    */
   boolean hasAutonomousDatabase();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateAutonomousDatabaseRequestOrBuilder
    * @return The autonomousDatabase.
    */
   com.google.cloud.oracledatabase.v1.AutonomousDatabase getAutonomousDatabase();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface CreateAutonomousDatabaseRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

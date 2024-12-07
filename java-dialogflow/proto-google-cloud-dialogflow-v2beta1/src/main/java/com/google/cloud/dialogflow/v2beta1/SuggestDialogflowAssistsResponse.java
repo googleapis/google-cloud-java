@@ -34,6 +34,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
     SuggestDialogflowAssistsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SuggestDialogflowAssistsResponse.newBuilder() to construct.
   private SuggestDialogflowAssistsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer>
       dialogflowAssistAnswers_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       getDialogflowAssistAnswersList() {
     return dialogflowAssistAnswers_;
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       getDialogflowAssistAnswersOrBuilderList() {
     return dialogflowAssistAnswers_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
   public int getDialogflowAssistAnswersCount() {
     return dialogflowAssistAnswers_.size();
   }
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       int index) {
     return dialogflowAssistAnswers_.get(index);
   }
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
   private int contextSize_ = 0;
+
   /**
    *
    *
@@ -421,6 +430,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -726,6 +736,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
         return dialogflowAssistAnswersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -745,6 +756,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
         return dialogflowAssistAnswersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -765,6 +777,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
         return dialogflowAssistAnswersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -791,6 +804,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +829,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +856,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +883,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +907,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +932,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +957,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +980,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1003,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1020,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
         getDialogflowAssistAnswersBuilder(int index) {
       return getDialogflowAssistAnswersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1018,6 +1041,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
         return dialogflowAssistAnswersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1063,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(dialogflowAssistAnswers_);
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1082,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
           .addBuilder(
               com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1076,6 +1102,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
               index,
               com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1114,6 +1141,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
     }
 
     private java.lang.Object latestMessage_ = "";
+
     /**
      *
      *
@@ -1139,6 +1167,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1164,6 +1193,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1188,6 +1218,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1239,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1267,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
     }
 
     private int contextSize_;
+
     /**
      *
      *
@@ -1255,6 +1288,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
     public int getContextSize() {
       return contextSize_;
     }
+
     /**
      *
      *
@@ -1279,6 +1313,7 @@ public final class SuggestDialogflowAssistsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

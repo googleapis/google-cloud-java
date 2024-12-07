@@ -53,6 +53,7 @@ public interface ProductDimensionOrBuilder
    * @return The unit.
    */
   java.lang.String getUnit();
+
   /**
    *
    *

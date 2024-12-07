@@ -33,6 +33,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.ListNetworkUsageResponse)
     ListNetworkUsageResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListNetworkUsageResponse.newBuilder() to construct.
   private ListNetworkUsageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.NetworkUsage> networks_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.baremetalsolution.v2.NetworkUsage> getNetworksList() {
     return networks_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
       getNetworksOrBuilderList() {
     return networks_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
   public int getNetworksCount() {
     return networks_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
   public com.google.cloud.baremetalsolution.v2.NetworkUsage getNetworks(int index) {
     return networks_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +303,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -563,6 +570,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
         return networksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -579,6 +587,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
         return networksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -595,6 +604,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
         return networksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -618,6 +628,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -638,6 +649,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +672,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -703,6 +717,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +738,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +759,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +799,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +813,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
         int index) {
       return getNetworksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -811,6 +831,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
         return networksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -828,6 +849,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(networks_);
       }
     }
+
     /**
      *
      *
@@ -841,6 +863,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
       return getNetworksFieldBuilder()
           .addBuilder(com.google.cloud.baremetalsolution.v2.NetworkUsage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -856,6 +879,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
           .addBuilder(
               index, com.google.cloud.baremetalsolution.v2.NetworkUsage.getDefaultInstance());
     }
+
     /**
      *
      *

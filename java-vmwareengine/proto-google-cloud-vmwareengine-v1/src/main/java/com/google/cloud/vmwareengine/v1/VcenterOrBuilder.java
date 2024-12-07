@@ -36,6 +36,7 @@ public interface VcenterOrBuilder
    * @return The internalIp.
    */
   java.lang.String getInternalIp();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface VcenterOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface VcenterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface VcenterOrBuilder
    * @return The fqdn.
    */
   java.lang.String getFqdn();
+
   /**
    *
    *

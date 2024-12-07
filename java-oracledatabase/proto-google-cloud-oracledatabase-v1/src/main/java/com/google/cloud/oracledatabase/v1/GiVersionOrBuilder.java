@@ -38,6 +38,7 @@ public interface GiVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface GiVersionOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

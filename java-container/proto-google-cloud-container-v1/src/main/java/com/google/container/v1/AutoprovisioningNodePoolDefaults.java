@@ -34,6 +34,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.container.v1.AutoprovisioningNodePoolDefaults)
     AutoprovisioningNodePoolDefaultsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoprovisioningNodePoolDefaults.newBuilder() to construct.
   private AutoprovisioningNodePoolDefaults(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -76,6 +77,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList oauthScopes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   public com.google.protobuf.ProtocolStringList getOauthScopesList() {
     return oauthScopes_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   public int getOauthScopesCount() {
     return oauthScopes_.size();
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   public java.lang.String getOauthScopes(int index) {
     return oauthScopes_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
 
   public static final int UPGRADE_SETTINGS_FIELD_NUMBER = 3;
   private com.google.container.v1.NodePool.UpgradeSettings upgradeSettings_;
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   public boolean hasUpgradeSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -220,6 +229,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         ? com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()
         : upgradeSettings_;
   }
+
   /**
    *
    *
@@ -238,6 +248,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
 
   public static final int MANAGEMENT_FIELD_NUMBER = 4;
   private com.google.container.v1.NodeManagement management_;
+
   /**
    *
    *
@@ -253,6 +264,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   public boolean hasManagement() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -270,6 +282,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         ? com.google.container.v1.NodeManagement.getDefaultInstance()
         : management_;
   }
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object minCpuPlatform_ = "";
+
   /**
    *
    *
@@ -326,6 +340,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -365,6 +380,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 6;
   private int diskSizeGb_ = 0;
+
   /**
    *
    *
@@ -388,6 +404,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object diskType_ = "";
+
   /**
    *
    *
@@ -414,6 +431,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -443,6 +461,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
 
   public static final int SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER = 8;
   private com.google.container.v1.ShieldedInstanceConfig shieldedInstanceConfig_;
+
   /**
    *
    *
@@ -458,6 +477,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   public boolean hasShieldedInstanceConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -475,6 +495,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         ? com.google.container.v1.ShieldedInstanceConfig.getDefaultInstance()
         : shieldedInstanceConfig_;
   }
+
   /**
    *
    *
@@ -496,6 +517,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bootDiskKmsKey_ = "";
+
   /**
    *
    *
@@ -524,6 +546,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -557,6 +580,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object imageType_ = "";
+
   /**
    *
    *
@@ -582,6 +606,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -610,6 +635,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
 
   public static final int INSECURE_KUBELET_READONLY_PORT_ENABLED_FIELD_NUMBER = 13;
   private boolean insecureKubeletReadonlyPortEnabled_ = false;
+
   /**
    *
    *
@@ -625,6 +651,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   public boolean hasInsecureKubeletReadonlyPortEnabled() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -925,6 +952,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1299,6 +1327,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -1314,6 +1343,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       oauthScopes_.makeImmutable();
       return oauthScopes_;
     }
+
     /**
      *
      *
@@ -1328,6 +1358,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public int getOauthScopesCount() {
       return oauthScopes_.size();
     }
+
     /**
      *
      *
@@ -1343,6 +1374,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public java.lang.String getOauthScopes(int index) {
       return oauthScopes_.get(index);
     }
+
     /**
      *
      *
@@ -1358,6 +1390,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public com.google.protobuf.ByteString getOauthScopesBytes(int index) {
       return oauthScopes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1381,6 +1414,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1403,6 +1437,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1422,6 +1457,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1476,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1465,6 +1502,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     }
 
     private java.lang.Object serviceAccount_ = "";
+
     /**
      *
      *
@@ -1487,6 +1525,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1509,6 +1548,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1530,6 +1570,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1547,6 +1588,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1576,6 +1618,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
             com.google.container.v1.NodePool.UpgradeSettings.Builder,
             com.google.container.v1.NodePool.UpgradeSettingsOrBuilder>
         upgradeSettingsBuilder_;
+
     /**
      *
      *
@@ -1590,6 +1633,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public boolean hasUpgradeSettings() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1610,6 +1654,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         return upgradeSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1632,6 +1677,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1698,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1680,6 +1727,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1699,6 +1747,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1713,6 +1762,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return getUpgradeSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1731,6 +1781,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
             : upgradeSettings_;
       }
     }
+
     /**
      *
      *
@@ -1763,6 +1814,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
             com.google.container.v1.NodeManagement.Builder,
             com.google.container.v1.NodeManagementOrBuilder>
         managementBuilder_;
+
     /**
      *
      *
@@ -1777,6 +1829,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public boolean hasManagement() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1797,6 +1850,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         return managementBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1819,6 +1873,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1838,6 +1893,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1865,6 +1921,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1884,6 +1941,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1898,6 +1956,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return getManagementFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1916,6 +1975,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
             : management_;
       }
     }
+
     /**
      *
      *
@@ -1943,6 +2003,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     }
 
     private java.lang.Object minCpuPlatform_ = "";
+
     /**
      *
      *
@@ -1978,6 +2039,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2013,6 +2075,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2047,6 +2110,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2077,6 +2141,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2114,6 +2179,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     }
 
     private int diskSizeGb_;
+
     /**
      *
      *
@@ -2132,6 +2198,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public int getDiskSizeGb() {
       return diskSizeGb_;
     }
+
     /**
      *
      *
@@ -2154,6 +2221,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2176,6 +2244,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     }
 
     private java.lang.Object diskType_ = "";
+
     /**
      *
      *
@@ -2201,6 +2270,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2226,6 +2296,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2250,6 +2321,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2270,6 +2342,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2302,6 +2375,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
             com.google.container.v1.ShieldedInstanceConfig.Builder,
             com.google.container.v1.ShieldedInstanceConfigOrBuilder>
         shieldedInstanceConfigBuilder_;
+
     /**
      *
      *
@@ -2316,6 +2390,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public boolean hasShieldedInstanceConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2336,6 +2411,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         return shieldedInstanceConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2358,6 +2434,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2378,6 +2455,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2407,6 +2485,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2426,6 +2505,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2441,6 +2521,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return getShieldedInstanceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2460,6 +2541,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
             : shieldedInstanceConfig_;
       }
     }
+
     /**
      *
      *
@@ -2487,6 +2569,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     }
 
     private java.lang.Object bootDiskKmsKey_ = "";
+
     /**
      *
      *
@@ -2514,6 +2597,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2541,6 +2625,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2567,6 +2652,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2589,6 +2675,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2618,6 +2705,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     }
 
     private java.lang.Object imageType_ = "";
+
     /**
      *
      *
@@ -2642,6 +2730,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2666,6 +2755,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2689,6 +2779,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2708,6 +2799,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2734,6 +2826,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     }
 
     private boolean insecureKubeletReadonlyPortEnabled_;
+
     /**
      *
      *
@@ -2749,6 +2842,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public boolean hasInsecureKubeletReadonlyPortEnabled() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -2764,6 +2858,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public boolean getInsecureKubeletReadonlyPortEnabled() {
       return insecureKubeletReadonlyPortEnabled_;
     }
+
     /**
      *
      *
@@ -2783,6 +2878,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

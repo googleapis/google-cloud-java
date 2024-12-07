@@ -36,6 +36,7 @@ public interface GetRegionAutoscalerRequestOrBuilder
    * @return The autoscaler.
    */
   java.lang.String getAutoscaler();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetRegionAutoscalerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetRegionAutoscalerRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

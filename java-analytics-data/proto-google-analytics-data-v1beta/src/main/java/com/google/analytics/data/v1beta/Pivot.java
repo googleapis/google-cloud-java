@@ -33,6 +33,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.Pivot)
     PivotOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Pivot.newBuilder() to construct.
   private Pivot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList fieldNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getFieldNamesList() {
     return fieldNames_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   public int getFieldNamesCount() {
     return fieldNames_.size();
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getFieldNames(int index) {
     return fieldNames_.get(index);
   }
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.OrderBy> orderBys_;
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.analytics.data.v1beta.OrderBy> getOrderBysList() {
     return orderBys_;
   }
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       getOrderBysOrBuilderList() {
     return orderBys_;
   }
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   public int getOrderBysCount() {
     return orderBys_.size();
   }
+
   /**
    *
    *
@@ -214,6 +223,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   public com.google.analytics.data.v1beta.OrderBy getOrderBys(int index) {
     return orderBys_.get(index);
   }
+
   /**
    *
    *
@@ -234,6 +244,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OFFSET_FIELD_NUMBER = 3;
   private long offset_ = 0L;
+
   /**
    *
    *
@@ -252,6 +263,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LIMIT_FIELD_NUMBER = 4;
   private long limit_ = 0L;
+
   /**
    *
    *
@@ -293,6 +305,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -312,6 +325,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.analytics.data.v1beta.MetricAggregation>(
         metricAggregations_, metricAggregations_converter_);
   }
+
   /**
    *
    *
@@ -328,6 +342,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   public int getMetricAggregationsCount() {
     return metricAggregations_.size();
   }
+
   /**
    *
    *
@@ -345,6 +360,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   public com.google.analytics.data.v1beta.MetricAggregation getMetricAggregations(int index) {
     return metricAggregations_converter_.convert(metricAggregations_.get(index));
   }
+
   /**
    *
    *
@@ -361,6 +377,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getMetricAggregationsValueList() {
     return metricAggregations_;
   }
+
   /**
    *
    *
@@ -601,6 +618,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -921,6 +939,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -939,6 +958,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       fieldNames_.makeImmutable();
       return fieldNames_;
     }
+
     /**
      *
      *
@@ -956,6 +976,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public int getFieldNamesCount() {
       return fieldNames_.size();
     }
+
     /**
      *
      *
@@ -974,6 +995,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getFieldNames(int index) {
       return fieldNames_.get(index);
     }
+
     /**
      *
      *
@@ -992,6 +1014,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getFieldNamesBytes(int index) {
       return fieldNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1018,6 +1041,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1067,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1090,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1112,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1176,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
         return orderBysBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1169,6 +1197,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
         return orderBysBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1218,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
         return orderBysBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1215,6 +1245,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1270,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1265,6 +1297,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1291,6 +1324,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1348,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1338,6 +1373,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1398,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1385,6 +1422,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1446,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1463,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.OrderBy.Builder getOrderBysBuilder(int index) {
       return getOrderBysFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1444,6 +1484,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
         return orderBysBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1465,6 +1506,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(orderBys_);
       }
     }
+
     /**
      *
      *
@@ -1482,6 +1524,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       return getOrderBysFieldBuilder()
           .addBuilder(com.google.analytics.data.v1beta.OrderBy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1499,6 +1542,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       return getOrderBysFieldBuilder()
           .addBuilder(index, com.google.analytics.data.v1beta.OrderBy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1535,6 +1579,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long offset_;
+
     /**
      *
      *
@@ -1550,6 +1595,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public long getOffset() {
       return offset_;
     }
+
     /**
      *
      *
@@ -1569,6 +1615,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1588,6 +1635,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long limit_;
+
     /**
      *
      *
@@ -1609,6 +1657,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public long getLimit() {
       return limit_;
     }
+
     /**
      *
      *
@@ -1634,6 +1683,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1667,6 +1717,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
       }
     }
+
     /**
      *
      *
@@ -1686,6 +1737,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.analytics.data.v1beta.MetricAggregation>(
           metricAggregations_, metricAggregations_converter_);
     }
+
     /**
      *
      *
@@ -1702,6 +1754,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public int getMetricAggregationsCount() {
       return metricAggregations_.size();
     }
+
     /**
      *
      *
@@ -1719,6 +1772,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.MetricAggregation getMetricAggregations(int index) {
       return metricAggregations_converter_.convert(metricAggregations_.get(index));
     }
+
     /**
      *
      *
@@ -1744,6 +1798,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1767,6 +1822,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1790,6 +1846,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1809,6 +1866,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1825,6 +1883,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getMetricAggregationsValueList() {
       return java.util.Collections.unmodifiableList(metricAggregations_);
     }
+
     /**
      *
      *
@@ -1842,6 +1901,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public int getMetricAggregationsValue(int index) {
       return metricAggregations_.get(index);
     }
+
     /**
      *
      *
@@ -1863,6 +1923,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1883,6 +1944,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

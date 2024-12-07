@@ -95,6 +95,7 @@ public enum EntryView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENTRY_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int ENTRY_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -105,6 +106,7 @@ public enum EntryView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BASIC = 1;</code>
    */
   public static final int BASIC_VALUE = 1;
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public enum EntryView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FULL = 2;</code>
    */
   public static final int FULL_VALUE = 2;
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public enum EntryView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CUSTOM = 3;</code>
    */
   public static final int CUSTOM_VALUE = 3;
+
   /**
    *
    *

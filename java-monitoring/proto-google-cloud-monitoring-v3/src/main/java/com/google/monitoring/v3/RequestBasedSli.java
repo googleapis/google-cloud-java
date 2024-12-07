@@ -34,6 +34,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.RequestBasedSli)
     RequestBasedSliOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RequestBasedSli.newBuilder() to construct.
   private RequestBasedSli(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     private MethodCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int GOOD_TOTAL_RATIO_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
   public boolean hasGoodTotalRatio() {
     return methodCase_ == 1;
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.monitoring.v3.TimeSeriesRatio.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DISTRIBUTION_CUT_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
   public boolean hasDistributionCut() {
     return methodCase_ == 3;
   }
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.monitoring.v3.DistributionCut.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -413,6 +421,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +657,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
             com.google.monitoring.v3.TimeSeriesRatio.Builder,
             com.google.monitoring.v3.TimeSeriesRatioOrBuilder>
         goodTotalRatioBuilder_;
+
     /**
      *
      *
@@ -664,6 +674,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     public boolean hasGoodTotalRatio() {
       return methodCase_ == 1;
     }
+
     /**
      *
      *
@@ -690,6 +701,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
         return com.google.monitoring.v3.TimeSeriesRatio.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -713,6 +725,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       methodCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +747,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       methodCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +781,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       methodCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +808,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +822,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     public com.google.monitoring.v3.TimeSeriesRatio.Builder getGoodTotalRatioBuilder() {
       return getGoodTotalRatioFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -827,6 +844,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
         return com.google.monitoring.v3.TimeSeriesRatio.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -866,6 +884,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
             com.google.monitoring.v3.DistributionCut.Builder,
             com.google.monitoring.v3.DistributionCutOrBuilder>
         distributionCutBuilder_;
+
     /**
      *
      *
@@ -884,6 +903,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     public boolean hasDistributionCut() {
       return methodCase_ == 3;
     }
+
     /**
      *
      *
@@ -912,6 +932,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
         return com.google.monitoring.v3.DistributionCut.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -937,6 +958,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       methodCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +982,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       methodCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1018,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       methodCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1047,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1063,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     public com.google.monitoring.v3.DistributionCut.Builder getDistributionCutBuilder() {
       return getDistributionCutFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1061,6 +1087,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
         return com.google.monitoring.v3.DistributionCut.getDefaultInstance();
       }
     }
+
     /**
      *
      *

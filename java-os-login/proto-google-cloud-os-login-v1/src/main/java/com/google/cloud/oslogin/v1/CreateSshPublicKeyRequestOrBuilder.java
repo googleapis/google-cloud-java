@@ -38,6 +38,7 @@ public interface CreateSshPublicKeyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateSshPublicKeyRequestOrBuilder
    * @return Whether the sshPublicKey field is set.
    */
   boolean hasSshPublicKey();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateSshPublicKeyRequestOrBuilder
    * @return The sshPublicKey.
    */
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey();
+
   /**
    *
    *

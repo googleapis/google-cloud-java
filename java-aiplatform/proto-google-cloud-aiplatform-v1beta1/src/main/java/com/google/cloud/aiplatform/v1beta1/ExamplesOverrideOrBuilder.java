@@ -62,6 +62,7 @@ public interface ExamplesOverrideOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ExamplesRestrictionsNamespace>
       getRestrictionsList();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface ExamplesOverrideOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ExamplesRestrictionsNamespace getRestrictions(int index);
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface ExamplesOverrideOrBuilder
    * </code>
    */
   int getRestrictionsCount();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface ExamplesOverrideOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.ExamplesRestrictionsNamespaceOrBuilder>
       getRestrictionsOrBuilderList();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface ExamplesOverrideOrBuilder
    * @return The enum numeric value on the wire for dataFormat.
    */
   int getDataFormatValue();
+
   /**
    *
    *

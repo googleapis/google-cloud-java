@@ -33,6 +33,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.RuleActionsPair)
     RuleActionsPairOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RuleActionsPair.newBuilder() to construct.
   private RuleActionsPair(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int RULE_FIELD_NUMBER = 1;
   private com.google.cloud.contentwarehouse.v1.Rule rule_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
   public boolean hasRule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.contentwarehouse.v1.Rule getRule() {
     return rule_ == null ? com.google.cloud.contentwarehouse.v1.Rule.getDefaultInstance() : rule_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.ActionOutput> actionOutputs_;
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.contentwarehouse.v1.ActionOutput> getActionOutputsList() {
     return actionOutputs_;
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       getActionOutputsOrBuilderList() {
     return actionOutputs_;
   }
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
   public int getActionOutputsCount() {
     return actionOutputs_.size();
   }
+
   /**
    *
    *
@@ -167,6 +175,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.contentwarehouse.v1.ActionOutput getActionOutputs(int index) {
     return actionOutputs_.get(index);
   }
+
   /**
    *
    *
@@ -357,6 +366,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -623,6 +633,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.contentwarehouse.v1.Rule.Builder,
             com.google.cloud.contentwarehouse.v1.RuleOrBuilder>
         ruleBuilder_;
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
     public boolean hasRule() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -657,6 +669,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
         return ruleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -679,6 +692,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +712,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +740,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +760,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +775,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRuleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -776,6 +794,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
             : rule_;
       }
     }
+
     /**
      *
      *
@@ -837,6 +856,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
         return actionOutputsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -853,6 +873,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
         return actionOutputsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -869,6 +890,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
         return actionOutputsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -892,6 +914,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +935,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +958,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +982,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +1003,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1024,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1045,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1065,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1085,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1099,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getActionOutputsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1085,6 +1117,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
         return actionOutputsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1102,6 +1135,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(actionOutputs_);
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1149,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
       return getActionOutputsFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.ActionOutput.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1130,6 +1165,7 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               index, com.google.cloud.contentwarehouse.v1.ActionOutput.getDefaultInstance());
     }
+
     /**
      *
      *

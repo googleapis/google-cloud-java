@@ -37,6 +37,7 @@ public interface CompletionSuggestionOrBuilder
    * @return Whether the globalScore field is set.
    */
   boolean hasGlobalScore();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface CompletionSuggestionOrBuilder
    * @return Whether the frequency field is set.
    */
   boolean hasFrequency();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface CompletionSuggestionOrBuilder
    * @return The suggestion.
    */
   java.lang.String getSuggestion();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface CompletionSuggestionOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface CompletionSuggestionOrBuilder
    * @return The groupId.
    */
   java.lang.String getGroupId();
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public interface CompletionSuggestionOrBuilder
    * @return A list containing the alternativePhrases.
    */
   java.util.List<java.lang.String> getAlternativePhrasesList();
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public interface CompletionSuggestionOrBuilder
    * @return The count of alternativePhrases.
    */
   int getAlternativePhrasesCount();
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public interface CompletionSuggestionOrBuilder
    * @return The alternativePhrases at the given index.
    */
   java.lang.String getAlternativePhrases(int index);
+
   /**
    *
    *

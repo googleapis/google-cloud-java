@@ -36,6 +36,7 @@ public interface GcpBackupConfigOrBuilder
    * @return The backupPlan.
    */
   java.lang.String getBackupPlan();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GcpBackupConfigOrBuilder
    * @return The backupPlanDescription.
    */
   java.lang.String getBackupPlanDescription();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GcpBackupConfigOrBuilder
    * @return The backupPlanAssociation.
    */
   java.lang.String getBackupPlanAssociation();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface GcpBackupConfigOrBuilder
    * @return A list containing the backupPlanRules.
    */
   java.util.List<java.lang.String> getBackupPlanRulesList();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface GcpBackupConfigOrBuilder
    * @return The count of backupPlanRules.
    */
   int getBackupPlanRulesCount();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface GcpBackupConfigOrBuilder
    * @return The backupPlanRules at the given index.
    */
   java.lang.String getBackupPlanRules(int index);
+
   /**
    *
    *

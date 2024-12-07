@@ -36,6 +36,7 @@ public interface GetNetworkAttachmentRequestOrBuilder
    * @return The networkAttachment.
    */
   java.lang.String getNetworkAttachment();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetNetworkAttachmentRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetNetworkAttachmentRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

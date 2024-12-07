@@ -34,6 +34,7 @@ public final class CustomFieldStatusEnum extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomFieldStatusEnum)
     CustomFieldStatusEnumOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomFieldStatusEnum.newBuilder() to construct.
   private CustomFieldStatusEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -115,6 +116,7 @@ public final class CustomFieldStatusEnum extends com.google.protobuf.GeneratedMe
      * <code>CUSTOM_FIELD_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int CUSTOM_FIELD_STATUS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -125,6 +127,7 @@ public final class CustomFieldStatusEnum extends com.google.protobuf.GeneratedMe
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
+
     /**
      *
      *
@@ -374,6 +377,7 @@ public final class CustomFieldStatusEnum extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

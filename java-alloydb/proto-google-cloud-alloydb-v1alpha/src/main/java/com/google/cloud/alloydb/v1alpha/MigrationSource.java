@@ -34,6 +34,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.MigrationSource)
     MigrationSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MigrationSource.newBuilder() to construct.
   private MigrationSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -109,6 +110,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
      * <code>MIGRATION_SOURCE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MIGRATION_SOURCE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -208,6 +210,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostPort_ = "";
+
   /**
    *
    *
@@ -232,6 +235,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -261,6 +265,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object referenceId_ = "";
+
   /**
    *
    *
@@ -285,6 +290,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -312,6 +318,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
 
   public static final int SOURCE_TYPE_FIELD_NUMBER = 3;
   private int sourceType_ = 0;
+
   /**
    *
    *
@@ -329,6 +336,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
   public int getSourceTypeValue() {
     return sourceType_;
   }
+
   /**
    *
    *
@@ -534,6 +542,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -747,6 +756,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object hostPort_ = "";
+
     /**
      *
      *
@@ -770,6 +780,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -793,6 +804,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -815,6 +827,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +846,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +872,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object referenceId_ = "";
+
     /**
      *
      *
@@ -881,6 +896,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -904,6 +920,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -926,6 +943,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +962,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +988,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
     }
 
     private int sourceType_ = 0;
+
     /**
      *
      *
@@ -986,6 +1006,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
     public int getSourceTypeValue() {
       return sourceType_;
     }
+
     /**
      *
      *
@@ -1006,6 +1027,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1050,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.alloydb.v1alpha.MigrationSource.MigrationSourceType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1052,6 +1075,7 @@ public final class MigrationSource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

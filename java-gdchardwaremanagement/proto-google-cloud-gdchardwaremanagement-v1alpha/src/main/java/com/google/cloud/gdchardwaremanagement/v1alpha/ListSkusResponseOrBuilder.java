@@ -34,6 +34,7 @@ public interface ListSkusResponseOrBuilder
    * <code>repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku skus = 1;</code>
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Sku> getSkusList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSkusResponseOrBuilder
    * <code>repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku skus = 1;</code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Sku getSkus(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSkusResponseOrBuilder
    * <code>repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku skus = 1;</code>
    */
   int getSkusCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSkusResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.SkuOrBuilder>
       getSkusOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListSkusResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface ListSkusResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListSkusResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -141,6 +148,7 @@ public interface ListSkusResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

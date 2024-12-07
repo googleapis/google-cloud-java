@@ -34,6 +34,7 @@ public interface AnnotationListOrBuilder
    * <code>repeated .google.cloud.visionai.v1.AnnotationValue values = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.AnnotationValue> getValuesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface AnnotationListOrBuilder
    * <code>repeated .google.cloud.visionai.v1.AnnotationValue values = 1;</code>
    */
   com.google.cloud.visionai.v1.AnnotationValue getValues(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface AnnotationListOrBuilder
    * <code>repeated .google.cloud.visionai.v1.AnnotationValue values = 1;</code>
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface AnnotationListOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.AnnotationValueOrBuilder>
       getValuesOrBuilderList();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ValidationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ValidationOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface ValidationOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.ValidationMessage message = 3;</code>
    */
   java.util.List<com.google.cloud.datastream.v1alpha1.ValidationMessage> getMessageList();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface ValidationOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.ValidationMessage message = 3;</code>
    */
   com.google.cloud.datastream.v1alpha1.ValidationMessage getMessage(int index);
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface ValidationOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.ValidationMessage message = 3;</code>
    */
   int getMessageCount();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ValidationOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1alpha1.ValidationMessageOrBuilder>
       getMessageOrBuilderList();
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public interface ValidationOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
+
   /**
    *
    *

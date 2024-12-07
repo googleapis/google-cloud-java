@@ -40,6 +40,7 @@ public interface ListCertificateMapEntriesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface ListCertificateMapEntriesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface ListCertificateMapEntriesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public interface ListCertificateMapEntriesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

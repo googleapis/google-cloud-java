@@ -34,6 +34,7 @@ public interface ListConversionEventsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ConversionEvent conversion_events = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.ConversionEvent> getConversionEventsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListConversionEventsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ConversionEvent conversion_events = 1;</code>
    */
   com.google.analytics.admin.v1alpha.ConversionEvent getConversionEvents(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListConversionEventsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ConversionEvent conversion_events = 1;</code>
    */
   int getConversionEventsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListConversionEventsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.ConversionEventOrBuilder>
       getConversionEventsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListConversionEventsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

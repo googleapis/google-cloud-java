@@ -93,7 +93,8 @@ public class MockAutofeedSettingsServiceImpl extends AutofeedSettingsServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateAutofeedSettings, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateAutofeedSettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AutofeedSettings.class.getName(),
                   Exception.class.getName())));

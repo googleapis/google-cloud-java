@@ -39,6 +39,7 @@ public interface CreateArtifactRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateArtifactRequestOrBuilder
    * @return Whether the artifact field is set.
    */
   boolean hasArtifact();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateArtifactRequestOrBuilder
    * @return The artifact.
    */
   com.google.cloud.apigeeregistry.v1.Artifact getArtifact();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateArtifactRequestOrBuilder
    * @return The artifactId.
    */
   java.lang.String getArtifactId();
+
   /**
    *
    *

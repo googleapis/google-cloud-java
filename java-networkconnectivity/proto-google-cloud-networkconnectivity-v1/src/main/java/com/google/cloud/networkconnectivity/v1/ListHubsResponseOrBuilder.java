@@ -34,6 +34,7 @@ public interface ListHubsResponseOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.Hub hubs = 1;</code>
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.Hub> getHubsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListHubsResponseOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.Hub hubs = 1;</code>
    */
   com.google.cloud.networkconnectivity.v1.Hub getHubs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListHubsResponseOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.Hub hubs = 1;</code>
    */
   int getHubsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListHubsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkconnectivity.v1.HubOrBuilder>
       getHubsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListHubsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface ListHubsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface ListHubsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -142,6 +149,7 @@ public interface ListHubsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1.BatchEnableServicesResponse)
     BatchEnableServicesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchEnableServicesResponse.newBuilder() to construct.
   private BatchEnableServicesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
      * @return The serviceId.
      */
     java.lang.String getServiceId();
+
     /**
      *
      *
@@ -108,6 +110,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
      * @return The errorMessage.
      */
     java.lang.String getErrorMessage();
+
     /**
      *
      *
@@ -121,6 +124,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
      */
     com.google.protobuf.ByteString getErrorMessageBytes();
   }
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure)
       EnableFailureOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EnableFailure.newBuilder() to construct.
     private EnableFailure(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -171,6 +176,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object serviceId_ = "";
+
     /**
      *
      *
@@ -194,6 +200,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -222,6 +229,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object errorMessage_ = "";
+
     /**
      *
      *
@@ -245,6 +253,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -446,6 +455,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -659,6 +669,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       private int bitField0_;
 
       private java.lang.Object serviceId_ = "";
+
       /**
        *
        *
@@ -681,6 +692,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -703,6 +715,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -724,6 +737,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -741,6 +755,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -765,6 +780,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
 
       private java.lang.Object errorMessage_ = "";
+
       /**
        *
        *
@@ -787,6 +803,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -809,6 +826,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -830,6 +848,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -847,6 +866,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -942,6 +962,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1.Service> services_;
+
   /**
    *
    *
@@ -955,6 +976,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.api.serviceusage.v1.Service> getServicesList() {
     return services_;
   }
+
   /**
    *
    *
@@ -969,6 +991,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       getServicesOrBuilderList() {
     return services_;
   }
+
   /**
    *
    *
@@ -982,6 +1005,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
   public int getServicesCount() {
     return services_.size();
   }
+
   /**
    *
    *
@@ -995,6 +1019,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
   public com.google.api.serviceusage.v1.Service getServices(int index) {
     return services_.get(index);
   }
+
   /**
    *
    *
@@ -1014,6 +1039,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure>
       failures_;
+
   /**
    *
    *
@@ -1031,6 +1057,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       getFailuresList() {
     return failures_;
   }
+
   /**
    *
    *
@@ -1050,6 +1077,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       getFailuresOrBuilderList() {
     return failures_;
   }
+
   /**
    *
    *
@@ -1066,6 +1094,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
   public int getFailuresCount() {
     return failures_.size();
   }
+
   /**
    *
    *
@@ -1083,6 +1112,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       int index) {
     return failures_.get(index);
   }
+
   /**
    *
    *
@@ -1274,6 +1304,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1595,6 +1626,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         return servicesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1611,6 +1643,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         return servicesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1627,6 +1660,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         return servicesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1649,6 +1683,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1669,6 +1704,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1691,6 +1727,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1713,6 +1750,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1770,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1752,6 +1791,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1772,6 +1812,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1791,6 +1832,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1810,6 +1852,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1822,6 +1865,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
     public com.google.api.serviceusage.v1.Service.Builder getServicesBuilder(int index) {
       return getServicesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1838,6 +1882,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         return servicesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1855,6 +1900,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(services_);
       }
     }
+
     /**
      *
      *
@@ -1868,6 +1914,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       return getServicesFieldBuilder()
           .addBuilder(com.google.api.serviceusage.v1.Service.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1881,6 +1928,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       return getServicesFieldBuilder()
           .addBuilder(index, com.google.api.serviceusage.v1.Service.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1950,6 +1998,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         return failuresBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1969,6 +2018,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         return failuresBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1989,6 +2039,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         return failuresBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2015,6 +2066,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2040,6 +2092,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2066,6 +2119,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2092,6 +2146,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2116,6 +2171,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2141,6 +2197,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2166,6 +2223,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2188,6 +2246,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2210,6 +2269,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2226,6 +2286,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         getFailuresBuilder(int index) {
       return getFailuresFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2246,6 +2307,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         return failuresBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2268,6 +2330,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(failures_);
       }
     }
+
     /**
      *
      *
@@ -2287,6 +2350,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
               com.google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2307,6 +2371,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
               com.google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure
                   .getDefaultInstance());
     }
+
     /**
      *
      *

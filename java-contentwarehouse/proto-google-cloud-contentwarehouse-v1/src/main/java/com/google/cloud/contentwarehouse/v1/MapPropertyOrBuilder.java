@@ -34,6 +34,7 @@ public interface MapPropertyOrBuilder
    * <code>map&lt;string, .google.cloud.contentwarehouse.v1.Value&gt; fields = 1;</code>
    */
   int getFieldsCount();
+
   /**
    *
    *
@@ -44,9 +45,11 @@ public interface MapPropertyOrBuilder
    * <code>map&lt;string, .google.cloud.contentwarehouse.v1.Value&gt; fields = 1;</code>
    */
   boolean containsFields(java.lang.String key);
+
   /** Use {@link #getFieldsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.contentwarehouse.v1.Value> getFields();
+
   /**
    *
    *
@@ -57,6 +60,7 @@ public interface MapPropertyOrBuilder
    * <code>map&lt;string, .google.cloud.contentwarehouse.v1.Value&gt; fields = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.contentwarehouse.v1.Value> getFieldsMap();
+
   /**
    *
    *
@@ -71,6 +75,7 @@ public interface MapPropertyOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.contentwarehouse.v1.Value defaultValue);
+
   /**
    *
    *

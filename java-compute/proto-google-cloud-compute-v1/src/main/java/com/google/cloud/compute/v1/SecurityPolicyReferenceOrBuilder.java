@@ -30,12 +30,14 @@ public interface SecurityPolicyReferenceOrBuilder
    * @return Whether the securityPolicy field is set.
    */
   boolean hasSecurityPolicy();
+
   /**
    * <code>optional string security_policy = 171082513;</code>
    *
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
+
   /**
    * <code>optional string security_policy = 171082513;</code>
    *

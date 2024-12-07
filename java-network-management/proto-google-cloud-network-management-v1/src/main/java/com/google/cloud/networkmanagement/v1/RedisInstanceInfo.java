@@ -33,6 +33,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.RedisInstanceInfo)
     RedisInstanceInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RedisInstanceInfo.newBuilder() to construct.
   private RedisInstanceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkUri_ = "";
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object primaryEndpointIp_ = "";
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -276,6 +285,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object readEndpointIp_ = "";
+
   /**
    *
    *
@@ -299,6 +309,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -327,6 +338,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -350,6 +362,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -579,6 +592,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -838,6 +852,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -860,6 +875,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -882,6 +898,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -903,6 +920,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +938,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +963,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -966,6 +986,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -988,6 +1009,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1031,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1049,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1074,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object networkUri_ = "";
+
     /**
      *
      *
@@ -1072,6 +1097,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1094,6 +1120,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1142,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1132,6 +1160,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1185,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object primaryEndpointIp_ = "";
+
     /**
      *
      *
@@ -1178,6 +1208,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1200,6 +1231,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1221,6 +1253,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1271,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1296,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object readEndpointIp_ = "";
+
     /**
      *
      *
@@ -1284,6 +1319,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1342,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1327,6 +1364,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1382,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1368,6 +1407,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1390,6 +1430,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1412,6 +1453,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1433,6 +1475,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1450,6 +1493,7 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

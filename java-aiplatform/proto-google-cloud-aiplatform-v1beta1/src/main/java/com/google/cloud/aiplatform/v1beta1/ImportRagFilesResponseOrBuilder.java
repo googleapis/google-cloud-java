@@ -37,6 +37,7 @@ public interface ImportRagFilesResponseOrBuilder
    * @return Whether the partialFailuresGcsPath field is set.
    */
   boolean hasPartialFailuresGcsPath();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ImportRagFilesResponseOrBuilder
    * @return The partialFailuresGcsPath.
    */
   java.lang.String getPartialFailuresGcsPath();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ImportRagFilesResponseOrBuilder
    * @return Whether the partialFailuresBigqueryTable field is set.
    */
   boolean hasPartialFailuresBigqueryTable();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface ImportRagFilesResponseOrBuilder
    * @return The partialFailuresBigqueryTable.
    */
   java.lang.String getPartialFailuresBigqueryTable();
+
   /**
    *
    *

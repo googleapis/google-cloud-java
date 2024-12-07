@@ -40,6 +40,7 @@ public interface GenerateHlsUriRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface GenerateHlsUriRequestOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.Partition.TemporalPartition>
       getTemporalPartitionsList();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface GenerateHlsUriRequestOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.Partition.TemporalPartition getTemporalPartitions(int index);
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface GenerateHlsUriRequestOrBuilder
    * </code>
    */
   int getTemporalPartitionsCount();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface GenerateHlsUriRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.Partition.TemporalPartitionOrBuilder>
       getTemporalPartitionsOrBuilderList();
+
   /**
    *
    *

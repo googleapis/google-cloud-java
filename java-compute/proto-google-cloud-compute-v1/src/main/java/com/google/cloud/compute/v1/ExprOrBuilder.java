@@ -36,6 +36,7 @@ public interface ExprOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ExprOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ExprOrBuilder
    * @return Whether the expression field is set.
    */
   boolean hasExpression();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ExprOrBuilder
    * @return The expression.
    */
   java.lang.String getExpression();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ExprOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface ExprOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface ExprOrBuilder
    * @return Whether the title field is set.
    */
   boolean hasTitle();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface ExprOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *

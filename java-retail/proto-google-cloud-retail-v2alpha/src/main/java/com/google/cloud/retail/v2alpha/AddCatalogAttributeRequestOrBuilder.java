@@ -39,6 +39,7 @@ public interface AddCatalogAttributeRequestOrBuilder
    * @return The attributesConfig.
    */
   java.lang.String getAttributesConfig();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface AddCatalogAttributeRequestOrBuilder
    * @return Whether the catalogAttribute field is set.
    */
   boolean hasCatalogAttribute();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface AddCatalogAttributeRequestOrBuilder
    * @return The catalogAttribute.
    */
   com.google.cloud.retail.v2alpha.CatalogAttribute getCatalogAttribute();
+
   /**
    *
    *

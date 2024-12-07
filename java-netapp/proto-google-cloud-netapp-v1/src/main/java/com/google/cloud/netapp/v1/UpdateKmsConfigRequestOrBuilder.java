@@ -41,6 +41,7 @@ public interface UpdateKmsConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateKmsConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateKmsConfigRequestOrBuilder
    * @return Whether the kmsConfig field is set.
    */
   boolean hasKmsConfig();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateKmsConfigRequestOrBuilder
    * @return The kmsConfig.
    */
   com.google.cloud.netapp.v1.KmsConfig getKmsConfig();
+
   /**
    *
    *

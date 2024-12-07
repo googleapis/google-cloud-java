@@ -34,6 +34,7 @@ public final class UndeployConversationModelRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.UndeployConversationModelRequest)
     UndeployConversationModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UndeployConversationModelRequest.newBuilder() to construct.
   private UndeployConversationModelRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class UndeployConversationModelRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class UndeployConversationModelRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -278,6 +281,7 @@ public final class UndeployConversationModelRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -467,6 +471,7 @@ public final class UndeployConversationModelRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -490,6 +495,7 @@ public final class UndeployConversationModelRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -513,6 +519,7 @@ public final class UndeployConversationModelRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -535,6 +542,7 @@ public final class UndeployConversationModelRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class UndeployConversationModelRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

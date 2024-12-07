@@ -39,6 +39,7 @@ public interface GetAdUnitRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

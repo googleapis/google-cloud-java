@@ -33,6 +33,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ClientConnectionConfig)
     ClientConnectionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClientConnectionConfig.newBuilder() to construct.
   private ClientConnectionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int INFERENCE_TIMEOUT_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration inferenceTimeout_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
   public boolean hasInferenceTimeout() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.Duration.getDefaultInstance()
         : inferenceTimeout_;
   }
+
   /**
    *
    *
@@ -277,6 +281,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -482,6 +487,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         inferenceTimeoutBuilder_;
+
     /**
      *
      *
@@ -496,6 +502,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
     public boolean hasInferenceTimeout() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -516,6 +523,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
         return inferenceTimeoutBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -538,6 +546,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -557,6 +566,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -584,6 +594,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -603,6 +614,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -617,6 +629,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getInferenceTimeoutFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -635,6 +648,7 @@ public final class ClientConnectionConfig extends com.google.protobuf.GeneratedM
             : inferenceTimeout_;
       }
     }
+
     /**
      *
      *

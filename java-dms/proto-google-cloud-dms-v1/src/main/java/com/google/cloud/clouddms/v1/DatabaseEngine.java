@@ -82,6 +82,7 @@ public enum DatabaseEngine implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATABASE_ENGINE_UNSPECIFIED = 0;</code>
    */
   public static final int DATABASE_ENGINE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum DatabaseEngine implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MYSQL = 1;</code>
    */
   public static final int MYSQL_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum DatabaseEngine implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POSTGRESQL = 2;</code>
    */
   public static final int POSTGRESQL_VALUE = 2;
+
   /**
    *
    *

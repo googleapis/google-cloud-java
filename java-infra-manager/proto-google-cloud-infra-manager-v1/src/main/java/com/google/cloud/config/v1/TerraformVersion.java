@@ -34,6 +34,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.config.v1.TerraformVersion)
     TerraformVersionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TerraformVersion.newBuilder() to construct.
   private TerraformVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,6 +129,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -138,6 +140,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
      * <code>DEPRECATED = 2;</code>
      */
     public static final int DEPRECATED_VALUE = 2;
+
     /**
      *
      *
@@ -249,6 +253,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -273,6 +278,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -300,6 +306,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -317,6 +324,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -339,6 +347,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int SUPPORT_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp supportTime_;
+
   /**
    *
    *
@@ -355,6 +364,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
   public boolean hasSupportTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -371,6 +381,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getSupportTime() {
     return supportTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : supportTime_;
   }
+
   /**
    *
    *
@@ -388,6 +399,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int DEPRECATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp deprecateTime_;
+
   /**
    *
    *
@@ -405,6 +417,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
   public boolean hasDeprecateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -424,6 +437,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : deprecateTime_;
   }
+
   /**
    *
    *
@@ -444,6 +458,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int OBSOLETE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp obsoleteTime_;
+
   /**
    *
    *
@@ -461,6 +476,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
   public boolean hasObsoleteTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -480,6 +496,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : obsoleteTime_;
   }
+
   /**
    *
    *
@@ -708,6 +725,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -975,6 +993,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -998,6 +1017,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1021,6 +1041,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1043,6 +1064,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1083,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1109,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1103,6 +1127,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1123,6 +1148,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1170,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.config.v1.TerraformVersion.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1167,6 +1194,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1193,6 +1221,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         supportTimeBuilder_;
+
     /**
      *
      *
@@ -1209,6 +1238,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
     public boolean hasSupportTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1231,6 +1261,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
         return supportTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1255,6 +1286,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1308,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1338,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1326,6 +1360,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1342,6 +1377,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getSupportTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1362,6 +1398,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
             : supportTime_;
       }
     }
+
     /**
      *
      *
@@ -1396,6 +1433,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deprecateTimeBuilder_;
+
     /**
      *
      *
@@ -1412,6 +1450,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
     public boolean hasDeprecateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1434,6 +1473,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
         return deprecateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1458,6 +1498,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1479,6 +1520,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1508,6 +1550,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1529,6 +1572,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1545,6 +1589,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getDeprecateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1565,6 +1610,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
             : deprecateTime_;
       }
     }
+
     /**
      *
      *
@@ -1599,6 +1645,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         obsoleteTimeBuilder_;
+
     /**
      *
      *
@@ -1615,6 +1662,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
     public boolean hasObsoleteTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1637,6 +1685,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
         return obsoleteTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1661,6 +1710,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1682,6 +1732,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1711,6 +1762,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1784,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1748,6 +1801,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getObsoleteTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1768,6 +1822,7 @@ public final class TerraformVersion extends com.google.protobuf.GeneratedMessage
             : obsoleteTime_;
       }
     }
+
     /**
      *
      *

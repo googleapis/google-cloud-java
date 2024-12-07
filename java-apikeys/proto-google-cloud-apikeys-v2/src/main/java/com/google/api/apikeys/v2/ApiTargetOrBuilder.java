@@ -39,6 +39,7 @@ public interface ApiTargetOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface ApiTargetOrBuilder
    * @return A list containing the methods.
    */
   java.util.List<java.lang.String> getMethodsList();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface ApiTargetOrBuilder
    * @return The count of methods.
    */
   int getMethodsCount();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface ApiTargetOrBuilder
    * @return The methods at the given index.
    */
   java.lang.String getMethods(int index);
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface HybridInspectJobTriggerRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface HybridInspectJobTriggerRequestOrBuilder
    * @return Whether the hybridItem field is set.
    */
   boolean hasHybridItem();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface HybridInspectJobTriggerRequestOrBuilder
    * @return The hybridItem.
    */
   com.google.privacy.dlp.v2.HybridContentItem getHybridItem();
+
   /**
    *
    *

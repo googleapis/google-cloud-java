@@ -36,6 +36,7 @@ public interface ImportEntriesMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ImportEntriesMetadataOrBuilder
    * <code>repeated .google.rpc.Status errors = 2;</code>
    */
   java.util.List<com.google.rpc.Status> getErrorsList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ImportEntriesMetadataOrBuilder
    * <code>repeated .google.rpc.Status errors = 2;</code>
    */
   com.google.rpc.Status getErrors(int index);
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface ImportEntriesMetadataOrBuilder
    * <code>repeated .google.rpc.Status errors = 2;</code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ImportEntriesMetadataOrBuilder
    * <code>repeated .google.rpc.Status errors = 2;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorsOrBuilderList();
+
   /**
    *
    *

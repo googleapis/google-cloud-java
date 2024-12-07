@@ -33,6 +33,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest)
     CreateOSPolicyAssignmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateOSPolicyAssignmentRequest.newBuilder() to construct.
   private CreateOSPolicyAssignmentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
 
   public static final int OS_POLICY_ASSIGNMENT_FIELD_NUMBER = 2;
   private com.google.cloud.osconfig.v1alpha.OSPolicyAssignment osPolicyAssignment_;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
   public boolean hasOsPolicyAssignment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
         ? com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.getDefaultInstance()
         : osPolicyAssignment_;
   }
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object osPolicyAssignmentId_ = "";
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -429,6 +437,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -666,6 +675,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -691,6 +701,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -716,6 +727,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -740,6 +752,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +773,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +806,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
             com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.Builder,
             com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOrBuilder>
         osPolicyAssignmentBuilder_;
+
     /**
      *
      *
@@ -808,6 +823,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
     public boolean hasOsPolicyAssignment() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -830,6 +846,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
         return osPolicyAssignmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -855,6 +872,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +895,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +927,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +949,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +967,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       onChanged();
       return getOsPolicyAssignmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -967,6 +989,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
             : osPolicyAssignment_;
       }
     }
+
     /**
      *
      *
@@ -996,6 +1019,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object osPolicyAssignmentId_ = "";
+
     /**
      *
      *
@@ -1025,6 +1049,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1054,6 +1079,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1082,6 +1108,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1133,7 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -138,7 +138,8 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SheetExportAudienceList, expected %s or %s",
+                  "Unrecognized response type %s for method SheetExportAudienceList, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SheetExportAudienceListResponse.class.getName(),
                   Exception.class.getName())));
@@ -203,7 +204,8 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateRecurringAudienceList, expected %s or %s",
+                  "Unrecognized response type %s for method CreateRecurringAudienceList, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RecurringAudienceList.class.getName(),
                   Exception.class.getName())));
@@ -225,7 +227,8 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetRecurringAudienceList, expected %s or %s",
+                  "Unrecognized response type %s for method GetRecurringAudienceList, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RecurringAudienceList.class.getName(),
                   Exception.class.getName())));
@@ -247,7 +250,8 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListRecurringAudienceLists, expected %s or %s",
+                  "Unrecognized response type %s for method ListRecurringAudienceLists, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListRecurringAudienceListsResponse.class.getName(),
                   Exception.class.getName())));
@@ -269,7 +273,8 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetPropertyQuotasSnapshot, expected %s or %s",
+                  "Unrecognized response type %s for method GetPropertyQuotasSnapshot, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PropertyQuotasSnapshot.class.getName(),
                   Exception.class.getName())));

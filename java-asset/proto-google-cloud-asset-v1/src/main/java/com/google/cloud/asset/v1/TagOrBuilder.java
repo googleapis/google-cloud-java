@@ -36,6 +36,7 @@ public interface TagOrBuilder
    * @return Whether the tagKey field is set.
    */
   boolean hasTagKey();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TagOrBuilder
    * @return The tagKey.
    */
   java.lang.String getTagKey();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface TagOrBuilder
    * @return Whether the tagKeyId field is set.
    */
   boolean hasTagKeyId();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface TagOrBuilder
    * @return The tagKeyId.
    */
   java.lang.String getTagKeyId();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface TagOrBuilder
    * @return Whether the tagValue field is set.
    */
   boolean hasTagValue();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface TagOrBuilder
    * @return The tagValue.
    */
   java.lang.String getTagValue();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface TagOrBuilder
    * @return Whether the tagValueId field is set.
    */
   boolean hasTagValueId();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface TagOrBuilder
    * @return The tagValueId.
    */
   java.lang.String getTagValueId();
+
   /**
    *
    *

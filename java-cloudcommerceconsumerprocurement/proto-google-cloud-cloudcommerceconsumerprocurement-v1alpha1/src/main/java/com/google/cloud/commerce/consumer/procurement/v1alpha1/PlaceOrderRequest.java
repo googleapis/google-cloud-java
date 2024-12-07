@@ -34,6 +34,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest)
     PlaceOrderRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PlaceOrderRequest.newBuilder() to construct.
   private PlaceOrderRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo>
       lineItemInfo_;
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       getLineItemInfoList() {
     return lineItemInfo_;
   }
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       getLineItemInfoOrBuilderList() {
     return lineItemInfo_;
   }
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
   public int getLineItemInfoCount() {
     return lineItemInfo_.size();
   }
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       int index) {
     return lineItemInfo_.get(index);
   }
+
   /**
    *
    *
@@ -271,6 +281,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -299,6 +310,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -519,6 +531,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -808,6 +821,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -833,6 +847,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -858,6 +873,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -882,6 +898,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +919,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +947,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -951,6 +970,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -973,6 +993,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -994,6 +1015,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1033,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1096,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         return lineItemInfoBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1116,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         return lineItemInfoBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1112,6 +1137,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         return lineItemInfoBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1138,6 +1164,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1190,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1217,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1215,6 +1244,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1269,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1295,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1289,6 +1321,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1311,6 +1344,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1333,6 +1367,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1349,6 +1384,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         getLineItemInfoBuilder(int index) {
       return getLineItemInfoFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1369,6 +1405,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         return lineItemInfoBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1390,6 +1427,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(lineItemInfo_);
       }
     }
+
     /**
      *
      *
@@ -1409,6 +1447,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
               com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1429,6 +1468,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
               com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1465,6 +1505,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1492,6 +1533,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1519,6 +1561,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1545,6 +1588,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1567,6 +1611,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

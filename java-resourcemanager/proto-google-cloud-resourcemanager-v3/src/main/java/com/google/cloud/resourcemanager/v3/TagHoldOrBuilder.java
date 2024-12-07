@@ -39,6 +39,7 @@ public interface TagHoldOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface TagHoldOrBuilder
    * @return The holder.
    */
   java.lang.String getHolder();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface TagHoldOrBuilder
    * @return The origin.
    */
   java.lang.String getOrigin();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface TagHoldOrBuilder
    * @return The helpLink.
    */
   java.lang.String getHelpLink();
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public interface TagHoldOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public interface TagHoldOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ExecutionReferenceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ExecutionReferenceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ExecutionReferenceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ExecutionReferenceOrBuilder
    * @return Whether the completionTime field is set.
    */
   boolean hasCompletionTime();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface ExecutionReferenceOrBuilder
    * @return The completionTime.
    */
   com.google.protobuf.Timestamp getCompletionTime();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface ExecutionReferenceOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface ExecutionReferenceOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public interface ExecutionReferenceOrBuilder
    * @return The enum numeric value on the wire for completionStatus.
    */
   int getCompletionStatusValue();
+
   /**
    *
    *

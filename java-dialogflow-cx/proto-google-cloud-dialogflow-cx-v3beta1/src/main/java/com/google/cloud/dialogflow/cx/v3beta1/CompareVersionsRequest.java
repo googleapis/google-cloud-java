@@ -34,6 +34,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.CompareVersionsRequest)
     CompareVersionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompareVersionsRequest.newBuilder() to construct.
   private CompareVersionsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseVersion_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetVersion_ = "";
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -223,6 +229,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -431,6 +438,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +657,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object baseVersion_ = "";
+
     /**
      *
      *
@@ -677,6 +686,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -705,6 +715,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -732,6 +743,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +767,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +798,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object targetVersion_ = "";
+
     /**
      *
      *
@@ -812,6 +826,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -839,6 +854,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -865,6 +881,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +904,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +934,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -944,6 +963,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -972,6 +992,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -999,6 +1020,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1044,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ListEventsResponse)
     ListEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListEventsResponse.newBuilder() to construct.
   private ListEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent> errorEvents_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       getErrorEventsList() {
     return errorEvents_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       getErrorEventsOrBuilderList() {
     return errorEvents_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   public int getErrorEventsCount() {
     return errorEvents_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent getErrorEvents(int index) {
     return errorEvents_.get(index);
   }
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int TIME_RANGE_BEGIN_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp timeRangeBegin_;
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasTimeRangeBegin() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -228,6 +238,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : timeRangeBegin_;
   }
+
   /**
    *
    *
@@ -430,6 +441,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -749,6 +761,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return errorEventsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -766,6 +779,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return errorEventsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -783,6 +797,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return errorEventsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -807,6 +822,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +845,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +870,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +895,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +917,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +940,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +963,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +984,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1005,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1020,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         int index) {
       return getErrorEventsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1014,6 +1039,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return errorEventsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1059,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(errorEvents_);
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1076,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1066,6 +1094,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
               index,
               com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1099,6 +1128,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1123,6 +1153,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1147,6 +1178,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1170,6 +1202,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1222,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1254,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timeRangeBeginBuilder_;
+
     /**
      *
      *
@@ -1234,6 +1269,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasTimeRangeBegin() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1254,6 +1290,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return timeRangeBeginBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1276,6 +1313,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1333,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1322,6 +1361,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1341,6 +1381,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1396,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getTimeRangeBeginFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1373,6 +1415,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
             : timeRangeBegin_;
       }
     }
+
     /**
      *
      *

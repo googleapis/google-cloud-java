@@ -36,6 +36,7 @@ public interface HubOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface HubOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface HubOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface HubOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface HubOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface HubOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -139,9 +145,11 @@ public interface HubOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -152,6 +160,7 @@ public interface HubOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -166,6 +175,7 @@ public interface HubOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -189,6 +199,7 @@ public interface HubOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -216,6 +227,7 @@ public interface HubOrBuilder
    * @return A list containing the spokes.
    */
   java.util.List<java.lang.String> getSpokesList();
+
   /**
    *
    *
@@ -230,6 +242,7 @@ public interface HubOrBuilder
    * @return The count of spokes.
    */
   int getSpokesCount();
+
   /**
    *
    *
@@ -245,6 +258,7 @@ public interface HubOrBuilder
    * @return The spokes at the given index.
    */
   java.lang.String getSpokes(int index);
+
   /**
    *
    *
@@ -275,6 +289,7 @@ public interface HubOrBuilder
    * @return The uniqueId.
    */
   java.lang.String getUniqueId();
+
   /**
    *
    *
@@ -304,6 +319,7 @@ public interface HubOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

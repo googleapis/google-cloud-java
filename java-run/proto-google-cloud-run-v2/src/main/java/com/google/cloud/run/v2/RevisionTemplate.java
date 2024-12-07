@@ -34,6 +34,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.RevisionTemplate)
     RevisionTemplateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RevisionTemplate.newBuilder() to construct.
   private RevisionTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,6 +90,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revision_ = "";
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -168,6 +171,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -194,12 +198,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -223,6 +229,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -253,6 +260,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -311,6 +319,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
+
   /**
    *
    *
@@ -338,12 +347,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
+
   /**
    *
    *
@@ -368,6 +379,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
+
   /**
    *
    *
@@ -399,6 +411,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -433,6 +446,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int SCALING_FIELD_NUMBER = 4;
   private com.google.cloud.run.v2.RevisionScaling scaling_;
+
   /**
    *
    *
@@ -450,6 +464,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasScaling() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -469,6 +484,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.run.v2.RevisionScaling.getDefaultInstance()
         : scaling_;
   }
+
   /**
    *
    *
@@ -489,6 +505,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int VPC_ACCESS_FIELD_NUMBER = 6;
   private com.google.cloud.run.v2.VpcAccess vpcAccess_;
+
   /**
    *
    *
@@ -507,6 +524,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasVpcAccess() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -525,6 +543,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.run.v2.VpcAccess getVpcAccess() {
     return vpcAccess_ == null ? com.google.cloud.run.v2.VpcAccess.getDefaultInstance() : vpcAccess_;
   }
+
   /**
    *
    *
@@ -544,6 +563,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int TIMEOUT_FIELD_NUMBER = 8;
   private com.google.protobuf.Duration timeout_;
+
   /**
    *
    *
@@ -559,6 +579,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasTimeout() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -574,6 +595,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Duration getTimeout() {
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
+
   /**
    *
    *
@@ -592,6 +614,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
+
   /**
    *
    *
@@ -618,6 +641,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -649,6 +673,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.Container> containers_;
+
   /**
    *
    *
@@ -663,6 +688,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.run.v2.Container> getContainersList() {
     return containers_;
   }
+
   /**
    *
    *
@@ -678,6 +704,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       getContainersOrBuilderList() {
     return containers_;
   }
+
   /**
    *
    *
@@ -692,6 +719,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public int getContainersCount() {
     return containers_.size();
   }
+
   /**
    *
    *
@@ -706,6 +734,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.run.v2.Container getContainers(int index) {
     return containers_.get(index);
   }
+
   /**
    *
    *
@@ -725,6 +754,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.Volume> volumes_;
+
   /**
    *
    *
@@ -740,6 +770,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.run.v2.Volume> getVolumesList() {
     return volumes_;
   }
+
   /**
    *
    *
@@ -756,6 +787,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       getVolumesOrBuilderList() {
     return volumes_;
   }
+
   /**
    *
    *
@@ -771,6 +803,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public int getVolumesCount() {
     return volumes_.size();
   }
+
   /**
    *
    *
@@ -786,6 +819,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.run.v2.Volume getVolumes(int index) {
     return volumes_.get(index);
   }
+
   /**
    *
    *
@@ -804,6 +838,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int EXECUTION_ENVIRONMENT_FIELD_NUMBER = 13;
   private int executionEnvironment_ = 0;
+
   /**
    *
    *
@@ -821,6 +856,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public int getExecutionEnvironmentValue() {
     return executionEnvironment_;
   }
+
   /**
    *
    *
@@ -845,6 +881,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object encryptionKey_ = "";
+
   /**
    *
    *
@@ -870,6 +907,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -898,6 +936,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int MAX_INSTANCE_REQUEST_CONCURRENCY_FIELD_NUMBER = 15;
   private int maxInstanceRequestConcurrency_ = 0;
+
   /**
    *
    *
@@ -919,6 +958,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int SERVICE_MESH_FIELD_NUMBER = 16;
   private com.google.cloud.run.v2.ServiceMesh serviceMesh_;
+
   /**
    *
    *
@@ -936,6 +976,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasServiceMesh() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -955,6 +996,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.run.v2.ServiceMesh.getDefaultInstance()
         : serviceMesh_;
   }
+
   /**
    *
    *
@@ -975,6 +1017,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int ENCRYPTION_KEY_REVOCATION_ACTION_FIELD_NUMBER = 17;
   private int encryptionKeyRevocationAction_ = 0;
+
   /**
    *
    *
@@ -992,6 +1035,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public int getEncryptionKeyRevocationActionValue() {
     return encryptionKeyRevocationAction_;
   }
+
   /**
    *
    *
@@ -1017,6 +1061,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int ENCRYPTION_KEY_SHUTDOWN_DURATION_FIELD_NUMBER = 18;
   private com.google.protobuf.Duration encryptionKeyShutdownDuration_;
+
   /**
    *
    *
@@ -1035,6 +1080,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasEncryptionKeyShutdownDuration() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1055,6 +1101,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Duration.getDefaultInstance()
         : encryptionKeyShutdownDuration_;
   }
+
   /**
    *
    *
@@ -1076,6 +1123,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int SESSION_AFFINITY_FIELD_NUMBER = 19;
   private boolean sessionAffinity_ = false;
+
   /**
    *
    *
@@ -1094,6 +1142,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int HEALTH_CHECK_DISABLED_FIELD_NUMBER = 20;
   private boolean healthCheckDisabled_ = false;
+
   /**
    *
    *
@@ -1112,6 +1161,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int NODE_SELECTOR_FIELD_NUMBER = 21;
   private com.google.cloud.run.v2.NodeSelector nodeSelector_;
+
   /**
    *
    *
@@ -1129,6 +1179,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasNodeSelector() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -1148,6 +1199,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.run.v2.NodeSelector.getDefaultInstance()
         : nodeSelector_;
   }
+
   /**
    *
    *
@@ -1545,6 +1597,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2135,6 +2188,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object revision_ = "";
+
     /**
      *
      *
@@ -2160,6 +2214,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2185,6 +2240,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2209,6 +2265,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2229,6 +2286,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2280,6 +2338,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2306,12 +2365,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2335,6 +2396,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2365,6 +2427,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2401,6 +2464,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2427,12 +2491,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000002;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2463,6 +2529,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -2516,6 +2583,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
+
     /**
      *
      *
@@ -2543,12 +2611,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
+
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
+
     /**
      *
      *
@@ -2573,6 +2643,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
+
     /**
      *
      *
@@ -2604,6 +2675,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2641,6 +2713,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2668,12 +2741,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000004;
       return internalGetMutableAnnotations().getMutableMap();
     }
+
     /**
      *
      *
@@ -2705,6 +2780,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -2737,6 +2813,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             com.google.cloud.run.v2.RevisionScaling.Builder,
             com.google.cloud.run.v2.RevisionScalingOrBuilder>
         scalingBuilder_;
+
     /**
      *
      *
@@ -2753,6 +2830,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasScaling() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2775,6 +2853,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return scalingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2799,6 +2878,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2820,6 +2900,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2849,6 +2930,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2870,6 +2952,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2886,6 +2969,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getScalingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2906,6 +2990,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             : scaling_;
       }
     }
+
     /**
      *
      *
@@ -2940,6 +3025,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             com.google.cloud.run.v2.VpcAccess.Builder,
             com.google.cloud.run.v2.VpcAccessOrBuilder>
         vpcAccessBuilder_;
+
     /**
      *
      *
@@ -2958,6 +3044,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasVpcAccess() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2982,6 +3069,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return vpcAccessBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3008,6 +3096,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3031,6 +3120,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3062,6 +3152,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3085,6 +3176,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3103,6 +3195,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getVpcAccessFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3125,6 +3218,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             : vpcAccess_;
       }
     }
+
     /**
      *
      *
@@ -3161,6 +3255,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeoutBuilder_;
+
     /**
      *
      *
@@ -3175,6 +3270,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasTimeout() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3193,6 +3289,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return timeoutBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3215,6 +3312,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3234,6 +3332,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3261,6 +3360,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3280,6 +3380,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3294,6 +3395,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3310,6 +3412,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
       }
     }
+
     /**
      *
      *
@@ -3337,6 +3440,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object serviceAccount_ = "";
+
     /**
      *
      *
@@ -3362,6 +3466,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3387,6 +3492,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3411,6 +3517,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3431,6 +3538,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3490,6 +3598,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return containersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3507,6 +3616,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return containersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3524,6 +3634,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return containersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3547,6 +3658,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3568,6 +3680,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3591,6 +3704,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3614,6 +3728,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3634,6 +3749,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3655,6 +3771,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3676,6 +3793,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3696,6 +3814,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3716,6 +3835,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3729,6 +3849,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.run.v2.Container.Builder getContainersBuilder(int index) {
       return getContainersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3746,6 +3867,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return containersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3764,6 +3886,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(containers_);
       }
     }
+
     /**
      *
      *
@@ -3778,6 +3901,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       return getContainersFieldBuilder()
           .addBuilder(com.google.cloud.run.v2.Container.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3792,6 +3916,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       return getContainersFieldBuilder()
           .addBuilder(index, com.google.cloud.run.v2.Container.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3857,6 +3982,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return volumesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3875,6 +4001,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return volumesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3893,6 +4020,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return volumesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3917,6 +4045,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3938,6 +4067,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3962,6 +4092,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3986,6 +4117,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4007,6 +4139,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4028,6 +4161,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4050,6 +4184,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4071,6 +4206,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4092,6 +4228,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4106,6 +4243,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.run.v2.Volume.Builder getVolumesBuilder(int index) {
       return getVolumesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4124,6 +4262,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return volumesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4143,6 +4282,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(volumes_);
       }
     }
+
     /**
      *
      *
@@ -4158,6 +4298,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       return getVolumesFieldBuilder()
           .addBuilder(com.google.cloud.run.v2.Volume.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4173,6 +4314,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       return getVolumesFieldBuilder()
           .addBuilder(index, com.google.cloud.run.v2.Volume.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4206,6 +4348,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private int executionEnvironment_ = 0;
+
     /**
      *
      *
@@ -4223,6 +4366,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public int getExecutionEnvironmentValue() {
       return executionEnvironment_;
     }
+
     /**
      *
      *
@@ -4243,6 +4387,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4262,6 +4407,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
           com.google.cloud.run.v2.ExecutionEnvironment.forNumber(executionEnvironment_);
       return result == null ? com.google.cloud.run.v2.ExecutionEnvironment.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -4285,6 +4431,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4306,6 +4453,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object encryptionKey_ = "";
+
     /**
      *
      *
@@ -4330,6 +4478,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4354,6 +4503,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4377,6 +4527,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4396,6 +4547,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4422,6 +4574,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private int maxInstanceRequestConcurrency_;
+
     /**
      *
      *
@@ -4440,6 +4593,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public int getMaxInstanceRequestConcurrency() {
       return maxInstanceRequestConcurrency_;
     }
+
     /**
      *
      *
@@ -4462,6 +4616,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4489,6 +4644,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             com.google.cloud.run.v2.ServiceMesh.Builder,
             com.google.cloud.run.v2.ServiceMeshOrBuilder>
         serviceMeshBuilder_;
+
     /**
      *
      *
@@ -4505,6 +4661,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasServiceMesh() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -4527,6 +4684,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return serviceMeshBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4551,6 +4709,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4572,6 +4731,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4601,6 +4761,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4622,6 +4783,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4638,6 +4800,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getServiceMeshFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4658,6 +4821,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             : serviceMesh_;
       }
     }
+
     /**
      *
      *
@@ -4687,6 +4851,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private int encryptionKeyRevocationAction_ = 0;
+
     /**
      *
      *
@@ -4704,6 +4869,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public int getEncryptionKeyRevocationActionValue() {
       return encryptionKeyRevocationAction_;
     }
+
     /**
      *
      *
@@ -4724,6 +4890,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4747,6 +4914,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.run.v2.EncryptionKeyRevocationAction.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4771,6 +4939,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4797,6 +4966,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         encryptionKeyShutdownDurationBuilder_;
+
     /**
      *
      *
@@ -4814,6 +4984,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasEncryptionKeyShutdownDuration() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -4837,6 +5008,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return encryptionKeyShutdownDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4862,6 +5034,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4885,6 +5058,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4916,6 +5090,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4938,6 +5113,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4955,6 +5131,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getEncryptionKeyShutdownDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4976,6 +5153,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             : encryptionKeyShutdownDuration_;
       }
     }
+
     /**
      *
      *
@@ -5006,6 +5184,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean sessionAffinity_;
+
     /**
      *
      *
@@ -5021,6 +5200,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public boolean getSessionAffinity() {
       return sessionAffinity_;
     }
+
     /**
      *
      *
@@ -5040,6 +5220,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5059,6 +5240,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean healthCheckDisabled_;
+
     /**
      *
      *
@@ -5074,6 +5256,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public boolean getHealthCheckDisabled() {
       return healthCheckDisabled_;
     }
+
     /**
      *
      *
@@ -5093,6 +5276,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5117,6 +5301,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             com.google.cloud.run.v2.NodeSelector.Builder,
             com.google.cloud.run.v2.NodeSelectorOrBuilder>
         nodeSelectorBuilder_;
+
     /**
      *
      *
@@ -5133,6 +5318,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasNodeSelector() {
       return ((bitField0_ & 0x00020000) != 0);
     }
+
     /**
      *
      *
@@ -5155,6 +5341,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         return nodeSelectorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5179,6 +5366,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5200,6 +5388,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5229,6 +5418,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5250,6 +5440,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5266,6 +5457,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getNodeSelectorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5286,6 +5478,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
             : nodeSelector_;
       }
     }
+
     /**
      *
      *

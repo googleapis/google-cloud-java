@@ -72,6 +72,7 @@ public enum InfoTypeSupportedBy implements com.google.protobuf.ProtocolMessageEn
    * <code>ENUM_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int ENUM_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum InfoTypeSupportedBy implements com.google.protobuf.ProtocolMessageEn
    * <code>INSPECT = 1;</code>
    */
   public static final int INSPECT_VALUE = 1;
+
   /**
    *
    *

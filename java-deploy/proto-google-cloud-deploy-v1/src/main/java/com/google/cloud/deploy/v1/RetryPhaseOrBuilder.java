@@ -52,6 +52,7 @@ public interface RetryPhaseOrBuilder
    * @return The enum numeric value on the wire for backoffMode.
    */
   int getBackoffModeValue();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface RetryPhaseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.RetryAttempt> getAttemptsList();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface RetryPhaseOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.RetryAttempt getAttempts(int index);
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface RetryPhaseOrBuilder
    * </code>
    */
   int getAttemptsCount();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface RetryPhaseOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.RetryAttemptOrBuilder>
       getAttemptsOrBuilderList();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface AsyncBatchAnnotateImagesResponseOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AsyncBatchAnnotateImagesResponseOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.vision.v1p4beta1.OutputConfig getOutputConfig();
+
   /**
    *
    *

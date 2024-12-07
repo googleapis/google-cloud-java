@@ -34,6 +34,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.UsageSnapshot)
     UsageSnapshotOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UsageSnapshot.newBuilder() to construct.
   private UsageSnapshot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int MILLI_DCU_FIELD_NUMBER = 1;
   private long milliDcu_ = 0L;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHUFFLE_STORAGE_GB_FIELD_NUMBER = 2;
   private long shuffleStorageGb_ = 0L;
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MILLI_DCU_PREMIUM_FIELD_NUMBER = 4;
   private long milliDcuPremium_ = 0L;
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHUFFLE_STORAGE_GB_PREMIUM_FIELD_NUMBER = 5;
   private long shuffleStorageGbPremium_ = 0L;
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MILLI_ACCELERATOR_FIELD_NUMBER = 6;
   private long milliAccelerator_ = 0L;
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object acceleratorType_ = "";
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SNAPSHOT_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp snapshotTime_;
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSnapshotTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -250,6 +260,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : snapshotTime_;
   }
+
   /**
    *
    *
@@ -485,6 +496,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -764,6 +776,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long milliDcu_;
+
     /**
      *
      *
@@ -781,6 +794,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     public long getMilliDcu() {
       return milliDcu_;
     }
+
     /**
      *
      *
@@ -802,6 +816,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +838,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long shuffleStorageGb_;
+
     /**
      *
      *
@@ -839,6 +855,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     public long getShuffleStorageGb() {
       return shuffleStorageGb_;
     }
+
     /**
      *
      *
@@ -859,6 +876,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +897,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long milliDcuPremium_;
+
     /**
      *
      *
@@ -896,6 +915,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     public long getMilliDcuPremium() {
       return milliDcuPremium_;
     }
+
     /**
      *
      *
@@ -917,6 +937,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +959,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long shuffleStorageGbPremium_;
+
     /**
      *
      *
@@ -955,6 +977,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     public long getShuffleStorageGbPremium() {
       return shuffleStorageGbPremium_;
     }
+
     /**
      *
      *
@@ -976,6 +999,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1021,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long milliAccelerator_;
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     public long getMilliAccelerator() {
       return milliAccelerator_;
     }
+
     /**
      *
      *
@@ -1033,6 +1059,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1080,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object acceleratorType_ = "";
+
     /**
      *
      *
@@ -1075,6 +1103,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1126,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1148,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1166,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1196,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         snapshotTimeBuilder_;
+
     /**
      *
      *
@@ -1179,6 +1212,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSnapshotTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1200,6 +1234,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
         return snapshotTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1223,6 +1258,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1279,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1271,6 +1308,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1291,6 +1329,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1345,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSnapshotTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1325,6 +1365,7 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
             : snapshotTime_;
       }
     }
+
     /**
      *
      *

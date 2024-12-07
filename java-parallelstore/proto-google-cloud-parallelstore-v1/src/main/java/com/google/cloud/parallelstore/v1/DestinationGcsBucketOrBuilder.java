@@ -38,6 +38,7 @@ public interface DestinationGcsBucketOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *

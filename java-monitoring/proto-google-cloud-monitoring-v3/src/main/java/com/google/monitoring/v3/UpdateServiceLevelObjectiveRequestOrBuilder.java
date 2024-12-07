@@ -39,6 +39,7 @@ public interface UpdateServiceLevelObjectiveRequestOrBuilder
    * @return Whether the serviceLevelObjective field is set.
    */
   boolean hasServiceLevelObjective();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateServiceLevelObjectiveRequestOrBuilder
    * @return The serviceLevelObjective.
    */
   com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjective();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateServiceLevelObjectiveRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface UpdateServiceLevelObjectiveRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

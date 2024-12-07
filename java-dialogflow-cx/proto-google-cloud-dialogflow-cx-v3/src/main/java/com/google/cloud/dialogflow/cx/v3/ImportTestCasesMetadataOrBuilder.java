@@ -34,6 +34,7 @@ public interface ImportTestCasesMetadataOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.TestCaseError errors = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.TestCaseError> getErrorsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ImportTestCasesMetadataOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.TestCaseError errors = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3.TestCaseError getErrors(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ImportTestCasesMetadataOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.TestCaseError errors = 1;</code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ImportTestCasesMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.TestCaseErrorOrBuilder>
       getErrorsOrBuilderList();
+
   /**
    *
    *

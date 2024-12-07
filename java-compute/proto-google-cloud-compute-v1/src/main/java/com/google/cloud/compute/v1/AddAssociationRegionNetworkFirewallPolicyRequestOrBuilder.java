@@ -36,6 +36,7 @@ public interface AddAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   java.lang.String getFirewallPolicy();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AddAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the firewallPolicyAssociationResource field is set.
    */
   boolean hasFirewallPolicyAssociationResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface AddAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The firewallPolicyAssociationResource.
    */
   com.google.cloud.compute.v1.FirewallPolicyAssociation getFirewallPolicyAssociationResource();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface AddAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface AddAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface AddAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the replaceExistingAssociation field is set.
    */
   boolean hasReplaceExistingAssociation();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface AddAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface AddAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

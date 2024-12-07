@@ -37,6 +37,7 @@ public interface ChannelGroupFilterExpressionListOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.ChannelGroupFilterExpression>
       getFilterExpressionsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ChannelGroupFilterExpressionListOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.ChannelGroupFilterExpression getFilterExpressions(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ChannelGroupFilterExpressionListOrBuilder
    * </code>
    */
   int getFilterExpressionsCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ChannelGroupFilterExpressionListOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.ChannelGroupFilterExpressionOrBuilder>
       getFilterExpressionsOrBuilderList();
+
   /**
    *
    *

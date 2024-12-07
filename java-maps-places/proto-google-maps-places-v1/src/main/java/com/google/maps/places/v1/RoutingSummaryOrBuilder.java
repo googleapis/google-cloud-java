@@ -40,6 +40,7 @@ public interface RoutingSummaryOrBuilder
    * <code>repeated .google.maps.places.v1.RoutingSummary.Leg legs = 1;</code>
    */
   java.util.List<com.google.maps.places.v1.RoutingSummary.Leg> getLegsList();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface RoutingSummaryOrBuilder
    * <code>repeated .google.maps.places.v1.RoutingSummary.Leg legs = 1;</code>
    */
   com.google.maps.places.v1.RoutingSummary.Leg getLegs(int index);
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface RoutingSummaryOrBuilder
    * <code>repeated .google.maps.places.v1.RoutingSummary.Leg legs = 1;</code>
    */
   int getLegsCount();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface RoutingSummaryOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.RoutingSummary.LegOrBuilder>
       getLegsOrBuilderList();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface RoutingSummaryOrBuilder
    * @return The directionsUri.
    */
   java.lang.String getDirectionsUri();
+
   /**
    *
    *

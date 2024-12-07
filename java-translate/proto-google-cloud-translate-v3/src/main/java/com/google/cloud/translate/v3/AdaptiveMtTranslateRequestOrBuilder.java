@@ -40,6 +40,7 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    * @return A list containing the content.
    */
   java.util.List<java.lang.String> getContentList();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    * @return The count of content.
    */
   int getContentCount();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    * @return The content at the given index.
    */
   java.lang.String getContent(int index);
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    * @return Whether the referenceSentenceConfig field is set.
    */
   boolean hasReferenceSentenceConfig();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    */
   com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentenceConfig
       getReferenceSentenceConfig();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    * @return Whether the glossaryConfig field is set.
    */
   boolean hasGlossaryConfig();
+
   /**
    *
    *
@@ -214,6 +222,7 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    * @return The glossaryConfig.
    */
   com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.GlossaryConfig getGlossaryConfig();
+
   /**
    *
    *

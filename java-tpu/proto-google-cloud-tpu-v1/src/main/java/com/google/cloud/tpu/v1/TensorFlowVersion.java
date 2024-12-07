@@ -33,6 +33,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v1.TensorFlowVersion)
     TensorFlowVersionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TensorFlowVersion.newBuilder() to construct.
   private TensorFlowVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -334,6 +339,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -532,6 +538,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -554,6 +561,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -576,6 +584,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -597,6 +606,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +624,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -638,6 +649,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -660,6 +672,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -682,6 +695,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -703,6 +717,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +735,7 @@ public final class TensorFlowVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

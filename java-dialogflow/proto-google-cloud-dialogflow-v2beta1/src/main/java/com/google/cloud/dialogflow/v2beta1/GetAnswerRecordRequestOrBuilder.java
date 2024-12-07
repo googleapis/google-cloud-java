@@ -38,6 +38,7 @@ public interface GetAnswerRecordRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

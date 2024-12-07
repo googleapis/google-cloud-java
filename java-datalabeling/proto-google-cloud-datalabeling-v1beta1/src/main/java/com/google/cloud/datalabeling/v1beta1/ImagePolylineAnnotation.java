@@ -33,6 +33,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation)
     ImagePolylineAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImagePolylineAnnotation.newBuilder() to construct.
   private ImagePolylineAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
     private PolyCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
   }
 
   public static final int POLYLINE_FIELD_NUMBER = 2;
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code>
    *
@@ -121,6 +124,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
   public boolean hasPolyline() {
     return polyCase_ == 2;
   }
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code>
    *
@@ -133,6 +137,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
     }
     return com.google.cloud.datalabeling.v1beta1.Polyline.getDefaultInstance();
   }
+
   /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.PolylineOrBuilder getPolylineOrBuilder() {
@@ -143,6 +148,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
   }
 
   public static final int NORMALIZED_POLYLINE_FIELD_NUMBER = 3;
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
    *
@@ -152,6 +158,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
   public boolean hasNormalizedPolyline() {
     return polyCase_ == 3;
   }
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
    *
@@ -164,6 +171,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
     }
     return com.google.cloud.datalabeling.v1beta1.NormalizedPolyline.getDefaultInstance();
   }
+
   /** <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code> */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.NormalizedPolylineOrBuilder
@@ -176,6 +184,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
 
   public static final int ANNOTATION_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.AnnotationSpec annotationSpec_;
+
   /**
    *
    *
@@ -191,6 +200,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
   public boolean hasAnnotationSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -208,6 +218,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
         : annotationSpec_;
   }
+
   /**
    *
    *
@@ -429,6 +440,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -699,6 +711,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
             com.google.cloud.datalabeling.v1beta1.Polyline.Builder,
             com.google.cloud.datalabeling.v1beta1.PolylineOrBuilder>
         polylineBuilder_;
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code>
      *
@@ -708,6 +721,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
     public boolean hasPolyline() {
       return polyCase_ == 2;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code>
      *
@@ -727,6 +741,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
         return com.google.cloud.datalabeling.v1beta1.Polyline.getDefaultInstance();
       }
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
     public Builder setPolyline(com.google.cloud.datalabeling.v1beta1.Polyline value) {
       if (polylineBuilder_ == null) {
@@ -741,6 +756,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       polyCase_ = 2;
       return this;
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
     public Builder setPolyline(
         com.google.cloud.datalabeling.v1beta1.Polyline.Builder builderForValue) {
@@ -753,6 +769,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       polyCase_ = 2;
       return this;
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
     public Builder mergePolyline(com.google.cloud.datalabeling.v1beta1.Polyline value) {
       if (polylineBuilder_ == null) {
@@ -777,6 +794,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       polyCase_ = 2;
       return this;
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
     public Builder clearPolyline() {
       if (polylineBuilder_ == null) {
@@ -794,10 +812,12 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
     public com.google.cloud.datalabeling.v1beta1.Polyline.Builder getPolylineBuilder() {
       return getPolylineFieldBuilder().getBuilder();
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.PolylineOrBuilder getPolylineOrBuilder() {
@@ -810,6 +830,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
         return com.google.cloud.datalabeling.v1beta1.Polyline.getDefaultInstance();
       }
     }
+
     /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.Polyline,
@@ -840,6 +861,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
             com.google.cloud.datalabeling.v1beta1.NormalizedPolyline.Builder,
             com.google.cloud.datalabeling.v1beta1.NormalizedPolylineOrBuilder>
         normalizedPolylineBuilder_;
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
      *
@@ -849,6 +871,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
     public boolean hasNormalizedPolyline() {
       return polyCase_ == 3;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
      *
@@ -868,6 +891,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
         return com.google.cloud.datalabeling.v1beta1.NormalizedPolyline.getDefaultInstance();
       }
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
      */
@@ -885,6 +909,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       polyCase_ = 3;
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
      */
@@ -899,6 +924,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       polyCase_ = 3;
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
      */
@@ -927,6 +953,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       polyCase_ = 3;
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
      */
@@ -946,6 +973,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
      */
@@ -953,6 +981,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
         getNormalizedPolylineBuilder() {
       return getNormalizedPolylineFieldBuilder().getBuilder();
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
      */
@@ -968,6 +997,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
         return com.google.cloud.datalabeling.v1beta1.NormalizedPolyline.getDefaultInstance();
       }
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
      */
@@ -1001,6 +1031,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
             com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder,
             com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder>
         annotationSpecBuilder_;
+
     /**
      *
      *
@@ -1015,6 +1046,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
     public boolean hasAnnotationSpec() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1035,6 +1067,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
         return annotationSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1090,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1111,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1140,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1160,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1175,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       onChanged();
       return getAnnotationSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1157,6 +1195,7 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
             : annotationSpec_;
       }
     }
+
     /**
      *
      *

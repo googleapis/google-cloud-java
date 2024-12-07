@@ -36,6 +36,7 @@ public interface CitationMetadataOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Citation> getCitationsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CitationMetadataOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.Citation getCitations(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface CitationMetadataOrBuilder
    * </code>
    */
   int getCitationsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface CitationMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.CitationOrBuilder>
       getCitationsOrBuilderList();
+
   /**
    *
    *

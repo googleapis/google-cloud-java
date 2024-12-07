@@ -38,6 +38,7 @@ public interface UpdateGroupRequestOrBuilder
    * @return Whether the group field is set.
    */
   boolean hasGroup();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateGroupRequestOrBuilder
    * @return The group.
    */
   com.google.monitoring.v3.Group getGroup();
+
   /**
    *
    *

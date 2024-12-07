@@ -42,6 +42,7 @@ public interface WebhookOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface WebhookOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface WebhookOrBuilder
    * @return Whether the genericWebService field is set.
    */
   boolean hasGenericWebService();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface WebhookOrBuilder
    * @return The genericWebService.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService getGenericWebService();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface WebhookOrBuilder
    * @return Whether the serviceDirectory field is set.
    */
   boolean hasServiceDirectory();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface WebhookOrBuilder
    * @return The serviceDirectory.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig getServiceDirectory();
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public interface WebhookOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface WebhookOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
+
   /**
    *
    *

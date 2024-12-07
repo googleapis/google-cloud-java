@@ -34,6 +34,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.CreateParticipantRequest)
     CreateParticipantRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateParticipantRequest.newBuilder() to construct.
   private CreateParticipantRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
 
   public static final int PARTICIPANT_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2.Participant participant_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
   public boolean hasParticipant() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
         ? com.google.cloud.dialogflow.v2.Participant.getDefaultInstance()
         : participant_;
   }
+
   /**
    *
    *
@@ -354,6 +360,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -569,6 +576,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -595,6 +603,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -621,6 +630,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -646,6 +656,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
             com.google.cloud.dialogflow.v2.Participant.Builder,
             com.google.cloud.dialogflow.v2.ParticipantOrBuilder>
         participantBuilder_;
+
     /**
      *
      *
@@ -716,6 +729,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
     public boolean hasParticipant() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
         return participantBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -762,6 +777,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +800,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +830,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +852,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
       onChanged();
       return getParticipantFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -870,6 +890,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
             : participant_;
       }
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface LogEntrySourceLocationOrBuilder
    * @return The file.
    */
   java.lang.String getFile();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface LogEntrySourceLocationOrBuilder
    * @return The function.
    */
   java.lang.String getFunction();
+
   /**
    *
    *

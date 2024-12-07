@@ -33,6 +33,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation)
     ImageClassificationAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImageClassificationAnnotation.newBuilder() to construct.
   private ImageClassificationAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int ANNOTATION_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.AnnotationSpec annotationSpec_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
   public boolean hasAnnotationSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
         : annotationSpec_;
   }
+
   /**
    *
    *
@@ -279,6 +283,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -490,6 +495,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
             com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder,
             com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder>
         annotationSpecBuilder_;
+
     /**
      *
      *
@@ -504,6 +510,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
     public boolean hasAnnotationSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -524,6 +531,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
         return annotationSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -546,6 +554,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -566,6 +575,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -594,6 +604,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -613,6 +624,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -627,6 +639,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
       onChanged();
       return getAnnotationSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -646,6 +659,7 @@ public final class ImageClassificationAnnotation extends com.google.protobuf.Gen
             : annotationSpec_;
       }
     }
+
     /**
      *
      *

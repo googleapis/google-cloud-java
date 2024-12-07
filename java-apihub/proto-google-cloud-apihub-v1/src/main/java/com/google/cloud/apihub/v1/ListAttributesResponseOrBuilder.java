@@ -34,6 +34,7 @@ public interface ListAttributesResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Attribute attributes = 1;</code>
    */
   java.util.List<com.google.cloud.apihub.v1.Attribute> getAttributesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListAttributesResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Attribute attributes = 1;</code>
    */
   com.google.cloud.apihub.v1.Attribute getAttributes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListAttributesResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Attribute attributes = 1;</code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListAttributesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apihub.v1.AttributeOrBuilder>
       getAttributesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListAttributesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface ProcessOptionsOrBuilder
    * @return Whether the individualPageSelector field is set.
    */
   boolean hasIndividualPageSelector();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ProcessOptionsOrBuilder
    * @return The individualPageSelector.
    */
   com.google.cloud.documentai.v1.ProcessOptions.IndividualPageSelector getIndividualPageSelector();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ProcessOptionsOrBuilder
    * @return Whether the fromStart field is set.
    */
   boolean hasFromStart();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface ProcessOptionsOrBuilder
    * @return Whether the fromEnd field is set.
    */
   boolean hasFromEnd();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface ProcessOptionsOrBuilder
    * @return Whether the ocrConfig field is set.
    */
   boolean hasOcrConfig();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface ProcessOptionsOrBuilder
    * @return The ocrConfig.
    */
   com.google.cloud.documentai.v1.OcrConfig getOcrConfig();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface ProcessOptionsOrBuilder
    * @return Whether the layoutConfig field is set.
    */
   boolean hasLayoutConfig();
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public interface ProcessOptionsOrBuilder
    * @return The layoutConfig.
    */
   com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig getLayoutConfig();
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public interface ProcessOptionsOrBuilder
    * @return Whether the schemaOverride field is set.
    */
   boolean hasSchemaOverride();
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public interface ProcessOptionsOrBuilder
    * @return The schemaOverride.
    */
   com.google.cloud.documentai.v1.DocumentSchema getSchemaOverride();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata)
     BatchDeleteVersionsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchDeleteVersionsMetadata.newBuilder() to construct.
   private BatchDeleteVersionsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList failedVersions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getFailedVersionsList() {
     return failedVersions_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
   public int getFailedVersionsCount() {
     return failedVersions_.size();
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
   public java.lang.String getFailedVersions(int index) {
     return failedVersions_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +300,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -501,6 +507,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -516,6 +523,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
       failedVersions_.makeImmutable();
       return failedVersions_;
     }
+
     /**
      *
      *
@@ -530,6 +538,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
     public int getFailedVersionsCount() {
       return failedVersions_.size();
     }
+
     /**
      *
      *
@@ -545,6 +554,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
     public java.lang.String getFailedVersions(int index) {
       return failedVersions_.get(index);
     }
+
     /**
      *
      *
@@ -560,6 +570,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getFailedVersionsBytes(int index) {
       return failedVersions_.getByteString(index);
     }
+
     /**
      *
      *
@@ -583,6 +594,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -605,6 +617,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +637,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +656,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

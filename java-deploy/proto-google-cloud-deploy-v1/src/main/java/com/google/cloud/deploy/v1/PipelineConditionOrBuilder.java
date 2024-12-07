@@ -36,6 +36,7 @@ public interface PipelineConditionOrBuilder
    * @return Whether the pipelineReadyCondition field is set.
    */
   boolean hasPipelineReadyCondition();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PipelineConditionOrBuilder
    * @return The pipelineReadyCondition.
    */
   com.google.cloud.deploy.v1.PipelineReadyCondition getPipelineReadyCondition();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface PipelineConditionOrBuilder
    * @return Whether the targetsPresentCondition field is set.
    */
   boolean hasTargetsPresentCondition();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface PipelineConditionOrBuilder
    * @return The targetsPresentCondition.
    */
   com.google.cloud.deploy.v1.TargetsPresentCondition getTargetsPresentCondition();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface PipelineConditionOrBuilder
    * @return Whether the targetsTypeCondition field is set.
    */
   boolean hasTargetsTypeCondition();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface PipelineConditionOrBuilder
    * @return The targetsTypeCondition.
    */
   com.google.cloud.deploy.v1.TargetsTypeCondition getTargetsTypeCondition();
+
   /**
    *
    *

@@ -103,6 +103,7 @@ public enum SpeechModelVariant implements com.google.protobuf.ProtocolMessageEnu
    * <code>SPEECH_MODEL_VARIANT_UNSPECIFIED = 0;</code>
    */
   public static final int SPEECH_MODEL_VARIANT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -114,6 +115,7 @@ public enum SpeechModelVariant implements com.google.protobuf.ProtocolMessageEnu
    * <code>USE_BEST_AVAILABLE = 1;</code>
    */
   public static final int USE_BEST_AVAILABLE_VALUE = 1;
+
   /**
    *
    *
@@ -127,6 +129,7 @@ public enum SpeechModelVariant implements com.google.protobuf.ProtocolMessageEnu
    * <code>USE_STANDARD = 2;</code>
    */
   public static final int USE_STANDARD_VALUE = 2;
+
   /**
    *
    *

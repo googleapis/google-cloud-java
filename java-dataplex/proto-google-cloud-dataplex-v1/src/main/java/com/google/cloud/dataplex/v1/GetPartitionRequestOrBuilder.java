@@ -41,6 +41,7 @@ public interface GetPartitionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

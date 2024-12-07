@@ -33,6 +33,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.Parameter)
     ParameterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Parameter.newBuilder() to construct.
   private Parameter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.cloud.channel.v1.Value value_;
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.channel.v1.Value getValue() {
     return value_ == null ? com.google.cloud.channel.v1.Value.getDefaultInstance() : value_;
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EDITABLE_FIELD_NUMBER = 3;
   private boolean editable_ = false;
+
   /**
    *
    *
@@ -361,6 +368,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -586,6 +594,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -608,6 +617,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -630,6 +640,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -651,6 +662,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +680,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +710,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.channel.v1.Value.Builder,
             com.google.cloud.channel.v1.ValueOrBuilder>
         valueBuilder_;
+
     /**
      *
      *
@@ -711,6 +725,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -729,6 +744,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         return valueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -751,6 +767,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +787,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +815,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +835,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +850,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -846,6 +867,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         return value_ == null ? com.google.cloud.channel.v1.Value.getDefaultInstance() : value_;
       }
     }
+
     /**
      *
      *
@@ -873,6 +895,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean editable_;
+
     /**
      *
      *
@@ -890,6 +913,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     public boolean getEditable() {
       return editable_;
     }
+
     /**
      *
      *
@@ -911,6 +935,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

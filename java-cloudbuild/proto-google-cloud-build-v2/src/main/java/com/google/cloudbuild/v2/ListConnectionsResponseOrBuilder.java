@@ -34,6 +34,7 @@ public interface ListConnectionsResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v2.Connection connections = 1;</code>
    */
   java.util.List<com.google.cloudbuild.v2.Connection> getConnectionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListConnectionsResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v2.Connection connections = 1;</code>
    */
   com.google.cloudbuild.v2.Connection getConnections(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListConnectionsResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v2.Connection connections = 1;</code>
    */
   int getConnectionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListConnectionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v2.ConnectionOrBuilder>
       getConnectionsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListConnectionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

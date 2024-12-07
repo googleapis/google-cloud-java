@@ -35,6 +35,7 @@ public interface BatchUpdateEntitySignalsMappingsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.EntitySignalsMapping> getEntitySignalsMappingsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface BatchUpdateEntitySignalsMappingsResponseOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.EntitySignalsMapping getEntitySignalsMappings(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface BatchUpdateEntitySignalsMappingsResponseOrBuilder
    * </code>
    */
   int getEntitySignalsMappingsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface BatchUpdateEntitySignalsMappingsResponseOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.EntitySignalsMappingOrBuilder>
       getEntitySignalsMappingsOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.OracleRdbms)
     OracleRdbmsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OracleRdbms.newBuilder() to construct.
   private OracleRdbms(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1alpha1.OracleSchema> oracleSchemas_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datastream.v1alpha1.OracleSchema> getOracleSchemasList() {
     return oracleSchemas_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
       getOracleSchemasOrBuilderList() {
     return oracleSchemas_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
   public int getOracleSchemasCount() {
     return oracleSchemas_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datastream.v1alpha1.OracleSchema getOracleSchemas(int index) {
     return oracleSchemas_.get(index);
   }
+
   /**
    *
    *
@@ -296,6 +302,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -561,6 +568,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
         return oracleSchemasBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -577,6 +585,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
         return oracleSchemasBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
         return oracleSchemasBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +647,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +670,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +694,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +715,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +736,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +757,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +777,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +797,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +811,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getOracleSchemasFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -809,6 +829,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
         return oracleSchemasBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -826,6 +847,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(oracleSchemas_);
       }
     }
+
     /**
      *
      *
@@ -839,6 +861,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
       return getOracleSchemasFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1alpha1.OracleSchema.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -854,6 +877,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.datastream.v1alpha1.OracleSchema.getDefaultInstance());
     }
+
     /**
      *
      *

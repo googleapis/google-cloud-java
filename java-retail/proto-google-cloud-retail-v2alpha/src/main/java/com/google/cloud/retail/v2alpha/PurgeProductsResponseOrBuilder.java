@@ -51,6 +51,7 @@ public interface PurgeProductsResponseOrBuilder
    * @return A list containing the purgeSample.
    */
   java.util.List<java.lang.String> getPurgeSampleList();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface PurgeProductsResponseOrBuilder
    * @return The count of purgeSample.
    */
   int getPurgeSampleCount();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface PurgeProductsResponseOrBuilder
    * @return The purgeSample at the given index.
    */
   java.lang.String getPurgeSample(int index);
+
   /**
    *
    *

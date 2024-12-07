@@ -34,6 +34,7 @@ public interface ListEnvironmentsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Environment environments = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.Environment> getEnvironmentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListEnvironmentsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Environment environments = 1;</code>
    */
   com.google.cloud.dataplex.v1.Environment getEnvironments(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListEnvironmentsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Environment environments = 1;</code>
    */
   int getEnvironmentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListEnvironmentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.EnvironmentOrBuilder>
       getEnvironmentsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListEnvironmentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

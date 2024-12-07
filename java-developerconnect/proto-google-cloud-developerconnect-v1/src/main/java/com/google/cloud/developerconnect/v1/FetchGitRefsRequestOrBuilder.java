@@ -39,6 +39,7 @@ public interface FetchGitRefsRequestOrBuilder
    * @return The gitRepositoryLink.
    */
   java.lang.String getGitRepositoryLink();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface FetchGitRefsRequestOrBuilder
    * @return The enum numeric value on the wire for refType.
    */
   int getRefTypeValue();
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public interface FetchGitRefsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

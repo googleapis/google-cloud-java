@@ -38,6 +38,7 @@ public interface ModerateTextRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ModerateTextRequestOrBuilder
    * @return The document.
    */
   com.google.cloud.language.v2.Document getDocument();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ModerateTextRequestOrBuilder
    * @return The enum numeric value on the wire for modelVersion.
    */
   int getModelVersionValue();
+
   /**
    *
    *

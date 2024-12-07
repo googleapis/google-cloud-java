@@ -37,6 +37,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the capacityProvisioningType field is set.
    */
   boolean hasCapacityProvisioningType();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface StoragePoolOrBuilder
    * @return The capacityProvisioningType.
    */
   java.lang.String getCapacityProvisioningType();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface StoragePoolOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface StoragePoolOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public interface StoragePoolOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
+
   /**
    *
    *
@@ -224,6 +234,7 @@ public interface StoragePoolOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public interface StoragePoolOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -257,9 +269,11 @@ public interface StoragePoolOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -270,6 +284,7 @@ public interface StoragePoolOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -284,6 +299,7 @@ public interface StoragePoolOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -307,6 +323,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -319,6 +336,7 @@ public interface StoragePoolOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -345,6 +363,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the performanceProvisioningType field is set.
    */
   boolean hasPerformanceProvisioningType();
+
   /**
    *
    *
@@ -358,6 +377,7 @@ public interface StoragePoolOrBuilder
    * @return The performanceProvisioningType.
    */
   java.lang.String getPerformanceProvisioningType();
+
   /**
    *
    *
@@ -384,6 +404,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the poolProvisionedCapacityGb field is set.
    */
   boolean hasPoolProvisionedCapacityGb();
+
   /**
    *
    *
@@ -409,6 +430,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the poolProvisionedIops field is set.
    */
   boolean hasPoolProvisionedIops();
+
   /**
    *
    *
@@ -434,6 +456,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the poolProvisionedThroughput field is set.
    */
   boolean hasPoolProvisionedThroughput();
+
   /**
    *
    *
@@ -460,6 +483,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the resourceStatus field is set.
    */
   boolean hasResourceStatus();
+
   /**
    *
    *
@@ -473,6 +497,7 @@ public interface StoragePoolOrBuilder
    * @return The resourceStatus.
    */
   com.google.cloud.compute.v1.StoragePoolResourceStatus getResourceStatus();
+
   /**
    *
    *
@@ -497,6 +522,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -509,6 +535,7 @@ public interface StoragePoolOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -534,6 +561,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the selfLinkWithId field is set.
    */
   boolean hasSelfLinkWithId();
+
   /**
    *
    *
@@ -546,6 +574,7 @@ public interface StoragePoolOrBuilder
    * @return The selfLinkWithId.
    */
   java.lang.String getSelfLinkWithId();
+
   /**
    *
    *
@@ -572,6 +601,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -585,6 +615,7 @@ public interface StoragePoolOrBuilder
    * @return The state.
    */
   java.lang.String getState();
+
   /**
    *
    *
@@ -611,6 +642,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -623,6 +655,7 @@ public interface StoragePoolOrBuilder
    * @return The status.
    */
   com.google.cloud.compute.v1.StoragePoolResourceStatus getStatus();
+
   /**
    *
    *
@@ -646,6 +679,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the storagePoolType field is set.
    */
   boolean hasStoragePoolType();
+
   /**
    *
    *
@@ -658,6 +692,7 @@ public interface StoragePoolOrBuilder
    * @return The storagePoolType.
    */
   java.lang.String getStoragePoolType();
+
   /**
    *
    *
@@ -683,6 +718,7 @@ public interface StoragePoolOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
+
   /**
    *
    *
@@ -695,6 +731,7 @@ public interface StoragePoolOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

@@ -290,21 +290,24 @@ public class HttpJsonStreamingServiceStub extends StreamingServiceStub {
   @Override
   public BidiStreamingCallable<SendPacketsRequest, SendPacketsResponse> sendPacketsCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: sendPacketsCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: sendPacketsCallable(). REST transport is not implemented for this method"
+            + " yet.");
   }
 
   @Override
   public BidiStreamingCallable<ReceivePacketsRequest, ReceivePacketsResponse>
       receivePacketsCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: receivePacketsCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: receivePacketsCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override
   public BidiStreamingCallable<ReceiveEventsRequest, ReceiveEventsResponse>
       receiveEventsCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: receiveEventsCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: receiveEventsCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override

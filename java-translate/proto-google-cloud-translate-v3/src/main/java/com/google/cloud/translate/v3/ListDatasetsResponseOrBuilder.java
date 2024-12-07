@@ -34,6 +34,7 @@ public interface ListDatasetsResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Dataset datasets = 1;</code>
    */
   java.util.List<com.google.cloud.translate.v3.Dataset> getDatasetsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDatasetsResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Dataset datasets = 1;</code>
    */
   com.google.cloud.translate.v3.Dataset getDatasets(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDatasetsResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Dataset datasets = 1;</code>
    */
   int getDatasetsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDatasetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3.DatasetOrBuilder>
       getDatasetsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListDatasetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

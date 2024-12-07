@@ -38,6 +38,7 @@ public interface CreateCutoverJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateCutoverJobRequestOrBuilder
    * @return The cutoverJobId.
    */
   java.lang.String getCutoverJobId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface CreateCutoverJobRequestOrBuilder
    * @return Whether the cutoverJob field is set.
    */
   boolean hasCutoverJob();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CreateCutoverJobRequestOrBuilder
    * @return The cutoverJob.
    */
   com.google.cloud.vmmigration.v1.CutoverJob getCutoverJob();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface CreateCutoverJobRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -43,6 +43,7 @@ public final class CompetitiveVisibilityTopMerchantView
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.CompetitiveVisibilityTopMerchantView)
     CompetitiveVisibilityTopMerchantViewOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompetitiveVisibilityTopMerchantView.newBuilder() to construct.
   private CompetitiveVisibilityTopMerchantView(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -80,6 +81,7 @@ public final class CompetitiveVisibilityTopMerchantView
   private int bitField0_;
   public static final int DATE_FIELD_NUMBER = 1;
   private com.google.type.Date date_;
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CompetitiveVisibilityTopMerchantView
   public boolean hasDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public final class CompetitiveVisibilityTopMerchantView
   public com.google.type.Date getDate() {
     return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class CompetitiveVisibilityTopMerchantView
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object domain_ = "";
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class CompetitiveVisibilityTopMerchantView
   public boolean hasDomain() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class CompetitiveVisibilityTopMerchantView
       return s;
     }
   }
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class CompetitiveVisibilityTopMerchantView
 
   public static final int IS_YOUR_DOMAIN_FIELD_NUMBER = 3;
   private boolean isYourDomain_ = false;
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public final class CompetitiveVisibilityTopMerchantView
   public boolean hasIsYourDomain() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public final class CompetitiveVisibilityTopMerchantView
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reportCountryCode_ = "";
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public final class CompetitiveVisibilityTopMerchantView
   public boolean hasReportCountryCode() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -293,6 +304,7 @@ public final class CompetitiveVisibilityTopMerchantView
       return s;
     }
   }
+
   /**
    *
    *
@@ -322,6 +334,7 @@ public final class CompetitiveVisibilityTopMerchantView
 
   public static final int REPORT_CATEGORY_ID_FIELD_NUMBER = 5;
   private long reportCategoryId_ = 0L;
+
   /**
    *
    *
@@ -342,6 +355,7 @@ public final class CompetitiveVisibilityTopMerchantView
   public boolean hasReportCategoryId() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -365,6 +379,7 @@ public final class CompetitiveVisibilityTopMerchantView
 
   public static final int TRAFFIC_SOURCE_FIELD_NUMBER = 6;
   private int trafficSource_ = 0;
+
   /**
    *
    *
@@ -384,6 +399,7 @@ public final class CompetitiveVisibilityTopMerchantView
   public boolean hasTrafficSource() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -403,6 +419,7 @@ public final class CompetitiveVisibilityTopMerchantView
   public int getTrafficSourceValue() {
     return trafficSource_;
   }
+
   /**
    *
    *
@@ -431,6 +448,7 @@ public final class CompetitiveVisibilityTopMerchantView
 
   public static final int RANK_FIELD_NUMBER = 7;
   private long rank_ = 0L;
+
   /**
    *
    *
@@ -450,6 +468,7 @@ public final class CompetitiveVisibilityTopMerchantView
   public boolean hasRank() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -472,6 +491,7 @@ public final class CompetitiveVisibilityTopMerchantView
 
   public static final int ADS_ORGANIC_RATIO_FIELD_NUMBER = 8;
   private double adsOrganicRatio_ = 0D;
+
   /**
    *
    *
@@ -492,6 +512,7 @@ public final class CompetitiveVisibilityTopMerchantView
   public boolean hasAdsOrganicRatio() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -515,6 +536,7 @@ public final class CompetitiveVisibilityTopMerchantView
 
   public static final int PAGE_OVERLAP_RATE_FIELD_NUMBER = 9;
   private double pageOverlapRate_ = 0D;
+
   /**
    *
    *
@@ -535,6 +557,7 @@ public final class CompetitiveVisibilityTopMerchantView
   public boolean hasPageOverlapRate() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -558,6 +581,7 @@ public final class CompetitiveVisibilityTopMerchantView
 
   public static final int HIGHER_POSITION_RATE_FIELD_NUMBER = 10;
   private double higherPositionRate_ = 0D;
+
   /**
    *
    *
@@ -578,6 +602,7 @@ public final class CompetitiveVisibilityTopMerchantView
   public boolean hasHigherPositionRate() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -910,6 +935,7 @@ public final class CompetitiveVisibilityTopMerchantView
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1266,6 +1292,7 @@ public final class CompetitiveVisibilityTopMerchantView
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         dateBuilder_;
+
     /**
      *
      *
@@ -1283,6 +1310,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public boolean hasDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1304,6 +1332,7 @@ public final class CompetitiveVisibilityTopMerchantView
         return dateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1329,6 +1358,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1351,6 +1381,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1381,6 +1412,7 @@ public final class CompetitiveVisibilityTopMerchantView
       }
       return this;
     }
+
     /**
      *
      *
@@ -1403,6 +1435,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1420,6 +1453,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return getDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1439,6 +1473,7 @@ public final class CompetitiveVisibilityTopMerchantView
         return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
       }
     }
+
     /**
      *
      *
@@ -1465,6 +1500,7 @@ public final class CompetitiveVisibilityTopMerchantView
     }
 
     private java.lang.Object domain_ = "";
+
     /**
      *
      *
@@ -1482,6 +1518,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public boolean hasDomain() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1507,6 +1544,7 @@ public final class CompetitiveVisibilityTopMerchantView
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1532,6 +1570,7 @@ public final class CompetitiveVisibilityTopMerchantView
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1556,6 +1595,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1576,6 +1616,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1603,6 +1644,7 @@ public final class CompetitiveVisibilityTopMerchantView
     }
 
     private boolean isYourDomain_;
+
     /**
      *
      *
@@ -1620,6 +1662,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public boolean hasIsYourDomain() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1637,6 +1680,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public boolean getIsYourDomain() {
       return isYourDomain_;
     }
+
     /**
      *
      *
@@ -1658,6 +1702,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1679,6 +1724,7 @@ public final class CompetitiveVisibilityTopMerchantView
     }
 
     private java.lang.Object reportCountryCode_ = "";
+
     /**
      *
      *
@@ -1696,6 +1742,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public boolean hasReportCountryCode() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1721,6 +1768,7 @@ public final class CompetitiveVisibilityTopMerchantView
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1746,6 +1794,7 @@ public final class CompetitiveVisibilityTopMerchantView
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1770,6 +1819,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1790,6 +1840,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1817,6 +1868,7 @@ public final class CompetitiveVisibilityTopMerchantView
     }
 
     private long reportCategoryId_;
+
     /**
      *
      *
@@ -1837,6 +1889,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public boolean hasReportCategoryId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1857,6 +1910,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public long getReportCategoryId() {
       return reportCategoryId_;
     }
+
     /**
      *
      *
@@ -1881,6 +1935,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1905,6 +1960,7 @@ public final class CompetitiveVisibilityTopMerchantView
     }
 
     private int trafficSource_ = 0;
+
     /**
      *
      *
@@ -1924,6 +1980,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public boolean hasTrafficSource() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1943,6 +2000,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public int getTrafficSourceValue() {
       return trafficSource_;
     }
+
     /**
      *
      *
@@ -1965,6 +2023,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1990,6 +2049,7 @@ public final class CompetitiveVisibilityTopMerchantView
           ? com.google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2016,6 +2076,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2039,6 +2100,7 @@ public final class CompetitiveVisibilityTopMerchantView
     }
 
     private long rank_;
+
     /**
      *
      *
@@ -2058,6 +2120,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public boolean hasRank() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2077,6 +2140,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public long getRank() {
       return rank_;
     }
+
     /**
      *
      *
@@ -2100,6 +2164,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2123,6 +2188,7 @@ public final class CompetitiveVisibilityTopMerchantView
     }
 
     private double adsOrganicRatio_;
+
     /**
      *
      *
@@ -2143,6 +2209,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public boolean hasAdsOrganicRatio() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2163,6 +2230,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public double getAdsOrganicRatio() {
       return adsOrganicRatio_;
     }
+
     /**
      *
      *
@@ -2187,6 +2255,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2211,6 +2280,7 @@ public final class CompetitiveVisibilityTopMerchantView
     }
 
     private double pageOverlapRate_;
+
     /**
      *
      *
@@ -2231,6 +2301,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public boolean hasPageOverlapRate() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2251,6 +2322,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public double getPageOverlapRate() {
       return pageOverlapRate_;
     }
+
     /**
      *
      *
@@ -2275,6 +2347,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2299,6 +2372,7 @@ public final class CompetitiveVisibilityTopMerchantView
     }
 
     private double higherPositionRate_;
+
     /**
      *
      *
@@ -2319,6 +2393,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public boolean hasHigherPositionRate() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2339,6 +2414,7 @@ public final class CompetitiveVisibilityTopMerchantView
     public double getHigherPositionRate() {
       return higherPositionRate_;
     }
+
     /**
      *
      *
@@ -2363,6 +2439,7 @@ public final class CompetitiveVisibilityTopMerchantView
       onChanged();
       return this;
     }
+
     /**
      *
      *

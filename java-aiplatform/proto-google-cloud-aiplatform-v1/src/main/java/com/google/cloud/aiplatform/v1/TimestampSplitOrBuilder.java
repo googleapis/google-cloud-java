@@ -79,6 +79,7 @@ public interface TimestampSplitOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *

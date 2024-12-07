@@ -37,6 +37,7 @@ public interface RuleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RuleOrBuilder
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface RuleOrBuilder
    * @return The enum numeric value on the wire for operation.
    */
   int getOperationValue();
+
   /**
    * <code>.google.devtools.artifactregistry.v1.Rule.Operation operation = 3;</code>
    *
@@ -102,6 +105,7 @@ public interface RuleOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface RuleOrBuilder
    * @return The condition.
    */
   com.google.type.Expr getCondition();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface RuleOrBuilder
    * @return The packageId.
    */
   java.lang.String getPackageId();
+
   /**
    *
    *

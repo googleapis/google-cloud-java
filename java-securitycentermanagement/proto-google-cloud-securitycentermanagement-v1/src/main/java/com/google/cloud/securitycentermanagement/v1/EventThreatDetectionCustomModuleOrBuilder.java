@@ -41,6 +41,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    * @return The config.
    */
   com.google.protobuf.Struct getConfig();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    * @return The ancestorModule.
    */
   java.lang.String getAncestorModule();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    * @return The enum numeric value on the wire for enablementState.
    */
   int getEnablementStateValue();
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -255,6 +263,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -292,6 +302,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    * @return The lastEditor.
    */
   java.lang.String getLastEditor();
+
   /**
    *
    *

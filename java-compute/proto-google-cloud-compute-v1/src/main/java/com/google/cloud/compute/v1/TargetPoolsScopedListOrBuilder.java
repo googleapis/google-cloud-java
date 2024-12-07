@@ -34,6 +34,7 @@ public interface TargetPoolsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
    */
   java.util.List<com.google.cloud.compute.v1.TargetPool> getTargetPoolsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface TargetPoolsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
    */
   com.google.cloud.compute.v1.TargetPool getTargetPools(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface TargetPoolsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
    */
   int getTargetPoolsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface TargetPoolsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.TargetPoolOrBuilder>
       getTargetPoolsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface TargetPoolsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface TargetPoolsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

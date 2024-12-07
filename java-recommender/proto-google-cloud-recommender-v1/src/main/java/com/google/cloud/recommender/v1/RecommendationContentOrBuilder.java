@@ -36,6 +36,7 @@ public interface RecommendationContentOrBuilder
    * <code>repeated .google.cloud.recommender.v1.OperationGroup operation_groups = 2;</code>
    */
   java.util.List<com.google.cloud.recommender.v1.OperationGroup> getOperationGroupsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RecommendationContentOrBuilder
    * <code>repeated .google.cloud.recommender.v1.OperationGroup operation_groups = 2;</code>
    */
   com.google.cloud.recommender.v1.OperationGroup getOperationGroups(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface RecommendationContentOrBuilder
    * <code>repeated .google.cloud.recommender.v1.OperationGroup operation_groups = 2;</code>
    */
   int getOperationGroupsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface RecommendationContentOrBuilder
    */
   java.util.List<? extends com.google.cloud.recommender.v1.OperationGroupOrBuilder>
       getOperationGroupsOrBuilderList();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface RecommendationContentOrBuilder
    * @return Whether the overview field is set.
    */
   boolean hasOverview();
+
   /**
    *
    *
@@ -110,6 +115,7 @@ public interface RecommendationContentOrBuilder
    * @return The overview.
    */
   com.google.protobuf.Struct getOverview();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface ComputeSchedulingOrBuilder
    * @return The enum numeric value on the wire for onHostMaintenance.
    */
   int getOnHostMaintenanceValue();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface ComputeSchedulingOrBuilder
    * @return The enum numeric value on the wire for restartType.
    */
   int getRestartTypeValue();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface ComputeSchedulingOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.SchedulingNodeAffinity node_affinities = 3;</code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.SchedulingNodeAffinity> getNodeAffinitiesList();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface ComputeSchedulingOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.SchedulingNodeAffinity node_affinities = 3;</code>
    */
   com.google.cloud.vmmigration.v1.SchedulingNodeAffinity getNodeAffinities(int index);
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface ComputeSchedulingOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.SchedulingNodeAffinity node_affinities = 3;</code>
    */
   int getNodeAffinitiesCount();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface ComputeSchedulingOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.SchedulingNodeAffinityOrBuilder>
       getNodeAffinitiesOrBuilderList();
+
   /**
    *
    *

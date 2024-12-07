@@ -38,6 +38,7 @@ public interface ConfidentialInstanceConfigOrBuilder
    * @return Whether the enableConfidentialCompute field is set.
    */
   boolean hasEnableConfidentialCompute();
+
   /**
    *
    *

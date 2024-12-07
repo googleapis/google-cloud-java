@@ -36,6 +36,7 @@ public interface InsertImageRequestOrBuilder
    * @return Whether the forceCreate field is set.
    */
   boolean hasForceCreate();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface InsertImageRequestOrBuilder
    * @return Whether the imageResource field is set.
    */
   boolean hasImageResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface InsertImageRequestOrBuilder
    * @return The imageResource.
    */
   com.google.cloud.compute.v1.Image getImageResource();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface InsertImageRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface InsertImageRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface InsertImageRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

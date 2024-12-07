@@ -41,6 +41,7 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return A list containing the delegates.
    */
   java.util.List<java.lang.String> getDelegatesList();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return The count of delegates.
    */
   int getDelegatesCount();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return The delegates at the given index.
    */
   java.lang.String getDelegates(int index);
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return A list containing the scope.
    */
   java.util.List<java.lang.String> getScopeList();
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return The count of scope.
    */
   int getScopeCount();
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return The scope at the given index.
    */
   java.lang.String getScope(int index);
+
   /**
    *
    *
@@ -224,6 +231,7 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return Whether the lifetime field is set.
    */
   boolean hasLifetime();
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return The lifetime.
    */
   com.google.protobuf.Duration getLifetime();
+
   /**
    *
    *

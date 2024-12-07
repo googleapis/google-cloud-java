@@ -36,6 +36,7 @@ public interface UpgradeNotebookRuntimeOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpgradeNotebookRuntimeOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1.GenericOperationMetadata getGenericMetadata();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface UpgradeNotebookRuntimeOperationMetadataOrBuilder
    * @return The progressMessage.
    */
   java.lang.String getProgressMessage();
+
   /**
    *
    *

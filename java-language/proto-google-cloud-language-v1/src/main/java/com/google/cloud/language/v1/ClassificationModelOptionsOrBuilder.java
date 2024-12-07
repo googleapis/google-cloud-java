@@ -38,6 +38,7 @@ public interface ClassificationModelOptionsOrBuilder
    * @return Whether the v1Model field is set.
    */
   boolean hasV1Model();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ClassificationModelOptionsOrBuilder
    * @return The v1Model.
    */
   com.google.cloud.language.v1.ClassificationModelOptions.V1Model getV1Model();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface ClassificationModelOptionsOrBuilder
    * @return Whether the v2Model field is set.
    */
   boolean hasV2Model();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface ClassificationModelOptionsOrBuilder
    * @return The v2Model.
    */
   com.google.cloud.language.v1.ClassificationModelOptions.V2Model getV2Model();
+
   /**
    *
    *

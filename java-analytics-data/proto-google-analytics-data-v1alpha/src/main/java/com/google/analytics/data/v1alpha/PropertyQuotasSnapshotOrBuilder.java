@@ -36,6 +36,7 @@ public interface PropertyQuotasSnapshotOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PropertyQuotasSnapshotOrBuilder
    * @return Whether the corePropertyQuota field is set.
    */
   boolean hasCorePropertyQuota();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface PropertyQuotasSnapshotOrBuilder
    * @return The corePropertyQuota.
    */
   com.google.analytics.data.v1alpha.PropertyQuota getCorePropertyQuota();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface PropertyQuotasSnapshotOrBuilder
    * @return Whether the realtimePropertyQuota field is set.
    */
   boolean hasRealtimePropertyQuota();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface PropertyQuotasSnapshotOrBuilder
    * @return The realtimePropertyQuota.
    */
   com.google.analytics.data.v1alpha.PropertyQuota getRealtimePropertyQuota();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface PropertyQuotasSnapshotOrBuilder
    * @return Whether the funnelPropertyQuota field is set.
    */
   boolean hasFunnelPropertyQuota();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface PropertyQuotasSnapshotOrBuilder
    * @return The funnelPropertyQuota.
    */
   com.google.analytics.data.v1alpha.PropertyQuota getFunnelPropertyQuota();
+
   /**
    *
    *

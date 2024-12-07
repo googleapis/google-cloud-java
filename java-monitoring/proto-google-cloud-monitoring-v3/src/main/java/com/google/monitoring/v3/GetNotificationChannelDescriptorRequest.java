@@ -34,6 +34,7 @@ public final class GetNotificationChannelDescriptorRequest
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.GetNotificationChannelDescriptorRequest)
     GetNotificationChannelDescriptorRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetNotificationChannelDescriptorRequest.newBuilder() to construct.
   private GetNotificationChannelDescriptorRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class GetNotificationChannelDescriptorRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class GetNotificationChannelDescriptorRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -284,6 +287,7 @@ public final class GetNotificationChannelDescriptorRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -472,6 +476,7 @@ public final class GetNotificationChannelDescriptorRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -498,6 +503,7 @@ public final class GetNotificationChannelDescriptorRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -524,6 +530,7 @@ public final class GetNotificationChannelDescriptorRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -549,6 +556,7 @@ public final class GetNotificationChannelDescriptorRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -570,6 +578,7 @@ public final class GetNotificationChannelDescriptorRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

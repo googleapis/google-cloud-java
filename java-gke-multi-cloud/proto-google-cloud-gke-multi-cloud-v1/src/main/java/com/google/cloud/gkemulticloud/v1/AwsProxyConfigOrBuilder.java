@@ -41,6 +41,7 @@ public interface AwsProxyConfigOrBuilder
    * @return The secretArn.
    */
   java.lang.String getSecretArn();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface AwsProxyConfigOrBuilder
    * @return The secretVersion.
    */
   java.lang.String getSecretVersion();
+
   /**
    *
    *

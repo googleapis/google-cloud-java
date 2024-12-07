@@ -33,6 +33,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.UpdatePackageRequest)
     UpdatePackageRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdatePackageRequest.newBuilder() to construct.
   private UpdatePackageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int PACKAGE_FIELD_NUMBER = 1;
   private com.google.devtools.artifactregistry.v1.Package package_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
   public boolean hasPackage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
         ? com.google.devtools.artifactregistry.v1.Package.getDefaultInstance()
         : package_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -343,6 +350,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -568,6 +576,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
             com.google.devtools.artifactregistry.v1.Package.Builder,
             com.google.devtools.artifactregistry.v1.PackageOrBuilder>
         packageBuilder_;
+
     /**
      *
      *
@@ -582,6 +591,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
     public boolean hasPackage() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -602,6 +612,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
         return packageBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +656,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -671,6 +684,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +704,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -704,6 +719,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getPackageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -722,6 +738,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
             : package_;
       }
     }
+
     /**
      *
      *
@@ -754,6 +771,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -770,6 +788,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -792,6 +811,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -816,6 +836,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +858,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +888,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +910,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +927,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -923,6 +948,7 @@ public final class UpdatePackageRequest extends com.google.protobuf.GeneratedMes
             : updateMask_;
       }
     }
+
     /**
      *
      *

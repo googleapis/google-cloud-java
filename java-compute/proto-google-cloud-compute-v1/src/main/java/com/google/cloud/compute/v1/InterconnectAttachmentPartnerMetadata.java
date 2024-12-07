@@ -34,6 +34,7 @@ public final class InterconnectAttachmentPartnerMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata)
     InterconnectAttachmentPartnerMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InterconnectAttachmentPartnerMetadata.newBuilder() to construct.
   private InterconnectAttachmentPartnerMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class InterconnectAttachmentPartnerMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object interconnectName_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class InterconnectAttachmentPartnerMetadata
   public boolean hasInterconnectName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class InterconnectAttachmentPartnerMetadata
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class InterconnectAttachmentPartnerMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object partnerName_ = "";
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class InterconnectAttachmentPartnerMetadata
   public boolean hasPartnerName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class InterconnectAttachmentPartnerMetadata
       return s;
     }
   }
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class InterconnectAttachmentPartnerMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object portalUrl_ = "";
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class InterconnectAttachmentPartnerMetadata
   public boolean hasPortalUrl() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public final class InterconnectAttachmentPartnerMetadata
       return s;
     }
   }
+
   /**
    *
    *
@@ -461,6 +471,7 @@ public final class InterconnectAttachmentPartnerMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -685,6 +696,7 @@ public final class InterconnectAttachmentPartnerMetadata
     private int bitField0_;
 
     private java.lang.Object interconnectName_ = "";
+
     /**
      *
      *
@@ -699,6 +711,7 @@ public final class InterconnectAttachmentPartnerMetadata
     public boolean hasInterconnectName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -721,6 +734,7 @@ public final class InterconnectAttachmentPartnerMetadata
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -743,6 +757,7 @@ public final class InterconnectAttachmentPartnerMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -764,6 +779,7 @@ public final class InterconnectAttachmentPartnerMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +797,7 @@ public final class InterconnectAttachmentPartnerMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class InterconnectAttachmentPartnerMetadata
     }
 
     private java.lang.Object partnerName_ = "";
+
     /**
      *
      *
@@ -819,6 +837,7 @@ public final class InterconnectAttachmentPartnerMetadata
     public boolean hasPartnerName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class InterconnectAttachmentPartnerMetadata
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -863,6 +883,7 @@ public final class InterconnectAttachmentPartnerMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -884,6 +905,7 @@ public final class InterconnectAttachmentPartnerMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +923,7 @@ public final class InterconnectAttachmentPartnerMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +948,7 @@ public final class InterconnectAttachmentPartnerMetadata
     }
 
     private java.lang.Object portalUrl_ = "";
+
     /**
      *
      *
@@ -939,6 +963,7 @@ public final class InterconnectAttachmentPartnerMetadata
     public boolean hasPortalUrl() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -961,6 +986,7 @@ public final class InterconnectAttachmentPartnerMetadata
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -983,6 +1009,7 @@ public final class InterconnectAttachmentPartnerMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1031,7 @@ public final class InterconnectAttachmentPartnerMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1049,7 @@ public final class InterconnectAttachmentPartnerMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *

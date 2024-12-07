@@ -36,6 +36,7 @@ public interface TextInputOrBuilder
    * @return The input.
    */
   java.lang.String getInput();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TextInputOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface TextInputOrBuilder
    * @return The context.
    */
   com.google.cloud.discoveryengine.v1.ConversationContext getContext();
+
   /**
    *
    *

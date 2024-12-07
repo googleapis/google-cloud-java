@@ -33,6 +33,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.PhraseMatchRule)
     PhraseMatchRuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PhraseMatchRule.newBuilder() to construct.
   private PhraseMatchRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
 
   public static final int NEGATED_FIELD_NUMBER = 2;
   private boolean negated_ = false;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
 
   public static final int CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig config_;
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig.getDefaultInstance()
         : config_;
   }
+
   /**
    *
    *
@@ -371,6 +378,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -597,6 +605,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object query_ = "";
+
     /**
      *
      *
@@ -619,6 +628,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -679,6 +691,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -703,6 +716,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean negated_;
+
     /**
      *
      *
@@ -719,6 +733,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
     public boolean getNegated() {
       return negated_;
     }
+
     /**
      *
      *
@@ -739,6 +754,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +780,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig.Builder,
             com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfigOrBuilder>
         configBuilder_;
+
     /**
      *
      *
@@ -779,6 +796,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -800,6 +818,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
         return configBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -824,6 +843,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +865,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +897,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +918,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +935,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -932,6 +956,7 @@ public final class PhraseMatchRule extends com.google.protobuf.GeneratedMessageV
             : config_;
       }
     }
+
     /**
      *
      *

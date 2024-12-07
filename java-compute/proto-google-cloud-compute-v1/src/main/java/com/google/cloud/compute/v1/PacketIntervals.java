@@ -33,6 +33,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PacketIntervals)
     PacketIntervalsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PacketIntervals.newBuilder() to construct.
   private PacketIntervals(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -113,10 +114,13 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_DURATION = 0;</code>
      */
     public static final int UNDEFINED_DURATION_VALUE = 0;
+
     /** <code>DURATION_UNSPECIFIED = 529071340;</code> */
     public static final int DURATION_UNSPECIFIED_VALUE = 529071340;
+
     /** <code>HOUR = 2223588;</code> */
     public static final int HOUR_VALUE = 2223588;
+
     /**
      *
      *
@@ -127,6 +131,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      * <code>MAX = 76100;</code>
      */
     public static final int MAX_VALUE = 76100;
+
     /** <code>MINUTE = 126786068;</code> */
     public static final int MINUTE_VALUE = 126786068;
 
@@ -282,6 +287,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
+
     /**
      *
      *
@@ -292,6 +298,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      * <code>LOOPBACK = 356174219;</code>
      */
     public static final int LOOPBACK_VALUE = 356174219;
+
     /**
      *
      *
@@ -302,6 +309,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      * <code>RECEIVE = 189660867;</code>
      */
     public static final int RECEIVE_VALUE = 189660867;
+
     /**
      *
      *
@@ -312,6 +320,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      * <code>TRANSMIT = 452903600;</code>
      */
     public static final int TRANSMIT_VALUE = 452903600;
+
     /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
     public static final int TYPE_UNSPECIFIED_VALUE = 437714322;
 
@@ -405,6 +414,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int AVG_MS_FIELD_NUMBER = 204811827;
   private long avgMs_ = 0L;
+
   /**
    *
    *
@@ -420,6 +430,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
   public boolean hasAvgMs() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -440,6 +451,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object duration_ = "";
+
   /**
    *
    *
@@ -456,6 +468,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
   public boolean hasDuration() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -480,6 +493,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -507,6 +521,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
 
   public static final int MAX_MS_FIELD_NUMBER = 529474145;
   private long maxMs_ = 0L;
+
   /**
    *
    *
@@ -522,6 +537,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
   public boolean hasMaxMs() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -540,6 +556,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
 
   public static final int MIN_MS_FIELD_NUMBER = 536564403;
   private long minMs_ = 0L;
+
   /**
    *
    *
@@ -555,6 +572,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
   public boolean hasMinMs() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -573,6 +591,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
 
   public static final int NUM_INTERVALS_FIELD_NUMBER = 186329813;
   private long numIntervals_ = 0L;
+
   /**
    *
    *
@@ -588,6 +607,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
   public boolean hasNumIntervals() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -608,6 +628,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -624,6 +645,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
   public boolean hasType() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -648,6 +670,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -907,6 +930,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1165,6 +1189,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private long avgMs_;
+
     /**
      *
      *
@@ -1180,6 +1205,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     public boolean hasAvgMs() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1195,6 +1221,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     public long getAvgMs() {
       return avgMs_;
     }
+
     /**
      *
      *
@@ -1214,6 +1241,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1261,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object duration_ = "";
+
     /**
      *
      *
@@ -1248,6 +1277,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1271,6 +1301,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1294,6 +1325,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1316,6 +1348,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1367,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1393,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     }
 
     private long maxMs_;
+
     /**
      *
      *
@@ -1374,6 +1409,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     public boolean hasMaxMs() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1389,6 +1425,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     public long getMaxMs() {
       return maxMs_;
     }
+
     /**
      *
      *
@@ -1408,6 +1445,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1427,6 +1465,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     }
 
     private long minMs_;
+
     /**
      *
      *
@@ -1442,6 +1481,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     public boolean hasMinMs() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1457,6 +1497,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     public long getMinMs() {
       return minMs_;
     }
+
     /**
      *
      *
@@ -1476,6 +1517,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1495,6 +1537,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     }
 
     private long numIntervals_;
+
     /**
      *
      *
@@ -1510,6 +1553,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     public boolean hasNumIntervals() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1525,6 +1569,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     public long getNumIntervals() {
       return numIntervals_;
     }
+
     /**
      *
      *
@@ -1544,6 +1589,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1563,6 +1609,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -1578,6 +1625,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     public boolean hasType() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1601,6 +1649,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1624,6 +1673,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1646,6 +1696,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1664,6 +1715,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

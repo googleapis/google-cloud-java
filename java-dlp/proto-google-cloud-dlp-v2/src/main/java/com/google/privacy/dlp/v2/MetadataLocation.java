@@ -33,6 +33,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.MetadataLocation)
     MetadataLocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MetadataLocation.newBuilder() to construct.
   private MetadataLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
     private LabelCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int STORAGE_LABEL_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
   public boolean hasStorageLabel() {
     return labelCase_ == 3;
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
     }
     return com.google.privacy.dlp.v2.StorageMetadataLabel.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -378,6 +385,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -604,6 +612,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -619,6 +628,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -637,6 +647,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +665,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
           com.google.privacy.dlp.v2.MetadataType.forNumber(type_);
       return result == null ? com.google.privacy.dlp.v2.MetadataType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -675,6 +687,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +711,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
             com.google.privacy.dlp.v2.StorageMetadataLabel.Builder,
             com.google.privacy.dlp.v2.StorageMetadataLabelOrBuilder>
         storageLabelBuilder_;
+
     /**
      *
      *
@@ -713,6 +727,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
     public boolean hasStorageLabel() {
       return labelCase_ == 3;
     }
+
     /**
      *
      *
@@ -738,6 +753,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
         return com.google.privacy.dlp.v2.StorageMetadataLabel.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -760,6 +776,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       labelCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +797,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       labelCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +830,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       labelCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +856,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +869,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.StorageMetadataLabel.Builder getStorageLabelBuilder() {
       return getStorageLabelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -869,6 +890,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
         return com.google.privacy.dlp.v2.StorageMetadataLabel.getDefaultInstance();
       }
     }
+
     /**
      *
      *

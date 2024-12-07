@@ -37,6 +37,7 @@ public interface ListDebuggeesResponseOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Debuggee debuggees = 1;</code>
    */
   java.util.List<com.google.devtools.clouddebugger.v2.Debuggee> getDebuggeesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListDebuggeesResponseOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Debuggee debuggees = 1;</code>
    */
   com.google.devtools.clouddebugger.v2.Debuggee getDebuggees(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface ListDebuggeesResponseOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Debuggee debuggees = 1;</code>
    */
   int getDebuggeesCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface ListDebuggeesResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.clouddebugger.v2.DebuggeeOrBuilder>
       getDebuggeesOrBuilderList();
+
   /**
    *
    *

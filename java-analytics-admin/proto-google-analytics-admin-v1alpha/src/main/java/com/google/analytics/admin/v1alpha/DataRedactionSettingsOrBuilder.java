@@ -39,6 +39,7 @@ public interface DataRedactionSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public interface DataRedactionSettingsOrBuilder
    * @return A list containing the queryParameterKeys.
    */
   java.util.List<java.lang.String> getQueryParameterKeysList();
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public interface DataRedactionSettingsOrBuilder
    * @return The count of queryParameterKeys.
    */
   int getQueryParameterKeysCount();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface DataRedactionSettingsOrBuilder
    * @return The queryParameterKeys at the given index.
    */
   java.lang.String getQueryParameterKeys(int index);
+
   /**
    *
    *

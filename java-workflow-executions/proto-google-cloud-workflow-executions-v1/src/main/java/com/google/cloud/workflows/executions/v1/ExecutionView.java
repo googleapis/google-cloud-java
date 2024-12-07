@@ -74,6 +74,7 @@ public enum ExecutionView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXECUTION_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int EXECUTION_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public enum ExecutionView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BASIC = 1;</code>
    */
   public static final int BASIC_VALUE = 1;
+
   /**
    *
    *

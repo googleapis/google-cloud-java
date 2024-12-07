@@ -48,6 +48,7 @@ public interface PolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface PolicyOrBuilder
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface PolicyOrBuilder
    * @return The spec.
    */
   com.google.cloud.orgpolicy.v2.PolicySpec getSpec();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface PolicyOrBuilder
    */
   @java.lang.Deprecated
   boolean hasAlternate();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface PolicyOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.orgpolicy.v2.AlternatePolicySpec getAlternate();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface PolicyOrBuilder
    * @return Whether the dryRunSpec field is set.
    */
   boolean hasDryRunSpec();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface PolicyOrBuilder
    * @return The dryRunSpec.
    */
   com.google.cloud.orgpolicy.v2.PolicySpec getDryRunSpec();
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public interface PolicyOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

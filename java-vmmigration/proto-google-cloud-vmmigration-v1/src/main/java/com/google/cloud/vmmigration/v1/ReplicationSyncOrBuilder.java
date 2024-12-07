@@ -37,6 +37,7 @@ public interface ReplicationSyncOrBuilder
    * @return Whether the lastSyncTime field is set.
    */
   boolean hasLastSyncTime();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ReplicationSyncOrBuilder
    * @return The lastSyncTime.
    */
   com.google.protobuf.Timestamp getLastSyncTime();
+
   /**
    *
    *

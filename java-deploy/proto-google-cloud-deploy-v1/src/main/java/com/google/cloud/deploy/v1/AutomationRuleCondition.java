@@ -34,6 +34,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.AutomationRuleCondition)
     AutomationRuleConditionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutomationRuleCondition.newBuilder() to construct.
   private AutomationRuleCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
     private RuleTypeConditionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
 
   public static final int TARGETS_PRESENT_CONDITION_FIELD_NUMBER = 1;
   private com.google.cloud.deploy.v1.TargetsPresentCondition targetsPresentCondition_;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
   public boolean hasTargetsPresentCondition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
         ? com.google.cloud.deploy.v1.TargetsPresentCondition.getDefaultInstance()
         : targetsPresentCondition_;
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
   }
 
   public static final int TIMED_PROMOTE_RELEASE_CONDITION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
   public boolean hasTimedPromoteReleaseCondition() {
     return ruleTypeConditionCase_ == 2;
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
     }
     return com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -418,6 +426,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -672,6 +681,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
             com.google.cloud.deploy.v1.TargetsPresentCondition.Builder,
             com.google.cloud.deploy.v1.TargetsPresentConditionOrBuilder>
         targetsPresentConditionBuilder_;
+
     /**
      *
      *
@@ -688,6 +698,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
     public boolean hasTargetsPresentCondition() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -710,6 +721,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
         return targetsPresentConditionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -735,6 +747,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +770,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +802,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +842,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
       onChanged();
       return getTargetsPresentConditionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
             : targetsPresentCondition_;
       }
     }
+
     /**
      *
      *
@@ -880,6 +898,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
             com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.Builder,
             com.google.cloud.deploy.v1.TimedPromoteReleaseConditionOrBuilder>
         timedPromoteReleaseConditionBuilder_;
+
     /**
      *
      *
@@ -898,6 +917,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
     public boolean hasTimedPromoteReleaseCondition() {
       return ruleTypeConditionCase_ == 2;
     }
+
     /**
      *
      *
@@ -927,6 +947,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
         return com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -953,6 +974,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
       ruleTypeConditionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +998,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
       ruleTypeConditionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1036,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
       ruleTypeConditionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1065,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1082,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
         getTimedPromoteReleaseConditionBuilder() {
       return getTimedPromoteReleaseConditionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1081,6 +1107,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
         return com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.ListValuedResourcesResponse)
     ListValuedResourcesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListValuedResourcesResponse.newBuilder() to construct.
   private ListValuedResourcesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.ValuedResource> valuedResources_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       getValuedResourcesList() {
     return valuedResources_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       getValuedResourcesOrBuilderList() {
     return valuedResources_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
   public int getValuedResourcesCount() {
     return valuedResources_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
   public com.google.cloud.securitycenter.v1.ValuedResource getValuedResources(int index) {
     return valuedResources_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
+
   /**
    *
    *
@@ -388,6 +397,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -684,6 +694,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
         return valuedResourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -700,6 +711,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
         return valuedResourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -716,6 +728,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
         return valuedResourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -739,6 +752,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +773,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +796,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +841,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +883,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +903,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +923,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +937,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
         int index) {
       return getValuedResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -932,6 +955,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
         return valuedResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -949,6 +973,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(valuedResources_);
       }
     }
+
     /**
      *
      *
@@ -962,6 +987,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       return getValuedResourcesFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v1.ValuedResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -977,6 +1003,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
           .addBuilder(
               index, com.google.cloud.securitycenter.v1.ValuedResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1012,6 +1039,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1035,6 +1063,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1087,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1110,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1098,6 +1129,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1155,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
     }
 
     private int totalSize_;
+
     /**
      *
      *
@@ -1138,6 +1171,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
     public int getTotalSize() {
       return totalSize_;
     }
+
     /**
      *
      *
@@ -1157,6 +1191,7 @@ public final class ListValuedResourcesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

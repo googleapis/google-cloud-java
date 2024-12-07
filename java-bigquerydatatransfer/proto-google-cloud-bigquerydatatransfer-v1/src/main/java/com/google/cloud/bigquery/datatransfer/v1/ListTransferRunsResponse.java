@@ -33,6 +33,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.ListTransferRunsResponse)
     ListTransferRunsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListTransferRunsResponse.newBuilder() to construct.
   private ListTransferRunsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun> transferRuns_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       getTransferRunsList() {
     return transferRuns_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       getTransferRunsOrBuilderList() {
     return transferRuns_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
   public int getTransferRunsCount() {
     return transferRuns_.size();
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
   public com.google.cloud.bigquery.datatransfer.v1.TransferRun getTransferRuns(int index) {
     return transferRuns_.get(index);
   }
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -376,6 +384,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -665,6 +674,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
         return transferRunsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -683,6 +693,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
         return transferRunsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -701,6 +712,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
         return transferRunsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -726,6 +738,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +761,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +786,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +812,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +835,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +858,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +882,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +904,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +926,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
         int index) {
       return getTransferRunsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -940,6 +962,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
         return transferRunsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -959,6 +982,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(transferRuns_);
       }
     }
+
     /**
      *
      *
@@ -974,6 +998,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       return getTransferRunsFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.datatransfer.v1.TransferRun.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -991,6 +1016,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
           .addBuilder(
               index, com.google.cloud.bigquery.datatransfer.v1.TransferRun.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1025,6 +1051,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1050,6 +1077,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1075,6 +1103,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1099,6 +1128,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1149,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.ListOrdersResponse)
     ListOrdersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListOrdersResponse.newBuilder() to construct.
   private ListOrdersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.commerce.consumer.procurement.v1.Order> orders_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.commerce.consumer.procurement.v1.Order> getOrdersList() {
     return orders_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       getOrdersOrBuilderList() {
     return orders_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
   public int getOrdersCount() {
     return orders_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.commerce.consumer.procurement.v1.Order getOrders(int index) {
     return orders_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -647,6 +656,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
         return ordersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -663,6 +673,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
         return ordersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -679,6 +690,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
         return ordersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -702,6 +714,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +759,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +804,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +848,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +868,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +888,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +902,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
         int index) {
       return getOrdersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -898,6 +920,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
         return ordersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -916,6 +939,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(orders_);
       }
     }
+
     /**
      *
      *
@@ -929,6 +953,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       return getOrdersFieldBuilder()
           .addBuilder(com.google.cloud.commerce.consumer.procurement.v1.Order.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -944,6 +969,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.commerce.consumer.procurement.v1.Order.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -976,6 +1002,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -998,6 +1025,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1048,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1041,6 +1070,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1088,7 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public interface ListVolumeRestoresResponseOrBuilder
    * <code>repeated .google.cloud.gkebackup.v1.VolumeRestore volume_restores = 1;</code>
    */
   java.util.List<com.google.cloud.gkebackup.v1.VolumeRestore> getVolumeRestoresList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListVolumeRestoresResponseOrBuilder
    * <code>repeated .google.cloud.gkebackup.v1.VolumeRestore volume_restores = 1;</code>
    */
   com.google.cloud.gkebackup.v1.VolumeRestore getVolumeRestores(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListVolumeRestoresResponseOrBuilder
    * <code>repeated .google.cloud.gkebackup.v1.VolumeRestore volume_restores = 1;</code>
    */
   int getVolumeRestoresCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListVolumeRestoresResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkebackup.v1.VolumeRestoreOrBuilder>
       getVolumeRestoresOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface ListVolumeRestoresResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

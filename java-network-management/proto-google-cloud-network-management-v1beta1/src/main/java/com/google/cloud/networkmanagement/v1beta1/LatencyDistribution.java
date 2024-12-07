@@ -33,6 +33,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.LatencyDistribution)
     LatencyDistributionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LatencyDistribution.newBuilder() to construct.
   private LatencyDistribution(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkmanagement.v1beta1.LatencyPercentile>
       latencyPercentiles_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
       getLatencyPercentilesList() {
     return latencyPercentiles_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
       getLatencyPercentilesOrBuilderList() {
     return latencyPercentiles_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
   public int getLatencyPercentilesCount() {
     return latencyPercentiles_.size();
   }
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
       int index) {
     return latencyPercentiles_.get(index);
   }
+
   /**
    *
    *
@@ -312,6 +318,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -582,6 +589,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
         return latencyPercentilesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -600,6 +608,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
         return latencyPercentilesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -619,6 +628,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
         return latencyPercentilesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -644,6 +654,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +777,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +845,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +861,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
         getLatencyPercentilesBuilder(int index) {
       return getLatencyPercentilesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -861,6 +881,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
         return latencyPercentilesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -881,6 +902,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(latencyPercentiles_);
       }
     }
+
     /**
      *
      *
@@ -898,6 +920,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
           .addBuilder(
               com.google.cloud.networkmanagement.v1beta1.LatencyPercentile.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -916,6 +939,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
               index,
               com.google.cloud.networkmanagement.v1beta1.LatencyPercentile.getDefaultInstance());
     }
+
     /**
      *
      *

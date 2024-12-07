@@ -36,6 +36,7 @@ public interface FrequencyCapOrBuilder
    * @return Whether the maxImpressions field is set.
    */
   boolean hasMaxImpressions();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface FrequencyCapOrBuilder
    * @return Whether the timeAmount field is set.
    */
   boolean hasTimeAmount();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface FrequencyCapOrBuilder
    * @return Whether the timeUnit field is set.
    */
   boolean hasTimeUnit();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface FrequencyCapOrBuilder
    * @return The enum numeric value on the wire for timeUnit.
    */
   int getTimeUnitValue();
+
   /**
    *
    *

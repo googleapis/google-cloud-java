@@ -34,6 +34,7 @@ public interface ValidationResultOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.ValidationError validation_errors = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.ValidationError> getValidationErrorsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ValidationResultOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.ValidationError validation_errors = 1;</code>
    */
   com.google.cloud.dialogflow.v2.ValidationError getValidationErrors(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ValidationResultOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.ValidationError validation_errors = 1;</code>
    */
   int getValidationErrorsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ValidationResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.ValidationErrorOrBuilder>
       getValidationErrorsOrBuilderList();
+
   /**
    *
    *

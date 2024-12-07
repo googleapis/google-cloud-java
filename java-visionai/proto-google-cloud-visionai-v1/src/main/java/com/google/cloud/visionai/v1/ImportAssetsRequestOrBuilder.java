@@ -39,6 +39,7 @@ public interface ImportAssetsRequestOrBuilder
    * @return Whether the assetsGcsUri field is set.
    */
   boolean hasAssetsGcsUri();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ImportAssetsRequestOrBuilder
    * @return The assetsGcsUri.
    */
   java.lang.String getAssetsGcsUri();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ImportAssetsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

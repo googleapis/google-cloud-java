@@ -42,6 +42,7 @@ public interface FeedOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface FeedOrBuilder
    * @return A list containing the assetNames.
    */
   java.util.List<java.lang.String> getAssetNamesList();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface FeedOrBuilder
    * @return The count of assetNames.
    */
   int getAssetNamesCount();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface FeedOrBuilder
    * @return The assetNames at the given index.
    */
   java.lang.String getAssetNames(int index);
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public interface FeedOrBuilder
    * @return A list containing the assetTypes.
    */
   java.util.List<java.lang.String> getAssetTypesList();
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public interface FeedOrBuilder
    * @return The count of assetTypes.
    */
   int getAssetTypesCount();
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public interface FeedOrBuilder
    * @return The assetTypes at the given index.
    */
   java.lang.String getAssetTypes(int index);
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public interface FeedOrBuilder
    * @return The enum numeric value on the wire for contentType.
    */
   int getContentTypeValue();
+
   /**
    *
    *
@@ -257,6 +265,7 @@ public interface FeedOrBuilder
    * @return Whether the feedOutputConfig field is set.
    */
   boolean hasFeedOutputConfig();
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public interface FeedOrBuilder
    * @return The feedOutputConfig.
    */
   com.google.cloud.asset.v1p2beta1.FeedOutputConfig getFeedOutputConfig();
+
   /**
    *
    *

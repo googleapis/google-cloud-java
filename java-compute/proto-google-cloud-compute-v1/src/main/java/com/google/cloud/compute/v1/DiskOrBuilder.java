@@ -37,6 +37,7 @@ public interface DiskOrBuilder
    * @return Whether the accessMode field is set.
    */
   boolean hasAccessMode();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface DiskOrBuilder
    * @return The accessMode.
    */
   java.lang.String getAccessMode();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface DiskOrBuilder
    * @return Whether the architecture field is set.
    */
   boolean hasArchitecture();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface DiskOrBuilder
    * @return The architecture.
    */
   java.lang.String getArchitecture();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface DiskOrBuilder
    * @return Whether the asyncPrimaryDisk field is set.
    */
   boolean hasAsyncPrimaryDisk();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface DiskOrBuilder
    * @return The asyncPrimaryDisk.
    */
   com.google.cloud.compute.v1.DiskAsyncReplication getAsyncPrimaryDisk();
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public interface DiskOrBuilder
    * </code>
    */
   int getAsyncSecondaryDisksCount();
+
   /**
    *
    *
@@ -166,10 +173,12 @@ public interface DiskOrBuilder
    * </code>
    */
   boolean containsAsyncSecondaryDisks(java.lang.String key);
+
   /** Use {@link #getAsyncSecondaryDisksMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.DiskAsyncReplicationList>
       getAsyncSecondaryDisks();
+
   /**
    *
    *
@@ -183,6 +192,7 @@ public interface DiskOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.DiskAsyncReplicationList>
       getAsyncSecondaryDisksMap();
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface DiskOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.DiskAsyncReplicationList defaultValue);
+
   /**
    *
    *
@@ -225,6 +236,7 @@ public interface DiskOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -237,6 +249,7 @@ public interface DiskOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -262,6 +275,7 @@ public interface DiskOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -274,6 +288,7 @@ public interface DiskOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -300,6 +315,7 @@ public interface DiskOrBuilder
    * @return Whether the diskEncryptionKey field is set.
    */
   boolean hasDiskEncryptionKey();
+
   /**
    *
    *
@@ -313,6 +329,7 @@ public interface DiskOrBuilder
    * @return The diskEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getDiskEncryptionKey();
+
   /**
    *
    *
@@ -337,6 +354,7 @@ public interface DiskOrBuilder
    * @return Whether the enableConfidentialCompute field is set.
    */
   boolean hasEnableConfidentialCompute();
+
   /**
    *
    *
@@ -360,6 +378,7 @@ public interface DiskOrBuilder
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
    */
   java.util.List<com.google.cloud.compute.v1.GuestOsFeature> getGuestOsFeaturesList();
+
   /**
    *
    *
@@ -370,6 +389,7 @@ public interface DiskOrBuilder
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
    */
   com.google.cloud.compute.v1.GuestOsFeature getGuestOsFeatures(int index);
+
   /**
    *
    *
@@ -380,6 +400,7 @@ public interface DiskOrBuilder
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
    */
   int getGuestOsFeaturesCount();
+
   /**
    *
    *
@@ -391,6 +412,7 @@ public interface DiskOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.GuestOsFeatureOrBuilder>
       getGuestOsFeaturesOrBuilderList();
+
   /**
    *
    *
@@ -414,6 +436,7 @@ public interface DiskOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -439,6 +462,7 @@ public interface DiskOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -451,6 +475,7 @@ public interface DiskOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -476,6 +501,7 @@ public interface DiskOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
+
   /**
    *
    *
@@ -488,6 +514,7 @@ public interface DiskOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
+
   /**
    *
    *
@@ -511,6 +538,7 @@ public interface DiskOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -521,9 +549,11 @@ public interface DiskOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -534,6 +564,7 @@ public interface DiskOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -548,6 +579,7 @@ public interface DiskOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -571,6 +603,7 @@ public interface DiskOrBuilder
    * @return Whether the lastAttachTimestamp field is set.
    */
   boolean hasLastAttachTimestamp();
+
   /**
    *
    *
@@ -583,6 +616,7 @@ public interface DiskOrBuilder
    * @return The lastAttachTimestamp.
    */
   java.lang.String getLastAttachTimestamp();
+
   /**
    *
    *
@@ -608,6 +642,7 @@ public interface DiskOrBuilder
    * @return Whether the lastDetachTimestamp field is set.
    */
   boolean hasLastDetachTimestamp();
+
   /**
    *
    *
@@ -620,6 +655,7 @@ public interface DiskOrBuilder
    * @return The lastDetachTimestamp.
    */
   java.lang.String getLastDetachTimestamp();
+
   /**
    *
    *
@@ -645,6 +681,7 @@ public interface DiskOrBuilder
    * @return A list containing the licenseCodes.
    */
   java.util.List<java.lang.Long> getLicenseCodesList();
+
   /**
    *
    *
@@ -657,6 +694,7 @@ public interface DiskOrBuilder
    * @return The count of licenseCodes.
    */
   int getLicenseCodesCount();
+
   /**
    *
    *
@@ -683,6 +721,7 @@ public interface DiskOrBuilder
    * @return A list containing the licenses.
    */
   java.util.List<java.lang.String> getLicensesList();
+
   /**
    *
    *
@@ -695,6 +734,7 @@ public interface DiskOrBuilder
    * @return The count of licenses.
    */
   int getLicensesCount();
+
   /**
    *
    *
@@ -708,6 +748,7 @@ public interface DiskOrBuilder
    * @return The licenses at the given index.
    */
   java.lang.String getLicenses(int index);
+
   /**
    *
    *
@@ -734,6 +775,7 @@ public interface DiskOrBuilder
    * @return Whether the locationHint field is set.
    */
   boolean hasLocationHint();
+
   /**
    *
    *
@@ -746,6 +788,7 @@ public interface DiskOrBuilder
    * @return The locationHint.
    */
   java.lang.String getLocationHint();
+
   /**
    *
    *
@@ -771,6 +814,7 @@ public interface DiskOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -783,6 +827,7 @@ public interface DiskOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -808,6 +853,7 @@ public interface DiskOrBuilder
    * @return Whether the options field is set.
    */
   boolean hasOptions();
+
   /**
    *
    *
@@ -820,6 +866,7 @@ public interface DiskOrBuilder
    * @return The options.
    */
   java.lang.String getOptions();
+
   /**
    *
    *
@@ -845,6 +892,7 @@ public interface DiskOrBuilder
    * @return Whether the params field is set.
    */
   boolean hasParams();
+
   /**
    *
    *
@@ -857,6 +905,7 @@ public interface DiskOrBuilder
    * @return The params.
    */
   com.google.cloud.compute.v1.DiskParams getParams();
+
   /**
    *
    *
@@ -880,6 +929,7 @@ public interface DiskOrBuilder
    * @return Whether the physicalBlockSizeBytes field is set.
    */
   boolean hasPhysicalBlockSizeBytes();
+
   /**
    *
    *
@@ -905,6 +955,7 @@ public interface DiskOrBuilder
    * @return Whether the provisionedIops field is set.
    */
   boolean hasProvisionedIops();
+
   /**
    *
    *
@@ -930,6 +981,7 @@ public interface DiskOrBuilder
    * @return Whether the provisionedThroughput field is set.
    */
   boolean hasProvisionedThroughput();
+
   /**
    *
    *
@@ -955,6 +1007,7 @@ public interface DiskOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -967,6 +1020,7 @@ public interface DiskOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -992,6 +1046,7 @@ public interface DiskOrBuilder
    * @return A list containing the replicaZones.
    */
   java.util.List<java.lang.String> getReplicaZonesList();
+
   /**
    *
    *
@@ -1004,6 +1059,7 @@ public interface DiskOrBuilder
    * @return The count of replicaZones.
    */
   int getReplicaZonesCount();
+
   /**
    *
    *
@@ -1017,6 +1073,7 @@ public interface DiskOrBuilder
    * @return The replicaZones at the given index.
    */
   java.lang.String getReplicaZones(int index);
+
   /**
    *
    *
@@ -1043,6 +1100,7 @@ public interface DiskOrBuilder
    * @return A list containing the resourcePolicies.
    */
   java.util.List<java.lang.String> getResourcePoliciesList();
+
   /**
    *
    *
@@ -1055,6 +1113,7 @@ public interface DiskOrBuilder
    * @return The count of resourcePolicies.
    */
   int getResourcePoliciesCount();
+
   /**
    *
    *
@@ -1068,6 +1127,7 @@ public interface DiskOrBuilder
    * @return The resourcePolicies at the given index.
    */
   java.lang.String getResourcePolicies(int index);
+
   /**
    *
    *
@@ -1094,6 +1154,7 @@ public interface DiskOrBuilder
    * @return Whether the resourceStatus field is set.
    */
   boolean hasResourceStatus();
+
   /**
    *
    *
@@ -1106,6 +1167,7 @@ public interface DiskOrBuilder
    * @return The resourceStatus.
    */
   com.google.cloud.compute.v1.DiskResourceStatus getResourceStatus();
+
   /**
    *
    *
@@ -1129,6 +1191,7 @@ public interface DiskOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
+
   /**
    *
    *
@@ -1154,6 +1217,7 @@ public interface DiskOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *
@@ -1179,6 +1243,7 @@ public interface DiskOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -1191,6 +1256,7 @@ public interface DiskOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -1216,6 +1282,7 @@ public interface DiskOrBuilder
    * @return Whether the sizeGb field is set.
    */
   boolean hasSizeGb();
+
   /**
    *
    *
@@ -1241,6 +1308,7 @@ public interface DiskOrBuilder
    * @return Whether the sourceConsistencyGroupPolicy field is set.
    */
   boolean hasSourceConsistencyGroupPolicy();
+
   /**
    *
    *
@@ -1253,6 +1321,7 @@ public interface DiskOrBuilder
    * @return The sourceConsistencyGroupPolicy.
    */
   java.lang.String getSourceConsistencyGroupPolicy();
+
   /**
    *
    *
@@ -1278,6 +1347,7 @@ public interface DiskOrBuilder
    * @return Whether the sourceConsistencyGroupPolicyId field is set.
    */
   boolean hasSourceConsistencyGroupPolicyId();
+
   /**
    *
    *
@@ -1290,6 +1360,7 @@ public interface DiskOrBuilder
    * @return The sourceConsistencyGroupPolicyId.
    */
   java.lang.String getSourceConsistencyGroupPolicyId();
+
   /**
    *
    *
@@ -1315,6 +1386,7 @@ public interface DiskOrBuilder
    * @return Whether the sourceDisk field is set.
    */
   boolean hasSourceDisk();
+
   /**
    *
    *
@@ -1327,6 +1399,7 @@ public interface DiskOrBuilder
    * @return The sourceDisk.
    */
   java.lang.String getSourceDisk();
+
   /**
    *
    *
@@ -1352,6 +1425,7 @@ public interface DiskOrBuilder
    * @return Whether the sourceDiskId field is set.
    */
   boolean hasSourceDiskId();
+
   /**
    *
    *
@@ -1364,6 +1438,7 @@ public interface DiskOrBuilder
    * @return The sourceDiskId.
    */
   java.lang.String getSourceDiskId();
+
   /**
    *
    *
@@ -1389,6 +1464,7 @@ public interface DiskOrBuilder
    * @return Whether the sourceImage field is set.
    */
   boolean hasSourceImage();
+
   /**
    *
    *
@@ -1401,6 +1477,7 @@ public interface DiskOrBuilder
    * @return The sourceImage.
    */
   java.lang.String getSourceImage();
+
   /**
    *
    *
@@ -1428,6 +1505,7 @@ public interface DiskOrBuilder
    * @return Whether the sourceImageEncryptionKey field is set.
    */
   boolean hasSourceImageEncryptionKey();
+
   /**
    *
    *
@@ -1442,6 +1520,7 @@ public interface DiskOrBuilder
    * @return The sourceImageEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getSourceImageEncryptionKey();
+
   /**
    *
    *
@@ -1467,6 +1546,7 @@ public interface DiskOrBuilder
    * @return Whether the sourceImageId field is set.
    */
   boolean hasSourceImageId();
+
   /**
    *
    *
@@ -1479,6 +1559,7 @@ public interface DiskOrBuilder
    * @return The sourceImageId.
    */
   java.lang.String getSourceImageId();
+
   /**
    *
    *
@@ -1504,6 +1585,7 @@ public interface DiskOrBuilder
    * @return Whether the sourceInstantSnapshot field is set.
    */
   boolean hasSourceInstantSnapshot();
+
   /**
    *
    *
@@ -1516,6 +1598,7 @@ public interface DiskOrBuilder
    * @return The sourceInstantSnapshot.
    */
   java.lang.String getSourceInstantSnapshot();
+
   /**
    *
    *
@@ -1541,6 +1624,7 @@ public interface DiskOrBuilder
    * @return Whether the sourceInstantSnapshotId field is set.
    */
   boolean hasSourceInstantSnapshotId();
+
   /**
    *
    *
@@ -1553,6 +1637,7 @@ public interface DiskOrBuilder
    * @return The sourceInstantSnapshotId.
    */
   java.lang.String getSourceInstantSnapshotId();
+
   /**
    *
    *
@@ -1578,6 +1663,7 @@ public interface DiskOrBuilder
    * @return Whether the sourceSnapshot field is set.
    */
   boolean hasSourceSnapshot();
+
   /**
    *
    *
@@ -1590,6 +1676,7 @@ public interface DiskOrBuilder
    * @return The sourceSnapshot.
    */
   java.lang.String getSourceSnapshot();
+
   /**
    *
    *
@@ -1617,6 +1704,7 @@ public interface DiskOrBuilder
    * @return Whether the sourceSnapshotEncryptionKey field is set.
    */
   boolean hasSourceSnapshotEncryptionKey();
+
   /**
    *
    *
@@ -1631,6 +1719,7 @@ public interface DiskOrBuilder
    * @return The sourceSnapshotEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getSourceSnapshotEncryptionKey();
+
   /**
    *
    *
@@ -1657,6 +1746,7 @@ public interface DiskOrBuilder
    * @return Whether the sourceSnapshotId field is set.
    */
   boolean hasSourceSnapshotId();
+
   /**
    *
    *
@@ -1669,6 +1759,7 @@ public interface DiskOrBuilder
    * @return The sourceSnapshotId.
    */
   java.lang.String getSourceSnapshotId();
+
   /**
    *
    *
@@ -1694,6 +1785,7 @@ public interface DiskOrBuilder
    * @return Whether the sourceStorageObject field is set.
    */
   boolean hasSourceStorageObject();
+
   /**
    *
    *
@@ -1706,6 +1798,7 @@ public interface DiskOrBuilder
    * @return The sourceStorageObject.
    */
   java.lang.String getSourceStorageObject();
+
   /**
    *
    *
@@ -1732,6 +1825,7 @@ public interface DiskOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -1745,6 +1839,7 @@ public interface DiskOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -1771,6 +1866,7 @@ public interface DiskOrBuilder
    * @return Whether the storagePool field is set.
    */
   boolean hasStoragePool();
+
   /**
    *
    *
@@ -1783,6 +1879,7 @@ public interface DiskOrBuilder
    * @return The storagePool.
    */
   java.lang.String getStoragePool();
+
   /**
    *
    *
@@ -1808,6 +1905,7 @@ public interface DiskOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -1820,6 +1918,7 @@ public interface DiskOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -1845,6 +1944,7 @@ public interface DiskOrBuilder
    * @return A list containing the users.
    */
   java.util.List<java.lang.String> getUsersList();
+
   /**
    *
    *
@@ -1857,6 +1957,7 @@ public interface DiskOrBuilder
    * @return The count of users.
    */
   int getUsersCount();
+
   /**
    *
    *
@@ -1870,6 +1971,7 @@ public interface DiskOrBuilder
    * @return The users at the given index.
    */
   java.lang.String getUsers(int index);
+
   /**
    *
    *
@@ -1896,6 +1998,7 @@ public interface DiskOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
+
   /**
    *
    *
@@ -1908,6 +2011,7 @@ public interface DiskOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

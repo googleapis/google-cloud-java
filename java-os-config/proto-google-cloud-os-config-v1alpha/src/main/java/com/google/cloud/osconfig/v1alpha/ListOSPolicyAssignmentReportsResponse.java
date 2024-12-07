@@ -35,6 +35,7 @@ public final class ListOSPolicyAssignmentReportsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse)
     ListOSPolicyAssignmentReportsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListOSPolicyAssignmentReportsResponse.newBuilder() to construct.
   private ListOSPolicyAssignmentReportsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class ListOSPolicyAssignmentReportsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport>
       osPolicyAssignmentReports_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       getOsPolicyAssignmentReportsList() {
     return osPolicyAssignmentReports_;
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       getOsPolicyAssignmentReportsOrBuilderList() {
     return osPolicyAssignmentReports_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class ListOSPolicyAssignmentReportsResponse
   public int getOsPolicyAssignmentReportsCount() {
     return osPolicyAssignmentReports_.size();
   }
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       int index) {
     return osPolicyAssignmentReports_.get(index);
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class ListOSPolicyAssignmentReportsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -381,6 +389,7 @@ public final class ListOSPolicyAssignmentReportsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -675,6 +684,7 @@ public final class ListOSPolicyAssignmentReportsResponse
         return osPolicyAssignmentReportsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -693,6 +703,7 @@ public final class ListOSPolicyAssignmentReportsResponse
         return osPolicyAssignmentReportsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -712,6 +723,7 @@ public final class ListOSPolicyAssignmentReportsResponse
         return osPolicyAssignmentReportsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -737,6 +749,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +773,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +799,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +825,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +848,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +872,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +896,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +918,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +940,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +956,7 @@ public final class ListOSPolicyAssignmentReportsResponse
         getOsPolicyAssignmentReportsBuilder(int index) {
       return getOsPolicyAssignmentReportsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -954,6 +976,7 @@ public final class ListOSPolicyAssignmentReportsResponse
         return osPolicyAssignmentReportsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -974,6 +997,7 @@ public final class ListOSPolicyAssignmentReportsResponse
         return java.util.Collections.unmodifiableList(osPolicyAssignmentReports_);
       }
     }
+
     /**
      *
      *
@@ -991,6 +1015,7 @@ public final class ListOSPolicyAssignmentReportsResponse
           .addBuilder(
               com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1009,6 +1034,7 @@ public final class ListOSPolicyAssignmentReportsResponse
               index,
               com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1046,6 +1072,7 @@ public final class ListOSPolicyAssignmentReportsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1069,6 +1096,7 @@ public final class ListOSPolicyAssignmentReportsResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1120,7 @@ public final class ListOSPolicyAssignmentReportsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1114,6 +1143,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1132,6 +1162,7 @@ public final class ListOSPolicyAssignmentReportsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

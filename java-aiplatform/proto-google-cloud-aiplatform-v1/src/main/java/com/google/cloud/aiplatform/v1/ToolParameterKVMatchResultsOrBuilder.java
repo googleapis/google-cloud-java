@@ -37,6 +37,7 @@ public interface ToolParameterKVMatchResultsOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.ToolParameterKVMatchMetricValue>
       getToolParameterKvMatchMetricValuesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ToolParameterKVMatchResultsOrBuilder
    */
   com.google.cloud.aiplatform.v1.ToolParameterKVMatchMetricValue
       getToolParameterKvMatchMetricValues(int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ToolParameterKVMatchResultsOrBuilder
    * </code>
    */
   int getToolParameterKvMatchMetricValuesCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface ToolParameterKVMatchResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ToolParameterKVMatchMetricValueOrBuilder>
       getToolParameterKvMatchMetricValuesOrBuilderList();
+
   /**
    *
    *

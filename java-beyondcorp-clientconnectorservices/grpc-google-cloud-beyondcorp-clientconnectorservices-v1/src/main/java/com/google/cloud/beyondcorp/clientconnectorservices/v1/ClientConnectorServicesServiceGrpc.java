@@ -33,7 +33,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments =
-        "Source: google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto")
+        "Source:"
+            + " google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ClientConnectorServicesServiceGrpc {
 

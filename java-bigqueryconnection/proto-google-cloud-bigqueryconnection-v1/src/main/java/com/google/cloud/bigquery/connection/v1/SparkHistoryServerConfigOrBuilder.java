@@ -43,6 +43,7 @@ public interface SparkHistoryServerConfigOrBuilder
    * @return The dataprocCluster.
    */
   java.lang.String getDataprocCluster();
+
   /**
    *
    *

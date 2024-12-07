@@ -34,6 +34,7 @@ public interface QuotaExceededInfoOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 414334925;</code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -44,9 +45,11 @@ public interface QuotaExceededInfoOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 414334925;</code>
    */
   boolean containsDimensions(java.lang.String key);
+
   /** Use {@link #getDimensionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDimensions();
+
   /**
    *
    *
@@ -57,6 +60,7 @@ public interface QuotaExceededInfoOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 414334925;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDimensionsMap();
+
   /**
    *
    *
@@ -71,6 +75,7 @@ public interface QuotaExceededInfoOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -94,6 +99,7 @@ public interface QuotaExceededInfoOrBuilder
    * @return Whether the futureLimit field is set.
    */
   boolean hasFutureLimit();
+
   /**
    *
    *
@@ -119,6 +125,7 @@ public interface QuotaExceededInfoOrBuilder
    * @return Whether the limit field is set.
    */
   boolean hasLimit();
+
   /**
    *
    *
@@ -144,6 +151,7 @@ public interface QuotaExceededInfoOrBuilder
    * @return Whether the limitName field is set.
    */
   boolean hasLimitName();
+
   /**
    *
    *
@@ -156,6 +164,7 @@ public interface QuotaExceededInfoOrBuilder
    * @return The limitName.
    */
   java.lang.String getLimitName();
+
   /**
    *
    *
@@ -181,6 +190,7 @@ public interface QuotaExceededInfoOrBuilder
    * @return Whether the metricName field is set.
    */
   boolean hasMetricName();
+
   /**
    *
    *
@@ -193,6 +203,7 @@ public interface QuotaExceededInfoOrBuilder
    * @return The metricName.
    */
   java.lang.String getMetricName();
+
   /**
    *
    *
@@ -219,6 +230,7 @@ public interface QuotaExceededInfoOrBuilder
    * @return Whether the rolloutStatus field is set.
    */
   boolean hasRolloutStatus();
+
   /**
    *
    *
@@ -232,6 +244,7 @@ public interface QuotaExceededInfoOrBuilder
    * @return The rolloutStatus.
    */
   java.lang.String getRolloutStatus();
+
   /**
    *
    *

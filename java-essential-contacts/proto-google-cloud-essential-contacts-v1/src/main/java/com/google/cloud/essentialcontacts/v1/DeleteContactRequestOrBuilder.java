@@ -41,6 +41,7 @@ public interface DeleteContactRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

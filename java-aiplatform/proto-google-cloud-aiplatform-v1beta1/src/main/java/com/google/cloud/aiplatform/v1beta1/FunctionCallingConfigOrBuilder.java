@@ -38,6 +38,7 @@ public interface FunctionCallingConfigOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface FunctionCallingConfigOrBuilder
    * @return A list containing the allowedFunctionNames.
    */
   java.util.List<java.lang.String> getAllowedFunctionNamesList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface FunctionCallingConfigOrBuilder
    * @return The count of allowedFunctionNames.
    */
   int getAllowedFunctionNamesCount();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface FunctionCallingConfigOrBuilder
    * @return The allowedFunctionNames at the given index.
    */
   java.lang.String getAllowedFunctionNames(int index);
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface GetQuotaInfoRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

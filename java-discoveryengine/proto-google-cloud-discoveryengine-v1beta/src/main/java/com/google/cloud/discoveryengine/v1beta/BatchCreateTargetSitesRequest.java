@@ -35,6 +35,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.BatchCreateTargetSitesRequest)
     BatchCreateTargetSitesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateTargetSitesRequest.newBuilder() to construct.
   private BatchCreateTargetSitesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1beta.CreateTargetSiteRequest> requests_;
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       getRequestsList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       getRequestsOrBuilderList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
   public int getRequestsCount() {
     return requests_.size();
   }
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
   public com.google.cloud.discoveryengine.v1beta.CreateTargetSiteRequest getRequests(int index) {
     return requests_.get(index);
   }
+
   /**
    *
    *
@@ -388,6 +396,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -643,6 +652,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -670,6 +680,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -697,6 +708,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -723,6 +735,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +758,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +825,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
         return requestsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -830,6 +845,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
         return requestsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -849,6 +865,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
         return requestsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +917,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +944,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -951,6 +971,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +995,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1020,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1046,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1069,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1067,6 +1092,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1109,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
         getRequestsBuilder(int index) {
       return getRequestsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1103,6 +1130,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
         return requestsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1152,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(requests_);
       }
     }
+
     /**
      *
      *
@@ -1142,6 +1171,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
           .addBuilder(
               com.google.cloud.discoveryengine.v1beta.CreateTargetSiteRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1161,6 +1191,7 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
               index,
               com.google.cloud.discoveryengine.v1beta.CreateTargetSiteRequest.getDefaultInstance());
     }
+
     /**
      *
      *

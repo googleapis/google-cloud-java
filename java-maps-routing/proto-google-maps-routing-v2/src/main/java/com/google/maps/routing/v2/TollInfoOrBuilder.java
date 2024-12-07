@@ -40,6 +40,7 @@ public interface TollInfoOrBuilder
    * <code>repeated .google.type.Money estimated_price = 1;</code>
    */
   java.util.List<com.google.type.Money> getEstimatedPriceList();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface TollInfoOrBuilder
    * <code>repeated .google.type.Money estimated_price = 1;</code>
    */
   com.google.type.Money getEstimatedPrice(int index);
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface TollInfoOrBuilder
    * <code>repeated .google.type.Money estimated_price = 1;</code>
    */
   int getEstimatedPriceCount();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface TollInfoOrBuilder
    * <code>repeated .google.type.Money estimated_price = 1;</code>
    */
   java.util.List<? extends com.google.type.MoneyOrBuilder> getEstimatedPriceOrBuilderList();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface DeliverInfoOrBuilder
    * @return The enum numeric value on the wire for target.
    */
   int getTargetValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DeliverInfoOrBuilder
    * @return The resourceUri.
    */
   java.lang.String getResourceUri();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface DeliverInfoOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface DeliverInfoOrBuilder
    * @return The storageBucket.
    */
   java.lang.String getStorageBucket();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface DeliverInfoOrBuilder
    * @return The pscGoogleApiTarget.
    */
   java.lang.String getPscGoogleApiTarget();
+
   /**
    *
    *

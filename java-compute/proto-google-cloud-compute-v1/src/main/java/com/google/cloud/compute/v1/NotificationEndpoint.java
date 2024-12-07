@@ -33,6 +33,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NotificationEndpoint)
     NotificationEndpointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NotificationEndpoint.newBuilder() to construct.
   private NotificationEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
 
   public static final int GRPC_SETTINGS_FIELD_NUMBER = 456139556;
   private com.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpcSettings_;
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
   public boolean hasGrpcSettings() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.compute.v1.NotificationEndpointGrpcSettings.getDefaultInstance()
         : grpcSettings_;
   }
+
   /**
    *
    *
@@ -260,6 +270,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
+
   /**
    *
    *
@@ -275,6 +286,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
   public boolean hasId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -295,6 +307,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -310,6 +323,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
   public boolean hasKind() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -333,6 +347,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -361,6 +376,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -376,6 +392,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
   public boolean hasName() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -399,6 +416,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -427,6 +445,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -442,6 +461,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -465,6 +485,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -493,6 +514,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -508,6 +530,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -531,6 +554,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -819,6 +843,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1128,6 +1153,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
+
     /**
      *
      *
@@ -1142,6 +1168,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1164,6 +1191,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1186,6 +1214,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1207,6 +1236,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1254,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1248,6 +1279,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1262,6 +1294,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1284,6 +1317,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1340,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1327,6 +1362,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1380,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1373,6 +1410,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.NotificationEndpointGrpcSettings.Builder,
             com.google.cloud.compute.v1.NotificationEndpointGrpcSettingsOrBuilder>
         grpcSettingsBuilder_;
+
     /**
      *
      *
@@ -1389,6 +1427,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     public boolean hasGrpcSettings() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1411,6 +1450,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return grpcSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1436,6 +1476,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1458,6 +1499,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1490,6 +1532,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1511,6 +1554,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1528,6 +1572,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return getGrpcSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1549,6 +1594,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
             : grpcSettings_;
       }
     }
+
     /**
      *
      *
@@ -1578,6 +1624,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
 
     private long id_;
+
     /**
      *
      *
@@ -1593,6 +1640,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     public boolean hasId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1608,6 +1656,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     public long getId() {
       return id_;
     }
+
     /**
      *
      *
@@ -1627,6 +1676,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1646,6 +1696,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1660,6 +1711,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     public boolean hasKind() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1682,6 +1734,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1704,6 +1757,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1725,6 +1779,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1742,6 +1797,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1766,6 +1822,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1780,6 +1837,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     public boolean hasName() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1802,6 +1860,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1824,6 +1883,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1845,6 +1905,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1862,6 +1923,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1886,6 +1948,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1900,6 +1963,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     public boolean hasRegion() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1922,6 +1986,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1944,6 +2009,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1965,6 +2031,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1982,6 +2049,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2006,6 +2074,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -2020,6 +2089,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2042,6 +2112,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2064,6 +2135,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2085,6 +2157,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2102,6 +2175,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

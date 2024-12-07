@@ -36,6 +36,7 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    * @return Whether the consumerPscAddress field is set.
    */
   boolean hasConsumerPscAddress();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    * @return The consumerPscAddress.
    */
   java.lang.String getConsumerPscAddress();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    * @return Whether the producerPort field is set.
    */
   boolean hasProducerPort();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    * @return Whether the pscConnectionId field is set.
    */
   boolean hasPscConnectionId();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    * @return Whether the pscConnectionStatus field is set.
    */
   boolean hasPscConnectionStatus();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    * @return The pscConnectionStatus.
    */
   java.lang.String getPscConnectionStatus();
+
   /**
    *
    *

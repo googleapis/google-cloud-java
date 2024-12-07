@@ -37,6 +37,7 @@ public interface ExportDataMetadataOrBuilder
    * @return Whether the operationMetadata field is set.
    */
   boolean hasOperationMetadata();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ExportDataMetadataOrBuilder
    * @return The operationMetadata.
    */
   com.google.cloud.parallelstore.v1beta.TransferOperationMetadata getOperationMetadata();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ExportDataMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ExportDataMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface ExportDataMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface ExportDataMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface ExportDataMetadataOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface ExportDataMetadataOrBuilder
    * @return The verb.
    */
   java.lang.String getVerb();
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public interface ExportDataMetadataOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
+
   /**
    *
    *
@@ -243,6 +252,7 @@ public interface ExportDataMetadataOrBuilder
    * @return The apiVersion.
    */
   java.lang.String getApiVersion();
+
   /**
    *
    *

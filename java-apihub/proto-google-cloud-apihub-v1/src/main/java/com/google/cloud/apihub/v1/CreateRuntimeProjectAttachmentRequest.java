@@ -36,6 +36,7 @@ public final class CreateRuntimeProjectAttachmentRequest
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.CreateRuntimeProjectAttachmentRequest)
     CreateRuntimeProjectAttachmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateRuntimeProjectAttachmentRequest.newBuilder() to construct.
   private CreateRuntimeProjectAttachmentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class CreateRuntimeProjectAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class CreateRuntimeProjectAttachmentRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class CreateRuntimeProjectAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object runtimeProjectAttachmentId_ = "";
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class CreateRuntimeProjectAttachmentRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public final class CreateRuntimeProjectAttachmentRequest
 
   public static final int RUNTIME_PROJECT_ATTACHMENT_FIELD_NUMBER = 3;
   private com.google.cloud.apihub.v1.RuntimeProjectAttachment runtimeProjectAttachment_;
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class CreateRuntimeProjectAttachmentRequest
   public boolean hasRuntimeProjectAttachment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class CreateRuntimeProjectAttachmentRequest
         ? com.google.cloud.apihub.v1.RuntimeProjectAttachment.getDefaultInstance()
         : runtimeProjectAttachment_;
   }
+
   /**
    *
    *
@@ -429,6 +437,7 @@ public final class CreateRuntimeProjectAttachmentRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -667,6 +676,7 @@ public final class CreateRuntimeProjectAttachmentRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -692,6 +702,7 @@ public final class CreateRuntimeProjectAttachmentRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -717,6 +728,7 @@ public final class CreateRuntimeProjectAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -741,6 +753,7 @@ public final class CreateRuntimeProjectAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +774,7 @@ public final class CreateRuntimeProjectAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +802,7 @@ public final class CreateRuntimeProjectAttachmentRequest
     }
 
     private java.lang.Object runtimeProjectAttachmentId_ = "";
+
     /**
      *
      *
@@ -814,6 +829,7 @@ public final class CreateRuntimeProjectAttachmentRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -840,6 +856,7 @@ public final class CreateRuntimeProjectAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -865,6 +882,7 @@ public final class CreateRuntimeProjectAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +904,7 @@ public final class CreateRuntimeProjectAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +938,7 @@ public final class CreateRuntimeProjectAttachmentRequest
             com.google.cloud.apihub.v1.RuntimeProjectAttachment.Builder,
             com.google.cloud.apihub.v1.RuntimeProjectAttachmentOrBuilder>
         runtimeProjectAttachmentBuilder_;
+
     /**
      *
      *
@@ -935,6 +955,7 @@ public final class CreateRuntimeProjectAttachmentRequest
     public boolean hasRuntimeProjectAttachment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -957,6 +978,7 @@ public final class CreateRuntimeProjectAttachmentRequest
         return runtimeProjectAttachmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -982,6 +1004,7 @@ public final class CreateRuntimeProjectAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1027,7 @@ public final class CreateRuntimeProjectAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1059,7 @@ public final class CreateRuntimeProjectAttachmentRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1081,7 @@ public final class CreateRuntimeProjectAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1099,7 @@ public final class CreateRuntimeProjectAttachmentRequest
       onChanged();
       return getRuntimeProjectAttachmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1094,6 +1121,7 @@ public final class CreateRuntimeProjectAttachmentRequest
             : runtimeProjectAttachment_;
       }
     }
+
     /**
      *
      *

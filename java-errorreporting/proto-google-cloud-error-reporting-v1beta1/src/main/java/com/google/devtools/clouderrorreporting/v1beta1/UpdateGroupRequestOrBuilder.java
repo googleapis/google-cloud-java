@@ -38,6 +38,7 @@ public interface UpdateGroupRequestOrBuilder
    * @return Whether the group field is set.
    */
   boolean hasGroup();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateGroupRequestOrBuilder
    * @return The group.
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup();
+
   /**
    *
    *

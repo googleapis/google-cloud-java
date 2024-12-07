@@ -25,6 +25,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.config.v1.UpdateDeploymentRequest)
     UpdateDeploymentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateDeploymentRequest.newBuilder() to construct.
   private UpdateDeploymentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -58,6 +59,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
 
   public static final int DEPLOYMENT_FIELD_NUMBER = 2;
   private com.google.cloud.config.v1.Deployment deployment_;
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
   public boolean hasDeployment() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
         ? com.google.cloud.config.v1.Deployment.getDefaultInstance()
         : deployment_;
   }
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -450,6 +459,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.config.v1.UpdateDeploymentRequest} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -679,6 +689,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -699,6 +710,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -725,6 +737,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -753,6 +766,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +792,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +873,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -880,6 +898,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -918,6 +937,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
             com.google.cloud.config.v1.Deployment.Builder,
             com.google.cloud.config.v1.DeploymentOrBuilder>
         deploymentBuilder_;
+
     /**
      *
      *
@@ -938,6 +958,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
     public boolean hasDeployment() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -964,6 +985,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
         return deploymentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -992,6 +1014,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1040,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1074,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1075,6 +1100,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1121,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return getDeploymentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1119,6 +1146,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
             : deployment_;
       }
     }
+
     /**
      *
      *
@@ -1152,6 +1180,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1186,6 +1215,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1250,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1253,6 +1284,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1282,6 +1314,7 @@ public final class UpdateDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

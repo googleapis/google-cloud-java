@@ -39,6 +39,7 @@ public interface GetDataTaxonomyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface StopLocationOrBuilder
    * @return Whether the point field is set.
    */
   boolean hasPoint();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface StopLocationOrBuilder
    * @return The point.
    */
   com.google.type.LatLng getPoint();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface StopLocationOrBuilder
    * @return Whether the timestamp field is set.
    */
   boolean hasTimestamp();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface StopLocationOrBuilder
    * @return The timestamp.
    */
   com.google.protobuf.Timestamp getTimestamp();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface StopLocationOrBuilder
    */
   @java.lang.Deprecated
   boolean hasStopTime();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface StopLocationOrBuilder
    */
   @java.lang.Deprecated
   com.google.protobuf.Timestamp getStopTime();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface SuggestSmartRepliesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.SmartReplyAnswer> getSmartReplyAnswersList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SuggestSmartRepliesResponseOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.SmartReplyAnswer getSmartReplyAnswers(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface SuggestSmartRepliesResponseOrBuilder
    * </code>
    */
   int getSmartReplyAnswersCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface SuggestSmartRepliesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SmartReplyAnswerOrBuilder>
       getSmartReplyAnswersOrBuilderList();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface SuggestSmartRepliesResponseOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
+
   /**
    *
    *

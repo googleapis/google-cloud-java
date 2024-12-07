@@ -36,6 +36,7 @@ public interface SmartReplyAnswerOrBuilder
    * @return The reply.
    */
   java.lang.String getReply();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface SmartReplyAnswerOrBuilder
    * @return The answerRecord.
    */
   java.lang.String getAnswerRecord();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.servicecontrol.v2.ReportResponse)
     ReportResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReportResponse.newBuilder() to construct.
   private ReportResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

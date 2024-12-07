@@ -34,6 +34,7 @@ public interface ListSubnetsResponseOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.Subnet subnets = 1;</code>
    */
   java.util.List<com.google.cloud.edgenetwork.v1.Subnet> getSubnetsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSubnetsResponseOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.Subnet subnets = 1;</code>
    */
   com.google.cloud.edgenetwork.v1.Subnet getSubnets(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSubnetsResponseOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.Subnet subnets = 1;</code>
    */
   int getSubnetsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSubnetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgenetwork.v1.SubnetOrBuilder>
       getSubnetsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListSubnetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListSubnetsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListSubnetsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListSubnetsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface DeleteRunRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

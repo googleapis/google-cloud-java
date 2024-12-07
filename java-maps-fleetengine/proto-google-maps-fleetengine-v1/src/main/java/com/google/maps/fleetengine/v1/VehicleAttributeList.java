@@ -33,6 +33,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.VehicleAttributeList)
     VehicleAttributeListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VehicleAttributeList.newBuilder() to construct.
   private VehicleAttributeList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.fleetengine.v1.VehicleAttribute> attributes_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.maps.fleetengine.v1.VehicleAttribute> getAttributesList() {
     return attributes_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
       getAttributesOrBuilderList() {
     return attributes_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
   public int getAttributesCount() {
     return attributes_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
   public com.google.maps.fleetengine.v1.VehicleAttribute getAttributes(int index) {
     return attributes_.get(index);
   }
+
   /**
    *
    *
@@ -296,6 +302,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -559,6 +566,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
         return attributesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -575,6 +583,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
         return attributesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -591,6 +600,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
         return attributesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -613,6 +623,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +644,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +667,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +690,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +711,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +732,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +753,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +773,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +793,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +806,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
     public com.google.maps.fleetengine.v1.VehicleAttribute.Builder getAttributesBuilder(int index) {
       return getAttributesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -804,6 +824,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
         return attributesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -821,6 +842,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(attributes_);
       }
     }
+
     /**
      *
      *
@@ -834,6 +856,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
       return getAttributesFieldBuilder()
           .addBuilder(com.google.maps.fleetengine.v1.VehicleAttribute.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -847,6 +870,7 @@ public final class VehicleAttributeList extends com.google.protobuf.GeneratedMes
       return getAttributesFieldBuilder()
           .addBuilder(index, com.google.maps.fleetengine.v1.VehicleAttribute.getDefaultInstance());
     }
+
     /**
      *
      *

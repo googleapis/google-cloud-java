@@ -33,6 +33,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.NetworkAdapterList)
     NetworkAdapterListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkAdapterList.newBuilder() to construct.
   private NetworkAdapterList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.NetworkAdapterDetails> entries_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
       getEntriesList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
       getEntriesOrBuilderList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
   public int getEntriesCount() {
     return entries_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.migrationcenter.v1.NetworkAdapterDetails getEntries(int index) {
     return entries_.get(index);
   }
+
   /**
    *
    *
@@ -299,6 +305,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -564,6 +571,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
         return entriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -580,6 +588,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
         return entriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -596,6 +605,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
         return entriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -619,6 +629,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +674,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -685,6 +698,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +719,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +741,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +763,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +783,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +803,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +817,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
         int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -815,6 +835,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -833,6 +854,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(entries_);
       }
     }
+
     /**
      *
      *
@@ -847,6 +869,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               com.google.cloud.migrationcenter.v1.NetworkAdapterDetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -863,6 +886,7 @@ public final class NetworkAdapterList extends com.google.protobuf.GeneratedMessa
               index,
               com.google.cloud.migrationcenter.v1.NetworkAdapterDetails.getDefaultInstance());
     }
+
     /**
      *
      *

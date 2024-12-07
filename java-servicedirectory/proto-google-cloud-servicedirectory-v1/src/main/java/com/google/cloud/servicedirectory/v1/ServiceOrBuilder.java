@@ -37,6 +37,7 @@ public interface ServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -111,9 +113,11 @@ public interface ServiceOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public interface ServiceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -224,6 +230,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.servicedirectory.v1.Endpoint> getEndpointsList();
+
   /**
    *
    *
@@ -239,6 +246,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   com.google.cloud.servicedirectory.v1.Endpoint getEndpoints(int index);
+
   /**
    *
    *
@@ -254,6 +262,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   int getEndpointsCount();
+
   /**
    *
    *
@@ -270,6 +279,7 @@ public interface ServiceOrBuilder
    */
   java.util.List<? extends com.google.cloud.servicedirectory.v1.EndpointOrBuilder>
       getEndpointsOrBuilderList();
+
   /**
    *
    *
@@ -299,6 +309,7 @@ public interface ServiceOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *

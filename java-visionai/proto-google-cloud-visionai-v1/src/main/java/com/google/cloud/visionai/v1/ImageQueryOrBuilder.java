@@ -36,6 +36,7 @@ public interface ImageQueryOrBuilder
    * @return Whether the inputImage field is set.
    */
   boolean hasInputImage();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ImageQueryOrBuilder
    * @return Whether the asset field is set.
    */
   boolean hasAsset();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ImageQueryOrBuilder
    * @return The asset.
    */
   java.lang.String getAsset();
+
   /**
    *
    *

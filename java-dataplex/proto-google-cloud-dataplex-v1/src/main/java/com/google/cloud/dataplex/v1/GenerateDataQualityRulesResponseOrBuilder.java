@@ -35,6 +35,7 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.DataQualityRule> getRuleList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
    */
   com.google.cloud.dataplex.v1.DataQualityRule getRule(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
    */
   int getRuleCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityRuleOrBuilder>
       getRuleOrBuilderList();
+
   /**
    *
    *

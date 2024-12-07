@@ -40,6 +40,7 @@ public interface CompleteTrialRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface CompleteTrialRequestOrBuilder
    * @return Whether the finalMeasurement field is set.
    */
   boolean hasFinalMeasurement();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface CompleteTrialRequestOrBuilder
    * @return The finalMeasurement.
    */
   com.google.cloud.aiplatform.v1.Measurement getFinalMeasurement();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface CompleteTrialRequestOrBuilder
    * @return The infeasibleReason.
    */
   java.lang.String getInfeasibleReason();
+
   /**
    *
    *

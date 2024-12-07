@@ -37,6 +37,7 @@ public interface UserManagedKeysConfigOrBuilder
    * @return The clusterCa.
    */
   java.lang.String getClusterCa();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface UserManagedKeysConfigOrBuilder
    * @return The etcdApiCa.
    */
   java.lang.String getEtcdApiCa();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface UserManagedKeysConfigOrBuilder
    * @return The etcdPeerCa.
    */
   java.lang.String getEtcdPeerCa();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface UserManagedKeysConfigOrBuilder
    * @return A list containing the serviceAccountSigningKeys.
    */
   java.util.List<java.lang.String> getServiceAccountSigningKeysList();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface UserManagedKeysConfigOrBuilder
    * @return The count of serviceAccountSigningKeys.
    */
   int getServiceAccountSigningKeysCount();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface UserManagedKeysConfigOrBuilder
    * @return The serviceAccountSigningKeys at the given index.
    */
   java.lang.String getServiceAccountSigningKeys(int index);
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public interface UserManagedKeysConfigOrBuilder
    * @return A list containing the serviceAccountVerificationKeys.
    */
   java.util.List<java.lang.String> getServiceAccountVerificationKeysList();
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public interface UserManagedKeysConfigOrBuilder
    * @return The count of serviceAccountVerificationKeys.
    */
   int getServiceAccountVerificationKeysCount();
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public interface UserManagedKeysConfigOrBuilder
    * @return The serviceAccountVerificationKeys at the given index.
    */
   java.lang.String getServiceAccountVerificationKeys(int index);
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public interface UserManagedKeysConfigOrBuilder
    * @return The aggregationCa.
    */
   java.lang.String getAggregationCa();
+
   /**
    *
    *
@@ -296,6 +306,7 @@ public interface UserManagedKeysConfigOrBuilder
    * @return The controlPlaneDiskEncryptionKey.
    */
   java.lang.String getControlPlaneDiskEncryptionKey();
+
   /**
    *
    *
@@ -325,6 +336,7 @@ public interface UserManagedKeysConfigOrBuilder
    * @return The gkeopsEtcdBackupEncryptionKey.
    */
   java.lang.String getGkeopsEtcdBackupEncryptionKey();
+
   /**
    *
    *

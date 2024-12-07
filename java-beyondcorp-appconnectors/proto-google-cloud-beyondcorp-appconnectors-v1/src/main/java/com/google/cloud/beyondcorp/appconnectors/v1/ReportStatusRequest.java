@@ -33,6 +33,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest)
     ReportStatusRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReportStatusRequest.newBuilder() to construct.
   private ReportStatusRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object appConnector_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
 
   public static final int RESOURCE_INFO_FIELD_NUMBER = 2;
   private com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo resourceInfo_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
   public boolean hasResourceInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo.getDefaultInstance()
         : resourceInfo_;
   }
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -256,6 +264,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -465,6 +474,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -711,6 +721,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object appConnector_ = "";
+
     /**
      *
      *
@@ -736,6 +747,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -761,6 +773,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -785,6 +798,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +819,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +852,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo.Builder,
             com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfoOrBuilder>
         resourceInfoBuilder_;
+
     /**
      *
      *
@@ -853,6 +869,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
     public boolean hasResourceInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
         return resourceInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -900,6 +918,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +941,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +973,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +995,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1013,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getResourceInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1012,6 +1035,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
             : resourceInfo_;
       }
     }
+
     /**
      *
      *
@@ -1041,6 +1065,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1075,6 +1100,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1109,6 +1135,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1142,6 +1169,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1199,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1236,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1223,6 +1253,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1243,6 +1274,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

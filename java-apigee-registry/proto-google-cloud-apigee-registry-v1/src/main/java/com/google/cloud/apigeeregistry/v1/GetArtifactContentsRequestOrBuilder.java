@@ -39,6 +39,7 @@ public interface GetArtifactContentsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

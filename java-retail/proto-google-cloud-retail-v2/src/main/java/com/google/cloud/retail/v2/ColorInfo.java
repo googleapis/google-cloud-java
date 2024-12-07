@@ -33,6 +33,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.ColorInfo)
     ColorInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ColorInfo.newBuilder() to construct.
   private ColorInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList colorFamilies_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getColorFamiliesList() {
     return colorFamilies_;
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public int getColorFamiliesCount() {
     return colorFamilies_.size();
   }
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getColorFamilies(int index) {
     return colorFamilies_.get(index);
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList colors_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getColorsList() {
     return colors_;
   }
+
   /**
    *
    *
@@ -231,6 +238,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public int getColorsCount() {
     return colors_.size();
   }
+
   /**
    *
    *
@@ -257,6 +265,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getColors(int index) {
     return colors_.get(index);
   }
+
   /**
    *
    *
@@ -464,6 +473,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -683,6 +693,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -710,6 +721,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       colorFamilies_.makeImmutable();
       return colorFamilies_;
     }
+
     /**
      *
      *
@@ -736,6 +748,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public int getColorFamiliesCount() {
       return colorFamilies_.size();
     }
+
     /**
      *
      *
@@ -763,6 +776,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getColorFamilies(int index) {
       return colorFamilies_.get(index);
     }
+
     /**
      *
      *
@@ -790,6 +804,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getColorFamiliesBytes(int index) {
       return colorFamilies_.getByteString(index);
     }
+
     /**
      *
      *
@@ -825,6 +840,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +875,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +907,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +938,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +984,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -991,6 +1011,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       colors_.makeImmutable();
       return colors_;
     }
+
     /**
      *
      *
@@ -1016,6 +1037,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public int getColorsCount() {
       return colors_.size();
     }
+
     /**
      *
      *
@@ -1042,6 +1064,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getColors(int index) {
       return colors_.get(index);
     }
+
     /**
      *
      *
@@ -1068,6 +1091,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getColorsBytes(int index) {
       return colors_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1102,6 +1126,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1160,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1191,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1221,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

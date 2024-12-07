@@ -34,6 +34,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.Asset)
     AssetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Asset.newBuilder() to construct.
   private Asset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,6 +98,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     private AssetDetailsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -131,6 +133,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -154,6 +157,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +184,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -196,6 +201,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -212,6 +218,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -302,6 +312,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -318,12 +329,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -337,6 +350,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -357,6 +371,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -404,6 +419,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public int getAttributesCount() {
     return internalGetAttributes().getMap().size();
   }
+
   /**
    *
    *
@@ -420,12 +436,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAttributes().getMap().containsKey(key);
   }
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
     return getAttributesMap();
   }
+
   /**
    *
    *
@@ -439,6 +457,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
     return internalGetAttributes().getMap();
   }
+
   /**
    *
    *
@@ -459,6 +478,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -481,6 +501,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MACHINE_DETAILS_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -499,6 +520,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMachineDetails() {
     return assetDetailsCase_ == 6;
   }
+
   /**
    *
    *
@@ -520,6 +542,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.migrationcenter.v1.MachineDetails.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -542,6 +565,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INSIGHT_LIST_FIELD_NUMBER = 20;
   private com.google.cloud.migrationcenter.v1.InsightList insightList_;
+
   /**
    *
    *
@@ -559,6 +583,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInsightList() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -578,6 +603,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.migrationcenter.v1.InsightList.getDefaultInstance()
         : insightList_;
   }
+
   /**
    *
    *
@@ -598,6 +624,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERFORMANCE_DATA_FIELD_NUMBER = 21;
   private com.google.cloud.migrationcenter.v1.AssetPerformanceData performanceData_;
+
   /**
    *
    *
@@ -615,6 +642,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPerformanceData() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -634,6 +662,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.migrationcenter.v1.AssetPerformanceData.getDefaultInstance()
         : performanceData_;
   }
+
   /**
    *
    *
@@ -658,6 +687,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sources_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -674,6 +704,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSourcesList() {
     return sources_;
   }
+
   /**
    *
    *
@@ -690,6 +721,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public int getSourcesCount() {
     return sources_.size();
   }
+
   /**
    *
    *
@@ -707,6 +739,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSources(int index) {
     return sources_.get(index);
   }
+
   /**
    *
    *
@@ -730,6 +763,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList assignedGroups_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -746,6 +780,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAssignedGroupsList() {
     return assignedGroups_;
   }
+
   /**
    *
    *
@@ -762,6 +797,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public int getAssignedGroupsCount() {
     return assignedGroups_.size();
   }
+
   /**
    *
    *
@@ -779,6 +815,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAssignedGroups(int index) {
     return assignedGroups_.get(index);
   }
+
   /**
    *
    *
@@ -1102,6 +1139,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1527,6 +1565,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1549,6 +1588,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1571,6 +1611,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1592,6 +1633,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1609,6 +1651,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1681,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1654,6 +1698,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1676,6 +1721,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1700,6 +1746,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1721,6 +1768,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1750,6 +1798,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1771,6 +1820,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1787,6 +1837,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1807,6 +1858,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1841,6 +1893,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1857,6 +1910,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1879,6 +1933,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1903,6 +1958,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1924,6 +1980,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1953,6 +2010,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1974,6 +2032,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1990,6 +2049,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2010,6 +2070,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2063,6 +2124,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2079,12 +2141,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2098,6 +2162,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2118,6 +2183,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2144,6 +2210,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2160,12 +2227,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2186,6 +2255,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -2229,6 +2299,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getAttributesCount() {
       return internalGetAttributes().getMap().size();
     }
+
     /**
      *
      *
@@ -2245,12 +2316,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAttributes().getMap().containsKey(key);
     }
+
     /** Use {@link #getAttributesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
       return getAttributesMap();
     }
+
     /**
      *
      *
@@ -2264,6 +2337,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
       return internalGetAttributes().getMap();
     }
+
     /**
      *
      *
@@ -2284,6 +2358,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2310,6 +2385,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAttributes().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2326,12 +2402,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAttributes().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAttributes() {
       bitField0_ |= 0x00000010;
       return internalGetMutableAttributes().getMutableMap();
     }
+
     /**
      *
      *
@@ -2352,6 +2430,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *
@@ -2372,6 +2451,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.MachineDetails.Builder,
             com.google.cloud.migrationcenter.v1.MachineDetailsOrBuilder>
         machineDetailsBuilder_;
+
     /**
      *
      *
@@ -2390,6 +2470,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMachineDetails() {
       return assetDetailsCase_ == 6;
     }
+
     /**
      *
      *
@@ -2418,6 +2499,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.migrationcenter.v1.MachineDetails.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2443,6 +2525,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       assetDetailsCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2466,6 +2549,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       assetDetailsCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2502,6 +2586,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       assetDetailsCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2530,6 +2615,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2545,6 +2631,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.migrationcenter.v1.MachineDetails.Builder getMachineDetailsBuilder() {
       return getMachineDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2569,6 +2656,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.migrationcenter.v1.MachineDetails.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2611,6 +2699,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.InsightList.Builder,
             com.google.cloud.migrationcenter.v1.InsightListOrBuilder>
         insightListBuilder_;
+
     /**
      *
      *
@@ -2627,6 +2716,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInsightList() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2649,6 +2739,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return insightListBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2673,6 +2764,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2695,6 +2787,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2725,6 +2818,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2746,6 +2840,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2762,6 +2857,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInsightListFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2782,6 +2878,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : insightList_;
       }
     }
+
     /**
      *
      *
@@ -2816,6 +2913,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.AssetPerformanceData.Builder,
             com.google.cloud.migrationcenter.v1.AssetPerformanceDataOrBuilder>
         performanceDataBuilder_;
+
     /**
      *
      *
@@ -2832,6 +2930,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPerformanceData() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2854,6 +2953,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return performanceDataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2879,6 +2979,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2901,6 +3002,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2932,6 +3034,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2953,6 +3056,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2970,6 +3074,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPerformanceDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2991,6 +3096,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : performanceData_;
       }
     }
+
     /**
      *
      *
@@ -3028,6 +3134,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
+
     /**
      *
      *
@@ -3045,6 +3152,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       sources_.makeImmutable();
       return sources_;
     }
+
     /**
      *
      *
@@ -3061,6 +3169,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getSourcesCount() {
       return sources_.size();
     }
+
     /**
      *
      *
@@ -3078,6 +3187,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSources(int index) {
       return sources_.get(index);
     }
+
     /**
      *
      *
@@ -3095,6 +3205,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSourcesBytes(int index) {
       return sources_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3120,6 +3231,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3144,6 +3256,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3165,6 +3278,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3185,6 +3299,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3220,6 +3335,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000200;
     }
+
     /**
      *
      *
@@ -3237,6 +3353,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       assignedGroups_.makeImmutable();
       return assignedGroups_;
     }
+
     /**
      *
      *
@@ -3253,6 +3370,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getAssignedGroupsCount() {
       return assignedGroups_.size();
     }
+
     /**
      *
      *
@@ -3270,6 +3388,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAssignedGroups(int index) {
       return assignedGroups_.get(index);
     }
+
     /**
      *
      *
@@ -3287,6 +3406,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAssignedGroupsBytes(int index) {
       return assignedGroups_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3312,6 +3432,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3336,6 +3457,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3357,6 +3479,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3377,6 +3500,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

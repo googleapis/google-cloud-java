@@ -36,6 +36,7 @@ public interface InterconnectMacsecPreSharedKeyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InterconnectMacsecPreSharedKeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface InterconnectMacsecPreSharedKeyOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface InterconnectMacsecPreSharedKeyOrBuilder
    * @return The startTime.
    */
   java.lang.String getStartTime();
+
   /**
    *
    *

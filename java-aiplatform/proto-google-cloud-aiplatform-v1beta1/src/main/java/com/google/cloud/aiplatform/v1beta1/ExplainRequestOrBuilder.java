@@ -40,6 +40,7 @@ public interface ExplainRequestOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface ExplainRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.protobuf.Value> getInstancesList();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface ExplainRequestOrBuilder
    * </code>
    */
   com.google.protobuf.Value getInstances(int index);
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface ExplainRequestOrBuilder
    * </code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface ExplainRequestOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.protobuf.ValueOrBuilder> getInstancesOrBuilderList();
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public interface ExplainRequestOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public interface ExplainRequestOrBuilder
    * @return The parameters.
    */
   com.google.protobuf.Value getParameters();
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public interface ExplainRequestOrBuilder
    * @return Whether the explanationSpecOverride field is set.
    */
   boolean hasExplanationSpecOverride();
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public interface ExplainRequestOrBuilder
    * @return The explanationSpecOverride.
    */
   com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride getExplanationSpecOverride();
+
   /**
    *
    *
@@ -283,6 +292,7 @@ public interface ExplainRequestOrBuilder
    * </code>
    */
   int getConcurrentExplanationSpecOverrideCount();
+
   /**
    *
    *
@@ -301,10 +311,12 @@ public interface ExplainRequestOrBuilder
    * </code>
    */
   boolean containsConcurrentExplanationSpecOverride(java.lang.String key);
+
   /** Use {@link #getConcurrentExplanationSpecOverrideMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
       getConcurrentExplanationSpecOverride();
+
   /**
    *
    *
@@ -324,6 +336,7 @@ public interface ExplainRequestOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
       getConcurrentExplanationSpecOverrideMap();
+
   /**
    *
    *
@@ -347,6 +360,7 @@ public interface ExplainRequestOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride defaultValue);
+
   /**
    *
    *
@@ -381,6 +395,7 @@ public interface ExplainRequestOrBuilder
    * @return The deployedModelId.
    */
   java.lang.String getDeployedModelId();
+
   /**
    *
    *

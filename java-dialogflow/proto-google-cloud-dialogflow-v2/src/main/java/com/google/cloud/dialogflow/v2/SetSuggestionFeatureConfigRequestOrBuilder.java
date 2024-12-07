@@ -38,6 +38,7 @@ public interface SetSuggestionFeatureConfigRequestOrBuilder
    * @return The conversationProfile.
    */
   java.lang.String getConversationProfile();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface SetSuggestionFeatureConfigRequestOrBuilder
    * @return The enum numeric value on the wire for participantRole.
    */
   int getParticipantRoleValue();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface SetSuggestionFeatureConfigRequestOrBuilder
    * @return Whether the suggestionFeatureConfig field is set.
    */
   boolean hasSuggestionFeatureConfig();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface SetSuggestionFeatureConfigRequestOrBuilder
    */
   com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionFeatureConfig
       getSuggestionFeatureConfig();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface StateNotificationConfigOrBuilder
    * @return The pubsubTopicName.
    */
   java.lang.String getPubsubTopicName();
+
   /**
    *
    *

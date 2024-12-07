@@ -34,6 +34,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Transport)
     TransportOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Transport.newBuilder() to construct.
   private Transport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
     private IntermediaryCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -109,6 +111,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUBSUB_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPubsub() {
     return intermediaryCase_ == 1;
   }
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.eventarc.v1.Pubsub.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -335,6 +340,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -553,6 +559,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.eventarc.v1.Pubsub.Builder,
             com.google.cloud.eventarc.v1.PubsubOrBuilder>
         pubsubBuilder_;
+
     /**
      *
      *
@@ -569,6 +576,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPubsub() {
       return intermediaryCase_ == 1;
     }
+
     /**
      *
      *
@@ -595,6 +603,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.eventarc.v1.Pubsub.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -618,6 +627,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
       intermediaryCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -638,6 +648,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
       intermediaryCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -671,6 +682,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
       intermediaryCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.eventarc.v1.Pubsub.Builder getPubsubBuilder() {
       return getPubsubFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -731,6 +745,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.eventarc.v1.Pubsub.getDefaultInstance();
       }
     }
+
     /**
      *
      *

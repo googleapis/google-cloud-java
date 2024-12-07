@@ -38,6 +38,7 @@ public interface AddRuleRegionSecurityPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface AddRuleRegionSecurityPolicyRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface AddRuleRegionSecurityPolicyRequestOrBuilder
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface AddRuleRegionSecurityPolicyRequestOrBuilder
    * @return Whether the securityPolicyRuleResource field is set.
    */
   boolean hasSecurityPolicyRuleResource();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface AddRuleRegionSecurityPolicyRequestOrBuilder
    * @return The securityPolicyRuleResource.
    */
   com.google.cloud.compute.v1.SecurityPolicyRule getSecurityPolicyRuleResource();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface AddRuleRegionSecurityPolicyRequestOrBuilder
    * @return Whether the validateOnly field is set.
    */
   boolean hasValidateOnly();
+
   /**
    *
    *

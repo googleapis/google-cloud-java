@@ -36,6 +36,7 @@ public interface AudioInputOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AudioInputOrBuilder
    * @return The config.
    */
   com.google.cloud.dialogflow.v2beta1.InputAudioConfig getConfig();
+
   /**
    *
    *

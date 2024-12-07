@@ -33,6 +33,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AdvancedMachineFeatures)
     AdvancedMachineFeaturesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AdvancedMachineFeatures.newBuilder() to construct.
   private AdvancedMachineFeatures(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,6 +130,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      * <code>UNDEFINED_PERFORMANCE_MONITORING_UNIT = 0;</code>
      */
     public static final int UNDEFINED_PERFORMANCE_MONITORING_UNIT_VALUE = 0;
+
     /**
      *
      *
@@ -139,6 +141,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      * <code>ARCHITECTURAL = 155113693;</code>
      */
     public static final int ARCHITECTURAL_VALUE = 155113693;
+
     /**
      *
      *
@@ -149,8 +152,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      * <code>ENHANCED = 476873590;</code>
      */
     public static final int ENHANCED_VALUE = 476873590;
+
     /** <code>PERFORMANCE_MONITORING_UNIT_UNSPECIFIED = 429210692;</code> */
     public static final int PERFORMANCE_MONITORING_UNIT_UNSPECIFIED_VALUE = 429210692;
+
     /**
      *
      *
@@ -257,6 +262,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int ENABLE_NESTED_VIRTUALIZATION_FIELD_NUMBER = 16639365;
   private boolean enableNestedVirtualization_ = false;
+
   /**
    *
    *
@@ -272,6 +278,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   public boolean hasEnableNestedVirtualization() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -290,6 +297,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
 
   public static final int ENABLE_UEFI_NETWORKING_FIELD_NUMBER = 334485668;
   private boolean enableUefiNetworking_ = false;
+
   /**
    *
    *
@@ -305,6 +313,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   public boolean hasEnableUefiNetworking() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -325,6 +334,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object performanceMonitoringUnit_ = "";
+
   /**
    *
    *
@@ -341,6 +351,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   public boolean hasPerformanceMonitoringUnit() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -365,6 +376,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -392,6 +404,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
 
   public static final int THREADS_PER_CORE_FIELD_NUMBER = 352611671;
   private int threadsPerCore_ = 0;
+
   /**
    *
    *
@@ -407,6 +420,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   public boolean hasThreadsPerCore() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -427,6 +441,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object turboMode_ = "";
+
   /**
    *
    *
@@ -442,6 +457,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   public boolean hasTurboMode() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -465,6 +481,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -491,6 +508,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
 
   public static final int VISIBLE_CORE_COUNT_FIELD_NUMBER = 193198684;
   private int visibleCoreCount_ = 0;
+
   /**
    *
    *
@@ -506,6 +524,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   public boolean hasVisibleCoreCount() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -764,6 +783,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1023,6 +1043,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     private int bitField0_;
 
     private boolean enableNestedVirtualization_;
+
     /**
      *
      *
@@ -1038,6 +1059,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public boolean hasEnableNestedVirtualization() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1053,6 +1075,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public boolean getEnableNestedVirtualization() {
       return enableNestedVirtualization_;
     }
+
     /**
      *
      *
@@ -1072,6 +1095,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1115,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     }
 
     private boolean enableUefiNetworking_;
+
     /**
      *
      *
@@ -1106,6 +1131,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public boolean hasEnableUefiNetworking() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1121,6 +1147,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public boolean getEnableUefiNetworking() {
       return enableUefiNetworking_;
     }
+
     /**
      *
      *
@@ -1140,6 +1167,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1159,6 +1187,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     }
 
     private java.lang.Object performanceMonitoringUnit_ = "";
+
     /**
      *
      *
@@ -1174,6 +1203,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public boolean hasPerformanceMonitoringUnit() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1197,6 +1227,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1251,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1242,6 +1274,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1293,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1285,6 +1319,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     }
 
     private int threadsPerCore_;
+
     /**
      *
      *
@@ -1300,6 +1335,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public boolean hasThreadsPerCore() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1315,6 +1351,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public int getThreadsPerCore() {
       return threadsPerCore_;
     }
+
     /**
      *
      *
@@ -1334,6 +1371,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1353,6 +1391,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     }
 
     private java.lang.Object turboMode_ = "";
+
     /**
      *
      *
@@ -1367,6 +1406,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public boolean hasTurboMode() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1389,6 +1429,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1411,6 +1452,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1432,6 +1474,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1449,6 +1492,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1473,6 +1517,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     }
 
     private int visibleCoreCount_;
+
     /**
      *
      *
@@ -1488,6 +1533,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public boolean hasVisibleCoreCount() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1503,6 +1549,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public int getVisibleCoreCount() {
       return visibleCoreCount_;
     }
+
     /**
      *
      *
@@ -1522,6 +1569,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface WebServerNetworkAccessControlOrBuilder
           com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl
               .AllowedIpRange>
       getAllowedIpRangesList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface WebServerNetworkAccessControlOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl.AllowedIpRange
       getAllowedIpRanges(int index);
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface WebServerNetworkAccessControlOrBuilder
    * </code>
    */
   int getAllowedIpRangesCount();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface WebServerNetworkAccessControlOrBuilder
               com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl
                   .AllowedIpRangeOrBuilder>
       getAllowedIpRangesOrBuilderList();
+
   /**
    *
    *

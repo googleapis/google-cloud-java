@@ -36,6 +36,7 @@ public final class FetchDomainVerificationStatusResponse
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusResponse)
     FetchDomainVerificationStatusResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchDomainVerificationStatusResponse.newBuilder() to construct.
   private FetchDomainVerificationStatusResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class FetchDomainVerificationStatusResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1alpha.TargetSite> targetSites_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class FetchDomainVerificationStatusResponse
   public java.util.List<com.google.cloud.discoveryengine.v1alpha.TargetSite> getTargetSitesList() {
     return targetSites_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class FetchDomainVerificationStatusResponse
       getTargetSitesOrBuilderList() {
     return targetSites_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class FetchDomainVerificationStatusResponse
   public int getTargetSitesCount() {
     return targetSites_.size();
   }
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public final class FetchDomainVerificationStatusResponse
   public com.google.cloud.discoveryengine.v1alpha.TargetSite getTargetSites(int index) {
     return targetSites_.get(index);
   }
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public final class FetchDomainVerificationStatusResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public final class FetchDomainVerificationStatusResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public final class FetchDomainVerificationStatusResponse
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
+
   /**
    *
    *
@@ -401,6 +410,7 @@ public final class FetchDomainVerificationStatusResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -709,6 +719,7 @@ public final class FetchDomainVerificationStatusResponse
         return targetSitesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -725,6 +736,7 @@ public final class FetchDomainVerificationStatusResponse
         return targetSitesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -741,6 +753,7 @@ public final class FetchDomainVerificationStatusResponse
         return targetSitesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -764,6 +777,7 @@ public final class FetchDomainVerificationStatusResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +798,7 @@ public final class FetchDomainVerificationStatusResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +821,7 @@ public final class FetchDomainVerificationStatusResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +845,7 @@ public final class FetchDomainVerificationStatusResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +866,7 @@ public final class FetchDomainVerificationStatusResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class FetchDomainVerificationStatusResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +908,7 @@ public final class FetchDomainVerificationStatusResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +928,7 @@ public final class FetchDomainVerificationStatusResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +948,7 @@ public final class FetchDomainVerificationStatusResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +962,7 @@ public final class FetchDomainVerificationStatusResponse
         int index) {
       return getTargetSitesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -957,6 +980,7 @@ public final class FetchDomainVerificationStatusResponse
         return targetSitesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -974,6 +998,7 @@ public final class FetchDomainVerificationStatusResponse
         return java.util.Collections.unmodifiableList(targetSites_);
       }
     }
+
     /**
      *
      *
@@ -987,6 +1012,7 @@ public final class FetchDomainVerificationStatusResponse
       return getTargetSitesFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1alpha.TargetSite.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1002,6 +1028,7 @@ public final class FetchDomainVerificationStatusResponse
           .addBuilder(
               index, com.google.cloud.discoveryengine.v1alpha.TargetSite.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1034,6 +1061,7 @@ public final class FetchDomainVerificationStatusResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1057,6 +1085,7 @@ public final class FetchDomainVerificationStatusResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1109,7 @@ public final class FetchDomainVerificationStatusResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1102,6 +1132,7 @@ public final class FetchDomainVerificationStatusResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1151,7 @@ public final class FetchDomainVerificationStatusResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1177,7 @@ public final class FetchDomainVerificationStatusResponse
     }
 
     private int totalSize_;
+
     /**
      *
      *
@@ -1161,6 +1194,7 @@ public final class FetchDomainVerificationStatusResponse
     public int getTotalSize() {
       return totalSize_;
     }
+
     /**
      *
      *
@@ -1181,6 +1215,7 @@ public final class FetchDomainVerificationStatusResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.FirewallLogConfig)
     FirewallLogConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FirewallLogConfig.newBuilder() to construct.
   private FirewallLogConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -100,8 +101,10 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_METADATA = 0;</code>
      */
     public static final int UNDEFINED_METADATA_VALUE = 0;
+
     /** <code>EXCLUDE_ALL_METADATA = 334519954;</code> */
     public static final int EXCLUDE_ALL_METADATA_VALUE = 334519954;
+
     /** <code>INCLUDE_ALL_METADATA = 164619908;</code> */
     public static final int INCLUDE_ALL_METADATA_VALUE = 164619908;
 
@@ -191,6 +194,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int ENABLE_FIELD_NUMBER = 311764355;
   private boolean enable_ = false;
+
   /**
    *
    *
@@ -206,6 +210,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasEnable() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -226,6 +231,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metadata_ = "";
+
   /**
    *
    *
@@ -242,6 +248,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -266,6 +273,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -469,6 +477,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -669,6 +678,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private boolean enable_;
+
     /**
      *
      *
@@ -684,6 +694,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasEnable() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -699,6 +710,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     public boolean getEnable() {
       return enable_;
     }
+
     /**
      *
      *
@@ -718,6 +730,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +750,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object metadata_ = "";
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -775,6 +790,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -820,6 +837,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +856,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

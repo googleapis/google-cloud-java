@@ -40,6 +40,7 @@ public interface DeleteCertificateAuthorityRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface DeleteCertificateAuthorityRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

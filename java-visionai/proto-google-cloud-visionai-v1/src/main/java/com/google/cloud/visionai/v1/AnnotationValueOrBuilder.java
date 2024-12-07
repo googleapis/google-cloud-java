@@ -36,6 +36,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the intValue field is set.
    */
   boolean hasIntValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the floatValue field is set.
    */
   boolean hasFloatValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the strValue field is set.
    */
   boolean hasStrValue();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface AnnotationValueOrBuilder
    * @return The strValue.
    */
   java.lang.String getStrValue();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the datetimeValue field is set.
    */
   boolean hasDatetimeValue();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface AnnotationValueOrBuilder
    * @return The datetimeValue.
    */
   java.lang.String getDatetimeValue();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the geoCoordinate field is set.
    */
   boolean hasGeoCoordinate();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface AnnotationValueOrBuilder
    * @return The geoCoordinate.
    */
   com.google.cloud.visionai.v1.GeoCoordinate getGeoCoordinate();
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the protoAnyValue field is set.
    */
   boolean hasProtoAnyValue();
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public interface AnnotationValueOrBuilder
    * @return The protoAnyValue.
    */
   com.google.protobuf.Any getProtoAnyValue();
+
   /**
    *
    *
@@ -230,6 +240,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
+
   /**
    *
    *
@@ -256,6 +267,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the customizedStructDataValue field is set.
    */
   boolean hasCustomizedStructDataValue();
+
   /**
    *
    *
@@ -269,6 +281,7 @@ public interface AnnotationValueOrBuilder
    * @return The customizedStructDataValue.
    */
   com.google.protobuf.Struct getCustomizedStructDataValue();
+
   /**
    *
    *
@@ -293,6 +306,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the listValue field is set.
    */
   boolean hasListValue();
+
   /**
    *
    *
@@ -305,6 +319,7 @@ public interface AnnotationValueOrBuilder
    * @return The listValue.
    */
   com.google.cloud.visionai.v1.AnnotationList getListValue();
+
   /**
    *
    *
@@ -328,6 +343,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the customizedStructValue field is set.
    */
   boolean hasCustomizedStructValue();
+
   /**
    *
    *
@@ -340,6 +356,7 @@ public interface AnnotationValueOrBuilder
    * @return The customizedStructValue.
    */
   com.google.cloud.visionai.v1.AnnotationCustomizedStruct getCustomizedStructValue();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface CreateEntryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface CreateEntryRequestOrBuilder
    * @return The entryId.
    */
   java.lang.String getEntryId();
+
   /**
    *
    *
@@ -131,6 +133,7 @@ public interface CreateEntryRequestOrBuilder
    * @return Whether the entry field is set.
    */
   boolean hasEntry();
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public interface CreateEntryRequestOrBuilder
    * @return The entry.
    */
   com.google.cloud.dataplex.v1.Entry getEntry();
+
   /**
    *
    *

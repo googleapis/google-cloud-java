@@ -35,6 +35,7 @@ public final class VideoActionRecognitionPredictionParams
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.predict.params.VideoActionRecognitionPredictionParams)
     VideoActionRecognitionPredictionParamsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VideoActionRecognitionPredictionParams.newBuilder() to construct.
   private VideoActionRecognitionPredictionParams(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class VideoActionRecognitionPredictionParams
 
   public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
   private float confidenceThreshold_ = 0F;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class VideoActionRecognitionPredictionParams
 
   public static final int MAX_PREDICTIONS_FIELD_NUMBER = 2;
   private int maxPredictions_ = 0;
+
   /**
    *
    *
@@ -302,6 +305,7 @@ public final class VideoActionRecognitionPredictionParams
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -526,6 +530,7 @@ public final class VideoActionRecognitionPredictionParams
     private int bitField0_;
 
     private float confidenceThreshold_;
+
     /**
      *
      *
@@ -542,6 +547,7 @@ public final class VideoActionRecognitionPredictionParams
     public float getConfidenceThreshold() {
       return confidenceThreshold_;
     }
+
     /**
      *
      *
@@ -562,6 +568,7 @@ public final class VideoActionRecognitionPredictionParams
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -582,6 +589,7 @@ public final class VideoActionRecognitionPredictionParams
     }
 
     private int maxPredictions_;
+
     /**
      *
      *
@@ -599,6 +607,7 @@ public final class VideoActionRecognitionPredictionParams
     public int getMaxPredictions() {
       return maxPredictions_;
     }
+
     /**
      *
      *
@@ -620,6 +629,7 @@ public final class VideoActionRecognitionPredictionParams
       onChanged();
       return this;
     }
+
     /**
      *
      *

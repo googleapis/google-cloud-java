@@ -33,6 +33,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.TagParsingConfig)
     TagParsingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TagParsingConfig.newBuilder() to construct.
   private TagParsingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
      * @return The entityClass.
      */
     java.lang.String getEntityClass();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
      * @return The regex.
      */
     java.lang.String getRegex();
+
     /**
      *
      *
@@ -134,6 +137,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire for entityMatchingStrategy.
      */
     int getEntityMatchingStrategyValue();
+
     /**
      *
      *
@@ -150,6 +154,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
     com.google.cloud.visionai.v1.TagParsingConfig.EntityParsingConfig.EntityMatchingStrategy
         getEntityMatchingStrategy();
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.TagParsingConfig.EntityParsingConfig)
       EntityParsingConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EntityParsingConfig.newBuilder() to construct.
     private EntityParsingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -251,6 +257,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
        * <code>ENTITY_MATCHING_STRATEGY_UNSPECIFIED = 0;</code>
        */
       public static final int ENTITY_MATCHING_STRATEGY_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -261,6 +268,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
        * <code>MULTI_LINE_MATCHING = 1;</code>
        */
       public static final int MULTI_LINE_MATCHING_VALUE = 1;
+
       /**
        *
        *
@@ -365,6 +373,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object entityClass_ = "";
+
     /**
      *
      *
@@ -389,6 +398,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -418,6 +428,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object regex_ = "";
+
     /**
      *
      *
@@ -441,6 +452,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -467,6 +479,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
 
     public static final int ENTITY_MATCHING_STRATEGY_FIELD_NUMBER = 3;
     private int entityMatchingStrategy_ = 0;
+
     /**
      *
      *
@@ -484,6 +497,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
     public int getEntityMatchingStrategyValue() {
       return entityMatchingStrategy_;
     }
+
     /**
      *
      *
@@ -696,6 +710,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -918,6 +933,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object entityClass_ = "";
+
       /**
        *
        *
@@ -941,6 +957,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -964,6 +981,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -986,6 +1004,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1004,6 +1023,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1029,6 +1049,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object regex_ = "";
+
       /**
        *
        *
@@ -1051,6 +1072,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1073,6 +1095,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1094,6 +1117,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1111,6 +1135,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1135,6 +1160,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       }
 
       private int entityMatchingStrategy_ = 0;
+
       /**
        *
        *
@@ -1152,6 +1178,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       public int getEntityMatchingStrategyValue() {
         return entityMatchingStrategy_;
       }
+
       /**
        *
        *
@@ -1172,6 +1199,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1198,6 +1226,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
                 .EntityMatchingStrategy.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1223,6 +1252,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1315,6 +1345,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.TagParsingConfig.EntityParsingConfig>
       entityParsingConfigs_;
+
   /**
    *
    *
@@ -1332,6 +1363,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       getEntityParsingConfigsList() {
     return entityParsingConfigs_;
   }
+
   /**
    *
    *
@@ -1350,6 +1382,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       getEntityParsingConfigsOrBuilderList() {
     return entityParsingConfigs_;
   }
+
   /**
    *
    *
@@ -1366,6 +1399,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
   public int getEntityParsingConfigsCount() {
     return entityParsingConfigs_.size();
   }
+
   /**
    *
    *
@@ -1383,6 +1417,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       int index) {
     return entityParsingConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -1563,6 +1598,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1830,6 +1866,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         return entityParsingConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1849,6 +1886,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         return entityParsingConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1869,6 +1907,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         return entityParsingConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1895,6 +1934,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1919,6 +1959,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1945,6 +1986,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1971,6 +2013,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1994,6 +2037,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2018,6 +2062,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2043,6 +2088,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2065,6 +2111,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2087,6 +2134,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2103,6 +2151,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         getEntityParsingConfigsBuilder(int index) {
       return getEntityParsingConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2123,6 +2172,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         return entityParsingConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2144,6 +2194,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(entityParsingConfigs_);
       }
     }
+
     /**
      *
      *
@@ -2163,6 +2214,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
               com.google.cloud.visionai.v1.TagParsingConfig.EntityParsingConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2183,6 +2235,7 @@ public final class TagParsingConfig extends com.google.protobuf.GeneratedMessage
               com.google.cloud.visionai.v1.TagParsingConfig.EntityParsingConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *

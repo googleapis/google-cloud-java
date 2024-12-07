@@ -35,6 +35,7 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse)
     GetUriPatternDocumentDataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetUriPatternDocumentDataResponse.newBuilder() to construct.
   private GetUriPatternDocumentDataResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -108,6 +109,7 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
   public int getDocumentDataMapCount() {
     return internalGetDocumentDataMap().getMap().size();
   }
+
   /**
    *
    *
@@ -132,12 +134,14 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
     }
     return internalGetDocumentDataMap().getMap().containsKey(key);
   }
+
   /** Use {@link #getDocumentDataMapMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Struct> getDocumentDataMap() {
     return getDocumentDataMapMap();
   }
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
   public java.util.Map<java.lang.String, com.google.protobuf.Struct> getDocumentDataMapMap() {
     return internalGetDocumentDataMap().getMap();
   }
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
         internalGetDocumentDataMap().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -393,6 +399,7 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -673,6 +680,7 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
     public int getDocumentDataMapCount() {
       return internalGetDocumentDataMap().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -697,12 +705,14 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
       }
       return internalGetDocumentDataMap().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getDocumentDataMapMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Struct> getDocumentDataMap() {
       return getDocumentDataMapMap();
     }
+
     /**
      *
      *
@@ -724,6 +734,7 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
     public java.util.Map<java.lang.String, com.google.protobuf.Struct> getDocumentDataMapMap() {
       return internalGetDocumentDataMap().getImmutableMap();
     }
+
     /**
      *
      *
@@ -753,6 +764,7 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
           internalGetMutableDocumentDataMap().ensureBuilderMap();
       return map.containsKey(key) ? documentDataMapConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -788,6 +800,7 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
       internalGetMutableDocumentDataMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -812,12 +825,14 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
       internalGetMutableDocumentDataMap().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Struct> getMutableDocumentDataMap() {
       bitField0_ |= 0x00000001;
       return internalGetMutableDocumentDataMap().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -846,6 +861,7 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +891,7 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

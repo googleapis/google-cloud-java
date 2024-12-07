@@ -36,6 +36,7 @@ public interface RemoveInstancesInstanceGroupRequestOrBuilder
    * @return The instanceGroup.
    */
   java.lang.String getInstanceGroup();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RemoveInstancesInstanceGroupRequestOrBuilder
    * @return Whether the instanceGroupsRemoveInstancesRequestResource field is set.
    */
   boolean hasInstanceGroupsRemoveInstancesRequestResource();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface RemoveInstancesInstanceGroupRequestOrBuilder
    */
   com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest
       getInstanceGroupsRemoveInstancesRequestResource();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface RemoveInstancesInstanceGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface RemoveInstancesInstanceGroupRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface RemoveInstancesInstanceGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface RemoveInstancesInstanceGroupRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

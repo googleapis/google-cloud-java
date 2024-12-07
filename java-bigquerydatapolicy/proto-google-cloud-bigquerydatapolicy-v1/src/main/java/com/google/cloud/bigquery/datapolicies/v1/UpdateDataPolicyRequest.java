@@ -33,6 +33,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datapolicies.v1.UpdateDataPolicyRequest)
     UpdateDataPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateDataPolicyRequest.newBuilder() to construct.
   private UpdateDataPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int DATA_POLICY_FIELD_NUMBER = 1;
   private com.google.cloud.bigquery.datapolicies.v1.DataPolicy dataPolicy_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
   public boolean hasDataPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
         ? com.google.cloud.bigquery.datapolicies.v1.DataPolicy.getDefaultInstance()
         : dataPolicy_;
   }
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -368,6 +375,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -595,6 +603,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
             com.google.cloud.bigquery.datapolicies.v1.DataPolicy.Builder,
             com.google.cloud.bigquery.datapolicies.v1.DataPolicyOrBuilder>
         dataPolicyBuilder_;
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
     public boolean hasDataPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -639,6 +649,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
         return dataPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +703,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +762,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +782,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return getDataPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -790,6 +806,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
             : dataPolicy_;
       }
     }
+
     /**
      *
      *
@@ -827,6 +844,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -846,6 +864,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -871,6 +890,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -898,6 +918,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +943,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +976,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1001,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1021,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1020,6 +1045,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
             : updateMask_;
       }
     }
+
     /**
      *
      *

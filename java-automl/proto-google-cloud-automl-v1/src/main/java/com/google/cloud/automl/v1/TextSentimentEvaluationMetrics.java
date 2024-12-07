@@ -33,6 +33,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.TextSentimentEvaluationMetrics)
     TextSentimentEvaluationMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TextSentimentEvaluationMetrics.newBuilder() to construct.
   private TextSentimentEvaluationMetrics(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int PRECISION_FIELD_NUMBER = 1;
   private float precision_ = 0F;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
 
   public static final int RECALL_FIELD_NUMBER = 2;
   private float recall_ = 0F;
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
 
   public static final int F1_SCORE_FIELD_NUMBER = 3;
   private float f1Score_ = 0F;
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
 
   public static final int MEAN_ABSOLUTE_ERROR_FIELD_NUMBER = 4;
   private float meanAbsoluteError_ = 0F;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
 
   public static final int MEAN_SQUARED_ERROR_FIELD_NUMBER = 5;
   private float meanSquaredError_ = 0F;
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
 
   public static final int LINEAR_KAPPA_FIELD_NUMBER = 6;
   private float linearKappa_ = 0F;
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
 
   public static final int QUADRATIC_KAPPA_FIELD_NUMBER = 7;
   private float quadraticKappa_ = 0F;
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
   public static final int CONFUSION_MATRIX_FIELD_NUMBER = 8;
   private com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix
       confusionMatrix_;
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
   public boolean hasConfusionMatrix() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -238,6 +248,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
             .getDefaultInstance()
         : confusionMatrix_;
   }
+
   /**
    *
    *
@@ -495,6 +506,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -785,6 +797,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     private int bitField0_;
 
     private float precision_;
+
     /**
      *
      *
@@ -800,6 +813,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     public float getPrecision() {
       return precision_;
     }
+
     /**
      *
      *
@@ -819,6 +833,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +853,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     }
 
     private float recall_;
+
     /**
      *
      *
@@ -853,6 +869,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     public float getRecall() {
       return recall_;
     }
+
     /**
      *
      *
@@ -872,6 +889,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +909,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     }
 
     private float f1Score_;
+
     /**
      *
      *
@@ -906,6 +925,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     public float getF1Score() {
       return f1Score_;
     }
+
     /**
      *
      *
@@ -925,6 +945,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +965,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     }
 
     private float meanAbsoluteError_;
+
     /**
      *
      *
@@ -960,6 +982,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     public float getMeanAbsoluteError() {
       return meanAbsoluteError_;
     }
+
     /**
      *
      *
@@ -980,6 +1003,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1024,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     }
 
     private float meanSquaredError_;
+
     /**
      *
      *
@@ -1016,6 +1041,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     public float getMeanSquaredError() {
       return meanSquaredError_;
     }
+
     /**
      *
      *
@@ -1036,6 +1062,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1083,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     }
 
     private float linearKappa_;
+
     /**
      *
      *
@@ -1072,6 +1100,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     public float getLinearKappa() {
       return linearKappa_;
     }
+
     /**
      *
      *
@@ -1092,6 +1121,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1112,6 +1142,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     }
 
     private float quadraticKappa_;
+
     /**
      *
      *
@@ -1128,6 +1159,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     public float getQuadraticKappa() {
       return quadraticKappa_;
     }
+
     /**
      *
      *
@@ -1148,6 +1180,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1174,6 +1207,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
             com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Builder,
             com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrixOrBuilder>
         confusionMatrixBuilder_;
+
     /**
      *
      *
@@ -1192,6 +1226,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     public boolean hasConfusionMatrix() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -1218,6 +1253,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
         return confusionMatrixBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1245,6 +1281,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1270,6 +1307,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1342,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1366,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1346,6 +1386,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
       onChanged();
       return getConfusionMatrixFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1370,6 +1411,7 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
             : confusionMatrix_;
       }
     }
+
     /**
      *
      *

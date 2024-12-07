@@ -34,6 +34,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult)
     MigrationTaskOrchestrationResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MigrationTaskOrchestrationResult.newBuilder() to construct.
   private MigrationTaskOrchestrationResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -80,6 +81,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
     private DetailsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
   }
 
   public static final int ASSESSMENT_DETAILS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
   public boolean hasAssessmentDetails() {
     return detailsCase_ == 1;
   }
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
     return com.google.cloud.bigquery.migration.v2alpha.AssessmentOrchestrationResultDetails
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -360,6 +365,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -594,6 +600,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
             com.google.cloud.bigquery.migration.v2alpha
                 .AssessmentOrchestrationResultDetailsOrBuilder>
         assessmentDetailsBuilder_;
+
     /**
      *
      *
@@ -611,6 +618,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
     public boolean hasAssessmentDetails() {
       return detailsCase_ == 1;
     }
+
     /**
      *
      *
@@ -642,6 +650,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -667,6 +676,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
       detailsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +700,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
       detailsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +741,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
       detailsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +769,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +785,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
         getAssessmentDetailsBuilder() {
       return getAssessmentDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -797,6 +811,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -32,6 +32,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SslPolicyReference)
     SslPolicyReferenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SslPolicyReference.newBuilder() to construct.
   private SslPolicyReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sslPolicy_ = "";
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
   public boolean hasSslPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -293,6 +297,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -478,6 +483,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object sslPolicy_ = "";
+
     /**
      *
      *
@@ -492,6 +498,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
     public boolean hasSslPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -514,6 +521,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -536,6 +544,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -557,6 +566,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -574,6 +584,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

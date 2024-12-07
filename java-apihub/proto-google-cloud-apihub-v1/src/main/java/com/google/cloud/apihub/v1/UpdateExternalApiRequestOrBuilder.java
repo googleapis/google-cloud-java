@@ -42,6 +42,7 @@ public interface UpdateExternalApiRequestOrBuilder
    * @return Whether the externalApi field is set.
    */
   boolean hasExternalApi();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdateExternalApiRequestOrBuilder
    * @return The externalApi.
    */
   com.google.cloud.apihub.v1.ExternalApi getExternalApi();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface UpdateExternalApiRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface UpdateExternalApiRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

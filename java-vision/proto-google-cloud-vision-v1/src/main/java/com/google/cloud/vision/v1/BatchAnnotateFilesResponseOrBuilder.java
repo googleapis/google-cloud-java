@@ -35,6 +35,7 @@ public interface BatchAnnotateFilesResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1.AnnotateFileResponse responses = 1;</code>
    */
   java.util.List<com.google.cloud.vision.v1.AnnotateFileResponse> getResponsesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface BatchAnnotateFilesResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1.AnnotateFileResponse responses = 1;</code>
    */
   com.google.cloud.vision.v1.AnnotateFileResponse getResponses(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface BatchAnnotateFilesResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1.AnnotateFileResponse responses = 1;</code>
    */
   int getResponsesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface BatchAnnotateFilesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.AnnotateFileResponseOrBuilder>
       getResponsesOrBuilderList();
+
   /**
    *
    *

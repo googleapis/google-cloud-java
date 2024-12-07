@@ -39,6 +39,7 @@ public interface CreateRagCorpusRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateRagCorpusRequestOrBuilder
    * @return Whether the ragCorpus field is set.
    */
   boolean hasRagCorpus();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateRagCorpusRequestOrBuilder
    * @return The ragCorpus.
    */
   com.google.cloud.aiplatform.v1beta1.RagCorpus getRagCorpus();
+
   /**
    *
    *

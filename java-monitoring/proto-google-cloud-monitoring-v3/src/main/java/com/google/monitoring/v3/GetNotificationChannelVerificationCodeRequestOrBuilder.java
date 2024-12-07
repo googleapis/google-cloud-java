@@ -40,6 +40,7 @@ public interface GetNotificationChannelVerificationCodeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface GetNotificationChannelVerificationCodeRequestOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface GetNotificationChannelVerificationCodeRequestOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *

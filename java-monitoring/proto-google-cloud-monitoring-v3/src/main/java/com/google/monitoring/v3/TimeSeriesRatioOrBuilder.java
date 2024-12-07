@@ -39,6 +39,7 @@ public interface TimeSeriesRatioOrBuilder
    * @return The goodServiceFilter.
    */
   java.lang.String getGoodServiceFilter();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface TimeSeriesRatioOrBuilder
    * @return The badServiceFilter.
    */
   java.lang.String getBadServiceFilter();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface TimeSeriesRatioOrBuilder
    * @return The totalServiceFilter.
    */
   java.lang.String getTotalServiceFilter();
+
   /**
    *
    *

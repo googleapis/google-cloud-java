@@ -33,6 +33,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.TermsOfService)
     TermsOfServiceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TermsOfService.newBuilder() to construct.
   private TermsOfService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KIND_FIELD_NUMBER = 3;
   private int kind_ = 0;
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
   public int getKindValue() {
     return kind_;
   }
+
   /**
    *
    *
@@ -226,6 +233,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fileUri_ = "";
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFileUri() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -264,6 +273,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -290,6 +300,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXTERNAL_FIELD_NUMBER = 5;
   private boolean external_ = false;
+
   /**
    *
    *
@@ -515,6 +526,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -758,6 +770,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -783,6 +796,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -808,6 +822,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -832,6 +847,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +868,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +896,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object regionCode_ = "";
+
     /**
      *
      *
@@ -906,6 +924,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -933,6 +952,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -959,6 +979,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1002,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1032,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int kind_ = 0;
+
     /**
      *
      *
@@ -1025,6 +1048,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
     public int getKindValue() {
       return kind_;
     }
+
     /**
      *
      *
@@ -1043,6 +1067,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1087,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
           ? com.google.shopping.merchant.accounts.v1beta.TermsOfServiceKind.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1083,6 +1109,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1129,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fileUri_ = "";
+
     /**
      *
      *
@@ -1116,6 +1144,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFileUri() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1138,6 +1167,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1190,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1181,6 +1212,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1198,6 +1230,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1222,6 +1255,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean external_;
+
     /**
      *
      *
@@ -1239,6 +1273,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
     public boolean getExternal() {
       return external_;
     }
+
     /**
      *
      *
@@ -1260,6 +1295,7 @@ public final class TermsOfService extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

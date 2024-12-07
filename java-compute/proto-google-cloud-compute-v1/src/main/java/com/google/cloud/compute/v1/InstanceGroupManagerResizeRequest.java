@@ -33,6 +33,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerResizeRequest)
     InstanceGroupManagerResizeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupManagerResizeRequest.newBuilder() to construct.
   private InstanceGroupManagerResizeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -164,6 +165,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
+
     /**
      *
      *
@@ -174,6 +176,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * <code>ACCEPTED = 246714279;</code>
      */
     public static final int ACCEPTED_VALUE = 246714279;
+
     /**
      *
      *
@@ -184,6 +187,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * <code>CANCELLED = 41957681;</code>
      */
     public static final int CANCELLED_VALUE = 41957681;
+
     /**
      *
      *
@@ -194,6 +198,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * <code>CREATING = 455564985;</code>
      */
     public static final int CREATING_VALUE = 455564985;
+
     /**
      *
      *
@@ -204,6 +209,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * <code>FAILED = 455706685;</code>
      */
     public static final int FAILED_VALUE = 455706685;
+
     /**
      *
      *
@@ -214,6 +220,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * <code>STATE_UNSPECIFIED = 470755401;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 470755401;
+
     /**
      *
      *
@@ -323,6 +330,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
+
   /**
    *
    *
@@ -338,6 +346,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -361,6 +370,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -389,6 +399,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -404,6 +415,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -427,6 +439,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -453,6 +466,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
+
   /**
    *
    *
@@ -468,6 +482,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   public boolean hasId() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -488,6 +503,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -503,6 +519,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   public boolean hasKind() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -526,6 +543,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -554,6 +572,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -569,6 +588,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   public boolean hasName() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -592,6 +612,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -618,6 +639,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
   public static final int REQUESTED_RUN_DURATION_FIELD_NUMBER = 232146425;
   private com.google.cloud.compute.v1.Duration requestedRunDuration_;
+
   /**
    *
    *
@@ -633,6 +655,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   public boolean hasRequestedRunDuration() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -650,6 +673,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
         : requestedRunDuration_;
   }
+
   /**
    *
    *
@@ -668,6 +692,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
   public static final int RESIZE_BY_FIELD_NUMBER = 533735362;
   private int resizeBy_ = 0;
+
   /**
    *
    *
@@ -683,6 +708,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   public boolean hasResizeBy() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -703,6 +729,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -718,6 +745,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -741,6 +769,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -769,6 +798,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLinkWithId_ = "";
+
   /**
    *
    *
@@ -784,6 +814,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   public boolean hasSelfLinkWithId() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -807,6 +838,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -835,6 +867,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
+
   /**
    *
    *
@@ -851,6 +884,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   public boolean hasState() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -875,6 +909,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -902,6 +937,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
   private com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatus status_;
+
   /**
    *
    *
@@ -919,6 +955,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -938,6 +975,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         ? com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatus.getDefaultInstance()
         : status_;
   }
+
   /**
    *
    *
@@ -961,6 +999,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -976,6 +1015,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   public boolean hasZone() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -999,6 +1039,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -1345,6 +1386,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1725,6 +1767,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
+
     /**
      *
      *
@@ -1739,6 +1782,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1761,6 +1805,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1783,6 +1828,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1804,6 +1850,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1821,6 +1868,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1845,6 +1893,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1859,6 +1908,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1881,6 +1931,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1903,6 +1954,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1924,6 +1976,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1941,6 +1994,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1965,6 +2019,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     }
 
     private long id_;
+
     /**
      *
      *
@@ -1980,6 +2035,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public boolean hasId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1995,6 +2051,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public long getId() {
       return id_;
     }
+
     /**
      *
      *
@@ -2014,6 +2071,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2033,6 +2091,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -2047,6 +2106,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public boolean hasKind() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2069,6 +2129,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2091,6 +2152,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2112,6 +2174,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2129,6 +2192,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2153,6 +2217,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2167,6 +2232,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public boolean hasName() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2189,6 +2255,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2211,6 +2278,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2232,6 +2300,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2249,6 +2318,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2278,6 +2348,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
             com.google.cloud.compute.v1.Duration.Builder,
             com.google.cloud.compute.v1.DurationOrBuilder>
         requestedRunDurationBuilder_;
+
     /**
      *
      *
@@ -2292,6 +2363,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public boolean hasRequestedRunDuration() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2312,6 +2384,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return requestedRunDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2334,6 +2407,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2354,6 +2428,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2381,6 +2456,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -2400,6 +2476,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2414,6 +2491,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return getRequestedRunDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2432,6 +2510,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
             : requestedRunDuration_;
       }
     }
+
     /**
      *
      *
@@ -2459,6 +2538,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     }
 
     private int resizeBy_;
+
     /**
      *
      *
@@ -2474,6 +2554,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public boolean hasResizeBy() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2489,6 +2570,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public int getResizeBy() {
       return resizeBy_;
     }
+
     /**
      *
      *
@@ -2508,6 +2590,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2527,6 +2610,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -2541,6 +2625,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2563,6 +2648,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2585,6 +2671,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2606,6 +2693,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2623,6 +2711,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2647,6 +2736,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     }
 
     private java.lang.Object selfLinkWithId_ = "";
+
     /**
      *
      *
@@ -2661,6 +2751,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public boolean hasSelfLinkWithId() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2683,6 +2774,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2705,6 +2797,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2726,6 +2819,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2743,6 +2837,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2767,6 +2862,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     }
 
     private java.lang.Object state_ = "";
+
     /**
      *
      *
@@ -2782,6 +2878,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public boolean hasState() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2805,6 +2902,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2828,6 +2926,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2850,6 +2949,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2868,6 +2968,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2898,6 +2999,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
             com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatus.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatusOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -2914,6 +3016,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -2937,6 +3040,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2962,6 +3066,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2985,6 +3090,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3017,6 +3123,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -3038,6 +3145,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3055,6 +3163,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3077,6 +3186,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
             : status_;
       }
     }
+
     /**
      *
      *
@@ -3106,6 +3216,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -3120,6 +3231,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public boolean hasZone() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3142,6 +3254,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3164,6 +3277,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3185,6 +3299,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3202,6 +3317,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

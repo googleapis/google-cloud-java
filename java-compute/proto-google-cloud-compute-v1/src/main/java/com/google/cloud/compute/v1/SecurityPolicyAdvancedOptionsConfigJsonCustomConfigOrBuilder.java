@@ -36,6 +36,7 @@ public interface SecurityPolicyAdvancedOptionsConfigJsonCustomConfigOrBuilder
    * @return A list containing the contentTypes.
    */
   java.util.List<java.lang.String> getContentTypesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SecurityPolicyAdvancedOptionsConfigJsonCustomConfigOrBuilder
    * @return The count of contentTypes.
    */
   int getContentTypesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface SecurityPolicyAdvancedOptionsConfigJsonCustomConfigOrBuilder
    * @return The contentTypes at the given index.
    */
   java.lang.String getContentTypes(int index);
+
   /**
    *
    *

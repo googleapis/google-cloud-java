@@ -33,6 +33,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.devtools.source.v1.GerritSourceContext)
     GerritSourceContextOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GerritSourceContext.newBuilder() to construct.
   private GerritSourceContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     private RevisionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -121,6 +123,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostUri_ = "";
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +176,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gerritProject_ = "";
+
   /**
    *
    *
@@ -197,6 +202,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -224,6 +230,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
   }
 
   public static final int REVISION_ID_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -238,6 +245,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
   public boolean hasRevisionId() {
     return revisionCase_ == 3;
   }
+
   /**
    *
    *
@@ -265,6 +273,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -294,6 +303,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ALIAS_NAME_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -311,6 +321,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
   public boolean hasAliasName() {
     return revisionCase_ == 4;
   }
+
   /**
    *
    *
@@ -341,6 +352,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -373,6 +385,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ALIAS_CONTEXT_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -388,6 +401,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
   public boolean hasAliasContext() {
     return revisionCase_ == 5;
   }
+
   /**
    *
    *
@@ -406,6 +420,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     }
     return com.google.devtools.source.v1.AliasContext.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -641,6 +656,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -913,6 +929,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object hostUri_ = "";
+
     /**
      *
      *
@@ -935,6 +952,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -957,6 +975,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -978,6 +997,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1015,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1040,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object gerritProject_ = "";
+
     /**
      *
      *
@@ -1043,6 +1065,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1067,6 +1090,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1114,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1134,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1175,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     public boolean hasRevisionId() {
       return revisionCase_ == 3;
     }
+
     /**
      *
      *
@@ -1177,6 +1204,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1205,6 +1233,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1226,6 +1255,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1245,6 +1275,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1286,6 +1317,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     public boolean hasAliasName() {
       return revisionCase_ == 4;
     }
+
     /**
      *
      *
@@ -1317,6 +1349,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1348,6 +1381,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1372,6 +1406,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1394,6 +1429,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1425,6 +1461,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
             com.google.devtools.source.v1.AliasContext.Builder,
             com.google.devtools.source.v1.AliasContextOrBuilder>
         aliasContextBuilder_;
+
     /**
      *
      *
@@ -1440,6 +1477,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     public boolean hasAliasContext() {
       return revisionCase_ == 5;
     }
+
     /**
      *
      *
@@ -1465,6 +1503,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
         return com.google.devtools.source.v1.AliasContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1487,6 +1526,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       revisionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1507,6 +1547,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       revisionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1539,6 +1580,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       revisionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1564,6 +1606,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1576,6 +1619,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     public com.google.devtools.source.v1.AliasContext.Builder getAliasContextBuilder() {
       return getAliasContextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1596,6 +1640,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
         return com.google.devtools.source.v1.AliasContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *

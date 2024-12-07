@@ -36,6 +36,7 @@ public interface ExamplePayloadOrBuilder
    * @return Whether the image field is set.
    */
   boolean hasImage();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ExamplePayloadOrBuilder
    * @return The image.
    */
   com.google.cloud.automl.v1beta1.Image getImage();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ExamplePayloadOrBuilder
    * @return Whether the textSnippet field is set.
    */
   boolean hasTextSnippet();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ExamplePayloadOrBuilder
    * @return The textSnippet.
    */
   com.google.cloud.automl.v1beta1.TextSnippet getTextSnippet();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface ExamplePayloadOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ExamplePayloadOrBuilder
    * @return The document.
    */
   com.google.cloud.automl.v1beta1.Document getDocument();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface ExamplePayloadOrBuilder
    * @return Whether the row field is set.
    */
   boolean hasRow();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface ExamplePayloadOrBuilder
    * @return The row.
    */
   com.google.cloud.automl.v1beta1.Row getRow();
+
   /**
    *
    *

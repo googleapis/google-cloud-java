@@ -32,6 +32,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.VpnGatewayStatus)
     VpnGatewayStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VpnGatewayStatus.newBuilder() to construct.
   private VpnGatewayStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection> vpnConnections_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
       getVpnConnectionsList() {
     return vpnConnections_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
       getVpnConnectionsOrBuilderList() {
     return vpnConnections_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
   public int getVpnConnectionsCount() {
     return vpnConnections_.size();
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection getVpnConnections(int index) {
     return vpnConnections_.get(index);
   }
+
   /**
    *
    *
@@ -309,6 +315,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -573,6 +580,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
         return vpnConnectionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -591,6 +599,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
         return vpnConnectionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -609,6 +618,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
         return vpnConnectionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -634,6 +644,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +694,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +743,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +791,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +813,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +835,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +851,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
         getVpnConnectionsBuilder(int index) {
       return getVpnConnectionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -851,6 +871,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
         return vpnConnectionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -871,6 +892,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(vpnConnections_);
       }
     }
+
     /**
      *
      *
@@ -888,6 +910,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -906,6 +929,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
               index,
               com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection.getDefaultInstance());
     }
+
     /**
      *
      *

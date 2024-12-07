@@ -40,6 +40,7 @@ public interface BusinessDayConfigOrBuilder
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig.Weekday>
       getBusinessDaysList();
+
   /**
    *
    *
@@ -55,6 +56,7 @@ public interface BusinessDayConfigOrBuilder
    * @return The count of businessDays.
    */
   int getBusinessDaysCount();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface BusinessDayConfigOrBuilder
    * @return The businessDays at the given index.
    */
   com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig.Weekday getBusinessDays(int index);
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface BusinessDayConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for businessDays.
    */
   java.util.List<java.lang.Integer> getBusinessDaysValueList();
+
   /**
    *
    *

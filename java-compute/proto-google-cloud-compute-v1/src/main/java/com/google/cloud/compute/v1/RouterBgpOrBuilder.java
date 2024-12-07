@@ -37,6 +37,7 @@ public interface RouterBgpOrBuilder
    * @return Whether the advertiseMode field is set.
    */
   boolean hasAdvertiseMode();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface RouterBgpOrBuilder
    * @return The advertiseMode.
    */
   java.lang.String getAdvertiseMode();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface RouterBgpOrBuilder
    * @return A list containing the advertisedGroups.
    */
   java.util.List<java.lang.String> getAdvertisedGroupsList();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface RouterBgpOrBuilder
    * @return The count of advertisedGroups.
    */
   int getAdvertisedGroupsCount();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface RouterBgpOrBuilder
    * @return The advertisedGroups at the given index.
    */
   java.lang.String getAdvertisedGroups(int index);
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface RouterBgpOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.RouterAdvertisedIpRange> getAdvertisedIpRangesList();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface RouterBgpOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.RouterAdvertisedIpRange getAdvertisedIpRanges(int index);
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public interface RouterBgpOrBuilder
    * </code>
    */
   int getAdvertisedIpRangesCount();
+
   /**
    *
    *
@@ -168,6 +176,7 @@ public interface RouterBgpOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterAdvertisedIpRangeOrBuilder>
       getAdvertisedIpRangesOrBuilderList();
+
   /**
    *
    *
@@ -194,6 +203,7 @@ public interface RouterBgpOrBuilder
    * @return Whether the asn field is set.
    */
   boolean hasAsn();
+
   /**
    *
    *
@@ -219,6 +229,7 @@ public interface RouterBgpOrBuilder
    * @return Whether the identifierRange field is set.
    */
   boolean hasIdentifierRange();
+
   /**
    *
    *
@@ -231,6 +242,7 @@ public interface RouterBgpOrBuilder
    * @return The identifierRange.
    */
   java.lang.String getIdentifierRange();
+
   /**
    *
    *
@@ -256,6 +268,7 @@ public interface RouterBgpOrBuilder
    * @return Whether the keepaliveInterval field is set.
    */
   boolean hasKeepaliveInterval();
+
   /**
    *
    *

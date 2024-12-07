@@ -39,6 +39,7 @@ public interface TriggerBackupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface TriggerBackupRequestOrBuilder
    * @return The ruleId.
    */
   java.lang.String getRuleId();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface TriggerBackupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -75,6 +75,7 @@ public enum RebillingBasis implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REBILLING_BASIS_UNSPECIFIED = 0;</code>
    */
   public static final int REBILLING_BASIS_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public enum RebillingBasis implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COST_AT_LIST = 1;</code>
    */
   public static final int COST_AT_LIST_VALUE = 1;
+
   /**
    *
    *

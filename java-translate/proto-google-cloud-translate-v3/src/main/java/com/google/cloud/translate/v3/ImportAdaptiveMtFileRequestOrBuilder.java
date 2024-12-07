@@ -39,6 +39,7 @@ public interface ImportAdaptiveMtFileRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ImportAdaptiveMtFileRequestOrBuilder
    * @return Whether the fileInputSource field is set.
    */
   boolean hasFileInputSource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ImportAdaptiveMtFileRequestOrBuilder
    * @return The fileInputSource.
    */
   com.google.cloud.translate.v3.FileInputSource getFileInputSource();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface ImportAdaptiveMtFileRequestOrBuilder
    * @return Whether the gcsInputSource field is set.
    */
   boolean hasGcsInputSource();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface ImportAdaptiveMtFileRequestOrBuilder
    * @return The gcsInputSource.
    */
   com.google.cloud.translate.v3.GcsInputSource getGcsInputSource();
+
   /**
    *
    *

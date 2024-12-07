@@ -33,6 +33,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.SkaffoldVersion)
     SkaffoldVersionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SkaffoldVersion.newBuilder() to construct.
   private SkaffoldVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
 
   public static final int MAINTENANCE_MODE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp maintenanceModeTime_;
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
   public boolean hasMaintenanceModeTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : maintenanceModeTime_;
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
 
   public static final int SUPPORT_EXPIRATION_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp supportExpirationTime_;
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
   public boolean hasSupportExpirationTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -199,6 +207,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : supportExpirationTime_;
   }
+
   /**
    *
    *
@@ -217,6 +226,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
 
   public static final int SUPPORT_END_DATE_FIELD_NUMBER = 2;
   private com.google.type.Date supportEndDate_;
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
   public boolean hasSupportEndDate() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
   public com.google.type.Date getSupportEndDate() {
     return supportEndDate_ == null ? com.google.type.Date.getDefaultInstance() : supportEndDate_;
   }
+
   /**
    *
    *
@@ -463,6 +475,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -722,6 +735,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -766,6 +781,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -787,6 +803,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +821,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +851,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         maintenanceModeTimeBuilder_;
+
     /**
      *
      *
@@ -847,6 +866,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     public boolean hasMaintenanceModeTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -867,6 +887,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
         return maintenanceModeTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -889,6 +910,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +930,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +958,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +978,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +993,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getMaintenanceModeTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -986,6 +1012,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
             : maintenanceModeTime_;
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1045,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         supportExpirationTimeBuilder_;
+
     /**
      *
      *
@@ -1032,6 +1060,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     public boolean hasSupportExpirationTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1052,6 +1081,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
         return supportExpirationTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1074,6 +1104,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1124,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1152,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1139,6 +1172,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1187,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSupportExpirationTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1171,6 +1206,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
             : supportExpirationTime_;
       }
     }
+
     /**
      *
      *
@@ -1201,6 +1237,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         supportEndDateBuilder_;
+
     /**
      *
      *
@@ -1215,6 +1252,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     public boolean hasSupportEndDate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1235,6 +1273,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
         return supportEndDateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1257,6 +1296,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1316,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1303,6 +1344,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1322,6 +1364,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1336,6 +1379,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSupportEndDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1354,6 +1398,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
             : supportEndDate_;
       }
     }
+
     /**
      *
      *

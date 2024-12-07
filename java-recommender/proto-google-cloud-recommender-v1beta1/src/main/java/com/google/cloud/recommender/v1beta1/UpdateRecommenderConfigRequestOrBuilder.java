@@ -38,6 +38,7 @@ public interface UpdateRecommenderConfigRequestOrBuilder
    * @return Whether the recommenderConfig field is set.
    */
   boolean hasRecommenderConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateRecommenderConfigRequestOrBuilder
    * @return The recommenderConfig.
    */
   com.google.cloud.recommender.v1beta1.RecommenderConfig getRecommenderConfig();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateRecommenderConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface UpdateRecommenderConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

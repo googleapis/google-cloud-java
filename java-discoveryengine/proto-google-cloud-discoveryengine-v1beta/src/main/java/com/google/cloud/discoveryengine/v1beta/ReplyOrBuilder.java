@@ -40,6 +40,7 @@ public interface ReplyOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getReply();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface ReplyOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.cloud.discoveryengine.v1beta.Reply.Reference> getReferencesList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ReplyOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.discoveryengine.v1beta.Reply.Reference getReferences(int index);
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ReplyOrBuilder
    */
   @java.lang.Deprecated
   int getReferencesCount();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ReplyOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.Reply.ReferenceOrBuilder>
       getReferencesOrBuilderList();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface ReplyOrBuilder
    * @return Whether the summary field is set.
    */
   boolean hasSummary();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface ReplyOrBuilder
    * @return The summary.
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary getSummary();
+
   /**
    *
    *

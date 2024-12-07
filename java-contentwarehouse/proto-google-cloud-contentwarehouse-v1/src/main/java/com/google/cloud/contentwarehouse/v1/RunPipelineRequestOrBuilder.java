@@ -39,6 +39,7 @@ public interface RunPipelineRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface RunPipelineRequestOrBuilder
    * @return Whether the gcsIngestPipeline field is set.
    */
   boolean hasGcsIngestPipeline();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface RunPipelineRequestOrBuilder
    * @return The gcsIngestPipeline.
    */
   com.google.cloud.contentwarehouse.v1.GcsIngestPipeline getGcsIngestPipeline();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface RunPipelineRequestOrBuilder
    * @return Whether the gcsIngestWithDocAiProcessorsPipeline field is set.
    */
   boolean hasGcsIngestWithDocAiProcessorsPipeline();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface RunPipelineRequestOrBuilder
    */
   com.google.cloud.contentwarehouse.v1.GcsIngestWithDocAiProcessorsPipeline
       getGcsIngestWithDocAiProcessorsPipeline();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface RunPipelineRequestOrBuilder
    * @return Whether the exportCdwPipeline field is set.
    */
   boolean hasExportCdwPipeline();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface RunPipelineRequestOrBuilder
    * @return The exportCdwPipeline.
    */
   com.google.cloud.contentwarehouse.v1.ExportToCdwPipeline getExportCdwPipeline();
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public interface RunPipelineRequestOrBuilder
    * @return Whether the processWithDocAiPipeline field is set.
    */
   boolean hasProcessWithDocAiPipeline();
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public interface RunPipelineRequestOrBuilder
    * @return The processWithDocAiPipeline.
    */
   com.google.cloud.contentwarehouse.v1.ProcessWithDocAiPipeline getProcessWithDocAiPipeline();
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public interface RunPipelineRequestOrBuilder
    * @return Whether the requestMetadata field is set.
    */
   boolean hasRequestMetadata();
+
   /**
    *
    *
@@ -242,6 +252,7 @@ public interface RunPipelineRequestOrBuilder
    * @return The requestMetadata.
    */
   com.google.cloud.contentwarehouse.v1.RequestMetadata getRequestMetadata();
+
   /**
    *
    *

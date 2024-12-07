@@ -33,6 +33,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.DestinationConfig)
     DestinationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DestinationConfig.newBuilder() to construct.
   private DestinationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     private DestinationStreamConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,6 +118,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destinationConnectionProfile_ = "";
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int GCS_DESTINATION_CONFIG_FIELD_NUMBER = 100;
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasGcsDestinationConfig() {
     return destinationStreamConfigCase_ == 100;
   }
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datastream.v1.GcsDestinationConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int BIGQUERY_DESTINATION_CONFIG_FIELD_NUMBER = 101;
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasBigqueryDestinationConfig() {
     return destinationStreamConfigCase_ == 101;
   }
+
   /**
    *
    *
@@ -257,6 +266,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datastream.v1.BigQueryDestinationConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -482,6 +492,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -730,6 +741,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object destinationConnectionProfile_ = "";
+
     /**
      *
      *
@@ -755,6 +767,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -780,6 +793,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -804,6 +818,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +839,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +871,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.GcsDestinationConfig.Builder,
             com.google.cloud.datastream.v1.GcsDestinationConfigOrBuilder>
         gcsDestinationConfigBuilder_;
+
     /**
      *
      *
@@ -870,6 +887,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasGcsDestinationConfig() {
       return destinationStreamConfigCase_ == 100;
     }
+
     /**
      *
      *
@@ -895,6 +913,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.GcsDestinationConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -918,6 +937,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       destinationStreamConfigCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +958,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       destinationStreamConfigCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +994,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       destinationStreamConfigCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1020,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1034,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         getGcsDestinationConfigBuilder() {
       return getGcsDestinationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1032,6 +1056,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.GcsDestinationConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1071,6 +1096,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder,
             com.google.cloud.datastream.v1.BigQueryDestinationConfigOrBuilder>
         bigqueryDestinationConfigBuilder_;
+
     /**
      *
      *
@@ -1088,6 +1114,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasBigqueryDestinationConfig() {
       return destinationStreamConfigCase_ == 101;
     }
+
     /**
      *
      *
@@ -1116,6 +1143,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.BigQueryDestinationConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1141,6 +1169,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       destinationStreamConfigCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1192,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       destinationStreamConfigCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1230,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       destinationStreamConfigCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1258,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1242,6 +1274,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         getBigqueryDestinationConfigBuilder() {
       return getBigqueryDestinationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1266,6 +1299,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.BigQueryDestinationConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *

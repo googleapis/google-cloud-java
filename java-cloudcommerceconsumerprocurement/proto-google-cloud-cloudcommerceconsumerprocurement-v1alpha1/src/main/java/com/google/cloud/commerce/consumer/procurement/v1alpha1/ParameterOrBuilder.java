@@ -36,6 +36,7 @@ public interface ParameterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ParameterOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ParameterOrBuilder
    * @return The value.
    */
   com.google.cloud.commerce.consumer.procurement.v1alpha1.Parameter.Value getValue();
+
   /**
    *
    *

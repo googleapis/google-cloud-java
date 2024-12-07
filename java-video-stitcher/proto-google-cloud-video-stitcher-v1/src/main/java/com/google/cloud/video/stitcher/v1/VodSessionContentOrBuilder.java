@@ -37,6 +37,7 @@ public interface VodSessionContentOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface VodSessionContentOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.LogicalInterface)
     LogicalInterfaceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LogicalInterface.newBuilder() to construct.
   private LogicalInterface(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
      * @return The network.
      */
     java.lang.String getNetwork();
+
     /**
      *
      *
@@ -109,6 +111,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
      * @return The ipAddress.
      */
     java.lang.String getIpAddress();
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire for networkType.
      */
     int getNetworkTypeValue();
+
     /**
      *
      *
@@ -173,6 +177,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
      * @return The id.
      */
     java.lang.String getId();
+
     /**
      *
      *
@@ -186,6 +191,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getIdBytes();
   }
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.LogicalInterface.LogicalNetworkInterface)
       LogicalNetworkInterfaceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use LogicalNetworkInterface.newBuilder() to construct.
     private LogicalNetworkInterface(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -239,6 +246,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -262,6 +270,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -290,6 +299,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -313,6 +323,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -339,6 +350,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
 
     public static final int DEFAULT_GATEWAY_FIELD_NUMBER = 3;
     private boolean defaultGateway_ = false;
+
     /**
      *
      *
@@ -358,6 +370,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
 
     public static final int NETWORK_TYPE_FIELD_NUMBER = 4;
     private int networkType_ = 0;
+
     /**
      *
      *
@@ -373,6 +386,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     public int getNetworkTypeValue() {
       return networkType_;
     }
+
     /**
      *
      *
@@ -397,6 +411,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -420,6 +435,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -651,6 +667,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -911,6 +928,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object network_ = "";
+
       /**
        *
        *
@@ -933,6 +951,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -955,6 +974,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -976,6 +996,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -993,6 +1014,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1017,6 +1039,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object ipAddress_ = "";
+
       /**
        *
        *
@@ -1039,6 +1062,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1061,6 +1085,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1082,6 +1107,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1099,6 +1125,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1123,6 +1150,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
 
       private boolean defaultGateway_;
+
       /**
        *
        *
@@ -1139,6 +1167,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       public boolean getDefaultGateway() {
         return defaultGateway_;
       }
+
       /**
        *
        *
@@ -1159,6 +1188,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1179,6 +1209,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
 
       private int networkType_ = 0;
+
       /**
        *
        *
@@ -1194,6 +1225,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       public int getNetworkTypeValue() {
         return networkType_;
       }
+
       /**
        *
        *
@@ -1212,6 +1244,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1231,6 +1264,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
             ? com.google.cloud.baremetalsolution.v2.Network.Type.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1252,6 +1286,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1271,6 +1306,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object id_ = "";
+
       /**
        *
        *
@@ -1293,6 +1329,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1315,6 +1352,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1336,6 +1374,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1353,6 +1392,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1451,6 +1491,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
   private java.util.List<
           com.google.cloud.baremetalsolution.v2.LogicalInterface.LogicalNetworkInterface>
       logicalNetworkInterfaces_;
+
   /**
    *
    *
@@ -1468,6 +1509,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       getLogicalNetworkInterfacesList() {
     return logicalNetworkInterfaces_;
   }
+
   /**
    *
    *
@@ -1487,6 +1529,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       getLogicalNetworkInterfacesOrBuilderList() {
     return logicalNetworkInterfaces_;
   }
+
   /**
    *
    *
@@ -1502,6 +1545,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
   public int getLogicalNetworkInterfacesCount() {
     return logicalNetworkInterfaces_.size();
   }
+
   /**
    *
    *
@@ -1518,6 +1562,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       getLogicalNetworkInterfaces(int index) {
     return logicalNetworkInterfaces_.get(index);
   }
+
   /**
    *
    *
@@ -1539,6 +1584,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1563,6 +1609,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -1590,6 +1637,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
 
   public static final int INTERFACE_INDEX_FIELD_NUMBER = 3;
   private int interfaceIndex_ = 0;
+
   /**
    *
    *
@@ -1793,6 +1841,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2096,6 +2145,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         return logicalNetworkInterfacesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2114,6 +2164,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         return logicalNetworkInterfacesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2133,6 +2184,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         return logicalNetworkInterfacesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2159,6 +2211,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2183,6 +2236,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2208,6 +2262,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2234,6 +2289,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2257,6 +2313,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2281,6 +2338,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2306,6 +2364,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2327,6 +2386,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2348,6 +2408,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2363,6 +2424,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         getLogicalNetworkInterfacesBuilder(int index) {
       return getLogicalNetworkInterfacesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2382,6 +2444,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         return logicalNetworkInterfacesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2404,6 +2467,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(logicalNetworkInterfaces_);
       }
     }
+
     /**
      *
      *
@@ -2422,6 +2486,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
               com.google.cloud.baremetalsolution.v2.LogicalInterface.LogicalNetworkInterface
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2441,6 +2506,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
               com.google.cloud.baremetalsolution.v2.LogicalInterface.LogicalNetworkInterface
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2481,6 +2547,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2504,6 +2571,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2527,6 +2595,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2549,6 +2618,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2567,6 +2637,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2592,6 +2663,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private int interfaceIndex_;
+
     /**
      *
      *
@@ -2611,6 +2683,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     public int getInterfaceIndex() {
       return interfaceIndex_;
     }
+
     /**
      *
      *
@@ -2634,6 +2707,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

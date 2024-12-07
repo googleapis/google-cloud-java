@@ -33,6 +33,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.Endpoint)
     EndpointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Endpoint.newBuilder() to construct.
   private Endpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -134,6 +135,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>NETWORK_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int NETWORK_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -146,6 +148,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>GCP_NETWORK = 1;</code>
      */
     public static final int GCP_NETWORK_VALUE = 1;
+
     /**
      *
      *
@@ -316,6 +319,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>FORWARDING_RULE_TARGET_UNSPECIFIED = 0;</code>
      */
     public static final int FORWARDING_RULE_TARGET_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -326,6 +330,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTANCE = 1;</code>
      */
     public static final int INSTANCE_VALUE = 1;
+
     /**
      *
      *
@@ -337,6 +342,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>LOAD_BALANCER = 2;</code>
      */
     public static final int LOAD_BALANCER_VALUE = 2;
+
     /**
      *
      *
@@ -347,6 +353,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>VPN_GATEWAY = 3;</code>
      */
     public static final int VPN_GATEWAY_VALUE = 3;
+
     /**
      *
      *
@@ -465,6 +472,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -478,6 +486,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getUriBytes();
   }
+
   /**
    *
    *
@@ -492,6 +501,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint)
       CloudFunctionEndpointOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CloudFunctionEndpoint.newBuilder() to construct.
     private CloudFunctionEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -526,6 +536,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -549,6 +560,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -735,6 +747,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -930,6 +943,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -952,6 +966,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -974,6 +989,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -995,6 +1011,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1012,6 +1029,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1121,6 +1139,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -1136,6 +1155,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getUriBytes();
   }
+
   /**
    *
    *
@@ -1150,6 +1170,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint)
       AppEngineVersionEndpointOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AppEngineVersionEndpoint.newBuilder() to construct.
     private AppEngineVersionEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1185,6 +1206,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1210,6 +1232,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1399,6 +1422,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1597,6 +1621,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -1621,6 +1646,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1645,6 +1671,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1668,6 +1695,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1687,6 +1715,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1800,6 +1829,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -1816,6 +1846,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getUriBytes();
   }
+
   /**
    *
    *
@@ -1830,6 +1861,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint)
       CloudRunRevisionEndpointOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CloudRunRevisionEndpoint.newBuilder() to construct.
     private CloudRunRevisionEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1865,6 +1897,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1891,6 +1924,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2081,6 +2115,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2279,6 +2314,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -2304,6 +2340,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2329,6 +2366,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2353,6 +2391,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2373,6 +2412,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2472,6 +2512,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
+
   /**
    *
    *
@@ -2495,6 +2536,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2521,6 +2563,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PORT_FIELD_NUMBER = 2;
   private int port_ = 0;
+
   /**
    *
    *
@@ -2542,6 +2585,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
+
   /**
    *
    *
@@ -2565,6 +2609,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2593,6 +2638,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object forwardingRule_ = "";
+
   /**
    *
    *
@@ -2621,6 +2667,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2652,6 +2699,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FORWARDING_RULE_TARGET_FIELD_NUMBER = 14;
   private int forwardingRuleTarget_ = 0;
+
   /**
    *
    *
@@ -2669,6 +2717,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasForwardingRuleTarget() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2686,6 +2735,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public int getForwardingRuleTargetValue() {
     return forwardingRuleTarget_;
   }
+
   /**
    *
    *
@@ -2714,6 +2764,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object loadBalancerId_ = "";
+
   /**
    *
    *
@@ -2731,6 +2782,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLoadBalancerId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2756,6 +2808,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2784,6 +2837,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOAD_BALANCER_TYPE_FIELD_NUMBER = 16;
   private int loadBalancerType_ = 0;
+
   /**
    *
    *
@@ -2801,6 +2855,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLoadBalancerType() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -2818,6 +2873,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public int getLoadBalancerTypeValue() {
     return loadBalancerType_;
   }
+
   /**
    *
    *
@@ -2844,6 +2900,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gkeMasterCluster_ = "";
+
   /**
    *
    *
@@ -2868,6 +2925,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2897,6 +2955,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fqdn_ = "";
+
   /**
    *
    *
@@ -2923,6 +2982,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2954,6 +3014,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cloudSqlInstance_ = "";
+
   /**
    *
    *
@@ -2977,6 +3038,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3005,6 +3067,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object redisInstance_ = "";
+
   /**
    *
    *
@@ -3029,6 +3092,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3058,6 +3122,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object redisCluster_ = "";
+
   /**
    *
    *
@@ -3082,6 +3147,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3109,6 +3175,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLOUD_FUNCTION_FIELD_NUMBER = 10;
   private com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloudFunction_;
+
   /**
    *
    *
@@ -3125,6 +3192,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudFunction() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -3143,6 +3211,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.getDefaultInstance()
         : cloudFunction_;
   }
+
   /**
    *
    *
@@ -3163,6 +3232,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APP_ENGINE_VERSION_FIELD_NUMBER = 11;
   private com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint appEngineVersion_;
+
   /**
    *
    *
@@ -3181,6 +3251,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAppEngineVersion() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -3203,6 +3274,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : appEngineVersion_;
   }
+
   /**
    *
    *
@@ -3226,6 +3298,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLOUD_RUN_REVISION_FIELD_NUMBER = 12;
   private com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloudRunRevision_;
+
   /**
    *
    *
@@ -3244,6 +3317,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudRunRevision() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -3266,6 +3340,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : cloudRunRevision_;
   }
+
   /**
    *
    *
@@ -3291,6 +3366,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -3314,6 +3390,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3340,6 +3417,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NETWORK_TYPE_FIELD_NUMBER = 5;
   private int networkType_ = 0;
+
   /**
    *
    *
@@ -3357,6 +3435,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public int getNetworkTypeValue() {
     return networkType_;
   }
+
   /**
    *
    *
@@ -3383,6 +3462,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -3414,6 +3494,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3792,6 +3873,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4252,6 +4334,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -4274,6 +4357,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4296,6 +4380,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4317,6 +4402,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4334,6 +4420,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4358,6 +4445,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int port_;
+
     /**
      *
      *
@@ -4374,6 +4462,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public int getPort() {
       return port_;
     }
+
     /**
      *
      *
@@ -4394,6 +4483,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4414,6 +4504,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object instance_ = "";
+
     /**
      *
      *
@@ -4436,6 +4527,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4458,6 +4550,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4479,6 +4572,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4496,6 +4590,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4520,6 +4615,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object forwardingRule_ = "";
+
     /**
      *
      *
@@ -4547,6 +4643,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4574,6 +4671,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4600,6 +4698,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4622,6 +4721,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4651,6 +4751,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int forwardingRuleTarget_ = 0;
+
     /**
      *
      *
@@ -4668,6 +4769,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasForwardingRuleTarget() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -4685,6 +4787,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public int getForwardingRuleTargetValue() {
       return forwardingRuleTarget_;
     }
+
     /**
      *
      *
@@ -4705,6 +4808,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4728,6 +4832,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4752,6 +4857,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4773,6 +4879,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object loadBalancerId_ = "";
+
     /**
      *
      *
@@ -4789,6 +4896,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoadBalancerId() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -4813,6 +4921,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4837,6 +4946,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4860,6 +4970,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4879,6 +4990,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4905,6 +5017,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int loadBalancerType_ = 0;
+
     /**
      *
      *
@@ -4922,6 +5035,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoadBalancerType() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -4939,6 +5053,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public int getLoadBalancerTypeValue() {
       return loadBalancerType_;
     }
+
     /**
      *
      *
@@ -4959,6 +5074,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4980,6 +5096,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1.LoadBalancerType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -5004,6 +5121,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5025,6 +5143,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object gkeMasterCluster_ = "";
+
     /**
      *
      *
@@ -5048,6 +5167,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5071,6 +5191,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5093,6 +5214,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5111,6 +5233,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5136,6 +5259,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fqdn_ = "";
+
     /**
      *
      *
@@ -5161,6 +5285,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5186,6 +5311,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5210,6 +5336,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5230,6 +5357,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5257,6 +5385,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object cloudSqlInstance_ = "";
+
     /**
      *
      *
@@ -5279,6 +5408,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5301,6 +5431,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5322,6 +5453,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5339,6 +5471,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5363,6 +5496,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object redisInstance_ = "";
+
     /**
      *
      *
@@ -5386,6 +5520,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5409,6 +5544,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5431,6 +5567,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5449,6 +5586,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5474,6 +5612,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object redisCluster_ = "";
+
     /**
      *
      *
@@ -5497,6 +5636,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5520,6 +5660,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5542,6 +5683,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5560,6 +5702,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5590,6 +5733,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.Builder,
             com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpointOrBuilder>
         cloudFunctionBuilder_;
+
     /**
      *
      *
@@ -5605,6 +5749,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudFunction() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -5627,6 +5772,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return cloudFunctionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5651,6 +5797,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5673,6 +5820,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5704,6 +5852,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5724,6 +5873,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5740,6 +5890,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCloudFunctionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5761,6 +5912,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             : cloudFunction_;
       }
     }
+
     /**
      *
      *
@@ -5795,6 +5947,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint.Builder,
             com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpointOrBuilder>
         appEngineVersionBuilder_;
+
     /**
      *
      *
@@ -5812,6 +5965,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAppEngineVersion() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -5837,6 +5991,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return appEngineVersionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5863,6 +6018,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5887,6 +6043,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5920,6 +6077,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5942,6 +6100,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5960,6 +6119,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAppEngineVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5983,6 +6143,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             : appEngineVersion_;
       }
     }
+
     /**
      *
      *
@@ -6019,6 +6180,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint.Builder,
             com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpointOrBuilder>
         cloudRunRevisionBuilder_;
+
     /**
      *
      *
@@ -6036,6 +6198,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudRunRevision() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -6061,6 +6224,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return cloudRunRevisionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6087,6 +6251,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6111,6 +6276,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6144,6 +6310,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6166,6 +6333,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6184,6 +6352,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCloudRunRevisionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6207,6 +6376,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             : cloudRunRevision_;
       }
     }
+
     /**
      *
      *
@@ -6237,6 +6407,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -6259,6 +6430,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6281,6 +6453,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6302,6 +6475,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6319,6 +6493,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6343,6 +6518,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int networkType_ = 0;
+
     /**
      *
      *
@@ -6360,6 +6536,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public int getNetworkTypeValue() {
       return networkType_;
     }
+
     /**
      *
      *
@@ -6380,6 +6557,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6401,6 +6579,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1.Endpoint.NetworkType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -6425,6 +6604,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6446,6 +6626,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -6476,6 +6657,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6506,6 +6688,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6535,6 +6718,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6560,6 +6744,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

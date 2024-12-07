@@ -34,6 +34,7 @@ public interface IntentBatchOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Intent> getIntentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface IntentBatchOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.Intent getIntents(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface IntentBatchOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 1;</code>
    */
   int getIntentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface IntentBatchOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.IntentOrBuilder>
       getIntentsOrBuilderList();
+
   /**
    *
    *

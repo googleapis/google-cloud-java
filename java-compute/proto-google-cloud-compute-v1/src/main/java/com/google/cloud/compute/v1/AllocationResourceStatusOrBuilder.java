@@ -38,6 +38,7 @@ public interface AllocationResourceStatusOrBuilder
    * @return Whether the specificSkuAllocation field is set.
    */
   boolean hasSpecificSkuAllocation();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface AllocationResourceStatusOrBuilder
    */
   com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation
       getSpecificSkuAllocation();
+
   /**
    *
    *

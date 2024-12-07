@@ -33,6 +33,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.LabelDetectionConfig)
     LabelDetectionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LabelDetectionConfig.newBuilder() to construct.
   private LabelDetectionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
 
   public static final int LABEL_DETECTION_MODE_FIELD_NUMBER = 1;
   private int labelDetectionMode_ = 0;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
   public int getLabelDetectionModeValue() {
     return labelDetectionMode_;
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
 
   public static final int STATIONARY_CAMERA_FIELD_NUMBER = 2;
   private boolean stationaryCamera_ = false;
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
 
   public static final int FRAME_CONFIDENCE_THRESHOLD_FIELD_NUMBER = 4;
   private float frameConfidenceThreshold_ = 0F;
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
 
   public static final int VIDEO_CONFIDENCE_THRESHOLD_FIELD_NUMBER = 5;
   private float videoConfidenceThreshold_ = 0F;
+
   /**
    *
    *
@@ -428,6 +436,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -664,6 +673,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int labelDetectionMode_ = 0;
+
     /**
      *
      *
@@ -681,6 +691,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     public int getLabelDetectionModeValue() {
       return labelDetectionMode_;
     }
+
     /**
      *
      *
@@ -701,6 +712,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +734,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.videointelligence.v1.LabelDetectionMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -746,6 +759,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +781,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     }
 
     private boolean stationaryCamera_;
+
     /**
      *
      *
@@ -784,6 +799,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     public boolean getStationaryCamera() {
       return stationaryCamera_;
     }
+
     /**
      *
      *
@@ -805,6 +821,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +843,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -850,6 +868,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -874,6 +893,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -897,6 +917,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +937,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +964,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     }
 
     private float frameConfidenceThreshold_;
+
     /**
      *
      *
@@ -962,6 +985,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     public float getFrameConfidenceThreshold() {
       return frameConfidenceThreshold_;
     }
+
     /**
      *
      *
@@ -986,6 +1010,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1035,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     }
 
     private float videoConfidenceThreshold_;
+
     /**
      *
      *
@@ -1030,6 +1056,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     public float getVideoConfidenceThreshold() {
       return videoConfidenceThreshold_;
     }
+
     /**
      *
      *
@@ -1054,6 +1081,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

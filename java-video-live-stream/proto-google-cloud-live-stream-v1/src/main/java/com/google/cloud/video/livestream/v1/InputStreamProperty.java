@@ -33,6 +33,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.InputStreamProperty)
     InputStreamPropertyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InputStreamProperty.newBuilder() to construct.
   private InputStreamProperty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int LAST_ESTABLISH_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp lastEstablishTime_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
   public boolean hasLastEstablishTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastEstablishTime_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.VideoStreamProperty> videoStreams_;
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       getVideoStreamsList() {
     return videoStreams_;
   }
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       getVideoStreamsOrBuilderList() {
     return videoStreams_;
   }
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
   public int getVideoStreamsCount() {
     return videoStreams_.size();
   }
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
   public com.google.cloud.video.livestream.v1.VideoStreamProperty getVideoStreams(int index) {
     return videoStreams_.get(index);
   }
+
   /**
    *
    *
@@ -195,6 +204,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.AudioStreamProperty> audioStreams_;
+
   /**
    *
    *
@@ -209,6 +219,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       getAudioStreamsList() {
     return audioStreams_;
   }
+
   /**
    *
    *
@@ -223,6 +234,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       getAudioStreamsOrBuilderList() {
     return audioStreams_;
   }
+
   /**
    *
    *
@@ -236,6 +248,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
   public int getAudioStreamsCount() {
     return audioStreams_.size();
   }
+
   /**
    *
    *
@@ -249,6 +262,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
   public com.google.cloud.video.livestream.v1.AudioStreamProperty getAudioStreams(int index) {
     return audioStreams_.get(index);
   }
+
   /**
    *
    *
@@ -451,6 +465,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -779,6 +794,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastEstablishTimeBuilder_;
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
     public boolean hasLastEstablishTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -815,6 +832,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         return lastEstablishTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -838,6 +856,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +877,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +906,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +927,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +943,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       onChanged();
       return getLastEstablishTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -940,6 +963,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
             : lastEstablishTime_;
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1027,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         return videoStreamsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1045,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         return videoStreamsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1063,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         return videoStreamsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1088,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1111,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1135,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1130,6 +1160,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1151,6 +1182,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1205,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1228,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1215,6 +1249,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1270,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1249,6 +1285,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         int index) {
       return getVideoStreamsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1267,6 +1304,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         return videoStreamsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1286,6 +1324,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(videoStreams_);
       }
     }
+
     /**
      *
      *
@@ -1302,6 +1341,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
           .addBuilder(
               com.google.cloud.video.livestream.v1.VideoStreamProperty.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1318,6 +1358,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.cloud.video.livestream.v1.VideoStreamProperty.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1386,6 +1427,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         return audioStreamsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1403,6 +1445,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         return audioStreamsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1420,6 +1463,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         return audioStreamsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1444,6 +1488,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1511,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1489,6 +1535,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1513,6 +1560,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1534,6 +1582,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1556,6 +1605,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1578,6 +1628,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1598,6 +1649,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1618,6 +1670,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1632,6 +1685,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         int index) {
       return getAudioStreamsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1650,6 +1704,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         return audioStreamsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1669,6 +1724,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(audioStreams_);
       }
     }
+
     /**
      *
      *
@@ -1685,6 +1741,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
           .addBuilder(
               com.google.cloud.video.livestream.v1.AudioStreamProperty.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1701,6 +1758,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.cloud.video.livestream.v1.AudioStreamProperty.getDefaultInstance());
     }
+
     /**
      *
      *

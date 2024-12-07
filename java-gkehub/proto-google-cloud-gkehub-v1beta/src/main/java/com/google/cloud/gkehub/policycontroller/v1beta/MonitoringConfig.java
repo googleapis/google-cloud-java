@@ -36,6 +36,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.policycontroller.v1beta.MonitoringConfig)
     MonitoringConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MonitoringConfig.newBuilder() to construct.
   private MonitoringConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
      * <code>MONITORING_BACKEND_UNSPECIFIED = 0;</code>
      */
     public static final int MONITORING_BACKEND_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
      * <code>PROMETHEUS = 1;</code>
      */
     public static final int PROMETHEUS_VALUE = 1;
+
     /**
      *
      *
@@ -255,6 +258,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
                   : result;
             }
           };
+
   /**
    *
    *
@@ -278,6 +282,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         com.google.cloud.gkehub.policycontroller.v1beta.MonitoringConfig.MonitoringBackend>(
         backends_, backends_converter_);
   }
+
   /**
    *
    *
@@ -296,6 +301,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
   public int getBackendsCount() {
     return backends_.size();
   }
+
   /**
    *
    *
@@ -316,6 +322,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       getBackends(int index) {
     return backends_converter_.convert(backends_.get(index));
   }
+
   /**
    *
    *
@@ -334,6 +341,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Integer> getBackendsValueList() {
     return backends_;
   }
+
   /**
    *
    *
@@ -532,6 +540,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -756,6 +765,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
       }
     }
+
     /**
      *
      *
@@ -778,6 +788,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
           com.google.cloud.gkehub.policycontroller.v1beta.MonitoringConfig.MonitoringBackend>(
           backends_, backends_converter_);
     }
+
     /**
      *
      *
@@ -795,6 +806,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     public int getBackendsCount() {
       return backends_.size();
     }
+
     /**
      *
      *
@@ -814,6 +826,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         getBackends(int index) {
       return backends_converter_.convert(backends_.get(index));
     }
+
     /**
      *
      *
@@ -841,6 +854,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +880,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +910,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +931,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +949,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     public java.util.List<java.lang.Integer> getBackendsValueList() {
       return java.util.Collections.unmodifiableList(backends_);
     }
+
     /**
      *
      *
@@ -950,6 +968,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     public int getBackendsValue(int index) {
       return backends_.get(index);
     }
+
     /**
      *
      *
@@ -972,6 +991,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1013,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

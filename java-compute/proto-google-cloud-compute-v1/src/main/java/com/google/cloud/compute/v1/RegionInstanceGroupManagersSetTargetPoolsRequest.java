@@ -33,6 +33,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest)
     RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder() to construct.
   private RegionInstanceGroupManagersSetTargetPoolsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList targetPools_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
   public com.google.protobuf.ProtocolStringList getTargetPoolsList() {
     return targetPools_;
   }
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
   public int getTargetPoolsCount() {
     return targetPools_.size();
   }
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
   public java.lang.String getTargetPools(int index) {
     return targetPools_.get(index);
   }
+
   /**
    *
    *
@@ -385,6 +393,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -604,6 +613,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     private int bitField0_;
 
     private java.lang.Object fingerprint_ = "";
+
     /**
      *
      *
@@ -618,6 +628,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -662,6 +674,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +714,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +747,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -747,6 +763,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       targetPools_.makeImmutable();
       return targetPools_;
     }
+
     /**
      *
      *
@@ -761,6 +778,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     public int getTargetPoolsCount() {
       return targetPools_.size();
     }
+
     /**
      *
      *
@@ -776,6 +794,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     public java.lang.String getTargetPools(int index) {
       return targetPools_.get(index);
     }
+
     /**
      *
      *
@@ -791,6 +810,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     public com.google.protobuf.ByteString getTargetPoolsBytes(int index) {
       return targetPools_.getByteString(index);
     }
+
     /**
      *
      *
@@ -814,6 +834,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +857,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +877,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +896,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

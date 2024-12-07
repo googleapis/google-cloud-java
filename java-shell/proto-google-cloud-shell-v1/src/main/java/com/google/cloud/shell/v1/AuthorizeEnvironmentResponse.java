@@ -34,6 +34,7 @@ public final class AuthorizeEnvironmentResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.shell.v1.AuthorizeEnvironmentResponse)
     AuthorizeEnvironmentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AuthorizeEnvironmentResponse.newBuilder() to construct.
   private AuthorizeEnvironmentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class AuthorizeEnvironmentResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

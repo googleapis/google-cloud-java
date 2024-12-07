@@ -38,6 +38,7 @@ public interface ScanConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ScanConfigOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface ScanConfigOrBuilder
    * @return A list containing the startingUrls.
    */
   java.util.List<java.lang.String> getStartingUrlsList();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface ScanConfigOrBuilder
    * @return The count of startingUrls.
    */
   int getStartingUrlsCount();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface ScanConfigOrBuilder
    * @return The startingUrls at the given index.
    */
   java.lang.String getStartingUrls(int index);
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface ScanConfigOrBuilder
    * @return Whether the authentication field is set.
    */
   boolean hasAuthentication();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface ScanConfigOrBuilder
    * @return The authentication.
    */
   com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication getAuthentication();
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public interface ScanConfigOrBuilder
    * @return The enum numeric value on the wire for userAgent.
    */
   int getUserAgentValue();
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public interface ScanConfigOrBuilder
    * @return A list containing the blacklistPatterns.
    */
   java.util.List<java.lang.String> getBlacklistPatternsList();
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public interface ScanConfigOrBuilder
    * @return The count of blacklistPatterns.
    */
   int getBlacklistPatternsCount();
+
   /**
    *
    *
@@ -249,6 +259,7 @@ public interface ScanConfigOrBuilder
    * @return The blacklistPatterns at the given index.
    */
   java.lang.String getBlacklistPatterns(int index);
+
   /**
    *
    *
@@ -276,6 +287,7 @@ public interface ScanConfigOrBuilder
    * @return Whether the schedule field is set.
    */
   boolean hasSchedule();
+
   /**
    *
    *
@@ -288,6 +300,7 @@ public interface ScanConfigOrBuilder
    * @return The schedule.
    */
   com.google.cloud.websecurityscanner.v1.ScanConfig.Schedule getSchedule();
+
   /**
    *
    *
@@ -314,6 +327,7 @@ public interface ScanConfigOrBuilder
    * @return The enum numeric value on the wire for exportToSecurityCommandCenter.
    */
   int getExportToSecurityCommandCenterValue();
+
   /**
    *
    *
@@ -343,6 +357,7 @@ public interface ScanConfigOrBuilder
    * @return The enum numeric value on the wire for riskLevel.
    */
   int getRiskLevelValue();
+
   /**
    *
    *

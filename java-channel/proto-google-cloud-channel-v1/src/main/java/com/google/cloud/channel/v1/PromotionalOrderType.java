@@ -82,6 +82,7 @@ public enum PromotionalOrderType implements com.google.protobuf.ProtocolMessageE
    * <code>PROMOTIONAL_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int PROMOTIONAL_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum PromotionalOrderType implements com.google.protobuf.ProtocolMessageE
    * <code>NEW_UPGRADE = 1;</code>
    */
   public static final int NEW_UPGRADE_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum PromotionalOrderType implements com.google.protobuf.ProtocolMessageE
    * <code>TRANSFER = 2;</code>
    */
   public static final int TRANSFER_VALUE = 2;
+
   /**
    *
    *

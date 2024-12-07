@@ -140,7 +140,8 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetOrganizationSettings, expected %s or %s",
+                  "Unrecognized response type %s for method GetOrganizationSettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   OrganizationSettings.class.getName(),
                   Exception.class.getName())));
@@ -392,7 +393,8 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateOrganizationSettings, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateOrganizationSettings, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   OrganizationSettings.class.getName(),
                   Exception.class.getName())));

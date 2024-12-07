@@ -43,6 +43,7 @@ public interface CreateEntitlementRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface CreateEntitlementRequestOrBuilder
    * @return The entitlementId.
    */
   java.lang.String getEntitlementId();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface CreateEntitlementRequestOrBuilder
    * @return Whether the entitlement field is set.
    */
   boolean hasEntitlement();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface CreateEntitlementRequestOrBuilder
    * @return The entitlement.
    */
   com.google.cloud.privilegedaccessmanager.v1.Entitlement getEntitlement();
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public interface CreateEntitlementRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

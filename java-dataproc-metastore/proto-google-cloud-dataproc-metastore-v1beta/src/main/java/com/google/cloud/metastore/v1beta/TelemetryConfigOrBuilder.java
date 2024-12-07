@@ -36,6 +36,7 @@ public interface TelemetryConfigOrBuilder
    * @return The enum numeric value on the wire for logFormat.
    */
   int getLogFormatValue();
+
   /**
    *
    *

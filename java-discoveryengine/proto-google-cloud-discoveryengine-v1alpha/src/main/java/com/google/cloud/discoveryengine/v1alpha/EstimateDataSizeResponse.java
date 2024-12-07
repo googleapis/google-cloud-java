@@ -35,6 +35,7 @@ public final class EstimateDataSizeResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.EstimateDataSizeResponse)
     EstimateDataSizeResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EstimateDataSizeResponse.newBuilder() to construct.
   private EstimateDataSizeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class EstimateDataSizeResponse extends com.google.protobuf.Generate
 
   public static final int DATA_SIZE_BYTES_FIELD_NUMBER = 1;
   private long dataSizeBytes_ = 0L;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class EstimateDataSizeResponse extends com.google.protobuf.Generate
 
   public static final int DOCUMENT_COUNT_FIELD_NUMBER = 2;
   private long documentCount_ = 0L;
+
   /**
    *
    *
@@ -269,6 +272,7 @@ public final class EstimateDataSizeResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -471,6 +475,7 @@ public final class EstimateDataSizeResponse extends com.google.protobuf.Generate
     private int bitField0_;
 
     private long dataSizeBytes_;
+
     /**
      *
      *
@@ -486,6 +491,7 @@ public final class EstimateDataSizeResponse extends com.google.protobuf.Generate
     public long getDataSizeBytes() {
       return dataSizeBytes_;
     }
+
     /**
      *
      *
@@ -505,6 +511,7 @@ public final class EstimateDataSizeResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -524,6 +531,7 @@ public final class EstimateDataSizeResponse extends com.google.protobuf.Generate
     }
 
     private long documentCount_;
+
     /**
      *
      *
@@ -539,6 +547,7 @@ public final class EstimateDataSizeResponse extends com.google.protobuf.Generate
     public long getDocumentCount() {
       return documentCount_;
     }
+
     /**
      *
      *
@@ -558,6 +567,7 @@ public final class EstimateDataSizeResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

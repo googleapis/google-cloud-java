@@ -33,6 +33,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AppPlatformCloudFunctionResponse)
     AppPlatformCloudFunctionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AppPlatformCloudFunctionResponse.newBuilder() to construct.
   private AppPlatformCloudFunctionResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -82,6 +83,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
      * @return Whether the annotation field is set.
      */
     boolean hasAnnotation();
+
     /**
      *
      *
@@ -94,6 +96,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
      * @return The annotation.
      */
     com.google.protobuf.Struct getAnnotation();
+
     /**
      *
      *
@@ -105,6 +108,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
      */
     com.google.protobuf.StructOrBuilder getAnnotationOrBuilder();
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AppPlatformCloudFunctionResponse.StructedOutputAnnotation)
       StructedOutputAnnotationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StructedOutputAnnotation.newBuilder() to construct.
     private StructedOutputAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -154,6 +159,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
     private int bitField0_;
     public static final int ANNOTATION_FIELD_NUMBER = 1;
     private com.google.protobuf.Struct annotation_;
+
     /**
      *
      *
@@ -169,6 +175,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
     public boolean hasAnnotation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -184,6 +191,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
     public com.google.protobuf.Struct getAnnotation() {
       return annotation_ == null ? com.google.protobuf.Struct.getDefaultInstance() : annotation_;
     }
+
     /**
      *
      *
@@ -386,6 +394,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -617,6 +626,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
               com.google.protobuf.Struct.Builder,
               com.google.protobuf.StructOrBuilder>
           annotationBuilder_;
+
       /**
        *
        *
@@ -631,6 +641,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       public boolean hasAnnotation() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -651,6 +662,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
           return annotationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -673,6 +685,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -692,6 +705,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -719,6 +733,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -738,6 +753,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -752,6 +768,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         onChanged();
         return getAnnotationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -770,6 +787,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
               : annotation_;
         }
       }
+
       /**
        *
        *
@@ -873,6 +891,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
   private java.util.List<
           com.google.cloud.visionai.v1.AppPlatformCloudFunctionResponse.StructedOutputAnnotation>
       annotations_;
+
   /**
    *
    *
@@ -892,6 +911,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       getAnnotationsList() {
     return annotations_;
   }
+
   /**
    *
    *
@@ -913,6 +933,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       getAnnotationsOrBuilderList() {
     return annotations_;
   }
+
   /**
    *
    *
@@ -930,6 +951,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
   public int getAnnotationsCount() {
     return annotations_.size();
   }
+
   /**
    *
    *
@@ -948,6 +970,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       getAnnotations(int index) {
     return annotations_.get(index);
   }
+
   /**
    *
    *
@@ -970,6 +993,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
 
   public static final int ANNOTATION_PASSTHROUGH_FIELD_NUMBER = 3;
   private boolean annotationPassthrough_ = false;
+
   /**
    *
    *
@@ -991,6 +1015,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.AppPlatformEventBody> events_;
+
   /**
    *
    *
@@ -1006,6 +1031,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
   public java.util.List<com.google.cloud.visionai.v1.AppPlatformEventBody> getEventsList() {
     return events_;
   }
+
   /**
    *
    *
@@ -1022,6 +1048,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       getEventsOrBuilderList() {
     return events_;
   }
+
   /**
    *
    *
@@ -1037,6 +1064,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
   public int getEventsCount() {
     return events_.size();
   }
+
   /**
    *
    *
@@ -1052,6 +1080,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
   public com.google.cloud.visionai.v1.AppPlatformEventBody getEvents(int index) {
     return events_.get(index);
   }
+
   /**
    *
    *
@@ -1250,6 +1279,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1600,6 +1630,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         return annotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1620,6 +1651,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         return annotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1641,6 +1673,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         return annotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1670,6 +1703,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1697,6 +1731,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1725,6 +1760,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1754,6 +1790,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1780,6 +1817,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1807,6 +1845,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1835,6 +1874,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1858,6 +1898,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1881,6 +1922,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1899,6 +1941,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         getAnnotationsBuilder(int index) {
       return getAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1921,6 +1964,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         return annotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1945,6 +1989,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(annotations_);
       }
     }
+
     /**
      *
      *
@@ -1966,6 +2011,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
               com.google.cloud.visionai.v1.AppPlatformCloudFunctionResponse.StructedOutputAnnotation
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1988,6 +2034,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
               com.google.cloud.visionai.v1.AppPlatformCloudFunctionResponse.StructedOutputAnnotation
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2031,6 +2078,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
     }
 
     private boolean annotationPassthrough_;
+
     /**
      *
      *
@@ -2047,6 +2095,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
     public boolean getAnnotationPassthrough() {
       return annotationPassthrough_;
     }
+
     /**
      *
      *
@@ -2067,6 +2116,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2121,6 +2171,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         return eventsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2139,6 +2190,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         return eventsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2157,6 +2209,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         return eventsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2181,6 +2234,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2203,6 +2257,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2227,6 +2282,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2251,6 +2307,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2273,6 +2330,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2295,6 +2353,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2317,6 +2376,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2338,6 +2398,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2359,6 +2420,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2373,6 +2435,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
     public com.google.cloud.visionai.v1.AppPlatformEventBody.Builder getEventsBuilder(int index) {
       return getEventsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2392,6 +2455,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         return eventsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2411,6 +2475,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(events_);
       }
     }
+
     /**
      *
      *
@@ -2426,6 +2491,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
       return getEventsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.AppPlatformEventBody.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2442,6 +2508,7 @@ public final class AppPlatformCloudFunctionResponse extends com.google.protobuf.
           .addBuilder(
               index, com.google.cloud.visionai.v1.AppPlatformEventBody.getDefaultInstance());
     }
+
     /**
      *
      *

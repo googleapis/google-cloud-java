@@ -38,6 +38,7 @@ public interface InsertInterconnectRequestOrBuilder
    * @return Whether the interconnectResource field is set.
    */
   boolean hasInterconnectResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InsertInterconnectRequestOrBuilder
    * @return The interconnectResource.
    */
   com.google.cloud.compute.v1.Interconnect getInterconnectResource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface InsertInterconnectRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface InsertInterconnectRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface InsertInterconnectRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

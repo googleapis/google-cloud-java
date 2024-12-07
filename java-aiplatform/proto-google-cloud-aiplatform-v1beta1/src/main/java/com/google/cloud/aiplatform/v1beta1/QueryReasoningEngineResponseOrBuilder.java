@@ -36,6 +36,7 @@ public interface QueryReasoningEngineResponseOrBuilder
    * @return Whether the output field is set.
    */
   boolean hasOutput();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface QueryReasoningEngineResponseOrBuilder
    * @return The output.
    */
   com.google.protobuf.Value getOutput();
+
   /**
    *
    *

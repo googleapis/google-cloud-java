@@ -38,6 +38,7 @@ public interface InsertSnapshotRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface InsertSnapshotRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface InsertSnapshotRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface InsertSnapshotRequestOrBuilder
    * @return Whether the snapshotResource field is set.
    */
   boolean hasSnapshotResource();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface InsertSnapshotRequestOrBuilder
    * @return The snapshotResource.
    */
   com.google.cloud.compute.v1.Snapshot getSnapshotResource();
+
   /**
    *
    *

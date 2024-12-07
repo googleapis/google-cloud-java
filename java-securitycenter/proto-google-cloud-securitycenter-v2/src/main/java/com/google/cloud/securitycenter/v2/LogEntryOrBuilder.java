@@ -36,6 +36,7 @@ public interface LogEntryOrBuilder
    * @return Whether the cloudLoggingEntry field is set.
    */
   boolean hasCloudLoggingEntry();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LogEntryOrBuilder
    * @return The cloudLoggingEntry.
    */
   com.google.cloud.securitycenter.v2.CloudLoggingEntry getCloudLoggingEntry();
+
   /**
    *
    *

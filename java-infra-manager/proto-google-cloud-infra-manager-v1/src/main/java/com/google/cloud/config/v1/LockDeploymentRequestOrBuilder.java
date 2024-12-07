@@ -39,6 +39,7 @@ public interface LockDeploymentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

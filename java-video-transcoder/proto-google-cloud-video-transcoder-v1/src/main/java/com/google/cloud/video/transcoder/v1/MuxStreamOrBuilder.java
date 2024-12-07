@@ -37,6 +37,7 @@ public interface MuxStreamOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface MuxStreamOrBuilder
    * @return The fileName.
    */
   java.lang.String getFileName();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface MuxStreamOrBuilder
    * @return The container.
    */
   java.lang.String getContainer();
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public interface MuxStreamOrBuilder
    * @return A list containing the elementaryStreams.
    */
   java.util.List<java.lang.String> getElementaryStreamsList();
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public interface MuxStreamOrBuilder
    * @return The count of elementaryStreams.
    */
   int getElementaryStreamsCount();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface MuxStreamOrBuilder
    * @return The elementaryStreams at the given index.
    */
   java.lang.String getElementaryStreams(int index);
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public interface MuxStreamOrBuilder
    * @return Whether the segmentSettings field is set.
    */
   boolean hasSegmentSettings();
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public interface MuxStreamOrBuilder
    * @return The segmentSettings.
    */
   com.google.cloud.video.transcoder.v1.SegmentSettings getSegmentSettings();
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public interface MuxStreamOrBuilder
    * @return The encryptionId.
    */
   java.lang.String getEncryptionId();
+
   /**
    *
    *

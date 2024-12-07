@@ -36,6 +36,7 @@ public interface AccessFilterOrBuilder
    * @return Whether the stringFilter field is set.
    */
   boolean hasStringFilter();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AccessFilterOrBuilder
    * @return The stringFilter.
    */
   com.google.analytics.admin.v1alpha.AccessStringFilter getStringFilter();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface AccessFilterOrBuilder
    * @return Whether the inListFilter field is set.
    */
   boolean hasInListFilter();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface AccessFilterOrBuilder
    * @return The inListFilter.
    */
   com.google.analytics.admin.v1alpha.AccessInListFilter getInListFilter();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface AccessFilterOrBuilder
    * @return Whether the numericFilter field is set.
    */
   boolean hasNumericFilter();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface AccessFilterOrBuilder
    * @return The numericFilter.
    */
   com.google.analytics.admin.v1alpha.AccessNumericFilter getNumericFilter();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface AccessFilterOrBuilder
    * @return Whether the betweenFilter field is set.
    */
   boolean hasBetweenFilter();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface AccessFilterOrBuilder
    * @return The betweenFilter.
    */
   com.google.analytics.admin.v1alpha.AccessBetweenFilter getBetweenFilter();
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public interface AccessFilterOrBuilder
    * @return The fieldName.
    */
   java.lang.String getFieldName();
+
   /**
    *
    *

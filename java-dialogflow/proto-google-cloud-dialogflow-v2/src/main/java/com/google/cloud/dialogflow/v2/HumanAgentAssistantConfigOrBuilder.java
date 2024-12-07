@@ -36,6 +36,7 @@ public interface HumanAgentAssistantConfigOrBuilder
    * @return Whether the notificationConfig field is set.
    */
   boolean hasNotificationConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface HumanAgentAssistantConfigOrBuilder
    * @return The notificationConfig.
    */
   com.google.cloud.dialogflow.v2.NotificationConfig getNotificationConfig();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface HumanAgentAssistantConfigOrBuilder
    * @return Whether the humanAgentSuggestionConfig field is set.
    */
   boolean hasHumanAgentSuggestionConfig();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface HumanAgentAssistantConfigOrBuilder
    */
   com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig
       getHumanAgentSuggestionConfig();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface HumanAgentAssistantConfigOrBuilder
    * @return Whether the endUserSuggestionConfig field is set.
    */
   boolean hasEndUserSuggestionConfig();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface HumanAgentAssistantConfigOrBuilder
    */
   com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig
       getEndUserSuggestionConfig();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface HumanAgentAssistantConfigOrBuilder
    * @return Whether the messageAnalysisConfig field is set.
    */
   boolean hasMessageAnalysisConfig();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface HumanAgentAssistantConfigOrBuilder
    */
   com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.MessageAnalysisConfig
       getMessageAnalysisConfig();
+
   /**
    *
    *

@@ -43,6 +43,7 @@ public interface BatchProcessRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface BatchProcessRequestOrBuilder
    * @return Whether the inputDocuments field is set.
    */
   boolean hasInputDocuments();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface BatchProcessRequestOrBuilder
    * @return The inputDocuments.
    */
   com.google.cloud.documentai.v1.BatchDocumentsInputConfig getInputDocuments();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface BatchProcessRequestOrBuilder
    * @return Whether the documentOutputConfig field is set.
    */
   boolean hasDocumentOutputConfig();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface BatchProcessRequestOrBuilder
    * @return The documentOutputConfig.
    */
   com.google.cloud.documentai.v1.DocumentOutputConfig getDocumentOutputConfig();
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public interface BatchProcessRequestOrBuilder
    * @return Whether the processOptions field is set.
    */
   boolean hasProcessOptions();
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public interface BatchProcessRequestOrBuilder
    * @return The processOptions.
    */
   com.google.cloud.documentai.v1.ProcessOptions getProcessOptions();
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public interface BatchProcessRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -224,9 +232,11 @@ public interface BatchProcessRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -242,6 +252,7 @@ public interface BatchProcessRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -261,6 +272,7 @@ public interface BatchProcessRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface CreateQuotaPreferenceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface CreateQuotaPreferenceRequestOrBuilder
    * @return The quotaPreferenceId.
    */
   java.lang.String getQuotaPreferenceId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface CreateQuotaPreferenceRequestOrBuilder
    * @return Whether the quotaPreference field is set.
    */
   boolean hasQuotaPreference();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateQuotaPreferenceRequestOrBuilder
    * @return The quotaPreference.
    */
   com.google.api.cloudquotas.v1.QuotaPreference getQuotaPreference();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface CreateQuotaPreferenceRequestOrBuilder
    * @return A list containing the ignoreSafetyChecks.
    */
   java.util.List<com.google.api.cloudquotas.v1.QuotaSafetyCheck> getIgnoreSafetyChecksList();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface CreateQuotaPreferenceRequestOrBuilder
    * @return The count of ignoreSafetyChecks.
    */
   int getIgnoreSafetyChecksCount();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface CreateQuotaPreferenceRequestOrBuilder
    * @return The ignoreSafetyChecks at the given index.
    */
   com.google.api.cloudquotas.v1.QuotaSafetyCheck getIgnoreSafetyChecks(int index);
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface CreateQuotaPreferenceRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for ignoreSafetyChecks.
    */
   java.util.List<java.lang.Integer> getIgnoreSafetyChecksValueList();
+
   /**
    *
    *

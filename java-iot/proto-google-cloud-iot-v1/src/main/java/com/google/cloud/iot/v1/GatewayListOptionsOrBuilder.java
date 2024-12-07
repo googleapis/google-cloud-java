@@ -38,6 +38,7 @@ public interface GatewayListOptionsOrBuilder
    * @return Whether the gatewayType field is set.
    */
   boolean hasGatewayType();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface GatewayListOptionsOrBuilder
    * @return The enum numeric value on the wire for gatewayType.
    */
   int getGatewayTypeValue();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface GatewayListOptionsOrBuilder
    * @return Whether the associationsGatewayId field is set.
    */
   boolean hasAssociationsGatewayId();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface GatewayListOptionsOrBuilder
    * @return The associationsGatewayId.
    */
   java.lang.String getAssociationsGatewayId();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface GatewayListOptionsOrBuilder
    * @return Whether the associationsDeviceId field is set.
    */
   boolean hasAssociationsDeviceId();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface GatewayListOptionsOrBuilder
    * @return The associationsDeviceId.
    */
   java.lang.String getAssociationsDeviceId();
+
   /**
    *
    *

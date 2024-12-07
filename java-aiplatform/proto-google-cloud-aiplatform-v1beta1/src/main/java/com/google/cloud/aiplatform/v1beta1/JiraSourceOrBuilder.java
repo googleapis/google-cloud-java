@@ -36,6 +36,7 @@ public interface JiraSourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.JiraSource.JiraQueries> getJiraQueriesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface JiraSourceOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.JiraSource.JiraQueries getJiraQueries(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface JiraSourceOrBuilder
    * </code>
    */
   int getJiraQueriesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface JiraSourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.JiraSource.JiraQueriesOrBuilder>
       getJiraQueriesOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RawDisk)
     RawDiskOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RawDisk.newBuilder() to construct.
   private RawDisk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -100,6 +101,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_CONTAINER_TYPE = 0;</code>
      */
     public static final int UNDEFINED_CONTAINER_TYPE_VALUE = 0;
+
     /** <code>TAR = 82821;</code> */
     public static final int TAR_VALUE = 82821;
 
@@ -189,6 +191,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object containerType_ = "";
+
   /**
    *
    *
@@ -205,6 +208,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContainerType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -229,6 +233,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -258,6 +263,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sha1Checksum_ = "";
+
   /**
    *
    *
@@ -273,6 +279,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSha1Checksum() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -296,6 +303,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -324,6 +332,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object source_ = "";
+
   /**
    *
    *
@@ -339,6 +348,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSource() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -362,6 +372,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -576,6 +587,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -793,6 +805,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object containerType_ = "";
+
     /**
      *
      *
@@ -808,6 +821,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContainerType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -831,6 +845,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -854,6 +869,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -876,6 +892,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +911,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +937,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sha1Checksum_ = "";
+
     /**
      *
      *
@@ -933,6 +952,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSha1Checksum() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -955,6 +975,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -977,6 +998,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -998,6 +1020,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1015,6 +1038,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1063,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object source_ = "";
+
     /**
      *
      *
@@ -1053,6 +1078,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1075,6 +1101,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1124,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1146,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1164,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

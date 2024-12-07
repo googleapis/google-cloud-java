@@ -37,6 +37,7 @@ public interface ConnectionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ConnectionOrBuilder
    * @return The friendlyName.
    */
   java.lang.String getFriendlyName();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface ConnectionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface ConnectionOrBuilder
    * @return Whether the cloudSql field is set.
    */
   boolean hasCloudSql();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface ConnectionOrBuilder
    * @return The cloudSql.
    */
   com.google.cloud.bigquery.connection.v1.CloudSqlProperties getCloudSql();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface ConnectionOrBuilder
    * @return Whether the aws field is set.
    */
   boolean hasAws();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface ConnectionOrBuilder
    * @return The aws.
    */
   com.google.cloud.bigquery.connection.v1.AwsProperties getAws();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface ConnectionOrBuilder
    * @return Whether the azure field is set.
    */
   boolean hasAzure();
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public interface ConnectionOrBuilder
    * @return The azure.
    */
   com.google.cloud.bigquery.connection.v1.AzureProperties getAzure();
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public interface ConnectionOrBuilder
    * @return Whether the cloudSpanner field is set.
    */
   boolean hasCloudSpanner();
+
   /**
    *
    *
@@ -230,6 +240,7 @@ public interface ConnectionOrBuilder
    * @return The cloudSpanner.
    */
   com.google.cloud.bigquery.connection.v1.CloudSpannerProperties getCloudSpanner();
+
   /**
    *
    *
@@ -254,6 +265,7 @@ public interface ConnectionOrBuilder
    * @return Whether the cloudResource field is set.
    */
   boolean hasCloudResource();
+
   /**
    *
    *
@@ -266,6 +278,7 @@ public interface ConnectionOrBuilder
    * @return The cloudResource.
    */
   com.google.cloud.bigquery.connection.v1.CloudResourceProperties getCloudResource();
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public interface ConnectionOrBuilder
    * @return Whether the spark field is set.
    */
   boolean hasSpark();
+
   /**
    *
    *
@@ -302,6 +316,7 @@ public interface ConnectionOrBuilder
    * @return The spark.
    */
   com.google.cloud.bigquery.connection.v1.SparkProperties getSpark();
+
   /**
    *
    *
@@ -329,6 +344,7 @@ public interface ConnectionOrBuilder
    * @return Whether the salesforceDataCloud field is set.
    */
   boolean hasSalesforceDataCloud();
+
   /**
    *
    *
@@ -345,6 +361,7 @@ public interface ConnectionOrBuilder
    * @return The salesforceDataCloud.
    */
   com.google.cloud.bigquery.connection.v1.SalesforceDataCloudProperties getSalesforceDataCloud();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SetInventoryRequest)
     SetInventoryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetInventoryRequest.newBuilder() to construct.
   private SetInventoryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int INVENTORY_FIELD_NUMBER = 1;
   private com.google.cloud.retail.v2.Product inventory_;
+
   /**
    *
    *
@@ -139,6 +141,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
   public boolean hasInventory() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -214,6 +217,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.retail.v2.Product.getDefaultInstance()
         : inventory_;
   }
+
   /**
    *
    *
@@ -290,6 +294,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
 
   public static final int SET_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask setMask_;
+
   /**
    *
    *
@@ -311,6 +316,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
   public boolean hasSetMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -332,6 +338,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.FieldMask getSetMask() {
     return setMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : setMask_;
   }
+
   /**
    *
    *
@@ -354,6 +361,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
 
   public static final int SET_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp setTime_;
+
   /**
    *
    *
@@ -371,6 +379,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
   public boolean hasSetTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -388,6 +397,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getSetTime() {
     return setTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : setTime_;
   }
+
   /**
    *
    *
@@ -406,6 +416,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 4;
   private boolean allowMissing_ = false;
+
   /**
    *
    *
@@ -628,6 +639,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -883,6 +895,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.retail.v2.Product.Builder,
             com.google.cloud.retail.v2.ProductOrBuilder>
         inventoryBuilder_;
+
     /**
      *
      *
@@ -956,6 +969,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
     public boolean hasInventory() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1035,6 +1049,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
         return inventoryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1116,6 +1131,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1210,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1280,6 +1297,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1376,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1431,6 +1450,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getInventoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1508,6 +1528,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
             : inventory_;
       }
     }
+
     /**
      *
      *
@@ -1599,6 +1620,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         setMaskBuilder_;
+
     /**
      *
      *
@@ -1619,6 +1641,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
     public boolean hasSetMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1643,6 +1666,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
         return setMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1671,6 +1695,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1696,6 +1721,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1729,6 +1755,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1754,6 +1781,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1774,6 +1802,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSetMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1796,6 +1825,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
         return setMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : setMask_;
       }
     }
+
     /**
      *
      *
@@ -1834,6 +1864,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         setTimeBuilder_;
+
     /**
      *
      *
@@ -1850,6 +1881,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
     public boolean hasSetTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1870,6 +1902,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
         return setTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1894,6 +1927,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1915,6 +1949,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1944,6 +1979,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1965,6 +2001,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1981,6 +2018,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSetTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1999,6 +2037,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
         return setTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : setTime_;
       }
     }
+
     /**
      *
      *
@@ -2028,6 +2067,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean allowMissing_;
+
     /**
      *
      *
@@ -2048,6 +2088,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
     public boolean getAllowMissing() {
       return allowMissing_;
     }
+
     /**
      *
      *
@@ -2072,6 +2113,7 @@ public final class SetInventoryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

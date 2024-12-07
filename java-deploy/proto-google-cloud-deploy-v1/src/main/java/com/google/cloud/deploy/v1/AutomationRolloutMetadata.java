@@ -34,6 +34,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.AutomationRolloutMetadata)
     AutomationRolloutMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutomationRolloutMetadata.newBuilder() to construct.
   private AutomationRolloutMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object promoteAutomationRun_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList advanceAutomationRuns_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getAdvanceAutomationRunsList() {
     return advanceAutomationRuns_;
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
   public int getAdvanceAutomationRunsCount() {
     return advanceAutomationRuns_.size();
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
   public java.lang.String getAdvanceAutomationRuns(int index) {
     return advanceAutomationRuns_.get(index);
   }
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList repairAutomationRuns_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getRepairAutomationRunsList() {
     return repairAutomationRuns_;
   }
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
   public int getRepairAutomationRunsCount() {
     return repairAutomationRuns_.size();
   }
+
   /**
    *
    *
@@ -245,6 +255,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
   public java.lang.String getRepairAutomationRuns(int index) {
     return repairAutomationRuns_.get(index);
   }
+
   /**
    *
    *
@@ -456,6 +467,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -685,6 +697,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object promoteAutomationRun_ = "";
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -731,6 +745,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -753,6 +768,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +787,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -823,6 +841,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       advanceAutomationRuns_.makeImmutable();
       return advanceAutomationRuns_;
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
     public int getAdvanceAutomationRunsCount() {
       return advanceAutomationRuns_.size();
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
     public java.lang.String getAdvanceAutomationRuns(int index) {
       return advanceAutomationRuns_.get(index);
     }
+
     /**
      *
      *
@@ -876,6 +897,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getAdvanceAutomationRunsBytes(int index) {
       return advanceAutomationRuns_.getByteString(index);
     }
+
     /**
      *
      *
@@ -902,6 +924,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +950,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +973,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +995,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1032,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1024,6 +1051,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       repairAutomationRuns_.makeImmutable();
       return repairAutomationRuns_;
     }
+
     /**
      *
      *
@@ -1041,6 +1069,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
     public int getRepairAutomationRunsCount() {
       return repairAutomationRuns_.size();
     }
+
     /**
      *
      *
@@ -1059,6 +1088,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
     public java.lang.String getRepairAutomationRuns(int index) {
       return repairAutomationRuns_.get(index);
     }
+
     /**
      *
      *
@@ -1077,6 +1107,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getRepairAutomationRunsBytes(int index) {
       return repairAutomationRuns_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1103,6 +1134,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1160,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1150,6 +1183,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1205,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

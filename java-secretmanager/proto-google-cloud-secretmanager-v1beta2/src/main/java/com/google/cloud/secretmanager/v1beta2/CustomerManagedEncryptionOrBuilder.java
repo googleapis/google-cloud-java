@@ -48,6 +48,7 @@ public interface CustomerManagedEncryptionOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *

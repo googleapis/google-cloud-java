@@ -34,6 +34,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary)
     ReportSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReportSummary.newBuilder() to construct.
   private ReportSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.ChartData.DataPoint>
         getDataPointsList();
+
     /**
      *
      *
@@ -98,6 +100,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.ChartData.DataPoint getDataPoints(int index);
+
     /**
      *
      *
@@ -112,6 +115,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getDataPointsCount();
+
     /**
      *
      *
@@ -129,6 +133,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
             ? extends
                 com.google.cloud.migrationcenter.v1.ReportSummary.ChartData.DataPointOrBuilder>
         getDataPointsOrBuilderList();
+
     /**
      *
      *
@@ -145,6 +150,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.migrationcenter.v1.ReportSummary.ChartData.DataPointOrBuilder
         getDataPointsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.ChartData)
       ChartDataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ChartData.newBuilder() to construct.
     private ChartData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -206,6 +213,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
        * @return The label.
        */
       java.lang.String getLabel();
+
       /**
        *
        *
@@ -232,6 +240,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
        */
       double getValue();
     }
+
     /**
      *
      *
@@ -246,6 +255,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.ChartData.DataPoint)
         DataPointOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use DataPoint.newBuilder() to construct.
       private DataPoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -281,6 +291,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object label_ = "";
+
       /**
        *
        *
@@ -304,6 +315,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -330,6 +342,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
       public static final int VALUE_FIELD_NUMBER = 2;
       private double value_ = 0D;
+
       /**
        *
        *
@@ -523,6 +536,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -734,6 +748,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object label_ = "";
+
         /**
          *
          *
@@ -756,6 +771,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -778,6 +794,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -799,6 +816,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -816,6 +834,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -840,6 +859,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
 
         private double value_;
+
         /**
          *
          *
@@ -855,6 +875,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         public double getValue() {
           return value_;
         }
+
         /**
          *
          *
@@ -874,6 +895,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -965,6 +987,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.ChartData.DataPoint>
         dataPoints_;
+
     /**
      *
      *
@@ -983,6 +1006,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getDataPointsList() {
       return dataPoints_;
     }
+
     /**
      *
      *
@@ -1003,6 +1027,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getDataPointsOrBuilderList() {
       return dataPoints_;
     }
+
     /**
      *
      *
@@ -1020,6 +1045,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public int getDataPointsCount() {
       return dataPoints_.size();
     }
+
     /**
      *
      *
@@ -1038,6 +1064,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return dataPoints_.get(index);
     }
+
     /**
      *
      *
@@ -1220,6 +1247,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1497,6 +1525,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return dataPointsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1517,6 +1546,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return dataPointsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1538,6 +1568,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return dataPointsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1565,6 +1596,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1591,6 +1623,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1618,6 +1651,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1645,6 +1679,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1670,6 +1705,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1696,6 +1732,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1722,6 +1759,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1745,6 +1783,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1768,6 +1807,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1785,6 +1825,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           getDataPointsBuilder(int index) {
         return getDataPointsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1806,6 +1847,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return dataPointsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1829,6 +1871,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(dataPoints_);
         }
       }
+
       /**
        *
        *
@@ -1849,6 +1892,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary.ChartData.DataPoint
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1870,6 +1914,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary.ChartData.DataPoint
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2002,6 +2047,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     long getFree();
   }
+
   /**
    *
    *
@@ -2017,6 +2063,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.UtilizationChartData)
       UtilizationChartDataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UtilizationChartData.newBuilder() to construct.
     private UtilizationChartData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2047,6 +2094,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int USED_FIELD_NUMBER = 1;
     private long used_ = 0L;
+
     /**
      *
      *
@@ -2065,6 +2113,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int FREE_FIELD_NUMBER = 2;
     private long free_ = 0L;
+
     /**
      *
      *
@@ -2253,6 +2302,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2462,6 +2512,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private long used_;
+
       /**
        *
        *
@@ -2477,6 +2528,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getUsed() {
         return used_;
       }
+
       /**
        *
        *
@@ -2496,6 +2548,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2515,6 +2568,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long free_;
+
       /**
        *
        *
@@ -2530,6 +2584,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getFree() {
         return free_;
       }
+
       /**
        *
        *
@@ -2549,6 +2604,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2657,6 +2713,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData.Bucket>
         getBucketsList();
+
     /**
      *
      *
@@ -2674,6 +2731,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData.Bucket getBuckets(
         int index);
+
     /**
      *
      *
@@ -2690,6 +2748,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getBucketsCount();
+
     /**
      *
      *
@@ -2710,6 +2769,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData
                     .BucketOrBuilder>
         getBucketsOrBuilderList();
+
     /**
      *
      *
@@ -2728,6 +2788,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData.BucketOrBuilder
         getBucketsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -2743,6 +2804,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData)
       HistogramChartDataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use HistogramChartData.newBuilder() to construct.
     private HistogramChartData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2817,6 +2879,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
        */
       long getCount();
     }
+
     /**
      *
      *
@@ -2834,6 +2897,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData.Bucket)
         BucketOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Bucket.newBuilder() to construct.
       private Bucket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2865,6 +2929,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
       public static final int LOWER_BOUND_FIELD_NUMBER = 1;
       private long lowerBound_ = 0L;
+
       /**
        *
        *
@@ -2883,6 +2948,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
       public static final int UPPER_BOUND_FIELD_NUMBER = 2;
       private long upperBound_ = 0L;
+
       /**
        *
        *
@@ -2901,6 +2967,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
       public static final int COUNT_FIELD_NUMBER = 3;
       private long count_ = 0L;
+
       /**
        *
        *
@@ -3106,6 +3173,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -3334,6 +3402,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private long lowerBound_;
+
         /**
          *
          *
@@ -3349,6 +3418,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         public long getLowerBound() {
           return lowerBound_;
         }
+
         /**
          *
          *
@@ -3368,6 +3438,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3387,6 +3458,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
 
         private long upperBound_;
+
         /**
          *
          *
@@ -3402,6 +3474,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         public long getUpperBound() {
           return upperBound_;
         }
+
         /**
          *
          *
@@ -3421,6 +3494,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3440,6 +3514,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
 
         private long count_;
+
         /**
          *
          *
@@ -3455,6 +3530,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         public long getCount() {
           return count_;
         }
+
         /**
          *
          *
@@ -3474,6 +3550,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3567,6 +3644,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData.Bucket>
         buckets_;
+
     /**
      *
      *
@@ -3588,6 +3666,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getBucketsList() {
       return buckets_;
     }
+
     /**
      *
      *
@@ -3611,6 +3690,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getBucketsOrBuilderList() {
       return buckets_;
     }
+
     /**
      *
      *
@@ -3630,6 +3710,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public int getBucketsCount() {
       return buckets_.size();
     }
+
     /**
      *
      *
@@ -3650,6 +3731,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return buckets_.get(index);
     }
+
     /**
      *
      *
@@ -3835,6 +3917,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4122,6 +4205,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return bucketsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -4144,6 +4228,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return bucketsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -4167,6 +4252,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return bucketsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -4197,6 +4283,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4225,6 +4312,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4254,6 +4342,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4284,6 +4373,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4311,6 +4401,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4339,6 +4430,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4368,6 +4460,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4393,6 +4486,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4418,6 +4512,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4437,6 +4532,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           getBucketsBuilder(int index) {
         return getBucketsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -4460,6 +4556,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return bucketsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -4486,6 +4583,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(buckets_);
         }
       }
+
       /**
        *
        *
@@ -4508,6 +4606,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData.Bucket
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4531,6 +4630,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData.Bucket
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4709,6 +4809,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the memoryUtilizationChart field is set.
      */
     boolean hasMemoryUtilizationChart();
+
     /**
      *
      *
@@ -4724,6 +4825,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.UtilizationChartData
         getMemoryUtilizationChart();
+
     /**
      *
      *
@@ -4752,6 +4854,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the storageUtilizationChart field is set.
      */
     boolean hasStorageUtilizationChart();
+
     /**
      *
      *
@@ -4767,6 +4870,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.UtilizationChartData
         getStorageUtilizationChart();
+
     /**
      *
      *
@@ -4793,6 +4897,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the operatingSystem field is set.
      */
     boolean hasOperatingSystem();
+
     /**
      *
      *
@@ -4805,6 +4910,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The operatingSystem.
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.ChartData getOperatingSystem();
+
     /**
      *
      *
@@ -4831,6 +4937,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the coreCountHistogram field is set.
      */
     boolean hasCoreCountHistogram();
+
     /**
      *
      *
@@ -4845,6 +4952,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The coreCountHistogram.
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData getCoreCountHistogram();
+
     /**
      *
      *
@@ -4873,6 +4981,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the memoryBytesHistogram field is set.
      */
     boolean hasMemoryBytesHistogram();
+
     /**
      *
      *
@@ -4887,6 +4996,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The memoryBytesHistogram.
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData getMemoryBytesHistogram();
+
     /**
      *
      *
@@ -4915,6 +5025,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the storageBytesHistogram field is set.
      */
     boolean hasStorageBytesHistogram();
+
     /**
      *
      *
@@ -4929,6 +5040,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The storageBytesHistogram.
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData getStorageBytesHistogram();
+
     /**
      *
      *
@@ -4943,6 +5055,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartDataOrBuilder
         getStorageBytesHistogramOrBuilder();
   }
+
   /**
    *
    *
@@ -4957,6 +5070,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.AssetAggregateStats)
       AssetAggregateStatsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AssetAggregateStats.newBuilder() to construct.
     private AssetAggregateStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4988,6 +5102,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int TOTAL_MEMORY_BYTES_FIELD_NUMBER = 1;
     private long totalMemoryBytes_ = 0L;
+
     /**
      *
      *
@@ -5006,6 +5121,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TOTAL_STORAGE_BYTES_FIELD_NUMBER = 2;
     private long totalStorageBytes_ = 0L;
+
     /**
      *
      *
@@ -5024,6 +5140,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TOTAL_CORES_FIELD_NUMBER = 3;
     private long totalCores_ = 0L;
+
     /**
      *
      *
@@ -5042,6 +5159,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TOTAL_ASSETS_FIELD_NUMBER = 4;
     private long totalAssets_ = 0L;
+
     /**
      *
      *
@@ -5061,6 +5179,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public static final int MEMORY_UTILIZATION_CHART_FIELD_NUMBER = 5;
     private com.google.cloud.migrationcenter.v1.ReportSummary.UtilizationChartData
         memoryUtilizationChart_;
+
     /**
      *
      *
@@ -5078,6 +5197,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMemoryUtilizationChart() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -5099,6 +5219,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : memoryUtilizationChart_;
     }
+
     /**
      *
      *
@@ -5122,6 +5243,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public static final int STORAGE_UTILIZATION_CHART_FIELD_NUMBER = 6;
     private com.google.cloud.migrationcenter.v1.ReportSummary.UtilizationChartData
         storageUtilizationChart_;
+
     /**
      *
      *
@@ -5139,6 +5261,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStorageUtilizationChart() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -5160,6 +5283,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : storageUtilizationChart_;
     }
+
     /**
      *
      *
@@ -5182,6 +5306,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int OPERATING_SYSTEM_FIELD_NUMBER = 7;
     private com.google.cloud.migrationcenter.v1.ReportSummary.ChartData operatingSystem_;
+
     /**
      *
      *
@@ -5197,6 +5322,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOperatingSystem() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -5214,6 +5340,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.migrationcenter.v1.ReportSummary.ChartData.getDefaultInstance()
           : operatingSystem_;
     }
+
     /**
      *
      *
@@ -5234,6 +5361,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public static final int CORE_COUNT_HISTOGRAM_FIELD_NUMBER = 8;
     private com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData
         coreCountHistogram_;
+
     /**
      *
      *
@@ -5251,6 +5379,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCoreCountHistogram() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -5272,6 +5401,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : coreCountHistogram_;
     }
+
     /**
      *
      *
@@ -5295,6 +5425,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public static final int MEMORY_BYTES_HISTOGRAM_FIELD_NUMBER = 9;
     private com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData
         memoryBytesHistogram_;
+
     /**
      *
      *
@@ -5312,6 +5443,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMemoryBytesHistogram() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -5333,6 +5465,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : memoryBytesHistogram_;
     }
+
     /**
      *
      *
@@ -5356,6 +5489,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public static final int STORAGE_BYTES_HISTOGRAM_FIELD_NUMBER = 10;
     private com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData
         storageBytesHistogram_;
+
     /**
      *
      *
@@ -5373,6 +5507,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStorageBytesHistogram() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -5394,6 +5529,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : storageBytesHistogram_;
     }
+
     /**
      *
      *
@@ -5695,6 +5831,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6075,6 +6212,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private long totalMemoryBytes_;
+
       /**
        *
        *
@@ -6090,6 +6228,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getTotalMemoryBytes() {
         return totalMemoryBytes_;
       }
+
       /**
        *
        *
@@ -6109,6 +6248,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6128,6 +6268,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long totalStorageBytes_;
+
       /**
        *
        *
@@ -6143,6 +6284,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getTotalStorageBytes() {
         return totalStorageBytes_;
       }
+
       /**
        *
        *
@@ -6162,6 +6304,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6181,6 +6324,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long totalCores_;
+
       /**
        *
        *
@@ -6196,6 +6340,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getTotalCores() {
         return totalCores_;
       }
+
       /**
        *
        *
@@ -6215,6 +6360,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6234,6 +6380,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long totalAssets_;
+
       /**
        *
        *
@@ -6249,6 +6396,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getTotalAssets() {
         return totalAssets_;
       }
+
       /**
        *
        *
@@ -6268,6 +6416,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6293,6 +6442,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.ReportSummary.UtilizationChartData.Builder,
               com.google.cloud.migrationcenter.v1.ReportSummary.UtilizationChartDataOrBuilder>
           memoryUtilizationChartBuilder_;
+
       /**
        *
        *
@@ -6309,6 +6459,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMemoryUtilizationChart() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -6333,6 +6484,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return memoryUtilizationChartBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -6358,6 +6510,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6381,6 +6534,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6413,6 +6567,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6434,6 +6589,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6451,6 +6607,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMemoryUtilizationChartFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6473,6 +6630,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : memoryUtilizationChart_;
         }
       }
+
       /**
        *
        *
@@ -6508,6 +6666,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.ReportSummary.UtilizationChartData.Builder,
               com.google.cloud.migrationcenter.v1.ReportSummary.UtilizationChartDataOrBuilder>
           storageUtilizationChartBuilder_;
+
       /**
        *
        *
@@ -6524,6 +6683,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStorageUtilizationChart() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -6548,6 +6708,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return storageUtilizationChartBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -6573,6 +6734,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6596,6 +6758,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6628,6 +6791,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6649,6 +6813,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6666,6 +6831,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStorageUtilizationChartFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6688,6 +6854,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : storageUtilizationChart_;
         }
       }
+
       /**
        *
        *
@@ -6722,6 +6889,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.ReportSummary.ChartData.Builder,
               com.google.cloud.migrationcenter.v1.ReportSummary.ChartDataOrBuilder>
           operatingSystemBuilder_;
+
       /**
        *
        *
@@ -6736,6 +6904,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOperatingSystem() {
         return ((bitField0_ & 0x00000040) != 0);
       }
+
       /**
        *
        *
@@ -6756,6 +6925,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return operatingSystemBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -6779,6 +6949,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6799,6 +6970,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6829,6 +7001,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6848,6 +7021,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6863,6 +7037,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOperatingSystemFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6882,6 +7057,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : operatingSystem_;
         }
       }
+
       /**
        *
        *
@@ -6915,6 +7091,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData.Builder,
               com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartDataOrBuilder>
           coreCountHistogramBuilder_;
+
       /**
        *
        *
@@ -6931,6 +7108,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCoreCountHistogram() {
         return ((bitField0_ & 0x00000080) != 0);
       }
+
       /**
        *
        *
@@ -6955,6 +7133,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return coreCountHistogramBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -6980,6 +7159,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7003,6 +7183,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7035,6 +7216,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -7056,6 +7238,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7073,6 +7256,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getCoreCountHistogramFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7095,6 +7279,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : coreCountHistogram_;
         }
       }
+
       /**
        *
        *
@@ -7130,6 +7315,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData.Builder,
               com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartDataOrBuilder>
           memoryBytesHistogramBuilder_;
+
       /**
        *
        *
@@ -7146,6 +7332,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMemoryBytesHistogram() {
         return ((bitField0_ & 0x00000100) != 0);
       }
+
       /**
        *
        *
@@ -7170,6 +7357,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return memoryBytesHistogramBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -7195,6 +7383,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7218,6 +7407,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7250,6 +7440,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -7271,6 +7462,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7288,6 +7480,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMemoryBytesHistogramFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7310,6 +7503,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : memoryBytesHistogram_;
         }
       }
+
       /**
        *
        *
@@ -7345,6 +7539,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartData.Builder,
               com.google.cloud.migrationcenter.v1.ReportSummary.HistogramChartDataOrBuilder>
           storageBytesHistogramBuilder_;
+
       /**
        *
        *
@@ -7361,6 +7556,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStorageBytesHistogram() {
         return ((bitField0_ & 0x00000200) != 0);
       }
+
       /**
        *
        *
@@ -7385,6 +7581,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return storageBytesHistogramBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -7410,6 +7607,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7433,6 +7631,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7465,6 +7664,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -7486,6 +7686,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7503,6 +7704,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStorageBytesHistogramFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7525,6 +7727,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : storageBytesHistogram_;
         }
       }
+
       /**
        *
        *
@@ -7638,6 +7841,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the machineSeries field is set.
      */
     boolean hasMachineSeries();
+
     /**
      *
      *
@@ -7650,6 +7854,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The machineSeries.
      */
     com.google.cloud.migrationcenter.v1.MachineSeries getMachineSeries();
+
     /**
      *
      *
@@ -7674,6 +7879,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     long getAllocatedAssetCount();
   }
+
   /**
    *
    *
@@ -7689,6 +7895,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.MachineSeriesAllocation)
       MachineSeriesAllocationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MachineSeriesAllocation.newBuilder() to construct.
     private MachineSeriesAllocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7721,6 +7928,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int MACHINE_SERIES_FIELD_NUMBER = 1;
     private com.google.cloud.migrationcenter.v1.MachineSeries machineSeries_;
+
     /**
      *
      *
@@ -7736,6 +7944,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMachineSeries() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -7753,6 +7962,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.migrationcenter.v1.MachineSeries.getDefaultInstance()
           : machineSeries_;
     }
+
     /**
      *
      *
@@ -7771,6 +7981,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALLOCATED_ASSET_COUNT_FIELD_NUMBER = 2;
     private long allocatedAssetCount_ = 0L;
+
     /**
      *
      *
@@ -7969,6 +8180,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -8201,6 +8413,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.MachineSeries.Builder,
               com.google.cloud.migrationcenter.v1.MachineSeriesOrBuilder>
           machineSeriesBuilder_;
+
       /**
        *
        *
@@ -8215,6 +8428,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMachineSeries() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -8235,6 +8449,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return machineSeriesBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -8257,6 +8472,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8277,6 +8493,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8305,6 +8522,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -8324,6 +8542,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8338,6 +8557,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMachineSeriesFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8357,6 +8577,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : machineSeries_;
         }
       }
+
       /**
        *
        *
@@ -8384,6 +8605,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long allocatedAssetCount_;
+
       /**
        *
        *
@@ -8399,6 +8621,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getAllocatedAssetCount() {
         return allocatedAssetCount_;
       }
+
       /**
        *
        *
@@ -8418,6 +8641,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8521,6 +8745,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the allocatedRegions.
      */
     java.util.List<java.lang.String> getAllocatedRegionsList();
+
     /**
      *
      *
@@ -8533,6 +8758,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The count of allocatedRegions.
      */
     int getAllocatedRegionsCount();
+
     /**
      *
      *
@@ -8546,6 +8772,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The allocatedRegions at the given index.
      */
     java.lang.String getAllocatedRegions(int index);
+
     /**
      *
      *
@@ -8586,6 +8813,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.MachineSeriesAllocation>
         getMachineSeriesAllocationsList();
+
     /**
      *
      *
@@ -8599,6 +8827,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.MachineSeriesAllocation
         getMachineSeriesAllocations(int index);
+
     /**
      *
      *
@@ -8611,6 +8840,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getMachineSeriesAllocationsCount();
+
     /**
      *
      *
@@ -8626,6 +8856,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
             ? extends
                 com.google.cloud.migrationcenter.v1.ReportSummary.MachineSeriesAllocationOrBuilder>
         getMachineSeriesAllocationsOrBuilderList();
+
     /**
      *
      *
@@ -8654,6 +8885,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.migrationcenter.v1.PersistentDiskType>
         getAllocatedDiskTypesList();
+
     /**
      *
      *
@@ -8667,6 +8899,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The count of allocatedDiskTypes.
      */
     int getAllocatedDiskTypesCount();
+
     /**
      *
      *
@@ -8681,6 +8914,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The allocatedDiskTypes at the given index.
      */
     com.google.cloud.migrationcenter.v1.PersistentDiskType getAllocatedDiskTypes(int index);
+
     /**
      *
      *
@@ -8694,6 +8928,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the enum numeric values on the wire for allocatedDiskTypes.
      */
     java.util.List<java.lang.Integer> getAllocatedDiskTypesValueList();
+
     /**
      *
      *
@@ -8709,6 +8944,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     int getAllocatedDiskTypesValue(int index);
   }
+
   /**
    *
    *
@@ -8723,6 +8959,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.ComputeEngineFinding)
       ComputeEngineFindingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ComputeEngineFinding.newBuilder() to construct.
     private ComputeEngineFinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8760,6 +8997,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList allocatedRegions_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -8774,6 +9012,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getAllocatedRegionsList() {
       return allocatedRegions_;
     }
+
     /**
      *
      *
@@ -8788,6 +9027,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public int getAllocatedRegionsCount() {
       return allocatedRegions_.size();
     }
+
     /**
      *
      *
@@ -8803,6 +9043,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAllocatedRegions(int index) {
       return allocatedRegions_.get(index);
     }
+
     /**
      *
      *
@@ -8821,6 +9062,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALLOCATED_ASSET_COUNT_FIELD_NUMBER = 2;
     private long allocatedAssetCount_ = 0L;
+
     /**
      *
      *
@@ -8843,6 +9085,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.migrationcenter.v1.ReportSummary.MachineSeriesAllocation>
         machineSeriesAllocations_;
+
     /**
      *
      *
@@ -8859,6 +9102,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getMachineSeriesAllocationsList() {
       return machineSeriesAllocations_;
     }
+
     /**
      *
      *
@@ -8877,6 +9121,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getMachineSeriesAllocationsOrBuilderList() {
       return machineSeriesAllocations_;
     }
+
     /**
      *
      *
@@ -8892,6 +9137,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public int getMachineSeriesAllocationsCount() {
       return machineSeriesAllocations_.size();
     }
+
     /**
      *
      *
@@ -8908,6 +9154,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getMachineSeriesAllocations(int index) {
       return machineSeriesAllocations_.get(index);
     }
+
     /**
      *
      *
@@ -8944,6 +9191,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                     : result;
               }
             };
+
     /**
      *
      *
@@ -8963,6 +9211,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.migrationcenter.v1.PersistentDiskType>(
           allocatedDiskTypes_, allocatedDiskTypes_converter_);
     }
+
     /**
      *
      *
@@ -8979,6 +9228,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public int getAllocatedDiskTypesCount() {
       return allocatedDiskTypes_.size();
     }
+
     /**
      *
      *
@@ -8996,6 +9246,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.migrationcenter.v1.PersistentDiskType getAllocatedDiskTypes(int index) {
       return allocatedDiskTypes_converter_.convert(allocatedDiskTypes_.get(index));
     }
+
     /**
      *
      *
@@ -9012,6 +9263,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getAllocatedDiskTypesValueList() {
       return allocatedDiskTypes_;
     }
+
     /**
      *
      *
@@ -9252,6 +9504,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -9577,6 +9830,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -9592,6 +9846,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         allocatedRegions_.makeImmutable();
         return allocatedRegions_;
       }
+
       /**
        *
        *
@@ -9606,6 +9861,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public int getAllocatedRegionsCount() {
         return allocatedRegions_.size();
       }
+
       /**
        *
        *
@@ -9621,6 +9877,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getAllocatedRegions(int index) {
         return allocatedRegions_.get(index);
       }
+
       /**
        *
        *
@@ -9636,6 +9893,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getAllocatedRegionsBytes(int index) {
         return allocatedRegions_.getByteString(index);
       }
+
       /**
        *
        *
@@ -9659,6 +9917,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9681,6 +9940,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9700,6 +9960,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9718,6 +9979,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9743,6 +10005,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long allocatedAssetCount_;
+
       /**
        *
        *
@@ -9758,6 +10021,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getAllocatedAssetCount() {
         return allocatedAssetCount_;
       }
+
       /**
        *
        *
@@ -9777,6 +10041,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9835,6 +10100,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return machineSeriesAllocationsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -9853,6 +10119,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return machineSeriesAllocationsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -9872,6 +10139,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return machineSeriesAllocationsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -9898,6 +10166,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -9922,6 +10191,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -9947,6 +10217,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -9973,6 +10244,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -9996,6 +10268,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -10020,6 +10293,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -10045,6 +10319,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -10066,6 +10341,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -10087,6 +10363,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -10102,6 +10379,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           getMachineSeriesAllocationsBuilder(int index) {
         return getMachineSeriesAllocationsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -10121,6 +10399,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return machineSeriesAllocationsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -10143,6 +10422,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(machineSeriesAllocations_);
         }
       }
+
       /**
        *
        *
@@ -10161,6 +10441,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary.MachineSeriesAllocation
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -10180,6 +10461,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary.MachineSeriesAllocation
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -10227,6 +10509,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000008;
         }
       }
+
       /**
        *
        *
@@ -10246,6 +10529,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
             java.lang.Integer, com.google.cloud.migrationcenter.v1.PersistentDiskType>(
             allocatedDiskTypes_, allocatedDiskTypes_converter_);
       }
+
       /**
        *
        *
@@ -10262,6 +10546,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public int getAllocatedDiskTypesCount() {
         return allocatedDiskTypes_.size();
       }
+
       /**
        *
        *
@@ -10280,6 +10565,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return allocatedDiskTypes_converter_.convert(allocatedDiskTypes_.get(index));
       }
+
       /**
        *
        *
@@ -10305,6 +10591,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10329,6 +10616,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10353,6 +10641,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10372,6 +10661,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10388,6 +10678,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public java.util.List<java.lang.Integer> getAllocatedDiskTypesValueList() {
         return java.util.Collections.unmodifiableList(allocatedDiskTypes_);
       }
+
       /**
        *
        *
@@ -10405,6 +10696,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public int getAllocatedDiskTypesValue(int index) {
         return allocatedDiskTypes_.get(index);
       }
+
       /**
        *
        *
@@ -10426,6 +10718,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10446,6 +10739,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10554,6 +10848,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the allocatedRegions.
      */
     java.util.List<java.lang.String> getAllocatedRegionsList();
+
     /**
      *
      *
@@ -10566,6 +10861,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The count of allocatedRegions.
      */
     int getAllocatedRegionsCount();
+
     /**
      *
      *
@@ -10579,6 +10875,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The allocatedRegions at the given index.
      */
     java.lang.String getAllocatedRegions(int index);
+
     /**
      *
      *
@@ -10619,6 +10916,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation>
         getNodeAllocationsList();
+
     /**
      *
      *
@@ -10632,6 +10930,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation getNodeAllocations(
         int index);
+
     /**
      *
      *
@@ -10644,6 +10943,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getNodeAllocationsCount();
+
     /**
      *
      *
@@ -10659,6 +10959,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
             ? extends
                 com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocationOrBuilder>
         getNodeAllocationsOrBuilderList();
+
     /**
      *
      *
@@ -10673,6 +10974,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocationOrBuilder
         getNodeAllocationsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -10687,6 +10989,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding)
       VmwareEngineFindingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use VmwareEngineFinding.newBuilder() to construct.
     private VmwareEngineFinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10723,6 +11026,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList allocatedRegions_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -10737,6 +11041,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getAllocatedRegionsList() {
       return allocatedRegions_;
     }
+
     /**
      *
      *
@@ -10751,6 +11056,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public int getAllocatedRegionsCount() {
       return allocatedRegions_.size();
     }
+
     /**
      *
      *
@@ -10766,6 +11072,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAllocatedRegions(int index) {
       return allocatedRegions_.get(index);
     }
+
     /**
      *
      *
@@ -10784,6 +11091,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALLOCATED_ASSET_COUNT_FIELD_NUMBER = 2;
     private long allocatedAssetCount_ = 0L;
+
     /**
      *
      *
@@ -10805,6 +11113,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation>
         nodeAllocations_;
+
     /**
      *
      *
@@ -10821,6 +11130,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getNodeAllocationsList() {
       return nodeAllocations_;
     }
+
     /**
      *
      *
@@ -10839,6 +11149,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getNodeAllocationsOrBuilderList() {
       return nodeAllocations_;
     }
+
     /**
      *
      *
@@ -10854,6 +11165,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public int getNodeAllocationsCount() {
       return nodeAllocations_.size();
     }
+
     /**
      *
      *
@@ -10870,6 +11182,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getNodeAllocations(int index) {
       return nodeAllocations_.get(index);
     }
+
     /**
      *
      *
@@ -11077,6 +11390,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -11365,6 +11679,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -11380,6 +11695,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         allocatedRegions_.makeImmutable();
         return allocatedRegions_;
       }
+
       /**
        *
        *
@@ -11394,6 +11710,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public int getAllocatedRegionsCount() {
         return allocatedRegions_.size();
       }
+
       /**
        *
        *
@@ -11409,6 +11726,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getAllocatedRegions(int index) {
         return allocatedRegions_.get(index);
       }
+
       /**
        *
        *
@@ -11424,6 +11742,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getAllocatedRegionsBytes(int index) {
         return allocatedRegions_.getByteString(index);
       }
+
       /**
        *
        *
@@ -11447,6 +11766,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11469,6 +11789,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11488,6 +11809,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11506,6 +11828,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11531,6 +11854,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long allocatedAssetCount_;
+
       /**
        *
        *
@@ -11546,6 +11870,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getAllocatedAssetCount() {
         return allocatedAssetCount_;
       }
+
       /**
        *
        *
@@ -11565,6 +11890,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11621,6 +11947,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return nodeAllocationsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -11639,6 +11966,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return nodeAllocationsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -11658,6 +11986,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return nodeAllocationsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -11683,6 +12012,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11707,6 +12037,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11732,6 +12063,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11757,6 +12089,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11780,6 +12113,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11804,6 +12138,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11828,6 +12163,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11849,6 +12185,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11870,6 +12207,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11885,6 +12223,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           getNodeAllocationsBuilder(int index) {
         return getNodeAllocationsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -11904,6 +12243,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return nodeAllocationsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -11925,6 +12265,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(nodeAllocations_);
         }
       }
+
       /**
        *
        *
@@ -11943,6 +12284,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -11962,6 +12304,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -12084,6 +12427,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the vmwareNode field is set.
      */
     boolean hasVmwareNode();
+
     /**
      *
      *
@@ -12096,6 +12440,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The vmwareNode.
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode getVmwareNode();
+
     /**
      *
      *
@@ -12133,6 +12478,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     long getAllocatedAssetCount();
   }
+
   /**
    *
    *
@@ -12147,6 +12493,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation)
       VmwareNodeAllocationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use VmwareNodeAllocation.newBuilder() to construct.
     private VmwareNodeAllocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -12178,6 +12525,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int VMWARE_NODE_FIELD_NUMBER = 1;
     private com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmwareNode_;
+
     /**
      *
      *
@@ -12193,6 +12541,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVmwareNode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -12210,6 +12559,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.getDefaultInstance()
           : vmwareNode_;
     }
+
     /**
      *
      *
@@ -12229,6 +12579,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int NODE_COUNT_FIELD_NUMBER = 2;
     private long nodeCount_ = 0L;
+
     /**
      *
      *
@@ -12247,6 +12598,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALLOCATED_ASSET_COUNT_FIELD_NUMBER = 3;
     private long allocatedAssetCount_ = 0L;
+
     /**
      *
      *
@@ -12449,6 +12801,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -12692,6 +13045,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.Builder,
               com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeOrBuilder>
           vmwareNodeBuilder_;
+
       /**
        *
        *
@@ -12706,6 +13060,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasVmwareNode() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -12726,6 +13081,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return vmwareNodeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -12749,6 +13105,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12769,6 +13126,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12799,6 +13157,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12818,6 +13177,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12833,6 +13193,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getVmwareNodeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -12852,6 +13213,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : vmwareNode_;
         }
       }
+
       /**
        *
        *
@@ -12879,6 +13241,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long nodeCount_;
+
       /**
        *
        *
@@ -12894,6 +13257,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getNodeCount() {
         return nodeCount_;
       }
+
       /**
        *
        *
@@ -12913,6 +13277,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12932,6 +13297,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long allocatedAssetCount_;
+
       /**
        *
        *
@@ -12947,6 +13313,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getAllocatedAssetCount() {
         return allocatedAssetCount_;
       }
+
       /**
        *
        *
@@ -12966,6 +13333,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13071,6 +13439,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The code.
      */
     java.lang.String getCode();
+
     /**
      *
      *
@@ -13086,6 +13455,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getCodeBytes();
   }
+
   /**
    *
    *
@@ -13100,6 +13470,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.VmwareNode)
       VmwareNodeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use VmwareNode.newBuilder() to construct.
     private VmwareNode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -13134,6 +13505,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object code_ = "";
+
     /**
      *
      *
@@ -13159,6 +13531,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -13346,6 +13719,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -13536,6 +13910,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object code_ = "";
+
       /**
        *
        *
@@ -13560,6 +13935,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -13584,6 +13960,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -13607,6 +13984,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13626,6 +14004,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13735,6 +14114,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the allocatedRegions.
      */
     java.util.List<java.lang.String> getAllocatedRegionsList();
+
     /**
      *
      *
@@ -13747,6 +14127,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The count of allocatedRegions.
      */
     int getAllocatedRegionsCount();
+
     /**
      *
      *
@@ -13760,6 +14141,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The allocatedRegions at the given index.
      */
     java.lang.String getAllocatedRegions(int index);
+
     /**
      *
      *
@@ -13800,6 +14182,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation>
         getNodeAllocationsList();
+
     /**
      *
      *
@@ -13813,6 +14196,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation getNodeAllocations(
         int index);
+
     /**
      *
      *
@@ -13825,6 +14209,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getNodeAllocationsCount();
+
     /**
      *
      *
@@ -13840,6 +14225,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
             ? extends
                 com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocationOrBuilder>
         getNodeAllocationsOrBuilderList();
+
     /**
      *
      *
@@ -13854,6 +14240,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocationOrBuilder
         getNodeAllocationsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -13868,6 +14255,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding)
       SoleTenantFindingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SoleTenantFinding.newBuilder() to construct.
     private SoleTenantFinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -13904,6 +14292,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList allocatedRegions_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -13918,6 +14307,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getAllocatedRegionsList() {
       return allocatedRegions_;
     }
+
     /**
      *
      *
@@ -13932,6 +14322,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public int getAllocatedRegionsCount() {
       return allocatedRegions_.size();
     }
+
     /**
      *
      *
@@ -13947,6 +14338,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAllocatedRegions(int index) {
       return allocatedRegions_.get(index);
     }
+
     /**
      *
      *
@@ -13965,6 +14357,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALLOCATED_ASSET_COUNT_FIELD_NUMBER = 2;
     private long allocatedAssetCount_ = 0L;
+
     /**
      *
      *
@@ -13987,6 +14380,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation>
         nodeAllocations_;
+
     /**
      *
      *
@@ -14004,6 +14398,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getNodeAllocationsList() {
       return nodeAllocations_;
     }
+
     /**
      *
      *
@@ -14022,6 +14417,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getNodeAllocationsOrBuilderList() {
       return nodeAllocations_;
     }
+
     /**
      *
      *
@@ -14037,6 +14433,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public int getNodeAllocationsCount() {
       return nodeAllocations_.size();
     }
+
     /**
      *
      *
@@ -14053,6 +14450,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getNodeAllocations(int index) {
       return nodeAllocations_.get(index);
     }
+
     /**
      *
      *
@@ -14260,6 +14658,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -14545,6 +14944,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -14560,6 +14960,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         allocatedRegions_.makeImmutable();
         return allocatedRegions_;
       }
+
       /**
        *
        *
@@ -14574,6 +14975,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public int getAllocatedRegionsCount() {
         return allocatedRegions_.size();
       }
+
       /**
        *
        *
@@ -14589,6 +14991,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getAllocatedRegions(int index) {
         return allocatedRegions_.get(index);
       }
+
       /**
        *
        *
@@ -14604,6 +15007,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getAllocatedRegionsBytes(int index) {
         return allocatedRegions_.getByteString(index);
       }
+
       /**
        *
        *
@@ -14627,6 +15031,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14649,6 +15054,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14668,6 +15074,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14686,6 +15093,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14711,6 +15119,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long allocatedAssetCount_;
+
       /**
        *
        *
@@ -14726,6 +15135,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getAllocatedAssetCount() {
         return allocatedAssetCount_;
       }
+
       /**
        *
        *
@@ -14745,6 +15155,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14803,6 +15214,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return nodeAllocationsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -14821,6 +15233,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return nodeAllocationsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -14840,6 +15253,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return nodeAllocationsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -14866,6 +15280,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -14890,6 +15305,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -14915,6 +15331,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -14941,6 +15358,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -14964,6 +15382,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -14988,6 +15407,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -15013,6 +15433,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -15034,6 +15455,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -15055,6 +15477,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -15070,6 +15493,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           getNodeAllocationsBuilder(int index) {
         return getNodeAllocationsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -15089,6 +15513,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return nodeAllocationsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -15111,6 +15536,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(nodeAllocations_);
         }
       }
+
       /**
        *
        *
@@ -15129,6 +15555,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -15148,6 +15575,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -15271,6 +15699,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the node field is set.
      */
     boolean hasNode();
+
     /**
      *
      *
@@ -15283,6 +15712,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The node.
      */
     com.google.cloud.migrationcenter.v1.SoleTenantNodeType getNode();
+
     /**
      *
      *
@@ -15320,6 +15750,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     long getAllocatedAssetCount();
   }
+
   /**
    *
    *
@@ -15334,6 +15765,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation)
       SoleTenantNodeAllocationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SoleTenantNodeAllocation.newBuilder() to construct.
     private SoleTenantNodeAllocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -15366,6 +15798,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int NODE_FIELD_NUMBER = 1;
     private com.google.cloud.migrationcenter.v1.SoleTenantNodeType node_;
+
     /**
      *
      *
@@ -15381,6 +15814,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -15398,6 +15832,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.migrationcenter.v1.SoleTenantNodeType.getDefaultInstance()
           : node_;
     }
+
     /**
      *
      *
@@ -15416,6 +15851,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int NODE_COUNT_FIELD_NUMBER = 2;
     private long nodeCount_ = 0L;
+
     /**
      *
      *
@@ -15434,6 +15870,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALLOCATED_ASSET_COUNT_FIELD_NUMBER = 3;
     private long allocatedAssetCount_ = 0L;
+
     /**
      *
      *
@@ -15641,6 +16078,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -15884,6 +16322,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.SoleTenantNodeType.Builder,
               com.google.cloud.migrationcenter.v1.SoleTenantNodeTypeOrBuilder>
           nodeBuilder_;
+
       /**
        *
        *
@@ -15898,6 +16337,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasNode() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -15918,6 +16358,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return nodeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -15940,6 +16381,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -15960,6 +16402,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -15988,6 +16431,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16007,6 +16451,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16021,6 +16466,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getNodeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -16039,6 +16485,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : node_;
         }
       }
+
       /**
        *
        *
@@ -16066,6 +16513,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long nodeCount_;
+
       /**
        *
        *
@@ -16081,6 +16529,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getNodeCount() {
         return nodeCount_;
       }
+
       /**
        *
        *
@@ -16100,6 +16549,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16119,6 +16569,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long allocatedAssetCount_;
+
       /**
        *
        *
@@ -16134,6 +16585,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getAllocatedAssetCount() {
         return allocatedAssetCount_;
       }
+
       /**
        *
        *
@@ -16153,6 +16605,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16256,6 +16709,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The displayName.
      */
     java.lang.String getDisplayName();
+
     /**
      *
      *
@@ -16281,6 +16735,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The description.
      */
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -16307,6 +16762,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the machinePreferences field is set.
      */
     boolean hasMachinePreferences();
+
     /**
      *
      *
@@ -16320,6 +16776,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The machinePreferences.
      */
     com.google.cloud.migrationcenter.v1.VirtualMachinePreferences getMachinePreferences();
+
     /**
      *
      *
@@ -16345,6 +16802,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the monthlyCostTotal field is set.
      */
     boolean hasMonthlyCostTotal();
+
     /**
      *
      *
@@ -16357,6 +16815,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The monthlyCostTotal.
      */
     com.google.type.Money getMonthlyCostTotal();
+
     /**
      *
      *
@@ -16380,6 +16839,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the monthlyCostCompute field is set.
      */
     boolean hasMonthlyCostCompute();
+
     /**
      *
      *
@@ -16392,6 +16852,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The monthlyCostCompute.
      */
     com.google.type.Money getMonthlyCostCompute();
+
     /**
      *
      *
@@ -16415,6 +16876,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the monthlyCostOsLicense field is set.
      */
     boolean hasMonthlyCostOsLicense();
+
     /**
      *
      *
@@ -16427,6 +16889,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The monthlyCostOsLicense.
      */
     com.google.type.Money getMonthlyCostOsLicense();
+
     /**
      *
      *
@@ -16450,6 +16913,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the monthlyCostNetworkEgress field is set.
      */
     boolean hasMonthlyCostNetworkEgress();
+
     /**
      *
      *
@@ -16462,6 +16926,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The monthlyCostNetworkEgress.
      */
     com.google.type.Money getMonthlyCostNetworkEgress();
+
     /**
      *
      *
@@ -16485,6 +16950,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the monthlyCostStorage field is set.
      */
     boolean hasMonthlyCostStorage();
+
     /**
      *
      *
@@ -16497,6 +16963,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The monthlyCostStorage.
      */
     com.google.type.Money getMonthlyCostStorage();
+
     /**
      *
      *
@@ -16520,6 +16987,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the monthlyCostOther field is set.
      */
     boolean hasMonthlyCostOther();
+
     /**
      *
      *
@@ -16532,6 +17000,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The monthlyCostOther.
      */
     com.google.type.Money getMonthlyCostOther();
+
     /**
      *
      *
@@ -16557,6 +17026,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the computeEngineFinding field is set.
      */
     boolean hasComputeEngineFinding();
+
     /**
      *
      *
@@ -16572,6 +17042,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.ComputeEngineFinding
         getComputeEngineFinding();
+
     /**
      *
      *
@@ -16600,6 +17071,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the vmwareEngineFinding field is set.
      */
     boolean hasVmwareEngineFinding();
+
     /**
      *
      *
@@ -16614,6 +17086,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The vmwareEngineFinding.
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding getVmwareEngineFinding();
+
     /**
      *
      *
@@ -16642,6 +17115,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the soleTenantFinding field is set.
      */
     boolean hasSoleTenantFinding();
+
     /**
      *
      *
@@ -16656,6 +17130,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The soleTenantFinding.
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding getSoleTenantFinding();
+
     /**
      *
      *
@@ -16670,6 +17145,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFindingOrBuilder
         getSoleTenantFindingOrBuilder();
   }
+
   /**
    *
    *
@@ -16684,6 +17160,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.GroupPreferenceSetFinding)
       GroupPreferenceSetFindingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GroupPreferenceSetFinding.newBuilder() to construct.
     private GroupPreferenceSetFinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -16721,6 +17198,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -16744,6 +17222,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -16772,6 +17251,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -16795,6 +17275,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -16821,6 +17302,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MACHINE_PREFERENCES_FIELD_NUMBER = 3;
     private com.google.cloud.migrationcenter.v1.VirtualMachinePreferences machinePreferences_;
+
     /**
      *
      *
@@ -16837,6 +17319,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMachinePreferences() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -16855,6 +17338,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.migrationcenter.v1.VirtualMachinePreferences.getDefaultInstance()
           : machinePreferences_;
     }
+
     /**
      *
      *
@@ -16875,6 +17359,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MONTHLY_COST_TOTAL_FIELD_NUMBER = 4;
     private com.google.type.Money monthlyCostTotal_;
+
     /**
      *
      *
@@ -16890,6 +17375,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMonthlyCostTotal() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -16907,6 +17393,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           ? com.google.type.Money.getDefaultInstance()
           : monthlyCostTotal_;
     }
+
     /**
      *
      *
@@ -16925,6 +17412,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MONTHLY_COST_COMPUTE_FIELD_NUMBER = 5;
     private com.google.type.Money monthlyCostCompute_;
+
     /**
      *
      *
@@ -16940,6 +17428,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMonthlyCostCompute() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -16957,6 +17446,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           ? com.google.type.Money.getDefaultInstance()
           : monthlyCostCompute_;
     }
+
     /**
      *
      *
@@ -16975,6 +17465,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MONTHLY_COST_OS_LICENSE_FIELD_NUMBER = 6;
     private com.google.type.Money monthlyCostOsLicense_;
+
     /**
      *
      *
@@ -16990,6 +17481,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMonthlyCostOsLicense() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -17007,6 +17499,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           ? com.google.type.Money.getDefaultInstance()
           : monthlyCostOsLicense_;
     }
+
     /**
      *
      *
@@ -17025,6 +17518,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MONTHLY_COST_NETWORK_EGRESS_FIELD_NUMBER = 7;
     private com.google.type.Money monthlyCostNetworkEgress_;
+
     /**
      *
      *
@@ -17040,6 +17534,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMonthlyCostNetworkEgress() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -17057,6 +17552,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           ? com.google.type.Money.getDefaultInstance()
           : monthlyCostNetworkEgress_;
     }
+
     /**
      *
      *
@@ -17075,6 +17571,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MONTHLY_COST_STORAGE_FIELD_NUMBER = 8;
     private com.google.type.Money monthlyCostStorage_;
+
     /**
      *
      *
@@ -17090,6 +17587,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMonthlyCostStorage() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -17107,6 +17605,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           ? com.google.type.Money.getDefaultInstance()
           : monthlyCostStorage_;
     }
+
     /**
      *
      *
@@ -17125,6 +17624,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MONTHLY_COST_OTHER_FIELD_NUMBER = 9;
     private com.google.type.Money monthlyCostOther_;
+
     /**
      *
      *
@@ -17140,6 +17640,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMonthlyCostOther() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -17157,6 +17658,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           ? com.google.type.Money.getDefaultInstance()
           : monthlyCostOther_;
     }
+
     /**
      *
      *
@@ -17176,6 +17678,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public static final int COMPUTE_ENGINE_FINDING_FIELD_NUMBER = 10;
     private com.google.cloud.migrationcenter.v1.ReportSummary.ComputeEngineFinding
         computeEngineFinding_;
+
     /**
      *
      *
@@ -17193,6 +17696,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasComputeEngineFinding() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -17214,6 +17718,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : computeEngineFinding_;
     }
+
     /**
      *
      *
@@ -17237,6 +17742,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public static final int VMWARE_ENGINE_FINDING_FIELD_NUMBER = 11;
     private com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
         vmwareEngineFinding_;
+
     /**
      *
      *
@@ -17254,6 +17760,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVmwareEngineFinding() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -17275,6 +17782,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : vmwareEngineFinding_;
     }
+
     /**
      *
      *
@@ -17297,6 +17805,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SOLE_TENANT_FINDING_FIELD_NUMBER = 12;
     private com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding soleTenantFinding_;
+
     /**
      *
      *
@@ -17314,6 +17823,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSoleTenantFinding() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -17334,6 +17844,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.getDefaultInstance()
           : soleTenantFinding_;
     }
+
     /**
      *
      *
@@ -17680,6 +18191,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -18134,6 +18646,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -18156,6 +18669,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -18178,6 +18692,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -18199,6 +18714,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18216,6 +18732,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18240,6 +18757,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -18262,6 +18780,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -18284,6 +18803,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -18305,6 +18825,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18322,6 +18843,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18351,6 +18873,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.VirtualMachinePreferences.Builder,
               com.google.cloud.migrationcenter.v1.VirtualMachinePreferencesOrBuilder>
           machinePreferencesBuilder_;
+
       /**
        *
        *
@@ -18366,6 +18889,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMachinePreferences() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -18387,6 +18911,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return machinePreferencesBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -18411,6 +18936,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18432,6 +18958,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18463,6 +18990,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -18483,6 +19011,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18499,6 +19028,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMachinePreferencesFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -18519,6 +19049,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : machinePreferences_;
         }
       }
+
       /**
        *
        *
@@ -18550,6 +19081,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
           monthlyCostTotalBuilder_;
+
       /**
        *
        *
@@ -18564,6 +19096,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMonthlyCostTotal() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -18584,6 +19117,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return monthlyCostTotalBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -18606,6 +19140,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18625,6 +19160,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18652,6 +19188,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -18671,6 +19208,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18685,6 +19223,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMonthlyCostTotalFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -18703,6 +19242,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : monthlyCostTotal_;
         }
       }
+
       /**
        *
        *
@@ -18731,6 +19271,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
           monthlyCostComputeBuilder_;
+
       /**
        *
        *
@@ -18745,6 +19286,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMonthlyCostCompute() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -18765,6 +19307,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return monthlyCostComputeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -18787,6 +19330,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18806,6 +19350,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18833,6 +19378,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -18852,6 +19398,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18866,6 +19413,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMonthlyCostComputeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -18884,6 +19432,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : monthlyCostCompute_;
         }
       }
+
       /**
        *
        *
@@ -18912,6 +19461,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
           monthlyCostOsLicenseBuilder_;
+
       /**
        *
        *
@@ -18926,6 +19476,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMonthlyCostOsLicense() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -18946,6 +19497,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return monthlyCostOsLicenseBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -18968,6 +19520,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18987,6 +19540,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19014,6 +19568,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -19033,6 +19588,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19047,6 +19603,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMonthlyCostOsLicenseFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -19065,6 +19622,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : monthlyCostOsLicense_;
         }
       }
+
       /**
        *
        *
@@ -19093,6 +19651,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
           monthlyCostNetworkEgressBuilder_;
+
       /**
        *
        *
@@ -19107,6 +19666,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMonthlyCostNetworkEgress() {
         return ((bitField0_ & 0x00000040) != 0);
       }
+
       /**
        *
        *
@@ -19127,6 +19687,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return monthlyCostNetworkEgressBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -19149,6 +19710,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19168,6 +19730,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19195,6 +19758,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -19214,6 +19778,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19228,6 +19793,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMonthlyCostNetworkEgressFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -19246,6 +19812,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : monthlyCostNetworkEgress_;
         }
       }
+
       /**
        *
        *
@@ -19274,6 +19841,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
           monthlyCostStorageBuilder_;
+
       /**
        *
        *
@@ -19288,6 +19856,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMonthlyCostStorage() {
         return ((bitField0_ & 0x00000080) != 0);
       }
+
       /**
        *
        *
@@ -19308,6 +19877,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return monthlyCostStorageBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -19330,6 +19900,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19349,6 +19920,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19376,6 +19948,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -19395,6 +19968,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19409,6 +19983,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMonthlyCostStorageFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -19427,6 +20002,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : monthlyCostStorage_;
         }
       }
+
       /**
        *
        *
@@ -19455,6 +20031,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
           monthlyCostOtherBuilder_;
+
       /**
        *
        *
@@ -19469,6 +20046,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMonthlyCostOther() {
         return ((bitField0_ & 0x00000100) != 0);
       }
+
       /**
        *
        *
@@ -19489,6 +20067,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return monthlyCostOtherBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -19511,6 +20090,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19530,6 +20110,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19557,6 +20138,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -19576,6 +20158,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19590,6 +20173,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMonthlyCostOtherFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -19608,6 +20192,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : monthlyCostOther_;
         }
       }
+
       /**
        *
        *
@@ -19639,6 +20224,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.ReportSummary.ComputeEngineFinding.Builder,
               com.google.cloud.migrationcenter.v1.ReportSummary.ComputeEngineFindingOrBuilder>
           computeEngineFindingBuilder_;
+
       /**
        *
        *
@@ -19655,6 +20241,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasComputeEngineFinding() {
         return ((bitField0_ & 0x00000200) != 0);
       }
+
       /**
        *
        *
@@ -19679,6 +20266,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return computeEngineFindingBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -19704,6 +20292,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19727,6 +20316,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19759,6 +20349,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -19780,6 +20371,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19797,6 +20389,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getComputeEngineFindingFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -19819,6 +20412,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : computeEngineFinding_;
         }
       }
+
       /**
        *
        *
@@ -19854,6 +20448,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding.Builder,
               com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFindingOrBuilder>
           vmwareEngineFindingBuilder_;
+
       /**
        *
        *
@@ -19870,6 +20465,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasVmwareEngineFinding() {
         return ((bitField0_ & 0x00000400) != 0);
       }
+
       /**
        *
        *
@@ -19894,6 +20490,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return vmwareEngineFindingBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -19919,6 +20516,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19942,6 +20540,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19974,6 +20573,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -19995,6 +20595,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20012,6 +20613,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getVmwareEngineFindingFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -20034,6 +20636,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : vmwareEngineFinding_;
         }
       }
+
       /**
        *
        *
@@ -20069,6 +20672,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.Builder,
               com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFindingOrBuilder>
           soleTenantFindingBuilder_;
+
       /**
        *
        *
@@ -20085,6 +20689,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSoleTenantFinding() {
         return ((bitField0_ & 0x00000800) != 0);
       }
+
       /**
        *
        *
@@ -20109,6 +20714,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return soleTenantFindingBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -20134,6 +20740,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20157,6 +20764,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20189,6 +20797,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -20210,6 +20819,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20227,6 +20837,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getSoleTenantFindingFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -20249,6 +20860,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : soleTenantFinding_;
         }
       }
+
       /**
        *
        *
@@ -20362,6 +20974,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The displayName.
      */
     java.lang.String getDisplayName();
+
     /**
      *
      *
@@ -20387,6 +21000,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The description.
      */
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -20414,6 +21028,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the assetAggregateStats field is set.
      */
     boolean hasAssetAggregateStats();
+
     /**
      *
      *
@@ -20428,6 +21043,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The assetAggregateStats.
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.AssetAggregateStats getAssetAggregateStats();
+
     /**
      *
      *
@@ -20472,6 +21088,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.GroupPreferenceSetFinding>
         getPreferenceSetFindingsList();
+
     /**
      *
      *
@@ -20485,6 +21102,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.GroupPreferenceSetFinding
         getPreferenceSetFindings(int index);
+
     /**
      *
      *
@@ -20497,6 +21115,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getPreferenceSetFindingsCount();
+
     /**
      *
      *
@@ -20513,6 +21132,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary
                     .GroupPreferenceSetFindingOrBuilder>
         getPreferenceSetFindingsOrBuilderList();
+
     /**
      *
      *
@@ -20527,6 +21147,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.migrationcenter.v1.ReportSummary.GroupPreferenceSetFindingOrBuilder
         getPreferenceSetFindingsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -20541,6 +21162,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.GroupFinding)
       GroupFindingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GroupFinding.newBuilder() to construct.
     private GroupFinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -20578,6 +21200,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -20601,6 +21224,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -20629,6 +21253,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -20652,6 +21277,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -20679,6 +21305,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public static final int ASSET_AGGREGATE_STATS_FIELD_NUMBER = 3;
     private com.google.cloud.migrationcenter.v1.ReportSummary.AssetAggregateStats
         assetAggregateStats_;
+
     /**
      *
      *
@@ -20696,6 +21323,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAssetAggregateStats() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -20717,6 +21345,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : assetAggregateStats_;
     }
+
     /**
      *
      *
@@ -20739,6 +21368,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int OVERLAPPING_ASSET_COUNT_FIELD_NUMBER = 4;
     private long overlappingAssetCount_ = 0L;
+
     /**
      *
      *
@@ -20765,6 +21395,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.migrationcenter.v1.ReportSummary.GroupPreferenceSetFinding>
         preferenceSetFindings_;
+
     /**
      *
      *
@@ -20782,6 +21413,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getPreferenceSetFindingsList() {
       return preferenceSetFindings_;
     }
+
     /**
      *
      *
@@ -20801,6 +21433,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getPreferenceSetFindingsOrBuilderList() {
       return preferenceSetFindings_;
     }
+
     /**
      *
      *
@@ -20816,6 +21449,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public int getPreferenceSetFindingsCount() {
       return preferenceSetFindings_.size();
     }
+
     /**
      *
      *
@@ -20832,6 +21466,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getPreferenceSetFindings(int index) {
       return preferenceSetFindings_.get(index);
     }
+
     /**
      *
      *
@@ -21057,6 +21692,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -21373,6 +22009,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -21395,6 +22032,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -21417,6 +22055,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -21438,6 +22077,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -21455,6 +22095,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -21479,6 +22120,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -21501,6 +22143,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -21523,6 +22166,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -21544,6 +22188,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -21561,6 +22206,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -21591,6 +22237,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.ReportSummary.AssetAggregateStats.Builder,
               com.google.cloud.migrationcenter.v1.ReportSummary.AssetAggregateStatsOrBuilder>
           assetAggregateStatsBuilder_;
+
       /**
        *
        *
@@ -21607,6 +22254,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAssetAggregateStats() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -21631,6 +22279,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return assetAggregateStatsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -21656,6 +22305,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -21679,6 +22329,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -21711,6 +22362,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -21732,6 +22384,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -21749,6 +22402,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getAssetAggregateStatsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -21771,6 +22425,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               : assetAggregateStats_;
         }
       }
+
       /**
        *
        *
@@ -21800,6 +22455,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long overlappingAssetCount_;
+
       /**
        *
        *
@@ -21819,6 +22475,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       public long getOverlappingAssetCount() {
         return overlappingAssetCount_;
       }
+
       /**
        *
        *
@@ -21842,6 +22499,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -21904,6 +22562,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return preferenceSetFindingsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -21922,6 +22581,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return preferenceSetFindingsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -21941,6 +22601,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return preferenceSetFindingsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -21967,6 +22628,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -21991,6 +22653,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -22016,6 +22679,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -22042,6 +22706,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -22065,6 +22730,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -22089,6 +22755,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -22114,6 +22781,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -22135,6 +22803,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -22156,6 +22825,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -22171,6 +22841,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           getPreferenceSetFindingsBuilder(int index) {
         return getPreferenceSetFindingsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -22190,6 +22861,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return preferenceSetFindingsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -22212,6 +22884,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(preferenceSetFindings_);
         }
       }
+
       /**
        *
        *
@@ -22230,6 +22903,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary.GroupPreferenceSetFinding
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -22249,6 +22923,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.migrationcenter.v1.ReportSummary.GroupPreferenceSetFinding
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -22358,6 +23033,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ALL_ASSETS_STATS_FIELD_NUMBER = 1;
   private com.google.cloud.migrationcenter.v1.ReportSummary.AssetAggregateStats allAssetsStats_;
+
   /**
    *
    *
@@ -22374,6 +23050,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAllAssetsStats() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -22392,6 +23069,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.migrationcenter.v1.ReportSummary.AssetAggregateStats.getDefaultInstance()
         : allAssetsStats_;
   }
+
   /**
    *
    *
@@ -22415,6 +23093,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.GroupFinding>
       groupFindings_;
+
   /**
    *
    *
@@ -22430,6 +23109,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       getGroupFindingsList() {
     return groupFindings_;
   }
+
   /**
    *
    *
@@ -22446,6 +23126,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       getGroupFindingsOrBuilderList() {
     return groupFindings_;
   }
+
   /**
    *
    *
@@ -22460,6 +23141,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
   public int getGroupFindingsCount() {
     return groupFindings_.size();
   }
+
   /**
    *
    *
@@ -22475,6 +23157,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return groupFindings_.get(index);
   }
+
   /**
    *
    *
@@ -22666,6 +23349,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -22934,6 +23618,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.ReportSummary.AssetAggregateStats.Builder,
             com.google.cloud.migrationcenter.v1.ReportSummary.AssetAggregateStatsOrBuilder>
         allAssetsStatsBuilder_;
+
     /**
      *
      *
@@ -22950,6 +23635,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAllAssetsStats() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -22974,6 +23660,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         return allAssetsStatsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -22999,6 +23686,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23022,6 +23710,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23054,6 +23743,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -23075,6 +23765,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23092,6 +23783,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAllAssetsStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -23114,6 +23806,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
             : allAssetsStats_;
       }
     }
+
     /**
      *
      *
@@ -23179,6 +23872,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         return groupFindingsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -23197,6 +23891,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         return groupFindingsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -23216,6 +23911,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         return groupFindingsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -23241,6 +23937,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -23264,6 +23961,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -23289,6 +23987,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -23314,6 +24013,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -23336,6 +24036,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -23359,6 +24060,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -23382,6 +24084,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -23403,6 +24106,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -23424,6 +24128,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -23439,6 +24144,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         getGroupFindingsBuilder(int index) {
       return getGroupFindingsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -23458,6 +24164,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         return groupFindingsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -23478,6 +24185,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(groupFindings_);
       }
     }
+
     /**
      *
      *
@@ -23495,6 +24203,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.migrationcenter.v1.ReportSummary.GroupFinding.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -23513,6 +24222,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.migrationcenter.v1.ReportSummary.GroupFinding.getDefaultInstance());
     }
+
     /**
      *
      *

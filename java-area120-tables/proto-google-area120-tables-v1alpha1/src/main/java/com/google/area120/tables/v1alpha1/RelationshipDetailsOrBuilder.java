@@ -36,6 +36,7 @@ public interface RelationshipDetailsOrBuilder
    * @return The linkedTable.
    */
   java.lang.String getLinkedTable();
+
   /**
    *
    *

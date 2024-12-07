@@ -34,6 +34,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame)
     ObjectTrackingFrameOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ObjectTrackingFrame.newBuilder() to construct.
   private ObjectTrackingFrame(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int NORMALIZED_BOUNDING_BOX_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1p3beta1.NormalizedBoundingBox normalizedBoundingBox_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
   public boolean hasNormalizedBoundingBox() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.videointelligence.v1p3beta1.NormalizedBoundingBox.getDefaultInstance()
         : normalizedBoundingBox_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
 
   public static final int TIME_OFFSET_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration timeOffset_;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
   public boolean hasTimeOffset() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
+
   /**
    *
    *
@@ -347,6 +354,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -579,6 +587,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
             com.google.cloud.videointelligence.v1p3beta1.NormalizedBoundingBox.Builder,
             com.google.cloud.videointelligence.v1p3beta1.NormalizedBoundingBoxOrBuilder>
         normalizedBoundingBoxBuilder_;
+
     /**
      *
      *
@@ -595,6 +604,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     public boolean hasNormalizedBoundingBox() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -619,6 +629,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
         return normalizedBoundingBoxBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +679,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +712,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +734,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +752,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       onChanged();
       return getNormalizedBoundingBoxFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -759,6 +775,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
             : normalizedBoundingBox_;
       }
     }
+
     /**
      *
      *
@@ -793,6 +810,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeOffsetBuilder_;
+
     /**
      *
      *
@@ -807,6 +825,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     public boolean hasTimeOffset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -827,6 +846,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
         return timeOffsetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -849,6 +869,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +889,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +917,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +937,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +952,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -946,6 +971,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
             : timeOffset_;
       }
     }
+
     /**
      *
      *

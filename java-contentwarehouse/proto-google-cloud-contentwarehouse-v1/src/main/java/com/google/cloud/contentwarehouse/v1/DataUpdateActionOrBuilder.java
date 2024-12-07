@@ -38,6 +38,7 @@ public interface DataUpdateActionOrBuilder
    * <code>map&lt;string, string&gt; entries = 1;</code>
    */
   int getEntriesCount();
+
   /**
    *
    *
@@ -52,9 +53,11 @@ public interface DataUpdateActionOrBuilder
    * <code>map&lt;string, string&gt; entries = 1;</code>
    */
   boolean containsEntries(java.lang.String key);
+
   /** Use {@link #getEntriesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEntries();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface DataUpdateActionOrBuilder
    * <code>map&lt;string, string&gt; entries = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getEntriesMap();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface DataUpdateActionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

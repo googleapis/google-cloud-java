@@ -33,6 +33,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertRouterRequest)
     InsertRouterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertRouterRequest.newBuilder() to construct.
   private InsertRouterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
 
   public static final int ROUTER_RESOURCE_FIELD_NUMBER = 155222084;
   private com.google.cloud.compute.v1.Router routerResource_;
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
   public boolean hasRouterResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.compute.v1.Router.getDefaultInstance()
         : routerResource_;
   }
+
   /**
    *
    *
@@ -495,6 +506,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -740,6 +752,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -764,6 +777,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -788,6 +802,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +846,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +873,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -880,6 +898,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -904,6 +923,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -927,6 +947,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +967,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +994,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -986,6 +1009,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1008,6 +1032,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1055,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1051,6 +1077,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1095,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1125,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.Router.Builder,
             com.google.cloud.compute.v1.RouterOrBuilder>
         routerResourceBuilder_;
+
     /**
      *
      *
@@ -1113,6 +1142,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
     public boolean hasRouterResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1135,6 +1165,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
         return routerResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1190,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1180,6 +1212,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1242,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1230,6 +1264,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1246,6 +1281,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRouterResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1266,6 +1302,7 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
             : routerResource_;
       }
     }
+
     /**
      *
      *

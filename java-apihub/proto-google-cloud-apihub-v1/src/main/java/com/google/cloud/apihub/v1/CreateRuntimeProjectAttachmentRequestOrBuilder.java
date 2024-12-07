@@ -39,6 +39,7 @@ public interface CreateRuntimeProjectAttachmentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateRuntimeProjectAttachmentRequestOrBuilder
    * @return The runtimeProjectAttachmentId.
    */
   java.lang.String getRuntimeProjectAttachmentId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreateRuntimeProjectAttachmentRequestOrBuilder
    * @return Whether the runtimeProjectAttachment field is set.
    */
   boolean hasRuntimeProjectAttachment();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateRuntimeProjectAttachmentRequestOrBuilder
    * @return The runtimeProjectAttachment.
    */
   com.google.cloud.apihub.v1.RuntimeProjectAttachment getRuntimeProjectAttachment();
+
   /**
    *
    *

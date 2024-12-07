@@ -73,7 +73,8 @@ public class MockDocumentSchemaServiceImpl extends DocumentSchemaServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDocumentSchema, expected %s or %s",
+                  "Unrecognized response type %s for method CreateDocumentSchema, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DocumentSchema.class.getName(),
                   Exception.class.getName())));
@@ -94,7 +95,8 @@ public class MockDocumentSchemaServiceImpl extends DocumentSchemaServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateDocumentSchema, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateDocumentSchema, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DocumentSchema.class.getName(),
                   Exception.class.getName())));
@@ -136,7 +138,8 @@ public class MockDocumentSchemaServiceImpl extends DocumentSchemaServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDocumentSchema, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteDocumentSchema, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

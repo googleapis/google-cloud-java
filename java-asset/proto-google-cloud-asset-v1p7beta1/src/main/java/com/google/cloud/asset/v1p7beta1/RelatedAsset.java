@@ -40,6 +40,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1p7beta1.RelatedAsset)
     RelatedAssetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RelatedAsset.newBuilder() to construct.
   private RelatedAsset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object asset_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object assetType_ = "";
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -197,6 +202,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList ancestors_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -216,6 +222,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAncestorsList() {
     return ancestors_;
   }
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
   public int getAncestorsCount() {
     return ancestors_.size();
   }
+
   /**
    *
    *
@@ -255,6 +263,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAncestors(int index) {
     return ancestors_.get(index);
   }
+
   /**
    *
    *
@@ -460,6 +469,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -687,6 +697,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object asset_ = "";
+
     /**
      *
      *
@@ -714,6 +725,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -741,6 +753,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -767,6 +780,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +803,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object assetType_ = "";
+
     /**
      *
      *
@@ -844,6 +860,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -870,6 +887,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -895,6 +913,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +935,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +972,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -972,6 +993,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       ancestors_.makeImmutable();
       return ancestors_;
     }
+
     /**
      *
      *
@@ -991,6 +1013,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     public int getAncestorsCount() {
       return ancestors_.size();
     }
+
     /**
      *
      *
@@ -1011,6 +1034,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAncestors(int index) {
       return ancestors_.get(index);
     }
+
     /**
      *
      *
@@ -1031,6 +1055,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAncestorsBytes(int index) {
       return ancestors_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1059,6 +1084,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1112,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1137,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1161,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface FetchReadWriteTokenResponseOrBuilder
    * @return The token.
    */
   java.lang.String getToken();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface FetchReadWriteTokenResponseOrBuilder
    * @return Whether the expirationTime field is set.
    */
   boolean hasExpirationTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface FetchReadWriteTokenResponseOrBuilder
    * @return The expirationTime.
    */
   com.google.protobuf.Timestamp getExpirationTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface FetchReadWriteTokenResponseOrBuilder
    * @return The gitUsername.
    */
   java.lang.String getGitUsername();
+
   /**
    *
    *

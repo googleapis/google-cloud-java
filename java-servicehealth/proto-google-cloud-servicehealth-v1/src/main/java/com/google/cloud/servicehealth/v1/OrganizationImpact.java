@@ -34,6 +34,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.servicehealth.v1.OrganizationImpact)
     OrganizationImpactOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OrganizationImpact.newBuilder() to construct.
   private OrganizationImpact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList events_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getEventsList() {
     return events_;
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
   public int getEventsCount() {
     return events_.size();
   }
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
   public java.lang.String getEvents(int index) {
     return events_.get(index);
   }
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
 
   public static final int ASSET_FIELD_NUMBER = 3;
   private com.google.cloud.servicehealth.v1.Asset asset_;
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
   public boolean hasAsset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.servicehealth.v1.Asset getAsset() {
     return asset_ == null ? com.google.cloud.servicehealth.v1.Asset.getDefaultInstance() : asset_;
   }
+
   /**
    *
    *
@@ -265,6 +275,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -281,6 +292,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -297,6 +309,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -515,6 +528,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -770,6 +784,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -803,6 +818,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -868,6 +885,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +914,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +958,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -956,6 +976,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       events_.makeImmutable();
       return events_;
     }
+
     /**
      *
      *
@@ -972,6 +993,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
     public int getEventsCount() {
       return events_.size();
     }
+
     /**
      *
      *
@@ -989,6 +1011,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
     public java.lang.String getEvents(int index) {
       return events_.get(index);
     }
+
     /**
      *
      *
@@ -1006,6 +1029,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getEventsBytes(int index) {
       return events_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1031,6 +1055,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1080,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1102,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1123,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1156,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
             com.google.cloud.servicehealth.v1.Asset.Builder,
             com.google.cloud.servicehealth.v1.AssetOrBuilder>
         assetBuilder_;
+
     /**
      *
      *
@@ -1144,6 +1173,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
     public boolean hasAsset() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1166,6 +1196,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
         return assetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1190,6 +1221,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1243,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1240,6 +1273,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1261,6 +1295,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1312,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getAssetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1297,6 +1333,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
             : asset_;
       }
     }
+
     /**
      *
      *
@@ -1331,6 +1368,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1347,6 +1385,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1369,6 +1408,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1393,6 +1433,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1455,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1485,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1464,6 +1507,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1480,6 +1524,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1500,6 +1545,7 @@ public final class OrganizationImpact extends com.google.protobuf.GeneratedMessa
             : updateTime_;
       }
     }
+
     /**
      *
      *

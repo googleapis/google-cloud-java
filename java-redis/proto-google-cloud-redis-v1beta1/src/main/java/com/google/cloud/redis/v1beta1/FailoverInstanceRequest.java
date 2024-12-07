@@ -33,6 +33,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.redis.v1beta1.FailoverInstanceRequest)
     FailoverInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FailoverInstanceRequest.newBuilder() to construct.
   private FailoverInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,6 +123,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <code>DATA_PROTECTION_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int DATA_PROTECTION_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -135,6 +137,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <code>LIMITED_DATA_LOSS = 1;</code>
      */
     public static final int LIMITED_DATA_LOSS_VALUE = 1;
+
     /**
      *
      *
@@ -238,6 +241,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -265,6 +269,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -295,6 +300,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
 
   public static final int DATA_PROTECTION_MODE_FIELD_NUMBER = 2;
   private int dataProtectionMode_ = 0;
+
   /**
    *
    *
@@ -313,6 +319,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
   public int getDataProtectionModeValue() {
     return dataProtectionMode_;
   }
+
   /**
    *
    *
@@ -513,6 +520,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -710,6 +718,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -736,6 +745,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -762,6 +772,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -787,6 +798,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +820,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +849,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
     }
 
     private int dataProtectionMode_ = 0;
+
     /**
      *
      *
@@ -854,6 +868,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
     public int getDataProtectionModeValue() {
       return dataProtectionMode_;
     }
+
     /**
      *
      *
@@ -875,6 +890,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +915,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
           ? com.google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -924,6 +941,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

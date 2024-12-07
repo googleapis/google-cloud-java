@@ -34,6 +34,7 @@ public final class SslCertificateManagedSslCertificate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SslCertificateManagedSslCertificate)
     SslCertificateManagedSslCertificateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SslCertificateManagedSslCertificate.newBuilder() to construct.
   private SslCertificateManagedSslCertificate(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -163,6 +164,7 @@ public final class SslCertificateManagedSslCertificate
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
+
     /**
      *
      *
@@ -173,8 +175,10 @@ public final class SslCertificateManagedSslCertificate
      * <code>ACTIVE = 314733318;</code>
      */
     public static final int ACTIVE_VALUE = 314733318;
+
     /** <code>MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 474800850;</code> */
     public static final int MANAGED_CERTIFICATE_STATUS_UNSPECIFIED_VALUE = 474800850;
+
     /**
      *
      *
@@ -185,6 +189,7 @@ public final class SslCertificateManagedSslCertificate
      * <code>PROVISIONING = 290896621;</code>
      */
     public static final int PROVISIONING_VALUE = 290896621;
+
     /**
      *
      *
@@ -195,6 +200,7 @@ public final class SslCertificateManagedSslCertificate
      * <code>PROVISIONING_FAILED = 76813775;</code>
      */
     public static final int PROVISIONING_FAILED_VALUE = 76813775;
+
     /**
      *
      *
@@ -205,6 +211,7 @@ public final class SslCertificateManagedSslCertificate
      * <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code>
      */
     public static final int PROVISIONING_FAILED_PERMANENTLY_VALUE = 275036203;
+
     /**
      *
      *
@@ -338,6 +345,7 @@ public final class SslCertificateManagedSslCertificate
   public int getDomainStatusCount() {
     return internalGetDomainStatus().getMap().size();
   }
+
   /**
    *
    *
@@ -354,12 +362,14 @@ public final class SslCertificateManagedSslCertificate
     }
     return internalGetDomainStatus().getMap().containsKey(key);
   }
+
   /** Use {@link #getDomainStatusMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getDomainStatus() {
     return getDomainStatusMap();
   }
+
   /**
    *
    *
@@ -373,6 +383,7 @@ public final class SslCertificateManagedSslCertificate
   public java.util.Map<java.lang.String, java.lang.String> getDomainStatusMap() {
     return internalGetDomainStatus().getMap();
   }
+
   /**
    *
    *
@@ -393,6 +404,7 @@ public final class SslCertificateManagedSslCertificate
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDomainStatus().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -419,6 +431,7 @@ public final class SslCertificateManagedSslCertificate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList domains_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -433,6 +446,7 @@ public final class SslCertificateManagedSslCertificate
   public com.google.protobuf.ProtocolStringList getDomainsList() {
     return domains_;
   }
+
   /**
    *
    *
@@ -447,6 +461,7 @@ public final class SslCertificateManagedSslCertificate
   public int getDomainsCount() {
     return domains_.size();
   }
+
   /**
    *
    *
@@ -462,6 +477,7 @@ public final class SslCertificateManagedSslCertificate
   public java.lang.String getDomains(int index) {
     return domains_.get(index);
   }
+
   /**
    *
    *
@@ -482,6 +498,7 @@ public final class SslCertificateManagedSslCertificate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
+
   /**
    *
    *
@@ -498,6 +515,7 @@ public final class SslCertificateManagedSslCertificate
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -522,6 +540,7 @@ public final class SslCertificateManagedSslCertificate
       return s;
     }
   }
+
   /**
    *
    *
@@ -745,6 +764,7 @@ public final class SslCertificateManagedSslCertificate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1026,6 +1046,7 @@ public final class SslCertificateManagedSslCertificate
     public int getDomainStatusCount() {
       return internalGetDomainStatus().getMap().size();
     }
+
     /**
      *
      *
@@ -1042,12 +1063,14 @@ public final class SslCertificateManagedSslCertificate
       }
       return internalGetDomainStatus().getMap().containsKey(key);
     }
+
     /** Use {@link #getDomainStatusMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDomainStatus() {
       return getDomainStatusMap();
     }
+
     /**
      *
      *
@@ -1061,6 +1084,7 @@ public final class SslCertificateManagedSslCertificate
     public java.util.Map<java.lang.String, java.lang.String> getDomainStatusMap() {
       return internalGetDomainStatus().getMap();
     }
+
     /**
      *
      *
@@ -1081,6 +1105,7 @@ public final class SslCertificateManagedSslCertificate
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDomainStatus().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1107,6 +1132,7 @@ public final class SslCertificateManagedSslCertificate
       internalGetMutableDomainStatus().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1123,12 +1149,14 @@ public final class SslCertificateManagedSslCertificate
       internalGetMutableDomainStatus().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDomainStatus() {
       bitField0_ |= 0x00000001;
       return internalGetMutableDomainStatus().getMutableMap();
     }
+
     /**
      *
      *
@@ -1149,6 +1177,7 @@ public final class SslCertificateManagedSslCertificate
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1202,7 @@ public final class SslCertificateManagedSslCertificate
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1188,6 +1218,7 @@ public final class SslCertificateManagedSslCertificate
       domains_.makeImmutable();
       return domains_;
     }
+
     /**
      *
      *
@@ -1202,6 +1233,7 @@ public final class SslCertificateManagedSslCertificate
     public int getDomainsCount() {
       return domains_.size();
     }
+
     /**
      *
      *
@@ -1217,6 +1249,7 @@ public final class SslCertificateManagedSslCertificate
     public java.lang.String getDomains(int index) {
       return domains_.get(index);
     }
+
     /**
      *
      *
@@ -1232,6 +1265,7 @@ public final class SslCertificateManagedSslCertificate
     public com.google.protobuf.ByteString getDomainsBytes(int index) {
       return domains_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1255,6 +1289,7 @@ public final class SslCertificateManagedSslCertificate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1312,7 @@ public final class SslCertificateManagedSslCertificate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1332,7 @@ public final class SslCertificateManagedSslCertificate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1351,7 @@ public final class SslCertificateManagedSslCertificate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1339,6 +1377,7 @@ public final class SslCertificateManagedSslCertificate
     }
 
     private java.lang.Object status_ = "";
+
     /**
      *
      *
@@ -1354,6 +1393,7 @@ public final class SslCertificateManagedSslCertificate
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1377,6 +1417,7 @@ public final class SslCertificateManagedSslCertificate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1400,6 +1441,7 @@ public final class SslCertificateManagedSslCertificate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1464,7 @@ public final class SslCertificateManagedSslCertificate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1483,7 @@ public final class SslCertificateManagedSslCertificate
       onChanged();
       return this;
     }
+
     /**
      *
      *

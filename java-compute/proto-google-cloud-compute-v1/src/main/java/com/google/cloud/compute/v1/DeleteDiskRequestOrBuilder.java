@@ -36,6 +36,7 @@ public interface DeleteDiskRequestOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DeleteDiskRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DeleteDiskRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface DeleteDiskRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface DeleteDiskRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

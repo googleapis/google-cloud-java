@@ -36,6 +36,7 @@ public interface WindowsNodeConfigOrBuilder
    * @return The enum numeric value on the wire for osVersion.
    */
   int getOsVersionValue();
+
   /**
    *
    *

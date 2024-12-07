@@ -38,6 +38,7 @@ public interface TuneModelMetadataOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *

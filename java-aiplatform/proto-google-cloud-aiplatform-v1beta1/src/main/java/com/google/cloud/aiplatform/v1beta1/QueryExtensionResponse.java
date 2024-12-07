@@ -34,6 +34,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.QueryExtensionResponse)
     QueryExtensionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryExtensionResponse.newBuilder() to construct.
   private QueryExtensionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Content> steps_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getStepsList() {
     return steps_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       getStepsOrBuilderList() {
     return steps_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
   public int getStepsCount() {
     return steps_.size();
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.aiplatform.v1beta1.Content getSteps(int index) {
     return steps_.get(index);
   }
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object failureMessage_ = "";
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -368,6 +376,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -647,6 +656,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
         return stepsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -665,6 +675,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
         return stepsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
         return stepsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +742,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +767,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +837,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +882,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +904,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +919,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.aiplatform.v1beta1.Content.Builder getStepsBuilder(int index) {
       return getStepsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -916,6 +938,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
         return stepsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -935,6 +958,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(steps_);
       }
     }
+
     /**
      *
      *
@@ -950,6 +974,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       return getStepsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -965,6 +990,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       return getStepsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -999,6 +1025,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object failureMessage_ = "";
+
     /**
      *
      *
@@ -1021,6 +1048,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1043,6 +1071,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1093,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1111,7 @@ public final class QueryExtensionResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

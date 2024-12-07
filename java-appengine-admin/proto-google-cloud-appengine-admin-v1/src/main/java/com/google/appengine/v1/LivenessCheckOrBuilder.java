@@ -36,6 +36,7 @@ public interface LivenessCheckOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface LivenessCheckOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface LivenessCheckOrBuilder
    * @return Whether the checkInterval field is set.
    */
   boolean hasCheckInterval();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface LivenessCheckOrBuilder
    * @return The checkInterval.
    */
   com.google.protobuf.Duration getCheckInterval();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface LivenessCheckOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface LivenessCheckOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface LivenessCheckOrBuilder
    * @return Whether the initialDelay field is set.
    */
   boolean hasInitialDelay();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface LivenessCheckOrBuilder
    * @return The initialDelay.
    */
   com.google.protobuf.Duration getInitialDelay();
+
   /**
    *
    *

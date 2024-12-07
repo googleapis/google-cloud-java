@@ -36,6 +36,7 @@ public interface SerialPortOutputOrBuilder
    * @return Whether the contents field is set.
    */
   boolean hasContents();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SerialPortOutputOrBuilder
    * @return The contents.
    */
   java.lang.String getContents();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface SerialPortOutputOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface SerialPortOutputOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface SerialPortOutputOrBuilder
    * @return Whether the next field is set.
    */
   boolean hasNext();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface SerialPortOutputOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface SerialPortOutputOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface SerialPortOutputOrBuilder
    * @return Whether the start field is set.
    */
   boolean hasStart();
+
   /**
    *
    *

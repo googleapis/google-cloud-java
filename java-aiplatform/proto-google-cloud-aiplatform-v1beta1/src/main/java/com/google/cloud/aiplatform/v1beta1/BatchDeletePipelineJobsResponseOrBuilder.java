@@ -34,6 +34,7 @@ public interface BatchDeletePipelineJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.PipelineJob pipeline_jobs = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineJob> getPipelineJobsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BatchDeletePipelineJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.PipelineJob pipeline_jobs = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.PipelineJob getPipelineJobs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BatchDeletePipelineJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.PipelineJob pipeline_jobs = 1;</code>
    */
   int getPipelineJobsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BatchDeletePipelineJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.PipelineJobOrBuilder>
       getPipelineJobsOrBuilderList();
+
   /**
    *
    *

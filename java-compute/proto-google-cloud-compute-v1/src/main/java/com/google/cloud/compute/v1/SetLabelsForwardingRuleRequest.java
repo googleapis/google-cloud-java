@@ -33,6 +33,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetLabelsForwardingRuleRequest)
     SetLabelsForwardingRuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetLabelsForwardingRuleRequest.newBuilder() to construct.
   private SetLabelsForwardingRuleRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
 
   public static final int REGION_SET_LABELS_REQUEST_RESOURCE_FIELD_NUMBER = 259357782;
   private com.google.cloud.compute.v1.RegionSetLabelsRequest regionSetLabelsRequestResource_;
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
   public boolean hasRegionSetLabelsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.RegionSetLabelsRequest.getDefaultInstance()
         : regionSetLabelsRequestResource_;
   }
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -305,6 +316,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -328,6 +340,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -562,6 +575,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -826,6 +840,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -850,6 +865,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -874,6 +890,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -897,6 +914,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +934,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +961,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -966,6 +986,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -990,6 +1011,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1035,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1055,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1087,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.RegionSetLabelsRequest.Builder,
             com.google.cloud.compute.v1.RegionSetLabelsRequestOrBuilder>
         regionSetLabelsRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1079,6 +1104,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
     public boolean hasRegionSetLabelsRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1101,6 +1127,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
         return regionSetLabelsRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1126,6 +1153,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1176,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1208,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1230,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1248,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return getRegionSetLabelsRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1238,6 +1270,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
             : regionSetLabelsRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1267,6 +1300,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1281,6 +1315,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1303,6 +1338,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1325,6 +1361,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1346,6 +1383,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1401,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1387,6 +1426,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -1409,6 +1449,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1431,6 +1472,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1452,6 +1494,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1469,6 +1512,7 @@ public final class SetLabelsForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

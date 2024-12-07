@@ -73,7 +73,8 @@ public class MockValidationHelperV1Impl extends ValidationHelperV1ImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ValidateAttestationOccurrence, expected %s or %s",
+                  "Unrecognized response type %s for method ValidateAttestationOccurrence, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Service.ValidateAttestationOccurrenceResponse.class.getName(),
                   Exception.class.getName())));

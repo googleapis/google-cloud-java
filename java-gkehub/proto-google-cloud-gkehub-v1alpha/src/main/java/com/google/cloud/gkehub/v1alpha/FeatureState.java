@@ -35,6 +35,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1alpha.FeatureState)
     FeatureStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FeatureState.newBuilder() to construct.
   private FeatureState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -135,6 +136,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
      * <code>CODE_UNSPECIFIED = 0;</code>
      */
     public static final int CODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -145,6 +147,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
      * <code>OK = 1;</code>
      */
     public static final int OK_VALUE = 1;
+
     /**
      *
      *
@@ -158,6 +161,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
      * <code>WARNING = 2;</code>
      */
     public static final int WARNING_VALUE = 2;
+
     /**
      *
      *
@@ -260,6 +264,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CODE_FIELD_NUMBER = 1;
   private int code_ = 0;
+
   /**
    *
    *
@@ -275,6 +280,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
   public int getCodeValue() {
     return code_;
   }
+
   /**
    *
    *
@@ -297,6 +303,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -320,6 +327,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -346,6 +354,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -361,6 +370,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -376,6 +386,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -572,6 +583,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -799,6 +811,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int code_ = 0;
+
     /**
      *
      *
@@ -814,6 +827,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
     public int getCodeValue() {
       return code_;
     }
+
     /**
      *
      *
@@ -832,6 +846,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +866,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gkehub.v1alpha.FeatureState.Code.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -872,6 +888,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +908,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -913,6 +931,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -935,6 +954,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -956,6 +976,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +994,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1024,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1016,6 +1039,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1036,6 +1060,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1083,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1103,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1131,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1151,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1166,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1155,6 +1185,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *

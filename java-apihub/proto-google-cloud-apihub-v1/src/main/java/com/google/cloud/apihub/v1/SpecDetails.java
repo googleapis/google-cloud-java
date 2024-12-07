@@ -34,6 +34,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.SpecDetails)
     SpecDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpecDetails.newBuilder() to construct.
   private SpecDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
     private DetailsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OPEN_API_SPEC_DETAILS_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOpenApiSpecDetails() {
     return detailsCase_ == 2;
   }
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.apihub.v1.OpenApiSpecDetails.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -412,6 +419,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +654,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.OpenApiSpecDetails.Builder,
             com.google.cloud.apihub.v1.OpenApiSpecDetailsOrBuilder>
         openApiSpecDetailsBuilder_;
+
     /**
      *
      *
@@ -667,6 +676,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOpenApiSpecDetails() {
       return detailsCase_ == 2;
     }
+
     /**
      *
      *
@@ -698,6 +708,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.OpenApiSpecDetails.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -726,6 +737,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +764,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +803,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +835,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +854,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apihub.v1.OpenApiSpecDetails.Builder getOpenApiSpecDetailsBuilder() {
       return getOpenApiSpecDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -865,6 +881,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.OpenApiSpecDetails.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -905,6 +922,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -927,6 +945,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -949,6 +968,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -970,6 +990,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1008,7 @@ public final class SpecDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

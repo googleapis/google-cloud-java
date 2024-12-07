@@ -41,6 +41,7 @@ public interface CreateAccessLevelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface CreateAccessLevelRequestOrBuilder
    * @return Whether the accessLevel field is set.
    */
   boolean hasAccessLevel();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface CreateAccessLevelRequestOrBuilder
    * @return The accessLevel.
    */
   com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevel();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest)
     UpdateAwsNodePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateAwsNodePoolRequest.newBuilder() to construct.
   private UpdateAwsNodePoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int AWS_NODE_POOL_FIELD_NUMBER = 1;
   private com.google.cloud.gkemulticloud.v1.AwsNodePool awsNodePool_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
   public boolean hasAwsNodePool() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
         ? com.google.cloud.gkemulticloud.v1.AwsNodePool.getDefaultInstance()
         : awsNodePool_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -239,6 +246,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -475,6 +483,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -711,6 +720,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
             com.google.cloud.gkemulticloud.v1.AwsNodePool.Builder,
             com.google.cloud.gkemulticloud.v1.AwsNodePoolOrBuilder>
         awsNodePoolBuilder_;
+
     /**
      *
      *
@@ -728,6 +738,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
     public boolean hasAwsNodePool() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -751,6 +762,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
         return awsNodePoolBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -776,6 +788,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +812,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +843,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +866,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +884,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return getAwsNodePoolFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -889,6 +906,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
             : awsNodePool_;
       }
     }
+
     /**
      *
      *
@@ -919,6 +937,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -934,6 +953,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -953,6 +973,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +998,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -1025,6 +1047,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1079,6 +1102,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1135,6 +1159,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1188,6 +1213,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1249,6 +1275,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1302,6 +1329,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1350,6 +1378,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1402,6 +1431,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
+
     /**
      *
      *

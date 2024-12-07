@@ -38,6 +38,7 @@ public interface UpdateDatasetVersionRequestOrBuilder
    * @return Whether the datasetVersion field is set.
    */
   boolean hasDatasetVersion();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateDatasetVersionRequestOrBuilder
    * @return The datasetVersion.
    */
   com.google.cloud.aiplatform.v1.DatasetVersion getDatasetVersion();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface UpdateDatasetVersionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpdateDatasetVersionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface CreateQaScorecardRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateQaScorecardRequestOrBuilder
    * @return Whether the qaScorecard field is set.
    */
   boolean hasQaScorecard();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateQaScorecardRequestOrBuilder
    * @return The qaScorecard.
    */
   com.google.cloud.contactcenterinsights.v1.QaScorecard getQaScorecard();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface CreateQaScorecardRequestOrBuilder
    * @return The qaScorecardId.
    */
   java.lang.String getQaScorecardId();
+
   /**
    *
    *

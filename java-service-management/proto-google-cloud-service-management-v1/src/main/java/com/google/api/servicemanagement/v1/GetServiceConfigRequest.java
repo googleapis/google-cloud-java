@@ -33,6 +33,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.GetServiceConfigRequest)
     GetServiceConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetServiceConfigRequest.newBuilder() to construct.
   private GetServiceConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -103,6 +104,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      * <code>BASIC = 0;</code>
      */
     public static final int BASIC_VALUE = 0;
+
     /**
      *
      *
@@ -204,6 +206,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceName_ = "";
+
   /**
    *
    *
@@ -229,6 +232,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -259,6 +263,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object configId_ = "";
+
   /**
    *
    *
@@ -285,6 +290,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -314,6 +320,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
 
   public static final int VIEW_FIELD_NUMBER = 3;
   private int view_ = 0;
+
   /**
    *
    *
@@ -330,6 +337,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
   public int getViewValue() {
     return view_;
   }
+
   /**
    *
    *
@@ -533,6 +541,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -745,6 +754,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object serviceName_ = "";
+
     /**
      *
      *
@@ -769,6 +779,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -793,6 +804,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -816,6 +828,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +848,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +875,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object configId_ = "";
+
     /**
      *
      *
@@ -886,6 +901,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -911,6 +927,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -935,6 +952,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +973,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1001,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
     }
 
     private int view_ = 0;
+
     /**
      *
      *
@@ -998,6 +1018,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
     public int getViewValue() {
       return view_;
     }
+
     /**
      *
      *
@@ -1017,6 +1038,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1059,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
           ? com.google.api.servicemanagement.v1.GetServiceConfigRequest.ConfigView.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1060,6 +1083,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

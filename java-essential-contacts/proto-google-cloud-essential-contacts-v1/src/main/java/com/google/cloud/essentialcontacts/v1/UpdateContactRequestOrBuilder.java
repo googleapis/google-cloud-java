@@ -39,6 +39,7 @@ public interface UpdateContactRequestOrBuilder
    * @return Whether the contact field is set.
    */
   boolean hasContact();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateContactRequestOrBuilder
    * @return The contact.
    */
   com.google.cloud.essentialcontacts.v1.Contact getContact();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface UpdateContactRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface UpdateContactRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

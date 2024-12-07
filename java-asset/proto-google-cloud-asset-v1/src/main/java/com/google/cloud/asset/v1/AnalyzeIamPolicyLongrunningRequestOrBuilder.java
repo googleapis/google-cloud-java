@@ -38,6 +38,7 @@ public interface AnalyzeIamPolicyLongrunningRequestOrBuilder
    * @return Whether the analysisQuery field is set.
    */
   boolean hasAnalysisQuery();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AnalyzeIamPolicyLongrunningRequestOrBuilder
    * @return The analysisQuery.
    */
   com.google.cloud.asset.v1.IamPolicyAnalysisQuery getAnalysisQuery();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface AnalyzeIamPolicyLongrunningRequestOrBuilder
    * @return The savedAnalysisQuery.
    */
   java.lang.String getSavedAnalysisQuery();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface AnalyzeIamPolicyLongrunningRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface AnalyzeIamPolicyLongrunningRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig getOutputConfig();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface RelatedAssetsOrBuilder
    * @return Whether the relationshipAttributes field is set.
    */
   boolean hasRelationshipAttributes();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface RelatedAssetsOrBuilder
    * @return The relationshipAttributes.
    */
   com.google.cloud.asset.v1.RelationshipAttributes getRelationshipAttributes();
+
   /**
    *
    *
@@ -70,6 +72,7 @@ public interface RelatedAssetsOrBuilder
    * <code>repeated .google.cloud.asset.v1.RelatedAsset assets = 2;</code>
    */
   java.util.List<com.google.cloud.asset.v1.RelatedAsset> getAssetsList();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface RelatedAssetsOrBuilder
    * <code>repeated .google.cloud.asset.v1.RelatedAsset assets = 2;</code>
    */
   com.google.cloud.asset.v1.RelatedAsset getAssets(int index);
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface RelatedAssetsOrBuilder
    * <code>repeated .google.cloud.asset.v1.RelatedAsset assets = 2;</code>
    */
   int getAssetsCount();
+
   /**
    *
    *
@@ -101,6 +106,7 @@ public interface RelatedAssetsOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1.RelatedAssetOrBuilder>
       getAssetsOrBuilderList();
+
   /**
    *
    *

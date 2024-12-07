@@ -36,6 +36,7 @@ public interface QuotaOrBuilder
    * @return The metric.
    */
   java.lang.String getMetric();
+
   /**
    *
    *

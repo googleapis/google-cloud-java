@@ -38,6 +38,7 @@ public interface MessageEntryOrBuilder
    * @return The enum numeric value on the wire for role.
    */
   int getRoleValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface MessageEntryOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface MessageEntryOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface MessageEntryOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface MessageEntryOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

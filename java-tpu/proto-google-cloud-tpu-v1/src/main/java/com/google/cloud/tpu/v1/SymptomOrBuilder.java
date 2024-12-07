@@ -36,6 +36,7 @@ public interface SymptomOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SymptomOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface SymptomOrBuilder
    * @return The enum numeric value on the wire for symptomType.
    */
   int getSymptomTypeValue();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface SymptomOrBuilder
    * @return The details.
    */
   java.lang.String getDetails();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface SymptomOrBuilder
    * @return The workerId.
    */
   java.lang.String getWorkerId();
+
   /**
    *
    *

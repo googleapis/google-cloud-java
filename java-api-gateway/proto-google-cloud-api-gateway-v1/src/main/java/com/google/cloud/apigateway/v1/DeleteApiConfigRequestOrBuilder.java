@@ -39,6 +39,7 @@ public interface DeleteApiConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface ProtectedResourcesSummaryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface ProtectedResourcesSummaryOrBuilder
    * <code>map&lt;string, int64&gt; resource_types = 3;</code>
    */
   int getResourceTypesCount();
+
   /**
    *
    *
@@ -101,9 +103,11 @@ public interface ProtectedResourcesSummaryOrBuilder
    * <code>map&lt;string, int64&gt; resource_types = 3;</code>
    */
   boolean containsResourceTypes(java.lang.String key);
+
   /** Use {@link #getResourceTypesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Long> getResourceTypes();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface ProtectedResourcesSummaryOrBuilder
    * <code>map&lt;string, int64&gt; resource_types = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.Long> getResourceTypesMap();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface ProtectedResourcesSummaryOrBuilder
    * <code>map&lt;string, int64&gt; resource_types = 3;</code>
    */
   long getResourceTypesOrDefault(java.lang.String key, long defaultValue);
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface ProtectedResourcesSummaryOrBuilder
    * <code>map&lt;string, int64&gt; cloud_products = 6;</code>
    */
   int getCloudProductsCount();
+
   /**
    *
    *
@@ -155,9 +162,11 @@ public interface ProtectedResourcesSummaryOrBuilder
    * <code>map&lt;string, int64&gt; cloud_products = 6;</code>
    */
   boolean containsCloudProducts(java.lang.String key);
+
   /** Use {@link #getCloudProductsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Long> getCloudProducts();
+
   /**
    *
    *
@@ -168,6 +177,7 @@ public interface ProtectedResourcesSummaryOrBuilder
    * <code>map&lt;string, int64&gt; cloud_products = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.Long> getCloudProductsMap();
+
   /**
    *
    *
@@ -178,6 +188,7 @@ public interface ProtectedResourcesSummaryOrBuilder
    * <code>map&lt;string, int64&gt; cloud_products = 6;</code>
    */
   long getCloudProductsOrDefault(java.lang.String key, long defaultValue);
+
   /**
    *
    *
@@ -199,6 +210,7 @@ public interface ProtectedResourcesSummaryOrBuilder
    * <code>map&lt;string, int64&gt; locations = 4;</code>
    */
   int getLocationsCount();
+
   /**
    *
    *
@@ -209,9 +221,11 @@ public interface ProtectedResourcesSummaryOrBuilder
    * <code>map&lt;string, int64&gt; locations = 4;</code>
    */
   boolean containsLocations(java.lang.String key);
+
   /** Use {@link #getLocationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Long> getLocations();
+
   /**
    *
    *
@@ -222,6 +236,7 @@ public interface ProtectedResourcesSummaryOrBuilder
    * <code>map&lt;string, int64&gt; locations = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.Long> getLocationsMap();
+
   /**
    *
    *
@@ -232,6 +247,7 @@ public interface ProtectedResourcesSummaryOrBuilder
    * <code>map&lt;string, int64&gt; locations = 4;</code>
    */
   long getLocationsOrDefault(java.lang.String key, long defaultValue);
+
   /**
    *
    *

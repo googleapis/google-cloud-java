@@ -47,6 +47,7 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -109,6 +110,7 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -142,6 +144,7 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * </code>
    */
   int getParametersCount();
+
   /**
    *
    *
@@ -154,9 +157,11 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * </code>
    */
   boolean containsParameters(java.lang.String key);
+
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getParameters();
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParametersMap();
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

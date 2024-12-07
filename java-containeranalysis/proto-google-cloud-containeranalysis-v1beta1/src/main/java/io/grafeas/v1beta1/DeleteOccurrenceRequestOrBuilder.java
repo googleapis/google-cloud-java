@@ -37,6 +37,7 @@ public interface DeleteOccurrenceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.ValidateEventThreatDetectionCustomModuleRequest)
     ValidateEventThreatDetectionCustomModuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ValidateEventThreatDetectionCustomModuleRequest.newBuilder() to construct.
   private ValidateEventThreatDetectionCustomModuleRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,6 +76,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rawText_ = "";
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -189,6 +194,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -212,6 +218,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -439,6 +446,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -680,6 +688,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -707,6 +716,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -734,6 +744,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -760,6 +771,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +794,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +824,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
     }
 
     private java.lang.Object rawText_ = "";
+
     /**
      *
      *
@@ -834,6 +848,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -857,6 +872,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -879,6 +895,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +914,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +940,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
     }
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -944,6 +963,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -966,6 +986,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -987,6 +1008,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1026,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -42,6 +42,7 @@ public interface InternalCheckerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface InternalCheckerOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface InternalCheckerOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface InternalCheckerOrBuilder
    * @return The gcpZone.
    */
   java.lang.String getGcpZone();
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public interface InternalCheckerOrBuilder
    * @return The peerProjectId.
    */
   java.lang.String getPeerProjectId();
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public interface InternalCheckerOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

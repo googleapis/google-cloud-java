@@ -36,6 +36,7 @@ public interface EgressRequestOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface EgressRequestOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface EgressRequestOrBuilder
    * @return The payload.
    */
   com.google.cloud.apigeeconnect.v1.Payload getPayload();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface EgressRequestOrBuilder
    * @return The enum numeric value on the wire for endpoint.
    */
   int getEndpointValue();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface EgressRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface EgressRequestOrBuilder
    * @return The traceId.
    */
   java.lang.String getTraceId();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface EgressRequestOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public interface EgressRequestOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
+
   /**
    *
    *

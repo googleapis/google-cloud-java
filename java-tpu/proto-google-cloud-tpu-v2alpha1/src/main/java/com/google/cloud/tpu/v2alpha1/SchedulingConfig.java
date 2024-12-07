@@ -33,6 +33,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.SchedulingConfig)
     SchedulingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SchedulingConfig.newBuilder() to construct.
   private SchedulingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int PREEMPTIBLE_FIELD_NUMBER = 1;
   private boolean preemptible_ = false;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int RESERVED_FIELD_NUMBER = 2;
   private boolean reserved_ = false;
+
   /**
    *
    *
@@ -265,6 +268,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -459,6 +463,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private boolean preemptible_;
+
     /**
      *
      *
@@ -474,6 +479,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     public boolean getPreemptible() {
       return preemptible_;
     }
+
     /**
      *
      *
@@ -493,6 +499,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -512,6 +519,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean reserved_;
+
     /**
      *
      *
@@ -527,6 +535,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     public boolean getReserved() {
       return reserved_;
     }
+
     /**
      *
      *
@@ -546,6 +555,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

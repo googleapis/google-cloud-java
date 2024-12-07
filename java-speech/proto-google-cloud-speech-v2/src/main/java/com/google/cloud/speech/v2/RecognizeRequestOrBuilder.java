@@ -41,6 +41,7 @@ public interface RecognizeRequestOrBuilder
    * @return The recognizer.
    */
   java.lang.String getRecognizer();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface RecognizeRequestOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface RecognizeRequestOrBuilder
    * @return The config.
    */
   com.google.cloud.speech.v2.RecognitionConfig getConfig();
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public interface RecognizeRequestOrBuilder
    * @return Whether the configMask field is set.
    */
   boolean hasConfigMask();
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public interface RecognizeRequestOrBuilder
    * @return The configMask.
    */
   com.google.protobuf.FieldMask getConfigMask();
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public interface RecognizeRequestOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
+
   /**
    *
    *
@@ -230,6 +236,7 @@ public interface RecognizeRequestOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
+
   /**
    *
    *
@@ -249,6 +256,7 @@ public interface RecognizeRequestOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *

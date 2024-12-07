@@ -38,6 +38,7 @@ public interface StudySpecOrBuilder
    * @return Whether the decayCurveStoppingSpec field is set.
    */
   boolean hasDecayCurveStoppingSpec();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface StudySpecOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.StudySpec.DecayCurveAutomatedStoppingSpec
       getDecayCurveStoppingSpec();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface StudySpecOrBuilder
    * @return Whether the medianAutomatedStoppingSpec field is set.
    */
   boolean hasMedianAutomatedStoppingSpec();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface StudySpecOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.StudySpec.MedianAutomatedStoppingSpec
       getMedianAutomatedStoppingSpec();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface StudySpecOrBuilder
    */
   @java.lang.Deprecated
   boolean hasConvexStopConfig();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface StudySpecOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig getConvexStopConfig();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface StudySpecOrBuilder
    * @return Whether the convexAutomatedStoppingSpec field is set.
    */
   boolean hasConvexAutomatedStoppingSpec();
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public interface StudySpecOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec
       getConvexAutomatedStoppingSpec();
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public interface StudySpecOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec> getMetricsList();
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public interface StudySpecOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec getMetrics(int index);
+
   /**
    *
    *
@@ -241,6 +251,7 @@ public interface StudySpecOrBuilder
    * </code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -254,6 +265,7 @@ public interface StudySpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpecOrBuilder>
       getMetricsOrBuilderList();
+
   /**
    *
    *
@@ -279,6 +291,7 @@ public interface StudySpecOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec> getParametersList();
+
   /**
    *
    *
@@ -291,6 +304,7 @@ public interface StudySpecOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec getParameters(int index);
+
   /**
    *
    *
@@ -303,6 +317,7 @@ public interface StudySpecOrBuilder
    * </code>
    */
   int getParametersCount();
+
   /**
    *
    *
@@ -316,6 +331,7 @@ public interface StudySpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpecOrBuilder>
       getParametersOrBuilderList();
+
   /**
    *
    *
@@ -342,6 +358,7 @@ public interface StudySpecOrBuilder
    * @return The enum numeric value on the wire for algorithm.
    */
   int getAlgorithmValue();
+
   /**
    *
    *
@@ -369,6 +386,7 @@ public interface StudySpecOrBuilder
    * @return The enum numeric value on the wire for observationNoise.
    */
   int getObservationNoiseValue();
+
   /**
    *
    *
@@ -398,6 +416,7 @@ public interface StudySpecOrBuilder
    * @return The enum numeric value on the wire for measurementSelectionType.
    */
   int getMeasurementSelectionTypeValue();
+
   /**
    *
    *
@@ -429,6 +448,7 @@ public interface StudySpecOrBuilder
    * @return Whether the transferLearningConfig field is set.
    */
   boolean hasTransferLearningConfig();
+
   /**
    *
    *
@@ -444,6 +464,7 @@ public interface StudySpecOrBuilder
    * @return The transferLearningConfig.
    */
   com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig getTransferLearningConfig();
+
   /**
    *
    *
@@ -474,6 +495,7 @@ public interface StudySpecOrBuilder
    * @return Whether the studyStoppingConfig field is set.
    */
   boolean hasStudyStoppingConfig();
+
   /**
    *
    *
@@ -489,6 +511,7 @@ public interface StudySpecOrBuilder
    * @return The studyStoppingConfig.
    */
   com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig getStudyStoppingConfig();
+
   /**
    *
    *

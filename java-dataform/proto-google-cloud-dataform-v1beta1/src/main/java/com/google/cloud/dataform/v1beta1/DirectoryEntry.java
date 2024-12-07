@@ -33,6 +33,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.DirectoryEntry)
     DirectoryEntryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DirectoryEntry.newBuilder() to construct.
   private DirectoryEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
     private EntryCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFile() {
     return entryCase_ == 1;
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIRECTORY_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDirectory() {
     return entryCase_ == 2;
   }
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -435,6 +443,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -674,6 +683,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFile() {
       return entryCase_ == 1;
     }
+
     /**
      *
      *
@@ -702,6 +712,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -730,6 +741,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -751,6 +763,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +822,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDirectory() {
       return entryCase_ == 2;
     }
+
     /**
      *
      *
@@ -836,6 +851,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -864,6 +880,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -885,6 +902,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +922,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *

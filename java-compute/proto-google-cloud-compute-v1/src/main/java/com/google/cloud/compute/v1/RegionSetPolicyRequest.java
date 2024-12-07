@@ -32,6 +32,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionSetPolicyRequest)
     RegionSetPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionSetPolicyRequest.newBuilder() to construct.
   private RegionSetPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Binding> bindings_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.compute.v1.Binding> getBindingsList() {
     return bindings_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       getBindingsOrBuilderList() {
     return bindings_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
   public int getBindingsCount() {
     return bindings_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
   public com.google.cloud.compute.v1.Binding getBindings(int index) {
     return bindings_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
   public boolean hasEtag() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -177,6 +185,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
 
   public static final int POLICY_FIELD_NUMBER = 91071794;
   private com.google.cloud.compute.v1.Policy policy_;
+
   /**
    *
    *
@@ -218,6 +228,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
   public boolean hasPolicy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -233,6 +244,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
   public com.google.cloud.compute.v1.Policy getPolicy() {
     return policy_ == null ? com.google.cloud.compute.v1.Policy.getDefaultInstance() : policy_;
   }
+
   /**
    *
    *
@@ -436,6 +448,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -742,6 +755,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
         return bindingsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -758,6 +772,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
         return bindingsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -774,6 +789,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
         return bindingsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +856,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +879,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +899,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +920,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +941,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +961,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +981,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +994,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.Binding.Builder getBindingsBuilder(int index) {
       return getBindingsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -985,6 +1011,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
         return bindingsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1029,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(bindings_);
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1043,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       return getBindingsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Binding.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1028,6 +1057,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       return getBindingsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Binding.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1059,6 +1089,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -1073,6 +1104,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
     public boolean hasEtag() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1095,6 +1127,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1150,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1138,6 +1172,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1190,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1220,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.Policy.Builder,
             com.google.cloud.compute.v1.PolicyOrBuilder>
         policyBuilder_;
+
     /**
      *
      *
@@ -1198,6 +1235,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1216,6 +1254,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
         return policyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1238,6 +1277,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1257,6 +1297,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1284,6 +1325,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1303,6 +1345,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1317,6 +1360,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1333,6 +1377,7 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
         return policy_ == null ? com.google.cloud.compute.v1.Policy.getDefaultInstance() : policy_;
       }
     }
+
     /**
      *
      *

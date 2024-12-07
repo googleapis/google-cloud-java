@@ -35,6 +35,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata)
     SetSuggestionFeatureConfigOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetSuggestionFeatureConfigOperationMetadata.newBuilder() to construct.
   private SetSuggestionFeatureConfigOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,6 +75,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationProfile_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
 
   public static final int PARTICIPANT_ROLE_FIELD_NUMBER = 2;
   private int participantRole_ = 0;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
   public int getParticipantRoleValue() {
     return participantRole_;
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
 
   public static final int SUGGESTION_FEATURE_TYPE_FIELD_NUMBER = 3;
   private int suggestionFeatureType_ = 0;
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
   public int getSuggestionFeatureTypeValue() {
     return suggestionFeatureType_;
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -456,6 +466,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -707,6 +718,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
     private int bitField0_;
 
     private java.lang.Object conversationProfile_ = "";
+
     /**
      *
      *
@@ -731,6 +743,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -755,6 +768,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -778,6 +792,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +812,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +839,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
     }
 
     private int participantRole_ = 0;
+
     /**
      *
      *
@@ -841,6 +858,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
     public int getParticipantRoleValue() {
       return participantRole_;
     }
+
     /**
      *
      *
@@ -862,6 +880,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +901,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
           com.google.cloud.dialogflow.v2.Participant.Role.forNumber(participantRole_);
       return result == null ? com.google.cloud.dialogflow.v2.Participant.Role.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -906,6 +926,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +949,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
     }
 
     private int suggestionFeatureType_ = 0;
+
     /**
      *
      *
@@ -945,6 +967,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
     public int getSuggestionFeatureTypeValue() {
       return suggestionFeatureType_;
     }
+
     /**
      *
      *
@@ -965,6 +988,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1010,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
           ? com.google.cloud.dialogflow.v2.SuggestionFeature.Type.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1010,6 +1035,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1062,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1050,6 +1077,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1070,6 +1098,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1121,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1141,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1169,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       }
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1189,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1204,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1189,6 +1223,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
             : createTime_;
       }
     }
+
     /**
      *
      *

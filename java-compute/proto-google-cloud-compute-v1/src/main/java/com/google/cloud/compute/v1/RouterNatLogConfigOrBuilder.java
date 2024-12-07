@@ -36,6 +36,7 @@ public interface RouterNatLogConfigOrBuilder
    * @return Whether the enable field is set.
    */
   boolean hasEnable();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface RouterNatLogConfigOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface RouterNatLogConfigOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

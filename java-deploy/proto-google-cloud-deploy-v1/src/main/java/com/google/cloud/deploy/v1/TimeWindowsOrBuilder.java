@@ -37,6 +37,7 @@ public interface TimeWindowsOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface TimeWindowsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.OneTimeWindow> getOneTimeWindowsList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface TimeWindowsOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.OneTimeWindow getOneTimeWindows(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface TimeWindowsOrBuilder
    * </code>
    */
   int getOneTimeWindowsCount();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface TimeWindowsOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.OneTimeWindowOrBuilder>
       getOneTimeWindowsOrBuilderList();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface TimeWindowsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.WeeklyWindow> getWeeklyWindowsList();
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public interface TimeWindowsOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.WeeklyWindow getWeeklyWindows(int index);
+
   /**
    *
    *
@@ -149,6 +156,7 @@ public interface TimeWindowsOrBuilder
    * </code>
    */
   int getWeeklyWindowsCount();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface TimeWindowsOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.WeeklyWindowOrBuilder>
       getWeeklyWindowsOrBuilderList();
+
   /**
    *
    *

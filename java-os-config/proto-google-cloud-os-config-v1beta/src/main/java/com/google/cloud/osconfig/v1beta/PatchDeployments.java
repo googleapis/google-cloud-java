@@ -48,6 +48,7 @@ public final class PatchDeployments {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -77,6 +78,7 @@ public final class PatchDeployments {
      * @return The description.
      */
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -105,6 +107,7 @@ public final class PatchDeployments {
      * @return Whether the instanceFilter field is set.
      */
     boolean hasInstanceFilter();
+
     /**
      *
      *
@@ -119,6 +122,7 @@ public final class PatchDeployments {
      * @return The instanceFilter.
      */
     com.google.cloud.osconfig.v1beta.PatchJobs.PatchInstanceFilter getInstanceFilter();
+
     /**
      *
      *
@@ -147,6 +151,7 @@ public final class PatchDeployments {
      * @return Whether the patchConfig field is set.
      */
     boolean hasPatchConfig();
+
     /**
      *
      *
@@ -161,6 +166,7 @@ public final class PatchDeployments {
      * @return The patchConfig.
      */
     com.google.cloud.osconfig.v1beta.PatchJobs.PatchConfig getPatchConfig();
+
     /**
      *
      *
@@ -187,6 +193,7 @@ public final class PatchDeployments {
      * @return Whether the duration field is set.
      */
     boolean hasDuration();
+
     /**
      *
      *
@@ -200,6 +207,7 @@ public final class PatchDeployments {
      * @return The duration.
      */
     com.google.protobuf.Duration getDuration();
+
     /**
      *
      *
@@ -226,6 +234,7 @@ public final class PatchDeployments {
      * @return Whether the oneTimeSchedule field is set.
      */
     boolean hasOneTimeSchedule();
+
     /**
      *
      *
@@ -240,6 +249,7 @@ public final class PatchDeployments {
      * @return The oneTimeSchedule.
      */
     com.google.cloud.osconfig.v1beta.PatchDeployments.OneTimeSchedule getOneTimeSchedule();
+
     /**
      *
      *
@@ -268,6 +278,7 @@ public final class PatchDeployments {
      * @return Whether the recurringSchedule field is set.
      */
     boolean hasRecurringSchedule();
+
     /**
      *
      *
@@ -282,6 +293,7 @@ public final class PatchDeployments {
      * @return The recurringSchedule.
      */
     com.google.cloud.osconfig.v1beta.PatchDeployments.RecurringSchedule getRecurringSchedule();
+
     /**
      *
      *
@@ -311,6 +323,7 @@ public final class PatchDeployments {
      * @return Whether the createTime field is set.
      */
     boolean hasCreateTime();
+
     /**
      *
      *
@@ -326,6 +339,7 @@ public final class PatchDeployments {
      * @return The createTime.
      */
     com.google.protobuf.Timestamp getCreateTime();
+
     /**
      *
      *
@@ -355,6 +369,7 @@ public final class PatchDeployments {
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
+
     /**
      *
      *
@@ -370,6 +385,7 @@ public final class PatchDeployments {
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
+
     /**
      *
      *
@@ -400,6 +416,7 @@ public final class PatchDeployments {
      * @return Whether the lastExecuteTime field is set.
      */
     boolean hasLastExecuteTime();
+
     /**
      *
      *
@@ -416,6 +433,7 @@ public final class PatchDeployments {
      * @return The lastExecuteTime.
      */
     com.google.protobuf.Timestamp getLastExecuteTime();
+
     /**
      *
      *
@@ -445,6 +463,7 @@ public final class PatchDeployments {
      * @return Whether the rollout field is set.
      */
     boolean hasRollout();
+
     /**
      *
      *
@@ -459,6 +478,7 @@ public final class PatchDeployments {
      * @return The rollout.
      */
     com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout getRollout();
+
     /**
      *
      *
@@ -486,6 +506,7 @@ public final class PatchDeployments {
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -504,6 +525,7 @@ public final class PatchDeployments {
     com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment.ScheduleCase
         getScheduleCase();
   }
+
   /**
    *
    *
@@ -522,6 +544,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.PatchDeployment)
       PatchDeploymentOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PatchDeployment.newBuilder() to construct.
     private PatchDeployment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -608,6 +631,7 @@ public final class PatchDeployments {
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -618,6 +642,7 @@ public final class PatchDeployments {
        * <code>ACTIVE = 1;</code>
        */
       public static final int ACTIVE_VALUE = 1;
+
       /**
        *
        *
@@ -733,6 +758,7 @@ public final class PatchDeployments {
       private ScheduleCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -769,6 +795,7 @@ public final class PatchDeployments {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -795,6 +822,7 @@ public final class PatchDeployments {
         return s;
       }
     }
+
     /**
      *
      *
@@ -826,6 +854,7 @@ public final class PatchDeployments {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -850,6 +879,7 @@ public final class PatchDeployments {
         return s;
       }
     }
+
     /**
      *
      *
@@ -877,6 +907,7 @@ public final class PatchDeployments {
 
     public static final int INSTANCE_FILTER_FIELD_NUMBER = 3;
     private com.google.cloud.osconfig.v1beta.PatchJobs.PatchInstanceFilter instanceFilter_;
+
     /**
      *
      *
@@ -894,6 +925,7 @@ public final class PatchDeployments {
     public boolean hasInstanceFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -913,6 +945,7 @@ public final class PatchDeployments {
           ? com.google.cloud.osconfig.v1beta.PatchJobs.PatchInstanceFilter.getDefaultInstance()
           : instanceFilter_;
     }
+
     /**
      *
      *
@@ -934,6 +967,7 @@ public final class PatchDeployments {
 
     public static final int PATCH_CONFIG_FIELD_NUMBER = 4;
     private com.google.cloud.osconfig.v1beta.PatchJobs.PatchConfig patchConfig_;
+
     /**
      *
      *
@@ -951,6 +985,7 @@ public final class PatchDeployments {
     public boolean hasPatchConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -970,6 +1005,7 @@ public final class PatchDeployments {
           ? com.google.cloud.osconfig.v1beta.PatchJobs.PatchConfig.getDefaultInstance()
           : patchConfig_;
     }
+
     /**
      *
      *
@@ -991,6 +1027,7 @@ public final class PatchDeployments {
 
     public static final int DURATION_FIELD_NUMBER = 5;
     private com.google.protobuf.Duration duration_;
+
     /**
      *
      *
@@ -1007,6 +1044,7 @@ public final class PatchDeployments {
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1023,6 +1061,7 @@ public final class PatchDeployments {
     public com.google.protobuf.Duration getDuration() {
       return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
     }
+
     /**
      *
      *
@@ -1039,6 +1078,7 @@ public final class PatchDeployments {
     }
 
     public static final int ONE_TIME_SCHEDULE_FIELD_NUMBER = 6;
+
     /**
      *
      *
@@ -1056,6 +1096,7 @@ public final class PatchDeployments {
     public boolean hasOneTimeSchedule() {
       return scheduleCase_ == 6;
     }
+
     /**
      *
      *
@@ -1076,6 +1117,7 @@ public final class PatchDeployments {
       }
       return com.google.cloud.osconfig.v1beta.PatchDeployments.OneTimeSchedule.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1097,6 +1139,7 @@ public final class PatchDeployments {
     }
 
     public static final int RECURRING_SCHEDULE_FIELD_NUMBER = 7;
+
     /**
      *
      *
@@ -1114,6 +1157,7 @@ public final class PatchDeployments {
     public boolean hasRecurringSchedule() {
       return scheduleCase_ == 7;
     }
+
     /**
      *
      *
@@ -1136,6 +1180,7 @@ public final class PatchDeployments {
       return com.google.cloud.osconfig.v1beta.PatchDeployments.RecurringSchedule
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1159,6 +1204,7 @@ public final class PatchDeployments {
 
     public static final int CREATE_TIME_FIELD_NUMBER = 8;
     private com.google.protobuf.Timestamp createTime_;
+
     /**
      *
      *
@@ -1177,6 +1223,7 @@ public final class PatchDeployments {
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1195,6 +1242,7 @@ public final class PatchDeployments {
     public com.google.protobuf.Timestamp getCreateTime() {
       return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
     }
+
     /**
      *
      *
@@ -1214,6 +1262,7 @@ public final class PatchDeployments {
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 9;
     private com.google.protobuf.Timestamp updateTime_;
+
     /**
      *
      *
@@ -1232,6 +1281,7 @@ public final class PatchDeployments {
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1250,6 +1300,7 @@ public final class PatchDeployments {
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
+
     /**
      *
      *
@@ -1269,6 +1320,7 @@ public final class PatchDeployments {
 
     public static final int LAST_EXECUTE_TIME_FIELD_NUMBER = 10;
     private com.google.protobuf.Timestamp lastExecuteTime_;
+
     /**
      *
      *
@@ -1288,6 +1340,7 @@ public final class PatchDeployments {
     public boolean hasLastExecuteTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1309,6 +1362,7 @@ public final class PatchDeployments {
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : lastExecuteTime_;
     }
+
     /**
      *
      *
@@ -1331,6 +1385,7 @@ public final class PatchDeployments {
 
     public static final int ROLLOUT_FIELD_NUMBER = 11;
     private com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout rollout_;
+
     /**
      *
      *
@@ -1348,6 +1403,7 @@ public final class PatchDeployments {
     public boolean hasRollout() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1367,6 +1423,7 @@ public final class PatchDeployments {
           ? com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.getDefaultInstance()
           : rollout_;
     }
+
     /**
      *
      *
@@ -1387,6 +1444,7 @@ public final class PatchDeployments {
 
     public static final int STATE_FIELD_NUMBER = 12;
     private int state_ = 0;
+
     /**
      *
      *
@@ -1404,6 +1462,7 @@ public final class PatchDeployments {
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1751,6 +1810,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2192,6 +2252,7 @@ public final class PatchDeployments {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -2217,6 +2278,7 @@ public final class PatchDeployments {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2242,6 +2304,7 @@ public final class PatchDeployments {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2266,6 +2329,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2286,6 +2350,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2313,6 +2378,7 @@ public final class PatchDeployments {
       }
 
       private java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -2336,6 +2402,7 @@ public final class PatchDeployments {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2359,6 +2426,7 @@ public final class PatchDeployments {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2381,6 +2449,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2399,6 +2468,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2429,6 +2499,7 @@ public final class PatchDeployments {
               com.google.cloud.osconfig.v1beta.PatchJobs.PatchInstanceFilter.Builder,
               com.google.cloud.osconfig.v1beta.PatchJobs.PatchInstanceFilterOrBuilder>
           instanceFilterBuilder_;
+
       /**
        *
        *
@@ -2445,6 +2516,7 @@ public final class PatchDeployments {
       public boolean hasInstanceFilter() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -2467,6 +2539,7 @@ public final class PatchDeployments {
           return instanceFilterBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2492,6 +2565,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2514,6 +2588,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2546,6 +2621,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -2567,6 +2643,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2584,6 +2661,7 @@ public final class PatchDeployments {
         onChanged();
         return getInstanceFilterFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2605,6 +2683,7 @@ public final class PatchDeployments {
               : instanceFilter_;
         }
       }
+
       /**
        *
        *
@@ -2639,6 +2718,7 @@ public final class PatchDeployments {
               com.google.cloud.osconfig.v1beta.PatchJobs.PatchConfig.Builder,
               com.google.cloud.osconfig.v1beta.PatchJobs.PatchConfigOrBuilder>
           patchConfigBuilder_;
+
       /**
        *
        *
@@ -2655,6 +2735,7 @@ public final class PatchDeployments {
       public boolean hasPatchConfig() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -2677,6 +2758,7 @@ public final class PatchDeployments {
           return patchConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2701,6 +2783,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2723,6 +2806,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2754,6 +2838,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -2775,6 +2860,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2792,6 +2878,7 @@ public final class PatchDeployments {
         onChanged();
         return getPatchConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2813,6 +2900,7 @@ public final class PatchDeployments {
               : patchConfig_;
         }
       }
+
       /**
        *
        *
@@ -2847,6 +2935,7 @@ public final class PatchDeployments {
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           durationBuilder_;
+
       /**
        *
        *
@@ -2862,6 +2951,7 @@ public final class PatchDeployments {
       public boolean hasDuration() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -2881,6 +2971,7 @@ public final class PatchDeployments {
           return durationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2904,6 +2995,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2924,6 +3016,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2952,6 +3045,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -2972,6 +3066,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2987,6 +3082,7 @@ public final class PatchDeployments {
         onChanged();
         return getDurationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3004,6 +3100,7 @@ public final class PatchDeployments {
           return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
         }
       }
+
       /**
        *
        *
@@ -3036,6 +3133,7 @@ public final class PatchDeployments {
               com.google.cloud.osconfig.v1beta.PatchDeployments.OneTimeSchedule.Builder,
               com.google.cloud.osconfig.v1beta.PatchDeployments.OneTimeScheduleOrBuilder>
           oneTimeScheduleBuilder_;
+
       /**
        *
        *
@@ -3053,6 +3151,7 @@ public final class PatchDeployments {
       public boolean hasOneTimeSchedule() {
         return scheduleCase_ == 6;
       }
+
       /**
        *
        *
@@ -3083,6 +3182,7 @@ public final class PatchDeployments {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3108,6 +3208,7 @@ public final class PatchDeployments {
         scheduleCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -3131,6 +3232,7 @@ public final class PatchDeployments {
         scheduleCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -3169,6 +3271,7 @@ public final class PatchDeployments {
         scheduleCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -3196,6 +3299,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -3211,6 +3315,7 @@ public final class PatchDeployments {
           getOneTimeScheduleBuilder() {
         return getOneTimeScheduleFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3235,6 +3340,7 @@ public final class PatchDeployments {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3277,6 +3383,7 @@ public final class PatchDeployments {
               com.google.cloud.osconfig.v1beta.PatchDeployments.RecurringSchedule.Builder,
               com.google.cloud.osconfig.v1beta.PatchDeployments.RecurringScheduleOrBuilder>
           recurringScheduleBuilder_;
+
       /**
        *
        *
@@ -3294,6 +3401,7 @@ public final class PatchDeployments {
       public boolean hasRecurringSchedule() {
         return scheduleCase_ == 7;
       }
+
       /**
        *
        *
@@ -3324,6 +3432,7 @@ public final class PatchDeployments {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3349,6 +3458,7 @@ public final class PatchDeployments {
         scheduleCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -3372,6 +3482,7 @@ public final class PatchDeployments {
         scheduleCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -3410,6 +3521,7 @@ public final class PatchDeployments {
         scheduleCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -3437,6 +3549,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -3452,6 +3565,7 @@ public final class PatchDeployments {
           getRecurringScheduleBuilder() {
         return getRecurringScheduleFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3476,6 +3590,7 @@ public final class PatchDeployments {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3519,6 +3634,7 @@ public final class PatchDeployments {
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           createTimeBuilder_;
+
       /**
        *
        *
@@ -3536,6 +3652,7 @@ public final class PatchDeployments {
       public boolean hasCreateTime() {
         return ((bitField0_ & 0x00000080) != 0);
       }
+
       /**
        *
        *
@@ -3559,6 +3676,7 @@ public final class PatchDeployments {
           return createTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3584,6 +3702,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3606,6 +3725,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3636,6 +3756,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -3658,6 +3779,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3675,6 +3797,7 @@ public final class PatchDeployments {
         onChanged();
         return getCreateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3696,6 +3819,7 @@ public final class PatchDeployments {
               : createTime_;
         }
       }
+
       /**
        *
        *
@@ -3731,6 +3855,7 @@ public final class PatchDeployments {
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           updateTimeBuilder_;
+
       /**
        *
        *
@@ -3748,6 +3873,7 @@ public final class PatchDeployments {
       public boolean hasUpdateTime() {
         return ((bitField0_ & 0x00000100) != 0);
       }
+
       /**
        *
        *
@@ -3771,6 +3897,7 @@ public final class PatchDeployments {
           return updateTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3796,6 +3923,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3818,6 +3946,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3848,6 +3977,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -3870,6 +4000,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3887,6 +4018,7 @@ public final class PatchDeployments {
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3908,6 +4040,7 @@ public final class PatchDeployments {
               : updateTime_;
         }
       }
+
       /**
        *
        *
@@ -3943,6 +4076,7 @@ public final class PatchDeployments {
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           lastExecuteTimeBuilder_;
+
       /**
        *
        *
@@ -3961,6 +4095,7 @@ public final class PatchDeployments {
       public boolean hasLastExecuteTime() {
         return ((bitField0_ & 0x00000200) != 0);
       }
+
       /**
        *
        *
@@ -3985,6 +4120,7 @@ public final class PatchDeployments {
           return lastExecuteTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4011,6 +4147,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4034,6 +4171,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4065,6 +4203,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -4088,6 +4227,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4106,6 +4246,7 @@ public final class PatchDeployments {
         onChanged();
         return getLastExecuteTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4128,6 +4269,7 @@ public final class PatchDeployments {
               : lastExecuteTime_;
         }
       }
+
       /**
        *
        *
@@ -4164,6 +4306,7 @@ public final class PatchDeployments {
               com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder,
               com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder>
           rolloutBuilder_;
+
       /**
        *
        *
@@ -4180,6 +4323,7 @@ public final class PatchDeployments {
       public boolean hasRollout() {
         return ((bitField0_ & 0x00000400) != 0);
       }
+
       /**
        *
        *
@@ -4202,6 +4346,7 @@ public final class PatchDeployments {
           return rolloutBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4226,6 +4371,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4248,6 +4394,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4278,6 +4425,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -4299,6 +4447,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4315,6 +4464,7 @@ public final class PatchDeployments {
         onChanged();
         return getRolloutFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4336,6 +4486,7 @@ public final class PatchDeployments {
               : rollout_;
         }
       }
+
       /**
        *
        *
@@ -4365,6 +4516,7 @@ public final class PatchDeployments {
       }
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -4382,6 +4534,7 @@ public final class PatchDeployments {
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -4402,6 +4555,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4424,6 +4578,7 @@ public final class PatchDeployments {
             ? com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment.State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -4448,6 +4603,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4553,6 +4709,7 @@ public final class PatchDeployments {
      * @return Whether the executeTime field is set.
      */
     boolean hasExecuteTime();
+
     /**
      *
      *
@@ -4566,6 +4723,7 @@ public final class PatchDeployments {
      * @return The executeTime.
      */
     com.google.protobuf.Timestamp getExecuteTime();
+
     /**
      *
      *
@@ -4578,6 +4736,7 @@ public final class PatchDeployments {
      */
     com.google.protobuf.TimestampOrBuilder getExecuteTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -4593,6 +4752,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.OneTimeSchedule)
       OneTimeScheduleOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OneTimeSchedule.newBuilder() to construct.
     private OneTimeSchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4624,6 +4784,7 @@ public final class PatchDeployments {
     private int bitField0_;
     public static final int EXECUTE_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp executeTime_;
+
     /**
      *
      *
@@ -4640,6 +4801,7 @@ public final class PatchDeployments {
     public boolean hasExecuteTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4658,6 +4820,7 @@ public final class PatchDeployments {
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : executeTime_;
     }
+
     /**
      *
      *
@@ -4842,6 +5005,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5057,6 +5221,7 @@ public final class PatchDeployments {
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           executeTimeBuilder_;
+
       /**
        *
        *
@@ -5073,6 +5238,7 @@ public final class PatchDeployments {
       public boolean hasExecuteTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -5095,6 +5261,7 @@ public final class PatchDeployments {
           return executeTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5119,6 +5286,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5140,6 +5308,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5169,6 +5338,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -5190,6 +5360,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5206,6 +5377,7 @@ public final class PatchDeployments {
         onChanged();
         return getExecuteTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5226,6 +5398,7 @@ public final class PatchDeployments {
               : executeTime_;
         }
       }
+
       /**
        *
        *
@@ -5339,6 +5512,7 @@ public final class PatchDeployments {
      * @return Whether the timeZone field is set.
      */
     boolean hasTimeZone();
+
     /**
      *
      *
@@ -5352,6 +5526,7 @@ public final class PatchDeployments {
      * @return The timeZone.
      */
     com.google.type.TimeZone getTimeZone();
+
     /**
      *
      *
@@ -5378,6 +5553,7 @@ public final class PatchDeployments {
      * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
+
     /**
      *
      *
@@ -5392,6 +5568,7 @@ public final class PatchDeployments {
      * @return The startTime.
      */
     com.google.protobuf.Timestamp getStartTime();
+
     /**
      *
      *
@@ -5419,6 +5596,7 @@ public final class PatchDeployments {
      * @return Whether the endTime field is set.
      */
     boolean hasEndTime();
+
     /**
      *
      *
@@ -5433,6 +5611,7 @@ public final class PatchDeployments {
      * @return The endTime.
      */
     com.google.protobuf.Timestamp getEndTime();
+
     /**
      *
      *
@@ -5459,6 +5638,7 @@ public final class PatchDeployments {
      * @return Whether the timeOfDay field is set.
      */
     boolean hasTimeOfDay();
+
     /**
      *
      *
@@ -5472,6 +5652,7 @@ public final class PatchDeployments {
      * @return The timeOfDay.
      */
     com.google.type.TimeOfDay getTimeOfDay();
+
     /**
      *
      *
@@ -5498,6 +5679,7 @@ public final class PatchDeployments {
      * @return The enum numeric value on the wire for frequency.
      */
     int getFrequencyValue();
+
     /**
      *
      *
@@ -5527,6 +5709,7 @@ public final class PatchDeployments {
      * @return Whether the weekly field is set.
      */
     boolean hasWeekly();
+
     /**
      *
      *
@@ -5541,6 +5724,7 @@ public final class PatchDeployments {
      * @return The weekly.
      */
     com.google.cloud.osconfig.v1beta.PatchDeployments.WeeklySchedule getWeekly();
+
     /**
      *
      *
@@ -5568,6 +5752,7 @@ public final class PatchDeployments {
      * @return Whether the monthly field is set.
      */
     boolean hasMonthly();
+
     /**
      *
      *
@@ -5582,6 +5767,7 @@ public final class PatchDeployments {
      * @return The monthly.
      */
     com.google.cloud.osconfig.v1beta.PatchDeployments.MonthlySchedule getMonthly();
+
     /**
      *
      *
@@ -5610,6 +5796,7 @@ public final class PatchDeployments {
      * @return Whether the lastExecuteTime field is set.
      */
     boolean hasLastExecuteTime();
+
     /**
      *
      *
@@ -5624,6 +5811,7 @@ public final class PatchDeployments {
      * @return The lastExecuteTime.
      */
     com.google.protobuf.Timestamp getLastExecuteTime();
+
     /**
      *
      *
@@ -5651,6 +5839,7 @@ public final class PatchDeployments {
      * @return Whether the nextExecuteTime field is set.
      */
     boolean hasNextExecuteTime();
+
     /**
      *
      *
@@ -5665,6 +5854,7 @@ public final class PatchDeployments {
      * @return The nextExecuteTime.
      */
     com.google.protobuf.Timestamp getNextExecuteTime();
+
     /**
      *
      *
@@ -5681,6 +5871,7 @@ public final class PatchDeployments {
     com.google.cloud.osconfig.v1beta.PatchDeployments.RecurringSchedule.ScheduleConfigCase
         getScheduleConfigCase();
   }
+
   /**
    *
    *
@@ -5695,6 +5886,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.RecurringSchedule)
       RecurringScheduleOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RecurringSchedule.newBuilder() to construct.
     private RecurringSchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5791,6 +5983,7 @@ public final class PatchDeployments {
        * <code>FREQUENCY_UNSPECIFIED = 0;</code>
        */
       public static final int FREQUENCY_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -5802,6 +5995,7 @@ public final class PatchDeployments {
        * <code>WEEKLY = 1;</code>
        */
       public static final int WEEKLY_VALUE = 1;
+
       /**
        *
        *
@@ -5813,6 +6007,7 @@ public final class PatchDeployments {
        * <code>MONTHLY = 2;</code>
        */
       public static final int MONTHLY_VALUE = 2;
+
       /**
        *
        *
@@ -5930,6 +6125,7 @@ public final class PatchDeployments {
       private ScheduleConfigCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -5964,6 +6160,7 @@ public final class PatchDeployments {
 
     public static final int TIME_ZONE_FIELD_NUMBER = 1;
     private com.google.type.TimeZone timeZone_;
+
     /**
      *
      *
@@ -5980,6 +6177,7 @@ public final class PatchDeployments {
     public boolean hasTimeZone() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -5996,6 +6194,7 @@ public final class PatchDeployments {
     public com.google.type.TimeZone getTimeZone() {
       return timeZone_ == null ? com.google.type.TimeZone.getDefaultInstance() : timeZone_;
     }
+
     /**
      *
      *
@@ -6013,6 +6212,7 @@ public final class PatchDeployments {
 
     public static final int START_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp startTime_;
+
     /**
      *
      *
@@ -6030,6 +6230,7 @@ public final class PatchDeployments {
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -6047,6 +6248,7 @@ public final class PatchDeployments {
     public com.google.protobuf.Timestamp getStartTime() {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
+
     /**
      *
      *
@@ -6065,6 +6267,7 @@ public final class PatchDeployments {
 
     public static final int END_TIME_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp endTime_;
+
     /**
      *
      *
@@ -6082,6 +6285,7 @@ public final class PatchDeployments {
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -6099,6 +6303,7 @@ public final class PatchDeployments {
     public com.google.protobuf.Timestamp getEndTime() {
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
+
     /**
      *
      *
@@ -6117,6 +6322,7 @@ public final class PatchDeployments {
 
     public static final int TIME_OF_DAY_FIELD_NUMBER = 4;
     private com.google.type.TimeOfDay timeOfDay_;
+
     /**
      *
      *
@@ -6133,6 +6339,7 @@ public final class PatchDeployments {
     public boolean hasTimeOfDay() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -6149,6 +6356,7 @@ public final class PatchDeployments {
     public com.google.type.TimeOfDay getTimeOfDay() {
       return timeOfDay_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : timeOfDay_;
     }
+
     /**
      *
      *
@@ -6166,6 +6374,7 @@ public final class PatchDeployments {
 
     public static final int FREQUENCY_FIELD_NUMBER = 5;
     private int frequency_ = 0;
+
     /**
      *
      *
@@ -6183,6 +6392,7 @@ public final class PatchDeployments {
     public int getFrequencyValue() {
       return frequency_;
     }
+
     /**
      *
      *
@@ -6209,6 +6419,7 @@ public final class PatchDeployments {
     }
 
     public static final int WEEKLY_FIELD_NUMBER = 6;
+
     /**
      *
      *
@@ -6226,6 +6437,7 @@ public final class PatchDeployments {
     public boolean hasWeekly() {
       return scheduleConfigCase_ == 6;
     }
+
     /**
      *
      *
@@ -6246,6 +6458,7 @@ public final class PatchDeployments {
       }
       return com.google.cloud.osconfig.v1beta.PatchDeployments.WeeklySchedule.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -6267,6 +6480,7 @@ public final class PatchDeployments {
     }
 
     public static final int MONTHLY_FIELD_NUMBER = 7;
+
     /**
      *
      *
@@ -6284,6 +6498,7 @@ public final class PatchDeployments {
     public boolean hasMonthly() {
       return scheduleConfigCase_ == 7;
     }
+
     /**
      *
      *
@@ -6304,6 +6519,7 @@ public final class PatchDeployments {
       }
       return com.google.cloud.osconfig.v1beta.PatchDeployments.MonthlySchedule.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -6326,6 +6542,7 @@ public final class PatchDeployments {
 
     public static final int LAST_EXECUTE_TIME_FIELD_NUMBER = 9;
     private com.google.protobuf.Timestamp lastExecuteTime_;
+
     /**
      *
      *
@@ -6343,6 +6560,7 @@ public final class PatchDeployments {
     public boolean hasLastExecuteTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -6362,6 +6580,7 @@ public final class PatchDeployments {
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : lastExecuteTime_;
     }
+
     /**
      *
      *
@@ -6382,6 +6601,7 @@ public final class PatchDeployments {
 
     public static final int NEXT_EXECUTE_TIME_FIELD_NUMBER = 10;
     private com.google.protobuf.Timestamp nextExecuteTime_;
+
     /**
      *
      *
@@ -6399,6 +6619,7 @@ public final class PatchDeployments {
     public boolean hasNextExecuteTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -6418,6 +6639,7 @@ public final class PatchDeployments {
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : nextExecuteTime_;
     }
+
     /**
      *
      *
@@ -6732,6 +6954,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7120,6 +7343,7 @@ public final class PatchDeployments {
               com.google.type.TimeZone.Builder,
               com.google.type.TimeZoneOrBuilder>
           timeZoneBuilder_;
+
       /**
        *
        *
@@ -7135,6 +7359,7 @@ public final class PatchDeployments {
       public boolean hasTimeZone() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -7154,6 +7379,7 @@ public final class PatchDeployments {
           return timeZoneBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -7177,6 +7403,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7197,6 +7424,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7225,6 +7453,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -7245,6 +7474,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7260,6 +7490,7 @@ public final class PatchDeployments {
         onChanged();
         return getTimeZoneFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7277,6 +7508,7 @@ public final class PatchDeployments {
           return timeZone_ == null ? com.google.type.TimeZone.getDefaultInstance() : timeZone_;
         }
       }
+
       /**
        *
        *
@@ -7310,6 +7542,7 @@ public final class PatchDeployments {
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           startTimeBuilder_;
+
       /**
        *
        *
@@ -7326,6 +7559,7 @@ public final class PatchDeployments {
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -7348,6 +7582,7 @@ public final class PatchDeployments {
           return startTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -7372,6 +7607,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7393,6 +7629,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7422,6 +7659,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -7443,6 +7681,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7459,6 +7698,7 @@ public final class PatchDeployments {
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7479,6 +7719,7 @@ public final class PatchDeployments {
               : startTime_;
         }
       }
+
       /**
        *
        *
@@ -7513,6 +7754,7 @@ public final class PatchDeployments {
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           endTimeBuilder_;
+
       /**
        *
        *
@@ -7529,6 +7771,7 @@ public final class PatchDeployments {
       public boolean hasEndTime() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -7549,6 +7792,7 @@ public final class PatchDeployments {
           return endTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -7573,6 +7817,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7594,6 +7839,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7623,6 +7869,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -7644,6 +7891,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7660,6 +7908,7 @@ public final class PatchDeployments {
         onChanged();
         return getEndTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7678,6 +7927,7 @@ public final class PatchDeployments {
           return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
         }
       }
+
       /**
        *
        *
@@ -7712,6 +7962,7 @@ public final class PatchDeployments {
               com.google.type.TimeOfDay.Builder,
               com.google.type.TimeOfDayOrBuilder>
           timeOfDayBuilder_;
+
       /**
        *
        *
@@ -7727,6 +7978,7 @@ public final class PatchDeployments {
       public boolean hasTimeOfDay() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -7746,6 +7998,7 @@ public final class PatchDeployments {
           return timeOfDayBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -7769,6 +8022,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7789,6 +8043,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7817,6 +8072,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -7837,6 +8093,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7852,6 +8109,7 @@ public final class PatchDeployments {
         onChanged();
         return getTimeOfDayFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7869,6 +8127,7 @@ public final class PatchDeployments {
           return timeOfDay_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : timeOfDay_;
         }
       }
+
       /**
        *
        *
@@ -7897,6 +8156,7 @@ public final class PatchDeployments {
       }
 
       private int frequency_ = 0;
+
       /**
        *
        *
@@ -7914,6 +8174,7 @@ public final class PatchDeployments {
       public int getFrequencyValue() {
         return frequency_;
       }
+
       /**
        *
        *
@@ -7934,6 +8195,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7958,6 +8220,7 @@ public final class PatchDeployments {
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -7982,6 +8245,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8007,6 +8271,7 @@ public final class PatchDeployments {
               com.google.cloud.osconfig.v1beta.PatchDeployments.WeeklySchedule.Builder,
               com.google.cloud.osconfig.v1beta.PatchDeployments.WeeklyScheduleOrBuilder>
           weeklyBuilder_;
+
       /**
        *
        *
@@ -8024,6 +8289,7 @@ public final class PatchDeployments {
       public boolean hasWeekly() {
         return scheduleConfigCase_ == 6;
       }
+
       /**
        *
        *
@@ -8054,6 +8320,7 @@ public final class PatchDeployments {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8079,6 +8346,7 @@ public final class PatchDeployments {
         scheduleConfigCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -8102,6 +8370,7 @@ public final class PatchDeployments {
         scheduleConfigCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -8140,6 +8409,7 @@ public final class PatchDeployments {
         scheduleConfigCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -8167,6 +8437,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -8182,6 +8453,7 @@ public final class PatchDeployments {
           getWeeklyBuilder() {
         return getWeeklyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8207,6 +8479,7 @@ public final class PatchDeployments {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8250,6 +8523,7 @@ public final class PatchDeployments {
               com.google.cloud.osconfig.v1beta.PatchDeployments.MonthlySchedule.Builder,
               com.google.cloud.osconfig.v1beta.PatchDeployments.MonthlyScheduleOrBuilder>
           monthlyBuilder_;
+
       /**
        *
        *
@@ -8267,6 +8541,7 @@ public final class PatchDeployments {
       public boolean hasMonthly() {
         return scheduleConfigCase_ == 7;
       }
+
       /**
        *
        *
@@ -8297,6 +8572,7 @@ public final class PatchDeployments {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8322,6 +8598,7 @@ public final class PatchDeployments {
         scheduleConfigCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -8345,6 +8622,7 @@ public final class PatchDeployments {
         scheduleConfigCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -8383,6 +8661,7 @@ public final class PatchDeployments {
         scheduleConfigCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -8410,6 +8689,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -8425,6 +8705,7 @@ public final class PatchDeployments {
           getMonthlyBuilder() {
         return getMonthlyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8450,6 +8731,7 @@ public final class PatchDeployments {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8494,6 +8776,7 @@ public final class PatchDeployments {
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           lastExecuteTimeBuilder_;
+
       /**
        *
        *
@@ -8510,6 +8793,7 @@ public final class PatchDeployments {
       public boolean hasLastExecuteTime() {
         return ((bitField0_ & 0x00000080) != 0);
       }
+
       /**
        *
        *
@@ -8532,6 +8816,7 @@ public final class PatchDeployments {
           return lastExecuteTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -8556,6 +8841,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8577,6 +8863,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8606,6 +8893,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -8627,6 +8915,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8643,6 +8932,7 @@ public final class PatchDeployments {
         onChanged();
         return getLastExecuteTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8663,6 +8953,7 @@ public final class PatchDeployments {
               : lastExecuteTime_;
         }
       }
+
       /**
        *
        *
@@ -8697,6 +8988,7 @@ public final class PatchDeployments {
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           nextExecuteTimeBuilder_;
+
       /**
        *
        *
@@ -8713,6 +9005,7 @@ public final class PatchDeployments {
       public boolean hasNextExecuteTime() {
         return ((bitField0_ & 0x00000100) != 0);
       }
+
       /**
        *
        *
@@ -8735,6 +9028,7 @@ public final class PatchDeployments {
           return nextExecuteTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -8759,6 +9053,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8780,6 +9075,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8809,6 +9105,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -8830,6 +9127,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8846,6 +9144,7 @@ public final class PatchDeployments {
         onChanged();
         return getNextExecuteTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8866,6 +9165,7 @@ public final class PatchDeployments {
               : nextExecuteTime_;
         }
       }
+
       /**
        *
        *
@@ -8979,6 +9279,7 @@ public final class PatchDeployments {
      * @return The enum numeric value on the wire for dayOfWeek.
      */
     int getDayOfWeekValue();
+
     /**
      *
      *
@@ -8993,6 +9294,7 @@ public final class PatchDeployments {
      */
     com.google.type.DayOfWeek getDayOfWeek();
   }
+
   /**
    *
    *
@@ -9007,6 +9309,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.WeeklySchedule)
       WeeklyScheduleOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use WeeklySchedule.newBuilder() to construct.
     private WeeklySchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9039,6 +9342,7 @@ public final class PatchDeployments {
 
     public static final int DAY_OF_WEEK_FIELD_NUMBER = 1;
     private int dayOfWeek_ = 0;
+
     /**
      *
      *
@@ -9055,6 +9359,7 @@ public final class PatchDeployments {
     public int getDayOfWeekValue() {
       return dayOfWeek_;
     }
+
     /**
      *
      *
@@ -9235,6 +9540,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -9427,6 +9733,7 @@ public final class PatchDeployments {
       private int bitField0_;
 
       private int dayOfWeek_ = 0;
+
       /**
        *
        *
@@ -9443,6 +9750,7 @@ public final class PatchDeployments {
       public int getDayOfWeekValue() {
         return dayOfWeek_;
       }
+
       /**
        *
        *
@@ -9462,6 +9770,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9479,6 +9788,7 @@ public final class PatchDeployments {
         com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(dayOfWeek_);
         return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
       }
+
       /**
        *
        *
@@ -9501,6 +9811,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9606,6 +9917,7 @@ public final class PatchDeployments {
      * @return Whether the weekDayOfMonth field is set.
      */
     boolean hasWeekDayOfMonth();
+
     /**
      *
      *
@@ -9620,6 +9932,7 @@ public final class PatchDeployments {
      * @return The weekDayOfMonth.
      */
     com.google.cloud.osconfig.v1beta.PatchDeployments.WeekDayOfMonth getWeekDayOfMonth();
+
     /**
      *
      *
@@ -9649,6 +9962,7 @@ public final class PatchDeployments {
      * @return Whether the monthDay field is set.
      */
     boolean hasMonthDay();
+
     /**
      *
      *
@@ -9668,6 +9982,7 @@ public final class PatchDeployments {
     com.google.cloud.osconfig.v1beta.PatchDeployments.MonthlySchedule.DayOfMonthCase
         getDayOfMonthCase();
   }
+
   /**
    *
    *
@@ -9683,6 +9998,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.MonthlySchedule)
       MonthlyScheduleOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MonthlySchedule.newBuilder() to construct.
     private MonthlySchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9728,6 +10044,7 @@ public final class PatchDeployments {
       private DayOfMonthCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -9761,6 +10078,7 @@ public final class PatchDeployments {
     }
 
     public static final int WEEK_DAY_OF_MONTH_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -9778,6 +10096,7 @@ public final class PatchDeployments {
     public boolean hasWeekDayOfMonth() {
       return dayOfMonthCase_ == 1;
     }
+
     /**
      *
      *
@@ -9798,6 +10117,7 @@ public final class PatchDeployments {
       }
       return com.google.cloud.osconfig.v1beta.PatchDeployments.WeekDayOfMonth.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -9819,6 +10139,7 @@ public final class PatchDeployments {
     }
 
     public static final int MONTH_DAY_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -9837,6 +10158,7 @@ public final class PatchDeployments {
     public boolean hasMonthDay() {
       return dayOfMonthCase_ == 2;
     }
+
     /**
      *
      *
@@ -10052,6 +10374,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -10294,6 +10617,7 @@ public final class PatchDeployments {
               com.google.cloud.osconfig.v1beta.PatchDeployments.WeekDayOfMonth.Builder,
               com.google.cloud.osconfig.v1beta.PatchDeployments.WeekDayOfMonthOrBuilder>
           weekDayOfMonthBuilder_;
+
       /**
        *
        *
@@ -10311,6 +10635,7 @@ public final class PatchDeployments {
       public boolean hasWeekDayOfMonth() {
         return dayOfMonthCase_ == 1;
       }
+
       /**
        *
        *
@@ -10340,6 +10665,7 @@ public final class PatchDeployments {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -10365,6 +10691,7 @@ public final class PatchDeployments {
         dayOfMonthCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -10388,6 +10715,7 @@ public final class PatchDeployments {
         dayOfMonthCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -10426,6 +10754,7 @@ public final class PatchDeployments {
         dayOfMonthCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -10453,6 +10782,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -10468,6 +10798,7 @@ public final class PatchDeployments {
           getWeekDayOfMonthBuilder() {
         return getWeekDayOfMonthFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -10492,6 +10823,7 @@ public final class PatchDeployments {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -10546,6 +10878,7 @@ public final class PatchDeployments {
       public boolean hasMonthDay() {
         return dayOfMonthCase_ == 2;
       }
+
       /**
        *
        *
@@ -10566,6 +10899,7 @@ public final class PatchDeployments {
         }
         return 0;
       }
+
       /**
        *
        *
@@ -10588,6 +10922,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10710,6 +11045,7 @@ public final class PatchDeployments {
      * @return The enum numeric value on the wire for dayOfWeek.
      */
     int getDayOfWeekValue();
+
     /**
      *
      *
@@ -10743,6 +11079,7 @@ public final class PatchDeployments {
      */
     int getDayOffset();
   }
+
   /**
    *
    *
@@ -10757,6 +11094,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.WeekDayOfMonth)
       WeekDayOfMonthOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use WeekDayOfMonth.newBuilder() to construct.
     private WeekDayOfMonth(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10789,6 +11127,7 @@ public final class PatchDeployments {
 
     public static final int WEEK_ORDINAL_FIELD_NUMBER = 1;
     private int weekOrdinal_ = 0;
+
     /**
      *
      *
@@ -10808,6 +11147,7 @@ public final class PatchDeployments {
 
     public static final int DAY_OF_WEEK_FIELD_NUMBER = 2;
     private int dayOfWeek_ = 0;
+
     /**
      *
      *
@@ -10824,6 +11164,7 @@ public final class PatchDeployments {
     public int getDayOfWeekValue() {
       return dayOfWeek_;
     }
+
     /**
      *
      *
@@ -10844,6 +11185,7 @@ public final class PatchDeployments {
 
     public static final int DAY_OFFSET_FIELD_NUMBER = 3;
     private int dayOffset_ = 0;
+
     /**
      *
      *
@@ -11046,6 +11388,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -11264,6 +11607,7 @@ public final class PatchDeployments {
       private int bitField0_;
 
       private int weekOrdinal_;
+
       /**
        *
        *
@@ -11280,6 +11624,7 @@ public final class PatchDeployments {
       public int getWeekOrdinal() {
         return weekOrdinal_;
       }
+
       /**
        *
        *
@@ -11300,6 +11645,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11320,6 +11666,7 @@ public final class PatchDeployments {
       }
 
       private int dayOfWeek_ = 0;
+
       /**
        *
        *
@@ -11336,6 +11683,7 @@ public final class PatchDeployments {
       public int getDayOfWeekValue() {
         return dayOfWeek_;
       }
+
       /**
        *
        *
@@ -11355,6 +11703,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11372,6 +11721,7 @@ public final class PatchDeployments {
         com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(dayOfWeek_);
         return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
       }
+
       /**
        *
        *
@@ -11394,6 +11744,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11414,6 +11765,7 @@ public final class PatchDeployments {
       }
 
       private int dayOffset_;
+
       /**
        *
        *
@@ -11435,6 +11787,7 @@ public final class PatchDeployments {
       public int getDayOffset() {
         return dayOffset_;
       }
+
       /**
        *
        *
@@ -11460,6 +11813,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11568,6 +11922,7 @@ public final class PatchDeployments {
      * @return The parent.
      */
     java.lang.String getParent();
+
     /**
      *
      *
@@ -11599,6 +11954,7 @@ public final class PatchDeployments {
      * @return The patchDeploymentId.
      */
     java.lang.String getPatchDeploymentId();
+
     /**
      *
      *
@@ -11632,6 +11988,7 @@ public final class PatchDeployments {
      * @return Whether the patchDeployment field is set.
      */
     boolean hasPatchDeployment();
+
     /**
      *
      *
@@ -11646,6 +12003,7 @@ public final class PatchDeployments {
      * @return The patchDeployment.
      */
     com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment getPatchDeployment();
+
     /**
      *
      *
@@ -11660,6 +12018,7 @@ public final class PatchDeployments {
     com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeploymentOrBuilder
         getPatchDeploymentOrBuilder();
   }
+
   /**
    *
    *
@@ -11675,6 +12034,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.CreatePatchDeploymentRequest)
       CreatePatchDeploymentRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CreatePatchDeploymentRequest.newBuilder() to construct.
     private CreatePatchDeploymentRequest(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -11713,6 +12073,7 @@ public final class PatchDeployments {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -11736,6 +12097,7 @@ public final class PatchDeployments {
         return s;
       }
     }
+
     /**
      *
      *
@@ -11764,6 +12126,7 @@ public final class PatchDeployments {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object patchDeploymentId_ = "";
+
     /**
      *
      *
@@ -11793,6 +12156,7 @@ public final class PatchDeployments {
         return s;
       }
     }
+
     /**
      *
      *
@@ -11825,6 +12189,7 @@ public final class PatchDeployments {
 
     public static final int PATCH_DEPLOYMENT_FIELD_NUMBER = 3;
     private com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment patchDeployment_;
+
     /**
      *
      *
@@ -11842,6 +12207,7 @@ public final class PatchDeployments {
     public boolean hasPatchDeployment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -11861,6 +12227,7 @@ public final class PatchDeployments {
           ? com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment.getDefaultInstance()
           : patchDeployment_;
     }
+
     /**
      *
      *
@@ -12072,6 +12439,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -12321,6 +12689,7 @@ public final class PatchDeployments {
       private int bitField0_;
 
       private java.lang.Object parent_ = "";
+
       /**
        *
        *
@@ -12343,6 +12712,7 @@ public final class PatchDeployments {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -12365,6 +12735,7 @@ public final class PatchDeployments {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -12386,6 +12757,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12403,6 +12775,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12427,6 +12800,7 @@ public final class PatchDeployments {
       }
 
       private java.lang.Object patchDeploymentId_ = "";
+
       /**
        *
        *
@@ -12455,6 +12829,7 @@ public final class PatchDeployments {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -12483,6 +12858,7 @@ public final class PatchDeployments {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -12510,6 +12886,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12533,6 +12910,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12568,6 +12946,7 @@ public final class PatchDeployments {
               com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment.Builder,
               com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeploymentOrBuilder>
           patchDeploymentBuilder_;
+
       /**
        *
        *
@@ -12584,6 +12963,7 @@ public final class PatchDeployments {
       public boolean hasPatchDeployment() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -12608,6 +12988,7 @@ public final class PatchDeployments {
           return patchDeploymentBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -12633,6 +13014,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12656,6 +13038,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12688,6 +13071,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -12709,6 +13093,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12726,6 +13111,7 @@ public final class PatchDeployments {
         onChanged();
         return getPatchDeploymentFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -12748,6 +13134,7 @@ public final class PatchDeployments {
               : patchDeployment_;
         }
       }
+
       /**
        *
        *
@@ -12863,6 +13250,7 @@ public final class PatchDeployments {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -12877,6 +13265,7 @@ public final class PatchDeployments {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
+
   /**
    *
    *
@@ -12891,6 +13280,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.GetPatchDeploymentRequest)
       GetPatchDeploymentRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GetPatchDeploymentRequest.newBuilder() to construct.
     private GetPatchDeploymentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -12926,6 +13316,7 @@ public final class PatchDeployments {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -12950,6 +13341,7 @@ public final class PatchDeployments {
         return s;
       }
     }
+
     /**
      *
      *
@@ -13143,6 +13535,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -13342,6 +13735,7 @@ public final class PatchDeployments {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -13365,6 +13759,7 @@ public final class PatchDeployments {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -13388,6 +13783,7 @@ public final class PatchDeployments {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -13410,6 +13806,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13428,6 +13825,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13537,6 +13935,7 @@ public final class PatchDeployments {
      * @return The parent.
      */
     java.lang.String getParent();
+
     /**
      *
      *
@@ -13576,6 +13975,7 @@ public final class PatchDeployments {
      * @return The pageToken.
      */
     java.lang.String getPageToken();
+
     /**
      *
      *
@@ -13590,6 +13990,7 @@ public final class PatchDeployments {
      */
     com.google.protobuf.ByteString getPageTokenBytes();
   }
+
   /**
    *
    *
@@ -13605,6 +14006,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.ListPatchDeploymentsRequest)
       ListPatchDeploymentsRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ListPatchDeploymentsRequest.newBuilder() to construct.
     private ListPatchDeploymentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -13641,6 +14043,7 @@ public final class PatchDeployments {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -13664,6 +14067,7 @@ public final class PatchDeployments {
         return s;
       }
     }
+
     /**
      *
      *
@@ -13690,6 +14094,7 @@ public final class PatchDeployments {
 
     public static final int PAGE_SIZE_FIELD_NUMBER = 2;
     private int pageSize_ = 0;
+
     /**
      *
      *
@@ -13710,6 +14115,7 @@ public final class PatchDeployments {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -13734,6 +14140,7 @@ public final class PatchDeployments {
         return s;
       }
     }
+
     /**
      *
      *
@@ -13946,6 +14353,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -14174,6 +14582,7 @@ public final class PatchDeployments {
       private int bitField0_;
 
       private java.lang.Object parent_ = "";
+
       /**
        *
        *
@@ -14196,6 +14605,7 @@ public final class PatchDeployments {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -14218,6 +14628,7 @@ public final class PatchDeployments {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -14239,6 +14650,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14256,6 +14668,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14280,6 +14693,7 @@ public final class PatchDeployments {
       }
 
       private int pageSize_;
+
       /**
        *
        *
@@ -14295,6 +14709,7 @@ public final class PatchDeployments {
       public int getPageSize() {
         return pageSize_;
       }
+
       /**
        *
        *
@@ -14314,6 +14729,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14333,6 +14749,7 @@ public final class PatchDeployments {
       }
 
       private java.lang.Object pageToken_ = "";
+
       /**
        *
        *
@@ -14356,6 +14773,7 @@ public final class PatchDeployments {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -14379,6 +14797,7 @@ public final class PatchDeployments {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -14401,6 +14820,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14419,6 +14839,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14528,6 +14949,7 @@ public final class PatchDeployments {
      */
     java.util.List<com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
         getPatchDeploymentsList();
+
     /**
      *
      *
@@ -14539,6 +14961,7 @@ public final class PatchDeployments {
      */
     com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment getPatchDeployments(
         int index);
+
     /**
      *
      *
@@ -14549,6 +14972,7 @@ public final class PatchDeployments {
      * <code>repeated .google.cloud.osconfig.v1beta.PatchDeployment patch_deployments = 1;</code>
      */
     int getPatchDeploymentsCount();
+
     /**
      *
      *
@@ -14561,6 +14985,7 @@ public final class PatchDeployments {
     java.util.List<
             ? extends com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeploymentOrBuilder>
         getPatchDeploymentsOrBuilderList();
+
     /**
      *
      *
@@ -14586,6 +15011,7 @@ public final class PatchDeployments {
      * @return The nextPageToken.
      */
     java.lang.String getNextPageToken();
+
     /**
      *
      *
@@ -14600,6 +15026,7 @@ public final class PatchDeployments {
      */
     com.google.protobuf.ByteString getNextPageTokenBytes();
   }
+
   /**
    *
    *
@@ -14615,6 +15042,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.ListPatchDeploymentsResponse)
       ListPatchDeploymentsResponseOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ListPatchDeploymentsResponse.newBuilder() to construct.
     private ListPatchDeploymentsResponse(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -14653,6 +15081,7 @@ public final class PatchDeployments {
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
         patchDeployments_;
+
     /**
      *
      *
@@ -14667,6 +15096,7 @@ public final class PatchDeployments {
         getPatchDeploymentsList() {
       return patchDeployments_;
     }
+
     /**
      *
      *
@@ -14682,6 +15112,7 @@ public final class PatchDeployments {
         getPatchDeploymentsOrBuilderList() {
       return patchDeployments_;
     }
+
     /**
      *
      *
@@ -14695,6 +15126,7 @@ public final class PatchDeployments {
     public int getPatchDeploymentsCount() {
       return patchDeployments_.size();
     }
+
     /**
      *
      *
@@ -14709,6 +15141,7 @@ public final class PatchDeployments {
         int index) {
       return patchDeployments_.get(index);
     }
+
     /**
      *
      *
@@ -14728,6 +15161,7 @@ public final class PatchDeployments {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -14752,6 +15186,7 @@ public final class PatchDeployments {
         return s;
       }
     }
+
     /**
      *
      *
@@ -14958,6 +15393,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -15259,6 +15695,7 @@ public final class PatchDeployments {
           return patchDeploymentsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -15275,6 +15712,7 @@ public final class PatchDeployments {
           return patchDeploymentsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -15292,6 +15730,7 @@ public final class PatchDeployments {
           return patchDeploymentsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -15315,6 +15754,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -15337,6 +15777,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -15360,6 +15801,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -15383,6 +15825,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -15404,6 +15847,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -15426,6 +15870,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -15448,6 +15893,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -15467,6 +15913,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -15486,6 +15933,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -15499,6 +15947,7 @@ public final class PatchDeployments {
           getPatchDeploymentsBuilder(int index) {
         return getPatchDeploymentsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -15516,6 +15965,7 @@ public final class PatchDeployments {
           return patchDeploymentsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -15534,6 +15984,7 @@ public final class PatchDeployments {
           return java.util.Collections.unmodifiableList(patchDeployments_);
         }
       }
+
       /**
        *
        *
@@ -15550,6 +16001,7 @@ public final class PatchDeployments {
                 com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -15567,6 +16019,7 @@ public final class PatchDeployments {
                 com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -15603,6 +16056,7 @@ public final class PatchDeployments {
       }
 
       private java.lang.Object nextPageToken_ = "";
+
       /**
        *
        *
@@ -15626,6 +16080,7 @@ public final class PatchDeployments {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -15649,6 +16104,7 @@ public final class PatchDeployments {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -15671,6 +16127,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -15689,6 +16146,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -15800,6 +16258,7 @@ public final class PatchDeployments {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -15814,6 +16273,7 @@ public final class PatchDeployments {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
+
   /**
    *
    *
@@ -15829,6 +16289,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.DeletePatchDeploymentRequest)
       DeletePatchDeploymentRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DeletePatchDeploymentRequest.newBuilder() to construct.
     private DeletePatchDeploymentRequest(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -15865,6 +16326,7 @@ public final class PatchDeployments {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -15889,6 +16351,7 @@ public final class PatchDeployments {
         return s;
       }
     }
+
     /**
      *
      *
@@ -16083,6 +16546,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -16286,6 +16750,7 @@ public final class PatchDeployments {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -16309,6 +16774,7 @@ public final class PatchDeployments {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -16332,6 +16798,7 @@ public final class PatchDeployments {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -16354,6 +16821,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16372,6 +16840,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16484,6 +16953,7 @@ public final class PatchDeployments {
      * @return Whether the patchDeployment field is set.
      */
     boolean hasPatchDeployment();
+
     /**
      *
      *
@@ -16498,6 +16968,7 @@ public final class PatchDeployments {
      * @return The patchDeployment.
      */
     com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment getPatchDeployment();
+
     /**
      *
      *
@@ -16526,6 +16997,7 @@ public final class PatchDeployments {
      * @return Whether the updateMask field is set.
      */
     boolean hasUpdateMask();
+
     /**
      *
      *
@@ -16540,6 +17012,7 @@ public final class PatchDeployments {
      * @return The updateMask.
      */
     com.google.protobuf.FieldMask getUpdateMask();
+
     /**
      *
      *
@@ -16553,6 +17026,7 @@ public final class PatchDeployments {
      */
     com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
   }
+
   /**
    *
    *
@@ -16568,6 +17042,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.UpdatePatchDeploymentRequest)
       UpdatePatchDeploymentRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UpdatePatchDeploymentRequest.newBuilder() to construct.
     private UpdatePatchDeploymentRequest(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -16601,6 +17076,7 @@ public final class PatchDeployments {
     private int bitField0_;
     public static final int PATCH_DEPLOYMENT_FIELD_NUMBER = 1;
     private com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment patchDeployment_;
+
     /**
      *
      *
@@ -16618,6 +17094,7 @@ public final class PatchDeployments {
     public boolean hasPatchDeployment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -16637,6 +17114,7 @@ public final class PatchDeployments {
           ? com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment.getDefaultInstance()
           : patchDeployment_;
     }
+
     /**
      *
      *
@@ -16658,6 +17136,7 @@ public final class PatchDeployments {
 
     public static final int UPDATE_MASK_FIELD_NUMBER = 2;
     private com.google.protobuf.FieldMask updateMask_;
+
     /**
      *
      *
@@ -16675,6 +17154,7 @@ public final class PatchDeployments {
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -16692,6 +17172,7 @@ public final class PatchDeployments {
     public com.google.protobuf.FieldMask getUpdateMask() {
       return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
     }
+
     /**
      *
      *
@@ -16896,6 +17377,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -17140,6 +17622,7 @@ public final class PatchDeployments {
               com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment.Builder,
               com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeploymentOrBuilder>
           patchDeploymentBuilder_;
+
       /**
        *
        *
@@ -17156,6 +17639,7 @@ public final class PatchDeployments {
       public boolean hasPatchDeployment() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -17180,6 +17664,7 @@ public final class PatchDeployments {
           return patchDeploymentBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -17205,6 +17690,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -17228,6 +17714,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -17260,6 +17747,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -17281,6 +17769,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -17298,6 +17787,7 @@ public final class PatchDeployments {
         onChanged();
         return getPatchDeploymentFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -17320,6 +17810,7 @@ public final class PatchDeployments {
               : patchDeployment_;
         }
       }
+
       /**
        *
        *
@@ -17354,6 +17845,7 @@ public final class PatchDeployments {
               com.google.protobuf.FieldMask.Builder,
               com.google.protobuf.FieldMaskOrBuilder>
           updateMaskBuilder_;
+
       /**
        *
        *
@@ -17370,6 +17862,7 @@ public final class PatchDeployments {
       public boolean hasUpdateMask() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -17392,6 +17885,7 @@ public final class PatchDeployments {
           return updateMaskBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -17416,6 +17910,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -17437,6 +17932,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -17466,6 +17962,7 @@ public final class PatchDeployments {
         }
         return this;
       }
+
       /**
        *
        *
@@ -17487,6 +17984,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -17503,6 +18001,7 @@ public final class PatchDeployments {
         onChanged();
         return getUpdateMaskFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -17523,6 +18022,7 @@ public final class PatchDeployments {
               : updateMask_;
         }
       }
+
       /**
        *
        *
@@ -17640,6 +18140,7 @@ public final class PatchDeployments {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -17656,6 +18157,7 @@ public final class PatchDeployments {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
+
   /**
    *
    *
@@ -17671,6 +18173,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.PausePatchDeploymentRequest)
       PausePatchDeploymentRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PausePatchDeploymentRequest.newBuilder() to construct.
     private PausePatchDeploymentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -17706,6 +18209,7 @@ public final class PatchDeployments {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -17732,6 +18236,7 @@ public final class PatchDeployments {
         return s;
       }
     }
+
     /**
      *
      *
@@ -17928,6 +18433,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -18128,6 +18634,7 @@ public final class PatchDeployments {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -18153,6 +18660,7 @@ public final class PatchDeployments {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -18178,6 +18686,7 @@ public final class PatchDeployments {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -18202,6 +18711,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18222,6 +18732,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18337,6 +18848,7 @@ public final class PatchDeployments {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -18353,6 +18865,7 @@ public final class PatchDeployments {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
+
   /**
    *
    *
@@ -18368,6 +18881,7 @@ public final class PatchDeployments {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.ResumePatchDeploymentRequest)
       ResumePatchDeploymentRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ResumePatchDeploymentRequest.newBuilder() to construct.
     private ResumePatchDeploymentRequest(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -18404,6 +18918,7 @@ public final class PatchDeployments {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -18430,6 +18945,7 @@ public final class PatchDeployments {
         return s;
       }
     }
+
     /**
      *
      *
@@ -18626,6 +19142,7 @@ public final class PatchDeployments {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -18829,6 +19346,7 @@ public final class PatchDeployments {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -18854,6 +19372,7 @@ public final class PatchDeployments {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -18879,6 +19398,7 @@ public final class PatchDeployments {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -18903,6 +19423,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18923,6 +19444,7 @@ public final class PatchDeployments {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19083,88 +19605,104 @@ public final class PatchDeployments {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n4google/cloud/osconfig/v1beta/patch_dep"
-          + "loyments.proto\022\034google.cloud.osconfig.v1"
+      "\n"
+          + "4google/cloud/osconfig/v1beta/patch_deployments.proto\022\034google.cloud.osconfig.v1"
           + "beta\032\037google/api/field_behavior.proto\032\031g"
           + "oogle/api/resource.proto\032-google/cloud/o"
-          + "sconfig/v1beta/patch_jobs.proto\032\036google/"
-          + "protobuf/duration.proto\032 google/protobuf"
-          + "/field_mask.proto\032\037google/protobuf/times"
+          + "sconfig/v1beta/patch_jobs.proto\032\036google/protobuf/duration.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/times"
           + "tamp.proto\032\032google/type/datetime.proto\032\033"
-          + "google/type/dayofweek.proto\032\033google/type"
-          + "/timeofday.proto\"\204\007\n\017PatchDeployment\022\014\n\004"
-          + "name\030\001 \001(\t\022\030\n\013description\030\002 \001(\tB\003\340A\001\022O\n\017"
-          + "instance_filter\030\003 \001(\01321.google.cloud.osc"
-          + "onfig.v1beta.PatchInstanceFilterB\003\340A\002\022D\n"
-          + "\014patch_config\030\004 \001(\0132).google.cloud.oscon"
-          + "fig.v1beta.PatchConfigB\003\340A\001\0220\n\010duration\030"
-          + "\005 \001(\0132\031.google.protobuf.DurationB\003\340A\001\022O\n"
+          + "google/type/dayofweek.proto\032\033google/type/timeofday.proto\"\204\007\n"
+          + "\017PatchDeployment\022\014\n"
+          + "\004name\030\001 \001(\t\022\030\n"
+          + "\013description\030\002 \001(\tB\003\340A\001\022O\n"
+          + "\017instance_filter\030\003"
+          + " \001(\01321.google.cloud.osconfig.v1beta.PatchInstanceFilterB\003\340A\002\022D\n"
+          + "\014patch_config\030\004"
+          + " \001(\0132).google.cloud.osconfig.v1beta.PatchConfigB\003\340A\001\0220\n"
+          + "\010duration\030\005 \001(\0132\031.google.protobuf.DurationB\003\340A\001\022O\n"
           + "\021one_time_schedule\030\006 \001(\0132-.google.cloud."
-          + "osconfig.v1beta.OneTimeScheduleB\003\340A\002H\000\022R"
-          + "\n\022recurring_schedule\030\007 \001(\0132/.google.clou"
-          + "d.osconfig.v1beta.RecurringScheduleB\003\340A\002"
-          + "H\000\0224\n\013create_time\030\010 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\0224\n\013update_time\030\t \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\022:\n\021last_e"
-          + "xecute_time\030\n \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\022@\n\007rollout\030\013 \001(\0132*.google.clo"
-          + "ud.osconfig.v1beta.PatchRolloutB\003\340A\001\022G\n\005"
-          + "state\030\014 \001(\01623.google.cloud.osconfig.v1be"
-          + "ta.PatchDeployment.StateB\003\340A\003\"6\n\005State\022\025"
-          + "\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\n\n\006PAU"
-          + "SED\020\002:d\352Aa\n\'osconfig.googleapis.com/Patc"
-          + "hDeployment\0226projects/{project}/patchDep"
-          + "loyments/{patch_deployment}B\n\n\010schedule\""
-          + "H\n\017OneTimeSchedule\0225\n\014execute_time\030\001 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\002\"\222\005\n\021Re"
-          + "curringSchedule\022-\n\ttime_zone\030\001 \001(\0132\025.goo"
-          + "gle.type.TimeZoneB\003\340A\002\0223\n\nstart_time\030\002 \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\001\0221\n\010e"
-          + "nd_time\030\003 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\001\0220\n\013time_of_day\030\004 \001(\0132\026.google.typ"
-          + "e.TimeOfDayB\003\340A\002\022Q\n\tfrequency\030\005 \001(\01629.go"
-          + "ogle.cloud.osconfig.v1beta.RecurringSche"
-          + "dule.FrequencyB\003\340A\002\022C\n\006weekly\030\006 \001(\0132,.go"
-          + "ogle.cloud.osconfig.v1beta.WeeklySchedul"
-          + "eB\003\340A\002H\000\022E\n\007monthly\030\007 \001(\0132-.google.cloud"
-          + ".osconfig.v1beta.MonthlyScheduleB\003\340A\002H\000\022"
-          + ":\n\021last_execute_time\030\t \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\022:\n\021next_execute_time"
-          + "\030\n \001(\0132\032.google.protobuf.TimestampB\003\340A\003\""
-          + "J\n\tFrequency\022\031\n\025FREQUENCY_UNSPECIFIED\020\000\022"
-          + "\n\n\006WEEKLY\020\001\022\013\n\007MONTHLY\020\002\022\t\n\005DAILY\020\003B\021\n\017s"
-          + "chedule_config\"B\n\016WeeklySchedule\0220\n\013day_"
-          + "of_week\030\001 \001(\0162\026.google.type.DayOfWeekB\003\340"
-          + "A\002\"\213\001\n\017MonthlySchedule\022N\n\021week_day_of_mo"
-          + "nth\030\001 \001(\0132,.google.cloud.osconfig.v1beta"
-          + ".WeekDayOfMonthB\003\340A\002H\000\022\030\n\tmonth_day\030\002 \001("
-          + "\005B\003\340A\002H\000B\016\n\014day_of_month\"v\n\016WeekDayOfMon"
-          + "th\022\031\n\014week_ordinal\030\001 \001(\005B\003\340A\002\0220\n\013day_of_"
-          + "week\030\002 \001(\0162\026.google.type.DayOfWeekB\003\340A\002\022"
-          + "\027\n\nday_offset\030\003 \001(\005B\003\340A\001\"\243\001\n\034CreatePatch"
-          + "DeploymentRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022 "
-          + "\n\023patch_deployment_id\030\002 \001(\tB\003\340A\002\022L\n\020patc"
-          + "h_deployment\030\003 \001(\0132-.google.cloud.osconf"
-          + "ig.v1beta.PatchDeploymentB\003\340A\002\".\n\031GetPat"
-          + "chDeploymentRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"c"
-          + "\n\033ListPatchDeploymentsRequest\022\023\n\006parent\030"
-          + "\001 \001(\tB\003\340A\002\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npa"
-          + "ge_token\030\003 \001(\tB\003\340A\001\"\201\001\n\034ListPatchDeploym"
-          + "entsResponse\022H\n\021patch_deployments\030\001 \003(\0132"
-          + "-.google.cloud.osconfig.v1beta.PatchDepl"
-          + "oyment\022\027\n\017next_page_token\030\002 \001(\t\"1\n\034Delet"
-          + "ePatchDeploymentRequest\022\021\n\004name\030\001 \001(\tB\003\340"
-          + "A\002\"\242\001\n\034UpdatePatchDeploymentRequest\022L\n\020p"
-          + "atch_deployment\030\001 \001(\0132-.google.cloud.osc"
-          + "onfig.v1beta.PatchDeploymentB\003\340A\002\0224\n\013upd"
-          + "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa"
-          + "skB\003\340A\001\"\\\n\033PausePatchDeploymentRequest\022="
-          + "\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'osconfig.googleapi"
-          + "s.com/PatchDeployment\"]\n\034ResumePatchDepl"
-          + "oymentRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'osc"
-          + "onfig.googleapis.com/PatchDeploymentBr\n "
-          + "com.google.cloud.osconfig.v1betaB\020PatchD"
-          + "eploymentsZ<cloud.google.com/go/osconfig"
+          + "osconfig.v1beta.OneTimeScheduleB\003\340A\002H\000\022R\n"
+          + "\022recurring_schedule\030\007 \001(\0132/.google.clou"
+          + "d.osconfig.v1beta.RecurringScheduleB\003\340A\002H\000\0224\n"
+          + "\013create_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022:\n"
+          + "\021last_execute_time\030\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022@\n"
+          + "\007rollout\030\013"
+          + " \001(\0132*.google.cloud.osconfig.v1beta.PatchRolloutB\003\340A\001\022G\n"
+          + "\005state\030\014"
+          + " \001(\01623.google.cloud.osconfig.v1beta.PatchDeployment.StateB\003\340A\003\"6\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\n\n"
+          + "\006ACTIVE\020\001\022\n\n"
+          + "\006PAUSED\020\002:d\352Aa\n"
+          + "\'osconfig.googleapis.com/Patc"
+          + "hDeployment\0226projects/{project}/patchDeployments/{patch_deployment}B\n\n"
+          + "\010schedule\"H\n"
+          + "\017OneTimeSchedule\0225\n"
+          + "\014execute_time\030\001"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\002\"\222\005\n"
+          + "\021RecurringSchedule\022-\n"
+          + "\ttime_zone\030\001 \001(\0132\025.google.type.TimeZoneB\003\340A\002\0223\n\n"
+          + "start_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\0221\n"
+          + "\010end_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\0220\n"
+          + "\013time_of_day\030\004 \001(\0132\026.google.type.TimeOfDayB\003\340A\002\022Q\n"
+          + "\tfrequency\030\005 \001(\01629.go"
+          + "ogle.cloud.osconfig.v1beta.RecurringSchedule.FrequencyB\003\340A\002\022C\n"
+          + "\006weekly\030\006 \001(\0132,.go"
+          + "ogle.cloud.osconfig.v1beta.WeeklyScheduleB\003\340A\002H\000\022E\n"
+          + "\007monthly\030\007 \001(\0132-.google.cloud"
+          + ".osconfig.v1beta.MonthlyScheduleB\003\340A\002H\000\022:\n"
+          + "\021last_execute_time\030\t"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022:\n"
+          + "\021next_execute_time\030\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"J\n"
+          + "\tFrequency\022\031\n"
+          + "\025FREQUENCY_UNSPECIFIED\020\000\022\n\n"
+          + "\006WEEKLY\020\001\022\013\n"
+          + "\007MONTHLY\020\002\022\t\n"
+          + "\005DAILY\020\003B\021\n"
+          + "\017schedule_config\"B\n"
+          + "\016WeeklySchedule\0220\n"
+          + "\013day_of_week\030\001 \001(\0162\026.google.type.DayOfWeekB\003\340A\002\"\213\001\n"
+          + "\017MonthlySchedule\022N\n"
+          + "\021week_day_of_month\030\001"
+          + " \001(\0132,.google.cloud.osconfig.v1beta.WeekDayOfMonthB\003\340A\002H\000\022\030\n"
+          + "\tmonth_day\030\002 \001(\005B\003\340A\002H\000B\016\n"
+          + "\014day_of_month\"v\n"
+          + "\016WeekDayOfMonth\022\031\n"
+          + "\014week_ordinal\030\001 \001(\005B\003\340A\002\0220\n"
+          + "\013day_of_week\030\002 \001(\0162\026.google.type.DayOfWeekB\003\340A\002\022\027\n\n"
+          + "day_offset\030\003 \001(\005B\003\340A\001\"\243\001\n"
+          + "\034CreatePatchDeploymentRequest\022\023\n"
+          + "\006parent\030\001 \001(\tB\003\340A\002\022 \n"
+          + "\023patch_deployment_id\030\002 \001(\tB\003\340A\002\022L\n"
+          + "\020patch_deployment\030\003"
+          + " \001(\0132-.google.cloud.osconfig.v1beta.PatchDeploymentB\003\340A\002\".\n"
+          + "\031GetPatchDeploymentRequest\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\"c\n"
+          + "\033ListPatchDeploymentsRequest\022\023\n"
+          + "\006parent\030\001 \001(\tB\003\340A\002\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\201\001\n"
+          + "\034ListPatchDeploymentsResponse\022H\n"
+          + "\021patch_deployments\030\001 \003(\0132"
+          + "-.google.cloud.osconfig.v1beta.PatchDeployment\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"1\n"
+          + "\034DeletePatchDeploymentRequest\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\"\242\001\n"
+          + "\034UpdatePatchDeploymentRequest\022L\n"
+          + "\020patch_deployment\030\001"
+          + " \001(\0132-.google.cloud.osconfig.v1beta.PatchDeploymentB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\\\n"
+          + "\033PausePatchDeploymentRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
+          + "\'osconfig.googleapis.com/PatchDeployment\"]\n"
+          + "\034ResumePatchDeploymentRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
+          + "\'osconfig.googleapis.com/PatchDeploymentBr\n"
+          + " com.google.cloud.osconfig.v1betaB\020PatchDeploymentsZ<cloud.google.com/go/osconfig"
           + "/apiv1beta/osconfigpb;osconfigpbb\006proto3"
     };
     descriptor =

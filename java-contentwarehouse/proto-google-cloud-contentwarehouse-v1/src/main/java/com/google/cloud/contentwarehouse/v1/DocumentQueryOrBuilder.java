@@ -79,6 +79,7 @@ public interface DocumentQueryOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -187,6 +188,7 @@ public interface DocumentQueryOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getCustomPropertyFilter();
+
   /**
    *
    *
@@ -232,6 +234,7 @@ public interface DocumentQueryOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.TimeFilter time_filters = 5;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.TimeFilter> getTimeFiltersList();
+
   /**
    *
    *
@@ -243,6 +246,7 @@ public interface DocumentQueryOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.TimeFilter time_filters = 5;</code>
    */
   com.google.cloud.contentwarehouse.v1.TimeFilter getTimeFilters(int index);
+
   /**
    *
    *
@@ -254,6 +258,7 @@ public interface DocumentQueryOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.TimeFilter time_filters = 5;</code>
    */
   int getTimeFiltersCount();
+
   /**
    *
    *
@@ -266,6 +271,7 @@ public interface DocumentQueryOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.TimeFilterOrBuilder>
       getTimeFiltersOrBuilderList();
+
   /**
    *
    *
@@ -299,6 +305,7 @@ public interface DocumentQueryOrBuilder
    * @return A list containing the documentSchemaNames.
    */
   java.util.List<java.lang.String> getDocumentSchemaNamesList();
+
   /**
    *
    *
@@ -320,6 +327,7 @@ public interface DocumentQueryOrBuilder
    * @return The count of documentSchemaNames.
    */
   int getDocumentSchemaNamesCount();
+
   /**
    *
    *
@@ -342,6 +350,7 @@ public interface DocumentQueryOrBuilder
    * @return The documentSchemaNames at the given index.
    */
   java.lang.String getDocumentSchemaNames(int index);
+
   /**
    *
    *
@@ -377,6 +386,7 @@ public interface DocumentQueryOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.PropertyFilter> getPropertyFilterList();
+
   /**
    *
    *
@@ -389,6 +399,7 @@ public interface DocumentQueryOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
    */
   com.google.cloud.contentwarehouse.v1.PropertyFilter getPropertyFilter(int index);
+
   /**
    *
    *
@@ -401,6 +412,7 @@ public interface DocumentQueryOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
    */
   int getPropertyFilterCount();
+
   /**
    *
    *
@@ -414,6 +426,7 @@ public interface DocumentQueryOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.PropertyFilterOrBuilder>
       getPropertyFilterOrBuilderList();
+
   /**
    *
    *
@@ -445,6 +458,7 @@ public interface DocumentQueryOrBuilder
    * @return Whether the fileTypeFilter field is set.
    */
   boolean hasFileTypeFilter();
+
   /**
    *
    *
@@ -462,6 +476,7 @@ public interface DocumentQueryOrBuilder
    * @return The fileTypeFilter.
    */
   com.google.cloud.contentwarehouse.v1.FileTypeFilter getFileTypeFilter();
+
   /**
    *
    *
@@ -492,6 +507,7 @@ public interface DocumentQueryOrBuilder
    * @return The folderNameFilter.
    */
   java.lang.String getFolderNameFilter();
+
   /**
    *
    *
@@ -521,6 +537,7 @@ public interface DocumentQueryOrBuilder
    * @return A list containing the documentNameFilter.
    */
   java.util.List<java.lang.String> getDocumentNameFilterList();
+
   /**
    *
    *
@@ -535,6 +552,7 @@ public interface DocumentQueryOrBuilder
    * @return The count of documentNameFilter.
    */
   int getDocumentNameFilterCount();
+
   /**
    *
    *
@@ -550,6 +568,7 @@ public interface DocumentQueryOrBuilder
    * @return The documentNameFilter at the given index.
    */
   java.lang.String getDocumentNameFilter(int index);
+
   /**
    *
    *
@@ -584,6 +603,7 @@ public interface DocumentQueryOrBuilder
    * @return A list containing the queryContext.
    */
   java.util.List<java.lang.String> getQueryContextList();
+
   /**
    *
    *
@@ -602,6 +622,7 @@ public interface DocumentQueryOrBuilder
    * @return The count of queryContext.
    */
   int getQueryContextCount();
+
   /**
    *
    *
@@ -621,6 +642,7 @@ public interface DocumentQueryOrBuilder
    * @return The queryContext at the given index.
    */
   java.lang.String getQueryContext(int index);
+
   /**
    *
    *
@@ -658,6 +680,7 @@ public interface DocumentQueryOrBuilder
    * @return A list containing the documentCreatorFilter.
    */
   java.util.List<java.lang.String> getDocumentCreatorFilterList();
+
   /**
    *
    *
@@ -675,6 +698,7 @@ public interface DocumentQueryOrBuilder
    * @return The count of documentCreatorFilter.
    */
   int getDocumentCreatorFilterCount();
+
   /**
    *
    *
@@ -693,6 +717,7 @@ public interface DocumentQueryOrBuilder
    * @return The documentCreatorFilter at the given index.
    */
   java.lang.String getDocumentCreatorFilter(int index);
+
   /**
    *
    *
@@ -729,6 +754,7 @@ public interface DocumentQueryOrBuilder
    * @return Whether the customWeightsMetadata field is set.
    */
   boolean hasCustomWeightsMetadata();
+
   /**
    *
    *
@@ -746,6 +772,7 @@ public interface DocumentQueryOrBuilder
    * @return The customWeightsMetadata.
    */
   com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata getCustomWeightsMetadata();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.RepositoryEventConfig)
     RepositoryEventConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RepositoryEventConfig.newBuilder() to construct.
   private RepositoryEventConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,6 +129,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
      * <code>REPOSITORY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int REPOSITORY_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -138,6 +140,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
      * <code>GITHUB = 1;</code>
      */
     public static final int GITHUB_VALUE = 1;
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
      * <code>GITHUB_ENTERPRISE = 2;</code>
      */
     public static final int GITHUB_ENTERPRISE_VALUE = 2;
+
     /**
      *
      *
@@ -261,6 +265,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
     private FilterCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -297,6 +302,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object repository_ = "";
+
   /**
    *
    *
@@ -320,6 +326,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -346,6 +353,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
 
   public static final int REPOSITORY_TYPE_FIELD_NUMBER = 2;
   private int repositoryType_ = 0;
+
   /**
    *
    *
@@ -363,6 +371,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
   public int getRepositoryTypeValue() {
     return repositoryType_;
   }
+
   /**
    *
    *
@@ -386,6 +395,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PULL_REQUEST_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -401,6 +411,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
   public boolean hasPullRequest() {
     return filterCase_ == 3;
   }
+
   /**
    *
    *
@@ -419,6 +430,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloudbuild.v1.PullRequestFilter.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -437,6 +449,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PUSH_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -452,6 +465,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
   public boolean hasPush() {
     return filterCase_ == 4;
   }
+
   /**
    *
    *
@@ -470,6 +484,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloudbuild.v1.PushFilter.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -698,6 +713,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -957,6 +973,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object repository_ = "";
+
     /**
      *
      *
@@ -979,6 +996,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1019,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1022,6 +1041,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1059,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1084,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
     }
 
     private int repositoryType_ = 0;
+
     /**
      *
      *
@@ -1080,6 +1102,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
     public int getRepositoryTypeValue() {
       return repositoryType_;
     }
+
     /**
      *
      *
@@ -1100,6 +1123,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1145,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
           ? com.google.cloudbuild.v1.RepositoryEventConfig.RepositoryType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1145,6 +1170,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1196,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
             com.google.cloudbuild.v1.PullRequestFilter.Builder,
             com.google.cloudbuild.v1.PullRequestFilterOrBuilder>
         pullRequestBuilder_;
+
     /**
      *
      *
@@ -1185,6 +1212,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
     public boolean hasPullRequest() {
       return filterCase_ == 3;
     }
+
     /**
      *
      *
@@ -1210,6 +1238,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
         return com.google.cloudbuild.v1.PullRequestFilter.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1232,6 +1261,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
       filterCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1282,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
       filterCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1284,6 +1315,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
       filterCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1309,6 +1341,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1321,6 +1354,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
     public com.google.cloudbuild.v1.PullRequestFilter.Builder getPullRequestBuilder() {
       return getPullRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1341,6 +1375,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
         return com.google.cloudbuild.v1.PullRequestFilter.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1379,6 +1414,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
             com.google.cloudbuild.v1.PushFilter.Builder,
             com.google.cloudbuild.v1.PushFilterOrBuilder>
         pushBuilder_;
+
     /**
      *
      *
@@ -1394,6 +1430,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
     public boolean hasPush() {
       return filterCase_ == 4;
     }
+
     /**
      *
      *
@@ -1419,6 +1456,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
         return com.google.cloudbuild.v1.PushFilter.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1441,6 +1479,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
       filterCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1460,6 +1499,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
       filterCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1492,6 +1532,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
       filterCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1517,6 +1558,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1529,6 +1571,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
     public com.google.cloudbuild.v1.PushFilter.Builder getPushBuilder() {
       return getPushFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1549,6 +1592,7 @@ public final class RepositoryEventConfig extends com.google.protobuf.GeneratedMe
         return com.google.cloudbuild.v1.PushFilter.getDefaultInstance();
       }
     }
+
     /**
      *
      *

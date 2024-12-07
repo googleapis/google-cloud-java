@@ -40,6 +40,7 @@ public interface ValidateEventThreatDetectionCustomModuleResponseOrBuilder
           com.google.cloud.securitycentermanagement.v1
               .ValidateEventThreatDetectionCustomModuleResponse.CustomModuleValidationError>
       getErrorsList();
+
   /**
    *
    *
@@ -55,6 +56,7 @@ public interface ValidateEventThreatDetectionCustomModuleResponseOrBuilder
   com.google.cloud.securitycentermanagement.v1.ValidateEventThreatDetectionCustomModuleResponse
           .CustomModuleValidationError
       getErrors(int index);
+
   /**
    *
    *
@@ -68,6 +70,7 @@ public interface ValidateEventThreatDetectionCustomModuleResponseOrBuilder
    * </code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface ValidateEventThreatDetectionCustomModuleResponseOrBuilder
                   .ValidateEventThreatDetectionCustomModuleResponse
                   .CustomModuleValidationErrorOrBuilder>
       getErrorsOrBuilderList();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface CreateSearchHypernymRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateSearchHypernymRequestOrBuilder
    * @return Whether the searchHypernym field is set.
    */
   boolean hasSearchHypernym();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateSearchHypernymRequestOrBuilder
    * @return The searchHypernym.
    */
   com.google.cloud.visionai.v1.SearchHypernym getSearchHypernym();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface CreateSearchHypernymRequestOrBuilder
    * @return Whether the searchHypernymId field is set.
    */
   boolean hasSearchHypernymId();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface CreateSearchHypernymRequestOrBuilder
    * @return The searchHypernymId.
    */
   java.lang.String getSearchHypernymId();
+
   /**
    *
    *

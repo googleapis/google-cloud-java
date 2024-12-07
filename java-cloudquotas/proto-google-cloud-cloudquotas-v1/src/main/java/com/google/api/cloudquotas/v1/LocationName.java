@@ -287,7 +287,8 @@ public class LocationName implements ResourceName {
     private Builder(LocationName locationName) {
       Preconditions.checkArgument(
           Objects.equals(locationName.pathTemplate, PROJECT_LOCATION),
-          "toBuilder is only supported when LocationName has the pattern of projects/{project}/locations/{location}");
+          "toBuilder is only supported when LocationName has the pattern of"
+              + " projects/{project}/locations/{location}");
       this.project = locationName.project;
       this.location = locationName.location;
     }

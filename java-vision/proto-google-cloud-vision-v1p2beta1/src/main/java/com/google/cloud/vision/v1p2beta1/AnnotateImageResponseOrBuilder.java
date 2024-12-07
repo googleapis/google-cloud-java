@@ -34,6 +34,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.FaceAnnotation face_annotations = 1;</code>
    */
   java.util.List<com.google.cloud.vision.v1p2beta1.FaceAnnotation> getFaceAnnotationsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.FaceAnnotation face_annotations = 1;</code>
    */
   com.google.cloud.vision.v1p2beta1.FaceAnnotation getFaceAnnotations(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.FaceAnnotation face_annotations = 1;</code>
    */
   int getFaceAnnotationsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface AnnotateImageResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p2beta1.FaceAnnotationOrBuilder>
       getFaceAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -86,6 +90,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.EntityAnnotation landmark_annotations = 2;</code>
    */
   java.util.List<com.google.cloud.vision.v1p2beta1.EntityAnnotation> getLandmarkAnnotationsList();
+
   /**
    *
    *
@@ -96,6 +101,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.EntityAnnotation landmark_annotations = 2;</code>
    */
   com.google.cloud.vision.v1p2beta1.EntityAnnotation getLandmarkAnnotations(int index);
+
   /**
    *
    *
@@ -106,6 +112,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.EntityAnnotation landmark_annotations = 2;</code>
    */
   int getLandmarkAnnotationsCount();
+
   /**
    *
    *
@@ -117,6 +124,7 @@ public interface AnnotateImageResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p2beta1.EntityAnnotationOrBuilder>
       getLandmarkAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -139,6 +147,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.EntityAnnotation logo_annotations = 3;</code>
    */
   java.util.List<com.google.cloud.vision.v1p2beta1.EntityAnnotation> getLogoAnnotationsList();
+
   /**
    *
    *
@@ -149,6 +158,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.EntityAnnotation logo_annotations = 3;</code>
    */
   com.google.cloud.vision.v1p2beta1.EntityAnnotation getLogoAnnotations(int index);
+
   /**
    *
    *
@@ -159,6 +169,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.EntityAnnotation logo_annotations = 3;</code>
    */
   int getLogoAnnotationsCount();
+
   /**
    *
    *
@@ -170,6 +181,7 @@ public interface AnnotateImageResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p2beta1.EntityAnnotationOrBuilder>
       getLogoAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -192,6 +204,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.EntityAnnotation label_annotations = 4;</code>
    */
   java.util.List<com.google.cloud.vision.v1p2beta1.EntityAnnotation> getLabelAnnotationsList();
+
   /**
    *
    *
@@ -202,6 +215,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.EntityAnnotation label_annotations = 4;</code>
    */
   com.google.cloud.vision.v1p2beta1.EntityAnnotation getLabelAnnotations(int index);
+
   /**
    *
    *
@@ -212,6 +226,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.EntityAnnotation label_annotations = 4;</code>
    */
   int getLabelAnnotationsCount();
+
   /**
    *
    *
@@ -223,6 +238,7 @@ public interface AnnotateImageResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p2beta1.EntityAnnotationOrBuilder>
       getLabelAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -245,6 +261,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.EntityAnnotation text_annotations = 5;</code>
    */
   java.util.List<com.google.cloud.vision.v1p2beta1.EntityAnnotation> getTextAnnotationsList();
+
   /**
    *
    *
@@ -255,6 +272,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.EntityAnnotation text_annotations = 5;</code>
    */
   com.google.cloud.vision.v1p2beta1.EntityAnnotation getTextAnnotations(int index);
+
   /**
    *
    *
@@ -265,6 +283,7 @@ public interface AnnotateImageResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.EntityAnnotation text_annotations = 5;</code>
    */
   int getTextAnnotationsCount();
+
   /**
    *
    *
@@ -276,6 +295,7 @@ public interface AnnotateImageResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p2beta1.EntityAnnotationOrBuilder>
       getTextAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -303,6 +323,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return Whether the fullTextAnnotation field is set.
    */
   boolean hasFullTextAnnotation();
+
   /**
    *
    *
@@ -318,6 +339,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return The fullTextAnnotation.
    */
   com.google.cloud.vision.v1p2beta1.TextAnnotation getFullTextAnnotation();
+
   /**
    *
    *
@@ -344,6 +366,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return Whether the safeSearchAnnotation field is set.
    */
   boolean hasSafeSearchAnnotation();
+
   /**
    *
    *
@@ -356,6 +379,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return The safeSearchAnnotation.
    */
   com.google.cloud.vision.v1p2beta1.SafeSearchAnnotation getSafeSearchAnnotation();
+
   /**
    *
    *
@@ -380,6 +404,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return Whether the imagePropertiesAnnotation field is set.
    */
   boolean hasImagePropertiesAnnotation();
+
   /**
    *
    *
@@ -392,6 +417,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return The imagePropertiesAnnotation.
    */
   com.google.cloud.vision.v1p2beta1.ImageProperties getImagePropertiesAnnotation();
+
   /**
    *
    *
@@ -416,6 +442,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return Whether the cropHintsAnnotation field is set.
    */
   boolean hasCropHintsAnnotation();
+
   /**
    *
    *
@@ -428,6 +455,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return The cropHintsAnnotation.
    */
   com.google.cloud.vision.v1p2beta1.CropHintsAnnotation getCropHintsAnnotation();
+
   /**
    *
    *
@@ -451,6 +479,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return Whether the webDetection field is set.
    */
   boolean hasWebDetection();
+
   /**
    *
    *
@@ -463,6 +492,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return The webDetection.
    */
   com.google.cloud.vision.v1p2beta1.WebDetection getWebDetection();
+
   /**
    *
    *
@@ -488,6 +518,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -502,6 +533,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -528,6 +560,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
+
   /**
    *
    *
@@ -541,6 +574,7 @@ public interface AnnotateImageResponseOrBuilder
    * @return The context.
    */
   com.google.cloud.vision.v1p2beta1.ImageAnnotationContext getContext();
+
   /**
    *
    *

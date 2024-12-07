@@ -33,6 +33,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.LiveConfig)
     LiveConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LiveConfig.newBuilder() to construct.
   private LiveConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -132,6 +133,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -142,6 +144,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -152,6 +155,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>READY = 2;</code>
      */
     public static final int READY_VALUE = 2;
+
     /**
      *
      *
@@ -303,6 +307,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>STITCHING_POLICY_UNSPECIFIED = 0;</code>
      */
     public static final int STITCHING_POLICY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -313,6 +318,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>CUT_CURRENT = 1;</code>
      */
     public static final int CUT_CURRENT_VALUE = 1;
+
     /**
      *
      *
@@ -414,6 +420,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -438,6 +445,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -467,6 +475,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceUri_ = "";
+
   /**
    *
    *
@@ -490,6 +499,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -518,6 +528,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object adTagUri_ = "";
+
   /**
    *
    *
@@ -541,6 +552,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -567,6 +579,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GAM_LIVE_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.video.stitcher.v1.GamLiveConfig gamLiveConfig_;
+
   /**
    *
    *
@@ -583,6 +596,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGamLiveConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -601,6 +615,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.stitcher.v1.GamLiveConfig.getDefaultInstance()
         : gamLiveConfig_;
   }
+
   /**
    *
    *
@@ -620,6 +635,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
+
   /**
    *
    *
@@ -637,6 +653,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -661,6 +678,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AD_TRACKING_FIELD_NUMBER = 6;
   private int adTracking_ = 0;
+
   /**
    *
    *
@@ -678,6 +696,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAdTrackingValue() {
     return adTracking_;
   }
+
   /**
    *
    *
@@ -702,6 +721,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object defaultSlate_ = "";
+
   /**
    *
    *
@@ -728,6 +748,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -757,6 +778,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STITCHING_POLICY_FIELD_NUMBER = 8;
   private int stitchingPolicy_ = 0;
+
   /**
    *
    *
@@ -773,6 +795,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
   public int getStitchingPolicyValue() {
     return stitchingPolicy_;
   }
+
   /**
    *
    *
@@ -796,6 +819,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PREFETCH_CONFIG_FIELD_NUMBER = 10;
   private com.google.cloud.video.stitcher.v1.PrefetchConfig prefetchConfig_;
+
   /**
    *
    *
@@ -811,6 +835,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrefetchConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -828,6 +853,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.stitcher.v1.PrefetchConfig.getDefaultInstance()
         : prefetchConfig_;
   }
+
   /**
    *
    *
@@ -846,6 +872,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_FETCH_OPTIONS_FIELD_NUMBER = 16;
   private com.google.cloud.video.stitcher.v1.FetchOptions sourceFetchOptions_;
+
   /**
    *
    *
@@ -861,6 +888,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSourceFetchOptions() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -878,6 +906,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.stitcher.v1.FetchOptions.getDefaultInstance()
         : sourceFetchOptions_;
   }
+
   /**
    *
    *
@@ -1159,6 +1188,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1499,6 +1529,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1522,6 +1553,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1545,6 +1577,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1567,6 +1600,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1585,6 +1619,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1610,6 +1645,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceUri_ = "";
+
     /**
      *
      *
@@ -1632,6 +1668,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1654,6 +1691,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1675,6 +1713,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1692,6 +1731,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1716,6 +1756,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object adTagUri_ = "";
+
     /**
      *
      *
@@ -1738,6 +1779,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1760,6 +1802,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1781,6 +1824,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1798,6 +1842,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1827,6 +1872,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.GamLiveConfig.Builder,
             com.google.cloud.video.stitcher.v1.GamLiveConfigOrBuilder>
         gamLiveConfigBuilder_;
+
     /**
      *
      *
@@ -1842,6 +1888,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGamLiveConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1863,6 +1910,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         return gamLiveConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1886,6 +1934,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1907,6 +1956,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1936,6 +1986,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1956,6 +2007,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1971,6 +2023,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGamLiveConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1990,6 +2043,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
             : gamLiveConfig_;
       }
     }
+
     /**
      *
      *
@@ -2018,6 +2072,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2035,6 +2090,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2055,6 +2111,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2076,6 +2133,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.stitcher.v1.LiveConfig.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2099,6 +2157,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2120,6 +2179,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int adTracking_ = 0;
+
     /**
      *
      *
@@ -2137,6 +2197,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     public int getAdTrackingValue() {
       return adTracking_;
     }
+
     /**
      *
      *
@@ -2157,6 +2218,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2176,6 +2238,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.video.stitcher.v1.AdTracking.forNumber(adTracking_);
       return result == null ? com.google.cloud.video.stitcher.v1.AdTracking.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2199,6 +2262,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2220,6 +2284,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object defaultSlate_ = "";
+
     /**
      *
      *
@@ -2245,6 +2310,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2270,6 +2336,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2294,6 +2361,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2314,6 +2382,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2341,6 +2410,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int stitchingPolicy_ = 0;
+
     /**
      *
      *
@@ -2357,6 +2427,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     public int getStitchingPolicyValue() {
       return stitchingPolicy_;
     }
+
     /**
      *
      *
@@ -2376,6 +2447,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2396,6 +2468,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.stitcher.v1.LiveConfig.StitchingPolicy.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2419,6 +2492,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2444,6 +2518,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.PrefetchConfig.Builder,
             com.google.cloud.video.stitcher.v1.PrefetchConfigOrBuilder>
         prefetchConfigBuilder_;
+
     /**
      *
      *
@@ -2458,6 +2533,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrefetchConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2478,6 +2554,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         return prefetchConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2500,6 +2577,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2520,6 +2598,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2548,6 +2627,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2567,6 +2647,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2581,6 +2662,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPrefetchConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2599,6 +2681,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
             : prefetchConfig_;
       }
     }
+
     /**
      *
      *
@@ -2631,6 +2714,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.FetchOptions.Builder,
             com.google.cloud.video.stitcher.v1.FetchOptionsOrBuilder>
         sourceFetchOptionsBuilder_;
+
     /**
      *
      *
@@ -2645,6 +2729,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceFetchOptions() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2665,6 +2750,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         return sourceFetchOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2687,6 +2773,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2707,6 +2794,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2735,6 +2823,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2754,6 +2843,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2768,6 +2858,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSourceFetchOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2787,6 +2878,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
             : sourceFetchOptions_;
       }
     }
+
     /**
      *
      *

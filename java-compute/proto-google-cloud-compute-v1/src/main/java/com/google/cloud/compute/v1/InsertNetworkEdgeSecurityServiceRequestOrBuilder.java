@@ -38,6 +38,7 @@ public interface InsertNetworkEdgeSecurityServiceRequestOrBuilder
    * @return Whether the networkEdgeSecurityServiceResource field is set.
    */
   boolean hasNetworkEdgeSecurityServiceResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InsertNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The networkEdgeSecurityServiceResource.
    */
   com.google.cloud.compute.v1.NetworkEdgeSecurityService getNetworkEdgeSecurityServiceResource();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface InsertNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface InsertNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface InsertNetworkEdgeSecurityServiceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface InsertNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface InsertNetworkEdgeSecurityServiceRequestOrBuilder
    * @return Whether the validateOnly field is set.
    */
   boolean hasValidateOnly();
+
   /**
    *
    *

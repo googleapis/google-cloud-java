@@ -37,6 +37,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return Whether the tags field is set.
    */
   boolean hasTags();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return The tags.
    */
   com.google.cloud.backupdr.v1.Tags getTags();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return Whether the machineType field is set.
    */
   boolean hasMachineType();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return Whether the canIpForward field is set.
    */
   boolean hasCanIpForward();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.NetworkInterface network_interface = 5;</code>
    */
   java.util.List<com.google.cloud.backupdr.v1.NetworkInterface> getNetworkInterfaceList();
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.NetworkInterface network_interface = 5;</code>
    */
   com.google.cloud.backupdr.v1.NetworkInterface getNetworkInterface(int index);
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.NetworkInterface network_interface = 5;</code>
    */
   int getNetworkInterfaceCount();
+
   /**
    *
    *
@@ -226,6 +236,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.NetworkInterfaceOrBuilder>
       getNetworkInterfaceOrBuilderList();
+
   /**
    *
    *
@@ -248,6 +259,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.AttachedDisk disk = 6;</code>
    */
   java.util.List<com.google.cloud.backupdr.v1.AttachedDisk> getDiskList();
+
   /**
    *
    *
@@ -259,6 +271,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.AttachedDisk disk = 6;</code>
    */
   com.google.cloud.backupdr.v1.AttachedDisk getDisk(int index);
+
   /**
    *
    *
@@ -270,6 +283,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.AttachedDisk disk = 6;</code>
    */
   int getDiskCount();
+
   /**
    *
    *
@@ -282,6 +296,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.AttachedDiskOrBuilder>
       getDiskOrBuilderList();
+
   /**
    *
    *
@@ -309,6 +324,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -324,6 +340,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return The metadata.
    */
   com.google.cloud.backupdr.v1.Metadata getMetadata();
+
   /**
    *
    *
@@ -351,6 +368,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.ServiceAccount service_account = 8;</code>
    */
   java.util.List<com.google.cloud.backupdr.v1.ServiceAccount> getServiceAccountList();
+
   /**
    *
    *
@@ -364,6 +382,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.ServiceAccount service_account = 8;</code>
    */
   com.google.cloud.backupdr.v1.ServiceAccount getServiceAccount(int index);
+
   /**
    *
    *
@@ -377,6 +396,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.ServiceAccount service_account = 8;</code>
    */
   int getServiceAccountCount();
+
   /**
    *
    *
@@ -391,6 +411,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.ServiceAccountOrBuilder>
       getServiceAccountOrBuilderList();
+
   /**
    *
    *
@@ -418,6 +439,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return Whether the scheduling field is set.
    */
   boolean hasScheduling();
+
   /**
    *
    *
@@ -431,6 +453,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return The scheduling.
    */
   com.google.cloud.backupdr.v1.Scheduling getScheduling();
+
   /**
    *
    *
@@ -454,6 +477,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.AcceleratorConfig guest_accelerator = 10;</code>
    */
   java.util.List<com.google.cloud.backupdr.v1.AcceleratorConfig> getGuestAcceleratorList();
+
   /**
    *
    *
@@ -465,6 +489,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.AcceleratorConfig guest_accelerator = 10;</code>
    */
   com.google.cloud.backupdr.v1.AcceleratorConfig getGuestAccelerator(int index);
+
   /**
    *
    *
@@ -476,6 +501,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.AcceleratorConfig guest_accelerator = 10;</code>
    */
   int getGuestAcceleratorCount();
+
   /**
    *
    *
@@ -488,6 +514,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.AcceleratorConfigOrBuilder>
       getGuestAcceleratorOrBuilderList();
+
   /**
    *
    *
@@ -517,6 +544,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return Whether the minCpuPlatform field is set.
    */
   boolean hasMinCpuPlatform();
+
   /**
    *
    *
@@ -534,6 +562,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return The minCpuPlatform.
    */
   java.lang.String getMinCpuPlatform();
+
   /**
    *
    *
@@ -567,6 +596,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return Whether the keyRevocationActionType field is set.
    */
   boolean hasKeyRevocationActionType();
+
   /**
    *
    *
@@ -582,6 +612,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return The enum numeric value on the wire for keyRevocationActionType.
    */
   int getKeyRevocationActionTypeValue();
+
   /**
    *
    *
@@ -613,6 +644,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return Whether the sourceInstance field is set.
    */
   boolean hasSourceInstance();
+
   /**
    *
    *
@@ -628,6 +660,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * @return The sourceInstance.
    */
   java.lang.String getSourceInstance();
+
   /**
    *
    *
@@ -654,6 +687,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 14;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -664,9 +698,11 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 14;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -677,6 +713,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 14;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -691,6 +728,7 @@ public interface ComputeInstanceBackupPropertiesOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

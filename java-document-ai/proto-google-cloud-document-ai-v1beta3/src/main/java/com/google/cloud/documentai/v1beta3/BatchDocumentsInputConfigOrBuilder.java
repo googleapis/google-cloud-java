@@ -36,6 +36,7 @@ public interface BatchDocumentsInputConfigOrBuilder
    * @return Whether the gcsPrefix field is set.
    */
   boolean hasGcsPrefix();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BatchDocumentsInputConfigOrBuilder
    * @return The gcsPrefix.
    */
   com.google.cloud.documentai.v1beta3.GcsPrefix getGcsPrefix();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface BatchDocumentsInputConfigOrBuilder
    * @return Whether the gcsDocuments field is set.
    */
   boolean hasGcsDocuments();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface BatchDocumentsInputConfigOrBuilder
    * @return The gcsDocuments.
    */
   com.google.cloud.documentai.v1beta3.GcsDocuments getGcsDocuments();
+
   /**
    *
    *

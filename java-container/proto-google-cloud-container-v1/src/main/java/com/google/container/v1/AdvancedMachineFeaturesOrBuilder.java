@@ -38,6 +38,7 @@ public interface AdvancedMachineFeaturesOrBuilder
    * @return Whether the threadsPerCore field is set.
    */
   boolean hasThreadsPerCore();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AdvancedMachineFeaturesOrBuilder
    * @return Whether the enableNestedVirtualization field is set.
    */
   boolean hasEnableNestedVirtualization();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface GetEkmConnectionsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

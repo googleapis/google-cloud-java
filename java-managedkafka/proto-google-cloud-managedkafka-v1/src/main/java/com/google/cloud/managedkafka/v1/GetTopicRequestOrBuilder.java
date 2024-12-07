@@ -40,6 +40,7 @@ public interface GetTopicRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

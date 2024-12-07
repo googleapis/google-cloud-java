@@ -39,6 +39,7 @@ public interface InsertLocalInventoryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface InsertLocalInventoryRequestOrBuilder
    * @return Whether the localInventory field is set.
    */
   boolean hasLocalInventory();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface InsertLocalInventoryRequestOrBuilder
    * @return The localInventory.
    */
   com.google.shopping.merchant.inventories.v1beta.LocalInventory getLocalInventory();
+
   /**
    *
    *

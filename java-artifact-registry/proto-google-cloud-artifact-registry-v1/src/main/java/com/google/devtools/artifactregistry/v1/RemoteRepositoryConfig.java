@@ -33,6 +33,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig)
     RemoteRepositoryConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RemoteRepositoryConfig.newBuilder() to construct.
   private RemoteRepositoryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the usernamePasswordCredentials field is set.
      */
     boolean hasUsernamePasswordCredentials();
+
     /**
      *
      *
@@ -98,6 +100,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.UpstreamCredentials
             .UsernamePasswordCredentials
         getUsernamePasswordCredentials();
+
     /**
      *
      *
@@ -117,6 +120,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .CredentialsCase
         getCredentialsCase();
   }
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.UpstreamCredentials)
       UpstreamCredentialsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UpstreamCredentials.newBuilder() to construct.
     private UpstreamCredentials(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -179,6 +184,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * @return The username.
        */
       java.lang.String getUsername();
+
       /**
        *
        *
@@ -206,6 +212,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * @return The passwordSecretVersion.
        */
       java.lang.String getPasswordSecretVersion();
+
       /**
        *
        *
@@ -221,6 +228,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        */
       com.google.protobuf.ByteString getPasswordSecretVersionBytes();
     }
+
     /**
      *
      *
@@ -237,6 +245,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.UpstreamCredentials.UsernamePasswordCredentials)
         UsernamePasswordCredentialsOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use UsernamePasswordCredentials.newBuilder() to construct.
       private UsernamePasswordCredentials(
           com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -275,6 +284,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object username_ = "";
+
       /**
        *
        *
@@ -298,6 +308,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           return s;
         }
       }
+
       /**
        *
        *
@@ -326,6 +337,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object passwordSecretVersion_ = "";
+
       /**
        *
        *
@@ -351,6 +363,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           return s;
         }
       }
+
       /**
        *
        *
@@ -577,6 +590,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -809,6 +823,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         private int bitField0_;
 
         private java.lang.Object username_ = "";
+
         /**
          *
          *
@@ -831,6 +846,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -853,6 +869,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -874,6 +891,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -891,6 +909,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -915,6 +934,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
 
         private java.lang.Object passwordSecretVersion_ = "";
+
         /**
          *
          *
@@ -940,6 +960,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -965,6 +986,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -989,6 +1011,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1009,6 +1032,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1123,6 +1147,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       private CredentialsCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1154,6 +1179,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int USERNAME_PASSWORD_CREDENTIALS_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -1171,6 +1197,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasUsernamePasswordCredentials() {
       return credentialsCase_ == 1;
     }
+
     /**
      *
      *
@@ -1196,6 +1223,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.UpstreamCredentials
           .UsernamePasswordCredentials.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1413,6 +1441,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1660,6 +1689,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.UpstreamCredentials
                   .UsernamePasswordCredentialsOrBuilder>
           usernamePasswordCredentialsBuilder_;
+
       /**
        *
        *
@@ -1677,6 +1707,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public boolean hasUsernamePasswordCredentials() {
         return credentialsCase_ == 1;
       }
+
       /**
        *
        *
@@ -1710,6 +1741,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .UsernamePasswordCredentials.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1737,6 +1769,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         credentialsCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1761,6 +1794,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         credentialsCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1803,6 +1837,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         credentialsCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1830,6 +1865,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1846,6 +1882,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           getUsernamePasswordCredentialsBuilder() {
         return getUsernamePasswordCredentialsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1873,6 +1910,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .UsernamePasswordCredentials.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2007,6 +2045,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the publicRepository field is set.
      */
     boolean hasPublicRepository();
+
     /**
      *
      *
@@ -2022,6 +2061,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for publicRepository.
      */
     int getPublicRepositoryValue();
+
     /**
      *
      *
@@ -2053,6 +2093,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the customRepository field is set.
      */
     boolean hasCustomRepository();
+
     /**
      *
      *
@@ -2068,6 +2109,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      */
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository
         getCustomRepository();
+
     /**
      *
      *
@@ -2086,6 +2128,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.UpstreamCase
         getUpstreamCase();
   }
+
   /**
    *
    *
@@ -2101,6 +2144,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository)
       DockerRepositoryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DockerRepository.newBuilder() to construct.
     private DockerRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2175,6 +2219,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * <code>PUBLIC_REPOSITORY_UNSPECIFIED = 0;</code>
        */
       public static final int PUBLIC_REPOSITORY_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2291,6 +2336,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * @return The uri.
        */
       java.lang.String getUri();
+
       /**
        *
        *
@@ -2305,6 +2351,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        */
       com.google.protobuf.ByteString getUriBytes();
     }
+
     /**
      *
      *
@@ -2320,6 +2367,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository)
         CustomRepositoryOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use CustomRepository.newBuilder() to construct.
       private CustomRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2356,6 +2404,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -2380,6 +2429,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           return s;
         }
       }
+
       /**
        *
        *
@@ -2595,6 +2645,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2812,6 +2863,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         private int bitField0_;
 
         private java.lang.Object uri_ = "";
+
         /**
          *
          *
@@ -2835,6 +2887,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2858,6 +2911,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2880,6 +2934,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2898,6 +2953,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3011,6 +3067,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       private UpstreamCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -3044,6 +3101,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int PUBLIC_REPOSITORY_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -3061,6 +3119,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasPublicRepository() {
       return upstreamCase_ == 1;
     }
+
     /**
      *
      *
@@ -3081,6 +3140,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       return 0;
     }
+
     /**
      *
      *
@@ -3114,6 +3174,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int CUSTOM_REPOSITORY_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -3131,6 +3192,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasCustomRepository() {
       return upstreamCase_ == 3;
     }
+
     /**
      *
      *
@@ -3156,6 +3218,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
           .CustomRepository.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -3386,6 +3449,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3651,6 +3715,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public boolean hasPublicRepository() {
         return upstreamCase_ == 1;
       }
+
       /**
        *
        *
@@ -3672,6 +3737,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
         return 0;
       }
+
       /**
        *
        *
@@ -3693,6 +3759,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3725,6 +3792,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
             .PublicRepository.PUBLIC_REPOSITORY_UNSPECIFIED;
       }
+
       /**
        *
        *
@@ -3752,6 +3820,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3783,6 +3852,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
                   .CustomRepositoryOrBuilder>
           customRepositoryBuilder_;
+
       /**
        *
        *
@@ -3800,6 +3870,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public boolean hasCustomRepository() {
         return upstreamCase_ == 3;
       }
+
       /**
        *
        *
@@ -3833,6 +3904,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .CustomRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3860,6 +3932,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -3884,6 +3957,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -3926,6 +4000,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -3953,6 +4028,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -3969,6 +4045,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           getCustomRepositoryBuilder() {
         return getCustomRepositoryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3996,6 +4073,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .CustomRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4130,6 +4208,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the publicRepository field is set.
      */
     boolean hasPublicRepository();
+
     /**
      *
      *
@@ -4145,6 +4224,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for publicRepository.
      */
     int getPublicRepositoryValue();
+
     /**
      *
      *
@@ -4176,6 +4256,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the customRepository field is set.
      */
     boolean hasCustomRepository();
+
     /**
      *
      *
@@ -4191,6 +4272,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      */
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository
         getCustomRepository();
+
     /**
      *
      *
@@ -4209,6 +4291,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.UpstreamCase
         getUpstreamCase();
   }
+
   /**
    *
    *
@@ -4224,6 +4307,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository)
       MavenRepositoryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MavenRepository.newBuilder() to construct.
     private MavenRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4298,6 +4382,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * <code>PUBLIC_REPOSITORY_UNSPECIFIED = 0;</code>
        */
       public static final int PUBLIC_REPOSITORY_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -4414,6 +4499,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * @return The uri.
        */
       java.lang.String getUri();
+
       /**
        *
        *
@@ -4428,6 +4514,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        */
       com.google.protobuf.ByteString getUriBytes();
     }
+
     /**
      *
      *
@@ -4443,6 +4530,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository)
         CustomRepositoryOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use CustomRepository.newBuilder() to construct.
       private CustomRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -4479,6 +4567,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -4503,6 +4592,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           return s;
         }
       }
+
       /**
        *
        *
@@ -4718,6 +4808,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -4935,6 +5026,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         private int bitField0_;
 
         private java.lang.Object uri_ = "";
+
         /**
          *
          *
@@ -4958,6 +5050,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -4981,6 +5074,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -5003,6 +5097,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5021,6 +5116,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5134,6 +5230,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       private UpstreamCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -5167,6 +5264,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int PUBLIC_REPOSITORY_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -5184,6 +5282,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasPublicRepository() {
       return upstreamCase_ == 1;
     }
+
     /**
      *
      *
@@ -5204,6 +5303,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       return 0;
     }
+
     /**
      *
      *
@@ -5237,6 +5337,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int CUSTOM_REPOSITORY_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -5254,6 +5355,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasCustomRepository() {
       return upstreamCase_ == 3;
     }
+
     /**
      *
      *
@@ -5279,6 +5381,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
           .CustomRepository.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -5509,6 +5612,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5774,6 +5878,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public boolean hasPublicRepository() {
         return upstreamCase_ == 1;
       }
+
       /**
        *
        *
@@ -5795,6 +5900,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
         return 0;
       }
+
       /**
        *
        *
@@ -5816,6 +5922,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5848,6 +5955,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
             .PublicRepository.PUBLIC_REPOSITORY_UNSPECIFIED;
       }
+
       /**
        *
        *
@@ -5875,6 +5983,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5906,6 +6015,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
                   .CustomRepositoryOrBuilder>
           customRepositoryBuilder_;
+
       /**
        *
        *
@@ -5923,6 +6033,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public boolean hasCustomRepository() {
         return upstreamCase_ == 3;
       }
+
       /**
        *
        *
@@ -5956,6 +6067,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .CustomRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5983,6 +6095,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -6007,6 +6120,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -6049,6 +6163,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -6076,6 +6191,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -6092,6 +6208,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           getCustomRepositoryBuilder() {
         return getCustomRepositoryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6119,6 +6236,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .CustomRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6253,6 +6371,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the publicRepository field is set.
      */
     boolean hasPublicRepository();
+
     /**
      *
      *
@@ -6268,6 +6387,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for publicRepository.
      */
     int getPublicRepositoryValue();
+
     /**
      *
      *
@@ -6299,6 +6419,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the customRepository field is set.
      */
     boolean hasCustomRepository();
+
     /**
      *
      *
@@ -6314,6 +6435,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      */
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository
         getCustomRepository();
+
     /**
      *
      *
@@ -6332,6 +6454,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.UpstreamCase
         getUpstreamCase();
   }
+
   /**
    *
    *
@@ -6346,6 +6469,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository)
       NpmRepositoryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use NpmRepository.newBuilder() to construct.
     private NpmRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6419,6 +6543,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * <code>PUBLIC_REPOSITORY_UNSPECIFIED = 0;</code>
        */
       public static final int PUBLIC_REPOSITORY_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -6535,6 +6660,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * @return The uri.
        */
       java.lang.String getUri();
+
       /**
        *
        *
@@ -6549,6 +6675,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        */
       com.google.protobuf.ByteString getUriBytes();
     }
+
     /**
      *
      *
@@ -6564,6 +6691,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository)
         CustomRepositoryOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use CustomRepository.newBuilder() to construct.
       private CustomRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -6600,6 +6728,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -6624,6 +6753,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           return s;
         }
       }
+
       /**
        *
        *
@@ -6839,6 +6969,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -7056,6 +7187,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         private int bitField0_;
 
         private java.lang.Object uri_ = "";
+
         /**
          *
          *
@@ -7079,6 +7211,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -7102,6 +7235,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -7124,6 +7258,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -7142,6 +7277,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -7255,6 +7391,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       private UpstreamCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -7288,6 +7425,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int PUBLIC_REPOSITORY_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -7305,6 +7443,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasPublicRepository() {
       return upstreamCase_ == 1;
     }
+
     /**
      *
      *
@@ -7325,6 +7464,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       return 0;
     }
+
     /**
      *
      *
@@ -7358,6 +7498,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int CUSTOM_REPOSITORY_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -7375,6 +7516,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasCustomRepository() {
       return upstreamCase_ == 3;
     }
+
     /**
      *
      *
@@ -7400,6 +7542,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
           .CustomRepository.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -7630,6 +7773,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7891,6 +8035,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public boolean hasPublicRepository() {
         return upstreamCase_ == 1;
       }
+
       /**
        *
        *
@@ -7912,6 +8057,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
         return 0;
       }
+
       /**
        *
        *
@@ -7933,6 +8079,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7965,6 +8112,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
             .PublicRepository.PUBLIC_REPOSITORY_UNSPECIFIED;
       }
+
       /**
        *
        *
@@ -7992,6 +8140,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8023,6 +8172,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
                   .CustomRepositoryOrBuilder>
           customRepositoryBuilder_;
+
       /**
        *
        *
@@ -8040,6 +8190,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public boolean hasCustomRepository() {
         return upstreamCase_ == 3;
       }
+
       /**
        *
        *
@@ -8073,6 +8224,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .CustomRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8100,6 +8252,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -8124,6 +8277,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -8166,6 +8320,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -8193,6 +8348,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -8209,6 +8365,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           getCustomRepositoryBuilder() {
         return getCustomRepositoryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8236,6 +8393,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .CustomRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8370,6 +8528,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the publicRepository field is set.
      */
     boolean hasPublicRepository();
+
     /**
      *
      *
@@ -8385,6 +8544,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for publicRepository.
      */
     int getPublicRepositoryValue();
+
     /**
      *
      *
@@ -8416,6 +8576,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the customRepository field is set.
      */
     boolean hasCustomRepository();
+
     /**
      *
      *
@@ -8431,6 +8592,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      */
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository
         getCustomRepository();
+
     /**
      *
      *
@@ -8449,6 +8611,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.UpstreamCase
         getUpstreamCase();
   }
+
   /**
    *
    *
@@ -8464,6 +8627,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository)
       PythonRepositoryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PythonRepository.newBuilder() to construct.
     private PythonRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8537,6 +8701,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * <code>PUBLIC_REPOSITORY_UNSPECIFIED = 0;</code>
        */
       public static final int PUBLIC_REPOSITORY_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -8653,6 +8818,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * @return The uri.
        */
       java.lang.String getUri();
+
       /**
        *
        *
@@ -8667,6 +8833,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        */
       com.google.protobuf.ByteString getUriBytes();
     }
+
     /**
      *
      *
@@ -8682,6 +8849,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository)
         CustomRepositoryOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use CustomRepository.newBuilder() to construct.
       private CustomRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -8718,6 +8886,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -8742,6 +8911,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           return s;
         }
       }
+
       /**
        *
        *
@@ -8957,6 +9127,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -9174,6 +9345,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         private int bitField0_;
 
         private java.lang.Object uri_ = "";
+
         /**
          *
          *
@@ -9197,6 +9369,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -9220,6 +9393,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -9242,6 +9416,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9260,6 +9435,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9373,6 +9549,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       private UpstreamCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -9406,6 +9583,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int PUBLIC_REPOSITORY_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -9423,6 +9601,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasPublicRepository() {
       return upstreamCase_ == 1;
     }
+
     /**
      *
      *
@@ -9443,6 +9622,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       return 0;
     }
+
     /**
      *
      *
@@ -9476,6 +9656,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int CUSTOM_REPOSITORY_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -9493,6 +9674,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasCustomRepository() {
       return upstreamCase_ == 3;
     }
+
     /**
      *
      *
@@ -9518,6 +9700,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
           .CustomRepository.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -9748,6 +9931,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -10013,6 +10197,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public boolean hasPublicRepository() {
         return upstreamCase_ == 1;
       }
+
       /**
        *
        *
@@ -10034,6 +10219,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
         return 0;
       }
+
       /**
        *
        *
@@ -10055,6 +10241,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10087,6 +10274,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
             .PublicRepository.PUBLIC_REPOSITORY_UNSPECIFIED;
       }
+
       /**
        *
        *
@@ -10114,6 +10302,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10145,6 +10334,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
                   .CustomRepositoryOrBuilder>
           customRepositoryBuilder_;
+
       /**
        *
        *
@@ -10162,6 +10352,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public boolean hasCustomRepository() {
         return upstreamCase_ == 3;
       }
+
       /**
        *
        *
@@ -10195,6 +10386,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .CustomRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -10222,6 +10414,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -10246,6 +10439,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -10288,6 +10482,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -10315,6 +10510,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -10331,6 +10527,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           getCustomRepositoryBuilder() {
         return getCustomRepositoryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -10358,6 +10555,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .CustomRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -10492,6 +10690,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the publicRepository field is set.
      */
     boolean hasPublicRepository();
+
     /**
      *
      *
@@ -10508,6 +10707,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      */
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.PublicRepository
         getPublicRepository();
+
     /**
      *
      *
@@ -10538,6 +10738,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the customRepository field is set.
      */
     boolean hasCustomRepository();
+
     /**
      *
      *
@@ -10553,6 +10754,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      */
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository
         getCustomRepository();
+
     /**
      *
      *
@@ -10571,6 +10773,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.UpstreamCase
         getUpstreamCase();
   }
+
   /**
    *
    *
@@ -10585,6 +10788,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository)
       AptRepositoryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AptRepository.newBuilder() to construct.
     private AptRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10633,6 +10837,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * @return The enum numeric value on the wire for repositoryBase.
        */
       int getRepositoryBaseValue();
+
       /**
        *
        *
@@ -10662,6 +10867,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * @return The repositoryPath.
        */
       java.lang.String getRepositoryPath();
+
       /**
        *
        *
@@ -10675,6 +10881,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        */
       com.google.protobuf.ByteString getRepositoryPathBytes();
     }
+
     /**
      *
      *
@@ -10691,6 +10898,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.PublicRepository)
         PublicRepositoryOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use PublicRepository.newBuilder() to construct.
       private PublicRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -10788,6 +10996,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
          * <code>REPOSITORY_BASE_UNSPECIFIED = 0;</code>
          */
         public static final int REPOSITORY_BASE_UNSPECIFIED_VALUE = 0;
+
         /**
          *
          *
@@ -10798,6 +11007,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
          * <code>DEBIAN = 1;</code>
          */
         public static final int DEBIAN_VALUE = 1;
+
         /**
          *
          *
@@ -10808,6 +11018,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
          * <code>UBUNTU = 2;</code>
          */
         public static final int UBUNTU_VALUE = 2;
+
         /**
          *
          *
@@ -10913,6 +11124,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
       public static final int REPOSITORY_BASE_FIELD_NUMBER = 1;
       private int repositoryBase_ = 0;
+
       /**
        *
        *
@@ -10930,6 +11142,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public int getRepositoryBaseValue() {
         return repositoryBase_;
       }
+
       /**
        *
        *
@@ -10962,6 +11175,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object repositoryPath_ = "";
+
       /**
        *
        *
@@ -10985,6 +11199,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           return s;
         }
       }
+
       /**
        *
        *
@@ -11214,6 +11429,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -11445,6 +11661,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         private int bitField0_;
 
         private int repositoryBase_ = 0;
+
         /**
          *
          *
@@ -11462,6 +11679,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         public int getRepositoryBaseValue() {
           return repositoryBase_;
         }
+
         /**
          *
          *
@@ -11482,6 +11700,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -11509,6 +11728,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
                   .PublicRepository.RepositoryBase.UNRECOGNIZED
               : result;
         }
+
         /**
          *
          *
@@ -11535,6 +11755,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -11556,6 +11777,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
 
         private java.lang.Object repositoryPath_ = "";
+
         /**
          *
          *
@@ -11578,6 +11800,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -11600,6 +11823,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -11621,6 +11845,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -11638,6 +11863,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -11751,6 +11977,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * @return The uri.
        */
       java.lang.String getUri();
+
       /**
        *
        *
@@ -11765,6 +11992,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        */
       com.google.protobuf.ByteString getUriBytes();
     }
+
     /**
      *
      *
@@ -11780,6 +12008,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository)
         CustomRepositoryOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use CustomRepository.newBuilder() to construct.
       private CustomRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -11816,6 +12045,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -11840,6 +12070,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           return s;
         }
       }
+
       /**
        *
        *
@@ -12055,6 +12286,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -12272,6 +12504,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         private int bitField0_;
 
         private java.lang.Object uri_ = "";
+
         /**
          *
          *
@@ -12295,6 +12528,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -12318,6 +12552,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -12340,6 +12575,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -12358,6 +12594,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -12471,6 +12708,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       private UpstreamCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -12504,6 +12742,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int PUBLIC_REPOSITORY_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -12522,6 +12761,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasPublicRepository() {
       return upstreamCase_ == 1;
     }
+
     /**
      *
      *
@@ -12548,6 +12788,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
           .PublicRepository.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -12574,6 +12815,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int CUSTOM_REPOSITORY_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -12591,6 +12833,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasCustomRepository() {
       return upstreamCase_ == 3;
     }
+
     /**
      *
      *
@@ -12616,6 +12859,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
           .CustomRepository.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -12853,6 +13097,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -13110,6 +13355,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
                   .PublicRepositoryOrBuilder>
           publicRepositoryBuilder_;
+
       /**
        *
        *
@@ -13128,6 +13374,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public boolean hasPublicRepository() {
         return upstreamCase_ == 1;
       }
+
       /**
        *
        *
@@ -13162,6 +13409,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .PublicRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -13190,6 +13438,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -13215,6 +13464,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -13258,6 +13508,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -13286,6 +13537,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -13303,6 +13555,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           getPublicRepositoryBuilder() {
         return getPublicRepositoryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -13331,6 +13584,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .PublicRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -13385,6 +13639,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
                   .CustomRepositoryOrBuilder>
           customRepositoryBuilder_;
+
       /**
        *
        *
@@ -13402,6 +13657,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public boolean hasCustomRepository() {
         return upstreamCase_ == 3;
       }
+
       /**
        *
        *
@@ -13435,6 +13691,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .CustomRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -13462,6 +13719,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -13486,6 +13744,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -13528,6 +13787,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -13555,6 +13815,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -13571,6 +13832,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           getCustomRepositoryBuilder() {
         return getCustomRepositoryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -13598,6 +13860,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .CustomRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -13732,6 +13995,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the publicRepository field is set.
      */
     boolean hasPublicRepository();
+
     /**
      *
      *
@@ -13748,6 +14012,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      */
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.PublicRepository
         getPublicRepository();
+
     /**
      *
      *
@@ -13778,6 +14043,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the customRepository field is set.
      */
     boolean hasCustomRepository();
+
     /**
      *
      *
@@ -13793,6 +14059,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      */
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository
         getCustomRepository();
+
     /**
      *
      *
@@ -13811,6 +14078,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.UpstreamCase
         getUpstreamCase();
   }
+
   /**
    *
    *
@@ -13825,6 +14093,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository)
       YumRepositoryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use YumRepository.newBuilder() to construct.
     private YumRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -13873,6 +14142,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * @return The enum numeric value on the wire for repositoryBase.
        */
       int getRepositoryBaseValue();
+
       /**
        *
        *
@@ -13902,6 +14172,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * @return The repositoryPath.
        */
       java.lang.String getRepositoryPath();
+
       /**
        *
        *
@@ -13915,6 +14186,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        */
       com.google.protobuf.ByteString getRepositoryPathBytes();
     }
+
     /**
      *
      *
@@ -13931,6 +14203,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.PublicRepository)
         PublicRepositoryOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use PublicRepository.newBuilder() to construct.
       private PublicRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -14058,6 +14331,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
          * <code>REPOSITORY_BASE_UNSPECIFIED = 0;</code>
          */
         public static final int REPOSITORY_BASE_UNSPECIFIED_VALUE = 0;
+
         /**
          *
          *
@@ -14068,6 +14342,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
          * <code>CENTOS = 1;</code>
          */
         public static final int CENTOS_VALUE = 1;
+
         /**
          *
          *
@@ -14078,6 +14353,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
          * <code>CENTOS_DEBUG = 2;</code>
          */
         public static final int CENTOS_DEBUG_VALUE = 2;
+
         /**
          *
          *
@@ -14088,6 +14364,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
          * <code>CENTOS_VAULT = 3;</code>
          */
         public static final int CENTOS_VAULT_VALUE = 3;
+
         /**
          *
          *
@@ -14098,6 +14375,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
          * <code>CENTOS_STREAM = 4;</code>
          */
         public static final int CENTOS_STREAM_VALUE = 4;
+
         /**
          *
          *
@@ -14108,6 +14386,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
          * <code>ROCKY = 5;</code>
          */
         public static final int ROCKY_VALUE = 5;
+
         /**
          *
          *
@@ -14219,6 +14498,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
       public static final int REPOSITORY_BASE_FIELD_NUMBER = 1;
       private int repositoryBase_ = 0;
+
       /**
        *
        *
@@ -14236,6 +14516,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public int getRepositoryBaseValue() {
         return repositoryBase_;
       }
+
       /**
        *
        *
@@ -14268,6 +14549,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object repositoryPath_ = "";
+
       /**
        *
        *
@@ -14291,6 +14573,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           return s;
         }
       }
+
       /**
        *
        *
@@ -14520,6 +14803,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -14751,6 +15035,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         private int bitField0_;
 
         private int repositoryBase_ = 0;
+
         /**
          *
          *
@@ -14768,6 +15053,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         public int getRepositoryBaseValue() {
           return repositoryBase_;
         }
+
         /**
          *
          *
@@ -14788,6 +15074,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14815,6 +15102,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
                   .PublicRepository.RepositoryBase.UNRECOGNIZED
               : result;
         }
+
         /**
          *
          *
@@ -14841,6 +15129,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14862,6 +15151,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
 
         private java.lang.Object repositoryPath_ = "";
+
         /**
          *
          *
@@ -14884,6 +15174,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -14906,6 +15197,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -14927,6 +15219,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14944,6 +15237,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -15057,6 +15351,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        * @return The uri.
        */
       java.lang.String getUri();
+
       /**
        *
        *
@@ -15071,6 +15366,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
        */
       com.google.protobuf.ByteString getUriBytes();
     }
+
     /**
      *
      *
@@ -15086,6 +15382,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository)
         CustomRepositoryOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use CustomRepository.newBuilder() to construct.
       private CustomRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -15122,6 +15419,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -15146,6 +15444,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           return s;
         }
       }
+
       /**
        *
        *
@@ -15361,6 +15660,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -15578,6 +15878,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         private int bitField0_;
 
         private java.lang.Object uri_ = "";
+
         /**
          *
          *
@@ -15601,6 +15902,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -15624,6 +15926,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -15646,6 +15949,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -15664,6 +15968,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -15777,6 +16082,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       private UpstreamCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -15810,6 +16116,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int PUBLIC_REPOSITORY_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -15828,6 +16135,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasPublicRepository() {
       return upstreamCase_ == 1;
     }
+
     /**
      *
      *
@@ -15854,6 +16162,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
           .PublicRepository.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -15880,6 +16189,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     public static final int CUSTOM_REPOSITORY_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -15897,6 +16207,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasCustomRepository() {
       return upstreamCase_ == 3;
     }
+
     /**
      *
      *
@@ -15922,6 +16233,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
           .CustomRepository.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -16159,6 +16471,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -16416,6 +16729,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
                   .PublicRepositoryOrBuilder>
           publicRepositoryBuilder_;
+
       /**
        *
        *
@@ -16434,6 +16748,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public boolean hasPublicRepository() {
         return upstreamCase_ == 1;
       }
+
       /**
        *
        *
@@ -16468,6 +16783,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .PublicRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -16496,6 +16812,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -16521,6 +16838,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -16564,6 +16882,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -16592,6 +16911,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -16609,6 +16929,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           getPublicRepositoryBuilder() {
         return getPublicRepositoryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -16637,6 +16958,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .PublicRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -16691,6 +17013,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
                   .CustomRepositoryOrBuilder>
           customRepositoryBuilder_;
+
       /**
        *
        *
@@ -16708,6 +17031,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public boolean hasCustomRepository() {
         return upstreamCase_ == 3;
       }
+
       /**
        *
        *
@@ -16741,6 +17065,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .CustomRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -16768,6 +17093,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -16792,6 +17118,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -16834,6 +17161,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -16861,6 +17189,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -16877,6 +17206,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           getCustomRepositoryBuilder() {
         return getCustomRepositoryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -16904,6 +17234,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               .CustomRepository.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -17035,6 +17366,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -17048,6 +17380,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getUriBytes();
   }
+
   /**
    *
    *
@@ -17063,6 +17396,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository)
       CommonRemoteRepositoryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CommonRemoteRepository.newBuilder() to construct.
     private CommonRemoteRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -17099,6 +17433,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -17122,6 +17457,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -17329,6 +17665,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -17538,6 +17875,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -17560,6 +17898,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -17582,6 +17921,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -17603,6 +17943,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -17620,6 +17961,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -17737,6 +18079,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     private RemoteSourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -17780,6 +18123,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int DOCKER_REPOSITORY_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -17797,6 +18141,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   public boolean hasDockerRepository() {
     return remoteSourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -17820,6 +18165,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -17843,6 +18189,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int MAVEN_REPOSITORY_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -17860,6 +18207,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   public boolean hasMavenRepository() {
     return remoteSourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -17883,6 +18231,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -17906,6 +18255,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int NPM_REPOSITORY_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -17923,6 +18273,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   public boolean hasNpmRepository() {
     return remoteSourceCase_ == 4;
   }
+
   /**
    *
    *
@@ -17946,6 +18297,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -17969,6 +18321,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int PYTHON_REPOSITORY_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -17986,6 +18339,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   public boolean hasPythonRepository() {
     return remoteSourceCase_ == 5;
   }
+
   /**
    *
    *
@@ -18009,6 +18363,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -18032,6 +18387,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int APT_REPOSITORY_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -18049,6 +18405,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   public boolean hasAptRepository() {
     return remoteSourceCase_ == 6;
   }
+
   /**
    *
    *
@@ -18072,6 +18429,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -18095,6 +18453,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int YUM_REPOSITORY_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -18112,6 +18471,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   public boolean hasYumRepository() {
     return remoteSourceCase_ == 7;
   }
+
   /**
    *
    *
@@ -18135,6 +18495,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -18158,6 +18519,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int COMMON_REPOSITORY_FIELD_NUMBER = 14;
+
   /**
    *
    *
@@ -18176,6 +18538,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   public boolean hasCommonRepository() {
     return remoteSourceCase_ == 14;
   }
+
   /**
    *
    *
@@ -18200,6 +18563,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -18228,6 +18592,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -18251,6 +18616,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -18278,6 +18644,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   public static final int UPSTREAM_CREDENTIALS_FIELD_NUMBER = 9;
   private com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.UpstreamCredentials
       upstreamCredentials_;
+
   /**
    *
    *
@@ -18295,6 +18662,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
   public boolean hasUpstreamCredentials() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -18316,6 +18684,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : upstreamCredentials_;
   }
+
   /**
    *
    *
@@ -18338,6 +18707,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
 
   public static final int DISABLE_UPSTREAM_VALIDATION_FIELD_NUMBER = 12;
   private boolean disableUpstreamValidation_ = false;
+
   /**
    *
    *
@@ -18688,6 +19058,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -19077,6 +19448,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
                 .DockerRepositoryOrBuilder>
         dockerRepositoryBuilder_;
+
     /**
      *
      *
@@ -19094,6 +19466,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasDockerRepository() {
       return remoteSourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -19125,6 +19498,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -19150,6 +19524,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -19173,6 +19548,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -19213,6 +19589,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -19240,6 +19617,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -19255,6 +19633,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         getDockerRepositoryBuilder() {
       return getDockerRepositoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -19280,6 +19659,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -19326,6 +19706,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.Builder,
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepositoryOrBuilder>
         mavenRepositoryBuilder_;
+
     /**
      *
      *
@@ -19343,6 +19724,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasMavenRepository() {
       return remoteSourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -19374,6 +19756,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -19399,6 +19782,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -19422,6 +19806,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -19462,6 +19847,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -19489,6 +19875,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -19504,6 +19891,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         getMavenRepositoryBuilder() {
       return getMavenRepositoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -19529,6 +19917,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -19574,6 +19963,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.Builder,
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepositoryOrBuilder>
         npmRepositoryBuilder_;
+
     /**
      *
      *
@@ -19591,6 +19981,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasNpmRepository() {
       return remoteSourceCase_ == 4;
     }
+
     /**
      *
      *
@@ -19622,6 +20013,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -19647,6 +20039,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -19670,6 +20063,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -19709,6 +20103,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -19736,6 +20131,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -19751,6 +20147,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         getNpmRepositoryBuilder() {
       return getNpmRepositoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -19776,6 +20173,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -19822,6 +20220,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
                 .PythonRepositoryOrBuilder>
         pythonRepositoryBuilder_;
+
     /**
      *
      *
@@ -19839,6 +20238,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasPythonRepository() {
       return remoteSourceCase_ == 5;
     }
+
     /**
      *
      *
@@ -19870,6 +20270,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -19895,6 +20296,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -19918,6 +20320,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -19958,6 +20361,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -19985,6 +20389,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -20000,6 +20405,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         getPythonRepositoryBuilder() {
       return getPythonRepositoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -20025,6 +20431,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -20071,6 +20478,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.Builder,
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepositoryOrBuilder>
         aptRepositoryBuilder_;
+
     /**
      *
      *
@@ -20088,6 +20496,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasAptRepository() {
       return remoteSourceCase_ == 6;
     }
+
     /**
      *
      *
@@ -20119,6 +20528,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -20144,6 +20554,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -20167,6 +20578,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -20206,6 +20618,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -20233,6 +20646,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -20248,6 +20662,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         getAptRepositoryBuilder() {
       return getAptRepositoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -20273,6 +20688,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -20318,6 +20734,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.Builder,
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepositoryOrBuilder>
         yumRepositoryBuilder_;
+
     /**
      *
      *
@@ -20335,6 +20752,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasYumRepository() {
       return remoteSourceCase_ == 7;
     }
+
     /**
      *
      *
@@ -20366,6 +20784,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -20391,6 +20810,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -20414,6 +20834,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -20453,6 +20874,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -20480,6 +20902,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -20495,6 +20918,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         getYumRepositoryBuilder() {
       return getYumRepositoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -20520,6 +20944,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -20567,6 +20992,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
                 .CommonRemoteRepositoryOrBuilder>
         commonRepositoryBuilder_;
+
     /**
      *
      *
@@ -20585,6 +21011,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasCommonRepository() {
       return remoteSourceCase_ == 14;
     }
+
     /**
      *
      *
@@ -20618,6 +21045,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -20645,6 +21073,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -20670,6 +21099,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -20712,6 +21142,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       remoteSourceCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -20740,6 +21171,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -20757,6 +21189,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         getCommonRepositoryBuilder() {
       return getCommonRepositoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -20785,6 +21218,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -20831,6 +21265,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -20853,6 +21288,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -20875,6 +21311,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -20896,6 +21333,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20913,6 +21351,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20945,6 +21384,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
                 .UpstreamCredentialsOrBuilder>
         upstreamCredentialsBuilder_;
+
     /**
      *
      *
@@ -20961,6 +21401,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean hasUpstreamCredentials() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -20985,6 +21426,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return upstreamCredentialsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -21010,6 +21452,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21033,6 +21476,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21065,6 +21509,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -21086,6 +21531,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21104,6 +21550,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getUpstreamCredentialsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -21127,6 +21574,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             : upstreamCredentials_;
       }
     }
+
     /**
      *
      *
@@ -21160,6 +21608,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
 
     private boolean disableUpstreamValidation_;
+
     /**
      *
      *
@@ -21177,6 +21626,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public boolean getDisableUpstreamValidation() {
       return disableUpstreamValidation_;
     }
+
     /**
      *
      *
@@ -21198,6 +21648,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

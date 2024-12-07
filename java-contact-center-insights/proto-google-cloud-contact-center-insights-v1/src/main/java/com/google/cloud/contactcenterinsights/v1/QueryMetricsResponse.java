@@ -33,6 +33,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QueryMetricsResponse)
     QueryMetricsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryMetricsResponse.newBuilder() to construct.
   private QueryMetricsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
      * <code>repeated .google.cloud.contactcenterinsights.v1.Dimension dimensions = 1;</code>
      */
     java.util.List<com.google.cloud.contactcenterinsights.v1.Dimension> getDimensionsList();
+
     /**
      *
      *
@@ -89,6 +91,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
      * <code>repeated .google.cloud.contactcenterinsights.v1.Dimension dimensions = 1;</code>
      */
     com.google.cloud.contactcenterinsights.v1.Dimension getDimensions(int index);
+
     /**
      *
      *
@@ -99,6 +102,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
      * <code>repeated .google.cloud.contactcenterinsights.v1.Dimension dimensions = 1;</code>
      */
     int getDimensionsCount();
+
     /**
      *
      *
@@ -110,6 +114,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
      */
     java.util.List<? extends com.google.cloud.contactcenterinsights.v1.DimensionOrBuilder>
         getDimensionsOrBuilderList();
+
     /**
      *
      *
@@ -135,6 +140,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the total field is set.
      */
     boolean hasTotal();
+
     /**
      *
      *
@@ -149,6 +155,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
      * @return The total.
      */
     com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint getTotal();
+
     /**
      *
      *
@@ -178,6 +185,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the timeSeries field is set.
      */
     boolean hasTimeSeries();
+
     /**
      *
      *
@@ -193,6 +201,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
      * @return The timeSeries.
      */
     com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.TimeSeries getTimeSeries();
+
     /**
      *
      *
@@ -208,6 +217,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
     com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.TimeSeriesOrBuilder
         getTimeSeriesOrBuilder();
   }
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice)
       SliceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Slice.newBuilder() to construct.
     private Slice(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -280,6 +291,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
        * @return Whether the conversationMeasure field is set.
        */
       boolean hasConversationMeasure();
+
       /**
        *
        *
@@ -296,6 +308,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint
               .ConversationMeasure
           getConversationMeasure();
+
       /**
        *
        *
@@ -328,6 +341,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
        * @return Whether the interval field is set.
        */
       boolean hasInterval();
+
       /**
        *
        *
@@ -345,6 +359,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
        * @return The interval.
        */
       com.google.type.Interval getInterval();
+
       /**
        *
        *
@@ -364,6 +379,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint.MeasureCase
           getMeasureCase();
     }
+
     /**
      *
      *
@@ -379,6 +395,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint)
         DataPointOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use DataPoint.newBuilder() to construct.
       private DataPoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -426,6 +443,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
          * @return Whether the conversationCount field is set.
          */
         boolean hasConversationCount();
+
         /**
          *
          *
@@ -451,6 +469,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
          * @return Whether the averageSilencePercentage field is set.
          */
         boolean hasAverageSilencePercentage();
+
         /**
          *
          *
@@ -476,6 +495,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
          * @return Whether the averageDuration field is set.
          */
         boolean hasAverageDuration();
+
         /**
          *
          *
@@ -488,6 +508,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
          * @return The averageDuration.
          */
         com.google.protobuf.Duration getAverageDuration();
+
         /**
          *
          *
@@ -511,6 +532,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
          * @return Whether the averageTurnCount field is set.
          */
         boolean hasAverageTurnCount();
+
         /**
          *
          *
@@ -536,6 +558,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
          * @return Whether the averageAgentSentimentScore field is set.
          */
         boolean hasAverageAgentSentimentScore();
+
         /**
          *
          *
@@ -561,6 +584,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
          * @return Whether the averageClientSentimentScore field is set.
          */
         boolean hasAverageClientSentimentScore();
+
         /**
          *
          *
@@ -586,6 +610,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
          * @return Whether the averageCustomerSatisfactionRating field is set.
          */
         boolean hasAverageCustomerSatisfactionRating();
+
         /**
          *
          *
@@ -612,6 +637,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
          * @return Whether the averageQaNormalizedScore field is set.
          */
         boolean hasAverageQaNormalizedScore();
+
         /**
          *
          *
@@ -641,6 +667,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint
                     .ConversationMeasure.QaTagScore>
             getQaTagScoresList();
+
         /**
          *
          *
@@ -655,6 +682,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint
                 .ConversationMeasure.QaTagScore
             getQaTagScores(int index);
+
         /**
          *
          *
@@ -667,6 +695,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
          * </code>
          */
         int getQaTagScoresCount();
+
         /**
          *
          *
@@ -683,6 +712,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                     com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint
                         .ConversationMeasure.QaTagScoreOrBuilder>
             getQaTagScoresOrBuilderList();
+
         /**
          *
          *
@@ -713,6 +743,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
          * @return Whether the averageQaQuestionNormalizedScore field is set.
          */
         boolean hasAverageQaQuestionNormalizedScore();
+
         /**
          *
          *
@@ -729,6 +760,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
          */
         double getAverageQaQuestionNormalizedScore();
       }
+
       /**
        *
        *
@@ -744,6 +776,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint.ConversationMeasure)
           ConversationMeasureOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use ConversationMeasure.newBuilder() to construct.
         private ConversationMeasure(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -793,6 +826,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
            * @return The tag.
            */
           java.lang.String getTag();
+
           /**
            *
            *
@@ -819,6 +853,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
            */
           double getAverageTagNormalizedScore();
         }
+
         /**
          *
          *
@@ -834,6 +869,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint.ConversationMeasure.QaTagScore)
             QaTagScoreOrBuilder {
           private static final long serialVersionUID = 0L;
+
           // Use QaTagScore.newBuilder() to construct.
           private QaTagScore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
             super(builder);
@@ -870,6 +906,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
           @SuppressWarnings("serial")
           private volatile java.lang.Object tag_ = "";
+
           /**
            *
            *
@@ -893,6 +930,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               return s;
             }
           }
+
           /**
            *
            *
@@ -919,6 +957,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
           public static final int AVERAGE_TAG_NORMALIZED_SCORE_FIELD_NUMBER = 2;
           private double averageTagNormalizedScore_ = 0D;
+
           /**
            *
            *
@@ -1144,6 +1183,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             Builder builder = new Builder(parent);
             return builder;
           }
+
           /**
            *
            *
@@ -1374,6 +1414,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             private int bitField0_;
 
             private java.lang.Object tag_ = "";
+
             /**
              *
              *
@@ -1396,6 +1437,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                 return (java.lang.String) ref;
               }
             }
+
             /**
              *
              *
@@ -1418,6 +1460,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                 return (com.google.protobuf.ByteString) ref;
               }
             }
+
             /**
              *
              *
@@ -1439,6 +1482,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               onChanged();
               return this;
             }
+
             /**
              *
              *
@@ -1456,6 +1500,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               onChanged();
               return this;
             }
+
             /**
              *
              *
@@ -1480,6 +1525,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             }
 
             private double averageTagNormalizedScore_;
+
             /**
              *
              *
@@ -1495,6 +1541,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             public double getAverageTagNormalizedScore() {
               return averageTagNormalizedScore_;
             }
+
             /**
              *
              *
@@ -1514,6 +1561,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               onChanged();
               return this;
             }
+
             /**
              *
              *
@@ -1607,6 +1655,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         private int bitField0_;
         public static final int CONVERSATION_COUNT_FIELD_NUMBER = 1;
         private int conversationCount_ = 0;
+
         /**
          *
          *
@@ -1622,6 +1671,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasConversationCount() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -1640,6 +1690,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
         public static final int AVERAGE_SILENCE_PERCENTAGE_FIELD_NUMBER = 2;
         private float averageSilencePercentage_ = 0F;
+
         /**
          *
          *
@@ -1655,6 +1706,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasAverageSilencePercentage() {
           return ((bitField0_ & 0x00000002) != 0);
         }
+
         /**
          *
          *
@@ -1673,6 +1725,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
         public static final int AVERAGE_DURATION_FIELD_NUMBER = 3;
         private com.google.protobuf.Duration averageDuration_;
+
         /**
          *
          *
@@ -1688,6 +1741,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasAverageDuration() {
           return ((bitField0_ & 0x00000004) != 0);
         }
+
         /**
          *
          *
@@ -1705,6 +1759,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               ? com.google.protobuf.Duration.getDefaultInstance()
               : averageDuration_;
         }
+
         /**
          *
          *
@@ -1723,6 +1778,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
         public static final int AVERAGE_TURN_COUNT_FIELD_NUMBER = 4;
         private float averageTurnCount_ = 0F;
+
         /**
          *
          *
@@ -1738,6 +1794,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasAverageTurnCount() {
           return ((bitField0_ & 0x00000008) != 0);
         }
+
         /**
          *
          *
@@ -1756,6 +1813,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
         public static final int AVERAGE_AGENT_SENTIMENT_SCORE_FIELD_NUMBER = 5;
         private float averageAgentSentimentScore_ = 0F;
+
         /**
          *
          *
@@ -1771,6 +1829,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasAverageAgentSentimentScore() {
           return ((bitField0_ & 0x00000010) != 0);
         }
+
         /**
          *
          *
@@ -1789,6 +1848,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
         public static final int AVERAGE_CLIENT_SENTIMENT_SCORE_FIELD_NUMBER = 6;
         private float averageClientSentimentScore_ = 0F;
+
         /**
          *
          *
@@ -1804,6 +1864,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasAverageClientSentimentScore() {
           return ((bitField0_ & 0x00000020) != 0);
         }
+
         /**
          *
          *
@@ -1822,6 +1883,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
         public static final int AVERAGE_CUSTOMER_SATISFACTION_RATING_FIELD_NUMBER = 8;
         private double averageCustomerSatisfactionRating_ = 0D;
+
         /**
          *
          *
@@ -1837,6 +1899,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasAverageCustomerSatisfactionRating() {
           return ((bitField0_ & 0x00000040) != 0);
         }
+
         /**
          *
          *
@@ -1855,6 +1918,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
         public static final int AVERAGE_QA_NORMALIZED_SCORE_FIELD_NUMBER = 7;
         private double averageQaNormalizedScore_ = 0D;
+
         /**
          *
          *
@@ -1871,6 +1935,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasAverageQaNormalizedScore() {
           return ((bitField0_ & 0x00000080) != 0);
         }
+
         /**
          *
          *
@@ -1895,6 +1960,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint
                     .ConversationMeasure.QaTagScore>
             qaTagScores_;
+
         /**
          *
          *
@@ -1913,6 +1979,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             getQaTagScoresList() {
           return qaTagScores_;
         }
+
         /**
          *
          *
@@ -1932,6 +1999,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             getQaTagScoresOrBuilderList() {
           return qaTagScores_;
         }
+
         /**
          *
          *
@@ -1947,6 +2015,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         public int getQaTagScoresCount() {
           return qaTagScores_.size();
         }
+
         /**
          *
          *
@@ -1964,6 +2033,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             getQaTagScores(int index) {
           return qaTagScores_.get(index);
         }
+
         /**
          *
          *
@@ -1984,6 +2054,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
         public static final int AVERAGE_QA_QUESTION_NORMALIZED_SCORE_FIELD_NUMBER = 10;
         private double averageQaQuestionNormalizedScore_ = 0D;
+
         /**
          *
          *
@@ -2002,6 +2073,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasAverageQaQuestionNormalizedScore() {
           return ((bitField0_ & 0x00000100) != 0);
         }
+
         /**
          *
          *
@@ -2382,6 +2454,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -2797,6 +2870,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           private int bitField0_;
 
           private int conversationCount_;
+
           /**
            *
            *
@@ -2812,6 +2886,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public boolean hasConversationCount() {
             return ((bitField0_ & 0x00000001) != 0);
           }
+
           /**
            *
            *
@@ -2827,6 +2902,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public int getConversationCount() {
             return conversationCount_;
           }
+
           /**
            *
            *
@@ -2846,6 +2922,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2865,6 +2942,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
 
           private float averageSilencePercentage_;
+
           /**
            *
            *
@@ -2880,6 +2958,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public boolean hasAverageSilencePercentage() {
             return ((bitField0_ & 0x00000002) != 0);
           }
+
           /**
            *
            *
@@ -2895,6 +2974,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public float getAverageSilencePercentage() {
             return averageSilencePercentage_;
           }
+
           /**
            *
            *
@@ -2914,6 +2994,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2938,6 +3019,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                   com.google.protobuf.Duration.Builder,
                   com.google.protobuf.DurationOrBuilder>
               averageDurationBuilder_;
+
           /**
            *
            *
@@ -2952,6 +3034,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public boolean hasAverageDuration() {
             return ((bitField0_ & 0x00000004) != 0);
           }
+
           /**
            *
            *
@@ -2972,6 +3055,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               return averageDurationBuilder_.getMessage();
             }
           }
+
           /**
            *
            *
@@ -2994,6 +3078,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3013,6 +3098,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3040,6 +3126,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             }
             return this;
           }
+
           /**
            *
            *
@@ -3059,6 +3146,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3073,6 +3161,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             onChanged();
             return getAverageDurationFieldBuilder().getBuilder();
           }
+
           /**
            *
            *
@@ -3091,6 +3180,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                   : averageDuration_;
             }
           }
+
           /**
            *
            *
@@ -3118,6 +3208,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
 
           private float averageTurnCount_;
+
           /**
            *
            *
@@ -3133,6 +3224,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public boolean hasAverageTurnCount() {
             return ((bitField0_ & 0x00000008) != 0);
           }
+
           /**
            *
            *
@@ -3148,6 +3240,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public float getAverageTurnCount() {
             return averageTurnCount_;
           }
+
           /**
            *
            *
@@ -3167,6 +3260,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3186,6 +3280,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
 
           private float averageAgentSentimentScore_;
+
           /**
            *
            *
@@ -3201,6 +3296,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public boolean hasAverageAgentSentimentScore() {
             return ((bitField0_ & 0x00000010) != 0);
           }
+
           /**
            *
            *
@@ -3216,6 +3312,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public float getAverageAgentSentimentScore() {
             return averageAgentSentimentScore_;
           }
+
           /**
            *
            *
@@ -3235,6 +3332,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3254,6 +3352,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
 
           private float averageClientSentimentScore_;
+
           /**
            *
            *
@@ -3269,6 +3368,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public boolean hasAverageClientSentimentScore() {
             return ((bitField0_ & 0x00000020) != 0);
           }
+
           /**
            *
            *
@@ -3284,6 +3384,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public float getAverageClientSentimentScore() {
             return averageClientSentimentScore_;
           }
+
           /**
            *
            *
@@ -3303,6 +3404,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3322,6 +3424,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
 
           private double averageCustomerSatisfactionRating_;
+
           /**
            *
            *
@@ -3337,6 +3440,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public boolean hasAverageCustomerSatisfactionRating() {
             return ((bitField0_ & 0x00000040) != 0);
           }
+
           /**
            *
            *
@@ -3352,6 +3456,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public double getAverageCustomerSatisfactionRating() {
             return averageCustomerSatisfactionRating_;
           }
+
           /**
            *
            *
@@ -3371,6 +3476,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3390,6 +3496,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
 
           private double averageQaNormalizedScore_;
+
           /**
            *
            *
@@ -3406,6 +3513,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public boolean hasAverageQaNormalizedScore() {
             return ((bitField0_ & 0x00000080) != 0);
           }
+
           /**
            *
            *
@@ -3422,6 +3530,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public double getAverageQaNormalizedScore() {
             return averageQaNormalizedScore_;
           }
+
           /**
            *
            *
@@ -3442,6 +3551,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3506,6 +3616,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               return qaTagScoresBuilder_.getMessageList();
             }
           }
+
           /**
            *
            *
@@ -3524,6 +3635,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               return qaTagScoresBuilder_.getCount();
             }
           }
+
           /**
            *
            *
@@ -3544,6 +3656,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               return qaTagScoresBuilder_.getMessage(index);
             }
           }
+
           /**
            *
            *
@@ -3572,6 +3685,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             }
             return this;
           }
+
           /**
            *
            *
@@ -3597,6 +3711,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             }
             return this;
           }
+
           /**
            *
            *
@@ -3624,6 +3739,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             }
             return this;
           }
+
           /**
            *
            *
@@ -3652,6 +3768,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             }
             return this;
           }
+
           /**
            *
            *
@@ -3676,6 +3793,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             }
             return this;
           }
+
           /**
            *
            *
@@ -3701,6 +3819,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             }
             return this;
           }
+
           /**
            *
            *
@@ -3727,6 +3846,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             }
             return this;
           }
+
           /**
            *
            *
@@ -3748,6 +3868,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             }
             return this;
           }
+
           /**
            *
            *
@@ -3769,6 +3890,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             }
             return this;
           }
+
           /**
            *
            *
@@ -3785,6 +3907,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               getQaTagScoresBuilder(int index) {
             return getQaTagScoresFieldBuilder().getBuilder(index);
           }
+
           /**
            *
            *
@@ -3805,6 +3928,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               return qaTagScoresBuilder_.getMessageOrBuilder(index);
             }
           }
+
           /**
            *
            *
@@ -3827,6 +3951,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               return java.util.Collections.unmodifiableList(qaTagScores_);
             }
           }
+
           /**
            *
            *
@@ -3846,6 +3971,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                     com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint
                         .ConversationMeasure.QaTagScore.getDefaultInstance());
           }
+
           /**
            *
            *
@@ -3866,6 +3992,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                     com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint
                         .ConversationMeasure.QaTagScore.getDefaultInstance());
           }
+
           /**
            *
            *
@@ -3911,6 +4038,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
 
           private double averageQaQuestionNormalizedScore_;
+
           /**
            *
            *
@@ -3929,6 +4057,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public boolean hasAverageQaQuestionNormalizedScore() {
             return ((bitField0_ & 0x00000200) != 0);
           }
+
           /**
            *
            *
@@ -3947,6 +4076,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           public double getAverageQaQuestionNormalizedScore() {
             return averageQaQuestionNormalizedScore_;
           }
+
           /**
            *
            *
@@ -3969,6 +4099,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -4079,6 +4210,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         private MeasureCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -4110,6 +4242,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       }
 
       public static final int CONVERSATION_MEASURE_FIELD_NUMBER = 2;
+
       /**
        *
        *
@@ -4127,6 +4260,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       public boolean hasConversationMeasure() {
         return measureCase_ == 2;
       }
+
       /**
        *
        *
@@ -4152,6 +4286,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         return com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint
             .ConversationMeasure.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -4178,6 +4313,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
       public static final int INTERVAL_FIELD_NUMBER = 1;
       private com.google.type.Interval interval_;
+
       /**
        *
        *
@@ -4198,6 +4334,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       public boolean hasInterval() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -4218,6 +4355,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       public com.google.type.Interval getInterval() {
         return interval_ == null ? com.google.type.Interval.getDefaultInstance() : interval_;
       }
+
       /**
        *
        *
@@ -4445,6 +4583,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -4717,6 +4856,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint
                     .ConversationMeasureOrBuilder>
             conversationMeasureBuilder_;
+
         /**
          *
          *
@@ -4734,6 +4874,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasConversationMeasure() {
           return measureCase_ == 2;
         }
+
         /**
          *
          *
@@ -4767,6 +4908,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                 .ConversationMeasure.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -4794,6 +4936,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           measureCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -4818,6 +4961,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           measureCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -4860,6 +5004,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           measureCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -4887,6 +5032,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -4903,6 +5049,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             getConversationMeasureBuilder() {
           return getConversationMeasureFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -4930,6 +5077,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                 .ConversationMeasure.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -4981,6 +5129,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                 com.google.type.Interval.Builder,
                 com.google.type.IntervalOrBuilder>
             intervalBuilder_;
+
         /**
          *
          *
@@ -5000,6 +5149,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasInterval() {
           return ((bitField0_ & 0x00000002) != 0);
         }
+
         /**
          *
          *
@@ -5023,6 +5173,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             return intervalBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -5050,6 +5201,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5074,6 +5226,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5106,6 +5259,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -5130,6 +5284,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5149,6 +5304,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return getIntervalFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -5170,6 +5326,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             return interval_ == null ? com.google.type.Interval.getDefaultInstance() : interval_;
           }
         }
+
         /**
          *
          *
@@ -5288,6 +5445,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
        */
       java.util.List<com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint>
           getDataPointsList();
+
       /**
        *
        *
@@ -5301,6 +5459,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
        */
       com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint getDataPoints(
           int index);
+
       /**
        *
        *
@@ -5313,6 +5472,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
        * </code>
        */
       int getDataPointsCount();
+
       /**
        *
        *
@@ -5329,6 +5489,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                   com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice
                       .DataPointOrBuilder>
           getDataPointsOrBuilderList();
+
       /**
        *
        *
@@ -5343,6 +5504,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPointOrBuilder
           getDataPointsOrBuilder(int index);
     }
+
     /**
      *
      *
@@ -5358,6 +5520,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.TimeSeries)
         TimeSeriesOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use TimeSeries.newBuilder() to construct.
       private TimeSeries(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -5396,6 +5559,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       private java.util.List<
               com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint>
           dataPoints_;
+
       /**
        *
        *
@@ -5413,6 +5577,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           getDataPointsList() {
         return dataPoints_;
       }
+
       /**
        *
        *
@@ -5432,6 +5597,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           getDataPointsOrBuilderList() {
         return dataPoints_;
       }
+
       /**
        *
        *
@@ -5447,6 +5613,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       public int getDataPointsCount() {
         return dataPoints_.size();
       }
+
       /**
        *
        *
@@ -5463,6 +5630,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           getDataPoints(int index) {
         return dataPoints_.get(index);
       }
+
       /**
        *
        *
@@ -5654,6 +5822,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -5950,6 +6119,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             return dataPointsBuilder_.getMessageList();
           }
         }
+
         /**
          *
          *
@@ -5968,6 +6138,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             return dataPointsBuilder_.getCount();
           }
         }
+
         /**
          *
          *
@@ -5987,6 +6158,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             return dataPointsBuilder_.getMessage(index);
           }
         }
+
         /**
          *
          *
@@ -6013,6 +6185,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -6037,6 +6210,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -6062,6 +6236,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -6088,6 +6263,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -6111,6 +6287,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -6135,6 +6312,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -6161,6 +6339,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -6182,6 +6361,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -6203,6 +6383,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -6219,6 +6400,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             getDataPointsBuilder(int index) {
           return getDataPointsFieldBuilder().getBuilder(index);
         }
+
         /**
          *
          *
@@ -6239,6 +6421,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             return dataPointsBuilder_.getMessageOrBuilder(index);
           }
         }
+
         /**
          *
          *
@@ -6261,6 +6444,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             return java.util.Collections.unmodifiableList(dataPoints_);
           }
         }
+
         /**
          *
          *
@@ -6280,6 +6464,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                   com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint
                       .getDefaultInstance());
         }
+
         /**
          *
          *
@@ -6300,6 +6485,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
                   com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint
                       .getDefaultInstance());
         }
+
         /**
          *
          *
@@ -6416,6 +6602,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.contactcenterinsights.v1.Dimension> dimensions_;
+
     /**
      *
      *
@@ -6429,6 +6616,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
     public java.util.List<com.google.cloud.contactcenterinsights.v1.Dimension> getDimensionsList() {
       return dimensions_;
     }
+
     /**
      *
      *
@@ -6443,6 +6631,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         getDimensionsOrBuilderList() {
       return dimensions_;
     }
+
     /**
      *
      *
@@ -6456,6 +6645,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
     public int getDimensionsCount() {
       return dimensions_.size();
     }
+
     /**
      *
      *
@@ -6469,6 +6659,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.contactcenterinsights.v1.Dimension getDimensions(int index) {
       return dimensions_.get(index);
     }
+
     /**
      *
      *
@@ -6486,6 +6677,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
     public static final int TOTAL_FIELD_NUMBER = 2;
     private com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.DataPoint total_;
+
     /**
      *
      *
@@ -6503,6 +6695,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
     public boolean hasTotal() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -6524,6 +6717,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               .getDefaultInstance()
           : total_;
     }
+
     /**
      *
      *
@@ -6547,6 +6741,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
     public static final int TIME_SERIES_FIELD_NUMBER = 3;
     private com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.TimeSeries
         timeSeries_;
+
     /**
      *
      *
@@ -6565,6 +6760,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
     public boolean hasTimeSeries() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -6587,6 +6783,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               .getDefaultInstance()
           : timeSeries_;
     }
+
     /**
      *
      *
@@ -6800,6 +6997,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7135,6 +7333,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           return dimensionsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -7151,6 +7350,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           return dimensionsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -7167,6 +7367,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           return dimensionsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -7190,6 +7391,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -7210,6 +7412,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -7232,6 +7435,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -7255,6 +7459,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -7275,6 +7480,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -7295,6 +7501,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -7316,6 +7523,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -7335,6 +7543,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -7354,6 +7563,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -7367,6 +7577,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           int index) {
         return getDimensionsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -7384,6 +7595,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           return dimensionsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -7401,6 +7613,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           return java.util.Collections.unmodifiableList(dimensions_);
         }
       }
+
       /**
        *
        *
@@ -7414,6 +7627,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         return getDimensionsFieldBuilder()
             .addBuilder(com.google.cloud.contactcenterinsights.v1.Dimension.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -7429,6 +7643,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             .addBuilder(
                 index, com.google.cloud.contactcenterinsights.v1.Dimension.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -7468,6 +7683,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice
                   .DataPointOrBuilder>
           totalBuilder_;
+
       /**
        *
        *
@@ -7485,6 +7701,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       public boolean hasTotal() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -7510,6 +7727,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           return totalBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -7536,6 +7754,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7560,6 +7779,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7593,6 +7813,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -7615,6 +7836,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7633,6 +7855,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return getTotalFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7656,6 +7879,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               : total_;
         }
       }
+
       /**
        *
        *
@@ -7697,6 +7921,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice
                   .TimeSeriesOrBuilder>
           timeSeriesBuilder_;
+
       /**
        *
        *
@@ -7714,6 +7939,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       public boolean hasTimeSeries() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -7739,6 +7965,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
           return timeSeriesBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -7765,6 +7992,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7789,6 +8017,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7822,6 +8051,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -7844,6 +8074,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7862,6 +8093,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return getTimeSeriesFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7886,6 +8118,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               : timeSeries_;
         }
       }
+
       /**
        *
        *
@@ -7990,6 +8223,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -8016,6 +8250,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -8045,6 +8280,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -8060,6 +8296,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -8075,6 +8312,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -8094,6 +8332,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice>
       slices_;
+
   /**
    *
    *
@@ -8111,6 +8350,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       getSlicesList() {
     return slices_;
   }
+
   /**
    *
    *
@@ -8129,6 +8369,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       getSlicesOrBuilderList() {
     return slices_;
   }
+
   /**
    *
    *
@@ -8145,6 +8386,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
   public int getSlicesCount() {
     return slices_.size();
   }
+
   /**
    *
    *
@@ -8161,6 +8403,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice getSlices(int index) {
     return slices_.get(index);
   }
+
   /**
    *
    *
@@ -8181,6 +8424,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
 
   public static final int MACRO_AVERAGE_SLICE_FIELD_NUMBER = 4;
   private com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice macroAverageSlice_;
+
   /**
    *
    *
@@ -8201,6 +8445,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
   public boolean hasMacroAverageSlice() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -8224,6 +8469,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.getDefaultInstance()
         : macroAverageSlice_;
   }
+
   /**
    *
    *
@@ -8445,6 +8691,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -8748,6 +8995,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -8773,6 +9021,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8798,6 +9047,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8822,6 +9072,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8842,6 +9093,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8874,6 +9126,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -8888,6 +9141,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -8908,6 +9162,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8930,6 +9185,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8949,6 +9205,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8976,6 +9233,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8995,6 +9253,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9009,6 +9268,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9027,6 +9287,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -9091,6 +9352,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         return slicesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -9110,6 +9372,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         return slicesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -9130,6 +9393,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         return slicesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -9156,6 +9420,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9181,6 +9446,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9207,6 +9473,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9233,6 +9500,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9257,6 +9525,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9282,6 +9551,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9307,6 +9577,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9329,6 +9600,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9351,6 +9623,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9367,6 +9640,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         getSlicesBuilder(int index) {
       return getSlicesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -9387,6 +9661,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         return slicesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -9408,6 +9683,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(slices_);
       }
     }
+
     /**
      *
      *
@@ -9427,6 +9703,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -9447,6 +9724,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
               com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -9488,6 +9766,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice.Builder,
             com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.SliceOrBuilder>
         macroAverageSliceBuilder_;
+
     /**
      *
      *
@@ -9507,6 +9786,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
     public boolean hasMacroAverageSlice() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -9534,6 +9814,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
         return macroAverageSliceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9562,6 +9843,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9588,6 +9870,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9623,6 +9906,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9647,6 +9931,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9667,6 +9952,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getMacroAverageSliceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9692,6 +9978,7 @@ public final class QueryMetricsResponse extends com.google.protobuf.GeneratedMes
             : macroAverageSlice_;
       }
     }
+
     /**
      *
      *

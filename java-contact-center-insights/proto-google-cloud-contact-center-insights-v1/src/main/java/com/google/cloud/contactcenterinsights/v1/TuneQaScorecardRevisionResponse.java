@@ -33,6 +33,7 @@ public final class TuneQaScorecardRevisionResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionResponse)
     TuneQaScorecardRevisionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TuneQaScorecardRevisionResponse.newBuilder() to construct.
   private TuneQaScorecardRevisionResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,6 +217,7 @@ public final class TuneQaScorecardRevisionResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

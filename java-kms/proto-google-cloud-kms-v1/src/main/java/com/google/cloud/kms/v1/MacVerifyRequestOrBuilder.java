@@ -40,6 +40,7 @@ public interface MacVerifyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public interface MacVerifyRequestOrBuilder
    * @return Whether the dataCrc32c field is set.
    */
   boolean hasDataCrc32C();
+
   /**
    *
    *
@@ -132,6 +134,7 @@ public interface MacVerifyRequestOrBuilder
    * @return The dataCrc32c.
    */
   com.google.protobuf.Int64Value getDataCrc32C();
+
   /**
    *
    *
@@ -202,6 +205,7 @@ public interface MacVerifyRequestOrBuilder
    * @return Whether the macCrc32c field is set.
    */
   boolean hasMacCrc32C();
+
   /**
    *
    *
@@ -230,6 +234,7 @@ public interface MacVerifyRequestOrBuilder
    * @return The macCrc32c.
    */
   com.google.protobuf.Int64Value getMacCrc32C();
+
   /**
    *
    *

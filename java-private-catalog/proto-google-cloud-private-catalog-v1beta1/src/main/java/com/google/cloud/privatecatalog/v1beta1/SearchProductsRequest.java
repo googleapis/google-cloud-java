@@ -33,6 +33,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.privatecatalog.v1beta1.SearchProductsRequest)
     SearchProductsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchProductsRequest.newBuilder() to construct.
   private SearchProductsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -227,6 +234,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -439,6 +447,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -669,6 +678,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -692,6 +702,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -715,6 +726,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -737,6 +749,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +768,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object query_ = "";
+
     /**
      *
      *
@@ -808,6 +823,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -863,6 +880,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +904,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +935,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -931,6 +951,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -950,6 +971,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +991,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -992,6 +1015,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1039,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1062,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1081,7 @@ public final class SearchProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

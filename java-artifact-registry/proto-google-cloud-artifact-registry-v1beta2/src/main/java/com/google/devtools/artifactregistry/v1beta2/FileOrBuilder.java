@@ -38,6 +38,7 @@ public interface FileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface FileOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1beta2.Hash hashes = 4;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1beta2.Hash> getHashesList();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface FileOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1beta2.Hash hashes = 4;</code>
    */
   com.google.devtools.artifactregistry.v1beta2.Hash getHashes(int index);
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface FileOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1beta2.Hash hashes = 4;</code>
    */
   int getHashesCount();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface FileOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1beta2.HashOrBuilder>
       getHashesOrBuilderList();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface FileOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface FileOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public interface FileOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -177,6 +185,7 @@ public interface FileOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public interface FileOrBuilder
    * @return The owner.
    */
   java.lang.String getOwner();
+
   /**
    *
    *

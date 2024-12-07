@@ -38,6 +38,7 @@ public interface ThreadReadStateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ThreadReadStateOrBuilder
    * @return Whether the lastReadTime field is set.
    */
   boolean hasLastReadTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ThreadReadStateOrBuilder
    * @return The lastReadTime.
    */
   com.google.protobuf.Timestamp getLastReadTime();
+
   /**
    *
    *

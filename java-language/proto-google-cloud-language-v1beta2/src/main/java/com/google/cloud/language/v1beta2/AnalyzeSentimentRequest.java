@@ -33,6 +33,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.AnalyzeSentimentRequest)
     AnalyzeSentimentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnalyzeSentimentRequest.newBuilder() to construct.
   private AnalyzeSentimentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private com.google.cloud.language.v1beta2.Document document_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
         ? com.google.cloud.language.v1beta2.Document.getDefaultInstance()
         : document_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
 
   public static final int ENCODING_TYPE_FIELD_NUMBER = 2;
   private int encodingType_ = 0;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
   public int getEncodingTypeValue() {
     return encodingType_;
   }
+
   /**
    *
    *
@@ -331,6 +337,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -547,6 +554,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
             com.google.cloud.language.v1beta2.Document.Builder,
             com.google.cloud.language.v1beta2.DocumentOrBuilder>
         documentBuilder_;
+
     /**
      *
      *
@@ -563,6 +571,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
         return documentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +693,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +710,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -716,6 +731,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
             : document_;
       }
     }
+
     /**
      *
      *
@@ -745,6 +761,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
     }
 
     private int encodingType_ = 0;
+
     /**
      *
      *
@@ -761,6 +778,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
     public int getEncodingTypeValue() {
       return encodingType_;
     }
+
     /**
      *
      *
@@ -780,6 +798,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +817,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
           com.google.cloud.language.v1beta2.EncodingType.forNumber(encodingType_);
       return result == null ? com.google.cloud.language.v1beta2.EncodingType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -820,6 +840,7 @@ public final class AnalyzeSentimentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public interface FileHashesOrBuilder
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
    */
   java.util.List<io.grafeas.v1beta1.provenance.Hash> getFileHashList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface FileHashesOrBuilder
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
    */
   io.grafeas.v1beta1.provenance.Hash getFileHash(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface FileHashesOrBuilder
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
    */
   int getFileHashCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface FileHashesOrBuilder
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
    */
   java.util.List<? extends io.grafeas.v1beta1.provenance.HashOrBuilder> getFileHashOrBuilderList();
+
   /**
    *
    *

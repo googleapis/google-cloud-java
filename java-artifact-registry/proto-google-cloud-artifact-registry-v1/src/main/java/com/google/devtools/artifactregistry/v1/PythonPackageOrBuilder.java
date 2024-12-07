@@ -44,6 +44,7 @@ public interface PythonPackageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface PythonPackageOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface PythonPackageOrBuilder
    * @return The packageName.
    */
   java.lang.String getPackageName();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface PythonPackageOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public interface PythonPackageOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public interface PythonPackageOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public interface PythonPackageOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public interface PythonPackageOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

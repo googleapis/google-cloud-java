@@ -36,6 +36,7 @@ public interface UndeleteServiceResponseOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UndeleteServiceResponseOrBuilder
    * @return The service.
    */
   com.google.api.servicemanagement.v1.ManagedService getService();
+
   /**
    *
    *

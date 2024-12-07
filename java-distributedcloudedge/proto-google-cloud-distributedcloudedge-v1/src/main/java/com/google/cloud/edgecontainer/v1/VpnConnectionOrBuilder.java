@@ -38,6 +38,7 @@ public interface VpnConnectionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface VpnConnectionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface VpnConnectionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface VpnConnectionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface VpnConnectionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface VpnConnectionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -149,9 +155,11 @@ public interface VpnConnectionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface VpnConnectionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -176,6 +185,7 @@ public interface VpnConnectionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -201,6 +211,7 @@ public interface VpnConnectionOrBuilder
    * @return The natGatewayIp.
    */
   java.lang.String getNatGatewayIp();
+
   /**
    *
    *
@@ -233,6 +244,7 @@ public interface VpnConnectionOrBuilder
    */
   @java.lang.Deprecated
   int getBgpRoutingModeValue();
+
   /**
    *
    *
@@ -264,6 +276,7 @@ public interface VpnConnectionOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public interface VpnConnectionOrBuilder
    * @return The vpc.
    */
   java.lang.String getVpc();
+
   /**
    *
    *
@@ -318,6 +332,7 @@ public interface VpnConnectionOrBuilder
    * @return Whether the vpcProject field is set.
    */
   boolean hasVpcProject();
+
   /**
    *
    *
@@ -333,6 +348,7 @@ public interface VpnConnectionOrBuilder
    * @return The vpcProject.
    */
   com.google.cloud.edgecontainer.v1.VpnConnection.VpcProject getVpcProject();
+
   /**
    *
    *
@@ -373,6 +389,7 @@ public interface VpnConnectionOrBuilder
    * @return The router.
    */
   java.lang.String getRouter();
+
   /**
    *
    *
@@ -400,6 +417,7 @@ public interface VpnConnectionOrBuilder
    * @return Whether the details field is set.
    */
   boolean hasDetails();
+
   /**
    *
    *
@@ -414,6 +432,7 @@ public interface VpnConnectionOrBuilder
    * @return The details.
    */
   com.google.cloud.edgecontainer.v1.VpnConnection.Details getDetails();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.PacketHeader)
     PacketHeaderOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PacketHeader.newBuilder() to construct.
   private PacketHeader(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CAPTURE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp captureTime_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCaptureTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCaptureTime() {
     return captureTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : captureTime_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private com.google.cloud.visionai.v1.PacketType type_;
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
   public boolean hasType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.visionai.v1.PacketType getType() {
     return type_ == null ? com.google.cloud.visionai.v1.PacketType.getDefaultInstance() : type_;
   }
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
 
   public static final int METADATA_FIELD_NUMBER = 3;
   private com.google.protobuf.Struct metadata_;
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -197,6 +206,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
+
   /**
    *
    *
@@ -213,6 +223,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SERVER_METADATA_FIELD_NUMBER = 4;
   private com.google.cloud.visionai.v1.ServerMetadata serverMetadata_;
+
   /**
    *
    *
@@ -232,6 +243,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
   public boolean hasServerMetadata() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -253,6 +265,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.visionai.v1.ServerMetadata.getDefaultInstance()
         : serverMetadata_;
   }
+
   /**
    *
    *
@@ -275,6 +288,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SERIES_METADATA_FIELD_NUMBER = 5;
   private com.google.cloud.visionai.v1.SeriesMetadata seriesMetadata_;
+
   /**
    *
    *
@@ -293,6 +307,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSeriesMetadata() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -313,6 +328,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.visionai.v1.SeriesMetadata.getDefaultInstance()
         : seriesMetadata_;
   }
+
   /**
    *
    *
@@ -334,6 +350,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FLAGS_FIELD_NUMBER = 6;
   private int flags_ = 0;
+
   /**
    *
    *
@@ -354,6 +371,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object traceContext_ = "";
+
   /**
    *
    *
@@ -387,6 +405,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -659,6 +678,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -968,6 +988,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         captureTimeBuilder_;
+
     /**
      *
      *
@@ -984,6 +1005,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCaptureTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1006,6 +1028,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
         return captureTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1053,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1075,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1105,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1127,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1144,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCaptureTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1137,6 +1165,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
             : captureTime_;
       }
     }
+
     /**
      *
      *
@@ -1171,6 +1200,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.PacketType.Builder,
             com.google.cloud.visionai.v1.PacketTypeOrBuilder>
         typeBuilder_;
+
     /**
      *
      *
@@ -1187,6 +1217,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
     public boolean hasType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1207,6 +1238,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
         return typeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1231,6 +1263,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1285,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1315,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1302,6 +1337,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1354,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1336,6 +1373,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
         return type_ == null ? com.google.cloud.visionai.v1.PacketType.getDefaultInstance() : type_;
       }
     }
+
     /**
      *
      *
@@ -1370,6 +1408,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -1385,6 +1424,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1404,6 +1444,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
         return metadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1427,6 +1468,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1447,6 +1489,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1475,6 +1518,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1495,6 +1539,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1510,6 +1555,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1527,6 +1573,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
         return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
       }
     }
+
     /**
      *
      *
@@ -1560,6 +1607,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.ServerMetadata.Builder,
             com.google.cloud.visionai.v1.ServerMetadataOrBuilder>
         serverMetadataBuilder_;
+
     /**
      *
      *
@@ -1578,6 +1626,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
     public boolean hasServerMetadata() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1602,6 +1651,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
         return serverMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1628,6 +1678,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1703,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1684,6 +1736,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1707,6 +1760,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1725,6 +1779,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getServerMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1747,6 +1802,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
             : serverMetadata_;
       }
     }
+
     /**
      *
      *
@@ -1783,6 +1839,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.SeriesMetadata.Builder,
             com.google.cloud.visionai.v1.SeriesMetadataOrBuilder>
         seriesMetadataBuilder_;
+
     /**
      *
      *
@@ -1800,6 +1857,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSeriesMetadata() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1823,6 +1881,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
         return seriesMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1848,6 +1907,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1871,6 +1931,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1902,6 +1963,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1924,6 +1986,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1941,6 +2004,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSeriesMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1962,6 +2026,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
             : seriesMetadata_;
       }
     }
+
     /**
      *
      *
@@ -1992,6 +2057,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int flags_;
+
     /**
      *
      *
@@ -2007,6 +2073,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
     public int getFlags() {
       return flags_;
     }
+
     /**
      *
      *
@@ -2026,6 +2093,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2045,6 +2113,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object traceContext_ = "";
+
     /**
      *
      *
@@ -2077,6 +2146,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2109,6 +2179,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2140,6 +2211,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2167,6 +2239,7 @@ public final class PacketHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

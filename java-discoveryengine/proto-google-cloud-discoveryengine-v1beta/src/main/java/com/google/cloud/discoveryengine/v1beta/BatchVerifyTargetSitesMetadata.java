@@ -36,6 +36,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.BatchVerifyTargetSitesMetadata)
     BatchVerifyTargetSitesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchVerifyTargetSitesMetadata.newBuilder() to construct.
   private BatchVerifyTargetSitesMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -341,6 +348,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -574,6 +582,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -588,6 +597,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -608,6 +618,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -649,6 +661,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +689,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +709,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +724,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -727,6 +743,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -759,6 +776,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -774,6 +792,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -795,6 +814,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -818,6 +838,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +859,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +888,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +909,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +925,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -920,6 +945,7 @@ public final class BatchVerifyTargetSitesMetadata extends com.google.protobuf.Ge
             : updateTime_;
       }
     }
+
     /**
      *
      *

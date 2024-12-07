@@ -46,6 +46,7 @@ public interface ClusterConfigOrBuilder
    * @return The configBucket.
    */
   java.lang.String getConfigBucket();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface ClusterConfigOrBuilder
    * @return The tempBucket.
    */
   java.lang.String getTempBucket();
+
   /**
    *
    *
@@ -129,6 +131,7 @@ public interface ClusterConfigOrBuilder
    * @return Whether the gceClusterConfig field is set.
    */
   boolean hasGceClusterConfig();
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public interface ClusterConfigOrBuilder
    * @return The gceClusterConfig.
    */
   com.google.cloud.dataproc.v1.GceClusterConfig getGceClusterConfig();
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public interface ClusterConfigOrBuilder
    * @return Whether the masterConfig field is set.
    */
   boolean hasMasterConfig();
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public interface ClusterConfigOrBuilder
    * @return The masterConfig.
    */
   com.google.cloud.dataproc.v1.InstanceGroupConfig getMasterConfig();
+
   /**
    *
    *
@@ -217,6 +223,7 @@ public interface ClusterConfigOrBuilder
    * @return Whether the workerConfig field is set.
    */
   boolean hasWorkerConfig();
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public interface ClusterConfigOrBuilder
    * @return The workerConfig.
    */
   com.google.cloud.dataproc.v1.InstanceGroupConfig getWorkerConfig();
+
   /**
    *
    *
@@ -261,6 +269,7 @@ public interface ClusterConfigOrBuilder
    * @return Whether the secondaryWorkerConfig field is set.
    */
   boolean hasSecondaryWorkerConfig();
+
   /**
    *
    *
@@ -276,6 +285,7 @@ public interface ClusterConfigOrBuilder
    * @return The secondaryWorkerConfig.
    */
   com.google.cloud.dataproc.v1.InstanceGroupConfig getSecondaryWorkerConfig();
+
   /**
    *
    *
@@ -304,6 +314,7 @@ public interface ClusterConfigOrBuilder
    * @return Whether the softwareConfig field is set.
    */
   boolean hasSoftwareConfig();
+
   /**
    *
    *
@@ -318,6 +329,7 @@ public interface ClusterConfigOrBuilder
    * @return The softwareConfig.
    */
   com.google.cloud.dataproc.v1.SoftwareConfig getSoftwareConfig();
+
   /**
    *
    *
@@ -356,6 +368,7 @@ public interface ClusterConfigOrBuilder
    */
   java.util.List<com.google.cloud.dataproc.v1.NodeInitializationAction>
       getInitializationActionsList();
+
   /**
    *
    *
@@ -380,6 +393,7 @@ public interface ClusterConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.NodeInitializationAction getInitializationActions(int index);
+
   /**
    *
    *
@@ -404,6 +418,7 @@ public interface ClusterConfigOrBuilder
    * </code>
    */
   int getInitializationActionsCount();
+
   /**
    *
    *
@@ -429,6 +444,7 @@ public interface ClusterConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.NodeInitializationActionOrBuilder>
       getInitializationActionsOrBuilderList();
+
   /**
    *
    *
@@ -469,6 +485,7 @@ public interface ClusterConfigOrBuilder
    * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
+
   /**
    *
    *
@@ -483,6 +500,7 @@ public interface ClusterConfigOrBuilder
    * @return The encryptionConfig.
    */
   com.google.cloud.dataproc.v1.EncryptionConfig getEncryptionConfig();
+
   /**
    *
    *
@@ -511,6 +529,7 @@ public interface ClusterConfigOrBuilder
    * @return Whether the autoscalingConfig field is set.
    */
   boolean hasAutoscalingConfig();
+
   /**
    *
    *
@@ -526,6 +545,7 @@ public interface ClusterConfigOrBuilder
    * @return The autoscalingConfig.
    */
   com.google.cloud.dataproc.v1.AutoscalingConfig getAutoscalingConfig();
+
   /**
    *
    *
@@ -554,6 +574,7 @@ public interface ClusterConfigOrBuilder
    * @return Whether the securityConfig field is set.
    */
   boolean hasSecurityConfig();
+
   /**
    *
    *
@@ -568,6 +589,7 @@ public interface ClusterConfigOrBuilder
    * @return The securityConfig.
    */
   com.google.cloud.dataproc.v1.SecurityConfig getSecurityConfig();
+
   /**
    *
    *
@@ -595,6 +617,7 @@ public interface ClusterConfigOrBuilder
    * @return Whether the lifecycleConfig field is set.
    */
   boolean hasLifecycleConfig();
+
   /**
    *
    *
@@ -609,6 +632,7 @@ public interface ClusterConfigOrBuilder
    * @return The lifecycleConfig.
    */
   com.google.cloud.dataproc.v1.LifecycleConfig getLifecycleConfig();
+
   /**
    *
    *
@@ -636,6 +660,7 @@ public interface ClusterConfigOrBuilder
    * @return Whether the endpointConfig field is set.
    */
   boolean hasEndpointConfig();
+
   /**
    *
    *
@@ -650,6 +675,7 @@ public interface ClusterConfigOrBuilder
    * @return The endpointConfig.
    */
   com.google.cloud.dataproc.v1.EndpointConfig getEndpointConfig();
+
   /**
    *
    *
@@ -677,6 +703,7 @@ public interface ClusterConfigOrBuilder
    * @return Whether the metastoreConfig field is set.
    */
   boolean hasMetastoreConfig();
+
   /**
    *
    *
@@ -691,6 +718,7 @@ public interface ClusterConfigOrBuilder
    * @return The metastoreConfig.
    */
   com.google.cloud.dataproc.v1.MetastoreConfig getMetastoreConfig();
+
   /**
    *
    *
@@ -718,6 +746,7 @@ public interface ClusterConfigOrBuilder
    * @return Whether the dataprocMetricConfig field is set.
    */
   boolean hasDataprocMetricConfig();
+
   /**
    *
    *
@@ -732,6 +761,7 @@ public interface ClusterConfigOrBuilder
    * @return The dataprocMetricConfig.
    */
   com.google.cloud.dataproc.v1.DataprocMetricConfig getDataprocMetricConfig();
+
   /**
    *
    *
@@ -757,6 +787,7 @@ public interface ClusterConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.AuxiliaryNodeGroup> getAuxiliaryNodeGroupsList();
+
   /**
    *
    *
@@ -769,6 +800,7 @@ public interface ClusterConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.AuxiliaryNodeGroup getAuxiliaryNodeGroups(int index);
+
   /**
    *
    *
@@ -781,6 +813,7 @@ public interface ClusterConfigOrBuilder
    * </code>
    */
   int getAuxiliaryNodeGroupsCount();
+
   /**
    *
    *
@@ -794,6 +827,7 @@ public interface ClusterConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.AuxiliaryNodeGroupOrBuilder>
       getAuxiliaryNodeGroupsOrBuilderList();
+
   /**
    *
    *

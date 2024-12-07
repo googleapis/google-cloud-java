@@ -33,6 +33,7 @@ public final class PrestoDialect extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.PrestoDialect)
     PrestoDialectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PrestoDialect.newBuilder() to construct.
   private PrestoDialect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class PrestoDialect extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

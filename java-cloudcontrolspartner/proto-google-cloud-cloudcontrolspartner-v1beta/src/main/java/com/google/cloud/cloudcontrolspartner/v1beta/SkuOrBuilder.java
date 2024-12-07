@@ -38,6 +38,7 @@ public interface SkuOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SkuOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

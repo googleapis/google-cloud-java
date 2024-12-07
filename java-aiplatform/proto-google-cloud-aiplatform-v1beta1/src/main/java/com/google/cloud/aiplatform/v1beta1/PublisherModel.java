@@ -33,6 +33,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel)
     PublisherModelOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PublisherModel.newBuilder() to construct.
   private PublisherModel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -155,6 +156,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * <code>OPEN_SOURCE_CATEGORY_UNSPECIFIED = 0;</code>
      */
     public static final int OPEN_SOURCE_CATEGORY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -165,6 +167,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * <code>PROPRIETARY = 1;</code>
      */
     public static final int PROPRIETARY_VALUE = 1;
+
     /**
      *
      *
@@ -176,6 +179,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * <code>GOOGLE_OWNED_OSS_WITH_GOOGLE_CHECKPOINT = 2;</code>
      */
     public static final int GOOGLE_OWNED_OSS_WITH_GOOGLE_CHECKPOINT_VALUE = 2;
+
     /**
      *
      *
@@ -187,6 +191,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * <code>THIRD_PARTY_OWNED_OSS_WITH_GOOGLE_CHECKPOINT = 3;</code>
      */
     public static final int THIRD_PARTY_OWNED_OSS_WITH_GOOGLE_CHECKPOINT_VALUE = 3;
+
     /**
      *
      *
@@ -198,6 +203,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * <code>GOOGLE_OWNED_OSS = 4;</code>
      */
     public static final int GOOGLE_OWNED_OSS_VALUE = 4;
+
     /**
      *
      *
@@ -383,6 +389,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * <code>LAUNCH_STAGE_UNSPECIFIED = 0;</code>
      */
     public static final int LAUNCH_STAGE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -394,6 +401,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * <code>EXPERIMENTAL = 1;</code>
      */
     public static final int EXPERIMENTAL_VALUE = 1;
+
     /**
      *
      *
@@ -407,6 +415,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIVATE_PREVIEW = 2;</code>
      */
     public static final int PRIVATE_PREVIEW_VALUE = 2;
+
     /**
      *
      *
@@ -419,6 +428,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * <code>PUBLIC_PREVIEW = 3;</code>
      */
     public static final int PUBLIC_PREVIEW_VALUE = 3;
+
     /**
      *
      *
@@ -573,6 +583,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * <code>VERSION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int VERSION_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -583,6 +594,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * <code>VERSION_STATE_STABLE = 1;</code>
      */
     public static final int VERSION_STATE_STABLE_VALUE = 1;
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the uri field is set.
      */
     boolean hasUri();
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -733,6 +747,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resourceName field is set.
      */
     boolean hasResourceName();
+
     /**
      *
      *
@@ -745,6 +760,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceName.
      */
     java.lang.String getResourceName();
+
     /**
      *
      *
@@ -773,6 +789,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     boolean hasUseCase();
+
     /**
      *
      *
@@ -788,6 +805,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     java.lang.String getUseCase();
+
     /**
      *
      *
@@ -819,6 +837,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     boolean hasDescription();
+
     /**
      *
      *
@@ -834,6 +853,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -853,6 +873,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.ReferenceCase
         getReferenceCase();
   }
+
   /**
    *
    *
@@ -867,6 +888,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference)
       ResourceReferenceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ResourceReference.newBuilder() to construct.
     private ResourceReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -916,6 +938,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       private ReferenceCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -953,6 +976,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int URI_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -967,6 +991,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUri() {
       return referenceCase_ == 1;
     }
+
     /**
      *
      *
@@ -994,6 +1019,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1049,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RESOURCE_NAME_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -1037,6 +1064,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResourceName() {
       return referenceCase_ == 2;
     }
+
     /**
      *
      *
@@ -1064,6 +1092,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1093,6 +1122,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int USE_CASE_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -1110,6 +1140,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUseCase() {
       return referenceCase_ == 3;
     }
+
     /**
      *
      *
@@ -1140,6 +1171,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1204,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -1189,6 +1222,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return referenceCase_ == 4;
     }
+
     /**
      *
      *
@@ -1219,6 +1253,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1464,6 +1499,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1743,6 +1779,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUri() {
         return referenceCase_ == 1;
       }
+
       /**
        *
        *
@@ -1771,6 +1808,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1799,6 +1837,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1820,6 +1859,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1839,6 +1879,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1877,6 +1918,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasResourceName() {
         return referenceCase_ == 2;
       }
+
       /**
        *
        *
@@ -1905,6 +1947,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1933,6 +1976,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1954,6 +1998,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1973,6 +2018,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2014,6 +2060,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUseCase() {
         return referenceCase_ == 3;
       }
+
       /**
        *
        *
@@ -2045,6 +2092,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2076,6 +2124,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2100,6 +2149,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2122,6 +2172,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2166,6 +2217,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDescription() {
         return referenceCase_ == 4;
       }
+
       /**
        *
        *
@@ -2197,6 +2249,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2228,6 +2281,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2252,6 +2306,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2274,6 +2329,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2385,6 +2441,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return The displayName.
      */
     java.lang.String getDisplayName();
+
     /**
      *
      *
@@ -2413,6 +2470,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the reference field is set.
      */
     boolean hasReference();
+
     /**
      *
      *
@@ -2427,6 +2485,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return The reference.
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference getReference();
+
     /**
      *
      *
@@ -2441,6 +2500,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReferenceOrBuilder
         getReferenceOrBuilder();
   }
+
   /**
    *
    *
@@ -2455,6 +2515,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.Parent)
       ParentOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Parent.newBuilder() to construct.
     private Parent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2490,6 +2551,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2514,6 +2576,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2541,6 +2604,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
     public static final int REFERENCE_FIELD_NUMBER = 2;
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference reference_;
+
     /**
      *
      *
@@ -2558,6 +2622,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReference() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2578,6 +2643,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : reference_;
     }
+
     /**
      *
      *
@@ -2773,6 +2839,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2989,6 +3056,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -3012,6 +3080,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3035,6 +3104,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3057,6 +3127,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3075,6 +3146,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3105,6 +3177,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.Builder,
               com.google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReferenceOrBuilder>
           referenceBuilder_;
+
       /**
        *
        *
@@ -3121,6 +3194,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasReference() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -3144,6 +3218,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return referenceBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3169,6 +3244,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3192,6 +3268,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3224,6 +3301,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3245,6 +3323,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3262,6 +3341,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getReferenceFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3284,6 +3364,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : reference_;
         }
       }
+
       /**
        *
        *
@@ -3394,6 +3475,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return The title.
      */
     java.lang.String getTitle();
+
     /**
      *
      *
@@ -3420,6 +3502,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return The content.
      */
     java.lang.String getContent();
+
     /**
      *
      *
@@ -3433,6 +3516,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getContentBytes();
   }
+
   /**
    *
    *
@@ -3447,6 +3531,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.Documentation)
       DocumentationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Documentation.newBuilder() to construct.
     private Documentation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3482,6 +3567,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -3506,6 +3592,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3535,6 +3622,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object content_ = "";
+
     /**
      *
      *
@@ -3558,6 +3646,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3753,6 +3842,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3962,6 +4052,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object title_ = "";
+
       /**
        *
        *
@@ -3985,6 +4076,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4008,6 +4100,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4030,6 +4123,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4048,6 +4142,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4073,6 +4168,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object content_ = "";
+
       /**
        *
        *
@@ -4095,6 +4191,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4117,6 +4214,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4138,6 +4236,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4155,6 +4254,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4264,6 +4364,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the viewRestApi field is set.
      */
     boolean hasViewRestApi();
+
     /**
      *
      *
@@ -4278,6 +4379,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return The viewRestApi.
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.ViewRestApi getViewRestApi();
+
     /**
      *
      *
@@ -4306,6 +4408,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the openNotebook field is set.
      */
     boolean hasOpenNotebook();
+
     /**
      *
      *
@@ -4321,6 +4424,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
         getOpenNotebook();
+
     /**
      *
      *
@@ -4350,6 +4454,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the openNotebooks field is set.
      */
     boolean hasOpenNotebooks();
+
     /**
      *
      *
@@ -4365,6 +4470,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
         getOpenNotebooks();
+
     /**
      *
      *
@@ -4393,6 +4499,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createApplication field is set.
      */
     boolean hasCreateApplication();
+
     /**
      *
      *
@@ -4408,6 +4515,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
         getCreateApplication();
+
     /**
      *
      *
@@ -4437,6 +4545,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the openFineTuningPipeline field is set.
      */
     boolean hasOpenFineTuningPipeline();
+
     /**
      *
      *
@@ -4452,6 +4561,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
         getOpenFineTuningPipeline();
+
     /**
      *
      *
@@ -4481,6 +4591,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the openFineTuningPipelines field is set.
      */
     boolean hasOpenFineTuningPipelines();
+
     /**
      *
      *
@@ -4496,6 +4607,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
         getOpenFineTuningPipelines();
+
     /**
      *
      *
@@ -4524,6 +4636,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the openPromptTuningPipeline field is set.
      */
     boolean hasOpenPromptTuningPipeline();
+
     /**
      *
      *
@@ -4539,6 +4652,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
         getOpenPromptTuningPipeline();
+
     /**
      *
      *
@@ -4568,6 +4682,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the openGenie field is set.
      */
     boolean hasOpenGenie();
+
     /**
      *
      *
@@ -4583,6 +4698,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
         getOpenGenie();
+
     /**
      *
      *
@@ -4612,6 +4728,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deploy field is set.
      */
     boolean hasDeploy();
+
     /**
      *
      *
@@ -4626,6 +4743,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return The deploy.
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy getDeploy();
+
     /**
      *
      *
@@ -4654,6 +4772,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deployGke field is set.
      */
     boolean hasDeployGke();
+
     /**
      *
      *
@@ -4668,6 +4787,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return The deployGke.
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke getDeployGke();
+
     /**
      *
      *
@@ -4696,6 +4816,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the openGenerationAiStudio field is set.
      */
     boolean hasOpenGenerationAiStudio();
+
     /**
      *
      *
@@ -4711,6 +4832,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
         getOpenGenerationAiStudio();
+
     /**
      *
      *
@@ -4740,6 +4862,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the requestAccess field is set.
      */
     boolean hasRequestAccess();
+
     /**
      *
      *
@@ -4755,6 +4878,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
         getRequestAccess();
+
     /**
      *
      *
@@ -4784,6 +4908,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the openEvaluationPipeline field is set.
      */
     boolean hasOpenEvaluationPipeline();
+
     /**
      *
      *
@@ -4799,6 +4924,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
         getOpenEvaluationPipeline();
+
     /**
      *
      *
@@ -4814,6 +4940,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             .RegionalResourceReferencesOrBuilder
         getOpenEvaluationPipelineOrBuilder();
   }
+
   /**
    *
    *
@@ -4828,6 +4955,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction)
       CallToActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CallToAction.newBuilder() to construct.
     private CallToAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4873,6 +5001,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       int getReferencesCount();
+
       /**
        *
        *
@@ -4885,12 +5014,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       boolean containsReferences(java.lang.String key);
+
       /** Use {@link #getReferencesMap()} instead. */
       @java.lang.Deprecated
       java.util.Map<
               java.lang.String,
               com.google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference>
           getReferences();
+
       /**
        *
        *
@@ -4906,6 +5037,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               java.lang.String,
               com.google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference>
           getReferencesMap();
+
       /**
        *
        *
@@ -4922,6 +5054,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           java.lang.String key,
           /* nullable */
           com.google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference defaultValue);
+
       /**
        *
        *
@@ -4948,6 +5081,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The title.
        */
       java.lang.String getTitle();
+
       /**
        *
        *
@@ -4973,6 +5107,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the resourceTitle field is set.
        */
       boolean hasResourceTitle();
+
       /**
        *
        *
@@ -4985,6 +5120,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The resourceTitle.
        */
       java.lang.String getResourceTitle();
+
       /**
        *
        *
@@ -5011,6 +5147,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the resourceUseCase field is set.
        */
       boolean hasResourceUseCase();
+
       /**
        *
        *
@@ -5024,6 +5161,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The resourceUseCase.
        */
       java.lang.String getResourceUseCase();
+
       /**
        *
        *
@@ -5051,6 +5189,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the resourceDescription field is set.
        */
       boolean hasResourceDescription();
+
       /**
        *
        *
@@ -5064,6 +5203,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The resourceDescription.
        */
       java.lang.String getResourceDescription();
+
       /**
        *
        *
@@ -5078,6 +5218,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getResourceDescriptionBytes();
     }
+
     /**
      *
      *
@@ -5095,6 +5236,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences)
         RegionalResourceReferencesOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use RegionalResourceReferences.newBuilder() to construct.
       private RegionalResourceReferences(
           com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -5184,6 +5326,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public int getReferencesCount() {
         return internalGetReferences().getMap().size();
       }
+
       /**
        *
        *
@@ -5202,6 +5345,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetReferences().getMap().containsKey(key);
       }
+
       /** Use {@link #getReferencesMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -5211,6 +5355,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           getReferences() {
         return getReferencesMap();
       }
+
       /**
        *
        *
@@ -5229,6 +5374,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           getReferencesMap() {
         return internalGetReferences().getMap();
       }
+
       /**
        *
        *
@@ -5255,6 +5401,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             map = internalGetReferences().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /**
        *
        *
@@ -5286,6 +5433,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object title_ = "";
+
       /**
        *
        *
@@ -5309,6 +5457,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -5337,6 +5486,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object resourceTitle_ = "";
+
       /**
        *
        *
@@ -5352,6 +5502,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasResourceTitle() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -5375,6 +5526,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -5403,6 +5555,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object resourceUseCase_ = "";
+
       /**
        *
        *
@@ -5419,6 +5572,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasResourceUseCase() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -5443,6 +5597,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -5472,6 +5627,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object resourceDescription_ = "";
+
       /**
        *
        *
@@ -5488,6 +5644,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasResourceDescription() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -5512,6 +5669,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -5789,6 +5947,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -6162,6 +6321,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public int getReferencesCount() {
           return internalGetReferences().ensureBuilderMap().size();
         }
+
         /**
          *
          *
@@ -6180,6 +6340,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return internalGetReferences().ensureBuilderMap().containsKey(key);
         }
+
         /** Use {@link #getReferencesMap()} instead. */
         @java.lang.Override
         @java.lang.Deprecated
@@ -6189,6 +6350,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             getReferences() {
           return getReferencesMap();
         }
+
         /**
          *
          *
@@ -6207,6 +6369,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             getReferencesMap() {
           return internalGetReferences().getImmutableMap();
         }
+
         /**
          *
          *
@@ -6233,6 +6396,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               map = internalGetMutableReferences().ensureBuilderMap();
           return map.containsKey(key) ? referencesConverter.build(map.get(key)) : defaultValue;
         }
+
         /**
          *
          *
@@ -6265,6 +6429,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableReferences().clear();
           return this;
         }
+
         /**
          *
          *
@@ -6283,6 +6448,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableReferences().ensureBuilderMap().remove(key);
           return this;
         }
+
         /** Use alternate mutation accessors instead. */
         @java.lang.Deprecated
         public java.util.Map<
@@ -6292,6 +6458,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
           return internalGetMutableReferences().ensureMessageMap();
         }
+
         /**
          *
          *
@@ -6316,6 +6483,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
           return this;
         }
+
         /**
          *
          *
@@ -6344,6 +6512,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
           return this;
         }
+
         /**
          *
          *
@@ -6380,6 +6549,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object title_ = "";
+
         /**
          *
          *
@@ -6402,6 +6572,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -6424,6 +6595,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -6445,6 +6617,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -6462,6 +6635,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -6486,6 +6660,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object resourceTitle_ = "";
+
         /**
          *
          *
@@ -6501,6 +6676,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public boolean hasResourceTitle() {
           return ((bitField0_ & 0x00000004) != 0);
         }
+
         /**
          *
          *
@@ -6524,6 +6700,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -6547,6 +6724,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -6569,6 +6747,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -6587,6 +6766,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -6612,6 +6792,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object resourceUseCase_ = "";
+
         /**
          *
          *
@@ -6627,6 +6808,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public boolean hasResourceUseCase() {
           return ((bitField0_ & 0x00000008) != 0);
         }
+
         /**
          *
          *
@@ -6650,6 +6832,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -6673,6 +6856,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -6695,6 +6879,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -6713,6 +6898,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -6738,6 +6924,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object resourceDescription_ = "";
+
         /**
          *
          *
@@ -6753,6 +6940,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public boolean hasResourceDescription() {
           return ((bitField0_ & 0x00000010) != 0);
         }
+
         /**
          *
          *
@@ -6776,6 +6964,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -6799,6 +6988,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -6821,6 +7011,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -6839,6 +7030,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -6953,6 +7145,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        */
       java.util.List<com.google.cloud.aiplatform.v1beta1.PublisherModel.Documentation>
           getDocumentationsList();
+
       /**
        *
        *
@@ -6965,6 +7158,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       com.google.cloud.aiplatform.v1beta1.PublisherModel.Documentation getDocumentations(int index);
+
       /**
        *
        *
@@ -6977,6 +7171,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       int getDocumentationsCount();
+
       /**
        *
        *
@@ -6991,6 +7186,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       java.util.List<
               ? extends com.google.cloud.aiplatform.v1beta1.PublisherModel.DocumentationOrBuilder>
           getDocumentationsOrBuilderList();
+
       /**
        *
        *
@@ -7017,6 +7213,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The title.
        */
       java.lang.String getTitle();
+
       /**
        *
        *
@@ -7030,6 +7227,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getTitleBytes();
     }
+
     /**
      *
      *
@@ -7044,6 +7242,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.ViewRestApi)
         ViewRestApiOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use ViewRestApi.newBuilder() to construct.
       private ViewRestApi(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -7081,6 +7280,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.aiplatform.v1beta1.PublisherModel.Documentation>
           documentations_;
+
       /**
        *
        *
@@ -7097,6 +7297,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           getDocumentationsList() {
         return documentations_;
       }
+
       /**
        *
        *
@@ -7114,6 +7315,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           getDocumentationsOrBuilderList() {
         return documentations_;
       }
+
       /**
        *
        *
@@ -7129,6 +7331,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public int getDocumentationsCount() {
         return documentations_.size();
       }
+
       /**
        *
        *
@@ -7145,6 +7348,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return documentations_.get(index);
       }
+
       /**
        *
        *
@@ -7166,6 +7370,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object title_ = "";
+
       /**
        *
        *
@@ -7189,6 +7394,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -7396,6 +7602,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -7697,6 +7904,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return documentationsBuilder_.getMessageList();
           }
         }
+
         /**
          *
          *
@@ -7715,6 +7923,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return documentationsBuilder_.getCount();
           }
         }
+
         /**
          *
          *
@@ -7734,6 +7943,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return documentationsBuilder_.getMessage(index);
           }
         }
+
         /**
          *
          *
@@ -7759,6 +7969,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -7783,6 +7994,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -7808,6 +8020,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -7833,6 +8046,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -7856,6 +8070,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -7880,6 +8095,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -7904,6 +8120,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -7925,6 +8142,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -7946,6 +8164,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -7961,6 +8180,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             getDocumentationsBuilder(int index) {
           return getDocumentationsFieldBuilder().getBuilder(index);
         }
+
         /**
          *
          *
@@ -7980,6 +8200,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return documentationsBuilder_.getMessageOrBuilder(index);
           }
         }
+
         /**
          *
          *
@@ -8000,6 +8221,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return java.util.Collections.unmodifiableList(documentations_);
           }
         }
+
         /**
          *
          *
@@ -8018,6 +8240,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.aiplatform.v1beta1.PublisherModel.Documentation
                       .getDefaultInstance());
         }
+
         /**
          *
          *
@@ -8037,6 +8260,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.aiplatform.v1beta1.PublisherModel.Documentation
                       .getDefaultInstance());
         }
+
         /**
          *
          *
@@ -8075,6 +8299,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object title_ = "";
+
         /**
          *
          *
@@ -8097,6 +8322,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -8119,6 +8345,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -8140,6 +8367,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8157,6 +8385,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8269,6 +8498,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .RegionalResourceReferences>
           getNotebooksList();
+
       /**
        *
        *
@@ -8282,6 +8512,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
           getNotebooks(int index);
+
       /**
        *
        *
@@ -8294,6 +8525,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       int getNotebooksCount();
+
       /**
        *
        *
@@ -8310,6 +8542,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                       .RegionalResourceReferencesOrBuilder>
           getNotebooksOrBuilderList();
+
       /**
        *
        *
@@ -8325,6 +8558,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .RegionalResourceReferencesOrBuilder
           getNotebooksOrBuilder(int index);
     }
+
     /**
      *
      *
@@ -8340,6 +8574,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks)
         OpenNotebooksOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use OpenNotebooks.newBuilder() to construct.
       private OpenNotebooks(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -8378,6 +8613,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .RegionalResourceReferences>
           notebooks_;
+
       /**
        *
        *
@@ -8396,6 +8632,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           getNotebooksList() {
         return notebooks_;
       }
+
       /**
        *
        *
@@ -8415,6 +8652,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           getNotebooksOrBuilderList() {
         return notebooks_;
       }
+
       /**
        *
        *
@@ -8430,6 +8668,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public int getNotebooksCount() {
         return notebooks_.size();
       }
+
       /**
        *
        *
@@ -8447,6 +8686,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           getNotebooks(int index) {
         return notebooks_.get(index);
       }
+
       /**
        *
        *
@@ -8638,6 +8878,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -8936,6 +9177,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return notebooksBuilder_.getMessageList();
           }
         }
+
         /**
          *
          *
@@ -8954,6 +9196,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return notebooksBuilder_.getCount();
           }
         }
+
         /**
          *
          *
@@ -8974,6 +9217,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return notebooksBuilder_.getMessage(index);
           }
         }
+
         /**
          *
          *
@@ -9002,6 +9246,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -9027,6 +9272,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -9054,6 +9300,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -9082,6 +9329,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -9106,6 +9354,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -9131,6 +9380,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -9157,6 +9407,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -9178,6 +9429,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -9199,6 +9451,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -9215,6 +9468,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             getNotebooksBuilder(int index) {
           return getNotebooksFieldBuilder().getBuilder(index);
         }
+
         /**
          *
          *
@@ -9235,6 +9489,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return notebooksBuilder_.getMessageOrBuilder(index);
           }
         }
+
         /**
          *
          *
@@ -9257,6 +9512,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return java.util.Collections.unmodifiableList(notebooks_);
           }
         }
+
         /**
          *
          *
@@ -9276,6 +9532,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                       .RegionalResourceReferences.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -9296,6 +9553,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                       .RegionalResourceReferences.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -9429,6 +9687,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .RegionalResourceReferences>
           getFineTuningPipelinesList();
+
       /**
        *
        *
@@ -9442,6 +9701,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
           getFineTuningPipelines(int index);
+
       /**
        *
        *
@@ -9454,6 +9714,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       int getFineTuningPipelinesCount();
+
       /**
        *
        *
@@ -9470,6 +9731,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                       .RegionalResourceReferencesOrBuilder>
           getFineTuningPipelinesOrBuilderList();
+
       /**
        *
        *
@@ -9485,6 +9747,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .RegionalResourceReferencesOrBuilder
           getFineTuningPipelinesOrBuilder(int index);
     }
+
     /**
      *
      *
@@ -9500,6 +9763,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines)
         OpenFineTuningPipelinesOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use OpenFineTuningPipelines.newBuilder() to construct.
       private OpenFineTuningPipelines(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -9539,6 +9803,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .RegionalResourceReferences>
           fineTuningPipelines_;
+
       /**
        *
        *
@@ -9557,6 +9822,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           getFineTuningPipelinesList() {
         return fineTuningPipelines_;
       }
+
       /**
        *
        *
@@ -9576,6 +9842,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           getFineTuningPipelinesOrBuilderList() {
         return fineTuningPipelines_;
       }
+
       /**
        *
        *
@@ -9591,6 +9858,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public int getFineTuningPipelinesCount() {
         return fineTuningPipelines_.size();
       }
+
       /**
        *
        *
@@ -9608,6 +9876,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           getFineTuningPipelines(int index) {
         return fineTuningPipelines_.get(index);
       }
+
       /**
        *
        *
@@ -9818,6 +10087,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -10126,6 +10396,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return fineTuningPipelinesBuilder_.getMessageList();
           }
         }
+
         /**
          *
          *
@@ -10144,6 +10415,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return fineTuningPipelinesBuilder_.getCount();
           }
         }
+
         /**
          *
          *
@@ -10164,6 +10436,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return fineTuningPipelinesBuilder_.getMessage(index);
           }
         }
+
         /**
          *
          *
@@ -10192,6 +10465,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10217,6 +10491,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10244,6 +10519,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10272,6 +10548,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10296,6 +10573,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10321,6 +10599,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10347,6 +10626,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10368,6 +10648,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10389,6 +10670,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10405,6 +10687,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             getFineTuningPipelinesBuilder(int index) {
           return getFineTuningPipelinesFieldBuilder().getBuilder(index);
         }
+
         /**
          *
          *
@@ -10425,6 +10708,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return fineTuningPipelinesBuilder_.getMessageOrBuilder(index);
           }
         }
+
         /**
          *
          *
@@ -10447,6 +10731,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return java.util.Collections.unmodifiableList(fineTuningPipelines_);
           }
         }
+
         /**
          *
          *
@@ -10466,6 +10751,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                       .RegionalResourceReferences.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -10486,6 +10772,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                       .RegionalResourceReferences.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -10619,6 +10906,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the dedicatedResources field is set.
        */
       boolean hasDedicatedResources();
+
       /**
        *
        *
@@ -10632,6 +10920,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The dedicatedResources.
        */
       com.google.cloud.aiplatform.v1beta1.DedicatedResources getDedicatedResources();
+
       /**
        *
        *
@@ -10658,6 +10947,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the automaticResources field is set.
        */
       boolean hasAutomaticResources();
+
       /**
        *
        *
@@ -10671,6 +10961,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The automaticResources.
        */
       com.google.cloud.aiplatform.v1beta1.AutomaticResources getAutomaticResources();
+
       /**
        *
        *
@@ -10698,6 +10989,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the sharedResources field is set.
        */
       boolean hasSharedResources();
+
       /**
        *
        *
@@ -10712,6 +11004,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The sharedResources.
        */
       java.lang.String getSharedResources();
+
       /**
        *
        *
@@ -10739,6 +11032,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The modelDisplayName.
        */
       java.lang.String getModelDisplayName();
+
       /**
        *
        *
@@ -10767,6 +11061,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the largeModelReference field is set.
        */
       boolean hasLargeModelReference();
+
       /**
        *
        *
@@ -10782,6 +11077,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The largeModelReference.
        */
       com.google.cloud.aiplatform.v1beta1.LargeModelReference getLargeModelReference();
+
       /**
        *
        *
@@ -10812,6 +11108,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the containerSpec field is set.
        */
       boolean hasContainerSpec();
+
       /**
        *
        *
@@ -10827,6 +11124,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The containerSpec.
        */
       com.google.cloud.aiplatform.v1beta1.ModelContainerSpec getContainerSpec();
+
       /**
        *
        *
@@ -10854,6 +11152,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The artifactUri.
        */
       java.lang.String getArtifactUri();
+
       /**
        *
        *
@@ -10882,6 +11181,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the deployTaskName field is set.
        */
       boolean hasDeployTaskName();
+
       /**
        *
        *
@@ -10896,6 +11196,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The deployTaskName.
        */
       java.lang.String getDeployTaskName();
+
       /**
        *
        *
@@ -10925,6 +11226,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the deployMetadata field is set.
        */
       boolean hasDeployMetadata();
+
       /**
        *
        *
@@ -10940,6 +11242,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.DeployMetadata
           getDeployMetadata();
+
       /**
        *
        *
@@ -10966,6 +11269,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The title.
        */
       java.lang.String getTitle();
+
       /**
        *
        *
@@ -10992,6 +11296,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The publicArtifactUri.
        */
       java.lang.String getPublicArtifactUri();
+
       /**
        *
        *
@@ -11009,6 +11314,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.PredictionResourcesCase
           getPredictionResourcesCase();
     }
+
     /**
      *
      *
@@ -11024,6 +11330,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy)
         DeployOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Deploy.newBuilder() to construct.
       private Deploy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -11076,6 +11383,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         int getLabelsCount();
+
         /**
          *
          *
@@ -11088,9 +11396,11 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         boolean containsLabels(java.lang.String key);
+
         /** Use {@link #getLabelsMap()} instead. */
         @java.lang.Deprecated
         java.util.Map<java.lang.String, java.lang.String> getLabels();
+
         /**
          *
          *
@@ -11103,6 +11413,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
         /**
          *
          *
@@ -11119,6 +11430,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             java.lang.String key,
             /* nullable */
             java.lang.String defaultValue);
+
         /**
          *
          *
@@ -11144,6 +11456,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          * @return The sampleRequest.
          */
         java.lang.String getSampleRequest();
+
         /**
          *
          *
@@ -11157,6 +11470,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getSampleRequestBytes();
       }
+
       /**
        *
        *
@@ -11173,6 +11487,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.DeployMetadata)
           DeployMetadataOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use DeployMetadata.newBuilder() to construct.
         private DeployMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -11247,6 +11562,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public int getLabelsCount() {
           return internalGetLabels().getMap().size();
         }
+
         /**
          *
          *
@@ -11265,12 +11581,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return internalGetLabels().getMap().containsKey(key);
         }
+
         /** Use {@link #getLabelsMap()} instead. */
         @java.lang.Override
         @java.lang.Deprecated
         public java.util.Map<java.lang.String, java.lang.String> getLabels() {
           return getLabelsMap();
         }
+
         /**
          *
          *
@@ -11286,6 +11604,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
           return internalGetLabels().getMap();
         }
+
         /**
          *
          *
@@ -11308,6 +11627,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
           return map.containsKey(key) ? map.get(key) : defaultValue;
         }
+
         /**
          *
          *
@@ -11335,6 +11655,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object sampleRequest_ = "";
+
         /**
          *
          *
@@ -11358,6 +11679,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
+
         /**
          *
          *
@@ -11590,6 +11912,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -11872,6 +12195,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           public int getLabelsCount() {
             return internalGetLabels().getMap().size();
           }
+
           /**
            *
            *
@@ -11890,12 +12214,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             }
             return internalGetLabels().getMap().containsKey(key);
           }
+
           /** Use {@link #getLabelsMap()} instead. */
           @java.lang.Override
           @java.lang.Deprecated
           public java.util.Map<java.lang.String, java.lang.String> getLabels() {
             return getLabelsMap();
           }
+
           /**
            *
            *
@@ -11911,6 +12237,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
             return internalGetLabels().getMap();
           }
+
           /**
            *
            *
@@ -11933,6 +12260,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
             return map.containsKey(key) ? map.get(key) : defaultValue;
           }
+
           /**
            *
            *
@@ -11961,6 +12289,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             internalGetMutableLabels().getMutableMap().clear();
             return this;
           }
+
           /**
            *
            *
@@ -11979,12 +12308,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             internalGetMutableLabels().getMutableMap().remove(key);
             return this;
           }
+
           /** Use alternate mutation accessors instead. */
           @java.lang.Deprecated
           public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
             bitField0_ |= 0x00000001;
             return internalGetMutableLabels().getMutableMap();
           }
+
           /**
            *
            *
@@ -12007,6 +12338,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000001;
             return this;
           }
+
           /**
            *
            *
@@ -12025,6 +12357,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
 
           private java.lang.Object sampleRequest_ = "";
+
           /**
            *
            *
@@ -12047,6 +12380,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -12069,6 +12403,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -12090,6 +12425,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -12107,6 +12443,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -12220,6 +12557,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         private PredictionResourcesCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -12255,6 +12593,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DEDICATED_RESOURCES_FIELD_NUMBER = 5;
+
       /**
        *
        *
@@ -12271,6 +12610,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDedicatedResources() {
         return predictionResourcesCase_ == 5;
       }
+
       /**
        *
        *
@@ -12290,6 +12630,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.cloud.aiplatform.v1beta1.DedicatedResources.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -12310,6 +12651,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int AUTOMATIC_RESOURCES_FIELD_NUMBER = 6;
+
       /**
        *
        *
@@ -12326,6 +12668,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAutomaticResources() {
         return predictionResourcesCase_ == 6;
       }
+
       /**
        *
        *
@@ -12345,6 +12688,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.cloud.aiplatform.v1beta1.AutomaticResources.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -12365,6 +12709,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int SHARED_RESOURCES_FIELD_NUMBER = 7;
+
       /**
        *
        *
@@ -12381,6 +12726,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSharedResources() {
         return predictionResourcesCase_ == 7;
       }
+
       /**
        *
        *
@@ -12410,6 +12756,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -12444,6 +12791,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object modelDisplayName_ = "";
+
       /**
        *
        *
@@ -12467,6 +12815,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -12493,6 +12842,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       public static final int LARGE_MODEL_REFERENCE_FIELD_NUMBER = 2;
       private com.google.cloud.aiplatform.v1beta1.LargeModelReference largeModelReference_;
+
       /**
        *
        *
@@ -12511,6 +12861,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLargeModelReference() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -12531,6 +12882,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.aiplatform.v1beta1.LargeModelReference.getDefaultInstance()
             : largeModelReference_;
       }
+
       /**
        *
        *
@@ -12553,6 +12905,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       public static final int CONTAINER_SPEC_FIELD_NUMBER = 3;
       private com.google.cloud.aiplatform.v1beta1.ModelContainerSpec containerSpec_;
+
       /**
        *
        *
@@ -12571,6 +12924,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasContainerSpec() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -12591,6 +12945,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.aiplatform.v1beta1.ModelContainerSpec.getDefaultInstance()
             : containerSpec_;
       }
+
       /**
        *
        *
@@ -12615,6 +12970,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object artifactUri_ = "";
+
       /**
        *
        *
@@ -12639,6 +12995,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -12668,6 +13025,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object deployTaskName_ = "";
+
       /**
        *
        *
@@ -12685,6 +13043,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDeployTaskName() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -12710,6 +13069,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -12739,6 +13099,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public static final int DEPLOY_METADATA_FIELD_NUMBER = 11;
       private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.DeployMetadata
           deployMetadata_;
+
       /**
        *
        *
@@ -12756,6 +13117,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDeployMetadata() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -12777,6 +13139,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()
             : deployMetadata_;
       }
+
       /**
        *
        *
@@ -12802,6 +13165,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object title_ = "";
+
       /**
        *
        *
@@ -12825,6 +13189,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -12853,6 +13218,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object publicArtifactUri_ = "";
+
       /**
        *
        *
@@ -12877,6 +13243,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -13210,6 +13577,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -13628,6 +13996,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.DedicatedResources.Builder,
                 com.google.cloud.aiplatform.v1beta1.DedicatedResourcesOrBuilder>
             dedicatedResourcesBuilder_;
+
         /**
          *
          *
@@ -13644,6 +14013,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public boolean hasDedicatedResources() {
           return predictionResourcesCase_ == 5;
         }
+
         /**
          *
          *
@@ -13670,6 +14040,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return com.google.cloud.aiplatform.v1beta1.DedicatedResources.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -13694,6 +14065,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           predictionResourcesCase_ = 5;
           return this;
         }
+
         /**
          *
          *
@@ -13715,6 +14087,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           predictionResourcesCase_ = 5;
           return this;
         }
+
         /**
          *
          *
@@ -13752,6 +14125,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           predictionResourcesCase_ = 5;
           return this;
         }
+
         /**
          *
          *
@@ -13778,6 +14152,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -13792,6 +14167,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             getDedicatedResourcesBuilder() {
           return getDedicatedResourcesFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -13814,6 +14190,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return com.google.cloud.aiplatform.v1beta1.DedicatedResources.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -13854,6 +14231,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.AutomaticResources.Builder,
                 com.google.cloud.aiplatform.v1beta1.AutomaticResourcesOrBuilder>
             automaticResourcesBuilder_;
+
         /**
          *
          *
@@ -13870,6 +14248,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public boolean hasAutomaticResources() {
           return predictionResourcesCase_ == 6;
         }
+
         /**
          *
          *
@@ -13896,6 +14275,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return com.google.cloud.aiplatform.v1beta1.AutomaticResources.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -13920,6 +14300,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           predictionResourcesCase_ = 6;
           return this;
         }
+
         /**
          *
          *
@@ -13941,6 +14322,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           predictionResourcesCase_ = 6;
           return this;
         }
+
         /**
          *
          *
@@ -13978,6 +14360,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           predictionResourcesCase_ = 6;
           return this;
         }
+
         /**
          *
          *
@@ -14004,6 +14387,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -14018,6 +14402,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             getAutomaticResourcesBuilder() {
           return getAutomaticResourcesFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -14040,6 +14425,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return com.google.cloud.aiplatform.v1beta1.AutomaticResources.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -14092,6 +14478,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public boolean hasSharedResources() {
           return predictionResourcesCase_ == 7;
         }
+
         /**
          *
          *
@@ -14122,6 +14509,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -14152,6 +14540,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -14175,6 +14564,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14196,6 +14586,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -14222,6 +14613,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object modelDisplayName_ = "";
+
         /**
          *
          *
@@ -14244,6 +14636,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -14266,6 +14659,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -14287,6 +14681,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14304,6 +14699,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14333,6 +14729,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.LargeModelReference.Builder,
                 com.google.cloud.aiplatform.v1beta1.LargeModelReferenceOrBuilder>
             largeModelReferenceBuilder_;
+
         /**
          *
          *
@@ -14350,6 +14747,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public boolean hasLargeModelReference() {
           return ((bitField0_ & 0x00000010) != 0);
         }
+
         /**
          *
          *
@@ -14373,6 +14771,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return largeModelReferenceBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -14399,6 +14798,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14422,6 +14822,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14455,6 +14856,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -14477,6 +14879,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14495,6 +14898,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getLargeModelReferenceFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -14517,6 +14921,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                 : largeModelReference_;
           }
         }
+
         /**
          *
          *
@@ -14552,6 +14957,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.ModelContainerSpec.Builder,
                 com.google.cloud.aiplatform.v1beta1.ModelContainerSpecOrBuilder>
             containerSpecBuilder_;
+
         /**
          *
          *
@@ -14569,6 +14975,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public boolean hasContainerSpec() {
           return ((bitField0_ & 0x00000020) != 0);
         }
+
         /**
          *
          *
@@ -14592,6 +14999,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return containerSpecBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -14618,6 +15026,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14641,6 +15050,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14674,6 +15084,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -14696,6 +15107,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14714,6 +15126,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getContainerSpecFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -14736,6 +15149,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                 : containerSpec_;
           }
         }
+
         /**
          *
          *
@@ -14766,6 +15180,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object artifactUri_ = "";
+
         /**
          *
          *
@@ -14789,6 +15204,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -14812,6 +15228,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -14834,6 +15251,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14852,6 +15270,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14877,6 +15296,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object deployTaskName_ = "";
+
         /**
          *
          *
@@ -14893,6 +15313,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public boolean hasDeployTaskName() {
           return ((bitField0_ & 0x00000080) != 0);
         }
+
         /**
          *
          *
@@ -14917,6 +15338,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -14941,6 +15363,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -14964,6 +15387,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14983,6 +15407,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -15019,6 +15444,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy
                     .DeployMetadataOrBuilder>
             deployMetadataBuilder_;
+
         /**
          *
          *
@@ -15035,6 +15461,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public boolean hasDeployMetadata() {
           return ((bitField0_ & 0x00000100) != 0);
         }
+
         /**
          *
          *
@@ -15059,6 +15486,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return deployMetadataBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -15085,6 +15513,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -15109,6 +15538,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -15142,6 +15572,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -15163,6 +15594,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -15181,6 +15613,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getDeployMetadataFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -15204,6 +15637,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                 : deployMetadata_;
           }
         }
+
         /**
          *
          *
@@ -15239,6 +15673,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object title_ = "";
+
         /**
          *
          *
@@ -15261,6 +15696,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -15283,6 +15719,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -15304,6 +15741,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -15321,6 +15759,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -15345,6 +15784,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object publicArtifactUri_ = "";
+
         /**
          *
          *
@@ -15368,6 +15808,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -15391,6 +15832,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -15413,6 +15855,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -15431,6 +15874,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -15541,6 +15985,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the gkeYamlConfigs.
        */
       java.util.List<java.lang.String> getGkeYamlConfigsList();
+
       /**
        *
        *
@@ -15554,6 +15999,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The count of gkeYamlConfigs.
        */
       int getGkeYamlConfigsCount();
+
       /**
        *
        *
@@ -15568,6 +16014,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The gkeYamlConfigs at the given index.
        */
       java.lang.String getGkeYamlConfigs(int index);
+
       /**
        *
        *
@@ -15583,6 +16030,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getGkeYamlConfigsBytes(int index);
     }
+
     /**
      *
      *
@@ -15597,6 +16045,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke)
         DeployGkeOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use DeployGke.newBuilder() to construct.
       private DeployGke(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -15633,6 +16082,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList gkeYamlConfigs_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -15648,6 +16098,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ProtocolStringList getGkeYamlConfigsList() {
         return gkeYamlConfigs_;
       }
+
       /**
        *
        *
@@ -15663,6 +16114,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public int getGkeYamlConfigsCount() {
         return gkeYamlConfigs_.size();
       }
+
       /**
        *
        *
@@ -15679,6 +16131,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getGkeYamlConfigs(int index) {
         return gkeYamlConfigs_.get(index);
       }
+
       /**
        *
        *
@@ -15873,6 +16326,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -16087,6 +16541,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000001;
         }
+
         /**
          *
          *
@@ -16103,6 +16558,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           gkeYamlConfigs_.makeImmutable();
           return gkeYamlConfigs_;
         }
+
         /**
          *
          *
@@ -16118,6 +16574,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public int getGkeYamlConfigsCount() {
           return gkeYamlConfigs_.size();
         }
+
         /**
          *
          *
@@ -16134,6 +16591,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getGkeYamlConfigs(int index) {
           return gkeYamlConfigs_.get(index);
         }
+
         /**
          *
          *
@@ -16150,6 +16608,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ByteString getGkeYamlConfigsBytes(int index) {
           return gkeYamlConfigs_.getByteString(index);
         }
+
         /**
          *
          *
@@ -16174,6 +16633,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -16197,6 +16657,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -16217,6 +16678,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -16236,6 +16698,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -16333,6 +16796,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public static final int VIEW_REST_API_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.ViewRestApi
         viewRestApi_;
+
     /**
      *
      *
@@ -16350,6 +16814,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasViewRestApi() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -16371,6 +16836,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : viewRestApi_;
     }
+
     /**
      *
      *
@@ -16395,6 +16861,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
             .RegionalResourceReferences
         openNotebook_;
+
     /**
      *
      *
@@ -16412,6 +16879,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOpenNotebook() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -16434,6 +16902,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .RegionalResourceReferences.getDefaultInstance()
           : openNotebook_;
     }
+
     /**
      *
      *
@@ -16458,6 +16927,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public static final int OPEN_NOTEBOOKS_FIELD_NUMBER = 12;
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
         openNotebooks_;
+
     /**
      *
      *
@@ -16475,6 +16945,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOpenNotebooks() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -16496,6 +16967,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : openNotebooks_;
     }
+
     /**
      *
      *
@@ -16520,6 +16992,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
             .RegionalResourceReferences
         createApplication_;
+
     /**
      *
      *
@@ -16537,6 +17010,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateApplication() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -16559,6 +17033,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .RegionalResourceReferences.getDefaultInstance()
           : createApplication_;
     }
+
     /**
      *
      *
@@ -16584,6 +17059,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
             .RegionalResourceReferences
         openFineTuningPipeline_;
+
     /**
      *
      *
@@ -16601,6 +17077,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOpenFineTuningPipeline() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -16623,6 +17100,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .RegionalResourceReferences.getDefaultInstance()
           : openFineTuningPipeline_;
     }
+
     /**
      *
      *
@@ -16647,6 +17125,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public static final int OPEN_FINE_TUNING_PIPELINES_FIELD_NUMBER = 13;
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
         openFineTuningPipelines_;
+
     /**
      *
      *
@@ -16664,6 +17143,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOpenFineTuningPipelines() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -16685,6 +17165,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : openFineTuningPipelines_;
     }
+
     /**
      *
      *
@@ -16710,6 +17191,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
             .RegionalResourceReferences
         openPromptTuningPipeline_;
+
     /**
      *
      *
@@ -16727,6 +17209,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOpenPromptTuningPipeline() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -16749,6 +17232,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .RegionalResourceReferences.getDefaultInstance()
           : openPromptTuningPipeline_;
     }
+
     /**
      *
      *
@@ -16774,6 +17258,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
             .RegionalResourceReferences
         openGenie_;
+
     /**
      *
      *
@@ -16791,6 +17276,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOpenGenie() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -16813,6 +17299,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .RegionalResourceReferences.getDefaultInstance()
           : openGenie_;
     }
+
     /**
      *
      *
@@ -16836,6 +17323,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DEPLOY_FIELD_NUMBER = 7;
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy deploy_;
+
     /**
      *
      *
@@ -16853,6 +17341,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeploy() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -16873,6 +17362,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : deploy_;
     }
+
     /**
      *
      *
@@ -16895,6 +17385,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DEPLOY_GKE_FIELD_NUMBER = 14;
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deployGke_;
+
     /**
      *
      *
@@ -16912,6 +17403,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeployGke() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -16933,6 +17425,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : deployGke_;
     }
+
     /**
      *
      *
@@ -16957,6 +17450,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
             .RegionalResourceReferences
         openGenerationAiStudio_;
+
     /**
      *
      *
@@ -16974,6 +17468,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOpenGenerationAiStudio() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -16996,6 +17491,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .RegionalResourceReferences.getDefaultInstance()
           : openGenerationAiStudio_;
     }
+
     /**
      *
      *
@@ -17021,6 +17517,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
             .RegionalResourceReferences
         requestAccess_;
+
     /**
      *
      *
@@ -17038,6 +17535,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRequestAccess() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -17060,6 +17558,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .RegionalResourceReferences.getDefaultInstance()
           : requestAccess_;
     }
+
     /**
      *
      *
@@ -17085,6 +17584,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
             .RegionalResourceReferences
         openEvaluationPipeline_;
+
     /**
      *
      *
@@ -17102,6 +17602,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOpenEvaluationPipeline() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -17124,6 +17625,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               .RegionalResourceReferences.getDefaultInstance()
           : openEvaluationPipeline_;
     }
+
     /**
      *
      *
@@ -17491,6 +17993,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -17959,6 +18462,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.ViewRestApi.Builder,
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.ViewRestApiOrBuilder>
           viewRestApiBuilder_;
+
       /**
        *
        *
@@ -17975,6 +18479,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasViewRestApi() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -17999,6 +18504,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return viewRestApiBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -18024,6 +18530,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18047,6 +18554,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18079,6 +18587,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -18100,6 +18609,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18117,6 +18627,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getViewRestApiFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -18139,6 +18650,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : viewRestApi_;
         }
       }
+
       /**
        *
        *
@@ -18179,6 +18691,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .RegionalResourceReferencesOrBuilder>
           openNotebookBuilder_;
+
       /**
        *
        *
@@ -18195,6 +18708,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOpenNotebook() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -18220,6 +18734,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return openNotebookBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -18246,6 +18761,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18270,6 +18786,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18303,6 +18820,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -18324,6 +18842,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18342,6 +18861,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOpenNotebookFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -18365,6 +18885,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : openNotebook_;
         }
       }
+
       /**
        *
        *
@@ -18407,6 +18928,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .OpenNotebooksOrBuilder>
           openNotebooksBuilder_;
+
       /**
        *
        *
@@ -18423,6 +18945,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOpenNotebooks() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -18447,6 +18970,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return openNotebooksBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -18472,6 +18996,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18495,6 +19020,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18527,6 +19053,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -18548,6 +19075,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18565,6 +19093,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOpenNotebooksFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -18587,6 +19116,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : openNotebooks_;
         }
       }
+
       /**
        *
        *
@@ -18629,6 +19159,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .RegionalResourceReferencesOrBuilder>
           createApplicationBuilder_;
+
       /**
        *
        *
@@ -18645,6 +19176,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCreateApplication() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -18670,6 +19202,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return createApplicationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -18696,6 +19229,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18720,6 +19254,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18753,6 +19288,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -18774,6 +19310,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18792,6 +19329,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getCreateApplicationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -18815,6 +19353,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : createApplication_;
         }
       }
+
       /**
        *
        *
@@ -18860,6 +19399,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .RegionalResourceReferencesOrBuilder>
           openFineTuningPipelineBuilder_;
+
       /**
        *
        *
@@ -18876,6 +19416,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOpenFineTuningPipeline() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -18901,6 +19442,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return openFineTuningPipelineBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -18927,6 +19469,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18951,6 +19494,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18984,6 +19528,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -19005,6 +19550,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19023,6 +19569,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOpenFineTuningPipelineFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -19046,6 +19593,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : openFineTuningPipeline_;
         }
       }
+
       /**
        *
        *
@@ -19091,6 +19639,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .OpenFineTuningPipelinesOrBuilder>
           openFineTuningPipelinesBuilder_;
+
       /**
        *
        *
@@ -19107,6 +19656,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOpenFineTuningPipelines() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -19131,6 +19681,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return openFineTuningPipelinesBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -19157,6 +19708,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19181,6 +19733,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19214,6 +19767,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -19235,6 +19789,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19253,6 +19808,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOpenFineTuningPipelinesFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -19276,6 +19832,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : openFineTuningPipelines_;
         }
       }
+
       /**
        *
        *
@@ -19321,6 +19878,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .RegionalResourceReferencesOrBuilder>
           openPromptTuningPipelineBuilder_;
+
       /**
        *
        *
@@ -19337,6 +19895,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOpenPromptTuningPipeline() {
         return ((bitField0_ & 0x00000040) != 0);
       }
+
       /**
        *
        *
@@ -19362,6 +19921,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return openPromptTuningPipelineBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -19388,6 +19948,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19412,6 +19973,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19445,6 +20007,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -19466,6 +20029,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19484,6 +20048,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOpenPromptTuningPipelineFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -19507,6 +20072,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : openPromptTuningPipeline_;
         }
       }
+
       /**
        *
        *
@@ -19552,6 +20118,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .RegionalResourceReferencesOrBuilder>
           openGenieBuilder_;
+
       /**
        *
        *
@@ -19568,6 +20135,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOpenGenie() {
         return ((bitField0_ & 0x00000080) != 0);
       }
+
       /**
        *
        *
@@ -19593,6 +20161,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return openGenieBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -19619,6 +20188,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19643,6 +20213,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19676,6 +20247,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -19697,6 +20269,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19715,6 +20288,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOpenGenieFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -19738,6 +20312,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : openGenie_;
         }
       }
+
       /**
        *
        *
@@ -19778,6 +20353,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.Builder,
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployOrBuilder>
           deployBuilder_;
+
       /**
        *
        *
@@ -19794,6 +20370,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDeploy() {
         return ((bitField0_ & 0x00000100) != 0);
       }
+
       /**
        *
        *
@@ -19817,6 +20394,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return deployBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -19842,6 +20420,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19865,6 +20444,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19897,6 +20477,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -19918,6 +20499,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -19935,6 +20517,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getDeployFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -19957,6 +20540,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : deploy_;
         }
       }
+
       /**
        *
        *
@@ -19991,6 +20575,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke.Builder,
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGkeOrBuilder>
           deployGkeBuilder_;
+
       /**
        *
        *
@@ -20007,6 +20592,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDeployGke() {
         return ((bitField0_ & 0x00000200) != 0);
       }
+
       /**
        *
        *
@@ -20031,6 +20617,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return deployGkeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -20056,6 +20643,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20079,6 +20667,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20111,6 +20700,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -20132,6 +20722,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20149,6 +20740,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getDeployGkeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -20171,6 +20763,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : deployGke_;
         }
       }
+
       /**
        *
        *
@@ -20210,6 +20803,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .RegionalResourceReferencesOrBuilder>
           openGenerationAiStudioBuilder_;
+
       /**
        *
        *
@@ -20226,6 +20820,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOpenGenerationAiStudio() {
         return ((bitField0_ & 0x00000400) != 0);
       }
+
       /**
        *
        *
@@ -20251,6 +20846,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return openGenerationAiStudioBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -20277,6 +20873,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20301,6 +20898,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20334,6 +20932,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -20355,6 +20954,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20373,6 +20973,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOpenGenerationAiStudioFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -20396,6 +20997,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : openGenerationAiStudio_;
         }
       }
+
       /**
        *
        *
@@ -20441,6 +21043,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .RegionalResourceReferencesOrBuilder>
           requestAccessBuilder_;
+
       /**
        *
        *
@@ -20457,6 +21060,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRequestAccess() {
         return ((bitField0_ & 0x00000800) != 0);
       }
+
       /**
        *
        *
@@ -20482,6 +21086,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return requestAccessBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -20508,6 +21113,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20532,6 +21138,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20565,6 +21172,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -20586,6 +21194,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20604,6 +21213,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getRequestAccessFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -20627,6 +21237,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : requestAccess_;
         }
       }
+
       /**
        *
        *
@@ -20672,6 +21283,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
                   .RegionalResourceReferencesOrBuilder>
           openEvaluationPipelineBuilder_;
+
       /**
        *
        *
@@ -20688,6 +21300,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOpenEvaluationPipeline() {
         return ((bitField0_ & 0x00001000) != 0);
       }
+
       /**
        *
        *
@@ -20713,6 +21326,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return openEvaluationPipelineBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -20739,6 +21353,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20763,6 +21378,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20796,6 +21412,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -20817,6 +21434,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -20835,6 +21453,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOpenEvaluationPipelineFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -20858,6 +21477,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               : openEvaluationPipeline_;
         }
       }
+
       /**
        *
        *
@@ -20964,6 +21584,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -20987,6 +21608,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -21015,6 +21637,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object versionId_ = "";
+
   /**
    *
    *
@@ -21043,6 +21666,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -21074,6 +21698,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OPEN_SOURCE_CATEGORY_FIELD_NUMBER = 7;
   private int openSourceCategory_ = 0;
+
   /**
    *
    *
@@ -21091,6 +21716,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
   public int getOpenSourceCategoryValue() {
     return openSourceCategory_;
   }
+
   /**
    *
    *
@@ -21117,6 +21743,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARENT_FIELD_NUMBER = 14;
   private com.google.cloud.aiplatform.v1beta1.PublisherModel.Parent parent_;
+
   /**
    *
    *
@@ -21135,6 +21762,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasParent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -21155,6 +21783,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.PublisherModel.Parent.getDefaultInstance()
         : parent_;
   }
+
   /**
    *
    *
@@ -21176,6 +21805,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUPPORTED_ACTIONS_FIELD_NUMBER = 19;
   private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction supportedActions_;
+
   /**
    *
    *
@@ -21193,6 +21823,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSupportedActions() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -21212,6 +21843,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.getDefaultInstance()
         : supportedActions_;
   }
+
   /**
    *
    *
@@ -21236,6 +21868,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList frameworks_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -21250,6 +21883,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getFrameworksList() {
     return frameworks_;
   }
+
   /**
    *
    *
@@ -21264,6 +21898,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
   public int getFrameworksCount() {
     return frameworks_.size();
   }
+
   /**
    *
    *
@@ -21279,6 +21914,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getFrameworks(int index) {
     return frameworks_.get(index);
   }
+
   /**
    *
    *
@@ -21297,6 +21933,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAUNCH_STAGE_FIELD_NUMBER = 29;
   private int launchStage_ = 0;
+
   /**
    *
    *
@@ -21314,6 +21951,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
   public int getLaunchStageValue() {
     return launchStage_;
   }
+
   /**
    *
    *
@@ -21338,6 +21976,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VERSION_STATE_FIELD_NUMBER = 37;
   private int versionState_ = 0;
+
   /**
    *
    *
@@ -21355,6 +21994,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
   public int getVersionStateValue() {
     return versionState_;
   }
+
   /**
    *
    *
@@ -21381,6 +22021,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publisherModelTemplate_ = "";
+
   /**
    *
    *
@@ -21408,6 +22049,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -21438,6 +22080,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PREDICT_SCHEMATA_FIELD_NUMBER = 31;
   private com.google.cloud.aiplatform.v1beta1.PredictSchemata predictSchemata_;
+
   /**
    *
    *
@@ -21457,6 +22100,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPredictSchemata() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -21478,6 +22122,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.PredictSchemata.getDefaultInstance()
         : predictSchemata_;
   }
+
   /**
    *
    *
@@ -21775,6 +22420,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -22120,6 +22766,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -22142,6 +22789,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -22164,6 +22812,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -22185,6 +22834,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22202,6 +22852,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22226,6 +22877,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object versionId_ = "";
+
     /**
      *
      *
@@ -22253,6 +22905,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -22280,6 +22933,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -22306,6 +22960,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22328,6 +22983,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22357,6 +23013,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int openSourceCategory_ = 0;
+
     /**
      *
      *
@@ -22374,6 +23031,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public int getOpenSourceCategoryValue() {
       return openSourceCategory_;
     }
+
     /**
      *
      *
@@ -22394,6 +23052,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22417,6 +23076,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1beta1.PublisherModel.OpenSourceCategory.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -22441,6 +23101,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22467,6 +23128,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.PublisherModel.Parent.Builder,
             com.google.cloud.aiplatform.v1beta1.PublisherModel.ParentOrBuilder>
         parentBuilder_;
+
     /**
      *
      *
@@ -22484,6 +23146,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasParent() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -22507,6 +23170,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return parentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -22532,6 +23196,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22555,6 +23220,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22586,6 +23252,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22608,6 +23275,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22625,6 +23293,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getParentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -22646,6 +23315,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             : parent_;
       }
     }
+
     /**
      *
      *
@@ -22681,6 +23351,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Builder,
             com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToActionOrBuilder>
         supportedActionsBuilder_;
+
     /**
      *
      *
@@ -22697,6 +23368,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSupportedActions() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -22719,6 +23391,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return supportedActionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -22744,6 +23417,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22766,6 +23440,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22798,6 +23473,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22819,6 +23495,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22836,6 +23513,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSupportedActionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -22857,6 +23535,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             : supportedActions_;
       }
     }
+
     /**
      *
      *
@@ -22894,6 +23573,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -22909,6 +23589,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       frameworks_.makeImmutable();
       return frameworks_;
     }
+
     /**
      *
      *
@@ -22923,6 +23604,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public int getFrameworksCount() {
       return frameworks_.size();
     }
+
     /**
      *
      *
@@ -22938,6 +23620,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getFrameworks(int index) {
       return frameworks_.get(index);
     }
+
     /**
      *
      *
@@ -22953,6 +23636,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getFrameworksBytes(int index) {
       return frameworks_.getByteString(index);
     }
+
     /**
      *
      *
@@ -22976,6 +23660,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22998,6 +23683,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23017,6 +23703,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23035,6 +23722,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23060,6 +23748,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int launchStage_ = 0;
+
     /**
      *
      *
@@ -23077,6 +23766,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public int getLaunchStageValue() {
       return launchStage_;
     }
+
     /**
      *
      *
@@ -23097,6 +23787,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23118,6 +23809,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1beta1.PublisherModel.LaunchStage.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -23142,6 +23834,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23163,6 +23856,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int versionState_ = 0;
+
     /**
      *
      *
@@ -23180,6 +23874,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public int getVersionStateValue() {
       return versionState_;
     }
+
     /**
      *
      *
@@ -23200,6 +23895,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23221,6 +23917,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1beta1.PublisherModel.VersionState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -23245,6 +23942,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23266,6 +23964,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object publisherModelTemplate_ = "";
+
     /**
      *
      *
@@ -23292,6 +23991,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -23318,6 +24018,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -23343,6 +24044,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23364,6 +24066,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23397,6 +24100,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.PredictSchemata.Builder,
             com.google.cloud.aiplatform.v1beta1.PredictSchemataOrBuilder>
         predictSchemataBuilder_;
+
     /**
      *
      *
@@ -23415,6 +24119,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPredictSchemata() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -23439,6 +24144,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return predictSchemataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -23465,6 +24171,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23489,6 +24196,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23521,6 +24229,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -23544,6 +24253,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23562,6 +24272,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPredictSchemataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -23585,6 +24296,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             : predictSchemata_;
       }
     }
+
     /**
      *
      *

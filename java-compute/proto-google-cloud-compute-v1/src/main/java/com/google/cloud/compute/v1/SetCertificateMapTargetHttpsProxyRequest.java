@@ -34,6 +34,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetCertificateMapTargetHttpsProxyRequest)
     SetCertificateMapTargetHttpsProxyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetCertificateMapTargetHttpsProxyRequest.newBuilder() to construct.
   private SetCertificateMapTargetHttpsProxyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       467639099;
   private com.google.cloud.compute.v1.TargetHttpsProxiesSetCertificateMapRequest
       targetHttpsProxiesSetCertificateMapRequestResource_;
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
   public boolean hasTargetHttpsProxiesSetCertificateMapRequestResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
             .getDefaultInstance()
         : targetHttpsProxiesSetCertificateMapRequestResource_;
   }
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetHttpsProxy_ = "";
+
   /**
    *
    *
@@ -278,6 +288,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -504,6 +515,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -762,6 +774,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -786,6 +799,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -810,6 +824,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -833,6 +848,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +868,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +895,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -892,6 +910,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -914,6 +933,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -936,6 +956,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -957,6 +978,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +996,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1027,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
             com.google.cloud.compute.v1.TargetHttpsProxiesSetCertificateMapRequest.Builder,
             com.google.cloud.compute.v1.TargetHttpsProxiesSetCertificateMapRequestOrBuilder>
         targetHttpsProxiesSetCertificateMapRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1020,6 +1044,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
     public boolean hasTargetHttpsProxiesSetCertificateMapRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1044,6 +1069,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
         return targetHttpsProxiesSetCertificateMapRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1095,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1120,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1153,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1175,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1193,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       onChanged();
       return getTargetHttpsProxiesSetCertificateMapRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1185,6 +1216,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
             : targetHttpsProxiesSetCertificateMapRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1216,6 +1248,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
     }
 
     private java.lang.Object targetHttpsProxy_ = "";
+
     /**
      *
      *
@@ -1238,6 +1271,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1260,6 +1294,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1281,6 +1316,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1334,7 @@ public final class SetCertificateMapTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

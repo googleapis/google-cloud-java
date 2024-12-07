@@ -37,6 +37,7 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return Whether the enableEachUniqueValue field is set.
    */
   boolean hasEnableEachUniqueValue();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return Whether the value field is set.
    */
   boolean hasValue();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *

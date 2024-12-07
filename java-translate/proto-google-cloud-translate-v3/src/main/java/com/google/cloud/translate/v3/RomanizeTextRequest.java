@@ -33,6 +33,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.RomanizeTextRequest)
     RomanizeTextRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RomanizeTextRequest.newBuilder() to construct.
   private RomanizeTextRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList contents_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getContentsList() {
     return contents_;
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
   public int getContentsCount() {
     return contents_.size();
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
   public java.lang.String getContents(int index) {
     return contents_.get(index);
   }
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceLanguageCode_ = "";
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -439,6 +448,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -660,6 +670,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -691,6 +702,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -722,6 +734,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -752,6 +765,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +792,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +834,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -834,6 +850,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
       contents_.makeImmutable();
       return contents_;
     }
+
     /**
      *
      *
@@ -848,6 +865,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
     public int getContentsCount() {
       return contents_.size();
     }
+
     /**
      *
      *
@@ -863,6 +881,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
     public java.lang.String getContents(int index) {
       return contents_.get(index);
     }
+
     /**
      *
      *
@@ -878,6 +897,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getContentsBytes(int index) {
       return contents_.getByteString(index);
     }
+
     /**
      *
      *
@@ -901,6 +921,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +944,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +964,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +983,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1009,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object sourceLanguageCode_ = "";
+
     /**
      *
      *
@@ -1010,6 +1035,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1035,6 +1061,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1059,6 +1086,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1107,7 @@ public final class RomanizeTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

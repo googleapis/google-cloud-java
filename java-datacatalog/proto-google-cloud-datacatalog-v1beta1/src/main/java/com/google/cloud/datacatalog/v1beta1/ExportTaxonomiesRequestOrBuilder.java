@@ -39,6 +39,7 @@ public interface ExportTaxonomiesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ExportTaxonomiesRequestOrBuilder
    * @return A list containing the taxonomies.
    */
   java.util.List<java.lang.String> getTaxonomiesList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ExportTaxonomiesRequestOrBuilder
    * @return The count of taxonomies.
    */
   int getTaxonomiesCount();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ExportTaxonomiesRequestOrBuilder
    * @return The taxonomies at the given index.
    */
   java.lang.String getTaxonomies(int index);
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface ExportTaxonomiesRequestOrBuilder
    * @return Whether the serializedTaxonomies field is set.
    */
   boolean hasSerializedTaxonomies();
+
   /**
    *
    *

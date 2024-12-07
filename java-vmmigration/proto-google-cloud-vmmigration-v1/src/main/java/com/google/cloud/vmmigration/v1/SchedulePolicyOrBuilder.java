@@ -36,6 +36,7 @@ public interface SchedulePolicyOrBuilder
    * @return Whether the idleDuration field is set.
    */
   boolean hasIdleDuration();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SchedulePolicyOrBuilder
    * @return The idleDuration.
    */
   com.google.protobuf.Duration getIdleDuration();
+
   /**
    *
    *

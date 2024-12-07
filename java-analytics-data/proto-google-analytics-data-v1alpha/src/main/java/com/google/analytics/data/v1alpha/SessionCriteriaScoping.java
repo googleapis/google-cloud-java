@@ -75,6 +75,7 @@ public enum SessionCriteriaScoping implements com.google.protobuf.ProtocolMessag
    * <code>SESSION_CRITERIA_SCOPING_UNSPECIFIED = 0;</code>
    */
   public static final int SESSION_CRITERIA_SCOPING_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public enum SessionCriteriaScoping implements com.google.protobuf.ProtocolMessag
    * <code>SESSION_CRITERIA_WITHIN_SAME_EVENT = 1;</code>
    */
   public static final int SESSION_CRITERIA_WITHIN_SAME_EVENT_VALUE = 1;
+
   /**
    *
    *

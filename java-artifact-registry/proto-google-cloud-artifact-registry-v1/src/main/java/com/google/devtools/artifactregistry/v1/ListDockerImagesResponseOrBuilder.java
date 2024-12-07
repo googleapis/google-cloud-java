@@ -34,6 +34,7 @@ public interface ListDockerImagesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.DockerImage docker_images = 1;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1.DockerImage> getDockerImagesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDockerImagesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.DockerImage docker_images = 1;</code>
    */
   com.google.devtools.artifactregistry.v1.DockerImage getDockerImages(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDockerImagesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.DockerImage docker_images = 1;</code>
    */
   int getDockerImagesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDockerImagesResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1.DockerImageOrBuilder>
       getDockerImagesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListDockerImagesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface ListAccessApprovalRequestsResponseOrBuilder
    */
   java.util.List<com.google.cloud.cloudcontrolspartner.v1.AccessApprovalRequest>
       getAccessApprovalRequestsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListAccessApprovalRequestsResponseOrBuilder
    */
   com.google.cloud.cloudcontrolspartner.v1.AccessApprovalRequest getAccessApprovalRequests(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ListAccessApprovalRequestsResponseOrBuilder
    * </code>
    */
   int getAccessApprovalRequestsCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface ListAccessApprovalRequestsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.cloudcontrolspartner.v1.AccessApprovalRequestOrBuilder>
       getAccessApprovalRequestsOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface ListAccessApprovalRequestsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface ListAccessApprovalRequestsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public interface ListAccessApprovalRequestsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface ListAccessApprovalRequestsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

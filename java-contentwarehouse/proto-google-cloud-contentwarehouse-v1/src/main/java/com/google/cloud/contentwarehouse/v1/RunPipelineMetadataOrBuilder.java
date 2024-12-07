@@ -62,6 +62,7 @@ public interface RunPipelineMetadataOrBuilder
    * @return Whether the userInfo field is set.
    */
   boolean hasUserInfo();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface RunPipelineMetadataOrBuilder
    * @return The userInfo.
    */
   com.google.cloud.contentwarehouse.v1.UserInfo getUserInfo();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface RunPipelineMetadataOrBuilder
    * @return Whether the gcsIngestPipelineMetadata field is set.
    */
   boolean hasGcsIngestPipelineMetadata();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface RunPipelineMetadataOrBuilder
    */
   com.google.cloud.contentwarehouse.v1.RunPipelineMetadata.GcsIngestPipelineMetadata
       getGcsIngestPipelineMetadata();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface RunPipelineMetadataOrBuilder
    * @return Whether the exportToCdwPipelineMetadata field is set.
    */
   boolean hasExportToCdwPipelineMetadata();
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface RunPipelineMetadataOrBuilder
    */
   com.google.cloud.contentwarehouse.v1.RunPipelineMetadata.ExportToCdwPipelineMetadata
       getExportToCdwPipelineMetadata();
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public interface RunPipelineMetadataOrBuilder
    * @return Whether the processWithDocAiPipelineMetadata field is set.
    */
   boolean hasProcessWithDocAiPipelineMetadata();
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public interface RunPipelineMetadataOrBuilder
    */
   com.google.cloud.contentwarehouse.v1.RunPipelineMetadata.ProcessWithDocAiPipelineMetadata
       getProcessWithDocAiPipelineMetadata();
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public interface RunPipelineMetadataOrBuilder
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.RunPipelineMetadata.IndividualDocumentStatus>
       getIndividualDocumentStatusesList();
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public interface RunPipelineMetadataOrBuilder
    */
   com.google.cloud.contentwarehouse.v1.RunPipelineMetadata.IndividualDocumentStatus
       getIndividualDocumentStatuses(int index);
+
   /**
    *
    *
@@ -252,6 +262,7 @@ public interface RunPipelineMetadataOrBuilder
    * </code>
    */
   int getIndividualDocumentStatusesCount();
+
   /**
    *
    *
@@ -268,6 +279,7 @@ public interface RunPipelineMetadataOrBuilder
               com.google.cloud.contentwarehouse.v1.RunPipelineMetadata
                   .IndividualDocumentStatusOrBuilder>
       getIndividualDocumentStatusesOrBuilderList();
+
   /**
    *
    *

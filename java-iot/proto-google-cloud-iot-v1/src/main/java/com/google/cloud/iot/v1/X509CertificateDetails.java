@@ -33,6 +33,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.X509CertificateDetails)
     X509CertificateDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use X509CertificateDetails.newBuilder() to construct.
   private X509CertificateDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object issuer_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subject_ = "";
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
 
   public static final int START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
 
   public static final int EXPIRY_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp expiryTime_;
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
   public boolean hasExpiryTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +257,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getExpiryTime() {
     return expiryTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiryTime_;
   }
+
   /**
    *
    *
@@ -265,6 +276,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object signatureAlgorithm_ = "";
+
   /**
    *
    *
@@ -288,6 +300,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -316,6 +329,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicKeyType_ = "";
+
   /**
    *
    *
@@ -339,6 +353,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -577,6 +592,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -853,6 +869,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object issuer_ = "";
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -897,6 +915,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -918,6 +937,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +955,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +980,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object subject_ = "";
+
     /**
      *
      *
@@ -981,6 +1003,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1026,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1048,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1066,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1096,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -1084,6 +1111,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1102,6 +1130,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1153,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1173,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1201,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1221,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1236,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1219,6 +1253,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1251,6 +1286,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expiryTimeBuilder_;
+
     /**
      *
      *
@@ -1265,6 +1301,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     public boolean hasExpiryTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1285,6 +1322,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         return expiryTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1307,6 +1345,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1326,6 +1365,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1353,6 +1393,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1413,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1386,6 +1428,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return getExpiryTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1404,6 +1447,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
             : expiryTime_;
       }
     }
+
     /**
      *
      *
@@ -1431,6 +1475,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object signatureAlgorithm_ = "";
+
     /**
      *
      *
@@ -1453,6 +1498,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1475,6 +1521,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1496,6 +1543,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1513,6 +1561,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1537,6 +1586,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object publicKeyType_ = "";
+
     /**
      *
      *
@@ -1559,6 +1609,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1581,6 +1632,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1602,6 +1654,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1619,6 +1672,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

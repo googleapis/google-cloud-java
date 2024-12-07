@@ -39,6 +39,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule)
     RuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Rule.newBuilder() to construct.
   private Rule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -126,6 +127,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The productsFilter.
      */
     java.lang.String getProductsFilter();
+
     /**
      *
      *
@@ -152,6 +154,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getProductsFilterBytes();
   }
+
   /**
    *
    *
@@ -166,6 +169,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.BoostAction)
       BoostActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BoostAction.newBuilder() to construct.
     private BoostAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -198,6 +202,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BOOST_FIELD_NUMBER = 1;
     private float boost_ = 0F;
+
     /**
      *
      *
@@ -234,6 +239,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object productsFilter_ = "";
+
     /**
      *
      *
@@ -270,6 +276,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -477,6 +484,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -677,6 +685,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private float boost_;
+
       /**
        *
        *
@@ -708,6 +717,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public float getBoost() {
         return boost_;
       }
+
       /**
        *
        *
@@ -743,6 +753,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -778,6 +789,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object productsFilter_ = "";
+
       /**
        *
        *
@@ -813,6 +825,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -848,6 +861,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -882,6 +896,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -912,6 +927,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1042,6 +1058,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The filter.
      */
     java.lang.String getFilter();
+
     /**
      *
      *
@@ -1068,6 +1085,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getFilterBytes();
   }
+
   /**
    *
    *
@@ -1097,6 +1115,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.FilterAction)
       FilterActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FilterAction.newBuilder() to construct.
     private FilterAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1131,6 +1150,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -1167,6 +1187,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1364,6 +1385,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1566,6 +1588,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object filter_ = "";
+
       /**
        *
        *
@@ -1601,6 +1624,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1636,6 +1660,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1670,6 +1695,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1700,6 +1726,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1817,6 +1844,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The redirectUri.
      */
     java.lang.String getRedirectUri();
+
     /**
      *
      *
@@ -1830,6 +1858,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getRedirectUriBytes();
   }
+
   /**
    *
    *
@@ -1850,6 +1879,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.RedirectAction)
       RedirectActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RedirectAction.newBuilder() to construct.
     private RedirectAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1884,6 +1914,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object redirectUri_ = "";
+
     /**
      *
      *
@@ -1907,6 +1938,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2092,6 +2124,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2285,6 +2318,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object redirectUri_ = "";
+
       /**
        *
        *
@@ -2307,6 +2341,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2329,6 +2364,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2350,6 +2386,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2367,6 +2404,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2473,6 +2511,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the synonyms.
      */
     java.util.List<java.lang.String> getSynonymsList();
+
     /**
      *
      *
@@ -2487,6 +2526,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of synonyms.
      */
     int getSynonymsCount();
+
     /**
      *
      *
@@ -2502,6 +2542,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The synonyms at the given index.
      */
     java.lang.String getSynonyms(int index);
+
     /**
      *
      *
@@ -2518,6 +2559,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getSynonymsBytes(int index);
   }
+
   /**
    *
    *
@@ -2536,6 +2578,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.TwowaySynonymsAction)
       TwowaySynonymsActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TwowaySynonymsAction.newBuilder() to construct.
     private TwowaySynonymsAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2571,6 +2614,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList synonyms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -2587,6 +2631,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getSynonymsList() {
       return synonyms_;
     }
+
     /**
      *
      *
@@ -2603,6 +2648,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getSynonymsCount() {
       return synonyms_.size();
     }
+
     /**
      *
      *
@@ -2620,6 +2666,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSynonyms(int index) {
       return synonyms_.get(index);
     }
+
     /**
      *
      *
@@ -2806,6 +2853,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3012,6 +3060,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -3029,6 +3078,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         synonyms_.makeImmutable();
         return synonyms_;
       }
+
       /**
        *
        *
@@ -3045,6 +3095,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getSynonymsCount() {
         return synonyms_.size();
       }
+
       /**
        *
        *
@@ -3062,6 +3113,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getSynonyms(int index) {
         return synonyms_.get(index);
       }
+
       /**
        *
        *
@@ -3079,6 +3131,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getSynonymsBytes(int index) {
         return synonyms_.getByteString(index);
       }
+
       /**
        *
        *
@@ -3104,6 +3157,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3128,6 +3182,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3149,6 +3204,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3169,6 +3225,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3279,6 +3336,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the queryTerms.
      */
     java.util.List<java.lang.String> getQueryTermsList();
+
     /**
      *
      *
@@ -3294,6 +3352,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of queryTerms.
      */
     int getQueryTermsCount();
+
     /**
      *
      *
@@ -3310,6 +3369,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The queryTerms at the given index.
      */
     java.lang.String getQueryTerms(int index);
+
     /**
      *
      *
@@ -3341,6 +3401,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the synonyms.
      */
     java.util.List<java.lang.String> getSynonymsList();
+
     /**
      *
      *
@@ -3355,6 +3416,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of synonyms.
      */
     int getSynonymsCount();
+
     /**
      *
      *
@@ -3370,6 +3432,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The synonyms at the given index.
      */
     java.lang.String getSynonyms(int index);
+
     /**
      *
      *
@@ -3398,6 +3461,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the onewayTerms.
      */
     java.util.List<java.lang.String> getOnewayTermsList();
+
     /**
      *
      *
@@ -3410,6 +3474,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of onewayTerms.
      */
     int getOnewayTermsCount();
+
     /**
      *
      *
@@ -3423,6 +3488,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The onewayTerms at the given index.
      */
     java.lang.String getOnewayTerms(int index);
+
     /**
      *
      *
@@ -3437,6 +3503,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getOnewayTermsBytes(int index);
   }
+
   /**
    *
    *
@@ -3455,6 +3522,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.OnewaySynonymsAction)
       OnewaySynonymsActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OnewaySynonymsAction.newBuilder() to construct.
     private OnewaySynonymsAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3492,6 +3560,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList queryTerms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -3509,6 +3578,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getQueryTermsList() {
       return queryTerms_;
     }
+
     /**
      *
      *
@@ -3526,6 +3596,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getQueryTermsCount() {
       return queryTerms_.size();
     }
+
     /**
      *
      *
@@ -3544,6 +3615,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getQueryTerms(int index) {
       return queryTerms_.get(index);
     }
+
     /**
      *
      *
@@ -3568,6 +3640,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList synonyms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -3584,6 +3657,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getSynonymsList() {
       return synonyms_;
     }
+
     /**
      *
      *
@@ -3600,6 +3674,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getSynonymsCount() {
       return synonyms_.size();
     }
+
     /**
      *
      *
@@ -3617,6 +3692,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSynonyms(int index) {
       return synonyms_.get(index);
     }
+
     /**
      *
      *
@@ -3640,6 +3716,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList onewayTerms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -3654,6 +3731,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getOnewayTermsList() {
       return onewayTerms_;
     }
+
     /**
      *
      *
@@ -3668,6 +3746,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getOnewayTermsCount() {
       return onewayTerms_.size();
     }
+
     /**
      *
      *
@@ -3683,6 +3762,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getOnewayTerms(int index) {
       return onewayTerms_.get(index);
     }
+
     /**
      *
      *
@@ -3899,6 +3979,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4149,6 +4230,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -4167,6 +4249,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         queryTerms_.makeImmutable();
         return queryTerms_;
       }
+
       /**
        *
        *
@@ -4184,6 +4267,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getQueryTermsCount() {
         return queryTerms_.size();
       }
+
       /**
        *
        *
@@ -4202,6 +4286,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getQueryTerms(int index) {
         return queryTerms_.get(index);
       }
+
       /**
        *
        *
@@ -4220,6 +4305,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getQueryTermsBytes(int index) {
         return queryTerms_.getByteString(index);
       }
+
       /**
        *
        *
@@ -4246,6 +4332,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4271,6 +4358,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4293,6 +4381,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4314,6 +4403,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4350,6 +4440,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -4367,6 +4458,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         synonyms_.makeImmutable();
         return synonyms_;
       }
+
       /**
        *
        *
@@ -4383,6 +4475,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getSynonymsCount() {
         return synonyms_.size();
       }
+
       /**
        *
        *
@@ -4400,6 +4493,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getSynonyms(int index) {
         return synonyms_.get(index);
       }
+
       /**
        *
        *
@@ -4417,6 +4511,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getSynonymsBytes(int index) {
         return synonyms_.getByteString(index);
       }
+
       /**
        *
        *
@@ -4442,6 +4537,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4466,6 +4562,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4487,6 +4584,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4507,6 +4605,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4542,6 +4641,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
@@ -4557,6 +4657,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onewayTerms_.makeImmutable();
         return onewayTerms_;
       }
+
       /**
        *
        *
@@ -4571,6 +4672,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getOnewayTermsCount() {
         return onewayTerms_.size();
       }
+
       /**
        *
        *
@@ -4586,6 +4688,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getOnewayTerms(int index) {
         return onewayTerms_.get(index);
       }
+
       /**
        *
        *
@@ -4601,6 +4704,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getOnewayTermsBytes(int index) {
         return onewayTerms_.getByteString(index);
       }
+
       /**
        *
        *
@@ -4624,6 +4728,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4646,6 +4751,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4665,6 +4771,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4683,6 +4790,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4790,6 +4898,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the queryTerms.
      */
     java.util.List<java.lang.String> getQueryTermsList();
+
     /**
      *
      *
@@ -4804,6 +4913,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of queryTerms.
      */
     int getQueryTermsCount();
+
     /**
      *
      *
@@ -4819,6 +4929,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The queryTerms at the given index.
      */
     java.lang.String getQueryTerms(int index);
+
     /**
      *
      *
@@ -4848,6 +4959,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the doNotAssociateTerms.
      */
     java.util.List<java.lang.String> getDoNotAssociateTermsList();
+
     /**
      *
      *
@@ -4861,6 +4973,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of doNotAssociateTerms.
      */
     int getDoNotAssociateTermsCount();
+
     /**
      *
      *
@@ -4875,6 +4988,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The doNotAssociateTerms at the given index.
      */
     java.lang.String getDoNotAssociateTerms(int index);
+
     /**
      *
      *
@@ -4902,6 +5016,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the terms.
      */
     java.util.List<java.lang.String> getTermsList();
+
     /**
      *
      *
@@ -4914,6 +5029,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of terms.
      */
     int getTermsCount();
+
     /**
      *
      *
@@ -4927,6 +5043,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The terms at the given index.
      */
     java.lang.String getTerms(int index);
+
     /**
      *
      *
@@ -4941,6 +5058,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTermsBytes(int index);
   }
+
   /**
    *
    *
@@ -4957,6 +5075,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.DoNotAssociateAction)
       DoNotAssociateActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DoNotAssociateAction.newBuilder() to construct.
     private DoNotAssociateAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4994,6 +5113,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList queryTerms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -5010,6 +5130,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getQueryTermsList() {
       return queryTerms_;
     }
+
     /**
      *
      *
@@ -5026,6 +5147,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getQueryTermsCount() {
       return queryTerms_.size();
     }
+
     /**
      *
      *
@@ -5043,6 +5165,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getQueryTerms(int index) {
       return queryTerms_.get(index);
     }
+
     /**
      *
      *
@@ -5066,6 +5189,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList doNotAssociateTerms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -5081,6 +5205,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getDoNotAssociateTermsList() {
       return doNotAssociateTerms_;
     }
+
     /**
      *
      *
@@ -5096,6 +5221,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getDoNotAssociateTermsCount() {
       return doNotAssociateTerms_.size();
     }
+
     /**
      *
      *
@@ -5112,6 +5238,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDoNotAssociateTerms(int index) {
       return doNotAssociateTerms_.get(index);
     }
+
     /**
      *
      *
@@ -5134,6 +5261,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList terms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -5148,6 +5276,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getTermsList() {
       return terms_;
     }
+
     /**
      *
      *
@@ -5162,6 +5291,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getTermsCount() {
       return terms_.size();
     }
+
     /**
      *
      *
@@ -5177,6 +5307,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTerms(int index) {
       return terms_.get(index);
     }
+
     /**
      *
      *
@@ -5394,6 +5525,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5642,6 +5774,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -5659,6 +5792,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         queryTerms_.makeImmutable();
         return queryTerms_;
       }
+
       /**
        *
        *
@@ -5675,6 +5809,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getQueryTermsCount() {
         return queryTerms_.size();
       }
+
       /**
        *
        *
@@ -5692,6 +5827,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getQueryTerms(int index) {
         return queryTerms_.get(index);
       }
+
       /**
        *
        *
@@ -5709,6 +5845,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getQueryTermsBytes(int index) {
         return queryTerms_.getByteString(index);
       }
+
       /**
        *
        *
@@ -5734,6 +5871,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5758,6 +5896,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5779,6 +5918,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5799,6 +5939,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5834,6 +5975,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -5850,6 +5992,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         doNotAssociateTerms_.makeImmutable();
         return doNotAssociateTerms_;
       }
+
       /**
        *
        *
@@ -5865,6 +6008,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getDoNotAssociateTermsCount() {
         return doNotAssociateTerms_.size();
       }
+
       /**
        *
        *
@@ -5881,6 +6025,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getDoNotAssociateTerms(int index) {
         return doNotAssociateTerms_.get(index);
       }
+
       /**
        *
        *
@@ -5897,6 +6042,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getDoNotAssociateTermsBytes(int index) {
         return doNotAssociateTerms_.getByteString(index);
       }
+
       /**
        *
        *
@@ -5921,6 +6067,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5944,6 +6091,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5964,6 +6112,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5983,6 +6132,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6017,6 +6167,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
@@ -6032,6 +6183,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         terms_.makeImmutable();
         return terms_;
       }
+
       /**
        *
        *
@@ -6046,6 +6198,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getTermsCount() {
         return terms_.size();
       }
+
       /**
        *
        *
@@ -6061,6 +6214,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getTerms(int index) {
         return terms_.get(index);
       }
+
       /**
        *
        *
@@ -6076,6 +6230,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getTermsBytes(int index) {
         return terms_.getByteString(index);
       }
+
       /**
        *
        *
@@ -6099,6 +6254,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6121,6 +6277,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6140,6 +6297,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6158,6 +6316,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6265,6 +6424,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the queryTerms.
      */
     java.util.List<java.lang.String> getQueryTermsList();
+
     /**
      *
      *
@@ -6279,6 +6439,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of queryTerms.
      */
     int getQueryTermsCount();
+
     /**
      *
      *
@@ -6294,6 +6455,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The queryTerms at the given index.
      */
     java.lang.String getQueryTerms(int index);
+
     /**
      *
      *
@@ -6322,6 +6484,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The replacementTerm.
      */
     java.lang.String getReplacementTerm();
+
     /**
      *
      *
@@ -6347,6 +6510,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The term.
      */
     java.lang.String getTerm();
+
     /**
      *
      *
@@ -6360,6 +6524,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTermBytes();
   }
+
   /**
    *
    *
@@ -6376,6 +6541,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.ReplacementAction)
       ReplacementActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ReplacementAction.newBuilder() to construct.
     private ReplacementAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6413,6 +6579,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList queryTerms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -6429,6 +6596,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getQueryTermsList() {
       return queryTerms_;
     }
+
     /**
      *
      *
@@ -6445,6 +6613,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getQueryTermsCount() {
       return queryTerms_.size();
     }
+
     /**
      *
      *
@@ -6462,6 +6631,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getQueryTerms(int index) {
       return queryTerms_.get(index);
     }
+
     /**
      *
      *
@@ -6484,6 +6654,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object replacementTerm_ = "";
+
     /**
      *
      *
@@ -6507,6 +6678,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -6535,6 +6707,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object term_ = "";
+
     /**
      *
      *
@@ -6558,6 +6731,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -6768,6 +6942,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7002,6 +7177,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -7019,6 +7195,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         queryTerms_.makeImmutable();
         return queryTerms_;
       }
+
       /**
        *
        *
@@ -7035,6 +7212,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getQueryTermsCount() {
         return queryTerms_.size();
       }
+
       /**
        *
        *
@@ -7052,6 +7230,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getQueryTerms(int index) {
         return queryTerms_.get(index);
       }
+
       /**
        *
        *
@@ -7069,6 +7248,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getQueryTermsBytes(int index) {
         return queryTerms_.getByteString(index);
       }
+
       /**
        *
        *
@@ -7094,6 +7274,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7118,6 +7299,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7139,6 +7321,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7159,6 +7342,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7186,6 +7370,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object replacementTerm_ = "";
+
       /**
        *
        *
@@ -7208,6 +7393,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7230,6 +7416,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7251,6 +7438,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7268,6 +7456,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7292,6 +7481,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object term_ = "";
+
       /**
        *
        *
@@ -7314,6 +7504,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7336,6 +7527,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7357,6 +7549,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7374,6 +7567,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7478,6 +7672,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ignoreTerms.
      */
     java.util.List<java.lang.String> getIgnoreTermsList();
+
     /**
      *
      *
@@ -7490,6 +7685,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of ignoreTerms.
      */
     int getIgnoreTermsCount();
+
     /**
      *
      *
@@ -7503,6 +7699,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The ignoreTerms at the given index.
      */
     java.lang.String getIgnoreTerms(int index);
+
     /**
      *
      *
@@ -7517,6 +7714,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getIgnoreTermsBytes(int index);
   }
+
   /**
    *
    *
@@ -7532,6 +7730,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.IgnoreAction)
       IgnoreActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IgnoreAction.newBuilder() to construct.
     private IgnoreAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7567,6 +7766,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList ignoreTerms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -7581,6 +7781,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getIgnoreTermsList() {
       return ignoreTerms_;
     }
+
     /**
      *
      *
@@ -7595,6 +7796,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getIgnoreTermsCount() {
       return ignoreTerms_.size();
     }
+
     /**
      *
      *
@@ -7610,6 +7812,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getIgnoreTerms(int index) {
       return ignoreTerms_.get(index);
     }
+
     /**
      *
      *
@@ -7793,6 +7996,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7996,6 +8200,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -8011,6 +8216,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         ignoreTerms_.makeImmutable();
         return ignoreTerms_;
       }
+
       /**
        *
        *
@@ -8025,6 +8231,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getIgnoreTermsCount() {
         return ignoreTerms_.size();
       }
+
       /**
        *
        *
@@ -8040,6 +8247,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getIgnoreTerms(int index) {
         return ignoreTerms_.get(index);
       }
+
       /**
        *
        *
@@ -8055,6 +8263,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getIgnoreTermsBytes(int index) {
         return ignoreTerms_.getByteString(index);
       }
+
       /**
        *
        *
@@ -8078,6 +8287,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8100,6 +8310,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8119,6 +8330,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8137,6 +8349,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8245,6 +8458,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment>
         getFacetPositionAdjustmentsList();
+
     /**
      *
      *
@@ -8259,6 +8473,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment
         getFacetPositionAdjustments(int index);
+
     /**
      *
      *
@@ -8272,6 +8487,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getFacetPositionAdjustmentsCount();
+
     /**
      *
      *
@@ -8289,6 +8505,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction
                     .FacetPositionAdjustmentOrBuilder>
         getFacetPositionAdjustmentsOrBuilderList();
+
     /**
      *
      *
@@ -8304,6 +8521,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustmentOrBuilder
         getFacetPositionAdjustmentsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -8344,6 +8562,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction)
       ForceReturnFacetActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ForceReturnFacetAction.newBuilder() to construct.
     private ForceReturnFacetAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8393,6 +8612,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return The attributeName.
        */
       java.lang.String getAttributeName();
+
       /**
        *
        *
@@ -8422,6 +8642,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        */
       int getPosition();
     }
+
     /**
      *
      *
@@ -8438,6 +8659,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment)
         FacetPositionAdjustmentOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use FacetPositionAdjustment.newBuilder() to construct.
       private FacetPositionAdjustment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -8474,6 +8696,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object attributeName_ = "";
+
       /**
        *
        *
@@ -8499,6 +8722,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -8527,6 +8751,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
       public static final int POSITION_FIELD_NUMBER = 2;
       private int position_ = 0;
+
       /**
        *
        *
@@ -8738,6 +8963,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -8961,6 +9187,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object attributeName_ = "";
+
         /**
          *
          *
@@ -8985,6 +9212,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -9009,6 +9237,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -9032,6 +9261,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9051,6 +9281,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9077,6 +9308,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int position_;
+
         /**
          *
          *
@@ -9093,6 +9325,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         public int getPosition() {
           return position_;
         }
+
         /**
          *
          *
@@ -9113,6 +9346,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9209,6 +9443,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment>
         facetPositionAdjustments_;
+
     /**
      *
      *
@@ -9227,6 +9462,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getFacetPositionAdjustmentsList() {
       return facetPositionAdjustments_;
     }
+
     /**
      *
      *
@@ -9247,6 +9483,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getFacetPositionAdjustmentsOrBuilderList() {
       return facetPositionAdjustments_;
     }
+
     /**
      *
      *
@@ -9263,6 +9500,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getFacetPositionAdjustmentsCount() {
       return facetPositionAdjustments_.size();
     }
+
     /**
      *
      *
@@ -9280,6 +9518,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getFacetPositionAdjustments(int index) {
       return facetPositionAdjustments_.get(index);
     }
+
     /**
      *
      *
@@ -9465,6 +9704,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -9774,6 +10014,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return facetPositionAdjustmentsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -9793,6 +10034,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return facetPositionAdjustmentsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -9813,6 +10055,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return facetPositionAdjustmentsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -9841,6 +10084,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -9867,6 +10111,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -9894,6 +10139,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -9922,6 +10168,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -9947,6 +10194,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -9973,6 +10221,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -10000,6 +10249,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -10022,6 +10272,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -10044,6 +10295,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -10061,6 +10313,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           getFacetPositionAdjustmentsBuilder(int index) {
         return getFacetPositionAdjustmentsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -10082,6 +10335,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return facetPositionAdjustmentsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -10105,6 +10359,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(facetPositionAdjustments_);
         }
       }
+
       /**
        *
        *
@@ -10125,6 +10380,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -10146,6 +10402,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -10275,6 +10532,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the attributeNames.
      */
     java.util.List<java.lang.String> getAttributeNamesList();
+
     /**
      *
      *
@@ -10290,6 +10548,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of attributeNames.
      */
     int getAttributeNamesCount();
+
     /**
      *
      *
@@ -10306,6 +10565,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The attributeNames at the given index.
      */
     java.lang.String getAttributeNames(int index);
+
     /**
      *
      *
@@ -10323,6 +10583,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getAttributeNamesBytes(int index);
   }
+
   /**
    *
    *
@@ -10354,6 +10615,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.RemoveFacetAction)
       RemoveFacetActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RemoveFacetAction.newBuilder() to construct.
     private RemoveFacetAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10389,6 +10651,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList attributeNames_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -10406,6 +10669,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getAttributeNamesList() {
       return attributeNames_;
     }
+
     /**
      *
      *
@@ -10423,6 +10687,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getAttributeNamesCount() {
       return attributeNames_.size();
     }
+
     /**
      *
      *
@@ -10441,6 +10706,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAttributeNames(int index) {
       return attributeNames_.get(index);
     }
+
     /**
      *
      *
@@ -10628,6 +10894,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -10847,6 +11114,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -10865,6 +11133,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         attributeNames_.makeImmutable();
         return attributeNames_;
       }
+
       /**
        *
        *
@@ -10882,6 +11151,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getAttributeNamesCount() {
         return attributeNames_.size();
       }
+
       /**
        *
        *
@@ -10900,6 +11170,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getAttributeNames(int index) {
         return attributeNames_.get(index);
       }
+
       /**
        *
        *
@@ -10918,6 +11189,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getAttributeNamesBytes(int index) {
         return attributeNames_.getByteString(index);
       }
+
       /**
        *
        *
@@ -10944,6 +11216,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10969,6 +11242,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10991,6 +11265,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11012,6 +11287,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11129,6 +11405,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     private ActionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -11178,6 +11455,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOST_ACTION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -11193,6 +11471,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoostAction() {
     return actionCase_ == 2;
   }
+
   /**
    *
    *
@@ -11211,6 +11490,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.BoostAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -11229,6 +11509,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REDIRECT_ACTION_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -11244,6 +11525,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRedirectAction() {
     return actionCase_ == 3;
   }
+
   /**
    *
    *
@@ -11262,6 +11544,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.RedirectAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -11280,6 +11563,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ONEWAY_SYNONYMS_ACTION_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -11296,6 +11580,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOnewaySynonymsAction() {
     return actionCase_ == 6;
   }
+
   /**
    *
    *
@@ -11315,6 +11600,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.OnewaySynonymsAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -11335,6 +11621,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DO_NOT_ASSOCIATE_ACTION_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -11351,6 +11638,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDoNotAssociateAction() {
     return actionCase_ == 7;
   }
+
   /**
    *
    *
@@ -11370,6 +11658,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.DoNotAssociateAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -11390,6 +11679,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPLACEMENT_ACTION_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -11405,6 +11695,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReplacementAction() {
     return actionCase_ == 8;
   }
+
   /**
    *
    *
@@ -11423,6 +11714,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.ReplacementAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -11442,6 +11734,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IGNORE_ACTION_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -11457,6 +11750,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIgnoreAction() {
     return actionCase_ == 9;
   }
+
   /**
    *
    *
@@ -11475,6 +11769,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.IgnoreAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -11493,6 +11788,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILTER_ACTION_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -11508,6 +11804,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFilterAction() {
     return actionCase_ == 10;
   }
+
   /**
    *
    *
@@ -11526,6 +11823,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.FilterAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -11544,6 +11842,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TWOWAY_SYNONYMS_ACTION_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -11560,6 +11859,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTwowaySynonymsAction() {
     return actionCase_ == 11;
   }
+
   /**
    *
    *
@@ -11579,6 +11879,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.TwowaySynonymsAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -11599,6 +11900,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORCE_RETURN_FACET_ACTION_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -11615,6 +11917,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasForceReturnFacetAction() {
     return actionCase_ == 12;
   }
+
   /**
    *
    *
@@ -11634,6 +11937,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -11654,6 +11958,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REMOVE_FACET_ACTION_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -11669,6 +11974,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRemoveFacetAction() {
     return actionCase_ == 13;
   }
+
   /**
    *
    *
@@ -11687,6 +11993,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.RemoveFacetAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -11707,6 +12014,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONDITION_FIELD_NUMBER = 1;
   private com.google.cloud.retail.v2alpha.Condition condition_;
+
   /**
    *
    *
@@ -11725,6 +12033,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCondition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -11745,6 +12054,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2alpha.Condition.getDefaultInstance()
         : condition_;
   }
+
   /**
    *
    *
@@ -12086,6 +12396,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -12496,6 +12807,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.BoostAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.BoostActionOrBuilder>
         boostActionBuilder_;
+
     /**
      *
      *
@@ -12511,6 +12823,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoostAction() {
       return actionCase_ == 2;
     }
+
     /**
      *
      *
@@ -12536,6 +12849,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.BoostAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -12558,6 +12872,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -12578,6 +12893,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -12610,6 +12926,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -12635,6 +12952,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -12647,6 +12965,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.Rule.BoostAction.Builder getBoostActionBuilder() {
       return getBoostActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -12667,6 +12986,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.BoostAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -12705,6 +13025,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.RedirectAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.RedirectActionOrBuilder>
         redirectActionBuilder_;
+
     /**
      *
      *
@@ -12720,6 +13041,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRedirectAction() {
       return actionCase_ == 3;
     }
+
     /**
      *
      *
@@ -12745,6 +13067,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.RedirectAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -12767,6 +13090,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -12787,6 +13111,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -12820,6 +13145,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -12845,6 +13171,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -12857,6 +13184,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.Rule.RedirectAction.Builder getRedirectActionBuilder() {
       return getRedirectActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -12878,6 +13206,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.RedirectAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -12916,6 +13245,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.OnewaySynonymsAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.OnewaySynonymsActionOrBuilder>
         onewaySynonymsActionBuilder_;
+
     /**
      *
      *
@@ -12933,6 +13263,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOnewaySynonymsAction() {
       return actionCase_ == 6;
     }
+
     /**
      *
      *
@@ -12960,6 +13291,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.OnewaySynonymsAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -12985,6 +13317,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -13007,6 +13340,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -13043,6 +13377,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -13070,6 +13405,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13085,6 +13421,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getOnewaySynonymsActionBuilder() {
       return getOnewaySynonymsActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13108,6 +13445,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.OnewaySynonymsAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13148,6 +13486,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.DoNotAssociateAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.DoNotAssociateActionOrBuilder>
         doNotAssociateActionBuilder_;
+
     /**
      *
      *
@@ -13164,6 +13503,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDoNotAssociateAction() {
       return actionCase_ == 7;
     }
+
     /**
      *
      *
@@ -13190,6 +13530,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.DoNotAssociateAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13214,6 +13555,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -13235,6 +13577,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -13270,6 +13613,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -13296,6 +13640,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13310,6 +13655,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getDoNotAssociateActionBuilder() {
       return getDoNotAssociateActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13332,6 +13678,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.DoNotAssociateAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13371,6 +13718,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.ReplacementAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.ReplacementActionOrBuilder>
         replacementActionBuilder_;
+
     /**
      *
      *
@@ -13386,6 +13734,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReplacementAction() {
       return actionCase_ == 8;
     }
+
     /**
      *
      *
@@ -13411,6 +13760,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.ReplacementAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13434,6 +13784,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -13454,6 +13805,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -13488,6 +13840,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -13513,6 +13866,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13526,6 +13880,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getReplacementActionBuilder() {
       return getReplacementActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13547,6 +13902,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.ReplacementAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13585,6 +13941,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.IgnoreAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.IgnoreActionOrBuilder>
         ignoreActionBuilder_;
+
     /**
      *
      *
@@ -13600,6 +13957,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIgnoreAction() {
       return actionCase_ == 9;
     }
+
     /**
      *
      *
@@ -13625,6 +13983,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.IgnoreAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13647,6 +14006,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -13667,6 +14027,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -13699,6 +14060,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -13724,6 +14086,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13736,6 +14099,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.Rule.IgnoreAction.Builder getIgnoreActionBuilder() {
       return getIgnoreActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13756,6 +14120,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.IgnoreAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13794,6 +14159,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.FilterAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.FilterActionOrBuilder>
         filterActionBuilder_;
+
     /**
      *
      *
@@ -13809,6 +14175,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFilterAction() {
       return actionCase_ == 10;
     }
+
     /**
      *
      *
@@ -13834,6 +14201,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.FilterAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13856,6 +14224,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -13876,6 +14245,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -13908,6 +14278,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -13933,6 +14304,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13945,6 +14317,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.Rule.FilterAction.Builder getFilterActionBuilder() {
       return getFilterActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13965,6 +14338,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.FilterAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14003,6 +14377,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.TwowaySynonymsAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.TwowaySynonymsActionOrBuilder>
         twowaySynonymsActionBuilder_;
+
     /**
      *
      *
@@ -14019,6 +14394,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTwowaySynonymsAction() {
       return actionCase_ == 11;
     }
+
     /**
      *
      *
@@ -14045,6 +14421,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.TwowaySynonymsAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14069,6 +14446,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -14090,6 +14468,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -14125,6 +14504,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -14151,6 +14531,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -14165,6 +14546,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getTwowaySynonymsActionBuilder() {
       return getTwowaySynonymsActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14187,6 +14569,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.TwowaySynonymsAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14226,6 +14609,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetActionOrBuilder>
         forceReturnFacetActionBuilder_;
+
     /**
      *
      *
@@ -14243,6 +14627,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasForceReturnFacetAction() {
       return actionCase_ == 12;
     }
+
     /**
      *
      *
@@ -14270,6 +14655,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14295,6 +14681,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -14317,6 +14704,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -14354,6 +14742,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -14381,6 +14770,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -14396,6 +14786,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getForceReturnFacetActionBuilder() {
       return getForceReturnFacetActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14419,6 +14810,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14460,6 +14852,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.RemoveFacetAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.RemoveFacetActionOrBuilder>
         removeFacetActionBuilder_;
+
     /**
      *
      *
@@ -14475,6 +14868,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRemoveFacetAction() {
       return actionCase_ == 13;
     }
+
     /**
      *
      *
@@ -14500,6 +14894,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.RemoveFacetAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14523,6 +14918,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -14543,6 +14939,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -14577,6 +14974,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -14602,6 +15000,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -14615,6 +15014,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getRemoveFacetActionBuilder() {
       return getRemoveFacetActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14636,6 +15036,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.RemoveFacetAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14675,6 +15076,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Condition.Builder,
             com.google.cloud.retail.v2alpha.ConditionOrBuilder>
         conditionBuilder_;
+
     /**
      *
      *
@@ -14692,6 +15094,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCondition() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -14715,6 +15118,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return conditionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -14740,6 +15144,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14762,6 +15167,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14792,6 +15198,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -14814,6 +15221,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14831,6 +15239,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14852,6 +15261,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             : condition_;
       }
     }
+
     /**
      *
      *

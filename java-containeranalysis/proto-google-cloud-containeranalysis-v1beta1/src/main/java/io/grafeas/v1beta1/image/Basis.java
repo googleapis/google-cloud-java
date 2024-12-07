@@ -37,6 +37,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.image.Basis)
     BasisOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Basis.newBuilder() to construct.
   private Basis(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceUrl_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FINGERPRINT_FIELD_NUMBER = 2;
   private io.grafeas.v1beta1.image.Fingerprint fingerprint_;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
         ? io.grafeas.v1beta1.image.Fingerprint.getDefaultInstance()
         : fingerprint_;
   }
+
   /**
    *
    *
@@ -340,6 +346,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -553,6 +560,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object resourceUrl_ = "";
+
     /**
      *
      *
@@ -576,6 +584,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -599,6 +608,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -621,6 +631,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -639,6 +650,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -669,6 +681,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.image.Fingerprint.Builder,
             io.grafeas.v1beta1.image.FingerprintOrBuilder>
         fingerprintBuilder_;
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -703,6 +717,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
         return fingerprintBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -725,6 +740,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +760,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +788,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +808,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +823,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFingerprintFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -822,6 +842,7 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
             : fingerprint_;
       }
     }
+
     /**
      *
      *

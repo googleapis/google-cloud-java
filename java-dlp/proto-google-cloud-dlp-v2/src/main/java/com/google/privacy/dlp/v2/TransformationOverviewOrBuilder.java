@@ -48,6 +48,7 @@ public interface TransformationOverviewOrBuilder
    * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.TransformationSummary> getTransformationSummariesList();
+
   /**
    *
    *
@@ -59,6 +60,7 @@ public interface TransformationOverviewOrBuilder
    * </code>
    */
   com.google.privacy.dlp.v2.TransformationSummary getTransformationSummaries(int index);
+
   /**
    *
    *
@@ -70,6 +72,7 @@ public interface TransformationOverviewOrBuilder
    * </code>
    */
   int getTransformationSummariesCount();
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface TransformationOverviewOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.TransformationSummaryOrBuilder>
       getTransformationSummariesOrBuilderList();
+
   /**
    *
    *

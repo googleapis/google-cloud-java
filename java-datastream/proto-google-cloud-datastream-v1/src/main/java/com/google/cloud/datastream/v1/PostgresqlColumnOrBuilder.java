@@ -36,6 +36,7 @@ public interface PostgresqlColumnOrBuilder
    * @return The column.
    */
   java.lang.String getColumn();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PostgresqlColumnOrBuilder
    * @return The dataType.
    */
   java.lang.String getDataType();
+
   /**
    *
    *

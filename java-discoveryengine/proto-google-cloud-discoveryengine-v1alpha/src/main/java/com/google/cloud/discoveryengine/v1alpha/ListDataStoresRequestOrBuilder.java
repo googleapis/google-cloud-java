@@ -44,6 +44,7 @@ public interface ListDataStoresRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -104,6 +105,7 @@ public interface ListDataStoresRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -139,6 +141,7 @@ public interface ListDataStoresRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

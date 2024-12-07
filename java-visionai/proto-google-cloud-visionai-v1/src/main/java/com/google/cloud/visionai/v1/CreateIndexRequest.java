@@ -33,6 +33,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.CreateIndexRequest)
     CreateIndexRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateIndexRequest.newBuilder() to construct.
   private CreateIndexRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object indexId_ = "";
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -189,6 +194,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int INDEX_FIELD_NUMBER = 3;
   private com.google.cloud.visionai.v1.Index index_;
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasIndex() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.visionai.v1.Index getIndex() {
     return index_ == null ? com.google.cloud.visionai.v1.Index.getDefaultInstance() : index_;
   }
+
   /**
    *
    *
@@ -418,6 +426,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +655,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -672,6 +682,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -698,6 +709,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -723,6 +735,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +757,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +786,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object indexId_ = "";
+
     /**
      *
      *
@@ -800,6 +815,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -828,6 +844,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -855,6 +872,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +896,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +932,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.visionai.v1.Index.Builder,
             com.google.cloud.visionai.v1.IndexOrBuilder>
         indexBuilder_;
+
     /**
      *
      *
@@ -928,6 +948,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasIndex() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -947,6 +968,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
         return indexBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -970,6 +992,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1013,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1042,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1063,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1079,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getIndexFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1070,6 +1097,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
         return index_ == null ? com.google.cloud.visionai.v1.Index.getDefaultInstance() : index_;
       }
     }
+
     /**
      *
      *

@@ -52,6 +52,7 @@ public interface LinuxNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
    */
   int getSysctlsCount();
+
   /**
    *
    *
@@ -80,9 +81,11 @@ public interface LinuxNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
    */
   boolean containsSysctls(java.lang.String key);
+
   /** Use {@link #getSysctlsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getSysctls();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface LinuxNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getSysctlsMap();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface LinuxNodeConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public interface LinuxNodeConfigOrBuilder
    * @return The enum numeric value on the wire for cgroupMode.
    */
   int getCgroupModeValue();
+
   /**
    *
    *
@@ -211,6 +217,7 @@ public interface LinuxNodeConfigOrBuilder
    * @return Whether the hugepages field is set.
    */
   boolean hasHugepages();
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public interface LinuxNodeConfigOrBuilder
    * @return The hugepages.
    */
   com.google.container.v1.LinuxNodeConfig.HugepagesConfig getHugepages();
+
   /**
    *
    *

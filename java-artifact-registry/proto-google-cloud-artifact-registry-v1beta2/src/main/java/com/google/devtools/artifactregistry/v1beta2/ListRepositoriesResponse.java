@@ -33,6 +33,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1beta2.ListRepositoriesResponse)
     ListRepositoriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListRepositoriesResponse.newBuilder() to construct.
   private ListRepositoriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1beta2.Repository> repositories_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       getRepositoriesList() {
     return repositories_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       getRepositoriesOrBuilderList() {
     return repositories_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
   public int getRepositoriesCount() {
     return repositories_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
   public com.google.devtools.artifactregistry.v1beta2.Repository getRepositories(int index) {
     return repositories_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -362,6 +370,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +658,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
         return repositoriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -665,6 +675,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
         return repositoriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
         return repositoriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -704,6 +716,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +738,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +761,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +806,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +828,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +870,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +890,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +904,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
         int index) {
       return getRepositoriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -900,6 +922,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
         return repositoriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -918,6 +941,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(repositories_);
       }
     }
+
     /**
      *
      *
@@ -932,6 +956,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       return getRepositoriesFieldBuilder()
           .addBuilder(com.google.devtools.artifactregistry.v1beta2.Repository.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -947,6 +972,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
           .addBuilder(
               index, com.google.devtools.artifactregistry.v1beta2.Repository.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -979,6 +1005,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1002,6 +1029,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1053,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1047,6 +1076,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1095,7 @@ public final class ListRepositoriesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

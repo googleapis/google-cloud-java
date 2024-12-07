@@ -48,6 +48,7 @@ public interface ListNotificationChannelDescriptorsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public interface ListNotificationChannelDescriptorsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

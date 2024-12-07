@@ -38,6 +38,7 @@ public interface PointwiseMetricInstanceOrBuilder
    * @return Whether the jsonInstance field is set.
    */
   boolean hasJsonInstance();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface PointwiseMetricInstanceOrBuilder
    * @return The jsonInstance.
    */
   java.lang.String getJsonInstance();
+
   /**
    *
    *

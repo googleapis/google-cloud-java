@@ -33,6 +33,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.UserEventInlineSource)
     UserEventInlineSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UserEventInlineSource.newBuilder() to construct.
   private UserEventInlineSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2alpha.UserEvent> userEvents_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.retail.v2alpha.UserEvent> getUserEventsList() {
     return userEvents_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       getUserEventsOrBuilderList() {
     return userEvents_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
   public int getUserEventsCount() {
     return userEvents_.size();
   }
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
   public com.google.cloud.retail.v2alpha.UserEvent getUserEvents(int index) {
     return userEvents_.get(index);
   }
+
   /**
    *
    *
@@ -306,6 +312,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -570,6 +577,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
         return userEventsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -588,6 +596,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
         return userEventsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -606,6 +615,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
         return userEventsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -630,6 +640,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -652,6 +663,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +688,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +713,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +736,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +759,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +782,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +804,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +826,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +841,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
     public com.google.cloud.retail.v2alpha.UserEvent.Builder getUserEventsBuilder(int index) {
       return getUserEventsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -840,6 +860,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
         return userEventsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -859,6 +880,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(userEvents_);
       }
     }
+
     /**
      *
      *
@@ -874,6 +896,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       return getUserEventsFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2alpha.UserEvent.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -889,6 +912,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       return getUserEventsFieldBuilder()
           .addBuilder(index, com.google.cloud.retail.v2alpha.UserEvent.getDefaultInstance());
     }
+
     /**
      *
      *

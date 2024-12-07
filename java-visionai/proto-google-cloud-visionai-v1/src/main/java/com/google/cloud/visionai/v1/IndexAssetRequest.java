@@ -33,6 +33,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.IndexAssetRequest)
     IndexAssetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IndexAssetRequest.newBuilder() to construct.
   private IndexAssetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object index_ = "";
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -350,6 +355,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -548,6 +554,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -574,6 +581,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -600,6 +608,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -625,6 +634,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +656,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +685,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object index_ = "";
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -726,6 +739,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -751,6 +765,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +787,7 @@ public final class IndexAssetRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface LinkedVpcNetworkOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface LinkedVpcNetworkOrBuilder
    * @return A list containing the excludeExportRanges.
    */
   java.util.List<java.lang.String> getExcludeExportRangesList();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface LinkedVpcNetworkOrBuilder
    * @return The count of excludeExportRanges.
    */
   int getExcludeExportRangesCount();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface LinkedVpcNetworkOrBuilder
    * @return The excludeExportRanges at the given index.
    */
   java.lang.String getExcludeExportRanges(int index);
+
   /**
    *
    *

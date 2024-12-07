@@ -39,6 +39,7 @@ public interface CreateCompilationResultRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateCompilationResultRequestOrBuilder
    * @return Whether the compilationResult field is set.
    */
   boolean hasCompilationResult();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateCompilationResultRequestOrBuilder
    * @return The compilationResult.
    */
   com.google.cloud.dataform.v1alpha2.CompilationResult getCompilationResult();
+
   /**
    *
    *

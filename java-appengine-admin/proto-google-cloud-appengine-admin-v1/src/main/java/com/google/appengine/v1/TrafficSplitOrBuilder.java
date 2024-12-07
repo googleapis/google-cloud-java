@@ -38,6 +38,7 @@ public interface TrafficSplitOrBuilder
    * @return The enum numeric value on the wire for shardBy.
    */
   int getShardByValue();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface TrafficSplitOrBuilder
    * <code>map&lt;string, double&gt; allocations = 2;</code>
    */
   int getAllocationsCount();
+
   /**
    *
    *
@@ -87,9 +89,11 @@ public interface TrafficSplitOrBuilder
    * <code>map&lt;string, double&gt; allocations = 2;</code>
    */
   boolean containsAllocations(java.lang.String key);
+
   /** Use {@link #getAllocationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Double> getAllocations();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface TrafficSplitOrBuilder
    * <code>map&lt;string, double&gt; allocations = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.Double> getAllocationsMap();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface TrafficSplitOrBuilder
    * <code>map&lt;string, double&gt; allocations = 2;</code>
    */
   double getAllocationsOrDefault(java.lang.String key, double defaultValue);
+
   /**
    *
    *

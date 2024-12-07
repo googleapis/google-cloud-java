@@ -33,6 +33,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.CreateSessionRequest)
     CreateSessionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateSessionRequest.newBuilder() to construct.
   private CreateSessionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
 
   public static final int SESSION_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1.Session session_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
   public boolean hasSession() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.discoveryengine.v1.Session.getDefaultInstance()
         : session_;
   }
+
   /**
    *
    *
@@ -351,6 +357,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -564,6 +571,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -589,6 +597,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -638,6 +648,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +669,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.discoveryengine.v1.Session.Builder,
             com.google.cloud.discoveryengine.v1.SessionOrBuilder>
         sessionBuilder_;
+
     /**
      *
      *
@@ -706,6 +719,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
     public boolean hasSession() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -728,6 +742,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
         return sessionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +789,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +819,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +841,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getSessionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -859,6 +879,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
             : session_;
       }
     }
+
     /**
      *
      *

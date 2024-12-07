@@ -67,6 +67,7 @@ public interface NodeManagementOrBuilder
    * @return Whether the upgradeOptions field is set.
    */
   boolean hasUpgradeOptions();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface NodeManagementOrBuilder
    * @return The upgradeOptions.
    */
   com.google.container.v1.AutoUpgradeOptions getUpgradeOptions();
+
   /**
    *
    *

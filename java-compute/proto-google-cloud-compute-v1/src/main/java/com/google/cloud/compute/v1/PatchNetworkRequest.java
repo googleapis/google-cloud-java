@@ -33,6 +33,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchNetworkRequest)
     PatchNetworkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PatchNetworkRequest.newBuilder() to construct.
   private PatchNetworkRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
 
   public static final int NETWORK_RESOURCE_FIELD_NUMBER = 122105599;
   private com.google.cloud.compute.v1.Network networkResource_;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
   public boolean hasNetworkResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.compute.v1.Network.getDefaultInstance()
         : networkResource_;
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -270,6 +280,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -491,6 +502,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -736,6 +748,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -758,6 +771,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -801,6 +816,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +834,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.Network.Builder,
             com.google.cloud.compute.v1.NetworkOrBuilder>
         networkResourceBuilder_;
+
     /**
      *
      *
@@ -863,6 +881,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
     public boolean hasNetworkResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -885,6 +904,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         return networkResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -909,6 +929,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +951,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +981,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -980,6 +1003,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1020,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getNetworkResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1016,6 +1041,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
             : networkResource_;
       }
     }
+
     /**
      *
      *
@@ -1045,6 +1071,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1069,6 +1096,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1093,6 +1121,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1116,6 +1145,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1165,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1192,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1175,6 +1207,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1197,6 +1230,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1219,6 +1253,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1240,6 +1275,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1257,6 +1293,7 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

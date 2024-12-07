@@ -38,6 +38,7 @@ public interface EndpointMatcherOrBuilder
    * @return Whether the metadataLabelMatcher field is set.
    */
   boolean hasMetadataLabelMatcher();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface EndpointMatcherOrBuilder
    */
   com.google.cloud.networkservices.v1.EndpointMatcher.MetadataLabelMatcher
       getMetadataLabelMatcher();
+
   /**
    *
    *

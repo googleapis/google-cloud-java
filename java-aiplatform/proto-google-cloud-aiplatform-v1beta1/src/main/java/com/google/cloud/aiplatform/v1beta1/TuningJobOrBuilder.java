@@ -36,6 +36,7 @@ public interface TuningJobOrBuilder
    * @return Whether the baseModel field is set.
    */
   boolean hasBaseModel();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TuningJobOrBuilder
    * @return The baseModel.
    */
   java.lang.String getBaseModel();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface TuningJobOrBuilder
    * @return Whether the supervisedTuningSpec field is set.
    */
   boolean hasSupervisedTuningSpec();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface TuningJobOrBuilder
    * @return The supervisedTuningSpec.
    */
   com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec getSupervisedTuningSpec();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface TuningJobOrBuilder
    * @return Whether the distillationSpec field is set.
    */
   boolean hasDistillationSpec();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface TuningJobOrBuilder
    * @return The distillationSpec.
    */
   com.google.cloud.aiplatform.v1beta1.DistillationSpec getDistillationSpec();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface TuningJobOrBuilder
    * @return Whether the partnerModelTuningSpec field is set.
    */
   boolean hasPartnerModelTuningSpec();
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public interface TuningJobOrBuilder
    * @return The partnerModelTuningSpec.
    */
   com.google.cloud.aiplatform.v1beta1.PartnerModelTuningSpec getPartnerModelTuningSpec();
+
   /**
    *
    *
@@ -186,6 +194,7 @@ public interface TuningJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public interface TuningJobOrBuilder
    * @return The tunedModelDisplayName.
    */
   java.lang.String getTunedModelDisplayName();
+
   /**
    *
    *
@@ -244,6 +254,7 @@ public interface TuningJobOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -272,6 +283,7 @@ public interface TuningJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -301,6 +313,7 @@ public interface TuningJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -315,6 +328,7 @@ public interface TuningJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -343,6 +357,7 @@ public interface TuningJobOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -358,6 +373,7 @@ public interface TuningJobOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -387,6 +403,7 @@ public interface TuningJobOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -402,6 +419,7 @@ public interface TuningJobOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -431,6 +449,7 @@ public interface TuningJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -446,6 +465,7 @@ public interface TuningJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -473,6 +493,7 @@ public interface TuningJobOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -486,6 +507,7 @@ public interface TuningJobOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -517,6 +539,7 @@ public interface TuningJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -536,9 +559,11 @@ public interface TuningJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -558,6 +583,7 @@ public interface TuningJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -581,6 +607,7 @@ public interface TuningJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -616,6 +643,7 @@ public interface TuningJobOrBuilder
    * @return The experiment.
    */
   java.lang.String getExperiment();
+
   /**
    *
    *
@@ -647,6 +675,7 @@ public interface TuningJobOrBuilder
    * @return Whether the tunedModel field is set.
    */
   boolean hasTunedModel();
+
   /**
    *
    *
@@ -662,6 +691,7 @@ public interface TuningJobOrBuilder
    * @return The tunedModel.
    */
   com.google.cloud.aiplatform.v1beta1.TunedModel getTunedModel();
+
   /**
    *
    *
@@ -691,6 +721,7 @@ public interface TuningJobOrBuilder
    * @return Whether the tuningDataStats field is set.
    */
   boolean hasTuningDataStats();
+
   /**
    *
    *
@@ -706,6 +737,7 @@ public interface TuningJobOrBuilder
    * @return The tuningDataStats.
    */
   com.google.cloud.aiplatform.v1beta1.TuningDataStats getTuningDataStats();
+
   /**
    *
    *
@@ -736,6 +768,7 @@ public interface TuningJobOrBuilder
    * @return The pipelineJob.
    */
   java.lang.String getPipelineJob();
+
   /**
    *
    *
@@ -767,6 +800,7 @@ public interface TuningJobOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -781,6 +815,7 @@ public interface TuningJobOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *
@@ -812,6 +847,7 @@ public interface TuningJobOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *

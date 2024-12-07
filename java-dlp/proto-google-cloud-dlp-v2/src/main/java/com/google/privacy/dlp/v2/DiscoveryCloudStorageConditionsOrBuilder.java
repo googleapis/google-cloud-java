@@ -44,6 +44,7 @@ public interface DiscoveryCloudStorageConditionsOrBuilder
   java.util.List<
           com.google.privacy.dlp.v2.DiscoveryCloudStorageConditions.CloudStorageObjectAttribute>
       getIncludedObjectAttributesList();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface DiscoveryCloudStorageConditionsOrBuilder
    * @return The count of includedObjectAttributes.
    */
   int getIncludedObjectAttributesCount();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface DiscoveryCloudStorageConditionsOrBuilder
    */
   com.google.privacy.dlp.v2.DiscoveryCloudStorageConditions.CloudStorageObjectAttribute
       getIncludedObjectAttributes(int index);
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface DiscoveryCloudStorageConditionsOrBuilder
    * @return A list containing the enum numeric values on the wire for includedObjectAttributes.
    */
   java.util.List<java.lang.Integer> getIncludedObjectAttributesValueList();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface DiscoveryCloudStorageConditionsOrBuilder
   java.util.List<
           com.google.privacy.dlp.v2.DiscoveryCloudStorageConditions.CloudStorageBucketAttribute>
       getIncludedBucketAttributesList();
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public interface DiscoveryCloudStorageConditionsOrBuilder
    * @return The count of includedBucketAttributes.
    */
   int getIncludedBucketAttributesCount();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface DiscoveryCloudStorageConditionsOrBuilder
    */
   com.google.privacy.dlp.v2.DiscoveryCloudStorageConditions.CloudStorageBucketAttribute
       getIncludedBucketAttributes(int index);
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public interface DiscoveryCloudStorageConditionsOrBuilder
    * @return A list containing the enum numeric values on the wire for includedBucketAttributes.
    */
   java.util.List<java.lang.Integer> getIncludedBucketAttributesValueList();
+
   /**
    *
    *

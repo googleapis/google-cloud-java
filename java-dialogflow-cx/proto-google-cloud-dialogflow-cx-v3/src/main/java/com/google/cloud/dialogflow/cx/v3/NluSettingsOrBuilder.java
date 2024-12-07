@@ -36,6 +36,7 @@ public interface NluSettingsOrBuilder
    * @return The enum numeric value on the wire for modelType.
    */
   int getModelTypeValue();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface NluSettingsOrBuilder
    * @return The enum numeric value on the wire for modelTrainingMode.
    */
   int getModelTrainingModeValue();
+
   /**
    *
    *

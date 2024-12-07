@@ -43,6 +43,7 @@ public interface AnswerQueryResponseOrBuilder
    * @return Whether the answer field is set.
    */
   boolean hasAnswer();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface AnswerQueryResponseOrBuilder
    * @return The answer.
    */
   com.google.cloud.discoveryengine.v1alpha.Answer getAnswer();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface AnswerQueryResponseOrBuilder
    * @return Whether the session field is set.
    */
   boolean hasSession();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface AnswerQueryResponseOrBuilder
    * @return The session.
    */
   com.google.cloud.discoveryengine.v1alpha.Session getSession();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface AnswerQueryResponseOrBuilder
    * @return The answerQueryToken.
    */
   java.lang.String getAnswerQueryToken();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.addressvalidation.v1.Verdict)
     VerdictOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Verdict.newBuilder() to construct.
   private Verdict(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -168,6 +169,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * <code>GRANULARITY_UNSPECIFIED = 0;</code>
      */
     public static final int GRANULARITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -178,6 +180,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * <code>SUB_PREMISE = 1;</code>
      */
     public static final int SUB_PREMISE_VALUE = 1;
+
     /**
      *
      *
@@ -188,6 +191,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * <code>PREMISE = 2;</code>
      */
     public static final int PREMISE_VALUE = 2;
+
     /**
      *
      *
@@ -198,6 +202,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * <code>PREMISE_PROXIMITY = 3;</code>
      */
     public static final int PREMISE_PROXIMITY_VALUE = 3;
+
     /**
      *
      *
@@ -209,6 +214,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * <code>BLOCK = 4;</code>
      */
     public static final int BLOCK_VALUE = 4;
+
     /**
      *
      *
@@ -220,6 +226,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * <code>ROUTE = 5;</code>
      */
     public static final int ROUTE_VALUE = 5;
+
     /**
      *
      *
@@ -325,6 +332,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INPUT_GRANULARITY_FIELD_NUMBER = 1;
   private int inputGranularity_ = 0;
+
   /**
    *
    *
@@ -347,6 +355,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
   public int getInputGranularityValue() {
     return inputGranularity_;
   }
+
   /**
    *
    *
@@ -376,6 +385,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALIDATION_GRANULARITY_FIELD_NUMBER = 2;
   private int validationGranularity_ = 0;
+
   /**
    *
    *
@@ -396,6 +406,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
   public int getValidationGranularityValue() {
     return validationGranularity_;
   }
+
   /**
    *
    *
@@ -423,6 +434,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GEOCODE_GRANULARITY_FIELD_NUMBER = 3;
   private int geocodeGranularity_ = 0;
+
   /**
    *
    *
@@ -447,6 +459,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
   public int getGeocodeGranularityValue() {
     return geocodeGranularity_;
   }
+
   /**
    *
    *
@@ -478,6 +491,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ADDRESS_COMPLETE_FIELD_NUMBER = 4;
   private boolean addressComplete_ = false;
+
   /**
    *
    *
@@ -502,6 +516,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HAS_UNCONFIRMED_COMPONENTS_FIELD_NUMBER = 5;
   private boolean hasUnconfirmedComponents_ = false;
+
   /**
    *
    *
@@ -522,6 +537,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HAS_INFERRED_COMPONENTS_FIELD_NUMBER = 6;
   private boolean hasInferredComponents_ = false;
+
   /**
    *
    *
@@ -543,6 +559,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HAS_REPLACED_COMPONENTS_FIELD_NUMBER = 7;
   private boolean hasReplacedComponents_ = false;
+
   /**
    *
    *
@@ -786,6 +803,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1045,6 +1063,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int inputGranularity_ = 0;
+
     /**
      *
      *
@@ -1067,6 +1086,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     public int getInputGranularityValue() {
       return inputGranularity_;
     }
+
     /**
      *
      *
@@ -1092,6 +1112,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1139,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.addressvalidation.v1.Verdict.Granularity.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1147,6 +1169,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1196,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int validationGranularity_ = 0;
+
     /**
      *
      *
@@ -1194,6 +1218,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     public int getValidationGranularityValue() {
       return validationGranularity_;
     }
+
     /**
      *
      *
@@ -1218,6 +1243,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1270,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.addressvalidation.v1.Verdict.Granularity.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1272,6 +1299,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1297,6 +1325,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int geocodeGranularity_ = 0;
+
     /**
      *
      *
@@ -1321,6 +1350,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     public int getGeocodeGranularityValue() {
       return geocodeGranularity_;
     }
+
     /**
      *
      *
@@ -1348,6 +1378,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1376,6 +1407,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.addressvalidation.v1.Verdict.Granularity.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1407,6 +1439,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1435,6 +1468,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean addressComplete_;
+
     /**
      *
      *
@@ -1456,6 +1490,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     public boolean getAddressComplete() {
       return addressComplete_;
     }
+
     /**
      *
      *
@@ -1481,6 +1516,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1506,6 +1542,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean hasUnconfirmedComponents_;
+
     /**
      *
      *
@@ -1523,6 +1560,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     public boolean getHasUnconfirmedComponents() {
       return hasUnconfirmedComponents_;
     }
+
     /**
      *
      *
@@ -1544,6 +1582,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1565,6 +1604,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean hasInferredComponents_;
+
     /**
      *
      *
@@ -1583,6 +1623,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     public boolean getHasInferredComponents() {
       return hasInferredComponents_;
     }
+
     /**
      *
      *
@@ -1605,6 +1646,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1627,6 +1669,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean hasReplacedComponents_;
+
     /**
      *
      *
@@ -1644,6 +1687,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     public boolean getHasReplacedComponents() {
       return hasReplacedComponents_;
     }
+
     /**
      *
      *
@@ -1665,6 +1709,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

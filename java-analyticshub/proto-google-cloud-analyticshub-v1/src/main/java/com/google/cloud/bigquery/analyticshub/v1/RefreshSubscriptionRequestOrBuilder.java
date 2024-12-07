@@ -39,6 +39,7 @@ public interface RefreshSubscriptionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

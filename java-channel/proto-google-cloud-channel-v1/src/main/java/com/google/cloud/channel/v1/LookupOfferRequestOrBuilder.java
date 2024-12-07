@@ -40,6 +40,7 @@ public interface LookupOfferRequestOrBuilder
    * @return The entitlement.
    */
   java.lang.String getEntitlement();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.UpgradeClusterResponse)
     UpgradeClusterResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpgradeClusterResponse.newBuilder() to construct.
   private UpgradeClusterResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -168,6 +169,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int STATUS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -178,6 +180,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>NOT_STARTED = 4;</code>
      */
     public static final int NOT_STARTED_VALUE = 4;
+
     /**
      *
      *
@@ -188,6 +191,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>IN_PROGRESS = 5;</code>
      */
     public static final int IN_PROGRESS_VALUE = 5;
+
     /**
      *
      *
@@ -198,6 +202,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>SUCCESS = 1;</code>
      */
     public static final int SUCCESS_VALUE = 1;
+
     /**
      *
      *
@@ -208,6 +213,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>FAILED = 2;</code>
      */
     public static final int FAILED_VALUE = 2;
+
     /**
      *
      *
@@ -218,6 +224,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>PARTIAL_SUCCESS = 3;</code>
      */
     public static final int PARTIAL_SUCCESS_VALUE = 3;
+
     /**
      *
      *
@@ -228,6 +235,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>CANCEL_IN_PROGRESS = 6;</code>
      */
     public static final int CANCEL_IN_PROGRESS_VALUE = 6;
+
     /**
      *
      *
@@ -437,6 +445,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>STAGE_UNSPECIFIED = 0;</code>
      */
     public static final int STAGE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -447,6 +456,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>ALLOYDB_PRECHECK = 1;</code>
      */
     public static final int ALLOYDB_PRECHECK_VALUE = 1;
+
     /**
      *
      *
@@ -457,6 +467,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>PG_UPGRADE_CHECK = 2;</code>
      */
     public static final int PG_UPGRADE_CHECK_VALUE = 2;
+
     /**
      *
      *
@@ -467,6 +478,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>PREPARE_FOR_UPGRADE = 5;</code>
      */
     public static final int PREPARE_FOR_UPGRADE_VALUE = 5;
+
     /**
      *
      *
@@ -477,6 +489,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>PRIMARY_INSTANCE_UPGRADE = 3;</code>
      */
     public static final int PRIMARY_INSTANCE_UPGRADE_VALUE = 3;
+
     /**
      *
      *
@@ -487,6 +500,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>READ_POOL_INSTANCES_UPGRADE = 4;</code>
      */
     public static final int READ_POOL_INSTANCES_UPGRADE_VALUE = 4;
+
     /**
      *
      *
@@ -497,6 +511,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * <code>ROLLBACK = 6;</code>
      */
     public static final int ROLLBACK_VALUE = 6;
+
     /**
      *
      *
@@ -620,6 +635,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for stage.
      */
     int getStageValue();
+
     /**
      *
      *
@@ -645,6 +661,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
+
     /**
      *
      *
@@ -672,6 +689,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * @return The logsUrl.
      */
     java.lang.String getLogsUrl();
+
     /**
      *
      *
@@ -687,6 +705,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getLogsUrlBytes();
   }
+
   /**
    *
    *
@@ -701,6 +720,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.UpgradeClusterResponse.StageInfo)
       StageInfoOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StageInfo.newBuilder() to construct.
     private StageInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -735,6 +755,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
 
     public static final int STAGE_FIELD_NUMBER = 1;
     private int stage_ = 0;
+
     /**
      *
      *
@@ -750,6 +771,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     public int getStageValue() {
       return stage_;
     }
+
     /**
      *
      *
@@ -772,6 +794,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
 
     public static final int STATUS_FIELD_NUMBER = 2;
     private int status_ = 0;
+
     /**
      *
      *
@@ -787,6 +810,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     public int getStatusValue() {
       return status_;
     }
+
     /**
      *
      *
@@ -811,6 +835,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object logsUrl_ = "";
+
     /**
      *
      *
@@ -836,6 +861,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -1050,6 +1076,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1270,6 +1297,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private int stage_ = 0;
+
       /**
        *
        *
@@ -1285,6 +1313,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       public int getStageValue() {
         return stage_;
       }
+
       /**
        *
        *
@@ -1303,6 +1332,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1322,6 +1352,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
             ? com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.Stage.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1343,6 +1374,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1362,6 +1394,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
 
       private int status_ = 0;
+
       /**
        *
        *
@@ -1377,6 +1410,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       public int getStatusValue() {
         return status_;
       }
+
       /**
        *
        *
@@ -1395,6 +1429,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1414,6 +1449,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
             ? com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.Status.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1436,6 +1472,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1455,6 +1492,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object logsUrl_ = "";
+
       /**
        *
        *
@@ -1479,6 +1517,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1503,6 +1542,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1526,6 +1566,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1545,6 +1586,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1654,6 +1696,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -1679,6 +1722,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for upgradeStatus.
      */
     int getUpgradeStatusValue();
+
     /**
      *
      *
@@ -1704,6 +1748,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for instanceType.
      */
     int getInstanceTypeValue();
+
     /**
      *
      *
@@ -1717,6 +1762,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      */
     com.google.cloud.alloydb.v1alpha.Instance.InstanceType getInstanceType();
   }
+
   /**
    *
    *
@@ -1732,6 +1778,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.UpgradeClusterResponse.InstanceUpgradeDetails)
       InstanceUpgradeDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use InstanceUpgradeDetails.newBuilder() to construct.
     private InstanceUpgradeDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1769,6 +1816,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1792,6 +1840,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -1818,6 +1867,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
 
     public static final int UPGRADE_STATUS_FIELD_NUMBER = 2;
     private int upgradeStatus_ = 0;
+
     /**
      *
      *
@@ -1833,6 +1883,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     public int getUpgradeStatusValue() {
       return upgradeStatus_;
     }
+
     /**
      *
      *
@@ -1855,6 +1906,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
 
     public static final int INSTANCE_TYPE_FIELD_NUMBER = 3;
     private int instanceType_ = 0;
+
     /**
      *
      *
@@ -1870,6 +1922,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     public int getInstanceTypeValue() {
       return instanceType_;
     }
+
     /**
      *
      *
@@ -2085,6 +2138,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2315,6 +2369,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -2337,6 +2392,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2359,6 +2415,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2380,6 +2437,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2397,6 +2455,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2421,6 +2480,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
 
       private int upgradeStatus_ = 0;
+
       /**
        *
        *
@@ -2437,6 +2497,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       public int getUpgradeStatusValue() {
         return upgradeStatus_;
       }
+
       /**
        *
        *
@@ -2456,6 +2517,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2477,6 +2539,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
             ? com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.Status.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2500,6 +2563,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2520,6 +2584,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
 
       private int instanceType_ = 0;
+
       /**
        *
        *
@@ -2535,6 +2600,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       public int getInstanceTypeValue() {
         return instanceType_;
       }
+
       /**
        *
        *
@@ -2553,6 +2619,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2572,6 +2639,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
             ? com.google.cloud.alloydb.v1alpha.Instance.InstanceType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2593,6 +2661,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2697,6 +2766,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -2722,6 +2792,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for upgradeStatus.
      */
     int getUpgradeStatusValue();
+
     /**
      *
      *
@@ -2747,6 +2818,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for clusterType.
      */
     int getClusterTypeValue();
+
     /**
      *
      *
@@ -2774,6 +2846,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for databaseVersion.
      */
     int getDatabaseVersionValue();
+
     /**
      *
      *
@@ -2801,6 +2874,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      */
     java.util.List<com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.StageInfo>
         getStageInfoList();
+
     /**
      *
      *
@@ -2812,6 +2886,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * </code>
      */
     com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.StageInfo getStageInfo(int index);
+
     /**
      *
      *
@@ -2823,6 +2898,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * </code>
      */
     int getStageInfoCount();
+
     /**
      *
      *
@@ -2836,6 +2912,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     java.util.List<
             ? extends com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.StageInfoOrBuilder>
         getStageInfoOrBuilderList();
+
     /**
      *
      *
@@ -2862,6 +2939,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      */
     java.util.List<com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.InstanceUpgradeDetails>
         getInstanceUpgradeDetailsList();
+
     /**
      *
      *
@@ -2875,6 +2953,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      */
     com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.InstanceUpgradeDetails
         getInstanceUpgradeDetails(int index);
+
     /**
      *
      *
@@ -2887,6 +2966,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      * </code>
      */
     int getInstanceUpgradeDetailsCount();
+
     /**
      *
      *
@@ -2903,6 +2983,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse
                     .InstanceUpgradeDetailsOrBuilder>
         getInstanceUpgradeDetailsOrBuilderList();
+
     /**
      *
      *
@@ -2917,6 +2998,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.InstanceUpgradeDetailsOrBuilder
         getInstanceUpgradeDetailsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -2931,6 +3013,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.UpgradeClusterResponse.ClusterUpgradeDetails)
       ClusterUpgradeDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ClusterUpgradeDetails.newBuilder() to construct.
     private ClusterUpgradeDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2971,6 +3054,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2994,6 +3078,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -3020,6 +3105,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
 
     public static final int UPGRADE_STATUS_FIELD_NUMBER = 2;
     private int upgradeStatus_ = 0;
+
     /**
      *
      *
@@ -3035,6 +3121,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     public int getUpgradeStatusValue() {
       return upgradeStatus_;
     }
+
     /**
      *
      *
@@ -3057,6 +3144,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
 
     public static final int CLUSTER_TYPE_FIELD_NUMBER = 3;
     private int clusterType_ = 0;
+
     /**
      *
      *
@@ -3072,6 +3160,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     public int getClusterTypeValue() {
       return clusterType_;
     }
+
     /**
      *
      *
@@ -3094,6 +3183,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
 
     public static final int DATABASE_VERSION_FIELD_NUMBER = 4;
     private int databaseVersion_ = 0;
+
     /**
      *
      *
@@ -3111,6 +3201,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     public int getDatabaseVersionValue() {
       return databaseVersion_;
     }
+
     /**
      *
      *
@@ -3138,6 +3229,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.StageInfo>
         stageInfo_;
+
     /**
      *
      *
@@ -3153,6 +3245,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         getStageInfoList() {
       return stageInfo_;
     }
+
     /**
      *
      *
@@ -3169,6 +3262,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         getStageInfoOrBuilderList() {
       return stageInfo_;
     }
+
     /**
      *
      *
@@ -3183,6 +3277,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     public int getStageInfoCount() {
       return stageInfo_.size();
     }
+
     /**
      *
      *
@@ -3198,6 +3293,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         int index) {
       return stageInfo_.get(index);
     }
+
     /**
      *
      *
@@ -3220,6 +3316,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     private java.util.List<
             com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.InstanceUpgradeDetails>
         instanceUpgradeDetails_;
+
     /**
      *
      *
@@ -3237,6 +3334,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         getInstanceUpgradeDetailsList() {
       return instanceUpgradeDetails_;
     }
+
     /**
      *
      *
@@ -3256,6 +3354,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         getInstanceUpgradeDetailsOrBuilderList() {
       return instanceUpgradeDetails_;
     }
+
     /**
      *
      *
@@ -3271,6 +3370,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     public int getInstanceUpgradeDetailsCount() {
       return instanceUpgradeDetails_.size();
     }
+
     /**
      *
      *
@@ -3287,6 +3387,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         getInstanceUpgradeDetails(int index) {
       return instanceUpgradeDetails_.get(index);
     }
+
     /**
      *
      *
@@ -3537,6 +3638,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3899,6 +4001,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -3921,6 +4024,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3943,6 +4047,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3964,6 +4069,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3981,6 +4087,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4005,6 +4112,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
 
       private int upgradeStatus_ = 0;
+
       /**
        *
        *
@@ -4021,6 +4129,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       public int getUpgradeStatusValue() {
         return upgradeStatus_;
       }
+
       /**
        *
        *
@@ -4040,6 +4149,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4061,6 +4171,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
             ? com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.Status.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -4084,6 +4195,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4104,6 +4216,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
 
       private int clusterType_ = 0;
+
       /**
        *
        *
@@ -4119,6 +4232,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       public int getClusterTypeValue() {
         return clusterType_;
       }
+
       /**
        *
        *
@@ -4137,6 +4251,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4156,6 +4271,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
             ? com.google.cloud.alloydb.v1alpha.Cluster.ClusterType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -4177,6 +4293,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4196,6 +4313,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
 
       private int databaseVersion_ = 0;
+
       /**
        *
        *
@@ -4213,6 +4331,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       public int getDatabaseVersionValue() {
         return databaseVersion_;
       }
+
       /**
        *
        *
@@ -4233,6 +4352,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4254,6 +4374,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
             ? com.google.cloud.alloydb.v1alpha.DatabaseVersion.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -4277,6 +4398,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4334,6 +4456,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return stageInfoBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -4352,6 +4475,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return stageInfoBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -4371,6 +4495,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return stageInfoBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -4396,6 +4521,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4420,6 +4546,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4445,6 +4572,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4470,6 +4598,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4493,6 +4622,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4517,6 +4647,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4541,6 +4672,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4562,6 +4694,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4583,6 +4716,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4598,6 +4732,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           getStageInfoBuilder(int index) {
         return getStageInfoFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -4617,6 +4752,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return stageInfoBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -4637,6 +4773,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return java.util.Collections.unmodifiableList(stageInfo_);
         }
       }
+
       /**
        *
        *
@@ -4655,6 +4792,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.StageInfo
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4674,6 +4812,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.StageInfo
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4750,6 +4889,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return instanceUpgradeDetailsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -4768,6 +4908,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return instanceUpgradeDetailsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -4787,6 +4928,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return instanceUpgradeDetailsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -4813,6 +4955,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4837,6 +4980,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4862,6 +5006,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4888,6 +5033,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4911,6 +5057,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4935,6 +5082,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4961,6 +5109,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4982,6 +5131,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -5003,6 +5153,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -5018,6 +5169,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           getInstanceUpgradeDetailsBuilder(int index) {
         return getInstanceUpgradeDetailsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -5037,6 +5189,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return instanceUpgradeDetailsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -5059,6 +5212,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           return java.util.Collections.unmodifiableList(instanceUpgradeDetails_);
         }
       }
+
       /**
        *
        *
@@ -5077,6 +5231,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.InstanceUpgradeDetails
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -5096,6 +5251,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.InstanceUpgradeDetails
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -5209,6 +5365,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
 
   public static final int STATUS_FIELD_NUMBER = 1;
   private int status_ = 0;
+
   /**
    *
    *
@@ -5224,6 +5381,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
   public int getStatusValue() {
     return status_;
   }
+
   /**
    *
    *
@@ -5248,6 +5406,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -5272,6 +5431,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -5303,6 +5463,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
   private java.util.List<
           com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.ClusterUpgradeDetails>
       clusterUpgradeDetails_;
+
   /**
    *
    *
@@ -5321,6 +5482,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       getClusterUpgradeDetailsList() {
     return clusterUpgradeDetails_;
   }
+
   /**
    *
    *
@@ -5341,6 +5503,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       getClusterUpgradeDetailsOrBuilderList() {
     return clusterUpgradeDetails_;
   }
+
   /**
    *
    *
@@ -5357,6 +5520,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
   public int getClusterUpgradeDetailsCount() {
     return clusterUpgradeDetails_.size();
   }
+
   /**
    *
    *
@@ -5374,6 +5538,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       getClusterUpgradeDetails(int index) {
     return clusterUpgradeDetails_.get(index);
   }
+
   /**
    *
    *
@@ -5578,6 +5743,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5838,6 +6004,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int status_ = 0;
+
     /**
      *
      *
@@ -5853,6 +6020,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     public int getStatusValue() {
       return status_;
     }
+
     /**
      *
      *
@@ -5871,6 +6039,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5890,6 +6059,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
           ? com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.Status.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -5911,6 +6081,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5930,6 +6101,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -5953,6 +6125,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5976,6 +6149,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5998,6 +6172,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6016,6 +6191,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6081,6 +6257,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         return clusterUpgradeDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -6100,6 +6277,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         return clusterUpgradeDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -6120,6 +6298,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         return clusterUpgradeDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -6147,6 +6326,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6172,6 +6352,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6198,6 +6379,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6225,6 +6407,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6249,6 +6432,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6274,6 +6458,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6300,6 +6485,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6322,6 +6508,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6344,6 +6531,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6360,6 +6548,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         getClusterUpgradeDetailsBuilder(int index) {
       return getClusterUpgradeDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6380,6 +6569,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         return clusterUpgradeDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6403,6 +6593,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(clusterUpgradeDetails_);
       }
     }
+
     /**
      *
      *
@@ -6422,6 +6613,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
               com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.ClusterUpgradeDetails
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6442,6 +6634,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
               com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.ClusterUpgradeDetails
                   .getDefaultInstance());
     }
+
     /**
      *
      *

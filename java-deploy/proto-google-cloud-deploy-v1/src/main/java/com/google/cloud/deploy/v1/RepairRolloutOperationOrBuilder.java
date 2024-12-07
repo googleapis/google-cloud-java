@@ -36,6 +36,7 @@ public interface RepairRolloutOperationOrBuilder
    * @return The rollout.
    */
   java.lang.String getRollout();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface RepairRolloutOperationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.RepairPhase> getRepairPhasesList();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface RepairRolloutOperationOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.RepairPhase getRepairPhases(int index);
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface RepairRolloutOperationOrBuilder
    * </code>
    */
   int getRepairPhasesCount();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface RepairRolloutOperationOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.RepairPhaseOrBuilder>
       getRepairPhasesOrBuilderList();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface RepairRolloutOperationOrBuilder
    * @return The phaseId.
    */
   java.lang.String getPhaseId();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface RepairRolloutOperationOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
+
   /**
    *
    *

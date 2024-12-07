@@ -36,6 +36,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances)
     LinkedRouterApplianceInstancesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LinkedRouterApplianceInstances.newBuilder() to construct.
   private LinkedRouterApplianceInstances(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkconnectivity.v1.RouterApplianceInstance>
       instances_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       getInstancesList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       getInstancesOrBuilderList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
   public int getInstancesCount() {
     return instances_.size();
   }
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
   public com.google.cloud.networkconnectivity.v1.RouterApplianceInstance getInstances(int index) {
     return instances_.get(index);
   }
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
 
   public static final int SITE_TO_SITE_DATA_TRANSFER_FIELD_NUMBER = 2;
   private boolean siteToSiteDataTransfer_ = false;
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vpcNetwork_ = "";
+
   /**
    *
    *
@@ -198,6 +206,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -406,6 +415,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -711,6 +721,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
         return instancesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -728,6 +739,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
         return instancesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -745,6 +757,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
         return instancesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -769,6 +782,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +805,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +830,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +855,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +877,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +900,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +924,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +945,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +966,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +981,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
         getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -977,6 +1000,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -996,6 +1020,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
+
     /**
      *
      *
@@ -1012,6 +1037,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
           .addBuilder(
               com.google.cloud.networkconnectivity.v1.RouterApplianceInstance.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1029,6 +1055,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
               index,
               com.google.cloud.networkconnectivity.v1.RouterApplianceInstance.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1062,6 +1089,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     }
 
     private boolean siteToSiteDataTransfer_;
+
     /**
      *
      *
@@ -1079,6 +1107,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     public boolean getSiteToSiteDataTransfer() {
       return siteToSiteDataTransfer_;
     }
+
     /**
      *
      *
@@ -1100,6 +1129,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1151,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     }
 
     private java.lang.Object vpcNetwork_ = "";
+
     /**
      *
      *
@@ -1146,6 +1177,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1171,6 +1203,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1195,6 +1228,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1215,6 +1249,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

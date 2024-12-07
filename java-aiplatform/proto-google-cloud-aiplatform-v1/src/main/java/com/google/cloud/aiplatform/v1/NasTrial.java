@@ -33,6 +33,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NasTrial)
     NasTrialOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NasTrial.newBuilder() to construct.
   private NasTrial(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -150,6 +151,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -161,6 +163,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
      * <code>REQUESTED = 1;</code>
      */
     public static final int REQUESTED_VALUE = 1;
+
     /**
      *
      *
@@ -171,6 +174,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -181,6 +185,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
      * <code>STOPPING = 3;</code>
      */
     public static final int STOPPING_VALUE = 3;
+
     /**
      *
      *
@@ -191,6 +196,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 4;</code>
      */
     public static final int SUCCEEDED_VALUE = 4;
+
     /**
      *
      *
@@ -298,6 +304,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -321,6 +328,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -347,6 +355,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -364,6 +373,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -386,6 +396,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FINAL_MEASUREMENT_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.Measurement finalMeasurement_;
+
   /**
    *
    *
@@ -403,6 +414,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFinalMeasurement() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -422,6 +434,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.Measurement.getDefaultInstance()
         : finalMeasurement_;
   }
+
   /**
    *
    *
@@ -442,6 +455,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -458,6 +472,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -474,6 +489,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -491,6 +507,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -508,6 +525,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -525,6 +543,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -750,6 +769,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1015,6 +1035,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1037,6 +1058,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1059,6 +1081,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1103,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1121,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1146,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1138,6 +1164,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1158,6 +1185,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1205,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1.NasTrial.State.forNumber(state_);
       return result == null ? com.google.cloud.aiplatform.v1.NasTrial.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1200,6 +1229,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1226,6 +1256,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.Measurement.Builder,
             com.google.cloud.aiplatform.v1.MeasurementOrBuilder>
         finalMeasurementBuilder_;
+
     /**
      *
      *
@@ -1242,6 +1273,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFinalMeasurement() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1264,6 +1296,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
         return finalMeasurementBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1288,6 +1321,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1310,6 +1344,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1375,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1397,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1414,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFinalMeasurementFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1397,6 +1435,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
             : finalMeasurement_;
       }
     }
+
     /**
      *
      *
@@ -1431,6 +1470,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -1446,6 +1486,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1465,6 +1506,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1488,6 +1530,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1508,6 +1551,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1536,6 +1580,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1556,6 +1601,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1571,6 +1617,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1588,6 +1635,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1621,6 +1669,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1637,6 +1686,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1657,6 +1707,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1681,6 +1732,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1702,6 +1754,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1731,6 +1784,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1752,6 +1806,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1768,6 +1823,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1786,6 +1842,7 @@ public final class NasTrial extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse)
     GenerateOfflineCredentialResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateOfflineCredentialResponse.newBuilder() to construct.
   private GenerateOfflineCredentialResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientCertificate_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientKey_ = "";
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userId_ = "";
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp expireTime_;
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
+
   /**
    *
    *
@@ -462,6 +472,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -712,6 +723,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object clientCertificate_ = "";
+
     /**
      *
      *
@@ -734,6 +746,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -756,6 +769,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +809,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +834,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
     }
 
     private java.lang.Object clientKey_ = "";
+
     /**
      *
      *
@@ -840,6 +857,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -862,6 +880,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -883,6 +902,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +920,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +945,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
     }
 
     private java.lang.Object userId_ = "";
+
     /**
      *
      *
@@ -946,6 +968,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -968,6 +991,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -989,6 +1013,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1031,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1061,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -1051,6 +1078,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1073,6 +1101,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
         return expireTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1126,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1148,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1178,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1200,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1217,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1204,6 +1238,7 @@ public final class GenerateOfflineCredentialResponse extends com.google.protobuf
             : expireTime_;
       }
     }
+
     /**
      *
      *

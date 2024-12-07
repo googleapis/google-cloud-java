@@ -44,6 +44,7 @@ public interface SpanContextOrBuilder
    * @return The spanName.
    */
   java.lang.String getSpanName();
+
   /**
    *
    *

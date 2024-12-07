@@ -37,6 +37,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.clouddebugger.v2.Debuggee)
     DebuggeeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Debuggee.newBuilder() to construct.
   private Debuggee(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,6 +91,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uniquifier_ = "";
+
   /**
    *
    *
@@ -222,6 +228,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -255,6 +262,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -280,6 +288,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -308,6 +317,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_INACTIVE_FIELD_NUMBER = 5;
   private boolean isInactive_ = false;
+
   /**
    *
    *
@@ -329,6 +339,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object agentVersion_ = "";
+
   /**
    *
    *
@@ -354,6 +365,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -382,6 +394,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_DISABLED_FIELD_NUMBER = 7;
   private boolean isDisabled_ = false;
+
   /**
    *
    *
@@ -401,6 +414,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 8;
   private com.google.devtools.clouddebugger.v2.StatusMessage status_;
+
   /**
    *
    *
@@ -418,6 +432,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -437,6 +452,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.clouddebugger.v2.StatusMessage.getDefaultInstance()
         : status_;
   }
+
   /**
    *
    *
@@ -459,6 +475,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.source.v1.SourceContext> sourceContexts_;
+
   /**
    *
    *
@@ -473,6 +490,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.devtools.source.v1.SourceContext> getSourceContextsList() {
     return sourceContexts_;
   }
+
   /**
    *
    *
@@ -488,6 +506,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       getSourceContextsOrBuilderList() {
     return sourceContexts_;
   }
+
   /**
    *
    *
@@ -502,6 +521,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   public int getSourceContextsCount() {
     return sourceContexts_.size();
   }
+
   /**
    *
    *
@@ -516,6 +536,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   public com.google.devtools.source.v1.SourceContext getSourceContexts(int index) {
     return sourceContexts_.get(index);
   }
+
   /**
    *
    *
@@ -536,6 +557,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.source.v1.ExtendedSourceContext> extSourceContexts_;
+
   /**
    *
    *
@@ -554,6 +576,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       getExtSourceContextsList() {
     return extSourceContexts_;
   }
+
   /**
    *
    *
@@ -572,6 +595,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       getExtSourceContextsOrBuilderList() {
     return extSourceContexts_;
   }
+
   /**
    *
    *
@@ -589,6 +613,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   public int getExtSourceContextsCount() {
     return extSourceContexts_.size();
   }
+
   /**
    *
    *
@@ -606,6 +631,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   public com.google.devtools.source.v1.ExtendedSourceContext getExtSourceContexts(int index) {
     return extSourceContexts_.get(index);
   }
+
   /**
    *
    *
@@ -651,6 +677,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -668,12 +695,14 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -688,6 +717,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -709,6 +739,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -998,6 +1029,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1460,6 +1492,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1482,6 +1515,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1504,6 +1538,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1525,6 +1560,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1542,6 +1578,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1566,6 +1603,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1589,6 +1627,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1612,6 +1651,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1634,6 +1674,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1693,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1677,6 +1719,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uniquifier_ = "";
+
     /**
      *
      *
@@ -1704,6 +1747,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1731,6 +1775,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1757,6 +1802,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1779,6 +1825,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1808,6 +1855,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1832,6 +1880,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1856,6 +1905,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1879,6 +1929,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1898,6 +1949,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1924,6 +1976,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isInactive_;
+
     /**
      *
      *
@@ -1940,6 +1993,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsInactive() {
       return isInactive_;
     }
+
     /**
      *
      *
@@ -1960,6 +2014,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1980,6 +2035,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object agentVersion_ = "";
+
     /**
      *
      *
@@ -2004,6 +2060,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2028,6 +2085,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2051,6 +2109,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2070,6 +2129,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2096,6 +2156,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isDisabled_;
+
     /**
      *
      *
@@ -2112,6 +2173,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsDisabled() {
       return isDisabled_;
     }
+
     /**
      *
      *
@@ -2132,6 +2194,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2157,6 +2220,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.clouddebugger.v2.StatusMessage.Builder,
             com.google.devtools.clouddebugger.v2.StatusMessageOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -2173,6 +2237,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2195,6 +2260,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2219,6 +2285,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2241,6 +2308,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2270,6 +2338,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2291,6 +2360,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2307,6 +2377,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2327,6 +2398,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
             : status_;
       }
     }
+
     /**
      *
      *
@@ -2389,6 +2461,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return sourceContextsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2406,6 +2479,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return sourceContextsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2423,6 +2497,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return sourceContextsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2446,6 +2521,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2467,6 +2543,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2490,6 +2567,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2513,6 +2591,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2534,6 +2613,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2555,6 +2635,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2576,6 +2657,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2596,6 +2678,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2616,6 +2699,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2629,6 +2713,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.source.v1.SourceContext.Builder getSourceContextsBuilder(int index) {
       return getSourceContextsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2647,6 +2732,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return sourceContextsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2665,6 +2751,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(sourceContexts_);
       }
     }
+
     /**
      *
      *
@@ -2679,6 +2766,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       return getSourceContextsFieldBuilder()
           .addBuilder(com.google.devtools.source.v1.SourceContext.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2693,6 +2781,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       return getSourceContextsFieldBuilder()
           .addBuilder(index, com.google.devtools.source.v1.SourceContext.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2767,6 +2856,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return extSourceContextsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2787,6 +2877,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return extSourceContextsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2807,6 +2898,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return extSourceContextsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2834,6 +2926,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2858,6 +2951,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2884,6 +2978,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2911,6 +3006,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2935,6 +3031,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2959,6 +3056,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2983,6 +3081,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3006,6 +3105,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3029,6 +3129,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3046,6 +3147,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getExtSourceContextsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3067,6 +3169,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return extSourceContextsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3088,6 +3191,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(extSourceContexts_);
       }
     }
+
     /**
      *
      *
@@ -3106,6 +3210,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       return getExtSourceContextsFieldBuilder()
           .addBuilder(com.google.devtools.source.v1.ExtendedSourceContext.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3125,6 +3230,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.devtools.source.v1.ExtendedSourceContext.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3188,6 +3294,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -3205,12 +3312,14 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -3225,6 +3334,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -3246,6 +3356,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3273,6 +3384,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3290,12 +3402,14 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000400;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -3317,6 +3431,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000400;
       return this;
     }
+
     /**
      *
      *

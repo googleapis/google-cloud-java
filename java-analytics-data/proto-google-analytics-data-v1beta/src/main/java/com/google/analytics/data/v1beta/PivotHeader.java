@@ -33,6 +33,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.PivotHeader)
     PivotHeaderOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PivotHeader.newBuilder() to construct.
   private PivotHeader(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.PivotDimensionHeader>
       pivotDimensionHeaders_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       getPivotDimensionHeadersList() {
     return pivotDimensionHeaders_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       getPivotDimensionHeadersOrBuilderList() {
     return pivotDimensionHeaders_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
   public int getPivotDimensionHeadersCount() {
     return pivotDimensionHeaders_.size();
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
   public com.google.analytics.data.v1beta.PivotDimensionHeader getPivotDimensionHeaders(int index) {
     return pivotDimensionHeaders_.get(index);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROW_COUNT_FIELD_NUMBER = 2;
   private int rowCount_ = 0;
+
   /**
    *
    *
@@ -339,6 +346,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -618,6 +626,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
         return pivotDimensionHeadersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -637,6 +646,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
         return pivotDimensionHeadersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -657,6 +667,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
         return pivotDimensionHeadersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +772,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +796,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +868,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +891,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +908,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
         getPivotDimensionHeadersBuilder(int index) {
       return getPivotDimensionHeadersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -908,6 +929,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
         return pivotDimensionHeadersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -928,6 +950,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(pivotDimensionHeaders_);
       }
     }
+
     /**
      *
      *
@@ -945,6 +968,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       return getPivotDimensionHeadersFieldBuilder()
           .addBuilder(com.google.analytics.data.v1beta.PivotDimensionHeader.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -963,6 +987,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.analytics.data.v1beta.PivotDimensionHeader.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1001,6 +1026,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int rowCount_;
+
     /**
      *
      *
@@ -1018,6 +1044,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     public int getRowCount() {
       return rowCount_;
     }
+
     /**
      *
      *
@@ -1039,6 +1066,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

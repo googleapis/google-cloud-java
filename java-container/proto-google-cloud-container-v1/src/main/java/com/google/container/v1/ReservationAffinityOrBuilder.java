@@ -36,6 +36,7 @@ public interface ReservationAffinityOrBuilder
    * @return The enum numeric value on the wire for consumeReservationType.
    */
   int getConsumeReservationTypeValue();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ReservationAffinityOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface ReservationAffinityOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.String> getValuesList();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ReservationAffinityOrBuilder
    * @return The count of values.
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface ReservationAffinityOrBuilder
    * @return The values at the given index.
    */
   java.lang.String getValues(int index);
+
   /**
    *
    *

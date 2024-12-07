@@ -36,6 +36,7 @@ public interface WorkflowConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface WorkflowConfigOrBuilder
    * @return The releaseConfig.
    */
   java.lang.String getReleaseConfig();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface WorkflowConfigOrBuilder
    * @return Whether the invocationConfig field is set.
    */
   boolean hasInvocationConfig();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface WorkflowConfigOrBuilder
    * @return The invocationConfig.
    */
   com.google.cloud.dataform.v1beta1.InvocationConfig getInvocationConfig();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface WorkflowConfigOrBuilder
    * @return The cronSchedule.
    */
   java.lang.String getCronSchedule();
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public interface WorkflowConfigOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface WorkflowConfigOrBuilder
    */
   java.util.List<com.google.cloud.dataform.v1beta1.WorkflowConfig.ScheduledExecutionRecord>
       getRecentScheduledExecutionRecordsList();
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public interface WorkflowConfigOrBuilder
    */
   com.google.cloud.dataform.v1beta1.WorkflowConfig.ScheduledExecutionRecord
       getRecentScheduledExecutionRecords(int index);
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public interface WorkflowConfigOrBuilder
    * </code>
    */
   int getRecentScheduledExecutionRecordsCount();
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public interface WorkflowConfigOrBuilder
           ? extends
               com.google.cloud.dataform.v1beta1.WorkflowConfig.ScheduledExecutionRecordOrBuilder>
       getRecentScheduledExecutionRecordsOrBuilderList();
+
   /**
    *
    *

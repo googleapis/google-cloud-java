@@ -33,6 +33,7 @@ public final class Port extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Port)
     PortOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Port.newBuilder() to construct.
   private Port(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class Port extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTAINER_PORT_FIELD_NUMBER = 3;
   private int containerPort_ = 0;
+
   /**
    *
    *
@@ -238,6 +240,7 @@ public final class Port extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -419,6 +422,7 @@ public final class Port extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int containerPort_;
+
     /**
      *
      *
@@ -435,6 +439,7 @@ public final class Port extends com.google.protobuf.GeneratedMessageV3
     public int getContainerPort() {
       return containerPort_;
     }
+
     /**
      *
      *
@@ -455,6 +460,7 @@ public final class Port extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

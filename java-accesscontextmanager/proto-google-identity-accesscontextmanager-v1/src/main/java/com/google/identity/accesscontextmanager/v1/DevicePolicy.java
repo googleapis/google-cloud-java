@@ -41,6 +41,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.DevicePolicy)
     DevicePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DevicePolicy.newBuilder() to construct.
   private DevicePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,6 +76,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUIRE_SCREENLOCK_FIELD_NUMBER = 1;
   private boolean requireScreenlock_ = false;
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.identity.accesscontextmanager.type.DeviceEncryptionStatus>(
         allowedEncryptionStatuses_, allowedEncryptionStatuses_converter_);
   }
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
   public int getAllowedEncryptionStatusesCount() {
     return allowedEncryptionStatuses_.size();
   }
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       getAllowedEncryptionStatuses(int index) {
     return allowedEncryptionStatuses_converter_.convert(allowedEncryptionStatuses_.get(index));
   }
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getAllowedEncryptionStatusesValueList() {
     return allowedEncryptionStatuses_;
   }
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.identity.accesscontextmanager.v1.OsConstraint> osConstraints_;
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       getOsConstraintsList() {
     return osConstraints_;
   }
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       getOsConstraintsOrBuilderList() {
     return osConstraints_;
   }
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
   public int getOsConstraintsCount() {
     return osConstraints_.size();
   }
+
   /**
    *
    *
@@ -266,6 +277,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.identity.accesscontextmanager.v1.OsConstraint getOsConstraints(int index) {
     return osConstraints_.get(index);
   }
+
   /**
    *
    *
@@ -302,6 +314,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -323,6 +336,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.identity.accesscontextmanager.type.DeviceManagementLevel>(
         allowedDeviceManagementLevels_, allowedDeviceManagementLevels_converter_);
   }
+
   /**
    *
    *
@@ -341,6 +355,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
   public int getAllowedDeviceManagementLevelsCount() {
     return allowedDeviceManagementLevels_.size();
   }
+
   /**
    *
    *
@@ -362,6 +377,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     return allowedDeviceManagementLevels_converter_.convert(
         allowedDeviceManagementLevels_.get(index));
   }
+
   /**
    *
    *
@@ -381,6 +397,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getAllowedDeviceManagementLevelsValueList() {
     return allowedDeviceManagementLevels_;
   }
+
   /**
    *
    *
@@ -405,6 +422,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUIRE_ADMIN_APPROVAL_FIELD_NUMBER = 7;
   private boolean requireAdminApproval_ = false;
+
   /**
    *
    *
@@ -423,6 +441,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUIRE_CORP_OWNED_FIELD_NUMBER = 8;
   private boolean requireCorpOwned_ = false;
+
   /**
    *
    *
@@ -681,6 +700,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1033,6 +1053,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean requireScreenlock_;
+
     /**
      *
      *
@@ -1049,6 +1070,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean getRequireScreenlock() {
       return requireScreenlock_;
     }
+
     /**
      *
      *
@@ -1069,6 +1091,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1098,6 +1121,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1141,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.identity.accesscontextmanager.type.DeviceEncryptionStatus>(
           allowedEncryptionStatuses_, allowedEncryptionStatuses_converter_);
     }
+
     /**
      *
      *
@@ -1133,6 +1158,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public int getAllowedEncryptionStatusesCount() {
       return allowedEncryptionStatuses_.size();
     }
+
     /**
      *
      *
@@ -1151,6 +1177,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         getAllowedEncryptionStatuses(int index) {
       return allowedEncryptionStatuses_converter_.convert(allowedEncryptionStatuses_.get(index));
     }
+
     /**
      *
      *
@@ -1176,6 +1203,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1228,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1225,6 +1254,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1274,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1291,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getAllowedEncryptionStatusesValueList() {
       return java.util.Collections.unmodifiableList(allowedEncryptionStatuses_);
     }
+
     /**
      *
      *
@@ -1277,6 +1309,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public int getAllowedEncryptionStatusesValue(int index) {
       return allowedEncryptionStatuses_.get(index);
     }
+
     /**
      *
      *
@@ -1298,6 +1331,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1352,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1378,6 +1413,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         return osConstraintsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1395,6 +1431,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         return osConstraintsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1412,6 +1449,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         return osConstraintsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1436,6 +1474,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1458,6 +1497,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1482,6 +1522,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1506,6 +1547,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1527,6 +1569,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1549,6 +1592,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1571,6 +1615,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1636,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1611,6 +1657,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1625,6 +1672,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getOsConstraintsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1643,6 +1691,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         return osConstraintsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1662,6 +1711,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(osConstraints_);
       }
     }
+
     /**
      *
      *
@@ -1678,6 +1728,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.identity.accesscontextmanager.v1.OsConstraint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1694,6 +1745,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.identity.accesscontextmanager.v1.OsConstraint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1739,6 +1791,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
       }
     }
+
     /**
      *
      *
@@ -1759,6 +1812,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.identity.accesscontextmanager.type.DeviceManagementLevel>(
           allowedDeviceManagementLevels_, allowedDeviceManagementLevels_converter_);
     }
+
     /**
      *
      *
@@ -1776,6 +1830,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public int getAllowedDeviceManagementLevelsCount() {
       return allowedDeviceManagementLevels_.size();
     }
+
     /**
      *
      *
@@ -1796,6 +1851,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       return allowedDeviceManagementLevels_converter_.convert(
           allowedDeviceManagementLevels_.get(index));
     }
+
     /**
      *
      *
@@ -1822,6 +1878,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1847,6 +1904,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1873,6 +1931,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1893,6 +1952,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1911,6 +1971,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getAllowedDeviceManagementLevelsValueList() {
       return java.util.Collections.unmodifiableList(allowedDeviceManagementLevels_);
     }
+
     /**
      *
      *
@@ -1930,6 +1991,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public int getAllowedDeviceManagementLevelsValue(int index) {
       return allowedDeviceManagementLevels_.get(index);
     }
+
     /**
      *
      *
@@ -1952,6 +2014,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1973,6 +2036,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1999,6 +2063,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean requireAdminApproval_;
+
     /**
      *
      *
@@ -2014,6 +2079,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean getRequireAdminApproval() {
       return requireAdminApproval_;
     }
+
     /**
      *
      *
@@ -2033,6 +2099,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2052,6 +2119,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean requireCorpOwned_;
+
     /**
      *
      *
@@ -2067,6 +2135,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean getRequireCorpOwned() {
       return requireCorpOwned_;
     }
+
     /**
      *
      *
@@ -2086,6 +2155,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

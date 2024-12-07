@@ -37,6 +37,7 @@ public interface EndpointPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface EndpointPolicyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface EndpointPolicyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface EndpointPolicyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface EndpointPolicyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface EndpointPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -147,9 +153,11 @@ public interface EndpointPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -160,6 +168,7 @@ public interface EndpointPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -174,6 +183,7 @@ public interface EndpointPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -200,6 +210,7 @@ public interface EndpointPolicyOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -234,6 +245,7 @@ public interface EndpointPolicyOrBuilder
    * @return The authorizationPolicy.
    */
   java.lang.String getAuthorizationPolicy();
+
   /**
    *
    *
@@ -268,6 +280,7 @@ public interface EndpointPolicyOrBuilder
    * @return Whether the endpointMatcher field is set.
    */
   boolean hasEndpointMatcher();
+
   /**
    *
    *
@@ -283,6 +296,7 @@ public interface EndpointPolicyOrBuilder
    * @return The endpointMatcher.
    */
   com.google.cloud.networkservices.v1.EndpointMatcher getEndpointMatcher();
+
   /**
    *
    *
@@ -312,6 +326,7 @@ public interface EndpointPolicyOrBuilder
    * @return Whether the trafficPortSelector field is set.
    */
   boolean hasTrafficPortSelector();
+
   /**
    *
    *
@@ -327,6 +342,7 @@ public interface EndpointPolicyOrBuilder
    * @return The trafficPortSelector.
    */
   com.google.cloud.networkservices.v1.TrafficPortSelector getTrafficPortSelector();
+
   /**
    *
    *
@@ -355,6 +371,7 @@ public interface EndpointPolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -386,6 +403,7 @@ public interface EndpointPolicyOrBuilder
    * @return The serverTlsPolicy.
    */
   java.lang.String getServerTlsPolicy();
+
   /**
    *
    *
@@ -425,6 +443,7 @@ public interface EndpointPolicyOrBuilder
    * @return The clientTlsPolicy.
    */
   java.lang.String getClientTlsPolicy();
+
   /**
    *
    *

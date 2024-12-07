@@ -39,6 +39,7 @@ public interface ContentOrBuilder
    * @return The role.
    */
   java.lang.String getRole();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ContentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Part> getPartsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ContentOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.Part getParts(int index);
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface ContentOrBuilder
    * </code>
    */
   int getPartsCount();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface ContentOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.PartOrBuilder> getPartsOrBuilderList();
+
   /**
    *
    *

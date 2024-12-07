@@ -50,6 +50,7 @@ public interface GenerateCredentialsResponseOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
+
   /**
    *
    *

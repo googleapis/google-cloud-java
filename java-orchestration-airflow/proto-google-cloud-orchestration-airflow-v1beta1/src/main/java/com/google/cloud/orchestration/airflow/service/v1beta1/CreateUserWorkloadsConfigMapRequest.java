@@ -35,6 +35,7 @@ public final class CreateUserWorkloadsConfigMapRequest
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.CreateUserWorkloadsConfigMapRequest)
     CreateUserWorkloadsConfigMapRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateUserWorkloadsConfigMapRequest.newBuilder() to construct.
   private CreateUserWorkloadsConfigMapRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class CreateUserWorkloadsConfigMapRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class CreateUserWorkloadsConfigMapRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class CreateUserWorkloadsConfigMapRequest
   public static final int USER_WORKLOADS_CONFIG_MAP_FIELD_NUMBER = 2;
   private com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap
       userWorkloadsConfigMap_;
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class CreateUserWorkloadsConfigMapRequest
   public boolean hasUserWorkloadsConfigMap() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class CreateUserWorkloadsConfigMapRequest
             .getDefaultInstance()
         : userWorkloadsConfigMap_;
   }
+
   /**
    *
    *
@@ -387,6 +393,7 @@ public final class CreateUserWorkloadsConfigMapRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -630,6 +637,7 @@ public final class CreateUserWorkloadsConfigMapRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -655,6 +663,7 @@ public final class CreateUserWorkloadsConfigMapRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -680,6 +689,7 @@ public final class CreateUserWorkloadsConfigMapRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -704,6 +714,7 @@ public final class CreateUserWorkloadsConfigMapRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +735,7 @@ public final class CreateUserWorkloadsConfigMapRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +769,7 @@ public final class CreateUserWorkloadsConfigMapRequest
             com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMapOrBuilder>
         userWorkloadsConfigMapBuilder_;
+
     /**
      *
      *
@@ -773,6 +786,7 @@ public final class CreateUserWorkloadsConfigMapRequest
     public boolean hasUserWorkloadsConfigMap() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -797,6 +811,7 @@ public final class CreateUserWorkloadsConfigMapRequest
         return userWorkloadsConfigMapBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -822,6 +837,7 @@ public final class CreateUserWorkloadsConfigMapRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +861,7 @@ public final class CreateUserWorkloadsConfigMapRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +894,7 @@ public final class CreateUserWorkloadsConfigMapRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +916,7 @@ public final class CreateUserWorkloadsConfigMapRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +934,7 @@ public final class CreateUserWorkloadsConfigMapRequest
       onChanged();
       return getUserWorkloadsConfigMapFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -937,6 +957,7 @@ public final class CreateUserWorkloadsConfigMapRequest
             : userWorkloadsConfigMap_;
       }
     }
+
     /**
      *
      *

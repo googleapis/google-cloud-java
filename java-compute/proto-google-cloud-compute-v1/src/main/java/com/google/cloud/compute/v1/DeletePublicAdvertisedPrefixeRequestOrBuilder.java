@@ -38,6 +38,7 @@ public interface DeletePublicAdvertisedPrefixeRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface DeletePublicAdvertisedPrefixeRequestOrBuilder
    * @return The publicAdvertisedPrefix.
    */
   java.lang.String getPublicAdvertisedPrefix();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface DeletePublicAdvertisedPrefixeRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface DeletePublicAdvertisedPrefixeRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

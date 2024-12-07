@@ -33,6 +33,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.BatchOperationMetadata)
     BatchOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchOperationMetadata.newBuilder() to construct.
   private BatchOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,6 +123,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>BATCH_OPERATION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int BATCH_OPERATION_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -224,6 +226,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object batch_ = "";
+
   /**
    *
    *
@@ -247,6 +250,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -275,6 +279,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object batchUuid_ = "";
+
   /**
    *
    *
@@ -298,6 +303,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -324,6 +330,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -339,6 +346,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -354,6 +362,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -370,6 +379,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int DONE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp doneTime_;
+
   /**
    *
    *
@@ -385,6 +395,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasDoneTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -400,6 +411,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getDoneTime() {
     return doneTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : doneTime_;
   }
+
   /**
    *
    *
@@ -416,6 +428,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int OPERATION_TYPE_FIELD_NUMBER = 6;
   private int operationType_ = 0;
+
   /**
    *
    *
@@ -432,6 +445,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public int getOperationTypeValue() {
     return operationType_;
   }
+
   /**
    *
    *
@@ -458,6 +472,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -481,6 +496,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -531,6 +547,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -547,12 +564,14 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -566,6 +585,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -586,6 +606,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -612,6 +633,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList warnings_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -626,6 +648,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getWarningsList() {
     return warnings_;
   }
+
   /**
    *
    *
@@ -640,6 +663,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public int getWarningsCount() {
     return warnings_.size();
   }
+
   /**
    *
    *
@@ -655,6 +679,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public java.lang.String getWarnings(int index) {
     return warnings_.get(index);
   }
+
   /**
    *
    *
@@ -924,6 +949,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1262,6 +1288,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object batch_ = "";
+
     /**
      *
      *
@@ -1284,6 +1311,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1334,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1327,6 +1356,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1374,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1368,6 +1399,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object batchUuid_ = "";
+
     /**
      *
      *
@@ -1390,6 +1422,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1412,6 +1445,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1433,6 +1467,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1450,6 +1485,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1479,6 +1515,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1493,6 +1530,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1513,6 +1551,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1535,6 +1574,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1554,6 +1594,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1581,6 +1622,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1600,6 +1642,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1614,6 +1657,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1632,6 +1676,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1664,6 +1709,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         doneTimeBuilder_;
+
     /**
      *
      *
@@ -1678,6 +1724,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasDoneTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1696,6 +1743,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return doneTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1718,6 +1766,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1737,6 +1786,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1764,6 +1814,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1783,6 +1834,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1797,6 +1849,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getDoneTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1813,6 +1866,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return doneTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : doneTime_;
       }
     }
+
     /**
      *
      *
@@ -1840,6 +1894,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     }
 
     private int operationType_ = 0;
+
     /**
      *
      *
@@ -1856,6 +1911,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public int getOperationTypeValue() {
       return operationType_;
     }
+
     /**
      *
      *
@@ -1875,6 +1931,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1897,6 +1954,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
           ? com.google.cloud.dataproc.v1.BatchOperationMetadata.BatchOperationType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1920,6 +1978,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1940,6 +1999,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1962,6 +2022,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1984,6 +2045,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2005,6 +2067,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2022,6 +2085,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2070,6 +2134,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2086,12 +2151,14 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2105,6 +2172,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2125,6 +2193,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2151,6 +2220,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2167,12 +2237,14 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2193,6 +2265,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -2217,6 +2290,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000080;
     }
+
     /**
      *
      *
@@ -2232,6 +2306,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       warnings_.makeImmutable();
       return warnings_;
     }
+
     /**
      *
      *
@@ -2246,6 +2321,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public int getWarningsCount() {
       return warnings_.size();
     }
+
     /**
      *
      *
@@ -2261,6 +2337,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public java.lang.String getWarnings(int index) {
       return warnings_.get(index);
     }
+
     /**
      *
      *
@@ -2276,6 +2353,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getWarningsBytes(int index) {
       return warnings_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2299,6 +2377,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2321,6 +2400,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2340,6 +2420,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2358,6 +2439,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

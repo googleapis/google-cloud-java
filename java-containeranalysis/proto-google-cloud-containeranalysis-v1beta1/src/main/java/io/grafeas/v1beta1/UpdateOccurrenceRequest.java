@@ -33,6 +33,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.UpdateOccurrenceRequest)
     UpdateOccurrenceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateOccurrenceRequest.newBuilder() to construct.
   private UpdateOccurrenceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
 
   public static final int OCCURRENCE_FIELD_NUMBER = 2;
   private io.grafeas.v1beta1.Occurrence occurrence_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
   public boolean hasOccurrence() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
   public io.grafeas.v1beta1.Occurrence getOccurrence() {
     return occurrence_ == null ? io.grafeas.v1beta1.Occurrence.getDefaultInstance() : occurrence_;
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -396,6 +405,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -627,6 +637,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -650,6 +661,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -673,6 +685,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -695,6 +708,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +727,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +758,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
             io.grafeas.v1beta1.Occurrence.Builder,
             io.grafeas.v1beta1.OccurrenceOrBuilder>
         occurrenceBuilder_;
+
     /**
      *
      *
@@ -757,6 +773,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
     public boolean hasOccurrence() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -777,6 +794,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
         return occurrenceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -799,6 +817,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +837,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +865,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +885,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +900,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return getOccurrenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -896,6 +919,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
             : occurrence_;
       }
     }
+
     /**
      *
      *
@@ -928,6 +952,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -942,6 +967,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -962,6 +988,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -984,6 +1011,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1003,6 +1031,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1059,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1049,6 +1079,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1094,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1081,6 +1113,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
             : updateMask_;
       }
     }
+
     /**
      *
      *

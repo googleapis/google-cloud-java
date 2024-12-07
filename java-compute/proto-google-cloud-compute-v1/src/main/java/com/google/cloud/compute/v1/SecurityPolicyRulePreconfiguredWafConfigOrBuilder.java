@@ -37,6 +37,7 @@ public interface SecurityPolicyRulePreconfiguredWafConfigOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusion>
       getExclusionsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SecurityPolicyRulePreconfiguredWafConfigOrBuilder
    */
   com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusion getExclusions(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface SecurityPolicyRulePreconfiguredWafConfigOrBuilder
    * </code>
    */
   int getExclusionsCount();
+
   /**
    *
    *
@@ -78,6 +81,7 @@ public interface SecurityPolicyRulePreconfiguredWafConfigOrBuilder
               com.google.cloud.compute.v1
                   .SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder>
       getExclusionsOrBuilderList();
+
   /**
    *
    *

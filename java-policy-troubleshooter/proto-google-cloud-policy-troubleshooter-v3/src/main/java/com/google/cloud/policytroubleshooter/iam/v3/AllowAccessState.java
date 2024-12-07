@@ -96,6 +96,7 @@ public enum AllowAccessState implements com.google.protobuf.ProtocolMessageEnum 
    * <code>ALLOW_ACCESS_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int ALLOW_ACCESS_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -106,6 +107,7 @@ public enum AllowAccessState implements com.google.protobuf.ProtocolMessageEnum 
    * <code>ALLOW_ACCESS_STATE_GRANTED = 1;</code>
    */
   public static final int ALLOW_ACCESS_STATE_GRANTED_VALUE = 1;
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public enum AllowAccessState implements com.google.protobuf.ProtocolMessageEnum 
    * <code>ALLOW_ACCESS_STATE_NOT_GRANTED = 2;</code>
    */
   public static final int ALLOW_ACCESS_STATE_NOT_GRANTED_VALUE = 2;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public enum AllowAccessState implements com.google.protobuf.ProtocolMessageEnum 
    * <code>ALLOW_ACCESS_STATE_UNKNOWN_CONDITIONAL = 3;</code>
    */
   public static final int ALLOW_ACCESS_STATE_UNKNOWN_CONDITIONAL_VALUE = 3;
+
   /**
    *
    *

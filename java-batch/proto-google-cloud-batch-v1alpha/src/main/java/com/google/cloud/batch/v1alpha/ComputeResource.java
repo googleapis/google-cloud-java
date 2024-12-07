@@ -39,6 +39,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.ComputeResource)
     ComputeResourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ComputeResource.newBuilder() to construct.
   private ComputeResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
 
   public static final int CPU_MILLI_FIELD_NUMBER = 1;
   private long cpuMilli_ = 0L;
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
 
   public static final int MEMORY_MIB_FIELD_NUMBER = 2;
   private long memoryMib_ = 0L;
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
 
   public static final int GPU_COUNT_FIELD_NUMBER = 3;
   private long gpuCount_ = 0L;
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
 
   public static final int BOOT_DISK_MIB_FIELD_NUMBER = 4;
   private long bootDiskMib_ = 0L;
+
   /**
    *
    *
@@ -359,6 +364,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -585,6 +591,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private long cpuMilli_;
+
     /**
      *
      *
@@ -617,6 +624,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     public long getCpuMilli() {
       return cpuMilli_;
     }
+
     /**
      *
      *
@@ -653,6 +661,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +698,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     }
 
     private long memoryMib_;
+
     /**
      *
      *
@@ -719,6 +729,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     public long getMemoryMib() {
       return memoryMib_;
     }
+
     /**
      *
      *
@@ -753,6 +764,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +799,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     }
 
     private long gpuCount_;
+
     /**
      *
      *
@@ -804,6 +817,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     public long getGpuCount() {
       return gpuCount_;
     }
+
     /**
      *
      *
@@ -825,6 +839,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +861,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     }
 
     private long bootDiskMib_;
+
     /**
      *
      *
@@ -861,6 +877,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     public long getBootDiskMib() {
       return bootDiskMib_;
     }
+
     /**
      *
      *
@@ -880,6 +897,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface SpeechConfigOrBuilder
    * @return The speechRecognizer.
    */
   java.lang.String getSpeechRecognizer();
+
   /**
    *
    *

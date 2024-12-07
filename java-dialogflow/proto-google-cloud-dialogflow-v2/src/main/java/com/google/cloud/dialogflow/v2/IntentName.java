@@ -253,7 +253,8 @@ public class IntentName implements ResourceName {
     private Builder(IntentName intentName) {
       Preconditions.checkArgument(
           Objects.equals(intentName.pathTemplate, PROJECT_INTENT),
-          "toBuilder is only supported when IntentName has the pattern of projects/{project}/agent/intents/{intent}");
+          "toBuilder is only supported when IntentName has the pattern of"
+              + " projects/{project}/agent/intents/{intent}");
       this.project = intentName.project;
       this.intent = intentName.intent;
     }

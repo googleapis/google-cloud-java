@@ -33,6 +33,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.QuoteInfo)
     QuoteInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QuoteInfo.newBuilder() to construct.
   private QuoteInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
     private ParsedQuoteCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATE_TIME_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDateTime() {
     return parsedQuoteCase_ == 2;
   }
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.DateTime.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -330,6 +335,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -546,6 +552,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.DateTime.Builder,
             com.google.privacy.dlp.v2.DateTimeOrBuilder>
         dateTimeBuilder_;
+
     /**
      *
      *
@@ -561,6 +568,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDateTime() {
       return parsedQuoteCase_ == 2;
     }
+
     /**
      *
      *
@@ -586,6 +594,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.DateTime.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -608,6 +617,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
       parsedQuoteCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -627,6 +637,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
       parsedQuoteCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +670,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
       parsedQuoteCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -684,6 +696,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +709,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.DateTime.Builder getDateTimeBuilder() {
       return getDateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -716,6 +730,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.DateTime.getDefaultInstance();
       }
     }
+
     /**
      *
      *

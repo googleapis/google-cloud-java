@@ -39,6 +39,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.PickTimeSeriesFilter)
     PickTimeSeriesFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PickTimeSeriesFilter.newBuilder() to construct.
   private PickTimeSeriesFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -155,6 +156,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * <code>METHOD_UNSPECIFIED = 0;</code>
      */
     public static final int METHOD_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -165,6 +167,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * <code>METHOD_MEAN = 1;</code>
      */
     public static final int METHOD_MEAN_VALUE = 1;
+
     /**
      *
      *
@@ -175,6 +178,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * <code>METHOD_MAX = 2;</code>
      */
     public static final int METHOD_MAX_VALUE = 2;
+
     /**
      *
      *
@@ -185,6 +189,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * <code>METHOD_MIN = 3;</code>
      */
     public static final int METHOD_MIN_VALUE = 3;
+
     /**
      *
      *
@@ -195,6 +200,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * <code>METHOD_SUM = 4;</code>
      */
     public static final int METHOD_SUM_VALUE = 4;
+
     /**
      *
      *
@@ -352,6 +358,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * <code>DIRECTION_UNSPECIFIED = 0;</code>
      */
     public static final int DIRECTION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -362,6 +369,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * <code>TOP = 1;</code>
      */
     public static final int TOP_VALUE = 1;
+
     /**
      *
      *
@@ -461,6 +469,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int RANKING_METHOD_FIELD_NUMBER = 1;
   private int rankingMethod_ = 0;
+
   /**
    *
    *
@@ -478,6 +487,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
   public int getRankingMethodValue() {
     return rankingMethod_;
   }
+
   /**
    *
    *
@@ -502,6 +512,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
 
   public static final int NUM_TIME_SERIES_FIELD_NUMBER = 2;
   private int numTimeSeries_ = 0;
+
   /**
    *
    *
@@ -520,6 +531,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
 
   public static final int DIRECTION_FIELD_NUMBER = 3;
   private int direction_ = 0;
+
   /**
    *
    *
@@ -535,6 +547,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
   public int getDirectionValue() {
     return direction_;
   }
+
   /**
    *
    *
@@ -557,6 +570,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
 
   public static final int INTERVAL_FIELD_NUMBER = 4;
   private com.google.type.Interval interval_;
+
   /**
    *
    *
@@ -572,6 +586,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
   public boolean hasInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -587,6 +602,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
   public com.google.type.Interval getInterval() {
     return interval_ == null ? com.google.type.Interval.getDefaultInstance() : interval_;
   }
+
   /**
    *
    *
@@ -801,6 +817,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1044,6 +1061,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int rankingMethod_ = 0;
+
     /**
      *
      *
@@ -1061,6 +1079,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     public int getRankingMethodValue() {
       return rankingMethod_;
     }
+
     /**
      *
      *
@@ -1081,6 +1100,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1122,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
           ? com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1126,6 +1147,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1169,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     }
 
     private int numTimeSeries_;
+
     /**
      *
      *
@@ -1162,6 +1185,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     public int getNumTimeSeries() {
       return numTimeSeries_;
     }
+
     /**
      *
      *
@@ -1181,6 +1205,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1225,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     }
 
     private int direction_ = 0;
+
     /**
      *
      *
@@ -1215,6 +1241,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     public int getDirectionValue() {
       return direction_;
     }
+
     /**
      *
      *
@@ -1233,6 +1260,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1280,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
           ? com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1274,6 +1303,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1328,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
             com.google.type.Interval.Builder,
             com.google.type.IntervalOrBuilder>
         intervalBuilder_;
+
     /**
      *
      *
@@ -1312,6 +1343,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     public boolean hasInterval() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1330,6 +1362,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
         return intervalBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1352,6 +1385,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1405,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1398,6 +1433,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1453,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1431,6 +1468,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return getIntervalFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1447,6 +1485,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
         return interval_ == null ? com.google.type.Interval.getDefaultInstance() : interval_;
       }
     }
+
     /**
      *
      *

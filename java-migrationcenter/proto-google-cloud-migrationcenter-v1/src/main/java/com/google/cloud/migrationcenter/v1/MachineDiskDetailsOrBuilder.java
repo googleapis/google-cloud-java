@@ -62,6 +62,7 @@ public interface MachineDiskDetailsOrBuilder
    * @return Whether the disks field is set.
    */
   boolean hasDisks();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface MachineDiskDetailsOrBuilder
    * @return The disks.
    */
   com.google.cloud.migrationcenter.v1.DiskEntryList getDisks();
+
   /**
    *
    *

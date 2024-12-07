@@ -33,6 +33,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securityposture.v1.PolicySet)
     PolicySetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PolicySet.newBuilder() to construct.
   private PolicySet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object policySetId_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securityposture.v1.Policy> policies_;
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.securityposture.v1.Policy> getPoliciesList() {
     return policies_;
   }
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       getPoliciesOrBuilderList() {
     return policies_;
   }
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
   public int getPoliciesCount() {
     return policies_.size();
   }
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securityposture.v1.Policy getPolicies(int index) {
     return policies_.get(index);
   }
+
   /**
    *
    *
@@ -427,6 +437,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -685,6 +696,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object policySetId_ = "";
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -729,6 +742,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -750,6 +764,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +782,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +807,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -813,6 +830,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -835,6 +853,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -856,6 +875,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +893,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +951,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
         return policiesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -948,6 +970,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
         return policiesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -966,6 +989,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
         return policiesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1037,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1062,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1060,6 +1087,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1109,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1132,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1155,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1177,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1199,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1214,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securityposture.v1.Policy.Builder getPoliciesBuilder(int index) {
       return getPoliciesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1199,6 +1233,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
         return policiesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1218,6 +1253,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(policies_);
       }
     }
+
     /**
      *
      *
@@ -1233,6 +1269,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       return getPoliciesFieldBuilder()
           .addBuilder(com.google.cloud.securityposture.v1.Policy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1248,6 +1285,7 @@ public final class PolicySet extends com.google.protobuf.GeneratedMessageV3
       return getPoliciesFieldBuilder()
           .addBuilder(index, com.google.cloud.securityposture.v1.Policy.getDefaultInstance());
     }
+
     /**
      *
      *

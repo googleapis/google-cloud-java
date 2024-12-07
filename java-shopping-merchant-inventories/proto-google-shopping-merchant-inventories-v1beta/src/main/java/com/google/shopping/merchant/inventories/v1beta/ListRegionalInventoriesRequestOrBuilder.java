@@ -39,6 +39,7 @@ public interface ListRegionalInventoriesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -90,6 +91,7 @@ public interface ListRegionalInventoriesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface UpdateDataScanRequestOrBuilder
    * @return Whether the dataScan field is set.
    */
   boolean hasDataScan();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateDataScanRequestOrBuilder
    * @return The dataScan.
    */
   com.google.cloud.dataplex.v1.DataScan getDataScan();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface UpdateDataScanRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface UpdateDataScanRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

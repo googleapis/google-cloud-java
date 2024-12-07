@@ -33,6 +33,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SourceInstanceProperties)
     SourceInstancePropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SourceInstanceProperties.newBuilder() to construct.
   private SourceInstanceProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -145,6 +146,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
      * <code>UNDEFINED_KEY_REVOCATION_ACTION_TYPE = 0;</code>
      */
     public static final int UNDEFINED_KEY_REVOCATION_ACTION_TYPE_VALUE = 0;
+
     /**
      *
      *
@@ -155,6 +157,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
      * <code>KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED = 467110106;</code>
      */
     public static final int KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED_VALUE = 467110106;
+
     /**
      *
      *
@@ -165,6 +168,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
      * <code>NONE = 2402104;</code>
      */
     public static final int NONE_VALUE = 2402104;
+
     /**
      *
      *
@@ -269,6 +273,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int CAN_IP_FORWARD_FIELD_NUMBER = 467731324;
   private boolean canIpForward_ = false;
+
   /**
    *
    *
@@ -284,6 +289,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public boolean hasCanIpForward() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -302,6 +308,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
 
   public static final int DELETION_PROTECTION_FIELD_NUMBER = 458014698;
   private boolean deletionProtection_ = false;
+
   /**
    *
    *
@@ -317,6 +324,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public boolean hasDeletionProtection() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -337,6 +345,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -352,6 +361,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -375,6 +385,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -403,6 +414,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.SavedAttachedDisk> disks_;
+
   /**
    *
    *
@@ -416,6 +428,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.compute.v1.SavedAttachedDisk> getDisksList() {
     return disks_;
   }
+
   /**
    *
    *
@@ -430,6 +443,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       getDisksOrBuilderList() {
     return disks_;
   }
+
   /**
    *
    *
@@ -443,6 +457,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public int getDisksCount() {
     return disks_.size();
   }
+
   /**
    *
    *
@@ -456,6 +471,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public com.google.cloud.compute.v1.SavedAttachedDisk getDisks(int index) {
     return disks_.get(index);
   }
+
   /**
    *
    *
@@ -474,6 +490,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> guestAccelerators_;
+
   /**
    *
    *
@@ -488,6 +505,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList() {
     return guestAccelerators_;
   }
+
   /**
    *
    *
@@ -503,6 +521,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       getGuestAcceleratorsOrBuilderList() {
     return guestAccelerators_;
   }
+
   /**
    *
    *
@@ -517,6 +536,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public int getGuestAcceleratorsCount() {
     return guestAccelerators_.size();
   }
+
   /**
    *
    *
@@ -531,6 +551,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index) {
     return guestAccelerators_.get(index);
   }
+
   /**
    *
    *
@@ -551,6 +572,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyRevocationActionType_ = "";
+
   /**
    *
    *
@@ -567,6 +589,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public boolean hasKeyRevocationActionType() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -591,6 +614,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -642,6 +666,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -658,12 +683,14 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -677,6 +704,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -697,6 +725,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -722,6 +751,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
+
   /**
    *
    *
@@ -737,6 +767,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public boolean hasMachineType() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -760,6 +791,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -786,6 +818,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
 
   public static final int METADATA_FIELD_NUMBER = 86866735;
   private com.google.cloud.compute.v1.Metadata metadata_;
+
   /**
    *
    *
@@ -801,6 +834,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -818,6 +852,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         ? com.google.cloud.compute.v1.Metadata.getDefaultInstance()
         : metadata_;
   }
+
   /**
    *
    *
@@ -838,6 +873,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object minCpuPlatform_ = "";
+
   /**
    *
    *
@@ -853,6 +889,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public boolean hasMinCpuPlatform() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -876,6 +913,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -904,6 +942,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NetworkInterface> networkInterfaces_;
+
   /**
    *
    *
@@ -917,6 +956,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.compute.v1.NetworkInterface> getNetworkInterfacesList() {
     return networkInterfaces_;
   }
+
   /**
    *
    *
@@ -931,6 +971,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       getNetworkInterfacesOrBuilderList() {
     return networkInterfaces_;
   }
+
   /**
    *
    *
@@ -944,6 +985,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public int getNetworkInterfacesCount() {
     return networkInterfaces_.size();
   }
+
   /**
    *
    *
@@ -957,6 +999,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public com.google.cloud.compute.v1.NetworkInterface getNetworkInterfaces(int index) {
     return networkInterfaces_.get(index);
   }
+
   /**
    *
    *
@@ -974,6 +1017,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
 
   public static final int SCHEDULING_FIELD_NUMBER = 386688404;
   private com.google.cloud.compute.v1.Scheduling scheduling_;
+
   /**
    *
    *
@@ -989,6 +1033,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public boolean hasScheduling() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -1006,6 +1051,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         ? com.google.cloud.compute.v1.Scheduling.getDefaultInstance()
         : scheduling_;
   }
+
   /**
    *
    *
@@ -1026,6 +1072,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ServiceAccount> serviceAccounts_;
+
   /**
    *
    *
@@ -1039,6 +1086,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.compute.v1.ServiceAccount> getServiceAccountsList() {
     return serviceAccounts_;
   }
+
   /**
    *
    *
@@ -1053,6 +1101,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       getServiceAccountsOrBuilderList() {
     return serviceAccounts_;
   }
+
   /**
    *
    *
@@ -1066,6 +1115,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public int getServiceAccountsCount() {
     return serviceAccounts_.size();
   }
+
   /**
    *
    *
@@ -1079,6 +1129,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public com.google.cloud.compute.v1.ServiceAccount getServiceAccounts(int index) {
     return serviceAccounts_.get(index);
   }
+
   /**
    *
    *
@@ -1096,6 +1147,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
 
   public static final int TAGS_FIELD_NUMBER = 3552281;
   private com.google.cloud.compute.v1.Tags tags_;
+
   /**
    *
    *
@@ -1111,6 +1163,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public boolean hasTags() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -1126,6 +1179,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
   public com.google.cloud.compute.v1.Tags getTags() {
     return tags_ == null ? com.google.cloud.compute.v1.Tags.getDefaultInstance() : tags_;
   }
+
   /**
    *
    *
@@ -1486,6 +1540,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2088,6 +2143,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     private int bitField0_;
 
     private boolean canIpForward_;
+
     /**
      *
      *
@@ -2103,6 +2159,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public boolean hasCanIpForward() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2118,6 +2175,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public boolean getCanIpForward() {
       return canIpForward_;
     }
+
     /**
      *
      *
@@ -2137,6 +2195,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2156,6 +2215,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     }
 
     private boolean deletionProtection_;
+
     /**
      *
      *
@@ -2171,6 +2231,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public boolean hasDeletionProtection() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2186,6 +2247,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public boolean getDeletionProtection() {
       return deletionProtection_;
     }
+
     /**
      *
      *
@@ -2205,6 +2267,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2224,6 +2287,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2238,6 +2302,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2260,6 +2325,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2282,6 +2348,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2303,6 +2370,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2320,6 +2388,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2375,6 +2444,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return disksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2391,6 +2461,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return disksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2407,6 +2478,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return disksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2429,6 +2501,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2449,6 +2522,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2471,6 +2545,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2493,6 +2568,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2512,6 +2588,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2532,6 +2609,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2552,6 +2630,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2571,6 +2650,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2590,6 +2670,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2602,6 +2683,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.SavedAttachedDisk.Builder getDisksBuilder(int index) {
       return getDisksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2618,6 +2700,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return disksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2635,6 +2718,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(disks_);
       }
     }
+
     /**
      *
      *
@@ -2648,6 +2732,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       return getDisksFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.SavedAttachedDisk.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2661,6 +2746,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       return getDisksFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.SavedAttachedDisk.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2728,6 +2814,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return guestAcceleratorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2745,6 +2832,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return guestAcceleratorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2762,6 +2850,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return guestAcceleratorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2786,6 +2875,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2807,6 +2897,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2830,6 +2921,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2854,6 +2946,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2875,6 +2968,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2896,6 +2990,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2917,6 +3012,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2937,6 +3033,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2957,6 +3054,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2971,6 +3069,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         int index) {
       return getGuestAcceleratorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2989,6 +3088,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return guestAcceleratorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3007,6 +3107,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(guestAccelerators_);
       }
     }
+
     /**
      *
      *
@@ -3021,6 +3122,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       return getGuestAcceleratorsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.AcceleratorConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3036,6 +3138,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       return getGuestAcceleratorsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.AcceleratorConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3072,6 +3175,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object keyRevocationActionType_ = "";
+
     /**
      *
      *
@@ -3087,6 +3191,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public boolean hasKeyRevocationActionType() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3110,6 +3215,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3133,6 +3239,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3155,6 +3262,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3173,6 +3281,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3222,6 +3331,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -3238,12 +3348,14 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -3257,6 +3369,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -3277,6 +3390,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3303,6 +3417,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3319,12 +3434,14 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -3345,6 +3462,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -3361,6 +3479,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object machineType_ = "";
+
     /**
      *
      *
@@ -3375,6 +3494,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public boolean hasMachineType() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3397,6 +3517,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3419,6 +3540,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3440,6 +3562,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3457,6 +3580,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3486,6 +3610,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.Metadata.Builder,
             com.google.cloud.compute.v1.MetadataOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -3500,6 +3625,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3520,6 +3646,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return metadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3542,6 +3669,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3561,6 +3689,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3588,6 +3717,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3607,6 +3737,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3621,6 +3752,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3639,6 +3771,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
             : metadata_;
       }
     }
+
     /**
      *
      *
@@ -3666,6 +3799,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object minCpuPlatform_ = "";
+
     /**
      *
      *
@@ -3680,6 +3814,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public boolean hasMinCpuPlatform() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3702,6 +3837,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3724,6 +3860,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3745,6 +3882,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3762,6 +3900,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3820,6 +3959,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return networkInterfacesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3837,6 +3977,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return networkInterfacesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3854,6 +3995,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return networkInterfacesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3878,6 +4020,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3899,6 +4042,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3922,6 +4066,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3946,6 +4091,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3967,6 +4113,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3988,6 +4135,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4009,6 +4157,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4029,6 +4178,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4049,6 +4199,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4063,6 +4214,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         int index) {
       return getNetworkInterfacesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4081,6 +4233,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return networkInterfacesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4099,6 +4252,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(networkInterfaces_);
       }
     }
+
     /**
      *
      *
@@ -4113,6 +4267,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       return getNetworkInterfacesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NetworkInterface.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4128,6 +4283,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       return getNetworkInterfacesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NetworkInterface.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4169,6 +4325,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.Scheduling.Builder,
             com.google.cloud.compute.v1.SchedulingOrBuilder>
         schedulingBuilder_;
+
     /**
      *
      *
@@ -4183,6 +4340,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public boolean hasScheduling() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -4203,6 +4361,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return schedulingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4225,6 +4384,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4244,6 +4404,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4271,6 +4432,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4290,6 +4452,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4304,6 +4467,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4322,6 +4486,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
             : scheduling_;
       }
     }
+
     /**
      *
      *
@@ -4381,6 +4546,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return serviceAccountsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4397,6 +4563,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return serviceAccountsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4413,6 +4580,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return serviceAccountsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4435,6 +4603,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4455,6 +4624,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4477,6 +4647,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4499,6 +4670,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4519,6 +4691,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4539,6 +4712,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4559,6 +4733,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4578,6 +4753,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4597,6 +4773,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4609,6 +4786,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.ServiceAccount.Builder getServiceAccountsBuilder(int index) {
       return getServiceAccountsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4626,6 +4804,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return serviceAccountsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4643,6 +4822,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(serviceAccounts_);
       }
     }
+
     /**
      *
      *
@@ -4656,6 +4836,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       return getServiceAccountsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.ServiceAccount.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4669,6 +4850,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       return getServiceAccountsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.ServiceAccount.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4709,6 +4891,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.Tags.Builder,
             com.google.cloud.compute.v1.TagsOrBuilder>
         tagsBuilder_;
+
     /**
      *
      *
@@ -4723,6 +4906,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public boolean hasTags() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -4741,6 +4925,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return tagsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4763,6 +4948,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4782,6 +4968,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4809,6 +4996,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4828,6 +5016,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4842,6 +5031,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       onChanged();
       return getTagsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4858,6 +5048,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         return tags_ == null ? com.google.cloud.compute.v1.Tags.getDefaultInstance() : tags_;
       }
     }
+
     /**
      *
      *

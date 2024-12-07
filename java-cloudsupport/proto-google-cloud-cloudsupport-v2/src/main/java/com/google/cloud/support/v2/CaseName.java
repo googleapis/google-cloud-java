@@ -239,7 +239,8 @@ public class CaseName implements ResourceName {
     private Builder(CaseName caseName) {
       Preconditions.checkArgument(
           Objects.equals(caseName.pathTemplate, ORGANIZATION_CASE),
-          "toBuilder is only supported when CaseName has the pattern of organizations/{organization}/cases/{case}");
+          "toBuilder is only supported when CaseName has the pattern of"
+              + " organizations/{organization}/cases/{case}");
       this.organization = caseName.organization;
       this.case_ = caseName.case_;
     }

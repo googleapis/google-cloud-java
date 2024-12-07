@@ -25,6 +25,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.TranslateTextResponse)
     TranslateTextResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TranslateTextResponse.newBuilder() to construct.
   private TranslateTextResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -60,6 +61,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3.Translation> translations_;
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.translate.v3.Translation> getTranslationsList() {
     return translations_;
   }
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       getTranslationsOrBuilderList() {
     return translations_;
   }
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
   public int getTranslationsCount() {
     return translations_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.translate.v3.Translation getTranslations(int index) {
     return translations_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3.Translation> glossaryTranslations_;
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.translate.v3.Translation> getGlossaryTranslationsList() {
     return glossaryTranslations_;
   }
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       getGlossaryTranslationsOrBuilderList() {
     return glossaryTranslations_;
   }
+
   /**
    *
    *
@@ -193,6 +202,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
   public int getGlossaryTranslationsCount() {
     return glossaryTranslations_.size();
   }
+
   /**
    *
    *
@@ -210,6 +220,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.translate.v3.Translation getGlossaryTranslations(int index) {
     return glossaryTranslations_.get(index);
   }
+
   /**
    *
    *
@@ -402,6 +413,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.translation.v3.TranslateTextResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -714,6 +726,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
         return translationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
         return translationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -750,6 +764,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
         return translationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -774,6 +789,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +837,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +885,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +908,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +931,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +953,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +975,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +990,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.translate.v3.Translation.Builder getTranslationsBuilder(int index) {
       return getTranslationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -984,6 +1009,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
         return translationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1029,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(translations_);
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1045,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       return getTranslationsFieldBuilder()
           .addBuilder(com.google.cloud.translate.v3.Translation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1033,6 +1061,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       return getTranslationsFieldBuilder()
           .addBuilder(index, com.google.cloud.translate.v3.Translation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1104,6 +1133,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
         return glossaryTranslationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1154,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
         return glossaryTranslationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1144,6 +1175,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
         return glossaryTranslationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1171,6 +1203,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1228,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1221,6 +1255,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1248,6 +1283,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1272,6 +1308,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1333,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1320,6 +1358,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1382,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1366,6 +1406,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1383,6 +1424,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return getGlossaryTranslationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1404,6 +1446,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
         return glossaryTranslationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1425,6 +1468,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(glossaryTranslations_);
       }
     }
+
     /**
      *
      *
@@ -1442,6 +1486,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       return getGlossaryTranslationsFieldBuilder()
           .addBuilder(com.google.cloud.translate.v3.Translation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1460,6 +1505,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       return getGlossaryTranslationsFieldBuilder()
           .addBuilder(index, com.google.cloud.translate.v3.Translation.getDefaultInstance());
     }
+
     /**
      *
      *

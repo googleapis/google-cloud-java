@@ -33,6 +33,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.lineage.v1.Origin)
     OriginOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Origin.newBuilder() to construct.
   private Origin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -157,6 +158,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * <code>SOURCE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SOURCE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -167,6 +169,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * <code>CUSTOM = 1;</code>
      */
     public static final int CUSTOM_VALUE = 1;
+
     /**
      *
      *
@@ -177,6 +180,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * <code>BIGQUERY = 2;</code>
      */
     public static final int BIGQUERY_VALUE = 2;
+
     /**
      *
      *
@@ -187,6 +191,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * <code>DATA_FUSION = 3;</code>
      */
     public static final int DATA_FUSION_VALUE = 3;
+
     /**
      *
      *
@@ -197,6 +202,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * <code>COMPOSER = 4;</code>
      */
     public static final int COMPOSER_VALUE = 4;
+
     /**
      *
      *
@@ -207,6 +213,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * <code>LOOKER_STUDIO = 5;</code>
      */
     public static final int LOOKER_STUDIO_VALUE = 5;
+
     /**
      *
      *
@@ -311,6 +318,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_TYPE_FIELD_NUMBER = 1;
   private int sourceType_ = 0;
+
   /**
    *
    *
@@ -330,6 +338,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
   public int getSourceTypeValue() {
     return sourceType_;
   }
+
   /**
    *
    *
@@ -358,6 +367,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -389,6 +399,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -593,6 +604,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -789,6 +801,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int sourceType_ = 0;
+
     /**
      *
      *
@@ -808,6 +821,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
     public int getSourceTypeValue() {
       return sourceType_;
     }
+
     /**
      *
      *
@@ -830,6 +844,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +868,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datacatalog.lineage.v1.Origin.SourceType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -878,6 +894,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +918,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -931,6 +949,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -961,6 +980,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -990,6 +1010,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1015,6 +1036,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.ListTargetSitesResponse)
     ListTargetSitesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListTargetSitesResponse.newBuilder() to construct.
   private ListTargetSitesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1.TargetSite> targetSites_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.discoveryengine.v1.TargetSite> getTargetSitesList() {
     return targetSites_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       getTargetSitesOrBuilderList() {
     return targetSites_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
   public int getTargetSitesCount() {
     return targetSites_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
   public com.google.cloud.discoveryengine.v1.TargetSite getTargetSites(int index) {
     return targetSites_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
+
   /**
    *
    *
@@ -390,6 +399,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -682,6 +692,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
         return targetSitesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -698,6 +709,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
         return targetSitesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -714,6 +726,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
         return targetSitesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -736,6 +749,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +770,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +793,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +837,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +858,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +879,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +899,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +919,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +932,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
     public com.google.cloud.discoveryengine.v1.TargetSite.Builder getTargetSitesBuilder(int index) {
       return getTargetSitesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -927,6 +950,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
         return targetSitesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -944,6 +968,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(targetSites_);
       }
     }
+
     /**
      *
      *
@@ -957,6 +982,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       return getTargetSitesFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1.TargetSite.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -970,6 +996,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       return getTargetSitesFieldBuilder()
           .addBuilder(index, com.google.cloud.discoveryengine.v1.TargetSite.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1002,6 +1029,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1025,6 +1053,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1048,6 +1077,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1070,6 +1100,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1119,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1145,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
     }
 
     private int totalSize_;
+
     /**
      *
      *
@@ -1129,6 +1162,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
     public int getTotalSize() {
       return totalSize_;
     }
+
     /**
      *
      *
@@ -1149,6 +1183,7 @@ public final class ListTargetSitesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

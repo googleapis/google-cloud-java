@@ -52,6 +52,7 @@ public interface NotificationConfigOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
+
   /**
    *
    *
@@ -94,6 +95,7 @@ public interface NotificationConfigOrBuilder
    * @return The enum numeric value on the wire for messageFormat.
    */
   int getMessageFormatValue();
+
   /**
    *
    *

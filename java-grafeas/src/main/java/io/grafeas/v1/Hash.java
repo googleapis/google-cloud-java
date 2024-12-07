@@ -34,6 +34,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.Hash)
     HashOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Hash.newBuilder() to construct.
   private Hash(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -296,6 +300,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -487,6 +492,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -509,6 +515,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -531,6 +538,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -552,6 +560,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -569,6 +578,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -593,6 +603,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -608,6 +619,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -629,6 +641,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

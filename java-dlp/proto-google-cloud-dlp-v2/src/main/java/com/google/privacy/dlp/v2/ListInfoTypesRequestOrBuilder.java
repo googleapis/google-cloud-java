@@ -40,6 +40,7 @@ public interface ListInfoTypesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface ListInfoTypesRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface ListInfoTypesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface ListInfoTypesRequestOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
+
   /**
    *
    *

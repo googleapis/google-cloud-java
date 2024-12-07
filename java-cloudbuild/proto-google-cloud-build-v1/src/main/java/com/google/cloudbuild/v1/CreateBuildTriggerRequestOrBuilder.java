@@ -37,6 +37,7 @@ public interface CreateBuildTriggerRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CreateBuildTriggerRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface CreateBuildTriggerRequestOrBuilder
    * @return Whether the trigger field is set.
    */
   boolean hasTrigger();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CreateBuildTriggerRequestOrBuilder
    * @return The trigger.
    */
   com.google.cloudbuild.v1.BuildTrigger getTrigger();
+
   /**
    *
    *

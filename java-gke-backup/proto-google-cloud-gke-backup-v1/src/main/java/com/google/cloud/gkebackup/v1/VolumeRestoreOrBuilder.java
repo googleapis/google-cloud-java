@@ -37,6 +37,7 @@ public interface VolumeRestoreOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface VolumeRestoreOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface VolumeRestoreOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface VolumeRestoreOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface VolumeRestoreOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface VolumeRestoreOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface VolumeRestoreOrBuilder
    * @return The volumeBackup.
    */
   java.lang.String getVolumeBackup();
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public interface VolumeRestoreOrBuilder
    * @return Whether the targetPvc field is set.
    */
   boolean hasTargetPvc();
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public interface VolumeRestoreOrBuilder
    * @return The targetPvc.
    */
   com.google.cloud.gkebackup.v1.NamespacedName getTargetPvc();
+
   /**
    *
    *
@@ -243,6 +252,7 @@ public interface VolumeRestoreOrBuilder
    * @return The volumeHandle.
    */
   java.lang.String getVolumeHandle();
+
   /**
    *
    *
@@ -271,6 +281,7 @@ public interface VolumeRestoreOrBuilder
    * @return The enum numeric value on the wire for volumeType.
    */
   int getVolumeTypeValue();
+
   /**
    *
    *
@@ -301,6 +312,7 @@ public interface VolumeRestoreOrBuilder
    * @return Whether the completeTime field is set.
    */
   boolean hasCompleteTime();
+
   /**
    *
    *
@@ -316,6 +328,7 @@ public interface VolumeRestoreOrBuilder
    * @return The completeTime.
    */
   com.google.protobuf.Timestamp getCompleteTime();
+
   /**
    *
    *
@@ -344,6 +357,7 @@ public interface VolumeRestoreOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -372,6 +386,7 @@ public interface VolumeRestoreOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
+
   /**
    *
    *
@@ -402,6 +417,7 @@ public interface VolumeRestoreOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

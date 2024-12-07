@@ -39,6 +39,7 @@ public interface GetCompanyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

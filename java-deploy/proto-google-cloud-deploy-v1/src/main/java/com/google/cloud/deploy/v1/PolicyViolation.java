@@ -35,6 +35,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.PolicyViolation)
     PolicyViolationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PolicyViolation.newBuilder() to construct.
   private PolicyViolation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.PolicyViolationDetails> policyViolationDetails_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
       getPolicyViolationDetailsList() {
     return policyViolationDetails_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
       getPolicyViolationDetailsOrBuilderList() {
     return policyViolationDetails_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
   public int getPolicyViolationDetailsCount() {
     return policyViolationDetails_.size();
   }
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.deploy.v1.PolicyViolationDetails getPolicyViolationDetails(int index) {
     return policyViolationDetails_.get(index);
   }
+
   /**
    *
    *
@@ -307,6 +313,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -573,6 +580,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
         return policyViolationDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -590,6 +598,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
         return policyViolationDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -607,6 +616,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
         return policyViolationDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -631,6 +641,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -652,6 +663,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +688,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +713,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +757,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +779,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +800,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +821,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +836,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
         getPolicyViolationDetailsBuilder(int index) {
       return getPolicyViolationDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -835,6 +855,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
         return policyViolationDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -853,6 +874,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(policyViolationDetails_);
       }
     }
+
     /**
      *
      *
@@ -868,6 +890,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
       return getPolicyViolationDetailsFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.PolicyViolationDetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -884,6 +907,7 @@ public final class PolicyViolation extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               index, com.google.cloud.deploy.v1.PolicyViolationDetails.getDefaultInstance());
     }
+
     /**
      *
      *

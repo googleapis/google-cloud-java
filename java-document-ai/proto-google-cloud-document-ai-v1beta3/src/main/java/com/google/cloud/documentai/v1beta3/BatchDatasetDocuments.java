@@ -33,6 +33,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.BatchDatasetDocuments)
     BatchDatasetDocumentsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchDatasetDocuments.newBuilder() to construct.
   private BatchDatasetDocuments(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
      * </code>
      */
     java.util.List<com.google.cloud.documentai.v1beta3.DocumentId> getDocumentIdsList();
+
     /**
      *
      *
@@ -92,6 +94,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
      * </code>
      */
     com.google.cloud.documentai.v1beta3.DocumentId getDocumentIds(int index);
+
     /**
      *
      *
@@ -105,6 +108,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
      * </code>
      */
     int getDocumentIdsCount();
+
     /**
      *
      *
@@ -119,6 +123,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
      */
     java.util.List<? extends com.google.cloud.documentai.v1beta3.DocumentIdOrBuilder>
         getDocumentIdsOrBuilderList();
+
     /**
      *
      *
@@ -133,6 +138,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
      */
     com.google.cloud.documentai.v1beta3.DocumentIdOrBuilder getDocumentIdsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.BatchDatasetDocuments.IndividualDocumentIds)
       IndividualDocumentIdsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IndividualDocumentIds.newBuilder() to construct.
     private IndividualDocumentIds(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -183,6 +190,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.documentai.v1beta3.DocumentId> documentIds_;
+
     /**
      *
      *
@@ -199,6 +207,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
     public java.util.List<com.google.cloud.documentai.v1beta3.DocumentId> getDocumentIdsList() {
       return documentIds_;
     }
+
     /**
      *
      *
@@ -216,6 +225,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         getDocumentIdsOrBuilderList() {
       return documentIds_;
     }
+
     /**
      *
      *
@@ -232,6 +242,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
     public int getDocumentIdsCount() {
       return documentIds_.size();
     }
+
     /**
      *
      *
@@ -248,6 +259,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
     public com.google.cloud.documentai.v1beta3.DocumentId getDocumentIds(int index) {
       return documentIds_.get(index);
     }
+
     /**
      *
      *
@@ -437,6 +449,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
           return documentIdsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -742,6 +756,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
           return documentIdsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -761,6 +776,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
           return documentIdsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -787,6 +803,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -810,6 +827,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -835,6 +853,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -861,6 +880,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -884,6 +904,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -907,6 +928,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -930,6 +952,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -952,6 +975,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -974,6 +998,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -990,6 +1015,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
           int index) {
         return getDocumentIdsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1010,6 +1036,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
           return documentIdsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1030,6 +1057,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
           return java.util.Collections.unmodifiableList(documentIds_);
         }
       }
+
       /**
        *
        *
@@ -1046,6 +1074,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         return getDocumentIdsFieldBuilder()
             .addBuilder(com.google.cloud.documentai.v1beta3.DocumentId.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1063,6 +1092,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         return getDocumentIdsFieldBuilder()
             .addBuilder(index, com.google.cloud.documentai.v1beta3.DocumentId.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1186,6 +1216,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
     private CriteriaCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1219,6 +1250,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
   }
 
   public static final int INDIVIDUAL_DOCUMENT_IDS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1236,6 +1268,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
   public boolean hasIndividualDocumentIds() {
     return criteriaCase_ == 1;
   }
+
   /**
    *
    *
@@ -1259,6 +1292,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
     return com.google.cloud.documentai.v1beta3.BatchDatasetDocuments.IndividualDocumentIds
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1282,6 +1316,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
   }
 
   public static final int FILTER_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1298,6 +1333,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
   public boolean hasFilter() {
     return criteriaCase_ == 2;
   }
+
   /**
    *
    *
@@ -1327,6 +1363,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -1550,6 +1587,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1785,6 +1823,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
             com.google.cloud.documentai.v1beta3.BatchDatasetDocuments
                 .IndividualDocumentIdsOrBuilder>
         individualDocumentIdsBuilder_;
+
     /**
      *
      *
@@ -1802,6 +1841,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
     public boolean hasIndividualDocumentIds() {
       return criteriaCase_ == 1;
     }
+
     /**
      *
      *
@@ -1833,6 +1873,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1858,6 +1899,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
       criteriaCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1881,6 +1923,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
       criteriaCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1921,6 +1964,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
       criteriaCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1948,6 +1992,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1963,6 +2008,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         getIndividualDocumentIdsBuilder() {
       return getIndividualDocumentIdsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1988,6 +2034,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2046,6 +2093,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
     public boolean hasFilter() {
       return criteriaCase_ == 2;
     }
+
     /**
      *
      *
@@ -2076,6 +2124,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2106,6 +2155,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2129,6 +2179,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2150,6 +2201,7 @@ public final class BatchDatasetDocuments extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PathRule)
     PathRuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PathRule.newBuilder() to construct.
   private PathRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CUSTOM_ERROR_RESPONSE_POLICY_FIELD_NUMBER = 202816619;
   private com.google.cloud.compute.v1.CustomErrorResponsePolicy customErrorResponsePolicy_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomErrorResponsePolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.CustomErrorResponsePolicy.getDefaultInstance()
         : customErrorResponsePolicy_;
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList paths_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPathsList() {
     return paths_;
   }
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
   public int getPathsCount() {
     return paths_.size();
   }
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPaths(int index) {
     return paths_.get(index);
   }
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROUTE_ACTION_FIELD_NUMBER = 424563948;
   private com.google.cloud.compute.v1.HttpRouteAction routeAction_;
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRouteAction() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -220,6 +230,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.HttpRouteAction.getDefaultInstance()
         : routeAction_;
   }
+
   /**
    *
    *
@@ -240,6 +251,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
+
   /**
    *
    *
@@ -255,6 +267,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasService() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -278,6 +291,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -304,6 +318,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int URL_REDIRECT_FIELD_NUMBER = 405147820;
   private com.google.cloud.compute.v1.HttpRedirectAction urlRedirect_;
+
   /**
    *
    *
@@ -319,6 +334,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUrlRedirect() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -336,6 +352,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.HttpRedirectAction.getDefaultInstance()
         : urlRedirect_;
   }
+
   /**
    *
    *
@@ -575,6 +592,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -858,6 +876,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.CustomErrorResponsePolicy.Builder,
             com.google.cloud.compute.v1.CustomErrorResponsePolicyOrBuilder>
         customErrorResponsePolicyBuilder_;
+
     /**
      *
      *
@@ -874,6 +893,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomErrorResponsePolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -896,6 +916,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         return customErrorResponsePolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +965,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +997,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1019,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1037,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomErrorResponsePolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1033,6 +1059,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
             : customErrorResponsePolicy_;
       }
     }
+
     /**
      *
      *
@@ -1070,6 +1097,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1085,6 +1113,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       paths_.makeImmutable();
       return paths_;
     }
+
     /**
      *
      *
@@ -1099,6 +1128,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     public int getPathsCount() {
       return paths_.size();
     }
+
     /**
      *
      *
@@ -1114,6 +1144,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPaths(int index) {
       return paths_.get(index);
     }
+
     /**
      *
      *
@@ -1129,6 +1160,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPathsBytes(int index) {
       return paths_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1152,6 +1184,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1174,6 +1207,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1193,6 +1227,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1246,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1277,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.HttpRouteAction.Builder,
             com.google.cloud.compute.v1.HttpRouteActionOrBuilder>
         routeActionBuilder_;
+
     /**
      *
      *
@@ -1255,6 +1292,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRouteAction() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1275,6 +1313,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         return routeActionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1297,6 +1336,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1317,6 +1357,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1385,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1405,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1420,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRouteActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1395,6 +1439,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
             : routeAction_;
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1467,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object service_ = "";
+
     /**
      *
      *
@@ -1436,6 +1482,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasService() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1458,6 +1505,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1480,6 +1528,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1501,6 +1550,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1518,6 +1568,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1547,6 +1598,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.HttpRedirectAction.Builder,
             com.google.cloud.compute.v1.HttpRedirectActionOrBuilder>
         urlRedirectBuilder_;
+
     /**
      *
      *
@@ -1561,6 +1613,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUrlRedirect() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1581,6 +1634,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         return urlRedirectBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1603,6 +1657,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1623,6 +1678,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1651,6 +1707,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1670,6 +1727,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1684,6 +1742,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUrlRedirectFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1702,6 +1761,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
             : urlRedirect_;
       }
     }
+
     /**
      *
      *

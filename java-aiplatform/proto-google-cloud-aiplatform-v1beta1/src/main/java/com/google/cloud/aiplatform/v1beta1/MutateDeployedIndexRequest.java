@@ -34,6 +34,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MutateDeployedIndexRequest)
     MutateDeployedIndexRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MutateDeployedIndexRequest.newBuilder() to construct.
   private MutateDeployedIndexRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object indexEndpoint_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
 
   public static final int DEPLOYED_INDEX_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.DeployedIndex deployedIndex_;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
   public boolean hasDeployedIndex() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
         ? com.google.cloud.aiplatform.v1beta1.DeployedIndex.getDefaultInstance()
         : deployedIndex_;
   }
+
   /**
    *
    *
@@ -360,6 +366,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -578,6 +585,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object indexEndpoint_ = "";
+
     /**
      *
      *
@@ -604,6 +612,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -630,6 +639,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -655,6 +665,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +687,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1beta1.DeployedIndex.Builder,
             com.google.cloud.aiplatform.v1beta1.DeployedIndexOrBuilder>
         deployedIndexBuilder_;
+
     /**
      *
      *
@@ -727,6 +740,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
     public boolean hasDeployedIndex() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -751,6 +765,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
         return deployedIndexBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +817,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +874,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +893,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
       onChanged();
       return getDeployedIndexFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -896,6 +916,7 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
             : deployedIndex_;
       }
     }
+
     /**
      *
      *

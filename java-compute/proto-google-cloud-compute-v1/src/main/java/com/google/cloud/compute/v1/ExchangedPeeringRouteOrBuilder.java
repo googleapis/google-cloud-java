@@ -36,6 +36,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * @return Whether the destRange field is set.
    */
   boolean hasDestRange();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * @return The destRange.
    */
   java.lang.String getDestRange();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * @return Whether the imported field is set.
    */
   boolean hasImported();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * @return Whether the nextHopRegion field is set.
    */
   boolean hasNextHopRegion();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * @return The nextHopRegion.
    */
   java.lang.String getNextHopRegion();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

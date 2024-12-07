@@ -36,6 +36,7 @@ public interface BatchRecognizeFileResultOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BatchRecognizeFileResultOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -65,12 +67,14 @@ public interface BatchRecognizeFileResultOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    * <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code>
    *
    * @return The metadata.
    */
   com.google.cloud.speech.v2.RecognitionResponseMetadata getMetadata();
+
   /** <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code> */
   com.google.cloud.speech.v2.RecognitionResponseMetadataOrBuilder getMetadataOrBuilder();
 
@@ -90,6 +94,7 @@ public interface BatchRecognizeFileResultOrBuilder
    * @return Whether the cloudStorageResult field is set.
    */
   boolean hasCloudStorageResult();
+
   /**
    *
    *
@@ -106,6 +111,7 @@ public interface BatchRecognizeFileResultOrBuilder
    * @return The cloudStorageResult.
    */
   com.google.cloud.speech.v2.CloudStorageResult getCloudStorageResult();
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public interface BatchRecognizeFileResultOrBuilder
    * @return Whether the inlineResult field is set.
    */
   boolean hasInlineResult();
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public interface BatchRecognizeFileResultOrBuilder
    * @return The inlineResult.
    */
   com.google.cloud.speech.v2.InlineResult getInlineResult();
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public interface BatchRecognizeFileResultOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getUri();
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public interface BatchRecognizeFileResultOrBuilder
    */
   @java.lang.Deprecated
   boolean hasTranscript();
+
   /**
    *
    *
@@ -226,6 +236,7 @@ public interface BatchRecognizeFileResultOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.speech.v2.BatchRecognizeResults getTranscript();
+
   /**
    *
    *

@@ -42,6 +42,7 @@ public interface VPCSCConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface VPCSCConfigOrBuilder
    * @return The enum numeric value on the wire for vpcscPolicy.
    */
   int getVpcscPolicyValue();
+
   /**
    *
    *

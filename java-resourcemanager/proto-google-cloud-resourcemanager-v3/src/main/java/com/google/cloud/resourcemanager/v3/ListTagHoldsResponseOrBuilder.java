@@ -34,6 +34,7 @@ public interface ListTagHoldsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.TagHold tag_holds = 1;</code>
    */
   java.util.List<com.google.cloud.resourcemanager.v3.TagHold> getTagHoldsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTagHoldsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.TagHold tag_holds = 1;</code>
    */
   com.google.cloud.resourcemanager.v3.TagHold getTagHolds(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTagHoldsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.TagHold tag_holds = 1;</code>
    */
   int getTagHoldsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListTagHoldsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.resourcemanager.v3.TagHoldOrBuilder>
       getTagHoldsOrBuilderList();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface ListTagHoldsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

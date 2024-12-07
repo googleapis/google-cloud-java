@@ -37,6 +37,7 @@ public interface NetworkEndpointGroupsListEndpointsRequestOrBuilder
    * @return Whether the healthStatus field is set.
    */
   boolean hasHealthStatus();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface NetworkEndpointGroupsListEndpointsRequestOrBuilder
    * @return The healthStatus.
    */
   java.lang.String getHealthStatus();
+
   /**
    *
    *

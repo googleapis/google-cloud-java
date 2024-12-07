@@ -33,6 +33,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.FieldExtractionMetadata)
     FieldExtractionMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FieldExtractionMetadata.newBuilder() to construct.
   private FieldExtractionMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int SUMMARY_OPTIONS_FIELD_NUMBER = 2;
   private com.google.cloud.documentai.v1beta3.SummaryOptions summaryOptions_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
   public boolean hasSummaryOptions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
         ? com.google.cloud.documentai.v1beta3.SummaryOptions.getDefaultInstance()
         : summaryOptions_;
   }
+
   /**
    *
    *
@@ -277,6 +281,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -481,6 +486,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
             com.google.cloud.documentai.v1beta3.SummaryOptions.Builder,
             com.google.cloud.documentai.v1beta3.SummaryOptionsOrBuilder>
         summaryOptionsBuilder_;
+
     /**
      *
      *
@@ -495,6 +501,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
     public boolean hasSummaryOptions() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -515,6 +522,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
         return summaryOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -537,6 +545,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -557,6 +566,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -585,6 +595,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -604,6 +615,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -618,6 +630,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
       onChanged();
       return getSummaryOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -637,6 +650,7 @@ public final class FieldExtractionMetadata extends com.google.protobuf.Generated
             : summaryOptions_;
       }
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface QaScorecardResultOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface QaScorecardResultOrBuilder
    * @return The qaScorecardRevision.
    */
   java.lang.String getQaScorecardRevision();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface QaScorecardResultOrBuilder
    * @return The conversation.
    */
   java.lang.String getConversation();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface QaScorecardResultOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface QaScorecardResultOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface QaScorecardResultOrBuilder
    * @return The agentId.
    */
   java.lang.String getAgentId();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface QaScorecardResultOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.QaAnswer qa_answers = 6;</code>
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.QaAnswer> getQaAnswersList();
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public interface QaScorecardResultOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.QaAnswer qa_answers = 6;</code>
    */
   com.google.cloud.contactcenterinsights.v1.QaAnswer getQaAnswers(int index);
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface QaScorecardResultOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.QaAnswer qa_answers = 6;</code>
    */
   int getQaAnswersCount();
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public interface QaScorecardResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.QaAnswerOrBuilder>
       getQaAnswersOrBuilderList();
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public interface QaScorecardResultOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
+
   /**
    *
    *
@@ -258,6 +269,7 @@ public interface QaScorecardResultOrBuilder
    * @return Whether the potentialScore field is set.
    */
   boolean hasPotentialScore();
+
   /**
    *
    *
@@ -285,6 +297,7 @@ public interface QaScorecardResultOrBuilder
    * @return Whether the normalizedScore field is set.
    */
   boolean hasNormalizedScore();
+
   /**
    *
    *
@@ -312,6 +325,7 @@ public interface QaScorecardResultOrBuilder
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResult>
       getQaTagResultsList();
+
   /**
    *
    *
@@ -325,6 +339,7 @@ public interface QaScorecardResultOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResult getQaTagResults(
       int index);
+
   /**
    *
    *
@@ -337,6 +352,7 @@ public interface QaScorecardResultOrBuilder
    * </code>
    */
   int getQaTagResultsCount();
+
   /**
    *
    *
@@ -352,6 +368,7 @@ public interface QaScorecardResultOrBuilder
           ? extends
               com.google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResultOrBuilder>
       getQaTagResultsOrBuilderList();
+
   /**
    *
    *
@@ -379,6 +396,7 @@ public interface QaScorecardResultOrBuilder
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult.ScoreSource>
       getScoreSourcesList();
+
   /**
    *
    *
@@ -392,6 +410,7 @@ public interface QaScorecardResultOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.QaScorecardResult.ScoreSource getScoreSources(
       int index);
+
   /**
    *
    *
@@ -404,6 +423,7 @@ public interface QaScorecardResultOrBuilder
    * </code>
    */
   int getScoreSourcesCount();
+
   /**
    *
    *
@@ -419,6 +439,7 @@ public interface QaScorecardResultOrBuilder
           ? extends
               com.google.cloud.contactcenterinsights.v1.QaScorecardResult.ScoreSourceOrBuilder>
       getScoreSourcesOrBuilderList();
+
   /**
    *
    *

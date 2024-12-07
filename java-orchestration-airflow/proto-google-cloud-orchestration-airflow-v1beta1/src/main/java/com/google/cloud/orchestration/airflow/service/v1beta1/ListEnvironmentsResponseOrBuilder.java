@@ -37,6 +37,7 @@ public interface ListEnvironmentsResponseOrBuilder
    */
   java.util.List<com.google.cloud.orchestration.airflow.service.v1beta1.Environment>
       getEnvironmentsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListEnvironmentsResponseOrBuilder
    * </code>
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.Environment getEnvironments(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListEnvironmentsResponseOrBuilder
    * </code>
    */
   int getEnvironmentsCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface ListEnvironmentsResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentOrBuilder>
       getEnvironmentsOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ListEnvironmentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

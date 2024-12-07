@@ -36,6 +36,7 @@ public interface GenerateRetrievalUrlResponseOrBuilder
    * @return The signedUri.
    */
   java.lang.String getSignedUri();
+
   /**
    *
    *

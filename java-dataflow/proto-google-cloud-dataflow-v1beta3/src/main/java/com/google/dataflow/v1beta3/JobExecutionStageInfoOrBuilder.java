@@ -38,6 +38,7 @@ public interface JobExecutionStageInfoOrBuilder
    * @return A list containing the stepName.
    */
   java.util.List<java.lang.String> getStepNameList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface JobExecutionStageInfoOrBuilder
    * @return The count of stepName.
    */
   int getStepNameCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface JobExecutionStageInfoOrBuilder
    * @return The stepName at the given index.
    */
   java.lang.String getStepName(int index);
+
   /**
    *
    *

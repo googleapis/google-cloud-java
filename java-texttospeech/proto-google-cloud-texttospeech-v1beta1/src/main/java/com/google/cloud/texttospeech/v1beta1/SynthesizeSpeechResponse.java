@@ -33,6 +33,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse)
     SynthesizeSpeechResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SynthesizeSpeechResponse.newBuilder() to construct.
   private SynthesizeSpeechResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int AUDIO_CONTENT_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString audioContent_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.texttospeech.v1beta1.Timepoint> timepoints_;
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.texttospeech.v1beta1.Timepoint> getTimepointsList() {
     return timepoints_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       getTimepointsOrBuilderList() {
     return timepoints_;
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
   public int getTimepointsCount() {
     return timepoints_.size();
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
   public com.google.cloud.texttospeech.v1beta1.Timepoint getTimepoints(int index) {
     return timepoints_.get(index);
   }
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
 
   public static final int AUDIO_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.texttospeech.v1beta1.AudioConfig audioConfig_;
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
   public boolean hasAudioConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
         ? com.google.cloud.texttospeech.v1beta1.AudioConfig.getDefaultInstance()
         : audioConfig_;
   }
+
   /**
    *
    *
@@ -399,6 +409,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -677,6 +688,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     private int bitField0_;
 
     private com.google.protobuf.ByteString audioContent_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getAudioContent() {
       return audioContent_;
     }
+
     /**
      *
      *
@@ -721,6 +734,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
         return timepointsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -794,6 +809,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
         return timepointsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -811,6 +827,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
         return timepointsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +873,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +897,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +921,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +943,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +965,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +987,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1008,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1029,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1043,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     public com.google.cloud.texttospeech.v1beta1.Timepoint.Builder getTimepointsBuilder(int index) {
       return getTimepointsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1035,6 +1062,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
         return timepointsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1053,6 +1081,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(timepoints_);
       }
     }
+
     /**
      *
      *
@@ -1067,6 +1096,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       return getTimepointsFieldBuilder()
           .addBuilder(com.google.cloud.texttospeech.v1beta1.Timepoint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1081,6 +1111,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       return getTimepointsFieldBuilder()
           .addBuilder(index, com.google.cloud.texttospeech.v1beta1.Timepoint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1119,6 +1150,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
             com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder,
             com.google.cloud.texttospeech.v1beta1.AudioConfigOrBuilder>
         audioConfigBuilder_;
+
     /**
      *
      *
@@ -1133,6 +1165,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     public boolean hasAudioConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1153,6 +1186,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
         return audioConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1175,6 +1209,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1230,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1223,6 +1259,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1242,6 +1279,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1294,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       onChanged();
       return getAudioConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1274,6 +1313,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
             : audioConfig_;
       }
     }
+
     /**
      *
      *

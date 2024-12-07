@@ -33,6 +33,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.PropertyDefinition)
     PropertyDefinitionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PropertyDefinition.newBuilder() to construct.
   private PropertyDefinition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -159,6 +160,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * <code>RETRIEVAL_IMPORTANCE_UNSPECIFIED = 0;</code>
      */
     public static final int RETRIEVAL_IMPORTANCE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -169,6 +171,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * <code>HIGHEST = 1;</code>
      */
     public static final int HIGHEST_VALUE = 1;
+
     /**
      *
      *
@@ -179,6 +182,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * <code>HIGHER = 2;</code>
      */
     public static final int HIGHER_VALUE = 2;
+
     /**
      *
      *
@@ -189,6 +193,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * <code>HIGH = 3;</code>
      */
     public static final int HIGH_VALUE = 3;
+
     /**
      *
      *
@@ -199,6 +204,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * <code>MEDIUM = 4;</code>
      */
     public static final int MEDIUM_VALUE = 4;
+
     /**
      *
      *
@@ -209,6 +215,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * <code>LOW = 5;</code>
      */
     public static final int LOW_VALUE = 5;
+
     /**
      *
      *
@@ -333,6 +340,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -358,6 +366,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * @return The processorType.
      */
     java.lang.String getProcessorType();
+
     /**
      *
      *
@@ -371,6 +380,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getProcessorTypeBytes();
   }
+
   /**
    *
    *
@@ -385,6 +395,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource)
       SchemaSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SchemaSource.newBuilder() to construct.
     private SchemaSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -420,6 +431,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -443,6 +455,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -471,6 +484,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object processorType_ = "";
+
     /**
      *
      *
@@ -494,6 +508,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -689,6 +704,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -899,6 +915,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -921,6 +938,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -943,6 +961,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -964,6 +983,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -981,6 +1001,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1005,6 +1026,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object processorType_ = "";
+
       /**
        *
        *
@@ -1027,6 +1049,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1049,6 +1072,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1070,6 +1094,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1087,6 +1112,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1200,6 +1226,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     private ValueTypeOptionsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1248,6 +1275,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1274,6 +1302,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -1305,6 +1334,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -1328,6 +1358,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -1354,6 +1385,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
 
   public static final int IS_REPEATABLE_FIELD_NUMBER = 2;
   private boolean isRepeatable_ = false;
+
   /**
    *
    *
@@ -1372,6 +1404,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
 
   public static final int IS_FILTERABLE_FIELD_NUMBER = 3;
   private boolean isFilterable_ = false;
+
   /**
    *
    *
@@ -1391,6 +1424,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
 
   public static final int IS_SEARCHABLE_FIELD_NUMBER = 4;
   private boolean isSearchable_ = false;
+
   /**
    *
    *
@@ -1409,6 +1443,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
 
   public static final int IS_METADATA_FIELD_NUMBER = 5;
   private boolean isMetadata_ = false;
+
   /**
    *
    *
@@ -1430,6 +1465,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
 
   public static final int IS_REQUIRED_FIELD_NUMBER = 14;
   private boolean isRequired_ = false;
+
   /**
    *
    *
@@ -1450,6 +1486,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
 
   public static final int RETRIEVAL_IMPORTANCE_FIELD_NUMBER = 18;
   private int retrievalImportance_ = 0;
+
   /**
    *
    *
@@ -1467,6 +1504,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   public int getRetrievalImportanceValue() {
     return retrievalImportance_;
   }
+
   /**
    *
    *
@@ -1492,6 +1530,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int INTEGER_TYPE_OPTIONS_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -1507,6 +1546,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   public boolean hasIntegerTypeOptions() {
     return valueTypeOptionsCase_ == 7;
   }
+
   /**
    *
    *
@@ -1525,6 +1565,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.contentwarehouse.v1.IntegerTypeOptions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1544,6 +1585,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int FLOAT_TYPE_OPTIONS_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -1559,6 +1601,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   public boolean hasFloatTypeOptions() {
     return valueTypeOptionsCase_ == 8;
   }
+
   /**
    *
    *
@@ -1577,6 +1620,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.contentwarehouse.v1.FloatTypeOptions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1596,6 +1640,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TEXT_TYPE_OPTIONS_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -1611,6 +1656,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   public boolean hasTextTypeOptions() {
     return valueTypeOptionsCase_ == 9;
   }
+
   /**
    *
    *
@@ -1629,6 +1675,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.contentwarehouse.v1.TextTypeOptions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1648,6 +1695,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PROPERTY_TYPE_OPTIONS_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -1663,6 +1711,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   public boolean hasPropertyTypeOptions() {
     return valueTypeOptionsCase_ == 10;
   }
+
   /**
    *
    *
@@ -1681,6 +1730,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.contentwarehouse.v1.PropertyTypeOptions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1700,6 +1750,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ENUM_TYPE_OPTIONS_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -1715,6 +1766,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   public boolean hasEnumTypeOptions() {
     return valueTypeOptionsCase_ == 11;
   }
+
   /**
    *
    *
@@ -1733,6 +1785,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.contentwarehouse.v1.EnumTypeOptions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1752,6 +1805,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DATE_TIME_TYPE_OPTIONS_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -1768,6 +1822,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   public boolean hasDateTimeTypeOptions() {
     return valueTypeOptionsCase_ == 13;
   }
+
   /**
    *
    *
@@ -1787,6 +1842,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.contentwarehouse.v1.DateTimeTypeOptions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1807,6 +1863,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MAP_TYPE_OPTIONS_FIELD_NUMBER = 15;
+
   /**
    *
    *
@@ -1822,6 +1879,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   public boolean hasMapTypeOptions() {
     return valueTypeOptionsCase_ == 15;
   }
+
   /**
    *
    *
@@ -1840,6 +1898,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.contentwarehouse.v1.MapTypeOptions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1858,6 +1917,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TIMESTAMP_TYPE_OPTIONS_FIELD_NUMBER = 16;
+
   /**
    *
    *
@@ -1875,6 +1935,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   public boolean hasTimestampTypeOptions() {
     return valueTypeOptionsCase_ == 16;
   }
+
   /**
    *
    *
@@ -1895,6 +1956,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.contentwarehouse.v1.TimestampTypeOptions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1920,6 +1982,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource>
       schemaSources_;
+
   /**
    *
    *
@@ -1936,6 +1999,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       getSchemaSourcesList() {
     return schemaSources_;
   }
+
   /**
    *
    *
@@ -1953,6 +2017,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       getSchemaSourcesOrBuilderList() {
     return schemaSources_;
   }
+
   /**
    *
    *
@@ -1968,6 +2033,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   public int getSchemaSourcesCount() {
     return schemaSources_.size();
   }
+
   /**
    *
    *
@@ -1984,6 +2050,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       int index) {
     return schemaSources_.get(index);
   }
+
   /**
    *
    *
@@ -2378,6 +2445,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2888,6 +2956,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2913,6 +2982,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2938,6 +3008,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2962,6 +3033,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2982,6 +3054,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3009,6 +3082,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -3031,6 +3105,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3053,6 +3128,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3074,6 +3150,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3091,6 +3168,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3115,6 +3193,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean isRepeatable_;
+
     /**
      *
      *
@@ -3130,6 +3209,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public boolean getIsRepeatable() {
       return isRepeatable_;
     }
+
     /**
      *
      *
@@ -3149,6 +3229,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3168,6 +3249,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean isFilterable_;
+
     /**
      *
      *
@@ -3184,6 +3266,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public boolean getIsFilterable() {
       return isFilterable_;
     }
+
     /**
      *
      *
@@ -3204,6 +3287,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3224,6 +3308,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean isSearchable_;
+
     /**
      *
      *
@@ -3239,6 +3324,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public boolean getIsSearchable() {
       return isSearchable_;
     }
+
     /**
      *
      *
@@ -3258,6 +3344,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3277,6 +3364,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean isMetadata_;
+
     /**
      *
      *
@@ -3295,6 +3383,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public boolean getIsMetadata() {
       return isMetadata_;
     }
+
     /**
      *
      *
@@ -3317,6 +3406,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3339,6 +3429,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean isRequired_;
+
     /**
      *
      *
@@ -3356,6 +3447,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public boolean getIsRequired() {
       return isRequired_;
     }
+
     /**
      *
      *
@@ -3377,6 +3469,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3398,6 +3491,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     }
 
     private int retrievalImportance_ = 0;
+
     /**
      *
      *
@@ -3415,6 +3509,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public int getRetrievalImportanceValue() {
       return retrievalImportance_;
     }
+
     /**
      *
      *
@@ -3435,6 +3530,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3458,6 +3554,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3482,6 +3579,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3507,6 +3605,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
             com.google.cloud.contentwarehouse.v1.IntegerTypeOptions.Builder,
             com.google.cloud.contentwarehouse.v1.IntegerTypeOptionsOrBuilder>
         integerTypeOptionsBuilder_;
+
     /**
      *
      *
@@ -3522,6 +3621,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public boolean hasIntegerTypeOptions() {
       return valueTypeOptionsCase_ == 7;
     }
+
     /**
      *
      *
@@ -3547,6 +3647,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.IntegerTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3570,6 +3671,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3590,6 +3692,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3624,6 +3727,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3649,6 +3753,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3662,6 +3767,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         getIntegerTypeOptionsBuilder() {
       return getIntegerTypeOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3683,6 +3789,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.IntegerTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3722,6 +3829,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
             com.google.cloud.contentwarehouse.v1.FloatTypeOptions.Builder,
             com.google.cloud.contentwarehouse.v1.FloatTypeOptionsOrBuilder>
         floatTypeOptionsBuilder_;
+
     /**
      *
      *
@@ -3737,6 +3845,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public boolean hasFloatTypeOptions() {
       return valueTypeOptionsCase_ == 8;
     }
+
     /**
      *
      *
@@ -3762,6 +3871,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.FloatTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3785,6 +3895,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3805,6 +3916,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3839,6 +3951,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3864,6 +3977,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3877,6 +3991,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         getFloatTypeOptionsBuilder() {
       return getFloatTypeOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3898,6 +4013,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.FloatTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3937,6 +4053,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
             com.google.cloud.contentwarehouse.v1.TextTypeOptions.Builder,
             com.google.cloud.contentwarehouse.v1.TextTypeOptionsOrBuilder>
         textTypeOptionsBuilder_;
+
     /**
      *
      *
@@ -3952,6 +4069,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public boolean hasTextTypeOptions() {
       return valueTypeOptionsCase_ == 9;
     }
+
     /**
      *
      *
@@ -3977,6 +4095,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.TextTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3999,6 +4118,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -4019,6 +4139,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -4053,6 +4174,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -4078,6 +4200,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4091,6 +4214,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         getTextTypeOptionsBuilder() {
       return getTextTypeOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4112,6 +4236,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.TextTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4151,6 +4276,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
             com.google.cloud.contentwarehouse.v1.PropertyTypeOptions.Builder,
             com.google.cloud.contentwarehouse.v1.PropertyTypeOptionsOrBuilder>
         propertyTypeOptionsBuilder_;
+
     /**
      *
      *
@@ -4167,6 +4293,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public boolean hasPropertyTypeOptions() {
       return valueTypeOptionsCase_ == 10;
     }
+
     /**
      *
      *
@@ -4193,6 +4320,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.PropertyTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4217,6 +4345,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -4238,6 +4367,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -4273,6 +4403,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -4299,6 +4430,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4313,6 +4445,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         getPropertyTypeOptionsBuilder() {
       return getPropertyTypeOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4335,6 +4468,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.PropertyTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4375,6 +4509,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
             com.google.cloud.contentwarehouse.v1.EnumTypeOptions.Builder,
             com.google.cloud.contentwarehouse.v1.EnumTypeOptionsOrBuilder>
         enumTypeOptionsBuilder_;
+
     /**
      *
      *
@@ -4390,6 +4525,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public boolean hasEnumTypeOptions() {
       return valueTypeOptionsCase_ == 11;
     }
+
     /**
      *
      *
@@ -4415,6 +4551,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.EnumTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4437,6 +4574,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -4457,6 +4595,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -4491,6 +4630,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -4516,6 +4656,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4529,6 +4670,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         getEnumTypeOptionsBuilder() {
       return getEnumTypeOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4550,6 +4692,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.EnumTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4589,6 +4732,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
             com.google.cloud.contentwarehouse.v1.DateTimeTypeOptions.Builder,
             com.google.cloud.contentwarehouse.v1.DateTimeTypeOptionsOrBuilder>
         dateTimeTypeOptionsBuilder_;
+
     /**
      *
      *
@@ -4606,6 +4750,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public boolean hasDateTimeTypeOptions() {
       return valueTypeOptionsCase_ == 13;
     }
+
     /**
      *
      *
@@ -4633,6 +4778,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.DateTimeTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4658,6 +4804,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4680,6 +4827,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4716,6 +4864,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4743,6 +4892,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4758,6 +4908,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         getDateTimeTypeOptionsBuilder() {
       return getDateTimeTypeOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4781,6 +4932,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.DateTimeTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4822,6 +4974,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
             com.google.cloud.contentwarehouse.v1.MapTypeOptions.Builder,
             com.google.cloud.contentwarehouse.v1.MapTypeOptionsOrBuilder>
         mapTypeOptionsBuilder_;
+
     /**
      *
      *
@@ -4837,6 +4990,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public boolean hasMapTypeOptions() {
       return valueTypeOptionsCase_ == 15;
     }
+
     /**
      *
      *
@@ -4862,6 +5016,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.MapTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4884,6 +5039,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4904,6 +5060,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4937,6 +5094,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4962,6 +5120,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4974,6 +5133,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.contentwarehouse.v1.MapTypeOptions.Builder getMapTypeOptionsBuilder() {
       return getMapTypeOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4995,6 +5155,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.MapTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5034,6 +5195,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
             com.google.cloud.contentwarehouse.v1.TimestampTypeOptions.Builder,
             com.google.cloud.contentwarehouse.v1.TimestampTypeOptionsOrBuilder>
         timestampTypeOptionsBuilder_;
+
     /**
      *
      *
@@ -5051,6 +5213,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public boolean hasTimestampTypeOptions() {
       return valueTypeOptionsCase_ == 16;
     }
+
     /**
      *
      *
@@ -5078,6 +5241,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.TimestampTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5103,6 +5267,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -5125,6 +5290,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -5161,6 +5327,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -5188,6 +5355,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5203,6 +5371,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         getTimestampTypeOptionsBuilder() {
       return getTimestampTypeOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5226,6 +5395,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.contentwarehouse.v1.TimestampTypeOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5300,6 +5470,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return schemaSourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5318,6 +5489,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return schemaSourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5337,6 +5509,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return schemaSourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5362,6 +5535,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5386,6 +5560,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5411,6 +5586,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5436,6 +5612,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5459,6 +5636,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5483,6 +5661,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5507,6 +5686,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5528,6 +5708,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5549,6 +5730,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5564,6 +5746,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         getSchemaSourcesBuilder(int index) {
       return getSchemaSourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5583,6 +5766,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return schemaSourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5603,6 +5787,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(schemaSources_);
       }
     }
+
     /**
      *
      *
@@ -5621,6 +5806,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
               com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5640,6 +5826,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
               com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource
                   .getDefaultInstance());
     }
+
     /**
      *
      *

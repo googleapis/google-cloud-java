@@ -36,6 +36,7 @@ public interface MaterializedViewEntityOrBuilder
    * @return The sqlCode.
    */
   java.lang.String getSqlCode();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface MaterializedViewEntityOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface MaterializedViewEntityOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
+
   /**
    *
    *

@@ -52,6 +52,7 @@ public interface BarcodeOrBuilder
    * @return The format.
    */
   java.lang.String getFormat();
+
   /**
    *
    *
@@ -108,6 +109,7 @@ public interface BarcodeOrBuilder
    * @return The valueFormat.
    */
   java.lang.String getValueFormat();
+
   /**
    *
    *
@@ -149,6 +151,7 @@ public interface BarcodeOrBuilder
    * @return The rawValue.
    */
   java.lang.String getRawValue();
+
   /**
    *
    *

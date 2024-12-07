@@ -33,6 +33,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.UpdateZoneRequest)
     UpdateZoneRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateZoneRequest.newBuilder() to construct.
   private UpdateZoneRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int ZONE_FIELD_NUMBER = 2;
   private com.google.cloud.gdchardwaremanagement.v1alpha.Zone zone_;
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasZone() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.gdchardwaremanagement.v1alpha.Zone.getDefaultInstance()
         : zone_;
   }
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -423,6 +432,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -664,6 +674,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -682,6 +693,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +769,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +801,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +825,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +844,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -849,6 +867,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -885,6 +904,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gdchardwaremanagement.v1alpha.Zone.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.ZoneOrBuilder>
         zoneBuilder_;
+
     /**
      *
      *
@@ -901,6 +921,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasZone() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -923,6 +944,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
         return zoneBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -947,6 +969,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +992,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1022,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1044,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1061,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getZoneFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1055,6 +1082,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
             : zone_;
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1112,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1109,6 +1138,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1134,6 +1164,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1158,6 +1189,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1210,7 @@ public final class UpdateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

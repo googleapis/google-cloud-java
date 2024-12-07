@@ -36,6 +36,7 @@ public interface TypeFilterOrBuilder
    * @return A list containing the includedTypes.
    */
   java.util.List<java.lang.String> getIncludedTypesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TypeFilterOrBuilder
    * @return The count of includedTypes.
    */
   int getIncludedTypesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface TypeFilterOrBuilder
    * @return The includedTypes at the given index.
    */
   java.lang.String getIncludedTypes(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface TypeFilterOrBuilder
    * @return A list containing the excludedTypes.
    */
   java.util.List<java.lang.String> getExcludedTypesList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface TypeFilterOrBuilder
    * @return The count of excludedTypes.
    */
   int getExcludedTypesCount();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface TypeFilterOrBuilder
    * @return The excludedTypes at the given index.
    */
   java.lang.String getExcludedTypes(int index);
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public interface TypeFilterOrBuilder
    * @return A list containing the includedPrimaryTypes.
    */
   java.util.List<java.lang.String> getIncludedPrimaryTypesList();
+
   /**
    *
    *
@@ -152,6 +159,7 @@ public interface TypeFilterOrBuilder
    * @return The count of includedPrimaryTypes.
    */
   int getIncludedPrimaryTypesCount();
+
   /**
    *
    *
@@ -166,6 +174,7 @@ public interface TypeFilterOrBuilder
    * @return The includedPrimaryTypes at the given index.
    */
   java.lang.String getIncludedPrimaryTypes(int index);
+
   /**
    *
    *
@@ -194,6 +203,7 @@ public interface TypeFilterOrBuilder
    * @return A list containing the excludedPrimaryTypes.
    */
   java.util.List<java.lang.String> getExcludedPrimaryTypesList();
+
   /**
    *
    *
@@ -207,6 +217,7 @@ public interface TypeFilterOrBuilder
    * @return The count of excludedPrimaryTypes.
    */
   int getExcludedPrimaryTypesCount();
+
   /**
    *
    *
@@ -221,6 +232,7 @@ public interface TypeFilterOrBuilder
    * @return The excludedPrimaryTypes at the given index.
    */
   java.lang.String getExcludedPrimaryTypes(int index);
+
   /**
    *
    *

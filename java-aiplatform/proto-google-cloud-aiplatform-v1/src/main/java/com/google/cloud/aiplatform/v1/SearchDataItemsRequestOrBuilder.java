@@ -37,6 +37,7 @@ public interface SearchDataItemsRequestOrBuilder
    * @return Whether the orderByDataItem field is set.
    */
   boolean hasOrderByDataItem();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SearchDataItemsRequestOrBuilder
    * @return The orderByDataItem.
    */
   java.lang.String getOrderByDataItem();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface SearchDataItemsRequestOrBuilder
    * @return Whether the orderByAnnotation field is set.
    */
   boolean hasOrderByAnnotation();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface SearchDataItemsRequestOrBuilder
    * @return The orderByAnnotation.
    */
   com.google.cloud.aiplatform.v1.SearchDataItemsRequest.OrderByAnnotation getOrderByAnnotation();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface SearchDataItemsRequestOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface SearchDataItemsRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getSavedQuery();
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public interface SearchDataItemsRequestOrBuilder
    * @return The dataLabelingJob.
    */
   java.lang.String getDataLabelingJob();
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public interface SearchDataItemsRequestOrBuilder
    * @return The dataItemFilter.
    */
   java.lang.String getDataItemFilter();
+
   /**
    *
    *
@@ -275,6 +283,7 @@ public interface SearchDataItemsRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getAnnotationsFilter();
+
   /**
    *
    *
@@ -309,6 +318,7 @@ public interface SearchDataItemsRequestOrBuilder
    * @return A list containing the annotationFilters.
    */
   java.util.List<java.lang.String> getAnnotationFiltersList();
+
   /**
    *
    *
@@ -325,6 +335,7 @@ public interface SearchDataItemsRequestOrBuilder
    * @return The count of annotationFilters.
    */
   int getAnnotationFiltersCount();
+
   /**
    *
    *
@@ -342,6 +353,7 @@ public interface SearchDataItemsRequestOrBuilder
    * @return The annotationFilters at the given index.
    */
   java.lang.String getAnnotationFilters(int index);
+
   /**
    *
    *
@@ -373,6 +385,7 @@ public interface SearchDataItemsRequestOrBuilder
    * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
+
   /**
    *
    *
@@ -386,6 +399,7 @@ public interface SearchDataItemsRequestOrBuilder
    * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
+
   /**
    *
    *
@@ -443,6 +457,7 @@ public interface SearchDataItemsRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -477,6 +492,7 @@ public interface SearchDataItemsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

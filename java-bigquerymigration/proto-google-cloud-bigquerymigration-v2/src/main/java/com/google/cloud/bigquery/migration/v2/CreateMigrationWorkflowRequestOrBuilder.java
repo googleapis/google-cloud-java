@@ -39,6 +39,7 @@ public interface CreateMigrationWorkflowRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateMigrationWorkflowRequestOrBuilder
    * @return Whether the migrationWorkflow field is set.
    */
   boolean hasMigrationWorkflow();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateMigrationWorkflowRequestOrBuilder
    * @return The migrationWorkflow.
    */
   com.google.cloud.bigquery.migration.v2.MigrationWorkflow getMigrationWorkflow();
+
   /**
    *
    *

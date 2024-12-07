@@ -33,6 +33,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ListFirewallPoliciesRequest)
     ListFirewallPoliciesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListFirewallPoliciesRequest.newBuilder() to construct.
   private ListFirewallPoliciesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
   private int maxResults_ = 0;
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
   public boolean hasMaxResults() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
   public boolean hasOrderBy() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -251,6 +261,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
   public boolean hasPageToken() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -274,6 +285,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -302,6 +314,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parentId_ = "";
+
   /**
    *
    *
@@ -317,6 +330,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
   public boolean hasParentId() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -340,6 +354,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -366,6 +381,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_ = false;
+
   /**
    *
    *
@@ -381,6 +397,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
   public boolean hasReturnPartialSuccess() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -633,6 +650,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -896,6 +914,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -910,6 +929,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -932,6 +952,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -954,6 +975,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -975,6 +997,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -992,6 +1015,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1016,6 +1040,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     }
 
     private int maxResults_;
+
     /**
      *
      *
@@ -1031,6 +1056,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     public boolean hasMaxResults() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1046,6 +1072,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     public int getMaxResults() {
       return maxResults_;
     }
+
     /**
      *
      *
@@ -1065,6 +1092,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1112,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object orderBy_ = "";
+
     /**
      *
      *
@@ -1098,6 +1127,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     public boolean hasOrderBy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1120,6 +1150,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1142,6 +1173,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1163,6 +1195,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1180,6 +1213,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1204,6 +1238,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1218,6 +1253,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     public boolean hasPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1240,6 +1276,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1262,6 +1299,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1283,6 +1321,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1300,6 +1339,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1364,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object parentId_ = "";
+
     /**
      *
      *
@@ -1338,6 +1379,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     public boolean hasParentId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1360,6 +1402,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1382,6 +1425,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1403,6 +1447,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1420,6 +1465,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1444,6 +1490,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     }
 
     private boolean returnPartialSuccess_;
+
     /**
      *
      *
@@ -1459,6 +1506,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     public boolean hasReturnPartialSuccess() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1474,6 +1522,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
     public boolean getReturnPartialSuccess() {
       return returnPartialSuccess_;
     }
+
     /**
      *
      *
@@ -1493,6 +1542,7 @@ public final class ListFirewallPoliciesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

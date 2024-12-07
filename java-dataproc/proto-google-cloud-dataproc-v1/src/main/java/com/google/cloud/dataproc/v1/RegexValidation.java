@@ -33,6 +33,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.RegexValidation)
     RegexValidationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegexValidation.newBuilder() to construct.
   private RegexValidation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList regexes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getRegexesList() {
     return regexes_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
   public int getRegexesCount() {
     return regexes_.size();
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getRegexes(int index) {
     return regexes_.get(index);
   }
+
   /**
    *
    *
@@ -301,6 +306,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -499,6 +505,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -516,6 +523,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
       regexes_.makeImmutable();
       return regexes_;
     }
+
     /**
      *
      *
@@ -532,6 +540,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
     public int getRegexesCount() {
       return regexes_.size();
     }
+
     /**
      *
      *
@@ -549,6 +558,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getRegexes(int index) {
       return regexes_.get(index);
     }
+
     /**
      *
      *
@@ -566,6 +576,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getRegexesBytes(int index) {
       return regexes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -591,6 +602,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -615,6 +627,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +649,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +670,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

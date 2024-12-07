@@ -35,6 +35,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.storageinsights.v1.FrequencyOptions)
     FrequencyOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FrequencyOptions.newBuilder() to construct.
   private FrequencyOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
      * <code>FREQUENCY_UNSPECIFIED = 0;</code>
      */
     public static final int FREQUENCY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
      * <code>DAILY = 1;</code>
      */
     public static final int DAILY_VALUE = 1;
+
     /**
      *
      *
@@ -227,6 +230,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int FREQUENCY_FIELD_NUMBER = 1;
   private int frequency_ = 0;
+
   /**
    *
    *
@@ -242,6 +246,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
   public int getFrequencyValue() {
     return frequency_;
   }
+
   /**
    *
    *
@@ -264,6 +269,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
 
   public static final int START_DATE_FIELD_NUMBER = 2;
   private com.google.type.Date startDate_;
+
   /**
    *
    *
@@ -280,6 +286,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
   public boolean hasStartDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -296,6 +303,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
   public com.google.type.Date getStartDate() {
     return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
   }
+
   /**
    *
    *
@@ -313,6 +321,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
 
   public static final int END_DATE_FIELD_NUMBER = 3;
   private com.google.type.Date endDate_;
+
   /**
    *
    *
@@ -329,6 +338,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
   public boolean hasEndDate() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -345,6 +355,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
   public com.google.type.Date getEndDate() {
     return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
   }
+
   /**
    *
    *
@@ -551,6 +562,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -783,6 +795,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int frequency_ = 0;
+
     /**
      *
      *
@@ -798,6 +811,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
     public int getFrequencyValue() {
       return frequency_;
     }
+
     /**
      *
      *
@@ -816,6 +830,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +850,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.storageinsights.v1.FrequencyOptions.Frequency.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -857,6 +873,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +896,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         startDateBuilder_;
+
     /**
      *
      *
@@ -894,6 +912,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
     public boolean hasStartDate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -913,6 +932,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
         return startDateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -936,6 +956,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +977,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1006,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1027,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1043,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getStartDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1036,6 +1061,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
         return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1089,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         endDateBuilder_;
+
     /**
      *
      *
@@ -1078,6 +1105,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
     public boolean hasEndDate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1097,6 +1125,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
         return endDateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1120,6 +1149,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1170,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1199,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1188,6 +1220,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1236,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getEndDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1220,6 +1254,7 @@ public final class FrequencyOptions extends com.google.protobuf.GeneratedMessage
         return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
       }
     }
+
     /**
      *
      *

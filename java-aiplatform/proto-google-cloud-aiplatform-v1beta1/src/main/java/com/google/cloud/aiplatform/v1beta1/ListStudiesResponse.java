@@ -34,6 +34,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ListStudiesResponse)
     ListStudiesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListStudiesResponse.newBuilder() to construct.
   private ListStudiesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Study> studies_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Study> getStudiesList() {
     return studies_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       getStudiesOrBuilderList() {
     return studies_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
   public int getStudiesCount() {
     return studies_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.aiplatform.v1beta1.Study getStudies(int index) {
     return studies_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -362,6 +370,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -639,6 +648,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
         return studiesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -655,6 +665,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
         return studiesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -671,6 +682,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
         return studiesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -693,6 +705,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +726,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +749,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +772,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +792,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +813,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +834,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +854,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +887,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1beta1.Study.Builder getStudiesBuilder(int index) {
       return getStudiesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -882,6 +904,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
         return studiesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -899,6 +922,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(studies_);
       }
     }
+
     /**
      *
      *
@@ -912,6 +936,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       return getStudiesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Study.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -925,6 +950,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       return getStudiesFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Study.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -957,6 +983,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -981,6 +1008,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1005,6 +1033,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1057,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1077,7 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

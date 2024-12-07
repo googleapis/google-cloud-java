@@ -34,6 +34,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetIamPolicyRegionInstantSnapshotRequest)
     SetIamPolicyRegionInstantSnapshotRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetIamPolicyRegionInstantSnapshotRequest.newBuilder() to construct.
   private SetIamPolicyRegionInstantSnapshotRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
 
   public static final int REGION_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 276489091;
   private com.google.cloud.compute.v1.RegionSetPolicyRequest regionSetPolicyRequestResource_;
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
   public boolean hasRegionSetPolicyRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
         ? com.google.cloud.compute.v1.RegionSetPolicyRequest.getDefaultInstance()
         : regionSetPolicyRequestResource_;
   }
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -475,6 +485,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -730,6 +741,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -752,6 +764,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -774,6 +787,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -795,6 +809,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +827,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -858,6 +875,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -880,6 +898,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -901,6 +920,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +938,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +968,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
             com.google.cloud.compute.v1.RegionSetPolicyRequest.Builder,
             com.google.cloud.compute.v1.RegionSetPolicyRequestOrBuilder>
         regionSetPolicyRequestResourceBuilder_;
+
     /**
      *
      *
@@ -963,6 +985,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
     public boolean hasRegionSetPolicyRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -985,6 +1008,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
         return regionSetPolicyRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1010,6 +1034,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1057,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1089,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1111,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1129,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       onChanged();
       return getRegionSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1122,6 +1151,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
             : regionSetPolicyRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1151,6 +1181,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -1173,6 +1204,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1195,6 +1227,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1216,6 +1249,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1267,7 @@ public final class SetIamPolicyRegionInstantSnapshotRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

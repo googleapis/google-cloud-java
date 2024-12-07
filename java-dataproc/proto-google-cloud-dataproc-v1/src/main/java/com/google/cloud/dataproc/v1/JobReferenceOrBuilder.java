@@ -37,6 +37,7 @@ public interface JobReferenceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface JobReferenceOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
+
   /**
    *
    *

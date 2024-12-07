@@ -38,6 +38,7 @@ public interface QuestionAnsweringRelevanceInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface QuestionAnsweringRelevanceInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.QuestionAnsweringRelevanceSpec getMetricSpec();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface QuestionAnsweringRelevanceInputOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface QuestionAnsweringRelevanceInputOrBuilder
    * @return The instance.
    */
   com.google.cloud.aiplatform.v1beta1.QuestionAnsweringRelevanceInstance getInstance();
+
   /**
    *
    *

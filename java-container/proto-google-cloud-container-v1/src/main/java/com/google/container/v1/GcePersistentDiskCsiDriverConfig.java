@@ -33,6 +33,7 @@ public final class GcePersistentDiskCsiDriverConfig extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.container.v1.GcePersistentDiskCsiDriverConfig)
     GcePersistentDiskCsiDriverConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GcePersistentDiskCsiDriverConfig.newBuilder() to construct.
   private GcePersistentDiskCsiDriverConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -64,6 +65,7 @@ public final class GcePersistentDiskCsiDriverConfig extends com.google.protobuf.
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -240,6 +242,7 @@ public final class GcePersistentDiskCsiDriverConfig extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -422,6 +425,7 @@ public final class GcePersistentDiskCsiDriverConfig extends com.google.protobuf.
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -437,6 +441,7 @@ public final class GcePersistentDiskCsiDriverConfig extends com.google.protobuf.
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -456,6 +461,7 @@ public final class GcePersistentDiskCsiDriverConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.UpdateStreamRequest)
     UpdateStreamRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateStreamRequest.newBuilder() to construct.
   private UpdateStreamRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
 
   public static final int STREAM_FIELD_NUMBER = 2;
   private com.google.cloud.datastream.v1.Stream stream_;
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
   public boolean hasStream() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
   public com.google.cloud.datastream.v1.Stream getStream() {
     return stream_ == null ? com.google.cloud.datastream.v1.Stream.getDefaultInstance() : stream_;
   }
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -270,6 +280,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
 
   public static final int FORCE_FIELD_NUMBER = 5;
   private boolean force_ = false;
+
   /**
    *
    *
@@ -491,6 +502,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -754,6 +766,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -773,6 +786,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -798,6 +812,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -825,6 +840,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +865,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +898,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +923,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +943,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -947,6 +967,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -984,6 +1005,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.datastream.v1.Stream.Builder,
             com.google.cloud.datastream.v1.StreamOrBuilder>
         streamBuilder_;
+
     /**
      *
      *
@@ -1000,6 +1022,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
     public boolean hasStream() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1022,6 +1045,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
         return streamBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1070,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1067,6 +1092,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1122,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1144,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1161,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getStreamFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1153,6 +1182,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
             : stream_;
       }
     }
+
     /**
      *
      *
@@ -1182,6 +1212,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1216,6 +1247,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1250,6 +1282,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1283,6 +1316,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1346,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1383,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1364,6 +1400,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1384,6 +1421,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1404,6 +1442,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean force_;
+
     /**
      *
      *
@@ -1419,6 +1458,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
     public boolean getForce() {
       return force_;
     }
+
     /**
      *
      *
@@ -1438,6 +1478,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

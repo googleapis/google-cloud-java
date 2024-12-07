@@ -37,6 +37,7 @@ public interface GetInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GetInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface GetInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The resizeRequest.
    */
   java.lang.String getResizeRequest();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface GetInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

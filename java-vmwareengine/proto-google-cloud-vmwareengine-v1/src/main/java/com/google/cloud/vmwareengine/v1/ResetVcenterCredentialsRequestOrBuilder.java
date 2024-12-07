@@ -43,6 +43,7 @@ public interface ResetVcenterCredentialsRequestOrBuilder
    * @return The privateCloud.
    */
   java.lang.String getPrivateCloud();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface ResetVcenterCredentialsRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -134,6 +136,7 @@ public interface ResetVcenterCredentialsRequestOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface PurchasableOfferOrBuilder
    * @return Whether the offer field is set.
    */
   boolean hasOffer();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PurchasableOfferOrBuilder
    * @return The offer.
    */
   com.google.cloud.channel.v1.Offer getOffer();
+
   /**
    *
    *

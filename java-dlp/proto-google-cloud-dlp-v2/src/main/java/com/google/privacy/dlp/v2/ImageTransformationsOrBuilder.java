@@ -36,6 +36,7 @@ public interface ImageTransformationsOrBuilder
    */
   java.util.List<com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation>
       getTransformsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ImageTransformationsOrBuilder
    * </code>
    */
   com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation getTransforms(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ImageTransformationsOrBuilder
    * </code>
    */
   int getTransformsCount();
+
   /**
    *
    *
@@ -71,6 +74,7 @@ public interface ImageTransformationsOrBuilder
   java.util.List<
           ? extends com.google.privacy.dlp.v2.ImageTransformations.ImageTransformationOrBuilder>
       getTransformsOrBuilderList();
+
   /**
    *
    *

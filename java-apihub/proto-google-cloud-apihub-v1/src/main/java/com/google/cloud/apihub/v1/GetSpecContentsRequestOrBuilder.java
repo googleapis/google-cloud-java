@@ -40,6 +40,7 @@ public interface GetSpecContentsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

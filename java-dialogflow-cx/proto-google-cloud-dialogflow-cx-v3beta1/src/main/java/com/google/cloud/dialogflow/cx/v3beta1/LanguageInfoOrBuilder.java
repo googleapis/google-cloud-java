@@ -37,6 +37,7 @@ public interface LanguageInfoOrBuilder
    * @return The inputLanguageCode.
    */
   java.lang.String getInputLanguageCode();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface LanguageInfoOrBuilder
    * @return The resolvedLanguageCode.
    */
   java.lang.String getResolvedLanguageCode();
+
   /**
    *
    *

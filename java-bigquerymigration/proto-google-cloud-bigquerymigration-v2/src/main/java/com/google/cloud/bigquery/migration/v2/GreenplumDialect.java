@@ -33,6 +33,7 @@ public final class GreenplumDialect extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.GreenplumDialect)
     GreenplumDialectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GreenplumDialect.newBuilder() to construct.
   private GreenplumDialect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class GreenplumDialect extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

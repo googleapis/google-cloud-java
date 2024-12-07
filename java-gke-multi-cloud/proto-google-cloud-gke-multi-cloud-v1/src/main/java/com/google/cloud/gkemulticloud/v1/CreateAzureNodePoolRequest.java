@@ -33,6 +33,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest)
     CreateAzureNodePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateAzureNodePoolRequest.newBuilder() to construct.
   private CreateAzureNodePoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
 
   public static final int AZURE_NODE_POOL_FIELD_NUMBER = 2;
   private com.google.cloud.gkemulticloud.v1.AzureNodePool azureNodePool_;
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
   public boolean hasAzureNodePool() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
         ? com.google.cloud.gkemulticloud.v1.AzureNodePool.getDefaultInstance()
         : azureNodePool_;
   }
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object azureNodePoolId_ = "";
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -262,6 +270,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -471,6 +480,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -716,6 +726,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -747,6 +758,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -778,6 +790,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -808,6 +821,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +848,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +887,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
             com.google.cloud.gkemulticloud.v1.AzureNodePool.Builder,
             com.google.cloud.gkemulticloud.v1.AzureNodePoolOrBuilder>
         azureNodePoolBuilder_;
+
     /**
      *
      *
@@ -889,6 +905,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
     public boolean hasAzureNodePool() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -912,6 +929,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
         return azureNodePoolBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -937,6 +955,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +979,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1011,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1034,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1052,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return getAzureNodePoolFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1051,6 +1074,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
             : azureNodePool_;
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1105,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object azureNodePoolId_ = "";
+
     /**
      *
      *
@@ -1111,6 +1136,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1141,6 +1167,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1170,6 +1197,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1223,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1256,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1243,6 +1273,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1263,6 +1294,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

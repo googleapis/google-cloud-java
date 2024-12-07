@@ -33,6 +33,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ErrorFrame)
     ErrorFrameOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ErrorFrame.newBuilder() to construct.
   private ErrorFrame(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.FrameViolationEntry> violations_;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       getViolationsList() {
     return violations_;
   }
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       getViolationsOrBuilderList() {
     return violations_;
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
   public int getViolationsCount() {
     return violations_.size();
   }
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.migrationcenter.v1.FrameViolationEntry getViolations(int index) {
     return violations_.get(index);
   }
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ORIGINAL_FRAME_FIELD_NUMBER = 3;
   private com.google.cloud.migrationcenter.v1.AssetFrame originalFrame_;
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOriginalFrame() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.migrationcenter.v1.AssetFrame.getDefaultInstance()
         : originalFrame_;
   }
+
   /**
    *
    *
@@ -257,6 +268,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INGESTION_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp ingestionTime_;
+
   /**
    *
    *
@@ -274,6 +286,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIngestionTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -293,6 +306,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : ingestionTime_;
   }
+
   /**
    *
    *
@@ -509,6 +523,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -804,6 +819,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -826,6 +842,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -848,6 +865,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +905,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +966,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
         return violationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -964,6 +985,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
         return violationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -982,6 +1004,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
         return violationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1007,6 +1030,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1054,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1079,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1105,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1128,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1152,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1176,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1198,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1220,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1204,6 +1236,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getViolationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1223,6 +1256,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
         return violationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1243,6 +1277,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(violations_);
       }
     }
+
     /**
      *
      *
@@ -1258,6 +1293,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       return getViolationsFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.FrameViolationEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1275,6 +1311,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.migrationcenter.v1.FrameViolationEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1314,6 +1351,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.AssetFrame.Builder,
             com.google.cloud.migrationcenter.v1.AssetFrameOrBuilder>
         originalFrameBuilder_;
+
     /**
      *
      *
@@ -1330,6 +1368,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOriginalFrame() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1352,6 +1391,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
         return originalFrameBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1376,6 +1416,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1398,6 +1439,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1428,6 +1470,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1449,6 +1492,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1465,6 +1509,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOriginalFrameFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1485,6 +1530,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
             : originalFrame_;
       }
     }
+
     /**
      *
      *
@@ -1519,6 +1565,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         ingestionTimeBuilder_;
+
     /**
      *
      *
@@ -1535,6 +1582,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIngestionTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1557,6 +1605,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
         return ingestionTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1581,6 +1630,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1602,6 +1652,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1631,6 +1682,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1704,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1668,6 +1721,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getIngestionTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1688,6 +1742,7 @@ public final class ErrorFrame extends com.google.protobuf.GeneratedMessageV3
             : ingestionTime_;
       }
     }
+
     /**
      *
      *

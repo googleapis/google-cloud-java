@@ -36,6 +36,7 @@ public interface OutputConfigOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface OutputConfigOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.retail.v2beta.OutputConfig.GcsDestination getGcsDestination();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface OutputConfigOrBuilder
    * @return Whether the bigqueryDestination field is set.
    */
   boolean hasBigqueryDestination();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface OutputConfigOrBuilder
    * @return The bigqueryDestination.
    */
   com.google.cloud.retail.v2beta.OutputConfig.BigQueryDestination getBigqueryDestination();
+
   /**
    *
    *

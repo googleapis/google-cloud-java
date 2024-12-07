@@ -38,6 +38,7 @@ public interface ManagementServerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ManagementServerOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface ManagementServerOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -106,9 +109,11 @@ public interface ManagementServerOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface ManagementServerOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public interface ManagementServerOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public interface ManagementServerOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public interface ManagementServerOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -204,6 +213,7 @@ public interface ManagementServerOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -217,6 +227,7 @@ public interface ManagementServerOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -243,6 +254,7 @@ public interface ManagementServerOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -273,6 +285,7 @@ public interface ManagementServerOrBuilder
    * @return Whether the managementUri field is set.
    */
   boolean hasManagementUri();
+
   /**
    *
    *
@@ -288,6 +301,7 @@ public interface ManagementServerOrBuilder
    * @return The managementUri.
    */
   com.google.cloud.backupdr.v1.ManagementURI getManagementUri();
+
   /**
    *
    *
@@ -317,6 +331,7 @@ public interface ManagementServerOrBuilder
    * @return Whether the workforceIdentityBasedManagementUri field is set.
    */
   boolean hasWorkforceIdentityBasedManagementUri();
+
   /**
    *
    *
@@ -333,6 +348,7 @@ public interface ManagementServerOrBuilder
    */
   com.google.cloud.backupdr.v1.WorkforceIdentityBasedManagementURI
       getWorkforceIdentityBasedManagementUri();
+
   /**
    *
    *
@@ -362,6 +378,7 @@ public interface ManagementServerOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -390,6 +407,7 @@ public interface ManagementServerOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.NetworkConfig> getNetworksList();
+
   /**
    *
    *
@@ -403,6 +421,7 @@ public interface ManagementServerOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.NetworkConfig getNetworks(int index);
+
   /**
    *
    *
@@ -416,6 +435,7 @@ public interface ManagementServerOrBuilder
    * </code>
    */
   int getNetworksCount();
+
   /**
    *
    *
@@ -430,6 +450,7 @@ public interface ManagementServerOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.NetworkConfigOrBuilder>
       getNetworksOrBuilderList();
+
   /**
    *
    *
@@ -457,6 +478,7 @@ public interface ManagementServerOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -487,6 +509,7 @@ public interface ManagementServerOrBuilder
    * @return The oauth2ClientId.
    */
   java.lang.String getOauth2ClientId();
+
   /**
    *
    *
@@ -518,6 +541,7 @@ public interface ManagementServerOrBuilder
    * @return Whether the workforceIdentityBasedOauth2ClientId field is set.
    */
   boolean hasWorkforceIdentityBasedOauth2ClientId();
+
   /**
    *
    *
@@ -533,6 +557,7 @@ public interface ManagementServerOrBuilder
    */
   com.google.cloud.backupdr.v1.WorkforceIdentityBasedOAuth2ClientID
       getWorkforceIdentityBasedOauth2ClientId();
+
   /**
    *
    *
@@ -560,6 +585,7 @@ public interface ManagementServerOrBuilder
    * @return A list containing the baProxyUri.
    */
   java.util.List<java.lang.String> getBaProxyUriList();
+
   /**
    *
    *
@@ -573,6 +599,7 @@ public interface ManagementServerOrBuilder
    * @return The count of baProxyUri.
    */
   int getBaProxyUriCount();
+
   /**
    *
    *
@@ -587,6 +614,7 @@ public interface ManagementServerOrBuilder
    * @return The baProxyUri at the given index.
    */
   java.lang.String getBaProxyUri(int index);
+
   /**
    *
    *
@@ -616,6 +644,7 @@ public interface ManagementServerOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *
@@ -630,6 +659,7 @@ public interface ManagementServerOrBuilder
    * @return The satisfiesPzs.
    */
   com.google.protobuf.BoolValue getSatisfiesPzs();
+
   /**
    *
    *

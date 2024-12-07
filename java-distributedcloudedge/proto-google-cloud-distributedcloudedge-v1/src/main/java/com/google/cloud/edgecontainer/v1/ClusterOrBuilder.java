@@ -38,6 +38,7 @@ public interface ClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ClusterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface ClusterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -149,9 +155,11 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -176,6 +185,7 @@ public interface ClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -201,6 +211,7 @@ public interface ClusterOrBuilder
    * @return Whether the fleet field is set.
    */
   boolean hasFleet();
+
   /**
    *
    *
@@ -215,6 +226,7 @@ public interface ClusterOrBuilder
    * @return The fleet.
    */
   com.google.cloud.edgecontainer.v1.Fleet getFleet();
+
   /**
    *
    *
@@ -242,6 +254,7 @@ public interface ClusterOrBuilder
    * @return Whether the networking field is set.
    */
   boolean hasNetworking();
+
   /**
    *
    *
@@ -256,6 +269,7 @@ public interface ClusterOrBuilder
    * @return The networking.
    */
   com.google.cloud.edgecontainer.v1.ClusterNetworking getNetworking();
+
   /**
    *
    *
@@ -283,6 +297,7 @@ public interface ClusterOrBuilder
    * @return Whether the authorization field is set.
    */
   boolean hasAuthorization();
+
   /**
    *
    *
@@ -297,6 +312,7 @@ public interface ClusterOrBuilder
    * @return The authorization.
    */
   com.google.cloud.edgecontainer.v1.Authorization getAuthorization();
+
   /**
    *
    *
@@ -337,6 +353,7 @@ public interface ClusterOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
+
   /**
    *
    *
@@ -375,6 +392,7 @@ public interface ClusterOrBuilder
    * @return The clusterCaCertificate.
    */
   java.lang.String getClusterCaCertificate();
+
   /**
    *
    *
@@ -402,6 +420,7 @@ public interface ClusterOrBuilder
    * @return Whether the maintenancePolicy field is set.
    */
   boolean hasMaintenancePolicy();
+
   /**
    *
    *
@@ -416,6 +435,7 @@ public interface ClusterOrBuilder
    * @return The maintenancePolicy.
    */
   com.google.cloud.edgecontainer.v1.MaintenancePolicy getMaintenancePolicy();
+
   /**
    *
    *
@@ -441,6 +461,7 @@ public interface ClusterOrBuilder
    * @return The controlPlaneVersion.
    */
   java.lang.String getControlPlaneVersion();
+
   /**
    *
    *
@@ -467,6 +488,7 @@ public interface ClusterOrBuilder
    * @return The nodeVersion.
    */
   java.lang.String getNodeVersion();
+
   /**
    *
    *
@@ -495,6 +517,7 @@ public interface ClusterOrBuilder
    * @return Whether the controlPlane field is set.
    */
   boolean hasControlPlane();
+
   /**
    *
    *
@@ -509,6 +532,7 @@ public interface ClusterOrBuilder
    * @return The controlPlane.
    */
   com.google.cloud.edgecontainer.v1.Cluster.ControlPlane getControlPlane();
+
   /**
    *
    *
@@ -536,6 +560,7 @@ public interface ClusterOrBuilder
    * @return Whether the systemAddonsConfig field is set.
    */
   boolean hasSystemAddonsConfig();
+
   /**
    *
    *
@@ -550,6 +575,7 @@ public interface ClusterOrBuilder
    * @return The systemAddonsConfig.
    */
   com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig getSystemAddonsConfig();
+
   /**
    *
    *
@@ -579,6 +605,7 @@ public interface ClusterOrBuilder
    * @return A list containing the externalLoadBalancerIpv4AddressPools.
    */
   java.util.List<java.lang.String> getExternalLoadBalancerIpv4AddressPoolsList();
+
   /**
    *
    *
@@ -594,6 +621,7 @@ public interface ClusterOrBuilder
    * @return The count of externalLoadBalancerIpv4AddressPools.
    */
   int getExternalLoadBalancerIpv4AddressPoolsCount();
+
   /**
    *
    *
@@ -610,6 +638,7 @@ public interface ClusterOrBuilder
    * @return The externalLoadBalancerIpv4AddressPools at the given index.
    */
   java.lang.String getExternalLoadBalancerIpv4AddressPools(int index);
+
   /**
    *
    *
@@ -642,6 +671,7 @@ public interface ClusterOrBuilder
    * @return Whether the controlPlaneEncryption field is set.
    */
   boolean hasControlPlaneEncryption();
+
   /**
    *
    *
@@ -657,6 +687,7 @@ public interface ClusterOrBuilder
    * @return The controlPlaneEncryption.
    */
   com.google.cloud.edgecontainer.v1.Cluster.ControlPlaneEncryption getControlPlaneEncryption();
+
   /**
    *
    *
@@ -686,6 +717,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *
@@ -716,6 +748,7 @@ public interface ClusterOrBuilder
    */
   java.util.List<com.google.cloud.edgecontainer.v1.Cluster.MaintenanceEvent>
       getMaintenanceEventsList();
+
   /**
    *
    *
@@ -730,6 +763,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.edgecontainer.v1.Cluster.MaintenanceEvent getMaintenanceEvents(int index);
+
   /**
    *
    *
@@ -744,6 +778,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getMaintenanceEventsCount();
+
   /**
    *
    *
@@ -759,6 +794,7 @@ public interface ClusterOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgecontainer.v1.Cluster.MaintenanceEventOrBuilder>
       getMaintenanceEventsOrBuilderList();
+
   /**
    *
    *
@@ -787,6 +823,7 @@ public interface ClusterOrBuilder
    * @return The targetVersion.
    */
   java.lang.String getTargetVersion();
+
   /**
    *
    *
@@ -814,6 +851,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for releaseChannel.
    */
   int getReleaseChannelValue();
+
   /**
    *
    *
@@ -845,6 +883,7 @@ public interface ClusterOrBuilder
    * @return Whether the survivabilityConfig field is set.
    */
   boolean hasSurvivabilityConfig();
+
   /**
    *
    *
@@ -861,6 +900,7 @@ public interface ClusterOrBuilder
    * @return The survivabilityConfig.
    */
   com.google.cloud.edgecontainer.v1.Cluster.SurvivabilityConfig getSurvivabilityConfig();
+
   /**
    *
    *
@@ -892,6 +932,7 @@ public interface ClusterOrBuilder
    * @return A list containing the externalLoadBalancerIpv6AddressPools.
    */
   java.util.List<java.lang.String> getExternalLoadBalancerIpv6AddressPoolsList();
+
   /**
    *
    *
@@ -907,6 +948,7 @@ public interface ClusterOrBuilder
    * @return The count of externalLoadBalancerIpv6AddressPools.
    */
   int getExternalLoadBalancerIpv6AddressPoolsCount();
+
   /**
    *
    *
@@ -923,6 +965,7 @@ public interface ClusterOrBuilder
    * @return The externalLoadBalancerIpv6AddressPools at the given index.
    */
   java.lang.String getExternalLoadBalancerIpv6AddressPools(int index);
+
   /**
    *
    *
@@ -954,6 +997,7 @@ public interface ClusterOrBuilder
    * @return Whether the connectionState field is set.
    */
   boolean hasConnectionState();
+
   /**
    *
    *
@@ -968,6 +1012,7 @@ public interface ClusterOrBuilder
    * @return The connectionState.
    */
   com.google.cloud.edgecontainer.v1.Cluster.ConnectionState getConnectionState();
+
   /**
    *
    *

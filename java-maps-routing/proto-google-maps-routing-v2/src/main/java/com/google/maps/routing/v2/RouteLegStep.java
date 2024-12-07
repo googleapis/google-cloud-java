@@ -35,6 +35,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.RouteLegStep)
     RouteLegStepOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RouteLegStep.newBuilder() to construct.
   private RouteLegStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the distance field is set.
      */
     boolean hasDistance();
+
     /**
      *
      *
@@ -94,6 +96,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      * @return The distance.
      */
     com.google.type.LocalizedText getDistance();
+
     /**
      *
      *
@@ -118,6 +121,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the staticDuration field is set.
      */
     boolean hasStaticDuration();
+
     /**
      *
      *
@@ -131,6 +135,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      * @return The staticDuration.
      */
     com.google.type.LocalizedText getStaticDuration();
+
     /**
      *
      *
@@ -143,6 +148,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.type.LocalizedTextOrBuilder getStaticDurationOrBuilder();
   }
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues)
       RouteLegStepLocalizedValuesOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RouteLegStepLocalizedValues.newBuilder() to construct.
     private RouteLegStepLocalizedValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -189,6 +196,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int DISTANCE_FIELD_NUMBER = 1;
     private com.google.type.LocalizedText distance_;
+
     /**
      *
      *
@@ -204,6 +212,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDistance() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -219,6 +228,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.LocalizedText getDistance() {
       return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
     }
+
     /**
      *
      *
@@ -235,6 +245,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
 
     public static final int STATIC_DURATION_FIELD_NUMBER = 3;
     private com.google.type.LocalizedText staticDuration_;
+
     /**
      *
      *
@@ -251,6 +262,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStaticDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -269,6 +281,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
           ? com.google.type.LocalizedText.getDefaultInstance()
           : staticDuration_;
     }
+
     /**
      *
      *
@@ -467,6 +480,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -701,6 +715,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
               com.google.type.LocalizedText.Builder,
               com.google.type.LocalizedTextOrBuilder>
           distanceBuilder_;
+
       /**
        *
        *
@@ -715,6 +730,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDistance() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -733,6 +749,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
           return distanceBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -755,6 +772,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -774,6 +792,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -801,6 +820,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -820,6 +840,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -834,6 +855,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getDistanceFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -850,6 +872,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
           return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
         }
       }
+
       /**
        *
        *
@@ -882,6 +905,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
               com.google.type.LocalizedText.Builder,
               com.google.type.LocalizedTextOrBuilder>
           staticDurationBuilder_;
+
       /**
        *
        *
@@ -897,6 +921,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStaticDuration() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -918,6 +943,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
           return staticDurationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -941,6 +967,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -961,6 +988,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -989,6 +1017,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1009,6 +1038,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1024,6 +1054,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStaticDurationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1043,6 +1074,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
               : staticDuration_;
         }
       }
+
       /**
        *
        *
@@ -1140,6 +1172,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int DISTANCE_METERS_FIELD_NUMBER = 1;
   private int distanceMeters_ = 0;
+
   /**
    *
    *
@@ -1159,6 +1192,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATIC_DURATION_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration staticDuration_;
+
   /**
    *
    *
@@ -1176,6 +1210,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStaticDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1195,6 +1230,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : staticDuration_;
   }
+
   /**
    *
    *
@@ -1215,6 +1251,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POLYLINE_FIELD_NUMBER = 3;
   private com.google.maps.routing.v2.Polyline polyline_;
+
   /**
    *
    *
@@ -1230,6 +1267,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPolyline() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1245,6 +1283,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.routing.v2.Polyline getPolyline() {
     return polyline_ == null ? com.google.maps.routing.v2.Polyline.getDefaultInstance() : polyline_;
   }
+
   /**
    *
    *
@@ -1261,6 +1300,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_LOCATION_FIELD_NUMBER = 4;
   private com.google.maps.routing.v2.Location startLocation_;
+
   /**
    *
    *
@@ -1276,6 +1316,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartLocation() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1293,6 +1334,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routing.v2.Location.getDefaultInstance()
         : startLocation_;
   }
+
   /**
    *
    *
@@ -1311,6 +1353,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_LOCATION_FIELD_NUMBER = 5;
   private com.google.maps.routing.v2.Location endLocation_;
+
   /**
    *
    *
@@ -1326,6 +1369,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndLocation() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1343,6 +1387,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routing.v2.Location.getDefaultInstance()
         : endLocation_;
   }
+
   /**
    *
    *
@@ -1361,6 +1406,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NAVIGATION_INSTRUCTION_FIELD_NUMBER = 6;
   private com.google.maps.routing.v2.NavigationInstruction navigationInstruction_;
+
   /**
    *
    *
@@ -1376,6 +1422,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNavigationInstruction() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1393,6 +1440,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routing.v2.NavigationInstruction.getDefaultInstance()
         : navigationInstruction_;
   }
+
   /**
    *
    *
@@ -1412,6 +1460,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRAVEL_ADVISORY_FIELD_NUMBER = 7;
   private com.google.maps.routing.v2.RouteLegStepTravelAdvisory travelAdvisory_;
+
   /**
    *
    *
@@ -1428,6 +1477,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTravelAdvisory() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -1446,6 +1496,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routing.v2.RouteLegStepTravelAdvisory.getDefaultInstance()
         : travelAdvisory_;
   }
+
   /**
    *
    *
@@ -1466,6 +1517,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCALIZED_VALUES_FIELD_NUMBER = 8;
   private com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localizedValues_;
+
   /**
    *
    *
@@ -1482,6 +1534,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocalizedValues() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -1500,6 +1553,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.getDefaultInstance()
         : localizedValues_;
   }
+
   /**
    *
    *
@@ -1520,6 +1574,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRANSIT_DETAILS_FIELD_NUMBER = 9;
   private com.google.maps.routing.v2.RouteLegStepTransitDetails transitDetails_;
+
   /**
    *
    *
@@ -1535,6 +1590,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTransitDetails() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -1552,6 +1608,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routing.v2.RouteLegStepTransitDetails.getDefaultInstance()
         : transitDetails_;
   }
+
   /**
    *
    *
@@ -1571,6 +1628,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRAVEL_MODE_FIELD_NUMBER = 10;
   private int travelMode_ = 0;
+
   /**
    *
    *
@@ -1586,6 +1644,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
   public int getTravelModeValue() {
     return travelMode_;
   }
+
   /**
    *
    *
@@ -1886,6 +1945,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2254,6 +2314,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int distanceMeters_;
+
     /**
      *
      *
@@ -2270,6 +2331,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     public int getDistanceMeters() {
       return distanceMeters_;
     }
+
     /**
      *
      *
@@ -2290,6 +2352,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2315,6 +2378,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         staticDurationBuilder_;
+
     /**
      *
      *
@@ -2331,6 +2395,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStaticDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2353,6 +2418,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         return staticDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2377,6 +2443,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2398,6 +2465,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2427,6 +2495,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2448,6 +2517,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2464,6 +2534,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStaticDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2484,6 +2555,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             : staticDuration_;
       }
     }
+
     /**
      *
      *
@@ -2518,6 +2590,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routing.v2.Polyline.Builder,
             com.google.maps.routing.v2.PolylineOrBuilder>
         polylineBuilder_;
+
     /**
      *
      *
@@ -2532,6 +2605,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPolyline() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2552,6 +2626,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         return polylineBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2574,6 +2649,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2593,6 +2669,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2620,6 +2697,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2639,6 +2717,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2653,6 +2732,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPolylineFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2671,6 +2751,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             : polyline_;
       }
     }
+
     /**
      *
      *
@@ -2703,6 +2784,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routing.v2.Location.Builder,
             com.google.maps.routing.v2.LocationOrBuilder>
         startLocationBuilder_;
+
     /**
      *
      *
@@ -2717,6 +2799,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartLocation() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2737,6 +2820,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         return startLocationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2759,6 +2843,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2778,6 +2863,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2805,6 +2891,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2824,6 +2911,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2838,6 +2926,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2856,6 +2945,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             : startLocation_;
       }
     }
+
     /**
      *
      *
@@ -2888,6 +2978,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routing.v2.Location.Builder,
             com.google.maps.routing.v2.LocationOrBuilder>
         endLocationBuilder_;
+
     /**
      *
      *
@@ -2902,6 +2993,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndLocation() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2922,6 +3014,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         return endLocationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2944,6 +3037,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2963,6 +3057,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2990,6 +3085,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3009,6 +3105,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3023,6 +3120,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3041,6 +3139,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             : endLocation_;
       }
     }
+
     /**
      *
      *
@@ -3073,6 +3172,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routing.v2.NavigationInstruction.Builder,
             com.google.maps.routing.v2.NavigationInstructionOrBuilder>
         navigationInstructionBuilder_;
+
     /**
      *
      *
@@ -3087,6 +3187,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNavigationInstruction() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3107,6 +3208,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         return navigationInstructionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3130,6 +3232,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3150,6 +3253,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3179,6 +3283,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3198,6 +3303,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3213,6 +3319,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNavigationInstructionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3232,6 +3339,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             : navigationInstruction_;
       }
     }
+
     /**
      *
      *
@@ -3264,6 +3372,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routing.v2.RouteLegStepTravelAdvisory.Builder,
             com.google.maps.routing.v2.RouteLegStepTravelAdvisoryOrBuilder>
         travelAdvisoryBuilder_;
+
     /**
      *
      *
@@ -3279,6 +3388,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTravelAdvisory() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3300,6 +3410,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         return travelAdvisoryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3323,6 +3434,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3344,6 +3456,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3374,6 +3487,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3394,6 +3508,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3410,6 +3525,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTravelAdvisoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3430,6 +3546,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             : travelAdvisory_;
       }
     }
+
     /**
      *
      *
@@ -3463,6 +3580,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.Builder,
             com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValuesOrBuilder>
         localizedValuesBuilder_;
+
     /**
      *
      *
@@ -3478,6 +3596,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocalizedValues() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3501,6 +3620,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         return localizedValuesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3525,6 +3645,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3547,6 +3668,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3578,6 +3700,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3598,6 +3721,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3614,6 +3738,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLocalizedValuesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3635,6 +3760,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             : localizedValues_;
       }
     }
+
     /**
      *
      *
@@ -3668,6 +3794,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routing.v2.RouteLegStepTransitDetails.Builder,
             com.google.maps.routing.v2.RouteLegStepTransitDetailsOrBuilder>
         transitDetailsBuilder_;
+
     /**
      *
      *
@@ -3682,6 +3809,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTransitDetails() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3702,6 +3830,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         return transitDetailsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3724,6 +3853,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3744,6 +3874,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3773,6 +3904,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3792,6 +3924,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3807,6 +3940,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTransitDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3826,6 +3960,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
             : transitDetails_;
       }
     }
+
     /**
      *
      *
@@ -3853,6 +3988,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int travelMode_ = 0;
+
     /**
      *
      *
@@ -3868,6 +4004,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     public int getTravelModeValue() {
       return travelMode_;
     }
+
     /**
      *
      *
@@ -3886,6 +4023,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3903,6 +4041,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
           com.google.maps.routing.v2.RouteTravelMode.forNumber(travelMode_);
       return result == null ? com.google.maps.routing.v2.RouteTravelMode.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3924,6 +4063,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

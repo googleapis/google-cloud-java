@@ -34,6 +34,7 @@ public interface DiskTypesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.DiskType disk_types = 198926167;</code>
    */
   java.util.List<com.google.cloud.compute.v1.DiskType> getDiskTypesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface DiskTypesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.DiskType disk_types = 198926167;</code>
    */
   com.google.cloud.compute.v1.DiskType getDiskTypes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface DiskTypesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.DiskType disk_types = 198926167;</code>
    */
   int getDiskTypesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface DiskTypesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.DiskTypeOrBuilder>
       getDiskTypesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface DiskTypesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface DiskTypesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

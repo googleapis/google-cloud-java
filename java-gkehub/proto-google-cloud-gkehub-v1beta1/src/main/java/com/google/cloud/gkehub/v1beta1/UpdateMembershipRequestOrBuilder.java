@@ -39,6 +39,7 @@ public interface UpdateMembershipRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface UpdateMembershipRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface UpdateMembershipRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface UpdateMembershipRequestOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface UpdateMembershipRequestOrBuilder
    * @return The resource.
    */
   com.google.cloud.gkehub.v1beta1.Membership getResource();
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public interface UpdateMembershipRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

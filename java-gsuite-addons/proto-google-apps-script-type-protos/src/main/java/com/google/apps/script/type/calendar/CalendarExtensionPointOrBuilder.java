@@ -37,6 +37,7 @@ public interface CalendarExtensionPointOrBuilder
    * @return The runFunction.
    */
   java.lang.String getRunFunction();
+
   /**
    *
    *

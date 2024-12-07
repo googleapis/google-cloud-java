@@ -33,6 +33,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.ImportAdaptiveMtFileResponse)
     ImportAdaptiveMtFileResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportAdaptiveMtFileResponse.newBuilder() to construct.
   private ImportAdaptiveMtFileResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int ADAPTIVE_MT_FILE_FIELD_NUMBER = 1;
   private com.google.cloud.translate.v3.AdaptiveMtFile adaptiveMtFile_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
   public boolean hasAdaptiveMtFile() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
         ? com.google.cloud.translate.v3.AdaptiveMtFile.getDefaultInstance()
         : adaptiveMtFile_;
   }
+
   /**
    *
    *
@@ -283,6 +287,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -487,6 +492,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
             com.google.cloud.translate.v3.AdaptiveMtFile.Builder,
             com.google.cloud.translate.v3.AdaptiveMtFileOrBuilder>
         adaptiveMtFileBuilder_;
+
     /**
      *
      *
@@ -503,6 +509,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
     public boolean hasAdaptiveMtFile() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -525,6 +532,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
         return adaptiveMtFileBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -549,6 +557,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -571,6 +580,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -601,6 +611,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -622,6 +633,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -638,6 +650,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
       onChanged();
       return getAdaptiveMtFileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -658,6 +671,7 @@ public final class ImportAdaptiveMtFileResponse extends com.google.protobuf.Gene
             : adaptiveMtFile_;
       }
     }
+
     /**
      *
      *

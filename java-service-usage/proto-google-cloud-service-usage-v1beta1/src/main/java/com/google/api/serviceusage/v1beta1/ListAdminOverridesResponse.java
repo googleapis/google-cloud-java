@@ -33,6 +33,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.ListAdminOverridesResponse)
     ListAdminOverridesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListAdminOverridesResponse.newBuilder() to construct.
   private ListAdminOverridesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1beta1.QuotaOverride> overrides_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.api.serviceusage.v1beta1.QuotaOverride> getOverridesList() {
     return overrides_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       getOverridesOrBuilderList() {
     return overrides_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
   public int getOverridesCount() {
     return overrides_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
   public com.google.api.serviceusage.v1beta1.QuotaOverride getOverrides(int index) {
     return overrides_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -641,6 +650,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
         return overridesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -657,6 +667,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
         return overridesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -673,6 +684,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
         return overridesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +729,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +776,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +797,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +818,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +839,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +879,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +893,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
         int index) {
       return getOverridesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -889,6 +911,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
         return overridesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -906,6 +929,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(overrides_);
       }
     }
+
     /**
      *
      *
@@ -919,6 +943,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       return getOverridesFieldBuilder()
           .addBuilder(com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -934,6 +959,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -966,6 +992,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -989,6 +1016,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1012,6 +1040,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1034,6 +1063,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1082,7 @@ public final class ListAdminOverridesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

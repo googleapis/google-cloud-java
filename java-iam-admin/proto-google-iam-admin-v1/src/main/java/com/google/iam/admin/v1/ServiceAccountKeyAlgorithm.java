@@ -72,6 +72,7 @@ public enum ServiceAccountKeyAlgorithm implements com.google.protobuf.ProtocolMe
    * <code>KEY_ALG_UNSPECIFIED = 0;</code>
    */
   public static final int KEY_ALG_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum ServiceAccountKeyAlgorithm implements com.google.protobuf.ProtocolMe
    * <code>KEY_ALG_RSA_1024 = 1;</code>
    */
   public static final int KEY_ALG_RSA_1024_VALUE = 1;
+
   /**
    *
    *

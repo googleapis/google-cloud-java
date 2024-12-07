@@ -32,6 +32,7 @@ public interface UpdateAclConfigRequestOrBuilder
    * @return Whether the aclConfig field is set.
    */
   boolean hasAclConfig();
+
   /**
    * <code>
    * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -40,6 +41,7 @@ public interface UpdateAclConfigRequestOrBuilder
    * @return The aclConfig.
    */
   com.google.cloud.discoveryengine.v1alpha.AclConfig getAclConfig();
+
   /**
    * <code>
    * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];

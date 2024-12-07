@@ -38,6 +38,7 @@ public interface ResourcePolicyResourceStatusOrBuilder
    * @return Whether the instanceSchedulePolicy field is set.
    */
   boolean hasInstanceSchedulePolicy();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface ResourcePolicyResourceStatusOrBuilder
    */
   com.google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
       getInstanceSchedulePolicy();
+
   /**
    *
    *

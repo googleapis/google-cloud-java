@@ -38,6 +38,7 @@ public interface DiscoveryConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface DiscoveryConfigOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DiscoveryConfigOrBuilder
    * @return Whether the orgConfig field is set.
    */
   boolean hasOrgConfig();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface DiscoveryConfigOrBuilder
    * @return The orgConfig.
    */
   com.google.privacy.dlp.v2.DiscoveryConfig.OrgConfig getOrgConfig();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface DiscoveryConfigOrBuilder
    * @return Whether the otherCloudStartingLocation field is set.
    */
   boolean hasOtherCloudStartingLocation();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface DiscoveryConfigOrBuilder
    * @return The otherCloudStartingLocation.
    */
   com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation getOtherCloudStartingLocation();
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface DiscoveryConfigOrBuilder
    * @return A list containing the inspectTemplates.
    */
   java.util.List<java.lang.String> getInspectTemplatesList();
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public interface DiscoveryConfigOrBuilder
    * @return The count of inspectTemplates.
    */
   int getInspectTemplatesCount();
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public interface DiscoveryConfigOrBuilder
    * @return The inspectTemplates at the given index.
    */
   java.lang.String getInspectTemplates(int index);
+
   /**
    *
    *
@@ -276,6 +285,7 @@ public interface DiscoveryConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DataProfileAction actions = 4;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.DataProfileAction> getActionsList();
+
   /**
    *
    *
@@ -286,6 +296,7 @@ public interface DiscoveryConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DataProfileAction actions = 4;</code>
    */
   com.google.privacy.dlp.v2.DataProfileAction getActions(int index);
+
   /**
    *
    *
@@ -296,6 +307,7 @@ public interface DiscoveryConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DataProfileAction actions = 4;</code>
    */
   int getActionsCount();
+
   /**
    *
    *
@@ -307,6 +319,7 @@ public interface DiscoveryConfigOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.DataProfileActionOrBuilder>
       getActionsOrBuilderList();
+
   /**
    *
    *
@@ -328,6 +341,7 @@ public interface DiscoveryConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DiscoveryTarget targets = 5;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.DiscoveryTarget> getTargetsList();
+
   /**
    *
    *
@@ -338,6 +352,7 @@ public interface DiscoveryConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DiscoveryTarget targets = 5;</code>
    */
   com.google.privacy.dlp.v2.DiscoveryTarget getTargets(int index);
+
   /**
    *
    *
@@ -348,6 +363,7 @@ public interface DiscoveryConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DiscoveryTarget targets = 5;</code>
    */
   int getTargetsCount();
+
   /**
    *
    *
@@ -359,6 +375,7 @@ public interface DiscoveryConfigOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.DiscoveryTargetOrBuilder>
       getTargetsOrBuilderList();
+
   /**
    *
    *
@@ -385,6 +402,7 @@ public interface DiscoveryConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList();
+
   /**
    *
    *
@@ -400,6 +418,7 @@ public interface DiscoveryConfigOrBuilder
    * </code>
    */
   com.google.privacy.dlp.v2.Error getErrors(int index);
+
   /**
    *
    *
@@ -415,6 +434,7 @@ public interface DiscoveryConfigOrBuilder
    * </code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -430,6 +450,7 @@ public interface DiscoveryConfigOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> getErrorsOrBuilderList();
+
   /**
    *
    *
@@ -459,6 +480,7 @@ public interface DiscoveryConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -472,6 +494,7 @@ public interface DiscoveryConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -497,6 +520,7 @@ public interface DiscoveryConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -510,6 +534,7 @@ public interface DiscoveryConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -536,6 +561,7 @@ public interface DiscoveryConfigOrBuilder
    * @return Whether the lastRunTime field is set.
    */
   boolean hasLastRunTime();
+
   /**
    *
    *
@@ -550,6 +576,7 @@ public interface DiscoveryConfigOrBuilder
    * @return The lastRunTime.
    */
   com.google.protobuf.Timestamp getLastRunTime();
+
   /**
    *
    *
@@ -577,6 +604,7 @@ public interface DiscoveryConfigOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *

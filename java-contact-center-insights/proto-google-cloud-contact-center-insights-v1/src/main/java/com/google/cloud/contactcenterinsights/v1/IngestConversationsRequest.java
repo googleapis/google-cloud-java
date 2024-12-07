@@ -33,6 +33,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.IngestConversationsRequest)
     IngestConversationsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IngestConversationsRequest.newBuilder() to construct.
   private IngestConversationsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * @return The bucketUri.
      */
     java.lang.String getBucketUri();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * @return The enum numeric value on the wire for bucketObjectType.
      */
     int getBucketObjectTypeValue();
+
     /**
      *
      *
@@ -143,6 +146,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * @return Whether the metadataBucketUri field is set.
      */
     boolean hasMetadataBucketUri();
+
     /**
      *
      *
@@ -163,6 +167,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * @return The metadataBucketUri.
      */
     java.lang.String getMetadataBucketUri();
+
     /**
      *
      *
@@ -199,6 +204,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * @return A list containing the customMetadataKeys.
      */
     java.util.List<java.lang.String> getCustomMetadataKeysList();
+
     /**
      *
      *
@@ -214,6 +220,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * @return The count of customMetadataKeys.
      */
     int getCustomMetadataKeysCount();
+
     /**
      *
      *
@@ -230,6 +237,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * @return The customMetadataKeys at the given index.
      */
     java.lang.String getCustomMetadataKeys(int index);
+
     /**
      *
      *
@@ -247,6 +255,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      */
     com.google.protobuf.ByteString getCustomMetadataKeysBytes(int index);
   }
+
   /**
    *
    *
@@ -262,6 +271,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource)
       GcsSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GcsSource.newBuilder() to construct.
     private GcsSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -344,6 +354,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
        * <code>BUCKET_OBJECT_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int BUCKET_OBJECT_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -354,6 +365,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
        * <code>TRANSCRIPT = 1;</code>
        */
       public static final int TRANSCRIPT_VALUE = 1;
+
       /**
        *
        *
@@ -459,6 +471,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object bucketUri_ = "";
+
     /**
      *
      *
@@ -482,6 +495,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -508,6 +522,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
 
     public static final int BUCKET_OBJECT_TYPE_FIELD_NUMBER = 2;
     private int bucketObjectType_ = 0;
+
     /**
      *
      *
@@ -525,6 +540,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public int getBucketObjectTypeValue() {
       return bucketObjectType_;
     }
+
     /**
      *
      *
@@ -557,6 +573,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object metadataBucketUri_ = "";
+
     /**
      *
      *
@@ -580,6 +597,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public boolean hasMetadataBucketUri() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -611,6 +629,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -648,6 +667,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList customMetadataKeys_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -665,6 +685,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ProtocolStringList getCustomMetadataKeysList() {
       return customMetadataKeys_;
     }
+
     /**
      *
      *
@@ -682,6 +703,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public int getCustomMetadataKeysCount() {
       return customMetadataKeys_.size();
     }
+
     /**
      *
      *
@@ -700,6 +722,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public java.lang.String getCustomMetadataKeys(int index) {
       return customMetadataKeys_.get(index);
     }
+
     /**
      *
      *
@@ -934,6 +957,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1191,6 +1215,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       private int bitField0_;
 
       private java.lang.Object bucketUri_ = "";
+
       /**
        *
        *
@@ -1213,6 +1238,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1235,6 +1261,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1256,6 +1283,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1273,6 +1301,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1297,6 +1326,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
 
       private int bucketObjectType_ = 0;
+
       /**
        *
        *
@@ -1314,6 +1344,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       public int getBucketObjectTypeValue() {
         return bucketObjectType_;
       }
+
       /**
        *
        *
@@ -1334,6 +1365,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1361,6 +1393,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
                 .BucketObjectType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1387,6 +1420,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1408,6 +1442,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
 
       private java.lang.Object metadataBucketUri_ = "";
+
       /**
        *
        *
@@ -1430,6 +1465,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       public boolean hasMetadataBucketUri() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1460,6 +1496,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1490,6 +1527,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1519,6 +1557,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1544,6 +1583,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1584,6 +1624,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         }
         bitField0_ |= 0x00000008;
       }
+
       /**
        *
        *
@@ -1602,6 +1643,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         customMetadataKeys_.makeImmutable();
         return customMetadataKeys_;
       }
+
       /**
        *
        *
@@ -1619,6 +1661,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       public int getCustomMetadataKeysCount() {
         return customMetadataKeys_.size();
       }
+
       /**
        *
        *
@@ -1637,6 +1680,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       public java.lang.String getCustomMetadataKeys(int index) {
         return customMetadataKeys_.get(index);
       }
+
       /**
        *
        *
@@ -1655,6 +1699,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       public com.google.protobuf.ByteString getCustomMetadataKeysBytes(int index) {
         return customMetadataKeys_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1681,6 +1726,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1706,6 +1752,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1728,6 +1775,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1749,6 +1797,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1864,6 +1913,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * @return The enum numeric value on the wire for medium.
      */
     int getMediumValue();
+
     /**
      *
      *
@@ -1879,6 +1929,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      */
     com.google.cloud.contactcenterinsights.v1.Conversation.Medium getMedium();
   }
+
   /**
    *
    *
@@ -1894,6 +1945,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.IngestConversationsRequest.TranscriptObjectConfig)
       TranscriptObjectConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TranscriptObjectConfig.newBuilder() to construct.
     private TranscriptObjectConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1928,6 +1980,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
 
     public static final int MEDIUM_FIELD_NUMBER = 1;
     private int medium_ = 0;
+
     /**
      *
      *
@@ -1945,6 +1998,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public int getMediumValue() {
       return medium_;
     }
+
     /**
      *
      *
@@ -2157,6 +2211,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2370,6 +2425,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       private int bitField0_;
 
       private int medium_ = 0;
+
       /**
        *
        *
@@ -2387,6 +2443,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       public int getMediumValue() {
         return medium_;
       }
+
       /**
        *
        *
@@ -2407,6 +2464,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2428,6 +2486,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             ? com.google.cloud.contactcenterinsights.v1.Conversation.Medium.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2452,6 +2511,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2564,6 +2624,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * @return The agentId.
      */
     java.lang.String getAgentId();
+
     /**
      *
      *
@@ -2610,6 +2671,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      */
     int getCustomerChannel();
   }
+
   /**
    *
    *
@@ -2625,6 +2687,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.IngestConversationsRequest.ConversationConfig)
       ConversationConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConversationConfig.newBuilder() to construct.
     private ConversationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2661,6 +2724,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object agentId_ = "";
+
     /**
      *
      *
@@ -2687,6 +2751,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -2716,6 +2781,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
 
     public static final int AGENT_CHANNEL_FIELD_NUMBER = 2;
     private int agentChannel_ = 0;
+
     /**
      *
      *
@@ -2736,6 +2802,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
 
     public static final int CUSTOMER_CHANNEL_FIELD_NUMBER = 3;
     private int customerChannel_ = 0;
+
     /**
      *
      *
@@ -2958,6 +3025,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3194,6 +3262,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       private int bitField0_;
 
       private java.lang.Object agentId_ = "";
+
       /**
        *
        *
@@ -3219,6 +3288,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3244,6 +3314,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3268,6 +3339,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3288,6 +3360,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3315,6 +3388,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
 
       private int agentChannel_;
+
       /**
        *
        *
@@ -3332,6 +3406,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       public int getAgentChannel() {
         return agentChannel_;
       }
+
       /**
        *
        *
@@ -3353,6 +3428,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3374,6 +3450,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
 
       private int customerChannel_;
+
       /**
        *
        *
@@ -3391,6 +3468,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       public int getCustomerChannel() {
         return customerChannel_;
       }
+
       /**
        *
        *
@@ -3412,6 +3490,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3520,6 +3599,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3566,6 +3646,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     private ObjectConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3597,6 +3678,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -3615,6 +3697,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -3639,6 +3722,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     return com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3663,6 +3747,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
   }
 
   public static final int TRANSCRIPT_OBJECT_CONFIG_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -3680,6 +3765,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
   public boolean hasTranscriptObjectConfig() {
     return objectConfigCase_ == 3;
   }
+
   /**
    *
    *
@@ -3704,6 +3790,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     return com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest
         .TranscriptObjectConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3732,6 +3819,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -3757,6 +3845,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -3786,6 +3875,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
   public static final int CONVERSATION_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.ConversationConfig
       conversationConfig_;
+
   /**
    *
    *
@@ -3803,6 +3893,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
   public boolean hasConversationConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3824,6 +3915,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             .getDefaultInstance()
         : conversationConfig_;
   }
+
   /**
    *
    *
@@ -3847,6 +3939,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
 
   public static final int REDACTION_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.contactcenterinsights.v1.RedactionConfig redactionConfig_;
+
   /**
    *
    *
@@ -3865,6 +3958,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
   public boolean hasRedactionConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3885,6 +3979,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         ? com.google.cloud.contactcenterinsights.v1.RedactionConfig.getDefaultInstance()
         : redactionConfig_;
   }
+
   /**
    *
    *
@@ -3907,6 +4002,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
 
   public static final int SPEECH_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.contactcenterinsights.v1.SpeechConfig speechConfig_;
+
   /**
    *
    *
@@ -3925,6 +4021,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
   public boolean hasSpeechConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -3945,6 +4042,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         ? com.google.cloud.contactcenterinsights.v1.SpeechConfig.getDefaultInstance()
         : speechConfig_;
   }
+
   /**
    *
    *
@@ -3967,6 +4065,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
 
   public static final int SAMPLE_SIZE_FIELD_NUMBER = 7;
   private int sampleSize_ = 0;
+
   /**
    *
    *
@@ -3985,6 +4084,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
   public boolean hasSampleSize() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -4280,6 +4380,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4650,6 +4751,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.Builder,
             com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -4668,6 +4770,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -4700,6 +4803,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4726,6 +4830,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4750,6 +4855,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4791,6 +4897,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4819,6 +4926,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -4835,6 +4943,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4861,6 +4970,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4910,6 +5020,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest
                 .TranscriptObjectConfigOrBuilder>
         transcriptObjectConfigBuilder_;
+
     /**
      *
      *
@@ -4927,6 +5038,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public boolean hasTranscriptObjectConfig() {
       return objectConfigCase_ == 3;
     }
+
     /**
      *
      *
@@ -4960,6 +5072,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             .TranscriptObjectConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4986,6 +5099,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       objectConfigCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -5010,6 +5124,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       objectConfigCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -5051,6 +5166,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       objectConfigCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -5078,6 +5194,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5094,6 +5211,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         getTranscriptObjectConfigBuilder() {
       return getTranscriptObjectConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5121,6 +5239,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             .TranscriptObjectConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5167,6 +5286,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -5191,6 +5311,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5215,6 +5336,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5238,6 +5360,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5257,6 +5380,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5291,6 +5415,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest
                 .ConversationConfigOrBuilder>
         conversationConfigBuilder_;
+
     /**
      *
      *
@@ -5307,6 +5432,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public boolean hasConversationConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -5331,6 +5457,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         return conversationConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5357,6 +5484,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5381,6 +5509,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5414,6 +5543,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5435,6 +5565,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5453,6 +5584,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return getConversationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5476,6 +5608,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             : conversationConfig_;
       }
     }
+
     /**
      *
      *
@@ -5515,6 +5648,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             com.google.cloud.contactcenterinsights.v1.RedactionConfig.Builder,
             com.google.cloud.contactcenterinsights.v1.RedactionConfigOrBuilder>
         redactionConfigBuilder_;
+
     /**
      *
      *
@@ -5532,6 +5666,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public boolean hasRedactionConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -5555,6 +5690,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         return redactionConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5581,6 +5717,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5604,6 +5741,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5636,6 +5774,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5658,6 +5797,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5676,6 +5816,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return getRedactionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5698,6 +5839,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             : redactionConfig_;
       }
     }
+
     /**
      *
      *
@@ -5733,6 +5875,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             com.google.cloud.contactcenterinsights.v1.SpeechConfig.Builder,
             com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder>
         speechConfigBuilder_;
+
     /**
      *
      *
@@ -5750,6 +5893,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public boolean hasSpeechConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -5773,6 +5917,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         return speechConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5798,6 +5943,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5821,6 +5967,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5852,6 +5999,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5874,6 +6022,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5891,6 +6040,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return getSpeechConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5913,6 +6063,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             : speechConfig_;
       }
     }
+
     /**
      *
      *
@@ -5943,6 +6094,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     }
 
     private int sampleSize_;
+
     /**
      *
      *
@@ -5961,6 +6113,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public boolean hasSampleSize() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -5979,6 +6132,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public int getSampleSize() {
       return sampleSize_;
     }
+
     /**
      *
      *
@@ -6001,6 +6155,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

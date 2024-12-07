@@ -36,6 +36,7 @@ public interface LocationPolicyLocationConstraintsOrBuilder
    * @return Whether the maxCount field is set.
    */
   boolean hasMaxCount();
+
   /**
    *
    *

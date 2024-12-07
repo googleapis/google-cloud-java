@@ -33,6 +33,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.domains.v1alpha2.ConfigureContactSettingsRequest)
     ConfigureContactSettingsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConfigureContactSettingsRequest.newBuilder() to construct.
   private ConfigureContactSettingsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object registration_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
 
   public static final int CONTACT_SETTINGS_FIELD_NUMBER = 2;
   private com.google.cloud.domains.v1alpha2.ContactSettings contactSettings_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
   public boolean hasContactSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
         ? com.google.cloud.domains.v1alpha2.ContactSettings.getDefaultInstance()
         : contactSettings_;
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
                   : result;
             }
           };
+
   /**
    *
    *
@@ -264,6 +274,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
         java.lang.Integer, com.google.cloud.domains.v1alpha2.ContactNotice>(
         contactNotices_, contactNotices_converter_);
   }
+
   /**
    *
    *
@@ -280,6 +291,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
   public int getContactNoticesCount() {
     return contactNotices_.size();
   }
+
   /**
    *
    *
@@ -297,6 +309,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
   public com.google.cloud.domains.v1alpha2.ContactNotice getContactNotices(int index) {
     return contactNotices_converter_.convert(contactNotices_.get(index));
   }
+
   /**
    *
    *
@@ -313,6 +326,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
   public java.util.List<java.lang.Integer> getContactNoticesValueList() {
     return contactNotices_;
   }
+
   /**
    *
    *
@@ -335,6 +349,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -575,6 +590,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -867,6 +883,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object registration_ = "";
+
     /**
      *
      *
@@ -892,6 +909,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -917,6 +935,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -941,6 +960,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +981,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1014,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
             com.google.cloud.domains.v1alpha2.ContactSettings.Builder,
             com.google.cloud.domains.v1alpha2.ContactSettingsOrBuilder>
         contactSettingsBuilder_;
+
     /**
      *
      *
@@ -1007,6 +1029,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     public boolean hasContactSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1027,6 +1050,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
         return contactSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1073,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1094,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1123,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1116,6 +1143,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1130,6 +1158,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return getContactSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1149,6 +1178,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
             : contactSettings_;
       }
     }
+
     /**
      *
      *
@@ -1181,6 +1211,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -1198,6 +1229,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1221,6 +1253,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1246,6 +1279,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1268,6 +1302,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1333,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1320,6 +1356,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1374,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1358,6 +1396,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -1395,6 +1434,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
         bitField0_ |= 0x00000008;
       }
     }
+
     /**
      *
      *
@@ -1412,6 +1452,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
           java.lang.Integer, com.google.cloud.domains.v1alpha2.ContactNotice>(
           contactNotices_, contactNotices_converter_);
     }
+
     /**
      *
      *
@@ -1427,6 +1468,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     public int getContactNoticesCount() {
       return contactNotices_.size();
     }
+
     /**
      *
      *
@@ -1443,6 +1485,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     public com.google.cloud.domains.v1alpha2.ContactNotice getContactNotices(int index) {
       return contactNotices_converter_.convert(contactNotices_.get(index));
     }
+
     /**
      *
      *
@@ -1467,6 +1510,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1489,6 +1533,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1511,6 +1556,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1529,6 +1575,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1544,6 +1591,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     public java.util.List<java.lang.Integer> getContactNoticesValueList() {
       return java.util.Collections.unmodifiableList(contactNotices_);
     }
+
     /**
      *
      *
@@ -1560,6 +1608,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     public int getContactNoticesValue(int index) {
       return contactNotices_.get(index);
     }
+
     /**
      *
      *
@@ -1580,6 +1629,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1599,6 +1649,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1622,6 +1673,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1637,6 +1689,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1656,6 +1709,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

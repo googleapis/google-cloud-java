@@ -38,6 +38,7 @@ public interface UpdateWebhookRequestOrBuilder
    * @return Whether the webhook field is set.
    */
   boolean hasWebhook();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateWebhookRequestOrBuilder
    * @return The webhook.
    */
   com.google.cloud.dialogflow.cx.v3.Webhook getWebhook();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateWebhookRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateWebhookRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

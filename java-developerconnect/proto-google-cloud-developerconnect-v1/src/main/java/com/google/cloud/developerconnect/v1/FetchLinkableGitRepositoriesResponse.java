@@ -34,6 +34,7 @@ public final class FetchLinkableGitRepositoriesResponse
     // @@protoc_insertion_point(message_implements:google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesResponse)
     FetchLinkableGitRepositoriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchLinkableGitRepositoriesResponse.newBuilder() to construct.
   private FetchLinkableGitRepositoriesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class FetchLinkableGitRepositoriesResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.developerconnect.v1.LinkableGitRepository>
       linkableGitRepositories_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class FetchLinkableGitRepositoriesResponse
       getLinkableGitRepositoriesList() {
     return linkableGitRepositories_;
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class FetchLinkableGitRepositoriesResponse
       getLinkableGitRepositoriesOrBuilderList() {
     return linkableGitRepositories_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class FetchLinkableGitRepositoriesResponse
   public int getLinkableGitRepositoriesCount() {
     return linkableGitRepositories_.size();
   }
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class FetchLinkableGitRepositoriesResponse
       int index) {
     return linkableGitRepositories_.get(index);
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class FetchLinkableGitRepositoriesResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public final class FetchLinkableGitRepositoriesResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -380,6 +388,7 @@ public final class FetchLinkableGitRepositoriesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -674,6 +683,7 @@ public final class FetchLinkableGitRepositoriesResponse
         return linkableGitRepositoriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -692,6 +702,7 @@ public final class FetchLinkableGitRepositoriesResponse
         return linkableGitRepositoriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -711,6 +722,7 @@ public final class FetchLinkableGitRepositoriesResponse
         return linkableGitRepositoriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -736,6 +748,7 @@ public final class FetchLinkableGitRepositoriesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +772,7 @@ public final class FetchLinkableGitRepositoriesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +798,7 @@ public final class FetchLinkableGitRepositoriesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class FetchLinkableGitRepositoriesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +847,7 @@ public final class FetchLinkableGitRepositoriesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +871,7 @@ public final class FetchLinkableGitRepositoriesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +895,7 @@ public final class FetchLinkableGitRepositoriesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +917,7 @@ public final class FetchLinkableGitRepositoriesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +939,7 @@ public final class FetchLinkableGitRepositoriesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +955,7 @@ public final class FetchLinkableGitRepositoriesResponse
         getLinkableGitRepositoriesBuilder(int index) {
       return getLinkableGitRepositoriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -953,6 +975,7 @@ public final class FetchLinkableGitRepositoriesResponse
         return linkableGitRepositoriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -973,6 +996,7 @@ public final class FetchLinkableGitRepositoriesResponse
         return java.util.Collections.unmodifiableList(linkableGitRepositories_);
       }
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class FetchLinkableGitRepositoriesResponse
           .addBuilder(
               com.google.cloud.developerconnect.v1.LinkableGitRepository.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1008,6 +1033,7 @@ public final class FetchLinkableGitRepositoriesResponse
               index,
               com.google.cloud.developerconnect.v1.LinkableGitRepository.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1045,6 +1071,7 @@ public final class FetchLinkableGitRepositoriesResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1067,6 +1094,7 @@ public final class FetchLinkableGitRepositoriesResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1089,6 +1117,7 @@ public final class FetchLinkableGitRepositoriesResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1110,6 +1139,7 @@ public final class FetchLinkableGitRepositoriesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1157,7 @@ public final class FetchLinkableGitRepositoriesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

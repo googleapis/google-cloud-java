@@ -74,6 +74,7 @@ public enum KmsKeyState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>KMS_KEY_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int KMS_KEY_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public enum KmsKeyState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>KMS_KEY_STATE_KEY_AVAILABLE = 1;</code>
    */
   public static final int KMS_KEY_STATE_KEY_AVAILABLE_VALUE = 1;
+
   /**
    *
    *

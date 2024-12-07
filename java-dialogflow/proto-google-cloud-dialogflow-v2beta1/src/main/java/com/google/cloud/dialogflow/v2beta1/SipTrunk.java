@@ -34,6 +34,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SipTrunk)
     SipTrunkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SipTrunk.newBuilder() to construct.
   private SipTrunk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList expectedHostname_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getExpectedHostnameList() {
     return expectedHostname_;
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
   public int getExpectedHostnameCount() {
     return expectedHostname_.size();
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getExpectedHostname(int index) {
     return expectedHostname_.get(index);
   }
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Connection> connections_;
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Connection> getConnectionsList() {
     return connections_;
   }
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       getConnectionsOrBuilderList() {
     return connections_;
   }
+
   /**
    *
    *
@@ -240,6 +250,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
   public int getConnectionsCount() {
     return connections_.size();
   }
+
   /**
    *
    *
@@ -255,6 +266,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dialogflow.v2beta1.Connection getConnections(int index) {
     return connections_.get(index);
   }
+
   /**
    *
    *
@@ -276,6 +288,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -299,6 +312,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -518,6 +532,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -799,6 +814,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -823,6 +839,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -870,6 +888,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +908,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +943,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -939,6 +960,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       expectedHostname_.makeImmutable();
       return expectedHostname_;
     }
+
     /**
      *
      *
@@ -954,6 +976,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
     public int getExpectedHostnameCount() {
       return expectedHostname_.size();
     }
+
     /**
      *
      *
@@ -970,6 +993,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getExpectedHostname(int index) {
       return expectedHostname_.get(index);
     }
+
     /**
      *
      *
@@ -986,6 +1010,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getExpectedHostnameBytes(int index) {
       return expectedHostname_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1010,6 +1035,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1059,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1080,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1100,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1132,6 +1161,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
         return connectionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1180,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
         return connectionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1168,6 +1199,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
         return connectionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1192,6 +1224,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1214,6 +1247,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1272,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1297,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1284,6 +1320,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1343,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1328,6 +1366,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1349,6 +1388,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1410,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1384,6 +1425,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.Connection.Builder getConnectionsBuilder(int index) {
       return getConnectionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1403,6 +1445,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
         return connectionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1465,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(connections_);
       }
     }
+
     /**
      *
      *
@@ -1437,6 +1481,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       return getConnectionsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.Connection.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1452,6 +1497,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       return getConnectionsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2beta1.Connection.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1486,6 +1532,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1508,6 +1555,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1530,6 +1578,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1551,6 +1600,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1568,6 +1618,7 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface PlacementOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface PlacementOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface PlacementOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public interface PlacementOrBuilder
    * @return The placementCode.
    */
   java.lang.String getPlacementCode();
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public interface PlacementOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public interface PlacementOrBuilder
    * @return A list containing the targetedAdUnits.
    */
   java.util.List<java.lang.String> getTargetedAdUnitsList();
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public interface PlacementOrBuilder
    * @return The count of targetedAdUnits.
    */
   int getTargetedAdUnitsCount();
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public interface PlacementOrBuilder
    * @return The targetedAdUnits at the given index.
    */
   java.lang.String getTargetedAdUnits(int index);
+
   /**
    *
    *
@@ -252,6 +260,7 @@ public interface PlacementOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -265,6 +274,7 @@ public interface PlacementOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

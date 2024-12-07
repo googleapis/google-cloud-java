@@ -42,6 +42,7 @@ public interface AzureNodePoolOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface AzureNodePoolOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface AzureNodePoolOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface AzureNodePoolOrBuilder
    * @return The config.
    */
   com.google.cloud.gkemulticloud.v1.AzureNodeConfig getConfig();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface AzureNodePoolOrBuilder
    * @return The subnetId.
    */
   java.lang.String getSubnetId();
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public interface AzureNodePoolOrBuilder
    * @return Whether the autoscaling field is set.
    */
   boolean hasAutoscaling();
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public interface AzureNodePoolOrBuilder
    * @return The autoscaling.
    */
   com.google.cloud.gkemulticloud.v1.AzureNodePoolAutoscaling getAutoscaling();
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public interface AzureNodePoolOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public interface AzureNodePoolOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -278,6 +287,7 @@ public interface AzureNodePoolOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -291,6 +301,7 @@ public interface AzureNodePoolOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -316,6 +327,7 @@ public interface AzureNodePoolOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -329,6 +341,7 @@ public interface AzureNodePoolOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -357,6 +370,7 @@ public interface AzureNodePoolOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -393,6 +407,7 @@ public interface AzureNodePoolOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -412,9 +427,11 @@ public interface AzureNodePoolOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -434,6 +451,7 @@ public interface AzureNodePoolOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -457,6 +475,7 @@ public interface AzureNodePoolOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -492,6 +511,7 @@ public interface AzureNodePoolOrBuilder
    * @return Whether the maxPodsConstraint field is set.
    */
   boolean hasMaxPodsConstraint();
+
   /**
    *
    *
@@ -507,6 +527,7 @@ public interface AzureNodePoolOrBuilder
    * @return The maxPodsConstraint.
    */
   com.google.cloud.gkemulticloud.v1.MaxPodsConstraint getMaxPodsConstraint();
+
   /**
    *
    *
@@ -535,6 +556,7 @@ public interface AzureNodePoolOrBuilder
    * @return The azureAvailabilityZone.
    */
   java.lang.String getAzureAvailabilityZone();
+
   /**
    *
    *
@@ -562,6 +584,7 @@ public interface AzureNodePoolOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AzureNodePoolError> getErrorsList();
+
   /**
    *
    *
@@ -574,6 +597,7 @@ public interface AzureNodePoolOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AzureNodePoolError getErrors(int index);
+
   /**
    *
    *
@@ -586,6 +610,7 @@ public interface AzureNodePoolOrBuilder
    * </code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -599,6 +624,7 @@ public interface AzureNodePoolOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AzureNodePoolErrorOrBuilder>
       getErrorsOrBuilderList();
+
   /**
    *
    *
@@ -626,6 +652,7 @@ public interface AzureNodePoolOrBuilder
    * @return Whether the management field is set.
    */
   boolean hasManagement();
+
   /**
    *
    *
@@ -640,6 +667,7 @@ public interface AzureNodePoolOrBuilder
    * @return The management.
    */
   com.google.cloud.gkemulticloud.v1.AzureNodeManagement getManagement();
+
   /**
    *
    *

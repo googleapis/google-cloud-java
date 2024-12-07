@@ -33,6 +33,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline)
     PipelineOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Pipeline.newBuilder() to construct.
   private Pipeline(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -102,6 +103,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the protobuf field is set.
      */
     boolean hasProtobuf();
+
     /**
      *
      *
@@ -116,6 +118,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return The protobuf.
      */
     com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.ProtobufFormat getProtobuf();
+
     /**
      *
      *
@@ -144,6 +147,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the avro field is set.
      */
     boolean hasAvro();
+
     /**
      *
      *
@@ -158,6 +162,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return The avro.
      */
     com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.AvroFormat getAvro();
+
     /**
      *
      *
@@ -186,6 +191,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the json field is set.
      */
     boolean hasJson();
+
     /**
      *
      *
@@ -200,6 +206,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return The json.
      */
     com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.JsonFormat getJson();
+
     /**
      *
      *
@@ -216,6 +223,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.KindCase getKindCase();
   }
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat)
       MessagePayloadFormatOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MessagePayloadFormat.newBuilder() to construct.
     private MessagePayloadFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -262,6 +271,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.JsonFormat)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -276,6 +286,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.JsonFormat)
         JsonFormatOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use JsonFormat.newBuilder() to construct.
       private JsonFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -460,6 +471,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -716,6 +728,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * @return The schemaDefinition.
        */
       java.lang.String getSchemaDefinition();
+
       /**
        *
        *
@@ -729,6 +742,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getSchemaDefinitionBytes();
     }
+
     /**
      *
      *
@@ -743,6 +757,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.ProtobufFormat)
         ProtobufFormatOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use ProtobufFormat.newBuilder() to construct.
       private ProtobufFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -778,6 +793,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object schemaDefinition_ = "";
+
       /**
        *
        *
@@ -801,6 +817,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -995,6 +1012,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1194,6 +1212,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object schemaDefinition_ = "";
+
         /**
          *
          *
@@ -1216,6 +1235,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1238,6 +1258,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1259,6 +1280,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1276,6 +1298,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1384,6 +1407,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * @return The schemaDefinition.
        */
       java.lang.String getSchemaDefinition();
+
       /**
        *
        *
@@ -1397,6 +1421,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getSchemaDefinitionBytes();
     }
+
     /**
      *
      *
@@ -1411,6 +1436,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.AvroFormat)
         AvroFormatOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use AvroFormat.newBuilder() to construct.
       private AvroFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1446,6 +1472,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object schemaDefinition_ = "";
+
       /**
        *
        *
@@ -1469,6 +1496,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -1657,6 +1685,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1855,6 +1884,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object schemaDefinition_ = "";
+
         /**
          *
          *
@@ -1877,6 +1907,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1899,6 +1930,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1920,6 +1952,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1937,6 +1970,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2046,6 +2080,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       private KindCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2081,6 +2116,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PROTOBUF_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -2098,6 +2134,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProtobuf() {
       return kindCase_ == 1;
     }
+
     /**
      *
      *
@@ -2119,6 +2156,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.ProtobufFormat
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2141,6 +2179,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int AVRO_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -2158,6 +2197,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAvro() {
       return kindCase_ == 2;
     }
+
     /**
      *
      *
@@ -2179,6 +2219,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.AvroFormat
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2201,6 +2242,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int JSON_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -2218,6 +2260,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasJson() {
       return kindCase_ == 3;
     }
+
     /**
      *
      *
@@ -2239,6 +2282,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.JsonFormat
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2470,6 +2514,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2729,6 +2774,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.ProtobufFormat.Builder,
               com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.ProtobufFormatOrBuilder>
           protobufBuilder_;
+
       /**
        *
        *
@@ -2746,6 +2792,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasProtobuf() {
         return kindCase_ == 1;
       }
+
       /**
        *
        *
@@ -2777,6 +2824,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2802,6 +2850,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         kindCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2825,6 +2874,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         kindCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2864,6 +2914,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         kindCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2891,6 +2942,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2906,6 +2958,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           getProtobufBuilder() {
         return getProtobufFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2931,6 +2984,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2974,6 +3028,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.AvroFormat.Builder,
               com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.AvroFormatOrBuilder>
           avroBuilder_;
+
       /**
        *
        *
@@ -2991,6 +3046,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAvro() {
         return kindCase_ == 2;
       }
+
       /**
        *
        *
@@ -3020,6 +3076,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3045,6 +3102,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         kindCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -3068,6 +3126,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         kindCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -3106,6 +3165,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         kindCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -3133,6 +3193,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3148,6 +3209,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           getAvroBuilder() {
         return getAvroFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3172,6 +3234,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3214,6 +3277,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.JsonFormat.Builder,
               com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.JsonFormatOrBuilder>
           jsonBuilder_;
+
       /**
        *
        *
@@ -3231,6 +3295,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasJson() {
         return kindCase_ == 3;
       }
+
       /**
        *
        *
@@ -3260,6 +3325,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3285,6 +3351,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         kindCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -3308,6 +3375,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         kindCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -3346,6 +3414,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         kindCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -3373,6 +3442,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3388,6 +3458,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           getJsonBuilder() {
         return getJsonFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3412,6 +3483,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3534,6 +3606,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the networkConfig field is set.
      */
     boolean hasNetworkConfig();
+
     /**
      *
      *
@@ -3549,6 +3622,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return The networkConfig.
      */
     com.google.cloud.eventarc.v1.Pipeline.Destination.NetworkConfig getNetworkConfig();
+
     /**
      *
      *
@@ -3582,6 +3656,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the httpEndpoint field is set.
      */
     boolean hasHttpEndpoint();
+
     /**
      *
      *
@@ -3600,6 +3675,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return The httpEndpoint.
      */
     com.google.cloud.eventarc.v1.Pipeline.Destination.HttpEndpoint getHttpEndpoint();
+
     /**
      *
      *
@@ -3635,6 +3711,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the workflow field is set.
      */
     boolean hasWorkflow();
+
     /**
      *
      *
@@ -3652,6 +3729,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return The workflow.
      */
     java.lang.String getWorkflow();
+
     /**
      *
      *
@@ -3687,6 +3765,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the messageBus field is set.
      */
     boolean hasMessageBus();
+
     /**
      *
      *
@@ -3704,6 +3783,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return The messageBus.
      */
     java.lang.String getMessageBus();
+
     /**
      *
      *
@@ -3738,6 +3818,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the topic field is set.
      */
     boolean hasTopic();
+
     /**
      *
      *
@@ -3754,6 +3835,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return The topic.
      */
     java.lang.String getTopic();
+
     /**
      *
      *
@@ -3789,6 +3871,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the authenticationConfig field is set.
      */
     boolean hasAuthenticationConfig();
+
     /**
      *
      *
@@ -3808,6 +3891,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.eventarc.v1.Pipeline.Destination.AuthenticationConfig
         getAuthenticationConfig();
+
     /**
      *
      *
@@ -3843,6 +3927,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the outputPayloadFormat field is set.
      */
     boolean hasOutputPayloadFormat();
+
     /**
      *
      *
@@ -3860,6 +3945,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return The outputPayloadFormat.
      */
     com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat getOutputPayloadFormat();
+
     /**
      *
      *
@@ -3880,6 +3966,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.eventarc.v1.Pipeline.Destination.DestinationDescriptorCase
         getDestinationDescriptorCase();
   }
+
   /**
    *
    *
@@ -3894,6 +3981,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline.Destination)
       DestinationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Destination.newBuilder() to construct.
     private Destination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3943,6 +4031,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * @return The networkAttachment.
        */
       java.lang.String getNetworkAttachment();
+
       /**
        *
        *
@@ -3960,6 +4049,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getNetworkAttachmentBytes();
     }
+
     /**
      *
      *
@@ -3975,6 +4065,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline.Destination.NetworkConfig)
         NetworkConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use NetworkConfig.newBuilder() to construct.
       private NetworkConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -4009,6 +4100,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object networkAttachment_ = "";
+
       /**
        *
        *
@@ -4036,6 +4128,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -4227,6 +4320,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -4422,6 +4516,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object networkAttachment_ = "";
+
         /**
          *
          *
@@ -4448,6 +4543,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -4474,6 +4570,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -4499,6 +4596,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4520,6 +4618,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4635,6 +4734,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * @return The uri.
        */
       java.lang.String getUri();
+
       /**
        *
        *
@@ -4828,6 +4928,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * @return The messageBindingTemplate.
        */
       java.lang.String getMessageBindingTemplate();
+
       /**
        *
        *
@@ -5005,6 +5106,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getMessageBindingTemplateBytes();
     }
+
     /**
      *
      *
@@ -5019,6 +5121,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline.Destination.HttpEndpoint)
         HttpEndpointOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use HttpEndpoint.newBuilder() to construct.
       private HttpEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -5054,6 +5157,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -5081,6 +5185,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -5113,6 +5218,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object messageBindingTemplate_ = "";
+
       /**
        *
        *
@@ -5300,6 +5406,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -5661,6 +5768,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -5870,6 +5978,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object uri_ = "";
+
         /**
          *
          *
@@ -5896,6 +6005,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -5922,6 +6032,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -5947,6 +6058,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5968,6 +6080,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5996,6 +6109,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object messageBindingTemplate_ = "";
+
         /**
          *
          *
@@ -6183,6 +6297,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -6370,6 +6485,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -6556,6 +6672,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -6738,6 +6855,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -7013,6 +7131,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the googleOidc field is set.
        */
       boolean hasGoogleOidc();
+
       /**
        *
        *
@@ -7029,6 +7148,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.eventarc.v1.Pipeline.Destination.AuthenticationConfig.OidcToken
           getGoogleOidc();
+
       /**
        *
        *
@@ -7064,6 +7184,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the oauthToken field is set.
        */
       boolean hasOauthToken();
+
       /**
        *
        *
@@ -7085,6 +7206,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.eventarc.v1.Pipeline.Destination.AuthenticationConfig.OAuthToken
           getOauthToken();
+
       /**
        *
        *
@@ -7109,6 +7231,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               .AuthenticationMethodDescriptorCase
           getAuthenticationMethodDescriptorCase();
     }
+
     /**
      *
      *
@@ -7123,6 +7246,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline.Destination.AuthenticationConfig)
         AuthenticationConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use AuthenticationConfig.newBuilder() to construct.
       private AuthenticationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -7177,6 +7301,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * @return The serviceAccount.
          */
         java.lang.String getServiceAccount();
+
         /**
          *
          *
@@ -7212,6 +7337,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * @return The audience.
          */
         java.lang.String getAudience();
+
         /**
          *
          *
@@ -7227,6 +7353,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getAudienceBytes();
       }
+
       /**
        *
        *
@@ -7245,6 +7372,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline.Destination.AuthenticationConfig.OidcToken)
           OidcTokenOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use OidcToken.newBuilder() to construct.
         private OidcToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -7282,6 +7410,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object serviceAccount_ = "";
+
         /**
          *
          *
@@ -7313,6 +7442,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
+
         /**
          *
          *
@@ -7349,6 +7479,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object audience_ = "";
+
         /**
          *
          *
@@ -7374,6 +7505,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
+
         /**
          *
          *
@@ -7597,6 +7729,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -7823,6 +7956,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           private int bitField0_;
 
           private java.lang.Object serviceAccount_ = "";
+
           /**
            *
            *
@@ -7853,6 +7987,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -7883,6 +8018,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -7912,6 +8048,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -7937,6 +8074,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -7969,6 +8107,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           }
 
           private java.lang.Object audience_ = "";
+
           /**
            *
            *
@@ -7993,6 +8132,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -8017,6 +8157,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -8040,6 +8181,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -8059,6 +8201,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -8181,6 +8324,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * @return The serviceAccount.
          */
         java.lang.String getServiceAccount();
+
         /**
          *
          *
@@ -8217,6 +8361,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * @return The scope.
          */
         java.lang.String getScope();
+
         /**
          *
          *
@@ -8232,6 +8377,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getScopeBytes();
       }
+
       /**
        *
        *
@@ -8250,6 +8396,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline.Destination.AuthenticationConfig.OAuthToken)
           OAuthTokenOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use OAuthToken.newBuilder() to construct.
         private OAuthToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -8287,6 +8434,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object serviceAccount_ = "";
+
         /**
          *
          *
@@ -8319,6 +8467,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
+
         /**
          *
          *
@@ -8356,6 +8505,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object scope_ = "";
+
         /**
          *
          *
@@ -8381,6 +8531,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
+
         /**
          *
          *
@@ -8604,6 +8755,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -8831,6 +8983,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           private int bitField0_;
 
           private java.lang.Object serviceAccount_ = "";
+
           /**
            *
            *
@@ -8862,6 +9015,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -8893,6 +9047,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -8923,6 +9078,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -8949,6 +9105,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -8982,6 +9139,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           }
 
           private java.lang.Object scope_ = "";
+
           /**
            *
            *
@@ -9006,6 +9164,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -9030,6 +9189,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -9053,6 +9213,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -9072,6 +9233,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -9185,6 +9347,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         private AuthenticationMethodDescriptorCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -9218,6 +9381,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int GOOGLE_OIDC_FIELD_NUMBER = 1;
+
       /**
        *
        *
@@ -9236,6 +9400,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGoogleOidc() {
         return authenticationMethodDescriptorCase_ == 1;
       }
+
       /**
        *
        *
@@ -9260,6 +9425,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.eventarc.v1.Pipeline.Destination.AuthenticationConfig.OidcToken
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -9285,6 +9451,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int OAUTH_TOKEN_FIELD_NUMBER = 2;
+
       /**
        *
        *
@@ -9308,6 +9475,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOauthToken() {
         return authenticationMethodDescriptorCase_ == 2;
       }
+
       /**
        *
        *
@@ -9337,6 +9505,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.eventarc.v1.Pipeline.Destination.AuthenticationConfig.OAuthToken
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -9578,6 +9747,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -9830,6 +10000,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.eventarc.v1.Pipeline.Destination.AuthenticationConfig
                     .OidcTokenOrBuilder>
             googleOidcBuilder_;
+
         /**
          *
          *
@@ -9848,6 +10019,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         public boolean hasGoogleOidc() {
           return authenticationMethodDescriptorCase_ == 1;
         }
+
         /**
          *
          *
@@ -9881,6 +10053,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -9908,6 +10081,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           authenticationMethodDescriptorCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -9932,6 +10106,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           authenticationMethodDescriptorCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -9974,6 +10149,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           authenticationMethodDescriptorCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -10002,6 +10178,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10019,6 +10196,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             getGoogleOidcBuilder() {
           return getGoogleOidcFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -10047,6 +10225,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10099,6 +10278,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.eventarc.v1.Pipeline.Destination.AuthenticationConfig
                     .OAuthTokenOrBuilder>
             oauthTokenBuilder_;
+
         /**
          *
          *
@@ -10122,6 +10302,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         public boolean hasOauthToken() {
           return authenticationMethodDescriptorCase_ == 2;
         }
+
         /**
          *
          *
@@ -10160,6 +10341,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10192,6 +10374,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           authenticationMethodDescriptorCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -10222,6 +10405,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           authenticationMethodDescriptorCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -10269,6 +10453,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           authenticationMethodDescriptorCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -10302,6 +10487,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10324,6 +10510,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             getOauthTokenBuilder() {
           return getOauthTokenFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -10357,6 +10544,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10495,6 +10683,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       private DestinationDescriptorCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -10533,6 +10722,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
     public static final int NETWORK_CONFIG_FIELD_NUMBER = 1;
     private com.google.cloud.eventarc.v1.Pipeline.Destination.NetworkConfig networkConfig_;
+
     /**
      *
      *
@@ -10551,6 +10741,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetworkConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -10571,6 +10762,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.eventarc.v1.Pipeline.Destination.NetworkConfig.getDefaultInstance()
           : networkConfig_;
     }
+
     /**
      *
      *
@@ -10592,6 +10784,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int HTTP_ENDPOINT_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -10613,6 +10806,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHttpEndpoint() {
       return destinationDescriptorCase_ == 2;
     }
+
     /**
      *
      *
@@ -10638,6 +10832,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.eventarc.v1.Pipeline.Destination.HttpEndpoint.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -10664,6 +10859,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int WORKFLOW_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -10683,6 +10879,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWorkflow() {
       return destinationDescriptorCase_ == 3;
     }
+
     /**
      *
      *
@@ -10715,6 +10912,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -10749,6 +10947,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MESSAGE_BUS_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -10768,6 +10967,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMessageBus() {
       return destinationDescriptorCase_ == 4;
     }
+
     /**
      *
      *
@@ -10800,6 +11000,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -10834,6 +11035,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TOPIC_FIELD_NUMBER = 8;
+
     /**
      *
      *
@@ -10852,6 +11054,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTopic() {
       return destinationDescriptorCase_ == 8;
     }
+
     /**
      *
      *
@@ -10883,6 +11086,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -10918,6 +11122,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public static final int AUTHENTICATION_CONFIG_FIELD_NUMBER = 5;
     private com.google.cloud.eventarc.v1.Pipeline.Destination.AuthenticationConfig
         authenticationConfig_;
+
     /**
      *
      *
@@ -10939,6 +11144,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAuthenticationConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -10964,6 +11170,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : authenticationConfig_;
     }
+
     /**
      *
      *
@@ -10990,6 +11197,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
     public static final int OUTPUT_PAYLOAD_FORMAT_FIELD_NUMBER = 6;
     private com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat outputPayloadFormat_;
+
     /**
      *
      *
@@ -11010,6 +11218,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOutputPayloadFormat() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -11032,6 +11241,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.getDefaultInstance()
           : outputPayloadFormat_;
     }
+
     /**
      *
      *
@@ -11318,6 +11528,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -11658,6 +11869,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.eventarc.v1.Pipeline.Destination.NetworkConfig.Builder,
               com.google.cloud.eventarc.v1.Pipeline.Destination.NetworkConfigOrBuilder>
           networkConfigBuilder_;
+
       /**
        *
        *
@@ -11675,6 +11887,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasNetworkConfig() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -11698,6 +11911,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return networkConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -11724,6 +11938,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11747,6 +11962,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11780,6 +11996,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11802,6 +12019,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11820,6 +12038,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getNetworkConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -11842,6 +12061,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               : networkConfig_;
         }
       }
+
       /**
        *
        *
@@ -11876,6 +12096,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.eventarc.v1.Pipeline.Destination.HttpEndpoint.Builder,
               com.google.cloud.eventarc.v1.Pipeline.Destination.HttpEndpointOrBuilder>
           httpEndpointBuilder_;
+
       /**
        *
        *
@@ -11897,6 +12118,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasHttpEndpoint() {
         return destinationDescriptorCase_ == 2;
       }
+
       /**
        *
        *
@@ -11931,6 +12153,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -11960,6 +12183,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         destinationDescriptorCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -11986,6 +12210,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         destinationDescriptorCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -12028,6 +12253,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         destinationDescriptorCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -12059,6 +12285,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12078,6 +12305,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           getHttpEndpointBuilder() {
         return getHttpEndpointFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -12107,6 +12335,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -12168,6 +12397,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasWorkflow() {
         return destinationDescriptorCase_ == 3;
       }
+
       /**
        *
        *
@@ -12201,6 +12431,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -12234,6 +12465,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -12260,6 +12492,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12284,6 +12517,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12332,6 +12566,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMessageBus() {
         return destinationDescriptorCase_ == 4;
       }
+
       /**
        *
        *
@@ -12365,6 +12600,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -12398,6 +12634,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -12424,6 +12661,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12448,6 +12686,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12495,6 +12734,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTopic() {
         return destinationDescriptorCase_ == 8;
       }
+
       /**
        *
        *
@@ -12527,6 +12767,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -12559,6 +12800,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -12584,6 +12826,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12607,6 +12850,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12641,6 +12885,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.eventarc.v1.Pipeline.Destination.AuthenticationConfig.Builder,
               com.google.cloud.eventarc.v1.Pipeline.Destination.AuthenticationConfigOrBuilder>
           authenticationConfigBuilder_;
+
       /**
        *
        *
@@ -12661,6 +12906,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAuthenticationConfig() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -12689,6 +12935,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return authenticationConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -12718,6 +12965,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12745,6 +12993,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12781,6 +13030,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12806,6 +13056,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12827,6 +13078,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getAuthenticationConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -12853,6 +13105,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               : authenticationConfig_;
         }
       }
+
       /**
        *
        *
@@ -12891,6 +13144,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.Builder,
               com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormatOrBuilder>
           outputPayloadFormatBuilder_;
+
       /**
        *
        *
@@ -12910,6 +13164,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOutputPayloadFormat() {
         return ((bitField0_ & 0x00000040) != 0);
       }
+
       /**
        *
        *
@@ -12935,6 +13190,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return outputPayloadFormatBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -12963,6 +13219,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12988,6 +13245,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13023,6 +13281,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -13047,6 +13306,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13067,6 +13327,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOutputPayloadFormatFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -13091,6 +13352,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               : outputPayloadFormat_;
         }
       }
+
       /**
        *
        *
@@ -13205,6 +13467,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the transformation field is set.
      */
     boolean hasTransformation();
+
     /**
      *
      *
@@ -13219,6 +13482,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return The transformation.
      */
     com.google.cloud.eventarc.v1.Pipeline.Mediation.Transformation getTransformation();
+
     /**
      *
      *
@@ -13236,6 +13500,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.eventarc.v1.Pipeline.Mediation.MediationDescriptorCase
         getMediationDescriptorCase();
   }
+
   /**
    *
    *
@@ -13250,6 +13515,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline.Mediation)
       MediationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Mediation.newBuilder() to construct.
     private Mediation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -13370,6 +13636,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * @return The transformationTemplate.
        */
       java.lang.String getTransformationTemplate();
+
       /**
        *
        *
@@ -13458,6 +13725,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getTransformationTemplateBytes();
     }
+
     /**
      *
      *
@@ -13472,6 +13740,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline.Mediation.Transformation)
         TransformationOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Transformation.newBuilder() to construct.
       private Transformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -13506,6 +13775,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object transformationTemplate_ = "";
+
       /**
        *
        *
@@ -13604,6 +13874,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -13867,6 +14138,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -14061,6 +14333,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object transformationTemplate_ = "";
+
         /**
          *
          *
@@ -14159,6 +14432,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -14257,6 +14531,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -14354,6 +14629,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14447,6 +14723,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14629,6 +14906,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       private MediationDescriptorCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -14660,6 +14938,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TRANSFORMATION_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -14677,6 +14956,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTransformation() {
       return mediationDescriptorCase_ == 1;
     }
+
     /**
      *
      *
@@ -14698,6 +14978,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.eventarc.v1.Pipeline.Mediation.Transformation.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -14898,6 +15179,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -15120,6 +15402,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.eventarc.v1.Pipeline.Mediation.Transformation.Builder,
               com.google.cloud.eventarc.v1.Pipeline.Mediation.TransformationOrBuilder>
           transformationBuilder_;
+
       /**
        *
        *
@@ -15137,6 +15420,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTransformation() {
         return mediationDescriptorCase_ == 1;
       }
+
       /**
        *
        *
@@ -15167,6 +15451,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -15192,6 +15477,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         mediationDescriptorCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -15214,6 +15500,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         mediationDescriptorCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -15252,6 +15539,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         mediationDescriptorCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -15279,6 +15567,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -15294,6 +15583,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           getTransformationBuilder() {
         return getTransformationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -15319,6 +15609,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -15455,6 +15746,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the minRetryDelay field is set.
      */
     boolean hasMinRetryDelay();
+
     /**
      *
      *
@@ -15471,6 +15763,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return The minRetryDelay.
      */
     com.google.protobuf.Duration getMinRetryDelay();
+
     /**
      *
      *
@@ -15502,6 +15795,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maxRetryDelay field is set.
      */
     boolean hasMaxRetryDelay();
+
     /**
      *
      *
@@ -15518,6 +15812,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return The maxRetryDelay.
      */
     com.google.protobuf.Duration getMaxRetryDelay();
+
     /**
      *
      *
@@ -15533,6 +15828,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getMaxRetryDelayOrBuilder();
   }
+
   /**
    *
    *
@@ -15554,6 +15850,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Pipeline.RetryPolicy)
       RetryPolicyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RetryPolicy.newBuilder() to construct.
     private RetryPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -15585,6 +15882,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int MAX_ATTEMPTS_FIELD_NUMBER = 1;
     private int maxAttempts_ = 0;
+
     /**
      *
      *
@@ -15604,6 +15902,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MIN_RETRY_DELAY_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration minRetryDelay_;
+
     /**
      *
      *
@@ -15623,6 +15922,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinRetryDelay() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -15644,6 +15944,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : minRetryDelay_;
     }
+
     /**
      *
      *
@@ -15666,6 +15967,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MAX_RETRY_DELAY_FIELD_NUMBER = 3;
     private com.google.protobuf.Duration maxRetryDelay_;
+
     /**
      *
      *
@@ -15685,6 +15987,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxRetryDelay() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -15706,6 +16009,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : maxRetryDelay_;
     }
+
     /**
      *
      *
@@ -15914,6 +16218,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -16156,6 +16461,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int maxAttempts_;
+
       /**
        *
        *
@@ -16172,6 +16478,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public int getMaxAttempts() {
         return maxAttempts_;
       }
+
       /**
        *
        *
@@ -16192,6 +16499,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16217,6 +16525,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           minRetryDelayBuilder_;
+
       /**
        *
        *
@@ -16235,6 +16544,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMinRetryDelay() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -16259,6 +16569,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return minRetryDelayBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -16285,6 +16596,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16308,6 +16620,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16339,6 +16652,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16362,6 +16676,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16380,6 +16695,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMinRetryDelayFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -16402,6 +16718,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               : minRetryDelay_;
         }
       }
+
       /**
        *
        *
@@ -16438,6 +16755,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           maxRetryDelayBuilder_;
+
       /**
        *
        *
@@ -16456,6 +16774,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMaxRetryDelay() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -16480,6 +16799,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           return maxRetryDelayBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -16506,6 +16826,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16529,6 +16850,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16560,6 +16882,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16583,6 +16906,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16601,6 +16925,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMaxRetryDelayFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -16623,6 +16948,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
               : maxRetryDelay_;
         }
       }
+
       /**
        *
        *
@@ -16722,6 +17048,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -16747,6 +17074,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -16775,6 +17103,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -16794,6 +17123,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -16813,6 +17143,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -16833,6 +17164,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -16852,6 +17184,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -16871,6 +17204,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -16915,6 +17249,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -16933,12 +17268,14 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -16954,6 +17291,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -16976,6 +17314,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -17003,6 +17342,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -17030,6 +17370,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -17085,6 +17426,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
+
   /**
    *
    *
@@ -17103,12 +17445,14 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
+
   /**
    *
    *
@@ -17124,6 +17468,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
+
   /**
    *
    *
@@ -17146,6 +17491,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -17173,6 +17519,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -17196,6 +17543,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -17224,6 +17572,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.eventarc.v1.Pipeline.Destination> destinations_;
+
   /**
    *
    *
@@ -17240,6 +17589,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.eventarc.v1.Pipeline.Destination> getDestinationsList() {
     return destinations_;
   }
+
   /**
    *
    *
@@ -17257,6 +17607,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       getDestinationsOrBuilderList() {
     return destinations_;
   }
+
   /**
    *
    *
@@ -17273,6 +17624,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public int getDestinationsCount() {
     return destinations_.size();
   }
+
   /**
    *
    *
@@ -17289,6 +17641,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.eventarc.v1.Pipeline.Destination getDestinations(int index) {
     return destinations_.get(index);
   }
+
   /**
    *
    *
@@ -17311,6 +17664,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.eventarc.v1.Pipeline.Mediation> mediations_;
+
   /**
    *
    *
@@ -17327,6 +17681,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.eventarc.v1.Pipeline.Mediation> getMediationsList() {
     return mediations_;
   }
+
   /**
    *
    *
@@ -17344,6 +17699,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       getMediationsOrBuilderList() {
     return mediations_;
   }
+
   /**
    *
    *
@@ -17360,6 +17716,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public int getMediationsCount() {
     return mediations_.size();
   }
+
   /**
    *
    *
@@ -17376,6 +17733,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.eventarc.v1.Pipeline.Mediation getMediations(int index) {
     return mediations_.get(index);
   }
+
   /**
    *
    *
@@ -17398,6 +17756,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cryptoKeyName_ = "";
+
   /**
    *
    *
@@ -17426,6 +17785,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -17457,6 +17817,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INPUT_PAYLOAD_FORMAT_FIELD_NUMBER = 11;
   private com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat inputPayloadFormat_;
+
   /**
    *
    *
@@ -17481,6 +17842,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInputPayloadFormat() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -17507,6 +17869,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.getDefaultInstance()
         : inputPayloadFormat_;
   }
+
   /**
    *
    *
@@ -17535,6 +17898,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 12;
   private com.google.cloud.eventarc.v1.LoggingConfig loggingConfig_;
+
   /**
    *
    *
@@ -17552,6 +17916,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLoggingConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -17571,6 +17936,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.eventarc.v1.LoggingConfig.getDefaultInstance()
         : loggingConfig_;
   }
+
   /**
    *
    *
@@ -17591,6 +17957,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RETRY_POLICY_FIELD_NUMBER = 13;
   private com.google.cloud.eventarc.v1.Pipeline.RetryPolicy retryPolicy_;
+
   /**
    *
    *
@@ -17608,6 +17975,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRetryPolicy() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -17627,6 +17995,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.eventarc.v1.Pipeline.RetryPolicy.getDefaultInstance()
         : retryPolicy_;
   }
+
   /**
    *
    *
@@ -17649,6 +18018,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -17674,6 +18044,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -18019,6 +18390,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -18557,6 +18929,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -18581,6 +18954,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -18605,6 +18979,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -18628,6 +19003,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -18647,6 +19023,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -18678,6 +19055,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -18697,6 +19075,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -18722,6 +19101,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -18749,6 +19129,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -18773,6 +19154,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -18805,6 +19187,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -18829,6 +19212,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -18848,6 +19232,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -18871,6 +19256,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -18908,6 +19294,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -18927,6 +19314,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -18952,6 +19340,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -18979,6 +19368,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -19003,6 +19393,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -19035,6 +19426,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -19059,6 +19451,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -19078,6 +19471,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -19101,6 +19495,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -19157,6 +19552,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -19175,12 +19571,14 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -19196,6 +19594,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -19218,6 +19617,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -19246,6 +19646,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -19264,12 +19665,14 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -19292,6 +19695,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -19310,6 +19714,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -19336,6 +19741,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -19362,6 +19768,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -19387,6 +19794,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -19408,6 +19816,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -19463,6 +19872,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
+
     /**
      *
      *
@@ -19481,12 +19891,14 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
+
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
+
     /**
      *
      *
@@ -19502,6 +19914,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
+
     /**
      *
      *
@@ -19524,6 +19937,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -19552,6 +19966,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -19570,12 +19985,14 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000020;
       return internalGetMutableAnnotations().getMutableMap();
     }
+
     /**
      *
      *
@@ -19598,6 +20015,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *
@@ -19616,6 +20034,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -19638,6 +20057,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -19660,6 +20080,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -19681,6 +20102,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -19698,6 +20120,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -19758,6 +20181,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return destinationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -19777,6 +20201,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return destinationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -19796,6 +20221,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return destinationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -19822,6 +20248,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -19845,6 +20272,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -19870,6 +20298,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -19896,6 +20325,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -19919,6 +20349,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -19942,6 +20373,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -19965,6 +20397,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -19987,6 +20420,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -20009,6 +20443,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -20025,6 +20460,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getDestinationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -20045,6 +20481,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return destinationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -20065,6 +20502,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(destinations_);
       }
     }
+
     /**
      *
      *
@@ -20081,6 +20519,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       return getDestinationsFieldBuilder()
           .addBuilder(com.google.cloud.eventarc.v1.Pipeline.Destination.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -20099,6 +20538,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.eventarc.v1.Pipeline.Destination.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -20169,6 +20609,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return mediationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -20188,6 +20629,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return mediationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -20207,6 +20649,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return mediationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -20232,6 +20675,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -20255,6 +20699,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -20280,6 +20725,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -20305,6 +20751,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -20328,6 +20775,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -20351,6 +20799,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -20374,6 +20823,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -20396,6 +20846,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -20418,6 +20869,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -20433,6 +20885,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.eventarc.v1.Pipeline.Mediation.Builder getMediationsBuilder(int index) {
       return getMediationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -20453,6 +20906,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return mediationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -20473,6 +20927,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(mediations_);
       }
     }
+
     /**
      *
      *
@@ -20489,6 +20944,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       return getMediationsFieldBuilder()
           .addBuilder(com.google.cloud.eventarc.v1.Pipeline.Mediation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -20505,6 +20961,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       return getMediationsFieldBuilder()
           .addBuilder(index, com.google.cloud.eventarc.v1.Pipeline.Mediation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -20540,6 +20997,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object cryptoKeyName_ = "";
+
     /**
      *
      *
@@ -20567,6 +21025,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -20594,6 +21053,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -20620,6 +21080,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20642,6 +21103,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20676,6 +21138,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat.Builder,
             com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormatOrBuilder>
         inputPayloadFormatBuilder_;
+
     /**
      *
      *
@@ -20699,6 +21162,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInputPayloadFormat() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -20728,6 +21192,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return inputPayloadFormatBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -20760,6 +21225,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20789,6 +21255,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20828,6 +21295,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -20856,6 +21324,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20880,6 +21349,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInputPayloadFormatFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -20908,6 +21378,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             : inputPayloadFormat_;
       }
     }
+
     /**
      *
      *
@@ -20949,6 +21420,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.eventarc.v1.LoggingConfig.Builder,
             com.google.cloud.eventarc.v1.LoggingConfigOrBuilder>
         loggingConfigBuilder_;
+
     /**
      *
      *
@@ -20965,6 +21437,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoggingConfig() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -20987,6 +21460,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return loggingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -21011,6 +21485,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21033,6 +21508,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21062,6 +21538,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -21083,6 +21560,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21099,6 +21577,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLoggingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -21119,6 +21598,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             : loggingConfig_;
       }
     }
+
     /**
      *
      *
@@ -21153,6 +21633,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.eventarc.v1.Pipeline.RetryPolicy.Builder,
             com.google.cloud.eventarc.v1.Pipeline.RetryPolicyOrBuilder>
         retryPolicyBuilder_;
+
     /**
      *
      *
@@ -21169,6 +21650,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRetryPolicy() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -21191,6 +21673,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return retryPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -21215,6 +21698,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21237,6 +21721,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21267,6 +21752,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -21288,6 +21774,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21304,6 +21791,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRetryPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -21324,6 +21812,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             : retryPolicy_;
       }
     }
+
     /**
      *
      *
@@ -21353,6 +21842,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -21377,6 +21867,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -21401,6 +21892,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -21424,6 +21916,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21443,6 +21936,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

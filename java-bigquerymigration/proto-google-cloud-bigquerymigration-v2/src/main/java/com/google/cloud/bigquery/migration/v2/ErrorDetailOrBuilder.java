@@ -38,6 +38,7 @@ public interface ErrorDetailOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ErrorDetailOrBuilder
    * @return The location.
    */
   com.google.cloud.bigquery.migration.v2.ErrorLocation getLocation();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ErrorDetailOrBuilder
    * @return Whether the errorInfo field is set.
    */
   boolean hasErrorInfo();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ErrorDetailOrBuilder
    * @return The errorInfo.
    */
   com.google.rpc.ErrorInfo getErrorInfo();
+
   /**
    *
    *

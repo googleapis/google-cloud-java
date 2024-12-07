@@ -33,6 +33,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.accessapproval.v1.ApprovalRequest)
     ApprovalRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ApprovalRequest.newBuilder() to construct.
   private ApprovalRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     private DecisionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,6 +120,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -171,6 +175,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestedResourceName_ = "";
+
   /**
    *
    *
@@ -200,6 +205,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -232,6 +238,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int REQUESTED_RESOURCE_PROPERTIES_FIELD_NUMBER = 9;
   private com.google.cloud.accessapproval.v1.ResourceProperties requestedResourceProperties_;
+
   /**
    *
    *
@@ -248,6 +255,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   public boolean hasRequestedResourceProperties() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -266,6 +274,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.accessapproval.v1.ResourceProperties.getDefaultInstance()
         : requestedResourceProperties_;
   }
+
   /**
    *
    *
@@ -286,6 +295,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int REQUESTED_REASON_FIELD_NUMBER = 3;
   private com.google.cloud.accessapproval.v1.AccessReason requestedReason_;
+
   /**
    *
    *
@@ -301,6 +311,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   public boolean hasRequestedReason() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -318,6 +329,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.accessapproval.v1.AccessReason.getDefaultInstance()
         : requestedReason_;
   }
+
   /**
    *
    *
@@ -336,6 +348,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int REQUESTED_LOCATIONS_FIELD_NUMBER = 4;
   private com.google.cloud.accessapproval.v1.AccessLocations requestedLocations_;
+
   /**
    *
    *
@@ -351,6 +364,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   public boolean hasRequestedLocations() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -368,6 +382,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.accessapproval.v1.AccessLocations.getDefaultInstance()
         : requestedLocations_;
   }
+
   /**
    *
    *
@@ -387,6 +402,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int REQUEST_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp requestTime_;
+
   /**
    *
    *
@@ -402,6 +418,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   public boolean hasRequestTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -417,6 +434,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getRequestTime() {
     return requestTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : requestTime_;
   }
+
   /**
    *
    *
@@ -433,6 +451,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int REQUESTED_EXPIRATION_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp requestedExpiration_;
+
   /**
    *
    *
@@ -449,6 +468,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   public boolean hasRequestedExpiration() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -467,6 +487,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : requestedExpiration_;
   }
+
   /**
    *
    *
@@ -485,6 +506,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int APPROVE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -500,6 +522,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   public boolean hasApprove() {
     return decisionCase_ == 7;
   }
+
   /**
    *
    *
@@ -518,6 +541,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.accessapproval.v1.ApproveDecision.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -536,6 +560,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DISMISS_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -551,6 +576,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   public boolean hasDismiss() {
     return decisionCase_ == 8;
   }
+
   /**
    *
    *
@@ -569,6 +595,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.accessapproval.v1.DismissDecision.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -866,6 +893,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1246,6 +1274,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1269,6 +1298,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1292,6 +1322,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1314,6 +1345,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1364,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1357,6 +1390,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object requestedResourceName_ = "";
+
     /**
      *
      *
@@ -1385,6 +1419,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1413,6 +1448,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1440,6 +1476,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1500,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1498,6 +1536,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.accessapproval.v1.ResourceProperties.Builder,
             com.google.cloud.accessapproval.v1.ResourcePropertiesOrBuilder>
         requestedResourcePropertiesBuilder_;
+
     /**
      *
      *
@@ -1513,6 +1552,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public boolean hasRequestedResourceProperties() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1534,6 +1574,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return requestedResourcePropertiesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1558,6 +1599,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1579,6 +1621,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1609,6 +1652,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1629,6 +1673,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1645,6 +1690,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRequestedResourcePropertiesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1665,6 +1711,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             : requestedResourceProperties_;
       }
     }
+
     /**
      *
      *
@@ -1698,6 +1745,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.accessapproval.v1.AccessReason.Builder,
             com.google.cloud.accessapproval.v1.AccessReasonOrBuilder>
         requestedReasonBuilder_;
+
     /**
      *
      *
@@ -1712,6 +1760,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public boolean hasRequestedReason() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1732,6 +1781,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return requestedReasonBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1754,6 +1804,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1774,6 +1825,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1854,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1821,6 +1874,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1835,6 +1889,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRequestedReasonFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1853,6 +1908,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             : requestedReason_;
       }
     }
+
     /**
      *
      *
@@ -1885,6 +1941,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.accessapproval.v1.AccessLocations.Builder,
             com.google.cloud.accessapproval.v1.AccessLocationsOrBuilder>
         requestedLocationsBuilder_;
+
     /**
      *
      *
@@ -1899,6 +1956,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public boolean hasRequestedLocations() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1919,6 +1977,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return requestedLocationsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1941,6 +2000,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1961,6 +2021,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1990,6 +2051,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2009,6 +2071,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2024,6 +2087,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRequestedLocationsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2043,6 +2107,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             : requestedLocations_;
       }
     }
+
     /**
      *
      *
@@ -2075,6 +2140,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         requestTimeBuilder_;
+
     /**
      *
      *
@@ -2089,6 +2155,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public boolean hasRequestTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2109,6 +2176,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return requestTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2131,6 +2199,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2150,6 +2219,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2177,6 +2247,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2196,6 +2267,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2210,6 +2282,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRequestTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2228,6 +2301,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             : requestTime_;
       }
     }
+
     /**
      *
      *
@@ -2260,6 +2334,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         requestedExpirationBuilder_;
+
     /**
      *
      *
@@ -2275,6 +2350,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public boolean hasRequestedExpiration() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2296,6 +2372,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return requestedExpirationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2319,6 +2396,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2339,6 +2417,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2367,6 +2446,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2387,6 +2467,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2402,6 +2483,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRequestedExpirationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2421,6 +2503,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             : requestedExpiration_;
       }
     }
+
     /**
      *
      *
@@ -2453,6 +2536,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.accessapproval.v1.ApproveDecision.Builder,
             com.google.cloud.accessapproval.v1.ApproveDecisionOrBuilder>
         approveBuilder_;
+
     /**
      *
      *
@@ -2468,6 +2552,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public boolean hasApprove() {
       return decisionCase_ == 7;
     }
+
     /**
      *
      *
@@ -2493,6 +2578,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.accessapproval.v1.ApproveDecision.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2515,6 +2601,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       decisionCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2535,6 +2622,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       decisionCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2568,6 +2656,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       decisionCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2593,6 +2682,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2605,6 +2695,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.accessapproval.v1.ApproveDecision.Builder getApproveBuilder() {
       return getApproveFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2625,6 +2716,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.accessapproval.v1.ApproveDecision.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2663,6 +2755,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.accessapproval.v1.DismissDecision.Builder,
             com.google.cloud.accessapproval.v1.DismissDecisionOrBuilder>
         dismissBuilder_;
+
     /**
      *
      *
@@ -2678,6 +2771,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public boolean hasDismiss() {
       return decisionCase_ == 8;
     }
+
     /**
      *
      *
@@ -2703,6 +2797,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.accessapproval.v1.DismissDecision.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2725,6 +2820,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       decisionCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2745,6 +2841,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       decisionCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2778,6 +2875,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       decisionCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2803,6 +2901,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2815,6 +2914,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.accessapproval.v1.DismissDecision.Builder getDismissBuilder() {
       return getDismissFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2835,6 +2935,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.accessapproval.v1.DismissDecision.getDefaultInstance();
       }
     }
+
     /**
      *
      *

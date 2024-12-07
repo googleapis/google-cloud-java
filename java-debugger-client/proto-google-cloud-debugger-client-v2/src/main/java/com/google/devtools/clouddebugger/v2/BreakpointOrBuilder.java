@@ -36,6 +36,7 @@ public interface BreakpointOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface BreakpointOrBuilder
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface BreakpointOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface BreakpointOrBuilder
    * @return The location.
    */
   com.google.devtools.clouddebugger.v2.SourceLocation getLocation();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface BreakpointOrBuilder
    * @return The condition.
    */
   java.lang.String getCondition();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface BreakpointOrBuilder
    * @return A list containing the expressions.
    */
   java.util.List<java.lang.String> getExpressionsList();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface BreakpointOrBuilder
    * @return The count of expressions.
    */
   int getExpressionsCount();
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public interface BreakpointOrBuilder
    * @return The expressions at the given index.
    */
   java.lang.String getExpressions(int index);
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public interface BreakpointOrBuilder
    * @return The logMessageFormat.
    */
   java.lang.String getLogMessageFormat();
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public interface BreakpointOrBuilder
    * @return The enum numeric value on the wire for logLevel.
    */
   int getLogLevelValue();
+
   /**
    *
    *
@@ -293,6 +303,7 @@ public interface BreakpointOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -305,6 +316,7 @@ public interface BreakpointOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -329,6 +341,7 @@ public interface BreakpointOrBuilder
    * @return Whether the finalTime field is set.
    */
   boolean hasFinalTime();
+
   /**
    *
    *
@@ -342,6 +355,7 @@ public interface BreakpointOrBuilder
    * @return The finalTime.
    */
   com.google.protobuf.Timestamp getFinalTime();
+
   /**
    *
    *
@@ -366,6 +380,7 @@ public interface BreakpointOrBuilder
    * @return The userEmail.
    */
   java.lang.String getUserEmail();
+
   /**
    *
    *
@@ -405,6 +420,7 @@ public interface BreakpointOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -431,6 +447,7 @@ public interface BreakpointOrBuilder
    * @return The status.
    */
   com.google.devtools.clouddebugger.v2.StatusMessage getStatus();
+
   /**
    *
    *
@@ -467,6 +484,7 @@ public interface BreakpointOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.StackFrame stack_frames = 7;</code>
    */
   java.util.List<com.google.devtools.clouddebugger.v2.StackFrame> getStackFramesList();
+
   /**
    *
    *
@@ -478,6 +496,7 @@ public interface BreakpointOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.StackFrame stack_frames = 7;</code>
    */
   com.google.devtools.clouddebugger.v2.StackFrame getStackFrames(int index);
+
   /**
    *
    *
@@ -489,6 +508,7 @@ public interface BreakpointOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.StackFrame stack_frames = 7;</code>
    */
   int getStackFramesCount();
+
   /**
    *
    *
@@ -501,6 +521,7 @@ public interface BreakpointOrBuilder
    */
   java.util.List<? extends com.google.devtools.clouddebugger.v2.StackFrameOrBuilder>
       getStackFramesOrBuilderList();
+
   /**
    *
    *
@@ -529,6 +550,7 @@ public interface BreakpointOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable evaluated_expressions = 8;</code>
    */
   java.util.List<com.google.devtools.clouddebugger.v2.Variable> getEvaluatedExpressionsList();
+
   /**
    *
    *
@@ -545,6 +567,7 @@ public interface BreakpointOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable evaluated_expressions = 8;</code>
    */
   com.google.devtools.clouddebugger.v2.Variable getEvaluatedExpressions(int index);
+
   /**
    *
    *
@@ -561,6 +584,7 @@ public interface BreakpointOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable evaluated_expressions = 8;</code>
    */
   int getEvaluatedExpressionsCount();
+
   /**
    *
    *
@@ -578,6 +602,7 @@ public interface BreakpointOrBuilder
    */
   java.util.List<? extends com.google.devtools.clouddebugger.v2.VariableOrBuilder>
       getEvaluatedExpressionsOrBuilderList();
+
   /**
    *
    *
@@ -617,6 +642,7 @@ public interface BreakpointOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable variable_table = 9;</code>
    */
   java.util.List<com.google.devtools.clouddebugger.v2.Variable> getVariableTableList();
+
   /**
    *
    *
@@ -638,6 +664,7 @@ public interface BreakpointOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable variable_table = 9;</code>
    */
   com.google.devtools.clouddebugger.v2.Variable getVariableTable(int index);
+
   /**
    *
    *
@@ -659,6 +686,7 @@ public interface BreakpointOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable variable_table = 9;</code>
    */
   int getVariableTableCount();
+
   /**
    *
    *
@@ -681,6 +709,7 @@ public interface BreakpointOrBuilder
    */
   java.util.List<? extends com.google.devtools.clouddebugger.v2.VariableOrBuilder>
       getVariableTableOrBuilderList();
+
   /**
    *
    *
@@ -714,6 +743,7 @@ public interface BreakpointOrBuilder
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -725,9 +755,11 @@ public interface BreakpointOrBuilder
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -739,6 +771,7 @@ public interface BreakpointOrBuilder
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -754,6 +787,7 @@ public interface BreakpointOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

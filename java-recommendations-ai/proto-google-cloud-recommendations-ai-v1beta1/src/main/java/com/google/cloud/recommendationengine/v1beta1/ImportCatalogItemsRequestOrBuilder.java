@@ -38,6 +38,7 @@ public interface ImportCatalogItemsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ImportCatalogItemsRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface ImportCatalogItemsRequestOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface ImportCatalogItemsRequestOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.recommendationengine.v1beta1.InputConfig getInputConfig();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface ImportCatalogItemsRequestOrBuilder
    * @return Whether the errorsConfig field is set.
    */
   boolean hasErrorsConfig();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface ImportCatalogItemsRequestOrBuilder
    * @return The errorsConfig.
    */
   com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig getErrorsConfig();
+
   /**
    *
    *

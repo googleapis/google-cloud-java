@@ -36,6 +36,7 @@ public interface PublicBlueprintOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PublicBlueprintOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface PublicBlueprintOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface PublicBlueprintOrBuilder
    * @return The enum numeric value on the wire for deploymentLevel.
    */
   int getDeploymentLevelValue();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface PublicBlueprintOrBuilder
    * @return The sourceProvider.
    */
   java.lang.String getSourceProvider();
+
   /**
    *
    *

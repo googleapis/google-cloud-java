@@ -33,6 +33,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchHealthCheckRequest)
     PatchHealthCheckRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PatchHealthCheckRequest.newBuilder() to construct.
   private PatchHealthCheckRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object healthCheck_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
 
   public static final int HEALTH_CHECK_RESOURCE_FIELD_NUMBER = 201925032;
   private com.google.cloud.compute.v1.HealthCheck healthCheckResource_;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
   public boolean hasHealthCheckResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
         ? com.google.cloud.compute.v1.HealthCheck.getDefaultInstance()
         : healthCheckResource_;
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -270,6 +280,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -492,6 +503,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -740,6 +752,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object healthCheck_ = "";
+
     /**
      *
      *
@@ -762,6 +775,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -784,6 +798,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -805,6 +820,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +838,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +868,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.HealthCheck.Builder,
             com.google.cloud.compute.v1.HealthCheckOrBuilder>
         healthCheckResourceBuilder_;
+
     /**
      *
      *
@@ -867,6 +885,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
     public boolean hasHealthCheckResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -889,6 +908,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
         return healthCheckResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -913,6 +933,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +956,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +987,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1009,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1026,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       onChanged();
       return getHealthCheckResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1022,6 +1047,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
             : healthCheckResource_;
       }
     }
+
     /**
      *
      *
@@ -1051,6 +1077,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1075,6 +1102,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1099,6 +1127,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1122,6 +1151,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1141,6 +1171,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1198,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1181,6 +1213,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1203,6 +1236,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1225,6 +1259,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1246,6 +1281,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1299,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

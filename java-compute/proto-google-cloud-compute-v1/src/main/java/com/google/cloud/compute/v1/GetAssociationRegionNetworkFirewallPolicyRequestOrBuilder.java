@@ -36,6 +36,7 @@ public interface GetAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   java.lang.String getFirewallPolicy();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface GetAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface GetAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface GetAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

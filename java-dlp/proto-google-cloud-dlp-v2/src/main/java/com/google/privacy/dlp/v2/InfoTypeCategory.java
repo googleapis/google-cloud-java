@@ -34,6 +34,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InfoTypeCategory)
     InfoTypeCategoryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InfoTypeCategory.newBuilder() to construct.
   private InfoTypeCategory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -597,6 +598,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>LOCATION_UNSPECIFIED = 0;</code>
      */
     public static final int LOCATION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -608,6 +610,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>GLOBAL = 1;</code>
      */
     public static final int GLOBAL_VALUE = 1;
+
     /**
      *
      *
@@ -618,6 +621,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>ARGENTINA = 2;</code>
      */
     public static final int ARGENTINA_VALUE = 2;
+
     /**
      *
      *
@@ -628,6 +632,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>ARMENIA = 51;</code>
      */
     public static final int ARMENIA_VALUE = 51;
+
     /**
      *
      *
@@ -638,6 +643,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>AUSTRALIA = 3;</code>
      */
     public static final int AUSTRALIA_VALUE = 3;
+
     /**
      *
      *
@@ -648,6 +654,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>AZERBAIJAN = 48;</code>
      */
     public static final int AZERBAIJAN_VALUE = 48;
+
     /**
      *
      *
@@ -658,6 +665,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>BELARUS = 50;</code>
      */
     public static final int BELARUS_VALUE = 50;
+
     /**
      *
      *
@@ -668,6 +676,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>BELGIUM = 4;</code>
      */
     public static final int BELGIUM_VALUE = 4;
+
     /**
      *
      *
@@ -678,6 +687,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>BRAZIL = 5;</code>
      */
     public static final int BRAZIL_VALUE = 5;
+
     /**
      *
      *
@@ -688,6 +698,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>CANADA = 6;</code>
      */
     public static final int CANADA_VALUE = 6;
+
     /**
      *
      *
@@ -698,6 +709,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>CHILE = 7;</code>
      */
     public static final int CHILE_VALUE = 7;
+
     /**
      *
      *
@@ -708,6 +720,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>CHINA = 8;</code>
      */
     public static final int CHINA_VALUE = 8;
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>COLOMBIA = 9;</code>
      */
     public static final int COLOMBIA_VALUE = 9;
+
     /**
      *
      *
@@ -728,6 +742,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>CROATIA = 42;</code>
      */
     public static final int CROATIA_VALUE = 42;
+
     /**
      *
      *
@@ -738,6 +753,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>DENMARK = 10;</code>
      */
     public static final int DENMARK_VALUE = 10;
+
     /**
      *
      *
@@ -748,6 +764,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>FRANCE = 11;</code>
      */
     public static final int FRANCE_VALUE = 11;
+
     /**
      *
      *
@@ -758,6 +775,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>FINLAND = 12;</code>
      */
     public static final int FINLAND_VALUE = 12;
+
     /**
      *
      *
@@ -768,6 +786,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>GERMANY = 13;</code>
      */
     public static final int GERMANY_VALUE = 13;
+
     /**
      *
      *
@@ -778,6 +797,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>HONG_KONG = 14;</code>
      */
     public static final int HONG_KONG_VALUE = 14;
+
     /**
      *
      *
@@ -788,6 +808,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>INDIA = 15;</code>
      */
     public static final int INDIA_VALUE = 15;
+
     /**
      *
      *
@@ -798,6 +819,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>INDONESIA = 16;</code>
      */
     public static final int INDONESIA_VALUE = 16;
+
     /**
      *
      *
@@ -808,6 +830,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>IRELAND = 17;</code>
      */
     public static final int IRELAND_VALUE = 17;
+
     /**
      *
      *
@@ -818,6 +841,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>ISRAEL = 18;</code>
      */
     public static final int ISRAEL_VALUE = 18;
+
     /**
      *
      *
@@ -828,6 +852,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>ITALY = 19;</code>
      */
     public static final int ITALY_VALUE = 19;
+
     /**
      *
      *
@@ -838,6 +863,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>JAPAN = 20;</code>
      */
     public static final int JAPAN_VALUE = 20;
+
     /**
      *
      *
@@ -848,6 +874,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>KAZAKHSTAN = 47;</code>
      */
     public static final int KAZAKHSTAN_VALUE = 47;
+
     /**
      *
      *
@@ -858,6 +885,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>KOREA = 21;</code>
      */
     public static final int KOREA_VALUE = 21;
+
     /**
      *
      *
@@ -868,6 +896,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>MEXICO = 22;</code>
      */
     public static final int MEXICO_VALUE = 22;
+
     /**
      *
      *
@@ -878,6 +907,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>THE_NETHERLANDS = 23;</code>
      */
     public static final int THE_NETHERLANDS_VALUE = 23;
+
     /**
      *
      *
@@ -888,6 +918,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>NEW_ZEALAND = 41;</code>
      */
     public static final int NEW_ZEALAND_VALUE = 41;
+
     /**
      *
      *
@@ -898,6 +929,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>NORWAY = 24;</code>
      */
     public static final int NORWAY_VALUE = 24;
+
     /**
      *
      *
@@ -908,6 +940,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>PARAGUAY = 25;</code>
      */
     public static final int PARAGUAY_VALUE = 25;
+
     /**
      *
      *
@@ -918,6 +951,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>PERU = 26;</code>
      */
     public static final int PERU_VALUE = 26;
+
     /**
      *
      *
@@ -928,6 +962,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>POLAND = 27;</code>
      */
     public static final int POLAND_VALUE = 27;
+
     /**
      *
      *
@@ -938,6 +973,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>PORTUGAL = 28;</code>
      */
     public static final int PORTUGAL_VALUE = 28;
+
     /**
      *
      *
@@ -948,6 +984,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>RUSSIA = 44;</code>
      */
     public static final int RUSSIA_VALUE = 44;
+
     /**
      *
      *
@@ -958,6 +995,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>SINGAPORE = 29;</code>
      */
     public static final int SINGAPORE_VALUE = 29;
+
     /**
      *
      *
@@ -968,6 +1006,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>SOUTH_AFRICA = 30;</code>
      */
     public static final int SOUTH_AFRICA_VALUE = 30;
+
     /**
      *
      *
@@ -978,6 +1017,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>SPAIN = 31;</code>
      */
     public static final int SPAIN_VALUE = 31;
+
     /**
      *
      *
@@ -988,6 +1028,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>SWEDEN = 32;</code>
      */
     public static final int SWEDEN_VALUE = 32;
+
     /**
      *
      *
@@ -998,6 +1039,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>SWITZERLAND = 43;</code>
      */
     public static final int SWITZERLAND_VALUE = 43;
+
     /**
      *
      *
@@ -1008,6 +1050,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>TAIWAN = 33;</code>
      */
     public static final int TAIWAN_VALUE = 33;
+
     /**
      *
      *
@@ -1018,6 +1061,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>THAILAND = 34;</code>
      */
     public static final int THAILAND_VALUE = 34;
+
     /**
      *
      *
@@ -1028,6 +1072,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>TURKEY = 35;</code>
      */
     public static final int TURKEY_VALUE = 35;
+
     /**
      *
      *
@@ -1038,6 +1083,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>UKRAINE = 45;</code>
      */
     public static final int UKRAINE_VALUE = 45;
+
     /**
      *
      *
@@ -1048,6 +1094,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>UNITED_KINGDOM = 36;</code>
      */
     public static final int UNITED_KINGDOM_VALUE = 36;
+
     /**
      *
      *
@@ -1058,6 +1105,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>UNITED_STATES = 37;</code>
      */
     public static final int UNITED_STATES_VALUE = 37;
+
     /**
      *
      *
@@ -1068,6 +1116,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>URUGUAY = 38;</code>
      */
     public static final int URUGUAY_VALUE = 38;
+
     /**
      *
      *
@@ -1078,6 +1127,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>UZBEKISTAN = 46;</code>
      */
     public static final int UZBEKISTAN_VALUE = 46;
+
     /**
      *
      *
@@ -1088,6 +1138,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>VENEZUELA = 39;</code>
      */
     public static final int VENEZUELA_VALUE = 39;
+
     /**
      *
      *
@@ -1344,6 +1395,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>INDUSTRY_UNSPECIFIED = 0;</code>
      */
     public static final int INDUSTRY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1354,6 +1406,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>FINANCE = 1;</code>
      */
     public static final int FINANCE_VALUE = 1;
+
     /**
      *
      *
@@ -1364,6 +1417,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>HEALTH = 2;</code>
      */
     public static final int HEALTH_VALUE = 2;
+
     /**
      *
      *
@@ -1570,6 +1624,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1581,6 +1636,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>PII = 1;</code>
      */
     public static final int PII_VALUE = 1;
+
     /**
      *
      *
@@ -1592,6 +1648,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>SPII = 2;</code>
      */
     public static final int SPII_VALUE = 2;
+
     /**
      *
      *
@@ -1603,6 +1660,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>DEMOGRAPHIC = 3;</code>
      */
     public static final int DEMOGRAPHIC_VALUE = 3;
+
     /**
      *
      *
@@ -1613,6 +1671,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>CREDENTIAL = 4;</code>
      */
     public static final int CREDENTIAL_VALUE = 4;
+
     /**
      *
      *
@@ -1623,6 +1682,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>GOVERNMENT_ID = 5;</code>
      */
     public static final int GOVERNMENT_ID_VALUE = 5;
+
     /**
      *
      *
@@ -1633,6 +1693,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>DOCUMENT = 6;</code>
      */
     public static final int DOCUMENT_VALUE = 6;
+
     /**
      *
      *
@@ -1756,6 +1817,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     private CategoryCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1791,6 +1853,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int LOCATION_CATEGORY_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1806,6 +1869,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
   public boolean hasLocationCategory() {
     return categoryCase_ == 1;
   }
+
   /**
    *
    *
@@ -1824,6 +1888,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     }
     return 0;
   }
+
   /**
    *
    *
@@ -1849,6 +1914,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int INDUSTRY_CATEGORY_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1863,6 +1929,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
   public boolean hasIndustryCategory() {
     return categoryCase_ == 2;
   }
+
   /**
    *
    *
@@ -1880,6 +1947,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     }
     return 0;
   }
+
   /**
    *
    *
@@ -1904,6 +1972,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TYPE_CATEGORY_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -1918,6 +1987,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
   public boolean hasTypeCategory() {
     return categoryCase_ == 3;
   }
+
   /**
    *
    *
@@ -1935,6 +2005,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     }
     return 0;
   }
+
   /**
    *
    *
@@ -2159,6 +2230,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2407,6 +2479,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     public boolean hasLocationCategory() {
       return categoryCase_ == 1;
     }
+
     /**
      *
      *
@@ -2426,6 +2499,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
       }
       return 0;
     }
+
     /**
      *
      *
@@ -2445,6 +2519,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2469,6 +2544,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
       }
       return com.google.privacy.dlp.v2.InfoTypeCategory.LocationCategory.LOCATION_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -2492,6 +2568,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2528,6 +2605,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     public boolean hasIndustryCategory() {
       return categoryCase_ == 2;
     }
+
     /**
      *
      *
@@ -2546,6 +2624,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
       }
       return 0;
     }
+
     /**
      *
      *
@@ -2564,6 +2643,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2587,6 +2667,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
       }
       return com.google.privacy.dlp.v2.InfoTypeCategory.IndustryCategory.INDUSTRY_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -2609,6 +2690,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2644,6 +2726,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     public boolean hasTypeCategory() {
       return categoryCase_ == 3;
     }
+
     /**
      *
      *
@@ -2662,6 +2745,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
       }
       return 0;
     }
+
     /**
      *
      *
@@ -2680,6 +2764,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2703,6 +2788,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
       }
       return com.google.privacy.dlp.v2.InfoTypeCategory.TypeCategory.TYPE_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -2724,6 +2810,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

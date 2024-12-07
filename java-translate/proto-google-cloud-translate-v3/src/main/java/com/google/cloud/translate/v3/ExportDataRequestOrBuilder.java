@@ -37,6 +37,7 @@ public interface ExportDataRequestOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ExportDataRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ExportDataRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.translate.v3.DatasetOutputConfig getOutputConfig();
+
   /**
    *
    *

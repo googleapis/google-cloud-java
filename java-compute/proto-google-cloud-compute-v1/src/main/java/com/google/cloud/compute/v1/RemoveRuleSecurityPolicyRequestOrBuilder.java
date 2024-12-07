@@ -36,6 +36,7 @@ public interface RemoveRuleSecurityPolicyRequestOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RemoveRuleSecurityPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface RemoveRuleSecurityPolicyRequestOrBuilder
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
+
   /**
    *
    *

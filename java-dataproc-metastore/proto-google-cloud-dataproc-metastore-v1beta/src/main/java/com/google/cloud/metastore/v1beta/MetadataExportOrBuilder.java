@@ -39,6 +39,7 @@ public interface MetadataExportOrBuilder
    * @return Whether the destinationGcsUri field is set.
    */
   boolean hasDestinationGcsUri();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface MetadataExportOrBuilder
    * @return The destinationGcsUri.
    */
   java.lang.String getDestinationGcsUri();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface MetadataExportOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface MetadataExportOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface MetadataExportOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface MetadataExportOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface MetadataExportOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface MetadataExportOrBuilder
    * @return The enum numeric value on the wire for databaseDumpType.
    */
   int getDatabaseDumpTypeValue();
+
   /**
    *
    *

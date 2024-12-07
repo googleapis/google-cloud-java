@@ -72,6 +72,7 @@ public enum ResourceAllowanceState implements com.google.protobuf.ProtocolMessag
    * <code>RESOURCE_ALLOWANCE_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int RESOURCE_ALLOWANCE_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum ResourceAllowanceState implements com.google.protobuf.ProtocolMessag
    * <code>RESOURCE_ALLOWANCE_ACTIVE = 1;</code>
    */
   public static final int RESOURCE_ALLOWANCE_ACTIVE_VALUE = 1;
+
   /**
    *
    *

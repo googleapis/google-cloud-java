@@ -33,6 +33,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.DocumentId)
     DocumentIdOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DocumentId.newBuilder() to construct.
   private DocumentId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
      * @return The gcsUri.
      */
     java.lang.String getGcsUri();
+
     /**
      *
      *
@@ -106,6 +108,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     java.lang.String getCwDocId();
+
     /**
      *
      *
@@ -122,6 +125,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     com.google.protobuf.ByteString getCwDocIdBytes();
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.DocumentId.GCSManagedDocumentId)
       GCSManagedDocumentIdOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GCSManagedDocumentId.newBuilder() to construct.
     private GCSManagedDocumentId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -172,6 +177,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object gcsUri_ = "";
+
     /**
      *
      *
@@ -195,6 +201,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -223,6 +230,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object cwDocId_ = "";
+
     /**
      *
      *
@@ -249,6 +257,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -447,6 +456,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -657,6 +667,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object gcsUri_ = "";
+
       /**
        *
        *
@@ -679,6 +690,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -701,6 +713,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -722,6 +735,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -739,6 +753,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -763,6 +778,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object cwDocId_ = "";
+
       /**
        *
        *
@@ -788,6 +804,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -813,6 +830,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -837,6 +855,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -857,6 +876,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -967,6 +987,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
      * @return The docId.
      */
     java.lang.String getDocId();
+
     /**
      *
      *
@@ -980,6 +1001,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDocIdBytes();
   }
+
   /**
    *
    *
@@ -995,6 +1017,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.DocumentId.UnmanagedDocumentId)
       UnmanagedDocumentIdOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UnmanagedDocumentId.newBuilder() to construct.
     private UnmanagedDocumentId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1029,6 +1052,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object docId_ = "";
+
     /**
      *
      *
@@ -1052,6 +1076,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1238,6 +1263,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1433,6 +1459,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object docId_ = "";
+
       /**
        *
        *
@@ -1455,6 +1482,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1477,6 +1505,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1498,6 +1527,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1515,6 +1545,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1623,6 +1654,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
     private TypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1656,6 +1688,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCS_MANAGED_DOC_ID_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1672,6 +1705,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsManagedDocId() {
     return typeCase_ == 1;
   }
+
   /**
    *
    *
@@ -1691,6 +1725,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.documentai.v1beta3.DocumentId.GCSManagedDocumentId.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1711,6 +1746,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNMANAGED_DOC_ID_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -1727,6 +1763,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUnmanagedDocId() {
     return typeCase_ == 4;
   }
+
   /**
    *
    *
@@ -1746,6 +1783,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.documentai.v1beta3.DocumentId.UnmanagedDocumentId.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1767,6 +1805,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REVISION_REF_FIELD_NUMBER = 3;
   private com.google.cloud.documentai.v1beta3.RevisionRef revisionRef_;
+
   /**
    *
    *
@@ -1782,6 +1821,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRevisionRef() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1799,6 +1839,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.documentai.v1beta3.RevisionRef.getDefaultInstance()
         : revisionRef_;
   }
+
   /**
    *
    *
@@ -2020,6 +2061,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2284,6 +2326,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1beta3.DocumentId.GCSManagedDocumentId.Builder,
             com.google.cloud.documentai.v1beta3.DocumentId.GCSManagedDocumentIdOrBuilder>
         gcsManagedDocIdBuilder_;
+
     /**
      *
      *
@@ -2301,6 +2344,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsManagedDocId() {
       return typeCase_ == 1;
     }
+
     /**
      *
      *
@@ -2331,6 +2375,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2356,6 +2401,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2379,6 +2425,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2416,6 +2463,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2443,6 +2491,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2458,6 +2507,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
         getGcsManagedDocIdBuilder() {
       return getGcsManagedDocIdFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2482,6 +2532,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2524,6 +2575,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1beta3.DocumentId.UnmanagedDocumentId.Builder,
             com.google.cloud.documentai.v1beta3.DocumentId.UnmanagedDocumentIdOrBuilder>
         unmanagedDocIdBuilder_;
+
     /**
      *
      *
@@ -2540,6 +2592,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUnmanagedDocId() {
       return typeCase_ == 4;
     }
+
     /**
      *
      *
@@ -2568,6 +2621,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2592,6 +2646,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2614,6 +2669,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2650,6 +2706,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2676,6 +2733,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2690,6 +2748,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
         getUnmanagedDocIdBuilder() {
       return getUnmanagedDocIdFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2713,6 +2772,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2755,6 +2815,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1beta3.RevisionRef.Builder,
             com.google.cloud.documentai.v1beta3.RevisionRefOrBuilder>
         revisionRefBuilder_;
+
     /**
      *
      *
@@ -2769,6 +2830,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRevisionRef() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2789,6 +2851,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
         return revisionRefBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2811,6 +2874,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2831,6 +2895,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2859,6 +2924,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2878,6 +2944,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2892,6 +2959,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRevisionRefFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2910,6 +2978,7 @@ public final class DocumentId extends com.google.protobuf.GeneratedMessageV3
             : revisionRef_;
       }
     }
+
     /**
      *
      *

@@ -40,6 +40,7 @@ public interface LabelImageRequestOrBuilder
    * @return Whether the imageClassificationConfig field is set.
    */
   boolean hasImageClassificationConfig();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface LabelImageRequestOrBuilder
    * @return The imageClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig getImageClassificationConfig();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface LabelImageRequestOrBuilder
    * @return Whether the boundingPolyConfig field is set.
    */
   boolean hasBoundingPolyConfig();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface LabelImageRequestOrBuilder
    * @return The boundingPolyConfig.
    */
   com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface LabelImageRequestOrBuilder
    * @return Whether the polylineConfig field is set.
    */
   boolean hasPolylineConfig();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface LabelImageRequestOrBuilder
    * @return The polylineConfig.
    */
   com.google.cloud.datalabeling.v1beta1.PolylineConfig getPolylineConfig();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface LabelImageRequestOrBuilder
    * @return Whether the segmentationConfig field is set.
    */
   boolean hasSegmentationConfig();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface LabelImageRequestOrBuilder
    * @return The segmentationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.SegmentationConfig getSegmentationConfig();
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public interface LabelImageRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public interface LabelImageRequestOrBuilder
    * @return Whether the basicConfig field is set.
    */
   boolean hasBasicConfig();
+
   /**
    *
    *
@@ -256,6 +266,7 @@ public interface LabelImageRequestOrBuilder
    * @return The basicConfig.
    */
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig();
+
   /**
    *
    *
@@ -283,6 +294,7 @@ public interface LabelImageRequestOrBuilder
    * @return The enum numeric value on the wire for feature.
    */
   int getFeatureValue();
+
   /**
    *
    *

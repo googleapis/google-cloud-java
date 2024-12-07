@@ -38,6 +38,7 @@ public interface TrainCustomModelRequestOrBuilder
    * @return Whether the gcsTrainingInput field is set.
    */
   boolean hasGcsTrainingInput();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface TrainCustomModelRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.TrainCustomModelRequest.GcsTrainingInput
       getGcsTrainingInput();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface TrainCustomModelRequestOrBuilder
    * @return The dataStore.
    */
   java.lang.String getDataStore();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface TrainCustomModelRequestOrBuilder
    * @return The modelType.
    */
   java.lang.String getModelType();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface TrainCustomModelRequestOrBuilder
    * @return Whether the errorConfig field is set.
    */
   boolean hasErrorConfig();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface TrainCustomModelRequestOrBuilder
    * @return The errorConfig.
    */
   com.google.cloud.discoveryengine.v1beta.ImportErrorConfig getErrorConfig();
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public interface TrainCustomModelRequestOrBuilder
    * @return The modelId.
    */
   java.lang.String getModelId();
+
   /**
    *
    *

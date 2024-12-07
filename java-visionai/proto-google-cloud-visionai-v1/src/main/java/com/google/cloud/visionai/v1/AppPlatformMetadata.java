@@ -35,6 +35,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AppPlatformMetadata)
     AppPlatformMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AppPlatformMetadata.newBuilder() to construct.
   private AppPlatformMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object application_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceId_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object node_ = "";
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -227,6 +234,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object processor_ = "";
+
   /**
    *
    *
@@ -250,6 +258,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -460,6 +469,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -691,6 +701,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object application_ = "";
+
     /**
      *
      *
@@ -713,6 +724,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -735,6 +747,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -756,6 +769,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +787,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +812,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object instanceId_ = "";
+
     /**
      *
      *
@@ -820,6 +836,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -843,6 +860,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -865,6 +883,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +902,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +928,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object node_ = "";
+
     /**
      *
      *
@@ -930,6 +951,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -952,6 +974,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -973,6 +996,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1039,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object processor_ = "";
+
     /**
      *
      *
@@ -1036,6 +1062,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1085,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1079,6 +1107,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1125,7 @@ public final class AppPlatformMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

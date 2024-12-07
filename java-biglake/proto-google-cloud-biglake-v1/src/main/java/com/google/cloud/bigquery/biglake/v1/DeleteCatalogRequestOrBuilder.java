@@ -40,6 +40,7 @@ public interface DeleteCatalogRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

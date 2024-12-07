@@ -39,6 +39,7 @@ public interface OrganizationSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface OrganizationSettingsOrBuilder
    * @return Whether the assetDiscoveryConfig field is set.
    */
   boolean hasAssetDiscoveryConfig();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface OrganizationSettingsOrBuilder
    */
   com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
       getAssetDiscoveryConfig();
+
   /**
    *
    *

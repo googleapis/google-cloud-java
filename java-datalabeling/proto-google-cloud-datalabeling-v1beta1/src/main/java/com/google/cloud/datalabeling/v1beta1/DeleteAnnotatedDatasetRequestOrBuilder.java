@@ -40,6 +40,7 @@ public interface DeleteAnnotatedDatasetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

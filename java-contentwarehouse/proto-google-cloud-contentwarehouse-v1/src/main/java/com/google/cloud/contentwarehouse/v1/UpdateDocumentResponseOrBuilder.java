@@ -36,6 +36,7 @@ public interface UpdateDocumentResponseOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateDocumentResponseOrBuilder
    * @return The document.
    */
   com.google.cloud.contentwarehouse.v1.Document getDocument();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface UpdateDocumentResponseOrBuilder
    * @return Whether the ruleEngineOutput field is set.
    */
   boolean hasRuleEngineOutput();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface UpdateDocumentResponseOrBuilder
    * @return The ruleEngineOutput.
    */
   com.google.cloud.contentwarehouse.v1.RuleEngineOutput getRuleEngineOutput();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface UpdateDocumentResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface UpdateDocumentResponseOrBuilder
    * @return The metadata.
    */
   com.google.cloud.contentwarehouse.v1.ResponseMetadata getMetadata();
+
   /**
    *
    *

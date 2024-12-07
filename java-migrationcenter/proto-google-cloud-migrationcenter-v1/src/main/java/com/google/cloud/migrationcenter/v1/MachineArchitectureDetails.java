@@ -33,6 +33,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.MachineArchitectureDetails)
     MachineArchitectureDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MachineArchitectureDetails.newBuilder() to construct.
   private MachineArchitectureDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
      * <code>FIRMWARE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int FIRMWARE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
      * <code>BIOS = 1;</code>
      */
     public static final int BIOS_VALUE = 1;
+
     /**
      *
      *
@@ -280,6 +283,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
      * <code>CPU_HYPER_THREADING_UNSPECIFIED = 0;</code>
      */
     public static final int CPU_HYPER_THREADING_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -290,6 +294,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -394,6 +399,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpuArchitecture_ = "";
+
   /**
    *
    *
@@ -417,6 +423,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -445,6 +452,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpuName_ = "";
+
   /**
    *
    *
@@ -468,6 +476,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -496,6 +505,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vendor_ = "";
+
   /**
    *
    *
@@ -519,6 +529,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -545,6 +556,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
 
   public static final int CPU_THREAD_COUNT_FIELD_NUMBER = 4;
   private int cpuThreadCount_ = 0;
+
   /**
    *
    *
@@ -563,6 +575,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
 
   public static final int CPU_SOCKET_COUNT_FIELD_NUMBER = 5;
   private int cpuSocketCount_ = 0;
+
   /**
    *
    *
@@ -581,6 +594,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
 
   public static final int BIOS_FIELD_NUMBER = 6;
   private com.google.cloud.migrationcenter.v1.BiosDetails bios_;
+
   /**
    *
    *
@@ -596,6 +610,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
   public boolean hasBios() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -613,6 +628,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
         ? com.google.cloud.migrationcenter.v1.BiosDetails.getDefaultInstance()
         : bios_;
   }
+
   /**
    *
    *
@@ -631,6 +647,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
 
   public static final int FIRMWARE_TYPE_FIELD_NUMBER = 7;
   private int firmwareType_ = 0;
+
   /**
    *
    *
@@ -648,6 +665,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
   public int getFirmwareTypeValue() {
     return firmwareType_;
   }
+
   /**
    *
    *
@@ -674,6 +692,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
 
   public static final int HYPERTHREADING_FIELD_NUMBER = 8;
   private int hyperthreading_ = 0;
+
   /**
    *
    *
@@ -691,6 +710,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
   public int getHyperthreadingValue() {
     return hyperthreading_;
   }
+
   /**
    *
    *
@@ -956,6 +976,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1254,6 +1275,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object cpuArchitecture_ = "";
+
     /**
      *
      *
@@ -1276,6 +1298,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1298,6 +1321,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1319,6 +1343,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1336,6 +1361,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1360,6 +1386,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     }
 
     private java.lang.Object cpuName_ = "";
+
     /**
      *
      *
@@ -1382,6 +1409,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1404,6 +1432,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1425,6 +1454,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1442,6 +1472,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1497,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     }
 
     private java.lang.Object vendor_ = "";
+
     /**
      *
      *
@@ -1488,6 +1520,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1510,6 +1543,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1531,6 +1565,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1548,6 +1583,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1572,6 +1608,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     }
 
     private int cpuThreadCount_;
+
     /**
      *
      *
@@ -1587,6 +1624,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     public int getCpuThreadCount() {
       return cpuThreadCount_;
     }
+
     /**
      *
      *
@@ -1606,6 +1644,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1625,6 +1664,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     }
 
     private int cpuSocketCount_;
+
     /**
      *
      *
@@ -1640,6 +1680,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     public int getCpuSocketCount() {
       return cpuSocketCount_;
     }
+
     /**
      *
      *
@@ -1659,6 +1700,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1683,6 +1725,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
             com.google.cloud.migrationcenter.v1.BiosDetails.Builder,
             com.google.cloud.migrationcenter.v1.BiosDetailsOrBuilder>
         biosBuilder_;
+
     /**
      *
      *
@@ -1697,6 +1740,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     public boolean hasBios() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1717,6 +1761,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
         return biosBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1739,6 +1784,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1759,6 +1805,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1786,6 +1833,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1805,6 +1853,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1819,6 +1868,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return getBiosFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1837,6 +1887,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
             : bios_;
       }
     }
+
     /**
      *
      *
@@ -1864,6 +1915,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     }
 
     private int firmwareType_ = 0;
+
     /**
      *
      *
@@ -1881,6 +1933,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     public int getFirmwareTypeValue() {
       return firmwareType_;
     }
+
     /**
      *
      *
@@ -1901,6 +1954,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1924,6 +1978,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
           ? com.google.cloud.migrationcenter.v1.MachineArchitectureDetails.FirmwareType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1948,6 +2003,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1969,6 +2025,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     }
 
     private int hyperthreading_ = 0;
+
     /**
      *
      *
@@ -1986,6 +2043,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
     public int getHyperthreadingValue() {
       return hyperthreading_;
     }
+
     /**
      *
      *
@@ -2006,6 +2064,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2030,6 +2089,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2054,6 +2114,7 @@ public final class MachineArchitectureDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

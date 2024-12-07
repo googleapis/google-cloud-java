@@ -44,6 +44,7 @@ public interface SpeechToTextConfigOrBuilder
    * @return The enum numeric value on the wire for speechModelVariant.
    */
   int getSpeechModelVariantValue();
+
   /**
    *
    *
@@ -98,6 +99,7 @@ public interface SpeechToTextConfigOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
@@ -144,6 +146,7 @@ public interface SpeechToTextConfigOrBuilder
    * @return A list containing the phraseSets.
    */
   java.util.List<java.lang.String> getPhraseSetsList();
+
   /**
    *
    *
@@ -156,6 +159,7 @@ public interface SpeechToTextConfigOrBuilder
    * @return The count of phraseSets.
    */
   int getPhraseSetsCount();
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public interface SpeechToTextConfigOrBuilder
    * @return The phraseSets at the given index.
    */
   java.lang.String getPhraseSets(int index);
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public interface SpeechToTextConfigOrBuilder
    * @return The enum numeric value on the wire for audioEncoding.
    */
   int getAudioEncodingValue();
+
   /**
    *
    *
@@ -240,6 +246,7 @@ public interface SpeechToTextConfigOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

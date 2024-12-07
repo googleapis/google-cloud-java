@@ -39,6 +39,7 @@ public interface ListRestoresRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -90,6 +91,7 @@ public interface ListRestoresRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -120,6 +122,7 @@ public interface ListRestoresRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public interface ListRestoresRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ToolNameMatchMetricValueOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
+
   /**
    *
    *

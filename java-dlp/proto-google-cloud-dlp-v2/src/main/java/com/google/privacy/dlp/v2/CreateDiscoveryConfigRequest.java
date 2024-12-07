@@ -33,6 +33,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CreateDiscoveryConfigRequest)
     CreateDiscoveryConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDiscoveryConfigRequest.newBuilder() to construct.
   private CreateDiscoveryConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -150,6 +153,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
 
   public static final int DISCOVERY_CONFIG_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DiscoveryConfig discoveryConfig_;
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
   public boolean hasDiscoveryConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
         ? com.google.privacy.dlp.v2.DiscoveryConfig.getDefaultInstance()
         : discoveryConfig_;
   }
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object configId_ = "";
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -444,6 +452,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -673,6 +682,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -711,6 +721,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -749,6 +760,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -786,6 +798,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +832,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +878,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.DiscoveryConfig.Builder,
             com.google.privacy.dlp.v2.DiscoveryConfigOrBuilder>
         discoveryConfigBuilder_;
+
     /**
      *
      *
@@ -880,6 +895,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
     public boolean hasDiscoveryConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -902,6 +918,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
         return discoveryConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -926,6 +943,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +966,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +996,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1018,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1035,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return getDiscoveryConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1034,6 +1056,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
             : discoveryConfig_;
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1086,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object configId_ = "";
+
     /**
      *
      *
@@ -1088,6 +1112,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1113,6 +1138,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1137,6 +1163,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1184,7 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

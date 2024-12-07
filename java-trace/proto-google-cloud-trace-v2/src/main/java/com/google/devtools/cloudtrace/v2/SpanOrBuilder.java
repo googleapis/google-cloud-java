@@ -47,6 +47,7 @@ public interface SpanOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface SpanOrBuilder
    * @return The spanId.
    */
   java.lang.String getSpanId();
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public interface SpanOrBuilder
    * @return The parentSpanId.
    */
   java.lang.String getParentSpanId();
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public interface SpanOrBuilder
    * @return Whether the displayName field is set.
    */
   boolean hasDisplayName();
+
   /**
    *
    *
@@ -163,6 +167,7 @@ public interface SpanOrBuilder
    * @return The displayName.
    */
   com.google.devtools.cloudtrace.v2.TruncatableString getDisplayName();
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public interface SpanOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public interface SpanOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -243,6 +250,7 @@ public interface SpanOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -257,6 +265,7 @@ public interface SpanOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -283,6 +292,7 @@ public interface SpanOrBuilder
    * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
+
   /**
    *
    *
@@ -296,6 +306,7 @@ public interface SpanOrBuilder
    * @return The attributes.
    */
   com.google.devtools.cloudtrace.v2.Span.Attributes getAttributes();
+
   /**
    *
    *
@@ -320,6 +331,7 @@ public interface SpanOrBuilder
    * @return Whether the stackTrace field is set.
    */
   boolean hasStackTrace();
+
   /**
    *
    *
@@ -332,6 +344,7 @@ public interface SpanOrBuilder
    * @return The stackTrace.
    */
   com.google.devtools.cloudtrace.v2.StackTrace getStackTrace();
+
   /**
    *
    *
@@ -356,6 +369,7 @@ public interface SpanOrBuilder
    * @return Whether the timeEvents field is set.
    */
   boolean hasTimeEvents();
+
   /**
    *
    *
@@ -369,6 +383,7 @@ public interface SpanOrBuilder
    * @return The timeEvents.
    */
   com.google.devtools.cloudtrace.v2.Span.TimeEvents getTimeEvents();
+
   /**
    *
    *
@@ -393,6 +408,7 @@ public interface SpanOrBuilder
    * @return Whether the links field is set.
    */
   boolean hasLinks();
+
   /**
    *
    *
@@ -405,6 +421,7 @@ public interface SpanOrBuilder
    * @return The links.
    */
   com.google.devtools.cloudtrace.v2.Span.Links getLinks();
+
   /**
    *
    *
@@ -428,6 +445,7 @@ public interface SpanOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -440,6 +458,7 @@ public interface SpanOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
+
   /**
    *
    *
@@ -467,6 +486,7 @@ public interface SpanOrBuilder
    * @return Whether the sameProcessAsParentSpan field is set.
    */
   boolean hasSameProcessAsParentSpan();
+
   /**
    *
    *
@@ -483,6 +503,7 @@ public interface SpanOrBuilder
    * @return The sameProcessAsParentSpan.
    */
   com.google.protobuf.BoolValue getSameProcessAsParentSpan();
+
   /**
    *
    *
@@ -513,6 +534,7 @@ public interface SpanOrBuilder
    * @return Whether the childSpanCount field is set.
    */
   boolean hasChildSpanCount();
+
   /**
    *
    *
@@ -528,6 +550,7 @@ public interface SpanOrBuilder
    * @return The childSpanCount.
    */
   com.google.protobuf.Int32Value getChildSpanCount();
+
   /**
    *
    *
@@ -558,6 +581,7 @@ public interface SpanOrBuilder
    * @return The enum numeric value on the wire for spanKind.
    */
   int getSpanKindValue();
+
   /**
    *
    *

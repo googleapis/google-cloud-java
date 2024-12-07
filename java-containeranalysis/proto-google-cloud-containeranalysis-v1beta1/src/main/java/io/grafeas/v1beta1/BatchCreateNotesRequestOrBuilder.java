@@ -37,6 +37,7 @@ public interface BatchCreateNotesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface BatchCreateNotesRequestOrBuilder
    * <code>map&lt;string, .grafeas.v1beta1.Note&gt; notes = 2;</code>
    */
   int getNotesCount();
+
   /**
    *
    *
@@ -71,9 +73,11 @@ public interface BatchCreateNotesRequestOrBuilder
    * <code>map&lt;string, .grafeas.v1beta1.Note&gt; notes = 2;</code>
    */
   boolean containsNotes(java.lang.String key);
+
   /** Use {@link #getNotesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, io.grafeas.v1beta1.Note> getNotes();
+
   /**
    *
    *
@@ -84,6 +88,7 @@ public interface BatchCreateNotesRequestOrBuilder
    * <code>map&lt;string, .grafeas.v1beta1.Note&gt; notes = 2;</code>
    */
   java.util.Map<java.lang.String, io.grafeas.v1beta1.Note> getNotesMap();
+
   /**
    *
    *
@@ -98,6 +103,7 @@ public interface BatchCreateNotesRequestOrBuilder
       java.lang.String key,
       /* nullable */
       io.grafeas.v1beta1.Note defaultValue);
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface QueryOverrideOrBuilder
    * @return The queryParams.
    */
   java.lang.String getQueryParams();
+
   /**
    *
    *

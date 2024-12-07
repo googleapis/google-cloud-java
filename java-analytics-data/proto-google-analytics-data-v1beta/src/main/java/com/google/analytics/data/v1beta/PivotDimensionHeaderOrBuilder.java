@@ -34,6 +34,7 @@ public interface PivotDimensionHeaderOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DimensionValue dimension_values = 1;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.DimensionValue> getDimensionValuesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface PivotDimensionHeaderOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DimensionValue dimension_values = 1;</code>
    */
   com.google.analytics.data.v1beta.DimensionValue getDimensionValues(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface PivotDimensionHeaderOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DimensionValue dimension_values = 1;</code>
    */
   int getDimensionValuesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface PivotDimensionHeaderOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.DimensionValueOrBuilder>
       getDimensionValuesOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ReplaceWithInfoTypeConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ReplaceWithInfoTypeConfig)
     ReplaceWithInfoTypeConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReplaceWithInfoTypeConfig.newBuilder() to construct.
   private ReplaceWithInfoTypeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class ReplaceWithInfoTypeConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

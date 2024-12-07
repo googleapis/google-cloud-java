@@ -36,6 +36,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1beta.ScanConfigError)
     ScanConfigErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ScanConfigError.newBuilder() to construct.
   private ScanConfigError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -518,6 +519,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>OK = 0;</code>
      */
     public static final Code OK = CODE_UNSPECIFIED;
+
     /**
      *
      *
@@ -528,6 +530,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>CODE_UNSPECIFIED = 0;</code>
      */
     public static final int CODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -538,6 +541,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>OK = 0;</code>
      */
     public static final int OK_VALUE = 0;
+
     /**
      *
      *
@@ -549,6 +553,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>INTERNAL_ERROR = 1;</code>
      */
     public static final int INTERNAL_ERROR_VALUE = 1;
+
     /**
      *
      *
@@ -560,6 +565,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>APPENGINE_API_BACKEND_ERROR = 2;</code>
      */
     public static final int APPENGINE_API_BACKEND_ERROR_VALUE = 2;
+
     /**
      *
      *
@@ -571,6 +577,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>APPENGINE_API_NOT_ACCESSIBLE = 3;</code>
      */
     public static final int APPENGINE_API_NOT_ACCESSIBLE_VALUE = 3;
+
     /**
      *
      *
@@ -582,6 +589,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>APPENGINE_DEFAULT_HOST_MISSING = 4;</code>
      */
     public static final int APPENGINE_DEFAULT_HOST_MISSING_VALUE = 4;
+
     /**
      *
      *
@@ -592,6 +600,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>CANNOT_USE_GOOGLE_COM_ACCOUNT = 6;</code>
      */
     public static final int CANNOT_USE_GOOGLE_COM_ACCOUNT_VALUE = 6;
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>CANNOT_USE_OWNER_ACCOUNT = 7;</code>
      */
     public static final int CANNOT_USE_OWNER_ACCOUNT_VALUE = 7;
+
     /**
      *
      *
@@ -613,6 +623,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>COMPUTE_API_BACKEND_ERROR = 8;</code>
      */
     public static final int COMPUTE_API_BACKEND_ERROR_VALUE = 8;
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>COMPUTE_API_NOT_ACCESSIBLE = 9;</code>
      */
     public static final int COMPUTE_API_NOT_ACCESSIBLE_VALUE = 9;
+
     /**
      *
      *
@@ -634,6 +646,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>CUSTOM_LOGIN_URL_DOES_NOT_BELONG_TO_CURRENT_PROJECT = 10;</code>
      */
     public static final int CUSTOM_LOGIN_URL_DOES_NOT_BELONG_TO_CURRENT_PROJECT_VALUE = 10;
+
     /**
      *
      *
@@ -644,6 +657,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>CUSTOM_LOGIN_URL_MALFORMED = 11;</code>
      */
     public static final int CUSTOM_LOGIN_URL_MALFORMED_VALUE = 11;
+
     /**
      *
      *
@@ -654,6 +668,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>CUSTOM_LOGIN_URL_MAPPED_TO_NON_ROUTABLE_ADDRESS = 12;</code>
      */
     public static final int CUSTOM_LOGIN_URL_MAPPED_TO_NON_ROUTABLE_ADDRESS_VALUE = 12;
+
     /**
      *
      *
@@ -665,6 +680,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>CUSTOM_LOGIN_URL_MAPPED_TO_UNRESERVED_ADDRESS = 13;</code>
      */
     public static final int CUSTOM_LOGIN_URL_MAPPED_TO_UNRESERVED_ADDRESS_VALUE = 13;
+
     /**
      *
      *
@@ -675,6 +691,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>CUSTOM_LOGIN_URL_HAS_NON_ROUTABLE_IP_ADDRESS = 14;</code>
      */
     public static final int CUSTOM_LOGIN_URL_HAS_NON_ROUTABLE_IP_ADDRESS_VALUE = 14;
+
     /**
      *
      *
@@ -686,6 +703,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>CUSTOM_LOGIN_URL_HAS_UNRESERVED_IP_ADDRESS = 15;</code>
      */
     public static final int CUSTOM_LOGIN_URL_HAS_UNRESERVED_IP_ADDRESS_VALUE = 15;
+
     /**
      *
      *
@@ -696,6 +714,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>DUPLICATE_SCAN_NAME = 16;</code>
      */
     public static final int DUPLICATE_SCAN_NAME_VALUE = 16;
+
     /**
      *
      *
@@ -706,6 +725,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>INVALID_FIELD_VALUE = 18;</code>
      */
     public static final int INVALID_FIELD_VALUE_VALUE = 18;
+
     /**
      *
      *
@@ -716,6 +736,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>FAILED_TO_AUTHENTICATE_TO_TARGET = 19;</code>
      */
     public static final int FAILED_TO_AUTHENTICATE_TO_TARGET_VALUE = 19;
+
     /**
      *
      *
@@ -726,6 +747,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>FINDING_TYPE_UNSPECIFIED = 20;</code>
      */
     public static final int FINDING_TYPE_UNSPECIFIED_VALUE = 20;
+
     /**
      *
      *
@@ -737,6 +759,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>FORBIDDEN_TO_SCAN_COMPUTE = 21;</code>
      */
     public static final int FORBIDDEN_TO_SCAN_COMPUTE_VALUE = 21;
+
     /**
      *
      *
@@ -747,6 +770,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>FORBIDDEN_UPDATE_TO_MANAGED_SCAN = 43;</code>
      */
     public static final int FORBIDDEN_UPDATE_TO_MANAGED_SCAN_VALUE = 43;
+
     /**
      *
      *
@@ -759,6 +783,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>MALFORMED_FILTER = 22;</code>
      */
     public static final int MALFORMED_FILTER_VALUE = 22;
+
     /**
      *
      *
@@ -769,6 +794,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>MALFORMED_RESOURCE_NAME = 23;</code>
      */
     public static final int MALFORMED_RESOURCE_NAME_VALUE = 23;
+
     /**
      *
      *
@@ -779,6 +805,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>PROJECT_INACTIVE = 24;</code>
      */
     public static final int PROJECT_INACTIVE_VALUE = 24;
+
     /**
      *
      *
@@ -789,6 +816,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>REQUIRED_FIELD = 25;</code>
      */
     public static final int REQUIRED_FIELD_VALUE = 25;
+
     /**
      *
      *
@@ -800,6 +828,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>RESOURCE_NAME_INCONSISTENT = 26;</code>
      */
     public static final int RESOURCE_NAME_INCONSISTENT_VALUE = 26;
+
     /**
      *
      *
@@ -810,6 +839,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>SCAN_ALREADY_RUNNING = 27;</code>
      */
     public static final int SCAN_ALREADY_RUNNING_VALUE = 27;
+
     /**
      *
      *
@@ -820,6 +850,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>SCAN_NOT_RUNNING = 28;</code>
      */
     public static final int SCAN_NOT_RUNNING_VALUE = 28;
+
     /**
      *
      *
@@ -830,6 +861,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>SEED_URL_DOES_NOT_BELONG_TO_CURRENT_PROJECT = 29;</code>
      */
     public static final int SEED_URL_DOES_NOT_BELONG_TO_CURRENT_PROJECT_VALUE = 29;
+
     /**
      *
      *
@@ -840,6 +872,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>SEED_URL_MALFORMED = 30;</code>
      */
     public static final int SEED_URL_MALFORMED_VALUE = 30;
+
     /**
      *
      *
@@ -850,6 +883,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>SEED_URL_MAPPED_TO_NON_ROUTABLE_ADDRESS = 31;</code>
      */
     public static final int SEED_URL_MAPPED_TO_NON_ROUTABLE_ADDRESS_VALUE = 31;
+
     /**
      *
      *
@@ -861,6 +895,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>SEED_URL_MAPPED_TO_UNRESERVED_ADDRESS = 32;</code>
      */
     public static final int SEED_URL_MAPPED_TO_UNRESERVED_ADDRESS_VALUE = 32;
+
     /**
      *
      *
@@ -871,6 +906,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>SEED_URL_HAS_NON_ROUTABLE_IP_ADDRESS = 33;</code>
      */
     public static final int SEED_URL_HAS_NON_ROUTABLE_IP_ADDRESS_VALUE = 33;
+
     /**
      *
      *
@@ -882,6 +918,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>SEED_URL_HAS_UNRESERVED_IP_ADDRESS = 35;</code>
      */
     public static final int SEED_URL_HAS_UNRESERVED_IP_ADDRESS_VALUE = 35;
+
     /**
      *
      *
@@ -893,6 +930,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>SERVICE_ACCOUNT_NOT_CONFIGURED = 36;</code>
      */
     public static final int SERVICE_ACCOUNT_NOT_CONFIGURED_VALUE = 36;
+
     /**
      *
      *
@@ -903,6 +941,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>TOO_MANY_SCANS = 37;</code>
      */
     public static final int TOO_MANY_SCANS_VALUE = 37;
+
     /**
      *
      *
@@ -913,6 +952,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>UNABLE_TO_RESOLVE_PROJECT_INFO = 38;</code>
      */
     public static final int UNABLE_TO_RESOLVE_PROJECT_INFO_VALUE = 38;
+
     /**
      *
      *
@@ -923,6 +963,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>UNSUPPORTED_BLACKLIST_PATTERN_FORMAT = 39;</code>
      */
     public static final int UNSUPPORTED_BLACKLIST_PATTERN_FORMAT_VALUE = 39;
+
     /**
      *
      *
@@ -933,6 +974,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>UNSUPPORTED_FILTER = 40;</code>
      */
     public static final int UNSUPPORTED_FILTER_VALUE = 40;
+
     /**
      *
      *
@@ -944,6 +986,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>UNSUPPORTED_FINDING_TYPE = 41;</code>
      */
     public static final int UNSUPPORTED_FINDING_TYPE_VALUE = 41;
+
     /**
      *
      *
@@ -1167,6 +1210,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
 
   public static final int CODE_FIELD_NUMBER = 1;
   private int code_ = 0;
+
   /**
    *
    *
@@ -1182,6 +1226,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
   public int getCodeValue() {
     return code_;
   }
+
   /**
    *
    *
@@ -1206,6 +1251,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fieldName_ = "";
+
   /**
    *
    *
@@ -1232,6 +1278,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1432,6 +1479,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1632,6 +1680,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int code_ = 0;
+
     /**
      *
      *
@@ -1647,6 +1696,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
     public int getCodeValue() {
       return code_;
     }
+
     /**
      *
      *
@@ -1665,6 +1715,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1684,6 +1735,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1705,6 +1757,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1724,6 +1777,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object fieldName_ = "";
+
     /**
      *
      *
@@ -1749,6 +1803,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1774,6 +1829,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1798,6 +1854,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1818,6 +1875,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

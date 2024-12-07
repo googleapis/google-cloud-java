@@ -33,6 +33,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest)
     SubnetworksExpandIpCidrRangeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SubnetworksExpandIpCidrRangeRequest.newBuilder() to construct.
   private SubnetworksExpandIpCidrRangeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipCidrRange_ = "";
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
   public boolean hasIpCidrRange() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -296,6 +300,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -486,6 +491,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
     private int bitField0_;
 
     private java.lang.Object ipCidrRange_ = "";
+
     /**
      *
      *
@@ -500,6 +506,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
     public boolean hasIpCidrRange() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -522,6 +529,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -544,6 +552,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -565,6 +574,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -582,6 +592,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

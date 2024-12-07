@@ -37,6 +37,7 @@ public interface TaskAttemptResultOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface TaskAttemptResultOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
+
   /**
    *
    *

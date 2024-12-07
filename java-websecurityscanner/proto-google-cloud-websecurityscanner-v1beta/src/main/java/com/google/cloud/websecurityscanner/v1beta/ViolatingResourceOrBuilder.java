@@ -36,6 +36,7 @@ public interface ViolatingResourceOrBuilder
    * @return The contentType.
    */
   java.lang.String getContentType();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ViolatingResourceOrBuilder
    * @return The resourceUrl.
    */
   java.lang.String getResourceUrl();
+
   /**
    *
    *

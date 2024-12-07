@@ -41,6 +41,7 @@ public interface UpdateReportConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateReportConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateReportConfigRequestOrBuilder
    * @return Whether the reportConfig field is set.
    */
   boolean hasReportConfig();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateReportConfigRequestOrBuilder
    * @return The reportConfig.
    */
   com.google.cloud.storageinsights.v1.ReportConfig getReportConfig();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface UpdateReportConfigRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

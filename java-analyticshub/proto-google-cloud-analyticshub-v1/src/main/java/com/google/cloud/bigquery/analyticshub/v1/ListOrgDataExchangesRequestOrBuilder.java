@@ -37,6 +37,7 @@ public interface ListOrgDataExchangesRequestOrBuilder
    * @return The organization.
    */
   java.lang.String getOrganization();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface ListOrgDataExchangesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

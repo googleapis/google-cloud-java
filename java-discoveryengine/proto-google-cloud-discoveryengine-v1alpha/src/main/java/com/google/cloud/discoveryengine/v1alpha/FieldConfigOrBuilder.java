@@ -37,6 +37,7 @@ public interface FieldConfigOrBuilder
    * @return The fieldPath.
    */
   java.lang.String getFieldPath();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface FieldConfigOrBuilder
    * @return The enum numeric value on the wire for fieldType.
    */
   int getFieldTypeValue();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface FieldConfigOrBuilder
    * @return The enum numeric value on the wire for indexableOption.
    */
   int getIndexableOptionValue();
+
   /**
    *
    *
@@ -176,6 +179,7 @@ public interface FieldConfigOrBuilder
    * @return The enum numeric value on the wire for dynamicFacetableOption.
    */
   int getDynamicFacetableOptionValue();
+
   /**
    *
    *
@@ -251,6 +255,7 @@ public interface FieldConfigOrBuilder
    * @return The enum numeric value on the wire for searchableOption.
    */
   int getSearchableOptionValue();
+
   /**
    *
    *
@@ -318,6 +323,7 @@ public interface FieldConfigOrBuilder
    * @return The enum numeric value on the wire for retrievableOption.
    */
   int getRetrievableOptionValue();
+
   /**
    *
    *
@@ -377,6 +383,7 @@ public interface FieldConfigOrBuilder
    * @return The enum numeric value on the wire for completableOption.
    */
   int getCompletableOptionValue();
+
   /**
    *
    *
@@ -443,6 +450,7 @@ public interface FieldConfigOrBuilder
    * @return The enum numeric value on the wire for recsFilterableOption.
    */
   int getRecsFilterableOptionValue();
+
   /**
    *
    *
@@ -499,6 +507,7 @@ public interface FieldConfigOrBuilder
    * @return The keyPropertyType.
    */
   java.lang.String getKeyPropertyType();
+
   /**
    *
    *
@@ -541,6 +550,7 @@ public interface FieldConfigOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource>
       getAdvancedSiteSearchDataSourcesList();
+
   /**
    *
    *
@@ -561,6 +571,7 @@ public interface FieldConfigOrBuilder
    * @return The count of advancedSiteSearchDataSources.
    */
   int getAdvancedSiteSearchDataSourcesCount();
+
   /**
    *
    *
@@ -583,6 +594,7 @@ public interface FieldConfigOrBuilder
    */
   com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource
       getAdvancedSiteSearchDataSources(int index);
+
   /**
    *
    *
@@ -604,6 +616,7 @@ public interface FieldConfigOrBuilder
    *     advancedSiteSearchDataSources.
    */
   java.util.List<java.lang.Integer> getAdvancedSiteSearchDataSourcesValueList();
+
   /**
    *
    *
@@ -649,6 +662,7 @@ public interface FieldConfigOrBuilder
    * @return A list containing the schemaOrgPaths.
    */
   java.util.List<java.lang.String> getSchemaOrgPathsList();
+
   /**
    *
    *
@@ -672,6 +686,7 @@ public interface FieldConfigOrBuilder
    * @return The count of schemaOrgPaths.
    */
   int getSchemaOrgPathsCount();
+
   /**
    *
    *
@@ -696,6 +711,7 @@ public interface FieldConfigOrBuilder
    * @return The schemaOrgPaths at the given index.
    */
   java.lang.String getSchemaOrgPaths(int index);
+
   /**
    *
    *

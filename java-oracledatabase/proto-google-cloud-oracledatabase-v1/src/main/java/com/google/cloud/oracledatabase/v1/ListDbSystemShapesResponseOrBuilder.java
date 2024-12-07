@@ -34,6 +34,7 @@ public interface ListDbSystemShapesResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.DbSystemShape db_system_shapes = 1;</code>
    */
   java.util.List<com.google.cloud.oracledatabase.v1.DbSystemShape> getDbSystemShapesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDbSystemShapesResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.DbSystemShape db_system_shapes = 1;</code>
    */
   com.google.cloud.oracledatabase.v1.DbSystemShape getDbSystemShapes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDbSystemShapesResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.DbSystemShape db_system_shapes = 1;</code>
    */
   int getDbSystemShapesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDbSystemShapesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.oracledatabase.v1.DbSystemShapeOrBuilder>
       getDbSystemShapesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListDbSystemShapesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

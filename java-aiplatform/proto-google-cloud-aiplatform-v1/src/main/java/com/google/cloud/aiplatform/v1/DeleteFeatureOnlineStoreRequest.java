@@ -34,6 +34,7 @@ public final class DeleteFeatureOnlineStoreRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.DeleteFeatureOnlineStoreRequest)
     DeleteFeatureOnlineStoreRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteFeatureOnlineStoreRequest.newBuilder() to construct.
   private DeleteFeatureOnlineStoreRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class DeleteFeatureOnlineStoreRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class DeleteFeatureOnlineStoreRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class DeleteFeatureOnlineStoreRequest extends com.google.protobuf.G
 
   public static final int FORCE_FIELD_NUMBER = 2;
   private boolean force_ = false;
+
   /**
    *
    *
@@ -313,6 +317,7 @@ public final class DeleteFeatureOnlineStoreRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -514,6 +519,7 @@ public final class DeleteFeatureOnlineStoreRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -540,6 +546,7 @@ public final class DeleteFeatureOnlineStoreRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -566,6 +573,7 @@ public final class DeleteFeatureOnlineStoreRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -591,6 +599,7 @@ public final class DeleteFeatureOnlineStoreRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -612,6 +621,7 @@ public final class DeleteFeatureOnlineStoreRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -640,6 +650,7 @@ public final class DeleteFeatureOnlineStoreRequest extends com.google.protobuf.G
     }
 
     private boolean force_;
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class DeleteFeatureOnlineStoreRequest extends com.google.protobuf.G
     public boolean getForce() {
       return force_;
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class DeleteFeatureOnlineStoreRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

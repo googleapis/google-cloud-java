@@ -33,6 +33,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.UndeleteServiceResponse)
     UndeleteServiceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UndeleteServiceResponse.newBuilder() to construct.
   private UndeleteServiceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int SERVICE_FIELD_NUMBER = 1;
   private com.google.api.servicemanagement.v1.ManagedService service_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
   public boolean hasService() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
         ? com.google.api.servicemanagement.v1.ManagedService.getDefaultInstance()
         : service_;
   }
+
   /**
    *
    *
@@ -277,6 +281,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -480,6 +485,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
             com.google.api.servicemanagement.v1.ManagedService.Builder,
             com.google.api.servicemanagement.v1.ManagedServiceOrBuilder>
         serviceBuilder_;
+
     /**
      *
      *
@@ -494,6 +500,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
     public boolean hasService() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -514,6 +521,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
         return serviceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -536,6 +544,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -556,6 +565,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -584,6 +594,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -603,6 +614,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -617,6 +629,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
       onChanged();
       return getServiceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -635,6 +648,7 @@ public final class UndeleteServiceResponse extends com.google.protobuf.Generated
             : service_;
       }
     }
+
     /**
      *
      *

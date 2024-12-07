@@ -40,6 +40,7 @@ public interface UpdateProcessRequestOrBuilder
    * @return Whether the process field is set.
    */
   boolean hasProcess();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateProcessRequestOrBuilder
    * @return The process.
    */
   com.google.cloud.datacatalog.lineage.v1.Process getProcess();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface UpdateProcessRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface UpdateProcessRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

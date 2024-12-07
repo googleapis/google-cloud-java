@@ -36,6 +36,7 @@ public interface PriceByResourceOrBuilder
    * @return The enum numeric value on the wire for resourceType.
    */
   int getResourceTypeValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PriceByResourceOrBuilder
    * @return Whether the price field is set.
    */
   boolean hasPrice();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface PriceByResourceOrBuilder
    * @return The price.
    */
   com.google.cloud.channel.v1.Price getPrice();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface PriceByResourceOrBuilder
    * <code>repeated .google.cloud.channel.v1.PricePhase price_phases = 3;</code>
    */
   java.util.List<com.google.cloud.channel.v1.PricePhase> getPricePhasesList();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface PriceByResourceOrBuilder
    * <code>repeated .google.cloud.channel.v1.PricePhase price_phases = 3;</code>
    */
   com.google.cloud.channel.v1.PricePhase getPricePhases(int index);
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface PriceByResourceOrBuilder
    * <code>repeated .google.cloud.channel.v1.PricePhase price_phases = 3;</code>
    */
   int getPricePhasesCount();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface PriceByResourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.PricePhaseOrBuilder>
       getPricePhasesOrBuilderList();
+
   /**
    *
    *

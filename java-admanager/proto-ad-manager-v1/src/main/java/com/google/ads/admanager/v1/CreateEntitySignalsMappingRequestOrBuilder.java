@@ -39,6 +39,7 @@ public interface CreateEntitySignalsMappingRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateEntitySignalsMappingRequestOrBuilder
    * @return Whether the entitySignalsMapping field is set.
    */
   boolean hasEntitySignalsMapping();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateEntitySignalsMappingRequestOrBuilder
    * @return The entitySignalsMapping.
    */
   com.google.ads.admanager.v1.EntitySignalsMapping getEntitySignalsMapping();
+
   /**
    *
    *

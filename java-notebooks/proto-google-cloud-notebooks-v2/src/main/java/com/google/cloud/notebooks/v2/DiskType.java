@@ -92,6 +92,7 @@ public enum DiskType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DISK_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int DISK_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public enum DiskType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PD_STANDARD = 1;</code>
    */
   public static final int PD_STANDARD_VALUE = 1;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public enum DiskType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PD_SSD = 2;</code>
    */
   public static final int PD_SSD_VALUE = 2;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum DiskType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PD_BALANCED = 3;</code>
    */
   public static final int PD_BALANCED_VALUE = 3;
+
   /**
    *
    *

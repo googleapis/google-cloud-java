@@ -34,6 +34,7 @@ public interface ListRecognizersResponseOrBuilder
    * <code>repeated .google.cloud.speech.v2.Recognizer recognizers = 1;</code>
    */
   java.util.List<com.google.cloud.speech.v2.Recognizer> getRecognizersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListRecognizersResponseOrBuilder
    * <code>repeated .google.cloud.speech.v2.Recognizer recognizers = 1;</code>
    */
   com.google.cloud.speech.v2.Recognizer getRecognizers(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListRecognizersResponseOrBuilder
    * <code>repeated .google.cloud.speech.v2.Recognizer recognizers = 1;</code>
    */
   int getRecognizersCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListRecognizersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v2.RecognizerOrBuilder>
       getRecognizersOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListRecognizersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

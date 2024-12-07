@@ -32,6 +32,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourceStatusScheduling)
     ResourceStatusSchedulingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceStatusScheduling.newBuilder() to construct.
   private ResourceStatusScheduling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int AVAILABILITY_DOMAIN_FIELD_NUMBER = 252514344;
   private int availabilityDomain_ = 0;
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
   public boolean hasAvailabilityDomain() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -259,6 +262,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -443,6 +447,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int availabilityDomain_;
+
     /**
      *
      *
@@ -458,6 +463,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     public boolean hasAvailabilityDomain() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -473,6 +479,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     public int getAvailabilityDomain() {
       return availabilityDomain_;
     }
+
     /**
      *
      *
@@ -492,6 +499,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

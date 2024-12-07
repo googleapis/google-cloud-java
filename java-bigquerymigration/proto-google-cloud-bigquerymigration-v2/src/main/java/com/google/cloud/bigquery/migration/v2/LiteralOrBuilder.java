@@ -36,6 +36,7 @@ public interface LiteralOrBuilder
    * @return Whether the literalString field is set.
    */
   boolean hasLiteralString();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LiteralOrBuilder
    * @return The literalString.
    */
   java.lang.String getLiteralString();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface LiteralOrBuilder
    * @return Whether the literalBytes field is set.
    */
   boolean hasLiteralBytes();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface LiteralOrBuilder
    * @return The relativePath.
    */
   java.lang.String getRelativePath();
+
   /**
    *
    *

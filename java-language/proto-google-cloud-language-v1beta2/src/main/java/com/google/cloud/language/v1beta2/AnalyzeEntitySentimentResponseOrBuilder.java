@@ -34,6 +34,7 @@ public interface AnalyzeEntitySentimentResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 1;</code>
    */
   java.util.List<com.google.cloud.language.v1beta2.Entity> getEntitiesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface AnalyzeEntitySentimentResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 1;</code>
    */
   com.google.cloud.language.v1beta2.Entity getEntities(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface AnalyzeEntitySentimentResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 1;</code>
    */
   int getEntitiesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface AnalyzeEntitySentimentResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v1beta2.EntityOrBuilder>
       getEntitiesOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface AnalyzeEntitySentimentResponseOrBuilder
    * @return The language.
    */
   java.lang.String getLanguage();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * @return The enum numeric value on the wire for responseType.
    */
   int getResponseTypeValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * @return Whether the additions field is set.
    */
   boolean hasAdditions();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * @return The additions.
    */
   com.google.webrisk.v1beta1.ThreatEntryAdditions getAdditions();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * @return Whether the removals field is set.
    */
   boolean hasRemovals();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * @return The removals.
    */
   com.google.webrisk.v1beta1.ThreatEntryRemovals getRemovals();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * @return Whether the checksum field is set.
    */
   boolean hasChecksum();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * @return The checksum.
    */
   com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum getChecksum();
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * @return Whether the recommendedNextDiff field is set.
    */
   boolean hasRecommendedNextDiff();
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * @return The recommendedNextDiff.
    */
   com.google.protobuf.Timestamp getRecommendedNextDiff();
+
   /**
    *
    *

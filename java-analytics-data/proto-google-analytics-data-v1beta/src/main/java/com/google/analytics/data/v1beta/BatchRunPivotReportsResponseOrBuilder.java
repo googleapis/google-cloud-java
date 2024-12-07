@@ -34,6 +34,7 @@ public interface BatchRunPivotReportsResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.RunPivotReportResponse pivot_reports = 1;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.RunPivotReportResponse> getPivotReportsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BatchRunPivotReportsResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.RunPivotReportResponse pivot_reports = 1;</code>
    */
   com.google.analytics.data.v1beta.RunPivotReportResponse getPivotReports(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BatchRunPivotReportsResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.RunPivotReportResponse pivot_reports = 1;</code>
    */
   int getPivotReportsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BatchRunPivotReportsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.RunPivotReportResponseOrBuilder>
       getPivotReportsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface BatchRunPivotReportsResponseOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *

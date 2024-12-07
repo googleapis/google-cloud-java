@@ -33,6 +33,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.UpdateAccountLabelRequest)
     UpdateAccountLabelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateAccountLabelRequest.newBuilder() to construct.
   private UpdateAccountLabelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int ACCOUNT_LABEL_FIELD_NUMBER = 1;
   private com.google.shopping.css.v1.AccountLabel accountLabel_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
   public boolean hasAccountLabel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
         ? com.google.shopping.css.v1.AccountLabel.getDefaultInstance()
         : accountLabel_;
   }
+
   /**
    *
    *
@@ -282,6 +286,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -486,6 +491,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
             com.google.shopping.css.v1.AccountLabel.Builder,
             com.google.shopping.css.v1.AccountLabelOrBuilder>
         accountLabelBuilder_;
+
     /**
      *
      *
@@ -502,6 +508,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
     public boolean hasAccountLabel() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -524,6 +531,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
         return accountLabelBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -548,6 +556,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -570,6 +579,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -599,6 +609,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -620,6 +631,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +648,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
       onChanged();
       return getAccountLabelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -656,6 +669,7 @@ public final class UpdateAccountLabelRequest extends com.google.protobuf.Generat
             : accountLabel_;
       }
     }
+
     /**
      *
      *

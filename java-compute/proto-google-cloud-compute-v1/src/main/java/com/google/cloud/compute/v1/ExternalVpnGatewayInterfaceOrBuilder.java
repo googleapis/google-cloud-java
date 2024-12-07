@@ -36,6 +36,7 @@ public interface ExternalVpnGatewayInterfaceOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ExternalVpnGatewayInterfaceOrBuilder
    * @return Whether the ipAddress field is set.
    */
   boolean hasIpAddress();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ExternalVpnGatewayInterfaceOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ExternalVpnGatewayInterfaceOrBuilder
    * @return Whether the ipv6Address field is set.
    */
   boolean hasIpv6Address();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ExternalVpnGatewayInterfaceOrBuilder
    * @return The ipv6Address.
    */
   java.lang.String getIpv6Address();
+
   /**
    *
    *

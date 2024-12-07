@@ -34,6 +34,7 @@ public interface ListCatalogsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.biglake.v1.Catalog catalogs = 1;</code>
    */
   java.util.List<com.google.cloud.bigquery.biglake.v1.Catalog> getCatalogsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCatalogsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.biglake.v1.Catalog catalogs = 1;</code>
    */
   com.google.cloud.bigquery.biglake.v1.Catalog getCatalogs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCatalogsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.biglake.v1.Catalog catalogs = 1;</code>
    */
   int getCatalogsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCatalogsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.biglake.v1.CatalogOrBuilder>
       getCatalogsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListCatalogsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

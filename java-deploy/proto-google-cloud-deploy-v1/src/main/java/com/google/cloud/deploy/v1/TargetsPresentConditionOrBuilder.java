@@ -50,6 +50,7 @@ public interface TargetsPresentConditionOrBuilder
    * @return A list containing the missingTargets.
    */
   java.util.List<java.lang.String> getMissingTargetsList();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface TargetsPresentConditionOrBuilder
    * @return The count of missingTargets.
    */
   int getMissingTargetsCount();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface TargetsPresentConditionOrBuilder
    * @return The missingTargets at the given index.
    */
   java.lang.String getMissingTargets(int index);
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface TargetsPresentConditionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface TargetsPresentConditionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

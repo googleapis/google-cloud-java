@@ -35,6 +35,7 @@ public interface SearchLinksResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.Link links = 1;</code>
    */
   java.util.List<com.google.cloud.datacatalog.lineage.v1.Link> getLinksList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface SearchLinksResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.Link links = 1;</code>
    */
   com.google.cloud.datacatalog.lineage.v1.Link getLinks(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface SearchLinksResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.Link links = 1;</code>
    */
   int getLinksCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface SearchLinksResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.lineage.v1.LinkOrBuilder>
       getLinksOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface SearchLinksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

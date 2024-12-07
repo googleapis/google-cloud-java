@@ -34,6 +34,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams)
     SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParamsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams.newBuilder() to construct.
   private SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -152,6 +153,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
      * <code>UNDEFINED_OP = 0;</code>
      */
     public static final int UNDEFINED_OP_VALUE = 0;
+
     /**
      *
      *
@@ -162,6 +164,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
      * <code>CONTAINS = 215180831;</code>
      */
     public static final int CONTAINS_VALUE = 215180831;
+
     /**
      *
      *
@@ -172,6 +175,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
      * <code>ENDS_WITH = 490402221;</code>
      */
     public static final int ENDS_WITH_VALUE = 490402221;
+
     /**
      *
      *
@@ -182,6 +186,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
      * <code>EQUALS = 442201023;</code>
      */
     public static final int EQUALS_VALUE = 442201023;
+
     /**
      *
      *
@@ -192,6 +197,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
      * <code>EQUALS_ANY = 337226060;</code>
      */
     public static final int EQUALS_ANY_VALUE = 337226060;
+
     /**
      *
      *
@@ -300,6 +306,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object op_ = "";
+
   /**
    *
    *
@@ -316,6 +323,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
   public boolean hasOp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -340,6 +348,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
       return s;
     }
   }
+
   /**
    *
    *
@@ -369,6 +378,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object val_ = "";
+
   /**
    *
    *
@@ -384,6 +394,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
   public boolean hasVal() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -407,6 +418,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
       return s;
     }
   }
+
   /**
    *
    *
@@ -632,6 +644,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -858,6 +871,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
     private int bitField0_;
 
     private java.lang.Object op_ = "";
+
     /**
      *
      *
@@ -873,6 +887,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
     public boolean hasOp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -896,6 +911,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -919,6 +935,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -941,6 +958,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +977,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1003,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
     }
 
     private java.lang.Object val_ = "";
+
     /**
      *
      *
@@ -998,6 +1018,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
     public boolean hasVal() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1020,6 +1041,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1042,6 +1064,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1086,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1104,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
       onChanged();
       return this;
     }
+
     /**
      *
      *

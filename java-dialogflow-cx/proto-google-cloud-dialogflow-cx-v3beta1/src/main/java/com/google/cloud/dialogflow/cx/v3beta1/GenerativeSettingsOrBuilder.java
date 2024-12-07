@@ -37,6 +37,7 @@ public interface GenerativeSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface GenerativeSettingsOrBuilder
    * @return Whether the fallbackSettings field is set.
    */
   boolean hasFallbackSettings();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface GenerativeSettingsOrBuilder
    * @return The fallbackSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.FallbackSettings getFallbackSettings();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface GenerativeSettingsOrBuilder
    * @return Whether the generativeSafetySettings field is set.
    */
   boolean hasGenerativeSafetySettings();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface GenerativeSettingsOrBuilder
    * @return The generativeSafetySettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.SafetySettings getGenerativeSafetySettings();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface GenerativeSettingsOrBuilder
    * @return Whether the knowledgeConnectorSettings field is set.
    */
   boolean hasKnowledgeConnectorSettings();
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public interface GenerativeSettingsOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.KnowledgeConnectorSettings
       getKnowledgeConnectorSettings();
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public interface GenerativeSettingsOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public interface GenerativeSettingsOrBuilder
    * @return Whether the llmModelSettings field is set.
    */
   boolean hasLlmModelSettings();
+
   /**
    *
    *
@@ -221,6 +230,7 @@ public interface GenerativeSettingsOrBuilder
    * @return The llmModelSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings getLlmModelSettings();
+
   /**
    *
    *

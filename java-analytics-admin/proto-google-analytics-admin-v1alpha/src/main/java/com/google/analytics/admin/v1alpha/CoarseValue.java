@@ -85,6 +85,7 @@ public enum CoarseValue implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COARSE_VALUE_UNSPECIFIED = 0;</code>
    */
   public static final int COARSE_VALUE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -95,6 +96,7 @@ public enum CoarseValue implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COARSE_VALUE_LOW = 1;</code>
    */
   public static final int COARSE_VALUE_LOW_VALUE = 1;
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public enum CoarseValue implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COARSE_VALUE_MEDIUM = 2;</code>
    */
   public static final int COARSE_VALUE_MEDIUM_VALUE = 2;
+
   /**
    *
    *

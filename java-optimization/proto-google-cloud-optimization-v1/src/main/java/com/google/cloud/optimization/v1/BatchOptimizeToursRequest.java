@@ -37,6 +37,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.optimization.v1.BatchOptimizeToursRequest)
     BatchOptimizeToursRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchOptimizeToursRequest.newBuilder() to construct.
   private BatchOptimizeToursRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,6 +87,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      * @return The displayName.
      */
     java.lang.String getDisplayName();
+
     /**
      *
      *
@@ -114,6 +116,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      * @return Whether the inputConfig field is set.
      */
     boolean hasInputConfig();
+
     /**
      *
      *
@@ -128,6 +131,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      * @return The inputConfig.
      */
     com.google.cloud.optimization.v1.InputConfig getInputConfig();
+
     /**
      *
      *
@@ -155,6 +159,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      * @return Whether the outputConfig field is set.
      */
     boolean hasOutputConfig();
+
     /**
      *
      *
@@ -169,6 +174,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      * @return The outputConfig.
      */
     com.google.cloud.optimization.v1.OutputConfig getOutputConfig();
+
     /**
      *
      *
@@ -202,6 +208,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      */
     boolean getEnableCheckpoints();
   }
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig)
       AsyncModelConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AsyncModelConfig.newBuilder() to construct.
     private AsyncModelConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -252,6 +260,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -276,6 +285,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -303,6 +313,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
 
     public static final int INPUT_CONFIG_FIELD_NUMBER = 2;
     private com.google.cloud.optimization.v1.InputConfig inputConfig_;
+
     /**
      *
      *
@@ -320,6 +331,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -339,6 +351,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
           ? com.google.cloud.optimization.v1.InputConfig.getDefaultInstance()
           : inputConfig_;
     }
+
     /**
      *
      *
@@ -359,6 +372,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
 
     public static final int OUTPUT_CONFIG_FIELD_NUMBER = 3;
     private com.google.cloud.optimization.v1.OutputConfig outputConfig_;
+
     /**
      *
      *
@@ -376,6 +390,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -395,6 +410,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
           ? com.google.cloud.optimization.v1.OutputConfig.getDefaultInstance()
           : outputConfig_;
     }
+
     /**
      *
      *
@@ -415,6 +431,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
 
     public static final int ENABLE_CHECKPOINTS_FIELD_NUMBER = 4;
     private boolean enableCheckpoints_ = false;
+
     /**
      *
      *
@@ -643,6 +660,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -905,6 +923,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       private int bitField0_;
 
       private java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -928,6 +947,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -951,6 +971,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -973,6 +994,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -991,6 +1013,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1021,6 +1044,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
               com.google.cloud.optimization.v1.InputConfig.Builder,
               com.google.cloud.optimization.v1.InputConfigOrBuilder>
           inputConfigBuilder_;
+
       /**
        *
        *
@@ -1037,6 +1061,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       public boolean hasInputConfig() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1059,6 +1084,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
           return inputConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1083,6 +1109,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1105,6 +1132,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1135,6 +1163,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         }
         return this;
       }
+
       /**
        *
        *
@@ -1156,6 +1185,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1172,6 +1202,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         onChanged();
         return getInputConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1192,6 +1223,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
               : inputConfig_;
         }
       }
+
       /**
        *
        *
@@ -1226,6 +1258,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
               com.google.cloud.optimization.v1.OutputConfig.Builder,
               com.google.cloud.optimization.v1.OutputConfigOrBuilder>
           outputConfigBuilder_;
+
       /**
        *
        *
@@ -1242,6 +1275,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       public boolean hasOutputConfig() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1264,6 +1298,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
           return outputConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1288,6 +1323,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1310,6 +1346,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1340,6 +1377,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         }
         return this;
       }
+
       /**
        *
        *
@@ -1361,6 +1399,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1377,6 +1416,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         onChanged();
         return getOutputConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1397,6 +1437,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
               : outputConfig_;
         }
       }
+
       /**
        *
        *
@@ -1426,6 +1467,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       }
 
       private boolean enableCheckpoints_;
+
       /**
        *
        *
@@ -1448,6 +1490,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       public boolean getEnableCheckpoints() {
         return enableCheckpoints_;
       }
+
       /**
        *
        *
@@ -1474,6 +1517,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1571,6 +1615,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -1598,6 +1643,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1632,6 +1678,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
   private java.util.List<
           com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig>
       modelConfigs_;
+
   /**
    *
    *
@@ -1649,6 +1696,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       getModelConfigsList() {
     return modelConfigs_;
   }
+
   /**
    *
    *
@@ -1668,6 +1716,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       getModelConfigsOrBuilderList() {
     return modelConfigs_;
   }
+
   /**
    *
    *
@@ -1684,6 +1733,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
   public int getModelConfigsCount() {
     return modelConfigs_.size();
   }
+
   /**
    *
    *
@@ -1701,6 +1751,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       getModelConfigs(int index) {
     return modelConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -1890,6 +1941,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2141,6 +2193,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -2167,6 +2220,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2193,6 +2247,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2218,6 +2273,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2239,6 +2295,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2307,6 +2364,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         return modelConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2326,6 +2384,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         return modelConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2346,6 +2405,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         return modelConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2373,6 +2433,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2398,6 +2459,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2424,6 +2486,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2451,6 +2514,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2475,6 +2539,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2500,6 +2565,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2526,6 +2592,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2548,6 +2615,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2570,6 +2638,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2586,6 +2655,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         getModelConfigsBuilder(int index) {
       return getModelConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2606,6 +2676,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         return modelConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2629,6 +2700,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(modelConfigs_);
       }
     }
+
     /**
      *
      *
@@ -2648,6 +2720,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
               com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2668,6 +2741,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
               com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *

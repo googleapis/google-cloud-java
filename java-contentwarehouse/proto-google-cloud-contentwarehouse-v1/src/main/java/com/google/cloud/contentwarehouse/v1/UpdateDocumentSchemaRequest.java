@@ -33,6 +33,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.UpdateDocumentSchemaRequest)
     UpdateDocumentSchemaRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateDocumentSchemaRequest.newBuilder() to construct.
   private UpdateDocumentSchemaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
 
   public static final int DOCUMENT_SCHEMA_FIELD_NUMBER = 2;
   private com.google.cloud.contentwarehouse.v1.DocumentSchema documentSchema_;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
   public boolean hasDocumentSchema() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
         ? com.google.cloud.contentwarehouse.v1.DocumentSchema.getDefaultInstance()
         : documentSchema_;
   }
+
   /**
    *
    *
@@ -353,6 +359,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +578,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -597,6 +605,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -623,6 +632,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -648,6 +658,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -669,6 +680,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -702,6 +714,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
             com.google.cloud.contentwarehouse.v1.DocumentSchema.Builder,
             com.google.cloud.contentwarehouse.v1.DocumentSchemaOrBuilder>
         documentSchemaBuilder_;
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
     public boolean hasDocumentSchema() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -740,6 +754,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
         return documentSchemaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -764,6 +779,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +802,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +855,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +872,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
       onChanged();
       return getDocumentSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -874,6 +894,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
             : documentSchema_;
       }
     }
+
     /**
      *
      *

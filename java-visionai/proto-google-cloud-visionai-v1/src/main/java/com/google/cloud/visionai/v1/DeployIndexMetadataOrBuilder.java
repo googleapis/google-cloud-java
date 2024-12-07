@@ -36,6 +36,7 @@ public interface DeployIndexMetadataOrBuilder
    * @return Whether the operationMetadata field is set.
    */
   boolean hasOperationMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DeployIndexMetadataOrBuilder
    * @return The operationMetadata.
    */
   com.google.cloud.visionai.v1.OperationMetadata getOperationMetadata();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface DeployIndexMetadataOrBuilder
    * @return The deployedIndex.
    */
   java.lang.String getDeployedIndex();
+
   /**
    *
    *

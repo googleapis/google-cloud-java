@@ -36,6 +36,7 @@ public interface RouteAsPathOrBuilder
    * @return A list containing the asLists.
    */
   java.util.List<java.lang.Integer> getAsListsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RouteAsPathOrBuilder
    * @return The count of asLists.
    */
   int getAsListsCount();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface RouteAsPathOrBuilder
    * @return Whether the pathSegmentType field is set.
    */
   boolean hasPathSegmentType();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface RouteAsPathOrBuilder
    * @return The pathSegmentType.
    */
   java.lang.String getPathSegmentType();
+
   /**
    *
    *

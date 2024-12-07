@@ -39,6 +39,7 @@ public interface TagTemplateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface TagTemplateOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -128,6 +130,7 @@ public interface TagTemplateOrBuilder
    * </code>
    */
   int getFieldsCount();
+
   /**
    *
    *
@@ -150,9 +153,11 @@ public interface TagTemplateOrBuilder
    * </code>
    */
   boolean containsFields(java.lang.String key);
+
   /** Use {@link #getFieldsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.TagTemplateField> getFields();
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public interface TagTemplateOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.TagTemplateField> getFieldsMap();
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public interface TagTemplateOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.datacatalog.v1.TagTemplateField defaultValue);
+
   /**
    *
    *
@@ -238,6 +245,7 @@ public interface TagTemplateOrBuilder
    * @return The enum numeric value on the wire for dataplexTransferStatus.
    */
   int getDataplexTransferStatusValue();
+
   /**
    *
    *

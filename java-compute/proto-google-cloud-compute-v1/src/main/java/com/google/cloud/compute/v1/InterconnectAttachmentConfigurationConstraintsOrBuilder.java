@@ -37,6 +37,7 @@ public interface InterconnectAttachmentConfigurationConstraintsOrBuilder
    * @return Whether the bgpMd5 field is set.
    */
   boolean hasBgpMd5();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface InterconnectAttachmentConfigurationConstraintsOrBuilder
    * @return The bgpMd5.
    */
   java.lang.String getBgpMd5();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface InterconnectAttachmentConfigurationConstraintsOrBuilder
   java.util.List<
           com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange>
       getBgpPeerAsnRangesList();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface InterconnectAttachmentConfigurationConstraintsOrBuilder
    */
   com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
       getBgpPeerAsnRanges(int index);
+
   /**
    *
    *
@@ -103,6 +107,7 @@ public interface InterconnectAttachmentConfigurationConstraintsOrBuilder
    * </code>
    */
   int getBgpPeerAsnRangesCount();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface InterconnectAttachmentConfigurationConstraintsOrBuilder
               com.google.cloud.compute.v1
                   .InterconnectAttachmentConfigurationConstraintsBgpPeerASNRangeOrBuilder>
       getBgpPeerAsnRangesOrBuilderList();
+
   /**
    *
    *

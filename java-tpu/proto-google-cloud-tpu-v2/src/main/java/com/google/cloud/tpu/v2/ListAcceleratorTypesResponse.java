@@ -34,6 +34,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2.ListAcceleratorTypesResponse)
     ListAcceleratorTypesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListAcceleratorTypesResponse.newBuilder() to construct.
   private ListAcceleratorTypesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.tpu.v2.AcceleratorType> acceleratorTypes_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.tpu.v2.AcceleratorType> getAcceleratorTypesList() {
     return acceleratorTypes_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       getAcceleratorTypesOrBuilderList() {
     return acceleratorTypes_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
   public int getAcceleratorTypesCount() {
     return acceleratorTypes_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
   public com.google.cloud.tpu.v2.AcceleratorType getAcceleratorTypes(int index) {
     return acceleratorTypes_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -221,6 +231,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -236,6 +247,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -438,6 +450,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -738,6 +751,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
         return acceleratorTypesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
         return acceleratorTypesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
         return acceleratorTypesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +829,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +852,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +875,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +896,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +917,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +938,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +958,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +978,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +991,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
     public com.google.cloud.tpu.v2.AcceleratorType.Builder getAcceleratorTypesBuilder(int index) {
       return getAcceleratorTypesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -983,6 +1009,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
         return acceleratorTypesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1000,6 +1027,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(acceleratorTypes_);
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1041,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       return getAcceleratorTypesFieldBuilder()
           .addBuilder(com.google.cloud.tpu.v2.AcceleratorType.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1026,6 +1055,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       return getAcceleratorTypesFieldBuilder()
           .addBuilder(index, com.google.cloud.tpu.v2.AcceleratorType.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1061,6 +1091,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1083,6 +1114,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1105,6 +1137,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1126,6 +1159,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1177,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1210,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1190,6 +1226,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -1204,6 +1241,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1219,6 +1257,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1234,6 +1273,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1257,6 +1297,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1279,6 +1320,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1340,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1316,6 +1359,7 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

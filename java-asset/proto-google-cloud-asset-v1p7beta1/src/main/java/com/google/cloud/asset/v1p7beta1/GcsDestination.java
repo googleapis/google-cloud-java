@@ -33,6 +33,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1p7beta1.GcsDestination)
     GcsDestinationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GcsDestination.newBuilder() to construct.
   private GcsDestination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     private ObjectUriCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUri() {
     return objectUriCase_ == 1;
   }
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -193,6 +198,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_PREFIX_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -215,6 +221,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUriPrefix() {
     return objectUriCase_ == 2;
   }
+
   /**
    *
    *
@@ -250,6 +257,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -471,6 +479,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -714,6 +723,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUri() {
       return objectUriCase_ == 1;
     }
+
     /**
      *
      *
@@ -746,6 +756,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -778,6 +789,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -803,6 +815,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +839,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +890,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUriPrefix() {
       return objectUriCase_ == 2;
     }
+
     /**
      *
      *
@@ -912,6 +927,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -948,6 +964,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -977,6 +994,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1022,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *

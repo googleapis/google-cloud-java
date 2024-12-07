@@ -33,6 +33,7 @@ public final class RemoveIpOverrideResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.RemoveIpOverrideResponse)
     RemoveIpOverrideResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RemoveIpOverrideResponse.newBuilder() to construct.
   private RemoveIpOverrideResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class RemoveIpOverrideResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

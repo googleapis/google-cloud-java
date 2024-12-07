@@ -33,6 +33,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.InputConfig)
     InputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InputConfig.newBuilder() to construct.
   private InputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p4beta1.GcsSource gcsSource_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsSource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1p4beta1.GcsSource.getDefaultInstance()
         : gcsSource_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTENT_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -373,6 +380,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -603,6 +611,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p4beta1.GcsSource.Builder,
             com.google.cloud.vision.v1p4beta1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -617,6 +626,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsSource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -637,6 +647,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return gcsSourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -659,6 +670,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -679,6 +691,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +719,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +754,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -757,6 +773,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             : gcsSource_;
       }
     }
+
     /**
      *
      *
@@ -784,6 +801,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -804,6 +822,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getContent() {
       return content_;
     }
+
     /**
      *
      *
@@ -830,6 +849,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object mimeType_ = "";
+
     /**
      *
      *
@@ -877,6 +898,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -900,6 +922,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -922,6 +945,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +964,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

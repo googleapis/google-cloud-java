@@ -33,6 +33,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.Interval)
     IntervalOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Interval.newBuilder() to construct.
   private Interval(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
     private MinCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -127,6 +129,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
     private MaxCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -160,6 +163,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MINIMUM_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -175,6 +179,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinimum() {
     return minCase_ == 1;
   }
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXCLUSIVE_MINIMUM_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -210,6 +216,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExclusiveMinimum() {
     return minCase_ == 2;
   }
+
   /**
    *
    *
@@ -230,6 +237,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAXIMUM_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaximum() {
     return maxCase_ == 3;
   }
+
   /**
    *
    *
@@ -265,6 +274,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXCLUSIVE_MAXIMUM_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExclusiveMaximum() {
     return maxCase_ == 4;
   }
+
   /**
    *
    *
@@ -543,6 +554,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -821,6 +833,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinimum() {
       return minCase_ == 1;
     }
+
     /**
      *
      *
@@ -838,6 +851,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
       }
       return 0D;
     }
+
     /**
      *
      *
@@ -857,6 +871,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +906,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExclusiveMinimum() {
       return minCase_ == 2;
     }
+
     /**
      *
      *
@@ -908,6 +924,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
       }
       return 0D;
     }
+
     /**
      *
      *
@@ -927,6 +944,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +979,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaximum() {
       return maxCase_ == 3;
     }
+
     /**
      *
      *
@@ -978,6 +997,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
       }
       return 0D;
     }
+
     /**
      *
      *
@@ -997,6 +1017,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1052,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExclusiveMaximum() {
       return maxCase_ == 4;
     }
+
     /**
      *
      *
@@ -1048,6 +1070,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
       }
       return 0D;
     }
+
     /**
      *
      *
@@ -1067,6 +1090,7 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

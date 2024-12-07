@@ -290,7 +290,8 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
     private Builder(EventThreatDetectionCustomModuleName eventThreatDetectionCustomModuleName) {
       Preconditions.checkArgument(
           Objects.equals(eventThreatDetectionCustomModuleName.pathTemplate, ORGANIZATION_MODULE),
-          "toBuilder is only supported when EventThreatDetectionCustomModuleName has the pattern of organizations/{organization}/eventThreatDetectionSettings/customModules/{module}");
+          "toBuilder is only supported when EventThreatDetectionCustomModuleName has the pattern of"
+              + " organizations/{organization}/eventThreatDetectionSettings/customModules/{module}");
       this.organization = eventThreatDetectionCustomModuleName.organization;
       this.module = eventThreatDetectionCustomModuleName.module;
     }

@@ -34,6 +34,7 @@ public interface SslCertificatesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
    */
   java.util.List<com.google.cloud.compute.v1.SslCertificate> getSslCertificatesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SslCertificatesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
    */
   com.google.cloud.compute.v1.SslCertificate getSslCertificates(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SslCertificatesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
    */
   int getSslCertificatesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SslCertificatesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.SslCertificateOrBuilder>
       getSslCertificatesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface SslCertificatesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface SslCertificatesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

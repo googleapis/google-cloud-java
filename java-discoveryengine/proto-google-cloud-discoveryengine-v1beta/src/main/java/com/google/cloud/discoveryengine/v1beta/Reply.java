@@ -33,6 +33,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Reply)
     ReplyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Reply.newBuilder() to construct.
   private Reply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      * @return The anchorText.
      */
     java.lang.String getAnchorText();
+
     /**
      *
      *
@@ -146,6 +149,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
      */
     int getEnd();
   }
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Reply.Reference)
       ReferenceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Reference.newBuilder() to construct.
     private Reference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -196,6 +201,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -219,6 +225,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -247,6 +254,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object anchorText_ = "";
+
     /**
      *
      *
@@ -270,6 +278,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -296,6 +305,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
 
     public static final int START_FIELD_NUMBER = 3;
     private int start_ = 0;
+
     /**
      *
      *
@@ -314,6 +324,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
 
     public static final int END_FIELD_NUMBER = 4;
     private int end_ = 0;
+
     /**
      *
      *
@@ -518,6 +529,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -746,6 +758,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -768,6 +781,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -790,6 +804,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -811,6 +826,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -828,6 +844,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -852,6 +869,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object anchorText_ = "";
+
       /**
        *
        *
@@ -874,6 +892,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -896,6 +915,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -917,6 +937,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -934,6 +955,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -958,6 +980,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int start_;
+
       /**
        *
        *
@@ -973,6 +996,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       public int getStart() {
         return start_;
       }
+
       /**
        *
        *
@@ -992,6 +1016,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1011,6 +1036,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int end_;
+
       /**
        *
        *
@@ -1026,6 +1052,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       public int getEnd() {
         return end_;
       }
+
       /**
        *
        *
@@ -1045,6 +1072,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1132,6 +1160,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reply_ = "";
+
   /**
    *
    *
@@ -1159,6 +1188,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1191,6 +1221,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1beta.Reply.Reference> references_;
+
   /**
    *
    *
@@ -1208,6 +1239,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       getReferencesList() {
     return references_;
   }
+
   /**
    *
    *
@@ -1225,6 +1257,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       getReferencesOrBuilderList() {
     return references_;
   }
+
   /**
    *
    *
@@ -1241,6 +1274,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
   public int getReferencesCount() {
     return references_.size();
   }
+
   /**
    *
    *
@@ -1257,6 +1291,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.discoveryengine.v1beta.Reply.Reference getReferences(int index) {
     return references_.get(index);
   }
+
   /**
    *
    *
@@ -1277,6 +1312,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUMMARY_FIELD_NUMBER = 3;
   private com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary_;
+
   /**
    *
    *
@@ -1292,6 +1328,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSummary() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1309,6 +1346,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.getDefaultInstance()
         : summary_;
   }
+
   /**
    *
    *
@@ -1510,6 +1548,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1784,6 +1823,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object reply_ = "";
+
     /**
      *
      *
@@ -1810,6 +1850,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1836,6 +1877,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1861,6 +1903,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1882,6 +1925,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1947,6 +1991,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         return referencesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1966,6 +2011,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         return referencesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1985,6 +2031,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         return referencesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2011,6 +2058,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2035,6 +2083,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2060,6 +2109,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2086,6 +2136,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2109,6 +2160,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2133,6 +2185,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2157,6 +2210,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2179,6 +2233,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2201,6 +2256,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2217,6 +2273,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getReferencesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2237,6 +2294,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         return referencesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2258,6 +2316,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(references_);
       }
     }
+
     /**
      *
      *
@@ -2274,6 +2333,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       return getReferencesFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1beta.Reply.Reference.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2292,6 +2352,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.discoveryengine.v1beta.Reply.Reference.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2332,6 +2393,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.Builder,
             com.google.cloud.discoveryengine.v1beta.SearchResponse.SummaryOrBuilder>
         summaryBuilder_;
+
     /**
      *
      *
@@ -2346,6 +2408,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSummary() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2366,6 +2429,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         return summaryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2389,6 +2453,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2409,6 +2474,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2439,6 +2505,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2458,6 +2525,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2473,6 +2541,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSummaryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2492,6 +2561,7 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
             : summary_;
       }
     }
+
     /**
      *
      *

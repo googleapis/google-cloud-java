@@ -36,6 +36,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.DimensionExpression)
     DimensionExpressionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DimensionExpression.newBuilder() to construct.
   private DimensionExpression(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
      * @return The dimensionName.
      */
     java.lang.String getDimensionName();
+
     /**
      *
      *
@@ -96,6 +98,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getDimensionNameBytes();
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.DimensionExpression.CaseExpression)
       CaseExpressionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CaseExpression.newBuilder() to construct.
     private CaseExpression(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -144,6 +148,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dimensionName_ = "";
+
     /**
      *
      *
@@ -168,6 +173,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -355,6 +361,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -549,6 +556,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object dimensionName_ = "";
+
       /**
        *
        *
@@ -572,6 +580,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -595,6 +604,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -617,6 +627,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -635,6 +646,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -744,6 +756,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
      * @return A list containing the dimensionNames.
      */
     java.util.List<java.lang.String> getDimensionNamesList();
+
     /**
      *
      *
@@ -757,6 +770,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
      * @return The count of dimensionNames.
      */
     int getDimensionNamesCount();
+
     /**
      *
      *
@@ -771,6 +785,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
      * @return The dimensionNames at the given index.
      */
     java.lang.String getDimensionNames(int index);
+
     /**
      *
      *
@@ -804,6 +819,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
      * @return The delimiter.
      */
     java.lang.String getDelimiter();
+
     /**
      *
      *
@@ -823,6 +839,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getDelimiterBytes();
   }
+
   /**
    *
    *
@@ -837,6 +854,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.DimensionExpression.ConcatenateExpression)
       ConcatenateExpressionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConcatenateExpression.newBuilder() to construct.
     private ConcatenateExpression(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -874,6 +892,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList dimensionNames_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -889,6 +908,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ProtocolStringList getDimensionNamesList() {
       return dimensionNames_;
     }
+
     /**
      *
      *
@@ -904,6 +924,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     public int getDimensionNamesCount() {
       return dimensionNames_.size();
     }
+
     /**
      *
      *
@@ -920,6 +941,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     public java.lang.String getDimensionNames(int index) {
       return dimensionNames_.get(index);
     }
+
     /**
      *
      *
@@ -941,6 +963,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object delimiter_ = "";
+
     /**
      *
      *
@@ -970,6 +993,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -1184,6 +1208,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1412,6 +1437,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -1428,6 +1454,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         dimensionNames_.makeImmutable();
         return dimensionNames_;
       }
+
       /**
        *
        *
@@ -1443,6 +1470,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       public int getDimensionNamesCount() {
         return dimensionNames_.size();
       }
+
       /**
        *
        *
@@ -1459,6 +1487,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       public java.lang.String getDimensionNames(int index) {
         return dimensionNames_.get(index);
       }
+
       /**
        *
        *
@@ -1475,6 +1504,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       public com.google.protobuf.ByteString getDimensionNamesBytes(int index) {
         return dimensionNames_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1499,6 +1529,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1522,6 +1553,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1542,6 +1574,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1561,6 +1594,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1587,6 +1621,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object delimiter_ = "";
+
       /**
        *
        *
@@ -1615,6 +1650,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1643,6 +1679,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1670,6 +1707,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1693,6 +1731,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1808,6 +1847,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     private OneExpressionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1843,6 +1883,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LOWER_CASE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -1858,6 +1899,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
   public boolean hasLowerCase() {
     return oneExpressionCase_ == 4;
   }
+
   /**
    *
    *
@@ -1876,6 +1918,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     }
     return com.google.analytics.data.v1beta.DimensionExpression.CaseExpression.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1895,6 +1938,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
   }
 
   public static final int UPPER_CASE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -1910,6 +1954,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
   public boolean hasUpperCase() {
     return oneExpressionCase_ == 5;
   }
+
   /**
    *
    *
@@ -1928,6 +1973,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     }
     return com.google.analytics.data.v1beta.DimensionExpression.CaseExpression.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1947,6 +1993,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CONCATENATE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -1964,6 +2011,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
   public boolean hasConcatenate() {
     return oneExpressionCase_ == 6;
   }
+
   /**
    *
    *
@@ -1987,6 +2035,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     return com.google.analytics.data.v1beta.DimensionExpression.ConcatenateExpression
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2222,6 +2271,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2477,6 +2527,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
             com.google.analytics.data.v1beta.DimensionExpression.CaseExpression.Builder,
             com.google.analytics.data.v1beta.DimensionExpression.CaseExpressionOrBuilder>
         lowerCaseBuilder_;
+
     /**
      *
      *
@@ -2492,6 +2543,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     public boolean hasLowerCase() {
       return oneExpressionCase_ == 4;
     }
+
     /**
      *
      *
@@ -2520,6 +2572,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2543,6 +2596,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       oneExpressionCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2564,6 +2618,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       oneExpressionCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2600,6 +2655,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       oneExpressionCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2625,6 +2681,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2638,6 +2695,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         getLowerCaseBuilder() {
       return getLowerCaseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2661,6 +2719,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2702,6 +2761,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
             com.google.analytics.data.v1beta.DimensionExpression.CaseExpression.Builder,
             com.google.analytics.data.v1beta.DimensionExpression.CaseExpressionOrBuilder>
         upperCaseBuilder_;
+
     /**
      *
      *
@@ -2717,6 +2777,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     public boolean hasUpperCase() {
       return oneExpressionCase_ == 5;
     }
+
     /**
      *
      *
@@ -2745,6 +2806,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2768,6 +2830,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       oneExpressionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2789,6 +2852,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       oneExpressionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2825,6 +2889,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       oneExpressionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2850,6 +2915,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2863,6 +2929,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         getUpperCaseBuilder() {
       return getUpperCaseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2886,6 +2953,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2927,6 +2995,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
             com.google.analytics.data.v1beta.DimensionExpression.ConcatenateExpression.Builder,
             com.google.analytics.data.v1beta.DimensionExpression.ConcatenateExpressionOrBuilder>
         concatenateBuilder_;
+
     /**
      *
      *
@@ -2945,6 +3014,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     public boolean hasConcatenate() {
       return oneExpressionCase_ == 6;
     }
+
     /**
      *
      *
@@ -2977,6 +3047,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3003,6 +3074,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       oneExpressionCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3027,6 +3099,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       oneExpressionCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3066,6 +3139,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       oneExpressionCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3094,6 +3168,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3110,6 +3185,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         getConcatenateBuilder() {
       return getConcatenateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3136,6 +3212,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

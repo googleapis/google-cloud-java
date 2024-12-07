@@ -35,6 +35,7 @@ public interface InstanceGroupManagersUpdatePerInstanceConfigsReqOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> getPerInstanceConfigsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface InstanceGroupManagersUpdatePerInstanceConfigsReqOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.PerInstanceConfig getPerInstanceConfigs(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface InstanceGroupManagersUpdatePerInstanceConfigsReqOrBuilder
    * </code>
    */
   int getPerInstanceConfigsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface InstanceGroupManagersUpdatePerInstanceConfigsReqOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
       getPerInstanceConfigsOrBuilderList();
+
   /**
    *
    *

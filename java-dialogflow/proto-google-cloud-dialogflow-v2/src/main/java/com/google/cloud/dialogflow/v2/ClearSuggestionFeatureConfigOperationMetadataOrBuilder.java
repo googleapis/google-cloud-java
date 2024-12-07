@@ -38,6 +38,7 @@ public interface ClearSuggestionFeatureConfigOperationMetadataOrBuilder
    * @return The conversationProfile.
    */
   java.lang.String getConversationProfile();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ClearSuggestionFeatureConfigOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for participantRole.
    */
   int getParticipantRoleValue();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface ClearSuggestionFeatureConfigOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for suggestionFeatureType.
    */
   int getSuggestionFeatureTypeValue();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface ClearSuggestionFeatureConfigOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface ClearSuggestionFeatureConfigOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

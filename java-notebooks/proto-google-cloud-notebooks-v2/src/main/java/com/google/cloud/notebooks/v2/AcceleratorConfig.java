@@ -38,6 +38,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v2.AcceleratorConfig)
     AcceleratorConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AcceleratorConfig.newBuilder() to construct.
   private AcceleratorConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -202,6 +203,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>ACCELERATOR_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ACCELERATOR_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -212,6 +214,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_TESLA_P100 = 2;</code>
      */
     public static final int NVIDIA_TESLA_P100_VALUE = 2;
+
     /**
      *
      *
@@ -222,6 +225,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_TESLA_V100 = 3;</code>
      */
     public static final int NVIDIA_TESLA_V100_VALUE = 3;
+
     /**
      *
      *
@@ -232,6 +236,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_TESLA_P4 = 4;</code>
      */
     public static final int NVIDIA_TESLA_P4_VALUE = 4;
+
     /**
      *
      *
@@ -242,6 +247,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_TESLA_T4 = 5;</code>
      */
     public static final int NVIDIA_TESLA_T4_VALUE = 5;
+
     /**
      *
      *
@@ -252,6 +258,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_TESLA_A100 = 11;</code>
      */
     public static final int NVIDIA_TESLA_A100_VALUE = 11;
+
     /**
      *
      *
@@ -262,6 +269,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_A100_80GB = 12;</code>
      */
     public static final int NVIDIA_A100_80GB_VALUE = 12;
+
     /**
      *
      *
@@ -272,6 +280,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_L4 = 13;</code>
      */
     public static final int NVIDIA_L4_VALUE = 13;
+
     /**
      *
      *
@@ -282,6 +291,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_TESLA_T4_VWS = 8;</code>
      */
     public static final int NVIDIA_TESLA_T4_VWS_VALUE = 8;
+
     /**
      *
      *
@@ -292,6 +302,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_TESLA_P100_VWS = 9;</code>
      */
     public static final int NVIDIA_TESLA_P100_VWS_VALUE = 9;
+
     /**
      *
      *
@@ -406,6 +417,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -423,6 +435,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -447,6 +460,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int CORE_COUNT_FIELD_NUMBER = 2;
   private long coreCount_ = 0L;
+
   /**
    *
    *
@@ -637,6 +651,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -837,6 +852,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -854,6 +870,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -874,6 +891,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +913,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.notebooks.v2.AcceleratorConfig.AcceleratorType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -918,6 +937,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +959,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private long coreCount_;
+
     /**
      *
      *
@@ -954,6 +975,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     public long getCoreCount() {
       return coreCount_;
     }
+
     /**
      *
      *
@@ -973,6 +995,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

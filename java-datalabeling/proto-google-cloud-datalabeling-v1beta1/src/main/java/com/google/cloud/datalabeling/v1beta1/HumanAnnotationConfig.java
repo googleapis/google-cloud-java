@@ -33,6 +33,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.HumanAnnotationConfig)
     HumanAnnotationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HumanAnnotationConfig.newBuilder() to construct.
   private HumanAnnotationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instruction_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object annotatedDatasetDisplayName_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object annotatedDatasetDescription_ = "";
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -237,6 +244,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object labelGroup_ = "";
+
   /**
    *
    *
@@ -261,6 +269,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -290,6 +299,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -317,6 +327,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -347,6 +358,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
 
   public static final int REPLICA_COUNT_FIELD_NUMBER = 6;
   private int replicaCount_ = 0;
+
   /**
    *
    *
@@ -368,6 +380,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
 
   public static final int QUESTION_DURATION_FIELD_NUMBER = 7;
   private com.google.protobuf.Duration questionDuration_;
+
   /**
    *
    *
@@ -386,6 +399,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   public boolean hasQuestionDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -406,6 +420,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         ? com.google.protobuf.Duration.getDefaultInstance()
         : questionDuration_;
   }
+
   /**
    *
    *
@@ -430,6 +445,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList contributorEmails_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -448,6 +464,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getContributorEmailsList() {
     return contributorEmails_;
   }
+
   /**
    *
    *
@@ -466,6 +483,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   public int getContributorEmailsCount() {
     return contributorEmails_.size();
   }
+
   /**
    *
    *
@@ -485,6 +503,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   public java.lang.String getContributorEmails(int index) {
     return contributorEmails_.get(index);
   }
+
   /**
    *
    *
@@ -509,6 +528,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userEmailAddress_ = "";
+
   /**
    *
    *
@@ -533,6 +553,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -806,6 +827,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1131,6 +1153,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object instruction_ = "";
+
     /**
      *
      *
@@ -1153,6 +1176,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1175,6 +1199,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1196,6 +1221,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1213,6 +1239,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1264,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object annotatedDatasetDisplayName_ = "";
+
     /**
      *
      *
@@ -1262,6 +1290,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1287,6 +1316,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1311,6 +1341,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1331,6 +1362,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1390,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object annotatedDatasetDescription_ = "";
+
     /**
      *
      *
@@ -1382,6 +1415,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1406,6 +1440,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1429,6 +1464,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1448,6 +1484,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1474,6 +1511,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object labelGroup_ = "";
+
     /**
      *
      *
@@ -1497,6 +1535,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1520,6 +1559,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1542,6 +1582,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1560,6 +1601,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1585,6 +1627,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -1611,6 +1654,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1637,6 +1681,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1662,6 +1707,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1683,6 +1729,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1711,6 +1758,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     }
 
     private int replicaCount_;
+
     /**
      *
      *
@@ -1729,6 +1777,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     public int getReplicaCount() {
       return replicaCount_;
     }
+
     /**
      *
      *
@@ -1751,6 +1800,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1778,6 +1828,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         questionDurationBuilder_;
+
     /**
      *
      *
@@ -1795,6 +1846,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     public boolean hasQuestionDuration() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1818,6 +1870,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return questionDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1843,6 +1896,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1865,6 +1919,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1895,6 +1950,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1917,6 +1973,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1934,6 +1991,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return getQuestionDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1955,6 +2013,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
             : questionDuration_;
       }
     }
+
     /**
      *
      *
@@ -1993,6 +2052,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000080;
     }
+
     /**
      *
      *
@@ -2013,6 +2073,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       contributorEmails_.makeImmutable();
       return contributorEmails_;
     }
+
     /**
      *
      *
@@ -2032,6 +2093,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     public int getContributorEmailsCount() {
       return contributorEmails_.size();
     }
+
     /**
      *
      *
@@ -2052,6 +2114,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     public java.lang.String getContributorEmails(int index) {
       return contributorEmails_.get(index);
     }
+
     /**
      *
      *
@@ -2072,6 +2135,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getContributorEmailsBytes(int index) {
       return contributorEmails_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2100,6 +2164,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2127,6 +2192,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2151,6 +2217,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2174,6 +2241,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2204,6 +2272,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object userEmailAddress_ = "";
+
     /**
      *
      *
@@ -2227,6 +2296,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2250,6 +2320,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2272,6 +2343,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2290,6 +2362,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

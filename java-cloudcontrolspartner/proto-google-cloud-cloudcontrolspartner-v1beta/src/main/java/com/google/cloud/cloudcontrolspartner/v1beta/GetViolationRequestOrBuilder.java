@@ -39,6 +39,7 @@ public interface GetViolationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

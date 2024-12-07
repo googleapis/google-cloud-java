@@ -33,6 +33,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.Runtime)
     RuntimeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Runtime.newBuilder() to construct.
   private Runtime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -179,6 +180,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -189,6 +191,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>STARTING = 1;</code>
      */
     public static final int STARTING_VALUE = 1;
+
     /**
      *
      *
@@ -200,6 +203,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVISIONING = 2;</code>
      */
     public static final int PROVISIONING_VALUE = 2;
+
     /**
      *
      *
@@ -210,6 +214,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 3;</code>
      */
     public static final int ACTIVE_VALUE = 3;
+
     /**
      *
      *
@@ -220,6 +225,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>STOPPING = 4;</code>
      */
     public static final int STOPPING_VALUE = 4;
+
     /**
      *
      *
@@ -230,6 +236,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>STOPPED = 5;</code>
      */
     public static final int STOPPED_VALUE = 5;
+
     /**
      *
      *
@@ -240,6 +247,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 6;</code>
      */
     public static final int DELETING_VALUE = 6;
+
     /**
      *
      *
@@ -250,6 +258,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>UPGRADING = 7;</code>
      */
     public static final int UPGRADING_VALUE = 7;
+
     /**
      *
      *
@@ -435,6 +444,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>HEALTH_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int HEALTH_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -447,6 +457,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>HEALTHY = 1;</code>
      */
     public static final int HEALTHY_VALUE = 1;
+
     /**
      *
      *
@@ -459,6 +470,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>UNHEALTHY = 2;</code>
      */
     public static final int UNHEALTHY_VALUE = 2;
+
     /**
      *
      *
@@ -470,6 +482,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>AGENT_NOT_INSTALLED = 3;</code>
      */
     public static final int AGENT_NOT_INSTALLED_VALUE = 3;
+
     /**
      *
      *
@@ -586,6 +599,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     private RuntimeTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -620,6 +634,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -645,6 +660,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -672,6 +688,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VIRTUAL_MACHINE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -687,6 +704,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVirtualMachine() {
     return runtimeTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -705,6 +723,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.notebooks.v1.VirtualMachine.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -724,6 +743,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -741,6 +761,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -763,6 +784,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HEALTH_STATE_FIELD_NUMBER = 4;
   private int healthState_ = 0;
+
   /**
    *
    *
@@ -780,6 +802,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   public int getHealthStateValue() {
     return healthState_;
   }
+
   /**
    *
    *
@@ -802,6 +825,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCESS_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.notebooks.v1.RuntimeAccessConfig accessConfig_;
+
   /**
    *
    *
@@ -817,6 +841,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccessConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -834,6 +859,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.notebooks.v1.RuntimeAccessConfig.getDefaultInstance()
         : accessConfig_;
   }
+
   /**
    *
    *
@@ -852,6 +878,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOFTWARE_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.notebooks.v1.RuntimeSoftwareConfig softwareConfig_;
+
   /**
    *
    *
@@ -867,6 +894,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSoftwareConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -884,6 +912,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.getDefaultInstance()
         : softwareConfig_;
   }
+
   /**
    *
    *
@@ -902,6 +931,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int METRICS_FIELD_NUMBER = 7;
   private com.google.cloud.notebooks.v1.RuntimeMetrics metrics_;
+
   /**
    *
    *
@@ -920,6 +950,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetrics() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -940,6 +971,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.notebooks.v1.RuntimeMetrics.getDefaultInstance()
         : metrics_;
   }
+
   /**
    *
    *
@@ -961,6 +993,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 20;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -977,6 +1010,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -993,6 +1027,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -1010,6 +1045,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 21;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1026,6 +1062,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1042,6 +1079,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1328,6 +1366,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1689,6 +1728,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1713,6 +1753,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1737,6 +1778,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1760,6 +1802,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1779,6 +1822,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1809,6 +1853,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.notebooks.v1.VirtualMachine.Builder,
             com.google.cloud.notebooks.v1.VirtualMachineOrBuilder>
         virtualMachineBuilder_;
+
     /**
      *
      *
@@ -1824,6 +1869,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVirtualMachine() {
       return runtimeTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1849,6 +1895,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.notebooks.v1.VirtualMachine.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1871,6 +1918,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       runtimeTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1891,6 +1939,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       runtimeTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1923,6 +1972,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       runtimeTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1948,6 +1998,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1960,6 +2011,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.notebooks.v1.VirtualMachine.Builder getVirtualMachineBuilder() {
       return getVirtualMachineFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1980,6 +2032,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.notebooks.v1.VirtualMachine.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2014,6 +2067,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2031,6 +2085,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2051,6 +2106,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2070,6 +2126,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.notebooks.v1.Runtime.State.forNumber(state_);
       return result == null ? com.google.cloud.notebooks.v1.Runtime.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2093,6 +2150,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2114,6 +2172,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int healthState_ = 0;
+
     /**
      *
      *
@@ -2131,6 +2190,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     public int getHealthStateValue() {
       return healthState_;
     }
+
     /**
      *
      *
@@ -2151,6 +2211,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2172,6 +2233,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.notebooks.v1.Runtime.HealthState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2195,6 +2257,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2221,6 +2284,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.notebooks.v1.RuntimeAccessConfig.Builder,
             com.google.cloud.notebooks.v1.RuntimeAccessConfigOrBuilder>
         accessConfigBuilder_;
+
     /**
      *
      *
@@ -2235,6 +2299,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2255,6 +2320,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         return accessConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2277,6 +2343,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2297,6 +2364,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2325,6 +2393,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2344,6 +2413,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2358,6 +2428,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAccessConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2376,6 +2447,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
             : accessConfig_;
       }
     }
+
     /**
      *
      *
@@ -2408,6 +2480,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.Builder,
             com.google.cloud.notebooks.v1.RuntimeSoftwareConfigOrBuilder>
         softwareConfigBuilder_;
+
     /**
      *
      *
@@ -2422,6 +2495,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSoftwareConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2442,6 +2516,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         return softwareConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2464,6 +2539,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2484,6 +2560,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2512,6 +2589,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2531,6 +2609,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2545,6 +2624,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSoftwareConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2564,6 +2644,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
             : softwareConfig_;
       }
     }
+
     /**
      *
      *
@@ -2596,6 +2677,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.notebooks.v1.RuntimeMetrics.Builder,
             com.google.cloud.notebooks.v1.RuntimeMetricsOrBuilder>
         metricsBuilder_;
+
     /**
      *
      *
@@ -2613,6 +2695,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetrics() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2636,6 +2719,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2661,6 +2745,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2684,6 +2769,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2714,6 +2800,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2736,6 +2823,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2753,6 +2841,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMetricsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2774,6 +2863,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
             : metrics_;
       }
     }
+
     /**
      *
      *
@@ -2809,6 +2899,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2825,6 +2916,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2847,6 +2939,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2871,6 +2964,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2892,6 +2986,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2921,6 +3016,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2942,6 +3038,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2958,6 +3055,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2978,6 +3076,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3012,6 +3111,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -3028,6 +3128,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3050,6 +3151,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3074,6 +3176,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3095,6 +3198,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3124,6 +3228,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3145,6 +3250,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3161,6 +3267,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3181,6 +3288,7 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *

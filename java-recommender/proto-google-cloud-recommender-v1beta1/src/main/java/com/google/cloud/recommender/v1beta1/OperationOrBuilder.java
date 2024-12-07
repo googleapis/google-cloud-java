@@ -38,6 +38,7 @@ public interface OperationOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface OperationOrBuilder
    * @return The resourceType.
    */
   java.lang.String getResourceType();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface OperationOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface OperationOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface OperationOrBuilder
    * @return The sourceResource.
    */
   java.lang.String getSourceResource();
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public interface OperationOrBuilder
    * @return The sourcePath.
    */
   java.lang.String getSourcePath();
+
   /**
    *
    *
@@ -210,6 +216,7 @@ public interface OperationOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
+
   /**
    *
    *
@@ -224,6 +231,7 @@ public interface OperationOrBuilder
    * @return The value.
    */
   com.google.protobuf.Value getValue();
+
   /**
    *
    *
@@ -250,6 +258,7 @@ public interface OperationOrBuilder
    * @return Whether the valueMatcher field is set.
    */
   boolean hasValueMatcher();
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public interface OperationOrBuilder
    * @return The valueMatcher.
    */
   com.google.cloud.recommender.v1beta1.ValueMatcher getValueMatcher();
+
   /**
    *
    *
@@ -313,6 +323,7 @@ public interface OperationOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
    */
   int getPathFiltersCount();
+
   /**
    *
    *
@@ -351,9 +362,11 @@ public interface OperationOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
    */
   boolean containsPathFilters(java.lang.String key);
+
   /** Use {@link #getPathFiltersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getPathFilters();
+
   /**
    *
    *
@@ -392,6 +405,7 @@ public interface OperationOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getPathFiltersMap();
+
   /**
    *
    *
@@ -434,6 +448,7 @@ public interface OperationOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
+
   /**
    *
    *
@@ -489,6 +504,7 @@ public interface OperationOrBuilder
    * </code>
    */
   int getPathValueMatchersCount();
+
   /**
    *
    *
@@ -505,10 +521,12 @@ public interface OperationOrBuilder
    * </code>
    */
   boolean containsPathValueMatchers(java.lang.String key);
+
   /** Use {@link #getPathValueMatchersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
       getPathValueMatchers();
+
   /**
    *
    *
@@ -526,6 +544,7 @@ public interface OperationOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
       getPathValueMatchersMap();
+
   /**
    *
    *
@@ -546,6 +565,7 @@ public interface OperationOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.recommender.v1beta1.ValueMatcher defaultValue);
+
   /**
    *
    *

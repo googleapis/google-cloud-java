@@ -34,6 +34,7 @@ public interface ListDataSourcesResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
    */
   java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSource> getDataSourcesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDataSourcesResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
    */
   com.google.cloud.bigquery.datatransfer.v1.DataSource getDataSources(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDataSourcesResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
    */
   int getDataSourcesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDataSourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder>
       getDataSourcesOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListDataSourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

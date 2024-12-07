@@ -39,6 +39,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.appengine.v1.EndpointsApiService)
     EndpointsApiServiceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EndpointsApiService.newBuilder() to construct.
   private EndpointsApiService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -125,6 +126,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
      * <code>UNSPECIFIED_ROLLOUT_STRATEGY = 0;</code>
      */
     public static final int UNSPECIFIED_ROLLOUT_STRATEGY_VALUE = 0;
+
     /**
      *
      *
@@ -136,6 +138,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
      * <code>FIXED = 1;</code>
      */
     public static final int FIXED_VALUE = 1;
+
     /**
      *
      *
@@ -236,6 +239,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -260,6 +264,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -289,6 +294,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object configId_ = "";
+
   /**
    *
    *
@@ -323,6 +329,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +367,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
 
   public static final int ROLLOUT_STRATEGY_FIELD_NUMBER = 3;
   private int rolloutStrategy_ = 0;
+
   /**
    *
    *
@@ -376,6 +384,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
   public int getRolloutStrategyValue() {
     return rolloutStrategy_;
   }
+
   /**
    *
    *
@@ -399,6 +408,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
 
   public static final int DISABLE_TRACE_SAMPLING_FIELD_NUMBER = 4;
   private boolean disableTraceSampling_ = false;
+
   /**
    *
    *
@@ -606,6 +616,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -836,6 +847,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -859,6 +871,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -882,6 +895,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -904,6 +918,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +937,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +963,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object configId_ = "";
+
     /**
      *
      *
@@ -980,6 +997,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1031,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1045,6 +1064,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1093,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1108,6 +1129,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
     }
 
     private int rolloutStrategy_ = 0;
+
     /**
      *
      *
@@ -1124,6 +1146,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
     public int getRolloutStrategyValue() {
       return rolloutStrategy_;
     }
+
     /**
      *
      *
@@ -1143,6 +1166,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1187,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
           ? com.google.appengine.v1.EndpointsApiService.RolloutStrategy.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1186,6 +1211,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1232,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
     }
 
     private boolean disableTraceSampling_;
+
     /**
      *
      *
@@ -1222,6 +1249,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
     public boolean getDisableTraceSampling() {
       return disableTraceSampling_;
     }
+
     /**
      *
      *
@@ -1242,6 +1270,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

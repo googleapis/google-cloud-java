@@ -38,6 +38,7 @@ public interface ListEntityReconciliationJobsResponseOrBuilder
    */
   java.util.List<com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob>
       getEntityReconciliationJobsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ListEntityReconciliationJobsResponseOrBuilder
    */
   com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob getEntityReconciliationJobs(
       int index);
+
   /**
    *
    *
@@ -65,6 +67,7 @@ public interface ListEntityReconciliationJobsResponseOrBuilder
    * </code>
    */
   int getEntityReconciliationJobsCount();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface ListEntityReconciliationJobsResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJobOrBuilder>
       getEntityReconciliationJobsOrBuilderList();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface ListEntityReconciliationJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

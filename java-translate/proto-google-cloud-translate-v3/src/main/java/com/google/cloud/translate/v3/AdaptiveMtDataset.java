@@ -33,6 +33,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.AdaptiveMtDataset)
     AdaptiveMtDatasetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AdaptiveMtDataset.newBuilder() to construct.
   private AdaptiveMtDataset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceLanguageCode_ = "";
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetLanguageCode_ = "";
+
   /**
    *
    *
@@ -257,6 +265,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -283,6 +292,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
 
   public static final int EXAMPLE_COUNT_FIELD_NUMBER = 5;
   private int exampleCount_ = 0;
+
   /**
    *
    *
@@ -301,6 +311,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -317,6 +328,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -333,6 +345,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -350,6 +363,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -366,6 +380,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -382,6 +397,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -620,6 +636,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -910,6 +927,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -935,6 +953,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -960,6 +979,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -984,6 +1004,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1025,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1053,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1055,6 +1078,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1079,6 +1103,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1102,6 +1127,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1147,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1174,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object sourceLanguageCode_ = "";
+
     /**
      *
      *
@@ -1169,6 +1197,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1191,6 +1220,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1242,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1260,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1253,6 +1285,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object targetLanguageCode_ = "";
+
     /**
      *
      *
@@ -1275,6 +1308,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1297,6 +1331,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1318,6 +1353,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1335,6 +1371,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1396,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
     }
 
     private int exampleCount_;
+
     /**
      *
      *
@@ -1374,6 +1412,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
     public int getExampleCount() {
       return exampleCount_;
     }
+
     /**
      *
      *
@@ -1393,6 +1432,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1457,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1433,6 +1474,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1455,6 +1497,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1479,6 +1522,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1500,6 +1544,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1529,6 +1574,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1550,6 +1596,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1566,6 +1613,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1586,6 +1634,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1620,6 +1669,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1636,6 +1686,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1658,6 +1709,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1682,6 +1734,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1703,6 +1756,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1786,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1753,6 +1808,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1769,6 +1825,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1789,6 +1846,7 @@ public final class AdaptiveMtDataset extends com.google.protobuf.GeneratedMessag
             : updateTime_;
       }
     }
+
     /**
      *
      *

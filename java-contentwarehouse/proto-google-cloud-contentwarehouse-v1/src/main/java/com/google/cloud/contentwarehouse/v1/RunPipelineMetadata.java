@@ -33,6 +33,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.RunPipelineMetadata)
     RunPipelineMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RunPipelineMetadata.newBuilder() to construct.
   private RunPipelineMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return The inputPath.
      */
     java.lang.String getInputPath();
+
     /**
      *
      *
@@ -95,6 +97,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getInputPathBytes();
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.RunPipelineMetadata.GcsIngestPipelineMetadata)
       GcsIngestPipelineMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GcsIngestPipelineMetadata.newBuilder() to construct.
     private GcsIngestPipelineMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -146,6 +150,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object inputPath_ = "";
+
     /**
      *
      *
@@ -170,6 +175,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -365,6 +371,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -572,6 +579,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object inputPath_ = "";
+
       /**
        *
        *
@@ -595,6 +603,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -618,6 +627,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -640,6 +650,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -658,6 +669,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -768,6 +780,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return A list containing the documents.
      */
     java.util.List<java.lang.String> getDocumentsList();
+
     /**
      *
      *
@@ -780,6 +793,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return The count of documents.
      */
     int getDocumentsCount();
+
     /**
      *
      *
@@ -793,6 +807,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return The documents at the given index.
      */
     java.lang.String getDocuments(int index);
+
     /**
      *
      *
@@ -819,6 +834,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return The docAiDataset.
      */
     java.lang.String getDocAiDataset();
+
     /**
      *
      *
@@ -844,6 +860,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return The outputPath.
      */
     java.lang.String getOutputPath();
+
     /**
      *
      *
@@ -857,6 +874,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getOutputPathBytes();
   }
+
   /**
    *
    *
@@ -873,6 +891,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.RunPipelineMetadata.ExportToCdwPipelineMetadata)
       ExportToCdwPipelineMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ExportToCdwPipelineMetadata.newBuilder() to construct.
     private ExportToCdwPipelineMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -912,6 +931,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList documents_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -926,6 +946,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ProtocolStringList getDocumentsList() {
       return documents_;
     }
+
     /**
      *
      *
@@ -940,6 +961,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public int getDocumentsCount() {
       return documents_.size();
     }
+
     /**
      *
      *
@@ -955,6 +977,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public java.lang.String getDocuments(int index) {
       return documents_.get(index);
     }
+
     /**
      *
      *
@@ -975,6 +998,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object docAiDataset_ = "";
+
     /**
      *
      *
@@ -998,6 +1022,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1051,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object outputPath_ = "";
+
     /**
      *
      *
@@ -1049,6 +1075,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -1281,6 +1308,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1534,6 +1562,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -1549,6 +1578,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         documents_.makeImmutable();
         return documents_;
       }
+
       /**
        *
        *
@@ -1563,6 +1593,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       public int getDocumentsCount() {
         return documents_.size();
       }
+
       /**
        *
        *
@@ -1578,6 +1609,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       public java.lang.String getDocuments(int index) {
         return documents_.get(index);
       }
+
       /**
        *
        *
@@ -1593,6 +1625,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       public com.google.protobuf.ByteString getDocumentsBytes(int index) {
         return documents_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1616,6 +1649,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1638,6 +1672,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1657,6 +1692,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1675,6 +1711,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1700,6 +1737,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object docAiDataset_ = "";
+
       /**
        *
        *
@@ -1722,6 +1760,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1744,6 +1783,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1765,6 +1805,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1782,6 +1823,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1806,6 +1848,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object outputPath_ = "";
+
       /**
        *
        *
@@ -1828,6 +1871,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1850,6 +1894,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1871,6 +1916,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1888,6 +1934,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2000,6 +2047,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return A list containing the documents.
      */
     java.util.List<java.lang.String> getDocumentsList();
+
     /**
      *
      *
@@ -2013,6 +2061,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return The count of documents.
      */
     int getDocumentsCount();
+
     /**
      *
      *
@@ -2027,6 +2076,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return The documents at the given index.
      */
     java.lang.String getDocuments(int index);
+
     /**
      *
      *
@@ -2054,6 +2104,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return Whether the processorInfo field is set.
      */
     boolean hasProcessorInfo();
+
     /**
      *
      *
@@ -2066,6 +2117,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return The processorInfo.
      */
     com.google.cloud.contentwarehouse.v1.ProcessorInfo getProcessorInfo();
+
     /**
      *
      *
@@ -2077,6 +2129,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      */
     com.google.cloud.contentwarehouse.v1.ProcessorInfoOrBuilder getProcessorInfoOrBuilder();
   }
+
   /**
    *
    *
@@ -2093,6 +2146,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.RunPipelineMetadata.ProcessWithDocAiPipelineMetadata)
       ProcessWithDocAiPipelineMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ProcessWithDocAiPipelineMetadata.newBuilder() to construct.
     private ProcessWithDocAiPipelineMetadata(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -2132,6 +2186,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList documents_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -2147,6 +2202,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ProtocolStringList getDocumentsList() {
       return documents_;
     }
+
     /**
      *
      *
@@ -2162,6 +2218,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public int getDocumentsCount() {
       return documents_.size();
     }
+
     /**
      *
      *
@@ -2178,6 +2235,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public java.lang.String getDocuments(int index) {
       return documents_.get(index);
     }
+
     /**
      *
      *
@@ -2197,6 +2255,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
 
     public static final int PROCESSOR_INFO_FIELD_NUMBER = 2;
     private com.google.cloud.contentwarehouse.v1.ProcessorInfo processorInfo_;
+
     /**
      *
      *
@@ -2212,6 +2271,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public boolean hasProcessorInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2229,6 +2289,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.contentwarehouse.v1.ProcessorInfo.getDefaultInstance()
           : processorInfo_;
     }
+
     /**
      *
      *
@@ -2452,6 +2513,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2710,6 +2772,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -2726,6 +2789,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         documents_.makeImmutable();
         return documents_;
       }
+
       /**
        *
        *
@@ -2741,6 +2805,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       public int getDocumentsCount() {
         return documents_.size();
       }
+
       /**
        *
        *
@@ -2757,6 +2822,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       public java.lang.String getDocuments(int index) {
         return documents_.get(index);
       }
+
       /**
        *
        *
@@ -2773,6 +2839,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       public com.google.protobuf.ByteString getDocumentsBytes(int index) {
         return documents_.getByteString(index);
       }
+
       /**
        *
        *
@@ -2797,6 +2864,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2820,6 +2888,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2840,6 +2909,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2859,6 +2929,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2890,6 +2961,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
               com.google.cloud.contentwarehouse.v1.ProcessorInfo.Builder,
               com.google.cloud.contentwarehouse.v1.ProcessorInfoOrBuilder>
           processorInfoBuilder_;
+
       /**
        *
        *
@@ -2904,6 +2976,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       public boolean hasProcessorInfo() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2924,6 +2997,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
           return processorInfoBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2946,6 +3020,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2966,6 +3041,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2994,6 +3070,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -3013,6 +3090,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3027,6 +3105,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return getProcessorInfoFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3046,6 +3125,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
               : processorInfo_;
         }
       }
+
       /**
        *
        *
@@ -3160,6 +3240,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return The documentId.
      */
     java.lang.String getDocumentId();
+
     /**
      *
      *
@@ -3185,6 +3266,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return Whether the status field is set.
      */
     boolean hasStatus();
+
     /**
      *
      *
@@ -3197,6 +3279,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      * @return The status.
      */
     com.google.rpc.Status getStatus();
+
     /**
      *
      *
@@ -3208,6 +3291,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
      */
     com.google.rpc.StatusOrBuilder getStatusOrBuilder();
   }
+
   /**
    *
    *
@@ -3223,6 +3307,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.RunPipelineMetadata.IndividualDocumentStatus)
       IndividualDocumentStatusOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IndividualDocumentStatus.newBuilder() to construct.
     private IndividualDocumentStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3260,6 +3345,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object documentId_ = "";
+
     /**
      *
      *
@@ -3283,6 +3369,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -3309,6 +3396,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
 
     public static final int STATUS_FIELD_NUMBER = 2;
     private com.google.rpc.Status status_;
+
     /**
      *
      *
@@ -3324,6 +3412,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3339,6 +3428,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
+
     /**
      *
      *
@@ -3537,6 +3627,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3771,6 +3862,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object documentId_ = "";
+
       /**
        *
        *
@@ -3793,6 +3885,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3815,6 +3908,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3836,6 +3930,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3853,6 +3948,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3880,6 +3976,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           statusBuilder_;
+
       /**
        *
        *
@@ -3894,6 +3991,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -3912,6 +4010,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
           return statusBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3934,6 +4033,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3953,6 +4053,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3980,6 +4081,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -3999,6 +4101,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4013,6 +4116,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4029,6 +4133,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
           return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
         }
       }
+
       /**
        *
        *
@@ -4140,6 +4245,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     private PipelineMetadataCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4176,6 +4282,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int TOTAL_FILE_COUNT_FIELD_NUMBER = 1;
   private int totalFileCount_ = 0;
+
   /**
    *
    *
@@ -4194,6 +4301,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int FAILED_FILE_COUNT_FIELD_NUMBER = 2;
   private int failedFileCount_ = 0;
+
   /**
    *
    *
@@ -4212,6 +4320,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int USER_INFO_FIELD_NUMBER = 3;
   private com.google.cloud.contentwarehouse.v1.UserInfo userInfo_;
+
   /**
    *
    *
@@ -4227,6 +4336,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
   public boolean hasUserInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4244,6 +4354,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.contentwarehouse.v1.UserInfo.getDefaultInstance()
         : userInfo_;
   }
+
   /**
    *
    *
@@ -4261,6 +4372,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
   }
 
   public static final int GCS_INGEST_PIPELINE_METADATA_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -4278,6 +4390,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
   public boolean hasGcsIngestPipelineMetadata() {
     return pipelineMetadataCase_ == 4;
   }
+
   /**
    *
    *
@@ -4301,6 +4414,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     return com.google.cloud.contentwarehouse.v1.RunPipelineMetadata.GcsIngestPipelineMetadata
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4324,6 +4438,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
   }
 
   public static final int EXPORT_TO_CDW_PIPELINE_METADATA_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -4341,6 +4456,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
   public boolean hasExportToCdwPipelineMetadata() {
     return pipelineMetadataCase_ == 6;
   }
+
   /**
    *
    *
@@ -4364,6 +4480,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     return com.google.cloud.contentwarehouse.v1.RunPipelineMetadata.ExportToCdwPipelineMetadata
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4388,6 +4505,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PROCESS_WITH_DOC_AI_PIPELINE_METADATA_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -4405,6 +4523,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
   public boolean hasProcessWithDocAiPipelineMetadata() {
     return pipelineMetadataCase_ == 7;
   }
+
   /**
    *
    *
@@ -4429,6 +4548,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     return com.google.cloud.contentwarehouse.v1.RunPipelineMetadata.ProcessWithDocAiPipelineMetadata
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4459,6 +4579,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
   private java.util.List<
           com.google.cloud.contentwarehouse.v1.RunPipelineMetadata.IndividualDocumentStatus>
       individualDocumentStatuses_;
+
   /**
    *
    *
@@ -4476,6 +4597,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       getIndividualDocumentStatusesList() {
     return individualDocumentStatuses_;
   }
+
   /**
    *
    *
@@ -4495,6 +4617,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       getIndividualDocumentStatusesOrBuilderList() {
     return individualDocumentStatuses_;
   }
+
   /**
    *
    *
@@ -4510,6 +4633,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
   public int getIndividualDocumentStatusesCount() {
     return individualDocumentStatuses_.size();
   }
+
   /**
    *
    *
@@ -4526,6 +4650,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       getIndividualDocumentStatuses(int index) {
     return individualDocumentStatuses_.get(index);
   }
+
   /**
    *
    *
@@ -4814,6 +4939,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5188,6 +5314,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int totalFileCount_;
+
     /**
      *
      *
@@ -5203,6 +5330,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public int getTotalFileCount() {
       return totalFileCount_;
     }
+
     /**
      *
      *
@@ -5222,6 +5350,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5241,6 +5370,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private int failedFileCount_;
+
     /**
      *
      *
@@ -5256,6 +5386,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public int getFailedFileCount() {
       return failedFileCount_;
     }
+
     /**
      *
      *
@@ -5275,6 +5406,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5299,6 +5431,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
             com.google.cloud.contentwarehouse.v1.UserInfo.Builder,
             com.google.cloud.contentwarehouse.v1.UserInfoOrBuilder>
         userInfoBuilder_;
+
     /**
      *
      *
@@ -5313,6 +5446,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public boolean hasUserInfo() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -5333,6 +5467,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         return userInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5355,6 +5490,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5375,6 +5511,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5402,6 +5539,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -5421,6 +5559,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5435,6 +5574,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUserInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5453,6 +5593,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
             : userInfo_;
       }
     }
+
     /**
      *
      *
@@ -5486,6 +5627,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
             com.google.cloud.contentwarehouse.v1.RunPipelineMetadata
                 .GcsIngestPipelineMetadataOrBuilder>
         gcsIngestPipelineMetadataBuilder_;
+
     /**
      *
      *
@@ -5503,6 +5645,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public boolean hasGcsIngestPipelineMetadata() {
       return pipelineMetadataCase_ == 4;
     }
+
     /**
      *
      *
@@ -5535,6 +5678,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5560,6 +5704,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       pipelineMetadataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -5583,6 +5728,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       pipelineMetadataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -5623,6 +5769,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       pipelineMetadataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -5650,6 +5797,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -5666,6 +5814,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         getGcsIngestPipelineMetadataBuilder() {
       return getGcsIngestPipelineMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5693,6 +5842,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5742,6 +5892,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
             com.google.cloud.contentwarehouse.v1.RunPipelineMetadata
                 .ExportToCdwPipelineMetadataOrBuilder>
         exportToCdwPipelineMetadataBuilder_;
+
     /**
      *
      *
@@ -5759,6 +5910,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public boolean hasExportToCdwPipelineMetadata() {
       return pipelineMetadataCase_ == 6;
     }
+
     /**
      *
      *
@@ -5791,6 +5943,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5817,6 +5970,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       pipelineMetadataCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -5840,6 +5994,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       pipelineMetadataCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -5881,6 +6036,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       pipelineMetadataCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -5908,6 +6064,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -5924,6 +6081,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         getExportToCdwPipelineMetadataBuilder() {
       return getExportToCdwPipelineMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5951,6 +6109,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6003,6 +6162,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
             com.google.cloud.contentwarehouse.v1.RunPipelineMetadata
                 .ProcessWithDocAiPipelineMetadataOrBuilder>
         processWithDocAiPipelineMetadataBuilder_;
+
     /**
      *
      *
@@ -6020,6 +6180,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
     public boolean hasProcessWithDocAiPipelineMetadata() {
       return pipelineMetadataCase_ == 7;
     }
+
     /**
      *
      *
@@ -6052,6 +6213,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
             .ProcessWithDocAiPipelineMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6078,6 +6240,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       pipelineMetadataCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -6102,6 +6265,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       pipelineMetadataCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -6143,6 +6307,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       pipelineMetadataCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -6170,6 +6335,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6186,6 +6352,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         getProcessWithDocAiPipelineMetadataBuilder() {
       return getProcessWithDocAiPipelineMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6213,6 +6380,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
             .ProcessWithDocAiPipelineMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6300,6 +6468,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         return individualDocumentStatusesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -6318,6 +6487,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         return individualDocumentStatusesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -6337,6 +6507,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         return individualDocumentStatusesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -6363,6 +6534,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6387,6 +6559,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6412,6 +6585,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6438,6 +6612,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6461,6 +6636,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6485,6 +6661,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6511,6 +6688,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6532,6 +6710,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6553,6 +6732,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6568,6 +6748,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         getIndividualDocumentStatusesBuilder(int index) {
       return getIndividualDocumentStatusesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6588,6 +6769,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         return individualDocumentStatusesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6610,6 +6792,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(individualDocumentStatuses_);
       }
     }
+
     /**
      *
      *
@@ -6628,6 +6811,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
               com.google.cloud.contentwarehouse.v1.RunPipelineMetadata.IndividualDocumentStatus
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6647,6 +6831,7 @@ public final class RunPipelineMetadata extends com.google.protobuf.GeneratedMess
               com.google.cloud.contentwarehouse.v1.RunPipelineMetadata.IndividualDocumentStatus
                   .getDefaultInstance());
     }
+
     /**
      *
      *

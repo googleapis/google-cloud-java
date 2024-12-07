@@ -34,6 +34,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.ComputeScheduling)
     ComputeSchedulingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ComputeScheduling.newBuilder() to construct.
   private ComputeScheduling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -111,6 +112,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
      * <code>ON_HOST_MAINTENANCE_UNSPECIFIED = 0;</code>
      */
     public static final int ON_HOST_MAINTENANCE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -121,6 +123,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
      * <code>TERMINATE = 1;</code>
      */
     public static final int TERMINATE_VALUE = 1;
+
     /**
      *
      *
@@ -276,6 +279,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
      * <code>RESTART_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RESTART_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -287,6 +291,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
      * <code>AUTOMATIC_RESTART = 1;</code>
      */
     public static final int AUTOMATIC_RESTART_VALUE = 1;
+
     /**
      *
      *
@@ -386,6 +391,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
 
   public static final int ON_HOST_MAINTENANCE_FIELD_NUMBER = 1;
   private int onHostMaintenance_ = 0;
+
   /**
    *
    *
@@ -403,6 +409,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
   public int getOnHostMaintenanceValue() {
     return onHostMaintenance_;
   }
+
   /**
    *
    *
@@ -429,6 +436,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
 
   public static final int RESTART_TYPE_FIELD_NUMBER = 5;
   private int restartType_ = 0;
+
   /**
    *
    *
@@ -449,6 +457,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
   public int getRestartTypeValue() {
     return restartType_;
   }
+
   /**
    *
    *
@@ -478,6 +487,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.SchedulingNodeAffinity> nodeAffinities_;
+
   /**
    *
    *
@@ -493,6 +503,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       getNodeAffinitiesList() {
     return nodeAffinities_;
   }
+
   /**
    *
    *
@@ -508,6 +519,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       getNodeAffinitiesOrBuilderList() {
     return nodeAffinities_;
   }
+
   /**
    *
    *
@@ -522,6 +534,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
   public int getNodeAffinitiesCount() {
     return nodeAffinities_.size();
   }
+
   /**
    *
    *
@@ -536,6 +549,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.vmmigration.v1.SchedulingNodeAffinity getNodeAffinities(int index) {
     return nodeAffinities_.get(index);
   }
+
   /**
    *
    *
@@ -554,6 +568,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
 
   public static final int MIN_NODE_CPUS_FIELD_NUMBER = 4;
   private int minNodeCpus_ = 0;
+
   /**
    *
    *
@@ -770,6 +785,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1041,6 +1057,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int onHostMaintenance_ = 0;
+
     /**
      *
      *
@@ -1059,6 +1076,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
     public int getOnHostMaintenanceValue() {
       return onHostMaintenance_;
     }
+
     /**
      *
      *
@@ -1080,6 +1098,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1123,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.vmmigration.v1.ComputeScheduling.OnHostMaintenance.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1129,6 +1149,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1151,6 +1172,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
     }
 
     private int restartType_ = 0;
+
     /**
      *
      *
@@ -1171,6 +1193,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
     public int getRestartTypeValue() {
       return restartType_;
     }
+
     /**
      *
      *
@@ -1194,6 +1217,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1242,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.vmmigration.v1.ComputeScheduling.RestartType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1245,6 +1270,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1331,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
         return nodeAffinitiesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1323,6 +1350,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
         return nodeAffinitiesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1341,6 +1369,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
         return nodeAffinitiesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1366,6 +1395,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1418,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1412,6 +1443,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1437,6 +1469,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1459,6 +1492,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1481,6 +1515,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1504,6 +1539,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1525,6 +1561,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1546,6 +1583,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1561,6 +1599,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
         int index) {
       return getNodeAffinitiesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1580,6 +1619,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
         return nodeAffinitiesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1599,6 +1639,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(nodeAffinities_);
       }
     }
+
     /**
      *
      *
@@ -1615,6 +1656,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       return getNodeAffinitiesFieldBuilder()
           .addBuilder(com.google.cloud.vmmigration.v1.SchedulingNodeAffinity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1632,6 +1674,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.cloud.vmmigration.v1.SchedulingNodeAffinity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1669,6 +1712,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
     }
 
     private int minNodeCpus_;
+
     /**
      *
      *
@@ -1686,6 +1730,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
     public int getMinNodeCpus() {
       return minNodeCpus_;
     }
+
     /**
      *
      *
@@ -1707,6 +1752,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

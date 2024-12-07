@@ -40,6 +40,7 @@ public interface GetChannelPartnerRepricingConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

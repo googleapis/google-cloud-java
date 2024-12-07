@@ -36,6 +36,7 @@ public interface RankingRecordOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface RankingRecordOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface RankingRecordOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetLabelsSecurityPolicyRequest)
     SetLabelsSecurityPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetLabelsSecurityPolicyRequest.newBuilder() to construct.
   private SetLabelsSecurityPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int GLOBAL_SET_LABELS_REQUEST_RESOURCE_FIELD_NUMBER = 319917189;
   private com.google.cloud.compute.v1.GlobalSetLabelsRequest globalSetLabelsRequestResource_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
   public boolean hasGlobalSetLabelsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.GlobalSetLabelsRequest.getDefaultInstance()
         : globalSetLabelsRequestResource_;
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -416,6 +424,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -654,6 +663,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.GlobalSetLabelsRequest.Builder,
             com.google.cloud.compute.v1.GlobalSetLabelsRequestOrBuilder>
         globalSetLabelsRequestResourceBuilder_;
+
     /**
      *
      *
@@ -670,6 +680,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
     public boolean hasGlobalSetLabelsRequestResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -692,6 +703,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
         return globalSetLabelsRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -717,6 +729,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +752,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +784,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +806,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +824,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return getGlobalSetLabelsRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -829,6 +846,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
             : globalSetLabelsRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -858,6 +876,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -882,6 +901,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -906,6 +926,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -929,6 +950,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +970,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +997,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -996,6 +1020,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1043,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1065,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1083,7 @@ public final class SetLabelsSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

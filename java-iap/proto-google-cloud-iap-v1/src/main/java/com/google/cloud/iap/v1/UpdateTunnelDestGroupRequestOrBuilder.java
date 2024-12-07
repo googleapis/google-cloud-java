@@ -38,6 +38,7 @@ public interface UpdateTunnelDestGroupRequestOrBuilder
    * @return Whether the tunnelDestGroup field is set.
    */
   boolean hasTunnelDestGroup();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateTunnelDestGroupRequestOrBuilder
    * @return The tunnelDestGroup.
    */
   com.google.cloud.iap.v1.TunnelDestGroup getTunnelDestGroup();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateTunnelDestGroupRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface UpdateTunnelDestGroupRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

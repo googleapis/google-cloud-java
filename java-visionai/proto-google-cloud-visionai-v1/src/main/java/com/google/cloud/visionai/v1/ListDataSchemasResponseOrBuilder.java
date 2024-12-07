@@ -34,6 +34,7 @@ public interface ListDataSchemasResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.DataSchema data_schemas = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.DataSchema> getDataSchemasList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDataSchemasResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.DataSchema data_schemas = 1;</code>
    */
   com.google.cloud.visionai.v1.DataSchema getDataSchemas(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDataSchemasResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.DataSchema data_schemas = 1;</code>
    */
   int getDataSchemasCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDataSchemasResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.DataSchemaOrBuilder>
       getDataSchemasOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListDataSchemasResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

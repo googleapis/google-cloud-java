@@ -36,6 +36,7 @@ public interface RequestMetadataOrBuilder
    * @return The stream.
    */
   java.lang.String getStream();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RequestMetadataOrBuilder
    * @return The event.
    */
   java.lang.String getEvent();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface RequestMetadataOrBuilder
    * @return The series.
    */
   java.lang.String getSeries();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface RequestMetadataOrBuilder
    * @return The leaseId.
    */
   java.lang.String getLeaseId();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface RequestMetadataOrBuilder
    * @return The owner.
    */
   java.lang.String getOwner();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface RequestMetadataOrBuilder
    * @return Whether the leaseTerm field is set.
    */
   boolean hasLeaseTerm();
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public interface RequestMetadataOrBuilder
    * @return The leaseTerm.
    */
   com.google.protobuf.Duration getLeaseTerm();
+
   /**
    *
    *

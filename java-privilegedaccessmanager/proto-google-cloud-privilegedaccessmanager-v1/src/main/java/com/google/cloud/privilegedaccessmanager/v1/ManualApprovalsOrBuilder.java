@@ -51,6 +51,7 @@ public interface ManualApprovalsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.privilegedaccessmanager.v1.ManualApprovals.Step> getStepsList();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ManualApprovalsOrBuilder
    * </code>
    */
   com.google.cloud.privilegedaccessmanager.v1.ManualApprovals.Step getSteps(int index);
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ManualApprovalsOrBuilder
    * </code>
    */
   int getStepsCount();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface ManualApprovalsOrBuilder
   java.util.List<
           ? extends com.google.cloud.privilegedaccessmanager.v1.ManualApprovals.StepOrBuilder>
       getStepsOrBuilderList();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface DatasetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface DatasetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DatasetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface DatasetOrBuilder
    * @return The metadataSchemaUri.
    */
   java.lang.String getMetadataSchemaUri();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface DatasetOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface DatasetOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Value getMetadata();
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public interface DatasetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public interface DatasetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public interface DatasetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public interface DatasetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public interface DatasetOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -315,6 +326,7 @@ public interface DatasetOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -340,9 +352,11 @@ public interface DatasetOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -368,6 +382,7 @@ public interface DatasetOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -397,6 +412,7 @@ public interface DatasetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -439,6 +455,7 @@ public interface DatasetOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.SavedQuery saved_queries = 9;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.SavedQuery> getSavedQueriesList();
+
   /**
    *
    *
@@ -455,6 +472,7 @@ public interface DatasetOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.SavedQuery saved_queries = 9;</code>
    */
   com.google.cloud.aiplatform.v1beta1.SavedQuery getSavedQueries(int index);
+
   /**
    *
    *
@@ -471,6 +489,7 @@ public interface DatasetOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.SavedQuery saved_queries = 9;</code>
    */
   int getSavedQueriesCount();
+
   /**
    *
    *
@@ -488,6 +507,7 @@ public interface DatasetOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.SavedQueryOrBuilder>
       getSavedQueriesOrBuilderList();
+
   /**
    *
    *
@@ -518,6 +538,7 @@ public interface DatasetOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -531,6 +552,7 @@ public interface DatasetOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *
@@ -558,6 +580,7 @@ public interface DatasetOrBuilder
    * @return The metadataArtifact.
    */
   java.lang.String getMetadataArtifact();
+
   /**
    *
    *
@@ -587,6 +610,7 @@ public interface DatasetOrBuilder
    * @return The modelReference.
    */
   java.lang.String getModelReference();
+
   /**
    *
    *

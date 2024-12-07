@@ -33,6 +33,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ComputeTokensRequest)
     ComputeTokensRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ComputeTokensRequest.newBuilder() to construct.
   private ComputeTokensRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Value> instances_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.protobuf.Value> getInstancesList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
   public java.util.List<? extends com.google.protobuf.ValueOrBuilder> getInstancesOrBuilderList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
   public int getInstancesCount() {
     return instances_.size();
   }
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Value getInstances(int index) {
     return instances_.get(index);
   }
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
+
   /**
    *
    *
@@ -237,6 +246,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Content> contents_;
+
   /**
    *
    *
@@ -282,6 +293,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList() {
     return contents_;
   }
+
   /**
    *
    *
@@ -298,6 +310,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       getContentsOrBuilderList() {
     return contents_;
   }
+
   /**
    *
    *
@@ -313,6 +326,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
   public int getContentsCount() {
     return contents_.size();
   }
+
   /**
    *
    *
@@ -328,6 +342,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.aiplatform.v1beta1.Content getContents(int index) {
     return contents_.get(index);
   }
+
   /**
    *
    *
@@ -535,6 +550,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -850,6 +866,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -900,6 +918,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -924,6 +943,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +964,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1027,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return instancesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1048,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return instancesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1069,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return instancesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1072,6 +1096,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1120,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1147,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1174,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1198,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1193,6 +1222,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1216,6 +1246,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1270,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1294,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1278,6 +1311,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.Value.Builder getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1298,6 +1332,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1319,6 +1354,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
+
     /**
      *
      *
@@ -1335,6 +1371,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.Value.Builder addInstancesBuilder() {
       return getInstancesFieldBuilder().addBuilder(com.google.protobuf.Value.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1352,6 +1389,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       return getInstancesFieldBuilder()
           .addBuilder(index, com.google.protobuf.Value.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1387,6 +1425,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -1411,6 +1450,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1435,6 +1475,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1458,6 +1499,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1477,6 +1519,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1536,6 +1579,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return contentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1554,6 +1598,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return contentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1572,6 +1617,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return contentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1596,6 +1642,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1618,6 +1665,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1642,6 +1690,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1666,6 +1715,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1688,6 +1738,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1710,6 +1761,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1784,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1753,6 +1806,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1774,6 +1828,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1788,6 +1843,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1beta1.Content.Builder getContentsBuilder(int index) {
       return getContentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1806,6 +1862,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return contentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1825,6 +1882,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(contents_);
       }
     }
+
     /**
      *
      *
@@ -1840,6 +1898,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       return getContentsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1855,6 +1914,7 @@ public final class ComputeTokensRequest extends com.google.protobuf.GeneratedMes
       return getContentsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
     }
+
     /**
      *
      *

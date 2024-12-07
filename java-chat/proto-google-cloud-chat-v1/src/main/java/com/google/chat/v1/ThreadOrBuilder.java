@@ -38,6 +38,7 @@ public interface ThreadOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface ThreadOrBuilder
    * @return The threadKey.
    */
   java.lang.String getThreadKey();
+
   /**
    *
    *

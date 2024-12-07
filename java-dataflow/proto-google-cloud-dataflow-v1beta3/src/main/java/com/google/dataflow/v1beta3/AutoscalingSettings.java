@@ -33,6 +33,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.AutoscalingSettings)
     AutoscalingSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoscalingSettings.newBuilder() to construct.
   private AutoscalingSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int ALGORITHM_FIELD_NUMBER = 1;
   private int algorithm_ = 0;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
   public int getAlgorithmValue() {
     return algorithm_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int MAX_NUM_WORKERS_FIELD_NUMBER = 2;
   private int maxNumWorkers_ = 0;
+
   /**
    *
    *
@@ -288,6 +292,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -483,6 +488,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int algorithm_ = 0;
+
     /**
      *
      *
@@ -498,6 +504,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public int getAlgorithmValue() {
       return algorithm_;
     }
+
     /**
      *
      *
@@ -516,6 +523,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -535,6 +543,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           ? com.google.dataflow.v1beta3.AutoscalingAlgorithm.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -556,6 +565,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -575,6 +585,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     }
 
     private int maxNumWorkers_;
+
     /**
      *
      *
@@ -590,6 +601,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public int getMaxNumWorkers() {
       return maxNumWorkers_;
     }
+
     /**
      *
      *
@@ -609,6 +621,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

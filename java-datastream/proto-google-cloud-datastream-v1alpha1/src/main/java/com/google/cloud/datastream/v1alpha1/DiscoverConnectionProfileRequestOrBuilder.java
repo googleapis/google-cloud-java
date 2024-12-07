@@ -39,6 +39,7 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the connectionProfile field is set.
    */
   boolean hasConnectionProfile();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return The connectionProfile.
    */
   com.google.cloud.datastream.v1alpha1.ConnectionProfile getConnectionProfile();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the connectionProfileName field is set.
    */
   boolean hasConnectionProfileName();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return The connectionProfileName.
    */
   java.lang.String getConnectionProfileName();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the recursive field is set.
    */
   boolean hasRecursive();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the recursionDepth field is set.
    */
   boolean hasRecursionDepth();
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the oracleRdbms field is set.
    */
   boolean hasOracleRdbms();
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return The oracleRdbms.
    */
   com.google.cloud.datastream.v1alpha1.OracleRdbms getOracleRdbms();
+
   /**
    *
    *
@@ -226,6 +235,7 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the mysqlRdbms field is set.
    */
   boolean hasMysqlRdbms();
+
   /**
    *
    *
@@ -238,6 +248,7 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return The mysqlRdbms.
    */
   com.google.cloud.datastream.v1alpha1.MysqlRdbms getMysqlRdbms();
+
   /**
    *
    *

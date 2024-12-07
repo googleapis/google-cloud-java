@@ -34,6 +34,7 @@ public final class DoubleComparisonFilter extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.DoubleComparisonFilter)
     DoubleComparisonFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DoubleComparisonFilter.newBuilder() to construct.
   private DoubleComparisonFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class DoubleComparisonFilter extends com.google.protobuf.GeneratedM
 
   public static final int VALUE_COMPARISON_FIELD_NUMBER = 1;
   private int valueComparison_ = 0;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class DoubleComparisonFilter extends com.google.protobuf.GeneratedM
   public int getValueComparisonValue() {
     return valueComparison_;
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class DoubleComparisonFilter extends com.google.protobuf.GeneratedM
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private double value_ = 0D;
+
   /**
    *
    *
@@ -294,6 +298,7 @@ public final class DoubleComparisonFilter extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -490,6 +495,7 @@ public final class DoubleComparisonFilter extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int valueComparison_ = 0;
+
     /**
      *
      *
@@ -507,6 +513,7 @@ public final class DoubleComparisonFilter extends com.google.protobuf.GeneratedM
     public int getValueComparisonValue() {
       return valueComparison_;
     }
+
     /**
      *
      *
@@ -527,6 +534,7 @@ public final class DoubleComparisonFilter extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -546,6 +554,7 @@ public final class DoubleComparisonFilter extends com.google.protobuf.GeneratedM
           com.google.cloud.clouddms.v1.ValueComparison.forNumber(valueComparison_);
       return result == null ? com.google.cloud.clouddms.v1.ValueComparison.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -569,6 +578,7 @@ public final class DoubleComparisonFilter extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -590,6 +600,7 @@ public final class DoubleComparisonFilter extends com.google.protobuf.GeneratedM
     }
 
     private double value_;
+
     /**
      *
      *
@@ -605,6 +616,7 @@ public final class DoubleComparisonFilter extends com.google.protobuf.GeneratedM
     public double getValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -624,6 +636,7 @@ public final class DoubleComparisonFilter extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

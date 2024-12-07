@@ -37,6 +37,7 @@ public interface TransportOrBuilder
    * @return Whether the pubsub field is set.
    */
   boolean hasPubsub();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface TransportOrBuilder
    * @return The pubsub.
    */
   com.google.cloud.eventarc.v1.Pubsub getPubsub();
+
   /**
    *
    *

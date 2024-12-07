@@ -33,6 +33,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.inventories.v1beta.InsertRegionalInventoryRequest)
     InsertRegionalInventoryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertRegionalInventoryRequest.newBuilder() to construct.
   private InsertRegionalInventoryRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
 
   public static final int REGIONAL_INVENTORY_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.inventories.v1beta.RegionalInventory regionalInventory_;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
   public boolean hasRegionalInventory() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
         ? com.google.shopping.merchant.inventories.v1beta.RegionalInventory.getDefaultInstance()
         : regionalInventory_;
   }
+
   /**
    *
    *
@@ -368,6 +374,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -598,6 +605,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -623,6 +631,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -648,6 +657,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -672,6 +682,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +703,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +736,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
             com.google.shopping.merchant.inventories.v1beta.RegionalInventory.Builder,
             com.google.shopping.merchant.inventories.v1beta.RegionalInventoryOrBuilder>
         regionalInventoryBuilder_;
+
     /**
      *
      *
@@ -742,6 +755,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
     public boolean hasRegionalInventory() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -767,6 +781,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
         return regionalInventoryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -794,6 +809,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +834,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +869,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +893,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +913,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
       onChanged();
       return getRegionalInventoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -917,6 +937,7 @@ public final class InsertRegionalInventoryRequest extends com.google.protobuf.Ge
             : regionalInventory_;
       }
     }
+
     /**
      *
      *

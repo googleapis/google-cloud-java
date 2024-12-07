@@ -91,6 +91,7 @@ public enum SettingView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SETTING_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int SETTING_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -104,6 +105,7 @@ public enum SettingView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SETTING_VIEW_BASIC = 1;</code>
    */
   public static final int SETTING_VIEW_BASIC_VALUE = 1;
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public enum SettingView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SETTING_VIEW_EFFECTIVE_VALUE = 2;</code>
    */
   public static final int SETTING_VIEW_EFFECTIVE_VALUE_VALUE = 2;
+
   /**
    *
    *

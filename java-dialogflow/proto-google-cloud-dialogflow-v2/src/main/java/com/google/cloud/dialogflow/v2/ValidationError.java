@@ -33,6 +33,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.ValidationError)
     ValidationErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ValidationError.newBuilder() to construct.
   private ValidationError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,6 +139,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * <code>SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -148,6 +150,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * <code>INFO = 1;</code>
      */
     public static final int INFO_VALUE = 1;
+
     /**
      *
      *
@@ -158,6 +161,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * <code>WARNING = 2;</code>
      */
     public static final int WARNING_VALUE = 2;
+
     /**
      *
      *
@@ -168,6 +172,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * <code>ERROR = 3;</code>
      */
     public static final int ERROR_VALUE = 3;
+
     /**
      *
      *
@@ -268,6 +273,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
 
   public static final int SEVERITY_FIELD_NUMBER = 1;
   private int severity_ = 0;
+
   /**
    *
    *
@@ -283,6 +289,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
   public int getSeverityValue() {
     return severity_;
   }
+
   /**
    *
    *
@@ -308,6 +315,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList entries_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -335,6 +343,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getEntriesList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -362,6 +371,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
   public int getEntriesCount() {
     return entries_.size();
   }
+
   /**
    *
    *
@@ -390,6 +400,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getEntries(int index) {
     return entries_.get(index);
   }
+
   /**
    *
    *
@@ -423,6 +434,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorMessage_ = "";
+
   /**
    *
    *
@@ -446,6 +458,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -658,6 +671,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -876,6 +890,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int severity_ = 0;
+
     /**
      *
      *
@@ -891,6 +906,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     public int getSeverityValue() {
       return severity_;
     }
+
     /**
      *
      *
@@ -909,6 +925,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +945,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.dialogflow.v2.ValidationError.Severity.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -949,6 +967,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +995,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1004,6 +1024,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       entries_.makeImmutable();
       return entries_;
     }
+
     /**
      *
      *
@@ -1031,6 +1052,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     public int getEntriesCount() {
       return entries_.size();
     }
+
     /**
      *
      *
@@ -1059,6 +1081,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getEntries(int index) {
       return entries_.get(index);
     }
+
     /**
      *
      *
@@ -1087,6 +1110,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getEntriesBytes(int index) {
       return entries_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1123,6 +1147,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1183,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1190,6 +1216,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1221,6 +1248,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1287,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object errorMessage_ = "";
+
     /**
      *
      *
@@ -1281,6 +1310,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1303,6 +1333,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1324,6 +1355,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1341,6 +1373,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

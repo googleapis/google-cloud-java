@@ -33,6 +33,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.ListHardwareGroupsResponse)
     ListHardwareGroupsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListHardwareGroupsResponse.newBuilder() to construct.
   private ListHardwareGroupsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup>
       hardwareGroups_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       getHardwareGroupsList() {
     return hardwareGroups_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       getHardwareGroupsOrBuilderList() {
     return hardwareGroups_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
   public int getHardwareGroupsCount() {
     return hardwareGroups_.size();
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
   public com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup getHardwareGroups(int index) {
     return hardwareGroups_.get(index);
   }
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -230,6 +240,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -245,6 +256,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -450,6 +462,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -764,6 +777,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
         return hardwareGroupsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -781,6 +795,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
         return hardwareGroupsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -799,6 +814,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
         return hardwareGroupsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -823,6 +839,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +862,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +912,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +934,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +957,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1001,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1022,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1037,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
         getHardwareGroupsBuilder(int index) {
       return getHardwareGroupsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1030,6 +1056,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
         return hardwareGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1076,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(hardwareGroups_);
       }
     }
+
     /**
      *
      *
@@ -1065,6 +1093,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
           .addBuilder(
               com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1082,6 +1111,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
               index,
               com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1118,6 +1148,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1140,6 +1171,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1162,6 +1194,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1183,6 +1216,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1234,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1232,6 +1267,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1247,6 +1283,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -1261,6 +1298,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1276,6 +1314,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1291,6 +1330,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1314,6 +1354,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1336,6 +1377,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1397,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1373,6 +1416,7 @@ public final class ListHardwareGroupsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface ChangeParametersRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface ChangeParametersRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.channel.v1.Parameter> getParametersList();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface ChangeParametersRequestOrBuilder
    * </code>
    */
   com.google.cloud.channel.v1.Parameter getParameters(int index);
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ChangeParametersRequestOrBuilder
    * </code>
    */
   int getParametersCount();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface ChangeParametersRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.ParameterOrBuilder>
       getParametersOrBuilderList();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface ChangeParametersRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public interface ChangeParametersRequestOrBuilder
    * @return The purchaseOrderId.
    */
   java.lang.String getPurchaseOrderId();
+
   /**
    *
    *

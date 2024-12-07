@@ -33,6 +33,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.RejoinUserEventsRequest)
     RejoinUserEventsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RejoinUserEventsRequest.newBuilder() to construct.
   private RejoinUserEventsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -125,6 +126,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
      * <code>USER_EVENT_REJOIN_SCOPE_UNSPECIFIED = 0;</code>
      */
     public static final int USER_EVENT_REJOIN_SCOPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -135,6 +137,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
      * <code>JOINED_EVENTS = 1;</code>
      */
     public static final int JOINED_EVENTS_VALUE = 1;
+
     /**
      *
      *
@@ -238,6 +241,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -262,6 +266,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -289,6 +294,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
 
   public static final int USER_EVENT_REJOIN_SCOPE_FIELD_NUMBER = 2;
   private int userEventRejoinScope_ = 0;
+
   /**
    *
    *
@@ -309,6 +315,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
   public int getUserEventRejoinScopeValue() {
     return userEventRejoinScope_;
   }
+
   /**
    *
    *
@@ -511,6 +518,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -708,6 +716,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -731,6 +740,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -754,6 +764,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -776,6 +787,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +806,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +832,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
     }
 
     private int userEventRejoinScope_ = 0;
+
     /**
      *
      *
@@ -839,6 +853,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
     public int getUserEventRejoinScopeValue() {
       return userEventRejoinScope_;
     }
+
     /**
      *
      *
@@ -862,6 +877,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +905,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -916,6 +933,7 @@ public final class RejoinUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

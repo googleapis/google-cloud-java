@@ -42,6 +42,7 @@ public interface SetAddonsConfigRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface SetAddonsConfigRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public interface SetAddonsConfigRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -148,6 +151,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * @return Whether the addonsConfig field is set.
    */
   boolean hasAddonsConfig();
+
   /**
    *
    *
@@ -163,6 +167,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * @return The addonsConfig.
    */
   com.google.container.v1beta1.AddonsConfig getAddonsConfig();
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

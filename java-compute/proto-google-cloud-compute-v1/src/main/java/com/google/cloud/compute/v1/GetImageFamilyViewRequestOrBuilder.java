@@ -36,6 +36,7 @@ public interface GetImageFamilyViewRequestOrBuilder
    * @return The family.
    */
   java.lang.String getFamily();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetImageFamilyViewRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetImageFamilyViewRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

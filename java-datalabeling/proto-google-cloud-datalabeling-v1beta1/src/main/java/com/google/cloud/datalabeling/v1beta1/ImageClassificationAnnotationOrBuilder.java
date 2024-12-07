@@ -36,6 +36,7 @@ public interface ImageClassificationAnnotationOrBuilder
    * @return Whether the annotationSpec field is set.
    */
   boolean hasAnnotationSpec();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ImageClassificationAnnotationOrBuilder
    * @return The annotationSpec.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec();
+
   /**
    *
    *

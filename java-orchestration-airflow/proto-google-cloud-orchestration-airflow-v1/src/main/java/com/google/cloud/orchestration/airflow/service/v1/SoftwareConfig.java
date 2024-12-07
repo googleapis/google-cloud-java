@@ -33,6 +33,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.SoftwareConfig)
     SoftwareConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SoftwareConfig.newBuilder() to construct.
   private SoftwareConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -135,6 +136,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>WEB_SERVER_PLUGINS_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int WEB_SERVER_PLUGINS_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -145,6 +147,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>PLUGINS_DISABLED = 1;</code>
      */
     public static final int PLUGINS_DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -249,6 +252,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object imageVersion_ = "";
+
   /**
    *
    *
@@ -295,6 +299,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -370,6 +375,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAirflowConfigOverridesCount() {
     return internalGetAirflowConfigOverrides().getMap().size();
   }
+
   /**
    *
    *
@@ -400,12 +406,14 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAirflowConfigOverrides().getMap().containsKey(key);
   }
+
   /** Use {@link #getAirflowConfigOverridesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAirflowConfigOverrides() {
     return getAirflowConfigOverridesMap();
   }
+
   /**
    *
    *
@@ -433,6 +441,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getAirflowConfigOverridesMap() {
     return internalGetAirflowConfigOverrides().getMap();
   }
+
   /**
    *
    *
@@ -468,6 +477,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         internalGetAirflowConfigOverrides().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -532,6 +542,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public int getPypiPackagesCount() {
     return internalGetPypiPackages().getMap().size();
   }
+
   /**
    *
    *
@@ -555,12 +566,14 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetPypiPackages().getMap().containsKey(key);
   }
+
   /** Use {@link #getPypiPackagesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getPypiPackages() {
     return getPypiPackagesMap();
   }
+
   /**
    *
    *
@@ -581,6 +594,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getPypiPackagesMap() {
     return internalGetPypiPackages().getMap();
   }
+
   /**
    *
    *
@@ -608,6 +622,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetPypiPackages().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -664,6 +679,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public int getEnvVariablesCount() {
     return internalGetEnvVariables().getMap().size();
   }
+
   /**
    *
    *
@@ -701,12 +717,14 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetEnvVariables().getMap().containsKey(key);
   }
+
   /** Use {@link #getEnvVariablesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getEnvVariables() {
     return getEnvVariablesMap();
   }
+
   /**
    *
    *
@@ -741,6 +759,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getEnvVariablesMap() {
     return internalGetEnvVariables().getMap();
   }
+
   /**
    *
    *
@@ -782,6 +801,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetEnvVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -828,6 +848,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pythonVersion_ = "";
+
   /**
    *
    *
@@ -859,6 +880,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -893,6 +915,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCHEDULER_COUNT_FIELD_NUMBER = 7;
   private int schedulerCount_ = 0;
+
   /**
    *
    *
@@ -915,6 +938,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int CLOUD_DATA_LINEAGE_INTEGRATION_FIELD_NUMBER = 8;
   private com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration
       cloudDataLineageIntegration_;
+
   /**
    *
    *
@@ -932,6 +956,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudDataLineageIntegration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -953,6 +978,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : cloudDataLineageIntegration_;
   }
+
   /**
    *
    *
@@ -975,6 +1001,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WEB_SERVER_PLUGINS_MODE_FIELD_NUMBER = 10;
   private int webServerPluginsMode_ = 0;
+
   /**
    *
    *
@@ -996,6 +1023,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public int getWebServerPluginsModeValue() {
     return webServerPluginsMode_;
   }
+
   /**
    *
    *
@@ -1290,6 +1318,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1642,6 +1671,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object imageVersion_ = "";
+
     /**
      *
      *
@@ -1687,6 +1717,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1732,6 +1763,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1776,6 +1808,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1816,6 +1849,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1892,6 +1926,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public int getAirflowConfigOverridesCount() {
       return internalGetAirflowConfigOverrides().getMap().size();
     }
+
     /**
      *
      *
@@ -1922,12 +1957,14 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAirflowConfigOverrides().getMap().containsKey(key);
     }
+
     /** Use {@link #getAirflowConfigOverridesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAirflowConfigOverrides() {
       return getAirflowConfigOverridesMap();
     }
+
     /**
      *
      *
@@ -1955,6 +1992,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getAirflowConfigOverridesMap() {
       return internalGetAirflowConfigOverrides().getMap();
     }
+
     /**
      *
      *
@@ -1990,6 +2028,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
           internalGetAirflowConfigOverrides().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2031,6 +2070,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAirflowConfigOverrides().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2061,12 +2101,14 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAirflowConfigOverrides().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAirflowConfigOverrides() {
       bitField0_ |= 0x00000002;
       return internalGetMutableAirflowConfigOverrides().getMutableMap();
     }
+
     /**
      *
      *
@@ -2101,6 +2143,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -2159,6 +2202,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public int getPypiPackagesCount() {
       return internalGetPypiPackages().getMap().size();
     }
+
     /**
      *
      *
@@ -2182,12 +2226,14 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetPypiPackages().getMap().containsKey(key);
     }
+
     /** Use {@link #getPypiPackagesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getPypiPackages() {
       return getPypiPackagesMap();
     }
+
     /**
      *
      *
@@ -2208,6 +2254,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getPypiPackagesMap() {
       return internalGetPypiPackages().getMap();
     }
+
     /**
      *
      *
@@ -2235,6 +2282,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetPypiPackages().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2268,6 +2316,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutablePypiPackages().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2291,12 +2340,14 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutablePypiPackages().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutablePypiPackages() {
       bitField0_ |= 0x00000004;
       return internalGetMutablePypiPackages().getMutableMap();
     }
+
     /**
      *
      *
@@ -2324,6 +2375,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -2374,6 +2426,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public int getEnvVariablesCount() {
       return internalGetEnvVariables().getMap().size();
     }
+
     /**
      *
      *
@@ -2411,12 +2464,14 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetEnvVariables().getMap().containsKey(key);
     }
+
     /** Use {@link #getEnvVariablesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getEnvVariables() {
       return getEnvVariablesMap();
     }
+
     /**
      *
      *
@@ -2451,6 +2506,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getEnvVariablesMap() {
       return internalGetEnvVariables().getMap();
     }
+
     /**
      *
      *
@@ -2492,6 +2548,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetEnvVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2539,6 +2596,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEnvVariables().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2576,12 +2634,14 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEnvVariables().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEnvVariables() {
       bitField0_ |= 0x00000008;
       return internalGetMutableEnvVariables().getMutableMap();
     }
+
     /**
      *
      *
@@ -2623,6 +2683,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -2660,6 +2721,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object pythonVersion_ = "";
+
     /**
      *
      *
@@ -2690,6 +2752,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2720,6 +2783,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2749,6 +2813,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2774,6 +2839,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2806,6 +2872,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int schedulerCount_;
+
     /**
      *
      *
@@ -2824,6 +2891,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public int getSchedulerCount() {
       return schedulerCount_;
     }
+
     /**
      *
      *
@@ -2846,6 +2914,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2874,6 +2943,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration.Builder,
             com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegrationOrBuilder>
         cloudDataLineageIntegrationBuilder_;
+
     /**
      *
      *
@@ -2890,6 +2960,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudDataLineageIntegration() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2914,6 +2985,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         return cloudDataLineageIntegrationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2939,6 +3011,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2962,6 +3035,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2994,6 +3068,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3015,6 +3090,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3032,6 +3108,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCloudDataLineageIntegrationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3054,6 +3131,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             : cloudDataLineageIntegration_;
       }
     }
+
     /**
      *
      *
@@ -3085,6 +3163,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int webServerPluginsMode_ = 0;
+
     /**
      *
      *
@@ -3106,6 +3185,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public int getWebServerPluginsModeValue() {
       return webServerPluginsMode_;
     }
+
     /**
      *
      *
@@ -3130,6 +3210,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3158,6 +3239,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3187,6 +3269,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

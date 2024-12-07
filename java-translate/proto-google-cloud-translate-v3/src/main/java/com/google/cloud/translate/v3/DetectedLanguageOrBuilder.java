@@ -37,6 +37,7 @@ public interface DetectedLanguageOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

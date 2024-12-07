@@ -36,6 +36,7 @@ public interface PatchNetworkAttachmentRequestOrBuilder
    * @return The networkAttachment.
    */
   java.lang.String getNetworkAttachment();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PatchNetworkAttachmentRequestOrBuilder
    * @return Whether the networkAttachmentResource field is set.
    */
   boolean hasNetworkAttachmentResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface PatchNetworkAttachmentRequestOrBuilder
    * @return The networkAttachmentResource.
    */
   com.google.cloud.compute.v1.NetworkAttachment getNetworkAttachmentResource();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface PatchNetworkAttachmentRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface PatchNetworkAttachmentRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface PatchNetworkAttachmentRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface PatchNetworkAttachmentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

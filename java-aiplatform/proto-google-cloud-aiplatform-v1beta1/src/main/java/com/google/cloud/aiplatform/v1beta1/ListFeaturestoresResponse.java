@@ -34,6 +34,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ListFeaturestoresResponse)
     ListFeaturestoresResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListFeaturestoresResponse.newBuilder() to construct.
   private ListFeaturestoresResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Featurestore> featurestores_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Featurestore> getFeaturestoresList() {
     return featurestores_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       getFeaturestoresOrBuilderList() {
     return featurestores_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
   public int getFeaturestoresCount() {
     return featurestores_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
   public com.google.cloud.aiplatform.v1beta1.Featurestore getFeaturestores(int index) {
     return featurestores_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -365,6 +373,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +657,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
         return featurestoresBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -664,6 +674,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
         return featurestoresBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -680,6 +691,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
         return featurestoresBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -703,6 +715,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +759,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +804,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +825,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +846,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +866,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +886,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +900,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
         int index) {
       return getFeaturestoresFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -896,6 +918,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
         return featurestoresBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -913,6 +936,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(featurestores_);
       }
     }
+
     /**
      *
      *
@@ -926,6 +950,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       return getFeaturestoresFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Featurestore.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -940,6 +965,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       return getFeaturestoresFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Featurestore.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -975,6 +1001,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1000,6 +1027,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1053,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1078,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1099,7 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

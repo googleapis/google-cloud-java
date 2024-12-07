@@ -284,7 +284,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BulkAnalyzeConversations, expected %s or %s",
+                  "Unrecognized response type %s for method BulkAnalyzeConversations, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -305,7 +306,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BulkDeleteConversations, expected %s or %s",
+                  "Unrecognized response type %s for method BulkDeleteConversations, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -639,7 +641,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CalculateIssueModelStats, expected %s or %s",
+                  "Unrecognized response type %s for method CalculateIssueModelStats, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CalculateIssueModelStatsResponse.class.getName(),
                   Exception.class.getName())));
@@ -955,7 +958,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method InitializeEncryptionSpec, expected %s or %s",
+                  "Unrecognized response type %s for method InitializeEncryptionSpec, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1309,7 +1313,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateQaScorecardRevision, expected %s or %s",
+                  "Unrecognized response type %s for method CreateQaScorecardRevision, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QaScorecardRevision.class.getName(),
                   Exception.class.getName())));
@@ -1330,7 +1335,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetQaScorecardRevision, expected %s or %s",
+                  "Unrecognized response type %s for method GetQaScorecardRevision, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   QaScorecardRevision.class.getName(),
                   Exception.class.getName())));
@@ -1351,7 +1357,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method TuneQaScorecardRevision, expected %s or %s",
+                  "Unrecognized response type %s for method TuneQaScorecardRevision, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1373,7 +1380,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeployQaScorecardRevision, expected %s or %s",
+                  "Unrecognized response type %s for method DeployQaScorecardRevision, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QaScorecardRevision.class.getName(),
                   Exception.class.getName())));
@@ -1395,7 +1403,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UndeployQaScorecardRevision, expected %s or %s",
+                  "Unrecognized response type %s for method UndeployQaScorecardRevision, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QaScorecardRevision.class.getName(),
                   Exception.class.getName())));
@@ -1416,7 +1425,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteQaScorecardRevision, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteQaScorecardRevision, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -1438,7 +1448,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListQaScorecardRevisions, expected %s or %s",
+                  "Unrecognized response type %s for method ListQaScorecardRevisions, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListQaScorecardRevisionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -1566,7 +1577,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAllFeedbackLabels, expected %s or %s",
+                  "Unrecognized response type %s for method ListAllFeedbackLabels, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAllFeedbackLabelsResponse.class.getName(),
                   Exception.class.getName())));
@@ -1587,7 +1599,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BulkUploadFeedbackLabels, expected %s or %s",
+                  "Unrecognized response type %s for method BulkUploadFeedbackLabels, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1608,7 +1621,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BulkDownloadFeedbackLabels, expected %s or %s",
+                  "Unrecognized response type %s for method BulkDownloadFeedbackLabels, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

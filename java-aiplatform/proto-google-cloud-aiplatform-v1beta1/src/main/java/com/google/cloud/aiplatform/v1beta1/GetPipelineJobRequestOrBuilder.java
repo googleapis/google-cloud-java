@@ -40,6 +40,7 @@ public interface GetPipelineJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

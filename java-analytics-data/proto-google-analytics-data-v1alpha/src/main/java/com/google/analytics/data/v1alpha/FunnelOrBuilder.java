@@ -49,6 +49,7 @@ public interface FunnelOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.FunnelStep steps = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.FunnelStep> getStepsList();
+
   /**
    *
    *
@@ -59,6 +60,7 @@ public interface FunnelOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.FunnelStep steps = 2;</code>
    */
   com.google.analytics.data.v1alpha.FunnelStep getSteps(int index);
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface FunnelOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.FunnelStep steps = 2;</code>
    */
   int getStepsCount();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface FunnelOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.FunnelStepOrBuilder>
       getStepsOrBuilderList();
+
   /**
    *
    *

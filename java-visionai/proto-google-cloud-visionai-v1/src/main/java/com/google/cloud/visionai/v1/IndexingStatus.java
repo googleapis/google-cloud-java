@@ -33,6 +33,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.IndexingStatus)
     IndexingStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IndexingStatus.newBuilder() to construct.
   private IndexingStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,6 +128,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -137,6 +139,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>IN_PROGRESS = 1;</code>
      */
     public static final int IN_PROGRESS_VALUE = 1;
+
     /**
      *
      *
@@ -147,6 +150,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 2;</code>
      */
     public static final int SUCCEEDED_VALUE = 2;
+
     /**
      *
      *
@@ -245,6 +249,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -262,6 +267,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -286,6 +292,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object statusMessage_ = "";
+
   /**
    *
    *
@@ -309,6 +316,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -501,6 +509,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -697,6 +706,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -714,6 +724,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -734,6 +745,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +767,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.visionai.v1.IndexingStatus.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -778,6 +791,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +813,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object statusMessage_ = "";
+
     /**
      *
      *
@@ -821,6 +836,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -843,6 +859,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -864,6 +881,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +899,7 @@ public final class IndexingStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

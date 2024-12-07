@@ -34,6 +34,7 @@ public interface ListHcxActivationKeysResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.HcxActivationKey hcx_activation_keys = 1;</code>
    */
   java.util.List<com.google.cloud.vmwareengine.v1.HcxActivationKey> getHcxActivationKeysList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListHcxActivationKeysResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.HcxActivationKey hcx_activation_keys = 1;</code>
    */
   com.google.cloud.vmwareengine.v1.HcxActivationKey getHcxActivationKeys(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListHcxActivationKeysResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.HcxActivationKey hcx_activation_keys = 1;</code>
    */
   int getHcxActivationKeysCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListHcxActivationKeysResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.HcxActivationKeyOrBuilder>
       getHcxActivationKeysOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListHcxActivationKeysResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface ListHcxActivationKeysResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -130,6 +136,7 @@ public interface ListHcxActivationKeysResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -144,6 +151,7 @@ public interface ListHcxActivationKeysResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

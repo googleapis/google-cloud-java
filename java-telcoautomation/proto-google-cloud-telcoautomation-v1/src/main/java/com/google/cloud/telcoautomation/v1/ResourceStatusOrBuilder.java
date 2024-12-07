@@ -36,6 +36,7 @@ public interface ResourceStatusOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ResourceStatusOrBuilder
    * @return The resourceNamespace.
    */
   java.lang.String getResourceNamespace();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ResourceStatusOrBuilder
    * @return The group.
    */
   java.lang.String getGroup();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface ResourceStatusOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface ResourceStatusOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface ResourceStatusOrBuilder
    * @return The enum numeric value on the wire for resourceType.
    */
   int getResourceTypeValue();
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public interface ResourceStatusOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public interface ResourceStatusOrBuilder
    * @return Whether the nfDeployStatus field is set.
    */
   boolean hasNfDeployStatus();
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public interface ResourceStatusOrBuilder
    * @return The nfDeployStatus.
    */
   com.google.cloud.telcoautomation.v1.NFDeployStatus getNfDeployStatus();
+
   /**
    *
    *

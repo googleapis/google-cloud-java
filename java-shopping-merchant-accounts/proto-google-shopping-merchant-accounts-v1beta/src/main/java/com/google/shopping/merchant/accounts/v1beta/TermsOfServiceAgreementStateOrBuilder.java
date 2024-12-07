@@ -39,6 +39,7 @@ public interface TermsOfServiceAgreementStateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface TermsOfServiceAgreementStateOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface TermsOfServiceAgreementStateOrBuilder
    * @return The enum numeric value on the wire for termsOfServiceKind.
    */
   int getTermsOfServiceKindValue();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface TermsOfServiceAgreementStateOrBuilder
    * @return Whether the accepted field is set.
    */
   boolean hasAccepted();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface TermsOfServiceAgreementStateOrBuilder
    * @return The accepted.
    */
   com.google.shopping.merchant.accounts.v1beta.Accepted getAccepted();
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public interface TermsOfServiceAgreementStateOrBuilder
    * @return Whether the required field is set.
    */
   boolean hasRequired();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface TermsOfServiceAgreementStateOrBuilder
    * @return The required.
    */
   com.google.shopping.merchant.accounts.v1beta.Required getRequired();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface RawIndicesOrBuilder
    * @return A list containing the indices.
    */
   java.util.List<java.lang.Integer> getIndicesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RawIndicesOrBuilder
    * @return The count of indices.
    */
   int getIndicesCount();
+
   /**
    *
    *

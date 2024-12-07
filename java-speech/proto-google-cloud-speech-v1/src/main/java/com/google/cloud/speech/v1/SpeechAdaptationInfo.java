@@ -33,6 +33,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1.SpeechAdaptationInfo)
     SpeechAdaptationInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpeechAdaptationInfo.newBuilder() to construct.
   private SpeechAdaptationInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
 
   public static final int ADAPTATION_TIMEOUT_FIELD_NUMBER = 1;
   private boolean adaptationTimeout_ = false;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timeoutMessage_ = "";
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -303,6 +307,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -500,6 +505,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean adaptationTimeout_;
+
     /**
      *
      *
@@ -516,6 +522,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
     public boolean getAdaptationTimeout() {
       return adaptationTimeout_;
     }
+
     /**
      *
      *
@@ -536,6 +543,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -556,6 +564,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object timeoutMessage_ = "";
+
     /**
      *
      *
@@ -579,6 +588,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -602,6 +612,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +654,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

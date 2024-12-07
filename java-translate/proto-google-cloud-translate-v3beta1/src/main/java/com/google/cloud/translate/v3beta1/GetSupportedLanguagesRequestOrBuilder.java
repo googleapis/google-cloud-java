@@ -50,6 +50,7 @@ public interface GetSupportedLanguagesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface GetSupportedLanguagesRequestOrBuilder
    * @return The displayLanguageCode.
    */
   java.lang.String getDisplayLanguageCode();
+
   /**
    *
    *
@@ -130,6 +132,7 @@ public interface GetSupportedLanguagesRequestOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *

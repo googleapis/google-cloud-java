@@ -34,6 +34,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.PurchasableOffer)
     PurchasableOfferOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PurchasableOffer.newBuilder() to construct.
   private PurchasableOffer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int OFFER_FIELD_NUMBER = 1;
   private com.google.cloud.channel.v1.Offer offer_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
   public boolean hasOffer() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.channel.v1.Offer getOffer() {
     return offer_ == null ? com.google.cloud.channel.v1.Offer.getDefaultInstance() : offer_;
   }
+
   /**
    *
    *
@@ -273,6 +277,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -476,6 +481,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
             com.google.cloud.channel.v1.Offer.Builder,
             com.google.cloud.channel.v1.OfferOrBuilder>
         offerBuilder_;
+
     /**
      *
      *
@@ -490,6 +496,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
     public boolean hasOffer() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -508,6 +515,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
         return offerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -530,6 +538,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -549,6 +558,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -576,6 +586,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -595,6 +606,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -609,6 +621,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getOfferFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -625,6 +638,7 @@ public final class PurchasableOffer extends com.google.protobuf.GeneratedMessage
         return offer_ == null ? com.google.cloud.channel.v1.Offer.getDefaultInstance() : offer_;
       }
     }
+
     /**
      *
      *

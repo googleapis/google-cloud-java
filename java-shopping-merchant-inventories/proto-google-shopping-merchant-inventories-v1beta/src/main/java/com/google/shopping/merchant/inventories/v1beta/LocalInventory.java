@@ -37,6 +37,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.inventories.v1beta.LocalInventory)
     LocalInventoryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocalInventory.newBuilder() to construct.
   private LocalInventory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCOUNT_FIELD_NUMBER = 2;
   private long account_ = 0L;
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storeCode_ = "";
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -213,6 +219,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRICE_FIELD_NUMBER = 4;
   private com.google.shopping.type.Price price_;
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrice() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.type.Price getPrice() {
     return price_ == null ? com.google.shopping.type.Price.getDefaultInstance() : price_;
   }
+
   /**
    *
    *
@@ -259,6 +268,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SALE_PRICE_FIELD_NUMBER = 5;
   private com.google.shopping.type.Price salePrice_;
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSalePrice() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -293,6 +304,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.type.Price getSalePrice() {
     return salePrice_ == null ? com.google.shopping.type.Price.getDefaultInstance() : salePrice_;
   }
+
   /**
    *
    *
@@ -311,6 +323,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SALE_PRICE_EFFECTIVE_DATE_FIELD_NUMBER = 6;
   private com.google.type.Interval salePriceEffectiveDate_;
+
   /**
    *
    *
@@ -327,6 +340,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSalePriceEffectiveDate() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -345,6 +359,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.Interval.getDefaultInstance()
         : salePriceEffectiveDate_;
   }
+
   /**
    *
    *
@@ -366,6 +381,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object availability_ = "";
+
   /**
    *
    *
@@ -383,6 +399,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAvailability() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -408,6 +425,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -436,6 +454,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUANTITY_FIELD_NUMBER = 8;
   private long quantity_ = 0L;
+
   /**
    *
    *
@@ -452,6 +471,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQuantity() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -473,6 +493,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pickupMethod_ = "";
+
   /**
    *
    *
@@ -492,6 +513,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPickupMethod() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -519,6 +541,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -551,6 +574,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pickupSla_ = "";
+
   /**
    *
    *
@@ -570,6 +594,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPickupSla() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -597,6 +622,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -629,6 +655,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instoreProductLocation_ = "";
+
   /**
    *
    *
@@ -644,6 +671,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInstoreProductLocation() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -667,6 +695,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -695,6 +724,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.type.CustomAttribute> customAttributes_;
+
   /**
    *
    *
@@ -710,6 +740,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList() {
     return customAttributes_;
   }
+
   /**
    *
    *
@@ -726,6 +757,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       getCustomAttributesOrBuilderList() {
     return customAttributes_;
   }
+
   /**
    *
    *
@@ -741,6 +773,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public int getCustomAttributesCount() {
     return customAttributes_.size();
   }
+
   /**
    *
    *
@@ -756,6 +789,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.type.CustomAttribute getCustomAttributes(int index) {
     return customAttributes_.get(index);
   }
+
   /**
    *
    *
@@ -1075,6 +1109,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1505,6 +1540,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1529,6 +1565,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1553,6 +1590,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1576,6 +1614,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1595,6 +1634,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1621,6 +1661,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long account_;
+
     /**
      *
      *
@@ -1637,6 +1678,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public long getAccount() {
       return account_;
     }
+
     /**
      *
      *
@@ -1657,6 +1699,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1677,6 +1720,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object storeCode_ = "";
+
     /**
      *
      *
@@ -1705,6 +1749,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1733,6 +1778,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1760,6 +1806,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1783,6 +1830,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1818,6 +1866,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         priceBuilder_;
+
     /**
      *
      *
@@ -1832,6 +1881,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrice() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1850,6 +1900,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return priceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1872,6 +1923,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1891,6 +1943,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1918,6 +1971,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1937,6 +1991,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1951,6 +2006,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPriceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1967,6 +2023,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return price_ == null ? com.google.shopping.type.Price.getDefaultInstance() : price_;
       }
     }
+
     /**
      *
      *
@@ -1999,6 +2056,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         salePriceBuilder_;
+
     /**
      *
      *
@@ -2015,6 +2073,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSalePrice() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2037,6 +2096,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return salePriceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2061,6 +2121,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2082,6 +2143,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2111,6 +2173,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2132,6 +2195,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2148,6 +2212,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSalePriceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2168,6 +2233,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
             : salePrice_;
       }
     }
+
     /**
      *
      *
@@ -2202,6 +2268,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
             com.google.type.Interval.Builder,
             com.google.type.IntervalOrBuilder>
         salePriceEffectiveDateBuilder_;
+
     /**
      *
      *
@@ -2217,6 +2284,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSalePriceEffectiveDate() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2238,6 +2306,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return salePriceEffectiveDateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2261,6 +2330,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2281,6 +2351,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2309,6 +2380,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2329,6 +2401,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2344,6 +2417,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSalePriceEffectiveDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2363,6 +2437,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
             : salePriceEffectiveDate_;
       }
     }
+
     /**
      *
      *
@@ -2391,6 +2466,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object availability_ = "";
+
     /**
      *
      *
@@ -2407,6 +2483,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAvailability() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2431,6 +2508,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2455,6 +2533,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2478,6 +2557,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2497,6 +2577,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2523,6 +2604,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long quantity_;
+
     /**
      *
      *
@@ -2539,6 +2621,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQuantity() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2555,6 +2638,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public long getQuantity() {
       return quantity_;
     }
+
     /**
      *
      *
@@ -2575,6 +2659,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2595,6 +2680,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object pickupMethod_ = "";
+
     /**
      *
      *
@@ -2613,6 +2699,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPickupMethod() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2639,6 +2726,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2665,6 +2753,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2690,6 +2779,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2711,6 +2801,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2739,6 +2830,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object pickupSla_ = "";
+
     /**
      *
      *
@@ -2757,6 +2849,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPickupSla() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2783,6 +2876,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2809,6 +2903,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2834,6 +2929,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2855,6 +2951,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2883,6 +2980,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object instoreProductLocation_ = "";
+
     /**
      *
      *
@@ -2897,6 +2995,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInstoreProductLocation() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -2919,6 +3018,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2941,6 +3041,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2962,6 +3063,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2979,6 +3081,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3037,6 +3140,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return customAttributesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3055,6 +3159,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return customAttributesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3073,6 +3178,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return customAttributesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3097,6 +3203,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3119,6 +3226,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3143,6 +3251,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3167,6 +3276,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3189,6 +3299,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3211,6 +3322,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3233,6 +3345,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3254,6 +3367,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3275,6 +3389,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3289,6 +3404,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public com.google.shopping.type.CustomAttribute.Builder getCustomAttributesBuilder(int index) {
       return getCustomAttributesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3308,6 +3424,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return customAttributesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3327,6 +3444,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(customAttributes_);
       }
     }
+
     /**
      *
      *
@@ -3342,6 +3460,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       return getCustomAttributesFieldBuilder()
           .addBuilder(com.google.shopping.type.CustomAttribute.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3357,6 +3476,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       return getCustomAttributesFieldBuilder()
           .addBuilder(index, com.google.shopping.type.CustomAttribute.getDefaultInstance());
     }
+
     /**
      *
      *

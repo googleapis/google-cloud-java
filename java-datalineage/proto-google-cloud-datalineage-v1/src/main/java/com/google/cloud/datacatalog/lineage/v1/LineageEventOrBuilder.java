@@ -41,6 +41,7 @@ public interface LineageEventOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface LineageEventOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.datacatalog.lineage.v1.EventLink> getLinksList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface LineageEventOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.lineage.v1.EventLink getLinks(int index);
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface LineageEventOrBuilder
    * </code>
    */
   int getLinksCount();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface LineageEventOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.lineage.v1.EventLinkOrBuilder>
       getLinksOrBuilderList();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface LineageEventOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface LineageEventOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public interface LineageEventOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public interface LineageEventOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

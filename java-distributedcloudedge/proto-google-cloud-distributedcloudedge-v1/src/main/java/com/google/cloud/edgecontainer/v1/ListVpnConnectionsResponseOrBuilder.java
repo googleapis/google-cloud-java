@@ -34,6 +34,7 @@ public interface ListVpnConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.edgecontainer.v1.VpnConnection vpn_connections = 1;</code>
    */
   java.util.List<com.google.cloud.edgecontainer.v1.VpnConnection> getVpnConnectionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListVpnConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.edgecontainer.v1.VpnConnection vpn_connections = 1;</code>
    */
   com.google.cloud.edgecontainer.v1.VpnConnection getVpnConnections(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListVpnConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.edgecontainer.v1.VpnConnection vpn_connections = 1;</code>
    */
   int getVpnConnectionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListVpnConnectionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgecontainer.v1.VpnConnectionOrBuilder>
       getVpnConnectionsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListVpnConnectionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListVpnConnectionsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListVpnConnectionsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListVpnConnectionsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -44,6 +44,7 @@ public interface ListAssignmentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -90,6 +91,7 @@ public interface ListAssignmentsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

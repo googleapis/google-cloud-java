@@ -36,6 +36,7 @@ public interface DiskTypeOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DiskTypeOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface DiskTypeOrBuilder
    * @return Whether the defaultDiskSizeGb field is set.
    */
   boolean hasDefaultDiskSizeGb();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface DiskTypeOrBuilder
    * @return Whether the deprecated field is set.
    */
   boolean hasDeprecated();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface DiskTypeOrBuilder
    * @return The deprecated.
    */
   com.google.cloud.compute.v1.DeprecationStatus getDeprecated();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface DiskTypeOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface DiskTypeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public interface DiskTypeOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public interface DiskTypeOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public interface DiskTypeOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public interface DiskTypeOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -244,6 +255,7 @@ public interface DiskTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -269,6 +281,7 @@ public interface DiskTypeOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -281,6 +294,7 @@ public interface DiskTypeOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -306,6 +320,7 @@ public interface DiskTypeOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -318,6 +333,7 @@ public interface DiskTypeOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -343,6 +359,7 @@ public interface DiskTypeOrBuilder
    * @return Whether the validDiskSize field is set.
    */
   boolean hasValidDiskSize();
+
   /**
    *
    *
@@ -355,6 +372,7 @@ public interface DiskTypeOrBuilder
    * @return The validDiskSize.
    */
   java.lang.String getValidDiskSize();
+
   /**
    *
    *
@@ -380,6 +398,7 @@ public interface DiskTypeOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
+
   /**
    *
    *
@@ -392,6 +411,7 @@ public interface DiskTypeOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

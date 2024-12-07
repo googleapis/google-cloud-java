@@ -33,6 +33,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.SizeAndSunshineStats)
     SizeAndSunshineStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SizeAndSunshineStats.newBuilder() to construct.
   private SizeAndSunshineStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
 
   public static final int AREA_METERS2_FIELD_NUMBER = 1;
   private float areaMeters2_ = 0F;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList sunshineQuantiles_ = emptyFloatList();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
   public java.util.List<java.lang.Float> getSunshineQuantilesList() {
     return sunshineQuantiles_;
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
   public int getSunshineQuantilesCount() {
     return sunshineQuantiles_.size();
   }
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
 
   public static final int GROUND_AREA_METERS2_FIELD_NUMBER = 3;
   private float groundAreaMeters2_ = 0F;
+
   /**
    *
    *
@@ -359,6 +365,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -588,6 +595,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private float areaMeters2_;
+
     /**
      *
      *
@@ -604,6 +612,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
     public float getAreaMeters2() {
       return areaMeters2_;
     }
+
     /**
      *
      *
@@ -624,6 +633,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
       sunshineQuantiles_.makeImmutable();
       return sunshineQuantiles_;
     }
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
     public int getSunshineQuantilesCount() {
       return sunshineQuantiles_.size();
     }
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
     public float getSunshineQuantiles(int index) {
       return sunshineQuantiles_.getFloat(index);
     }
+
     /**
      *
      *
@@ -743,6 +757,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
     }
 
     private float groundAreaMeters2_;
+
     /**
      *
      *
@@ -831,6 +849,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
     public float getGroundAreaMeters2() {
       return groundAreaMeters2_;
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class SizeAndSunshineStats extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

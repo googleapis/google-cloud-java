@@ -34,6 +34,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.UploadedNpmPackage)
     UploadedNpmPackageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UploadedNpmPackage.newBuilder() to construct.
   private UploadedNpmPackage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
 
   public static final int FILE_HASHES_FIELD_NUMBER = 2;
   private com.google.cloudbuild.v1.FileHashes fileHashes_;
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
   public boolean hasFileHashes() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
         ? com.google.cloudbuild.v1.FileHashes.getDefaultInstance()
         : fileHashes_;
   }
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
 
   public static final int PUSH_TIMING_FIELD_NUMBER = 3;
   private com.google.cloudbuild.v1.TimeSpan pushTiming_;
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
   public boolean hasPushTiming() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -204,6 +212,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
         ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()
         : pushTiming_;
   }
+
   /**
    *
    *
@@ -409,6 +418,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -641,6 +651,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -706,6 +719,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +737,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
             com.google.cloudbuild.v1.FileHashes.Builder,
             com.google.cloudbuild.v1.FileHashesOrBuilder>
         fileHashesBuilder_;
+
     /**
      *
      *
@@ -766,6 +782,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
     public boolean hasFileHashes() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -786,6 +803,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
         return fileHashesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -808,6 +826,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +846,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +894,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +909,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getFileHashesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -905,6 +928,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
             : fileHashes_;
       }
     }
+
     /**
      *
      *
@@ -937,6 +961,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
             com.google.cloudbuild.v1.TimeSpan.Builder,
             com.google.cloudbuild.v1.TimeSpanOrBuilder>
         pushTimingBuilder_;
+
     /**
      *
      *
@@ -953,6 +978,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
     public boolean hasPushTiming() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -975,6 +1001,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
         return pushTimingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -999,6 +1026,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1048,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1049,6 +1078,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1100,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1117,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getPushTimingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1106,6 +1138,7 @@ public final class UploadedNpmPackage extends com.google.protobuf.GeneratedMessa
             : pushTiming_;
       }
     }
+
     /**
      *
      *

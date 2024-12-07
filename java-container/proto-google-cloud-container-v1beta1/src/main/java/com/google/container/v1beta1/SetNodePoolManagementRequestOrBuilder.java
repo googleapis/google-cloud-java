@@ -42,6 +42,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -150,6 +153,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getNodePoolId();
+
   /**
    *
    *
@@ -182,6 +186,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    * @return Whether the management field is set.
    */
   boolean hasManagement();
+
   /**
    *
    *
@@ -196,6 +201,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    * @return The management.
    */
   com.google.container.v1beta1.NodeManagement getManagement();
+
   /**
    *
    *
@@ -223,6 +229,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

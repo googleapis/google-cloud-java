@@ -34,6 +34,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.RecognitionConfig)
     RecognitionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RecognitionConfig.newBuilder() to construct.
   private RecognitionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     private DecodingConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,6 +118,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int AUTO_DECODING_CONFIG_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasAutoDecodingConfig() {
     return decodingConfigCase_ == 7;
   }
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.AutoDetectDecodingConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int EXPLICIT_DECODING_CONFIG_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasExplicitDecodingConfig() {
     return decodingConfigCase_ == 8;
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.ExplicitDecodingConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -297,6 +307,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList languageCodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -321,6 +332,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
     return languageCodes_;
   }
+
   /**
    *
    *
@@ -345,6 +357,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   public int getLanguageCodesCount() {
     return languageCodes_.size();
   }
+
   /**
    *
    *
@@ -370,6 +383,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   public java.lang.String getLanguageCodes(int index) {
     return languageCodes_.get(index);
   }
+
   /**
    *
    *
@@ -398,6 +412,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int FEATURES_FIELD_NUMBER = 2;
   private com.google.cloud.speech.v2.RecognitionFeatures features_;
+
   /**
    *
    *
@@ -413,6 +428,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasFeatures() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -430,6 +446,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.speech.v2.RecognitionFeatures.getDefaultInstance()
         : features_;
   }
+
   /**
    *
    *
@@ -448,6 +465,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int ADAPTATION_FIELD_NUMBER = 6;
   private com.google.cloud.speech.v2.SpeechAdaptation adaptation_;
+
   /**
    *
    *
@@ -464,6 +482,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasAdaptation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -482,6 +501,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.speech.v2.SpeechAdaptation.getDefaultInstance()
         : adaptation_;
   }
+
   /**
    *
    *
@@ -501,6 +521,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int TRANSCRIPT_NORMALIZATION_FIELD_NUMBER = 11;
   private com.google.cloud.speech.v2.TranscriptNormalization transcriptNormalization_;
+
   /**
    *
    *
@@ -521,6 +542,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasTranscriptNormalization() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -543,6 +565,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.speech.v2.TranscriptNormalization.getDefaultInstance()
         : transcriptNormalization_;
   }
+
   /**
    *
    *
@@ -567,6 +590,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int TRANSLATION_CONFIG_FIELD_NUMBER = 15;
   private com.google.cloud.speech.v2.TranslationConfig translationConfig_;
+
   /**
    *
    *
@@ -585,6 +609,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasTranslationConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -605,6 +630,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.speech.v2.TranslationConfig.getDefaultInstance()
         : translationConfig_;
   }
+
   /**
    *
    *
@@ -896,6 +922,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1264,6 +1291,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.AutoDetectDecodingConfig.Builder,
             com.google.cloud.speech.v2.AutoDetectDecodingConfigOrBuilder>
         autoDecodingConfigBuilder_;
+
     /**
      *
      *
@@ -1280,6 +1308,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasAutoDecodingConfig() {
       return decodingConfigCase_ == 7;
     }
+
     /**
      *
      *
@@ -1306,6 +1335,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.AutoDetectDecodingConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1330,6 +1360,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       decodingConfigCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1351,6 +1382,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       decodingConfigCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1386,6 +1418,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       decodingConfigCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1412,6 +1445,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1426,6 +1460,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         getAutoDecodingConfigBuilder() {
       return getAutoDecodingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1448,6 +1483,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.AutoDetectDecodingConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1488,6 +1524,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.ExplicitDecodingConfig.Builder,
             com.google.cloud.speech.v2.ExplicitDecodingConfigOrBuilder>
         explicitDecodingConfigBuilder_;
+
     /**
      *
      *
@@ -1504,6 +1541,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasExplicitDecodingConfig() {
       return decodingConfigCase_ == 8;
     }
+
     /**
      *
      *
@@ -1530,6 +1568,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.ExplicitDecodingConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1554,6 +1593,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       decodingConfigCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1615,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       decodingConfigCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1610,6 +1651,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       decodingConfigCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1636,6 +1678,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1650,6 +1693,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         getExplicitDecodingConfigBuilder() {
       return getExplicitDecodingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1672,6 +1716,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.ExplicitDecodingConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1707,6 +1752,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -1737,6 +1783,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1767,6 +1814,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1796,6 +1844,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1821,6 +1870,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1861,6 +1911,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1886,6 +1937,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       languageCodes_.makeImmutable();
       return languageCodes_;
     }
+
     /**
      *
      *
@@ -1910,6 +1962,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public int getLanguageCodesCount() {
       return languageCodes_.size();
     }
+
     /**
      *
      *
@@ -1935,6 +1988,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public java.lang.String getLanguageCodes(int index) {
       return languageCodes_.get(index);
     }
+
     /**
      *
      *
@@ -1960,6 +2014,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
       return languageCodes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1993,6 +2048,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2025,6 +2081,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2054,6 +2111,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2082,6 +2140,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2122,6 +2181,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.RecognitionFeatures.Builder,
             com.google.cloud.speech.v2.RecognitionFeaturesOrBuilder>
         featuresBuilder_;
+
     /**
      *
      *
@@ -2136,6 +2196,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasFeatures() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2156,6 +2217,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         return featuresBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2178,6 +2240,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2198,6 +2261,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2225,6 +2289,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2244,6 +2309,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2258,6 +2324,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getFeaturesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2276,6 +2343,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             : features_;
       }
     }
+
     /**
      *
      *
@@ -2308,6 +2376,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.SpeechAdaptation.Builder,
             com.google.cloud.speech.v2.SpeechAdaptationOrBuilder>
         adaptationBuilder_;
+
     /**
      *
      *
@@ -2323,6 +2392,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasAdaptation() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2344,6 +2414,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         return adaptationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2367,6 +2438,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2388,6 +2460,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2416,6 +2489,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2436,6 +2510,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2451,6 +2526,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getAdaptationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2470,6 +2546,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             : adaptation_;
       }
     }
+
     /**
      *
      *
@@ -2503,6 +2580,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.TranscriptNormalization.Builder,
             com.google.cloud.speech.v2.TranscriptNormalizationOrBuilder>
         transcriptNormalizationBuilder_;
+
     /**
      *
      *
@@ -2522,6 +2600,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasTranscriptNormalization() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2547,6 +2626,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         return transcriptNormalizationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2575,6 +2655,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2600,6 +2681,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2634,6 +2716,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2658,6 +2741,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2678,6 +2762,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTranscriptNormalizationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2702,6 +2787,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             : transcriptNormalization_;
       }
     }
+
     /**
      *
      *
@@ -2739,6 +2825,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.TranslationConfig.Builder,
             com.google.cloud.speech.v2.TranslationConfigOrBuilder>
         translationConfigBuilder_;
+
     /**
      *
      *
@@ -2756,6 +2843,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasTranslationConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2779,6 +2867,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         return translationConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2804,6 +2893,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2827,6 +2917,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2858,6 +2949,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2880,6 +2972,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2897,6 +2990,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTranslationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2918,6 +3012,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             : translationConfig_;
       }
     }
+
     /**
      *
      *

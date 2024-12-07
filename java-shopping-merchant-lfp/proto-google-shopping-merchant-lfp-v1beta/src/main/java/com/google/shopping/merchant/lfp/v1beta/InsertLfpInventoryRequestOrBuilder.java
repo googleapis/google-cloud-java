@@ -39,6 +39,7 @@ public interface InsertLfpInventoryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface InsertLfpInventoryRequestOrBuilder
    * @return Whether the lfpInventory field is set.
    */
   boolean hasLfpInventory();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface InsertLfpInventoryRequestOrBuilder
    * @return The lfpInventory.
    */
   com.google.shopping.merchant.lfp.v1beta.LfpInventory getLfpInventory();
+
   /**
    *
    *

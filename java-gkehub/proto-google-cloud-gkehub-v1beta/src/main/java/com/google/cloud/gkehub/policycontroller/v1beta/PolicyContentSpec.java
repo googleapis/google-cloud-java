@@ -34,6 +34,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.policycontroller.v1beta.PolicyContentSpec)
     PolicyContentSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PolicyContentSpec.newBuilder() to construct.
   private PolicyContentSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -111,6 +112,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
   public int getBundlesCount() {
     return internalGetBundles().getMap().size();
   }
+
   /**
    *
    *
@@ -131,6 +133,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
     }
     return internalGetBundles().getMap().containsKey(key);
   }
+
   /** Use {@link #getBundlesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -139,6 +142,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
       getBundles() {
     return getBundlesMap();
   }
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
       getBundlesMap() {
     return internalGetBundles().getMap();
   }
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
         map = internalGetBundles().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -215,6 +221,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
 
   public static final int TEMPLATE_LIBRARY_FIELD_NUMBER = 2;
   private com.google.cloud.gkehub.policycontroller.v1beta.TemplateLibraryConfig templateLibrary_;
+
   /**
    *
    *
@@ -231,6 +238,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
   public boolean hasTemplateLibrary() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -250,6 +258,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.gkehub.policycontroller.v1beta.TemplateLibraryConfig.getDefaultInstance()
         : templateLibrary_;
   }
+
   /**
    *
    *
@@ -454,6 +463,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -762,6 +772,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
     public int getBundlesCount() {
       return internalGetBundles().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -782,6 +793,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
       }
       return internalGetBundles().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getBundlesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -790,6 +802,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
         getBundles() {
       return getBundlesMap();
     }
+
     /**
      *
      *
@@ -809,6 +822,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
         getBundlesMap() {
       return internalGetBundles().getImmutableMap();
     }
+
     /**
      *
      *
@@ -837,6 +851,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
           map = internalGetMutableBundles().ensureBuilderMap();
       return map.containsKey(key) ? bundlesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -871,6 +886,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
       internalGetMutableBundles().clear();
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +907,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
       internalGetMutableBundles().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -899,6 +916,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000001;
       return internalGetMutableBundles().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -925,6 +943,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +972,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -992,6 +1012,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gkehub.policycontroller.v1beta.TemplateLibraryConfig.Builder,
             com.google.cloud.gkehub.policycontroller.v1beta.TemplateLibraryConfigOrBuilder>
         templateLibraryBuilder_;
+
     /**
      *
      *
@@ -1008,6 +1029,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
     public boolean hasTemplateLibrary() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1032,6 +1054,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
         return templateLibraryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1080,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1104,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1112,6 +1137,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1159,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1150,6 +1177,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTemplateLibraryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1172,6 +1200,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
             : templateLibrary_;
       }
     }
+
     /**
      *
      *

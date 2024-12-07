@@ -72,6 +72,7 @@ public enum EncryptionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENCRYPTION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int ENCRYPTION_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum EncryptionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SERVICE_MANAGED = 1;</code>
    */
   public static final int SERVICE_MANAGED_VALUE = 1;
+
   /**
    *
    *

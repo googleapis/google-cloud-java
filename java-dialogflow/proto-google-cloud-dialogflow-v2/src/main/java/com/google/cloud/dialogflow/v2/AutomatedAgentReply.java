@@ -33,6 +33,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.AutomatedAgentReply)
     AutomatedAgentReplyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutomatedAgentReply.newBuilder() to construct.
   private AutomatedAgentReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,6 +120,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * <code>AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * <code>PARTIAL = 1;</code>
      */
     public static final int PARTIAL_VALUE = 1;
+
     /**
      *
      *
@@ -233,6 +236,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int DETECT_INTENT_RESPONSE_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2.DetectIntentResponse detectIntentResponse_;
+
   /**
    *
    *
@@ -250,6 +254,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   public boolean hasDetectIntentResponse() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -269,6 +274,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dialogflow.v2.DetectIntentResponse.getDefaultInstance()
         : detectIntentResponse_;
   }
+
   /**
    *
    *
@@ -290,6 +296,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
 
   public static final int AUTOMATED_AGENT_REPLY_TYPE_FIELD_NUMBER = 7;
   private int automatedAgentReplyType_ = 0;
+
   /**
    *
    *
@@ -307,6 +314,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   public int getAutomatedAgentReplyTypeValue() {
     return automatedAgentReplyType_;
   }
+
   /**
    *
    *
@@ -333,6 +341,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
 
   public static final int ALLOW_CANCELLATION_FIELD_NUMBER = 8;
   private boolean allowCancellation_ = false;
+
   /**
    *
    *
@@ -355,6 +364,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cxCurrentPage_ = "";
+
   /**
    *
    *
@@ -380,6 +390,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -604,6 +615,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -852,6 +864,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
             com.google.cloud.dialogflow.v2.DetectIntentResponse.Builder,
             com.google.cloud.dialogflow.v2.DetectIntentResponseOrBuilder>
         detectIntentResponseBuilder_;
+
     /**
      *
      *
@@ -868,6 +881,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public boolean hasDetectIntentResponse() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -890,6 +904,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         return detectIntentResponseBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -915,6 +930,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +953,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +985,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -989,6 +1007,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1025,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       onChanged();
       return getDetectIntentResponseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1027,6 +1047,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
             : detectIntentResponse_;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1077,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     }
 
     private int automatedAgentReplyType_ = 0;
+
     /**
      *
      *
@@ -1073,6 +1095,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public int getAutomatedAgentReplyTypeValue() {
       return automatedAgentReplyType_;
     }
+
     /**
      *
      *
@@ -1093,6 +1116,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1116,6 +1140,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1140,6 +1165,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1187,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     }
 
     private boolean allowCancellation_;
+
     /**
      *
      *
@@ -1178,6 +1205,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public boolean getAllowCancellation() {
       return allowCancellation_;
     }
+
     /**
      *
      *
@@ -1199,6 +1227,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1249,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object cxCurrentPage_ = "";
+
     /**
      *
      *
@@ -1244,6 +1274,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1268,6 +1299,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1291,6 +1323,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1310,6 +1343,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

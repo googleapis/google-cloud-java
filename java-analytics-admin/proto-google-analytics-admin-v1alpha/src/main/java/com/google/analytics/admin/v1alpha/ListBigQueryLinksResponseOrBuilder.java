@@ -34,6 +34,7 @@ public interface ListBigQueryLinksResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.BigQueryLink bigquery_links = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.BigQueryLink> getBigqueryLinksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListBigQueryLinksResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.BigQueryLink bigquery_links = 1;</code>
    */
   com.google.analytics.admin.v1alpha.BigQueryLink getBigqueryLinks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListBigQueryLinksResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.BigQueryLink bigquery_links = 1;</code>
    */
   int getBigqueryLinksCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListBigQueryLinksResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.BigQueryLinkOrBuilder>
       getBigqueryLinksOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListBigQueryLinksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

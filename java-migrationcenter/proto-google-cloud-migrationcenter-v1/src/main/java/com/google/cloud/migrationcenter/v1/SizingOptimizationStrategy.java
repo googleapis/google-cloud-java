@@ -88,6 +88,7 @@ public enum SizingOptimizationStrategy implements com.google.protobuf.ProtocolMe
    * <code>SIZING_OPTIMIZATION_STRATEGY_UNSPECIFIED = 0;</code>
    */
   public static final int SIZING_OPTIMIZATION_STRATEGY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -100,6 +101,7 @@ public enum SizingOptimizationStrategy implements com.google.protobuf.ProtocolMe
    * <code>SIZING_OPTIMIZATION_STRATEGY_SAME_AS_SOURCE = 1;</code>
    */
   public static final int SIZING_OPTIMIZATION_STRATEGY_SAME_AS_SOURCE_VALUE = 1;
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public enum SizingOptimizationStrategy implements com.google.protobuf.ProtocolMe
    * <code>SIZING_OPTIMIZATION_STRATEGY_MODERATE = 2;</code>
    */
   public static final int SIZING_OPTIMIZATION_STRATEGY_MODERATE_VALUE = 2;
+
   /**
    *
    *

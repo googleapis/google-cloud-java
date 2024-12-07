@@ -36,6 +36,7 @@ public final class DeleteRuntimeProjectAttachmentRequest
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.DeleteRuntimeProjectAttachmentRequest)
     DeleteRuntimeProjectAttachmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteRuntimeProjectAttachmentRequest.newBuilder() to construct.
   private DeleteRuntimeProjectAttachmentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class DeleteRuntimeProjectAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class DeleteRuntimeProjectAttachmentRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -286,6 +289,7 @@ public final class DeleteRuntimeProjectAttachmentRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -476,6 +480,7 @@ public final class DeleteRuntimeProjectAttachmentRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -502,6 +507,7 @@ public final class DeleteRuntimeProjectAttachmentRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -528,6 +534,7 @@ public final class DeleteRuntimeProjectAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -553,6 +560,7 @@ public final class DeleteRuntimeProjectAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -574,6 +582,7 @@ public final class DeleteRuntimeProjectAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SuggestionResult)
     SuggestionResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SuggestionResult.newBuilder() to construct.
   private SuggestionResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,6 +90,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     private SuggestionResponseCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -132,6 +134,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ERROR_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -147,6 +150,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   public boolean hasError() {
     return suggestionResponseCase_ == 1;
   }
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     }
     return com.google.rpc.Status.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUGGEST_ARTICLES_RESPONSE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   public boolean hasSuggestArticlesResponse() {
     return suggestionResponseCase_ == 2;
   }
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUGGEST_KNOWLEDGE_ASSIST_RESPONSE_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   public boolean hasSuggestKnowledgeAssistResponse() {
     return suggestionResponseCase_ == 8;
   }
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -299,6 +310,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUGGEST_FAQ_ANSWERS_RESPONSE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -316,6 +328,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   public boolean hasSuggestFaqAnswersResponse() {
     return suggestionResponseCase_ == 3;
   }
+
   /**
    *
    *
@@ -337,6 +350,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -358,6 +372,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUGGEST_SMART_REPLIES_RESPONSE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -375,6 +390,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   public boolean hasSuggestSmartRepliesResponse() {
     return suggestionResponseCase_ == 4;
   }
+
   /**
    *
    *
@@ -396,6 +412,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -417,6 +434,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUGGEST_DIALOGFLOW_ASSISTS_RESPONSE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -434,6 +452,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   public boolean hasSuggestDialogflowAssistsResponse() {
     return suggestionResponseCase_ == 5;
   }
+
   /**
    *
    *
@@ -457,6 +476,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -480,6 +500,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUGGEST_ENTITY_EXTRACTION_RESPONSE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -497,6 +518,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   public boolean hasSuggestEntityExtractionResponse() {
     return suggestionResponseCase_ == 7;
   }
+
   /**
    *
    *
@@ -520,6 +542,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -831,6 +854,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1164,6 +1188,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -1179,6 +1204,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     public boolean hasError() {
       return suggestionResponseCase_ == 1;
     }
+
     /**
      *
      *
@@ -1204,6 +1230,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         return com.google.rpc.Status.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1226,6 +1253,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1245,6 +1273,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1305,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1301,6 +1331,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1313,6 +1344,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     public com.google.rpc.Status.Builder getErrorBuilder() {
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1333,6 +1365,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         return com.google.rpc.Status.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1367,6 +1400,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse.Builder,
             com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponseOrBuilder>
         suggestArticlesResponseBuilder_;
+
     /**
      *
      *
@@ -1383,6 +1417,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     public boolean hasSuggestArticlesResponse() {
       return suggestionResponseCase_ == 2;
     }
+
     /**
      *
      *
@@ -1410,6 +1445,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1434,6 +1470,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1455,6 +1492,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1492,6 +1530,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1518,6 +1557,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1532,6 +1572,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         getSuggestArticlesResponseBuilder() {
       return getSuggestArticlesResponseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1554,6 +1595,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1594,6 +1636,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse.Builder,
             com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponseOrBuilder>
         suggestKnowledgeAssistResponseBuilder_;
+
     /**
      *
      *
@@ -1611,6 +1654,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     public boolean hasSuggestKnowledgeAssistResponse() {
       return suggestionResponseCase_ == 8;
     }
+
     /**
      *
      *
@@ -1642,6 +1686,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1667,6 +1712,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1690,6 +1736,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1728,6 +1775,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1755,6 +1803,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1770,6 +1819,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         getSuggestKnowledgeAssistResponseBuilder() {
       return getSuggestKnowledgeAssistResponseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1795,6 +1845,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1838,6 +1889,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.Builder,
             com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponseOrBuilder>
         suggestFaqAnswersResponseBuilder_;
+
     /**
      *
      *
@@ -1855,6 +1907,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     public boolean hasSuggestFaqAnswersResponse() {
       return suggestionResponseCase_ == 3;
     }
+
     /**
      *
      *
@@ -1884,6 +1937,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1909,6 +1963,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1931,6 +1986,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1969,6 +2025,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1996,6 +2053,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2011,6 +2069,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         getSuggestFaqAnswersResponseBuilder() {
       return getSuggestFaqAnswersResponseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2035,6 +2094,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2076,6 +2136,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.Builder,
             com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponseOrBuilder>
         suggestSmartRepliesResponseBuilder_;
+
     /**
      *
      *
@@ -2093,6 +2154,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     public boolean hasSuggestSmartRepliesResponse() {
       return suggestionResponseCase_ == 4;
     }
+
     /**
      *
      *
@@ -2122,6 +2184,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2147,6 +2210,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2169,6 +2233,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2207,6 +2272,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2234,6 +2300,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2249,6 +2316,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         getSuggestSmartRepliesResponseBuilder() {
       return getSuggestSmartRepliesResponseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2273,6 +2341,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2315,6 +2384,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.Builder,
             com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder>
         suggestDialogflowAssistsResponseBuilder_;
+
     /**
      *
      *
@@ -2332,6 +2402,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     public boolean hasSuggestDialogflowAssistsResponse() {
       return suggestionResponseCase_ == 5;
     }
+
     /**
      *
      *
@@ -2363,6 +2434,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2388,6 +2460,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2411,6 +2484,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2449,6 +2523,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2476,6 +2551,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2491,6 +2567,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         getSuggestDialogflowAssistsResponseBuilder() {
       return getSuggestDialogflowAssistsResponseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2516,6 +2593,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2559,6 +2637,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.Builder,
             com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder>
         suggestEntityExtractionResponseBuilder_;
+
     /**
      *
      *
@@ -2576,6 +2655,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     public boolean hasSuggestEntityExtractionResponse() {
       return suggestionResponseCase_ == 7;
     }
+
     /**
      *
      *
@@ -2607,6 +2687,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2632,6 +2713,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2655,6 +2737,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2693,6 +2776,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2720,6 +2804,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2735,6 +2820,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         getSuggestEntityExtractionResponseBuilder() {
       return getSuggestEntityExtractionResponseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2760,6 +2846,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

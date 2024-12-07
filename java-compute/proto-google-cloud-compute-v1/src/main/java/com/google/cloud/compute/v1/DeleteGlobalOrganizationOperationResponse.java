@@ -34,6 +34,7 @@ public final class DeleteGlobalOrganizationOperationResponse
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteGlobalOrganizationOperationResponse)
     DeleteGlobalOrganizationOperationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteGlobalOrganizationOperationResponse.newBuilder() to construct.
   private DeleteGlobalOrganizationOperationResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -215,6 +216,7 @@ public final class DeleteGlobalOrganizationOperationResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

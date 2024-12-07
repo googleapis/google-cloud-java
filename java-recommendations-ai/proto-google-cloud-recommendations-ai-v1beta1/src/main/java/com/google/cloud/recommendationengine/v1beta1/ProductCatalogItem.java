@@ -33,6 +33,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.ProductCatalogItem)
     ProductCatalogItemOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProductCatalogItem.newBuilder() to construct.
   private ProductCatalogItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -142,6 +143,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      * <code>IN_STOCK = 0;</code>
      */
     public static final StockState IN_STOCK = STOCK_STATE_UNSPECIFIED;
+
     /**
      *
      *
@@ -152,6 +154,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      * <code>STOCK_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STOCK_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -162,6 +165,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      * <code>IN_STOCK = 0;</code>
      */
     public static final int IN_STOCK_VALUE = 0;
+
     /**
      *
      *
@@ -172,6 +176,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      * <code>OUT_OF_STOCK = 1;</code>
      */
     public static final int OUT_OF_STOCK_VALUE = 1;
+
     /**
      *
      *
@@ -182,6 +187,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      * <code>PREORDER = 2;</code>
      */
     public static final int PREORDER_VALUE = 2;
+
     /**
      *
      *
@@ -320,6 +326,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      */
     float getOriginalPrice();
   }
+
   /**
    *
    *
@@ -334,6 +341,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice)
       ExactPriceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ExactPrice.newBuilder() to construct.
     private ExactPrice(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -365,6 +373,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
     public static final int DISPLAY_PRICE_FIELD_NUMBER = 1;
     private float displayPrice_ = 0F;
+
     /**
      *
      *
@@ -383,6 +392,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
     public static final int ORIGINAL_PRICE_FIELD_NUMBER = 2;
     private float originalPrice_ = 0F;
+
     /**
      *
      *
@@ -579,6 +589,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -789,6 +800,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private float displayPrice_;
+
       /**
        *
        *
@@ -804,6 +816,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       public float getDisplayPrice() {
         return displayPrice_;
       }
+
       /**
        *
        *
@@ -823,6 +836,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -842,6 +856,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
 
       private float originalPrice_;
+
       /**
        *
        *
@@ -858,6 +873,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       public float getOriginalPrice() {
         return originalPrice_;
       }
+
       /**
        *
        *
@@ -878,6 +894,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -996,6 +1013,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      */
     float getMax();
   }
+
   /**
    *
    *
@@ -1011,6 +1029,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange)
       PriceRangeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PriceRange.newBuilder() to construct.
     private PriceRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1042,6 +1061,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
     public static final int MIN_FIELD_NUMBER = 1;
     private float min_ = 0F;
+
     /**
      *
      *
@@ -1060,6 +1080,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
     public static final int MAX_FIELD_NUMBER = 2;
     private float max_ = 0F;
+
     /**
      *
      *
@@ -1255,6 +1276,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1466,6 +1488,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private float min_;
+
       /**
        *
        *
@@ -1481,6 +1504,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       public float getMin() {
         return min_;
       }
+
       /**
        *
        *
@@ -1500,6 +1524,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1519,6 +1544,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
 
       private float max_;
+
       /**
        *
        *
@@ -1534,6 +1560,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       public float getMax() {
         return max_;
       }
+
       /**
        *
        *
@@ -1553,6 +1580,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1656,6 +1684,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     private PriceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1689,6 +1718,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int EXACT_PRICE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1706,6 +1736,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   public boolean hasExactPrice() {
     return priceCase_ == 1;
   }
+
   /**
    *
    *
@@ -1728,6 +1759,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1750,6 +1782,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PRICE_RANGE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1767,6 +1800,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   public boolean hasPriceRange() {
     return priceCase_ == 2;
   }
+
   /**
    *
    *
@@ -1789,6 +1823,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1836,6 +1871,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   public int getCostsCount() {
     return internalGetCosts().getMap().size();
   }
+
   /**
    *
    *
@@ -1859,12 +1895,14 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     }
     return internalGetCosts().getMap().containsKey(key);
   }
+
   /** Use {@link #getCostsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Float> getCosts() {
     return getCostsMap();
   }
+
   /**
    *
    *
@@ -1885,6 +1923,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.Float> getCostsMap() {
     return internalGetCosts().getMap();
   }
+
   /**
    *
    *
@@ -1909,6 +1948,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     java.util.Map<java.lang.String, java.lang.Float> map = internalGetCosts().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1941,6 +1981,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object currencyCode_ = "";
+
   /**
    *
    *
@@ -1965,6 +2006,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -1992,6 +2034,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
   public static final int STOCK_STATE_FIELD_NUMBER = 5;
   private int stockState_ = 0;
+
   /**
    *
    *
@@ -2009,6 +2052,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   public int getStockStateValue() {
     return stockState_;
   }
+
   /**
    *
    *
@@ -2035,6 +2079,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
   public static final int AVAILABLE_QUANTITY_FIELD_NUMBER = 6;
   private long availableQuantity_ = 0L;
+
   /**
    *
    *
@@ -2055,6 +2100,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object canonicalProductUri_ = "";
+
   /**
    *
    *
@@ -2079,6 +2125,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -2108,6 +2155,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommendationengine.v1beta1.Image> images_;
+
   /**
    *
    *
@@ -2123,6 +2171,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.recommendationengine.v1beta1.Image> getImagesList() {
     return images_;
   }
+
   /**
    *
    *
@@ -2139,6 +2188,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       getImagesOrBuilderList() {
     return images_;
   }
+
   /**
    *
    *
@@ -2154,6 +2204,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   public int getImagesCount() {
     return images_.size();
   }
+
   /**
    *
    *
@@ -2169,6 +2220,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.recommendationengine.v1beta1.Image getImages(int index) {
     return images_.get(index);
   }
+
   /**
    *
    *
@@ -2450,6 +2502,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2846,6 +2899,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
             com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice.Builder,
             com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPriceOrBuilder>
         exactPriceBuilder_;
+
     /**
      *
      *
@@ -2863,6 +2917,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     public boolean hasExactPrice() {
       return priceCase_ == 1;
     }
+
     /**
      *
      *
@@ -2894,6 +2949,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2919,6 +2975,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       priceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2942,6 +2999,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       priceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2981,6 +3039,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       priceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -3008,6 +3067,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3023,6 +3083,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         getExactPriceBuilder() {
       return getExactPriceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3048,6 +3109,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3092,6 +3154,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
             com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange.Builder,
             com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRangeOrBuilder>
         priceRangeBuilder_;
+
     /**
      *
      *
@@ -3109,6 +3172,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     public boolean hasPriceRange() {
       return priceCase_ == 2;
     }
+
     /**
      *
      *
@@ -3140,6 +3204,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3165,6 +3230,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       priceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3188,6 +3254,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       priceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3227,6 +3294,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       priceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3254,6 +3322,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3269,6 +3338,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         getPriceRangeBuilder() {
       return getPriceRangeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3294,6 +3364,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3358,6 +3429,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     public int getCostsCount() {
       return internalGetCosts().getMap().size();
     }
+
     /**
      *
      *
@@ -3381,12 +3453,14 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       return internalGetCosts().getMap().containsKey(key);
     }
+
     /** Use {@link #getCostsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Float> getCosts() {
       return getCostsMap();
     }
+
     /**
      *
      *
@@ -3407,6 +3481,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.Float> getCostsMap() {
       return internalGetCosts().getMap();
     }
+
     /**
      *
      *
@@ -3431,6 +3506,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       java.util.Map<java.lang.String, java.lang.Float> map = internalGetCosts().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3464,6 +3540,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       internalGetMutableCosts().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3487,12 +3564,14 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       internalGetMutableCosts().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Float> getMutableCosts() {
       bitField0_ |= 0x00000004;
       return internalGetMutableCosts().getMutableMap();
     }
+
     /**
      *
      *
@@ -3518,6 +3597,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -3541,6 +3621,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object currencyCode_ = "";
+
     /**
      *
      *
@@ -3564,6 +3645,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3587,6 +3669,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3609,6 +3692,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3627,6 +3711,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3652,6 +3737,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     }
 
     private int stockState_ = 0;
+
     /**
      *
      *
@@ -3669,6 +3755,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     public int getStockStateValue() {
       return stockState_;
     }
+
     /**
      *
      *
@@ -3689,6 +3776,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3712,6 +3800,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3736,6 +3825,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3757,6 +3847,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     }
 
     private long availableQuantity_;
+
     /**
      *
      *
@@ -3772,6 +3863,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     public long getAvailableQuantity() {
       return availableQuantity_;
     }
+
     /**
      *
      *
@@ -3791,6 +3883,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3810,6 +3903,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object canonicalProductUri_ = "";
+
     /**
      *
      *
@@ -3833,6 +3927,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3856,6 +3951,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3878,6 +3974,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3896,6 +3993,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3955,6 +4053,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         return imagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3973,6 +4072,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         return imagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3991,6 +4091,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         return imagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4015,6 +4116,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4037,6 +4139,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4061,6 +4164,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4085,6 +4189,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4107,6 +4212,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4129,6 +4235,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4151,6 +4258,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4172,6 +4280,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4193,6 +4302,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4207,6 +4317,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.recommendationengine.v1beta1.Image.Builder getImagesBuilder(int index) {
       return getImagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4226,6 +4337,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         return imagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4245,6 +4357,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(images_);
       }
     }
+
     /**
      *
      *
@@ -4260,6 +4373,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       return getImagesFieldBuilder()
           .addBuilder(com.google.cloud.recommendationengine.v1beta1.Image.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4276,6 +4390,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.recommendationengine.v1beta1.Image.getDefaultInstance());
     }
+
     /**
      *
      *

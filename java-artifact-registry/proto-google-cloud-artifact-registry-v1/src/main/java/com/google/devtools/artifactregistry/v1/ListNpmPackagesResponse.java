@@ -33,6 +33,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.ListNpmPackagesResponse)
     ListNpmPackagesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListNpmPackagesResponse.newBuilder() to construct.
   private ListNpmPackagesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1.NpmPackage> npmPackages_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.devtools.artifactregistry.v1.NpmPackage> getNpmPackagesList() {
     return npmPackages_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       getNpmPackagesOrBuilderList() {
     return npmPackages_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
   public int getNpmPackagesCount() {
     return npmPackages_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
   public com.google.devtools.artifactregistry.v1.NpmPackage getNpmPackages(int index) {
     return npmPackages_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -643,6 +652,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
         return npmPackagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -659,6 +669,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
         return npmPackagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
         return npmPackagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +754,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +778,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +799,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +820,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +841,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +861,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +881,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +895,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
         int index) {
       return getNpmPackagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -891,6 +913,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
         return npmPackagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -908,6 +931,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(npmPackages_);
       }
     }
+
     /**
      *
      *
@@ -921,6 +945,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       return getNpmPackagesFieldBuilder()
           .addBuilder(com.google.devtools.artifactregistry.v1.NpmPackage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -936,6 +961,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.devtools.artifactregistry.v1.NpmPackage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -968,6 +994,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -991,6 +1018,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1042,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1036,6 +1065,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1084,7 @@ public final class ListNpmPackagesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

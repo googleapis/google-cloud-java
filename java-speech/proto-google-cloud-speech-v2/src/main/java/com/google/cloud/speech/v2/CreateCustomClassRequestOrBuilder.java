@@ -38,6 +38,7 @@ public interface CreateCustomClassRequestOrBuilder
    * @return Whether the customClass field is set.
    */
   boolean hasCustomClass();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CreateCustomClassRequestOrBuilder
    * @return The customClass.
    */
   com.google.cloud.speech.v2.CustomClass getCustomClass();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface CreateCustomClassRequestOrBuilder
    * @return The customClassId.
    */
   java.lang.String getCustomClassId();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface CreateCustomClassRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface GitHubConfigOrBuilder
    * @return The enum numeric value on the wire for githubApp.
    */
   int getGithubAppValue();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface GitHubConfigOrBuilder
    * @return Whether the authorizerCredential field is set.
    */
   boolean hasAuthorizerCredential();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface GitHubConfigOrBuilder
    * @return The authorizerCredential.
    */
   com.google.cloud.developerconnect.v1.OAuthCredential getAuthorizerCredential();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface GitHubConfigOrBuilder
    * @return The installationUri.
    */
   java.lang.String getInstallationUri();
+
   /**
    *
    *

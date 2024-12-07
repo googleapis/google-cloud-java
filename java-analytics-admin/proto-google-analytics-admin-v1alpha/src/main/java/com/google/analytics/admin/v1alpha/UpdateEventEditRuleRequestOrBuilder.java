@@ -40,6 +40,7 @@ public interface UpdateEventEditRuleRequestOrBuilder
    * @return Whether the eventEditRule field is set.
    */
   boolean hasEventEditRule();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateEventEditRuleRequestOrBuilder
    * @return The eventEditRule.
    */
   com.google.analytics.admin.v1alpha.EventEditRule getEventEditRule();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UpdateEventEditRuleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface UpdateEventEditRuleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

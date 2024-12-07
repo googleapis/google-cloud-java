@@ -34,6 +34,7 @@ public interface ListTrustConfigsResponseOrBuilder
    * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig trust_configs = 1;</code>
    */
   java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig> getTrustConfigsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTrustConfigsResponseOrBuilder
    * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig trust_configs = 1;</code>
    */
   com.google.cloud.certificatemanager.v1.TrustConfig getTrustConfigs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTrustConfigsResponseOrBuilder
    * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig trust_configs = 1;</code>
    */
   int getTrustConfigsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListTrustConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.certificatemanager.v1.TrustConfigOrBuilder>
       getTrustConfigsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListTrustConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface ListTrustConfigsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface ListTrustConfigsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -142,6 +149,7 @@ public interface ListTrustConfigsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

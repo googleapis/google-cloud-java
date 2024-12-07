@@ -38,6 +38,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the reportCountryCode field is set.
    */
   boolean hasReportCountryCode();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The reportCountryCode.
    */
   java.lang.String getReportCountryCode();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the offerId field is set.
    */
   boolean hasOfferId();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The offerId.
    */
   java.lang.String getOfferId();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the title field is set.
    */
   boolean hasTitle();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the brand field is set.
    */
   boolean hasBrand();
+
   /**
    *
    *
@@ -214,6 +223,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The brand.
    */
   java.lang.String getBrand();
+
   /**
    *
    *
@@ -240,6 +250,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the categoryL1 field is set.
    */
   boolean hasCategoryL1();
+
   /**
    *
    *
@@ -253,6 +264,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The categoryL1.
    */
   java.lang.String getCategoryL1();
+
   /**
    *
    *
@@ -280,6 +292,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the categoryL2 field is set.
    */
   boolean hasCategoryL2();
+
   /**
    *
    *
@@ -293,6 +306,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The categoryL2.
    */
   java.lang.String getCategoryL2();
+
   /**
    *
    *
@@ -320,6 +334,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the categoryL3 field is set.
    */
   boolean hasCategoryL3();
+
   /**
    *
    *
@@ -333,6 +348,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The categoryL3.
    */
   java.lang.String getCategoryL3();
+
   /**
    *
    *
@@ -360,6 +376,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the categoryL4 field is set.
    */
   boolean hasCategoryL4();
+
   /**
    *
    *
@@ -373,6 +390,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The categoryL4.
    */
   java.lang.String getCategoryL4();
+
   /**
    *
    *
@@ -400,6 +418,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the categoryL5 field is set.
    */
   boolean hasCategoryL5();
+
   /**
    *
    *
@@ -413,6 +432,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The categoryL5.
    */
   java.lang.String getCategoryL5();
+
   /**
    *
    *
@@ -440,6 +460,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the productTypeL1 field is set.
    */
   boolean hasProductTypeL1();
+
   /**
    *
    *
@@ -453,6 +474,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The productTypeL1.
    */
   java.lang.String getProductTypeL1();
+
   /**
    *
    *
@@ -480,6 +502,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the productTypeL2 field is set.
    */
   boolean hasProductTypeL2();
+
   /**
    *
    *
@@ -493,6 +516,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The productTypeL2.
    */
   java.lang.String getProductTypeL2();
+
   /**
    *
    *
@@ -520,6 +544,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the productTypeL3 field is set.
    */
   boolean hasProductTypeL3();
+
   /**
    *
    *
@@ -533,6 +558,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The productTypeL3.
    */
   java.lang.String getProductTypeL3();
+
   /**
    *
    *
@@ -560,6 +586,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the productTypeL4 field is set.
    */
   boolean hasProductTypeL4();
+
   /**
    *
    *
@@ -573,6 +600,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The productTypeL4.
    */
   java.lang.String getProductTypeL4();
+
   /**
    *
    *
@@ -600,6 +628,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the productTypeL5 field is set.
    */
   boolean hasProductTypeL5();
+
   /**
    *
    *
@@ -613,6 +642,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The productTypeL5.
    */
   java.lang.String getProductTypeL5();
+
   /**
    *
    *
@@ -639,6 +669,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the price field is set.
    */
   boolean hasPrice();
+
   /**
    *
    *
@@ -651,6 +682,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The price.
    */
   com.google.shopping.type.Price getPrice();
+
   /**
    *
    *
@@ -675,6 +707,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return Whether the benchmarkPrice field is set.
    */
   boolean hasBenchmarkPrice();
+
   /**
    *
    *
@@ -688,6 +721,7 @@ public interface PriceCompetitivenessProductViewOrBuilder
    * @return The benchmarkPrice.
    */
   com.google.shopping.type.Price getBenchmarkPrice();
+
   /**
    *
    *

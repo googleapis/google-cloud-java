@@ -33,6 +33,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.Metadata)
     MetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Metadata.newBuilder() to construct.
   private Metadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.backupdr.v1.Entry> items_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.backupdr.v1.Entry> getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.backupdr.v1.Entry getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -308,6 +314,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -570,6 +577,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -589,6 +597,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -608,6 +617,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -633,6 +643,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +666,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +692,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +741,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +764,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +788,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +811,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +834,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +850,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.backupdr.v1.Entry.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -850,6 +870,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -870,6 +891,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -886,6 +908,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.backupdr.v1.Entry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -902,6 +925,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       return getItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.backupdr.v1.Entry.getDefaultInstance());
     }
+
     /**
      *
      *

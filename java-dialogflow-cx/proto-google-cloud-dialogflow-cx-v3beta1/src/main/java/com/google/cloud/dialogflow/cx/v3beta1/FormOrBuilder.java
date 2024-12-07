@@ -34,6 +34,7 @@ public interface FormOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Form.Parameter parameters = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter> getParametersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface FormOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Form.Parameter parameters = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter getParameters(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface FormOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Form.Parameter parameters = 1;</code>
    */
   int getParametersCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface FormOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.Form.ParameterOrBuilder>
       getParametersOrBuilderList();
+
   /**
    *
    *

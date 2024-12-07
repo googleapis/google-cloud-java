@@ -36,6 +36,7 @@ public interface WeightedBackendServiceOrBuilder
    * @return Whether the backendService field is set.
    */
   boolean hasBackendService();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface WeightedBackendServiceOrBuilder
    * @return The backendService.
    */
   java.lang.String getBackendService();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface WeightedBackendServiceOrBuilder
    * @return Whether the headerAction field is set.
    */
   boolean hasHeaderAction();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface WeightedBackendServiceOrBuilder
    * @return The headerAction.
    */
   com.google.cloud.compute.v1.HttpHeaderAction getHeaderAction();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface WeightedBackendServiceOrBuilder
    * @return Whether the weight field is set.
    */
   boolean hasWeight();
+
   /**
    *
    *

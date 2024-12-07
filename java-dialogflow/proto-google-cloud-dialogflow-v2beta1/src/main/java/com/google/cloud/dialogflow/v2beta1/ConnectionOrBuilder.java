@@ -36,6 +36,7 @@ public interface ConnectionOrBuilder
    * @return The connectionId.
    */
   java.lang.String getConnectionId();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ConnectionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface ConnectionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface ConnectionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface ConnectionOrBuilder
    * @return Whether the errorDetails field is set.
    */
   boolean hasErrorDetails();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface ConnectionOrBuilder
    * @return The errorDetails.
    */
   com.google.cloud.dialogflow.v2beta1.Connection.ErrorDetails getErrorDetails();
+
   /**
    *
    *

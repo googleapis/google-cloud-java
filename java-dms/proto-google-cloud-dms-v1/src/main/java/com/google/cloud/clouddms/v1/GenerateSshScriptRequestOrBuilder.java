@@ -36,6 +36,7 @@ public interface GenerateSshScriptRequestOrBuilder
    * @return The migrationJob.
    */
   java.lang.String getMigrationJob();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GenerateSshScriptRequestOrBuilder
    * @return The vm.
    */
   java.lang.String getVm();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GenerateSshScriptRequestOrBuilder
    * @return Whether the vmCreationConfig field is set.
    */
   boolean hasVmCreationConfig();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface GenerateSshScriptRequestOrBuilder
    * @return The vmCreationConfig.
    */
   com.google.cloud.clouddms.v1.VmCreationConfig getVmCreationConfig();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface GenerateSshScriptRequestOrBuilder
    * @return Whether the vmSelectionConfig field is set.
    */
   boolean hasVmSelectionConfig();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface GenerateSshScriptRequestOrBuilder
    * @return The vmSelectionConfig.
    */
   com.google.cloud.clouddms.v1.VmSelectionConfig getVmSelectionConfig();
+
   /**
    *
    *

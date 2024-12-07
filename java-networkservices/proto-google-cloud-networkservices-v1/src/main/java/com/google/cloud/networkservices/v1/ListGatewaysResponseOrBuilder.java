@@ -34,6 +34,7 @@ public interface ListGatewaysResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.Gateway gateways = 1;</code>
    */
   java.util.List<com.google.cloud.networkservices.v1.Gateway> getGatewaysList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListGatewaysResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.Gateway gateways = 1;</code>
    */
   com.google.cloud.networkservices.v1.Gateway getGateways(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListGatewaysResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.Gateway gateways = 1;</code>
    */
   int getGatewaysCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListGatewaysResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.GatewayOrBuilder>
       getGatewaysOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListGatewaysResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.IamPolicyAnalysisQuery)
     IamPolicyAnalysisQueryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IamPolicyAnalysisQuery.newBuilder() to construct.
   private IamPolicyAnalysisQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return The fullResourceName.
      */
     java.lang.String getFullResourceName();
+
     /**
      *
      *
@@ -99,6 +101,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getFullResourceNameBytes();
   }
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector)
       ResourceSelectorOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ResourceSelector.newBuilder() to construct.
     private ResourceSelector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -149,6 +153,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fullResourceName_ = "";
+
     /**
      *
      *
@@ -175,6 +180,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -364,6 +370,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -560,6 +567,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object fullResourceName_ = "";
+
       /**
        *
        *
@@ -585,6 +593,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -610,6 +619,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -634,6 +644,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -654,6 +665,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -775,6 +787,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return The identity.
      */
     java.lang.String getIdentity();
+
     /**
      *
      *
@@ -799,6 +812,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getIdentityBytes();
   }
+
   /**
    *
    *
@@ -815,6 +829,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector)
       IdentitySelectorOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IdentitySelector.newBuilder() to construct.
     private IdentitySelector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -849,6 +864,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object identity_ = "";
+
     /**
      *
      *
@@ -883,6 +899,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1097,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1276,6 +1294,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object identity_ = "";
+
       /**
        *
        *
@@ -1309,6 +1328,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1342,6 +1362,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1374,6 +1395,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1402,6 +1424,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1520,6 +1543,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return A list containing the roles.
      */
     java.util.List<java.lang.String> getRolesList();
+
     /**
      *
      *
@@ -1532,6 +1556,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return The count of roles.
      */
     int getRolesCount();
+
     /**
      *
      *
@@ -1545,6 +1570,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return The roles at the given index.
      */
     java.lang.String getRoles(int index);
+
     /**
      *
      *
@@ -1571,6 +1597,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return A list containing the permissions.
      */
     java.util.List<java.lang.String> getPermissionsList();
+
     /**
      *
      *
@@ -1583,6 +1610,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return The count of permissions.
      */
     int getPermissionsCount();
+
     /**
      *
      *
@@ -1596,6 +1624,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return The permissions at the given index.
      */
     java.lang.String getPermissions(int index);
+
     /**
      *
      *
@@ -1610,6 +1639,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getPermissionsBytes(int index);
   }
+
   /**
    *
    *
@@ -1628,6 +1658,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector)
       AccessSelectorOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AccessSelector.newBuilder() to construct.
     private AccessSelector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1664,6 +1695,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList roles_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -1678,6 +1710,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ProtocolStringList getRolesList() {
       return roles_;
     }
+
     /**
      *
      *
@@ -1692,6 +1725,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public int getRolesCount() {
       return roles_.size();
     }
+
     /**
      *
      *
@@ -1707,6 +1741,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public java.lang.String getRoles(int index) {
       return roles_.get(index);
     }
+
     /**
      *
      *
@@ -1728,6 +1763,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList permissions_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -1742,6 +1778,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ProtocolStringList getPermissionsList() {
       return permissions_;
     }
+
     /**
      *
      *
@@ -1756,6 +1793,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public int getPermissionsCount() {
       return permissions_.size();
     }
+
     /**
      *
      *
@@ -1771,6 +1809,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public java.lang.String getPermissions(int index) {
       return permissions_.get(index);
     }
+
     /**
      *
      *
@@ -1972,6 +2011,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2205,6 +2245,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -2220,6 +2261,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         roles_.makeImmutable();
         return roles_;
       }
+
       /**
        *
        *
@@ -2234,6 +2276,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public int getRolesCount() {
         return roles_.size();
       }
+
       /**
        *
        *
@@ -2249,6 +2292,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public java.lang.String getRoles(int index) {
         return roles_.get(index);
       }
+
       /**
        *
        *
@@ -2264,6 +2308,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ByteString getRolesBytes(int index) {
         return roles_.getByteString(index);
       }
+
       /**
        *
        *
@@ -2287,6 +2332,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2309,6 +2355,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2328,6 +2375,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2346,6 +2394,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2379,6 +2428,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -2394,6 +2444,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         permissions_.makeImmutable();
         return permissions_;
       }
+
       /**
        *
        *
@@ -2408,6 +2459,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public int getPermissionsCount() {
         return permissions_.size();
       }
+
       /**
        *
        *
@@ -2423,6 +2475,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public java.lang.String getPermissions(int index) {
         return permissions_.get(index);
       }
+
       /**
        *
        *
@@ -2438,6 +2491,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ByteString getPermissionsBytes(int index) {
         return permissions_.getByteString(index);
       }
+
       /**
        *
        *
@@ -2461,6 +2515,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2483,6 +2538,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2502,6 +2558,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2520,6 +2577,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2778,6 +2836,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      */
     boolean getAnalyzeServiceAccountImpersonation();
   }
+
   /**
    *
    *
@@ -2792,6 +2851,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.IamPolicyAnalysisQuery.Options)
       OptionsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Options.newBuilder() to construct.
     private Options(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2822,6 +2882,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
     public static final int EXPAND_GROUPS_FIELD_NUMBER = 1;
     private boolean expandGroups_ = false;
+
     /**
      *
      *
@@ -2851,6 +2912,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
     public static final int EXPAND_ROLES_FIELD_NUMBER = 2;
     private boolean expandRoles_ = false;
+
     /**
      *
      *
@@ -2877,6 +2939,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
     public static final int EXPAND_RESOURCES_FIELD_NUMBER = 3;
     private boolean expandResources_ = false;
+
     /**
      *
      *
@@ -2921,6 +2984,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
     public static final int OUTPUT_RESOURCE_EDGES_FIELD_NUMBER = 4;
     private boolean outputResourceEdges_ = false;
+
     /**
      *
      *
@@ -2940,6 +3004,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
     public static final int OUTPUT_GROUP_EDGES_FIELD_NUMBER = 5;
     private boolean outputGroupEdges_ = false;
+
     /**
      *
      *
@@ -2960,6 +3025,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
     public static final int ANALYZE_SERVICE_ACCOUNT_IMPERSONATION_FIELD_NUMBER = 6;
     private boolean analyzeServiceAccountImpersonation_ = false;
+
     /**
      *
      *
@@ -3223,6 +3289,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3473,6 +3540,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private boolean expandGroups_;
+
       /**
        *
        *
@@ -3499,6 +3567,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public boolean getExpandGroups() {
         return expandGroups_;
       }
+
       /**
        *
        *
@@ -3529,6 +3598,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3559,6 +3629,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       }
 
       private boolean expandRoles_;
+
       /**
        *
        *
@@ -3582,6 +3653,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public boolean getExpandRoles() {
         return expandRoles_;
       }
+
       /**
        *
        *
@@ -3609,6 +3681,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3636,6 +3709,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       }
 
       private boolean expandResources_;
+
       /**
        *
        *
@@ -3677,6 +3751,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public boolean getExpandResources() {
         return expandResources_;
       }
+
       /**
        *
        *
@@ -3722,6 +3797,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3767,6 +3843,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       }
 
       private boolean outputResourceEdges_;
+
       /**
        *
        *
@@ -3783,6 +3860,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public boolean getOutputResourceEdges() {
         return outputResourceEdges_;
       }
+
       /**
        *
        *
@@ -3803,6 +3881,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3823,6 +3902,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       }
 
       private boolean outputGroupEdges_;
+
       /**
        *
        *
@@ -3840,6 +3920,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public boolean getOutputGroupEdges() {
         return outputGroupEdges_;
       }
+
       /**
        *
        *
@@ -3861,6 +3942,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3882,6 +3964,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       }
 
       private boolean analyzeServiceAccountImpersonation_;
+
       /**
        *
        *
@@ -3933,6 +4016,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public boolean getAnalyzeServiceAccountImpersonation() {
         return analyzeServiceAccountImpersonation_;
       }
+
       /**
        *
        *
@@ -3988,6 +4072,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4125,6 +4210,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return Whether the accessTime field is set.
      */
     boolean hasAccessTime();
+
     /**
      *
      *
@@ -4139,6 +4225,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return The accessTime.
      */
     com.google.protobuf.Timestamp getAccessTime();
+
     /**
      *
      *
@@ -4155,6 +4242,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.TimeContextCase
         getTimeContextCase();
   }
+
   /**
    *
    *
@@ -4169,6 +4257,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext)
       ConditionContextOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConditionContext.newBuilder() to construct.
     private ConditionContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4213,6 +4302,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       private TimeContextCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -4244,6 +4334,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     }
 
     public static final int ACCESS_TIME_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -4261,6 +4352,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public boolean hasAccessTime() {
       return timeContextCase_ == 1;
     }
+
     /**
      *
      *
@@ -4281,6 +4373,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       }
       return com.google.protobuf.Timestamp.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4477,6 +4570,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4706,6 +4800,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           accessTimeBuilder_;
+
       /**
        *
        *
@@ -4723,6 +4818,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public boolean hasAccessTime() {
         return timeContextCase_ == 1;
       }
+
       /**
        *
        *
@@ -4750,6 +4846,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           return com.google.protobuf.Timestamp.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4774,6 +4871,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         timeContextCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -4795,6 +4893,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         timeContextCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -4829,6 +4928,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         timeContextCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -4856,6 +4956,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -4870,6 +4971,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public com.google.protobuf.Timestamp.Builder getAccessTimeBuilder() {
         return getAccessTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4892,6 +4994,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           return com.google.protobuf.Timestamp.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4997,6 +5100,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object scope_ = "";
+
   /**
    *
    *
@@ -5031,6 +5135,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -5068,6 +5173,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
   public static final int RESOURCE_SELECTOR_FIELD_NUMBER = 2;
   private com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector resourceSelector_;
+
   /**
    *
    *
@@ -5085,6 +5191,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
   public boolean hasResourceSelector() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -5104,6 +5211,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector.getDefaultInstance()
         : resourceSelector_;
   }
+
   /**
    *
    *
@@ -5125,6 +5233,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
   public static final int IDENTITY_SELECTOR_FIELD_NUMBER = 3;
   private com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector identitySelector_;
+
   /**
    *
    *
@@ -5142,6 +5251,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
   public boolean hasIdentitySelector() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -5161,6 +5271,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector.getDefaultInstance()
         : identitySelector_;
   }
+
   /**
    *
    *
@@ -5182,6 +5293,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
   public static final int ACCESS_SELECTOR_FIELD_NUMBER = 4;
   private com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector accessSelector_;
+
   /**
    *
    *
@@ -5199,6 +5311,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
   public boolean hasAccessSelector() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -5218,6 +5331,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector.getDefaultInstance()
         : accessSelector_;
   }
+
   /**
    *
    *
@@ -5239,6 +5353,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
   public static final int OPTIONS_FIELD_NUMBER = 5;
   private com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options options_;
+
   /**
    *
    *
@@ -5256,6 +5371,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
   public boolean hasOptions() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -5275,6 +5391,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.getDefaultInstance()
         : options_;
   }
+
   /**
    *
    *
@@ -5295,6 +5412,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
   public static final int CONDITION_CONTEXT_FIELD_NUMBER = 6;
   private com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext conditionContext_;
+
   /**
    *
    *
@@ -5312,6 +5430,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
   public boolean hasConditionContext() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -5331,6 +5450,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.getDefaultInstance()
         : conditionContext_;
   }
+
   /**
    *
    *
@@ -5579,6 +5699,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5875,6 +5996,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object scope_ = "";
+
     /**
      *
      *
@@ -5908,6 +6030,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5941,6 +6064,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5973,6 +6097,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6001,6 +6126,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6041,6 +6167,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
             com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector.Builder,
             com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelectorOrBuilder>
         resourceSelectorBuilder_;
+
     /**
      *
      *
@@ -6057,6 +6184,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public boolean hasResourceSelector() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -6079,6 +6207,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         return resourceSelectorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6104,6 +6233,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6126,6 +6256,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6158,6 +6289,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6179,6 +6311,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6196,6 +6329,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return getResourceSelectorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6217,6 +6351,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
             : resourceSelector_;
       }
     }
+
     /**
      *
      *
@@ -6251,6 +6386,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
             com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector.Builder,
             com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelectorOrBuilder>
         identitySelectorBuilder_;
+
     /**
      *
      *
@@ -6267,6 +6403,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public boolean hasIdentitySelector() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -6289,6 +6426,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         return identitySelectorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6314,6 +6452,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6336,6 +6475,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6368,6 +6508,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6389,6 +6530,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6406,6 +6548,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return getIdentitySelectorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6427,6 +6570,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
             : identitySelector_;
       }
     }
+
     /**
      *
      *
@@ -6461,6 +6605,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
             com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector.Builder,
             com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelectorOrBuilder>
         accessSelectorBuilder_;
+
     /**
      *
      *
@@ -6477,6 +6622,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public boolean hasAccessSelector() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -6499,6 +6645,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         return accessSelectorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6524,6 +6671,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6546,6 +6694,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6578,6 +6727,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6599,6 +6749,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6616,6 +6767,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return getAccessSelectorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6637,6 +6789,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
             : accessSelector_;
       }
     }
+
     /**
      *
      *
@@ -6671,6 +6824,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
             com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.Builder,
             com.google.cloud.asset.v1.IamPolicyAnalysisQuery.OptionsOrBuilder>
         optionsBuilder_;
+
     /**
      *
      *
@@ -6687,6 +6841,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public boolean hasOptions() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -6709,6 +6864,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         return optionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6733,6 +6889,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6755,6 +6912,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6785,6 +6943,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6806,6 +6965,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6822,6 +6982,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return getOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6842,6 +7003,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
             : options_;
       }
     }
+
     /**
      *
      *
@@ -6876,6 +7038,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
             com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.Builder,
             com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContextOrBuilder>
         conditionContextBuilder_;
+
     /**
      *
      *
@@ -6892,6 +7055,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public boolean hasConditionContext() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -6914,6 +7078,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         return conditionContextBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6939,6 +7104,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6961,6 +7127,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6993,6 +7160,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -7014,6 +7182,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7031,6 +7200,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       onChanged();
       return getConditionContextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7052,6 +7222,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
             : conditionContext_;
       }
     }
+
     /**
      *
      *

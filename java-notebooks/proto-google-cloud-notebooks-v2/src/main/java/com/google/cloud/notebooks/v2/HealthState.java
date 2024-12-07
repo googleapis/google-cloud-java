@@ -98,6 +98,7 @@ public enum HealthState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HEALTH_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int HEALTH_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -110,6 +111,7 @@ public enum HealthState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HEALTHY = 1;</code>
    */
   public static final int HEALTHY_VALUE = 1;
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public enum HealthState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNHEALTHY = 2;</code>
    */
   public static final int UNHEALTHY_VALUE = 2;
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public enum HealthState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AGENT_NOT_INSTALLED = 3;</code>
    */
   public static final int AGENT_NOT_INSTALLED_VALUE = 3;
+
   /**
    *
    *

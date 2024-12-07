@@ -39,6 +39,7 @@ public interface ListVodAdTagDetailsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface ListVodAdTagDetailsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface UpdateRegistrationRequestOrBuilder
    * @return Whether the registration field is set.
    */
   boolean hasRegistration();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateRegistrationRequestOrBuilder
    * @return The registration.
    */
   com.google.cloud.domains.v1alpha2.Registration getRegistration();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface UpdateRegistrationRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface UpdateRegistrationRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

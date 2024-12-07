@@ -36,6 +36,7 @@ public interface CreateSnapshotRegionDiskRequestOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CreateSnapshotRegionDiskRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface CreateSnapshotRegionDiskRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface CreateSnapshotRegionDiskRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface CreateSnapshotRegionDiskRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface CreateSnapshotRegionDiskRequestOrBuilder
    * @return Whether the snapshotResource field is set.
    */
   boolean hasSnapshotResource();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface CreateSnapshotRegionDiskRequestOrBuilder
    * @return The snapshotResource.
    */
   com.google.cloud.compute.v1.Snapshot getSnapshotResource();
+
   /**
    *
    *

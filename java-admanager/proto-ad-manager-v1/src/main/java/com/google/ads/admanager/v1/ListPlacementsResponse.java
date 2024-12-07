@@ -34,6 +34,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ListPlacementsResponse)
     ListPlacementsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListPlacementsResponse.newBuilder() to construct.
   private ListPlacementsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.Placement> placements_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.ads.admanager.v1.Placement> getPlacementsList() {
     return placements_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       getPlacementsOrBuilderList() {
     return placements_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
   public int getPlacementsCount() {
     return placements_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
   public com.google.ads.admanager.v1.Placement getPlacements(int index) {
     return placements_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
+
   /**
    *
    *
@@ -396,6 +405,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -686,6 +696,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
         return placementsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -702,6 +713,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
         return placementsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -718,6 +730,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
         return placementsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -740,6 +753,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +774,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +797,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +840,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +861,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +882,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +902,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +922,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +935,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
     public com.google.ads.admanager.v1.Placement.Builder getPlacementsBuilder(int index) {
       return getPlacementsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -929,6 +952,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
         return placementsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -946,6 +970,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(placements_);
       }
     }
+
     /**
      *
      *
@@ -959,6 +984,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       return getPlacementsFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.Placement.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -972,6 +998,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       return getPlacementsFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.Placement.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1004,6 +1031,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1027,6 +1055,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1050,6 +1079,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1072,6 +1102,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1121,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1147,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
     }
 
     private int totalSize_;
+
     /**
      *
      *
@@ -1140,6 +1173,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
     public int getTotalSize() {
       return totalSize_;
     }
+
     /**
      *
      *
@@ -1169,6 +1203,7 @@ public final class ListPlacementsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

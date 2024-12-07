@@ -38,6 +38,7 @@ public interface AudienceSequenceFilterOrBuilder
    * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface AudienceSequenceFilterOrBuilder
    * @return Whether the sequenceMaximumDuration field is set.
    */
   boolean hasSequenceMaximumDuration();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface AudienceSequenceFilterOrBuilder
    * @return The sequenceMaximumDuration.
    */
   com.google.protobuf.Duration getSequenceMaximumDuration();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface AudienceSequenceFilterOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.AudienceSequenceFilter.AudienceSequenceStep>
       getSequenceStepsList();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface AudienceSequenceFilterOrBuilder
    */
   com.google.analytics.admin.v1alpha.AudienceSequenceFilter.AudienceSequenceStep getSequenceSteps(
       int index);
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface AudienceSequenceFilterOrBuilder
    * </code>
    */
   int getSequenceStepsCount();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface AudienceSequenceFilterOrBuilder
               com.google.analytics.admin.v1alpha.AudienceSequenceFilter
                   .AudienceSequenceStepOrBuilder>
       getSequenceStepsOrBuilderList();
+
   /**
    *
    *

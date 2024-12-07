@@ -36,6 +36,7 @@ public interface FirewallLogConfigOrBuilder
    * @return Whether the enable field is set.
    */
   boolean hasEnable();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface FirewallLogConfigOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface FirewallLogConfigOrBuilder
    * @return The metadata.
    */
   java.lang.String getMetadata();
+
   /**
    *
    *

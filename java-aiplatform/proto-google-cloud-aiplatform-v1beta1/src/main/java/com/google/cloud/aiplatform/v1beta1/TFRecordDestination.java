@@ -33,6 +33,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TFRecordDestination)
     TFRecordDestinationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TFRecordDestination.newBuilder() to construct.
   private TFRecordDestination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int GCS_DESTINATION_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GcsDestination gcsDestination_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
   public boolean hasGcsDestination() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance()
         : gcsDestination_;
   }
+
   /**
    *
    *
@@ -283,6 +287,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -487,6 +492,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
             com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>
         gcsDestinationBuilder_;
+
     /**
      *
      *
@@ -503,6 +509,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
     public boolean hasGcsDestination() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -525,6 +532,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
         return gcsDestinationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -549,6 +557,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -571,6 +580,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -601,6 +611,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -622,6 +633,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -638,6 +650,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return getGcsDestinationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -659,6 +672,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
             : gcsDestination_;
       }
     }
+
     /**
      *
      *

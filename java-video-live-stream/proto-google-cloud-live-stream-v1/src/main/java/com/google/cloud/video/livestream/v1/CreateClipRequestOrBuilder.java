@@ -39,6 +39,7 @@ public interface CreateClipRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreateClipRequestOrBuilder
    * @return The clipId.
    */
   java.lang.String getClipId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface CreateClipRequestOrBuilder
    * @return Whether the clip field is set.
    */
   boolean hasClip();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateClipRequestOrBuilder
    * @return The clip.
    */
   com.google.cloud.video.livestream.v1.Clip getClip();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface CreateClipRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

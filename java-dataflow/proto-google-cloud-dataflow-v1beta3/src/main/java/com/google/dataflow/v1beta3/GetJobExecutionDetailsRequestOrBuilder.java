@@ -36,6 +36,7 @@ public interface GetJobExecutionDetailsRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetJobExecutionDetailsRequestOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface GetJobExecutionDetailsRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public interface GetJobExecutionDetailsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

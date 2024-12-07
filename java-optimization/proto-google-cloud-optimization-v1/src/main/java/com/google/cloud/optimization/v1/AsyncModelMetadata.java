@@ -33,6 +33,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.optimization.v1.AsyncModelMetadata)
     AsyncModelMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AsyncModelMetadata.newBuilder() to construct.
   private AsyncModelMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -137,6 +138,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -147,6 +149,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
      * <code>RUNNING = 1;</code>
      */
     public static final int RUNNING_VALUE = 1;
+
     /**
      *
      *
@@ -157,6 +160,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
      * <code>SUCCEEDED = 2;</code>
      */
     public static final int SUCCEEDED_VALUE = 2;
+
     /**
      *
      *
@@ -167,6 +171,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
      * <code>CANCELLED = 3;</code>
      */
     public static final int CANCELLED_VALUE = 3;
+
     /**
      *
      *
@@ -270,6 +275,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -285,6 +291,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -309,6 +316,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stateMessage_ = "";
+
   /**
    *
    *
@@ -333,6 +341,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +369,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -375,6 +385,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -390,6 +401,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -406,6 +418,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -421,6 +434,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -436,6 +450,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -650,6 +665,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -895,6 +911,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -910,6 +927,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -928,6 +946,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +966,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.optimization.v1.AsyncModelMetadata.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -968,6 +988,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1008,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object stateMessage_ = "";
+
     /**
      *
      *
@@ -1010,6 +1032,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1056,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1079,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1098,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1129,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1117,6 +1144,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1137,6 +1165,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1188,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1208,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1236,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1256,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1271,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1256,6 +1290,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1288,6 +1323,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1302,6 +1338,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1322,6 +1359,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1344,6 +1382,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1402,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1390,6 +1430,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1409,6 +1450,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1423,6 +1465,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1441,6 +1484,7 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
             : updateTime_;
       }
     }
+
     /**
      *
      *

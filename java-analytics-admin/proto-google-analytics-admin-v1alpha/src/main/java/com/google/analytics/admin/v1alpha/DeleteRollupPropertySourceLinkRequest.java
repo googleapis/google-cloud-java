@@ -34,6 +34,7 @@ public final class DeleteRollupPropertySourceLinkRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest)
     DeleteRollupPropertySourceLinkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteRollupPropertySourceLinkRequest.newBuilder() to construct.
   private DeleteRollupPropertySourceLinkRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class DeleteRollupPropertySourceLinkRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class DeleteRollupPropertySourceLinkRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -286,6 +289,7 @@ public final class DeleteRollupPropertySourceLinkRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -480,6 +484,7 @@ public final class DeleteRollupPropertySourceLinkRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -506,6 +511,7 @@ public final class DeleteRollupPropertySourceLinkRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -532,6 +538,7 @@ public final class DeleteRollupPropertySourceLinkRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -557,6 +564,7 @@ public final class DeleteRollupPropertySourceLinkRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -578,6 +586,7 @@ public final class DeleteRollupPropertySourceLinkRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

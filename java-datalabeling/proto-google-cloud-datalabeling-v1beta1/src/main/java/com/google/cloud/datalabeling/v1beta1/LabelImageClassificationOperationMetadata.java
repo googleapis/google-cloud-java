@@ -34,6 +34,7 @@ public final class LabelImageClassificationOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata)
     LabelImageClassificationOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LabelImageClassificationOperationMetadata.newBuilder() to construct.
   private LabelImageClassificationOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class LabelImageClassificationOperationMetadata
   private int bitField0_;
   public static final int BASIC_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basicConfig_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class LabelImageClassificationOperationMetadata
   public boolean hasBasicConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class LabelImageClassificationOperationMetadata
         ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
         : basicConfig_;
   }
+
   /**
    *
    *
@@ -289,6 +293,7 @@ public final class LabelImageClassificationOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -507,6 +512,7 @@ public final class LabelImageClassificationOperationMetadata
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
         basicConfigBuilder_;
+
     /**
      *
      *
@@ -521,6 +527,7 @@ public final class LabelImageClassificationOperationMetadata
     public boolean hasBasicConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -541,6 +548,7 @@ public final class LabelImageClassificationOperationMetadata
         return basicConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -564,6 +572,7 @@ public final class LabelImageClassificationOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -584,6 +593,7 @@ public final class LabelImageClassificationOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +624,7 @@ public final class LabelImageClassificationOperationMetadata
       }
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +644,7 @@ public final class LabelImageClassificationOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +660,7 @@ public final class LabelImageClassificationOperationMetadata
       onChanged();
       return getBasicConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -667,6 +680,7 @@ public final class LabelImageClassificationOperationMetadata
             : basicConfig_;
       }
     }
+
     /**
      *
      *

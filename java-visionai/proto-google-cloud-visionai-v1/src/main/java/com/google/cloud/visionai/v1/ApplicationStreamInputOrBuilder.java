@@ -30,12 +30,14 @@ public interface ApplicationStreamInputOrBuilder
    * @return Whether the streamWithAnnotation field is set.
    */
   boolean hasStreamWithAnnotation();
+
   /**
    * <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code>
    *
    * @return The streamWithAnnotation.
    */
   com.google.cloud.visionai.v1.StreamWithAnnotation getStreamWithAnnotation();
+
   /** <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code> */
   com.google.cloud.visionai.v1.StreamWithAnnotationOrBuilder getStreamWithAnnotationOrBuilder();
 }

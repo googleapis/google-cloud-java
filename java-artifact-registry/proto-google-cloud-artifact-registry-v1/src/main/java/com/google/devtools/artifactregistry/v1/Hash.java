@@ -33,6 +33,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.Hash)
     HashOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Hash.newBuilder() to construct.
   private Hash(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * <code>HASH_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int HASH_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * <code>SHA256 = 1;</code>
      */
     public static final int SHA256_VALUE = 1;
+
     /**
      *
      *
@@ -223,6 +226,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -238,6 +242,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -260,6 +265,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -448,6 +454,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -642,6 +649,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -657,6 +665,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -675,6 +684,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +704,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.artifactregistry.v1.Hash.HashType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -715,6 +726,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +746,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -749,6 +762,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -770,6 +784,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

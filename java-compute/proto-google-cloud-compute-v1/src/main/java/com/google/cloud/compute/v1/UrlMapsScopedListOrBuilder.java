@@ -34,6 +34,7 @@ public interface UrlMapsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMap url_maps = 103352167;</code>
    */
   java.util.List<com.google.cloud.compute.v1.UrlMap> getUrlMapsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface UrlMapsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMap url_maps = 103352167;</code>
    */
   com.google.cloud.compute.v1.UrlMap getUrlMaps(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface UrlMapsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMap url_maps = 103352167;</code>
    */
   int getUrlMapsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface UrlMapsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMap url_maps = 103352167;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.UrlMapOrBuilder> getUrlMapsOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface UrlMapsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -99,6 +104,7 @@ public interface UrlMapsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

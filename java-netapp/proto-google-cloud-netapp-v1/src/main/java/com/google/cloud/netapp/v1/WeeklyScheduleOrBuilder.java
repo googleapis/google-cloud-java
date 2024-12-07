@@ -36,6 +36,7 @@ public interface WeeklyScheduleOrBuilder
    * @return Whether the snapshotsToKeep field is set.
    */
   boolean hasSnapshotsToKeep();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface WeeklyScheduleOrBuilder
    * @return Whether the minute field is set.
    */
   boolean hasMinute();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface WeeklyScheduleOrBuilder
    * @return Whether the hour field is set.
    */
   boolean hasHour();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface WeeklyScheduleOrBuilder
    * @return Whether the day field is set.
    */
   boolean hasDay();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface WeeklyScheduleOrBuilder
    * @return The day.
    */
   java.lang.String getDay();
+
   /**
    *
    *

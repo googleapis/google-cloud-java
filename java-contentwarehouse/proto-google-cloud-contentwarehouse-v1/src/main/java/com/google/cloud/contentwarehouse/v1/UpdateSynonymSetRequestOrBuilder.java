@@ -40,6 +40,7 @@ public interface UpdateSynonymSetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface UpdateSynonymSetRequestOrBuilder
    * @return Whether the synonymSet field is set.
    */
   boolean hasSynonymSet();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateSynonymSetRequestOrBuilder
    * @return The synonymSet.
    */
   com.google.cloud.contentwarehouse.v1.SynonymSet getSynonymSet();
+
   /**
    *
    *

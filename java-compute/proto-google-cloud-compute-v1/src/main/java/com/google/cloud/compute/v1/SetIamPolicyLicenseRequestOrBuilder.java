@@ -38,6 +38,7 @@ public interface SetIamPolicyLicenseRequestOrBuilder
    * @return Whether the globalSetPolicyRequestResource field is set.
    */
   boolean hasGlobalSetPolicyRequestResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface SetIamPolicyLicenseRequestOrBuilder
    * @return The globalSetPolicyRequestResource.
    */
   com.google.cloud.compute.v1.GlobalSetPolicyRequest getGlobalSetPolicyRequestResource();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface SetIamPolicyLicenseRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface SetIamPolicyLicenseRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface CreateRepositoryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateRepositoryRequestOrBuilder
    * @return Whether the repository field is set.
    */
   boolean hasRepository();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateRepositoryRequestOrBuilder
    * @return The repository.
    */
   com.google.cloud.dataform.v1alpha2.Repository getRepository();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface CreateRepositoryRequestOrBuilder
    * @return The repositoryId.
    */
   java.lang.String getRepositoryId();
+
   /**
    *
    *

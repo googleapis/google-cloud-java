@@ -33,6 +33,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.IndexDatapoint)
     IndexDatapointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IndexDatapoint.newBuilder() to construct.
   private IndexDatapoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the values.
      */
     java.util.List<java.lang.Float> getValuesList();
+
     /**
      *
      *
@@ -95,6 +97,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return The count of values.
      */
     int getValuesCount();
+
     /**
      *
      *
@@ -122,6 +125,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the dimensions.
      */
     java.util.List<java.lang.Long> getDimensionsList();
+
     /**
      *
      *
@@ -135,6 +139,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return The count of dimensions.
      */
     int getDimensionsCount();
+
     /**
      *
      *
@@ -150,6 +155,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      */
     long getDimensions(int index);
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.IndexDatapoint.SparseEmbedding)
       SparseEmbeddingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SparseEmbedding.newBuilder() to construct.
     private SparseEmbedding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -200,6 +207,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.FloatList values_ = emptyFloatList();
+
     /**
      *
      *
@@ -215,6 +223,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Float> getValuesList() {
       return values_;
     }
+
     /**
      *
      *
@@ -229,6 +238,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public int getValuesCount() {
       return values_.size();
     }
+
     /**
      *
      *
@@ -251,6 +261,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList dimensions_ = emptyLongList();
+
     /**
      *
      *
@@ -267,6 +278,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Long> getDimensionsList() {
       return dimensions_;
     }
+
     /**
      *
      *
@@ -282,6 +294,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public int getDimensionsCount() {
       return dimensions_.size();
     }
+
     /**
      *
      *
@@ -501,6 +514,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -761,6 +775,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -776,6 +791,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         values_.makeImmutable();
         return values_;
       }
+
       /**
        *
        *
@@ -790,6 +806,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public int getValuesCount() {
         return values_.size();
       }
+
       /**
        *
        *
@@ -805,6 +822,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public float getValues(int index) {
         return values_.getFloat(index);
       }
+
       /**
        *
        *
@@ -826,6 +844,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -846,6 +865,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -865,6 +885,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -891,6 +912,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -907,6 +929,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         dimensions_.makeImmutable();
         return dimensions_;
       }
+
       /**
        *
        *
@@ -922,6 +945,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public int getDimensionsCount() {
         return dimensions_.size();
       }
+
       /**
        *
        *
@@ -938,6 +962,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public long getDimensions(int index) {
         return dimensions_.getLong(index);
       }
+
       /**
        *
        *
@@ -960,6 +985,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -981,6 +1007,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1001,6 +1028,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1104,6 +1132,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return The namespace.
      */
     java.lang.String getNamespace();
+
     /**
      *
      *
@@ -1129,6 +1158,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the allowList.
      */
     java.util.List<java.lang.String> getAllowListList();
+
     /**
      *
      *
@@ -1141,6 +1171,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return The count of allowList.
      */
     int getAllowListCount();
+
     /**
      *
      *
@@ -1154,6 +1185,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return The allowList at the given index.
      */
     java.lang.String getAllowList(int index);
+
     /**
      *
      *
@@ -1180,6 +1212,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the denyList.
      */
     java.util.List<java.lang.String> getDenyListList();
+
     /**
      *
      *
@@ -1192,6 +1225,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return The count of denyList.
      */
     int getDenyListCount();
+
     /**
      *
      *
@@ -1205,6 +1239,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return The denyList at the given index.
      */
     java.lang.String getDenyList(int index);
+
     /**
      *
      *
@@ -1219,6 +1254,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDenyListBytes(int index);
   }
+
   /**
    *
    *
@@ -1234,6 +1270,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.IndexDatapoint.Restriction)
       RestrictionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Restriction.newBuilder() to construct.
     private Restriction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1270,6 +1307,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object namespace_ = "";
+
     /**
      *
      *
@@ -1293,6 +1331,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1322,6 +1361,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList allowList_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -1336,6 +1376,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getAllowListList() {
       return allowList_;
     }
+
     /**
      *
      *
@@ -1350,6 +1391,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public int getAllowListCount() {
       return allowList_.size();
     }
+
     /**
      *
      *
@@ -1365,6 +1407,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAllowList(int index) {
       return allowList_.get(index);
     }
+
     /**
      *
      *
@@ -1386,6 +1429,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList denyList_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -1400,6 +1444,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getDenyListList() {
       return denyList_;
     }
+
     /**
      *
      *
@@ -1414,6 +1459,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public int getDenyListCount() {
       return denyList_.size();
     }
+
     /**
      *
      *
@@ -1429,6 +1475,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDenyList(int index) {
       return denyList_.get(index);
     }
+
     /**
      *
      *
@@ -1638,6 +1685,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1870,6 +1918,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object namespace_ = "";
+
       /**
        *
        *
@@ -1892,6 +1941,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1914,6 +1964,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1935,6 +1986,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1952,6 +2004,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1984,6 +2037,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -1999,6 +2053,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         allowList_.makeImmutable();
         return allowList_;
       }
+
       /**
        *
        *
@@ -2013,6 +2068,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public int getAllowListCount() {
         return allowList_.size();
       }
+
       /**
        *
        *
@@ -2028,6 +2084,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getAllowList(int index) {
         return allowList_.get(index);
       }
+
       /**
        *
        *
@@ -2043,6 +2100,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getAllowListBytes(int index) {
         return allowList_.getByteString(index);
       }
+
       /**
        *
        *
@@ -2066,6 +2124,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2088,6 +2147,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2107,6 +2167,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2125,6 +2186,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2158,6 +2220,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
@@ -2173,6 +2236,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         denyList_.makeImmutable();
         return denyList_;
       }
+
       /**
        *
        *
@@ -2187,6 +2251,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public int getDenyListCount() {
         return denyList_.size();
       }
+
       /**
        *
        *
@@ -2202,6 +2267,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getDenyList(int index) {
         return denyList_.get(index);
       }
+
       /**
        *
        *
@@ -2217,6 +2283,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getDenyListBytes(int index) {
         return denyList_.getByteString(index);
       }
+
       /**
        *
        *
@@ -2240,6 +2307,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2262,6 +2330,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2281,6 +2350,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2299,6 +2369,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2404,6 +2475,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the valueInt field is set.
      */
     boolean hasValueInt();
+
     /**
      *
      *
@@ -2429,6 +2501,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the valueFloat field is set.
      */
     boolean hasValueFloat();
+
     /**
      *
      *
@@ -2454,6 +2527,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the valueDouble field is set.
      */
     boolean hasValueDouble();
+
     /**
      *
      *
@@ -2479,6 +2553,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return The namespace.
      */
     java.lang.String getNamespace();
+
     /**
      *
      *
@@ -2505,6 +2580,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for op.
      */
     int getOpValue();
+
     /**
      *
      *
@@ -2521,6 +2597,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.ValueCase getValueCase();
   }
+
   /**
    *
    *
@@ -2536,6 +2613,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction)
       NumericRestrictionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use NumericRestriction.newBuilder() to construct.
     private NumericRestriction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2664,6 +2742,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * <code>OPERATOR_UNSPECIFIED = 0;</code>
        */
       public static final int OPERATOR_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2674,6 +2753,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * <code>LESS = 1;</code>
        */
       public static final int LESS_VALUE = 1;
+
       /**
        *
        *
@@ -2684,6 +2764,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * <code>LESS_EQUAL = 2;</code>
        */
       public static final int LESS_EQUAL_VALUE = 2;
+
       /**
        *
        *
@@ -2694,6 +2775,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * <code>EQUAL = 3;</code>
        */
       public static final int EQUAL_VALUE = 3;
+
       /**
        *
        *
@@ -2704,6 +2786,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * <code>GREATER_EQUAL = 4;</code>
        */
       public static final int GREATER_EQUAL_VALUE = 4;
+
       /**
        *
        *
@@ -2714,6 +2797,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * <code>GREATER = 5;</code>
        */
       public static final int GREATER_VALUE = 5;
+
       /**
        *
        *
@@ -2836,6 +2920,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       private ValueCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2871,6 +2956,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUE_INT_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -2886,6 +2972,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValueInt() {
       return valueCase_ == 2;
     }
+
     /**
      *
      *
@@ -2906,6 +2993,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUE_FLOAT_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -2921,6 +3009,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValueFloat() {
       return valueCase_ == 3;
     }
+
     /**
      *
      *
@@ -2941,6 +3030,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUE_DOUBLE_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -2956,6 +3046,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValueDouble() {
       return valueCase_ == 4;
     }
+
     /**
      *
      *
@@ -2979,6 +3070,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object namespace_ = "";
+
     /**
      *
      *
@@ -3002,6 +3094,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3028,6 +3121,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
     public static final int OP_FIELD_NUMBER = 5;
     private int op_ = 0;
+
     /**
      *
      *
@@ -3044,6 +3138,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public int getOpValue() {
       return op_;
     }
+
     /**
      *
      *
@@ -3301,6 +3396,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3584,6 +3680,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public boolean hasValueInt() {
         return valueCase_ == 2;
       }
+
       /**
        *
        *
@@ -3601,6 +3698,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         }
         return 0L;
       }
+
       /**
        *
        *
@@ -3620,6 +3718,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3654,6 +3753,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public boolean hasValueFloat() {
         return valueCase_ == 3;
       }
+
       /**
        *
        *
@@ -3671,6 +3771,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         }
         return 0F;
       }
+
       /**
        *
        *
@@ -3690,6 +3791,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3724,6 +3826,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public boolean hasValueDouble() {
         return valueCase_ == 4;
       }
+
       /**
        *
        *
@@ -3741,6 +3844,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         }
         return 0D;
       }
+
       /**
        *
        *
@@ -3760,6 +3864,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3781,6 +3886,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object namespace_ = "";
+
       /**
        *
        *
@@ -3803,6 +3909,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3825,6 +3932,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3846,6 +3954,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3863,6 +3972,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3887,6 +3997,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int op_ = 0;
+
       /**
        *
        *
@@ -3903,6 +4014,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public int getOpValue() {
         return op_;
       }
+
       /**
        *
        *
@@ -3922,6 +4034,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3943,6 +4056,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3966,6 +4080,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4073,6 +4188,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return The crowdingAttribute.
      */
     java.lang.String getCrowdingAttribute();
+
     /**
      *
      *
@@ -4090,6 +4206,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getCrowdingAttributeBytes();
   }
+
   /**
    *
    *
@@ -4106,6 +4223,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag)
       CrowdingTagOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CrowdingTag.newBuilder() to construct.
     private CrowdingTag(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4140,6 +4258,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object crowdingAttribute_ = "";
+
     /**
      *
      *
@@ -4167,6 +4286,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -4356,6 +4476,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4545,6 +4666,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object crowdingAttribute_ = "";
+
       /**
        *
        *
@@ -4571,6 +4693,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4597,6 +4720,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4622,6 +4746,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4643,6 +4768,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4739,6 +4865,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object datapointId_ = "";
+
   /**
    *
    *
@@ -4762,6 +4889,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -4790,6 +4918,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList featureVector_ = emptyFloatList();
+
   /**
    *
    *
@@ -4806,6 +4935,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Float> getFeatureVectorList() {
     return featureVector_;
   }
+
   /**
    *
    *
@@ -4821,6 +4951,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
   public int getFeatureVectorCount() {
     return featureVector_.size();
   }
+
   /**
    *
    *
@@ -4842,6 +4973,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPARSE_EMBEDDING_FIELD_NUMBER = 7;
   private com.google.cloud.aiplatform.v1.IndexDatapoint.SparseEmbedding sparseEmbedding_;
+
   /**
    *
    *
@@ -4859,6 +4991,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSparseEmbedding() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4878,6 +5011,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.IndexDatapoint.SparseEmbedding.getDefaultInstance()
         : sparseEmbedding_;
   }
+
   /**
    *
    *
@@ -4901,6 +5035,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction> restricts_;
+
   /**
    *
    *
@@ -4920,6 +5055,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       getRestrictsList() {
     return restricts_;
   }
+
   /**
    *
    *
@@ -4940,6 +5076,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       getRestrictsOrBuilderList() {
     return restricts_;
   }
+
   /**
    *
    *
@@ -4958,6 +5095,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
   public int getRestrictsCount() {
     return restricts_.size();
   }
+
   /**
    *
    *
@@ -4976,6 +5114,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction getRestricts(int index) {
     return restricts_.get(index);
   }
+
   /**
    *
    *
@@ -5001,6 +5140,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction>
       numericRestricts_;
+
   /**
    *
    *
@@ -5019,6 +5159,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       getNumericRestrictsList() {
     return numericRestricts_;
   }
+
   /**
    *
    *
@@ -5038,6 +5179,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       getNumericRestrictsOrBuilderList() {
     return numericRestricts_;
   }
+
   /**
    *
    *
@@ -5055,6 +5197,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
   public int getNumericRestrictsCount() {
     return numericRestricts_.size();
   }
+
   /**
    *
    *
@@ -5073,6 +5216,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return numericRestricts_.get(index);
   }
+
   /**
    *
    *
@@ -5094,6 +5238,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CROWDING_TAG_FIELD_NUMBER = 5;
   private com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag crowdingTag_;
+
   /**
    *
    *
@@ -5112,6 +5257,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCrowdingTag() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -5132,6 +5278,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag.getDefaultInstance()
         : crowdingTag_;
   }
+
   /**
    *
    *
@@ -5384,6 +5531,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5772,6 +5920,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object datapointId_ = "";
+
     /**
      *
      *
@@ -5794,6 +5943,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5816,6 +5966,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5837,6 +5988,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5854,6 +6006,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5892,6 +6045,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -5908,6 +6062,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       featureVector_.makeImmutable();
       return featureVector_;
     }
+
     /**
      *
      *
@@ -5923,6 +6078,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public int getFeatureVectorCount() {
       return featureVector_.size();
     }
+
     /**
      *
      *
@@ -5939,6 +6095,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public float getFeatureVector(int index) {
       return featureVector_.getFloat(index);
     }
+
     /**
      *
      *
@@ -5961,6 +6118,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5982,6 +6140,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6002,6 +6161,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6027,6 +6187,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.IndexDatapoint.SparseEmbedding.Builder,
             com.google.cloud.aiplatform.v1.IndexDatapoint.SparseEmbeddingOrBuilder>
         sparseEmbeddingBuilder_;
+
     /**
      *
      *
@@ -6043,6 +6204,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSparseEmbedding() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -6065,6 +6227,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return sparseEmbeddingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6090,6 +6253,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6112,6 +6276,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6144,6 +6309,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6165,6 +6331,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6182,6 +6349,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSparseEmbeddingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6203,6 +6371,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             : sparseEmbedding_;
       }
     }
+
     /**
      *
      *
@@ -6271,6 +6440,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return restrictsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -6292,6 +6462,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return restrictsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -6313,6 +6484,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return restrictsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -6341,6 +6513,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6367,6 +6540,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6394,6 +6568,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6422,6 +6597,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6447,6 +6623,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6473,6 +6650,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6499,6 +6677,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6523,6 +6702,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6547,6 +6727,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6565,6 +6746,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getRestrictsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6587,6 +6769,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return restrictsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6610,6 +6793,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(restricts_);
       }
     }
+
     /**
      *
      *
@@ -6629,6 +6813,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6650,6 +6835,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6726,6 +6912,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return numericRestrictsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -6746,6 +6933,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return numericRestrictsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -6767,6 +6955,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return numericRestrictsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -6794,6 +6983,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6819,6 +7009,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6846,6 +7037,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6873,6 +7065,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6897,6 +7090,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6922,6 +7116,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6948,6 +7143,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6971,6 +7167,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6994,6 +7191,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7011,6 +7209,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         getNumericRestrictsBuilder(int index) {
       return getNumericRestrictsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -7032,6 +7231,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return numericRestrictsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -7054,6 +7254,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(numericRestricts_);
       }
     }
+
     /**
      *
      *
@@ -7074,6 +7275,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -7095,6 +7297,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -7139,6 +7342,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag.Builder,
             com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTagOrBuilder>
         crowdingTagBuilder_;
+
     /**
      *
      *
@@ -7156,6 +7360,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCrowdingTag() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -7179,6 +7384,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return crowdingTagBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7204,6 +7410,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7227,6 +7434,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7259,6 +7467,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7281,6 +7490,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7299,6 +7509,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCrowdingTagFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7321,6 +7532,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             : crowdingTag_;
       }
     }
+
     /**
      *
      *

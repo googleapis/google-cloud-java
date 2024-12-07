@@ -41,6 +41,7 @@ public interface AzureNodeConfigOrBuilder
    * @return The vmSize.
    */
   java.lang.String getVmSize();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface AzureNodeConfigOrBuilder
    * @return Whether the rootVolume field is set.
    */
   boolean hasRootVolume();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface AzureNodeConfigOrBuilder
    * @return The rootVolume.
    */
   com.google.cloud.gkemulticloud.v1.AzureDiskTemplate getRootVolume();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface AzureNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -139,9 +143,11 @@ public interface AzureNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsTags(java.lang.String key);
+
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTags();
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public interface AzureNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface AzureNodeConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public interface AzureNodeConfigOrBuilder
    * @return The imageType.
    */
   java.lang.String getImageType();
+
   /**
    *
    *
@@ -237,6 +246,7 @@ public interface AzureNodeConfigOrBuilder
    * @return Whether the sshConfig field is set.
    */
   boolean hasSshConfig();
+
   /**
    *
    *
@@ -251,6 +261,7 @@ public interface AzureNodeConfigOrBuilder
    * @return The sshConfig.
    */
   com.google.cloud.gkemulticloud.v1.AzureSshConfig getSshConfig();
+
   /**
    *
    *
@@ -278,6 +289,7 @@ public interface AzureNodeConfigOrBuilder
    * @return Whether the proxyConfig field is set.
    */
   boolean hasProxyConfig();
+
   /**
    *
    *
@@ -292,6 +304,7 @@ public interface AzureNodeConfigOrBuilder
    * @return The proxyConfig.
    */
   com.google.cloud.gkemulticloud.v1.AzureProxyConfig getProxyConfig();
+
   /**
    *
    *
@@ -319,6 +332,7 @@ public interface AzureNodeConfigOrBuilder
    * @return Whether the configEncryption field is set.
    */
   boolean hasConfigEncryption();
+
   /**
    *
    *
@@ -333,6 +347,7 @@ public interface AzureNodeConfigOrBuilder
    * @return The configEncryption.
    */
   com.google.cloud.gkemulticloud.v1.AzureConfigEncryption getConfigEncryption();
+
   /**
    *
    *
@@ -358,6 +373,7 @@ public interface AzureNodeConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.NodeTaint> getTaintsList();
+
   /**
    *
    *
@@ -370,6 +386,7 @@ public interface AzureNodeConfigOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.NodeTaint getTaints(int index);
+
   /**
    *
    *
@@ -382,6 +399,7 @@ public interface AzureNodeConfigOrBuilder
    * </code>
    */
   int getTaintsCount();
+
   /**
    *
    *
@@ -395,6 +413,7 @@ public interface AzureNodeConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.NodeTaintOrBuilder>
       getTaintsOrBuilderList();
+
   /**
    *
    *
@@ -420,6 +439,7 @@ public interface AzureNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -432,9 +452,11 @@ public interface AzureNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -447,6 +469,7 @@ public interface AzureNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -463,6 +486,7 @@ public interface AzureNodeConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

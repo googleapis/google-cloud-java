@@ -38,6 +38,7 @@ public interface CreateTriggerRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface CreateTriggerRequestOrBuilder
    * @return Whether the trigger field is set.
    */
   boolean hasTrigger();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface CreateTriggerRequestOrBuilder
    * @return The trigger.
    */
   com.google.cloud.eventarc.v1.Trigger getTrigger();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface CreateTriggerRequestOrBuilder
    * @return The triggerId.
    */
   java.lang.String getTriggerId();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DiskList)
     DiskListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiskList.newBuilder() to construct.
   private DiskList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Disk> items_;
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.compute.v1.Disk> getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.Disk getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -224,6 +234,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -275,6 +287,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -313,6 +327,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -341,6 +356,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -356,6 +372,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -379,6 +396,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -405,6 +423,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -420,6 +439,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -435,6 +455,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -678,6 +699,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -998,6 +1020,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1012,6 +1035,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1034,6 +1058,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1081,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1077,6 +1103,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1121,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1177,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1165,6 +1194,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1181,6 +1211,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1203,6 +1234,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1222,6 +1254,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1277,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1300,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1285,6 +1320,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1340,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1361,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1381,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1401,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1414,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Disk.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1390,6 +1431,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1407,6 +1449,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -1420,6 +1463,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Disk.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1433,6 +1477,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       return getItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Disk.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1464,6 +1509,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1478,6 +1524,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1500,6 +1547,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1522,6 +1570,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1543,6 +1592,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1560,6 +1610,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1584,6 +1635,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1598,6 +1650,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1620,6 +1673,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1642,6 +1696,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1663,6 +1718,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1680,6 +1736,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1704,6 +1761,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -1718,6 +1776,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1740,6 +1799,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1762,6 +1822,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1783,6 +1844,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1800,6 +1862,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1829,6 +1892,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -1843,6 +1907,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1863,6 +1928,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1885,6 +1951,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1904,6 +1971,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1931,6 +1999,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1950,6 +2019,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1964,6 +2034,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1982,6 +2053,7 @@ public final class DiskList extends com.google.protobuf.GeneratedMessageV3
             : warning_;
       }
     }
+
     /**
      *
      *

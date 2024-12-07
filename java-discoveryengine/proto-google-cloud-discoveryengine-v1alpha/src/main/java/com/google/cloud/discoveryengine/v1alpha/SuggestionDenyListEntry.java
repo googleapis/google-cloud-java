@@ -34,6 +34,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry)
     SuggestionDenyListEntryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SuggestionDenyListEntry.newBuilder() to construct.
   private SuggestionDenyListEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,6 +120,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
      * <code>MATCH_OPERATOR_UNSPECIFIED = 0;</code>
      */
     public static final int MATCH_OPERATOR_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
      * <code>EXACT_MATCH = 1;</code>
      */
     public static final int EXACT_MATCH_VALUE = 1;
+
     /**
      *
      *
@@ -229,6 +232,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object blockPhrase_ = "";
+
   /**
    *
    *
@@ -253,6 +257,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -280,6 +285,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
 
   public static final int MATCH_OPERATOR_FIELD_NUMBER = 2;
   private int matchOperator_ = 0;
+
   /**
    *
    *
@@ -298,6 +304,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
   public int getMatchOperatorValue() {
     return matchOperator_;
   }
+
   /**
    *
    *
@@ -499,6 +506,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -701,6 +709,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object blockPhrase_ = "";
+
     /**
      *
      *
@@ -724,6 +733,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -747,6 +757,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -769,6 +780,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +799,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +825,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
     }
 
     private int matchOperator_ = 0;
+
     /**
      *
      *
@@ -830,6 +844,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
     public int getMatchOperatorValue() {
       return matchOperator_;
     }
+
     /**
      *
      *
@@ -851,6 +866,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +892,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -901,6 +918,7 @@ public final class SuggestionDenyListEntry extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -65,6 +65,7 @@ public interface Float64StatsOrBuilder
    * @return A list containing the quantiles.
    */
   java.util.List<java.lang.Double> getQuantilesList();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface Float64StatsOrBuilder
    * @return The count of quantiles.
    */
   int getQuantilesCount();
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public interface Float64StatsOrBuilder
    */
   java.util.List<com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket>
       getHistogramBucketsList();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface Float64StatsOrBuilder
    * </code>
    */
   com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket getHistogramBuckets(int index);
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface Float64StatsOrBuilder
    * </code>
    */
   int getHistogramBucketsCount();
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public interface Float64StatsOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucketOrBuilder>
       getHistogramBucketsOrBuilderList();
+
   /**
    *
    *

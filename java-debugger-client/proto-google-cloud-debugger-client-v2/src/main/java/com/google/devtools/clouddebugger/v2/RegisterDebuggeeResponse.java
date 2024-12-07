@@ -33,6 +33,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.devtools.clouddebugger.v2.RegisterDebuggeeResponse)
     RegisterDebuggeeResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegisterDebuggeeResponse.newBuilder() to construct.
   private RegisterDebuggeeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int DEBUGGEE_FIELD_NUMBER = 1;
   private com.google.devtools.clouddebugger.v2.Debuggee debuggee_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
   public boolean hasDebuggee() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
         ? com.google.devtools.clouddebugger.v2.Debuggee.getDefaultInstance()
         : debuggee_;
   }
+
   /**
    *
    *
@@ -289,6 +293,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -495,6 +500,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
             com.google.devtools.clouddebugger.v2.Debuggee.Builder,
             com.google.devtools.clouddebugger.v2.DebuggeeOrBuilder>
         debuggeeBuilder_;
+
     /**
      *
      *
@@ -513,6 +519,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
     public boolean hasDebuggee() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -537,6 +544,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
         return debuggeeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -563,6 +571,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -618,6 +628,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -641,6 +652,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
       onChanged();
       return getDebuggeeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -681,6 +694,7 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
             : debuggee_;
       }
     }
+
     /**
      *
      *

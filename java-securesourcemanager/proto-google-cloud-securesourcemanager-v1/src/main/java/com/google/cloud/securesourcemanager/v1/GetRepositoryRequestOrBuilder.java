@@ -40,6 +40,7 @@ public interface GetRepositoryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

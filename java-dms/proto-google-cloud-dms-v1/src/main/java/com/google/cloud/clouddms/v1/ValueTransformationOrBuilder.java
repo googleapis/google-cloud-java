@@ -36,6 +36,7 @@ public interface ValueTransformationOrBuilder
    * @return Whether the isNull field is set.
    */
   boolean hasIsNull();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ValueTransformationOrBuilder
    * @return The isNull.
    */
   com.google.protobuf.Empty getIsNull();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ValueTransformationOrBuilder
    * @return Whether the valueList field is set.
    */
   boolean hasValueList();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface ValueTransformationOrBuilder
    * @return The valueList.
    */
   com.google.cloud.clouddms.v1.ValueListFilter getValueList();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface ValueTransformationOrBuilder
    * @return Whether the intComparison field is set.
    */
   boolean hasIntComparison();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface ValueTransformationOrBuilder
    * @return The intComparison.
    */
   com.google.cloud.clouddms.v1.IntComparisonFilter getIntComparison();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface ValueTransformationOrBuilder
    * @return Whether the doubleComparison field is set.
    */
   boolean hasDoubleComparison();
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public interface ValueTransformationOrBuilder
    * @return The doubleComparison.
    */
   com.google.cloud.clouddms.v1.DoubleComparisonFilter getDoubleComparison();
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public interface ValueTransformationOrBuilder
    * @return Whether the assignNull field is set.
    */
   boolean hasAssignNull();
+
   /**
    *
    *
@@ -214,6 +223,7 @@ public interface ValueTransformationOrBuilder
    * @return The assignNull.
    */
   com.google.protobuf.Empty getAssignNull();
+
   /**
    *
    *
@@ -241,6 +251,7 @@ public interface ValueTransformationOrBuilder
    * @return Whether the assignSpecificValue field is set.
    */
   boolean hasAssignSpecificValue();
+
   /**
    *
    *
@@ -256,6 +267,7 @@ public interface ValueTransformationOrBuilder
    * @return The assignSpecificValue.
    */
   com.google.cloud.clouddms.v1.AssignSpecificValue getAssignSpecificValue();
+
   /**
    *
    *
@@ -284,6 +296,7 @@ public interface ValueTransformationOrBuilder
    * @return Whether the assignMinValue field is set.
    */
   boolean hasAssignMinValue();
+
   /**
    *
    *
@@ -298,6 +311,7 @@ public interface ValueTransformationOrBuilder
    * @return The assignMinValue.
    */
   com.google.protobuf.Empty getAssignMinValue();
+
   /**
    *
    *
@@ -325,6 +339,7 @@ public interface ValueTransformationOrBuilder
    * @return Whether the assignMaxValue field is set.
    */
   boolean hasAssignMaxValue();
+
   /**
    *
    *
@@ -339,6 +354,7 @@ public interface ValueTransformationOrBuilder
    * @return The assignMaxValue.
    */
   com.google.protobuf.Empty getAssignMaxValue();
+
   /**
    *
    *
@@ -366,6 +382,7 @@ public interface ValueTransformationOrBuilder
    * @return Whether the roundScale field is set.
    */
   boolean hasRoundScale();
+
   /**
    *
    *
@@ -380,6 +397,7 @@ public interface ValueTransformationOrBuilder
    * @return The roundScale.
    */
   com.google.cloud.clouddms.v1.RoundToScale getRoundScale();
+
   /**
    *
    *
@@ -407,6 +425,7 @@ public interface ValueTransformationOrBuilder
    * @return Whether the applyHash field is set.
    */
   boolean hasApplyHash();
+
   /**
    *
    *
@@ -421,6 +440,7 @@ public interface ValueTransformationOrBuilder
    * @return The applyHash.
    */
   com.google.cloud.clouddms.v1.ApplyHash getApplyHash();
+
   /**
    *
    *

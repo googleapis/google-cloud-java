@@ -36,6 +36,7 @@ public interface PatchTracesRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PatchTracesRequestOrBuilder
    * @return Whether the traces field is set.
    */
   boolean hasTraces();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface PatchTracesRequestOrBuilder
    * @return The traces.
    */
   com.google.devtools.cloudtrace.v1.Traces getTraces();
+
   /**
    *
    *

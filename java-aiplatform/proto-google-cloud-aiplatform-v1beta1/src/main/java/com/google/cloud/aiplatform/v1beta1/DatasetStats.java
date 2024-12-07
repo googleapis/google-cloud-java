@@ -33,6 +33,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DatasetStats)
     DatasetStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DatasetStats.newBuilder() to construct.
   private DatasetStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TUNING_DATASET_EXAMPLE_COUNT_FIELD_NUMBER = 1;
   private long tuningDatasetExampleCount_ = 0L;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOTAL_TUNING_CHARACTER_COUNT_FIELD_NUMBER = 2;
   private long totalTuningCharacterCount_ = 0L;
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOTAL_BILLABLE_CHARACTER_COUNT_FIELD_NUMBER = 3;
   private long totalBillableCharacterCount_ = 0L;
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TUNING_STEP_COUNT_FIELD_NUMBER = 4;
   private long tuningStepCount_ = 0L;
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USER_INPUT_TOKEN_DISTRIBUTION_FIELD_NUMBER = 5;
   private com.google.cloud.aiplatform.v1beta1.DatasetDistribution userInputTokenDistribution_;
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUserInputTokenDistribution() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.DatasetDistribution.getDefaultInstance()
         : userInputTokenDistribution_;
   }
+
   /**
    *
    *
@@ -198,6 +206,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USER_OUTPUT_TOKEN_DISTRIBUTION_FIELD_NUMBER = 6;
   private com.google.cloud.aiplatform.v1beta1.DatasetDistribution userOutputTokenDistribution_;
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUserOutputTokenDistribution() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -234,6 +244,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.DatasetDistribution.getDefaultInstance()
         : userOutputTokenDistribution_;
   }
+
   /**
    *
    *
@@ -256,6 +267,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
   public static final int USER_MESSAGE_PER_EXAMPLE_DISTRIBUTION_FIELD_NUMBER = 7;
   private com.google.cloud.aiplatform.v1beta1.DatasetDistribution
       userMessagePerExampleDistribution_;
+
   /**
    *
    *
@@ -273,6 +285,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUserMessagePerExampleDistribution() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -293,6 +306,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.DatasetDistribution.getDefaultInstance()
         : userMessagePerExampleDistribution_;
   }
+
   /**
    *
    *
@@ -316,6 +330,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Content> userDatasetExamples_;
+
   /**
    *
    *
@@ -331,6 +346,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getUserDatasetExamplesList() {
     return userDatasetExamples_;
   }
+
   /**
    *
    *
@@ -347,6 +363,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       getUserDatasetExamplesOrBuilderList() {
     return userDatasetExamples_;
   }
+
   /**
    *
    *
@@ -362,6 +379,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
   public int getUserDatasetExamplesCount() {
     return userDatasetExamples_.size();
   }
+
   /**
    *
    *
@@ -377,6 +395,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1beta1.Content getUserDatasetExamples(int index) {
     return userDatasetExamples_.get(index);
   }
+
   /**
    *
    *
@@ -645,6 +664,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1008,6 +1028,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long tuningDatasetExampleCount_;
+
     /**
      *
      *
@@ -1024,6 +1045,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
     public long getTuningDatasetExampleCount() {
       return tuningDatasetExampleCount_;
     }
+
     /**
      *
      *
@@ -1044,6 +1066,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1087,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long totalTuningCharacterCount_;
+
     /**
      *
      *
@@ -1080,6 +1104,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
     public long getTotalTuningCharacterCount() {
       return totalTuningCharacterCount_;
     }
+
     /**
      *
      *
@@ -1100,6 +1125,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1146,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long totalBillableCharacterCount_;
+
     /**
      *
      *
@@ -1136,6 +1163,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
     public long getTotalBillableCharacterCount() {
       return totalBillableCharacterCount_;
     }
+
     /**
      *
      *
@@ -1156,6 +1184,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1176,6 +1205,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long tuningStepCount_;
+
     /**
      *
      *
@@ -1191,6 +1221,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
     public long getTuningStepCount() {
       return tuningStepCount_;
     }
+
     /**
      *
      *
@@ -1210,6 +1241,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1266,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.DatasetDistribution.Builder,
             com.google.cloud.aiplatform.v1beta1.DatasetDistributionOrBuilder>
         userInputTokenDistributionBuilder_;
+
     /**
      *
      *
@@ -1250,6 +1283,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUserInputTokenDistribution() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1272,6 +1306,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
         return userInputTokenDistributionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1297,6 +1332,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1319,6 +1355,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1350,6 +1387,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1409,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1427,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUserInputTokenDistributionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1409,6 +1449,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
             : userInputTokenDistribution_;
       }
     }
+
     /**
      *
      *
@@ -1443,6 +1484,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.DatasetDistribution.Builder,
             com.google.cloud.aiplatform.v1beta1.DatasetDistributionOrBuilder>
         userOutputTokenDistributionBuilder_;
+
     /**
      *
      *
@@ -1459,6 +1501,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUserOutputTokenDistribution() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1482,6 +1525,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
         return userOutputTokenDistributionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1507,6 +1551,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1529,6 +1574,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1560,6 +1606,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1581,6 +1628,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1598,6 +1646,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUserOutputTokenDistributionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1619,6 +1668,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
             : userOutputTokenDistribution_;
       }
     }
+
     /**
      *
      *
@@ -1654,6 +1704,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.DatasetDistribution.Builder,
             com.google.cloud.aiplatform.v1beta1.DatasetDistributionOrBuilder>
         userMessagePerExampleDistributionBuilder_;
+
     /**
      *
      *
@@ -1670,6 +1721,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUserMessagePerExampleDistribution() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1693,6 +1745,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
         return userMessagePerExampleDistributionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1718,6 +1771,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1740,6 +1794,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1771,6 +1826,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1792,6 +1848,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1809,6 +1866,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUserMessagePerExampleDistributionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1830,6 +1888,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
             : userMessagePerExampleDistribution_;
       }
     }
+
     /**
      *
      *
@@ -1895,6 +1954,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
         return userDatasetExamplesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1913,6 +1973,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
         return userDatasetExamplesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1931,6 +1992,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
         return userDatasetExamplesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1956,6 +2018,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1978,6 +2041,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2002,6 +2066,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2027,6 +2092,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2049,6 +2115,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2071,6 +2138,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2093,6 +2161,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2114,6 +2183,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2135,6 +2205,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2150,6 +2221,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getUserDatasetExamplesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2169,6 +2241,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
         return userDatasetExamplesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2188,6 +2261,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(userDatasetExamples_);
       }
     }
+
     /**
      *
      *
@@ -2203,6 +2277,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       return getUserDatasetExamplesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2219,6 +2294,7 @@ public final class DatasetStats extends com.google.protobuf.GeneratedMessageV3
       return getUserDatasetExamplesFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class AzureSynapseDialect extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.AzureSynapseDialect)
     AzureSynapseDialectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AzureSynapseDialect.newBuilder() to construct.
   private AzureSynapseDialect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class AzureSynapseDialect extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

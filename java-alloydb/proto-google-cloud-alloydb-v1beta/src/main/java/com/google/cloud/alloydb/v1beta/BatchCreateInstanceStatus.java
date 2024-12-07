@@ -47,6 +47,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.BatchCreateInstanceStatus)
     BatchCreateInstanceStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateInstanceStatus.newBuilder() to construct.
   private BatchCreateInstanceStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -177,6 +178,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -188,6 +190,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
      * <code>PENDING_CREATE = 1;</code>
      */
     public static final int PENDING_CREATE_VALUE = 1;
+
     /**
      *
      *
@@ -198,6 +201,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
      * <code>READY = 2;</code>
      */
     public static final int READY_VALUE = 2;
+
     /**
      *
      *
@@ -208,6 +212,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
      * <code>CREATING = 3;</code>
      */
     public static final int CREATING_VALUE = 3;
+
     /**
      *
      *
@@ -218,6 +223,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
      * <code>DELETING = 4;</code>
      */
     public static final int DELETING_VALUE = 4;
+
     /**
      *
      *
@@ -229,6 +235,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
      * <code>FAILED = 5;</code>
      */
     public static final int FAILED_VALUE = 5;
+
     /**
      *
      *
@@ -337,6 +344,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -359,6 +367,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -390,6 +399,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorMsg_ = "";
+
   /**
    *
    *
@@ -414,6 +424,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -441,6 +452,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
 
   public static final int ERROR_FIELD_NUMBER = 4;
   private com.google.rpc.Status error_;
+
   /**
    *
    *
@@ -457,6 +469,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
   public boolean hasError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -473,6 +486,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
+
   /**
    *
    *
@@ -490,6 +504,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
 
   public static final int TYPE_FIELD_NUMBER = 3;
   private int type_ = 0;
+
   /**
    * <code>.google.cloud.alloydb.v1beta.Instance.InstanceType type = 3;</code>
    *
@@ -499,6 +514,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
   public int getTypeValue() {
     return type_;
   }
+
   /**
    * <code>.google.cloud.alloydb.v1beta.Instance.InstanceType type = 3;</code>
    *
@@ -713,6 +729,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -966,6 +983,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -988,6 +1006,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1013,6 +1032,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1059,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
           ? com.google.cloud.alloydb.v1beta.BatchCreateInstanceStatus.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1067,6 +1088,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1115,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object errorMsg_ = "";
+
     /**
      *
      *
@@ -1116,6 +1139,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1139,6 +1163,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1161,6 +1186,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1205,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1234,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -1222,6 +1250,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
     public boolean hasError() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1241,6 +1270,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1264,6 +1294,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1284,6 +1315,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1344,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1365,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1347,6 +1381,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1364,6 +1399,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
+
     /**
      *
      *
@@ -1389,6 +1425,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
     }
 
     private int type_ = 0;
+
     /**
      * <code>.google.cloud.alloydb.v1beta.Instance.InstanceType type = 3;</code>
      *
@@ -1398,6 +1435,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
     public int getTypeValue() {
       return type_;
     }
+
     /**
      * <code>.google.cloud.alloydb.v1beta.Instance.InstanceType type = 3;</code>
      *
@@ -1410,6 +1448,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      * <code>.google.cloud.alloydb.v1beta.Instance.InstanceType type = 3;</code>
      *
@@ -1423,6 +1462,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
           ? com.google.cloud.alloydb.v1beta.Instance.InstanceType.UNRECOGNIZED
           : result;
     }
+
     /**
      * <code>.google.cloud.alloydb.v1beta.Instance.InstanceType type = 3;</code>
      *
@@ -1438,6 +1478,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      * <code>.google.cloud.alloydb.v1beta.Instance.InstanceType type = 3;</code>
      *

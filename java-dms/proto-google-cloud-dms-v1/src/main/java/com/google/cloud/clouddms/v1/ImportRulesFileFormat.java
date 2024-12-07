@@ -72,6 +72,7 @@ public enum ImportRulesFileFormat implements com.google.protobuf.ProtocolMessage
    * <code>IMPORT_RULES_FILE_FORMAT_UNSPECIFIED = 0;</code>
    */
   public static final int IMPORT_RULES_FILE_FORMAT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum ImportRulesFileFormat implements com.google.protobuf.ProtocolMessage
    * <code>IMPORT_RULES_FILE_FORMAT_HARBOUR_BRIDGE_SESSION_FILE = 1;</code>
    */
   public static final int IMPORT_RULES_FILE_FORMAT_HARBOUR_BRIDGE_SESSION_FILE_VALUE = 1;
+
   /**
    *
    *

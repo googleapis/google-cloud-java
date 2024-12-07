@@ -109,6 +109,7 @@ public interface UsageSnapshotOrBuilder
    * @return The acceleratorType.
    */
   java.lang.String getAcceleratorType();
+
   /**
    *
    *
@@ -135,6 +136,7 @@ public interface UsageSnapshotOrBuilder
    * @return Whether the snapshotTime field is set.
    */
   boolean hasSnapshotTime();
+
   /**
    *
    *
@@ -148,6 +150,7 @@ public interface UsageSnapshotOrBuilder
    * @return The snapshotTime.
    */
   com.google.protobuf.Timestamp getSnapshotTime();
+
   /**
    *
    *

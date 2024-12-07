@@ -33,6 +33,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CreateConnectionRequest)
     CreateConnectionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateConnectionRequest.newBuilder() to construct.
   private CreateConnectionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
 
   public static final int CONNECTION_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.Connection connection_;
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
   public boolean hasConnection() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
         ? com.google.privacy.dlp.v2.Connection.getDefaultInstance()
         : connection_;
   }
+
   /**
    *
    *
@@ -364,6 +370,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -577,6 +584,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -609,6 +617,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -641,6 +650,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -672,6 +682,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +710,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +750,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.Connection.Builder,
             com.google.privacy.dlp.v2.ConnectionOrBuilder>
         connectionBuilder_;
+
     /**
      *
      *
@@ -754,6 +767,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
     public boolean hasConnection() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -776,6 +790,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
         return connectionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -800,6 +815,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +837,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +867,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +889,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
       onChanged();
       return getConnectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
             : connection_;
       }
     }
+
     /**
      *
      *

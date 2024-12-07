@@ -38,6 +38,7 @@ public interface PatchRegionSslPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface PatchRegionSslPolicyRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface PatchRegionSslPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface PatchRegionSslPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface PatchRegionSslPolicyRequestOrBuilder
    * @return The sslPolicy.
    */
   java.lang.String getSslPolicy();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface PatchRegionSslPolicyRequestOrBuilder
    * @return Whether the sslPolicyResource field is set.
    */
   boolean hasSslPolicyResource();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface PatchRegionSslPolicyRequestOrBuilder
    * @return The sslPolicyResource.
    */
   com.google.cloud.compute.v1.SslPolicy getSslPolicyResource();
+
   /**
    *
    *

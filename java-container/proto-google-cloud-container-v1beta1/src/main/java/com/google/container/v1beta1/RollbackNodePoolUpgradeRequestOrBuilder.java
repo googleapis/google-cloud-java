@@ -42,6 +42,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -150,6 +153,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getNodePoolId();
+
   /**
    *
    *
@@ -182,6 +186,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

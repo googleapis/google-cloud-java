@@ -34,6 +34,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ProvisionCloudIdentityRequest)
     ProvisionCloudIdentityRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProvisionCloudIdentityRequest.newBuilder() to construct.
   private ProvisionCloudIdentityRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customer_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
 
   public static final int CLOUD_IDENTITY_INFO_FIELD_NUMBER = 2;
   private com.google.cloud.channel.v1.CloudIdentityInfo cloudIdentityInfo_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
   public boolean hasCloudIdentityInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
         ? com.google.cloud.channel.v1.CloudIdentityInfo.getDefaultInstance()
         : cloudIdentityInfo_;
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
 
   public static final int USER_FIELD_NUMBER = 3;
   private com.google.cloud.channel.v1.AdminUser user_;
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
   public boolean hasUser() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -204,6 +212,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
   public com.google.cloud.channel.v1.AdminUser getUser() {
     return user_ == null ? com.google.cloud.channel.v1.AdminUser.getDefaultInstance() : user_;
   }
+
   /**
    *
    *
@@ -220,6 +229,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -433,6 +443,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -683,6 +694,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object customer_ = "";
+
     /**
      *
      *
@@ -708,6 +720,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -757,6 +771,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +825,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
             com.google.cloud.channel.v1.CloudIdentityInfo.Builder,
             com.google.cloud.channel.v1.CloudIdentityInfoOrBuilder>
         cloudIdentityInfoBuilder_;
+
     /**
      *
      *
@@ -823,6 +840,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
     public boolean hasCloudIdentityInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -843,6 +861,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
         return cloudIdentityInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +905,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +934,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +954,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +969,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return getCloudIdentityInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -964,6 +988,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
             : cloudIdentityInfo_;
       }
     }
+
     /**
      *
      *
@@ -996,6 +1021,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
             com.google.cloud.channel.v1.AdminUser.Builder,
             com.google.cloud.channel.v1.AdminUserOrBuilder>
         userBuilder_;
+
     /**
      *
      *
@@ -1010,6 +1036,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
     public boolean hasUser() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1028,6 +1055,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
         return userBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1050,6 +1078,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1098,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1126,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1146,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1161,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return getUserFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1145,6 +1178,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
         return user_ == null ? com.google.cloud.channel.v1.AdminUser.getDefaultInstance() : user_;
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1206,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1187,6 +1222,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1206,6 +1242,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

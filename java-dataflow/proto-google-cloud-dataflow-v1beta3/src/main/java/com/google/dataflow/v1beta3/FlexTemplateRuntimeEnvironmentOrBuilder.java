@@ -66,6 +66,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *
@@ -94,6 +95,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
+
   /**
    *
    *
@@ -120,6 +122,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The tempLocation.
    */
   java.lang.String getTempLocation();
+
   /**
    *
    *
@@ -147,6 +150,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return A list containing the additionalExperiments.
    */
   java.util.List<java.lang.String> getAdditionalExperimentsList();
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The count of additionalExperiments.
    */
   int getAdditionalExperimentsCount();
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The additionalExperiments at the given index.
    */
   java.lang.String getAdditionalExperiments(int index);
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -256,6 +264,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *
@@ -289,6 +298,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * <code>map&lt;string, string&gt; additional_user_labels = 10;</code>
    */
   int getAdditionalUserLabelsCount();
+
   /**
    *
    *
@@ -304,9 +314,11 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * <code>map&lt;string, string&gt; additional_user_labels = 10;</code>
    */
   boolean containsAdditionalUserLabels(java.lang.String key);
+
   /** Use {@link #getAdditionalUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabels();
+
   /**
    *
    *
@@ -322,6 +334,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * <code>map&lt;string, string&gt; additional_user_labels = 10;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabelsMap();
+
   /**
    *
    *
@@ -341,6 +354,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -371,6 +385,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -398,6 +413,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The enum numeric value on the wire for ipConfiguration.
    */
   int getIpConfigurationValue();
+
   /**
    *
    *
@@ -427,6 +443,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The workerRegion.
    */
   java.lang.String getWorkerRegion();
+
   /**
    *
    *
@@ -461,6 +478,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The workerZone.
    */
   java.lang.String getWorkerZone();
+
   /**
    *
    *
@@ -505,6 +523,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The enum numeric value on the wire for flexrsGoal.
    */
   int getFlexrsGoalValue();
+
   /**
    *
    *
@@ -532,6 +551,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The stagingLocation.
    */
   java.lang.String getStagingLocation();
+
   /**
    *
    *
@@ -560,6 +580,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The sdkContainerImage.
    */
   java.lang.String getSdkContainerImage();
+
   /**
    *
    *
@@ -600,6 +621,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The enum numeric value on the wire for autoscalingAlgorithm.
    */
   int getAutoscalingAlgorithmValue();
+
   /**
    *
    *
@@ -643,6 +665,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The saveHeapDumpsToGcsPath.
    */
   java.lang.String getSaveHeapDumpsToGcsPath();
+
   /**
    *
    *
@@ -671,6 +694,7 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The launcherMachineType.
    */
   java.lang.String getLauncherMachineType();
+
   /**
    *
    *

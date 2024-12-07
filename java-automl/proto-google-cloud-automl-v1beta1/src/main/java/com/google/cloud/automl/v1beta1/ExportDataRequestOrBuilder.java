@@ -38,6 +38,7 @@ public interface ExportDataRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ExportDataRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ExportDataRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.automl.v1beta1.OutputConfig getOutputConfig();
+
   /**
    *
    *

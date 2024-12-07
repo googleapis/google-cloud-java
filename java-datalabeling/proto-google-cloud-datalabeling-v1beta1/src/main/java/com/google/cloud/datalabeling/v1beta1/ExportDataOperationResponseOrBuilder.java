@@ -37,6 +37,7 @@ public interface ExportDataOperationResponseOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface ExportDataOperationResponseOrBuilder
    * @return Whether the labelStats field is set.
    */
   boolean hasLabelStats();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface ExportDataOperationResponseOrBuilder
    * @return The labelStats.
    */
   com.google.cloud.datalabeling.v1beta1.LabelStats getLabelStats();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface ExportDataOperationResponseOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface ExportDataOperationResponseOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.datalabeling.v1beta1.OutputConfig getOutputConfig();
+
   /**
    *
    *

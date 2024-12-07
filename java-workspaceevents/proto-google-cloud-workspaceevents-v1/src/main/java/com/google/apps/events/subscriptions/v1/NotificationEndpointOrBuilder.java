@@ -49,6 +49,7 @@ public interface NotificationEndpointOrBuilder
    * @return Whether the pubsubTopic field is set.
    */
   boolean hasPubsubTopic();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface NotificationEndpointOrBuilder
    * @return The pubsubTopic.
    */
   java.lang.String getPubsubTopic();
+
   /**
    *
    *

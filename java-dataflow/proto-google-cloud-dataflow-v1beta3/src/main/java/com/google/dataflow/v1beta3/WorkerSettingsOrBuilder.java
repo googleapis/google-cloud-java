@@ -44,6 +44,7 @@ public interface WorkerSettingsOrBuilder
    * @return The baseUrl.
    */
   java.lang.String getBaseUrl();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface WorkerSettingsOrBuilder
    * @return The servicePath.
    */
   java.lang.String getServicePath();
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public interface WorkerSettingsOrBuilder
    * @return The shuffleServicePath.
    */
   java.lang.String getShuffleServicePath();
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public interface WorkerSettingsOrBuilder
    * @return The workerId.
    */
   java.lang.String getWorkerId();
+
   /**
    *
    *
@@ -177,6 +181,7 @@ public interface WorkerSettingsOrBuilder
    * @return The tempStoragePrefix.
    */
   java.lang.String getTempStoragePrefix();
+
   /**
    *
    *

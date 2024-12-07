@@ -36,6 +36,7 @@ public interface LookupDetailsOrBuilder
    * @return The relationshipColumn.
    */
   java.lang.String getRelationshipColumn();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface LookupDetailsOrBuilder
    * @return The relationshipColumnId.
    */
   java.lang.String getRelationshipColumnId();
+
   /**
    *
    *

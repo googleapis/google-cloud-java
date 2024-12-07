@@ -40,6 +40,7 @@ public interface ExtensionOperationOrBuilder
    * @return The operationId.
    */
   java.lang.String getOperationId();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface ExtensionOperationOrBuilder
    * @return Whether the functionDeclaration field is set.
    */
   boolean hasFunctionDeclaration();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface ExtensionOperationOrBuilder
    * @return The functionDeclaration.
    */
   com.google.cloud.aiplatform.v1beta1.FunctionDeclaration getFunctionDeclaration();
+
   /**
    *
    *

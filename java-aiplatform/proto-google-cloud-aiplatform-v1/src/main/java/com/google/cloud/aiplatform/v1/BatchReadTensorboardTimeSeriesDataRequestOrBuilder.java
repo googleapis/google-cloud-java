@@ -43,6 +43,7 @@ public interface BatchReadTensorboardTimeSeriesDataRequestOrBuilder
    * @return The tensorboard.
    */
   java.lang.String getTensorboard();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface BatchReadTensorboardTimeSeriesDataRequestOrBuilder
    * @return A list containing the timeSeries.
    */
   java.util.List<java.lang.String> getTimeSeriesList();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface BatchReadTensorboardTimeSeriesDataRequestOrBuilder
    * @return The count of timeSeries.
    */
   int getTimeSeriesCount();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface BatchReadTensorboardTimeSeriesDataRequestOrBuilder
    * @return The timeSeries at the given index.
    */
   java.lang.String getTimeSeries(int index);
+
   /**
    *
    *

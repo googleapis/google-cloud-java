@@ -38,6 +38,7 @@ public interface SeedConversionWorkspaceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface SeedConversionWorkspaceRequestOrBuilder
    * @return Whether the sourceConnectionProfile field is set.
    */
   boolean hasSourceConnectionProfile();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface SeedConversionWorkspaceRequestOrBuilder
    * @return The sourceConnectionProfile.
    */
   java.lang.String getSourceConnectionProfile();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface SeedConversionWorkspaceRequestOrBuilder
    * @return Whether the destinationConnectionProfile field is set.
    */
   boolean hasDestinationConnectionProfile();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface SeedConversionWorkspaceRequestOrBuilder
    * @return The destinationConnectionProfile.
    */
   java.lang.String getDestinationConnectionProfile();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return Whether the instanceRedistributionType field is set.
    */
   boolean hasInstanceRedistributionType();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return The instanceRedistributionType.
    */
   java.lang.String getInstanceRedistributionType();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return Whether the maxSurge field is set.
    */
   boolean hasMaxSurge();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return The maxSurge.
    */
   com.google.cloud.compute.v1.FixedOrPercent getMaxSurge();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return Whether the maxUnavailable field is set.
    */
   boolean hasMaxUnavailable();
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return The maxUnavailable.
    */
   com.google.cloud.compute.v1.FixedOrPercent getMaxUnavailable();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return Whether the minimalAction field is set.
    */
   boolean hasMinimalAction();
+
   /**
    *
    *
@@ -160,6 +167,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return The minimalAction.
    */
   java.lang.String getMinimalAction();
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return Whether the mostDisruptiveAllowedAction field is set.
    */
   boolean hasMostDisruptiveAllowedAction();
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return The mostDisruptiveAllowedAction.
    */
   java.lang.String getMostDisruptiveAllowedAction();
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return Whether the replacementMethod field is set.
    */
   boolean hasReplacementMethod();
+
   /**
    *
    *
@@ -240,6 +251,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return The replacementMethod.
    */
   java.lang.String getReplacementMethod();
+
   /**
    *
    *
@@ -267,6 +279,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -280,6 +293,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

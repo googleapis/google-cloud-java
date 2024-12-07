@@ -35,6 +35,7 @@ public interface ListCssProductsResponseOrBuilder
    * <code>repeated .google.shopping.css.v1.CssProduct css_products = 1;</code>
    */
   java.util.List<com.google.shopping.css.v1.CssProduct> getCssProductsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListCssProductsResponseOrBuilder
    * <code>repeated .google.shopping.css.v1.CssProduct css_products = 1;</code>
    */
   com.google.shopping.css.v1.CssProduct getCssProducts(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListCssProductsResponseOrBuilder
    * <code>repeated .google.shopping.css.v1.CssProduct css_products = 1;</code>
    */
   int getCssProductsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListCssProductsResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.css.v1.CssProductOrBuilder>
       getCssProductsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListCssProductsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

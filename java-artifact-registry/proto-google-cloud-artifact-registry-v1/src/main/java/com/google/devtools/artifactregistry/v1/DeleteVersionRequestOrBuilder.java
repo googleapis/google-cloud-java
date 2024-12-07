@@ -36,6 +36,7 @@ public interface DeleteVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

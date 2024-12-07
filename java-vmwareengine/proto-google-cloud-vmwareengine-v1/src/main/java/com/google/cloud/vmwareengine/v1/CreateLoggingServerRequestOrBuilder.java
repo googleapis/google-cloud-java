@@ -43,6 +43,7 @@ public interface CreateLoggingServerRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface CreateLoggingServerRequestOrBuilder
    * @return Whether the loggingServer field is set.
    */
   boolean hasLoggingServer();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface CreateLoggingServerRequestOrBuilder
    * @return The loggingServer.
    */
   com.google.cloud.vmwareengine.v1.LoggingServer getLoggingServer();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface CreateLoggingServerRequestOrBuilder
    * @return The loggingServerId.
    */
   java.lang.String getLoggingServerId();
+
   /**
    *
    *
@@ -174,6 +178,7 @@ public interface CreateLoggingServerRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

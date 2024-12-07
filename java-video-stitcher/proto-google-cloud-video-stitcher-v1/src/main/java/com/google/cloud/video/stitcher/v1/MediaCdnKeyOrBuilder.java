@@ -49,6 +49,7 @@ public interface MediaCdnKeyOrBuilder
    * @return The keyName.
    */
   java.lang.String getKeyName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface MediaCdnKeyOrBuilder
    * @return Whether the tokenConfig field is set.
    */
   boolean hasTokenConfig();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface MediaCdnKeyOrBuilder
    * @return The tokenConfig.
    */
   com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig getTokenConfig();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.servicecontrol.v1.LogEntry)
     LogEntryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LogEntry.newBuilder() to construct.
   private LogEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,6 +98,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     private PayloadCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -135,6 +137,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -159,6 +162,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -186,6 +190,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMESTAMP_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp timestamp_;
+
   /**
    *
    *
@@ -202,6 +207,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -218,6 +224,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getTimestamp() {
     return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
   }
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEVERITY_FIELD_NUMBER = 12;
   private int severity_ = 0;
+
   /**
    *
    *
@@ -251,6 +259,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   public int getSeverityValue() {
     return severity_;
   }
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HTTP_REQUEST_FIELD_NUMBER = 14;
   private com.google.api.servicecontrol.v1.HttpRequest httpRequest_;
+
   /**
    *
    *
@@ -288,6 +298,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHttpRequest() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         ? com.google.api.servicecontrol.v1.HttpRequest.getDefaultInstance()
         : httpRequest_;
   }
+
   /**
    *
    *
@@ -327,6 +339,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object trace_ = "";
+
   /**
    *
    *
@@ -353,6 +366,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -384,6 +398,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object insertId_ = "";
+
   /**
    *
    *
@@ -408,6 +423,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -459,6 +475,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -476,12 +493,14 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -496,6 +515,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -517,6 +537,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -540,6 +561,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROTO_PAYLOAD_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -557,6 +579,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProtoPayload() {
     return payloadCase_ == 2;
   }
+
   /**
    *
    *
@@ -577,6 +600,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Any.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -597,6 +621,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_PAYLOAD_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -611,6 +636,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTextPayload() {
     return payloadCase_ == 3;
   }
+
   /**
    *
    *
@@ -638,6 +664,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -667,6 +694,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRUCT_PAYLOAD_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -683,6 +711,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStructPayload() {
     return payloadCase_ == 6;
   }
+
   /**
    *
    *
@@ -702,6 +731,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Struct.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -722,6 +752,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OPERATION_FIELD_NUMBER = 16;
   private com.google.api.servicecontrol.v1.LogEntryOperation operation_;
+
   /**
    *
    *
@@ -738,6 +769,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOperation() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -756,6 +788,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         ? com.google.api.servicecontrol.v1.LogEntryOperation.getDefaultInstance()
         : operation_;
   }
+
   /**
    *
    *
@@ -775,6 +808,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_LOCATION_FIELD_NUMBER = 17;
   private com.google.api.servicecontrol.v1.LogEntrySourceLocation sourceLocation_;
+
   /**
    *
    *
@@ -791,6 +825,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSourceLocation() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -809,6 +844,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         ? com.google.api.servicecontrol.v1.LogEntrySourceLocation.getDefaultInstance()
         : sourceLocation_;
   }
+
   /**
    *
    *
@@ -1138,6 +1174,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1569,6 +1606,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1592,6 +1630,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1615,6 +1654,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1637,6 +1677,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1655,6 +1696,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1685,6 +1727,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timestampBuilder_;
+
     /**
      *
      *
@@ -1700,6 +1743,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimestamp() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1719,6 +1763,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return timestampBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1742,6 +1787,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1762,6 +1808,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1790,6 +1837,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1810,6 +1858,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1825,6 +1874,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimestampFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1842,6 +1892,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
       }
     }
+
     /**
      *
      *
@@ -1870,6 +1921,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int severity_ = 0;
+
     /**
      *
      *
@@ -1886,6 +1938,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public int getSeverityValue() {
       return severity_;
     }
+
     /**
      *
      *
@@ -1905,6 +1958,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1923,6 +1977,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
           com.google.logging.type.LogSeverity.forNumber(severity_);
       return result == null ? com.google.logging.type.LogSeverity.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1945,6 +2000,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1970,6 +2026,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.api.servicecontrol.v1.HttpRequest.Builder,
             com.google.api.servicecontrol.v1.HttpRequestOrBuilder>
         httpRequestBuilder_;
+
     /**
      *
      *
@@ -1985,6 +2042,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHttpRequest() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2006,6 +2064,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return httpRequestBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2029,6 +2088,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2050,6 +2110,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2078,6 +2139,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2098,6 +2160,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2113,6 +2176,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHttpRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2132,6 +2196,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             : httpRequest_;
       }
     }
+
     /**
      *
      *
@@ -2160,6 +2225,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object trace_ = "";
+
     /**
      *
      *
@@ -2185,6 +2251,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2210,6 +2277,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2234,6 +2302,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2254,6 +2323,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2281,6 +2351,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object insertId_ = "";
+
     /**
      *
      *
@@ -2304,6 +2375,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2327,6 +2399,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2349,6 +2422,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2367,6 +2441,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2416,6 +2491,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2433,12 +2509,14 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2453,6 +2531,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2474,6 +2553,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2501,6 +2581,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2518,12 +2599,14 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2545,6 +2628,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -2566,6 +2650,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Any.Builder,
             com.google.protobuf.AnyOrBuilder>
         protoPayloadBuilder_;
+
     /**
      *
      *
@@ -2583,6 +2668,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProtoPayload() {
       return payloadCase_ == 2;
     }
+
     /**
      *
      *
@@ -2610,6 +2696,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Any.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2634,6 +2721,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2655,6 +2743,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2687,6 +2776,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2714,6 +2804,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2728,6 +2819,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Any.Builder getProtoPayloadBuilder() {
       return getProtoPayloadFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2750,6 +2842,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Any.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2798,6 +2891,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextPayload() {
       return payloadCase_ == 3;
     }
+
     /**
      *
      *
@@ -2826,6 +2920,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2854,6 +2949,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2875,6 +2971,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2894,6 +2991,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2922,6 +3020,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         structPayloadBuilder_;
+
     /**
      *
      *
@@ -2938,6 +3037,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStructPayload() {
       return payloadCase_ == 6;
     }
+
     /**
      *
      *
@@ -2964,6 +3064,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Struct.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2987,6 +3088,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3007,6 +3109,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3038,6 +3141,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3064,6 +3168,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3077,6 +3182,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Struct.Builder getStructPayloadBuilder() {
       return getStructPayloadFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3098,6 +3204,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Struct.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3136,6 +3243,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.api.servicecontrol.v1.LogEntryOperation.Builder,
             com.google.api.servicecontrol.v1.LogEntryOperationOrBuilder>
         operationBuilder_;
+
     /**
      *
      *
@@ -3151,6 +3259,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOperation() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3172,6 +3281,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return operationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3195,6 +3305,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3216,6 +3327,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3245,6 +3357,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3265,6 +3378,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3280,6 +3394,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOperationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3299,6 +3414,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             : operation_;
       }
     }
+
     /**
      *
      *
@@ -3332,6 +3448,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.api.servicecontrol.v1.LogEntrySourceLocation.Builder,
             com.google.api.servicecontrol.v1.LogEntrySourceLocationOrBuilder>
         sourceLocationBuilder_;
+
     /**
      *
      *
@@ -3347,6 +3464,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceLocation() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3368,6 +3486,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return sourceLocationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3392,6 +3511,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3413,6 +3533,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3443,6 +3564,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3463,6 +3585,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3479,6 +3602,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSourceLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3499,6 +3623,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             : sourceLocation_;
       }
     }
+
     /**
      *
      *

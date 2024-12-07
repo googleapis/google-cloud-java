@@ -34,6 +34,7 @@ public interface RankResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.RankingRecord records = 5;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.RankingRecord> getRecordsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface RankResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.RankingRecord records = 5;</code>
    */
   com.google.cloud.discoveryengine.v1alpha.RankingRecord getRecords(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface RankResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.RankingRecord records = 5;</code>
    */
   int getRecordsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface RankResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.RankingRecordOrBuilder>
       getRecordsOrBuilderList();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface PropertyArrayOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Property properties = 1;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.Property> getPropertiesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface PropertyArrayOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Property properties = 1;</code>
    */
   com.google.cloud.contentwarehouse.v1.Property getProperties(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface PropertyArrayOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Property properties = 1;</code>
    */
   int getPropertiesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface PropertyArrayOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.PropertyOrBuilder>
       getPropertiesOrBuilderList();
+
   /**
    *
    *

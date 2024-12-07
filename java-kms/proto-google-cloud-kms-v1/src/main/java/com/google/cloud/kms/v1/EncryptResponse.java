@@ -34,6 +34,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.EncryptResponse)
     EncryptResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EncryptResponse.newBuilder() to construct.
   private EncryptResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
 
   public static final int CIPHERTEXT_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString ciphertext_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
 
   public static final int CIPHERTEXT_CRC32C_FIELD_NUMBER = 4;
   private com.google.protobuf.Int64Value ciphertextCrc32C_;
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
   public boolean hasCiphertextCrc32C() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Int64Value.getDefaultInstance()
         : ciphertextCrc32C_;
   }
+
   /**
    *
    *
@@ -230,6 +237,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
 
   public static final int VERIFIED_PLAINTEXT_CRC32C_FIELD_NUMBER = 5;
   private boolean verifiedPlaintextCrc32C_ = false;
+
   /**
    *
    *
@@ -261,6 +269,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
 
   public static final int VERIFIED_ADDITIONAL_AUTHENTICATED_DATA_CRC32C_FIELD_NUMBER = 6;
   private boolean verifiedAdditionalAuthenticatedDataCrc32C_ = false;
+
   /**
    *
    *
@@ -292,6 +301,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 7;
   private int protectionLevel_ = 0;
+
   /**
    *
    *
@@ -309,6 +319,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
   public int getProtectionLevelValue() {
     return protectionLevel_;
   }
+
   /**
    *
    *
@@ -545,6 +556,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -814,6 +826,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -839,6 +852,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -864,6 +878,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -888,6 +903,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +924,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +952,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     private com.google.protobuf.ByteString ciphertext_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -950,6 +968,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getCiphertext() {
       return ciphertext_;
     }
+
     /**
      *
      *
@@ -971,6 +990,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1015,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         ciphertextCrc32CBuilder_;
+
     /**
      *
      *
@@ -1021,6 +1042,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     public boolean hasCiphertextCrc32C() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1053,6 +1075,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
         return ciphertextCrc32CBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1087,6 +1110,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1142,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1182,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1188,6 +1214,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1214,6 +1241,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCiphertextCrc32CFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1244,6 +1272,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
             : ciphertextCrc32C_;
       }
     }
+
     /**
      *
      *
@@ -1283,6 +1312,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean verifiedPlaintextCrc32C_;
+
     /**
      *
      *
@@ -1311,6 +1341,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     public boolean getVerifiedPlaintextCrc32C() {
       return verifiedPlaintextCrc32C_;
     }
+
     /**
      *
      *
@@ -1343,6 +1374,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1407,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean verifiedAdditionalAuthenticatedDataCrc32C_;
+
     /**
      *
      *
@@ -1403,6 +1436,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     public boolean getVerifiedAdditionalAuthenticatedDataCrc32C() {
       return verifiedAdditionalAuthenticatedDataCrc32C_;
     }
+
     /**
      *
      *
@@ -1435,6 +1469,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1467,6 +1502,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     private int protectionLevel_ = 0;
+
     /**
      *
      *
@@ -1484,6 +1520,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     public int getProtectionLevelValue() {
       return protectionLevel_;
     }
+
     /**
      *
      *
@@ -1504,6 +1541,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1523,6 +1561,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
           com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1546,6 +1585,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

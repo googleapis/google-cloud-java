@@ -33,6 +33,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AttackExposure)
     AttackExposureOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AttackExposure.newBuilder() to construct.
   private AttackExposure(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
      * <code>CALCULATED = 1;</code>
      */
     public static final int CALCULATED_VALUE = 1;
+
     /**
      *
      *
@@ -226,6 +229,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private double score_ = 0D;
+
   /**
    *
    *
@@ -246,6 +250,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LATEST_CALCULATION_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp latestCalculationTime_;
+
   /**
    *
    *
@@ -261,6 +266,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLatestCalculationTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -278,6 +284,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : latestCalculationTime_;
   }
+
   /**
    *
    *
@@ -298,6 +305,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attackExposureResult_ = "";
+
   /**
    *
    *
@@ -323,6 +331,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -351,6 +360,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    *
    *
@@ -369,6 +379,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -394,6 +405,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPOSED_HIGH_VALUE_RESOURCES_COUNT_FIELD_NUMBER = 5;
   private int exposedHighValueResourcesCount_ = 0;
+
   /**
    *
    *
@@ -413,6 +425,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPOSED_MEDIUM_VALUE_RESOURCES_COUNT_FIELD_NUMBER = 6;
   private int exposedMediumValueResourcesCount_ = 0;
+
   /**
    *
    *
@@ -432,6 +445,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPOSED_LOW_VALUE_RESOURCES_COUNT_FIELD_NUMBER = 7;
   private int exposedLowValueResourcesCount_ = 0;
+
   /**
    *
    *
@@ -681,6 +695,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -963,6 +978,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double score_;
+
     /**
      *
      *
@@ -980,6 +996,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     public double getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -1001,6 +1018,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1045,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         latestCalculationTimeBuilder_;
+
     /**
      *
      *
@@ -1041,6 +1060,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatestCalculationTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1061,6 +1081,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
         return latestCalculationTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1083,6 +1104,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1124,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1152,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1172,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1162,6 +1187,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLatestCalculationTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1180,6 +1206,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
             : latestCalculationTime_;
       }
     }
+
     /**
      *
      *
@@ -1207,6 +1234,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object attackExposureResult_ = "";
+
     /**
      *
      *
@@ -1231,6 +1259,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1255,6 +1284,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1278,6 +1308,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1297,6 +1328,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1323,6 +1355,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1341,6 +1374,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1362,6 +1396,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1384,6 +1419,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.securitycenter.v2.AttackExposure.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1408,6 +1444,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1430,6 +1467,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int exposedHighValueResourcesCount_;
+
     /**
      *
      *
@@ -1446,6 +1484,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     public int getExposedHighValueResourcesCount() {
       return exposedHighValueResourcesCount_;
     }
+
     /**
      *
      *
@@ -1466,6 +1505,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1486,6 +1526,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int exposedMediumValueResourcesCount_;
+
     /**
      *
      *
@@ -1502,6 +1543,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     public int getExposedMediumValueResourcesCount() {
       return exposedMediumValueResourcesCount_;
     }
+
     /**
      *
      *
@@ -1522,6 +1564,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1542,6 +1585,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int exposedLowValueResourcesCount_;
+
     /**
      *
      *
@@ -1558,6 +1602,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
     public int getExposedLowValueResourcesCount() {
       return exposedLowValueResourcesCount_;
     }
+
     /**
      *
      *
@@ -1578,6 +1623,7 @@ public final class AttackExposure extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

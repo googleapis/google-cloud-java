@@ -38,6 +38,7 @@ public interface MaterializeChannelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface MaterializeChannelRequestOrBuilder
    * @return The channelId.
    */
   java.lang.String getChannelId();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface MaterializeChannelRequestOrBuilder
    * @return Whether the channel field is set.
    */
   boolean hasChannel();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface MaterializeChannelRequestOrBuilder
    * @return The channel.
    */
   com.google.cloud.visionai.v1.Channel getChannel();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface MaterializeChannelRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

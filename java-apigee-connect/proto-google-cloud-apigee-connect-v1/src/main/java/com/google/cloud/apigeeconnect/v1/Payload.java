@@ -33,6 +33,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apigeeconnect.v1.Payload)
     PayloadOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Payload.newBuilder() to construct.
   private Payload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     private KindCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,6 +116,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HTTP_REQUEST_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHttpRequest() {
     return kindCase_ == 1;
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.apigeeconnect.v1.HttpRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STREAM_INFO_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStreamInfo() {
     return kindCase_ == 2;
   }
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.apigeeconnect.v1.StreamInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACTION_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -230,6 +239,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAction() {
     return kindCase_ == 3;
   }
+
   /**
    *
    *
@@ -247,6 +257,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     }
     return 0;
   }
+
   /**
    *
    *
@@ -469,6 +480,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -715,6 +727,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apigeeconnect.v1.HttpRequest.Builder,
             com.google.cloud.apigeeconnect.v1.HttpRequestOrBuilder>
         httpRequestBuilder_;
+
     /**
      *
      *
@@ -730,6 +743,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHttpRequest() {
       return kindCase_ == 1;
     }
+
     /**
      *
      *
@@ -755,6 +769,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apigeeconnect.v1.HttpRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +813,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +846,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +885,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apigeeconnect.v1.HttpRequest.Builder getHttpRequestBuilder() {
       return getHttpRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -886,6 +906,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apigeeconnect.v1.HttpRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -924,6 +945,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apigeeconnect.v1.StreamInfo.Builder,
             com.google.cloud.apigeeconnect.v1.StreamInfoOrBuilder>
         streamInfoBuilder_;
+
     /**
      *
      *
@@ -939,6 +961,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStreamInfo() {
       return kindCase_ == 2;
     }
+
     /**
      *
      *
@@ -964,6 +987,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apigeeconnect.v1.StreamInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -986,6 +1010,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1031,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1064,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1090,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1075,6 +1103,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apigeeconnect.v1.StreamInfo.Builder getStreamInfoBuilder() {
       return getStreamInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1095,6 +1124,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apigeeconnect.v1.StreamInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1143,6 +1173,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAction() {
       return kindCase_ == 3;
     }
+
     /**
      *
      *
@@ -1161,6 +1192,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -1179,6 +1211,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1199,6 +1232,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.apigeeconnect.v1.Action.ACTION_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -1220,6 +1254,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

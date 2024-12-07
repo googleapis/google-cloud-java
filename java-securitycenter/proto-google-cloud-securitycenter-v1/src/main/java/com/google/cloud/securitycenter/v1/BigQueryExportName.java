@@ -281,7 +281,8 @@ public class BigQueryExportName implements ResourceName {
     private Builder(BigQueryExportName bigQueryExportName) {
       Preconditions.checkArgument(
           Objects.equals(bigQueryExportName.pathTemplate, ORGANIZATION_EXPORT),
-          "toBuilder is only supported when BigQueryExportName has the pattern of organizations/{organization}/bigQueryExports/{export}");
+          "toBuilder is only supported when BigQueryExportName has the pattern of"
+              + " organizations/{organization}/bigQueryExports/{export}");
       this.organization = bigQueryExportName.organization;
       this.export = bigQueryExportName.export;
     }

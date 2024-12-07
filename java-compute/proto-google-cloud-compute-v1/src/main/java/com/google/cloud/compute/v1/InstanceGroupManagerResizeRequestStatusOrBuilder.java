@@ -36,6 +36,7 @@ public interface InstanceGroupManagerResizeRequestStatusOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstanceGroupManagerResizeRequestStatusOrBuilder
    * @return The error.
    */
   com.google.cloud.compute.v1.Error getError();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface InstanceGroupManagerResizeRequestStatusOrBuilder
    * @return Whether the lastAttempt field is set.
    */
   boolean hasLastAttempt();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface InstanceGroupManagerResizeRequestStatusOrBuilder
    * @return The lastAttempt.
    */
   com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatusLastAttempt getLastAttempt();
+
   /**
    *
    *

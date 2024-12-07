@@ -38,6 +38,7 @@ public interface GcsDestinationOrBuilder
    * @return The outputUriPrefix.
    */
   java.lang.String getOutputUriPrefix();
+
   /**
    *
    *

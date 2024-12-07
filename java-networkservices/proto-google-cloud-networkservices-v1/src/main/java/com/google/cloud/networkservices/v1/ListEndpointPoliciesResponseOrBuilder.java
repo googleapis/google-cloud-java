@@ -34,6 +34,7 @@ public interface ListEndpointPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.EndpointPolicy endpoint_policies = 1;</code>
    */
   java.util.List<com.google.cloud.networkservices.v1.EndpointPolicy> getEndpointPoliciesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListEndpointPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.EndpointPolicy endpoint_policies = 1;</code>
    */
   com.google.cloud.networkservices.v1.EndpointPolicy getEndpointPolicies(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListEndpointPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.EndpointPolicy endpoint_policies = 1;</code>
    */
   int getEndpointPoliciesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListEndpointPoliciesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.EndpointPolicyOrBuilder>
       getEndpointPoliciesOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListEndpointPoliciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

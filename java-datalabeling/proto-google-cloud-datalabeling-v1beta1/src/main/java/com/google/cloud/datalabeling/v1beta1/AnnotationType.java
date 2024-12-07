@@ -160,6 +160,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
 
   /** <code>ANNOTATION_TYPE_UNSPECIFIED = 0;</code> */
   public static final int ANNOTATION_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -170,6 +171,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGE_CLASSIFICATION_ANNOTATION = 1;</code>
    */
   public static final int IMAGE_CLASSIFICATION_ANNOTATION_VALUE = 1;
+
   /**
    *
    *
@@ -181,6 +183,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGE_BOUNDING_BOX_ANNOTATION = 2;</code>
    */
   public static final int IMAGE_BOUNDING_BOX_ANNOTATION_VALUE = 2;
+
   /**
    *
    *
@@ -192,6 +195,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGE_ORIENTED_BOUNDING_BOX_ANNOTATION = 13;</code>
    */
   public static final int IMAGE_ORIENTED_BOUNDING_BOX_ANNOTATION_VALUE = 13;
+
   /**
    *
    *
@@ -202,6 +206,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGE_BOUNDING_POLY_ANNOTATION = 10;</code>
    */
   public static final int IMAGE_BOUNDING_POLY_ANNOTATION_VALUE = 10;
+
   /**
    *
    *
@@ -212,6 +217,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGE_POLYLINE_ANNOTATION = 11;</code>
    */
   public static final int IMAGE_POLYLINE_ANNOTATION_VALUE = 11;
+
   /**
    *
    *
@@ -222,6 +228,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGE_SEGMENTATION_ANNOTATION = 12;</code>
    */
   public static final int IMAGE_SEGMENTATION_ANNOTATION_VALUE = 12;
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VIDEO_SHOTS_CLASSIFICATION_ANNOTATION = 3;</code>
    */
   public static final int VIDEO_SHOTS_CLASSIFICATION_ANNOTATION_VALUE = 3;
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VIDEO_OBJECT_TRACKING_ANNOTATION = 4;</code>
    */
   public static final int VIDEO_OBJECT_TRACKING_ANNOTATION_VALUE = 4;
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VIDEO_OBJECT_DETECTION_ANNOTATION = 5;</code>
    */
   public static final int VIDEO_OBJECT_DETECTION_ANNOTATION_VALUE = 5;
+
   /**
    *
    *
@@ -262,6 +272,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VIDEO_EVENT_ANNOTATION = 6;</code>
    */
   public static final int VIDEO_EVENT_ANNOTATION_VALUE = 6;
+
   /**
    *
    *
@@ -272,6 +283,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEXT_CLASSIFICATION_ANNOTATION = 8;</code>
    */
   public static final int TEXT_CLASSIFICATION_ANNOTATION_VALUE = 8;
+
   /**
    *
    *
@@ -282,6 +294,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEXT_ENTITY_EXTRACTION_ANNOTATION = 9;</code>
    */
   public static final int TEXT_ENTITY_EXTRACTION_ANNOTATION_VALUE = 9;
+
   /**
    *
    *

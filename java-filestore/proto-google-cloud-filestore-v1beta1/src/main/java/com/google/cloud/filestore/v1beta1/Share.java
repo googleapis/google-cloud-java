@@ -33,6 +33,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1beta1.Share)
     ShareOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Share.newBuilder() to construct.
   private Share(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -142,6 +143,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -152,6 +154,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -162,6 +165,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
      * <code>READY = 3;</code>
      */
     public static final int READY_VALUE = 3;
+
     /**
      *
      *
@@ -275,6 +279,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -309,6 +314,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -333,6 +339,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -362,6 +369,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mountName_ = "";
+
   /**
    *
    *
@@ -386,6 +394,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -415,6 +424,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -439,6 +449,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -466,6 +477,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CAPACITY_GB_FIELD_NUMBER = 4;
   private long capacityGb_ = 0L;
+
   /**
    *
    *
@@ -487,6 +499,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.filestore.v1beta1.NfsExportOptions> nfsExportOptions_;
+
   /**
    *
    *
@@ -502,6 +515,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       getNfsExportOptionsList() {
     return nfsExportOptions_;
   }
+
   /**
    *
    *
@@ -517,6 +531,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       getNfsExportOptionsOrBuilderList() {
     return nfsExportOptions_;
   }
+
   /**
    *
    *
@@ -531,6 +546,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
   public int getNfsExportOptionsCount() {
     return nfsExportOptions_.size();
   }
+
   /**
    *
    *
@@ -545,6 +561,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.filestore.v1beta1.NfsExportOptions getNfsExportOptions(int index) {
     return nfsExportOptions_.get(index);
   }
+
   /**
    *
    *
@@ -563,6 +580,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_ = 0;
+
   /**
    *
    *
@@ -580,6 +598,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -602,6 +621,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -618,6 +638,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -634,6 +655,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -675,6 +697,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -691,12 +714,14 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -710,6 +735,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -730,6 +756,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -752,6 +779,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BACKUP_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -772,6 +800,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBackup() {
     return sourceCase_ == 9;
   }
+
   /**
    *
    *
@@ -805,6 +834,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1097,6 +1127,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1510,6 +1541,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1533,6 +1565,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1556,6 +1589,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1578,6 +1612,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1596,6 +1631,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1621,6 +1657,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object mountName_ = "";
+
     /**
      *
      *
@@ -1644,6 +1681,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1667,6 +1705,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1689,6 +1728,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1707,6 +1747,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1773,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1755,6 +1797,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1778,6 +1821,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1800,6 +1844,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1818,6 +1863,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1843,6 +1889,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long capacityGb_;
+
     /**
      *
      *
@@ -1859,6 +1906,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     public long getCapacityGb() {
       return capacityGb_;
     }
+
     /**
      *
      *
@@ -1879,6 +1927,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1935,6 +1984,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return nfsExportOptionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1953,6 +2003,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return nfsExportOptionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1971,6 +2022,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return nfsExportOptionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1996,6 +2048,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2018,6 +2071,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2042,6 +2096,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2067,6 +2122,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2089,6 +2145,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2111,6 +2168,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2133,6 +2191,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2154,6 +2213,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2175,6 +2235,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2190,6 +2251,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getNfsExportOptionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2209,6 +2271,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return nfsExportOptionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2228,6 +2291,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(nfsExportOptions_);
       }
     }
+
     /**
      *
      *
@@ -2244,6 +2308,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       return getNfsExportOptionsFieldBuilder()
           .addBuilder(com.google.cloud.filestore.v1beta1.NfsExportOptions.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2261,6 +2326,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.filestore.v1beta1.NfsExportOptions.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2298,6 +2364,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2315,6 +2382,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2335,6 +2403,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2354,6 +2423,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.filestore.v1beta1.Share.State.forNumber(state_);
       return result == null ? com.google.cloud.filestore.v1beta1.Share.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2377,6 +2447,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2403,6 +2474,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2419,6 +2491,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2441,6 +2514,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2465,6 +2539,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2486,6 +2561,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2515,6 +2591,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2536,6 +2613,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2552,6 +2630,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2572,6 +2651,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2625,6 +2705,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2641,12 +2722,14 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2660,6 +2743,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2680,6 +2764,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2706,6 +2791,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2722,12 +2808,14 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2748,6 +2836,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000080;
       return this;
     }
+
     /**
      *
      *
@@ -2784,6 +2873,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBackup() {
       return sourceCase_ == 9;
     }
+
     /**
      *
      *
@@ -2818,6 +2908,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2852,6 +2943,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2879,6 +2971,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2904,6 +2997,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *

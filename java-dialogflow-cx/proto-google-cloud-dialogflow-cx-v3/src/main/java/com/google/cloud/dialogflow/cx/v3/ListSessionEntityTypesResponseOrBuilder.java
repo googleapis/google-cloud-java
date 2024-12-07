@@ -36,6 +36,7 @@ public interface ListSessionEntityTypesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.SessionEntityType> getSessionEntityTypesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListSessionEntityTypesResponseOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3.SessionEntityType getSessionEntityTypes(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListSessionEntityTypesResponseOrBuilder
    * </code>
    */
   int getSessionEntityTypesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ListSessionEntityTypesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.SessionEntityTypeOrBuilder>
       getSessionEntityTypesOrBuilderList();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface ListSessionEntityTypesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

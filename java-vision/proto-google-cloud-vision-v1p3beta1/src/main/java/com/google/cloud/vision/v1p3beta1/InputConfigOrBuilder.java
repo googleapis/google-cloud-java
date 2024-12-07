@@ -36,6 +36,7 @@ public interface InputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.vision.v1p3beta1.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface InputConfigOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *

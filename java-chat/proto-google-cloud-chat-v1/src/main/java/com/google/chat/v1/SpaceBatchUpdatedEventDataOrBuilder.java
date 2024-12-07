@@ -34,6 +34,7 @@ public interface SpaceBatchUpdatedEventDataOrBuilder
    * <code>repeated .google.chat.v1.SpaceUpdatedEventData spaces = 1;</code>
    */
   java.util.List<com.google.chat.v1.SpaceUpdatedEventData> getSpacesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SpaceBatchUpdatedEventDataOrBuilder
    * <code>repeated .google.chat.v1.SpaceUpdatedEventData spaces = 1;</code>
    */
   com.google.chat.v1.SpaceUpdatedEventData getSpaces(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SpaceBatchUpdatedEventDataOrBuilder
    * <code>repeated .google.chat.v1.SpaceUpdatedEventData spaces = 1;</code>
    */
   int getSpacesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SpaceBatchUpdatedEventDataOrBuilder
    */
   java.util.List<? extends com.google.chat.v1.SpaceUpdatedEventDataOrBuilder>
       getSpacesOrBuilderList();
+
   /**
    *
    *

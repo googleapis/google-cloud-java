@@ -34,6 +34,7 @@ public interface ListPreferenceSetsResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.PreferenceSet preference_sets = 1;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.PreferenceSet> getPreferenceSetsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListPreferenceSetsResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.PreferenceSet preference_sets = 1;</code>
    */
   com.google.cloud.migrationcenter.v1.PreferenceSet getPreferenceSets(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListPreferenceSetsResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.PreferenceSet preference_sets = 1;</code>
    */
   int getPreferenceSetsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListPreferenceSetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.PreferenceSetOrBuilder>
       getPreferenceSetsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListPreferenceSetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListPreferenceSetsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListPreferenceSetsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListPreferenceSetsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

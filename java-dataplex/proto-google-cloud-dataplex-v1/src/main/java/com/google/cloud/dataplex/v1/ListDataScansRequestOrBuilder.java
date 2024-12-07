@@ -41,6 +41,7 @@ public interface ListDataScansRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface ListDataScansRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -117,6 +119,7 @@ public interface ListDataScansRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public interface ListDataScansRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

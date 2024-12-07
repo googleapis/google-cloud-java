@@ -33,6 +33,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.TunedModelRef)
     TunedModelRefOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TunedModelRef.newBuilder() to construct.
   private TunedModelRef(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
     private TunedModelRefCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,6 +116,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TUNED_MODEL_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTunedModel() {
     return tunedModelRefCase_ == 1;
   }
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TUNING_JOB_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTuningJob() {
     return tunedModelRefCase_ == 2;
   }
+
   /**
    *
    *
@@ -227,6 +234,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -257,6 +265,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PIPELINE_JOB_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPipelineJob() {
     return tunedModelRefCase_ == 3;
   }
+
   /**
    *
    *
@@ -300,6 +310,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -527,6 +538,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -779,6 +791,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTunedModel() {
       return tunedModelRefCase_ == 1;
     }
+
     /**
      *
      *
@@ -807,6 +820,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -835,6 +849,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -856,6 +871,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +891,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +931,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTuningJob() {
       return tunedModelRefCase_ == 2;
     }
+
     /**
      *
      *
@@ -943,6 +961,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -972,6 +991,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -994,6 +1014,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1035,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1076,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPipelineJob() {
       return tunedModelRefCase_ == 3;
     }
+
     /**
      *
      *
@@ -1083,6 +1106,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1112,6 +1136,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1134,6 +1159,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1180,7 @@ public final class TunedModelRef extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *

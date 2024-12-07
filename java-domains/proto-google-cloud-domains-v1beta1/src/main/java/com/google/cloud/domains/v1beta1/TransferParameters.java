@@ -33,6 +33,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.domains.v1beta1.TransferParameters)
     TransferParametersOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransferParameters.newBuilder() to construct.
   private TransferParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object domainName_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object currentRegistrar_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList nameServers_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getNameServersList() {
     return nameServers_;
   }
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   public int getNameServersCount() {
     return nameServers_.size();
   }
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   public java.lang.String getNameServers(int index) {
     return nameServers_.get(index);
   }
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
 
   public static final int TRANSFER_LOCK_STATE_FIELD_NUMBER = 4;
   private int transferLockState_ = 0;
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   public int getTransferLockStateValue() {
     return transferLockState_;
   }
+
   /**
    *
    *
@@ -293,6 +304,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
                   : result;
             }
           };
+
   /**
    *
    *
@@ -310,6 +322,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
         java.lang.Integer, com.google.cloud.domains.v1beta1.ContactPrivacy>(
         supportedPrivacy_, supportedPrivacy_converter_);
   }
+
   /**
    *
    *
@@ -325,6 +338,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   public int getSupportedPrivacyCount() {
     return supportedPrivacy_.size();
   }
+
   /**
    *
    *
@@ -341,6 +355,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.domains.v1beta1.ContactPrivacy getSupportedPrivacy(int index) {
     return supportedPrivacy_converter_.convert(supportedPrivacy_.get(index));
   }
+
   /**
    *
    *
@@ -356,6 +371,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   public java.util.List<java.lang.Integer> getSupportedPrivacyValueList() {
     return supportedPrivacy_;
   }
+
   /**
    *
    *
@@ -377,6 +393,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
 
   public static final int YEARLY_PRICE_FIELD_NUMBER = 6;
   private com.google.type.Money yearlyPrice_;
+
   /**
    *
    *
@@ -392,6 +409,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   public boolean hasYearlyPrice() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -407,6 +425,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   public com.google.type.Money getYearlyPrice() {
     return yearlyPrice_ == null ? com.google.type.Money.getDefaultInstance() : yearlyPrice_;
   }
+
   /**
    *
    *
@@ -658,6 +677,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -963,6 +983,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object domainName_ = "";
+
     /**
      *
      *
@@ -985,6 +1006,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1007,6 +1029,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1051,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1069,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1094,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object currentRegistrar_ = "";
+
     /**
      *
      *
@@ -1091,6 +1117,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1113,6 +1140,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1134,6 +1162,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1151,6 +1180,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1183,6 +1213,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1198,6 +1229,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       nameServers_.makeImmutable();
       return nameServers_;
     }
+
     /**
      *
      *
@@ -1212,6 +1244,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     public int getNameServersCount() {
       return nameServers_.size();
     }
+
     /**
      *
      *
@@ -1227,6 +1260,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     public java.lang.String getNameServers(int index) {
       return nameServers_.get(index);
     }
+
     /**
      *
      *
@@ -1242,6 +1276,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getNameServersBytes(int index) {
       return nameServers_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1265,6 +1300,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1323,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1343,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1362,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1349,6 +1388,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     }
 
     private int transferLockState_ = 0;
+
     /**
      *
      *
@@ -1366,6 +1406,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     public int getTransferLockStateValue() {
       return transferLockState_;
     }
+
     /**
      *
      *
@@ -1386,6 +1427,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1407,6 +1449,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.domains.v1beta1.TransferLockState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1430,6 +1473,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1458,6 +1502,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000010;
       }
     }
+
     /**
      *
      *
@@ -1475,6 +1520,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
           java.lang.Integer, com.google.cloud.domains.v1beta1.ContactPrivacy>(
           supportedPrivacy_, supportedPrivacy_converter_);
     }
+
     /**
      *
      *
@@ -1489,6 +1535,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     public int getSupportedPrivacyCount() {
       return supportedPrivacy_.size();
     }
+
     /**
      *
      *
@@ -1504,6 +1551,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.domains.v1beta1.ContactPrivacy getSupportedPrivacy(int index) {
       return supportedPrivacy_converter_.convert(supportedPrivacy_.get(index));
     }
+
     /**
      *
      *
@@ -1527,6 +1575,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1548,6 +1597,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1569,6 +1619,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1586,6 +1637,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1600,6 +1652,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     public java.util.List<java.lang.Integer> getSupportedPrivacyValueList() {
       return java.util.Collections.unmodifiableList(supportedPrivacy_);
     }
+
     /**
      *
      *
@@ -1615,6 +1668,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     public int getSupportedPrivacyValue(int index) {
       return supportedPrivacy_.get(index);
     }
+
     /**
      *
      *
@@ -1634,6 +1688,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1707,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1677,6 +1733,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         yearlyPriceBuilder_;
+
     /**
      *
      *
@@ -1691,6 +1748,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     public boolean hasYearlyPrice() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1709,6 +1767,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
         return yearlyPriceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1731,6 +1790,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1750,6 +1810,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1777,6 +1838,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1796,6 +1858,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1810,6 +1873,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getYearlyPriceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1826,6 +1890,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
         return yearlyPrice_ == null ? com.google.type.Money.getDefaultInstance() : yearlyPrice_;
       }
     }
+
     /**
      *
      *

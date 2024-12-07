@@ -36,6 +36,7 @@ public interface VpnGatewayInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface VpnGatewayInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface VpnGatewayInfoOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface VpnGatewayInfoOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface VpnGatewayInfoOrBuilder
    * @return The vpnTunnelUri.
    */
   java.lang.String getVpnTunnelUri();
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public interface VpnGatewayInfoOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

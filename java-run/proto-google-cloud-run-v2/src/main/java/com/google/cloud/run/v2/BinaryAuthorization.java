@@ -33,6 +33,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.BinaryAuthorization)
     BinaryAuthorizationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BinaryAuthorization.newBuilder() to construct.
   private BinaryAuthorization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     private BinauthzMethodCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
   }
 
   public static final int USE_DEFAULT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
   public boolean hasUseDefault() {
     return binauthzMethodCase_ == 1;
   }
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
   }
 
   public static final int POLICY_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
   public boolean hasPolicy() {
     return binauthzMethodCase_ == 3;
   }
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object breakglassJustification_ = "";
+
   /**
    *
    *
@@ -258,6 +266,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -481,6 +490,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -731,6 +741,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     public boolean hasUseDefault() {
       return binauthzMethodCase_ == 1;
     }
+
     /**
      *
      *
@@ -749,6 +760,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       }
       return false;
     }
+
     /**
      *
      *
@@ -769,6 +781,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +821,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     public boolean hasPolicy() {
       return binauthzMethodCase_ == 3;
     }
+
     /**
      *
      *
@@ -839,6 +853,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -870,6 +885,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -894,6 +910,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +933,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +961,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object breakglassJustification_ = "";
+
     /**
      *
      *
@@ -968,6 +987,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -993,6 +1013,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1017,6 +1038,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1059,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

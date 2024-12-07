@@ -61,6 +61,7 @@ public interface RpoConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkebackup.v1.ExclusionWindow> getExclusionWindowsList();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface RpoConfigOrBuilder
    * </code>
    */
   com.google.cloud.gkebackup.v1.ExclusionWindow getExclusionWindows(int index);
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface RpoConfigOrBuilder
    * </code>
    */
   int getExclusionWindowsCount();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface RpoConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkebackup.v1.ExclusionWindowOrBuilder>
       getExclusionWindowsOrBuilderList();
+
   /**
    *
    *

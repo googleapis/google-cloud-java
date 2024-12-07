@@ -33,6 +33,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1beta1.MultiCloudCluster)
     MultiCloudClusterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MultiCloudCluster.newBuilder() to construct.
   private MultiCloudCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceLink_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
 
   public static final int CLUSTER_MISSING_FIELD_NUMBER = 2;
   private boolean clusterMissing_ = false;
+
   /**
    *
    *
@@ -312,6 +316,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -509,6 +514,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object resourceLink_ = "";
+
     /**
      *
      *
@@ -536,6 +542,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -563,6 +570,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -589,6 +597,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -611,6 +620,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -640,6 +650,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean clusterMissing_;
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
     public boolean getClusterMissing() {
       return clusterMissing_;
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

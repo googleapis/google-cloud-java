@@ -40,6 +40,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * @return The advertiserId.
    */
   java.lang.String getAdvertiserId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * @return Whether the linkProposalStatusDetails field is set.
    */
   boolean hasLinkProposalStatusDetails();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * @return The linkProposalStatusDetails.
    */
   com.google.analytics.admin.v1alpha.LinkProposalStatusDetails getLinkProposalStatusDetails();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * @return The advertiserDisplayName.
    */
   java.lang.String getAdvertiserDisplayName();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * @return The validationEmail.
    */
   java.lang.String getValidationEmail();
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * @return Whether the adsPersonalizationEnabled field is set.
    */
   boolean hasAdsPersonalizationEnabled();
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * @return The adsPersonalizationEnabled.
    */
   com.google.protobuf.BoolValue getAdsPersonalizationEnabled();
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * @return Whether the campaignDataSharingEnabled field is set.
    */
   boolean hasCampaignDataSharingEnabled();
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * @return The campaignDataSharingEnabled.
    */
   com.google.protobuf.BoolValue getCampaignDataSharingEnabled();
+
   /**
    *
    *
@@ -290,6 +300,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * @return Whether the costDataSharingEnabled field is set.
    */
   boolean hasCostDataSharingEnabled();
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * @return The costDataSharingEnabled.
    */
   com.google.protobuf.BoolValue getCostDataSharingEnabled();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig)
     InstanceGroupManagerStatusAllInstancesConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupManagerStatusAllInstancesConfig.newBuilder() to construct.
   private InstanceGroupManagerStatusAllInstancesConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object currentRevision_ = "";
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
   public boolean hasCurrentRevision() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
       return s;
     }
   }
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
 
   public static final int EFFECTIVE_FIELD_NUMBER = 141961639;
   private boolean effective_ = false;
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
   public boolean hasEffective() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -345,6 +351,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -555,6 +562,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
     private int bitField0_;
 
     private java.lang.Object currentRevision_ = "";
+
     /**
      *
      *
@@ -569,6 +577,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
     public boolean hasCurrentRevision() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -591,6 +600,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -613,6 +623,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -634,6 +645,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +663,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
     }
 
     private boolean effective_;
+
     /**
      *
      *
@@ -690,6 +704,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
     public boolean hasEffective() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -705,6 +720,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
     public boolean getEffective() {
       return effective_;
     }
+
     /**
      *
      *
@@ -724,6 +740,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *

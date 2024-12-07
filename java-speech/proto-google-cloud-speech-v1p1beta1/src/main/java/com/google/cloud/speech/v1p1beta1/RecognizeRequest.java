@@ -33,6 +33,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.RecognizeRequest)
     RecognizeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RecognizeRequest.newBuilder() to construct.
   private RecognizeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.speech.v1p1beta1.RecognitionConfig config_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.speech.v1p1beta1.RecognitionConfig.getDefaultInstance()
         : config_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int AUDIO_FIELD_NUMBER = 2;
   private com.google.cloud.speech.v1p1beta1.RecognitionAudio audio_;
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasAudio() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.speech.v1p1beta1.RecognitionAudio.getDefaultInstance()
         : audio_;
   }
+
   /**
    *
    *
@@ -355,6 +362,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -577,6 +585,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
             com.google.cloud.speech.v1p1beta1.RecognitionConfig.Builder,
             com.google.cloud.speech.v1p1beta1.RecognitionConfigOrBuilder>
         configBuilder_;
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -617,6 +627,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
         return configBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -642,6 +653,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +677,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +709,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +732,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +750,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -756,6 +772,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
             : config_;
       }
     }
+
     /**
      *
      *
@@ -791,6 +808,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
             com.google.cloud.speech.v1p1beta1.RecognitionAudio.Builder,
             com.google.cloud.speech.v1p1beta1.RecognitionAudioOrBuilder>
         audioBuilder_;
+
     /**
      *
      *
@@ -807,6 +825,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasAudio() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -829,6 +848,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
         return audioBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -853,6 +873,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +896,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +926,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +948,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +965,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getAudioFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -961,6 +986,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
             : audio_;
       }
     }
+
     /**
      *
      *

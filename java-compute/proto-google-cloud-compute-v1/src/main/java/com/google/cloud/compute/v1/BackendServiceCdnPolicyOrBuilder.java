@@ -37,6 +37,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader>
       getBypassCacheOnRequestHeadersList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    */
   com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader
       getBypassCacheOnRequestHeaders(int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * </code>
    */
   int getBypassCacheOnRequestHeadersCount();
+
   /**
    *
    *
@@ -78,6 +81,7 @@ public interface BackendServiceCdnPolicyOrBuilder
               com.google.cloud.compute.v1
                   .BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder>
       getBypassCacheOnRequestHeadersOrBuilderList();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return Whether the cacheKeyPolicy field is set.
    */
   boolean hasCacheKeyPolicy();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return The cacheKeyPolicy.
    */
   com.google.cloud.compute.v1.CacheKeyPolicy getCacheKeyPolicy();
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return Whether the cacheMode field is set.
    */
   boolean hasCacheMode();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return The cacheMode.
    */
   java.lang.String getCacheMode();
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return Whether the clientTtl field is set.
    */
   boolean hasClientTtl();
+
   /**
    *
    *
@@ -204,6 +213,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return Whether the defaultTtl field is set.
    */
   boolean hasDefaultTtl();
+
   /**
    *
    *
@@ -229,6 +239,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return Whether the maxTtl field is set.
    */
   boolean hasMaxTtl();
+
   /**
    *
    *
@@ -254,6 +265,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return Whether the negativeCaching field is set.
    */
   boolean hasNegativeCaching();
+
   /**
    *
    *
@@ -280,6 +292,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy>
       getNegativeCachingPolicyList();
+
   /**
    *
    *
@@ -293,6 +306,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    */
   com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy getNegativeCachingPolicy(
       int index);
+
   /**
    *
    *
@@ -305,6 +319,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * </code>
    */
   int getNegativeCachingPolicyCount();
+
   /**
    *
    *
@@ -320,6 +335,7 @@ public interface BackendServiceCdnPolicyOrBuilder
           ? extends
               com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicyOrBuilder>
       getNegativeCachingPolicyOrBuilderList();
+
   /**
    *
    *
@@ -346,6 +362,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return Whether the requestCoalescing field is set.
    */
   boolean hasRequestCoalescing();
+
   /**
    *
    *
@@ -371,6 +388,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return Whether the serveWhileStale field is set.
    */
   boolean hasServeWhileStale();
+
   /**
    *
    *
@@ -396,6 +414,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return Whether the signedUrlCacheMaxAgeSec field is set.
    */
   boolean hasSignedUrlCacheMaxAgeSec();
+
   /**
    *
    *
@@ -421,6 +440,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return A list containing the signedUrlKeyNames.
    */
   java.util.List<java.lang.String> getSignedUrlKeyNamesList();
+
   /**
    *
    *
@@ -433,6 +453,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return The count of signedUrlKeyNames.
    */
   int getSignedUrlKeyNamesCount();
+
   /**
    *
    *
@@ -446,6 +467,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * @return The signedUrlKeyNames at the given index.
    */
   java.lang.String getSignedUrlKeyNames(int index);
+
   /**
    *
    *

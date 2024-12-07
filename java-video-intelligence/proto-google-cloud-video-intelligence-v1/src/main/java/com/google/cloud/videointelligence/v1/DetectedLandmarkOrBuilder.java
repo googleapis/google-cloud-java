@@ -36,6 +36,7 @@ public interface DetectedLandmarkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface DetectedLandmarkOrBuilder
    * @return Whether the point field is set.
    */
   boolean hasPoint();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface DetectedLandmarkOrBuilder
    * @return The point.
    */
   com.google.cloud.videointelligence.v1.NormalizedVertex getPoint();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.CreateIssueModelRequest)
     CreateIssueModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateIssueModelRequest.newBuilder() to construct.
   private CreateIssueModelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
 
   public static final int ISSUE_MODEL_FIELD_NUMBER = 2;
   private com.google.cloud.contactcenterinsights.v1.IssueModel issueModel_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
   public boolean hasIssueModel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
         ? com.google.cloud.contactcenterinsights.v1.IssueModel.getDefaultInstance()
         : issueModel_;
   }
+
   /**
    *
    *
@@ -350,6 +356,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -568,6 +575,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -592,6 +600,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -616,6 +625,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -639,6 +649,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +669,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +701,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
             com.google.cloud.contactcenterinsights.v1.IssueModel.Builder,
             com.google.cloud.contactcenterinsights.v1.IssueModelOrBuilder>
         issueModelBuilder_;
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
     public boolean hasIssueModel() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -727,6 +741,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
         return issueModelBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -751,6 +766,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +789,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +820,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +842,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
       onChanged();
       return getIssueModelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -860,6 +880,7 @@ public final class CreateIssueModelRequest extends com.google.protobuf.Generated
             : issueModel_;
       }
     }
+
     /**
      *
      *

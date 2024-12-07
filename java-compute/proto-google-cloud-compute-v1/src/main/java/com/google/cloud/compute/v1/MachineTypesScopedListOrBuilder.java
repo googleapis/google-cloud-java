@@ -34,6 +34,7 @@ public interface MachineTypesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.MachineType machine_types = 79720065;</code>
    */
   java.util.List<com.google.cloud.compute.v1.MachineType> getMachineTypesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface MachineTypesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.MachineType machine_types = 79720065;</code>
    */
   com.google.cloud.compute.v1.MachineType getMachineTypes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface MachineTypesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.MachineType machine_types = 79720065;</code>
    */
   int getMachineTypesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface MachineTypesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.MachineTypeOrBuilder>
       getMachineTypesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface MachineTypesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface MachineTypesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

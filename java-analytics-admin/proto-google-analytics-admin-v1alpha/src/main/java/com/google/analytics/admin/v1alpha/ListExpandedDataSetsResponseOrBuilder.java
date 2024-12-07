@@ -35,6 +35,7 @@ public interface ListExpandedDataSetsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_sets = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.ExpandedDataSet> getExpandedDataSetsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListExpandedDataSetsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_sets = 1;</code>
    */
   com.google.analytics.admin.v1alpha.ExpandedDataSet getExpandedDataSets(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListExpandedDataSetsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_sets = 1;</code>
    */
   int getExpandedDataSetsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListExpandedDataSetsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.ExpandedDataSetOrBuilder>
       getExpandedDataSetsOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListExpandedDataSetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

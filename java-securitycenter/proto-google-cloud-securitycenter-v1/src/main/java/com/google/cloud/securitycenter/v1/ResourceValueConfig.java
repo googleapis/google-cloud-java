@@ -34,6 +34,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.ResourceValueConfig)
     ResourceValueConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceValueConfig.newBuilder() to construct.
   private ResourceValueConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -100,6 +101,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      * @return The enum numeric value on the wire for highSensitivityMapping.
      */
     int getHighSensitivityMappingValue();
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      * @return The enum numeric value on the wire for mediumSensitivityMapping.
      */
     int getMediumSensitivityMappingValue();
+
     /**
      *
      *
@@ -141,6 +144,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      */
     com.google.cloud.securitycenter.v1.ResourceValue getMediumSensitivityMapping();
   }
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.ResourceValueConfig.SensitiveDataProtectionMapping)
       SensitiveDataProtectionMappingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SensitiveDataProtectionMapping.newBuilder() to construct.
     private SensitiveDataProtectionMapping(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -195,6 +200,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
 
     public static final int HIGH_SENSITIVITY_MAPPING_FIELD_NUMBER = 1;
     private int highSensitivityMapping_ = 0;
+
     /**
      *
      *
@@ -211,6 +217,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     public int getHighSensitivityMappingValue() {
       return highSensitivityMapping_;
     }
+
     /**
      *
      *
@@ -234,6 +241,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
 
     public static final int MEDIUM_SENSITIVITY_MAPPING_FIELD_NUMBER = 2;
     private int mediumSensitivityMapping_ = 0;
+
     /**
      *
      *
@@ -250,6 +258,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     public int getMediumSensitivityMappingValue() {
       return mediumSensitivityMapping_;
     }
+
     /**
      *
      *
@@ -471,6 +480,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -693,6 +703,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private int highSensitivityMapping_ = 0;
+
       /**
        *
        *
@@ -709,6 +720,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       public int getHighSensitivityMappingValue() {
         return highSensitivityMapping_;
       }
+
       /**
        *
        *
@@ -728,6 +740,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -748,6 +761,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
             ? com.google.cloud.securitycenter.v1.ResourceValue.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -771,6 +785,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -791,6 +806,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       }
 
       private int mediumSensitivityMapping_ = 0;
+
       /**
        *
        *
@@ -807,6 +823,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       public int getMediumSensitivityMappingValue() {
         return mediumSensitivityMapping_;
       }
+
       /**
        *
        *
@@ -826,6 +843,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -846,6 +864,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
             ? com.google.cloud.securitycenter.v1.ResourceValue.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -869,6 +888,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -964,6 +984,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -987,6 +1008,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -1013,6 +1035,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
 
   public static final int RESOURCE_VALUE_FIELD_NUMBER = 2;
   private int resourceValue_ = 0;
+
   /**
    *
    *
@@ -1030,6 +1053,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   public int getResourceValueValue() {
     return resourceValue_;
   }
+
   /**
    *
    *
@@ -1055,6 +1079,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tagValues_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1072,6 +1097,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getTagValuesList() {
     return tagValues_;
   }
+
   /**
    *
    *
@@ -1089,6 +1115,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   public int getTagValuesCount() {
     return tagValues_.size();
   }
+
   /**
    *
    *
@@ -1107,6 +1134,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   public java.lang.String getTagValues(int index) {
     return tagValues_.get(index);
   }
+
   /**
    *
    *
@@ -1130,6 +1158,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceType_ = "";
+
   /**
    *
    *
@@ -1156,6 +1185,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -1187,6 +1217,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object scope_ = "";
+
   /**
    *
    *
@@ -1213,6 +1244,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -1268,6 +1300,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   public int getResourceLabelsSelectorCount() {
     return internalGetResourceLabelsSelector().getMap().size();
   }
+
   /**
    *
    *
@@ -1288,12 +1321,14 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     }
     return internalGetResourceLabelsSelector().getMap().containsKey(key);
   }
+
   /** Use {@link #getResourceLabelsSelectorMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsSelector() {
     return getResourceLabelsSelectorMap();
   }
+
   /**
    *
    *
@@ -1311,6 +1346,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsSelectorMap() {
     return internalGetResourceLabelsSelector().getMap();
   }
+
   /**
    *
    *
@@ -1336,6 +1372,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         internalGetResourceLabelsSelector().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1366,6 +1403,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1389,6 +1427,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -1415,6 +1454,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
 
   public static final int CREATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -1431,6 +1471,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1447,6 +1488,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -1464,6 +1506,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1480,6 +1523,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1496,6 +1540,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1513,6 +1558,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
 
   public static final int CLOUD_PROVIDER_FIELD_NUMBER = 10;
   private int cloudProvider_ = 0;
+
   /**
    *
    *
@@ -1528,6 +1574,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   public int getCloudProviderValue() {
     return cloudProvider_;
   }
+
   /**
    *
    *
@@ -1549,6 +1596,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   public static final int SENSITIVE_DATA_PROTECTION_MAPPING_FIELD_NUMBER = 11;
   private com.google.cloud.securitycenter.v1.ResourceValueConfig.SensitiveDataProtectionMapping
       sensitiveDataProtectionMapping_;
+
   /**
    *
    *
@@ -1569,6 +1617,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
   public boolean hasSensitiveDataProtectionMapping() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1593,6 +1642,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
             .getDefaultInstance()
         : sensitiveDataProtectionMapping_;
   }
+
   /**
    *
    *
@@ -1913,6 +1963,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2307,6 +2358,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2329,6 +2381,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2351,6 +2404,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2372,6 +2426,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2389,6 +2444,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2413,6 +2469,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     }
 
     private int resourceValue_ = 0;
+
     /**
      *
      *
@@ -2430,6 +2487,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     public int getResourceValueValue() {
       return resourceValue_;
     }
+
     /**
      *
      *
@@ -2450,6 +2508,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2471,6 +2530,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.securitycenter.v1.ResourceValue.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2494,6 +2554,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2523,6 +2584,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -2541,6 +2603,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       tagValues_.makeImmutable();
       return tagValues_;
     }
+
     /**
      *
      *
@@ -2558,6 +2621,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     public int getTagValuesCount() {
       return tagValues_.size();
     }
+
     /**
      *
      *
@@ -2576,6 +2640,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     public java.lang.String getTagValues(int index) {
       return tagValues_.get(index);
     }
+
     /**
      *
      *
@@ -2594,6 +2659,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getTagValuesBytes(int index) {
       return tagValues_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2620,6 +2686,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2645,6 +2712,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2667,6 +2735,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2688,6 +2757,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2716,6 +2786,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object resourceType_ = "";
+
     /**
      *
      *
@@ -2741,6 +2812,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2766,6 +2838,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2790,6 +2863,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2810,6 +2884,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2837,6 +2912,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object scope_ = "";
+
     /**
      *
      *
@@ -2862,6 +2938,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2887,6 +2964,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2911,6 +2989,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2931,6 +3010,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2987,6 +3067,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     public int getResourceLabelsSelectorCount() {
       return internalGetResourceLabelsSelector().getMap().size();
     }
+
     /**
      *
      *
@@ -3007,12 +3088,14 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       }
       return internalGetResourceLabelsSelector().getMap().containsKey(key);
     }
+
     /** Use {@link #getResourceLabelsSelectorMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsSelector() {
       return getResourceLabelsSelectorMap();
     }
+
     /**
      *
      *
@@ -3030,6 +3113,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsSelectorMap() {
       return internalGetResourceLabelsSelector().getMap();
     }
+
     /**
      *
      *
@@ -3055,6 +3139,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
           internalGetResourceLabelsSelector().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3086,6 +3171,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       internalGetMutableResourceLabelsSelector().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3106,12 +3192,14 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       internalGetMutableResourceLabelsSelector().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableResourceLabelsSelector() {
       bitField0_ |= 0x00000020;
       return internalGetMutableResourceLabelsSelector().getMutableMap();
     }
+
     /**
      *
      *
@@ -3136,6 +3224,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *
@@ -3157,6 +3246,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -3179,6 +3269,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3201,6 +3292,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3222,6 +3314,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3239,6 +3332,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3268,6 +3362,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3284,6 +3379,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3306,6 +3402,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3330,6 +3427,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3351,6 +3449,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3380,6 +3479,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3401,6 +3501,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3417,6 +3518,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3437,6 +3539,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3471,6 +3574,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -3487,6 +3591,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3509,6 +3614,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3533,6 +3639,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3554,6 +3661,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3583,6 +3691,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3604,6 +3713,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3620,6 +3730,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3640,6 +3751,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -3669,6 +3781,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     }
 
     private int cloudProvider_ = 0;
+
     /**
      *
      *
@@ -3684,6 +3797,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     public int getCloudProviderValue() {
       return cloudProvider_;
     }
+
     /**
      *
      *
@@ -3702,6 +3816,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3721,6 +3836,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.securitycenter.v1.CloudProvider.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3742,6 +3858,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3769,6 +3886,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.securitycenter.v1.ResourceValueConfig
                 .SensitiveDataProtectionMappingOrBuilder>
         sensitiveDataProtectionMappingBuilder_;
+
     /**
      *
      *
@@ -3788,6 +3906,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
     public boolean hasSensitiveDataProtectionMapping() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3815,6 +3934,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
         return sensitiveDataProtectionMappingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3844,6 +3964,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3871,6 +3992,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3907,6 +4029,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3931,6 +4054,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3952,6 +4076,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSensitiveDataProtectionMappingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3978,6 +4103,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
             : sensitiveDataProtectionMapping_;
       }
     }
+
     /**
      *
      *

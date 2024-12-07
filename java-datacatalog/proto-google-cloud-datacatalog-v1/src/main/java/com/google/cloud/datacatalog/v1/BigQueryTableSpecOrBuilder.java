@@ -38,6 +38,7 @@ public interface BigQueryTableSpecOrBuilder
    * @return The enum numeric value on the wire for tableSourceType.
    */
   int getTableSourceTypeValue();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface BigQueryTableSpecOrBuilder
    * @return Whether the viewSpec field is set.
    */
   boolean hasViewSpec();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface BigQueryTableSpecOrBuilder
    * @return The viewSpec.
    */
   com.google.cloud.datacatalog.v1.ViewSpec getViewSpec();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface BigQueryTableSpecOrBuilder
    * @return Whether the tableSpec field is set.
    */
   boolean hasTableSpec();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface BigQueryTableSpecOrBuilder
    * @return The tableSpec.
    */
   com.google.cloud.datacatalog.v1.TableSpec getTableSpec();
+
   /**
    *
    *

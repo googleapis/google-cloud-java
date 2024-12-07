@@ -40,6 +40,7 @@ public interface UserOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface UserOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface UserOrBuilder
    * @return A list containing the accessRights.
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.AccessRight> getAccessRightsList();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface UserOrBuilder
    * @return The count of accessRights.
    */
   int getAccessRightsCount();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface UserOrBuilder
    * @return The accessRights at the given index.
    */
   com.google.shopping.merchant.accounts.v1beta.AccessRight getAccessRights(int index);
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface UserOrBuilder
    * @return A list containing the enum numeric values on the wire for accessRights.
    */
   java.util.List<java.lang.Integer> getAccessRightsValueList();
+
   /**
    *
    *

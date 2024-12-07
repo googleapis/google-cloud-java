@@ -37,6 +37,7 @@ public interface QueryAudienceListRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

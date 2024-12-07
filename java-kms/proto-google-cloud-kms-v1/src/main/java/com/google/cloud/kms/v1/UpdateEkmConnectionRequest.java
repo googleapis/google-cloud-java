@@ -34,6 +34,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.UpdateEkmConnectionRequest)
     UpdateEkmConnectionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateEkmConnectionRequest.newBuilder() to construct.
   private UpdateEkmConnectionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int EKM_CONNECTION_FIELD_NUMBER = 1;
   private com.google.cloud.kms.v1.EkmConnection ekmConnection_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
   public boolean hasEkmConnection() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
         ? com.google.cloud.kms.v1.EkmConnection.getDefaultInstance()
         : ekmConnection_;
   }
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -349,6 +356,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -573,6 +581,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
             com.google.cloud.kms.v1.EkmConnection.Builder,
             com.google.cloud.kms.v1.EkmConnectionOrBuilder>
         ekmConnectionBuilder_;
+
     /**
      *
      *
@@ -590,6 +599,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
     public boolean hasEkmConnection() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -613,6 +623,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
         return ekmConnectionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -638,6 +649,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +672,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +703,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +726,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +744,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return getEkmConnectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -750,6 +766,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
             : ekmConnection_;
       }
     }
+
     /**
      *
      *
@@ -785,6 +802,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -800,6 +818,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -821,6 +840,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -844,6 +864,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +885,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +914,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +935,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +951,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -946,6 +971,7 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
             : updateMask_;
       }
     }
+
     /**
      *
      *

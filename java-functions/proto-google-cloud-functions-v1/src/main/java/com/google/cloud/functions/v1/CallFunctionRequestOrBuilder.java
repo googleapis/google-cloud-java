@@ -38,6 +38,7 @@ public interface CallFunctionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CallFunctionRequestOrBuilder
    * @return The data.
    */
   java.lang.String getData();
+
   /**
    *
    *

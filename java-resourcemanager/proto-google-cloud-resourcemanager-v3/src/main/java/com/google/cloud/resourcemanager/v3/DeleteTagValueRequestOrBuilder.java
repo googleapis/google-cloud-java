@@ -39,6 +39,7 @@ public interface DeleteTagValueRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface DeleteTagValueRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface BulkDownloadFeedbackLabelsMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface BulkDownloadFeedbackLabelsMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface BulkDownloadFeedbackLabelsMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface BulkDownloadFeedbackLabelsMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface BulkDownloadFeedbackLabelsMetadataOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface BulkDownloadFeedbackLabelsMetadataOrBuilder
    * @return The request.
    */
   com.google.cloud.contactcenterinsights.v1.BulkDownloadFeedbackLabelsRequest getRequest();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface BulkDownloadFeedbackLabelsMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   java.util.List<com.google.rpc.Status> getPartialErrorsList();
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public interface BulkDownloadFeedbackLabelsMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   com.google.rpc.Status getPartialErrors(int index);
+
   /**
    *
    *
@@ -175,6 +183,7 @@ public interface BulkDownloadFeedbackLabelsMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   int getPartialErrorsCount();
+
   /**
    *
    *
@@ -186,6 +195,7 @@ public interface BulkDownloadFeedbackLabelsMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList();
+
   /**
    *
    *
@@ -212,6 +222,7 @@ public interface BulkDownloadFeedbackLabelsMetadataOrBuilder
    * @return Whether the downloadStats field is set.
    */
   boolean hasDownloadStats();
+
   /**
    *
    *
@@ -227,6 +238,7 @@ public interface BulkDownloadFeedbackLabelsMetadataOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.BulkDownloadFeedbackLabelsMetadata.DownloadStats
       getDownloadStats();
+
   /**
    *
    *

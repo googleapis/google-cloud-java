@@ -37,6 +37,7 @@ public interface NetworkEdgeSecurityServicesScopedListOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.NetworkEdgeSecurityService>
       getNetworkEdgeSecurityServicesList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface NetworkEdgeSecurityServicesScopedListOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.NetworkEdgeSecurityService getNetworkEdgeSecurityServices(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface NetworkEdgeSecurityServicesScopedListOrBuilder
    * </code>
    */
   int getNetworkEdgeSecurityServicesCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface NetworkEdgeSecurityServicesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NetworkEdgeSecurityServiceOrBuilder>
       getNetworkEdgeSecurityServicesOrBuilderList();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface NetworkEdgeSecurityServicesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface NetworkEdgeSecurityServicesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.JobStatus)
     JobStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use JobStatus.newBuilder() to construct.
   private JobStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -193,6 +194,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -203,6 +205,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
+
     /**
      *
      *
@@ -214,6 +217,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>SETUP_DONE = 8;</code>
      */
     public static final int SETUP_DONE_VALUE = 8;
+
     /**
      *
      *
@@ -224,6 +228,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>RUNNING = 2;</code>
      */
     public static final int RUNNING_VALUE = 2;
+
     /**
      *
      *
@@ -234,6 +239,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCEL_PENDING = 3;</code>
      */
     public static final int CANCEL_PENDING_VALUE = 3;
+
     /**
      *
      *
@@ -245,6 +251,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCEL_STARTED = 7;</code>
      */
     public static final int CANCEL_STARTED_VALUE = 7;
+
     /**
      *
      *
@@ -255,6 +262,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLED = 4;</code>
      */
     public static final int CANCELLED_VALUE = 4;
+
     /**
      *
      *
@@ -265,6 +273,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>DONE = 5;</code>
      */
     public static final int DONE_VALUE = 5;
+
     /**
      *
      *
@@ -275,6 +284,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 6;</code>
      */
     public static final int ERROR_VALUE = 6;
+
     /**
      *
      *
@@ -459,6 +469,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSPECIFIED = 0;</code>
      */
     public static final int UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -471,6 +482,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>SUBMITTED = 1;</code>
      */
     public static final int SUBMITTED_VALUE = 1;
+
     /**
      *
      *
@@ -485,6 +497,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>QUEUED = 2;</code>
      */
     public static final int QUEUED_VALUE = 2;
+
     /**
      *
      *
@@ -588,6 +601,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -605,6 +619,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -629,6 +644,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object details_ = "";
+
   /**
    *
    *
@@ -655,6 +671,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -684,6 +701,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_START_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp stateStartTime_;
+
   /**
    *
    *
@@ -701,6 +719,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStateStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -720,6 +739,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : stateStartTime_;
   }
+
   /**
    *
    *
@@ -740,6 +760,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUBSTATE_FIELD_NUMBER = 7;
   private int substate_ = 0;
+
   /**
    *
    *
@@ -758,6 +779,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   public int getSubstateValue() {
     return substate_;
   }
+
   /**
    *
    *
@@ -969,6 +991,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1208,6 +1231,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1225,6 +1249,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1245,6 +1270,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1290,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dataproc.v1.JobStatus.State.forNumber(state_);
       return result == null ? com.google.cloud.dataproc.v1.JobStatus.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1287,6 +1314,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1308,6 +1336,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object details_ = "";
+
     /**
      *
      *
@@ -1333,6 +1362,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1358,6 +1388,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1382,6 +1413,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1402,6 +1434,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1434,6 +1467,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         stateStartTimeBuilder_;
+
     /**
      *
      *
@@ -1450,6 +1484,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStateStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1472,6 +1507,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         return stateStartTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1496,6 +1532,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1517,6 +1554,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1546,6 +1584,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1567,6 +1606,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1583,6 +1623,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStateStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1603,6 +1644,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
             : stateStartTime_;
       }
     }
+
     /**
      *
      *
@@ -1632,6 +1674,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int substate_ = 0;
+
     /**
      *
      *
@@ -1650,6 +1693,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public int getSubstateValue() {
       return substate_;
     }
+
     /**
      *
      *
@@ -1671,6 +1715,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1691,6 +1736,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dataproc.v1.JobStatus.Substate.forNumber(substate_);
       return result == null ? com.google.cloud.dataproc.v1.JobStatus.Substate.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1715,6 +1761,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface GetIngressRuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

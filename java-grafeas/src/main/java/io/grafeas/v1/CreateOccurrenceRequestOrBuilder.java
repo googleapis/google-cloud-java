@@ -40,6 +40,7 @@ public interface CreateOccurrenceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateOccurrenceRequestOrBuilder
    * @return Whether the occurrence field is set.
    */
   boolean hasOccurrence();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface CreateOccurrenceRequestOrBuilder
    * @return The occurrence.
    */
   io.grafeas.v1.Occurrence getOccurrence();
+
   /**
    *
    *

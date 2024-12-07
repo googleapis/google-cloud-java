@@ -36,6 +36,7 @@ public interface ManagedInstanceVersionOrBuilder
    * @return Whether the instanceTemplate field is set.
    */
   boolean hasInstanceTemplate();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ManagedInstanceVersionOrBuilder
    * @return The instanceTemplate.
    */
   java.lang.String getInstanceTemplate();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ManagedInstanceVersionOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ManagedInstanceVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

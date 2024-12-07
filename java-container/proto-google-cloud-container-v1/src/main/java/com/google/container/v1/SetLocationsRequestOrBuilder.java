@@ -41,6 +41,7 @@ public interface SetLocationsRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface SetLocationsRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface SetLocationsRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -147,6 +150,7 @@ public interface SetLocationsRequestOrBuilder
    * @return A list containing the locations.
    */
   java.util.List<java.lang.String> getLocationsList();
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public interface SetLocationsRequestOrBuilder
    * @return The count of locations.
    */
   int getLocationsCount();
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public interface SetLocationsRequestOrBuilder
    * @return The locations at the given index.
    */
   java.lang.String getLocations(int index);
+
   /**
    *
    *
@@ -217,6 +223,7 @@ public interface SetLocationsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

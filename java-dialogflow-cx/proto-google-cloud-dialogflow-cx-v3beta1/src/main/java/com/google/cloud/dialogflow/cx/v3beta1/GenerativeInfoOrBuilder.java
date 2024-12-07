@@ -38,6 +38,7 @@ public interface GenerativeInfoOrBuilder
    * @return A list containing the currentPlaybooks.
    */
   java.util.List<java.lang.String> getCurrentPlaybooksList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface GenerativeInfoOrBuilder
    * @return The count of currentPlaybooks.
    */
   int getCurrentPlaybooksCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface GenerativeInfoOrBuilder
    * @return The currentPlaybooks at the given index.
    */
   java.lang.String getCurrentPlaybooks(int index);
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface GenerativeInfoOrBuilder
    * @return Whether the actionTracingInfo field is set.
    */
   boolean hasActionTracingInfo();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface GenerativeInfoOrBuilder
    * @return The actionTracingInfo.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Example getActionTracingInfo();
+
   /**
    *
    *

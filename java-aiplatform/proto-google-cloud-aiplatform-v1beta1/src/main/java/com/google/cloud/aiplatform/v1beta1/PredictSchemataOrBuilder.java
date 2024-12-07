@@ -47,6 +47,7 @@ public interface PredictSchemataOrBuilder
    * @return The instanceSchemaUri.
    */
   java.lang.String getInstanceSchemaUri();
+
   /**
    *
    *
@@ -95,6 +96,7 @@ public interface PredictSchemataOrBuilder
    * @return The parametersSchemaUri.
    */
   java.lang.String getParametersSchemaUri();
+
   /**
    *
    *
@@ -144,6 +146,7 @@ public interface PredictSchemataOrBuilder
    * @return The predictionSchemaUri.
    */
   java.lang.String getPredictionSchemaUri();
+
   /**
    *
    *

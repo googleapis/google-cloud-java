@@ -33,6 +33,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomField)
     CustomFieldOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomField.newBuilder() to construct.
   private CustomField(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOM_FIELD_ID_FIELD_NUMBER = 2;
   private long customFieldId_ = 0L;
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 5;
   private int status_ = 0;
+
   /**
    *
    *
@@ -265,6 +274,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
   public int getStatusValue() {
     return status_;
   }
+
   /**
    *
    *
@@ -289,6 +299,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENTITY_TYPE_FIELD_NUMBER = 7;
   private int entityType_ = 0;
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
   public int getEntityTypeValue() {
     return entityType_;
   }
+
   /**
    *
    *
@@ -332,6 +344,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_TYPE_FIELD_NUMBER = 8;
   private int dataType_ = 0;
+
   /**
    *
    *
@@ -349,6 +362,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
   public int getDataTypeValue() {
     return dataType_;
   }
+
   /**
    *
    *
@@ -374,6 +388,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VISIBILITY_FIELD_NUMBER = 9;
   private int visibility_ = 0;
+
   /**
    *
    *
@@ -391,6 +406,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
   public int getVisibilityValue() {
     return visibility_;
   }
+
   /**
    *
    *
@@ -419,6 +435,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.CustomFieldOption> options_;
+
   /**
    *
    *
@@ -436,6 +453,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.ads.admanager.v1.CustomFieldOption> getOptionsList() {
     return options_;
   }
+
   /**
    *
    *
@@ -454,6 +472,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       getOptionsOrBuilderList() {
     return options_;
   }
+
   /**
    *
    *
@@ -471,6 +490,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
   public int getOptionsCount() {
     return options_.size();
   }
+
   /**
    *
    *
@@ -488,6 +508,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
   public com.google.ads.admanager.v1.CustomFieldOption getOptions(int index) {
     return options_.get(index);
   }
+
   /**
    *
    *
@@ -762,6 +783,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1100,6 +1122,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1123,6 +1146,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1146,6 +1170,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1168,6 +1193,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1186,6 +1212,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1238,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long customFieldId_;
+
     /**
      *
      *
@@ -1227,6 +1255,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     public long getCustomFieldId() {
       return customFieldId_;
     }
+
     /**
      *
      *
@@ -1247,6 +1276,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1297,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1289,6 +1320,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1311,6 +1343,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1332,6 +1365,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1349,6 +1383,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1373,6 +1408,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1396,6 +1432,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1419,6 +1456,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1441,6 +1479,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1459,6 +1498,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1484,6 +1524,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int status_ = 0;
+
     /**
      *
      *
@@ -1501,6 +1542,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     public int getStatusValue() {
       return status_;
     }
+
     /**
      *
      *
@@ -1521,6 +1563,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1542,6 +1585,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
           ? com.google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1566,6 +1610,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1587,6 +1632,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int entityType_ = 0;
+
     /**
      *
      *
@@ -1604,6 +1650,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     public int getEntityTypeValue() {
       return entityType_;
     }
+
     /**
      *
      *
@@ -1624,6 +1671,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1647,6 +1695,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
           ? com.google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1671,6 +1720,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1692,6 +1742,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int dataType_ = 0;
+
     /**
      *
      *
@@ -1709,6 +1760,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     public int getDataTypeValue() {
       return dataType_;
     }
+
     /**
      *
      *
@@ -1729,6 +1781,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1751,6 +1804,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
           ? com.google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1775,6 +1829,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1796,6 +1851,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int visibility_ = 0;
+
     /**
      *
      *
@@ -1813,6 +1869,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     public int getVisibilityValue() {
       return visibility_;
     }
+
     /**
      *
      *
@@ -1833,6 +1890,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1856,6 +1914,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
           ? com.google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1880,6 +1939,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1936,6 +1996,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
         return optionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1956,6 +2017,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
         return optionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1976,6 +2038,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
         return optionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2002,6 +2065,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2026,6 +2090,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2052,6 +2117,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2078,6 +2144,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2102,6 +2169,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2126,6 +2194,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2150,6 +2219,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2173,6 +2243,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2196,6 +2267,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2212,6 +2284,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     public com.google.ads.admanager.v1.CustomFieldOption.Builder getOptionsBuilder(int index) {
       return getOptionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2232,6 +2305,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
         return optionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2253,6 +2327,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(options_);
       }
     }
+
     /**
      *
      *
@@ -2270,6 +2345,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       return getOptionsFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.CustomFieldOption.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2287,6 +2363,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       return getOptionsFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.CustomFieldOption.getDefaultInstance());
     }
+
     /**
      *
      *

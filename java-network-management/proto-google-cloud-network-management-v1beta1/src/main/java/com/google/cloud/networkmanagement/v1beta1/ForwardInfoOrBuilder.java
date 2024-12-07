@@ -36,6 +36,7 @@ public interface ForwardInfoOrBuilder
    * @return The enum numeric value on the wire for target.
    */
   int getTargetValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ForwardInfoOrBuilder
    * @return The resourceUri.
    */
   java.lang.String getResourceUri();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ForwardInfoOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *

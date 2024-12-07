@@ -35,6 +35,7 @@ public interface ListAccessLevelsResponseOrBuilder
    * <code>repeated .google.identity.accesscontextmanager.v1.AccessLevel access_levels = 1;</code>
    */
   java.util.List<com.google.identity.accesscontextmanager.v1.AccessLevel> getAccessLevelsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListAccessLevelsResponseOrBuilder
    * <code>repeated .google.identity.accesscontextmanager.v1.AccessLevel access_levels = 1;</code>
    */
   com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevels(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListAccessLevelsResponseOrBuilder
    * <code>repeated .google.identity.accesscontextmanager.v1.AccessLevel access_levels = 1;</code>
    */
   int getAccessLevelsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListAccessLevelsResponseOrBuilder
    */
   java.util.List<? extends com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder>
       getAccessLevelsOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListAccessLevelsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public interface ListFoldersResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.Folder folders = 1;</code>
    */
   java.util.List<com.google.cloud.resourcemanager.v3.Folder> getFoldersList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListFoldersResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.Folder folders = 1;</code>
    */
   com.google.cloud.resourcemanager.v3.Folder getFolders(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListFoldersResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.Folder folders = 1;</code>
    */
   int getFoldersCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListFoldersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.resourcemanager.v3.FolderOrBuilder>
       getFoldersOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListFoldersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

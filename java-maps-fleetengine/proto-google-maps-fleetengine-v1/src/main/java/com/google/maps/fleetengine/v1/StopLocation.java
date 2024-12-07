@@ -33,6 +33,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.StopLocation)
     StopLocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StopLocation.newBuilder() to construct.
   private StopLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int POINT_FIELD_NUMBER = 1;
   private com.google.type.LatLng point_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPoint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getPoint() {
     return point_ == null ? com.google.type.LatLng.getDefaultInstance() : point_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMESTAMP_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp timestamp_;
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimestamp() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getTimestamp() {
     return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
   }
+
   /**
    *
    *
@@ -156,6 +163,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STOP_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp stopTime_;
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStopTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStopTime() {
     return stopTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : stopTime_;
   }
+
   /**
    *
    *
@@ -405,6 +415,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -643,6 +654,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         pointBuilder_;
+
     /**
      *
      *
@@ -657,6 +669,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPoint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
         return pointBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -697,6 +711,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +731,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +759,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +794,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPointFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -792,6 +811,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
         return point_ == null ? com.google.type.LatLng.getDefaultInstance() : point_;
       }
     }
+
     /**
      *
      *
@@ -821,6 +841,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timestampBuilder_;
+
     /**
      *
      *
@@ -835,6 +856,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimestamp() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -853,6 +875,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
         return timestampBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -875,6 +898,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +918,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +946,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +966,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +981,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimestampFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -970,6 +998,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
         return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1031,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         stopTimeBuilder_;
+
     /**
      *
      *
@@ -1021,6 +1051,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStopTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1044,6 +1075,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
         return stopTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1101,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1124,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1155,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1178,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1160,6 +1196,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStopTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1179,6 +1216,7 @@ public final class StopLocation extends com.google.protobuf.GeneratedMessageV3
         return stopTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : stopTime_;
       }
     }
+
     /**
      *
      *

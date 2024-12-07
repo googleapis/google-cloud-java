@@ -33,6 +33,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TestIamPermissionsLicenseRequest)
     TestIamPermissionsLicenseRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TestIamPermissionsLicenseRequest.newBuilder() to construct.
   private TestIamPermissionsLicenseRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
 
   public static final int TEST_PERMISSIONS_REQUEST_RESOURCE_FIELD_NUMBER = 439214758;
   private com.google.cloud.compute.v1.TestPermissionsRequest testPermissionsRequestResource_;
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
   public boolean hasTestPermissionsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
         ? com.google.cloud.compute.v1.TestPermissionsRequest.getDefaultInstance()
         : testPermissionsRequestResource_;
   }
+
   /**
    *
    *
@@ -412,6 +420,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +657,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -670,6 +680,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -692,6 +703,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -713,6 +725,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +743,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -776,6 +791,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -819,6 +836,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.TestPermissionsRequest.Builder,
             com.google.cloud.compute.v1.TestPermissionsRequestOrBuilder>
         testPermissionsRequestResourceBuilder_;
+
     /**
      *
      *
@@ -881,6 +901,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
     public boolean hasTestPermissionsRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -903,6 +924,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
         return testPermissionsRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -928,6 +950,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +973,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1005,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1027,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1045,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
       onChanged();
       return getTestPermissionsRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1040,6 +1067,7 @@ public final class TestIamPermissionsLicenseRequest extends com.google.protobuf.
             : testPermissionsRequestResource_;
       }
     }
+
     /**
      *
      *

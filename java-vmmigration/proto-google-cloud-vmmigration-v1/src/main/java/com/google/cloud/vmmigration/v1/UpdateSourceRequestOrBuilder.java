@@ -40,6 +40,7 @@ public interface UpdateSourceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateSourceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface UpdateSourceRequestOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface UpdateSourceRequestOrBuilder
    * @return The source.
    */
   com.google.cloud.vmmigration.v1.Source getSource();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface UpdateSourceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

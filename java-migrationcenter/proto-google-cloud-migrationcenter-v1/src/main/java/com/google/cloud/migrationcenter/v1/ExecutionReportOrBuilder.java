@@ -49,6 +49,7 @@ public interface ExecutionReportOrBuilder
    * @return Whether the executionErrors field is set.
    */
   boolean hasExecutionErrors();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ExecutionReportOrBuilder
    * @return The executionErrors.
    */
   com.google.cloud.migrationcenter.v1.ValidationReport getExecutionErrors();
+
   /**
    *
    *

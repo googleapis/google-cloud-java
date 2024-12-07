@@ -51,6 +51,7 @@ public interface DataQualityResultOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface DataQualityResultOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.DataQualityDimensionResult> getDimensionsList();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface DataQualityResultOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
    */
   com.google.cloud.dataplex.v1.DataQualityDimensionResult getDimensions(int index);
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface DataQualityResultOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface DataQualityResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder>
       getDimensionsOrBuilderList();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface DataQualityResultOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataplex.v1.DataQualityColumnResult> getColumnsList();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface DataQualityResultOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.DataQualityColumnResult getColumns(int index);
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public interface DataQualityResultOrBuilder
    * </code>
    */
   int getColumnsCount();
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public interface DataQualityResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityColumnResultOrBuilder>
       getColumnsOrBuilderList();
+
   /**
    *
    *
@@ -221,6 +230,7 @@ public interface DataQualityResultOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.DataQualityRuleResult> getRulesList();
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public interface DataQualityResultOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
    */
   com.google.cloud.dataplex.v1.DataQualityRuleResult getRules(int index);
+
   /**
    *
    *
@@ -241,6 +252,7 @@ public interface DataQualityResultOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -252,6 +264,7 @@ public interface DataQualityResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityRuleResultOrBuilder>
       getRulesOrBuilderList();
+
   /**
    *
    *
@@ -288,6 +301,7 @@ public interface DataQualityResultOrBuilder
    * @return Whether the scannedData field is set.
    */
   boolean hasScannedData();
+
   /**
    *
    *
@@ -300,6 +314,7 @@ public interface DataQualityResultOrBuilder
    * @return The scannedData.
    */
   com.google.cloud.dataplex.v1.ScannedData getScannedData();
+
   /**
    *
    *
@@ -325,6 +340,7 @@ public interface DataQualityResultOrBuilder
    * @return Whether the postScanActionsResult field is set.
    */
   boolean hasPostScanActionsResult();
+
   /**
    *
    *
@@ -339,6 +355,7 @@ public interface DataQualityResultOrBuilder
    * @return The postScanActionsResult.
    */
   com.google.cloud.dataplex.v1.DataQualityResult.PostScanActionsResult getPostScanActionsResult();
+
   /**
    *
    *

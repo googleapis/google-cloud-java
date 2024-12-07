@@ -36,6 +36,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * @return Whether the code field is set.
    */
   boolean hasCode();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface FilterExpressionOrBuilder
    * @return Whether the andGroup field is set.
    */
   boolean hasAndGroup();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FilterExpressionOrBuilder
    * @return The andGroup.
    */
   com.google.analytics.data.v1beta.FilterExpressionList getAndGroup();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface FilterExpressionOrBuilder
    * @return Whether the orGroup field is set.
    */
   boolean hasOrGroup();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface FilterExpressionOrBuilder
    * @return The orGroup.
    */
   com.google.analytics.data.v1beta.FilterExpressionList getOrGroup();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface FilterExpressionOrBuilder
    * @return Whether the notExpression field is set.
    */
   boolean hasNotExpression();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface FilterExpressionOrBuilder
    * @return The notExpression.
    */
   com.google.analytics.data.v1beta.FilterExpression getNotExpression();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface FilterExpressionOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public interface FilterExpressionOrBuilder
    * @return The filter.
    */
   com.google.analytics.data.v1beta.Filter getFilter();
+
   /**
    *
    *

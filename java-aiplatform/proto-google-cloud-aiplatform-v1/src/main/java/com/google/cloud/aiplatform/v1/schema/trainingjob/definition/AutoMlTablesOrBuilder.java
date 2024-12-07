@@ -37,6 +37,7 @@ public interface AutoMlTablesOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface AutoMlTablesOrBuilder
    * @return The inputs.
    */
   com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs getInputs();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface AutoMlTablesOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface AutoMlTablesOrBuilder
    * @return The metadata.
    */
   com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesMetadata getMetadata();
+
   /**
    *
    *

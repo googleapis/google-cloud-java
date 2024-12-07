@@ -33,6 +33,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ListVpnTunnelsRequest)
     ListVpnTunnelsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListVpnTunnelsRequest.newBuilder() to construct.
   private ListVpnTunnelsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
   private int maxResults_ = 0;
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasMaxResults() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasOrderBy() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -237,6 +246,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -252,6 +262,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasPageToken() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -275,6 +286,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -303,6 +315,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -326,6 +339,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -354,6 +368,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -377,6 +392,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -403,6 +419,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_ = false;
+
   /**
    *
    *
@@ -418,6 +435,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasReturnPartialSuccess() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -673,6 +691,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -950,6 +969,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -964,6 +984,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -986,6 +1007,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1030,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1029,6 +1052,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1070,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1095,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private int maxResults_;
+
     /**
      *
      *
@@ -1085,6 +1111,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasMaxResults() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1100,6 +1127,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     public int getMaxResults() {
       return maxResults_;
     }
+
     /**
      *
      *
@@ -1119,6 +1147,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1167,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object orderBy_ = "";
+
     /**
      *
      *
@@ -1152,6 +1182,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasOrderBy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1174,6 +1205,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1196,6 +1228,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1250,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1268,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1258,6 +1293,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1272,6 +1308,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1294,6 +1331,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1316,6 +1354,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1337,6 +1376,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1354,6 +1394,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1378,6 +1419,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1400,6 +1442,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1465,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1443,6 +1487,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1460,6 +1505,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1484,6 +1530,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1506,6 +1553,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1528,6 +1576,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1549,6 +1598,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1566,6 +1616,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1590,6 +1641,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean returnPartialSuccess_;
+
     /**
      *
      *
@@ -1605,6 +1657,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasReturnPartialSuccess() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1620,6 +1673,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
     public boolean getReturnPartialSuccess() {
       return returnPartialSuccess_;
     }
+
     /**
      *
      *
@@ -1639,6 +1693,7 @@ public final class ListVpnTunnelsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

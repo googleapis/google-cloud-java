@@ -33,6 +33,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.GatewayListOptions)
     GatewayListOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GatewayListOptions.newBuilder() to construct.
   private GatewayListOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
     private FilterCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,6 +116,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int GATEWAY_TYPE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
   public boolean hasGatewayType() {
     return filterCase_ == 1;
   }
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
     }
     return 0;
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ASSOCIATIONS_GATEWAY_ID_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
   public boolean hasAssociationsGatewayId() {
     return filterCase_ == 2;
   }
+
   /**
    *
    *
@@ -219,6 +226,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -251,6 +259,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ASSOCIATIONS_DEVICE_ID_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
   public boolean hasAssociationsDeviceId() {
     return filterCase_ == 3;
   }
+
   /**
    *
    *
@@ -298,6 +308,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -528,6 +539,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -780,6 +792,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
     public boolean hasGatewayType() {
       return filterCase_ == 1;
     }
+
     /**
      *
      *
@@ -800,6 +813,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
       }
       return 0;
     }
+
     /**
      *
      *
@@ -820,6 +834,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +857,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
       }
       return com.google.cloud.iot.v1.GatewayType.GATEWAY_TYPE_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -865,6 +881,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +922,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
     public boolean hasAssociationsGatewayId() {
       return filterCase_ == 2;
     }
+
     /**
      *
      *
@@ -936,6 +954,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -967,6 +986,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -991,6 +1011,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1034,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1079,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
     public boolean hasAssociationsDeviceId() {
       return filterCase_ == 3;
     }
+
     /**
      *
      *
@@ -1088,6 +1111,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1119,6 +1143,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1143,6 +1168,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1191,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *

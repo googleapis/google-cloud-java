@@ -33,6 +33,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.VodSessionAdBreak)
     VodSessionAdBreakOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VodSessionAdBreak.newBuilder() to construct.
   private VodSessionAdBreak(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.ProgressEvent> progressEvents_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.video.stitcher.v1.ProgressEvent> getProgressEventsList() {
     return progressEvents_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       getProgressEventsOrBuilderList() {
     return progressEvents_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
   public int getProgressEventsCount() {
     return progressEvents_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.video.stitcher.v1.ProgressEvent getProgressEvents(int index) {
     return progressEvents_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.VodSessionAd> ads_;
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.video.stitcher.v1.VodSessionAd> getAdsList() {
     return ads_;
   }
+
   /**
    *
    *
@@ -168,6 +176,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       getAdsOrBuilderList() {
     return ads_;
   }
+
   /**
    *
    *
@@ -181,6 +190,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
   public int getAdsCount() {
     return ads_.size();
   }
+
   /**
    *
    *
@@ -194,6 +204,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.video.stitcher.v1.VodSessionAd getAds(int index) {
     return ads_.get(index);
   }
+
   /**
    *
    *
@@ -210,6 +221,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
 
   public static final int END_TIME_OFFSET_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration endTimeOffset_;
+
   /**
    *
    *
@@ -225,6 +237,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
   public boolean hasEndTimeOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -242,6 +255,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Duration.getDefaultInstance()
         : endTimeOffset_;
   }
+
   /**
    *
    *
@@ -260,6 +274,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
 
   public static final int START_TIME_OFFSET_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration startTimeOffset_;
+
   /**
    *
    *
@@ -275,6 +290,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
   public boolean hasStartTimeOffset() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -292,6 +308,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Duration.getDefaultInstance()
         : startTimeOffset_;
   }
+
   /**
    *
    *
@@ -508,6 +525,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -882,6 +900,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         return progressEventsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -898,6 +917,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         return progressEventsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -914,6 +934,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         return progressEventsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -937,6 +958,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +979,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1002,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1026,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1047,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1042,6 +1068,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1089,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1109,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1100,6 +1129,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1143,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         int index) {
       return getProgressEventsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1130,6 +1161,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         return progressEventsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1147,6 +1179,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(progressEvents_);
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1193,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       return getProgressEventsFieldBuilder()
           .addBuilder(com.google.cloud.video.stitcher.v1.ProgressEvent.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1174,6 +1208,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       return getProgressEventsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.stitcher.v1.ProgressEvent.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1240,6 +1275,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         return adsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1256,6 +1292,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         return adsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1272,6 +1309,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         return adsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1294,6 +1332,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1353,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1336,6 +1376,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1399,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1419,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1397,6 +1440,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1461,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1436,6 +1481,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1455,6 +1501,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1467,6 +1514,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.video.stitcher.v1.VodSessionAd.Builder getAdsBuilder(int index) {
       return getAdsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1483,6 +1531,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         return adsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1500,6 +1549,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(ads_);
       }
     }
+
     /**
      *
      *
@@ -1513,6 +1563,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       return getAdsFieldBuilder()
           .addBuilder(com.google.cloud.video.stitcher.v1.VodSessionAd.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1526,6 +1577,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       return getAdsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.stitcher.v1.VodSessionAd.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1563,6 +1615,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         endTimeOffsetBuilder_;
+
     /**
      *
      *
@@ -1577,6 +1630,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
     public boolean hasEndTimeOffset() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1597,6 +1651,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         return endTimeOffsetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1619,6 +1674,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1694,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1665,6 +1722,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1684,6 +1742,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1698,6 +1757,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getEndTimeOffsetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1716,6 +1776,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
             : endTimeOffset_;
       }
     }
+
     /**
      *
      *
@@ -1748,6 +1809,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         startTimeOffsetBuilder_;
+
     /**
      *
      *
@@ -1762,6 +1824,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
     public boolean hasStartTimeOffset() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1782,6 +1845,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
         return startTimeOffsetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1804,6 +1868,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1823,6 +1888,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1850,6 +1916,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1869,6 +1936,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1883,6 +1951,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getStartTimeOffsetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1901,6 +1970,7 @@ public final class VodSessionAdBreak extends com.google.protobuf.GeneratedMessag
             : startTimeOffset_;
       }
     }
+
     /**
      *
      *

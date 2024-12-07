@@ -38,6 +38,7 @@ public interface RecommendResponseOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.RecommendResponse.RecommendationResult>
       getResultsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface RecommendResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1alpha.RecommendResponse.RecommendationResult getResults(
       int index);
+
   /**
    *
    *
@@ -65,6 +67,7 @@ public interface RecommendResponseOrBuilder
    * </code>
    */
   int getResultsCount();
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface RecommendResponseOrBuilder
               com.google.cloud.discoveryengine.v1alpha.RecommendResponse
                   .RecommendationResultOrBuilder>
       getResultsOrBuilderList();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface RecommendResponseOrBuilder
    * @return The attributionToken.
    */
   java.lang.String getAttributionToken();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface RecommendResponseOrBuilder
    * @return A list containing the missingIds.
    */
   java.util.List<java.lang.String> getMissingIdsList();
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public interface RecommendResponseOrBuilder
    * @return The count of missingIds.
    */
   int getMissingIdsCount();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface RecommendResponseOrBuilder
    * @return The missingIds at the given index.
    */
   java.lang.String getMissingIds(int index);
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.DataStats)
     DataStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataStats.newBuilder() to construct.
   private DataStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     private StatsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -123,6 +125,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FLOAT64_STATS_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -138,6 +141,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFloat64Stats() {
     return statsCase_ == 3;
   }
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.Float64Stats.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_STATS_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStringStats() {
     return statsCase_ == 4;
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.StringStats.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIMESTAMP_STATS_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimestampStats() {
     return statsCase_ == 5;
   }
+
   /**
    *
    *
@@ -258,6 +268,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.TimestampStats.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -276,6 +287,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARRAY_STATS_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -291,6 +303,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasArrayStats() {
     return statsCase_ == 6;
   }
+
   /**
    *
    *
@@ -309,6 +322,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.ArrayStats.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -327,6 +341,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRUCT_STATS_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -342,6 +357,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStructStats() {
     return statsCase_ == 7;
   }
+
   /**
    *
    *
@@ -360,6 +376,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.StructStats.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -378,6 +395,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CATEGORY_STATS_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -393,6 +411,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCategoryStats() {
     return statsCase_ == 8;
   }
+
   /**
    *
    *
@@ -411,6 +430,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.CategoryStats.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -430,6 +450,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISTINCT_VALUE_COUNT_FIELD_NUMBER = 1;
   private long distinctValueCount_ = 0L;
+
   /**
    *
    *
@@ -448,6 +469,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NULL_VALUE_COUNT_FIELD_NUMBER = 2;
   private long nullValueCount_ = 0L;
+
   /**
    *
    *
@@ -466,6 +488,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALID_VALUE_COUNT_FIELD_NUMBER = 9;
   private long validValueCount_ = 0L;
+
   /**
    *
    *
@@ -758,6 +781,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1099,6 +1123,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.Float64Stats.Builder,
             com.google.cloud.automl.v1beta1.Float64StatsOrBuilder>
         float64StatsBuilder_;
+
     /**
      *
      *
@@ -1114,6 +1139,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFloat64Stats() {
       return statsCase_ == 3;
     }
+
     /**
      *
      *
@@ -1139,6 +1165,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.Float64Stats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1161,6 +1188,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1209,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1213,6 +1242,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1268,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1250,6 +1281,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.Float64Stats.Builder getFloat64StatsBuilder() {
       return getFloat64StatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1270,6 +1302,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.Float64Stats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1308,6 +1341,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.StringStats.Builder,
             com.google.cloud.automl.v1beta1.StringStatsOrBuilder>
         stringStatsBuilder_;
+
     /**
      *
      *
@@ -1323,6 +1357,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStringStats() {
       return statsCase_ == 4;
     }
+
     /**
      *
      *
@@ -1348,6 +1383,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.StringStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1370,6 +1406,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1390,6 +1427,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1422,6 +1460,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1447,6 +1486,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1459,6 +1499,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.StringStats.Builder getStringStatsBuilder() {
       return getStringStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1479,6 +1520,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.StringStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1517,6 +1559,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.TimestampStats.Builder,
             com.google.cloud.automl.v1beta1.TimestampStatsOrBuilder>
         timestampStatsBuilder_;
+
     /**
      *
      *
@@ -1532,6 +1575,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimestampStats() {
       return statsCase_ == 5;
     }
+
     /**
      *
      *
@@ -1557,6 +1601,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.TimestampStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1579,6 +1624,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1599,6 +1645,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1631,6 +1678,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1656,6 +1704,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1668,6 +1717,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.TimestampStats.Builder getTimestampStatsBuilder() {
       return getTimestampStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1688,6 +1738,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.TimestampStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1726,6 +1777,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.ArrayStats.Builder,
             com.google.cloud.automl.v1beta1.ArrayStatsOrBuilder>
         arrayStatsBuilder_;
+
     /**
      *
      *
@@ -1741,6 +1793,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasArrayStats() {
       return statsCase_ == 6;
     }
+
     /**
      *
      *
@@ -1766,6 +1819,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.ArrayStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1788,6 +1842,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1808,6 +1863,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1840,6 +1896,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1865,6 +1922,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1877,6 +1935,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.ArrayStats.Builder getArrayStatsBuilder() {
       return getArrayStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1897,6 +1956,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.ArrayStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1935,6 +1995,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.StructStats.Builder,
             com.google.cloud.automl.v1beta1.StructStatsOrBuilder>
         structStatsBuilder_;
+
     /**
      *
      *
@@ -1950,6 +2011,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStructStats() {
       return statsCase_ == 7;
     }
+
     /**
      *
      *
@@ -1975,6 +2037,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.StructStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1997,6 +2060,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2017,6 +2081,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2049,6 +2114,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2074,6 +2140,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2086,6 +2153,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.StructStats.Builder getStructStatsBuilder() {
       return getStructStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2106,6 +2174,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.StructStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2144,6 +2213,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.CategoryStats.Builder,
             com.google.cloud.automl.v1beta1.CategoryStatsOrBuilder>
         categoryStatsBuilder_;
+
     /**
      *
      *
@@ -2159,6 +2229,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCategoryStats() {
       return statsCase_ == 8;
     }
+
     /**
      *
      *
@@ -2184,6 +2255,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.CategoryStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2206,6 +2278,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2226,6 +2299,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2258,6 +2332,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       statsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2283,6 +2358,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2295,6 +2371,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.CategoryStats.Builder getCategoryStatsBuilder() {
       return getCategoryStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2315,6 +2392,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.CategoryStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2349,6 +2427,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long distinctValueCount_;
+
     /**
      *
      *
@@ -2364,6 +2443,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public long getDistinctValueCount() {
       return distinctValueCount_;
     }
+
     /**
      *
      *
@@ -2383,6 +2463,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2402,6 +2483,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long nullValueCount_;
+
     /**
      *
      *
@@ -2417,6 +2499,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public long getNullValueCount() {
       return nullValueCount_;
     }
+
     /**
      *
      *
@@ -2436,6 +2519,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2455,6 +2539,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long validValueCount_;
+
     /**
      *
      *
@@ -2470,6 +2555,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public long getValidValueCount() {
       return validValueCount_;
     }
+
     /**
      *
      *
@@ -2489,6 +2575,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface TransitionCoverageOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TransitionCoverage.Transition>
       getTransitionsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface TransitionCoverageOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.TransitionCoverage.Transition getTransitions(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface TransitionCoverageOrBuilder
    * </code>
    */
   int getTransitionsCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface TransitionCoverageOrBuilder
   java.util.List<
           ? extends com.google.cloud.dialogflow.cx.v3beta1.TransitionCoverage.TransitionOrBuilder>
       getTransitionsOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.InsertShippingSettingsRequest)
     InsertShippingSettingsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertShippingSettingsRequest.newBuilder() to construct.
   private InsertShippingSettingsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
 
   public static final int SHIPPING_SETTING_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.accounts.v1beta.ShippingSettings shippingSetting_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
   public boolean hasShippingSetting() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
         ? com.google.shopping.merchant.accounts.v1beta.ShippingSettings.getDefaultInstance()
         : shippingSetting_;
   }
+
   /**
    *
    *
@@ -356,6 +362,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -581,6 +588,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -604,6 +612,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -627,6 +636,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -649,6 +659,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
             com.google.shopping.merchant.accounts.v1beta.ShippingSettings.Builder,
             com.google.shopping.merchant.accounts.v1beta.ShippingSettingsOrBuilder>
         shippingSettingBuilder_;
+
     /**
      *
      *
@@ -713,6 +726,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
     public boolean hasShippingSetting() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -735,6 +749,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
         return shippingSettingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -760,6 +775,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +798,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +831,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +853,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +871,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
       onChanged();
       return getShippingSettingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -873,6 +893,7 @@ public final class InsertShippingSettingsRequest extends com.google.protobuf.Gen
             : shippingSetting_;
       }
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse)
     ListEvaluationResultsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListEvaluationResultsResponse.newBuilder() to construct.
   private ListEvaluationResultsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,6 +88,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      * @return Whether the sampleQuery field is set.
      */
     boolean hasSampleQuery();
+
     /**
      *
      *
@@ -103,6 +105,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      * @return The sampleQuery.
      */
     com.google.cloud.discoveryengine.v1beta.SampleQuery getSampleQuery();
+
     /**
      *
      *
@@ -133,6 +136,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      * @return Whether the qualityMetrics field is set.
      */
     boolean hasQualityMetrics();
+
     /**
      *
      *
@@ -148,6 +152,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      * @return The qualityMetrics.
      */
     com.google.cloud.discoveryengine.v1beta.QualityMetrics getQualityMetrics();
+
     /**
      *
      *
@@ -162,6 +167,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      */
     com.google.cloud.discoveryengine.v1beta.QualityMetricsOrBuilder getQualityMetricsOrBuilder();
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult)
       EvaluationResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EvaluationResult.newBuilder() to construct.
     private EvaluationResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -211,6 +218,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
     private int bitField0_;
     public static final int SAMPLE_QUERY_FIELD_NUMBER = 1;
     private com.google.cloud.discoveryengine.v1beta.SampleQuery sampleQuery_;
+
     /**
      *
      *
@@ -230,6 +238,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
     public boolean hasSampleQuery() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -251,6 +260,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
           ? com.google.cloud.discoveryengine.v1beta.SampleQuery.getDefaultInstance()
           : sampleQuery_;
     }
+
     /**
      *
      *
@@ -273,6 +283,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
 
     public static final int QUALITY_METRICS_FIELD_NUMBER = 2;
     private com.google.cloud.discoveryengine.v1beta.QualityMetrics qualityMetrics_;
+
     /**
      *
      *
@@ -291,6 +302,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
     public boolean hasQualityMetrics() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -311,6 +323,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
           ? com.google.cloud.discoveryengine.v1beta.QualityMetrics.getDefaultInstance()
           : qualityMetrics_;
     }
+
     /**
      *
      *
@@ -533,6 +546,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -785,6 +799,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
               com.google.cloud.discoveryengine.v1beta.SampleQuery.Builder,
               com.google.cloud.discoveryengine.v1beta.SampleQueryOrBuilder>
           sampleQueryBuilder_;
+
       /**
        *
        *
@@ -803,6 +818,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       public boolean hasSampleQuery() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -827,6 +843,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
           return sampleQueryBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -853,6 +870,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -877,6 +895,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -909,6 +928,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -932,6 +952,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -950,6 +971,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         onChanged();
         return getSampleQueryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -973,6 +995,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
               : sampleQuery_;
         }
       }
+
       /**
        *
        *
@@ -1009,6 +1032,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
               com.google.cloud.discoveryengine.v1beta.QualityMetrics.Builder,
               com.google.cloud.discoveryengine.v1beta.QualityMetricsOrBuilder>
           qualityMetricsBuilder_;
+
       /**
        *
        *
@@ -1026,6 +1050,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       public boolean hasQualityMetrics() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1049,6 +1074,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
           return qualityMetricsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1075,6 +1101,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1098,6 +1125,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1130,6 +1158,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -1152,6 +1181,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1170,6 +1200,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         onChanged();
         return getQualityMetricsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1192,6 +1223,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
               : qualityMetrics_;
         }
       }
+
       /**
        *
        *
@@ -1298,6 +1330,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
   private java.util.List<
           com.google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult>
       evaluationResults_;
+
   /**
    *
    *
@@ -1316,6 +1349,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       getEvaluationResultsList() {
     return evaluationResults_;
   }
+
   /**
    *
    *
@@ -1336,6 +1370,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       getEvaluationResultsOrBuilderList() {
     return evaluationResults_;
   }
+
   /**
    *
    *
@@ -1352,6 +1387,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
   public int getEvaluationResultsCount() {
     return evaluationResults_.size();
   }
+
   /**
    *
    *
@@ -1369,6 +1405,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       getEvaluationResults(int index) {
     return evaluationResults_.get(index);
   }
+
   /**
    *
    *
@@ -1392,6 +1429,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -1418,6 +1456,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -1618,6 +1657,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1918,6 +1958,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         return evaluationResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1937,6 +1978,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         return evaluationResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1957,6 +1999,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         return evaluationResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1985,6 +2028,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2011,6 +2055,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2038,6 +2083,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2066,6 +2112,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2091,6 +2138,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2117,6 +2165,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2144,6 +2193,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2166,6 +2216,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2188,6 +2239,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2205,6 +2257,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         getEvaluationResultsBuilder(int index) {
       return getEvaluationResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2226,6 +2279,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         return evaluationResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2249,6 +2303,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(evaluationResults_);
       }
     }
+
     /**
      *
      *
@@ -2269,6 +2324,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
               com.google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2290,6 +2346,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
               com.google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2335,6 +2392,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -2360,6 +2418,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2385,6 +2444,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2409,6 +2469,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2429,6 +2490,7 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

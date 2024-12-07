@@ -38,6 +38,7 @@ public interface GetQaQuestionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

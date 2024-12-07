@@ -38,6 +38,7 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    * @return Whether the stringFilter field is set.
    */
   boolean hasStringFilter();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    * @return The stringFilter.
    */
   com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.StringFilter getStringFilter();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    * @return Whether the inListFilter field is set.
    */
   boolean hasInListFilter();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    * @return The inListFilter.
    */
   com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.InListFilter getInListFilter();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    * @return Whether the numericFilter field is set.
    */
   boolean hasNumericFilter();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    */
   com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericFilter
       getNumericFilter();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    * @return Whether the betweenFilter field is set.
    */
   boolean hasBetweenFilter();
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    */
   com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.BetweenFilter
       getBetweenFilter();
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    * @return The fieldName.
    */
   java.lang.String getFieldName();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface PolicyContentSpecOrBuilder
    * </code>
    */
   int getBundlesCount();
+
   /**
    *
    *
@@ -52,10 +53,12 @@ public interface PolicyContentSpecOrBuilder
    * </code>
    */
   boolean containsBundles(java.lang.String key);
+
   /** Use {@link #getBundlesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.gkehub.policycontroller.v1beta.BundleInstallSpec>
       getBundles();
+
   /**
    *
    *
@@ -71,6 +74,7 @@ public interface PolicyContentSpecOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.gkehub.policycontroller.v1beta.BundleInstallSpec>
       getBundlesMap();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface PolicyContentSpecOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.gkehub.policycontroller.v1beta.BundleInstallSpec defaultValue);
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface PolicyContentSpecOrBuilder
    * @return Whether the templateLibrary field is set.
    */
   boolean hasTemplateLibrary();
+
   /**
    *
    *
@@ -131,6 +137,7 @@ public interface PolicyContentSpecOrBuilder
    * @return The templateLibrary.
    */
   com.google.cloud.gkehub.policycontroller.v1beta.TemplateLibraryConfig getTemplateLibrary();
+
   /**
    *
    *

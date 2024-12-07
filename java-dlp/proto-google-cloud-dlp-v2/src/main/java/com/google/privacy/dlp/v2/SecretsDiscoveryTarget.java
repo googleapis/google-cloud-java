@@ -44,6 +44,7 @@ public final class SecretsDiscoveryTarget extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.SecretsDiscoveryTarget)
     SecretsDiscoveryTargetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecretsDiscoveryTarget.newBuilder() to construct.
   private SecretsDiscoveryTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -222,6 +223,7 @@ public final class SecretsDiscoveryTarget extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

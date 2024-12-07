@@ -33,6 +33,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1alpha.ScalingConfig)
     ScalingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ScalingConfig.newBuilder() to construct.
   private ScalingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -144,6 +145,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTANCE_SIZE_UNSPECIFIED = 0;</code>
      */
     public static final int INSTANCE_SIZE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -154,6 +156,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>EXTRA_SMALL = 1;</code>
      */
     public static final int EXTRA_SMALL_VALUE = 1;
+
     /**
      *
      *
@@ -164,6 +167,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>SMALL = 2;</code>
      */
     public static final int SMALL_VALUE = 2;
+
     /**
      *
      *
@@ -174,6 +178,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>MEDIUM = 3;</code>
      */
     public static final int MEDIUM_VALUE = 3;
+
     /**
      *
      *
@@ -184,6 +189,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LARGE = 4;</code>
      */
     public static final int LARGE_VALUE = 4;
+
     /**
      *
      *
@@ -301,6 +307,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
     private ScalingModelCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -334,6 +341,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCE_SIZE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -349,6 +357,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInstanceSize() {
     return scalingModelCase_ == 1;
   }
+
   /**
    *
    *
@@ -367,6 +376,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return 0;
   }
+
   /**
    *
    *
@@ -392,6 +402,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCALING_FACTOR_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -408,6 +419,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScalingFactor() {
     return scalingModelCase_ == 2;
   }
+
   /**
    *
    *
@@ -618,6 +630,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -853,6 +866,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInstanceSize() {
       return scalingModelCase_ == 1;
     }
+
     /**
      *
      *
@@ -872,6 +886,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -891,6 +906,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +932,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.metastore.v1alpha.ScalingConfig.InstanceSize
           .INSTANCE_SIZE_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -939,6 +956,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +993,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScalingFactor() {
       return scalingModelCase_ == 2;
     }
+
     /**
      *
      *
@@ -993,6 +1012,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return 0F;
     }
+
     /**
      *
      *
@@ -1013,6 +1033,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

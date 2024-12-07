@@ -33,6 +33,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.LookupDiscoveredWorkloadResponse)
     LookupDiscoveredWorkloadResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LookupDiscoveredWorkloadResponse.newBuilder() to construct.
   private LookupDiscoveredWorkloadResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
   private int bitField0_;
   public static final int DISCOVERED_WORKLOAD_FIELD_NUMBER = 1;
   private com.google.cloud.apphub.v1.DiscoveredWorkload discoveredWorkload_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
   public boolean hasDiscoveredWorkload() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
         ? com.google.cloud.apphub.v1.DiscoveredWorkload.getDefaultInstance()
         : discoveredWorkload_;
   }
+
   /**
    *
    *
@@ -278,6 +282,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -485,6 +490,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
             com.google.cloud.apphub.v1.DiscoveredWorkload.Builder,
             com.google.cloud.apphub.v1.DiscoveredWorkloadOrBuilder>
         discoveredWorkloadBuilder_;
+
     /**
      *
      *
@@ -499,6 +505,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
     public boolean hasDiscoveredWorkload() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -519,6 +526,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
         return discoveredWorkloadBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -541,6 +549,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -561,6 +570,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -589,6 +599,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -608,6 +619,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -622,6 +634,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
       onChanged();
       return getDiscoveredWorkloadFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -640,6 +653,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
             : discoveredWorkload_;
       }
     }
+
     /**
      *
      *

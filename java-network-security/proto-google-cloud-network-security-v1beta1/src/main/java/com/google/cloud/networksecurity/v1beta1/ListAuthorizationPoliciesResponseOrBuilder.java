@@ -37,6 +37,7 @@ public interface ListAuthorizationPoliciesResponseOrBuilder
    */
   java.util.List<com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy>
       getAuthorizationPoliciesList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListAuthorizationPoliciesResponseOrBuilder
    * </code>
    */
   com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy getAuthorizationPolicies(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListAuthorizationPoliciesResponseOrBuilder
    * </code>
    */
   int getAuthorizationPoliciesCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListAuthorizationPoliciesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOrBuilder>
       getAuthorizationPoliciesOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface ListAuthorizationPoliciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface UpdateSpokeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateSpokeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateSpokeRequestOrBuilder
    * @return Whether the spoke field is set.
    */
   boolean hasSpoke();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateSpokeRequestOrBuilder
    * @return The spoke.
    */
   com.google.cloud.networkconnectivity.v1.Spoke getSpoke();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface UpdateSpokeRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -42,6 +42,7 @@ public interface ExportEvaluatedDataItemsConfigOrBuilder
    * @return The destinationBigqueryUri.
    */
   java.lang.String getDestinationBigqueryUri();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ToolCallValidSpec extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ToolCallValidSpec)
     ToolCallValidSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ToolCallValidSpec.newBuilder() to construct.
   private ToolCallValidSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class ToolCallValidSpec extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest)
     UpdateNetworkPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateNetworkPolicyRequest.newBuilder() to construct.
   private UpdateNetworkPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int NETWORK_POLICY_FIELD_NUMBER = 1;
   private com.google.cloud.vmwareengine.v1.NetworkPolicy networkPolicy_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
   public boolean hasNetworkPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
         ? com.google.cloud.vmwareengine.v1.NetworkPolicy.getDefaultInstance()
         : networkPolicy_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -447,6 +456,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -686,6 +696,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
             com.google.cloud.vmwareengine.v1.NetworkPolicy.Builder,
             com.google.cloud.vmwareengine.v1.NetworkPolicyOrBuilder>
         networkPolicyBuilder_;
+
     /**
      *
      *
@@ -702,6 +713,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
     public boolean hasNetworkPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -724,6 +736,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
         return networkPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -748,6 +761,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +784,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +815,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +837,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +854,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return getNetworkPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -857,6 +875,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
             : networkPolicy_;
       }
     }
+
     /**
      *
      *
@@ -891,6 +910,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -910,6 +930,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -935,6 +956,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -962,6 +984,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1009,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1042,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1042,6 +1067,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1087,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1084,6 +1111,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -1116,6 +1144,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1151,6 +1180,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1186,6 +1216,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1251,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1250,6 +1282,7 @@ public final class UpdateNetworkPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

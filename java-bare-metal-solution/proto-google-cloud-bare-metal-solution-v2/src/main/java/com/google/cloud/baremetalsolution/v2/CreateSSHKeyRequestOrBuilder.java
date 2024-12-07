@@ -38,6 +38,7 @@ public interface CreateSSHKeyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateSSHKeyRequestOrBuilder
    * @return Whether the sshKey field is set.
    */
   boolean hasSshKey();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateSSHKeyRequestOrBuilder
    * @return The sshKey.
    */
   com.google.cloud.baremetalsolution.v2.SSHKey getSshKey();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateSSHKeyRequestOrBuilder
    * @return The sshKeyId.
    */
   java.lang.String getSshKeyId();
+
   /**
    *
    *

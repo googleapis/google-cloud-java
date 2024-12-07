@@ -40,6 +40,7 @@ public interface ListGroupMembersRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public interface ListGroupMembersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public interface ListGroupMembersRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -153,6 +156,7 @@ public interface ListGroupMembersRequestOrBuilder
    * @return Whether the interval field is set.
    */
   boolean hasInterval();
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public interface ListGroupMembersRequestOrBuilder
    * @return The interval.
    */
   com.google.monitoring.v3.TimeInterval getInterval();
+
   /**
    *
    *

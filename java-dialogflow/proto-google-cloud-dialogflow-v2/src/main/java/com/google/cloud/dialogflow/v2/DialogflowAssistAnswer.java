@@ -33,6 +33,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.DialogflowAssistAnswer)
     DialogflowAssistAnswerOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DialogflowAssistAnswer.newBuilder() to construct.
   private DialogflowAssistAnswer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
     private ResultCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
   }
 
   public static final int QUERY_RESULT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
   public boolean hasQueryResult() {
     return resultCase_ == 1;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.dialogflow.v2.QueryResult.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
   }
 
   public static final int INTENT_SUGGESTION_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
   public boolean hasIntentSuggestion() {
     return resultCase_ == 5;
   }
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.dialogflow.v2.IntentSuggestion.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object answerRecord_ = "";
+
   /**
    *
    *
@@ -243,6 +252,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -468,6 +478,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -719,6 +730,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
             com.google.cloud.dialogflow.v2.QueryResult.Builder,
             com.google.cloud.dialogflow.v2.QueryResultOrBuilder>
         queryResultBuilder_;
+
     /**
      *
      *
@@ -734,6 +746,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
     public boolean hasQueryResult() {
       return resultCase_ == 1;
     }
+
     /**
      *
      *
@@ -759,6 +772,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
         return com.google.cloud.dialogflow.v2.QueryResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -781,6 +795,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
       resultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +816,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
       resultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +849,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
       resultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +875,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +888,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.v2.QueryResult.Builder getQueryResultBuilder() {
       return getQueryResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -890,6 +909,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
         return com.google.cloud.dialogflow.v2.QueryResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -928,6 +948,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
             com.google.cloud.dialogflow.v2.IntentSuggestion.Builder,
             com.google.cloud.dialogflow.v2.IntentSuggestionOrBuilder>
         intentSuggestionBuilder_;
+
     /**
      *
      *
@@ -943,6 +964,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
     public boolean hasIntentSuggestion() {
       return resultCase_ == 5;
     }
+
     /**
      *
      *
@@ -968,6 +990,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
         return com.google.cloud.dialogflow.v2.IntentSuggestion.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -990,6 +1013,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
       resultCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1034,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
       resultCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1042,6 +1067,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
       resultCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1067,6 +1093,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1106,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.v2.IntentSuggestion.Builder getIntentSuggestionBuilder() {
       return getIntentSuggestionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1099,6 +1127,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
         return com.google.cloud.dialogflow.v2.IntentSuggestion.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1133,6 +1162,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object answerRecord_ = "";
+
     /**
      *
      *
@@ -1157,6 +1187,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1181,6 +1212,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1204,6 +1236,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1223,6 +1256,7 @@ public final class DialogflowAssistAnswer extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

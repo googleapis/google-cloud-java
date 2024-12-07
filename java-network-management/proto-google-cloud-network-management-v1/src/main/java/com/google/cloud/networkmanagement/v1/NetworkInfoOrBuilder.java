@@ -36,6 +36,7 @@ public interface NetworkInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface NetworkInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface NetworkInfoOrBuilder
    * @return The matchedSubnetUri.
    */
   java.lang.String getMatchedSubnetUri();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface NetworkInfoOrBuilder
    * @return The matchedIpRange.
    */
   java.lang.String getMatchedIpRange();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface NetworkInfoOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public interface ListGeneratorsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Generator generators = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Generator> getGeneratorsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListGeneratorsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Generator generators = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Generator getGenerators(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListGeneratorsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Generator generators = 1;</code>
    */
   int getGeneratorsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListGeneratorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.GeneratorOrBuilder>
       getGeneratorsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListGeneratorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

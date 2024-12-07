@@ -34,6 +34,7 @@ public final class CloudDataLineageIntegration extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.CloudDataLineageIntegration)
     CloudDataLineageIntegrationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudDataLineageIntegration.newBuilder() to construct.
   private CloudDataLineageIntegration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class CloudDataLineageIntegration extends com.google.protobuf.Gener
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -251,6 +253,7 @@ public final class CloudDataLineageIntegration extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -450,6 +453,7 @@ public final class CloudDataLineageIntegration extends com.google.protobuf.Gener
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -465,6 +469,7 @@ public final class CloudDataLineageIntegration extends com.google.protobuf.Gener
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -484,6 +489,7 @@ public final class CloudDataLineageIntegration extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

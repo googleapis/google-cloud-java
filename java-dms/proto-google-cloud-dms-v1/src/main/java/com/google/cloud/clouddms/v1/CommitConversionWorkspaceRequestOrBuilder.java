@@ -38,6 +38,7 @@ public interface CommitConversionWorkspaceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CommitConversionWorkspaceRequestOrBuilder
    * @return The commitName.
    */
   java.lang.String getCommitName();
+
   /**
    *
    *

@@ -43,6 +43,7 @@ public interface StreamingFetchFeatureValuesResponseOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface StreamingFetchFeatureValuesResponseOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
+
   /**
    *
    *
@@ -82,13 +84,17 @@ public interface StreamingFetchFeatureValuesResponseOrBuilder
 
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code> */
   java.util.List<com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse> getDataList();
+
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code> */
   com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse getData(int index);
+
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code> */
   int getDataCount();
+
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code> */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponseOrBuilder>
       getDataOrBuilderList();
+
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code> */
   com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponseOrBuilder getDataOrBuilder(
       int index);
@@ -98,22 +104,26 @@ public interface StreamingFetchFeatureValuesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey> getDataKeysWithErrorList();
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey getDataKeysWithError(int index);
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
    * </code>
    */
   int getDataKeysWithErrorCount();
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
    * </code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>
       getDataKeysWithErrorOrBuilderList();
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
    * </code>

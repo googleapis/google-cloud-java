@@ -36,6 +36,7 @@ public interface ListBatchPredictionJobsResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>
       getBatchPredictionJobsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListBatchPredictionJobsResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.BatchPredictionJob getBatchPredictionJobs(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListBatchPredictionJobsResponseOrBuilder
    * </code>
    */
   int getBatchPredictionJobsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListBatchPredictionJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.BatchPredictionJobOrBuilder>
       getBatchPredictionJobsOrBuilderList();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface ListBatchPredictionJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

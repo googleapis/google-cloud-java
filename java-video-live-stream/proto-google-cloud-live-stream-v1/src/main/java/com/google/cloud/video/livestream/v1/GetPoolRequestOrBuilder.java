@@ -39,6 +39,7 @@ public interface GetPoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

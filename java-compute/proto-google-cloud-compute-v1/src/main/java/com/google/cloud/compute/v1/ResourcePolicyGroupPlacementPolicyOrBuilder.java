@@ -36,6 +36,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    * @return Whether the availabilityDomainCount field is set.
    */
   boolean hasAvailabilityDomainCount();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    * @return Whether the collocation field is set.
    */
   boolean hasCollocation();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    * @return The collocation.
    */
   java.lang.String getCollocation();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    * @return Whether the vmCount field is set.
    */
   boolean hasVmCount();
+
   /**
    *
    *

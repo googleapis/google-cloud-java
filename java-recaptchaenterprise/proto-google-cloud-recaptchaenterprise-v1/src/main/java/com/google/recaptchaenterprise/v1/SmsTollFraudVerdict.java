@@ -33,6 +33,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.SmsTollFraudVerdict)
     SmsTollFraudVerdictOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SmsTollFraudVerdict.newBuilder() to construct.
   private SmsTollFraudVerdict(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -107,6 +108,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
      * <code>SMS_TOLL_FRAUD_REASON_UNSPECIFIED = 0;</code>
      */
     public static final int SMS_TOLL_FRAUD_REASON_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -206,6 +208,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
 
   public static final int RISK_FIELD_NUMBER = 1;
   private float risk_ = 0F;
+
   /**
    *
    *
@@ -246,6 +249,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
                   : result;
             }
           };
+
   /**
    *
    *
@@ -267,6 +271,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
         com.google.recaptchaenterprise.v1.SmsTollFraudVerdict.SmsTollFraudReason>(
         reasons_, reasons_converter_);
   }
+
   /**
    *
    *
@@ -284,6 +289,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
   public int getReasonsCount() {
     return reasons_.size();
   }
+
   /**
    *
    *
@@ -303,6 +309,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
       int index) {
     return reasons_converter_.convert(reasons_.get(index));
   }
+
   /**
    *
    *
@@ -320,6 +327,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
   public java.util.List<java.lang.Integer> getReasonsValueList() {
     return reasons_;
   }
+
   /**
    *
    *
@@ -527,6 +535,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -750,6 +759,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private float risk_;
+
     /**
      *
      *
@@ -766,6 +776,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
     public float getRisk() {
       return risk_;
     }
+
     /**
      *
      *
@@ -786,6 +797,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +825,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000002;
       }
     }
+
     /**
      *
      *
@@ -833,6 +846,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
           com.google.recaptchaenterprise.v1.SmsTollFraudVerdict.SmsTollFraudReason>(
           reasons_, reasons_converter_);
     }
+
     /**
      *
      *
@@ -849,6 +863,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
     public int getReasonsCount() {
       return reasons_.size();
     }
+
     /**
      *
      *
@@ -867,6 +882,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
         int index) {
       return reasons_converter_.convert(reasons_.get(index));
     }
+
     /**
      *
      *
@@ -892,6 +908,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +933,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +960,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +980,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +997,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
     public java.util.List<java.lang.Integer> getReasonsValueList() {
       return java.util.Collections.unmodifiableList(reasons_);
     }
+
     /**
      *
      *
@@ -994,6 +1015,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
     public int getReasonsValue(int index) {
       return reasons_.get(index);
     }
+
     /**
      *
      *
@@ -1015,6 +1037,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1058,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

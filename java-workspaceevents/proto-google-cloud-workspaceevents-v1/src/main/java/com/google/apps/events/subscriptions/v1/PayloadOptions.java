@@ -34,6 +34,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.apps.events.subscriptions.v1.PayloadOptions)
     PayloadOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PayloadOptions.newBuilder() to construct.
   private PayloadOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int INCLUDE_RESOURCE_FIELD_NUMBER = 1;
   private boolean includeResource_ = false;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FIELD_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask fieldMask_;
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFieldMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.FieldMask getFieldMask() {
     return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
   }
+
   /**
    *
    *
@@ -330,6 +335,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -542,6 +548,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean includeResource_;
+
     /**
      *
      *
@@ -562,6 +569,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean getIncludeResource() {
       return includeResource_;
     }
+
     /**
      *
      *
@@ -586,6 +594,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -615,6 +624,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         fieldMaskBuilder_;
+
     /**
      *
      *
@@ -637,6 +647,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFieldMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
         return fieldMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -693,6 +705,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +733,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +769,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +797,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFieldMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class PayloadOptions extends com.google.protobuf.GeneratedMessageV3
         return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
       }
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface CreateSynonymSetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateSynonymSetRequestOrBuilder
    * @return Whether the synonymSet field is set.
    */
   boolean hasSynonymSet();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateSynonymSetRequestOrBuilder
    * @return The synonymSet.
    */
   com.google.cloud.contentwarehouse.v1.SynonymSet getSynonymSet();
+
   /**
    *
    *

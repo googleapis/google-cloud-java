@@ -33,6 +33,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.AnnotateImageResponse)
     AnnotateImageResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotateImageResponse.newBuilder() to construct.
   private AnnotateImageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.FaceAnnotation> faceAnnotations_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.vision.v1.FaceAnnotation> getFaceAnnotationsList() {
     return faceAnnotations_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       getFaceAnnotationsOrBuilderList() {
     return faceAnnotations_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public int getFaceAnnotationsCount() {
     return faceAnnotations_.size();
   }
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.vision.v1.FaceAnnotation getFaceAnnotations(int index) {
     return faceAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.EntityAnnotation> landmarkAnnotations_;
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.vision.v1.EntityAnnotation> getLandmarkAnnotationsList() {
     return landmarkAnnotations_;
   }
+
   /**
    *
    *
@@ -171,6 +179,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       getLandmarkAnnotationsOrBuilderList() {
     return landmarkAnnotations_;
   }
+
   /**
    *
    *
@@ -184,6 +193,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public int getLandmarkAnnotationsCount() {
     return landmarkAnnotations_.size();
   }
+
   /**
    *
    *
@@ -197,6 +207,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.vision.v1.EntityAnnotation getLandmarkAnnotations(int index) {
     return landmarkAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -216,6 +227,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.EntityAnnotation> logoAnnotations_;
+
   /**
    *
    *
@@ -229,6 +241,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.vision.v1.EntityAnnotation> getLogoAnnotationsList() {
     return logoAnnotations_;
   }
+
   /**
    *
    *
@@ -243,6 +256,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       getLogoAnnotationsOrBuilderList() {
     return logoAnnotations_;
   }
+
   /**
    *
    *
@@ -256,6 +270,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public int getLogoAnnotationsCount() {
     return logoAnnotations_.size();
   }
+
   /**
    *
    *
@@ -269,6 +284,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.vision.v1.EntityAnnotation getLogoAnnotations(int index) {
     return logoAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -288,6 +304,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.EntityAnnotation> labelAnnotations_;
+
   /**
    *
    *
@@ -301,6 +318,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.vision.v1.EntityAnnotation> getLabelAnnotationsList() {
     return labelAnnotations_;
   }
+
   /**
    *
    *
@@ -315,6 +333,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       getLabelAnnotationsOrBuilderList() {
     return labelAnnotations_;
   }
+
   /**
    *
    *
@@ -328,6 +347,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public int getLabelAnnotationsCount() {
     return labelAnnotations_.size();
   }
+
   /**
    *
    *
@@ -341,6 +361,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.vision.v1.EntityAnnotation getLabelAnnotations(int index) {
     return labelAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -361,6 +382,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation>
       localizedObjectAnnotations_;
+
   /**
    *
    *
@@ -378,6 +400,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       getLocalizedObjectAnnotationsList() {
     return localizedObjectAnnotations_;
   }
+
   /**
    *
    *
@@ -395,6 +418,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       getLocalizedObjectAnnotationsOrBuilderList() {
     return localizedObjectAnnotations_;
   }
+
   /**
    *
    *
@@ -411,6 +435,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public int getLocalizedObjectAnnotationsCount() {
     return localizedObjectAnnotations_.size();
   }
+
   /**
    *
    *
@@ -428,6 +453,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       int index) {
     return localizedObjectAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -450,6 +476,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.EntityAnnotation> textAnnotations_;
+
   /**
    *
    *
@@ -463,6 +490,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.vision.v1.EntityAnnotation> getTextAnnotationsList() {
     return textAnnotations_;
   }
+
   /**
    *
    *
@@ -477,6 +505,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       getTextAnnotationsOrBuilderList() {
     return textAnnotations_;
   }
+
   /**
    *
    *
@@ -490,6 +519,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public int getTextAnnotationsCount() {
     return textAnnotations_.size();
   }
+
   /**
    *
    *
@@ -503,6 +533,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.vision.v1.EntityAnnotation getTextAnnotations(int index) {
     return textAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -520,6 +551,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
 
   public static final int FULL_TEXT_ANNOTATION_FIELD_NUMBER = 12;
   private com.google.cloud.vision.v1.TextAnnotation fullTextAnnotation_;
+
   /**
    *
    *
@@ -538,6 +570,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public boolean hasFullTextAnnotation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -558,6 +591,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.vision.v1.TextAnnotation.getDefaultInstance()
         : fullTextAnnotation_;
   }
+
   /**
    *
    *
@@ -579,6 +613,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
 
   public static final int SAFE_SEARCH_ANNOTATION_FIELD_NUMBER = 6;
   private com.google.cloud.vision.v1.SafeSearchAnnotation safeSearchAnnotation_;
+
   /**
    *
    *
@@ -594,6 +629,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public boolean hasSafeSearchAnnotation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -611,6 +647,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.vision.v1.SafeSearchAnnotation.getDefaultInstance()
         : safeSearchAnnotation_;
   }
+
   /**
    *
    *
@@ -630,6 +667,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
 
   public static final int IMAGE_PROPERTIES_ANNOTATION_FIELD_NUMBER = 8;
   private com.google.cloud.vision.v1.ImageProperties imagePropertiesAnnotation_;
+
   /**
    *
    *
@@ -645,6 +683,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public boolean hasImagePropertiesAnnotation() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -662,6 +701,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.vision.v1.ImageProperties.getDefaultInstance()
         : imagePropertiesAnnotation_;
   }
+
   /**
    *
    *
@@ -681,6 +721,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
 
   public static final int CROP_HINTS_ANNOTATION_FIELD_NUMBER = 11;
   private com.google.cloud.vision.v1.CropHintsAnnotation cropHintsAnnotation_;
+
   /**
    *
    *
@@ -696,6 +737,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public boolean hasCropHintsAnnotation() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -713,6 +755,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.vision.v1.CropHintsAnnotation.getDefaultInstance()
         : cropHintsAnnotation_;
   }
+
   /**
    *
    *
@@ -731,6 +774,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
 
   public static final int WEB_DETECTION_FIELD_NUMBER = 13;
   private com.google.cloud.vision.v1.WebDetection webDetection_;
+
   /**
    *
    *
@@ -746,6 +790,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public boolean hasWebDetection() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -763,6 +808,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.vision.v1.WebDetection.getDefaultInstance()
         : webDetection_;
   }
+
   /**
    *
    *
@@ -781,6 +827,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
 
   public static final int PRODUCT_SEARCH_RESULTS_FIELD_NUMBER = 14;
   private com.google.cloud.vision.v1.ProductSearchResults productSearchResults_;
+
   /**
    *
    *
@@ -796,6 +843,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public boolean hasProductSearchResults() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -813,6 +861,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.vision.v1.ProductSearchResults.getDefaultInstance()
         : productSearchResults_;
   }
+
   /**
    *
    *
@@ -832,6 +881,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
 
   public static final int ERROR_FIELD_NUMBER = 9;
   private com.google.rpc.Status error_;
+
   /**
    *
    *
@@ -849,6 +899,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public boolean hasError() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -866,6 +917,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
+
   /**
    *
    *
@@ -884,6 +936,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
 
   public static final int CONTEXT_FIELD_NUMBER = 21;
   private com.google.cloud.vision.v1.ImageAnnotationContext context_;
+
   /**
    *
    *
@@ -900,6 +953,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   public boolean hasContext() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -918,6 +972,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.vision.v1.ImageAnnotationContext.getDefaultInstance()
         : context_;
   }
+
   /**
    *
    *
@@ -1273,6 +1328,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2006,6 +2062,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return faceAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2022,6 +2079,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return faceAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2038,6 +2096,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return faceAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2060,6 +2119,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2080,6 +2140,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2102,6 +2163,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2124,6 +2186,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2144,6 +2207,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2164,6 +2228,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2184,6 +2249,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2203,6 +2269,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2222,6 +2289,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2234,6 +2302,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.vision.v1.FaceAnnotation.Builder getFaceAnnotationsBuilder(int index) {
       return getFaceAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2251,6 +2320,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return faceAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2268,6 +2338,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(faceAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -2281,6 +2352,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       return getFaceAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.FaceAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2294,6 +2366,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       return getFaceAnnotationsFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.FaceAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2363,6 +2436,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return landmarkAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2379,6 +2453,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return landmarkAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2395,6 +2470,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return landmarkAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2418,6 +2494,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2438,6 +2515,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2460,6 +2538,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2483,6 +2562,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2503,6 +2583,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2523,6 +2604,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2543,6 +2625,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2562,6 +2645,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2581,6 +2665,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2594,6 +2679,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return getLandmarkAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2611,6 +2697,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return landmarkAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2628,6 +2715,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(landmarkAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -2641,6 +2729,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       return getLandmarkAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.EntityAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2655,6 +2744,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       return getLandmarkAnnotationsFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.EntityAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2722,6 +2812,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return logoAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2738,6 +2829,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return logoAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2754,6 +2846,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return logoAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2777,6 +2870,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2797,6 +2891,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2819,6 +2914,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2842,6 +2938,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2862,6 +2959,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2882,6 +2980,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2902,6 +3001,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2921,6 +3021,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2940,6 +3041,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2953,6 +3055,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return getLogoAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2970,6 +3073,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return logoAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2987,6 +3091,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(logoAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -3000,6 +3105,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       return getLogoAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.EntityAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3014,6 +3120,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       return getLogoAnnotationsFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.EntityAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3081,6 +3188,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return labelAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3097,6 +3205,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return labelAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3113,6 +3222,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return labelAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3136,6 +3246,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3156,6 +3267,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3178,6 +3290,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3201,6 +3314,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3221,6 +3335,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3241,6 +3356,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3261,6 +3377,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3280,6 +3397,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3299,6 +3417,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3312,6 +3431,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return getLabelAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3329,6 +3449,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return labelAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3346,6 +3467,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(labelAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -3359,6 +3481,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       return getLabelAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.EntityAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3373,6 +3496,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       return getLabelAnnotationsFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.EntityAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3445,6 +3569,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return localizedObjectAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3464,6 +3589,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return localizedObjectAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3484,6 +3610,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return localizedObjectAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3510,6 +3637,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3533,6 +3661,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3559,6 +3688,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3585,6 +3715,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3608,6 +3739,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3631,6 +3763,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3654,6 +3787,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3676,6 +3810,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3698,6 +3833,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3714,6 +3850,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         getLocalizedObjectAnnotationsBuilder(int index) {
       return getLocalizedObjectAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3734,6 +3871,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return localizedObjectAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3754,6 +3892,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -3771,6 +3910,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       return getLocalizedObjectAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.LocalizedObjectAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3789,6 +3929,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.cloud.vision.v1.LocalizedObjectAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3859,6 +4000,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return textAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3875,6 +4017,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return textAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3891,6 +4034,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return textAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3914,6 +4058,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3934,6 +4079,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3956,6 +4102,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3979,6 +4126,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3999,6 +4147,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -4019,6 +4168,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -4039,6 +4189,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -4058,6 +4209,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -4077,6 +4229,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -4090,6 +4243,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return getTextAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4107,6 +4261,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return textAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4124,6 +4279,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(textAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -4137,6 +4293,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       return getTextAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.EntityAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4151,6 +4308,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       return getTextAnnotationsFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.EntityAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4191,6 +4349,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.vision.v1.TextAnnotation.Builder,
             com.google.cloud.vision.v1.TextAnnotationOrBuilder>
         fullTextAnnotationBuilder_;
+
     /**
      *
      *
@@ -4208,6 +4367,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
     public boolean hasFullTextAnnotation() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -4231,6 +4391,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return fullTextAnnotationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4256,6 +4417,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4279,6 +4441,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4310,6 +4473,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -4332,6 +4496,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4349,6 +4514,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getFullTextAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4370,6 +4536,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             : fullTextAnnotation_;
       }
     }
+
     /**
      *
      *
@@ -4405,6 +4572,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.vision.v1.SafeSearchAnnotation.Builder,
             com.google.cloud.vision.v1.SafeSearchAnnotationOrBuilder>
         safeSearchAnnotationBuilder_;
+
     /**
      *
      *
@@ -4419,6 +4587,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
     public boolean hasSafeSearchAnnotation() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -4439,6 +4608,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return safeSearchAnnotationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4461,6 +4631,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4481,6 +4652,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4510,6 +4682,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -4529,6 +4702,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4544,6 +4718,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getSafeSearchAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4563,6 +4738,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             : safeSearchAnnotation_;
       }
     }
+
     /**
      *
      *
@@ -4595,6 +4771,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.vision.v1.ImageProperties.Builder,
             com.google.cloud.vision.v1.ImagePropertiesOrBuilder>
         imagePropertiesAnnotationBuilder_;
+
     /**
      *
      *
@@ -4609,6 +4786,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
     public boolean hasImagePropertiesAnnotation() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -4629,6 +4807,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return imagePropertiesAnnotationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4651,6 +4830,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4671,6 +4851,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4700,6 +4881,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -4719,6 +4901,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4734,6 +4917,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getImagePropertiesAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4753,6 +4937,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             : imagePropertiesAnnotation_;
       }
     }
+
     /**
      *
      *
@@ -4785,6 +4970,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.vision.v1.CropHintsAnnotation.Builder,
             com.google.cloud.vision.v1.CropHintsAnnotationOrBuilder>
         cropHintsAnnotationBuilder_;
+
     /**
      *
      *
@@ -4799,6 +4985,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
     public boolean hasCropHintsAnnotation() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -4819,6 +5006,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return cropHintsAnnotationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4841,6 +5029,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4861,6 +5050,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4889,6 +5079,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -4908,6 +5099,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4922,6 +5114,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCropHintsAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4941,6 +5134,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             : cropHintsAnnotation_;
       }
     }
+
     /**
      *
      *
@@ -4973,6 +5167,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.vision.v1.WebDetection.Builder,
             com.google.cloud.vision.v1.WebDetectionOrBuilder>
         webDetectionBuilder_;
+
     /**
      *
      *
@@ -4987,6 +5182,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
     public boolean hasWebDetection() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -5007,6 +5203,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return webDetectionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5029,6 +5226,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5049,6 +5247,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5076,6 +5275,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5095,6 +5295,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5109,6 +5310,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getWebDetectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5127,6 +5329,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             : webDetection_;
       }
     }
+
     /**
      *
      *
@@ -5159,6 +5362,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.vision.v1.ProductSearchResults.Builder,
             com.google.cloud.vision.v1.ProductSearchResultsOrBuilder>
         productSearchResultsBuilder_;
+
     /**
      *
      *
@@ -5173,6 +5377,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
     public boolean hasProductSearchResults() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -5193,6 +5398,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return productSearchResultsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5215,6 +5421,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5235,6 +5442,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5264,6 +5472,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5283,6 +5492,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5298,6 +5508,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getProductSearchResultsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5317,6 +5528,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             : productSearchResults_;
       }
     }
+
     /**
      *
      *
@@ -5347,6 +5559,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -5363,6 +5576,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
     public boolean hasError() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -5383,6 +5597,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5407,6 +5622,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5428,6 +5644,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5457,6 +5674,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5478,6 +5696,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5494,6 +5713,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5512,6 +5732,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
+
     /**
      *
      *
@@ -5543,6 +5764,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.vision.v1.ImageAnnotationContext.Builder,
             com.google.cloud.vision.v1.ImageAnnotationContextOrBuilder>
         contextBuilder_;
+
     /**
      *
      *
@@ -5558,6 +5780,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
     public boolean hasContext() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -5579,6 +5802,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
         return contextBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5602,6 +5826,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5623,6 +5848,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5651,6 +5877,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5671,6 +5898,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5686,6 +5914,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5705,6 +5934,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             : context_;
       }
     }
+
     /**
      *
      *

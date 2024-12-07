@@ -34,6 +34,7 @@ public interface ListPostureTemplatesResponseOrBuilder
    * <code>repeated .google.cloud.securityposture.v1.PostureTemplate posture_templates = 1;</code>
    */
   java.util.List<com.google.cloud.securityposture.v1.PostureTemplate> getPostureTemplatesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListPostureTemplatesResponseOrBuilder
    * <code>repeated .google.cloud.securityposture.v1.PostureTemplate posture_templates = 1;</code>
    */
   com.google.cloud.securityposture.v1.PostureTemplate getPostureTemplates(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListPostureTemplatesResponseOrBuilder
    * <code>repeated .google.cloud.securityposture.v1.PostureTemplate posture_templates = 1;</code>
    */
   int getPostureTemplatesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListPostureTemplatesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securityposture.v1.PostureTemplateOrBuilder>
       getPostureTemplatesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListPostureTemplatesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

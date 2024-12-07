@@ -38,6 +38,7 @@ public interface FetchFileDiffRequestOrBuilder
    * @return The workspace.
    */
   java.lang.String getWorkspace();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface FetchFileDiffRequestOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *

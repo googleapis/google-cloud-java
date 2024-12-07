@@ -38,6 +38,7 @@ public interface DeleteNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The networkEdgeSecurityService.
    */
   java.lang.String getNetworkEdgeSecurityService();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface DeleteNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface DeleteNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface DeleteNetworkEdgeSecurityServiceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface DeleteNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

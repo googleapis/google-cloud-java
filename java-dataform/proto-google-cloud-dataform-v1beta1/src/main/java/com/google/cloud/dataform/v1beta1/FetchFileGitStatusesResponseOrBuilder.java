@@ -39,6 +39,7 @@ public interface FetchFileGitStatusesResponseOrBuilder
   java.util.List<
           com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange>
       getUncommittedFileChangesList();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface FetchFileGitStatusesResponseOrBuilder
    */
   com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange
       getUncommittedFileChanges(int index);
+
   /**
    *
    *
@@ -66,6 +68,7 @@ public interface FetchFileGitStatusesResponseOrBuilder
    * </code>
    */
   int getUncommittedFileChangesCount();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface FetchFileGitStatusesResponseOrBuilder
               com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse
                   .UncommittedFileChangeOrBuilder>
       getUncommittedFileChangesOrBuilderList();
+
   /**
    *
    *

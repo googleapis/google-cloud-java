@@ -34,6 +34,7 @@ public interface NodeGroupsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.NodeGroup node_groups = 73188017;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NodeGroup> getNodeGroupsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface NodeGroupsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.NodeGroup node_groups = 73188017;</code>
    */
   com.google.cloud.compute.v1.NodeGroup getNodeGroups(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface NodeGroupsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.NodeGroup node_groups = 73188017;</code>
    */
   int getNodeGroupsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface NodeGroupsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NodeGroupOrBuilder>
       getNodeGroupsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface NodeGroupsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface NodeGroupsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

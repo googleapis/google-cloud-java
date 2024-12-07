@@ -33,6 +33,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.TranslationTaskResult)
     TranslationTaskResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TranslationTaskResult.newBuilder() to construct.
   private TranslationTaskResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.migration.v2.Literal> translatedLiterals_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       getTranslatedLiteralsList() {
     return translatedLiterals_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       getTranslatedLiteralsOrBuilderList() {
     return translatedLiterals_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
   public int getTranslatedLiteralsCount() {
     return translatedLiterals_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
   public com.google.cloud.bigquery.migration.v2.Literal getTranslatedLiterals(int index) {
     return translatedLiterals_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.migration.v2.GcsReportLogMessage>
       reportLogMessages_;
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       getReportLogMessagesList() {
     return reportLogMessages_;
   }
+
   /**
    *
    *
@@ -173,6 +181,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       getReportLogMessagesOrBuilderList() {
     return reportLogMessages_;
   }
+
   /**
    *
    *
@@ -187,6 +196,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
   public int getReportLogMessagesCount() {
     return reportLogMessages_.size();
   }
+
   /**
    *
    *
@@ -202,6 +212,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       int index) {
     return reportLogMessages_.get(index);
   }
+
   /**
    *
    *
@@ -393,6 +404,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -717,6 +729,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         return translatedLiteralsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         return translatedLiteralsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         return translatedLiteralsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -772,6 +787,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +831,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +855,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +876,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +897,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +918,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +938,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +958,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +972,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         int index) {
       return getTranslatedLiteralsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -965,6 +990,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         return translatedLiteralsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -982,6 +1008,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(translatedLiterals_);
       }
     }
+
     /**
      *
      *
@@ -995,6 +1022,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       return getTranslatedLiteralsFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.migration.v2.Literal.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1009,6 +1037,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       return getTranslatedLiteralsFieldBuilder()
           .addBuilder(index, com.google.cloud.bigquery.migration.v2.Literal.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1080,6 +1109,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         return reportLogMessagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1098,6 +1128,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         return reportLogMessagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1148,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         return reportLogMessagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1142,6 +1174,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1198,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1190,6 +1224,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1215,6 +1250,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1273,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1297,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1321,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1343,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1325,6 +1365,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1381,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         getReportLogMessagesBuilder(int index) {
       return getReportLogMessagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1359,6 +1401,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         return reportLogMessagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1379,6 +1422,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(reportLogMessages_);
       }
     }
+
     /**
      *
      *
@@ -1396,6 +1440,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
           .addBuilder(
               com.google.cloud.bigquery.migration.v2.GcsReportLogMessage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1414,6 +1459,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
               index,
               com.google.cloud.bigquery.migration.v2.GcsReportLogMessage.getDefaultInstance());
     }
+
     /**
      *
      *

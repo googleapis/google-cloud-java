@@ -34,6 +34,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.DatasetSpec)
     DatasetSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DatasetSpec.newBuilder() to construct.
   private DatasetSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
     private SystemSpecCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -109,6 +111,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERTEX_DATASET_SPEC_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVertexDatasetSpec() {
     return systemSpecCase_ == 2;
   }
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1.VertexDatasetSpec.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -334,6 +339,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -553,6 +559,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.VertexDatasetSpec.Builder,
             com.google.cloud.datacatalog.v1.VertexDatasetSpecOrBuilder>
         vertexDatasetSpecBuilder_;
+
     /**
      *
      *
@@ -568,6 +575,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVertexDatasetSpec() {
       return systemSpecCase_ == 2;
     }
+
     /**
      *
      *
@@ -593,6 +601,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.VertexDatasetSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -615,6 +624,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
       systemSpecCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -635,6 +645,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
       systemSpecCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
       systemSpecCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +705,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.VertexDatasetSpec.Builder getVertexDatasetSpecBuilder() {
       return getVertexDatasetSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class DatasetSpec extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.VertexDatasetSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *

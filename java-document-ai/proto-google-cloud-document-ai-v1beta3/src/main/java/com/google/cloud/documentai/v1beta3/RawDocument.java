@@ -33,6 +33,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.RawDocument)
     RawDocumentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RawDocument.newBuilder() to construct.
   private RawDocument(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTENT_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -372,6 +378,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -584,6 +591,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -599,6 +607,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getContent() {
       return content_;
     }
+
     /**
      *
      *
@@ -620,6 +629,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -639,6 +649,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object mimeType_ = "";
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +765,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -776,6 +792,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -802,6 +819,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -827,6 +845,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +867,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

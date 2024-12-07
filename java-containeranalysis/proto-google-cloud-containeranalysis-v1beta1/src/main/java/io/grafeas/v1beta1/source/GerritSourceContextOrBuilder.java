@@ -36,6 +36,7 @@ public interface GerritSourceContextOrBuilder
    * @return The hostUri.
    */
   java.lang.String getHostUri();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GerritSourceContextOrBuilder
    * @return The gerritProject.
    */
   java.lang.String getGerritProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface GerritSourceContextOrBuilder
    * @return Whether the revisionId field is set.
    */
   boolean hasRevisionId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface GerritSourceContextOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface GerritSourceContextOrBuilder
    * @return Whether the aliasContext field is set.
    */
   boolean hasAliasContext();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface GerritSourceContextOrBuilder
    * @return The aliasContext.
    */
   io.grafeas.v1beta1.source.AliasContext getAliasContext();
+
   /**
    *
    *

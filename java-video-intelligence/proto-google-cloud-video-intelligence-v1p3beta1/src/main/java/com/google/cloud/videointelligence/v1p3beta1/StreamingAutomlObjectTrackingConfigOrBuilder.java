@@ -37,6 +37,7 @@ public interface StreamingAutomlObjectTrackingConfigOrBuilder
    * @return The modelName.
    */
   java.lang.String getModelName();
+
   /**
    *
    *

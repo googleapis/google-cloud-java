@@ -41,6 +41,7 @@ public interface AssetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface AssetOrBuilder
    * @return The assetType.
    */
   java.lang.String getAssetType();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface AssetOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface AssetOrBuilder
    * @return The resource.
    */
   com.google.cloud.asset.v1p5beta1.Resource getResource();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface AssetOrBuilder
    * @return Whether the iamPolicy field is set.
    */
   boolean hasIamPolicy();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface AssetOrBuilder
    * @return The iamPolicy.
    */
   com.google.iam.v1.Policy getIamPolicy();
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public interface AssetOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
    */
   java.util.List<com.google.cloud.orgpolicy.v1.Policy> getOrgPolicyList();
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public interface AssetOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
    */
   com.google.cloud.orgpolicy.v1.Policy getOrgPolicy(int index);
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public interface AssetOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
    */
   int getOrgPolicyCount();
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public interface AssetOrBuilder
    */
   java.util.List<? extends com.google.cloud.orgpolicy.v1.PolicyOrBuilder>
       getOrgPolicyOrBuilderList();
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public interface AssetOrBuilder
    * @return Whether the accessPolicy field is set.
    */
   boolean hasAccessPolicy();
+
   /**
    *
    *
@@ -279,6 +290,7 @@ public interface AssetOrBuilder
    * @return The accessPolicy.
    */
   com.google.identity.accesscontextmanager.v1.AccessPolicy getAccessPolicy();
+
   /**
    *
    *
@@ -304,6 +316,7 @@ public interface AssetOrBuilder
    * @return Whether the accessLevel field is set.
    */
   boolean hasAccessLevel();
+
   /**
    *
    *
@@ -317,6 +330,7 @@ public interface AssetOrBuilder
    * @return The accessLevel.
    */
   com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevel();
+
   /**
    *
    *
@@ -342,6 +356,7 @@ public interface AssetOrBuilder
    * @return Whether the servicePerimeter field is set.
    */
   boolean hasServicePerimeter();
+
   /**
    *
    *
@@ -355,6 +370,7 @@ public interface AssetOrBuilder
    * @return The servicePerimeter.
    */
   com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeter();
+
   /**
    *
    *
@@ -387,6 +403,7 @@ public interface AssetOrBuilder
    * @return A list containing the ancestors.
    */
   java.util.List<java.lang.String> getAncestorsList();
+
   /**
    *
    *
@@ -406,6 +423,7 @@ public interface AssetOrBuilder
    * @return The count of ancestors.
    */
   int getAncestorsCount();
+
   /**
    *
    *
@@ -426,6 +444,7 @@ public interface AssetOrBuilder
    * @return The ancestors at the given index.
    */
   java.lang.String getAncestors(int index);
+
   /**
    *
    *

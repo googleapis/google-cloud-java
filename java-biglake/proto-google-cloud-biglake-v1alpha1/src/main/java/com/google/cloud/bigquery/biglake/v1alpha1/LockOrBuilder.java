@@ -37,6 +37,7 @@ public interface LockOrBuilder
    * @return Whether the tableId field is set.
    */
   boolean hasTableId();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface LockOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface LockOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface LockOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface LockOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface LockOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface LockOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

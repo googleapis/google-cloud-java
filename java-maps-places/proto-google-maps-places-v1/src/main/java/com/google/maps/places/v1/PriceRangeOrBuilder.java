@@ -37,6 +37,7 @@ public interface PriceRangeOrBuilder
    * @return Whether the startPrice field is set.
    */
   boolean hasStartPrice();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface PriceRangeOrBuilder
    * @return The startPrice.
    */
   com.google.type.Money getStartPrice();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface PriceRangeOrBuilder
    * @return Whether the endPrice field is set.
    */
   boolean hasEndPrice();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface PriceRangeOrBuilder
    * @return The endPrice.
    */
   com.google.type.Money getEndPrice();
+
   /**
    *
    *

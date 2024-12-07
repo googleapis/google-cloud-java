@@ -35,6 +35,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.ElementaryStream)
     ElementaryStreamOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ElementaryStream.newBuilder() to construct.
   private ElementaryStream(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     private ElementaryStreamCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -121,6 +123,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VIDEO_STREAM_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
   public boolean hasVideoStream() {
     return elementaryStreamCase_ == 1;
   }
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.video.transcoder.v1.VideoStream.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int AUDIO_STREAM_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
   public boolean hasAudioStream() {
     return elementaryStreamCase_ == 2;
   }
+
   /**
    *
    *
@@ -253,6 +262,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.video.transcoder.v1.AudioStream.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -271,6 +281,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TEXT_STREAM_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
   public boolean hasTextStream() {
     return elementaryStreamCase_ == 3;
   }
+
   /**
    *
    *
@@ -304,6 +316,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.video.transcoder.v1.TextStream.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -535,6 +548,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -800,6 +814,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object key_ = "";
+
     /**
      *
      *
@@ -822,6 +837,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -844,6 +860,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -865,6 +882,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +900,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +929,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
             com.google.cloud.video.transcoder.v1.VideoStream.Builder,
             com.google.cloud.video.transcoder.v1.VideoStreamOrBuilder>
         videoStreamBuilder_;
+
     /**
      *
      *
@@ -925,6 +945,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     public boolean hasVideoStream() {
       return elementaryStreamCase_ == 1;
     }
+
     /**
      *
      *
@@ -950,6 +971,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.video.transcoder.v1.VideoStream.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -972,6 +994,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       elementaryStreamCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -992,6 +1015,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       elementaryStreamCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1049,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       elementaryStreamCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1075,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1088,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.video.transcoder.v1.VideoStream.Builder getVideoStreamBuilder() {
       return getVideoStreamFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1082,6 +1109,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.video.transcoder.v1.VideoStream.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1120,6 +1148,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
             com.google.cloud.video.transcoder.v1.AudioStream.Builder,
             com.google.cloud.video.transcoder.v1.AudioStreamOrBuilder>
         audioStreamBuilder_;
+
     /**
      *
      *
@@ -1135,6 +1164,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     public boolean hasAudioStream() {
       return elementaryStreamCase_ == 2;
     }
+
     /**
      *
      *
@@ -1160,6 +1190,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.video.transcoder.v1.AudioStream.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1182,6 +1213,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       elementaryStreamCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1202,6 +1234,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       elementaryStreamCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1268,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       elementaryStreamCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1294,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1272,6 +1307,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.video.transcoder.v1.AudioStream.Builder getAudioStreamBuilder() {
       return getAudioStreamFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1292,6 +1328,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.video.transcoder.v1.AudioStream.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1330,6 +1367,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
             com.google.cloud.video.transcoder.v1.TextStream.Builder,
             com.google.cloud.video.transcoder.v1.TextStreamOrBuilder>
         textStreamBuilder_;
+
     /**
      *
      *
@@ -1345,6 +1383,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     public boolean hasTextStream() {
       return elementaryStreamCase_ == 3;
     }
+
     /**
      *
      *
@@ -1370,6 +1409,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.video.transcoder.v1.TextStream.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1392,6 +1432,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       elementaryStreamCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1412,6 +1453,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       elementaryStreamCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1445,6 +1487,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       elementaryStreamCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1470,6 +1513,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1482,6 +1526,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.video.transcoder.v1.TextStream.Builder getTextStreamBuilder() {
       return getTextStreamFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1502,6 +1547,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.video.transcoder.v1.TextStream.getDefaultInstance();
       }
     }
+
     /**
      *
      *

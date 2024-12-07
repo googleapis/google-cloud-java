@@ -37,6 +37,7 @@ public interface OpMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface OpMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface OpMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface OpMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface OpMetadataOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface OpMetadataOrBuilder
    * @return The verb.
    */
   java.lang.String getVerb();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface OpMetadataOrBuilder
    * @return The apiVersion.
    */
   java.lang.String getApiVersion();
+
   /**
    *
    *

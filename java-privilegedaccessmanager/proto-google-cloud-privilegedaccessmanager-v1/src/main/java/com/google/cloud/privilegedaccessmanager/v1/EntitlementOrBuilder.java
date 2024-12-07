@@ -41,6 +41,7 @@ public interface EntitlementOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface EntitlementOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface EntitlementOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface EntitlementOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface EntitlementOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface EntitlementOrBuilder
    */
   java.util.List<com.google.cloud.privilegedaccessmanager.v1.AccessControlEntry>
       getEligibleUsersList();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface EntitlementOrBuilder
    * </code>
    */
   com.google.cloud.privilegedaccessmanager.v1.AccessControlEntry getEligibleUsers(int index);
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface EntitlementOrBuilder
    * </code>
    */
   int getEligibleUsersCount();
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public interface EntitlementOrBuilder
    */
   java.util.List<? extends com.google.cloud.privilegedaccessmanager.v1.AccessControlEntryOrBuilder>
       getEligibleUsersOrBuilderList();
+
   /**
    *
    *
@@ -219,6 +228,7 @@ public interface EntitlementOrBuilder
    * @return Whether the approvalWorkflow field is set.
    */
   boolean hasApprovalWorkflow();
+
   /**
    *
    *
@@ -234,6 +244,7 @@ public interface EntitlementOrBuilder
    * @return The approvalWorkflow.
    */
   com.google.cloud.privilegedaccessmanager.v1.ApprovalWorkflow getApprovalWorkflow();
+
   /**
    *
    *
@@ -261,6 +272,7 @@ public interface EntitlementOrBuilder
    * @return Whether the privilegedAccess field is set.
    */
   boolean hasPrivilegedAccess();
+
   /**
    *
    *
@@ -273,6 +285,7 @@ public interface EntitlementOrBuilder
    * @return The privilegedAccess.
    */
   com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess getPrivilegedAccess();
+
   /**
    *
    *
@@ -300,6 +313,7 @@ public interface EntitlementOrBuilder
    * @return Whether the maxRequestDuration field is set.
    */
   boolean hasMaxRequestDuration();
+
   /**
    *
    *
@@ -315,6 +329,7 @@ public interface EntitlementOrBuilder
    * @return The maxRequestDuration.
    */
   com.google.protobuf.Duration getMaxRequestDuration();
+
   /**
    *
    *
@@ -343,6 +358,7 @@ public interface EntitlementOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -373,6 +389,7 @@ public interface EntitlementOrBuilder
    * @return Whether the requesterJustificationConfig field is set.
    */
   boolean hasRequesterJustificationConfig();
+
   /**
    *
    *
@@ -389,6 +406,7 @@ public interface EntitlementOrBuilder
    */
   com.google.cloud.privilegedaccessmanager.v1.Entitlement.RequesterJustificationConfig
       getRequesterJustificationConfig();
+
   /**
    *
    *
@@ -418,6 +436,7 @@ public interface EntitlementOrBuilder
    * @return Whether the additionalNotificationTargets field is set.
    */
   boolean hasAdditionalNotificationTargets();
+
   /**
    *
    *
@@ -433,6 +452,7 @@ public interface EntitlementOrBuilder
    */
   com.google.cloud.privilegedaccessmanager.v1.Entitlement.AdditionalNotificationTargets
       getAdditionalNotificationTargets();
+
   /**
    *
    *
@@ -464,6 +484,7 @@ public interface EntitlementOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

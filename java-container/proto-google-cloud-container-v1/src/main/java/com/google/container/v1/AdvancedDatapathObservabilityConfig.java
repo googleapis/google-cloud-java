@@ -35,6 +35,7 @@ public final class AdvancedDatapathObservabilityConfig
     // @@protoc_insertion_point(message_implements:google.container.v1.AdvancedDatapathObservabilityConfig)
     AdvancedDatapathObservabilityConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AdvancedDatapathObservabilityConfig.newBuilder() to construct.
   private AdvancedDatapathObservabilityConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -129,6 +130,7 @@ public final class AdvancedDatapathObservabilityConfig
      * <code>RELAY_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int RELAY_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -139,6 +141,7 @@ public final class AdvancedDatapathObservabilityConfig
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -149,6 +152,7 @@ public final class AdvancedDatapathObservabilityConfig
      * <code>INTERNAL_VPC_LB = 3;</code>
      */
     public static final int INTERNAL_VPC_LB_VALUE = 3;
+
     /**
      *
      *
@@ -250,6 +254,7 @@ public final class AdvancedDatapathObservabilityConfig
   private int bitField0_;
   public static final int ENABLE_METRICS_FIELD_NUMBER = 1;
   private boolean enableMetrics_ = false;
+
   /**
    *
    *
@@ -268,6 +273,7 @@ public final class AdvancedDatapathObservabilityConfig
 
   public static final int RELAY_MODE_FIELD_NUMBER = 2;
   private int relayMode_ = 0;
+
   /**
    *
    *
@@ -283,6 +289,7 @@ public final class AdvancedDatapathObservabilityConfig
   public int getRelayModeValue() {
     return relayMode_;
   }
+
   /**
    *
    *
@@ -305,6 +312,7 @@ public final class AdvancedDatapathObservabilityConfig
 
   public static final int ENABLE_RELAY_FIELD_NUMBER = 3;
   private boolean enableRelay_ = false;
+
   /**
    *
    *
@@ -320,6 +328,7 @@ public final class AdvancedDatapathObservabilityConfig
   public boolean hasEnableRelay() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -525,6 +534,7 @@ public final class AdvancedDatapathObservabilityConfig
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -737,6 +747,7 @@ public final class AdvancedDatapathObservabilityConfig
     private int bitField0_;
 
     private boolean enableMetrics_;
+
     /**
      *
      *
@@ -752,6 +763,7 @@ public final class AdvancedDatapathObservabilityConfig
     public boolean getEnableMetrics() {
       return enableMetrics_;
     }
+
     /**
      *
      *
@@ -771,6 +783,7 @@ public final class AdvancedDatapathObservabilityConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +803,7 @@ public final class AdvancedDatapathObservabilityConfig
     }
 
     private int relayMode_ = 0;
+
     /**
      *
      *
@@ -806,6 +820,7 @@ public final class AdvancedDatapathObservabilityConfig
     public int getRelayModeValue() {
       return relayMode_;
     }
+
     /**
      *
      *
@@ -825,6 +840,7 @@ public final class AdvancedDatapathObservabilityConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +862,7 @@ public final class AdvancedDatapathObservabilityConfig
           ? com.google.container.v1.AdvancedDatapathObservabilityConfig.RelayMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -869,6 +886,7 @@ public final class AdvancedDatapathObservabilityConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +907,7 @@ public final class AdvancedDatapathObservabilityConfig
     }
 
     private boolean enableRelay_;
+
     /**
      *
      *
@@ -904,6 +923,7 @@ public final class AdvancedDatapathObservabilityConfig
     public boolean hasEnableRelay() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -919,6 +939,7 @@ public final class AdvancedDatapathObservabilityConfig
     public boolean getEnableRelay() {
       return enableRelay_;
     }
+
     /**
      *
      *
@@ -938,6 +959,7 @@ public final class AdvancedDatapathObservabilityConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *

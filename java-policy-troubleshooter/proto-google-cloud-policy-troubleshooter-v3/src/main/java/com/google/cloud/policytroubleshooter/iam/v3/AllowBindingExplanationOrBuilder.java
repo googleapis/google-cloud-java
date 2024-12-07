@@ -45,6 +45,7 @@ public interface AllowBindingExplanationOrBuilder
    * @return The enum numeric value on the wire for allowAccessState.
    */
   int getAllowAccessStateValue();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface AllowBindingExplanationOrBuilder
    * @return The role.
    */
   java.lang.String getRole();
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public interface AllowBindingExplanationOrBuilder
    * @return The enum numeric value on the wire for rolePermission.
    */
   int getRolePermissionValue();
+
   /**
    *
    *
@@ -146,6 +149,7 @@ public interface AllowBindingExplanationOrBuilder
    * @return The enum numeric value on the wire for rolePermissionRelevance.
    */
   int getRolePermissionRelevanceValue();
+
   /**
    *
    *
@@ -177,6 +181,7 @@ public interface AllowBindingExplanationOrBuilder
    * @return Whether the combinedMembership field is set.
    */
   boolean hasCombinedMembership();
+
   /**
    *
    *
@@ -193,6 +198,7 @@ public interface AllowBindingExplanationOrBuilder
    */
   com.google.cloud.policytroubleshooter.iam.v3.AllowBindingExplanation.AnnotatedAllowMembership
       getCombinedMembership();
+
   /**
    *
    *
@@ -240,6 +246,7 @@ public interface AllowBindingExplanationOrBuilder
    * </code>
    */
   int getMembershipsCount();
+
   /**
    *
    *
@@ -271,6 +278,7 @@ public interface AllowBindingExplanationOrBuilder
    * </code>
    */
   boolean containsMemberships(java.lang.String key);
+
   /** Use {@link #getMembershipsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
@@ -278,6 +286,7 @@ public interface AllowBindingExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.AllowBindingExplanation
               .AnnotatedAllowMembership>
       getMemberships();
+
   /**
    *
    *
@@ -313,6 +322,7 @@ public interface AllowBindingExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.AllowBindingExplanation
               .AnnotatedAllowMembership>
       getMembershipsMap();
+
   /**
    *
    *
@@ -351,6 +361,7 @@ public interface AllowBindingExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.AllowBindingExplanation
                   .AnnotatedAllowMembership
               defaultValue);
+
   /**
    *
    *
@@ -397,6 +408,7 @@ public interface AllowBindingExplanationOrBuilder
    * @return The enum numeric value on the wire for relevance.
    */
   int getRelevanceValue();
+
   /**
    *
    *
@@ -426,6 +438,7 @@ public interface AllowBindingExplanationOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
+
   /**
    *
    *
@@ -441,6 +454,7 @@ public interface AllowBindingExplanationOrBuilder
    * @return The condition.
    */
   com.google.type.Expr getCondition();
+
   /**
    *
    *
@@ -468,6 +482,7 @@ public interface AllowBindingExplanationOrBuilder
    * @return Whether the conditionExplanation field is set.
    */
   boolean hasConditionExplanation();
+
   /**
    *
    *
@@ -481,6 +496,7 @@ public interface AllowBindingExplanationOrBuilder
    * @return The conditionExplanation.
    */
   com.google.cloud.policytroubleshooter.iam.v3.ConditionExplanation getConditionExplanation();
+
   /**
    *
    *

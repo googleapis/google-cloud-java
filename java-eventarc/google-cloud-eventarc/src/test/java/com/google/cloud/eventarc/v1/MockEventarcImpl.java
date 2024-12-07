@@ -322,7 +322,8 @@ public class MockEventarcImpl extends EventarcImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetChannelConnection, expected %s or %s",
+                  "Unrecognized response type %s for method GetChannelConnection, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ChannelConnection.class.getName(),
                   Exception.class.getName())));
@@ -344,7 +345,8 @@ public class MockEventarcImpl extends EventarcImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListChannelConnections, expected %s or %s",
+                  "Unrecognized response type %s for method ListChannelConnections, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListChannelConnectionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -365,7 +367,8 @@ public class MockEventarcImpl extends EventarcImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateChannelConnection, expected %s or %s",
+                  "Unrecognized response type %s for method CreateChannelConnection, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -386,7 +389,8 @@ public class MockEventarcImpl extends EventarcImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteChannelConnection, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteChannelConnection, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -407,7 +411,8 @@ public class MockEventarcImpl extends EventarcImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetGoogleChannelConfig, expected %s or %s",
+                  "Unrecognized response type %s for method GetGoogleChannelConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   GoogleChannelConfig.class.getName(),
                   Exception.class.getName())));
@@ -429,7 +434,8 @@ public class MockEventarcImpl extends EventarcImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateGoogleChannelConfig, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateGoogleChannelConfig, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GoogleChannelConfig.class.getName(),
                   Exception.class.getName())));
@@ -493,7 +499,8 @@ public class MockEventarcImpl extends EventarcImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListMessageBusEnrollments, expected %s or %s",
+                  "Unrecognized response type %s for method ListMessageBusEnrollments, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListMessageBusEnrollmentsResponse.class.getName(),
                   Exception.class.getName())));
@@ -808,7 +815,8 @@ public class MockEventarcImpl extends EventarcImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListGoogleApiSources, expected %s or %s",
+                  "Unrecognized response type %s for method ListGoogleApiSources, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListGoogleApiSourcesResponse.class.getName(),
                   Exception.class.getName())));
@@ -829,7 +837,8 @@ public class MockEventarcImpl extends EventarcImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateGoogleApiSource, expected %s or %s",
+                  "Unrecognized response type %s for method CreateGoogleApiSource, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -850,7 +859,8 @@ public class MockEventarcImpl extends EventarcImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateGoogleApiSource, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateGoogleApiSource, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -871,7 +881,8 @@ public class MockEventarcImpl extends EventarcImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteGoogleApiSource, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteGoogleApiSource, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

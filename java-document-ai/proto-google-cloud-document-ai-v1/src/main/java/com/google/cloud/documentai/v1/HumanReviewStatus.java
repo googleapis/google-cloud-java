@@ -33,6 +33,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.HumanReviewStatus)
     HumanReviewStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HumanReviewStatus.newBuilder() to construct.
   private HumanReviewStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -142,6 +143,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -154,6 +156,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      * <code>SKIPPED = 1;</code>
      */
     public static final int SKIPPED_VALUE = 1;
+
     /**
      *
      *
@@ -164,6 +167,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      * <code>VALIDATION_PASSED = 2;</code>
      */
     public static final int VALIDATION_PASSED_VALUE = 2;
+
     /**
      *
      *
@@ -174,6 +178,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      * <code>IN_PROGRESS = 3;</code>
      */
     public static final int IN_PROGRESS_VALUE = 3;
+
     /**
      *
      *
@@ -276,6 +281,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -291,6 +297,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -315,6 +322,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stateMessage_ = "";
+
   /**
    *
    *
@@ -338,6 +346,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -366,6 +375,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object humanReviewOperation_ = "";
+
   /**
    *
    *
@@ -394,6 +404,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -602,6 +613,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -814,6 +826,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -829,6 +842,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -847,6 +861,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +881,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.documentai.v1.HumanReviewStatus.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -887,6 +903,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +923,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object stateMessage_ = "";
+
     /**
      *
      *
@@ -928,6 +946,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -950,6 +969,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -971,6 +991,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1009,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1034,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object humanReviewOperation_ = "";
+
     /**
      *
      *
@@ -1039,6 +1062,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1066,6 +1090,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1117,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1114,6 +1140,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

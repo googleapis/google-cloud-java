@@ -50,6 +50,7 @@ public interface QuotaConfigOrBuilder
    * @return The stateDetail.
    */
   java.lang.String getStateDetail();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface QuotaConfigOrBuilder
    * @return Whether the grantedValue field is set.
    */
   boolean hasGrantedValue();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface QuotaConfigOrBuilder
    * @return The grantedValue.
    */
   com.google.protobuf.Int64Value getGrantedValue();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface QuotaConfigOrBuilder
    * @return The traceId.
    */
   java.lang.String getTraceId();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface QuotaConfigOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -163,9 +168,11 @@ public interface QuotaConfigOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public interface QuotaConfigOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface QuotaConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public interface QuotaConfigOrBuilder
    * @return The enum numeric value on the wire for requestOrigin.
    */
   int getRequestOriginValue();
+
   /**
    *
    *

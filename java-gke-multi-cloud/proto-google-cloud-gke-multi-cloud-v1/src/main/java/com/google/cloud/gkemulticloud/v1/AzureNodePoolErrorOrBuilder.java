@@ -36,6 +36,7 @@ public interface AzureNodePoolErrorOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *

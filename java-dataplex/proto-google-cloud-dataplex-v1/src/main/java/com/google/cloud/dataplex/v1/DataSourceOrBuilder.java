@@ -40,6 +40,7 @@ public interface DataSourceOrBuilder
    * @return Whether the entity field is set.
    */
   boolean hasEntity();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface DataSourceOrBuilder
    * @return The entity.
    */
   java.lang.String getEntity();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface DataSourceOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface DataSourceOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *

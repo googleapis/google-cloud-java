@@ -95,6 +95,7 @@ public enum StoredInfoTypeState implements com.google.protobuf.ProtocolMessageEn
    * <code>STORED_INFO_TYPE_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int STORED_INFO_TYPE_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -105,6 +106,7 @@ public enum StoredInfoTypeState implements com.google.protobuf.ProtocolMessageEn
    * <code>PENDING = 1;</code>
    */
   public static final int PENDING_VALUE = 1;
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public enum StoredInfoTypeState implements com.google.protobuf.ProtocolMessageEn
    * <code>READY = 2;</code>
    */
   public static final int READY_VALUE = 2;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public enum StoredInfoTypeState implements com.google.protobuf.ProtocolMessageEn
    * <code>FAILED = 3;</code>
    */
   public static final int FAILED_VALUE = 3;
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface CreateConversationDatasetOperationMetadataOrBuilder
    * @return The conversationDataset.
    */
   java.lang.String getConversationDataset();
+
   /**
    *
    *

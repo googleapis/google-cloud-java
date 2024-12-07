@@ -39,6 +39,7 @@ public interface RetryJobRequestOrBuilder
    * @return The rollout.
    */
   java.lang.String getRollout();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface RetryJobRequestOrBuilder
    * @return The phaseId.
    */
   java.lang.String getPhaseId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface RetryJobRequestOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface RetryJobRequestOrBuilder
    * @return A list containing the overrideDeployPolicy.
    */
   java.util.List<java.lang.String> getOverrideDeployPolicyList();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface RetryJobRequestOrBuilder
    * @return The count of overrideDeployPolicy.
    */
   int getOverrideDeployPolicyCount();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface RetryJobRequestOrBuilder
    * @return The overrideDeployPolicy at the given index.
    */
   java.lang.String getOverrideDeployPolicy(int index);
+
   /**
    *
    *

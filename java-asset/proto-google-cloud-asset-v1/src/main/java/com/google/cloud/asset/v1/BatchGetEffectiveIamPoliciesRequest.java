@@ -35,6 +35,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest)
     BatchGetEffectiveIamPoliciesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchGetEffectiveIamPoliciesRequest.newBuilder() to construct.
   private BatchGetEffectiveIamPoliciesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object scope_ = "";
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -147,6 +150,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList names_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
   public com.google.protobuf.ProtocolStringList getNamesList() {
     return names_;
   }
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
   public int getNamesCount() {
     return names_.size();
   }
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
   public java.lang.String getNames(int index) {
     return names_.get(index);
   }
+
   /**
    *
    *
@@ -406,6 +413,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -616,6 +624,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
     private int bitField0_;
 
     private java.lang.Object scope_ = "";
+
     /**
      *
      *
@@ -650,6 +659,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -684,6 +694,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -717,6 +728,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +758,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +803,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -811,6 +825,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
       names_.makeImmutable();
       return names_;
     }
+
     /**
      *
      *
@@ -831,6 +846,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
     public int getNamesCount() {
       return names_.size();
     }
+
     /**
      *
      *
@@ -852,6 +868,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
     public java.lang.String getNames(int index) {
       return names_.get(index);
     }
+
     /**
      *
      *
@@ -873,6 +890,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
     public com.google.protobuf.ByteString getNamesBytes(int index) {
       return names_.getByteString(index);
     }
+
     /**
      *
      *
@@ -902,6 +920,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +949,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +975,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1000,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

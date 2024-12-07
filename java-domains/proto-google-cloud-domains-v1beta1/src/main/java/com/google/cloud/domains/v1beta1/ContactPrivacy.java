@@ -96,6 +96,7 @@ public enum ContactPrivacy implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONTACT_PRIVACY_UNSPECIFIED = 0;</code>
    */
   public static final int CONTACT_PRIVACY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -109,6 +110,7 @@ public enum ContactPrivacy implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PUBLIC_CONTACT_DATA = 1;</code>
    */
   public static final int PUBLIC_CONTACT_DATA_VALUE = 1;
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public enum ContactPrivacy implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRIVATE_CONTACT_DATA = 2;</code>
    */
   public static final int PRIVATE_CONTACT_DATA_VALUE = 2;
+
   /**
    *
    *

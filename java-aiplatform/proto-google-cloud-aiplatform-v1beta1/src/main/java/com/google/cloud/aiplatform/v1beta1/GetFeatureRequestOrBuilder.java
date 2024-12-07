@@ -42,6 +42,7 @@ public interface GetFeatureRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface GetFeatureRequestOrBuilder
    * @return Whether the featureStatsAndAnomalySpec field is set.
    */
   boolean hasFeatureStatsAndAnomalySpec();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface GetFeatureRequestOrBuilder
    * @return The featureStatsAndAnomalySpec.
    */
   com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomalySpec getFeatureStatsAndAnomalySpec();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface CloudStorageOptionsOrBuilder
    * @return Whether the fileSet field is set.
    */
   boolean hasFileSet();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CloudStorageOptionsOrBuilder
    * @return The fileSet.
    */
   com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getFileSet();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface CloudStorageOptionsOrBuilder
    * @return A list containing the fileTypes.
    */
   java.util.List<com.google.privacy.dlp.v2.FileType> getFileTypesList();
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public interface CloudStorageOptionsOrBuilder
    * @return The count of fileTypes.
    */
   int getFileTypesCount();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface CloudStorageOptionsOrBuilder
    * @return The fileTypes at the given index.
    */
   com.google.privacy.dlp.v2.FileType getFileTypes(int index);
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public interface CloudStorageOptionsOrBuilder
    * @return A list containing the enum numeric values on the wire for fileTypes.
    */
   java.util.List<java.lang.Integer> getFileTypesValueList();
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public interface CloudStorageOptionsOrBuilder
    * @return The enum numeric value on the wire for sampleMethod.
    */
   int getSampleMethodValue();
+
   /**
    *
    *

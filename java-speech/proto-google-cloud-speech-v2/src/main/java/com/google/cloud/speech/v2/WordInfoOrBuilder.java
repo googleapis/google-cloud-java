@@ -41,6 +41,7 @@ public interface WordInfoOrBuilder
    * @return Whether the startOffset field is set.
    */
   boolean hasStartOffset();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface WordInfoOrBuilder
    * @return The startOffset.
    */
   com.google.protobuf.Duration getStartOffset();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface WordInfoOrBuilder
    * @return Whether the endOffset field is set.
    */
   boolean hasEndOffset();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface WordInfoOrBuilder
    * @return The endOffset.
    */
   com.google.protobuf.Duration getEndOffset();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface WordInfoOrBuilder
    * @return The word.
    */
   java.lang.String getWord();
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public interface WordInfoOrBuilder
    * @return The speakerLabel.
    */
   java.lang.String getSpeakerLabel();
+
   /**
    *
    *

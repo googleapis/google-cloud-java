@@ -36,6 +36,7 @@ public interface ValidateAddressResponseOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ValidateAddressResponseOrBuilder
    * @return The result.
    */
   com.google.maps.addressvalidation.v1.ValidationResult getResult();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface ValidateAddressResponseOrBuilder
    * @return The responseId.
    */
   java.lang.String getResponseId();
+
   /**
    *
    *

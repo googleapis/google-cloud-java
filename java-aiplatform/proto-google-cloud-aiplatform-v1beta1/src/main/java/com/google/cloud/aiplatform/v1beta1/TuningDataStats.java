@@ -34,6 +34,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TuningDataStats)
     TuningDataStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TuningDataStats.newBuilder() to construct.
   private TuningDataStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
     private TuningDataStatsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SUPERVISED_TUNING_DATA_STATS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
   public boolean hasSupervisedTuningDataStats() {
     return tuningDataStatsCase_ == 1;
   }
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DISTILLATION_DATA_STATS_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
   public boolean hasDistillationDataStats() {
     return tuningDataStatsCase_ == 3;
   }
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.aiplatform.v1beta1.DistillationDataStats.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -420,6 +428,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -658,6 +667,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats.Builder,
             com.google.cloud.aiplatform.v1beta1.SupervisedTuningDataStatsOrBuilder>
         supervisedTuningDataStatsBuilder_;
+
     /**
      *
      *
@@ -675,6 +685,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
     public boolean hasSupervisedTuningDataStats() {
       return tuningDataStatsCase_ == 1;
     }
+
     /**
      *
      *
@@ -703,6 +714,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -728,6 +740,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       tuningDataStatsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +763,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       tuningDataStatsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +802,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       tuningDataStatsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +830,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +846,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
         getSupervisedTuningDataStatsBuilder() {
       return getSupervisedTuningDataStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -853,6 +870,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -894,6 +912,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.DistillationDataStats.Builder,
             com.google.cloud.aiplatform.v1beta1.DistillationDataStatsOrBuilder>
         distillationDataStatsBuilder_;
+
     /**
      *
      *
@@ -911,6 +930,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
     public boolean hasDistillationDataStats() {
       return tuningDataStatsCase_ == 3;
     }
+
     /**
      *
      *
@@ -938,6 +958,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.aiplatform.v1beta1.DistillationDataStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -963,6 +984,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       tuningDataStatsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1007,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       tuningDataStatsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1044,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       tuningDataStatsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1072,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1088,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
         getDistillationDataStatsBuilder() {
       return getDistillationDataStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1086,6 +1112,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.aiplatform.v1beta1.DistillationDataStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *

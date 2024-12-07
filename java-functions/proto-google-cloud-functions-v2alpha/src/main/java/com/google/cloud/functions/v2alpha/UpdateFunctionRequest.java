@@ -33,6 +33,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.functions.v2alpha.UpdateFunctionRequest)
     UpdateFunctionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateFunctionRequest.newBuilder() to construct.
   private UpdateFunctionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int FUNCTION_FIELD_NUMBER = 1;
   private com.google.cloud.functions.v2alpha.Function function_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
   public boolean hasFunction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.functions.v2alpha.Function.getDefaultInstance()
         : function_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -346,6 +353,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -568,6 +576,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.functions.v2alpha.Function.Builder,
             com.google.cloud.functions.v2alpha.FunctionOrBuilder>
         functionBuilder_;
+
     /**
      *
      *
@@ -584,6 +593,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
     public boolean hasFunction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -606,6 +616,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
         return functionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -652,6 +664,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +694,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -702,6 +716,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +733,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getFunctionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -738,6 +754,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
             : function_;
       }
     }
+
     /**
      *
      *
@@ -772,6 +789,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -787,6 +805,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -808,6 +827,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -831,6 +851,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +872,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +901,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +922,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +938,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -933,6 +958,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
             : updateMask_;
       }
     }
+
     /**
      *
      *

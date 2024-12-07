@@ -36,6 +36,7 @@ public interface EnumerateLicensedUsersResponseOrBuilder
    */
   java.util.List<com.google.cloud.commerce.consumer.procurement.v1.LicensedUser>
       getLicensedUsersList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface EnumerateLicensedUsersResponseOrBuilder
    * </code>
    */
   com.google.cloud.commerce.consumer.procurement.v1.LicensedUser getLicensedUsers(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface EnumerateLicensedUsersResponseOrBuilder
    * </code>
    */
   int getLicensedUsersCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface EnumerateLicensedUsersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.commerce.consumer.procurement.v1.LicensedUserOrBuilder>
       getLicensedUsersOrBuilderList();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface EnumerateLicensedUsersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

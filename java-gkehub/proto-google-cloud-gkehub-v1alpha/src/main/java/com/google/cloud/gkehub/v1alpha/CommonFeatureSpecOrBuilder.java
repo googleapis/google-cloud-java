@@ -37,6 +37,7 @@ public interface CommonFeatureSpecOrBuilder
    * @return Whether the multiclusteringress field is set.
    */
   boolean hasMulticlusteringress();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface CommonFeatureSpecOrBuilder
    * @return The multiclusteringress.
    */
   com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpec getMulticlusteringress();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface CommonFeatureSpecOrBuilder
    * @return Whether the cloudauditlogging field is set.
    */
   boolean hasCloudauditlogging();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface CommonFeatureSpecOrBuilder
    * @return The cloudauditlogging.
    */
   com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec getCloudauditlogging();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface SearchEntitlementsResponseOrBuilder
    * <code>repeated .google.cloud.privilegedaccessmanager.v1.Entitlement entitlements = 1;</code>
    */
   java.util.List<com.google.cloud.privilegedaccessmanager.v1.Entitlement> getEntitlementsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SearchEntitlementsResponseOrBuilder
    * <code>repeated .google.cloud.privilegedaccessmanager.v1.Entitlement entitlements = 1;</code>
    */
   com.google.cloud.privilegedaccessmanager.v1.Entitlement getEntitlements(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SearchEntitlementsResponseOrBuilder
    * <code>repeated .google.cloud.privilegedaccessmanager.v1.Entitlement entitlements = 1;</code>
    */
   int getEntitlementsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SearchEntitlementsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.privilegedaccessmanager.v1.EntitlementOrBuilder>
       getEntitlementsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface SearchEntitlementsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.PeripheralsConfig)
     PeripheralsConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PeripheralsConfig.newBuilder() to construct.
   private PeripheralsConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metastoreService_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int SPARK_HISTORY_SERVER_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.dataproc.v1.SparkHistoryServerConfig sparkHistoryServerConfig_;
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasSparkHistoryServerConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.dataproc.v1.SparkHistoryServerConfig.getDefaultInstance()
         : sparkHistoryServerConfig_;
   }
+
   /**
    *
    *
@@ -359,6 +365,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -575,6 +582,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object metastoreService_ = "";
+
     /**
      *
      *
@@ -603,6 +611,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -631,6 +640,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +728,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dataproc.v1.SparkHistoryServerConfig.Builder,
             com.google.cloud.dataproc.v1.SparkHistoryServerConfigOrBuilder>
         sparkHistoryServerConfigBuilder_;
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasSparkHistoryServerConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
         return sparkHistoryServerConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +817,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +849,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +871,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +889,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSparkHistoryServerConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -891,6 +911,7 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
             : sparkHistoryServerConfig_;
       }
     }
+
     /**
      *
      *

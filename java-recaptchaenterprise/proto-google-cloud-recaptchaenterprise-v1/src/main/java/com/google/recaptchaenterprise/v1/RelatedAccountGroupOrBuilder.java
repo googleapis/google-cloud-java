@@ -40,6 +40,7 @@ public interface RelatedAccountGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

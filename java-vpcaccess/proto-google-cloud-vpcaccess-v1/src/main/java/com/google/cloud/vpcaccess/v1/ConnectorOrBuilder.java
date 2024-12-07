@@ -36,6 +36,7 @@ public interface ConnectorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ConnectorOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface ConnectorOrBuilder
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface ConnectorOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public interface ConnectorOrBuilder
    * @return A list containing the connectedProjects.
    */
   java.util.List<java.lang.String> getConnectedProjectsList();
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public interface ConnectorOrBuilder
    * @return The count of connectedProjects.
    */
   int getConnectedProjectsCount();
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface ConnectorOrBuilder
    * @return The connectedProjects at the given index.
    */
   java.lang.String getConnectedProjects(int index);
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public interface ConnectorOrBuilder
    * @return Whether the subnet field is set.
    */
   boolean hasSubnet();
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public interface ConnectorOrBuilder
    * @return The subnet.
    */
   com.google.cloud.vpcaccess.v1.Connector.Subnet getSubnet();
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public interface ConnectorOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *

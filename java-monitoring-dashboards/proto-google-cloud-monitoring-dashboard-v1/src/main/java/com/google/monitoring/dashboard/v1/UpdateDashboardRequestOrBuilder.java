@@ -38,6 +38,7 @@ public interface UpdateDashboardRequestOrBuilder
    * @return Whether the dashboard field is set.
    */
   boolean hasDashboard();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateDashboardRequestOrBuilder
    * @return The dashboard.
    */
   com.google.monitoring.dashboard.v1.Dashboard getDashboard();
+
   /**
    *
    *

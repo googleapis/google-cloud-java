@@ -40,6 +40,7 @@ public interface ListKeyRingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface ListKeyRingsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public interface ListKeyRingsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -149,6 +152,7 @@ public interface ListKeyRingsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

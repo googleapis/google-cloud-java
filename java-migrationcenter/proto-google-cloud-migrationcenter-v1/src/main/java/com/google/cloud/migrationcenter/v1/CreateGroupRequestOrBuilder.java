@@ -38,6 +38,7 @@ public interface CreateGroupRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateGroupRequestOrBuilder
    * @return The groupId.
    */
   java.lang.String getGroupId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface CreateGroupRequestOrBuilder
    * @return Whether the group field is set.
    */
   boolean hasGroup();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateGroupRequestOrBuilder
    * @return The group.
    */
   com.google.cloud.migrationcenter.v1.Group getGroup();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface CreateGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

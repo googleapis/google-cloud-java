@@ -179,7 +179,8 @@ public class MockSubscriptionsServiceImpl extends SubscriptionsServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ReactivateSubscription, expected %s or %s",
+                  "Unrecognized response type %s for method ReactivateSubscription, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

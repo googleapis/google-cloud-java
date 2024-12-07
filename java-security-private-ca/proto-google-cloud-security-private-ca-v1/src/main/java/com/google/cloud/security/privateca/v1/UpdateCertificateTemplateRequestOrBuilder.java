@@ -40,6 +40,7 @@ public interface UpdateCertificateTemplateRequestOrBuilder
    * @return Whether the certificateTemplate field is set.
    */
   boolean hasCertificateTemplate();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateCertificateTemplateRequestOrBuilder
    * @return The certificateTemplate.
    */
   com.google.cloud.security.privateca.v1.CertificateTemplate getCertificateTemplate();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateCertificateTemplateRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface UpdateCertificateTemplateRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface UpdateCertificateTemplateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class GetClusterCertificateAuthorityRequest
     // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest)
     GetClusterCertificateAuthorityRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetClusterCertificateAuthorityRequest.newBuilder() to construct.
   private GetClusterCertificateAuthorityRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class GetClusterCertificateAuthorityRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class GetClusterCertificateAuthorityRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -293,6 +296,7 @@ public final class GetClusterCertificateAuthorityRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -489,6 +493,7 @@ public final class GetClusterCertificateAuthorityRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -515,6 +520,7 @@ public final class GetClusterCertificateAuthorityRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -541,6 +547,7 @@ public final class GetClusterCertificateAuthorityRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -566,6 +573,7 @@ public final class GetClusterCertificateAuthorityRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -587,6 +595,7 @@ public final class GetClusterCertificateAuthorityRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

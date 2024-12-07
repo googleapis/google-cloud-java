@@ -36,6 +36,7 @@ public interface ImpactOrBuilder
    * @return The enum numeric value on the wire for category.
    */
   int getCategoryValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ImpactOrBuilder
    * @return Whether the costProjection field is set.
    */
   boolean hasCostProjection();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ImpactOrBuilder
    * @return The costProjection.
    */
   com.google.cloud.recommender.v1beta1.CostProjection getCostProjection();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ImpactOrBuilder
    * @return Whether the securityProjection field is set.
    */
   boolean hasSecurityProjection();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface ImpactOrBuilder
    * @return The securityProjection.
    */
   com.google.cloud.recommender.v1beta1.SecurityProjection getSecurityProjection();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface ImpactOrBuilder
    * @return Whether the sustainabilityProjection field is set.
    */
   boolean hasSustainabilityProjection();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface ImpactOrBuilder
    * @return The sustainabilityProjection.
    */
   com.google.cloud.recommender.v1beta1.SustainabilityProjection getSustainabilityProjection();
+
   /**
    *
    *

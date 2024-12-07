@@ -37,6 +37,7 @@ public interface ResourceManagerTagsOrBuilder
    * <code>map&lt;string, string&gt; tags = 1;</code>
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -50,9 +51,11 @@ public interface ResourceManagerTagsOrBuilder
    * <code>map&lt;string, string&gt; tags = 1;</code>
    */
   boolean containsTags(java.lang.String key);
+
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTags();
+
   /**
    *
    *
@@ -66,6 +69,7 @@ public interface ResourceManagerTagsOrBuilder
    * <code>map&lt;string, string&gt; tags = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
   /**
    *
    *
@@ -83,6 +87,7 @@ public interface ResourceManagerTagsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

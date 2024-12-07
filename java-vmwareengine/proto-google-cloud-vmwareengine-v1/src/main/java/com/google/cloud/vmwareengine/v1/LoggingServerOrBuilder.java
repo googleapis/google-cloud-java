@@ -40,6 +40,7 @@ public interface LoggingServerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface LoggingServerOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface LoggingServerOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface LoggingServerOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface LoggingServerOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface LoggingServerOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public interface LoggingServerOrBuilder
    * @return The enum numeric value on the wire for protocol.
    */
   int getProtocolValue();
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public interface LoggingServerOrBuilder
    * @return The enum numeric value on the wire for sourceType.
    */
   int getSourceTypeValue();
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public interface LoggingServerOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *

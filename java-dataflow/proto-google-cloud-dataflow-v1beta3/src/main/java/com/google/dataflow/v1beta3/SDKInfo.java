@@ -33,6 +33,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.SDKInfo)
     SDKInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SDKInfo.newBuilder() to construct.
   private SDKInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>JAVA = 1;</code>
      */
     public static final int JAVA_VALUE = 1;
+
     /**
      *
      *
@@ -223,6 +226,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LANGUAGE_FIELD_NUMBER = 1;
   private int language_ = 0;
+
   /**
    *
    *
@@ -238,6 +242,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
   public int getLanguageValue() {
     return language_;
   }
+
   /**
    *
    *
@@ -260,6 +265,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -283,6 +289,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -473,6 +480,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -668,6 +676,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int language_ = 0;
+
     /**
      *
      *
@@ -683,6 +692,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
     public int getLanguageValue() {
       return language_;
     }
+
     /**
      *
      *
@@ -701,6 +711,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +729,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
           com.google.dataflow.v1beta3.SDKInfo.Language.forNumber(language_);
       return result == null ? com.google.dataflow.v1beta3.SDKInfo.Language.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -739,6 +751,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +771,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -802,6 +817,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -823,6 +839,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +857,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

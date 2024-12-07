@@ -34,6 +34,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ListTransferableSkusResponse)
     ListTransferableSkusResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListTransferableSkusResponse.newBuilder() to construct.
   private ListTransferableSkusResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.TransferableSku> transferableSkus_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.channel.v1.TransferableSku> getTransferableSkusList() {
     return transferableSkus_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       getTransferableSkusOrBuilderList() {
     return transferableSkus_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
   public int getTransferableSkusCount() {
     return transferableSkus_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
   public com.google.cloud.channel.v1.TransferableSku getTransferableSkus(int index) {
     return transferableSkus_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -365,6 +373,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -643,6 +652,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
         return transferableSkusBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -659,6 +669,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
         return transferableSkusBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
         return transferableSkusBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +754,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +778,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +799,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +820,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +841,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +861,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +881,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +895,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
         int index) {
       return getTransferableSkusFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -891,6 +913,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
         return transferableSkusBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -908,6 +931,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(transferableSkus_);
       }
     }
+
     /**
      *
      *
@@ -921,6 +945,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       return getTransferableSkusFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.TransferableSku.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -935,6 +960,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       return getTransferableSkusFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.TransferableSku.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -970,6 +996,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -995,6 +1022,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1048,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1073,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1094,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

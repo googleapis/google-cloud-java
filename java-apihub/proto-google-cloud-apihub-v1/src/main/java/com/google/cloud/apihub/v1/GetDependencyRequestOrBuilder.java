@@ -39,6 +39,7 @@ public interface GetDependencyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

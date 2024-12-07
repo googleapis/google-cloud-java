@@ -36,6 +36,7 @@ public interface ErrorFrameOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ErrorFrameOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.FrameViolationEntry> getViolationsList();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ErrorFrameOrBuilder
    * </code>
    */
   com.google.cloud.migrationcenter.v1.FrameViolationEntry getViolations(int index);
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ErrorFrameOrBuilder
    * </code>
    */
   int getViolationsCount();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface ErrorFrameOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.FrameViolationEntryOrBuilder>
       getViolationsOrBuilderList();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface ErrorFrameOrBuilder
    * @return Whether the originalFrame field is set.
    */
   boolean hasOriginalFrame();
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public interface ErrorFrameOrBuilder
    * @return The originalFrame.
    */
   com.google.cloud.migrationcenter.v1.AssetFrame getOriginalFrame();
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public interface ErrorFrameOrBuilder
    * @return Whether the ingestionTime field is set.
    */
   boolean hasIngestionTime();
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public interface ErrorFrameOrBuilder
    * @return The ingestionTime.
    */
   com.google.protobuf.Timestamp getIngestionTime();
+
   /**
    *
    *

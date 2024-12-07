@@ -39,6 +39,7 @@ public interface UpdateJobTriggerRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface UpdateJobTriggerRequestOrBuilder
    * @return Whether the jobTrigger field is set.
    */
   boolean hasJobTrigger();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateJobTriggerRequestOrBuilder
    * @return The jobTrigger.
    */
   com.google.privacy.dlp.v2.JobTrigger getJobTrigger();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateJobTriggerRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface UpdateJobTriggerRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

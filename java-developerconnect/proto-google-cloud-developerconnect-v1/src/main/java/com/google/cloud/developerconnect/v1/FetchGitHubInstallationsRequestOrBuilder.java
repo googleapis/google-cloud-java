@@ -39,6 +39,7 @@ public interface FetchGitHubInstallationsRequestOrBuilder
    * @return The connection.
    */
   java.lang.String getConnection();
+
   /**
    *
    *

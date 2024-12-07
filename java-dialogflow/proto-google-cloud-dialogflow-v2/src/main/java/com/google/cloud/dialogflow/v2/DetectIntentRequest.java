@@ -33,6 +33,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.DetectIntentRequest)
     DetectIntentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DetectIntentRequest.newBuilder() to construct.
   private DetectIntentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object session_ = "";
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -154,6 +157,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
 
   public static final int QUERY_PARAMS_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2.QueryParameters queryParams_;
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
   public boolean hasQueryParams() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dialogflow.v2.QueryParameters.getDefaultInstance()
         : queryParams_;
   }
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
 
   public static final int QUERY_INPUT_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.v2.QueryInput queryInput_;
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
   public boolean hasQueryInput() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -254,6 +262,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dialogflow.v2.QueryInput.getDefaultInstance()
         : queryInput_;
   }
+
   /**
    *
    *
@@ -281,6 +290,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
 
   public static final int OUTPUT_AUDIO_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.dialogflow.v2.OutputAudioConfig outputAudioConfig_;
+
   /**
    *
    *
@@ -298,6 +308,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
   public boolean hasOutputAudioConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -317,6 +328,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dialogflow.v2.OutputAudioConfig.getDefaultInstance()
         : outputAudioConfig_;
   }
+
   /**
    *
    *
@@ -337,6 +349,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
 
   public static final int OUTPUT_AUDIO_CONFIG_MASK_FIELD_NUMBER = 7;
   private com.google.protobuf.FieldMask outputAudioConfigMask_;
+
   /**
    *
    *
@@ -359,6 +372,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
   public boolean hasOutputAudioConfigMask() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -383,6 +397,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.FieldMask.getDefaultInstance()
         : outputAudioConfigMask_;
   }
+
   /**
    *
    *
@@ -408,6 +423,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
 
   public static final int INPUT_AUDIO_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString inputAudio_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -651,6 +667,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -943,6 +960,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object session_ = "";
+
     /**
      *
      *
@@ -983,6 +1001,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1042,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1062,6 +1082,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1118,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1166,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.dialogflow.v2.QueryParameters.Builder,
             com.google.cloud.dialogflow.v2.QueryParametersOrBuilder>
         queryParamsBuilder_;
+
     /**
      *
      *
@@ -1158,6 +1181,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     public boolean hasQueryParams() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1178,6 +1202,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
         return queryParamsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1200,6 +1225,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1246,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1248,6 +1275,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1295,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1310,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getQueryParamsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1299,6 +1329,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
             : queryParams_;
       }
     }
+
     /**
      *
      *
@@ -1331,6 +1362,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.dialogflow.v2.QueryInput.Builder,
             com.google.cloud.dialogflow.v2.QueryInputOrBuilder>
         queryInputBuilder_;
+
     /**
      *
      *
@@ -1354,6 +1386,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     public boolean hasQueryInput() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1383,6 +1416,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
         return queryInputBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1414,6 +1448,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1478,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1479,6 +1515,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1507,6 +1544,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1530,6 +1568,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getQueryInputFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1557,6 +1596,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
             : queryInput_;
       }
     }
+
     /**
      *
      *
@@ -1598,6 +1638,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder,
             com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder>
         outputAudioConfigBuilder_;
+
     /**
      *
      *
@@ -1614,6 +1655,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     public boolean hasOutputAudioConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1636,6 +1678,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
         return outputAudioConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1660,6 +1703,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1682,6 +1726,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1712,6 +1757,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1733,6 +1779,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1749,6 +1796,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getOutputAudioConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1770,6 +1818,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
             : outputAudioConfig_;
       }
     }
+
     /**
      *
      *
@@ -1804,6 +1853,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         outputAudioConfigMaskBuilder_;
+
     /**
      *
      *
@@ -1825,6 +1875,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     public boolean hasOutputAudioConfigMask() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1852,6 +1903,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
         return outputAudioConfigMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1881,6 +1933,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1907,6 +1960,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1941,6 +1995,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1967,6 +2022,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1988,6 +2044,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getOutputAudioConfigMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2013,6 +2070,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
             : outputAudioConfigMask_;
       }
     }
+
     /**
      *
      *
@@ -2047,6 +2105,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     }
 
     private com.google.protobuf.ByteString inputAudio_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -2064,6 +2123,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getInputAudio() {
       return inputAudio_;
     }
+
     /**
      *
      *
@@ -2087,6 +2147,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse)
     ScheduleTransferRunsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ScheduleTransferRunsResponse.newBuilder() to construct.
   private ScheduleTransferRunsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun> runs_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun> getRunsList() {
     return runs_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
       getRunsOrBuilderList() {
     return runs_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
   public int getRunsCount() {
     return runs_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
   public com.google.cloud.bigquery.datatransfer.v1.TransferRun getRuns(int index) {
     return runs_.get(index);
   }
+
   /**
    *
    *
@@ -298,6 +304,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -569,6 +576,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
         return runsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -585,6 +593,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
         return runsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -601,6 +610,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
         return runsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -623,6 +633,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -643,6 +654,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +677,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +700,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +721,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +742,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +764,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +784,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +804,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +817,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
     public com.google.cloud.bigquery.datatransfer.v1.TransferRun.Builder getRunsBuilder(int index) {
       return getRunsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -815,6 +835,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
         return runsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -832,6 +853,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(runs_);
       }
     }
+
     /**
      *
      *
@@ -845,6 +867,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
       return getRunsFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.datatransfer.v1.TransferRun.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -859,6 +882,7 @@ public final class ScheduleTransferRunsResponse extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.cloud.bigquery.datatransfer.v1.TransferRun.getDefaultInstance());
     }
+
     /**
      *
      *

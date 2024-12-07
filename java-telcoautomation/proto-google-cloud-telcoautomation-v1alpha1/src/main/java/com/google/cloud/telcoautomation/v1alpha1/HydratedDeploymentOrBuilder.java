@@ -36,6 +36,7 @@ public interface HydratedDeploymentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface HydratedDeploymentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface HydratedDeploymentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.telcoautomation.v1alpha1.File> getFilesList();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface HydratedDeploymentOrBuilder
    * </code>
    */
   com.google.cloud.telcoautomation.v1alpha1.File getFiles(int index);
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface HydratedDeploymentOrBuilder
    * </code>
    */
   int getFilesCount();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface HydratedDeploymentOrBuilder
    */
   java.util.List<? extends com.google.cloud.telcoautomation.v1alpha1.FileOrBuilder>
       getFilesOrBuilderList();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface HydratedDeploymentOrBuilder
    * @return The workloadCluster.
    */
   java.lang.String getWorkloadCluster();
+
   /**
    *
    *

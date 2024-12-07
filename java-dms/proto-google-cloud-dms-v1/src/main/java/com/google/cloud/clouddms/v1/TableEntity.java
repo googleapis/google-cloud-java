@@ -33,6 +33,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.TableEntity)
     TableEntityOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TableEntity.newBuilder() to construct.
   private TableEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.clouddms.v1.ColumnEntity> columns_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.clouddms.v1.ColumnEntity> getColumnsList() {
     return columns_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       getColumnsOrBuilderList() {
     return columns_;
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
   public int getColumnsCount() {
     return columns_.size();
   }
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.clouddms.v1.ColumnEntity getColumns(int index) {
     return columns_.get(index);
   }
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.clouddms.v1.ConstraintEntity> constraints_;
+
   /**
    *
    *
@@ -156,6 +163,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.clouddms.v1.ConstraintEntity> getConstraintsList() {
     return constraints_;
   }
+
   /**
    *
    *
@@ -170,6 +178,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       getConstraintsOrBuilderList() {
     return constraints_;
   }
+
   /**
    *
    *
@@ -183,6 +192,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
   public int getConstraintsCount() {
     return constraints_.size();
   }
+
   /**
    *
    *
@@ -196,6 +206,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.clouddms.v1.ConstraintEntity getConstraints(int index) {
     return constraints_.get(index);
   }
+
   /**
    *
    *
@@ -214,6 +225,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.clouddms.v1.IndexEntity> indices_;
+
   /**
    *
    *
@@ -227,6 +239,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.clouddms.v1.IndexEntity> getIndicesList() {
     return indices_;
   }
+
   /**
    *
    *
@@ -241,6 +254,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       getIndicesOrBuilderList() {
     return indices_;
   }
+
   /**
    *
    *
@@ -254,6 +268,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
   public int getIndicesCount() {
     return indices_.size();
   }
+
   /**
    *
    *
@@ -267,6 +282,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.clouddms.v1.IndexEntity getIndices(int index) {
     return indices_.get(index);
   }
+
   /**
    *
    *
@@ -285,6 +301,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.clouddms.v1.TriggerEntity> triggers_;
+
   /**
    *
    *
@@ -298,6 +315,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.clouddms.v1.TriggerEntity> getTriggersList() {
     return triggers_;
   }
+
   /**
    *
    *
@@ -312,6 +330,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       getTriggersOrBuilderList() {
     return triggers_;
   }
+
   /**
    *
    *
@@ -325,6 +344,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
   public int getTriggersCount() {
     return triggers_.size();
   }
+
   /**
    *
    *
@@ -338,6 +358,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.clouddms.v1.TriggerEntity getTriggers(int index) {
     return triggers_.get(index);
   }
+
   /**
    *
    *
@@ -354,6 +375,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOM_FEATURES_FIELD_NUMBER = 5;
   private com.google.protobuf.Struct customFeatures_;
+
   /**
    *
    *
@@ -369,6 +391,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomFeatures() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -386,6 +409,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Struct.getDefaultInstance()
         : customFeatures_;
   }
+
   /**
    *
    *
@@ -406,6 +430,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object comment_ = "";
+
   /**
    *
    *
@@ -429,6 +454,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -669,6 +695,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1145,6 +1172,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return columnsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1161,6 +1189,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return columnsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1177,6 +1206,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return columnsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1199,6 +1229,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1219,6 +1250,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1273,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1296,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1282,6 +1316,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1302,6 +1337,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1322,6 +1358,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1341,6 +1378,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1360,6 +1398,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1411,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.clouddms.v1.ColumnEntity.Builder getColumnsBuilder(int index) {
       return getColumnsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1388,6 +1428,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return columnsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1405,6 +1446,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(columns_);
       }
     }
+
     /**
      *
      *
@@ -1418,6 +1460,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       return getColumnsFieldBuilder()
           .addBuilder(com.google.cloud.clouddms.v1.ColumnEntity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1431,6 +1474,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       return getColumnsFieldBuilder()
           .addBuilder(index, com.google.cloud.clouddms.v1.ColumnEntity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1495,6 +1539,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return constraintsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1511,6 +1556,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return constraintsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1527,6 +1573,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return constraintsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1549,6 +1596,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1569,6 +1617,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1640,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1613,6 +1663,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1633,6 +1684,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1653,6 +1705,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1673,6 +1726,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1692,6 +1746,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1711,6 +1766,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1723,6 +1779,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.clouddms.v1.ConstraintEntity.Builder getConstraintsBuilder(int index) {
       return getConstraintsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1740,6 +1797,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return constraintsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1757,6 +1815,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(constraints_);
       }
     }
+
     /**
      *
      *
@@ -1770,6 +1829,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       return getConstraintsFieldBuilder()
           .addBuilder(com.google.cloud.clouddms.v1.ConstraintEntity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1783,6 +1843,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       return getConstraintsFieldBuilder()
           .addBuilder(index, com.google.cloud.clouddms.v1.ConstraintEntity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1846,6 +1907,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return indicesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1862,6 +1924,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return indicesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1878,6 +1941,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return indicesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1900,6 +1964,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1920,6 +1985,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1942,6 +2008,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1964,6 +2031,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1983,6 +2051,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2003,6 +2072,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2023,6 +2093,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2042,6 +2113,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2061,6 +2133,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2073,6 +2146,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.clouddms.v1.IndexEntity.Builder getIndicesBuilder(int index) {
       return getIndicesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2089,6 +2163,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return indicesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2106,6 +2181,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(indices_);
       }
     }
+
     /**
      *
      *
@@ -2119,6 +2195,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       return getIndicesFieldBuilder()
           .addBuilder(com.google.cloud.clouddms.v1.IndexEntity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2132,6 +2209,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       return getIndicesFieldBuilder()
           .addBuilder(index, com.google.cloud.clouddms.v1.IndexEntity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2195,6 +2273,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return triggersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2211,6 +2290,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return triggersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2227,6 +2307,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return triggersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2249,6 +2330,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2269,6 +2351,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2291,6 +2374,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2313,6 +2397,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2332,6 +2417,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2352,6 +2438,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2372,6 +2459,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2391,6 +2479,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2410,6 +2499,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2422,6 +2512,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.clouddms.v1.TriggerEntity.Builder getTriggersBuilder(int index) {
       return getTriggersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2438,6 +2529,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return triggersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2455,6 +2547,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(triggers_);
       }
     }
+
     /**
      *
      *
@@ -2468,6 +2561,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       return getTriggersFieldBuilder()
           .addBuilder(com.google.cloud.clouddms.v1.TriggerEntity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2481,6 +2575,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       return getTriggersFieldBuilder()
           .addBuilder(index, com.google.cloud.clouddms.v1.TriggerEntity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2518,6 +2613,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         customFeaturesBuilder_;
+
     /**
      *
      *
@@ -2532,6 +2628,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomFeatures() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2552,6 +2649,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return customFeaturesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2574,6 +2672,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2593,6 +2692,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2620,6 +2720,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2639,6 +2740,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2653,6 +2755,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomFeaturesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2671,6 +2774,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
             : customFeatures_;
       }
     }
+
     /**
      *
      *
@@ -2698,6 +2802,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object comment_ = "";
+
     /**
      *
      *
@@ -2720,6 +2825,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2742,6 +2848,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2763,6 +2870,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2780,6 +2888,7 @@ public final class TableEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

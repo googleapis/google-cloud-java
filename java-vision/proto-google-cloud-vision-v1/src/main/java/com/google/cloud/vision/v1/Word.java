@@ -33,6 +33,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.Word)
     WordOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Word.newBuilder() to construct.
   private Word(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PROPERTY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1.TextAnnotation.TextProperty property_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProperty() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1.TextAnnotation.TextProperty.getDefaultInstance()
         : property_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BOUNDING_BOX_FIELD_NUMBER = 2;
   private com.google.cloud.vision.v1.BoundingPoly boundingBox_;
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoundingBox() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
         : boundingBox_;
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.Symbol> symbols_;
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.vision.v1.Symbol> getSymbolsList() {
     return symbols_;
   }
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       getSymbolsOrBuilderList() {
     return symbols_;
   }
+
   /**
    *
    *
@@ -252,6 +262,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
   public int getSymbolsCount() {
     return symbols_.size();
   }
+
   /**
    *
    *
@@ -266,6 +277,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vision.v1.Symbol getSymbols(int index) {
     return symbols_.get(index);
   }
+
   /**
    *
    *
@@ -283,6 +295,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENCE_FIELD_NUMBER = 4;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -496,6 +509,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -790,6 +804,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1.TextAnnotation.TextProperty.Builder,
             com.google.cloud.vision.v1.TextAnnotation.TextPropertyOrBuilder>
         propertyBuilder_;
+
     /**
      *
      *
@@ -804,6 +819,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProperty() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -824,6 +840,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
         return propertyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -846,6 +863,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +884,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +913,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +933,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +948,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPropertyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -945,6 +967,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
             : property_;
       }
     }
+
     /**
      *
      *
@@ -977,6 +1000,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1.BoundingPoly.Builder,
             com.google.cloud.vision.v1.BoundingPolyOrBuilder>
         boundingBoxBuilder_;
+
     /**
      *
      *
@@ -1005,6 +1029,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoundingBox() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1039,6 +1064,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
         return boundingBoxBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1075,6 +1101,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1108,6 +1135,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1177,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1211,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1210,6 +1240,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBoundingBoxFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1242,6 +1273,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
             : boundingBox_;
       }
     }
+
     /**
      *
      *
@@ -1315,6 +1347,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
         return symbolsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1332,6 +1365,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
         return symbolsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1349,6 +1383,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
         return symbolsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1372,6 +1407,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1429,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1416,6 +1453,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1439,6 +1477,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1459,6 +1498,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1480,6 +1520,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1501,6 +1542,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1521,6 +1563,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1541,6 +1584,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1554,6 +1598,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1.Symbol.Builder getSymbolsBuilder(int index) {
       return getSymbolsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1571,6 +1616,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
         return symbolsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1589,6 +1635,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(symbols_);
       }
     }
+
     /**
      *
      *
@@ -1603,6 +1650,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       return getSymbolsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.Symbol.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1617,6 +1665,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       return getSymbolsFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.Symbol.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1649,6 +1698,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -1664,6 +1714,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -1683,6 +1734,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

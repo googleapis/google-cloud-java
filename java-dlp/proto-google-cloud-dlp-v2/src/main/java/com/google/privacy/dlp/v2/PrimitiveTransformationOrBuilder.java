@@ -36,6 +36,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return Whether the replaceConfig field is set.
    */
   boolean hasReplaceConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return The replaceConfig.
    */
   com.google.privacy.dlp.v2.ReplaceValueConfig getReplaceConfig();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return Whether the redactConfig field is set.
    */
   boolean hasRedactConfig();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return The redactConfig.
    */
   com.google.privacy.dlp.v2.RedactConfig getRedactConfig();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return Whether the characterMaskConfig field is set.
    */
   boolean hasCharacterMaskConfig();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return The characterMaskConfig.
    */
   com.google.privacy.dlp.v2.CharacterMaskConfig getCharacterMaskConfig();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return Whether the cryptoReplaceFfxFpeConfig field is set.
    */
   boolean hasCryptoReplaceFfxFpeConfig();
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return The cryptoReplaceFfxFpeConfig.
    */
   com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig getCryptoReplaceFfxFpeConfig();
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return Whether the fixedSizeBucketingConfig field is set.
    */
   boolean hasFixedSizeBucketingConfig();
+
   /**
    *
    *
@@ -192,6 +201,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return The fixedSizeBucketingConfig.
    */
   com.google.privacy.dlp.v2.FixedSizeBucketingConfig getFixedSizeBucketingConfig();
+
   /**
    *
    *
@@ -216,6 +226,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return Whether the bucketingConfig field is set.
    */
   boolean hasBucketingConfig();
+
   /**
    *
    *
@@ -228,6 +239,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return The bucketingConfig.
    */
   com.google.privacy.dlp.v2.BucketingConfig getBucketingConfig();
+
   /**
    *
    *
@@ -252,6 +264,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return Whether the replaceWithInfoTypeConfig field is set.
    */
   boolean hasReplaceWithInfoTypeConfig();
+
   /**
    *
    *
@@ -265,6 +278,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return The replaceWithInfoTypeConfig.
    */
   com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig getReplaceWithInfoTypeConfig();
+
   /**
    *
    *
@@ -290,6 +304,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return Whether the timePartConfig field is set.
    */
   boolean hasTimePartConfig();
+
   /**
    *
    *
@@ -302,6 +317,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return The timePartConfig.
    */
   com.google.privacy.dlp.v2.TimePartConfig getTimePartConfig();
+
   /**
    *
    *
@@ -325,6 +341,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return Whether the cryptoHashConfig field is set.
    */
   boolean hasCryptoHashConfig();
+
   /**
    *
    *
@@ -337,6 +354,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return The cryptoHashConfig.
    */
   com.google.privacy.dlp.v2.CryptoHashConfig getCryptoHashConfig();
+
   /**
    *
    *
@@ -360,6 +378,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return Whether the dateShiftConfig field is set.
    */
   boolean hasDateShiftConfig();
+
   /**
    *
    *
@@ -372,6 +391,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return The dateShiftConfig.
    */
   com.google.privacy.dlp.v2.DateShiftConfig getDateShiftConfig();
+
   /**
    *
    *
@@ -395,6 +415,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return Whether the cryptoDeterministicConfig field is set.
    */
   boolean hasCryptoDeterministicConfig();
+
   /**
    *
    *
@@ -407,6 +428,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return The cryptoDeterministicConfig.
    */
   com.google.privacy.dlp.v2.CryptoDeterministicConfig getCryptoDeterministicConfig();
+
   /**
    *
    *
@@ -431,6 +453,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return Whether the replaceDictionaryConfig field is set.
    */
   boolean hasReplaceDictionaryConfig();
+
   /**
    *
    *
@@ -443,6 +466,7 @@ public interface PrimitiveTransformationOrBuilder
    * @return The replaceDictionaryConfig.
    */
   com.google.privacy.dlp.v2.ReplaceDictionaryConfig getReplaceDictionaryConfig();
+
   /**
    *
    *

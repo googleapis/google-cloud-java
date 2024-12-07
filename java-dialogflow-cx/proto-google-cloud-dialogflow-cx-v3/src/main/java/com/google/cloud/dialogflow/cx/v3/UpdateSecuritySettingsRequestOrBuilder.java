@@ -39,6 +39,7 @@ public interface UpdateSecuritySettingsRequestOrBuilder
    * @return Whether the securitySettings field is set.
    */
   boolean hasSecuritySettings();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateSecuritySettingsRequestOrBuilder
    * @return The securitySettings.
    */
   com.google.cloud.dialogflow.cx.v3.SecuritySettings getSecuritySettings();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface UpdateSecuritySettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface UpdateSecuritySettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

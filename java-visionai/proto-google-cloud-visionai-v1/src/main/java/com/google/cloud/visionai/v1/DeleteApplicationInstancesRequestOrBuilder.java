@@ -40,6 +40,7 @@ public interface DeleteApplicationInstancesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface DeleteApplicationInstancesRequestOrBuilder
    * @return A list containing the instanceIds.
    */
   java.util.List<java.lang.String> getInstanceIdsList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface DeleteApplicationInstancesRequestOrBuilder
    * @return The count of instanceIds.
    */
   int getInstanceIdsCount();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface DeleteApplicationInstancesRequestOrBuilder
    * @return The instanceIds at the given index.
    */
   java.lang.String getInstanceIds(int index);
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface DeleteApplicationInstancesRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

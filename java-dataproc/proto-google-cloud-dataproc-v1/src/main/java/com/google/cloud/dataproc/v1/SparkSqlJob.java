@@ -34,6 +34,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.SparkSqlJob)
     SparkSqlJobOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SparkSqlJob.newBuilder() to construct.
   private SparkSqlJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -96,6 +97,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     private QueriesCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -129,6 +131,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERY_FILE_URI_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQueryFileUri() {
     return queriesCase_ == 1;
   }
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -199,6 +204,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERY_LIST_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQueryList() {
     return queriesCase_ == 2;
   }
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataproc.v1.QueryList.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -277,6 +285,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   public int getScriptVariablesCount() {
     return internalGetScriptVariables().getMap().size();
   }
+
   /**
    *
    *
@@ -295,12 +304,14 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetScriptVariables().getMap().containsKey(key);
   }
+
   /** Use {@link #getScriptVariablesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getScriptVariables() {
     return getScriptVariablesMap();
   }
+
   /**
    *
    *
@@ -316,6 +327,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
     return internalGetScriptVariables().getMap();
   }
+
   /**
    *
    *
@@ -338,6 +350,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -387,6 +400,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   public int getPropertiesCount() {
     return internalGetProperties().getMap().size();
   }
+
   /**
    *
    *
@@ -406,12 +420,14 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetProperties().getMap().containsKey(key);
   }
+
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
   }
+
   /**
    *
    *
@@ -428,6 +444,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
+
   /**
    *
    *
@@ -451,6 +468,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -480,6 +498,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList jarFileUris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -494,6 +513,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
     return jarFileUris_;
   }
+
   /**
    *
    *
@@ -508,6 +528,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   public int getJarFileUrisCount() {
     return jarFileUris_.size();
   }
+
   /**
    *
    *
@@ -523,6 +544,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getJarFileUris(int index) {
     return jarFileUris_.get(index);
   }
+
   /**
    *
    *
@@ -541,6 +563,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.dataproc.v1.LoggingConfig loggingConfig_;
+
   /**
    *
    *
@@ -558,6 +581,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLoggingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -577,6 +601,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()
         : loggingConfig_;
   }
+
   /**
    *
    *
@@ -845,6 +870,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1203,6 +1229,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQueryFileUri() {
       return queriesCase_ == 1;
     }
+
     /**
      *
      *
@@ -1231,6 +1258,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1259,6 +1287,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1280,6 +1309,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1299,6 +1329,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1358,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.QueryList.Builder,
             com.google.cloud.dataproc.v1.QueryListOrBuilder>
         queryListBuilder_;
+
     /**
      *
      *
@@ -1342,6 +1374,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQueryList() {
       return queriesCase_ == 2;
     }
+
     /**
      *
      *
@@ -1367,6 +1400,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1.QueryList.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1389,6 +1423,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       queriesCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1443,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       queriesCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1476,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       queriesCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1465,6 +1502,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1477,6 +1515,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.QueryList.Builder getQueryListBuilder() {
       return getQueryListFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1497,6 +1536,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1.QueryList.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1559,6 +1599,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     public int getScriptVariablesCount() {
       return internalGetScriptVariables().getMap().size();
     }
+
     /**
      *
      *
@@ -1578,12 +1619,14 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetScriptVariables().getMap().containsKey(key);
     }
+
     /** Use {@link #getScriptVariablesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getScriptVariables() {
       return getScriptVariablesMap();
     }
+
     /**
      *
      *
@@ -1600,6 +1643,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
       return internalGetScriptVariables().getMap();
     }
+
     /**
      *
      *
@@ -1623,6 +1667,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1652,6 +1697,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableScriptVariables().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1671,12 +1717,14 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableScriptVariables().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableScriptVariables() {
       bitField0_ |= 0x00000004;
       return internalGetMutableScriptVariables().getMutableMap();
     }
+
     /**
      *
      *
@@ -1700,6 +1748,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -1746,6 +1795,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     public int getPropertiesCount() {
       return internalGetProperties().getMap().size();
     }
+
     /**
      *
      *
@@ -1765,12 +1815,14 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetProperties().getMap().containsKey(key);
     }
+
     /** Use {@link #getPropertiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
     }
+
     /**
      *
      *
@@ -1787,6 +1839,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
+
     /**
      *
      *
@@ -1810,6 +1863,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1839,6 +1893,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1858,12 +1913,14 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
       bitField0_ |= 0x00000008;
       return internalGetMutableProperties().getMutableMap();
     }
+
     /**
      *
      *
@@ -1887,6 +1944,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -1914,6 +1972,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -1929,6 +1988,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       jarFileUris_.makeImmutable();
       return jarFileUris_;
     }
+
     /**
      *
      *
@@ -1943,6 +2003,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     public int getJarFileUrisCount() {
       return jarFileUris_.size();
     }
+
     /**
      *
      *
@@ -1958,6 +2019,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getJarFileUris(int index) {
       return jarFileUris_.get(index);
     }
+
     /**
      *
      *
@@ -1973,6 +2035,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
       return jarFileUris_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1996,6 +2059,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2018,6 +2082,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2037,6 +2102,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2055,6 +2121,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2085,6 +2152,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.LoggingConfig.Builder,
             com.google.cloud.dataproc.v1.LoggingConfigOrBuilder>
         loggingConfigBuilder_;
+
     /**
      *
      *
@@ -2101,6 +2169,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoggingConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2123,6 +2192,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
         return loggingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2147,6 +2217,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2169,6 +2240,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2198,6 +2270,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2219,6 +2292,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2235,6 +2309,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLoggingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2255,6 +2330,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
             : loggingConfig_;
       }
     }
+
     /**
      *
      *

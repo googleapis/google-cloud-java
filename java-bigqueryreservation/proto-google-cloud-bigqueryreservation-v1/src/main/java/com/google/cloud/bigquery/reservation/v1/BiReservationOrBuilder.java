@@ -38,6 +38,7 @@ public interface BiReservationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface BiReservationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface BiReservationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface BiReservationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.bigquery.reservation.v1.TableReference> getPreferredTablesList();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface BiReservationOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.reservation.v1.TableReference getPreferredTables(int index);
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface BiReservationOrBuilder
    * </code>
    */
   int getPreferredTablesCount();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface BiReservationOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder>
       getPreferredTablesOrBuilderList();
+
   /**
    *
    *

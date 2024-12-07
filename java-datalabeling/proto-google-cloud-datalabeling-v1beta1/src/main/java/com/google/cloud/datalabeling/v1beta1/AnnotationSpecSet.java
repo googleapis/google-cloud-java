@@ -35,6 +35,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.AnnotationSpecSet)
     AnnotationSpecSetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotationSpecSet.newBuilder() to construct.
   private AnnotationSpecSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datalabeling.v1beta1.AnnotationSpec> annotationSpecs_;
+
   /**
    *
    *
@@ -249,6 +257,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       getAnnotationSpecsList() {
     return annotationSpecs_;
   }
+
   /**
    *
    *
@@ -264,6 +273,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       getAnnotationSpecsOrBuilderList() {
     return annotationSpecs_;
   }
+
   /**
    *
    *
@@ -278,6 +288,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
   public int getAnnotationSpecsCount() {
     return annotationSpecs_.size();
   }
+
   /**
    *
    *
@@ -292,6 +303,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpecs(int index) {
     return annotationSpecs_.get(index);
   }
+
   /**
    *
    *
@@ -313,6 +325,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList blockingResources_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -328,6 +341,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getBlockingResourcesList() {
     return blockingResources_;
   }
+
   /**
    *
    *
@@ -343,6 +357,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
   public int getBlockingResourcesCount() {
     return blockingResources_.size();
   }
+
   /**
    *
    *
@@ -359,6 +374,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
   public java.lang.String getBlockingResources(int index) {
     return blockingResources_.get(index);
   }
+
   /**
    *
    *
@@ -581,6 +597,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -881,6 +898,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -905,6 +923,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -929,6 +948,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -952,6 +972,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -971,6 +992,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1019,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1020,6 +1043,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1043,6 +1067,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1065,6 +1090,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1109,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1108,6 +1135,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1131,6 +1159,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1154,6 +1183,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1176,6 +1206,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1225,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1286,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         return annotationSpecsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1271,6 +1304,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         return annotationSpecsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1288,6 +1322,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         return annotationSpecsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1312,6 +1347,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1333,6 +1369,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1393,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1380,6 +1418,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1401,6 +1440,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1422,6 +1462,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1484,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1505,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1483,6 +1526,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1497,6 +1541,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         int index) {
       return getAnnotationSpecsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1515,6 +1560,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         return annotationSpecsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1533,6 +1579,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(annotationSpecs_);
       }
     }
+
     /**
      *
      *
@@ -1548,6 +1595,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       return getAnnotationSpecsFieldBuilder()
           .addBuilder(com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1564,6 +1612,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1608,6 +1657,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -1624,6 +1674,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       blockingResources_.makeImmutable();
       return blockingResources_;
     }
+
     /**
      *
      *
@@ -1639,6 +1690,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     public int getBlockingResourcesCount() {
       return blockingResources_.size();
     }
+
     /**
      *
      *
@@ -1655,6 +1707,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     public java.lang.String getBlockingResources(int index) {
       return blockingResources_.get(index);
     }
+
     /**
      *
      *
@@ -1671,6 +1724,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getBlockingResourcesBytes(int index) {
       return blockingResources_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1695,6 +1749,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1718,6 +1773,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1738,6 +1794,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1757,6 +1814,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

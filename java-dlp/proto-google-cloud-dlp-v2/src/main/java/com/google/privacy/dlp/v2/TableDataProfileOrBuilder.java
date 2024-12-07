@@ -36,6 +36,7 @@ public interface TableDataProfileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TableDataProfileOrBuilder
    * @return Whether the dataSourceType field is set.
    */
   boolean hasDataSourceType();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface TableDataProfileOrBuilder
    * @return The dataSourceType.
    */
   com.google.privacy.dlp.v2.DataSourceType getDataSourceType();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface TableDataProfileOrBuilder
    * @return The projectDataProfile.
    */
   java.lang.String getProjectDataProfile();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface TableDataProfileOrBuilder
    * @return The datasetProjectId.
    */
   java.lang.String getDatasetProjectId();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface TableDataProfileOrBuilder
    * @return The datasetLocation.
    */
   java.lang.String getDatasetLocation();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface TableDataProfileOrBuilder
    * @return The datasetId.
    */
   java.lang.String getDatasetId();
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public interface TableDataProfileOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public interface TableDataProfileOrBuilder
    * @return The fullResource.
    */
   java.lang.String getFullResource();
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public interface TableDataProfileOrBuilder
    * @return Whether the profileStatus field is set.
    */
   boolean hasProfileStatus();
+
   /**
    *
    *
@@ -268,6 +278,7 @@ public interface TableDataProfileOrBuilder
    * @return The profileStatus.
    */
   com.google.privacy.dlp.v2.ProfileStatus getProfileStatus();
+
   /**
    *
    *
@@ -292,6 +303,7 @@ public interface TableDataProfileOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -317,6 +329,7 @@ public interface TableDataProfileOrBuilder
    * @return Whether the sensitivityScore field is set.
    */
   boolean hasSensitivityScore();
+
   /**
    *
    *
@@ -329,6 +342,7 @@ public interface TableDataProfileOrBuilder
    * @return The sensitivityScore.
    */
   com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore();
+
   /**
    *
    *
@@ -352,6 +366,7 @@ public interface TableDataProfileOrBuilder
    * @return Whether the dataRiskLevel field is set.
    */
   boolean hasDataRiskLevel();
+
   /**
    *
    *
@@ -364,6 +379,7 @@ public interface TableDataProfileOrBuilder
    * @return The dataRiskLevel.
    */
   com.google.privacy.dlp.v2.DataRiskLevel getDataRiskLevel();
+
   /**
    *
    *
@@ -385,6 +401,7 @@ public interface TableDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSummary predicted_info_types = 27;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.InfoTypeSummary> getPredictedInfoTypesList();
+
   /**
    *
    *
@@ -395,6 +412,7 @@ public interface TableDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSummary predicted_info_types = 27;</code>
    */
   com.google.privacy.dlp.v2.InfoTypeSummary getPredictedInfoTypes(int index);
+
   /**
    *
    *
@@ -405,6 +423,7 @@ public interface TableDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSummary predicted_info_types = 27;</code>
    */
   int getPredictedInfoTypesCount();
+
   /**
    *
    *
@@ -416,6 +435,7 @@ public interface TableDataProfileOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeSummaryOrBuilder>
       getPredictedInfoTypesOrBuilderList();
+
   /**
    *
    *
@@ -437,6 +457,7 @@ public interface TableDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.OtherInfoTypeSummary other_info_types = 28;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.OtherInfoTypeSummary> getOtherInfoTypesList();
+
   /**
    *
    *
@@ -447,6 +468,7 @@ public interface TableDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.OtherInfoTypeSummary other_info_types = 28;</code>
    */
   com.google.privacy.dlp.v2.OtherInfoTypeSummary getOtherInfoTypes(int index);
+
   /**
    *
    *
@@ -457,6 +479,7 @@ public interface TableDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.OtherInfoTypeSummary other_info_types = 28;</code>
    */
   int getOtherInfoTypesCount();
+
   /**
    *
    *
@@ -468,6 +491,7 @@ public interface TableDataProfileOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.OtherInfoTypeSummaryOrBuilder>
       getOtherInfoTypesOrBuilderList();
+
   /**
    *
    *
@@ -491,6 +515,7 @@ public interface TableDataProfileOrBuilder
    * @return Whether the configSnapshot field is set.
    */
   boolean hasConfigSnapshot();
+
   /**
    *
    *
@@ -503,6 +528,7 @@ public interface TableDataProfileOrBuilder
    * @return The configSnapshot.
    */
   com.google.privacy.dlp.v2.DataProfileConfigSnapshot getConfigSnapshot();
+
   /**
    *
    *
@@ -526,6 +552,7 @@ public interface TableDataProfileOrBuilder
    * @return Whether the lastModifiedTime field is set.
    */
   boolean hasLastModifiedTime();
+
   /**
    *
    *
@@ -538,6 +565,7 @@ public interface TableDataProfileOrBuilder
    * @return The lastModifiedTime.
    */
   com.google.protobuf.Timestamp getLastModifiedTime();
+
   /**
    *
    *
@@ -561,6 +589,7 @@ public interface TableDataProfileOrBuilder
    * @return Whether the expirationTime field is set.
    */
   boolean hasExpirationTime();
+
   /**
    *
    *
@@ -573,6 +602,7 @@ public interface TableDataProfileOrBuilder
    * @return The expirationTime.
    */
   com.google.protobuf.Timestamp getExpirationTime();
+
   /**
    *
    *
@@ -649,6 +679,7 @@ public interface TableDataProfileOrBuilder
    * @return The enum numeric value on the wire for encryptionStatus.
    */
   int getEncryptionStatusValue();
+
   /**
    *
    *
@@ -674,6 +705,7 @@ public interface TableDataProfileOrBuilder
    * @return The enum numeric value on the wire for resourceVisibility.
    */
   int getResourceVisibilityValue();
+
   /**
    *
    *
@@ -699,6 +731,7 @@ public interface TableDataProfileOrBuilder
    * @return Whether the profileLastGenerated field is set.
    */
   boolean hasProfileLastGenerated();
+
   /**
    *
    *
@@ -711,6 +744,7 @@ public interface TableDataProfileOrBuilder
    * @return The profileLastGenerated.
    */
   com.google.protobuf.Timestamp getProfileLastGenerated();
+
   /**
    *
    *
@@ -732,6 +766,7 @@ public interface TableDataProfileOrBuilder
    * <code>map&lt;string, string&gt; resource_labels = 17;</code>
    */
   int getResourceLabelsCount();
+
   /**
    *
    *
@@ -742,9 +777,11 @@ public interface TableDataProfileOrBuilder
    * <code>map&lt;string, string&gt; resource_labels = 17;</code>
    */
   boolean containsResourceLabels(java.lang.String key);
+
   /** Use {@link #getResourceLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getResourceLabels();
+
   /**
    *
    *
@@ -755,6 +792,7 @@ public interface TableDataProfileOrBuilder
    * <code>map&lt;string, string&gt; resource_labels = 17;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap();
+
   /**
    *
    *
@@ -769,6 +807,7 @@ public interface TableDataProfileOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -792,6 +831,7 @@ public interface TableDataProfileOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -804,6 +844,7 @@ public interface TableDataProfileOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

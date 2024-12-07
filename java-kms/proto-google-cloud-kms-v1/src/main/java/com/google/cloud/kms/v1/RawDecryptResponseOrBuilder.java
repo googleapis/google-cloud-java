@@ -63,6 +63,7 @@ public interface RawDecryptResponseOrBuilder
    * @return Whether the plaintextCrc32c field is set.
    */
   boolean hasPlaintextCrc32C();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface RawDecryptResponseOrBuilder
    * @return The plaintextCrc32c.
    */
   com.google.protobuf.Int64Value getPlaintextCrc32C();
+
   /**
    *
    *
@@ -128,6 +130,7 @@ public interface RawDecryptResponseOrBuilder
    * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
+
   /**
    *
    *

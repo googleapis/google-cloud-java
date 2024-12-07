@@ -39,6 +39,7 @@ public interface UpdateLiveConfigRequestOrBuilder
    * @return Whether the liveConfig field is set.
    */
   boolean hasLiveConfig();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateLiveConfigRequestOrBuilder
    * @return The liveConfig.
    */
   com.google.cloud.video.stitcher.v1.LiveConfig getLiveConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface UpdateLiveConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface UpdateLiveConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

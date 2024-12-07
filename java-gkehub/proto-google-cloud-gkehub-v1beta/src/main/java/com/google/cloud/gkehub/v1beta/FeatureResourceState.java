@@ -35,6 +35,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1beta.FeatureResourceState)
     FeatureResourceStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FeatureResourceState.newBuilder() to construct.
   private FeatureResourceState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -151,6 +152,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -162,6 +164,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      * <code>ENABLING = 1;</code>
      */
     public static final int ENABLING_VALUE = 1;
+
     /**
      *
      *
@@ -173,6 +176,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -184,6 +188,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      * <code>DISABLING = 3;</code>
      */
     public static final int DISABLING_VALUE = 3;
+
     /**
      *
      *
@@ -194,6 +199,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      * <code>UPDATING = 4;</code>
      */
     public static final int UPDATING_VALUE = 4;
+
     /**
      *
      *
@@ -298,6 +304,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -313,6 +320,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -496,6 +504,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -680,6 +689,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -695,6 +705,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -713,6 +724,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +744,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.gkehub.v1beta.FeatureResourceState.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -753,6 +766,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

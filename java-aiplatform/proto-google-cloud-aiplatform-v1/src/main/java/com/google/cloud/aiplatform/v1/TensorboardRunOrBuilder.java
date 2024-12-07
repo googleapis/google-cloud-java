@@ -38,6 +38,7 @@ public interface TensorboardRunOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface TensorboardRunOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface TensorboardRunOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface TensorboardRunOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface TensorboardRunOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface TensorboardRunOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface TensorboardRunOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public interface TensorboardRunOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -237,9 +245,11 @@ public interface TensorboardRunOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public interface TensorboardRunOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -298,6 +309,7 @@ public interface TensorboardRunOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -339,6 +351,7 @@ public interface TensorboardRunOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

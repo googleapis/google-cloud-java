@@ -63,6 +63,7 @@ public enum Usage implements com.google.protobuf.ProtocolMessageEnum {
    * <code>USAGE_UNSPECIFIED = 0;</code>
    */
   public static final int USAGE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

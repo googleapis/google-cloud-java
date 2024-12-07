@@ -33,6 +33,7 @@ public final class EntityTypeMetadata extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.EntityTypeMetadata)
     EntityTypeMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EntityTypeMetadata.newBuilder() to construct.
   private EntityTypeMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class EntityTypeMetadata extends com.google.protobuf.GeneratedMessa
 
   public static final int INACTIVE_FIELD_NUMBER = 5;
   private boolean inactive_ = false;
+
   /**
    *
    *
@@ -239,6 +241,7 @@ public final class EntityTypeMetadata extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -421,6 +424,7 @@ public final class EntityTypeMetadata extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private boolean inactive_;
+
     /**
      *
      *
@@ -436,6 +440,7 @@ public final class EntityTypeMetadata extends com.google.protobuf.GeneratedMessa
     public boolean getInactive() {
       return inactive_;
     }
+
     /**
      *
      *
@@ -455,6 +460,7 @@ public final class EntityTypeMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface BackendServiceLogConfigOrBuilder
    * @return Whether the enable field is set.
    */
   boolean hasEnable();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface BackendServiceLogConfigOrBuilder
    * @return A list containing the optionalFields.
    */
   java.util.List<java.lang.String> getOptionalFieldsList();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface BackendServiceLogConfigOrBuilder
    * @return The count of optionalFields.
    */
   int getOptionalFieldsCount();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface BackendServiceLogConfigOrBuilder
    * @return The optionalFields at the given index.
    */
   java.lang.String getOptionalFields(int index);
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface BackendServiceLogConfigOrBuilder
    * @return Whether the optionalMode field is set.
    */
   boolean hasOptionalMode();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface BackendServiceLogConfigOrBuilder
    * @return The optionalMode.
    */
   java.lang.String getOptionalMode();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface BackendServiceLogConfigOrBuilder
    * @return Whether the sampleRate field is set.
    */
   boolean hasSampleRate();
+
   /**
    *
    *

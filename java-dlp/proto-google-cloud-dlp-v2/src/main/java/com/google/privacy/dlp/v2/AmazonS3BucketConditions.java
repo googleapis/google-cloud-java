@@ -33,6 +33,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.AmazonS3BucketConditions)
     AmazonS3BucketConditionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AmazonS3BucketConditions.newBuilder() to construct.
   private AmazonS3BucketConditions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
      * <code>TYPE_ALL_SUPPORTED = 1;</code>
      */
     public static final int TYPE_ALL_SUPPORTED_VALUE = 1;
+
     /**
      *
      *
@@ -308,6 +311,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
      * <code>UNSPECIFIED = 0;</code>
      */
     public static final int UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -318,6 +322,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
      * <code>ALL_SUPPORTED_CLASSES = 1;</code>
      */
     public static final int ALL_SUPPORTED_CLASSES_VALUE = 1;
+
     /**
      *
      *
@@ -328,6 +333,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
      * <code>STANDARD = 2;</code>
      */
     public static final int STANDARD_VALUE = 2;
+
     /**
      *
      *
@@ -338,6 +344,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
      * <code>STANDARD_INFREQUENT_ACCESS = 4;</code>
      */
     public static final int STANDARD_INFREQUENT_ACCESS_VALUE = 4;
+
     /**
      *
      *
@@ -348,6 +355,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
      * <code>GLACIER_INSTANT_RETRIEVAL = 6;</code>
      */
     public static final int GLACIER_INSTANT_RETRIEVAL_VALUE = 6;
+
     /**
      *
      *
@@ -472,6 +480,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
                   : result;
             }
           };
+
   /**
    *
    *
@@ -493,6 +502,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
         java.lang.Integer, com.google.privacy.dlp.v2.AmazonS3BucketConditions.BucketType>(
         bucketTypes_, bucketTypes_converter_);
   }
+
   /**
    *
    *
@@ -511,6 +521,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
   public int getBucketTypesCount() {
     return bucketTypes_.size();
   }
+
   /**
    *
    *
@@ -530,6 +541,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
   public com.google.privacy.dlp.v2.AmazonS3BucketConditions.BucketType getBucketTypes(int index) {
     return bucketTypes_converter_.convert(bucketTypes_.get(index));
   }
+
   /**
    *
    *
@@ -548,6 +560,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
   public java.util.List<java.lang.Integer> getBucketTypesValueList() {
     return bucketTypes_;
   }
+
   /**
    *
    *
@@ -592,6 +605,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
                   : result;
             }
           };
+
   /**
    *
    *
@@ -613,6 +627,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
         java.lang.Integer, com.google.privacy.dlp.v2.AmazonS3BucketConditions.ObjectStorageClass>(
         objectStorageClasses_, objectStorageClasses_converter_);
   }
+
   /**
    *
    *
@@ -631,6 +646,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
   public int getObjectStorageClassesCount() {
     return objectStorageClasses_.size();
   }
+
   /**
    *
    *
@@ -651,6 +667,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
       getObjectStorageClasses(int index) {
     return objectStorageClasses_converter_.convert(objectStorageClasses_.get(index));
   }
+
   /**
    *
    *
@@ -669,6 +686,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
   public java.util.List<java.lang.Integer> getObjectStorageClassesValueList() {
     return objectStorageClasses_;
   }
+
   /**
    *
    *
@@ -892,6 +910,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1145,6 +1164,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
         bitField0_ |= 0x00000001;
       }
     }
+
     /**
      *
      *
@@ -1165,6 +1185,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
           java.lang.Integer, com.google.privacy.dlp.v2.AmazonS3BucketConditions.BucketType>(
           bucketTypes_, bucketTypes_converter_);
     }
+
     /**
      *
      *
@@ -1182,6 +1203,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
     public int getBucketTypesCount() {
       return bucketTypes_.size();
     }
+
     /**
      *
      *
@@ -1200,6 +1222,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
     public com.google.privacy.dlp.v2.AmazonS3BucketConditions.BucketType getBucketTypes(int index) {
       return bucketTypes_converter_.convert(bucketTypes_.get(index));
     }
+
     /**
      *
      *
@@ -1226,6 +1249,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1251,6 +1275,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1301,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1322,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1313,6 +1340,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
     public java.util.List<java.lang.Integer> getBucketTypesValueList() {
       return java.util.Collections.unmodifiableList(bucketTypes_);
     }
+
     /**
      *
      *
@@ -1331,6 +1359,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
     public int getBucketTypesValue(int index) {
       return bucketTypes_.get(index);
     }
+
     /**
      *
      *
@@ -1353,6 +1382,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1404,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1407,6 +1438,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
         bitField0_ |= 0x00000002;
       }
     }
+
     /**
      *
      *
@@ -1427,6 +1459,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
           java.lang.Integer, com.google.privacy.dlp.v2.AmazonS3BucketConditions.ObjectStorageClass>(
           objectStorageClasses_, objectStorageClasses_converter_);
     }
+
     /**
      *
      *
@@ -1444,6 +1477,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
     public int getObjectStorageClassesCount() {
       return objectStorageClasses_.size();
     }
+
     /**
      *
      *
@@ -1463,6 +1497,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
         getObjectStorageClasses(int index) {
       return objectStorageClasses_converter_.convert(objectStorageClasses_.get(index));
     }
+
     /**
      *
      *
@@ -1489,6 +1524,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1514,6 +1550,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1540,6 +1577,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1560,6 +1598,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1577,6 +1616,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
     public java.util.List<java.lang.Integer> getObjectStorageClassesValueList() {
       return java.util.Collections.unmodifiableList(objectStorageClasses_);
     }
+
     /**
      *
      *
@@ -1595,6 +1635,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
     public int getObjectStorageClassesValue(int index) {
       return objectStorageClasses_.get(index);
     }
+
     /**
      *
      *
@@ -1617,6 +1658,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1680,7 @@ public final class AmazonS3BucketConditions extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

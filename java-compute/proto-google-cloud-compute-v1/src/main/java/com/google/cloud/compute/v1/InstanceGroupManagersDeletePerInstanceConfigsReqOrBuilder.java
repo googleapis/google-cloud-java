@@ -36,6 +36,7 @@ public interface InstanceGroupManagersDeletePerInstanceConfigsReqOrBuilder
    * @return A list containing the names.
    */
   java.util.List<java.lang.String> getNamesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstanceGroupManagersDeletePerInstanceConfigsReqOrBuilder
    * @return The count of names.
    */
   int getNamesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface InstanceGroupManagersDeletePerInstanceConfigsReqOrBuilder
    * @return The names at the given index.
    */
   java.lang.String getNames(int index);
+
   /**
    *
    *

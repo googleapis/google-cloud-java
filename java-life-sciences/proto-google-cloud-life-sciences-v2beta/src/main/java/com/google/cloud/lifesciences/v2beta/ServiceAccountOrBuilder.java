@@ -37,6 +37,7 @@ public interface ServiceAccountOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ServiceAccountOrBuilder
    * @return A list containing the scopes.
    */
   java.util.List<java.lang.String> getScopesList();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ServiceAccountOrBuilder
    * @return The count of scopes.
    */
   int getScopesCount();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface ServiceAccountOrBuilder
    * @return The scopes at the given index.
    */
   java.lang.String getScopes(int index);
+
   /**
    *
    *

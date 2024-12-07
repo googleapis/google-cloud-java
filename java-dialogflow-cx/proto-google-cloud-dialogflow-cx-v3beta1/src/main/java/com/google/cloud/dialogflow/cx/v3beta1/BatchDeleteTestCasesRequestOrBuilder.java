@@ -39,6 +39,7 @@ public interface BatchDeleteTestCasesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface BatchDeleteTestCasesRequestOrBuilder
    * @return A list containing the names.
    */
   java.util.List<java.lang.String> getNamesList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface BatchDeleteTestCasesRequestOrBuilder
    * @return The count of names.
    */
   int getNamesCount();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface BatchDeleteTestCasesRequestOrBuilder
    * @return The names at the given index.
    */
   java.lang.String getNames(int index);
+
   /**
    *
    *

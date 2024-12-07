@@ -36,6 +36,7 @@ public interface CheckUpgradeResponseOrBuilder
    * @return The buildLogUri.
    */
   java.lang.String getBuildLogUri();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CheckUpgradeResponseOrBuilder
    * @return The enum numeric value on the wire for containsPypiModulesConflict.
    */
   int getContainsPypiModulesConflictValue();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface CheckUpgradeResponseOrBuilder
    * @return The pypiConflictBuildLogExtract.
    */
   java.lang.String getPypiConflictBuildLogExtract();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface CheckUpgradeResponseOrBuilder
    * @return The imageVersion.
    */
   java.lang.String getImageVersion();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface CheckUpgradeResponseOrBuilder
    * <code>map&lt;string, string&gt; pypi_dependencies = 6;</code>
    */
   int getPypiDependenciesCount();
+
   /**
    *
    *
@@ -155,9 +160,11 @@ public interface CheckUpgradeResponseOrBuilder
    * <code>map&lt;string, string&gt; pypi_dependencies = 6;</code>
    */
   boolean containsPypiDependencies(java.lang.String key);
+
   /** Use {@link #getPypiDependenciesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getPypiDependencies();
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public interface CheckUpgradeResponseOrBuilder
    * <code>map&lt;string, string&gt; pypi_dependencies = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPypiDependenciesMap();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface CheckUpgradeResponseOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

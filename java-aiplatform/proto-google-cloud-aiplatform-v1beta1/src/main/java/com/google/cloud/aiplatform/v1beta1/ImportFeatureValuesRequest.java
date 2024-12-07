@@ -34,6 +34,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest)
     ImportFeatureValuesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportFeatureValuesRequest.newBuilder() to construct.
   private ImportFeatureValuesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      * @return The id.
      */
     java.lang.String getId();
+
     /**
      *
      *
@@ -111,6 +113,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      * @return The sourceField.
      */
     java.lang.String getSourceField();
+
     /**
      *
      *
@@ -125,6 +128,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      */
     com.google.protobuf.ByteString getSourceFieldBytes();
   }
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.FeatureSpec)
       FeatureSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FeatureSpec.newBuilder() to construct.
     private FeatureSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -175,6 +180,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -199,6 +205,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -228,6 +235,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sourceField_ = "";
+
     /**
      *
      *
@@ -252,6 +260,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -454,6 +463,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -667,6 +677,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       private int bitField0_;
 
       private java.lang.Object id_ = "";
+
       /**
        *
        *
@@ -690,6 +701,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -713,6 +725,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -735,6 +748,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -753,6 +767,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -778,6 +793,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
 
       private java.lang.Object sourceField_ = "";
+
       /**
        *
        *
@@ -801,6 +817,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -824,6 +841,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -846,6 +864,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -864,6 +883,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -974,6 +994,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1025,6 +1046,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     private FeatureTimeSourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1058,6 +1080,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   }
 
   public static final int AVRO_SOURCE_FIELD_NUMBER = 2;
+
   /**
    * <code>.google.cloud.aiplatform.v1beta1.AvroSource avro_source = 2;</code>
    *
@@ -1067,6 +1090,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   public boolean hasAvroSource() {
     return sourceCase_ == 2;
   }
+
   /**
    * <code>.google.cloud.aiplatform.v1beta1.AvroSource avro_source = 2;</code>
    *
@@ -1079,6 +1103,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     }
     return com.google.cloud.aiplatform.v1beta1.AvroSource.getDefaultInstance();
   }
+
   /** <code>.google.cloud.aiplatform.v1beta1.AvroSource avro_source = 2;</code> */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.AvroSourceOrBuilder getAvroSourceOrBuilder() {
@@ -1089,6 +1114,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   }
 
   public static final int BIGQUERY_SOURCE_FIELD_NUMBER = 3;
+
   /**
    * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_source = 3;</code>
    *
@@ -1098,6 +1124,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   public boolean hasBigquerySource() {
     return sourceCase_ == 3;
   }
+
   /**
    * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_source = 3;</code>
    *
@@ -1110,6 +1137,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     }
     return com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance();
   }
+
   /** <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_source = 3;</code> */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.BigQuerySourceOrBuilder getBigquerySourceOrBuilder() {
@@ -1120,6 +1148,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   }
 
   public static final int CSV_SOURCE_FIELD_NUMBER = 4;
+
   /**
    * <code>.google.cloud.aiplatform.v1beta1.CsvSource csv_source = 4;</code>
    *
@@ -1129,6 +1158,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   public boolean hasCsvSource() {
     return sourceCase_ == 4;
   }
+
   /**
    * <code>.google.cloud.aiplatform.v1beta1.CsvSource csv_source = 4;</code>
    *
@@ -1141,6 +1171,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     }
     return com.google.cloud.aiplatform.v1beta1.CsvSource.getDefaultInstance();
   }
+
   /** <code>.google.cloud.aiplatform.v1beta1.CsvSource csv_source = 4;</code> */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.CsvSourceOrBuilder getCsvSourceOrBuilder() {
@@ -1151,6 +1182,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   }
 
   public static final int FEATURE_TIME_FIELD_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -1166,6 +1198,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   public boolean hasFeatureTimeField() {
     return featureTimeSourceCase_ == 6;
   }
+
   /**
    *
    *
@@ -1194,6 +1227,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -1224,6 +1258,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   }
 
   public static final int FEATURE_TIME_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -1240,6 +1275,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   public boolean hasFeatureTime() {
     return featureTimeSourceCase_ == 7;
   }
+
   /**
    *
    *
@@ -1259,6 +1295,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1281,6 +1318,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entityType_ = "";
+
   /**
    *
    *
@@ -1308,6 +1346,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -1340,6 +1379,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entityIdField_ = "";
+
   /**
    *
    *
@@ -1364,6 +1404,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -1394,6 +1435,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.FeatureSpec>
       featureSpecs_;
+
   /**
    *
    *
@@ -1412,6 +1454,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       getFeatureSpecsList() {
     return featureSpecs_;
   }
+
   /**
    *
    *
@@ -1432,6 +1475,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       getFeatureSpecsOrBuilderList() {
     return featureSpecs_;
   }
+
   /**
    *
    *
@@ -1449,6 +1493,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   public int getFeatureSpecsCount() {
     return featureSpecs_.size();
   }
+
   /**
    *
    *
@@ -1467,6 +1512,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       int index) {
     return featureSpecs_.get(index);
   }
+
   /**
    *
    *
@@ -1488,6 +1534,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
 
   public static final int DISABLE_ONLINE_SERVING_FIELD_NUMBER = 9;
   private boolean disableOnlineServing_ = false;
+
   /**
    *
    *
@@ -1508,6 +1555,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
 
   public static final int WORKER_COUNT_FIELD_NUMBER = 11;
   private int workerCount_ = 0;
+
   /**
    *
    *
@@ -1531,6 +1579,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
 
   public static final int DISABLE_INGESTION_ANALYSIS_FIELD_NUMBER = 12;
   private boolean disableIngestionAnalysis_ = false;
+
   /**
    *
    *
@@ -1845,6 +1894,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2289,6 +2339,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1beta1.AvroSource.Builder,
             com.google.cloud.aiplatform.v1beta1.AvroSourceOrBuilder>
         avroSourceBuilder_;
+
     /**
      * <code>.google.cloud.aiplatform.v1beta1.AvroSource avro_source = 2;</code>
      *
@@ -2298,6 +2349,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     public boolean hasAvroSource() {
       return sourceCase_ == 2;
     }
+
     /**
      * <code>.google.cloud.aiplatform.v1beta1.AvroSource avro_source = 2;</code>
      *
@@ -2317,6 +2369,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return com.google.cloud.aiplatform.v1beta1.AvroSource.getDefaultInstance();
       }
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.AvroSource avro_source = 2;</code> */
     public Builder setAvroSource(com.google.cloud.aiplatform.v1beta1.AvroSource value) {
       if (avroSourceBuilder_ == null) {
@@ -2331,6 +2384,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       sourceCase_ = 2;
       return this;
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.AvroSource avro_source = 2;</code> */
     public Builder setAvroSource(
         com.google.cloud.aiplatform.v1beta1.AvroSource.Builder builderForValue) {
@@ -2343,6 +2397,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       sourceCase_ = 2;
       return this;
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.AvroSource avro_source = 2;</code> */
     public Builder mergeAvroSource(com.google.cloud.aiplatform.v1beta1.AvroSource value) {
       if (avroSourceBuilder_ == null) {
@@ -2367,6 +2422,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       sourceCase_ = 2;
       return this;
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.AvroSource avro_source = 2;</code> */
     public Builder clearAvroSource() {
       if (avroSourceBuilder_ == null) {
@@ -2384,10 +2440,12 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.AvroSource avro_source = 2;</code> */
     public com.google.cloud.aiplatform.v1beta1.AvroSource.Builder getAvroSourceBuilder() {
       return getAvroSourceFieldBuilder().getBuilder();
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.AvroSource avro_source = 2;</code> */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.AvroSourceOrBuilder getAvroSourceOrBuilder() {
@@ -2400,6 +2458,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return com.google.cloud.aiplatform.v1beta1.AvroSource.getDefaultInstance();
       }
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.AvroSource avro_source = 2;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.AvroSource,
@@ -2430,6 +2489,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1beta1.BigQuerySource.Builder,
             com.google.cloud.aiplatform.v1beta1.BigQuerySourceOrBuilder>
         bigquerySourceBuilder_;
+
     /**
      * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_source = 3;</code>
      *
@@ -2439,6 +2499,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     public boolean hasBigquerySource() {
       return sourceCase_ == 3;
     }
+
     /**
      * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_source = 3;</code>
      *
@@ -2458,6 +2519,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance();
       }
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_source = 3;</code> */
     public Builder setBigquerySource(com.google.cloud.aiplatform.v1beta1.BigQuerySource value) {
       if (bigquerySourceBuilder_ == null) {
@@ -2472,6 +2534,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       sourceCase_ = 3;
       return this;
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_source = 3;</code> */
     public Builder setBigquerySource(
         com.google.cloud.aiplatform.v1beta1.BigQuerySource.Builder builderForValue) {
@@ -2484,6 +2547,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       sourceCase_ = 3;
       return this;
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_source = 3;</code> */
     public Builder mergeBigquerySource(com.google.cloud.aiplatform.v1beta1.BigQuerySource value) {
       if (bigquerySourceBuilder_ == null) {
@@ -2508,6 +2572,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       sourceCase_ = 3;
       return this;
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_source = 3;</code> */
     public Builder clearBigquerySource() {
       if (bigquerySourceBuilder_ == null) {
@@ -2525,10 +2590,12 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_source = 3;</code> */
     public com.google.cloud.aiplatform.v1beta1.BigQuerySource.Builder getBigquerySourceBuilder() {
       return getBigquerySourceFieldBuilder().getBuilder();
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_source = 3;</code> */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.BigQuerySourceOrBuilder
@@ -2542,6 +2609,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance();
       }
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_source = 3;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.BigQuerySource,
@@ -2572,6 +2640,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1beta1.CsvSource.Builder,
             com.google.cloud.aiplatform.v1beta1.CsvSourceOrBuilder>
         csvSourceBuilder_;
+
     /**
      * <code>.google.cloud.aiplatform.v1beta1.CsvSource csv_source = 4;</code>
      *
@@ -2581,6 +2650,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     public boolean hasCsvSource() {
       return sourceCase_ == 4;
     }
+
     /**
      * <code>.google.cloud.aiplatform.v1beta1.CsvSource csv_source = 4;</code>
      *
@@ -2600,6 +2670,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return com.google.cloud.aiplatform.v1beta1.CsvSource.getDefaultInstance();
       }
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.CsvSource csv_source = 4;</code> */
     public Builder setCsvSource(com.google.cloud.aiplatform.v1beta1.CsvSource value) {
       if (csvSourceBuilder_ == null) {
@@ -2614,6 +2685,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       sourceCase_ = 4;
       return this;
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.CsvSource csv_source = 4;</code> */
     public Builder setCsvSource(
         com.google.cloud.aiplatform.v1beta1.CsvSource.Builder builderForValue) {
@@ -2626,6 +2698,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       sourceCase_ = 4;
       return this;
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.CsvSource csv_source = 4;</code> */
     public Builder mergeCsvSource(com.google.cloud.aiplatform.v1beta1.CsvSource value) {
       if (csvSourceBuilder_ == null) {
@@ -2650,6 +2723,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       sourceCase_ = 4;
       return this;
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.CsvSource csv_source = 4;</code> */
     public Builder clearCsvSource() {
       if (csvSourceBuilder_ == null) {
@@ -2667,10 +2741,12 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.CsvSource csv_source = 4;</code> */
     public com.google.cloud.aiplatform.v1beta1.CsvSource.Builder getCsvSourceBuilder() {
       return getCsvSourceFieldBuilder().getBuilder();
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.CsvSource csv_source = 4;</code> */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.CsvSourceOrBuilder getCsvSourceOrBuilder() {
@@ -2683,6 +2759,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return com.google.cloud.aiplatform.v1beta1.CsvSource.getDefaultInstance();
       }
     }
+
     /** <code>.google.cloud.aiplatform.v1beta1.CsvSource csv_source = 4;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.CsvSource,
@@ -2724,6 +2801,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     public boolean hasFeatureTimeField() {
       return featureTimeSourceCase_ == 6;
     }
+
     /**
      *
      *
@@ -2753,6 +2831,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2782,6 +2861,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2804,6 +2884,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2824,6 +2905,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2853,6 +2935,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         featureTimeBuilder_;
+
     /**
      *
      *
@@ -2869,6 +2952,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     public boolean hasFeatureTime() {
       return featureTimeSourceCase_ == 7;
     }
+
     /**
      *
      *
@@ -2895,6 +2979,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2918,6 +3003,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       featureTimeSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2938,6 +3024,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       featureTimeSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2971,6 +3058,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       featureTimeSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2997,6 +3085,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3010,6 +3099,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     public com.google.protobuf.Timestamp.Builder getFeatureTimeBuilder() {
       return getFeatureTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3031,6 +3121,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3066,6 +3157,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object entityType_ = "";
+
     /**
      *
      *
@@ -3092,6 +3184,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3118,6 +3211,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3143,6 +3237,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3164,6 +3259,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3192,6 +3288,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object entityIdField_ = "";
+
     /**
      *
      *
@@ -3215,6 +3312,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3238,6 +3336,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3260,6 +3359,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3278,6 +3378,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3344,6 +3445,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return featureSpecsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3364,6 +3466,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return featureSpecsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3385,6 +3488,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return featureSpecsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3413,6 +3517,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3439,6 +3544,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3466,6 +3572,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3494,6 +3601,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3519,6 +3627,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3545,6 +3654,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3572,6 +3682,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3595,6 +3706,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3618,6 +3730,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3635,6 +3748,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         getFeatureSpecsBuilder(int index) {
       return getFeatureSpecsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3656,6 +3770,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return featureSpecsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3679,6 +3794,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(featureSpecs_);
       }
     }
+
     /**
      *
      *
@@ -3699,6 +3815,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
               com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.FeatureSpec
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3720,6 +3837,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
               com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.FeatureSpec
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3758,6 +3876,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     }
 
     private boolean disableOnlineServing_;
+
     /**
      *
      *
@@ -3775,6 +3894,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     public boolean getDisableOnlineServing() {
       return disableOnlineServing_;
     }
+
     /**
      *
      *
@@ -3796,6 +3916,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3817,6 +3938,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     }
 
     private int workerCount_;
+
     /**
      *
      *
@@ -3837,6 +3959,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     public int getWorkerCount() {
       return workerCount_;
     }
+
     /**
      *
      *
@@ -3861,6 +3984,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3885,6 +4009,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     }
 
     private boolean disableIngestionAnalysis_;
+
     /**
      *
      *
@@ -3900,6 +4025,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     public boolean getDisableIngestionAnalysis() {
       return disableIngestionAnalysis_;
     }
+
     /**
      *
      *
@@ -3919,6 +4045,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface RegexValidationOrBuilder
    * @return A list containing the regexes.
    */
   java.util.List<java.lang.String> getRegexesList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface RegexValidationOrBuilder
    * @return The count of regexes.
    */
   int getRegexesCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface RegexValidationOrBuilder
    * @return The regexes at the given index.
    */
   java.lang.String getRegexes(int index);
+
   /**
    *
    *

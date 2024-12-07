@@ -41,6 +41,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return The instance.
    */
   com.google.cloud.alloydb.v1alpha.Instance getInstance();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

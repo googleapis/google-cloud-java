@@ -39,6 +39,7 @@ public interface NotificationChannelOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface NotificationChannelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface NotificationChannelOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public interface NotificationChannelOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public interface NotificationChannelOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -174,9 +179,11 @@ public interface NotificationChannelOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface NotificationChannelOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public interface NotificationChannelOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public interface NotificationChannelOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
   int getUserLabelsCount();
+
   /**
    *
    *
@@ -257,9 +267,11 @@ public interface NotificationChannelOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
   boolean containsUserLabels(java.lang.String key);
+
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserLabels();
+
   /**
    *
    *
@@ -278,6 +290,7 @@ public interface NotificationChannelOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
+
   /**
    *
    *
@@ -300,6 +313,7 @@ public interface NotificationChannelOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -350,6 +364,7 @@ public interface NotificationChannelOrBuilder
    * @return The enum numeric value on the wire for verificationStatus.
    */
   int getVerificationStatusValue();
+
   /**
    *
    *
@@ -399,6 +414,7 @@ public interface NotificationChannelOrBuilder
    * @return Whether the enabled field is set.
    */
   boolean hasEnabled();
+
   /**
    *
    *
@@ -416,6 +432,7 @@ public interface NotificationChannelOrBuilder
    * @return The enabled.
    */
   com.google.protobuf.BoolValue getEnabled();
+
   /**
    *
    *
@@ -444,6 +461,7 @@ public interface NotificationChannelOrBuilder
    * @return Whether the creationRecord field is set.
    */
   boolean hasCreationRecord();
+
   /**
    *
    *
@@ -456,6 +474,7 @@ public interface NotificationChannelOrBuilder
    * @return The creationRecord.
    */
   com.google.monitoring.v3.MutationRecord getCreationRecord();
+
   /**
    *
    *
@@ -477,6 +496,7 @@ public interface NotificationChannelOrBuilder
    * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
    */
   java.util.List<com.google.monitoring.v3.MutationRecord> getMutationRecordsList();
+
   /**
    *
    *
@@ -487,6 +507,7 @@ public interface NotificationChannelOrBuilder
    * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
    */
   com.google.monitoring.v3.MutationRecord getMutationRecords(int index);
+
   /**
    *
    *
@@ -497,6 +518,7 @@ public interface NotificationChannelOrBuilder
    * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
    */
   int getMutationRecordsCount();
+
   /**
    *
    *
@@ -508,6 +530,7 @@ public interface NotificationChannelOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.MutationRecordOrBuilder>
       getMutationRecordsOrBuilderList();
+
   /**
    *
    *

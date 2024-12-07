@@ -37,6 +37,7 @@ public interface ListSecurityCenterServicesResponseOrBuilder
    */
   java.util.List<com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
       getSecurityCenterServicesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListSecurityCenterServicesResponseOrBuilder
    */
   com.google.cloud.securitycentermanagement.v1.SecurityCenterService getSecurityCenterServices(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ListSecurityCenterServicesResponseOrBuilder
    * </code>
    */
   int getSecurityCenterServicesCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface ListSecurityCenterServicesResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.securitycentermanagement.v1.SecurityCenterServiceOrBuilder>
       getSecurityCenterServicesOrBuilderList();
+
   /**
    *
    *
@@ -103,6 +107,7 @@ public interface ListSecurityCenterServicesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

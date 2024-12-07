@@ -36,6 +36,7 @@ public interface GenerateStatelessSummaryResponseOrBuilder
    * @return Whether the summary field is set.
    */
   boolean hasSummary();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface GenerateStatelessSummaryResponseOrBuilder
    * @return The summary.
    */
   com.google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse.Summary getSummary();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface GenerateStatelessSummaryResponseOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
+
   /**
    *
    *

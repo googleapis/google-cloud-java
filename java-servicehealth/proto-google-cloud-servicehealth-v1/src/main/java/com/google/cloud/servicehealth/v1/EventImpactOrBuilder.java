@@ -36,6 +36,7 @@ public interface EventImpactOrBuilder
    * @return Whether the product field is set.
    */
   boolean hasProduct();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface EventImpactOrBuilder
    * @return The product.
    */
   com.google.cloud.servicehealth.v1.Product getProduct();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface EventImpactOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface EventImpactOrBuilder
    * @return The location.
    */
   com.google.cloud.servicehealth.v1.Location getLocation();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface BatchEnableServicesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface BatchEnableServicesRequestOrBuilder
    * @return A list containing the serviceIds.
    */
   java.util.List<java.lang.String> getServiceIdsList();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface BatchEnableServicesRequestOrBuilder
    * @return The count of serviceIds.
    */
   int getServiceIdsCount();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface BatchEnableServicesRequestOrBuilder
    * @return The serviceIds at the given index.
    */
   java.lang.String getServiceIds(int index);
+
   /**
    *
    *

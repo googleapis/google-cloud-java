@@ -36,6 +36,7 @@ public interface MetadataExchangeRequestOrBuilder
    * @return The userAgent.
    */
   java.lang.String getUserAgent();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface MetadataExchangeRequestOrBuilder
    * @return The enum numeric value on the wire for authType.
    */
   int getAuthTypeValue();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface MetadataExchangeRequestOrBuilder
    * @return The oauth2Token.
    */
   java.lang.String getOauth2Token();
+
   /**
    *
    *

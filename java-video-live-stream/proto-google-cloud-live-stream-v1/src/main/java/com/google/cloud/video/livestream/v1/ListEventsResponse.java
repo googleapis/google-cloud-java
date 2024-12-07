@@ -33,6 +33,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.ListEventsResponse)
     ListEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListEventsResponse.newBuilder() to construct.
   private ListEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.Event> events_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.video.livestream.v1.Event> getEventsList() {
     return events_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       getEventsOrBuilderList() {
     return events_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   public int getEventsCount() {
     return events_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.video.livestream.v1.Event getEvents(int index) {
     return events_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -222,6 +232,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -237,6 +248,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -440,6 +452,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -738,6 +751,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return eventsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return eventsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return eventsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +829,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +852,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +875,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +916,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +937,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +957,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +977,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +990,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.video.livestream.v1.Event.Builder getEventsBuilder(int index) {
       return getEventsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -981,6 +1007,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return eventsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -998,6 +1025,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(events_);
       }
     }
+
     /**
      *
      *
@@ -1011,6 +1039,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       return getEventsFieldBuilder()
           .addBuilder(com.google.cloud.video.livestream.v1.Event.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1024,6 +1053,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       return getEventsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.livestream.v1.Event.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1056,6 +1086,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1079,6 +1110,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1102,6 +1134,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1157,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1176,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1210,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1190,6 +1226,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -1204,6 +1241,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1219,6 +1257,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1234,6 +1273,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1257,6 +1297,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1279,6 +1320,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1340,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1316,6 +1359,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

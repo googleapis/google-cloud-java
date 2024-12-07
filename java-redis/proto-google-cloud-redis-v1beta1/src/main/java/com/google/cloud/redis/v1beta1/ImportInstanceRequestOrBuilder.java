@@ -38,6 +38,7 @@ public interface ImportInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ImportInstanceRequestOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ImportInstanceRequestOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.redis.v1beta1.InputConfig getInputConfig();
+
   /**
    *
    *

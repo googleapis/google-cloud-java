@@ -37,6 +37,7 @@ public interface ToolCallValidResultsOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ToolCallValidMetricValue>
       getToolCallValidMetricValuesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ToolCallValidResultsOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ToolCallValidMetricValue getToolCallValidMetricValues(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ToolCallValidResultsOrBuilder
    * </code>
    */
   int getToolCallValidMetricValuesCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface ToolCallValidResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ToolCallValidMetricValueOrBuilder>
       getToolCallValidMetricValuesOrBuilderList();
+
   /**
    *
    *

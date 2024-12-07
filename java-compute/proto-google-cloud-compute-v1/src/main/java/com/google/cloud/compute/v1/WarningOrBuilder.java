@@ -37,6 +37,7 @@ public interface WarningOrBuilder
    * @return Whether the code field is set.
    */
   boolean hasCode();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface WarningOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface WarningOrBuilder
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Data> getDataList();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface WarningOrBuilder
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
    */
   com.google.cloud.compute.v1.Data getData(int index);
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface WarningOrBuilder
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
    */
   int getDataCount();
+
   /**
    *
    *
@@ -104,6 +109,7 @@ public interface WarningOrBuilder
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.DataOrBuilder> getDataOrBuilderList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface WarningOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
+
   /**
    *
    *
@@ -139,6 +146,7 @@ public interface WarningOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *

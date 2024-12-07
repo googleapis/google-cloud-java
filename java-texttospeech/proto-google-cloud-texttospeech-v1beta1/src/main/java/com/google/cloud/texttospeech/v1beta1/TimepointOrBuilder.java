@@ -36,6 +36,7 @@ public interface TimepointOrBuilder
    * @return The markName.
    */
   java.lang.String getMarkName();
+
   /**
    *
    *

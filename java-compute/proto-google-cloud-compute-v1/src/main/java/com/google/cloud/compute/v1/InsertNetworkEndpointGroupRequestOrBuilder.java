@@ -38,6 +38,7 @@ public interface InsertNetworkEndpointGroupRequestOrBuilder
    * @return Whether the networkEndpointGroupResource field is set.
    */
   boolean hasNetworkEndpointGroupResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InsertNetworkEndpointGroupRequestOrBuilder
    * @return The networkEndpointGroupResource.
    */
   com.google.cloud.compute.v1.NetworkEndpointGroup getNetworkEndpointGroupResource();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface InsertNetworkEndpointGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface InsertNetworkEndpointGroupRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface InsertNetworkEndpointGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface InsertNetworkEndpointGroupRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

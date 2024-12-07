@@ -59,6 +59,7 @@ public interface SoftwareConfigOrBuilder
    * @return The imageVersion.
    */
   java.lang.String getImageVersion();
+
   /**
    *
    *
@@ -119,6 +120,7 @@ public interface SoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; airflow_config_overrides = 2;</code>
    */
   int getAirflowConfigOverridesCount();
+
   /**
    *
    *
@@ -143,9 +145,11 @@ public interface SoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; airflow_config_overrides = 2;</code>
    */
   boolean containsAirflowConfigOverrides(java.lang.String key);
+
   /** Use {@link #getAirflowConfigOverridesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAirflowConfigOverrides();
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public interface SoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; airflow_config_overrides = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAirflowConfigOverridesMap();
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public interface SoftwareConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -240,6 +246,7 @@ public interface SoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; pypi_packages = 3;</code>
    */
   int getPypiPackagesCount();
+
   /**
    *
    *
@@ -257,9 +264,11 @@ public interface SoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; pypi_packages = 3;</code>
    */
   boolean containsPypiPackages(java.lang.String key);
+
   /** Use {@link #getPypiPackagesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getPypiPackages();
+
   /**
    *
    *
@@ -277,6 +286,7 @@ public interface SoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; pypi_packages = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPypiPackagesMap();
+
   /**
    *
    *
@@ -298,6 +308,7 @@ public interface SoftwareConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -347,6 +358,7 @@ public interface SoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; env_variables = 4;</code>
    */
   int getEnvVariablesCount();
+
   /**
    *
    *
@@ -378,9 +390,11 @@ public interface SoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; env_variables = 4;</code>
    */
   boolean containsEnvVariables(java.lang.String key);
+
   /** Use {@link #getEnvVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEnvVariables();
+
   /**
    *
    *
@@ -412,6 +426,7 @@ public interface SoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; env_variables = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getEnvVariablesMap();
+
   /**
    *
    *
@@ -447,6 +462,7 @@ public interface SoftwareConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -499,6 +515,7 @@ public interface SoftwareConfigOrBuilder
    * @return The pythonVersion.
    */
   java.lang.String getPythonVersion();
+
   /**
    *
    *
@@ -550,6 +567,7 @@ public interface SoftwareConfigOrBuilder
    * @return Whether the cloudDataLineageIntegration field is set.
    */
   boolean hasCloudDataLineageIntegration();
+
   /**
    *
    *
@@ -565,6 +583,7 @@ public interface SoftwareConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration
       getCloudDataLineageIntegration();
+
   /**
    *
    *
@@ -597,6 +616,7 @@ public interface SoftwareConfigOrBuilder
    * @return The enum numeric value on the wire for webServerPluginsMode.
    */
   int getWebServerPluginsModeValue();
+
   /**
    *
    *

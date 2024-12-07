@@ -33,6 +33,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.datafusion.v1beta1.AddDnsPeeringRequest)
     AddDnsPeeringRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddDnsPeeringRequest.newBuilder() to construct.
   private AddDnsPeeringRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
 
   public static final int DNS_PEERING_FIELD_NUMBER = 2;
   private com.google.cloud.datafusion.v1beta1.DnsPeering dnsPeering_;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
   public boolean hasDnsPeering() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.datafusion.v1beta1.DnsPeering.getDefaultInstance()
         : dnsPeering_;
   }
+
   /**
    *
    *
@@ -343,6 +349,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -556,6 +563,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -580,6 +588,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -604,6 +613,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -627,6 +637,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +657,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +689,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.datafusion.v1beta1.DnsPeering.Builder,
             com.google.cloud.datafusion.v1beta1.DnsPeeringOrBuilder>
         dnsPeeringBuilder_;
+
     /**
      *
      *
@@ -691,6 +704,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
     public boolean hasDnsPeering() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -711,6 +725,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
         return dnsPeeringBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -733,6 +748,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +769,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +797,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +817,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +832,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getDnsPeeringFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -831,6 +851,7 @@ public final class AddDnsPeeringRequest extends com.google.protobuf.GeneratedMes
             : dnsPeering_;
       }
     }
+
     /**
      *
      *

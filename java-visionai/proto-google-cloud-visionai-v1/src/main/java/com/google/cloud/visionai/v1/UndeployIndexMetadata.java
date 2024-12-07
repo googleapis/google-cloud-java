@@ -33,6 +33,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.UndeployIndexMetadata)
     UndeployIndexMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UndeployIndexMetadata.newBuilder() to construct.
   private UndeployIndexMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int OPERATION_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.OperationMetadata operationMetadata_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasOperationMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.visionai.v1.OperationMetadata.getDefaultInstance()
         : operationMetadata_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deployedIndex_ = "";
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -342,6 +348,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -564,6 +571,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
             com.google.cloud.visionai.v1.OperationMetadata.Builder,
             com.google.cloud.visionai.v1.OperationMetadataOrBuilder>
         operationMetadataBuilder_;
+
     /**
      *
      *
@@ -578,6 +586,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasOperationMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -598,6 +607,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
         return operationMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -620,6 +630,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +680,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +700,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +715,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getOperationMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -719,6 +734,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
             : operationMetadata_;
       }
     }
+
     /**
      *
      *
@@ -746,6 +762,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object deployedIndex_ = "";
+
     /**
      *
      *
@@ -770,6 +787,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -794,6 +812,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -817,6 +836,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +856,7 @@ public final class UndeployIndexMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface FindClosestBuildingInsightsRequestOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface FindClosestBuildingInsightsRequestOrBuilder
    * @return The location.
    */
   com.google.type.LatLng getLocation();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface FindClosestBuildingInsightsRequestOrBuilder
    * @return The enum numeric value on the wire for requiredQuality.
    */
   int getRequiredQualityValue();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListBudgetsResponseOrBuilder
    * <code>repeated .google.cloud.billing.budgets.v1beta1.Budget budgets = 1;</code>
    */
   java.util.List<com.google.cloud.billing.budgets.v1beta1.Budget> getBudgetsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListBudgetsResponseOrBuilder
    * <code>repeated .google.cloud.billing.budgets.v1beta1.Budget budgets = 1;</code>
    */
   com.google.cloud.billing.budgets.v1beta1.Budget getBudgets(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListBudgetsResponseOrBuilder
    * <code>repeated .google.cloud.billing.budgets.v1beta1.Budget budgets = 1;</code>
    */
   int getBudgetsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListBudgetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.billing.budgets.v1beta1.BudgetOrBuilder>
       getBudgetsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListBudgetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

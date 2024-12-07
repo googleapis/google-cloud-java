@@ -33,6 +33,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.DataplexSpec)
     DataplexSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataplexSpec.newBuilder() to construct.
   private DataplexSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object asset_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_FORMAT_FIELD_NUMBER = 2;
   private com.google.cloud.datacatalog.v1.PhysicalSchema dataFormat_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataFormat() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datacatalog.v1.PhysicalSchema.getDefaultInstance()
         : dataFormat_;
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object compressionFormat_ = "";
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -468,6 +478,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -710,6 +721,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object asset_ = "";
+
     /**
      *
      *
@@ -734,6 +746,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -758,6 +771,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -781,6 +795,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +815,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +847,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.PhysicalSchema.Builder,
             com.google.cloud.datacatalog.v1.PhysicalSchemaOrBuilder>
         dataFormatBuilder_;
+
     /**
      *
      *
@@ -845,6 +862,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataFormat() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -865,6 +883,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
         return dataFormatBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +955,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +975,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +990,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDataFormatFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -985,6 +1009,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
             : dataFormat_;
       }
     }
+
     /**
      *
      *
@@ -1012,6 +1037,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object compressionFormat_ = "";
+
     /**
      *
      *
@@ -1034,6 +1060,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1083,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1077,6 +1105,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1123,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1148,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -1142,6 +1173,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1166,6 +1198,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1222,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1242,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

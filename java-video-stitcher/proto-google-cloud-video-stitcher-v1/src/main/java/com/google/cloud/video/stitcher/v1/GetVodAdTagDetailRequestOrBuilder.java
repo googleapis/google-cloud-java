@@ -40,6 +40,7 @@ public interface GetVodAdTagDetailRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

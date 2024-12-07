@@ -39,6 +39,7 @@ public interface CustomTargetOrBuilder
    * @return The customTargetType.
    */
   java.lang.String getCustomTargetType();
+
   /**
    *
    *

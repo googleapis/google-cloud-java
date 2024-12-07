@@ -36,6 +36,7 @@ public interface ValueFrequencyOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ValueFrequencyOrBuilder
    * @return The value.
    */
   com.google.privacy.dlp.v2.Value getValue();
+
   /**
    *
    *

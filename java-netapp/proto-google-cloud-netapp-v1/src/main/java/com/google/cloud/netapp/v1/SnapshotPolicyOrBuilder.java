@@ -37,6 +37,7 @@ public interface SnapshotPolicyOrBuilder
    * @return Whether the enabled field is set.
    */
   boolean hasEnabled();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SnapshotPolicyOrBuilder
    * @return Whether the hourlySchedule field is set.
    */
   boolean hasHourlySchedule();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface SnapshotPolicyOrBuilder
    * @return The hourlySchedule.
    */
   com.google.cloud.netapp.v1.HourlySchedule getHourlySchedule();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface SnapshotPolicyOrBuilder
    * @return Whether the dailySchedule field is set.
    */
   boolean hasDailySchedule();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface SnapshotPolicyOrBuilder
    * @return The dailySchedule.
    */
   com.google.cloud.netapp.v1.DailySchedule getDailySchedule();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface SnapshotPolicyOrBuilder
    * @return Whether the weeklySchedule field is set.
    */
   boolean hasWeeklySchedule();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface SnapshotPolicyOrBuilder
    * @return The weeklySchedule.
    */
   com.google.cloud.netapp.v1.WeeklySchedule getWeeklySchedule();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface SnapshotPolicyOrBuilder
    * @return Whether the monthlySchedule field is set.
    */
   boolean hasMonthlySchedule();
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public interface SnapshotPolicyOrBuilder
    * @return The monthlySchedule.
    */
   com.google.cloud.netapp.v1.MonthlySchedule getMonthlySchedule();
+
   /**
    *
    *

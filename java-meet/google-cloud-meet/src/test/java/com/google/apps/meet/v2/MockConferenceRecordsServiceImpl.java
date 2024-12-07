@@ -94,7 +94,8 @@ public class MockConferenceRecordsServiceImpl extends ConferenceRecordsServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListConferenceRecords, expected %s or %s",
+                  "Unrecognized response type %s for method ListConferenceRecords, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConferenceRecordsResponse.class.getName(),
                   Exception.class.getName())));
@@ -157,7 +158,8 @@ public class MockConferenceRecordsServiceImpl extends ConferenceRecordsServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetParticipantSession, expected %s or %s",
+                  "Unrecognized response type %s for method GetParticipantSession, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ParticipantSession.class.getName(),
                   Exception.class.getName())));
@@ -179,7 +181,8 @@ public class MockConferenceRecordsServiceImpl extends ConferenceRecordsServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListParticipantSessions, expected %s or %s",
+                  "Unrecognized response type %s for method ListParticipantSessions, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListParticipantSessionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -306,7 +309,8 @@ public class MockConferenceRecordsServiceImpl extends ConferenceRecordsServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListTranscriptEntries, expected %s or %s",
+                  "Unrecognized response type %s for method ListTranscriptEntries, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListTranscriptEntriesResponse.class.getName(),
                   Exception.class.getName())));

@@ -50,6 +50,7 @@ public interface MerchantCenterFeedFilterOrBuilder
    * @return The primaryFeedName.
    */
   java.lang.String getPrimaryFeedName();
+
   /**
    *
    *

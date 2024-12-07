@@ -37,6 +37,7 @@ public interface UpdateEkmConfigRequestOrBuilder
    * @return Whether the ekmConfig field is set.
    */
   boolean hasEkmConfig();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface UpdateEkmConfigRequestOrBuilder
    * @return The ekmConfig.
    */
   com.google.cloud.kms.v1.EkmConfig getEkmConfig();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface UpdateEkmConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface UpdateEkmConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

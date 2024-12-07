@@ -36,6 +36,7 @@ public interface EvaluationReferenceOrBuilder
    * @return The operation.
    */
   java.lang.String getOperation();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface EvaluationReferenceOrBuilder
    * @return The evaluation.
    */
   java.lang.String getEvaluation();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface EvaluationReferenceOrBuilder
    * @return Whether the aggregateMetrics field is set.
    */
   boolean hasAggregateMetrics();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface EvaluationReferenceOrBuilder
    * @return The aggregateMetrics.
    */
   com.google.cloud.documentai.v1beta3.Evaluation.Metrics getAggregateMetrics();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface EvaluationReferenceOrBuilder
    * @return Whether the aggregateMetricsExact field is set.
    */
   boolean hasAggregateMetricsExact();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface EvaluationReferenceOrBuilder
    * @return The aggregateMetricsExact.
    */
   com.google.cloud.documentai.v1beta3.Evaluation.Metrics getAggregateMetricsExact();
+
   /**
    *
    *

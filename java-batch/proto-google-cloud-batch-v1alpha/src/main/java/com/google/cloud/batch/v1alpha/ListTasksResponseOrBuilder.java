@@ -34,6 +34,7 @@ public interface ListTasksResponseOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.Task tasks = 1;</code>
    */
   java.util.List<com.google.cloud.batch.v1alpha.Task> getTasksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTasksResponseOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.Task tasks = 1;</code>
    */
   com.google.cloud.batch.v1alpha.Task getTasks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTasksResponseOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.Task tasks = 1;</code>
    */
   int getTasksCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListTasksResponseOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.Task tasks = 1;</code>
    */
   java.util.List<? extends com.google.cloud.batch.v1alpha.TaskOrBuilder> getTasksOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface ListTasksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface ListTasksResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface ListTasksResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -137,6 +144,7 @@ public interface ListTasksResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

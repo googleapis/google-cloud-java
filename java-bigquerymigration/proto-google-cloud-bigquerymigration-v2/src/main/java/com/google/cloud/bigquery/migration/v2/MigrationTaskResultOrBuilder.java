@@ -37,6 +37,7 @@ public interface MigrationTaskResultOrBuilder
    * @return Whether the translationTaskResult field is set.
    */
   boolean hasTranslationTaskResult();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface MigrationTaskResultOrBuilder
    * @return The translationTaskResult.
    */
   com.google.cloud.bigquery.migration.v2.TranslationTaskResult getTranslationTaskResult();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface DeliveryPipelineNotificationEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DeliveryPipelineNotificationEventOrBuilder
    * @return The pipelineUid.
    */
   java.lang.String getPipelineUid();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface DeliveryPipelineNotificationEventOrBuilder
    * @return The deliveryPipeline.
    */
   java.lang.String getDeliveryPipeline();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface DeliveryPipelineNotificationEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.ContainerImageSignature)
     ContainerImageSignatureOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ContainerImageSignature.newBuilder() to construct.
   private ContainerImageSignature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
 
   public static final int PAYLOAD_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString payload_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
 
   public static final int SIGNATURE_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
 
   public static final int PUBLIC_KEY_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString publicKey_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
 
   public static final int SIG_ALG_FIELD_NUMBER = 4;
   private int sigAlg_ = 0;
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
   public int getSigAlgValue() {
     return sigAlg_;
   }
+
   /**
    *
    *
@@ -362,6 +368,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -589,6 +596,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
     private int bitField0_;
 
     private com.google.protobuf.ByteString payload_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -606,6 +614,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getPayload() {
       return payload_;
     }
+
     /**
      *
      *
@@ -629,6 +638,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
     }
 
     private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -671,6 +682,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getSignature() {
       return signature_;
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
     }
 
     private com.google.protobuf.ByteString publicKey_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getPublicKey() {
       return publicKey_;
     }
+
     /**
      *
      *
@@ -759,6 +774,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +794,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
     }
 
     private int sigAlg_ = 0;
+
     /**
      *
      *
@@ -795,6 +812,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
     public int getSigAlgValue() {
       return sigAlg_;
     }
+
     /**
      *
      *
@@ -815,6 +833,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +855,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
           ? com.google.cloud.confidentialcomputing.v1.SigningAlgorithm.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -859,6 +879,7 @@ public final class ContainerImageSignature extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

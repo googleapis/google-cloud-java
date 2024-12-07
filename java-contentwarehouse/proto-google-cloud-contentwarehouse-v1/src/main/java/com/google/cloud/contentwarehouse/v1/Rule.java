@@ -33,6 +33,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.Rule)
     RuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Rule.newBuilder() to construct.
   private Rule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -140,6 +141,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
+
     /**
      *
      *
@@ -150,6 +152,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * <code>ON_CREATE = 1;</code>
      */
     public static final int ON_CREATE_VALUE = 1;
+
     /**
      *
      *
@@ -160,6 +163,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * <code>ON_UPDATE = 4;</code>
      */
     public static final int ON_UPDATE_VALUE = 4;
+
     /**
      *
      *
@@ -170,6 +174,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * <code>ON_CREATE_LINK = 7;</code>
      */
     public static final int ON_CREATE_LINK_VALUE = 7;
+
     /**
      *
      *
@@ -272,6 +277,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -323,6 +330,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ruleId_ = "";
+
   /**
    *
    *
@@ -347,6 +355,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -374,6 +383,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRIGGER_TYPE_FIELD_NUMBER = 3;
   private int triggerType_ = 0;
+
   /**
    *
    *
@@ -389,6 +399,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public int getTriggerTypeValue() {
     return triggerType_;
   }
+
   /**
    *
    *
@@ -413,6 +424,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object condition_ = "";
+
   /**
    *
    *
@@ -439,6 +451,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -470,6 +483,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.Action> actions_;
+
   /**
    *
    *
@@ -483,6 +497,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.contentwarehouse.v1.Action> getActionsList() {
     return actions_;
   }
+
   /**
    *
    *
@@ -497,6 +512,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       getActionsOrBuilderList() {
     return actions_;
   }
+
   /**
    *
    *
@@ -510,6 +526,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public int getActionsCount() {
     return actions_.size();
   }
+
   /**
    *
    *
@@ -523,6 +540,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.contentwarehouse.v1.Action getActions(int index) {
     return actions_.get(index);
   }
+
   /**
    *
    *
@@ -734,6 +752,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1020,6 +1039,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1042,6 +1062,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1085,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1085,6 +1107,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1125,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1150,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ruleId_ = "";
+
     /**
      *
      *
@@ -1149,6 +1174,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1198,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1194,6 +1221,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1240,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1266,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int triggerType_ = 0;
+
     /**
      *
      *
@@ -1252,6 +1282,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getTriggerTypeValue() {
       return triggerType_;
     }
+
     /**
      *
      *
@@ -1270,6 +1301,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1289,6 +1321,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.contentwarehouse.v1.Rule.TriggerType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1310,6 +1343,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1329,6 +1363,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object condition_ = "";
+
     /**
      *
      *
@@ -1354,6 +1389,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1379,6 +1415,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1403,6 +1440,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1423,6 +1461,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1481,6 +1520,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return actionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1497,6 +1537,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return actionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1513,6 +1554,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return actionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1535,6 +1577,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1555,6 +1598,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1577,6 +1621,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1599,6 +1644,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1618,6 +1664,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1685,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1658,6 +1706,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1677,6 +1726,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1696,6 +1746,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1708,6 +1759,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.Action.Builder getActionsBuilder(int index) {
       return getActionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1724,6 +1776,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return actionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1741,6 +1794,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(actions_);
       }
     }
+
     /**
      *
      *
@@ -1754,6 +1808,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       return getActionsFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.Action.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1767,6 +1822,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       return getActionsFieldBuilder()
           .addBuilder(index, com.google.cloud.contentwarehouse.v1.Action.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DeleteFeatureValuesResponse)
     DeleteFeatureValuesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteFeatureValuesResponse.newBuilder() to construct.
   private DeleteFeatureValuesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -96,6 +97,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
      */
     long getOnlineStorageDeletedEntityCount();
   }
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DeleteFeatureValuesResponse.SelectEntity)
       SelectEntityOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SelectEntity.newBuilder() to construct.
     private SelectEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -141,6 +144,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
 
     public static final int OFFLINE_STORAGE_DELETED_ENTITY_ROW_COUNT_FIELD_NUMBER = 1;
     private long offlineStorageDeletedEntityRowCount_ = 0L;
+
     /**
      *
      *
@@ -161,6 +165,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
 
     public static final int ONLINE_STORAGE_DELETED_ENTITY_COUNT_FIELD_NUMBER = 2;
     private long onlineStorageDeletedEntityCount_ = 0L;
+
     /**
      *
      *
@@ -365,6 +370,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -576,6 +582,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       private int bitField0_;
 
       private long offlineStorageDeletedEntityRowCount_;
+
       /**
        *
        *
@@ -593,6 +600,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       public long getOfflineStorageDeletedEntityRowCount() {
         return offlineStorageDeletedEntityRowCount_;
       }
+
       /**
        *
        *
@@ -614,6 +622,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -635,6 +644,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       }
 
       private long onlineStorageDeletedEntityCount_;
+
       /**
        *
        *
@@ -651,6 +661,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       public long getOnlineStorageDeletedEntityCount() {
         return onlineStorageDeletedEntityCount_;
       }
+
       /**
        *
        *
@@ -671,6 +682,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -811,6 +823,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
      */
     long getOnlineStorageModifiedEntityCount();
   }
+
   /**
    *
    *
@@ -826,6 +839,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DeleteFeatureValuesResponse.SelectTimeRangeAndFeature)
       SelectTimeRangeAndFeatureOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SelectTimeRangeAndFeature.newBuilder() to construct.
     private SelectTimeRangeAndFeature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -858,6 +872,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
 
     public static final int IMPACTED_FEATURE_COUNT_FIELD_NUMBER = 1;
     private long impactedFeatureCount_ = 0L;
+
     /**
      *
      *
@@ -877,6 +892,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
 
     public static final int OFFLINE_STORAGE_MODIFIED_ENTITY_ROW_COUNT_FIELD_NUMBER = 2;
     private long offlineStorageModifiedEntityRowCount_ = 0L;
+
     /**
      *
      *
@@ -899,6 +915,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
 
     public static final int ONLINE_STORAGE_MODIFIED_ENTITY_COUNT_FIELD_NUMBER = 3;
     private long onlineStorageModifiedEntityCount_ = 0L;
+
     /**
      *
      *
@@ -1132,6 +1149,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1369,6 +1387,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       private int bitField0_;
 
       private long impactedFeatureCount_;
+
       /**
        *
        *
@@ -1385,6 +1404,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       public long getImpactedFeatureCount() {
         return impactedFeatureCount_;
       }
+
       /**
        *
        *
@@ -1405,6 +1425,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1425,6 +1446,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       }
 
       private long offlineStorageModifiedEntityRowCount_;
+
       /**
        *
        *
@@ -1444,6 +1466,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       public long getOfflineStorageModifiedEntityRowCount() {
         return offlineStorageModifiedEntityRowCount_;
       }
+
       /**
        *
        *
@@ -1467,6 +1490,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1490,6 +1514,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       }
 
       private long onlineStorageModifiedEntityCount_;
+
       /**
        *
        *
@@ -1508,6 +1533,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       public long getOnlineStorageModifiedEntityCount() {
         return onlineStorageModifiedEntityCount_;
       }
+
       /**
        *
        *
@@ -1530,6 +1556,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1639,6 +1666,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
     private ResponseCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1672,6 +1700,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
   }
 
   public static final int SELECT_ENTITY_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1689,6 +1718,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
   public boolean hasSelectEntity() {
     return responseCase_ == 1;
   }
+
   /**
    *
    *
@@ -1712,6 +1742,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
     return com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesResponse.SelectEntity
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1735,6 +1766,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
   }
 
   public static final int SELECT_TIME_RANGE_AND_FEATURE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1752,6 +1784,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
   public boolean hasSelectTimeRangeAndFeature() {
     return responseCase_ == 2;
   }
+
   /**
    *
    *
@@ -1776,6 +1809,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
     return com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesResponse.SelectTimeRangeAndFeature
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2002,6 +2036,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2244,6 +2279,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
             com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesResponse.SelectEntity.Builder,
             com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesResponse.SelectEntityOrBuilder>
         selectEntityBuilder_;
+
     /**
      *
      *
@@ -2261,6 +2297,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
     public boolean hasSelectEntity() {
       return responseCase_ == 1;
     }
+
     /**
      *
      *
@@ -2292,6 +2329,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2317,6 +2355,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2340,6 +2379,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2379,6 +2419,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2406,6 +2447,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2421,6 +2463,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
         getSelectEntityBuilder() {
       return getSelectEntityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2446,6 +2489,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2494,6 +2538,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
             com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesResponse
                 .SelectTimeRangeAndFeatureOrBuilder>
         selectTimeRangeAndFeatureBuilder_;
+
     /**
      *
      *
@@ -2511,6 +2556,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
     public boolean hasSelectTimeRangeAndFeature() {
       return responseCase_ == 2;
     }
+
     /**
      *
      *
@@ -2543,6 +2589,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
             .SelectTimeRangeAndFeature.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2569,6 +2616,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2593,6 +2641,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2634,6 +2683,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2661,6 +2711,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2677,6 +2728,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
         getSelectTimeRangeAndFeatureBuilder() {
       return getSelectTimeRangeAndFeatureFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2704,6 +2756,7 @@ public final class DeleteFeatureValuesResponse extends com.google.protobuf.Gener
             .SelectTimeRangeAndFeature.getDefaultInstance();
       }
     }
+
     /**
      *
      *

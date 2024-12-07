@@ -38,6 +38,7 @@ public interface QueryAssetsOutputConfigOrBuilder
    * @return Whether the bigqueryDestination field is set.
    */
   boolean hasBigqueryDestination();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface QueryAssetsOutputConfigOrBuilder
    * @return The bigqueryDestination.
    */
   com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination getBigqueryDestination();
+
   /**
    *
    *

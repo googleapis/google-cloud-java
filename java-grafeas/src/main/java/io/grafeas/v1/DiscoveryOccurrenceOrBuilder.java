@@ -37,6 +37,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return The enum numeric value on the wire for continuousAnalysis.
    */
   int getContinuousAnalysisValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return The enum numeric value on the wire for analysisStatus.
    */
   int getAnalysisStatusValue();
+
   /**
    *
    *
@@ -81,12 +83,14 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return Whether the analysisCompleted field is set.
    */
   boolean hasAnalysisCompleted();
+
   /**
    * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
    *
    * @return The analysisCompleted.
    */
   io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted getAnalysisCompleted();
+
   /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
   io.grafeas.v1.DiscoveryOccurrence.AnalysisCompletedOrBuilder getAnalysisCompletedOrBuilder();
 
@@ -101,6 +105,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * <code>repeated .google.rpc.Status analysis_error = 8;</code>
    */
   java.util.List<com.google.rpc.Status> getAnalysisErrorList();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * <code>repeated .google.rpc.Status analysis_error = 8;</code>
    */
   com.google.rpc.Status getAnalysisError(int index);
+
   /**
    *
    *
@@ -123,6 +129,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * <code>repeated .google.rpc.Status analysis_error = 8;</code>
    */
   int getAnalysisErrorCount();
+
   /**
    *
    *
@@ -134,6 +141,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * <code>repeated .google.rpc.Status analysis_error = 8;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getAnalysisErrorOrBuilderList();
+
   /**
    *
    *
@@ -160,6 +168,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return Whether the analysisStatusError field is set.
    */
   boolean hasAnalysisStatusError();
+
   /**
    *
    *
@@ -174,6 +183,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return The analysisStatusError.
    */
   com.google.rpc.Status getAnalysisStatusError();
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return The cpe.
    */
   java.lang.String getCpe();
+
   /**
    *
    *
@@ -224,6 +235,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return Whether the lastScanTime field is set.
    */
   boolean hasLastScanTime();
+
   /**
    *
    *
@@ -236,6 +248,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return The lastScanTime.
    */
   com.google.protobuf.Timestamp getLastScanTime();
+
   /**
    *
    *
@@ -260,6 +273,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return Whether the archiveTime field is set.
    */
   boolean hasArchiveTime();
+
   /**
    *
    *
@@ -273,6 +287,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return The archiveTime.
    */
   com.google.protobuf.Timestamp getArchiveTime();
+
   /**
    *
    *
@@ -297,6 +312,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return Whether the sbomStatus field is set.
    */
   boolean hasSbomStatus();
+
   /**
    *
    *
@@ -309,6 +325,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return The sbomStatus.
    */
   io.grafeas.v1.DiscoveryOccurrence.SBOMStatus getSbomStatus();
+
   /**
    *
    *
@@ -333,6 +350,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return Whether the vulnerabilityAttestation field is set.
    */
   boolean hasVulnerabilityAttestation();
+
   /**
    *
    *
@@ -346,6 +364,7 @@ public interface DiscoveryOccurrenceOrBuilder
    * @return The vulnerabilityAttestation.
    */
   io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation getVulnerabilityAttestation();
+
   /**
    *
    *

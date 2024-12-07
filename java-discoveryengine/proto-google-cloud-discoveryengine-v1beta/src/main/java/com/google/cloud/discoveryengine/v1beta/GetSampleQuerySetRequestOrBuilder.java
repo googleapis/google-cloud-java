@@ -50,6 +50,7 @@ public interface GetSampleQuerySetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

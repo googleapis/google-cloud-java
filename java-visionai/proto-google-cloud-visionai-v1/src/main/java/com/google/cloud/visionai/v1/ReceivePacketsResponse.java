@@ -33,6 +33,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ReceivePacketsResponse)
     ReceivePacketsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReceivePacketsResponse.newBuilder() to construct.
   private ReceivePacketsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
     private ResponseCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int PACKET_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
   public boolean hasPacket() {
     return responseCase_ == 1;
   }
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.visionai.v1.Packet.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int CONTROL_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
   public boolean hasControl() {
     return responseCase_ == 3;
   }
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.visionai.v1.ReceivePacketsControlResponse.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -402,6 +410,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -637,6 +646,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.visionai.v1.Packet.Builder,
             com.google.cloud.visionai.v1.PacketOrBuilder>
         packetBuilder_;
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
     public boolean hasPacket() {
       return responseCase_ == 1;
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
         return com.google.cloud.visionai.v1.Packet.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -699,6 +711,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +764,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +790,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +803,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.visionai.v1.Packet.Builder getPacketBuilder() {
       return getPacketFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -807,6 +824,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
         return com.google.cloud.visionai.v1.Packet.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -843,6 +861,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.visionai.v1.ReceivePacketsControlResponse.Builder,
             com.google.cloud.visionai.v1.ReceivePacketsControlResponseOrBuilder>
         controlBuilder_;
+
     /**
      *
      *
@@ -858,6 +877,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
     public boolean hasControl() {
       return responseCase_ == 3;
     }
+
     /**
      *
      *
@@ -883,6 +903,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
         return com.google.cloud.visionai.v1.ReceivePacketsControlResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -905,6 +926,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
       responseCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +947,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
       responseCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +982,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
       responseCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1008,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1021,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.visionai.v1.ReceivePacketsControlResponse.Builder getControlBuilder() {
       return getControlFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1017,6 +1043,7 @@ public final class ReceivePacketsResponse extends com.google.protobuf.GeneratedM
         return com.google.cloud.visionai.v1.ReceivePacketsControlResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *

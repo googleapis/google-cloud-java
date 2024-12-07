@@ -33,6 +33,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetMachineTypeInstanceRequest)
     SetMachineTypeInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetMachineTypeInstanceRequest.newBuilder() to construct.
   private SetMachineTypeInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
   public static final int INSTANCES_SET_MACHINE_TYPE_REQUEST_RESOURCE_FIELD_NUMBER = 254157709;
   private com.google.cloud.compute.v1.InstancesSetMachineTypeRequest
       instancesSetMachineTypeRequestResource_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
   public boolean hasInstancesSetMachineTypeRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
         ? com.google.cloud.compute.v1.InstancesSetMachineTypeRequest.getDefaultInstance()
         : instancesSetMachineTypeRequestResource_;
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -274,6 +284,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -302,6 +313,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -327,6 +339,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -563,6 +576,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -828,6 +842,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
+
     /**
      *
      *
@@ -850,6 +865,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -872,6 +888,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -893,6 +910,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +928,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +959,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.InstancesSetMachineTypeRequest.Builder,
             com.google.cloud.compute.v1.InstancesSetMachineTypeRequestOrBuilder>
         instancesSetMachineTypeRequestResourceBuilder_;
+
     /**
      *
      *
@@ -956,6 +976,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
     public boolean hasInstancesSetMachineTypeRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -979,6 +1000,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
         return instancesSetMachineTypeRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1026,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1049,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1082,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1104,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1122,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       onChanged();
       return getInstancesSetMachineTypeRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1117,6 +1144,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
             : instancesSetMachineTypeRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1146,6 +1174,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1170,6 +1199,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1194,6 +1224,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1248,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1236,6 +1268,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1295,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1276,6 +1310,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1298,6 +1333,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1320,6 +1356,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1341,6 +1378,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1396,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1382,6 +1421,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1406,6 +1446,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1430,6 +1471,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1453,6 +1495,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1472,6 +1515,7 @@ public final class SetMachineTypeInstanceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

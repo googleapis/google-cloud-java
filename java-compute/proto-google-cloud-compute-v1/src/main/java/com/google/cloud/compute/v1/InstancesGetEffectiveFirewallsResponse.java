@@ -33,6 +33,7 @@ public final class InstancesGetEffectiveFirewallsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponse)
     InstancesGetEffectiveFirewallsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstancesGetEffectiveFirewallsResponse.newBuilder() to construct.
   private InstancesGetEffectiveFirewallsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class InstancesGetEffectiveFirewallsResponse
   private java.util.List<
           com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy>
       firewallPolicys_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       getFirewallPolicysList() {
     return firewallPolicys_;
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       getFirewallPolicysOrBuilderList() {
     return firewallPolicys_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class InstancesGetEffectiveFirewallsResponse
   public int getFirewallPolicysCount() {
     return firewallPolicys_.size();
   }
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       getFirewallPolicys(int index) {
     return firewallPolicys_.get(index);
   }
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public final class InstancesGetEffectiveFirewallsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Firewall> firewalls_;
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public final class InstancesGetEffectiveFirewallsResponse
   public java.util.List<com.google.cloud.compute.v1.Firewall> getFirewallsList() {
     return firewalls_;
   }
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       getFirewallsOrBuilderList() {
     return firewalls_;
   }
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public final class InstancesGetEffectiveFirewallsResponse
   public int getFirewallsCount() {
     return firewalls_.size();
   }
+
   /**
    *
    *
@@ -213,6 +223,7 @@ public final class InstancesGetEffectiveFirewallsResponse
   public com.google.cloud.compute.v1.Firewall getFirewalls(int index) {
     return firewalls_.get(index);
   }
+
   /**
    *
    *
@@ -404,6 +415,7 @@ public final class InstancesGetEffectiveFirewallsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -746,6 +758,7 @@ public final class InstancesGetEffectiveFirewallsResponse
         return firewallPolicysBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -764,6 +777,7 @@ public final class InstancesGetEffectiveFirewallsResponse
         return firewallPolicysBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -783,6 +797,7 @@ public final class InstancesGetEffectiveFirewallsResponse
         return firewallPolicysBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -810,6 +825,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +851,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +878,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +906,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +931,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +957,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +984,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1006,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1028,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1045,7 @@ public final class InstancesGetEffectiveFirewallsResponse
         getFirewallPolicysBuilder(int index) {
       return getFirewallPolicysFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1041,6 +1066,7 @@ public final class InstancesGetEffectiveFirewallsResponse
         return firewallPolicysBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1089,7 @@ public final class InstancesGetEffectiveFirewallsResponse
         return java.util.Collections.unmodifiableList(firewallPolicys_);
       }
     }
+
     /**
      *
      *
@@ -1083,6 +1110,7 @@ public final class InstancesGetEffectiveFirewallsResponse
                   .InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1104,6 +1132,7 @@ public final class InstancesGetEffectiveFirewallsResponse
                   .InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1180,6 +1209,7 @@ public final class InstancesGetEffectiveFirewallsResponse
         return firewallsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1196,6 +1226,7 @@ public final class InstancesGetEffectiveFirewallsResponse
         return firewallsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1243,7 @@ public final class InstancesGetEffectiveFirewallsResponse
         return firewallsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1234,6 +1266,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1287,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1310,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1333,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -1317,6 +1353,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1374,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -1357,6 +1395,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -1376,6 +1415,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -1395,6 +1435,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -1407,6 +1448,7 @@ public final class InstancesGetEffectiveFirewallsResponse
     public com.google.cloud.compute.v1.Firewall.Builder getFirewallsBuilder(int index) {
       return getFirewallsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1423,6 +1465,7 @@ public final class InstancesGetEffectiveFirewallsResponse
         return firewallsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1440,6 +1483,7 @@ public final class InstancesGetEffectiveFirewallsResponse
         return java.util.Collections.unmodifiableList(firewalls_);
       }
     }
+
     /**
      *
      *
@@ -1453,6 +1497,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       return getFirewallsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Firewall.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1466,6 +1511,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       return getFirewallsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Firewall.getDefaultInstance());
     }
+
     /**
      *
      *

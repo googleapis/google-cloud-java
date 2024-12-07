@@ -35,6 +35,7 @@ public final class UpdateShieldedInstanceConfigRequest
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.UpdateShieldedInstanceConfigRequest)
     UpdateShieldedInstanceConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateShieldedInstanceConfigRequest.newBuilder() to construct.
   private UpdateShieldedInstanceConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class UpdateShieldedInstanceConfigRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class UpdateShieldedInstanceConfigRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class UpdateShieldedInstanceConfigRequest
 
   public static final int SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfig shieldedInstanceConfig_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class UpdateShieldedInstanceConfigRequest
   public boolean hasShieldedInstanceConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class UpdateShieldedInstanceConfigRequest
         ? com.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfig.getDefaultInstance()
         : shieldedInstanceConfig_;
   }
+
   /**
    *
    *
@@ -350,6 +356,7 @@ public final class UpdateShieldedInstanceConfigRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -573,6 +580,7 @@ public final class UpdateShieldedInstanceConfigRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -596,6 +604,7 @@ public final class UpdateShieldedInstanceConfigRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -619,6 +628,7 @@ public final class UpdateShieldedInstanceConfigRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class UpdateShieldedInstanceConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +670,7 @@ public final class UpdateShieldedInstanceConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +701,7 @@ public final class UpdateShieldedInstanceConfigRequest
             com.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfig.Builder,
             com.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfigOrBuilder>
         shieldedInstanceConfigBuilder_;
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class UpdateShieldedInstanceConfigRequest
     public boolean hasShieldedInstanceConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -728,6 +742,7 @@ public final class UpdateShieldedInstanceConfigRequest
         return shieldedInstanceConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -753,6 +768,7 @@ public final class UpdateShieldedInstanceConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +791,7 @@ public final class UpdateShieldedInstanceConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +824,7 @@ public final class UpdateShieldedInstanceConfigRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +846,7 @@ public final class UpdateShieldedInstanceConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +864,7 @@ public final class UpdateShieldedInstanceConfigRequest
       onChanged();
       return getShieldedInstanceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -866,6 +886,7 @@ public final class UpdateShieldedInstanceConfigRequest
             : shieldedInstanceConfig_;
       }
     }
+
     /**
      *
      *

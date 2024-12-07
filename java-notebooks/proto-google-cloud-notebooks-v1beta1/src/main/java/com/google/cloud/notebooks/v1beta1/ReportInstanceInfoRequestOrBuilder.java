@@ -37,6 +37,7 @@ public interface ReportInstanceInfoRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ReportInstanceInfoRequestOrBuilder
    * @return The vmId.
    */
   java.lang.String getVmId();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface ReportInstanceInfoRequestOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -100,9 +103,11 @@ public interface ReportInstanceInfoRequestOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface ReportInstanceInfoRequestOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface ReportInstanceInfoRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

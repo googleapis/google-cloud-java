@@ -33,6 +33,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.LoggingConfig)
     LoggingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LoggingConfig.newBuilder() to construct.
   private LoggingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_STACKDRIVER_LOGGING_FIELD_NUMBER = 3;
   private boolean enableStackdriverLogging_ = false;
+
   /**
    *
    *
@@ -241,6 +243,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -422,6 +425,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean enableStackdriverLogging_;
+
     /**
      *
      *
@@ -440,6 +444,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableStackdriverLogging() {
       return enableStackdriverLogging_;
     }
+
     /**
      *
      *
@@ -462,6 +467,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

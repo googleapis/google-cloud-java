@@ -36,6 +36,7 @@ public interface PacketOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PacketOrBuilder
    * @return The header.
    */
   com.google.cloud.visionai.v1.PacketHeader getHeader();
+
   /**
    *
    *

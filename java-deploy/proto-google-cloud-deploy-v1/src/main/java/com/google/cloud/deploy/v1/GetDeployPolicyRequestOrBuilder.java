@@ -39,6 +39,7 @@ public interface GetDeployPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

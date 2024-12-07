@@ -38,6 +38,7 @@ public interface CreateDraftRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateDraftRequestOrBuilder
    * @return The draftId.
    */
   java.lang.String getDraftId();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface CreateDraftRequestOrBuilder
    * @return Whether the draft field is set.
    */
   boolean hasDraft();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CreateDraftRequestOrBuilder
    * @return The draft.
    */
   com.google.cloud.visionai.v1.Draft getDraft();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface CreateDraftRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

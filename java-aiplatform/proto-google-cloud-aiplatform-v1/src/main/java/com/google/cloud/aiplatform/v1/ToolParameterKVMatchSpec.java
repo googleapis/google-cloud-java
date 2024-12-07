@@ -33,6 +33,7 @@ public final class ToolParameterKVMatchSpec extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ToolParameterKVMatchSpec)
     ToolParameterKVMatchSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ToolParameterKVMatchSpec.newBuilder() to construct.
   private ToolParameterKVMatchSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class ToolParameterKVMatchSpec extends com.google.protobuf.Generate
 
   public static final int USE_STRICT_STRING_MATCH_FIELD_NUMBER = 1;
   private boolean useStrictStringMatch_ = false;
+
   /**
    *
    *
@@ -239,6 +241,7 @@ public final class ToolParameterKVMatchSpec extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -421,6 +424,7 @@ public final class ToolParameterKVMatchSpec extends com.google.protobuf.Generate
     private int bitField0_;
 
     private boolean useStrictStringMatch_;
+
     /**
      *
      *
@@ -436,6 +440,7 @@ public final class ToolParameterKVMatchSpec extends com.google.protobuf.Generate
     public boolean getUseStrictStringMatch() {
       return useStrictStringMatch_;
     }
+
     /**
      *
      *
@@ -455,6 +460,7 @@ public final class ToolParameterKVMatchSpec extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

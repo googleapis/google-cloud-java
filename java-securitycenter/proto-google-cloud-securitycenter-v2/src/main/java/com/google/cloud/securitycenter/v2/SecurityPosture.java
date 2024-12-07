@@ -37,6 +37,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.SecurityPosture)
     SecurityPostureOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPosture.newBuilder() to construct.
   private SecurityPosture(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,6 +93,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
      * @return The field.
      */
     java.lang.String getField();
+
     /**
      *
      *
@@ -119,6 +121,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
      * @return The expectedValue.
      */
     java.lang.String getExpectedValue();
+
     /**
      *
      *
@@ -146,6 +149,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
      * @return The detectedValue.
      */
     java.lang.String getDetectedValue();
+
     /**
      *
      *
@@ -160,6 +164,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getDetectedValueBytes();
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.SecurityPosture.PolicyDriftDetails)
       PolicyDriftDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PolicyDriftDetails.newBuilder() to construct.
     private PolicyDriftDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -211,6 +217,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object field_ = "";
+
     /**
      *
      *
@@ -235,6 +242,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -264,6 +272,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object expectedValue_ = "";
+
     /**
      *
      *
@@ -288,6 +297,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -317,6 +327,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object detectedValue_ = "";
+
     /**
      *
      *
@@ -341,6 +352,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -546,6 +558,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -774,6 +787,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object field_ = "";
+
       /**
        *
        *
@@ -797,6 +811,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -820,6 +835,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -842,6 +858,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -860,6 +877,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -885,6 +903,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object expectedValue_ = "";
+
       /**
        *
        *
@@ -908,6 +927,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -931,6 +951,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -953,6 +974,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -971,6 +993,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -996,6 +1019,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object detectedValue_ = "";
+
       /**
        *
        *
@@ -1019,6 +1043,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1042,6 +1067,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1064,6 +1090,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1082,6 +1109,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1178,6 +1206,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1201,6 +1230,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1229,6 +1259,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revisionId_ = "";
+
   /**
    *
    *
@@ -1252,6 +1283,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1280,6 +1312,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object postureDeploymentResource_ = "";
+
   /**
    *
    *
@@ -1304,6 +1337,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1333,6 +1367,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object postureDeployment_ = "";
+
   /**
    *
    *
@@ -1357,6 +1392,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1386,6 +1422,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object changedPolicy_ = "";
+
   /**
    *
    *
@@ -1410,6 +1447,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1439,6 +1477,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object policySet_ = "";
+
   /**
    *
    *
@@ -1462,6 +1501,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1490,6 +1530,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object policy_ = "";
+
   /**
    *
    *
@@ -1513,6 +1554,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1542,6 +1584,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.SecurityPosture.PolicyDriftDetails>
       policyDriftDetails_;
+
   /**
    *
    *
@@ -1559,6 +1602,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       getPolicyDriftDetailsList() {
     return policyDriftDetails_;
   }
+
   /**
    *
    *
@@ -1577,6 +1621,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       getPolicyDriftDetailsOrBuilderList() {
     return policyDriftDetails_;
   }
+
   /**
    *
    *
@@ -1593,6 +1638,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
   public int getPolicyDriftDetailsCount() {
     return policyDriftDetails_.size();
   }
+
   /**
    *
    *
@@ -1610,6 +1656,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       getPolicyDriftDetails(int index) {
     return policyDriftDetails_.get(index);
   }
+
   /**
    *
    *
@@ -1854,6 +1901,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2195,6 +2243,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2217,6 +2266,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2239,6 +2289,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2260,6 +2311,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2277,6 +2329,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2301,6 +2354,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object revisionId_ = "";
+
     /**
      *
      *
@@ -2323,6 +2377,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2345,6 +2400,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2366,6 +2422,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2383,6 +2440,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2407,6 +2465,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object postureDeploymentResource_ = "";
+
     /**
      *
      *
@@ -2430,6 +2489,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2453,6 +2513,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2475,6 +2536,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2493,6 +2555,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2518,6 +2581,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object postureDeployment_ = "";
+
     /**
      *
      *
@@ -2541,6 +2605,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2564,6 +2629,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2586,6 +2652,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2604,6 +2671,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2629,6 +2697,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object changedPolicy_ = "";
+
     /**
      *
      *
@@ -2652,6 +2721,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2675,6 +2745,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2697,6 +2768,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2715,6 +2787,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2740,6 +2813,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object policySet_ = "";
+
     /**
      *
      *
@@ -2762,6 +2836,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2784,6 +2859,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2805,6 +2881,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2822,6 +2899,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2846,6 +2924,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object policy_ = "";
+
     /**
      *
      *
@@ -2868,6 +2947,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2890,6 +2970,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2911,6 +2992,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2928,6 +3010,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2990,6 +3073,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return policyDriftDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3009,6 +3093,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return policyDriftDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3029,6 +3114,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return policyDriftDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3055,6 +3141,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3080,6 +3167,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3106,6 +3194,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3132,6 +3221,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3156,6 +3246,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3181,6 +3272,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3206,6 +3298,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3228,6 +3321,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3250,6 +3344,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3266,6 +3361,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         getPolicyDriftDetailsBuilder(int index) {
       return getPolicyDriftDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3286,6 +3382,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return policyDriftDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3308,6 +3405,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(policyDriftDetails_);
       }
     }
+
     /**
      *
      *
@@ -3327,6 +3425,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
               com.google.cloud.securitycenter.v2.SecurityPosture.PolicyDriftDetails
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3347,6 +3446,7 @@ public final class SecurityPosture extends com.google.protobuf.GeneratedMessageV
               com.google.cloud.securitycenter.v2.SecurityPosture.PolicyDriftDetails
                   .getDefaultInstance());
     }
+
     /**
      *
      *

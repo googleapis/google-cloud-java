@@ -36,6 +36,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.Sku)
     SkuOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Sku.newBuilder() to construct.
   private Sku(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MARKETING_INFO_FIELD_NUMBER = 2;
   private com.google.cloud.channel.v1.MarketingInfo marketingInfo_;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMarketingInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.channel.v1.MarketingInfo.getDefaultInstance()
         : marketingInfo_;
   }
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRODUCT_FIELD_NUMBER = 3;
   private com.google.cloud.channel.v1.Product product_;
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProduct() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.channel.v1.Product getProduct() {
     return product_ == null ? com.google.cloud.channel.v1.Product.getDefaultInstance() : product_;
   }
+
   /**
    *
    *
@@ -400,6 +409,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -633,6 +643,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -656,6 +667,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -679,6 +691,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -701,6 +714,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +733,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +764,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.channel.v1.MarketingInfo.Builder,
             com.google.cloud.channel.v1.MarketingInfoOrBuilder>
         marketingInfoBuilder_;
+
     /**
      *
      *
@@ -763,6 +779,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMarketingInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -783,6 +800,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return marketingInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -805,6 +823,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +844,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +872,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +892,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +907,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMarketingInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -903,6 +926,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             : marketingInfo_;
       }
     }
+
     /**
      *
      *
@@ -935,6 +959,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.channel.v1.Product.Builder,
             com.google.cloud.channel.v1.ProductOrBuilder>
         productBuilder_;
+
     /**
      *
      *
@@ -949,6 +974,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProduct() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -969,6 +995,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return productBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -991,6 +1018,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1038,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1066,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1086,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1101,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProductFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1088,6 +1120,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             : product_;
       }
     }
+
     /**
      *
      *

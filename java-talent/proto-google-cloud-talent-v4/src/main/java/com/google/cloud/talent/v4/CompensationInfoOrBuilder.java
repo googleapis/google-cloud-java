@@ -38,6 +38,7 @@ public interface CompensationInfoOrBuilder
    * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
    */
   java.util.List<com.google.cloud.talent.v4.CompensationInfo.CompensationEntry> getEntriesList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CompensationInfoOrBuilder
    * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
    */
   com.google.cloud.talent.v4.CompensationInfo.CompensationEntry getEntries(int index);
+
   /**
    *
    *
@@ -66,6 +68,7 @@ public interface CompensationInfoOrBuilder
    * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
    */
   int getEntriesCount();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface CompensationInfoOrBuilder
    */
   java.util.List<? extends com.google.cloud.talent.v4.CompensationInfo.CompensationEntryOrBuilder>
       getEntriesOrBuilderList();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface CompensationInfoOrBuilder
    * @return Whether the annualizedBaseCompensationRange field is set.
    */
   boolean hasAnnualizedBaseCompensationRange();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface CompensationInfoOrBuilder
    */
   com.google.cloud.talent.v4.CompensationInfo.CompensationRange
       getAnnualizedBaseCompensationRange();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface CompensationInfoOrBuilder
    * @return Whether the annualizedTotalCompensationRange field is set.
    */
   boolean hasAnnualizedTotalCompensationRange();
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public interface CompensationInfoOrBuilder
    */
   com.google.cloud.talent.v4.CompensationInfo.CompensationRange
       getAnnualizedTotalCompensationRange();
+
   /**
    *
    *

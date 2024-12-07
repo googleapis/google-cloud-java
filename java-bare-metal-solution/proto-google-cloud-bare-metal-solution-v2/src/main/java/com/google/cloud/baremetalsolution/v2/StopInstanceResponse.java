@@ -33,6 +33,7 @@ public final class StopInstanceResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.StopInstanceResponse)
     StopInstanceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StopInstanceResponse.newBuilder() to construct.
   private StopInstanceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class StopInstanceResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

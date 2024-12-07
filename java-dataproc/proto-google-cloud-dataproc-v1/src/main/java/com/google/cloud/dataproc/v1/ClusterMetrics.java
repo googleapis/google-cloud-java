@@ -36,6 +36,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.ClusterMetrics)
     ClusterMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClusterMetrics.newBuilder() to construct.
   private ClusterMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -104,6 +105,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
   public int getHdfsMetricsCount() {
     return internalGetHdfsMetrics().getMap().size();
   }
+
   /**
    *
    *
@@ -120,12 +122,14 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetHdfsMetrics().getMap().containsKey(key);
   }
+
   /** Use {@link #getHdfsMetricsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Long> getHdfsMetrics() {
     return getHdfsMetricsMap();
   }
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.Long> getHdfsMetricsMap() {
     return internalGetHdfsMetrics().getMap();
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetHdfsMetrics().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
   public int getYarnMetricsCount() {
     return internalGetYarnMetrics().getMap().size();
   }
+
   /**
    *
    *
@@ -219,12 +226,14 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetYarnMetrics().getMap().containsKey(key);
   }
+
   /** Use {@link #getYarnMetricsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Long> getYarnMetrics() {
     return getYarnMetricsMap();
   }
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.Long> getYarnMetricsMap() {
     return internalGetYarnMetrics().getMap();
   }
+
   /**
    *
    *
@@ -255,6 +265,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetYarnMetrics().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -460,6 +471,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -722,6 +734,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     public int getHdfsMetricsCount() {
       return internalGetHdfsMetrics().getMap().size();
     }
+
     /**
      *
      *
@@ -738,12 +751,14 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetHdfsMetrics().getMap().containsKey(key);
     }
+
     /** Use {@link #getHdfsMetricsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getHdfsMetrics() {
       return getHdfsMetricsMap();
     }
+
     /**
      *
      *
@@ -757,6 +772,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.Long> getHdfsMetricsMap() {
       return internalGetHdfsMetrics().getMap();
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetHdfsMetrics().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableHdfsMetrics().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -816,12 +834,14 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableHdfsMetrics().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getMutableHdfsMetrics() {
       bitField0_ |= 0x00000001;
       return internalGetMutableHdfsMetrics().getMutableMap();
     }
+
     /**
      *
      *
@@ -840,6 +860,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +904,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     public int getYarnMetricsCount() {
       return internalGetYarnMetrics().getMap().size();
     }
+
     /**
      *
      *
@@ -899,12 +921,14 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetYarnMetrics().getMap().containsKey(key);
     }
+
     /** Use {@link #getYarnMetricsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getYarnMetrics() {
       return getYarnMetricsMap();
     }
+
     /**
      *
      *
@@ -918,6 +942,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.Long> getYarnMetricsMap() {
       return internalGetYarnMetrics().getMap();
     }
+
     /**
      *
      *
@@ -935,6 +960,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetYarnMetrics().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -961,6 +987,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableYarnMetrics().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -977,12 +1004,14 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableYarnMetrics().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getMutableYarnMetrics() {
       bitField0_ |= 0x00000002;
       return internalGetMutableYarnMetrics().getMutableMap();
     }
+
     /**
      *
      *
@@ -1001,6 +1030,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

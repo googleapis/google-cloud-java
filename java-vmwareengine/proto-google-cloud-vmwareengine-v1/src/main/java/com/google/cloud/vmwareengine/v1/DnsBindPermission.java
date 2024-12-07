@@ -34,6 +34,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.DnsBindPermission)
     DnsBindPermissionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DnsBindPermission.newBuilder() to construct.
   private DnsBindPermission(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmwareengine.v1.Principal> principals_;
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.vmwareengine.v1.Principal> getPrincipalsList() {
     return principals_;
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       getPrincipalsOrBuilderList() {
     return principals_;
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
   public int getPrincipalsCount() {
     return principals_.size();
   }
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.vmwareengine.v1.Principal getPrincipals(int index) {
     return principals_.get(index);
   }
+
   /**
    *
    *
@@ -384,6 +392,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -630,6 +639,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -686,6 +697,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -713,6 +725,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +749,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +815,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
         return principalsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -820,6 +835,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
         return principalsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -839,6 +855,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
         return principalsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -864,6 +881,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +905,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +931,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +957,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +981,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +1005,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1029,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1052,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1075,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1091,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.vmwareengine.v1.Principal.Builder getPrincipalsBuilder(int index) {
       return getPrincipalsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1084,6 +1111,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
         return principalsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1104,6 +1132,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(principals_);
       }
     }
+
     /**
      *
      *
@@ -1120,6 +1149,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       return getPrincipalsFieldBuilder()
           .addBuilder(com.google.cloud.vmwareengine.v1.Principal.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1136,6 +1166,7 @@ public final class DnsBindPermission extends com.google.protobuf.GeneratedMessag
       return getPrincipalsFieldBuilder()
           .addBuilder(index, com.google.cloud.vmwareengine.v1.Principal.getDefaultInstance());
     }
+
     /**
      *
      *

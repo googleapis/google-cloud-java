@@ -33,6 +33,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.ZipInfo)
     ZipInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ZipInfo.newBuilder() to construct.
   private ZipInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceUrl_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FILES_COUNT_FIELD_NUMBER = 4;
   private int filesCount_ = 0;
+
   /**
    *
    *
@@ -303,6 +307,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -497,6 +502,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object sourceUrl_ = "";
+
     /**
      *
      *
@@ -521,6 +527,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -545,6 +552,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -568,6 +576,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -613,6 +623,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int filesCount_;
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
     public int getFilesCount() {
       return filesCount_;
     }
+
     /**
      *
      *
@@ -651,6 +663,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

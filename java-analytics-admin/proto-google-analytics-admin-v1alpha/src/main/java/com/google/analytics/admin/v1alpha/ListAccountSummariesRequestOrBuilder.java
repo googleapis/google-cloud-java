@@ -55,6 +55,7 @@ public interface ListAccountSummariesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

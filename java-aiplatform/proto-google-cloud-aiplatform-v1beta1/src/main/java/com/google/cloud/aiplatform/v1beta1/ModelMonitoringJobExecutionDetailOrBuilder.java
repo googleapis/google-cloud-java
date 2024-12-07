@@ -38,6 +38,7 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
   java.util.List<
           com.google.cloud.aiplatform.v1beta1.ModelMonitoringJobExecutionDetail.ProcessedDataset>
       getBaselineDatasetsList();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringJobExecutionDetail.ProcessedDataset
       getBaselineDatasets(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
    * </code>
    */
   int getBaselineDatasetsCount();
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringJobExecutionDetail
                   .ProcessedDatasetOrBuilder>
       getBaselineDatasetsOrBuilderList();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
   java.util.List<
           com.google.cloud.aiplatform.v1beta1.ModelMonitoringJobExecutionDetail.ProcessedDataset>
       getTargetDatasetsList();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringJobExecutionDetail.ProcessedDataset
       getTargetDatasets(int index);
+
   /**
    *
    *
@@ -132,6 +138,7 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
    * </code>
    */
   int getTargetDatasetsCount();
+
   /**
    *
    *
@@ -148,6 +155,7 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringJobExecutionDetail
                   .ProcessedDatasetOrBuilder>
       getTargetDatasetsOrBuilderList();
+
   /**
    *
    *
@@ -173,6 +181,7 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
    * <code>map&lt;string, .google.rpc.Status&gt; objective_status = 3;</code>
    */
   int getObjectiveStatusCount();
+
   /**
    *
    *
@@ -184,9 +193,11 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
    * <code>map&lt;string, .google.rpc.Status&gt; objective_status = 3;</code>
    */
   boolean containsObjectiveStatus(java.lang.String key);
+
   /** Use {@link #getObjectiveStatusMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.rpc.Status> getObjectiveStatus();
+
   /**
    *
    *
@@ -198,6 +209,7 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
    * <code>map&lt;string, .google.rpc.Status&gt; objective_status = 3;</code>
    */
   java.util.Map<java.lang.String, com.google.rpc.Status> getObjectiveStatusMap();
+
   /**
    *
    *
@@ -213,6 +225,7 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.rpc.Status defaultValue);
+
   /**
    *
    *
@@ -237,6 +250,7 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -249,6 +263,7 @@ public interface ModelMonitoringJobExecutionDetailOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *

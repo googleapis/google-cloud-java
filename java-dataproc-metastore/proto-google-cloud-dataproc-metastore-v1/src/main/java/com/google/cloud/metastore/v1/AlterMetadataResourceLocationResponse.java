@@ -35,6 +35,7 @@ public final class AlterMetadataResourceLocationResponse
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1.AlterMetadataResourceLocationResponse)
     AlterMetadataResourceLocationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AlterMetadataResourceLocationResponse.newBuilder() to construct.
   private AlterMetadataResourceLocationResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,6 +217,7 @@ public final class AlterMetadataResourceLocationResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface SyncFeatureViewResponseOrBuilder
    * @return The featureViewSync.
    */
   java.lang.String getFeatureViewSync();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface TableOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.FieldId> getHeadersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface TableOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   com.google.privacy.dlp.v2.FieldId getHeaders(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface TableOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   int getHeadersCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface TableOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> getHeadersOrBuilderList();
+
   /**
    *
    *
@@ -85,6 +89,7 @@ public interface TableOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.Table.Row> getRowsList();
+
   /**
    *
    *
@@ -95,6 +100,7 @@ public interface TableOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   com.google.privacy.dlp.v2.Table.Row getRows(int index);
+
   /**
    *
    *
@@ -105,6 +111,7 @@ public interface TableOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   int getRowsCount();
+
   /**
    *
    *
@@ -115,6 +122,7 @@ public interface TableOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.Table.RowOrBuilder> getRowsOrBuilderList();
+
   /**
    *
    *

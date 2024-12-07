@@ -51,6 +51,7 @@ public interface TargetsTypeConditionOrBuilder
    * @return The errorDetails.
    */
   java.lang.String getErrorDetails();
+
   /**
    *
    *

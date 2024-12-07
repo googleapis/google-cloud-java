@@ -33,6 +33,7 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.EnableServiceResponse)
     EnableServiceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EnableServiceResponse.newBuilder() to construct.
   private EnableServiceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

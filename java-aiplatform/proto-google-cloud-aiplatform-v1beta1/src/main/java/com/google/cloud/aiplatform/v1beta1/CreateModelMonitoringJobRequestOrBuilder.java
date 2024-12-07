@@ -40,6 +40,7 @@ public interface CreateModelMonitoringJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateModelMonitoringJobRequestOrBuilder
    * @return Whether the modelMonitoringJob field is set.
    */
   boolean hasModelMonitoringJob();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateModelMonitoringJobRequestOrBuilder
    * @return The modelMonitoringJob.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringJob getModelMonitoringJob();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateModelMonitoringJobRequestOrBuilder
    * @return The modelMonitoringJobId.
    */
   java.lang.String getModelMonitoringJobId();
+
   /**
    *
    *

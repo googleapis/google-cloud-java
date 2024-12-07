@@ -33,6 +33,7 @@ public final class ComputeStorageDescriptor extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ComputeStorageDescriptor)
     ComputeStorageDescriptorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ComputeStorageDescriptor.newBuilder() to construct.
   private ComputeStorageDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ComputeStorageDescriptor extends com.google.protobuf.Generate
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class ComputeStorageDescriptor extends com.google.protobuf.Generate
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class ComputeStorageDescriptor extends com.google.protobuf.Generate
 
   public static final int SIZE_GB_FIELD_NUMBER = 2;
   private int sizeGb_ = 0;
+
   /**
    *
    *
@@ -291,6 +295,7 @@ public final class ComputeStorageDescriptor extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -489,6 +494,7 @@ public final class ComputeStorageDescriptor extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -504,6 +510,7 @@ public final class ComputeStorageDescriptor extends com.google.protobuf.Generate
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -522,6 +529,7 @@ public final class ComputeStorageDescriptor extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -541,6 +549,7 @@ public final class ComputeStorageDescriptor extends com.google.protobuf.Generate
           ? com.google.cloud.migrationcenter.v1.PersistentDiskType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -562,6 +571,7 @@ public final class ComputeStorageDescriptor extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,6 +591,7 @@ public final class ComputeStorageDescriptor extends com.google.protobuf.Generate
     }
 
     private int sizeGb_;
+
     /**
      *
      *
@@ -596,6 +607,7 @@ public final class ComputeStorageDescriptor extends com.google.protobuf.Generate
     public int getSizeGb() {
       return sizeGb_;
     }
+
     /**
      *
      *
@@ -615,6 +627,7 @@ public final class ComputeStorageDescriptor extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

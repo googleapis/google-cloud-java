@@ -38,6 +38,7 @@ public interface DatabaseConnectionStringProfileOrBuilder
    * @return The enum numeric value on the wire for consumerGroup.
    */
   int getConsumerGroupValue();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface DatabaseConnectionStringProfileOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DatabaseConnectionStringProfileOrBuilder
    * @return The enum numeric value on the wire for hostFormat.
    */
   int getHostFormatValue();
+
   /**
    *
    *
@@ -138,6 +141,7 @@ public interface DatabaseConnectionStringProfileOrBuilder
    * @return The enum numeric value on the wire for protocol.
    */
   int getProtocolValue();
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public interface DatabaseConnectionStringProfileOrBuilder
    * @return The enum numeric value on the wire for sessionMode.
    */
   int getSessionModeValue();
+
   /**
    *
    *
@@ -196,6 +201,7 @@ public interface DatabaseConnectionStringProfileOrBuilder
    * @return The enum numeric value on the wire for syntaxFormat.
    */
   int getSyntaxFormatValue();
+
   /**
    *
    *
@@ -226,6 +232,7 @@ public interface DatabaseConnectionStringProfileOrBuilder
    * @return The enum numeric value on the wire for tlsAuthentication.
    */
   int getTlsAuthenticationValue();
+
   /**
    *
    *
@@ -255,6 +262,7 @@ public interface DatabaseConnectionStringProfileOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.Contact)
     ContactOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Contact.newBuilder() to construct.
   private Contact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object givenName_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object familyName_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object email_ = "";
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object phone_ = "";
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -274,6 +283,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_ZONE_FIELD_NUMBER = 5;
   private com.google.type.TimeZone timeZone_;
+
   /**
    *
    *
@@ -289,6 +299,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeZone() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -304,6 +315,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.TimeZone getTimeZone() {
     return timeZone_ == null ? com.google.type.TimeZone.getDefaultInstance() : timeZone_;
   }
+
   /**
    *
    *
@@ -322,6 +334,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.TimePeriod> reachableTimes_;
+
   /**
    *
    *
@@ -339,6 +352,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       getReachableTimesList() {
     return reachableTimes_;
   }
+
   /**
    *
    *
@@ -357,6 +371,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       getReachableTimesOrBuilderList() {
     return reachableTimes_;
   }
+
   /**
    *
    *
@@ -373,6 +388,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
   public int getReachableTimesCount() {
     return reachableTimes_.size();
   }
+
   /**
    *
    *
@@ -389,6 +405,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.gdchardwaremanagement.v1alpha.TimePeriod getReachableTimes(int index) {
     return reachableTimes_.get(index);
   }
+
   /**
    *
    *
@@ -619,6 +636,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -940,6 +958,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object givenName_ = "";
+
     /**
      *
      *
@@ -962,6 +981,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -984,6 +1004,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1005,6 +1026,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1044,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1069,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object familyName_ = "";
+
     /**
      *
      *
@@ -1068,6 +1092,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1115,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1111,6 +1137,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1155,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1180,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object email_ = "";
+
     /**
      *
      *
@@ -1174,6 +1203,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1196,6 +1226,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1248,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1266,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1258,6 +1291,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object phone_ = "";
+
     /**
      *
      *
@@ -1280,6 +1314,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1302,6 +1337,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1323,6 +1359,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1377,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1369,6 +1407,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
             com.google.type.TimeZone.Builder,
             com.google.type.TimeZoneOrBuilder>
         timeZoneBuilder_;
+
     /**
      *
      *
@@ -1383,6 +1422,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeZone() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1401,6 +1441,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return timeZoneBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1423,6 +1464,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1442,6 +1484,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1469,6 +1512,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1488,6 +1532,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1502,6 +1547,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeZoneFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1518,6 +1564,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return timeZone_ == null ? com.google.type.TimeZone.getDefaultInstance() : timeZone_;
       }
     }
+
     /**
      *
      *
@@ -1582,6 +1629,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return reachableTimesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1601,6 +1649,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return reachableTimesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1620,6 +1669,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return reachableTimesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1646,6 +1696,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1670,6 +1721,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1696,6 +1748,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1722,6 +1775,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1745,6 +1799,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1769,6 +1824,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1793,6 +1849,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1815,6 +1872,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1837,6 +1895,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1853,6 +1912,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         getReachableTimesBuilder(int index) {
       return getReachableTimesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1873,6 +1933,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return reachableTimesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1894,6 +1955,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(reachableTimes_);
       }
     }
+
     /**
      *
      *
@@ -1912,6 +1974,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.gdchardwaremanagement.v1alpha.TimePeriod.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1931,6 +1994,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.gdchardwaremanagement.v1alpha.TimePeriod.getDefaultInstance());
     }
+
     /**
      *
      *

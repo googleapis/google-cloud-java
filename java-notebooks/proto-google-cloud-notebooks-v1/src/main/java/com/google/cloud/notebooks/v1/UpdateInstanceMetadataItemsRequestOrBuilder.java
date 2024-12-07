@@ -37,6 +37,7 @@ public interface UpdateInstanceMetadataItemsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface UpdateInstanceMetadataItemsRequestOrBuilder
    * <code>map&lt;string, string&gt; items = 2;</code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -71,9 +73,11 @@ public interface UpdateInstanceMetadataItemsRequestOrBuilder
    * <code>map&lt;string, string&gt; items = 2;</code>
    */
   boolean containsItems(java.lang.String key);
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getItems();
+
   /**
    *
    *
@@ -84,6 +88,7 @@ public interface UpdateInstanceMetadataItemsRequestOrBuilder
    * <code>map&lt;string, string&gt; items = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getItemsMap();
+
   /**
    *
    *
@@ -98,6 +103,7 @@ public interface UpdateInstanceMetadataItemsRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

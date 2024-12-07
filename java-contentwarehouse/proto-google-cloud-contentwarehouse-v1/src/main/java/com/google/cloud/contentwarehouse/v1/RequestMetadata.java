@@ -33,6 +33,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.RequestMetadata)
     RequestMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RequestMetadata.newBuilder() to construct.
   private RequestMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int USER_INFO_FIELD_NUMBER = 1;
   private com.google.cloud.contentwarehouse.v1.UserInfo userInfo_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
   public boolean hasUserInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.contentwarehouse.v1.UserInfo.getDefaultInstance()
         : userInfo_;
   }
+
   /**
    *
    *
@@ -276,6 +280,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -479,6 +484,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.contentwarehouse.v1.UserInfo.Builder,
             com.google.cloud.contentwarehouse.v1.UserInfoOrBuilder>
         userInfoBuilder_;
+
     /**
      *
      *
@@ -493,6 +499,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     public boolean hasUserInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -513,6 +520,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return userInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -535,6 +543,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -555,6 +564,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -582,6 +592,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -601,6 +612,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -615,6 +627,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getUserInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -633,6 +646,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
             : userInfo_;
       }
     }
+
     /**
      *
      *

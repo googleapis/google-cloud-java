@@ -34,6 +34,7 @@ public interface RecordTransformationsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.FieldTransformation> getFieldTransformationsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface RecordTransformationsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 1;</code>
    */
   com.google.privacy.dlp.v2.FieldTransformation getFieldTransformations(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface RecordTransformationsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 1;</code>
    */
   int getFieldTransformationsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface RecordTransformationsOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FieldTransformationOrBuilder>
       getFieldTransformationsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface RecordTransformationsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.RecordSuppression> getRecordSuppressionsList();
+
   /**
    *
    *
@@ -99,6 +104,7 @@ public interface RecordTransformationsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
    */
   com.google.privacy.dlp.v2.RecordSuppression getRecordSuppressions(int index);
+
   /**
    *
    *
@@ -110,6 +116,7 @@ public interface RecordTransformationsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
    */
   int getRecordSuppressionsCount();
+
   /**
    *
    *
@@ -122,6 +129,7 @@ public interface RecordTransformationsOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.RecordSuppressionOrBuilder>
       getRecordSuppressionsOrBuilderList();
+
   /**
    *
    *

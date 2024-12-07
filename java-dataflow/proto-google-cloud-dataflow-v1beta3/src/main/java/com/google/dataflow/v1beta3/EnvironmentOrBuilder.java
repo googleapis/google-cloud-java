@@ -48,6 +48,7 @@ public interface EnvironmentOrBuilder
    * @return The tempStoragePrefix.
    */
   java.lang.String getTempStoragePrefix();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface EnvironmentOrBuilder
    * @return The clusterManagerApiService.
    */
   java.lang.String getClusterManagerApiService();
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public interface EnvironmentOrBuilder
    * @return A list containing the experiments.
    */
   java.util.List<java.lang.String> getExperimentsList();
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public interface EnvironmentOrBuilder
    * @return The count of experiments.
    */
   int getExperimentsCount();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface EnvironmentOrBuilder
    * @return The experiments at the given index.
    */
   java.lang.String getExperiments(int index);
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public interface EnvironmentOrBuilder
    * @return A list containing the serviceOptions.
    */
   java.util.List<java.lang.String> getServiceOptionsList();
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public interface EnvironmentOrBuilder
    * @return The count of serviceOptions.
    */
   int getServiceOptionsCount();
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public interface EnvironmentOrBuilder
    * @return The serviceOptions at the given index.
    */
   java.lang.String getServiceOptions(int index);
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public interface EnvironmentOrBuilder
    * @return The serviceKmsKeyName.
    */
   java.lang.String getServiceKmsKeyName();
+
   /**
    *
    *
@@ -266,6 +275,7 @@ public interface EnvironmentOrBuilder
    * <code>repeated .google.dataflow.v1beta3.WorkerPool worker_pools = 4;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.WorkerPool> getWorkerPoolsList();
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public interface EnvironmentOrBuilder
    * <code>repeated .google.dataflow.v1beta3.WorkerPool worker_pools = 4;</code>
    */
   com.google.dataflow.v1beta3.WorkerPool getWorkerPools(int index);
+
   /**
    *
    *
@@ -288,6 +299,7 @@ public interface EnvironmentOrBuilder
    * <code>repeated .google.dataflow.v1beta3.WorkerPool worker_pools = 4;</code>
    */
   int getWorkerPoolsCount();
+
   /**
    *
    *
@@ -300,6 +312,7 @@ public interface EnvironmentOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.WorkerPoolOrBuilder>
       getWorkerPoolsOrBuilderList();
+
   /**
    *
    *
@@ -324,6 +337,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the userAgent field is set.
    */
   boolean hasUserAgent();
+
   /**
    *
    *
@@ -336,6 +350,7 @@ public interface EnvironmentOrBuilder
    * @return The userAgent.
    */
   com.google.protobuf.Struct getUserAgent();
+
   /**
    *
    *
@@ -360,6 +375,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
+
   /**
    *
    *
@@ -373,6 +389,7 @@ public interface EnvironmentOrBuilder
    * @return The version.
    */
   com.google.protobuf.Struct getVersion();
+
   /**
    *
    *
@@ -403,6 +420,7 @@ public interface EnvironmentOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
+
   /**
    *
    *
@@ -437,6 +455,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the sdkPipelineOptions field is set.
    */
   boolean hasSdkPipelineOptions();
+
   /**
    *
    *
@@ -452,6 +471,7 @@ public interface EnvironmentOrBuilder
    * @return The sdkPipelineOptions.
    */
   com.google.protobuf.Struct getSdkPipelineOptions();
+
   /**
    *
    *
@@ -478,6 +498,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the internalExperiments field is set.
    */
   boolean hasInternalExperiments();
+
   /**
    *
    *
@@ -490,6 +511,7 @@ public interface EnvironmentOrBuilder
    * @return The internalExperiments.
    */
   com.google.protobuf.Any getInternalExperiments();
+
   /**
    *
    *
@@ -513,6 +535,7 @@ public interface EnvironmentOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
+
   /**
    *
    *
@@ -539,6 +562,7 @@ public interface EnvironmentOrBuilder
    * @return The enum numeric value on the wire for flexResourceSchedulingGoal.
    */
   int getFlexResourceSchedulingGoalValue();
+
   /**
    *
    *
@@ -569,6 +593,7 @@ public interface EnvironmentOrBuilder
    * @return The workerRegion.
    */
   java.lang.String getWorkerRegion();
+
   /**
    *
    *
@@ -602,6 +627,7 @@ public interface EnvironmentOrBuilder
    * @return The workerZone.
    */
   java.lang.String getWorkerZone();
+
   /**
    *
    *
@@ -633,6 +659,7 @@ public interface EnvironmentOrBuilder
    * @return The enum numeric value on the wire for shuffleMode.
    */
   int getShuffleModeValue();
+
   /**
    *
    *
@@ -660,6 +687,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the debugOptions field is set.
    */
   boolean hasDebugOptions();
+
   /**
    *
    *
@@ -672,6 +700,7 @@ public interface EnvironmentOrBuilder
    * @return The debugOptions.
    */
   com.google.dataflow.v1beta3.DebugOptions getDebugOptions();
+
   /**
    *
    *

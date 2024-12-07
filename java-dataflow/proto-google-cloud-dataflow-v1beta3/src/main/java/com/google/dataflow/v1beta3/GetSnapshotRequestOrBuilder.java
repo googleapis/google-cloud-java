@@ -36,6 +36,7 @@ public interface GetSnapshotRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetSnapshotRequestOrBuilder
    * @return The snapshotId.
    */
   java.lang.String getSnapshotId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetSnapshotRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

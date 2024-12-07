@@ -34,6 +34,7 @@ public interface JobExecutionInfoOrBuilder
    * <code>map&lt;string, .google.dataflow.v1beta3.JobExecutionStageInfo&gt; stages = 1;</code>
    */
   int getStagesCount();
+
   /**
    *
    *
@@ -44,9 +45,11 @@ public interface JobExecutionInfoOrBuilder
    * <code>map&lt;string, .google.dataflow.v1beta3.JobExecutionStageInfo&gt; stages = 1;</code>
    */
   boolean containsStages(java.lang.String key);
+
   /** Use {@link #getStagesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.dataflow.v1beta3.JobExecutionStageInfo> getStages();
+
   /**
    *
    *
@@ -57,6 +60,7 @@ public interface JobExecutionInfoOrBuilder
    * <code>map&lt;string, .google.dataflow.v1beta3.JobExecutionStageInfo&gt; stages = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.dataflow.v1beta3.JobExecutionStageInfo> getStagesMap();
+
   /**
    *
    *
@@ -71,6 +75,7 @@ public interface JobExecutionInfoOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.dataflow.v1beta3.JobExecutionStageInfo defaultValue);
+
   /**
    *
    *

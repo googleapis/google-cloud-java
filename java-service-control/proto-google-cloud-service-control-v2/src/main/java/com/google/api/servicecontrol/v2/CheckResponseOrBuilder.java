@@ -38,6 +38,7 @@ public interface CheckResponseOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CheckResponseOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface CheckResponseOrBuilder
    * <code>map&lt;string, string&gt; headers = 2;</code>
    */
   int getHeadersCount();
+
   /**
    *
    *
@@ -85,9 +88,11 @@ public interface CheckResponseOrBuilder
    * <code>map&lt;string, string&gt; headers = 2;</code>
    */
   boolean containsHeaders(java.lang.String key);
+
   /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getHeaders();
+
   /**
    *
    *
@@ -98,6 +103,7 @@ public interface CheckResponseOrBuilder
    * <code>map&lt;string, string&gt; headers = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
+
   /**
    *
    *
@@ -112,6 +118,7 @@ public interface CheckResponseOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

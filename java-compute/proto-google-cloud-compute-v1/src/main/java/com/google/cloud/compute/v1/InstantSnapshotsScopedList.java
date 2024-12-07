@@ -32,6 +32,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstantSnapshotsScopedList)
     InstantSnapshotsScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstantSnapshotsScopedList.newBuilder() to construct.
   private InstantSnapshotsScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InstantSnapshot> instantSnapshots_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.compute.v1.InstantSnapshot> getInstantSnapshotsList() {
     return instantSnapshots_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       getInstantSnapshotsOrBuilderList() {
     return instantSnapshots_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
   public int getInstantSnapshotsCount() {
     return instantSnapshots_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
   public com.google.cloud.compute.v1.InstantSnapshot getInstantSnapshots(int index) {
     return instantSnapshots_.get(index);
   }
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -152,6 +159,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -167,6 +175,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -359,6 +368,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -650,6 +660,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
         return instantSnapshotsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
         return instantSnapshotsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -682,6 +694,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
         return instantSnapshotsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +762,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +786,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +807,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +828,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +849,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +869,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +889,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +903,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
         int index) {
       return getInstantSnapshotsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -898,6 +921,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
         return instantSnapshotsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -915,6 +939,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(instantSnapshots_);
       }
     }
+
     /**
      *
      *
@@ -928,6 +953,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       return getInstantSnapshotsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.InstantSnapshot.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -942,6 +968,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       return getInstantSnapshotsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.InstantSnapshot.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -982,6 +1009,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -996,6 +1024,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1016,6 +1045,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1038,6 +1068,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1088,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1116,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1136,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1151,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1135,6 +1170,7 @@ public final class InstantSnapshotsScopedList extends com.google.protobuf.Genera
             : warning_;
       }
     }
+
     /**
      *
      *

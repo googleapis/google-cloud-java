@@ -36,6 +36,7 @@ public interface AutoscalingPolicyOrBuilder
    * @return Whether the coolDownPeriodSec field is set.
    */
   boolean hasCoolDownPeriodSec();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AutoscalingPolicyOrBuilder
    * @return Whether the cpuUtilization field is set.
    */
   boolean hasCpuUtilization();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface AutoscalingPolicyOrBuilder
    * @return The cpuUtilization.
    */
   com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization getCpuUtilization();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface AutoscalingPolicyOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization>
       getCustomMetricUtilizationsList();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface AutoscalingPolicyOrBuilder
    */
   com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization getCustomMetricUtilizations(
       int index);
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface AutoscalingPolicyOrBuilder
    * </code>
    */
   int getCustomMetricUtilizationsCount();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface AutoscalingPolicyOrBuilder
   java.util.List<
           ? extends com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilizationOrBuilder>
       getCustomMetricUtilizationsOrBuilderList();
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public interface AutoscalingPolicyOrBuilder
    * @return Whether the loadBalancingUtilization field is set.
    */
   boolean hasLoadBalancingUtilization();
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public interface AutoscalingPolicyOrBuilder
    */
   com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization
       getLoadBalancingUtilization();
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public interface AutoscalingPolicyOrBuilder
    * @return Whether the maxNumReplicas field is set.
    */
   boolean hasMaxNumReplicas();
+
   /**
    *
    *
@@ -236,6 +246,7 @@ public interface AutoscalingPolicyOrBuilder
    * @return Whether the minNumReplicas field is set.
    */
   boolean hasMinNumReplicas();
+
   /**
    *
    *
@@ -262,6 +273,7 @@ public interface AutoscalingPolicyOrBuilder
    * @return Whether the mode field is set.
    */
   boolean hasMode();
+
   /**
    *
    *
@@ -275,6 +287,7 @@ public interface AutoscalingPolicyOrBuilder
    * @return The mode.
    */
   java.lang.String getMode();
+
   /**
    *
    *
@@ -297,6 +310,7 @@ public interface AutoscalingPolicyOrBuilder
    * @return Whether the scaleInControl field is set.
    */
   boolean hasScaleInControl();
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
@@ -305,6 +319,7 @@ public interface AutoscalingPolicyOrBuilder
    * @return The scaleInControl.
    */
   com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl getScaleInControl();
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
@@ -324,6 +339,7 @@ public interface AutoscalingPolicyOrBuilder
    * </code>
    */
   int getScalingSchedulesCount();
+
   /**
    *
    *
@@ -336,10 +352,12 @@ public interface AutoscalingPolicyOrBuilder
    * </code>
    */
   boolean containsScalingSchedules(java.lang.String key);
+
   /** Use {@link #getScalingSchedulesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
       getScalingSchedules();
+
   /**
    *
    *
@@ -353,6 +371,7 @@ public interface AutoscalingPolicyOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
       getScalingSchedulesMap();
+
   /**
    *
    *
@@ -369,6 +388,7 @@ public interface AutoscalingPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule defaultValue);
+
   /**
    *
    *

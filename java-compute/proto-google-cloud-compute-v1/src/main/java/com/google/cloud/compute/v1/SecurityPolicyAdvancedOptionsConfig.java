@@ -33,6 +33,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig)
     SecurityPolicyAdvancedOptionsConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyAdvancedOptionsConfig.newBuilder() to construct.
   private SecurityPolicyAdvancedOptionsConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -104,10 +105,13 @@ public final class SecurityPolicyAdvancedOptionsConfig
      * <code>UNDEFINED_JSON_PARSING = 0;</code>
      */
     public static final int UNDEFINED_JSON_PARSING_VALUE = 0;
+
     /** <code>DISABLED = 516696700;</code> */
     public static final int DISABLED_VALUE = 516696700;
+
     /** <code>STANDARD = 484642493;</code> */
     public static final int STANDARD_VALUE = 484642493;
+
     /** <code>STANDARD_WITH_GRAPHQL = 106979218;</code> */
     public static final int STANDARD_WITH_GRAPHQL_VALUE = 106979218;
 
@@ -234,8 +238,10 @@ public final class SecurityPolicyAdvancedOptionsConfig
      * <code>UNDEFINED_LOG_LEVEL = 0;</code>
      */
     public static final int UNDEFINED_LOG_LEVEL_VALUE = 0;
+
     /** <code>NORMAL = 161067239;</code> */
     public static final int NORMAL_VALUE = 161067239;
+
     /** <code>VERBOSE = 532219234;</code> */
     public static final int VERBOSE_VALUE = 532219234;
 
@@ -328,6 +334,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
   public static final int JSON_CUSTOM_CONFIG_FIELD_NUMBER = 111570105;
   private com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
       jsonCustomConfig_;
+
   /**
    *
    *
@@ -345,6 +352,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
   public boolean hasJsonCustomConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -366,6 +374,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
             .getDefaultInstance()
         : jsonCustomConfig_;
   }
+
   /**
    *
    *
@@ -390,6 +399,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jsonParsing_ = "";
+
   /**
    *
    *
@@ -406,6 +416,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
   public boolean hasJsonParsing() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -430,6 +441,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       return s;
     }
   }
+
   /**
    *
    *
@@ -459,6 +471,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object logLevel_ = "";
+
   /**
    *
    *
@@ -475,6 +488,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
   public boolean hasLogLevel() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -499,6 +513,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       return s;
     }
   }
+
   /**
    *
    *
@@ -529,6 +544,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList userIpRequestHeaders_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -543,6 +559,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
   public com.google.protobuf.ProtocolStringList getUserIpRequestHeadersList() {
     return userIpRequestHeaders_;
   }
+
   /**
    *
    *
@@ -557,6 +574,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
   public int getUserIpRequestHeadersCount() {
     return userIpRequestHeaders_.size();
   }
+
   /**
    *
    *
@@ -572,6 +590,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
   public java.lang.String getUserIpRequestHeaders(int index) {
     return userIpRequestHeaders_.get(index);
   }
+
   /**
    *
    *
@@ -800,6 +819,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1064,6 +1084,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
             com.google.cloud.compute.v1
                 .SecurityPolicyAdvancedOptionsConfigJsonCustomConfigOrBuilder>
         jsonCustomConfigBuilder_;
+
     /**
      *
      *
@@ -1080,6 +1101,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
     public boolean hasJsonCustomConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1104,6 +1126,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
         return jsonCustomConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1152,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1176,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1209,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1231,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1222,6 +1249,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       onChanged();
       return getJsonCustomConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1244,6 +1272,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
             : jsonCustomConfig_;
       }
     }
+
     /**
      *
      *
@@ -1276,6 +1305,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
     }
 
     private java.lang.Object jsonParsing_ = "";
+
     /**
      *
      *
@@ -1291,6 +1321,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
     public boolean hasJsonParsing() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1314,6 +1345,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1337,6 +1369,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1359,6 +1392,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1411,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1402,6 +1437,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
     }
 
     private java.lang.Object logLevel_ = "";
+
     /**
      *
      *
@@ -1417,6 +1453,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
     public boolean hasLogLevel() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1440,6 +1477,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1463,6 +1501,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1485,6 +1524,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1503,6 +1543,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1536,6 +1577,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1551,6 +1593,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       userIpRequestHeaders_.makeImmutable();
       return userIpRequestHeaders_;
     }
+
     /**
      *
      *
@@ -1565,6 +1608,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
     public int getUserIpRequestHeadersCount() {
       return userIpRequestHeaders_.size();
     }
+
     /**
      *
      *
@@ -1580,6 +1624,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
     public java.lang.String getUserIpRequestHeaders(int index) {
       return userIpRequestHeaders_.get(index);
     }
+
     /**
      *
      *
@@ -1595,6 +1640,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
     public com.google.protobuf.ByteString getUserIpRequestHeadersBytes(int index) {
       return userIpRequestHeaders_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1618,6 +1664,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1640,6 +1687,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1659,6 +1707,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1677,6 +1726,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *

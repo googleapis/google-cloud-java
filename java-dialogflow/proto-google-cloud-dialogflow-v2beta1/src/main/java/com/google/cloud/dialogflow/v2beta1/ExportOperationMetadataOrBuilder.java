@@ -36,6 +36,7 @@ public interface ExportOperationMetadataOrBuilder
    * @return Whether the exportedGcsDestination field is set.
    */
   boolean hasExportedGcsDestination();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ExportOperationMetadataOrBuilder
    * @return The exportedGcsDestination.
    */
   com.google.cloud.dialogflow.v2beta1.GcsDestination getExportedGcsDestination();
+
   /**
    *
    *

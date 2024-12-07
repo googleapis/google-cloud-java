@@ -34,6 +34,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.OtherCloudResourceRegexes)
     OtherCloudResourceRegexesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OtherCloudResourceRegexes.newBuilder() to construct.
   private OtherCloudResourceRegexes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.OtherCloudResourceRegex> patterns_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
   public java.util.List<com.google.privacy.dlp.v2.OtherCloudResourceRegex> getPatternsList() {
     return patterns_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
       getPatternsOrBuilderList() {
     return patterns_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
   public int getPatternsCount() {
     return patterns_.size();
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
   public com.google.privacy.dlp.v2.OtherCloudResourceRegex getPatterns(int index) {
     return patterns_.get(index);
   }
+
   /**
    *
    *
@@ -312,6 +318,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -579,6 +586,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
         return patternsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -598,6 +606,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
         return patternsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -617,6 +626,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
         return patternsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -642,6 +652,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +676,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +776,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +800,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +846,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +862,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
     public com.google.privacy.dlp.v2.OtherCloudResourceRegex.Builder getPatternsBuilder(int index) {
       return getPatternsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -863,6 +883,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
         return patternsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -883,6 +904,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(patterns_);
       }
     }
+
     /**
      *
      *
@@ -899,6 +921,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
       return getPatternsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.OtherCloudResourceRegex.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -916,6 +939,7 @@ public final class OtherCloudResourceRegexes extends com.google.protobuf.Generat
           .addBuilder(
               index, com.google.privacy.dlp.v2.OtherCloudResourceRegex.getDefaultInstance());
     }
+
     /**
      *
      *

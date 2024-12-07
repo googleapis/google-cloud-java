@@ -34,6 +34,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RecreateInstancesInstanceGroupManagerRequest)
     RecreateInstancesInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RecreateInstancesInstanceGroupManagerRequest.newBuilder() to construct.
   private RecreateInstancesInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       21405952;
   private com.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest
       instanceGroupManagersRecreateInstancesRequestResource_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
   public boolean hasInstanceGroupManagersRecreateInstancesRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
             .getDefaultInstance()
         : instanceGroupManagersRecreateInstancesRequestResource_;
   }
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -281,6 +291,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -309,6 +320,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -574,6 +587,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -850,6 +864,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
+
     /**
      *
      *
@@ -873,6 +888,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -896,6 +912,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -918,6 +935,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +954,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +986,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequestOrBuilder>
         instanceGroupManagersRecreateInstancesRequestResourceBuilder_;
+
     /**
      *
      *
@@ -983,6 +1003,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
     public boolean hasInstanceGroupManagersRecreateInstancesRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1007,6 +1028,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
         return instanceGroupManagersRecreateInstancesRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1032,6 +1054,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1079,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1112,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1134,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1152,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       onChanged();
       return getInstanceGroupManagersRecreateInstancesRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1148,6 +1175,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
             : instanceGroupManagersRecreateInstancesRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1179,6 +1207,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1203,6 +1232,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1227,6 +1257,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1250,6 +1281,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1269,6 +1301,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1328,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1309,6 +1343,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1331,6 +1366,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1353,6 +1389,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1374,6 +1411,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1391,6 +1429,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1415,6 +1454,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1439,6 +1479,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1463,6 +1504,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1486,6 +1528,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1505,6 +1548,7 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

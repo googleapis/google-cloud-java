@@ -36,6 +36,7 @@ public interface FetchRemoteBranchesResponseOrBuilder
    * @return A list containing the branches.
    */
   java.util.List<java.lang.String> getBranchesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FetchRemoteBranchesResponseOrBuilder
    * @return The count of branches.
    */
   int getBranchesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface FetchRemoteBranchesResponseOrBuilder
    * @return The branches at the given index.
    */
   java.lang.String getBranches(int index);
+
   /**
    *
    *

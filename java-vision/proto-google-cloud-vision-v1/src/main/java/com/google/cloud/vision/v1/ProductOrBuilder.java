@@ -41,6 +41,7 @@ public interface ProductOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface ProductOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface ProductOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface ProductOrBuilder
    * @return The productCategory.
    */
   java.lang.String getProductCategory();
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public interface ProductOrBuilder
    * <code>repeated .google.cloud.vision.v1.Product.KeyValue product_labels = 5;</code>
    */
   java.util.List<com.google.cloud.vision.v1.Product.KeyValue> getProductLabelsList();
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public interface ProductOrBuilder
    * <code>repeated .google.cloud.vision.v1.Product.KeyValue product_labels = 5;</code>
    */
   com.google.cloud.vision.v1.Product.KeyValue getProductLabels(int index);
+
   /**
    *
    *
@@ -212,6 +218,7 @@ public interface ProductOrBuilder
    * <code>repeated .google.cloud.vision.v1.Product.KeyValue product_labels = 5;</code>
    */
   int getProductLabelsCount();
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public interface ProductOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.Product.KeyValueOrBuilder>
       getProductLabelsOrBuilderList();
+
   /**
    *
    *

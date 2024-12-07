@@ -33,6 +33,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datapolicies.v1.ListDataPoliciesResponse)
     ListDataPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDataPoliciesResponse.newBuilder() to construct.
   private ListDataPoliciesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.datapolicies.v1.DataPolicy> dataPolicies_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       getDataPoliciesList() {
     return dataPolicies_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       getDataPoliciesOrBuilderList() {
     return dataPolicies_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
   public int getDataPoliciesCount() {
     return dataPolicies_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
   public com.google.cloud.bigquery.datapolicies.v1.DataPolicy getDataPolicies(int index) {
     return dataPolicies_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -362,6 +370,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +658,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
         return dataPoliciesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -665,6 +675,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
         return dataPoliciesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
         return dataPoliciesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -704,6 +716,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +760,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +784,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +805,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +847,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +867,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +887,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +901,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
         int index) {
       return getDataPoliciesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -897,6 +919,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
         return dataPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -914,6 +937,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(dataPolicies_);
       }
     }
+
     /**
      *
      *
@@ -927,6 +951,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       return getDataPoliciesFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.datapolicies.v1.DataPolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -942,6 +967,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
           .addBuilder(
               index, com.google.cloud.bigquery.datapolicies.v1.DataPolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -974,6 +1000,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -997,6 +1024,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1048,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1042,6 +1071,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1060,6 +1090,7 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

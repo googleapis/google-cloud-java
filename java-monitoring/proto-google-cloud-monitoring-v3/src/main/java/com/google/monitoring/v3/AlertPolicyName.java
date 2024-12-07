@@ -294,7 +294,8 @@ public class AlertPolicyName implements ResourceName {
     private Builder(AlertPolicyName alertPolicyName) {
       Preconditions.checkArgument(
           Objects.equals(alertPolicyName.pathTemplate, PROJECT_ALERT_POLICY),
-          "toBuilder is only supported when AlertPolicyName has the pattern of projects/{project}/alertPolicies/{alert_policy}");
+          "toBuilder is only supported when AlertPolicyName has the pattern of"
+              + " projects/{project}/alertPolicies/{alert_policy}");
       this.project = alertPolicyName.project;
       this.alertPolicy = alertPolicyName.alertPolicy;
     }

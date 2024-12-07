@@ -40,6 +40,7 @@ public interface EncryptionConfigOrBuilder
    * @return The gcePdKmsKeyName.
    */
   java.lang.String getGcePdKmsKeyName();
+
   /**
    *
    *
@@ -96,6 +97,7 @@ public interface EncryptionConfigOrBuilder
    * @return The kmsKey.
    */
   java.lang.String getKmsKey();
+
   /**
    *
    *

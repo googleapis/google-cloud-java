@@ -36,6 +36,7 @@ public interface ValidateRegionUrlMapRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ValidateRegionUrlMapRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface ValidateRegionUrlMapRequestOrBuilder
    * @return Whether the regionUrlMapsValidateRequestResource field is set.
    */
   boolean hasRegionUrlMapsValidateRequestResource();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface ValidateRegionUrlMapRequestOrBuilder
    */
   com.google.cloud.compute.v1.RegionUrlMapsValidateRequest
       getRegionUrlMapsValidateRequestResource();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface ValidateRegionUrlMapRequestOrBuilder
    * @return The urlMap.
    */
   java.lang.String getUrlMap();
+
   /**
    *
    *

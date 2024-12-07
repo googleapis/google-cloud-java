@@ -38,6 +38,7 @@ public interface LabelDetectionConfigOrBuilder
    * @return The enum numeric value on the wire for labelDetectionMode.
    */
   int getLabelDetectionModeValue();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface LabelDetectionConfigOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *

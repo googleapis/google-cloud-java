@@ -33,6 +33,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PreviewRouterRequest)
     PreviewRouterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PreviewRouterRequest.newBuilder() to construct.
   private PreviewRouterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object router_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
 
   public static final int ROUTER_RESOURCE_FIELD_NUMBER = 155222084;
   private com.google.cloud.compute.v1.Router routerResource_;
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
   public boolean hasRouterResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -257,6 +266,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.compute.v1.Router.getDefaultInstance()
         : routerResource_;
   }
+
   /**
    *
    *
@@ -467,6 +477,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -711,6 +722,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -733,6 +745,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -755,6 +768,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -776,6 +790,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +808,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +833,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -839,6 +856,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -861,6 +879,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -882,6 +901,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +919,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +944,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object router_ = "";
+
     /**
      *
      *
@@ -945,6 +967,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -967,6 +990,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -988,6 +1012,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1030,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1060,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.Router.Builder,
             com.google.cloud.compute.v1.RouterOrBuilder>
         routerResourceBuilder_;
+
     /**
      *
      *
@@ -1050,6 +1077,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
     public boolean hasRouterResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1072,6 +1100,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
         return routerResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1125,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1147,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1177,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1199,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1183,6 +1216,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getRouterResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1203,6 +1237,7 @@ public final class PreviewRouterRequest extends com.google.protobuf.GeneratedMes
             : routerResource_;
       }
     }
+
     /**
      *
      *

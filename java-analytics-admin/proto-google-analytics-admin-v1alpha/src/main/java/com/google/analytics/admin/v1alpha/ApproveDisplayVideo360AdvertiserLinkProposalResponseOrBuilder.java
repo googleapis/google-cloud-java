@@ -39,6 +39,7 @@ public interface ApproveDisplayVideo360AdvertiserLinkProposalResponseOrBuilder
    * @return Whether the displayVideo360AdvertiserLink field is set.
    */
   boolean hasDisplayVideo360AdvertiserLink();
+
   /**
    *
    *
@@ -55,6 +56,7 @@ public interface ApproveDisplayVideo360AdvertiserLinkProposalResponseOrBuilder
    */
   com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
       getDisplayVideo360AdvertiserLink();
+
   /**
    *
    *

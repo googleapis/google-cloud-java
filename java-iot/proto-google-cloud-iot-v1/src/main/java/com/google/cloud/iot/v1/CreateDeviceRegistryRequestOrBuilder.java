@@ -39,6 +39,7 @@ public interface CreateDeviceRegistryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateDeviceRegistryRequestOrBuilder
    * @return Whether the deviceRegistry field is set.
    */
   boolean hasDeviceRegistry();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CreateDeviceRegistryRequestOrBuilder
    * @return The deviceRegistry.
    */
   com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistry();
+
   /**
    *
    *

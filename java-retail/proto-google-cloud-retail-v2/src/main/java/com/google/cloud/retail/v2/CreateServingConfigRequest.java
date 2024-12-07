@@ -33,6 +33,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.CreateServingConfigRequest)
     CreateServingConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateServingConfigRequest.newBuilder() to construct.
   private CreateServingConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
 
   public static final int SERVING_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2.ServingConfig servingConfig_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
   public boolean hasServingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
         ? com.google.cloud.retail.v2.ServingConfig.getDefaultInstance()
         : servingConfig_;
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object servingConfigId_ = "";
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -420,6 +428,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +658,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -674,6 +684,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -699,6 +710,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -723,6 +735,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +756,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +789,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
             com.google.cloud.retail.v2.ServingConfig.Builder,
             com.google.cloud.retail.v2.ServingConfigOrBuilder>
         servingConfigBuilder_;
+
     /**
      *
      *
@@ -791,6 +806,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
     public boolean hasServingConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -813,6 +829,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
         return servingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -837,6 +854,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +877,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +907,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -909,6 +929,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +946,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return getServingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -945,6 +967,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
             : servingConfig_;
       }
     }
+
     /**
      *
      *
@@ -974,6 +997,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object servingConfigId_ = "";
+
     /**
      *
      *
@@ -1000,6 +1024,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1051,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1051,6 +1077,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1099,7 @@ public final class CreateServingConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

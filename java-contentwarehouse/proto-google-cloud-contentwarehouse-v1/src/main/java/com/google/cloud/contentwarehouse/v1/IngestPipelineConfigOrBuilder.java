@@ -52,6 +52,7 @@ public interface IngestPipelineConfigOrBuilder
    * @return Whether the documentAclPolicy field is set.
    */
   boolean hasDocumentAclPolicy();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface IngestPipelineConfigOrBuilder
    * @return The documentAclPolicy.
    */
   com.google.iam.v1.Policy getDocumentAclPolicy();
+
   /**
    *
    *
@@ -136,6 +138,7 @@ public interface IngestPipelineConfigOrBuilder
    * @return The folder.
    */
   java.lang.String getFolder();
+
   /**
    *
    *
@@ -185,6 +188,7 @@ public interface IngestPipelineConfigOrBuilder
    * @return The cloudFunction.
    */
   java.lang.String getCloudFunction();
+
   /**
    *
    *

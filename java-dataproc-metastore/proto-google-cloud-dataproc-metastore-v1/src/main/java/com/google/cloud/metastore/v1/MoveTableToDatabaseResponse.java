@@ -34,6 +34,7 @@ public final class MoveTableToDatabaseResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1.MoveTableToDatabaseResponse)
     MoveTableToDatabaseResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MoveTableToDatabaseResponse.newBuilder() to construct.
   private MoveTableToDatabaseResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class MoveTableToDatabaseResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

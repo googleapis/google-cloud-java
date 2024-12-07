@@ -33,6 +33,7 @@ public final class RemoveGroupMigrationResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.RemoveGroupMigrationResponse)
     RemoveGroupMigrationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RemoveGroupMigrationResponse.newBuilder() to construct.
   private RemoveGroupMigrationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class RemoveGroupMigrationResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

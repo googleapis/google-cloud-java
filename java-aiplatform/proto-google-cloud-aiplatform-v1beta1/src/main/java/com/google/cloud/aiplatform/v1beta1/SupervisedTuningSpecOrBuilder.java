@@ -37,6 +37,7 @@ public interface SupervisedTuningSpecOrBuilder
    * @return The trainingDatasetUri.
    */
   java.lang.String getTrainingDatasetUri();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface SupervisedTuningSpecOrBuilder
    * @return The validationDatasetUri.
    */
   java.lang.String getValidationDatasetUri();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface SupervisedTuningSpecOrBuilder
    * @return Whether the hyperParameters field is set.
    */
   boolean hasHyperParameters();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface SupervisedTuningSpecOrBuilder
    * @return The hyperParameters.
    */
   com.google.cloud.aiplatform.v1beta1.SupervisedHyperParameters getHyperParameters();
+
   /**
    *
    *

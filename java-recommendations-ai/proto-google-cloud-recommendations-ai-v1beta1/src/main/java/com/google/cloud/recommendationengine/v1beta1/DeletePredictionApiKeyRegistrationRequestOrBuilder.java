@@ -39,6 +39,7 @@ public interface DeletePredictionApiKeyRegistrationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

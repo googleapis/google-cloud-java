@@ -34,6 +34,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.StreamWithAnnotation)
     StreamWithAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamWithAnnotation.newBuilder() to construct.
   private StreamWithAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
      * @return The node.
      */
     java.lang.String getNode();
+
     /**
      *
      *
@@ -106,6 +108,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
      * <code>repeated .google.cloud.visionai.v1.StreamAnnotation annotations = 2;</code>
      */
     java.util.List<com.google.cloud.visionai.v1.StreamAnnotation> getAnnotationsList();
+
     /**
      *
      *
@@ -116,6 +119,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
      * <code>repeated .google.cloud.visionai.v1.StreamAnnotation annotations = 2;</code>
      */
     com.google.cloud.visionai.v1.StreamAnnotation getAnnotations(int index);
+
     /**
      *
      *
@@ -126,6 +130,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
      * <code>repeated .google.cloud.visionai.v1.StreamAnnotation annotations = 2;</code>
      */
     int getAnnotationsCount();
+
     /**
      *
      *
@@ -137,6 +142,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
      */
     java.util.List<? extends com.google.cloud.visionai.v1.StreamAnnotationOrBuilder>
         getAnnotationsOrBuilderList();
+
     /**
      *
      *
@@ -148,6 +154,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
      */
     com.google.cloud.visionai.v1.StreamAnnotationOrBuilder getAnnotationsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.StreamWithAnnotation.NodeAnnotation)
       NodeAnnotationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use NodeAnnotation.newBuilder() to construct.
     private NodeAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -197,6 +205,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object node_ = "";
+
     /**
      *
      *
@@ -220,6 +229,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -248,6 +258,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.visionai.v1.StreamAnnotation> annotations_;
+
     /**
      *
      *
@@ -261,6 +272,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
     public java.util.List<com.google.cloud.visionai.v1.StreamAnnotation> getAnnotationsList() {
       return annotations_;
     }
+
     /**
      *
      *
@@ -275,6 +287,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         getAnnotationsOrBuilderList() {
       return annotations_;
     }
+
     /**
      *
      *
@@ -288,6 +301,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
     public int getAnnotationsCount() {
       return annotations_.size();
     }
+
     /**
      *
      *
@@ -301,6 +315,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
     public com.google.cloud.visionai.v1.StreamAnnotation getAnnotations(int index) {
       return annotations_.get(index);
     }
+
     /**
      *
      *
@@ -489,6 +504,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -745,6 +761,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object node_ = "";
+
       /**
        *
        *
@@ -767,6 +784,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -789,6 +807,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -810,6 +829,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -827,6 +847,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -883,6 +904,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
           return annotationsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -899,6 +921,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
           return annotationsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -915,6 +938,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
           return annotationsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -938,6 +962,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -958,6 +983,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -980,6 +1006,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1003,6 +1030,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1023,6 +1051,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1043,6 +1072,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1063,6 +1093,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1082,6 +1113,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1101,6 +1133,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1114,6 +1147,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
           int index) {
         return getAnnotationsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1131,6 +1165,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
           return annotationsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1148,6 +1183,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
           return java.util.Collections.unmodifiableList(annotations_);
         }
       }
+
       /**
        *
        *
@@ -1161,6 +1197,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return getAnnotationsFieldBuilder()
             .addBuilder(com.google.cloud.visionai.v1.StreamAnnotation.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1175,6 +1212,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return getAnnotationsFieldBuilder()
             .addBuilder(index, com.google.cloud.visionai.v1.StreamAnnotation.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1280,6 +1318,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stream_ = "";
+
   /**
    *
    *
@@ -1303,6 +1342,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1331,6 +1371,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.StreamAnnotation> applicationAnnotations_;
+
   /**
    *
    *
@@ -1345,6 +1386,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       getApplicationAnnotationsList() {
     return applicationAnnotations_;
   }
+
   /**
    *
    *
@@ -1359,6 +1401,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       getApplicationAnnotationsOrBuilderList() {
     return applicationAnnotations_;
   }
+
   /**
    *
    *
@@ -1372,6 +1415,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
   public int getApplicationAnnotationsCount() {
     return applicationAnnotations_.size();
   }
+
   /**
    *
    *
@@ -1385,6 +1429,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
   public com.google.cloud.visionai.v1.StreamAnnotation getApplicationAnnotations(int index) {
     return applicationAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -1405,6 +1450,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.StreamWithAnnotation.NodeAnnotation>
       nodeAnnotations_;
+
   /**
    *
    *
@@ -1428,6 +1474,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       getNodeAnnotationsList() {
     return nodeAnnotations_;
   }
+
   /**
    *
    *
@@ -1452,6 +1499,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       getNodeAnnotationsOrBuilderList() {
     return nodeAnnotations_;
   }
+
   /**
    *
    *
@@ -1474,6 +1522,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
   public int getNodeAnnotationsCount() {
     return nodeAnnotations_.size();
   }
+
   /**
    *
    *
@@ -1497,6 +1546,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       int index) {
     return nodeAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -1705,6 +1755,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2008,6 +2059,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object stream_ = "";
+
     /**
      *
      *
@@ -2030,6 +2082,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2052,6 +2105,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2073,6 +2127,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2090,6 +2145,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2148,6 +2204,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return applicationAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2164,6 +2221,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return applicationAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2180,6 +2238,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return applicationAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2203,6 +2262,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2223,6 +2283,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2245,6 +2306,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2268,6 +2330,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2288,6 +2351,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2308,6 +2372,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2328,6 +2393,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2347,6 +2413,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2366,6 +2433,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2379,6 +2447,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         int index) {
       return getApplicationAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2396,6 +2465,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return applicationAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2413,6 +2483,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(applicationAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -2427,6 +2498,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       return getApplicationAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.StreamAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2441,6 +2513,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       return getApplicationAnnotationsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.StreamAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2519,6 +2592,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return nodeAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2544,6 +2618,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return nodeAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2570,6 +2645,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return nodeAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2602,6 +2678,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2632,6 +2709,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2664,6 +2742,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2696,6 +2775,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2725,6 +2805,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2755,6 +2836,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2786,6 +2868,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2814,6 +2897,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2842,6 +2926,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2864,6 +2949,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         getNodeAnnotationsBuilder(int index) {
       return getNodeAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2890,6 +2976,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return nodeAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2917,6 +3004,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(nodeAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -2942,6 +3030,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
               com.google.cloud.visionai.v1.StreamWithAnnotation.NodeAnnotation
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2968,6 +3057,7 @@ public final class StreamWithAnnotation extends com.google.protobuf.GeneratedMes
               com.google.cloud.visionai.v1.StreamWithAnnotation.NodeAnnotation
                   .getDefaultInstance());
     }
+
     /**
      *
      *

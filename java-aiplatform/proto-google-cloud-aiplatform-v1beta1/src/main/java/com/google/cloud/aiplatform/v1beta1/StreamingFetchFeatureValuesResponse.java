@@ -35,6 +35,7 @@ public final class StreamingFetchFeatureValuesResponse
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse)
     StreamingFetchFeatureValuesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingFetchFeatureValuesResponse.newBuilder() to construct.
   private StreamingFetchFeatureValuesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class StreamingFetchFeatureValuesResponse
   private int bitField0_;
   public static final int STATUS_FIELD_NUMBER = 1;
   private com.google.rpc.Status status_;
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class StreamingFetchFeatureValuesResponse
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public final class StreamingFetchFeatureValuesResponse
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
+
   /**
    *
    *
@@ -139,12 +143,14 @@ public final class StreamingFetchFeatureValuesResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse> data_;
+
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code> */
   @java.lang.Override
   public java.util.List<com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse>
       getDataList() {
     return data_;
   }
+
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code> */
   @java.lang.Override
   public java.util.List<
@@ -152,16 +158,19 @@ public final class StreamingFetchFeatureValuesResponse
       getDataOrBuilderList() {
     return data_;
   }
+
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code> */
   @java.lang.Override
   public int getDataCount() {
     return data_.size();
   }
+
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code> */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse getData(int index) {
     return data_.get(index);
   }
+
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code> */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponseOrBuilder getDataOrBuilder(
@@ -173,6 +182,7 @@ public final class StreamingFetchFeatureValuesResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey> dataKeysWithError_;
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
    * </code>
@@ -182,6 +192,7 @@ public final class StreamingFetchFeatureValuesResponse
       getDataKeysWithErrorList() {
     return dataKeysWithError_;
   }
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
    * </code>
@@ -191,6 +202,7 @@ public final class StreamingFetchFeatureValuesResponse
       getDataKeysWithErrorOrBuilderList() {
     return dataKeysWithError_;
   }
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
    * </code>
@@ -199,6 +211,7 @@ public final class StreamingFetchFeatureValuesResponse
   public int getDataKeysWithErrorCount() {
     return dataKeysWithError_.size();
   }
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
    * </code>
@@ -207,6 +220,7 @@ public final class StreamingFetchFeatureValuesResponse
   public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey getDataKeysWithError(int index) {
     return dataKeysWithError_.get(index);
   }
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
    * </code>
@@ -406,6 +420,7 @@ public final class StreamingFetchFeatureValuesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -739,6 +754,7 @@ public final class StreamingFetchFeatureValuesResponse
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -760,6 +776,7 @@ public final class StreamingFetchFeatureValuesResponse
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -785,6 +802,7 @@ public final class StreamingFetchFeatureValuesResponse
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class StreamingFetchFeatureValuesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class StreamingFetchFeatureValuesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +894,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +921,7 @@ public final class StreamingFetchFeatureValuesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +943,7 @@ public final class StreamingFetchFeatureValuesResponse
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -944,6 +967,7 @@ public final class StreamingFetchFeatureValuesResponse
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1027,7 @@ public final class StreamingFetchFeatureValuesResponse
         return dataBuilder_.getMessageList();
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1013,6 +1038,7 @@ public final class StreamingFetchFeatureValuesResponse
         return dataBuilder_.getCount();
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1023,6 +1049,7 @@ public final class StreamingFetchFeatureValuesResponse
         return dataBuilder_.getMessage(index);
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1040,6 +1067,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1055,6 +1083,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1071,6 +1100,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1088,6 +1118,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1102,6 +1133,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1117,6 +1149,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1132,6 +1165,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1145,6 +1179,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1158,6 +1193,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1165,6 +1201,7 @@ public final class StreamingFetchFeatureValuesResponse
         int index) {
       return getDataFieldBuilder().getBuilder(index);
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1176,6 +1213,7 @@ public final class StreamingFetchFeatureValuesResponse
         return dataBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1188,6 +1226,7 @@ public final class StreamingFetchFeatureValuesResponse
         return java.util.Collections.unmodifiableList(data_);
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1196,6 +1235,7 @@ public final class StreamingFetchFeatureValuesResponse
           .addBuilder(
               com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse.getDefaultInstance());
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1206,6 +1246,7 @@ public final class StreamingFetchFeatureValuesResponse
               index,
               com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse.getDefaultInstance());
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse data = 2;</code>
      */
@@ -1261,6 +1302,7 @@ public final class StreamingFetchFeatureValuesResponse
         return dataKeysWithErrorBuilder_.getMessageList();
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1272,6 +1314,7 @@ public final class StreamingFetchFeatureValuesResponse
         return dataKeysWithErrorBuilder_.getCount();
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1283,6 +1326,7 @@ public final class StreamingFetchFeatureValuesResponse
         return dataKeysWithErrorBuilder_.getMessage(index);
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1301,6 +1345,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1316,6 +1361,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1334,6 +1380,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1352,6 +1399,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1367,6 +1415,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1382,6 +1431,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1398,6 +1448,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1412,6 +1463,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1426,6 +1478,7 @@ public final class StreamingFetchFeatureValuesResponse
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1434,6 +1487,7 @@ public final class StreamingFetchFeatureValuesResponse
         getDataKeysWithErrorBuilder(int index) {
       return getDataKeysWithErrorFieldBuilder().getBuilder(index);
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1446,6 +1500,7 @@ public final class StreamingFetchFeatureValuesResponse
         return dataKeysWithErrorBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1458,6 +1513,7 @@ public final class StreamingFetchFeatureValuesResponse
         return java.util.Collections.unmodifiableList(dataKeysWithError_);
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1467,6 +1523,7 @@ public final class StreamingFetchFeatureValuesResponse
       return getDataKeysWithErrorFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance());
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>
@@ -1477,6 +1534,7 @@ public final class StreamingFetchFeatureValuesResponse
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance());
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys_with_error = 3;
      * </code>

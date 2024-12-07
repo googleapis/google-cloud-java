@@ -33,6 +33,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.Point)
     PointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Point.newBuilder() to construct.
   private Point(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -62,6 +63,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LINE_FIELD_NUMBER = 1;
   private int line_ = 0;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHARACTER_FIELD_NUMBER = 2;
   private int character_ = 0;
+
   /**
    *
    *
@@ -262,6 +265,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -455,6 +459,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int line_;
+
     /**
      *
      *
@@ -470,6 +475,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     public int getLine() {
       return line_;
     }
+
     /**
      *
      *
@@ -489,6 +495,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -508,6 +515,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int character_;
+
     /**
      *
      *
@@ -523,6 +531,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     public int getCharacter() {
       return character_;
     }
+
     /**
      *
      *
@@ -542,6 +551,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

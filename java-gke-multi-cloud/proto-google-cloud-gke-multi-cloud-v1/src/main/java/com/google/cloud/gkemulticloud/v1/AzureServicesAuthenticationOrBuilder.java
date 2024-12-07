@@ -36,6 +36,7 @@ public interface AzureServicesAuthenticationOrBuilder
    * @return The tenantId.
    */
   java.lang.String getTenantId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AzureServicesAuthenticationOrBuilder
    * @return The applicationId.
    */
   java.lang.String getApplicationId();
+
   /**
    *
    *

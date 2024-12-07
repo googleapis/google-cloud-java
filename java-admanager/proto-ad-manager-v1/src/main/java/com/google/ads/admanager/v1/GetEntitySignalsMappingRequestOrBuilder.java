@@ -40,6 +40,7 @@ public interface GetEntitySignalsMappingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface GetParticipantRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

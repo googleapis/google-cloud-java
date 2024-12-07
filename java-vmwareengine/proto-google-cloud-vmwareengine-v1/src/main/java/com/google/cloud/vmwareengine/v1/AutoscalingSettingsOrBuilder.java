@@ -48,6 +48,7 @@ public interface AutoscalingSettingsOrBuilder
    * </code>
    */
   int getAutoscalingPoliciesCount();
+
   /**
    *
    *
@@ -72,11 +73,13 @@ public interface AutoscalingSettingsOrBuilder
    * </code>
    */
   boolean containsAutoscalingPolicies(java.lang.String key);
+
   /** Use {@link #getAutoscalingPoliciesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String, com.google.cloud.vmwareengine.v1.AutoscalingSettings.AutoscalingPolicy>
       getAutoscalingPolicies();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface AutoscalingSettingsOrBuilder
   java.util.Map<
           java.lang.String, com.google.cloud.vmwareengine.v1.AutoscalingSettings.AutoscalingPolicy>
       getAutoscalingPoliciesMap();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface AutoscalingSettingsOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.vmwareengine.v1.AutoscalingSettings.AutoscalingPolicy defaultValue);
+
   /**
    *
    *
@@ -202,6 +207,7 @@ public interface AutoscalingSettingsOrBuilder
    * @return Whether the coolDownPeriod field is set.
    */
   boolean hasCoolDownPeriod();
+
   /**
    *
    *
@@ -218,6 +224,7 @@ public interface AutoscalingSettingsOrBuilder
    * @return The coolDownPeriod.
    */
   com.google.protobuf.Duration getCoolDownPeriod();
+
   /**
    *
    *

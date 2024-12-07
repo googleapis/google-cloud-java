@@ -33,6 +33,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.FetchFileGitStatusesResponse)
     FetchFileGitStatusesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchFileGitStatusesResponse.newBuilder() to construct.
   private FetchFileGitStatusesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
      * @return The path.
      */
     java.lang.String getPath();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -123,6 +126,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
     com.google.cloud.dataform.v1alpha2.FetchFileGitStatusesResponse.UncommittedFileChange.State
         getState();
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.FetchFileGitStatusesResponse.UncommittedFileChange)
       UncommittedFileChangeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UncommittedFileChange.newBuilder() to construct.
     private UncommittedFileChange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -245,6 +250,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -255,6 +261,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
        * <code>ADDED = 1;</code>
        */
       public static final int ADDED_VALUE = 1;
+
       /**
        *
        *
@@ -265,6 +272,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
        * <code>DELETED = 2;</code>
        */
       public static final int DELETED_VALUE = 2;
+
       /**
        *
        *
@@ -275,6 +283,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
        * <code>MODIFIED = 3;</code>
        */
       public static final int MODIFIED_VALUE = 3;
+
       /**
        *
        *
@@ -380,6 +389,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object path_ = "";
+
     /**
      *
      *
@@ -403,6 +413,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         return s;
       }
     }
+
     /**
      *
      *
@@ -429,6 +440,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
 
     public static final int STATE_FIELD_NUMBER = 2;
     private int state_ = 0;
+
     /**
      *
      *
@@ -446,6 +458,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -671,6 +684,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -893,6 +907,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       private int bitField0_;
 
       private java.lang.Object path_ = "";
+
       /**
        *
        *
@@ -915,6 +930,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -937,6 +953,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -958,6 +975,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -975,6 +993,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -999,6 +1018,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       }
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -1016,6 +1036,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -1036,6 +1057,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1062,6 +1084,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
                 .State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1088,6 +1111,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1185,6 +1209,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
   private java.util.List<
           com.google.cloud.dataform.v1alpha2.FetchFileGitStatusesResponse.UncommittedFileChange>
       uncommittedFileChanges_;
+
   /**
    *
    *
@@ -1203,6 +1228,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       getUncommittedFileChangesList() {
     return uncommittedFileChanges_;
   }
+
   /**
    *
    *
@@ -1223,6 +1249,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       getUncommittedFileChangesOrBuilderList() {
     return uncommittedFileChanges_;
   }
+
   /**
    *
    *
@@ -1239,6 +1266,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
   public int getUncommittedFileChangesCount() {
     return uncommittedFileChanges_.size();
   }
+
   /**
    *
    *
@@ -1256,6 +1284,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       getUncommittedFileChanges(int index) {
     return uncommittedFileChanges_.get(index);
   }
+
   /**
    *
    *
@@ -1440,6 +1469,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1720,6 +1750,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         return uncommittedFileChangesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1739,6 +1770,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         return uncommittedFileChangesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1759,6 +1791,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         return uncommittedFileChangesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1787,6 +1820,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1813,6 +1847,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1840,6 +1875,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1868,6 +1904,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1893,6 +1930,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1919,6 +1957,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1946,6 +1985,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1968,6 +2008,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1990,6 +2031,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -2007,6 +2049,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         getUncommittedFileChangesBuilder(int index) {
       return getUncommittedFileChangesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2028,6 +2071,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         return uncommittedFileChangesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2051,6 +2095,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(uncommittedFileChanges_);
       }
     }
+
     /**
      *
      *
@@ -2071,6 +2116,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
               com.google.cloud.dataform.v1alpha2.FetchFileGitStatusesResponse.UncommittedFileChange
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2092,6 +2138,7 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
               com.google.cloud.dataform.v1alpha2.FetchFileGitStatusesResponse.UncommittedFileChange
                   .getDefaultInstance());
     }
+
     /**
      *
      *

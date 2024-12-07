@@ -33,6 +33,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NearestNeighborQuery)
     NearestNeighborQueryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NearestNeighborQuery.newBuilder() to construct.
   private NearestNeighborQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return A list containing the value.
      */
     java.util.List<java.lang.Float> getValueList();
+
     /**
      *
      *
@@ -93,6 +95,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return The count of value.
      */
     int getValueCount();
+
     /**
      *
      *
@@ -107,6 +110,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      */
     float getValue(int index);
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NearestNeighborQuery.Embedding)
       EmbeddingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Embedding.newBuilder() to construct.
     private Embedding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -155,6 +160,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.FloatList value_ = emptyFloatList();
+
     /**
      *
      *
@@ -170,6 +176,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public java.util.List<java.lang.Float> getValueList() {
       return value_;
     }
+
     /**
      *
      *
@@ -184,6 +191,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public int getValueCount() {
       return value_.size();
     }
+
     /**
      *
      *
@@ -377,6 +385,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -617,6 +627,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         value_.makeImmutable();
         return value_;
       }
+
       /**
        *
        *
@@ -631,6 +642,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public int getValueCount() {
         return value_.size();
       }
+
       /**
        *
        *
@@ -646,6 +658,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public float getValue(int index) {
         return value_.getFloat(index);
       }
+
       /**
        *
        *
@@ -667,6 +680,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -687,6 +701,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -706,6 +721,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -808,6 +824,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return A list containing the allowTokens.
      */
     java.util.List<java.lang.String> getAllowTokensList();
+
     /**
      *
      *
@@ -845,6 +863,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return The count of allowTokens.
      */
     int getAllowTokensCount();
+
     /**
      *
      *
@@ -858,6 +877,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return The allowTokens at the given index.
      */
     java.lang.String getAllowTokens(int index);
+
     /**
      *
      *
@@ -884,6 +904,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return A list containing the denyTokens.
      */
     java.util.List<java.lang.String> getDenyTokensList();
+
     /**
      *
      *
@@ -896,6 +917,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return The count of denyTokens.
      */
     int getDenyTokensCount();
+
     /**
      *
      *
@@ -909,6 +931,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return The denyTokens at the given index.
      */
     java.lang.String getDenyTokens(int index);
+
     /**
      *
      *
@@ -923,6 +946,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.ByteString getDenyTokensBytes(int index);
   }
+
   /**
    *
    *
@@ -944,6 +968,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NearestNeighborQuery.StringFilter)
       StringFilterOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StringFilter.newBuilder() to construct.
     private StringFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -980,6 +1005,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1003,6 +1029,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -1032,6 +1059,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList allowTokens_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -1046,6 +1074,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ProtocolStringList getAllowTokensList() {
       return allowTokens_;
     }
+
     /**
      *
      *
@@ -1060,6 +1089,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public int getAllowTokensCount() {
       return allowTokens_.size();
     }
+
     /**
      *
      *
@@ -1075,6 +1105,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public java.lang.String getAllowTokens(int index) {
       return allowTokens_.get(index);
     }
+
     /**
      *
      *
@@ -1096,6 +1127,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList denyTokens_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -1110,6 +1142,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ProtocolStringList getDenyTokensList() {
       return denyTokens_;
     }
+
     /**
      *
      *
@@ -1124,6 +1157,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public int getDenyTokensCount() {
       return denyTokens_.size();
     }
+
     /**
      *
      *
@@ -1139,6 +1173,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public java.lang.String getDenyTokens(int index) {
       return denyTokens_.get(index);
     }
+
     /**
      *
      *
@@ -1349,6 +1384,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1594,6 +1630,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -1616,6 +1653,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1638,6 +1676,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1659,6 +1698,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1676,6 +1716,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1708,6 +1749,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -1723,6 +1765,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         allowTokens_.makeImmutable();
         return allowTokens_;
       }
+
       /**
        *
        *
@@ -1737,6 +1780,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public int getAllowTokensCount() {
         return allowTokens_.size();
       }
+
       /**
        *
        *
@@ -1752,6 +1796,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public java.lang.String getAllowTokens(int index) {
         return allowTokens_.get(index);
       }
+
       /**
        *
        *
@@ -1767,6 +1812,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public com.google.protobuf.ByteString getAllowTokensBytes(int index) {
         return allowTokens_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1790,6 +1836,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1812,6 +1859,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1831,6 +1879,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1849,6 +1898,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1882,6 +1932,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
@@ -1897,6 +1948,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         denyTokens_.makeImmutable();
         return denyTokens_;
       }
+
       /**
        *
        *
@@ -1911,6 +1963,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public int getDenyTokensCount() {
         return denyTokens_.size();
       }
+
       /**
        *
        *
@@ -1926,6 +1979,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public java.lang.String getDenyTokens(int index) {
         return denyTokens_.get(index);
       }
+
       /**
        *
        *
@@ -1941,6 +1995,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public com.google.protobuf.ByteString getDenyTokensBytes(int index) {
         return denyTokens_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1964,6 +2019,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1986,6 +2042,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2005,6 +2062,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2023,6 +2081,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2131,6 +2190,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return Whether the valueInt field is set.
      */
     boolean hasValueInt();
+
     /**
      *
      *
@@ -2156,6 +2216,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return Whether the valueFloat field is set.
      */
     boolean hasValueFloat();
+
     /**
      *
      *
@@ -2181,6 +2242,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return Whether the valueDouble field is set.
      */
     boolean hasValueDouble();
+
     /**
      *
      *
@@ -2206,6 +2268,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -2234,6 +2297,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return Whether the op field is set.
      */
     boolean hasOp();
+
     /**
      *
      *
@@ -2249,6 +2313,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for op.
      */
     int getOpValue();
+
     /**
      *
      *
@@ -2267,6 +2332,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
 
     com.google.cloud.aiplatform.v1.NearestNeighborQuery.NumericFilter.ValueCase getValueCase();
   }
+
   /**
    *
    *
@@ -2288,6 +2354,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NearestNeighborQuery.NumericFilter)
       NumericFilterOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use NumericFilter.newBuilder() to construct.
     private NumericFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2413,6 +2480,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
        * <code>OPERATOR_UNSPECIFIED = 0;</code>
        */
       public static final int OPERATOR_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2423,6 +2491,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
        * <code>LESS = 1;</code>
        */
       public static final int LESS_VALUE = 1;
+
       /**
        *
        *
@@ -2433,6 +2502,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
        * <code>LESS_EQUAL = 2;</code>
        */
       public static final int LESS_EQUAL_VALUE = 2;
+
       /**
        *
        *
@@ -2443,6 +2513,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
        * <code>EQUAL = 3;</code>
        */
       public static final int EQUAL_VALUE = 3;
+
       /**
        *
        *
@@ -2453,6 +2524,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
        * <code>GREATER_EQUAL = 4;</code>
        */
       public static final int GREATER_EQUAL_VALUE = 4;
+
       /**
        *
        *
@@ -2463,6 +2535,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
        * <code>GREATER = 5;</code>
        */
       public static final int GREATER_VALUE = 5;
+
       /**
        *
        *
@@ -2586,6 +2659,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       private ValueCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2621,6 +2695,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     }
 
     public static final int VALUE_INT_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -2636,6 +2711,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public boolean hasValueInt() {
       return valueCase_ == 2;
     }
+
     /**
      *
      *
@@ -2656,6 +2732,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     }
 
     public static final int VALUE_FLOAT_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -2671,6 +2748,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public boolean hasValueFloat() {
       return valueCase_ == 3;
     }
+
     /**
      *
      *
@@ -2691,6 +2769,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     }
 
     public static final int VALUE_DOUBLE_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -2706,6 +2785,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public boolean hasValueDouble() {
       return valueCase_ == 4;
     }
+
     /**
      *
      *
@@ -2729,6 +2809,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2752,6 +2833,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -2778,6 +2860,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
 
     public static final int OP_FIELD_NUMBER = 5;
     private int op_ = 0;
+
     /**
      *
      *
@@ -2796,6 +2879,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public boolean hasOp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2814,6 +2898,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public int getOpValue() {
       return op_;
     }
+
     /**
      *
      *
@@ -3072,6 +3157,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3364,6 +3450,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public boolean hasValueInt() {
         return valueCase_ == 2;
       }
+
       /**
        *
        *
@@ -3381,6 +3468,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         }
         return 0L;
       }
+
       /**
        *
        *
@@ -3400,6 +3488,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3434,6 +3523,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public boolean hasValueFloat() {
         return valueCase_ == 3;
       }
+
       /**
        *
        *
@@ -3451,6 +3541,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         }
         return 0F;
       }
+
       /**
        *
        *
@@ -3470,6 +3561,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3504,6 +3596,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public boolean hasValueDouble() {
         return valueCase_ == 4;
       }
+
       /**
        *
        *
@@ -3521,6 +3614,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         }
         return 0D;
       }
+
       /**
        *
        *
@@ -3540,6 +3634,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3561,6 +3656,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -3583,6 +3679,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3605,6 +3702,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3626,6 +3724,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3643,6 +3742,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3667,6 +3767,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
 
       private int op_ = 0;
+
       /**
        *
        *
@@ -3685,6 +3786,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public boolean hasOp() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -3703,6 +3805,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public int getOpValue() {
         return op_;
       }
+
       /**
        *
        *
@@ -3724,6 +3827,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3748,6 +3852,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3773,6 +3878,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3898,6 +4004,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
      */
     double getLeafNodesSearchFraction();
   }
+
   /**
    *
    *
@@ -3913,6 +4020,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NearestNeighborQuery.Parameters)
       ParametersOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Parameters.newBuilder() to construct.
     private Parameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3943,6 +4051,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
 
     public static final int APPROXIMATE_NEIGHBOR_CANDIDATES_FIELD_NUMBER = 1;
     private int approximateNeighborCandidates_ = 0;
+
     /**
      *
      *
@@ -3964,6 +4073,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
 
     public static final int LEAF_NODES_SEARCH_FRACTION_FIELD_NUMBER = 2;
     private double leafNodesSearchFraction_ = 0D;
+
     /**
      *
      *
@@ -4161,6 +4271,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4364,6 +4475,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private int approximateNeighborCandidates_;
+
       /**
        *
        *
@@ -4382,6 +4494,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public int getApproximateNeighborCandidates() {
         return approximateNeighborCandidates_;
       }
+
       /**
        *
        *
@@ -4404,6 +4517,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4426,6 +4540,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
 
       private double leafNodesSearchFraction_;
+
       /**
        *
        *
@@ -4445,6 +4560,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       public double getLeafNodesSearchFraction() {
         return leafNodesSearchFraction_;
       }
+
       /**
        *
        *
@@ -4468,6 +4584,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4575,6 +4692,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     private InstanceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4608,6 +4726,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ENTITY_ID_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -4624,6 +4743,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
   public boolean hasEntityId() {
     return instanceCase_ == 1;
   }
+
   /**
    *
    *
@@ -4653,6 +4773,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -4684,6 +4805,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
   }
 
   public static final int EMBEDDING_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -4701,6 +4823,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
   public boolean hasEmbedding() {
     return instanceCase_ == 2;
   }
+
   /**
    *
    *
@@ -4721,6 +4844,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1.NearestNeighborQuery.Embedding.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4743,6 +4867,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
 
   public static final int NEIGHBOR_COUNT_FIELD_NUMBER = 3;
   private int neighborCount_ = 0;
+
   /**
    *
    *
@@ -4765,6 +4890,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.NearestNeighborQuery.StringFilter>
       stringFilters_;
+
   /**
    *
    *
@@ -4781,6 +4907,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       getStringFiltersList() {
     return stringFilters_;
   }
+
   /**
    *
    *
@@ -4798,6 +4925,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       getStringFiltersOrBuilderList() {
     return stringFilters_;
   }
+
   /**
    *
    *
@@ -4813,6 +4941,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
   public int getStringFiltersCount() {
     return stringFilters_.size();
   }
+
   /**
    *
    *
@@ -4829,6 +4958,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       int index) {
     return stringFilters_.get(index);
   }
+
   /**
    *
    *
@@ -4851,6 +4981,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.NearestNeighborQuery.NumericFilter>
       numericFilters_;
+
   /**
    *
    *
@@ -4867,6 +4998,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       getNumericFiltersList() {
     return numericFilters_;
   }
+
   /**
    *
    *
@@ -4884,6 +5016,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       getNumericFiltersOrBuilderList() {
     return numericFilters_;
   }
+
   /**
    *
    *
@@ -4899,6 +5032,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
   public int getNumericFiltersCount() {
     return numericFilters_.size();
   }
+
   /**
    *
    *
@@ -4915,6 +5049,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       int index) {
     return numericFilters_.get(index);
   }
+
   /**
    *
    *
@@ -4934,6 +5069,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
 
   public static final int PER_CROWDING_ATTRIBUTE_NEIGHBOR_COUNT_FIELD_NUMBER = 5;
   private int perCrowdingAttributeNeighborCount_ = 0;
+
   /**
    *
    *
@@ -4957,6 +5093,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
 
   public static final int PARAMETERS_FIELD_NUMBER = 7;
   private com.google.cloud.aiplatform.v1.NearestNeighborQuery.Parameters parameters_;
+
   /**
    *
    *
@@ -4974,6 +5111,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
   public boolean hasParameters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4993,6 +5131,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1.NearestNeighborQuery.Parameters.getDefaultInstance()
         : parameters_;
   }
+
   /**
    *
    *
@@ -5257,6 +5396,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5677,6 +5817,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public boolean hasEntityId() {
       return instanceCase_ == 1;
     }
+
     /**
      *
      *
@@ -5707,6 +5848,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5737,6 +5879,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5760,6 +5903,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5781,6 +5925,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -5811,6 +5956,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.NearestNeighborQuery.Embedding.Builder,
             com.google.cloud.aiplatform.v1.NearestNeighborQuery.EmbeddingOrBuilder>
         embeddingBuilder_;
+
     /**
      *
      *
@@ -5828,6 +5974,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public boolean hasEmbedding() {
       return instanceCase_ == 2;
     }
+
     /**
      *
      *
@@ -5855,6 +6002,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.NearestNeighborQuery.Embedding.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5880,6 +6028,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       instanceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -5902,6 +6051,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       instanceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -5939,6 +6089,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       instanceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -5966,6 +6117,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -5981,6 +6133,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         getEmbeddingBuilder() {
       return getEmbeddingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6004,6 +6157,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.NearestNeighborQuery.Embedding.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6041,6 +6195,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     }
 
     private int neighborCount_;
+
     /**
      *
      *
@@ -6057,6 +6212,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public int getNeighborCount() {
       return neighborCount_;
     }
+
     /**
      *
      *
@@ -6077,6 +6233,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6133,6 +6290,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return stringFiltersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -6151,6 +6309,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return stringFiltersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -6170,6 +6329,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return stringFiltersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -6195,6 +6355,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6218,6 +6379,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6243,6 +6405,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6268,6 +6431,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6290,6 +6454,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6313,6 +6478,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6337,6 +6503,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6358,6 +6525,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6379,6 +6547,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6394,6 +6563,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         getStringFiltersBuilder(int index) {
       return getStringFiltersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6413,6 +6583,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return stringFiltersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6433,6 +6604,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(stringFilters_);
       }
     }
+
     /**
      *
      *
@@ -6451,6 +6623,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
               com.google.cloud.aiplatform.v1.NearestNeighborQuery.StringFilter
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6470,6 +6643,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
               com.google.cloud.aiplatform.v1.NearestNeighborQuery.StringFilter
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6543,6 +6717,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return numericFiltersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -6561,6 +6736,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return numericFiltersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -6580,6 +6756,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return numericFiltersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -6605,6 +6782,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6628,6 +6806,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6653,6 +6832,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6678,6 +6858,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6700,6 +6881,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6723,6 +6905,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6747,6 +6930,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6768,6 +6952,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6789,6 +6974,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6804,6 +6990,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         getNumericFiltersBuilder(int index) {
       return getNumericFiltersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6823,6 +7010,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return numericFiltersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6843,6 +7031,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(numericFilters_);
       }
     }
+
     /**
      *
      *
@@ -6861,6 +7050,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
               com.google.cloud.aiplatform.v1.NearestNeighborQuery.NumericFilter
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6880,6 +7070,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
               com.google.cloud.aiplatform.v1.NearestNeighborQuery.NumericFilter
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6917,6 +7108,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     }
 
     private int perCrowdingAttributeNeighborCount_;
+
     /**
      *
      *
@@ -6937,6 +7129,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public int getPerCrowdingAttributeNeighborCount() {
       return perCrowdingAttributeNeighborCount_;
     }
+
     /**
      *
      *
@@ -6961,6 +7154,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6990,6 +7184,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.NearestNeighborQuery.Parameters.Builder,
             com.google.cloud.aiplatform.v1.NearestNeighborQuery.ParametersOrBuilder>
         parametersBuilder_;
+
     /**
      *
      *
@@ -7006,6 +7201,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
     public boolean hasParameters() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -7028,6 +7224,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
         return parametersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7053,6 +7250,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7075,6 +7273,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7107,6 +7306,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7128,6 +7328,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7145,6 +7346,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7166,6 +7368,7 @@ public final class NearestNeighborQuery extends com.google.protobuf.GeneratedMes
             : parameters_;
       }
     }
+
     /**
      *
      *

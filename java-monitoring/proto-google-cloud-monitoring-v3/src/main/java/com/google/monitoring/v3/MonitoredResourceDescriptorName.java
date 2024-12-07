@@ -331,7 +331,8 @@ public class MonitoredResourceDescriptorName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               monitoredResourceDescriptorName.pathTemplate, PROJECT_MONITORED_RESOURCE_DESCRIPTOR),
-          "toBuilder is only supported when MonitoredResourceDescriptorName has the pattern of projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}");
+          "toBuilder is only supported when MonitoredResourceDescriptorName has the pattern of"
+              + " projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}");
       this.project = monitoredResourceDescriptorName.project;
       this.monitoredResourceDescriptor =
           monitoredResourceDescriptorName.monitoredResourceDescriptor;

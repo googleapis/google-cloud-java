@@ -38,6 +38,7 @@ public interface ModelMonitoringInputOrBuilder
    * @return Whether the columnizedDataset field is set.
    */
   boolean hasColumnizedDataset();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface ModelMonitoringInputOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringInput.ModelMonitoringDataset
       getColumnizedDataset();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ModelMonitoringInputOrBuilder
    * @return Whether the batchPredictionOutput field is set.
    */
   boolean hasBatchPredictionOutput();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ModelMonitoringInputOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringInput.BatchPredictionOutput
       getBatchPredictionOutput();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface ModelMonitoringInputOrBuilder
    * @return Whether the vertexEndpointLogs field is set.
    */
   boolean hasVertexEndpointLogs();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface ModelMonitoringInputOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringInput.VertexEndpointLogs
       getVertexEndpointLogs();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface ModelMonitoringInputOrBuilder
    * @return Whether the timeInterval field is set.
    */
   boolean hasTimeInterval();
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public interface ModelMonitoringInputOrBuilder
    * @return The timeInterval.
    */
   com.google.type.Interval getTimeInterval();
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public interface ModelMonitoringInputOrBuilder
    * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface ModelMonitoringInputOrBuilder
    * @return The timeOffset.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringInput.TimeOffset getTimeOffset();
+
   /**
    *
    *

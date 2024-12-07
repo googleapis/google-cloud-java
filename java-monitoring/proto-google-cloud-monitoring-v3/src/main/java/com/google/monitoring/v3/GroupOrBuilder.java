@@ -42,6 +42,7 @@ public interface GroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface GroupOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface GroupOrBuilder
    * @return The parentName.
    */
   java.lang.String getParentName();
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public interface GroupOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface PublishEventsRequestOrBuilder
    * @return The channel.
    */
   java.lang.String getChannel();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface PublishEventsRequestOrBuilder
    * <code>repeated .google.protobuf.Any events = 2;</code>
    */
   java.util.List<com.google.protobuf.Any> getEventsList();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface PublishEventsRequestOrBuilder
    * <code>repeated .google.protobuf.Any events = 2;</code>
    */
   com.google.protobuf.Any getEvents(int index);
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface PublishEventsRequestOrBuilder
    * <code>repeated .google.protobuf.Any events = 2;</code>
    */
   int getEventsCount();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface PublishEventsRequestOrBuilder
    * <code>repeated .google.protobuf.Any events = 2;</code>
    */
   java.util.List<? extends com.google.protobuf.AnyOrBuilder> getEventsOrBuilderList();
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public interface PublishEventsRequestOrBuilder
    * @return A list containing the textEvents.
    */
   java.util.List<java.lang.String> getTextEventsList();
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public interface PublishEventsRequestOrBuilder
    * @return The count of textEvents.
    */
   int getTextEventsCount();
+
   /**
    *
    *
@@ -156,6 +163,7 @@ public interface PublishEventsRequestOrBuilder
    * @return The textEvents at the given index.
    */
   java.lang.String getTextEvents(int index);
+
   /**
    *
    *

@@ -491,7 +491,8 @@ public class ComponentSettingsName implements ResourceName {
     private Builder(ComponentSettingsName componentSettingsName) {
       Preconditions.checkArgument(
           Objects.equals(componentSettingsName.pathTemplate, ORGANIZATION_COMPONENT),
-          "toBuilder is only supported when ComponentSettingsName has the pattern of organizations/{organization}/components/{component}/settings");
+          "toBuilder is only supported when ComponentSettingsName has the pattern of"
+              + " organizations/{organization}/components/{component}/settings");
       this.organization = componentSettingsName.organization;
       this.component = componentSettingsName.component;
     }

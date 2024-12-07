@@ -40,6 +40,7 @@ public interface GetDiscoveredWorkloadRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

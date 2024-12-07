@@ -41,6 +41,7 @@ public interface DeleteReferenceImageRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

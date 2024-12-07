@@ -34,6 +34,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.IdentityConfig)
     IdentityConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IdentityConfig.newBuilder() to construct.
   private IdentityConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -103,6 +104,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
   public int getUserServiceAccountMappingCount() {
     return internalGetUserServiceAccountMapping().getMap().size();
   }
+
   /**
    *
    *
@@ -121,12 +123,14 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetUserServiceAccountMapping().getMap().containsKey(key);
   }
+
   /** Use {@link #getUserServiceAccountMappingMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getUserServiceAccountMapping() {
     return getUserServiceAccountMappingMap();
   }
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getUserServiceAccountMappingMap() {
     return internalGetUserServiceAccountMapping().getMap();
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
         internalGetUserServiceAccountMapping().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -361,6 +367,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -605,6 +612,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
     public int getUserServiceAccountMappingCount() {
       return internalGetUserServiceAccountMapping().getMap().size();
     }
+
     /**
      *
      *
@@ -623,12 +631,14 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetUserServiceAccountMapping().getMap().containsKey(key);
     }
+
     /** Use {@link #getUserServiceAccountMappingMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getUserServiceAccountMapping() {
       return getUserServiceAccountMappingMap();
     }
+
     /**
      *
      *
@@ -644,6 +654,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getUserServiceAccountMappingMap() {
       return internalGetUserServiceAccountMapping().getMap();
     }
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
           internalGetUserServiceAccountMapping().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableUserServiceAccountMapping().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -714,12 +727,14 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableUserServiceAccountMapping().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserServiceAccountMapping() {
       bitField0_ |= 0x00000001;
       return internalGetMutableUserServiceAccountMapping().getMutableMap();
     }
+
     /**
      *
      *
@@ -742,6 +757,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

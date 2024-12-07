@@ -33,6 +33,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.CreateEntryGroupRequest)
     CreateEntryGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateEntryGroupRequest.newBuilder() to construct.
   private CreateEntryGroupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entryGroupId_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
 
   public static final int ENTRY_GROUP_FIELD_NUMBER = 3;
   private com.google.cloud.dataplex.v1.EntryGroup entryGroup_;
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
   public boolean hasEntryGroup() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
         ? com.google.cloud.dataplex.v1.EntryGroup.getDefaultInstance()
         : entryGroup_;
   }
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -441,6 +450,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -682,6 +692,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -708,6 +719,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -734,6 +746,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -759,6 +772,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +823,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object entryGroupId_ = "";
+
     /**
      *
      *
@@ -830,6 +846,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -852,6 +869,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -873,6 +891,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +909,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +939,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
             com.google.cloud.dataplex.v1.EntryGroup.Builder,
             com.google.cloud.dataplex.v1.EntryGroupOrBuilder>
         entryGroupBuilder_;
+
     /**
      *
      *
@@ -935,6 +956,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
     public boolean hasEntryGroup() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -957,6 +979,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
         return entryGroupBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -981,6 +1004,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1026,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1056,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1078,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1095,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return getEntryGroupFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1088,6 +1116,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
             : entryGroup_;
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1146,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1133,6 +1163,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1153,6 +1184,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

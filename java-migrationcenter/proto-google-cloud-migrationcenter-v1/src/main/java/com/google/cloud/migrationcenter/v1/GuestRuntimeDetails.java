@@ -33,6 +33,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.GuestRuntimeDetails)
     GuestRuntimeDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GuestRuntimeDetails.newBuilder() to construct.
   private GuestRuntimeDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int SERVICES_FIELD_NUMBER = 1;
   private com.google.cloud.migrationcenter.v1.RunningServiceList services_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
   public boolean hasServices() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.migrationcenter.v1.RunningServiceList.getDefaultInstance()
         : services_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
 
   public static final int PROCESSES_FIELD_NUMBER = 2;
   private com.google.cloud.migrationcenter.v1.RunningProcessList processes_;
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
   public boolean hasProcesses() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.migrationcenter.v1.RunningProcessList.getDefaultInstance()
         : processes_;
   }
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
 
   public static final int NETWORK_FIELD_NUMBER = 3;
   private com.google.cloud.migrationcenter.v1.RuntimeNetworkInfo network_;
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
   public boolean hasNetwork() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.migrationcenter.v1.RuntimeNetworkInfo.getDefaultInstance()
         : network_;
   }
+
   /**
    *
    *
@@ -217,6 +227,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
 
   public static final int LAST_BOOT_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp lastBootTime_;
+
   /**
    *
    *
@@ -232,6 +243,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
   public boolean hasLastBootTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -249,6 +261,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastBootTime_;
   }
+
   /**
    *
    *
@@ -269,6 +282,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object domain_ = "";
+
   /**
    *
    *
@@ -292,6 +306,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -320,6 +335,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineName_ = "";
+
   /**
    *
    *
@@ -343,6 +359,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -369,6 +386,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
 
   public static final int INSTALLED_APPS_FIELD_NUMBER = 7;
   private com.google.cloud.migrationcenter.v1.GuestInstalledApplicationList installedApps_;
+
   /**
    *
    *
@@ -384,6 +402,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
   public boolean hasInstalledApps() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -401,6 +420,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.migrationcenter.v1.GuestInstalledApplicationList.getDefaultInstance()
         : installedApps_;
   }
+
   /**
    *
    *
@@ -420,6 +440,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
 
   public static final int OPEN_FILE_LIST_FIELD_NUMBER = 8;
   private com.google.cloud.migrationcenter.v1.OpenFileList openFileList_;
+
   /**
    *
    *
@@ -435,6 +456,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
   public boolean hasOpenFileList() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -452,6 +474,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.migrationcenter.v1.OpenFileList.getDefaultInstance()
         : openFileList_;
   }
+
   /**
    *
    *
@@ -721,6 +744,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1052,6 +1076,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
             com.google.cloud.migrationcenter.v1.RunningServiceList.Builder,
             com.google.cloud.migrationcenter.v1.RunningServiceListOrBuilder>
         servicesBuilder_;
+
     /**
      *
      *
@@ -1066,6 +1091,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
     public boolean hasServices() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1086,6 +1112,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         return servicesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1108,6 +1135,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1156,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1185,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1205,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1220,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return getServicesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1207,6 +1239,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
             : services_;
       }
     }
+
     /**
      *
      *
@@ -1239,6 +1272,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
             com.google.cloud.migrationcenter.v1.RunningProcessList.Builder,
             com.google.cloud.migrationcenter.v1.RunningProcessListOrBuilder>
         processesBuilder_;
+
     /**
      *
      *
@@ -1253,6 +1287,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
     public boolean hasProcesses() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1273,6 +1308,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         return processesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1295,6 +1331,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1315,6 +1352,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1381,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1401,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1376,6 +1416,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return getProcessesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1394,6 +1435,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
             : processes_;
       }
     }
+
     /**
      *
      *
@@ -1426,6 +1468,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
             com.google.cloud.migrationcenter.v1.RuntimeNetworkInfo.Builder,
             com.google.cloud.migrationcenter.v1.RuntimeNetworkInfoOrBuilder>
         networkBuilder_;
+
     /**
      *
      *
@@ -1440,6 +1483,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1460,6 +1504,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         return networkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1482,6 +1527,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1502,6 +1548,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1530,6 +1577,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1549,6 +1597,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1563,6 +1612,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return getNetworkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1581,6 +1631,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
             : network_;
       }
     }
+
     /**
      *
      *
@@ -1613,6 +1664,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastBootTimeBuilder_;
+
     /**
      *
      *
@@ -1627,6 +1679,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
     public boolean hasLastBootTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1647,6 +1700,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         return lastBootTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1669,6 +1723,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1688,6 +1743,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1715,6 +1771,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1734,6 +1791,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1748,6 +1806,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return getLastBootTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1766,6 +1825,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
             : lastBootTime_;
       }
     }
+
     /**
      *
      *
@@ -1793,6 +1853,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object domain_ = "";
+
     /**
      *
      *
@@ -1815,6 +1876,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1837,6 +1899,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1858,6 +1921,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1875,6 +1939,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1899,6 +1964,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object machineName_ = "";
+
     /**
      *
      *
@@ -1921,6 +1987,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1943,6 +2010,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1964,6 +2032,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1981,6 +2050,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2010,6 +2080,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
             com.google.cloud.migrationcenter.v1.GuestInstalledApplicationList.Builder,
             com.google.cloud.migrationcenter.v1.GuestInstalledApplicationListOrBuilder>
         installedAppsBuilder_;
+
     /**
      *
      *
@@ -2025,6 +2096,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
     public boolean hasInstalledApps() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2046,6 +2118,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         return installedAppsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2070,6 +2143,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2091,6 +2165,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2122,6 +2197,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2142,6 +2218,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2158,6 +2235,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return getInstalledAppsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2178,6 +2256,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
             : installedApps_;
       }
     }
+
     /**
      *
      *
@@ -2211,6 +2290,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
             com.google.cloud.migrationcenter.v1.OpenFileList.Builder,
             com.google.cloud.migrationcenter.v1.OpenFileListOrBuilder>
         openFileListBuilder_;
+
     /**
      *
      *
@@ -2225,6 +2305,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
     public boolean hasOpenFileList() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2245,6 +2326,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
         return openFileListBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2267,6 +2349,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2287,6 +2370,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2315,6 +2399,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2334,6 +2419,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2348,6 +2434,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return getOpenFileListFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2366,6 +2453,7 @@ public final class GuestRuntimeDetails extends com.google.protobuf.GeneratedMess
             : openFileList_;
       }
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface ClusterOperationOrBuilder
    * @return The operationId.
    */
   java.lang.String getOperationId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ClusterOperationOrBuilder
    * @return The error.
    */
   java.lang.String getError();
+
   /**
    *
    *

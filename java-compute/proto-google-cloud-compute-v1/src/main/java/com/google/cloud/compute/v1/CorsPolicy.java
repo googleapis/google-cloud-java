@@ -33,6 +33,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.CorsPolicy)
     CorsPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CorsPolicy.newBuilder() to construct.
   private CorsPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ALLOW_CREDENTIALS_FIELD_NUMBER = 481263366;
   private boolean allowCredentials_ = false;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAllowCredentials() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowHeaders_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAllowHeadersList() {
     return allowHeaders_;
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getAllowHeadersCount() {
     return allowHeaders_.size();
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAllowHeaders(int index) {
     return allowHeaders_.get(index);
   }
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowMethods_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAllowMethodsList() {
     return allowMethods_;
   }
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getAllowMethodsCount() {
     return allowMethods_.size();
   }
+
   /**
    *
    *
@@ -213,6 +223,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAllowMethods(int index) {
     return allowMethods_.get(index);
   }
+
   /**
    *
    *
@@ -234,6 +245,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowOriginRegexes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -248,6 +260,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAllowOriginRegexesList() {
     return allowOriginRegexes_;
   }
+
   /**
    *
    *
@@ -262,6 +275,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getAllowOriginRegexesCount() {
     return allowOriginRegexes_.size();
   }
+
   /**
    *
    *
@@ -277,6 +291,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAllowOriginRegexes(int index) {
     return allowOriginRegexes_.get(index);
   }
+
   /**
    *
    *
@@ -298,6 +313,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowOrigins_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -312,6 +328,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAllowOriginsList() {
     return allowOrigins_;
   }
+
   /**
    *
    *
@@ -326,6 +343,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getAllowOriginsCount() {
     return allowOrigins_.size();
   }
+
   /**
    *
    *
@@ -341,6 +359,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAllowOrigins(int index) {
     return allowOrigins_.get(index);
   }
+
   /**
    *
    *
@@ -359,6 +378,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISABLED_FIELD_NUMBER = 270940796;
   private boolean disabled_ = false;
+
   /**
    *
    *
@@ -374,6 +394,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDisabled() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -395,6 +416,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList exposeHeaders_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -409,6 +431,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getExposeHeadersList() {
     return exposeHeaders_;
   }
+
   /**
    *
    *
@@ -423,6 +446,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getExposeHeadersCount() {
     return exposeHeaders_.size();
   }
+
   /**
    *
    *
@@ -438,6 +462,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getExposeHeaders(int index) {
     return exposeHeaders_.get(index);
   }
+
   /**
    *
    *
@@ -456,6 +481,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_AGE_FIELD_NUMBER = 307559332;
   private int maxAge_ = 0;
+
   /**
    *
    *
@@ -471,6 +497,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxAge() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -762,6 +789,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1084,6 +1112,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean allowCredentials_;
+
     /**
      *
      *
@@ -1099,6 +1128,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAllowCredentials() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1114,6 +1144,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean getAllowCredentials() {
       return allowCredentials_;
     }
+
     /**
      *
      *
@@ -1133,6 +1164,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1160,6 +1192,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1175,6 +1208,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       allowHeaders_.makeImmutable();
       return allowHeaders_;
     }
+
     /**
      *
      *
@@ -1189,6 +1223,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getAllowHeadersCount() {
       return allowHeaders_.size();
     }
+
     /**
      *
      *
@@ -1204,6 +1239,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAllowHeaders(int index) {
       return allowHeaders_.get(index);
     }
+
     /**
      *
      *
@@ -1219,6 +1255,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAllowHeadersBytes(int index) {
       return allowHeaders_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1242,6 +1279,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1302,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1322,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1301,6 +1341,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1375,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1349,6 +1391,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       allowMethods_.makeImmutable();
       return allowMethods_;
     }
+
     /**
      *
      *
@@ -1363,6 +1406,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getAllowMethodsCount() {
       return allowMethods_.size();
     }
+
     /**
      *
      *
@@ -1378,6 +1422,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAllowMethods(int index) {
       return allowMethods_.get(index);
     }
+
     /**
      *
      *
@@ -1393,6 +1438,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAllowMethodsBytes(int index) {
       return allowMethods_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1416,6 +1462,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1438,6 +1485,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1457,6 +1505,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1475,6 +1524,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1508,6 +1558,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1523,6 +1574,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       allowOriginRegexes_.makeImmutable();
       return allowOriginRegexes_;
     }
+
     /**
      *
      *
@@ -1537,6 +1589,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getAllowOriginRegexesCount() {
       return allowOriginRegexes_.size();
     }
+
     /**
      *
      *
@@ -1552,6 +1605,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAllowOriginRegexes(int index) {
       return allowOriginRegexes_.get(index);
     }
+
     /**
      *
      *
@@ -1567,6 +1621,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAllowOriginRegexesBytes(int index) {
       return allowOriginRegexes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1590,6 +1645,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1612,6 +1668,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1631,6 +1688,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1649,6 +1707,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1682,6 +1741,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -1697,6 +1757,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       allowOrigins_.makeImmutable();
       return allowOrigins_;
     }
+
     /**
      *
      *
@@ -1711,6 +1772,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getAllowOriginsCount() {
       return allowOrigins_.size();
     }
+
     /**
      *
      *
@@ -1726,6 +1788,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAllowOrigins(int index) {
       return allowOrigins_.get(index);
     }
+
     /**
      *
      *
@@ -1741,6 +1804,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAllowOriginsBytes(int index) {
       return allowOrigins_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1764,6 +1828,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1786,6 +1851,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1805,6 +1871,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1823,6 +1890,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1848,6 +1916,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean disabled_;
+
     /**
      *
      *
@@ -1863,6 +1932,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDisabled() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1878,6 +1948,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisabled() {
       return disabled_;
     }
+
     /**
      *
      *
@@ -1897,6 +1968,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1924,6 +1996,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -1939,6 +2012,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       exposeHeaders_.makeImmutable();
       return exposeHeaders_;
     }
+
     /**
      *
      *
@@ -1953,6 +2027,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getExposeHeadersCount() {
       return exposeHeaders_.size();
     }
+
     /**
      *
      *
@@ -1968,6 +2043,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getExposeHeaders(int index) {
       return exposeHeaders_.get(index);
     }
+
     /**
      *
      *
@@ -1983,6 +2059,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getExposeHeadersBytes(int index) {
       return exposeHeaders_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2006,6 +2083,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2028,6 +2106,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2047,6 +2126,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2065,6 +2145,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2090,6 +2171,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int maxAge_;
+
     /**
      *
      *
@@ -2105,6 +2187,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxAge() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2120,6 +2203,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getMaxAge() {
       return maxAge_;
     }
+
     /**
      *
      *
@@ -2139,6 +2223,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

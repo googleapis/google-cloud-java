@@ -33,6 +33,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.ConditionEvaluation)
     ConditionEvaluationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConditionEvaluation.newBuilder() to construct.
   private ConditionEvaluation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,6 +129,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
      * <code>EVALUATION_VALUE_UNSPECIFIED = 0;</code>
      */
     public static final int EVALUATION_VALUE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -138,6 +140,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
      * <code>TRUE = 1;</code>
      */
     public static final int TRUE_VALUE = 1;
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
      * <code>FALSE = 2;</code>
      */
     public static final int FALSE_VALUE = 2;
+
     /**
      *
      *
@@ -250,6 +254,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
 
   public static final int EVALUATION_VALUE_FIELD_NUMBER = 1;
   private int evaluationValue_ = 0;
+
   /**
    *
    *
@@ -265,6 +270,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
   public int getEvaluationValueValue() {
     return evaluationValue_;
   }
+
   /**
    *
    *
@@ -450,6 +456,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -631,6 +638,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int evaluationValue_ = 0;
+
     /**
      *
      *
@@ -646,6 +654,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
     public int getEvaluationValueValue() {
       return evaluationValue_;
     }
+
     /**
      *
      *
@@ -664,6 +673,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +693,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.asset.v1.ConditionEvaluation.EvaluationValue.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -705,6 +716,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.apigeeregistry.v1.UpdateApiDeploymentRequest)
     UpdateApiDeploymentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateApiDeploymentRequest.newBuilder() to construct.
   private UpdateApiDeploymentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int API_DEPLOYMENT_FIELD_NUMBER = 1;
   private com.google.cloud.apigeeregistry.v1.ApiDeployment apiDeployment_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
   public boolean hasApiDeployment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
         ? com.google.cloud.apigeeregistry.v1.ApiDeployment.getDefaultInstance()
         : apiDeployment_;
   }
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
   private boolean allowMissing_ = false;
+
   /**
    *
    *
@@ -389,6 +397,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -628,6 +637,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
             com.google.cloud.apigeeregistry.v1.ApiDeployment.Builder,
             com.google.cloud.apigeeregistry.v1.ApiDeploymentOrBuilder>
         apiDeploymentBuilder_;
+
     /**
      *
      *
@@ -647,6 +657,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
     public boolean hasApiDeployment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
         return apiDeploymentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -699,6 +711,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +771,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +796,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
       onChanged();
       return getApiDeploymentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -823,6 +840,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
             : apiDeployment_;
       }
     }
+
     /**
      *
      *
@@ -860,6 +878,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -877,6 +896,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -900,6 +920,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -925,6 +946,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +969,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +1000,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1023,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1016,6 +1041,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1037,6 +1063,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -1067,6 +1094,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
     }
 
     private boolean allowMissing_;
+
     /**
      *
      *
@@ -1083,6 +1111,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
     public boolean getAllowMissing() {
       return allowMissing_;
     }
+
     /**
      *
      *
@@ -1103,6 +1132,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

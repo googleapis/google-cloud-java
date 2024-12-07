@@ -36,6 +36,7 @@ public interface RuleActionsPairOrBuilder
    * @return Whether the rule field is set.
    */
   boolean hasRule();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RuleActionsPairOrBuilder
    * @return The rule.
    */
   com.google.cloud.contentwarehouse.v1.Rule getRule();
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface RuleActionsPairOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.ActionOutput action_outputs = 2;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.ActionOutput> getActionOutputsList();
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface RuleActionsPairOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.ActionOutput action_outputs = 2;</code>
    */
   com.google.cloud.contentwarehouse.v1.ActionOutput getActionOutputs(int index);
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface RuleActionsPairOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.ActionOutput action_outputs = 2;</code>
    */
   int getActionOutputsCount();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface RuleActionsPairOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.ActionOutputOrBuilder>
       getActionOutputsOrBuilderList();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.container.v1.ClusterAutoscaling)
     ClusterAutoscalingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClusterAutoscaling.newBuilder() to construct.
   private ClusterAutoscaling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      * <code>PROFILE_UNSPECIFIED = 0;</code>
      */
     public static final int PROFILE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      * <code>OPTIMIZE_UTILIZATION = 1;</code>
      */
     public static final int OPTIMIZE_UTILIZATION_VALUE = 1;
+
     /**
      *
      *
@@ -231,6 +234,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int ENABLE_NODE_AUTOPROVISIONING_FIELD_NUMBER = 1;
   private boolean enableNodeAutoprovisioning_ = false;
+
   /**
    *
    *
@@ -251,6 +255,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1.ResourceLimit> resourceLimits_;
+
   /**
    *
    *
@@ -265,6 +270,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.container.v1.ResourceLimit> getResourceLimitsList() {
     return resourceLimits_;
   }
+
   /**
    *
    *
@@ -280,6 +286,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       getResourceLimitsOrBuilderList() {
     return resourceLimits_;
   }
+
   /**
    *
    *
@@ -294,6 +301,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   public int getResourceLimitsCount() {
     return resourceLimits_.size();
   }
+
   /**
    *
    *
@@ -308,6 +316,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   public com.google.container.v1.ResourceLimit getResourceLimits(int index) {
     return resourceLimits_.get(index);
   }
+
   /**
    *
    *
@@ -325,6 +334,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
 
   public static final int AUTOSCALING_PROFILE_FIELD_NUMBER = 3;
   private int autoscalingProfile_ = 0;
+
   /**
    *
    *
@@ -341,6 +351,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   public int getAutoscalingProfileValue() {
     return autoscalingProfile_;
   }
+
   /**
    *
    *
@@ -366,6 +377,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   public static final int AUTOPROVISIONING_NODE_POOL_DEFAULTS_FIELD_NUMBER = 4;
   private com.google.container.v1.AutoprovisioningNodePoolDefaults
       autoprovisioningNodePoolDefaults_;
+
   /**
    *
    *
@@ -384,6 +396,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   public boolean hasAutoprovisioningNodePoolDefaults() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -405,6 +418,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         ? com.google.container.v1.AutoprovisioningNodePoolDefaults.getDefaultInstance()
         : autoprovisioningNodePoolDefaults_;
   }
+
   /**
    *
    *
@@ -430,6 +444,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList autoprovisioningLocations_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -446,6 +461,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getAutoprovisioningLocationsList() {
     return autoprovisioningLocations_;
   }
+
   /**
    *
    *
@@ -462,6 +478,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   public int getAutoprovisioningLocationsCount() {
     return autoprovisioningLocations_.size();
   }
+
   /**
    *
    *
@@ -479,6 +496,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   public java.lang.String getAutoprovisioningLocations(int index) {
     return autoprovisioningLocations_.get(index);
   }
+
   /**
    *
    *
@@ -716,6 +734,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1030,6 +1049,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private boolean enableNodeAutoprovisioning_;
+
     /**
      *
      *
@@ -1045,6 +1065,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     public boolean getEnableNodeAutoprovisioning() {
       return enableNodeAutoprovisioning_;
     }
+
     /**
      *
      *
@@ -1064,6 +1085,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1116,6 +1138,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         return resourceLimitsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1133,6 +1156,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         return resourceLimitsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1174,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         return resourceLimitsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1198,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1220,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1244,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1240,6 +1268,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1261,6 +1290,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1282,6 +1312,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1303,6 +1334,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1323,6 +1355,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1376,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1390,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     public com.google.container.v1.ResourceLimit.Builder getResourceLimitsBuilder(int index) {
       return getResourceLimitsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1373,6 +1408,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         return resourceLimitsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1391,6 +1427,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(resourceLimits_);
       }
     }
+
     /**
      *
      *
@@ -1405,6 +1442,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       return getResourceLimitsFieldBuilder()
           .addBuilder(com.google.container.v1.ResourceLimit.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1419,6 +1457,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       return getResourceLimitsFieldBuilder()
           .addBuilder(index, com.google.container.v1.ResourceLimit.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1455,6 +1494,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     }
 
     private int autoscalingProfile_ = 0;
+
     /**
      *
      *
@@ -1471,6 +1511,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     public int getAutoscalingProfileValue() {
       return autoscalingProfile_;
     }
+
     /**
      *
      *
@@ -1490,6 +1531,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1511,6 +1553,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
           ? com.google.container.v1.ClusterAutoscaling.AutoscalingProfile.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1534,6 +1577,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1560,6 +1604,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
             com.google.container.v1.AutoprovisioningNodePoolDefaults.Builder,
             com.google.container.v1.AutoprovisioningNodePoolDefaultsOrBuilder>
         autoprovisioningNodePoolDefaultsBuilder_;
+
     /**
      *
      *
@@ -1577,6 +1622,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     public boolean hasAutoprovisioningNodePoolDefaults() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1601,6 +1647,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         return autoprovisioningNodePoolDefaultsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1627,6 +1674,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1650,6 +1698,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1682,6 +1731,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1704,6 +1754,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1722,6 +1773,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getAutoprovisioningNodePoolDefaultsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1744,6 +1796,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
             : autoprovisioningNodePoolDefaults_;
       }
     }
+
     /**
      *
      *
@@ -1783,6 +1836,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -1800,6 +1854,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       autoprovisioningLocations_.makeImmutable();
       return autoprovisioningLocations_;
     }
+
     /**
      *
      *
@@ -1816,6 +1871,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     public int getAutoprovisioningLocationsCount() {
       return autoprovisioningLocations_.size();
     }
+
     /**
      *
      *
@@ -1833,6 +1889,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     public java.lang.String getAutoprovisioningLocations(int index) {
       return autoprovisioningLocations_.get(index);
     }
+
     /**
      *
      *
@@ -1850,6 +1907,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getAutoprovisioningLocationsBytes(int index) {
       return autoprovisioningLocations_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1875,6 +1933,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1899,6 +1958,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1920,6 +1980,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1940,6 +2001,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

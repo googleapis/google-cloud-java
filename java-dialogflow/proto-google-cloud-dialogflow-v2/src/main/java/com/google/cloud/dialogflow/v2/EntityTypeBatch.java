@@ -33,6 +33,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.EntityTypeBatch)
     EntityTypeBatchOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EntityTypeBatch.newBuilder() to construct.
   private EntityTypeBatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.EntityType> entityTypes_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.dialogflow.v2.EntityType> getEntityTypesList() {
     return entityTypes_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
       getEntityTypesOrBuilderList() {
     return entityTypes_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
   public int getEntityTypesCount() {
     return entityTypes_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.dialogflow.v2.EntityType getEntityTypes(int index) {
     return entityTypes_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -555,6 +562,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
         return entityTypesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -571,6 +579,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
         return entityTypesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
         return entityTypesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +640,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +663,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +686,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +707,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +728,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +749,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +769,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +789,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +802,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dialogflow.v2.EntityType.Builder getEntityTypesBuilder(int index) {
       return getEntityTypesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -799,6 +819,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
         return entityTypesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -816,6 +837,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(entityTypes_);
       }
     }
+
     /**
      *
      *
@@ -829,6 +851,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
       return getEntityTypesFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2.EntityType.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -842,6 +865,7 @@ public final class EntityTypeBatch extends com.google.protobuf.GeneratedMessageV
       return getEntityTypesFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2.EntityType.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RpoConfig)
     RpoConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RpoConfig.newBuilder() to construct.
   private RpoConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_RPO_MINUTES_FIELD_NUMBER = 1;
   private int targetRpoMinutes_ = 0;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkebackup.v1.ExclusionWindow> exclusionWindows_;
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.gkebackup.v1.ExclusionWindow> getExclusionWindowsList() {
     return exclusionWindows_;
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
       getExclusionWindowsOrBuilderList() {
     return exclusionWindows_;
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
   public int getExclusionWindowsCount() {
     return exclusionWindows_.size();
   }
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.gkebackup.v1.ExclusionWindow getExclusionWindows(int index) {
     return exclusionWindows_.get(index);
   }
+
   /**
    *
    *
@@ -381,6 +388,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -623,6 +631,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int targetRpoMinutes_;
+
     /**
      *
      *
@@ -641,6 +650,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
     public int getTargetRpoMinutes() {
       return targetRpoMinutes_;
     }
+
     /**
      *
      *
@@ -663,6 +673,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +740,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
         return exclusionWindowsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -756,6 +768,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
         return exclusionWindowsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -783,6 +796,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
         return exclusionWindowsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -817,6 +831,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +863,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +897,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +932,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +964,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +996,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1028,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1059,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1090,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1115,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getExclusionWindowsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1120,6 +1144,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
         return exclusionWindowsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1148,6 +1173,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(exclusionWindows_);
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1198,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
       return getExclusionWindowsFieldBuilder()
           .addBuilder(com.google.cloud.gkebackup.v1.ExclusionWindow.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1197,6 +1224,7 @@ public final class RpoConfig extends com.google.protobuf.GeneratedMessageV3
       return getExclusionWindowsFieldBuilder()
           .addBuilder(index, com.google.cloud.gkebackup.v1.ExclusionWindow.getDefaultInstance());
     }
+
     /**
      *
      *

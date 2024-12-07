@@ -39,6 +39,7 @@ public interface LocationMetadataOrBuilder
    */
   java.util.List<com.google.cloud.metastore.v1beta.LocationMetadata.HiveMetastoreVersion>
       getSupportedHiveMetastoreVersionsList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface LocationMetadataOrBuilder
    */
   com.google.cloud.metastore.v1beta.LocationMetadata.HiveMetastoreVersion
       getSupportedHiveMetastoreVersions(int index);
+
   /**
    *
    *
@@ -68,6 +70,7 @@ public interface LocationMetadataOrBuilder
    * </code>
    */
   int getSupportedHiveMetastoreVersionsCount();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface LocationMetadataOrBuilder
           ? extends
               com.google.cloud.metastore.v1beta.LocationMetadata.HiveMetastoreVersionOrBuilder>
       getSupportedHiveMetastoreVersionsOrBuilderList();
+
   /**
    *
    *

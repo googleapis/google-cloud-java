@@ -46,6 +46,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * @return A list containing the targetLanguageCodes.
    */
   java.util.List<java.lang.String> getTargetLanguageCodesList();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * @return The count of targetLanguageCodes.
    */
   int getTargetLanguageCodesCount();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * @return The targetLanguageCodes at the given index.
    */
   java.lang.String getTargetLanguageCodes(int index);
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.translate.v3beta1.BatchDocumentInputConfig> getInputConfigsList();
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * </code>
    */
   com.google.cloud.translate.v3beta1.BatchDocumentInputConfig getInputConfigs(int index);
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * </code>
    */
   int getInputConfigsCount();
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3beta1.BatchDocumentInputConfigOrBuilder>
       getInputConfigsOrBuilderList();
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.translate.v3beta1.BatchDocumentOutputConfig getOutputConfig();
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * <code>map&lt;string, string&gt; models = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getModelsCount();
+
   /**
    *
    *
@@ -330,9 +342,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * <code>map&lt;string, string&gt; models = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsModels(java.lang.String key);
+
   /** Use {@link #getModelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getModels();
+
   /**
    *
    *
@@ -357,6 +371,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * <code>map&lt;string, string&gt; models = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getModelsMap();
+
   /**
    *
    *
@@ -385,6 +400,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -422,6 +438,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * </code>
    */
   int getGlossariesCount();
+
   /**
    *
    *
@@ -434,10 +451,12 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * </code>
    */
   boolean containsGlossaries(java.lang.String key);
+
   /** Use {@link #getGlossariesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig>
       getGlossaries();
+
   /**
    *
    *
@@ -451,6 +470,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig>
       getGlossariesMap();
+
   /**
    *
    *
@@ -467,6 +487,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig defaultValue);
+
   /**
    *
    *
@@ -502,6 +523,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * </code>
    */
   int getFormatConversionsCount();
+
   /**
    *
    *
@@ -523,9 +545,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * </code>
    */
   boolean containsFormatConversions(java.lang.String key);
+
   /** Use {@link #getFormatConversionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getFormatConversions();
+
   /**
    *
    *
@@ -547,6 +571,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getFormatConversionsMap();
+
   /**
    *
    *
@@ -572,6 +597,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -609,6 +635,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * @return The customizedAttribution.
    */
   java.lang.String getCustomizedAttribution();
+
   /**
    *
    *

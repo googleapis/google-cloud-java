@@ -34,6 +34,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.MergeVersionAliasesRequest)
     MergeVersionAliasesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MergeVersionAliasesRequest.newBuilder() to construct.
   private MergeVersionAliasesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList versionAliases_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getVersionAliasesList() {
     return versionAliases_;
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
   public int getVersionAliasesCount() {
     return versionAliases_.size();
   }
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
   public java.lang.String getVersionAliases(int index) {
     return versionAliases_.get(index);
   }
+
   /**
    *
    *
@@ -410,6 +417,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -617,6 +625,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -644,6 +653,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -671,6 +681,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -697,6 +708,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +731,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +769,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -782,6 +796,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       versionAliases_.makeImmutable();
       return versionAliases_;
     }
+
     /**
      *
      *
@@ -807,6 +822,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
     public int getVersionAliasesCount() {
       return versionAliases_.size();
     }
+
     /**
      *
      *
@@ -833,6 +849,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
     public java.lang.String getVersionAliases(int index) {
       return versionAliases_.get(index);
     }
+
     /**
      *
      *
@@ -859,6 +876,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getVersionAliasesBytes(int index) {
       return versionAliases_.getByteString(index);
     }
+
     /**
      *
      *
@@ -893,6 +911,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +945,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +976,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1006,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

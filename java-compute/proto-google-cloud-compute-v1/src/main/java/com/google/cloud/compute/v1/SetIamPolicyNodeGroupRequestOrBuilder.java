@@ -36,6 +36,7 @@ public interface SetIamPolicyNodeGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SetIamPolicyNodeGroupRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface SetIamPolicyNodeGroupRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface SetIamPolicyNodeGroupRequestOrBuilder
    * @return Whether the zoneSetPolicyRequestResource field is set.
    */
   boolean hasZoneSetPolicyRequestResource();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface SetIamPolicyNodeGroupRequestOrBuilder
    * @return The zoneSetPolicyRequestResource.
    */
   com.google.cloud.compute.v1.ZoneSetPolicyRequest getZoneSetPolicyRequestResource();
+
   /**
    *
    *

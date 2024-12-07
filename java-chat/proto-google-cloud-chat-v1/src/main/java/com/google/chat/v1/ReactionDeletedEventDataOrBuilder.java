@@ -36,6 +36,7 @@ public interface ReactionDeletedEventDataOrBuilder
    * @return Whether the reaction field is set.
    */
   boolean hasReaction();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ReactionDeletedEventDataOrBuilder
    * @return The reaction.
    */
   com.google.chat.v1.Reaction getReaction();
+
   /**
    *
    *

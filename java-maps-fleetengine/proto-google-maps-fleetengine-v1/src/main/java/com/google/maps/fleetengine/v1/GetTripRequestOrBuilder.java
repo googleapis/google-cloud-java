@@ -36,6 +36,7 @@ public interface GetTripRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface GetTripRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.v1.RequestHeader getHeader();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface GetTripRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface GetTripRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface GetTripRequestOrBuilder
    * @return Whether the currentRouteSegmentVersion field is set.
    */
   boolean hasCurrentRouteSegmentVersion();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface GetTripRequestOrBuilder
    * @return The currentRouteSegmentVersion.
    */
   com.google.protobuf.Timestamp getCurrentRouteSegmentVersion();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface GetTripRequestOrBuilder
    * @return Whether the remainingWaypointsVersion field is set.
    */
   boolean hasRemainingWaypointsVersion();
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public interface GetTripRequestOrBuilder
    * @return The remainingWaypointsVersion.
    */
   com.google.protobuf.Timestamp getRemainingWaypointsVersion();
+
   /**
    *
    *
@@ -221,6 +229,7 @@ public interface GetTripRequestOrBuilder
    * @return The enum numeric value on the wire for routeFormatType.
    */
   int getRouteFormatTypeValue();
+
   /**
    *
    *
@@ -253,6 +262,7 @@ public interface GetTripRequestOrBuilder
    * @return Whether the currentRouteSegmentTrafficVersion field is set.
    */
   boolean hasCurrentRouteSegmentTrafficVersion();
+
   /**
    *
    *
@@ -270,6 +280,7 @@ public interface GetTripRequestOrBuilder
    * @return The currentRouteSegmentTrafficVersion.
    */
   com.google.protobuf.Timestamp getCurrentRouteSegmentTrafficVersion();
+
   /**
    *
    *
@@ -303,6 +314,7 @@ public interface GetTripRequestOrBuilder
    * @return Whether the remainingWaypointsRouteVersion field is set.
    */
   boolean hasRemainingWaypointsRouteVersion();
+
   /**
    *
    *
@@ -320,6 +332,7 @@ public interface GetTripRequestOrBuilder
    * @return The remainingWaypointsRouteVersion.
    */
   com.google.protobuf.Timestamp getRemainingWaypointsRouteVersion();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface UpdateCustomTargetTypeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateCustomTargetTypeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateCustomTargetTypeRequestOrBuilder
    * @return Whether the customTargetType field is set.
    */
   boolean hasCustomTargetType();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateCustomTargetTypeRequestOrBuilder
    * @return The customTargetType.
    */
   com.google.cloud.deploy.v1.CustomTargetType getCustomTargetType();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface UpdateCustomTargetTypeRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

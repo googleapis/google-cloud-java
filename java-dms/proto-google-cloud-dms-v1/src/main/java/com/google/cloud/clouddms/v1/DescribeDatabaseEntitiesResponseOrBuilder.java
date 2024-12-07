@@ -34,6 +34,7 @@ public interface DescribeDatabaseEntitiesResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.DatabaseEntity database_entities = 1;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.DatabaseEntity> getDatabaseEntitiesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface DescribeDatabaseEntitiesResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.DatabaseEntity database_entities = 1;</code>
    */
   com.google.cloud.clouddms.v1.DatabaseEntity getDatabaseEntities(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface DescribeDatabaseEntitiesResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.DatabaseEntity database_entities = 1;</code>
    */
   int getDatabaseEntitiesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface DescribeDatabaseEntitiesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.DatabaseEntityOrBuilder>
       getDatabaseEntitiesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface DescribeDatabaseEntitiesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

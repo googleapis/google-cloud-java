@@ -39,6 +39,7 @@ public interface CreateDeploymentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface CreateDeploymentRequestOrBuilder
    * @return The deploymentId.
    */
   java.lang.String getDeploymentId();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface CreateDeploymentRequestOrBuilder
    * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface CreateDeploymentRequestOrBuilder
    * @return The deployment.
    */
   com.google.cloud.apihub.v1.Deployment getDeployment();
+
   /**
    *
    *

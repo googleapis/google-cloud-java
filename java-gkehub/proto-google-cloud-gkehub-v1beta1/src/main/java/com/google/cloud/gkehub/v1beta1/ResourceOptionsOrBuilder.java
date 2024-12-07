@@ -38,6 +38,7 @@ public interface ResourceOptionsOrBuilder
    * @return The connectVersion.
    */
   java.lang.String getConnectVersion();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface ResourceOptionsOrBuilder
    * @return The k8sVersion.
    */
   java.lang.String getK8SVersion();
+
   /**
    *
    *

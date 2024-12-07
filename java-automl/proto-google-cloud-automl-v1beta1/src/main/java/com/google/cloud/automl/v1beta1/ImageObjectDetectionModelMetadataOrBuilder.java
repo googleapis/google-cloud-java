@@ -58,6 +58,7 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * @return The modelType.
    */
   java.lang.String getModelType();
+
   /**
    *
    *
@@ -135,6 +136,7 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * @return The stopReason.
    */
   java.lang.String getStopReason();
+
   /**
    *
    *

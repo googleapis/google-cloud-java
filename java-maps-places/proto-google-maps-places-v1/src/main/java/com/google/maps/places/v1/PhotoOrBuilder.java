@@ -38,6 +38,7 @@ public interface PhotoOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface PhotoOrBuilder
    * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   java.util.List<com.google.maps.places.v1.AuthorAttribution> getAuthorAttributionsList();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface PhotoOrBuilder
    * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   com.google.maps.places.v1.AuthorAttribution getAuthorAttributions(int index);
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface PhotoOrBuilder
    * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   int getAuthorAttributionsCount();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface PhotoOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.AuthorAttributionOrBuilder>
       getAuthorAttributionsOrBuilderList();
+
   /**
    *
    *

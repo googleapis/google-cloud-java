@@ -33,6 +33,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datafusion.v1beta1.Namespace)
     NamespaceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Namespace.newBuilder() to construct.
   private Namespace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IAM_POLICY_FIELD_NUMBER = 2;
   private com.google.cloud.datafusion.v1beta1.IAMPolicy iamPolicy_;
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIamPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datafusion.v1beta1.IAMPolicy.getDefaultInstance()
         : iamPolicy_;
   }
+
   /**
    *
    *
@@ -338,6 +344,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -550,6 +557,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -572,6 +580,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -615,6 +625,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +643,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +673,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datafusion.v1beta1.IAMPolicy.Builder,
             com.google.cloud.datafusion.v1beta1.IAMPolicyOrBuilder>
         iamPolicyBuilder_;
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIamPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -695,6 +709,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
         return iamPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -717,6 +732,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +753,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +781,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +801,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +816,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getIamPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -815,6 +835,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
             : iamPolicy_;
       }
     }
+
     /**
      *
      *

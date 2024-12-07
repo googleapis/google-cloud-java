@@ -36,6 +36,7 @@ public interface ResourcePolicyInstanceSchedulePolicyScheduleOrBuilder
    * @return Whether the schedule field is set.
    */
   boolean hasSchedule();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ResourcePolicyInstanceSchedulePolicyScheduleOrBuilder
    * @return The schedule.
    */
   java.lang.String getSchedule();
+
   /**
    *
    *

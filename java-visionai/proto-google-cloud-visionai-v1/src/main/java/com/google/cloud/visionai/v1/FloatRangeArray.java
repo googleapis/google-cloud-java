@@ -33,6 +33,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.FloatRangeArray)
     FloatRangeArrayOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FloatRangeArray.newBuilder() to construct.
   private FloatRangeArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.FloatRange> floatRanges_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.visionai.v1.FloatRange> getFloatRangesList() {
     return floatRanges_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
       getFloatRangesOrBuilderList() {
     return floatRanges_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
   public int getFloatRangesCount() {
     return floatRanges_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.visionai.v1.FloatRange getFloatRanges(int index) {
     return floatRanges_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -555,6 +562,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
         return floatRangesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -571,6 +579,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
         return floatRangesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
         return floatRangesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +640,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +663,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +686,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +706,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +727,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +748,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +768,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +788,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +801,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.visionai.v1.FloatRange.Builder getFloatRangesBuilder(int index) {
       return getFloatRangesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -798,6 +818,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
         return floatRangesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -815,6 +836,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(floatRanges_);
       }
     }
+
     /**
      *
      *
@@ -828,6 +850,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
       return getFloatRangesFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.FloatRange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -841,6 +864,7 @@ public final class FloatRangeArray extends com.google.protobuf.GeneratedMessageV
       return getFloatRangesFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.FloatRange.getDefaultInstance());
     }
+
     /**
      *
      *

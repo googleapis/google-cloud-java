@@ -45,6 +45,7 @@ public interface DeleteAzureClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -116,6 +117,7 @@ public interface DeleteAzureClusterRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

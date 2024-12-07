@@ -39,6 +39,7 @@ public interface QueryMetricsRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface QueryMetricsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface QueryMetricsRequestOrBuilder
    * @return The enum numeric value on the wire for timeGranularity.
    */
   int getTimeGranularityValue();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface QueryMetricsRequestOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.Dimension dimensions = 4;</code>
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.Dimension> getDimensionsList();
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface QueryMetricsRequestOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.Dimension dimensions = 4;</code>
    */
   com.google.cloud.contactcenterinsights.v1.Dimension getDimensions(int index);
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public interface QueryMetricsRequestOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.Dimension dimensions = 4;</code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public interface QueryMetricsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.DimensionOrBuilder>
       getDimensionsOrBuilderList();
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public interface QueryMetricsRequestOrBuilder
    * @return Whether the measureMask field is set.
    */
   boolean hasMeasureMask();
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public interface QueryMetricsRequestOrBuilder
    * @return The measureMask.
    */
   com.google.protobuf.FieldMask getMeasureMask();
+
   /**
    *
    *

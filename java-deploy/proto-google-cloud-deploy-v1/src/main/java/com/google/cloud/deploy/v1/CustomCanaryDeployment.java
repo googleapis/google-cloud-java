@@ -34,6 +34,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.CustomCanaryDeployment)
     CustomCanaryDeploymentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomCanaryDeployment.newBuilder() to construct.
   private CustomCanaryDeployment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,6 +86,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      * @return The phaseId.
      */
     java.lang.String getPhaseId();
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      * @return A list containing the profiles.
      */
     java.util.List<java.lang.String> getProfilesList();
+
     /**
      *
      *
@@ -143,6 +146,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      * @return The count of profiles.
      */
     int getProfilesCount();
+
     /**
      *
      *
@@ -158,6 +162,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      * @return The profiles at the given index.
      */
     java.lang.String getProfiles(int index);
+
     /**
      *
      *
@@ -202,6 +207,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      * @return Whether the predeploy field is set.
      */
     boolean hasPredeploy();
+
     /**
      *
      *
@@ -217,6 +223,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      * @return The predeploy.
      */
     com.google.cloud.deploy.v1.Predeploy getPredeploy();
+
     /**
      *
      *
@@ -246,6 +253,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      * @return Whether the postdeploy field is set.
      */
     boolean hasPostdeploy();
+
     /**
      *
      *
@@ -261,6 +269,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      * @return The postdeploy.
      */
     com.google.cloud.deploy.v1.Postdeploy getPostdeploy();
+
     /**
      *
      *
@@ -275,6 +284,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      */
     com.google.cloud.deploy.v1.PostdeployOrBuilder getPostdeployOrBuilder();
   }
+
   /**
    *
    *
@@ -290,6 +300,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig)
       PhaseConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PhaseConfig.newBuilder() to construct.
     private PhaseConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -326,6 +337,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object phaseId_ = "";
+
     /**
      *
      *
@@ -353,6 +365,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -383,6 +396,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
 
     public static final int PERCENTAGE_FIELD_NUMBER = 2;
     private int percentage_ = 0;
+
     /**
      *
      *
@@ -404,6 +418,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList profiles_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -420,6 +435,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ProtocolStringList getProfilesList() {
       return profiles_;
     }
+
     /**
      *
      *
@@ -436,6 +452,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
     public int getProfilesCount() {
       return profiles_.size();
     }
+
     /**
      *
      *
@@ -453,6 +470,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
     public java.lang.String getProfiles(int index) {
       return profiles_.get(index);
     }
+
     /**
      *
      *
@@ -473,6 +491,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
 
     public static final int VERIFY_FIELD_NUMBER = 4;
     private boolean verify_ = false;
+
     /**
      *
      *
@@ -491,6 +510,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
 
     public static final int PREDEPLOY_FIELD_NUMBER = 5;
     private com.google.cloud.deploy.v1.Predeploy predeploy_;
+
     /**
      *
      *
@@ -509,6 +529,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
     public boolean hasPredeploy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -529,6 +550,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
           ? com.google.cloud.deploy.v1.Predeploy.getDefaultInstance()
           : predeploy_;
     }
+
     /**
      *
      *
@@ -550,6 +572,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
 
     public static final int POSTDEPLOY_FIELD_NUMBER = 6;
     private com.google.cloud.deploy.v1.Postdeploy postdeploy_;
+
     /**
      *
      *
@@ -568,6 +591,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
     public boolean hasPostdeploy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -588,6 +612,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
           ? com.google.cloud.deploy.v1.Postdeploy.getDefaultInstance()
           : postdeploy_;
     }
+
     /**
      *
      *
@@ -830,6 +855,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1119,6 +1145,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object phaseId_ = "";
+
       /**
        *
        *
@@ -1145,6 +1172,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1171,6 +1199,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1196,6 +1225,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1217,6 +1247,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1245,6 +1276,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       }
 
       private int percentage_;
+
       /**
        *
        *
@@ -1260,6 +1292,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       public int getPercentage() {
         return percentage_;
       }
+
       /**
        *
        *
@@ -1279,6 +1312,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1306,6 +1340,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
@@ -1323,6 +1358,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         profiles_.makeImmutable();
         return profiles_;
       }
+
       /**
        *
        *
@@ -1339,6 +1375,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       public int getProfilesCount() {
         return profiles_.size();
       }
+
       /**
        *
        *
@@ -1356,6 +1393,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       public java.lang.String getProfiles(int index) {
         return profiles_.get(index);
       }
+
       /**
        *
        *
@@ -1373,6 +1411,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ByteString getProfilesBytes(int index) {
         return profiles_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1398,6 +1437,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1422,6 +1462,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1443,6 +1484,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1463,6 +1505,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1490,6 +1533,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       }
 
       private boolean verify_;
+
       /**
        *
        *
@@ -1505,6 +1549,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       public boolean getVerify() {
         return verify_;
       }
+
       /**
        *
        *
@@ -1524,6 +1569,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1548,6 +1594,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
               com.google.cloud.deploy.v1.Predeploy.Builder,
               com.google.cloud.deploy.v1.PredeployOrBuilder>
           predeployBuilder_;
+
       /**
        *
        *
@@ -1565,6 +1612,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       public boolean hasPredeploy() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -1588,6 +1636,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
           return predeployBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1613,6 +1662,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1635,6 +1685,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1665,6 +1716,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1687,6 +1739,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1704,6 +1757,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return getPredeployFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1725,6 +1779,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
               : predeploy_;
         }
       }
+
       /**
        *
        *
@@ -1760,6 +1815,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
               com.google.cloud.deploy.v1.Postdeploy.Builder,
               com.google.cloud.deploy.v1.PostdeployOrBuilder>
           postdeployBuilder_;
+
       /**
        *
        *
@@ -1777,6 +1833,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       public boolean hasPostdeploy() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -1800,6 +1857,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
           return postdeployBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1825,6 +1883,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1847,6 +1906,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1877,6 +1937,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1899,6 +1960,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1916,6 +1978,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         onChanged();
         return getPostdeployFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1937,6 +2000,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
               : postdeploy_;
         }
       }
+
       /**
        *
        *
@@ -2038,6 +2102,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig>
       phaseConfigs_;
+
   /**
    *
    *
@@ -2055,6 +2120,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       getPhaseConfigsList() {
     return phaseConfigs_;
   }
+
   /**
    *
    *
@@ -2073,6 +2139,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       getPhaseConfigsOrBuilderList() {
     return phaseConfigs_;
   }
+
   /**
    *
    *
@@ -2089,6 +2156,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
   public int getPhaseConfigsCount() {
     return phaseConfigs_.size();
   }
+
   /**
    *
    *
@@ -2105,6 +2173,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
   public com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig getPhaseConfigs(int index) {
     return phaseConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -2284,6 +2353,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2553,6 +2623,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         return phaseConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2572,6 +2643,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         return phaseConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2592,6 +2664,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         return phaseConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2618,6 +2691,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2642,6 +2716,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2668,6 +2743,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2694,6 +2770,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2717,6 +2794,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2741,6 +2819,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2765,6 +2844,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2787,6 +2867,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2809,6 +2890,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2825,6 +2907,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         getPhaseConfigsBuilder(int index) {
       return getPhaseConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2845,6 +2928,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         return phaseConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2866,6 +2950,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(phaseConfigs_);
       }
     }
+
     /**
      *
      *
@@ -2884,6 +2969,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
           .addBuilder(
               com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2903,6 +2989,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
               index,
               com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig.getDefaultInstance());
     }
+
     /**
      *
      *

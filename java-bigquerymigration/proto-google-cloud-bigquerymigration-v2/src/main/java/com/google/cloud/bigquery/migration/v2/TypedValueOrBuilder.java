@@ -36,6 +36,7 @@ public interface TypedValueOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TypedValueOrBuilder
    * @return Whether the int64Value field is set.
    */
   boolean hasInt64Value();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface TypedValueOrBuilder
    * @return Whether the doubleValue field is set.
    */
   boolean hasDoubleValue();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface TypedValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface TypedValueOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public interface TypedValueOrBuilder
    * @return Whether the distributionValue field is set.
    */
   boolean hasDistributionValue();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface TypedValueOrBuilder
    * @return The distributionValue.
    */
   com.google.api.Distribution getDistributionValue();
+
   /**
    *
    *

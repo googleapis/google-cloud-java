@@ -34,6 +34,7 @@ public interface ListJobMessagesResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.JobMessage job_messages = 1;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.JobMessage> getJobMessagesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListJobMessagesResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.JobMessage job_messages = 1;</code>
    */
   com.google.dataflow.v1beta3.JobMessage getJobMessages(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListJobMessagesResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.JobMessage job_messages = 1;</code>
    */
   int getJobMessagesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListJobMessagesResponseOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.JobMessageOrBuilder>
       getJobMessagesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListJobMessagesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -111,6 +116,7 @@ public interface ListJobMessagesResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.AutoscalingEvent autoscaling_events = 3;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.AutoscalingEvent> getAutoscalingEventsList();
+
   /**
    *
    *
@@ -121,6 +127,7 @@ public interface ListJobMessagesResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.AutoscalingEvent autoscaling_events = 3;</code>
    */
   com.google.dataflow.v1beta3.AutoscalingEvent getAutoscalingEvents(int index);
+
   /**
    *
    *
@@ -131,6 +138,7 @@ public interface ListJobMessagesResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.AutoscalingEvent autoscaling_events = 3;</code>
    */
   int getAutoscalingEventsCount();
+
   /**
    *
    *
@@ -142,6 +150,7 @@ public interface ListJobMessagesResponseOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.AutoscalingEventOrBuilder>
       getAutoscalingEventsOrBuilderList();
+
   /**
    *
    *

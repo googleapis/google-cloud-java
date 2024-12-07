@@ -34,6 +34,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec)
     ModelMonitoringNotificationSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ModelMonitoringNotificationSpec.newBuilder() to construct.
   private ModelMonitoringNotificationSpec(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -82,6 +83,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
      * @return A list containing the userEmails.
      */
     java.util.List<java.lang.String> getUserEmailsList();
+
     /**
      *
      *
@@ -94,6 +96,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
      * @return The count of userEmails.
      */
     int getUserEmailsCount();
+
     /**
      *
      *
@@ -107,6 +110,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
      * @return The userEmails at the given index.
      */
     java.lang.String getUserEmails(int index);
+
     /**
      *
      *
@@ -121,6 +125,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
      */
     com.google.protobuf.ByteString getUserEmailsBytes(int index);
   }
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec.EmailConfig)
       EmailConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EmailConfig.newBuilder() to construct.
     private EmailConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -172,6 +178,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList userEmails_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -186,6 +193,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
     public com.google.protobuf.ProtocolStringList getUserEmailsList() {
       return userEmails_;
     }
+
     /**
      *
      *
@@ -200,6 +208,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
     public int getUserEmailsCount() {
       return userEmails_.size();
     }
+
     /**
      *
      *
@@ -215,6 +224,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
     public java.lang.String getUserEmails(int index) {
       return userEmails_.get(index);
     }
+
     /**
      *
      *
@@ -407,6 +417,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -626,6 +637,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -641,6 +653,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         userEmails_.makeImmutable();
         return userEmails_;
       }
+
       /**
        *
        *
@@ -655,6 +668,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       public int getUserEmailsCount() {
         return userEmails_.size();
       }
+
       /**
        *
        *
@@ -670,6 +684,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       public java.lang.String getUserEmails(int index) {
         return userEmails_.get(index);
       }
+
       /**
        *
        *
@@ -685,6 +700,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       public com.google.protobuf.ByteString getUserEmailsBytes(int index) {
         return userEmails_.getByteString(index);
       }
+
       /**
        *
        *
@@ -708,6 +724,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -730,6 +747,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -749,6 +767,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -767,6 +786,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -879,6 +899,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
      * @return The notificationChannel.
      */
     java.lang.String getNotificationChannel();
+
     /**
      *
      *
@@ -894,6 +915,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
      */
     com.google.protobuf.ByteString getNotificationChannelBytes();
   }
+
   /**
    *
    *
@@ -909,6 +931,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec.NotificationChannelConfig)
       NotificationChannelConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use NotificationChannelConfig.newBuilder() to construct.
     private NotificationChannelConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -945,6 +968,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object notificationChannel_ = "";
+
     /**
      *
      *
@@ -970,6 +994,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         return s;
       }
     }
+
     /**
      *
      *
@@ -1183,6 +1208,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1400,6 +1426,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       private int bitField0_;
 
       private java.lang.Object notificationChannel_ = "";
+
       /**
        *
        *
@@ -1424,6 +1451,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1448,6 +1476,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1471,6 +1500,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1490,6 +1520,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1591,6 +1622,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
   public static final int EMAIL_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec.EmailConfig
       emailConfig_;
+
   /**
    *
    *
@@ -1608,6 +1640,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
   public boolean hasEmailConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1629,6 +1662,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
             .getDefaultInstance()
         : emailConfig_;
   }
+
   /**
    *
    *
@@ -1651,6 +1685,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
 
   public static final int ENABLE_CLOUD_LOGGING_FIELD_NUMBER = 2;
   private boolean enableCloudLogging_ = false;
+
   /**
    *
    *
@@ -1678,6 +1713,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
           com.google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec
               .NotificationChannelConfig>
       notificationChannelConfigs_;
+
   /**
    *
    *
@@ -1696,6 +1732,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       getNotificationChannelConfigsList() {
     return notificationChannelConfigs_;
   }
+
   /**
    *
    *
@@ -1715,6 +1752,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       getNotificationChannelConfigsOrBuilderList() {
     return notificationChannelConfigs_;
   }
+
   /**
    *
    *
@@ -1730,6 +1768,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
   public int getNotificationChannelConfigsCount() {
     return notificationChannelConfigs_.size();
   }
+
   /**
    *
    *
@@ -1747,6 +1786,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       getNotificationChannelConfigs(int index) {
     return notificationChannelConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -1954,6 +1994,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2248,6 +2289,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
             com.google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec
                 .EmailConfigOrBuilder>
         emailConfigBuilder_;
+
     /**
      *
      *
@@ -2264,6 +2306,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
     public boolean hasEmailConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2288,6 +2331,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         return emailConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2313,6 +2357,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2336,6 +2381,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2368,6 +2414,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2389,6 +2436,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2406,6 +2454,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       onChanged();
       return getEmailConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2428,6 +2477,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
             : emailConfig_;
       }
     }
+
     /**
      *
      *
@@ -2459,6 +2509,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
     }
 
     private boolean enableCloudLogging_;
+
     /**
      *
      *
@@ -2478,6 +2529,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
     public boolean getEnableCloudLogging() {
       return enableCloudLogging_;
     }
+
     /**
      *
      *
@@ -2501,6 +2553,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2568,6 +2621,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         return notificationChannelConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2586,6 +2640,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         return notificationChannelConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2606,6 +2661,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         return notificationChannelConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2634,6 +2690,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2659,6 +2716,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2686,6 +2744,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2714,6 +2773,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2738,6 +2798,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2763,6 +2824,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2789,6 +2851,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2810,6 +2873,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2831,6 +2895,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2847,6 +2912,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         getNotificationChannelConfigsBuilder(int index) {
       return getNotificationChannelConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2867,6 +2933,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         return notificationChannelConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2889,6 +2956,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(notificationChannelConfigs_);
       }
     }
+
     /**
      *
      *
@@ -2908,6 +2976,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec
                   .NotificationChannelConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2928,6 +2997,7 @@ public final class ModelMonitoringNotificationSpec extends com.google.protobuf.G
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec
                   .NotificationChannelConfig.getDefaultInstance());
     }
+
     /**
      *
      *

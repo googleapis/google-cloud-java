@@ -44,6 +44,7 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface InstanceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface InstanceOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface InstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface InstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface InstanceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public interface InstanceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public interface InstanceOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public interface InstanceOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -251,9 +261,11 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -264,6 +276,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -278,6 +291,7 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -303,6 +317,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -332,6 +347,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for instanceType.
    */
   int getInstanceTypeValue();
+
   /**
    *
    *
@@ -360,6 +376,7 @@ public interface InstanceOrBuilder
    * @return Whether the machineConfig field is set.
    */
   boolean hasMachineConfig();
+
   /**
    *
    *
@@ -373,6 +390,7 @@ public interface InstanceOrBuilder
    * @return The machineConfig.
    */
   com.google.cloud.alloydb.v1alpha.Instance.MachineConfig getMachineConfig();
+
   /**
    *
    *
@@ -402,6 +420,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for availabilityType.
    */
   int getAvailabilityTypeValue();
+
   /**
    *
    *
@@ -437,6 +456,7 @@ public interface InstanceOrBuilder
    * @return The gceZone.
    */
   java.lang.String getGceZone();
+
   /**
    *
    *
@@ -478,6 +498,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; database_flags = 13;</code>
    */
   int getDatabaseFlagsCount();
+
   /**
    *
    *
@@ -501,9 +522,11 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; database_flags = 13;</code>
    */
   boolean containsDatabaseFlags(java.lang.String key);
+
   /** Use {@link #getDatabaseFlagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDatabaseFlags();
+
   /**
    *
    *
@@ -527,6 +550,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; database_flags = 13;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDatabaseFlagsMap();
+
   /**
    *
    *
@@ -554,6 +578,7 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -593,6 +618,7 @@ public interface InstanceOrBuilder
    * @return Whether the writableNode field is set.
    */
   boolean hasWritableNode();
+
   /**
    *
    *
@@ -608,6 +634,7 @@ public interface InstanceOrBuilder
    * @return The writableNode.
    */
   com.google.cloud.alloydb.v1alpha.Instance.Node getWritableNode();
+
   /**
    *
    *
@@ -635,6 +662,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.alloydb.v1alpha.Instance.Node> getNodesList();
+
   /**
    *
    *
@@ -648,6 +676,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.alloydb.v1alpha.Instance.Node getNodes(int index);
+
   /**
    *
    *
@@ -661,6 +690,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getNodesCount();
+
   /**
    *
    *
@@ -675,6 +705,7 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.alloydb.v1alpha.Instance.NodeOrBuilder>
       getNodesOrBuilderList();
+
   /**
    *
    *
@@ -703,6 +734,7 @@ public interface InstanceOrBuilder
    * @return Whether the queryInsightsConfig field is set.
    */
   boolean hasQueryInsightsConfig();
+
   /**
    *
    *
@@ -717,6 +749,7 @@ public interface InstanceOrBuilder
    * @return The queryInsightsConfig.
    */
   com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceConfig getQueryInsightsConfig();
+
   /**
    *
    *
@@ -745,6 +778,7 @@ public interface InstanceOrBuilder
    * @return Whether the observabilityConfig field is set.
    */
   boolean hasObservabilityConfig();
+
   /**
    *
    *
@@ -759,6 +793,7 @@ public interface InstanceOrBuilder
    * @return The observabilityConfig.
    */
   com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceConfig getObservabilityConfig();
+
   /**
    *
    *
@@ -786,6 +821,7 @@ public interface InstanceOrBuilder
    * @return Whether the readPoolConfig field is set.
    */
   boolean hasReadPoolConfig();
+
   /**
    *
    *
@@ -799,6 +835,7 @@ public interface InstanceOrBuilder
    * @return The readPoolConfig.
    */
   com.google.cloud.alloydb.v1alpha.Instance.ReadPoolConfig getReadPoolConfig();
+
   /**
    *
    *
@@ -824,6 +861,7 @@ public interface InstanceOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *
@@ -854,6 +892,7 @@ public interface InstanceOrBuilder
    * @return The publicIpAddress.
    */
   java.lang.String getPublicIpAddress();
+
   /**
    *
    *
@@ -900,6 +939,7 @@ public interface InstanceOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -925,6 +965,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; annotations = 18;</code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -937,9 +978,11 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; annotations = 18;</code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -952,6 +995,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; annotations = 18;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -968,6 +1012,7 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -996,6 +1041,7 @@ public interface InstanceOrBuilder
    * @return Whether the updatePolicy field is set.
    */
   boolean hasUpdatePolicy();
+
   /**
    *
    *
@@ -1011,6 +1057,7 @@ public interface InstanceOrBuilder
    * @return The updatePolicy.
    */
   com.google.cloud.alloydb.v1alpha.Instance.UpdatePolicy getUpdatePolicy();
+
   /**
    *
    *
@@ -1039,6 +1086,7 @@ public interface InstanceOrBuilder
    * @return Whether the clientConnectionConfig field is set.
    */
   boolean hasClientConnectionConfig();
+
   /**
    *
    *
@@ -1053,6 +1101,7 @@ public interface InstanceOrBuilder
    * @return The clientConnectionConfig.
    */
   com.google.cloud.alloydb.v1alpha.Instance.ClientConnectionConfig getClientConnectionConfig();
+
   /**
    *
    *
@@ -1108,6 +1157,7 @@ public interface InstanceOrBuilder
    * @return Whether the pscInstanceConfig field is set.
    */
   boolean hasPscInstanceConfig();
+
   /**
    *
    *
@@ -1123,6 +1173,7 @@ public interface InstanceOrBuilder
    * @return The pscInstanceConfig.
    */
   com.google.cloud.alloydb.v1alpha.Instance.PscInstanceConfig getPscInstanceConfig();
+
   /**
    *
    *
@@ -1152,6 +1203,7 @@ public interface InstanceOrBuilder
    * @return Whether the networkConfig field is set.
    */
   boolean hasNetworkConfig();
+
   /**
    *
    *
@@ -1166,6 +1218,7 @@ public interface InstanceOrBuilder
    * @return The networkConfig.
    */
   com.google.cloud.alloydb.v1alpha.Instance.InstanceNetworkConfig getNetworkConfig();
+
   /**
    *
    *
@@ -1195,6 +1248,7 @@ public interface InstanceOrBuilder
    * @return Whether the geminiConfig field is set.
    */
   boolean hasGeminiConfig();
+
   /**
    *
    *
@@ -1210,6 +1264,7 @@ public interface InstanceOrBuilder
    * @return The geminiConfig.
    */
   com.google.cloud.alloydb.v1alpha.GeminiInstanceConfig getGeminiConfig();
+
   /**
    *
    *
@@ -1238,6 +1293,7 @@ public interface InstanceOrBuilder
    * @return A list containing the outboundPublicIpAddresses.
    */
   java.util.List<java.lang.String> getOutboundPublicIpAddressesList();
+
   /**
    *
    *
@@ -1252,6 +1308,7 @@ public interface InstanceOrBuilder
    * @return The count of outboundPublicIpAddresses.
    */
   int getOutboundPublicIpAddressesCount();
+
   /**
    *
    *
@@ -1267,6 +1324,7 @@ public interface InstanceOrBuilder
    * @return The outboundPublicIpAddresses at the given index.
    */
   java.lang.String getOutboundPublicIpAddresses(int index);
+
   /**
    *
    *

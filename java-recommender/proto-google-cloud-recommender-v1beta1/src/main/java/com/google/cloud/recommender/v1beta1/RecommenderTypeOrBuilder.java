@@ -37,6 +37,7 @@ public interface RecommenderTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

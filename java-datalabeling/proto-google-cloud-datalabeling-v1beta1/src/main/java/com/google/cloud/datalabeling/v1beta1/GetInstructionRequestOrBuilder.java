@@ -39,6 +39,7 @@ public interface GetInstructionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

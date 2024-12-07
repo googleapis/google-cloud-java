@@ -36,6 +36,7 @@ public interface CloudFunctionInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CloudFunctionInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface CloudFunctionInfoOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

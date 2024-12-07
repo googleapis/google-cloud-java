@@ -38,6 +38,7 @@ public interface TagParsingConfigOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.TagParsingConfig.EntityParsingConfig>
       getEntityParsingConfigsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface TagParsingConfigOrBuilder
    */
   com.google.cloud.visionai.v1.TagParsingConfig.EntityParsingConfig getEntityParsingConfigs(
       int index);
+
   /**
    *
    *
@@ -65,6 +67,7 @@ public interface TagParsingConfigOrBuilder
    * </code>
    */
   int getEntityParsingConfigsCount();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface TagParsingConfigOrBuilder
   java.util.List<
           ? extends com.google.cloud.visionai.v1.TagParsingConfig.EntityParsingConfigOrBuilder>
       getEntityParsingConfigsOrBuilderList();
+
   /**
    *
    *

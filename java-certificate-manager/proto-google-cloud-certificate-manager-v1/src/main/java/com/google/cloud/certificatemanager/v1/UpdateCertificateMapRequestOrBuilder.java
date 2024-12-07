@@ -38,6 +38,7 @@ public interface UpdateCertificateMapRequestOrBuilder
    * @return Whether the certificateMap field is set.
    */
   boolean hasCertificateMap();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateCertificateMapRequestOrBuilder
    * @return The certificateMap.
    */
   com.google.cloud.certificatemanager.v1.CertificateMap getCertificateMap();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateCertificateMapRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateCertificateMapRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

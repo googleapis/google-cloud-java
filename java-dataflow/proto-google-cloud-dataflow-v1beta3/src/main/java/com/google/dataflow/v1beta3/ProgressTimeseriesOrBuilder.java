@@ -49,6 +49,7 @@ public interface ProgressTimeseriesOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ProgressTimeseries.Point data_points = 2;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.ProgressTimeseries.Point> getDataPointsList();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ProgressTimeseriesOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ProgressTimeseries.Point data_points = 2;</code>
    */
   com.google.dataflow.v1beta3.ProgressTimeseries.Point getDataPoints(int index);
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ProgressTimeseriesOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ProgressTimeseries.Point data_points = 2;</code>
    */
   int getDataPointsCount();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface ProgressTimeseriesOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.ProgressTimeseries.PointOrBuilder>
       getDataPointsOrBuilderList();
+
   /**
    *
    *

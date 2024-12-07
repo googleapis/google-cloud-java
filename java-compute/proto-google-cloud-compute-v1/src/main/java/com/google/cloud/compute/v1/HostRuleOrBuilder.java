@@ -36,6 +36,7 @@ public interface HostRuleOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface HostRuleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface HostRuleOrBuilder
    * @return A list containing the hosts.
    */
   java.util.List<java.lang.String> getHostsList();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface HostRuleOrBuilder
    * @return The count of hosts.
    */
   int getHostsCount();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface HostRuleOrBuilder
    * @return The hosts at the given index.
    */
   java.lang.String getHosts(int index);
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface HostRuleOrBuilder
    * @return Whether the pathMatcher field is set.
    */
   boolean hasPathMatcher();
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public interface HostRuleOrBuilder
    * @return The pathMatcher.
    */
   java.lang.String getPathMatcher();
+
   /**
    *
    *

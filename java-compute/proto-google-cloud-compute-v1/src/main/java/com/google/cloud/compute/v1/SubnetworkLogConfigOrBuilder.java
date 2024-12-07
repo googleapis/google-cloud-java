@@ -37,6 +37,7 @@ public interface SubnetworkLogConfigOrBuilder
    * @return Whether the aggregationInterval field is set.
    */
   boolean hasAggregationInterval();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SubnetworkLogConfigOrBuilder
    * @return The aggregationInterval.
    */
   java.lang.String getAggregationInterval();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface SubnetworkLogConfigOrBuilder
    * @return Whether the enable field is set.
    */
   boolean hasEnable();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface SubnetworkLogConfigOrBuilder
    * @return Whether the filterExpr field is set.
    */
   boolean hasFilterExpr();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface SubnetworkLogConfigOrBuilder
    * @return The filterExpr.
    */
   java.lang.String getFilterExpr();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface SubnetworkLogConfigOrBuilder
    * @return Whether the flowSampling field is set.
    */
   boolean hasFlowSampling();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface SubnetworkLogConfigOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface SubnetworkLogConfigOrBuilder
    * @return The metadata.
    */
   java.lang.String getMetadata();
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public interface SubnetworkLogConfigOrBuilder
    * @return A list containing the metadataFields.
    */
   java.util.List<java.lang.String> getMetadataFieldsList();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface SubnetworkLogConfigOrBuilder
    * @return The count of metadataFields.
    */
   int getMetadataFieldsCount();
+
   /**
    *
    *
@@ -228,6 +238,7 @@ public interface SubnetworkLogConfigOrBuilder
    * @return The metadataFields at the given index.
    */
   java.lang.String getMetadataFields(int index);
+
   /**
    *
    *

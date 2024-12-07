@@ -39,6 +39,7 @@ public interface RunContinuousTestRequestOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
+
   /**
    *
    *

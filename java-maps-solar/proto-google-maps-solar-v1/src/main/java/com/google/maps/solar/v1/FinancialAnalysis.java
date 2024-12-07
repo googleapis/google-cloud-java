@@ -34,6 +34,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.FinancialAnalysis)
     FinancialAnalysisOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FinancialAnalysis.newBuilder() to construct.
   private FinancialAnalysis(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int MONTHLY_BILL_FIELD_NUMBER = 3;
   private com.google.type.Money monthlyBill_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
   public boolean hasMonthlyBill() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
   public com.google.type.Money getMonthlyBill() {
     return monthlyBill_ == null ? com.google.type.Money.getDefaultInstance() : monthlyBill_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
 
   public static final int DEFAULT_BILL_FIELD_NUMBER = 4;
   private boolean defaultBill_ = false;
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
 
   public static final int AVERAGE_KWH_PER_MONTH_FIELD_NUMBER = 5;
   private float averageKwhPerMonth_ = 0F;
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
 
   public static final int PANEL_CONFIG_INDEX_FIELD_NUMBER = 6;
   private int panelConfigIndex_ = 0;
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
   public boolean hasPanelConfigIndex() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
 
   public static final int FINANCIAL_DETAILS_FIELD_NUMBER = 7;
   private com.google.maps.solar.v1.FinancialDetails financialDetails_;
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
   public boolean hasFinancialDetails() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -225,6 +235,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.solar.v1.FinancialDetails.getDefaultInstance()
         : financialDetails_;
   }
+
   /**
    *
    *
@@ -244,6 +255,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
 
   public static final int LEASING_SAVINGS_FIELD_NUMBER = 8;
   private com.google.maps.solar.v1.LeasingSavings leasingSavings_;
+
   /**
    *
    *
@@ -259,6 +271,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
   public boolean hasLeasingSavings() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -276,6 +289,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.solar.v1.LeasingSavings.getDefaultInstance()
         : leasingSavings_;
   }
+
   /**
    *
    *
@@ -294,6 +308,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
 
   public static final int CASH_PURCHASE_SAVINGS_FIELD_NUMBER = 9;
   private com.google.maps.solar.v1.CashPurchaseSavings cashPurchaseSavings_;
+
   /**
    *
    *
@@ -309,6 +324,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
   public boolean hasCashPurchaseSavings() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -326,6 +342,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.solar.v1.CashPurchaseSavings.getDefaultInstance()
         : cashPurchaseSavings_;
   }
+
   /**
    *
    *
@@ -344,6 +361,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
 
   public static final int FINANCED_PURCHASE_SAVINGS_FIELD_NUMBER = 10;
   private com.google.maps.solar.v1.FinancedPurchaseSavings financedPurchaseSavings_;
+
   /**
    *
    *
@@ -359,6 +377,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
   public boolean hasFinancedPurchaseSavings() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -376,6 +395,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.solar.v1.FinancedPurchaseSavings.getDefaultInstance()
         : financedPurchaseSavings_;
   }
+
   /**
    *
    *
@@ -648,6 +668,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -977,6 +998,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         monthlyBillBuilder_;
+
     /**
      *
      *
@@ -991,6 +1013,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     public boolean hasMonthlyBill() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1009,6 +1032,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
         return monthlyBillBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1055,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1075,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1103,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1123,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1138,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getMonthlyBillFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1126,6 +1155,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
         return monthlyBill_ == null ? com.google.type.Money.getDefaultInstance() : monthlyBill_;
       }
     }
+
     /**
      *
      *
@@ -1151,6 +1181,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean defaultBill_;
+
     /**
      *
      *
@@ -1168,6 +1199,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     public boolean getDefaultBill() {
       return defaultBill_;
     }
+
     /**
      *
      *
@@ -1189,6 +1221,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1210,6 +1243,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     }
 
     private float averageKwhPerMonth_;
+
     /**
      *
      *
@@ -1226,6 +1260,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     public float getAverageKwhPerMonth() {
       return averageKwhPerMonth_;
     }
+
     /**
      *
      *
@@ -1246,6 +1281,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1302,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     }
 
     private int panelConfigIndex_;
+
     /**
      *
      *
@@ -1285,6 +1322,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     public boolean hasPanelConfigIndex() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1304,6 +1342,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     public int getPanelConfigIndex() {
       return panelConfigIndex_;
     }
+
     /**
      *
      *
@@ -1327,6 +1366,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1395,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
             com.google.maps.solar.v1.FinancialDetails.Builder,
             com.google.maps.solar.v1.FinancialDetailsOrBuilder>
         financialDetailsBuilder_;
+
     /**
      *
      *
@@ -1370,6 +1411,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     public boolean hasFinancialDetails() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1391,6 +1433,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
         return financialDetailsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1414,6 +1457,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1435,6 +1479,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1464,6 +1509,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1484,6 +1530,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1499,6 +1546,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getFinancialDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1518,6 +1566,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
             : financialDetails_;
       }
     }
+
     /**
      *
      *
@@ -1551,6 +1600,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
             com.google.maps.solar.v1.LeasingSavings.Builder,
             com.google.maps.solar.v1.LeasingSavingsOrBuilder>
         leasingSavingsBuilder_;
+
     /**
      *
      *
@@ -1565,6 +1615,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     public boolean hasLeasingSavings() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1585,6 +1636,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
         return leasingSavingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1607,6 +1659,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1627,6 +1680,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1654,6 +1708,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1673,6 +1728,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1687,6 +1743,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getLeasingSavingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1705,6 +1762,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
             : leasingSavings_;
       }
     }
+
     /**
      *
      *
@@ -1737,6 +1795,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
             com.google.maps.solar.v1.CashPurchaseSavings.Builder,
             com.google.maps.solar.v1.CashPurchaseSavingsOrBuilder>
         cashPurchaseSavingsBuilder_;
+
     /**
      *
      *
@@ -1751,6 +1810,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     public boolean hasCashPurchaseSavings() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1771,6 +1831,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
         return cashPurchaseSavingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1793,6 +1854,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1813,6 +1875,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1841,6 +1904,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1860,6 +1924,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1874,6 +1939,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCashPurchaseSavingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1892,6 +1958,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
             : cashPurchaseSavings_;
       }
     }
+
     /**
      *
      *
@@ -1924,6 +1991,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
             com.google.maps.solar.v1.FinancedPurchaseSavings.Builder,
             com.google.maps.solar.v1.FinancedPurchaseSavingsOrBuilder>
         financedPurchaseSavingsBuilder_;
+
     /**
      *
      *
@@ -1938,6 +2006,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
     public boolean hasFinancedPurchaseSavings() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -1958,6 +2027,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
         return financedPurchaseSavingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1981,6 +2051,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2001,6 +2072,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2030,6 +2102,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2049,6 +2122,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2064,6 +2138,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getFinancedPurchaseSavingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2083,6 +2158,7 @@ public final class FinancialAnalysis extends com.google.protobuf.GeneratedMessag
             : financedPurchaseSavings_;
       }
     }
+
     /**
      *
      *

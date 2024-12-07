@@ -38,6 +38,7 @@ public interface CreateEventEditRuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateEventEditRuleRequestOrBuilder
    * @return Whether the eventEditRule field is set.
    */
   boolean hasEventEditRule();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateEventEditRuleRequestOrBuilder
    * @return The eventEditRule.
    */
   com.google.analytics.admin.v1alpha.EventEditRule getEventEditRule();
+
   /**
    *
    *

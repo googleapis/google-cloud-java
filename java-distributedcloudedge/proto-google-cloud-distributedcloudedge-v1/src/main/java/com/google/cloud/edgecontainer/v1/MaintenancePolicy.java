@@ -33,6 +33,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.MaintenancePolicy)
     MaintenancePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MaintenancePolicy.newBuilder() to construct.
   private MaintenancePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int WINDOW_FIELD_NUMBER = 1;
   private com.google.cloud.edgecontainer.v1.MaintenanceWindow window_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
   public boolean hasWindow() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.edgecontainer.v1.MaintenanceWindow.getDefaultInstance()
         : window_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow>
       maintenanceExclusions_;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       getMaintenanceExclusionsList() {
     return maintenanceExclusions_;
   }
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       getMaintenanceExclusionsOrBuilderList() {
     return maintenanceExclusions_;
   }
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
   public int getMaintenanceExclusionsCount() {
     return maintenanceExclusions_.size();
   }
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       int index) {
     return maintenanceExclusions_.get(index);
   }
+
   /**
    *
    *
@@ -392,6 +401,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -658,6 +668,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
             com.google.cloud.edgecontainer.v1.MaintenanceWindow.Builder,
             com.google.cloud.edgecontainer.v1.MaintenanceWindowOrBuilder>
         windowBuilder_;
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     public boolean hasWindow() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         return windowBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +777,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +797,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +812,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getWindowFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -813,6 +831,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
             : window_;
       }
     }
+
     /**
      *
      *
@@ -879,6 +898,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         return maintenanceExclusionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -900,6 +920,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         return maintenanceExclusionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -922,6 +943,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         return maintenanceExclusionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -950,6 +972,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +999,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1028,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1057,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1083,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1110,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1137,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1162,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1187,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1206,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         getMaintenanceExclusionsBuilder(int index) {
       return getMaintenanceExclusionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1197,6 +1229,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         return maintenanceExclusionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1253,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(maintenanceExclusions_);
       }
     }
+
     /**
      *
      *
@@ -1240,6 +1274,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1261,6 +1296,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
               index,
               com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.getDefaultInstance());
     }
+
     /**
      *
      *

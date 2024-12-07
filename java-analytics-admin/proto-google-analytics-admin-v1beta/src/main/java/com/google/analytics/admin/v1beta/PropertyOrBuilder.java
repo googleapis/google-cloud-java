@@ -38,6 +38,7 @@ public interface PropertyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface PropertyOrBuilder
    * @return The enum numeric value on the wire for propertyType.
    */
   int getPropertyTypeValue();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface PropertyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface PropertyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface PropertyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface PropertyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface PropertyOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public interface PropertyOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public interface PropertyOrBuilder
    * @return The enum numeric value on the wire for industryCategory.
    */
   int getIndustryCategoryValue();
+
   /**
    *
    *
@@ -271,6 +280,7 @@ public interface PropertyOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
+
   /**
    *
    *
@@ -308,6 +318,7 @@ public interface PropertyOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
+
   /**
    *
    *
@@ -340,6 +351,7 @@ public interface PropertyOrBuilder
    * @return The enum numeric value on the wire for serviceLevel.
    */
   int getServiceLevelValue();
+
   /**
    *
    *
@@ -370,6 +382,7 @@ public interface PropertyOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -384,6 +397,7 @@ public interface PropertyOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -412,6 +426,7 @@ public interface PropertyOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -427,6 +442,7 @@ public interface PropertyOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -457,6 +473,7 @@ public interface PropertyOrBuilder
    * @return The account.
    */
   java.lang.String getAccount();
+
   /**
    *
    *

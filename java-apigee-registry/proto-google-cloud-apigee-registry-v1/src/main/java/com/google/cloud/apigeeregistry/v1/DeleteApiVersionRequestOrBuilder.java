@@ -39,6 +39,7 @@ public interface DeleteApiVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

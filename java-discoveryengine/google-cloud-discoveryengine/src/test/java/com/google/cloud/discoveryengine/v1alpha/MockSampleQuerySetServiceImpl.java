@@ -116,7 +116,8 @@ public class MockSampleQuerySetServiceImpl extends SampleQuerySetServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateSampleQuerySet, expected %s or %s",
+                  "Unrecognized response type %s for method CreateSampleQuerySet, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SampleQuerySet.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +138,8 @@ public class MockSampleQuerySetServiceImpl extends SampleQuerySetServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateSampleQuerySet, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateSampleQuerySet, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SampleQuerySet.class.getName(),
                   Exception.class.getName())));
@@ -158,7 +160,8 @@ public class MockSampleQuerySetServiceImpl extends SampleQuerySetServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteSampleQuerySet, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteSampleQuerySet, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

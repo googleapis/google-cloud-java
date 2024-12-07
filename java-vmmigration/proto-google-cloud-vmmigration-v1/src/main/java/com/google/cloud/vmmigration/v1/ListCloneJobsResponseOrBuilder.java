@@ -36,6 +36,7 @@ public interface ListCloneJobsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.CloneJob> getCloneJobsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListCloneJobsResponseOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.CloneJob getCloneJobs(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListCloneJobsResponseOrBuilder
    * </code>
    */
   int getCloneJobsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ListCloneJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.CloneJobOrBuilder>
       getCloneJobsOrBuilderList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface ListCloneJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface ListCloneJobsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public interface ListCloneJobsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -150,6 +157,7 @@ public interface ListCloneJobsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

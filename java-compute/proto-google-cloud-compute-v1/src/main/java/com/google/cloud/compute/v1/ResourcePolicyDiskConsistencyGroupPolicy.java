@@ -34,6 +34,7 @@ public final class ResourcePolicyDiskConsistencyGroupPolicy
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy)
     ResourcePolicyDiskConsistencyGroupPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourcePolicyDiskConsistencyGroupPolicy.newBuilder() to construct.
   private ResourcePolicyDiskConsistencyGroupPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -215,6 +216,7 @@ public final class ResourcePolicyDiskConsistencyGroupPolicy
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface CreateNfsShareRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateNfsShareRequestOrBuilder
    * @return Whether the nfsShare field is set.
    */
   boolean hasNfsShare();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateNfsShareRequestOrBuilder
    * @return The nfsShare.
    */
   com.google.cloud.baremetalsolution.v2.NfsShare getNfsShare();
+
   /**
    *
    *

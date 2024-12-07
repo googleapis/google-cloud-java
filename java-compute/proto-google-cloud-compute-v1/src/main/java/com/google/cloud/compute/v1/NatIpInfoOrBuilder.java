@@ -36,6 +36,7 @@ public interface NatIpInfoOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.NatIpInfoNatIpInfoMapping> getNatIpInfoMappingsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NatIpInfoOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.NatIpInfoNatIpInfoMapping getNatIpInfoMappings(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface NatIpInfoOrBuilder
    * </code>
    */
   int getNatIpInfoMappingsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface NatIpInfoOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NatIpInfoNatIpInfoMappingOrBuilder>
       getNatIpInfoMappingsOrBuilderList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface NatIpInfoOrBuilder
    * @return Whether the natName field is set.
    */
   boolean hasNatName();
+
   /**
    *
    *
@@ -111,6 +116,7 @@ public interface NatIpInfoOrBuilder
    * @return The natName.
    */
   java.lang.String getNatName();
+
   /**
    *
    *

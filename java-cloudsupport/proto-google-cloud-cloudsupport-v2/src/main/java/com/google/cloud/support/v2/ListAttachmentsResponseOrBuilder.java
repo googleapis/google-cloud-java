@@ -34,6 +34,7 @@ public interface ListAttachmentsResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.Attachment attachments = 1;</code>
    */
   java.util.List<com.google.cloud.support.v2.Attachment> getAttachmentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListAttachmentsResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.Attachment attachments = 1;</code>
    */
   com.google.cloud.support.v2.Attachment getAttachments(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListAttachmentsResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.Attachment attachments = 1;</code>
    */
   int getAttachmentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListAttachmentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.support.v2.AttachmentOrBuilder>
       getAttachmentsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListAttachmentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

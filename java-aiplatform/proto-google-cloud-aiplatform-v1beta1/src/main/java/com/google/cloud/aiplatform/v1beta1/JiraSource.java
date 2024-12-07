@@ -33,6 +33,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.JiraSource)
     JiraSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use JiraSource.newBuilder() to construct.
   private JiraSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the projects.
      */
     java.util.List<java.lang.String> getProjectsList();
+
     /**
      *
      *
@@ -92,6 +94,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * @return The count of projects.
      */
     int getProjectsCount();
+
     /**
      *
      *
@@ -105,6 +108,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * @return The projects at the given index.
      */
     java.lang.String getProjects(int index);
+
     /**
      *
      *
@@ -133,6 +137,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the customQueries.
      */
     java.util.List<java.lang.String> getCustomQueriesList();
+
     /**
      *
      *
@@ -147,6 +152,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * @return The count of customQueries.
      */
     int getCustomQueriesCount();
+
     /**
      *
      *
@@ -162,6 +168,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * @return The customQueries at the given index.
      */
     java.lang.String getCustomQueries(int index);
+
     /**
      *
      *
@@ -190,6 +197,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * @return The email.
      */
     java.lang.String getEmail();
+
     /**
      *
      *
@@ -215,6 +223,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * @return The serverUri.
      */
     java.lang.String getServerUri();
+
     /**
      *
      *
@@ -245,6 +254,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the apiKeyConfig field is set.
      */
     boolean hasApiKeyConfig();
+
     /**
      *
      *
@@ -262,6 +272,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * @return The apiKeyConfig.
      */
     com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig getApiKeyConfig();
+
     /**
      *
      *
@@ -278,6 +289,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfigOrBuilder getApiKeyConfigOrBuilder();
   }
+
   /**
    *
    *
@@ -292,6 +304,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.JiraSource.JiraQueries)
       JiraQueriesOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use JiraQueries.newBuilder() to construct.
     private JiraQueries(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -331,6 +344,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList projects_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -345,6 +359,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getProjectsList() {
       return projects_;
     }
+
     /**
      *
      *
@@ -359,6 +374,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
     public int getProjectsCount() {
       return projects_.size();
     }
+
     /**
      *
      *
@@ -374,6 +390,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getProjects(int index) {
       return projects_.get(index);
     }
+
     /**
      *
      *
@@ -395,6 +412,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList customQueries_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -411,6 +429,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getCustomQueriesList() {
       return customQueries_;
     }
+
     /**
      *
      *
@@ -427,6 +446,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
     public int getCustomQueriesCount() {
       return customQueries_.size();
     }
+
     /**
      *
      *
@@ -444,6 +464,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getCustomQueries(int index) {
       return customQueries_.get(index);
     }
+
     /**
      *
      *
@@ -466,6 +487,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object email_ = "";
+
     /**
      *
      *
@@ -489,6 +511,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -517,6 +540,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object serverUri_ = "";
+
     /**
      *
      *
@@ -540,6 +564,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -566,6 +591,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
 
     public static final int API_KEY_CONFIG_FIELD_NUMBER = 7;
     private com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig apiKeyConfig_;
+
     /**
      *
      *
@@ -586,6 +612,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasApiKeyConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -608,6 +635,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.getDefaultInstance()
           : apiKeyConfig_;
     }
+
     /**
      *
      *
@@ -846,6 +874,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1133,6 +1162,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -1148,6 +1178,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         projects_.makeImmutable();
         return projects_;
       }
+
       /**
        *
        *
@@ -1162,6 +1193,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       public int getProjectsCount() {
         return projects_.size();
       }
+
       /**
        *
        *
@@ -1177,6 +1209,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getProjects(int index) {
         return projects_.get(index);
       }
+
       /**
        *
        *
@@ -1192,6 +1225,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getProjectsBytes(int index) {
         return projects_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1215,6 +1249,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1237,6 +1272,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1256,6 +1292,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1274,6 +1311,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1307,6 +1345,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -1324,6 +1363,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         customQueries_.makeImmutable();
         return customQueries_;
       }
+
       /**
        *
        *
@@ -1340,6 +1380,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       public int getCustomQueriesCount() {
         return customQueries_.size();
       }
+
       /**
        *
        *
@@ -1357,6 +1398,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getCustomQueries(int index) {
         return customQueries_.get(index);
       }
+
       /**
        *
        *
@@ -1374,6 +1416,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getCustomQueriesBytes(int index) {
         return customQueries_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1399,6 +1442,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1423,6 +1467,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1444,6 +1489,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1464,6 +1510,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1491,6 +1538,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object email_ = "";
+
       /**
        *
        *
@@ -1513,6 +1561,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1535,6 +1584,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1556,6 +1606,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1573,6 +1624,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1597,6 +1649,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object serverUri_ = "";
+
       /**
        *
        *
@@ -1619,6 +1672,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1641,6 +1695,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1662,6 +1717,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1679,6 +1735,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1708,6 +1765,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.Builder,
               com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfigOrBuilder>
           apiKeyConfigBuilder_;
+
       /**
        *
        *
@@ -1727,6 +1785,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       public boolean hasApiKeyConfig() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -1752,6 +1811,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
           return apiKeyConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1780,6 +1840,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1805,6 +1866,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1840,6 +1902,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1864,6 +1927,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1884,6 +1948,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getApiKeyConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1908,6 +1973,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
               : apiKeyConfig_;
         }
       }
+
       /**
        *
        *
@@ -2008,6 +2074,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.JiraSource.JiraQueries> jiraQueries_;
+
   /**
    *
    *
@@ -2024,6 +2091,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       getJiraQueriesList() {
     return jiraQueries_;
   }
+
   /**
    *
    *
@@ -2041,6 +2109,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       getJiraQueriesOrBuilderList() {
     return jiraQueries_;
   }
+
   /**
    *
    *
@@ -2056,6 +2125,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
   public int getJiraQueriesCount() {
     return jiraQueries_.size();
   }
+
   /**
    *
    *
@@ -2071,6 +2141,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1beta1.JiraSource.JiraQueries getJiraQueries(int index) {
     return jiraQueries_.get(index);
   }
+
   /**
    *
    *
@@ -2249,6 +2320,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2514,6 +2586,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         return jiraQueriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2532,6 +2605,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         return jiraQueriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2550,6 +2624,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         return jiraQueriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2575,6 +2650,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2598,6 +2674,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2623,6 +2700,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2648,6 +2726,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2670,6 +2749,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2693,6 +2773,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2716,6 +2797,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2737,6 +2819,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2758,6 +2841,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2773,6 +2857,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getJiraQueriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2792,6 +2877,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         return jiraQueriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2812,6 +2898,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(jiraQueries_);
       }
     }
+
     /**
      *
      *
@@ -2829,6 +2916,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.aiplatform.v1beta1.JiraSource.JiraQueries.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2847,6 +2935,7 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.aiplatform.v1beta1.JiraSource.JiraQueries.getDefaultInstance());
     }
+
     /**
      *
      *

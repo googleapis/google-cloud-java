@@ -279,7 +279,8 @@ public class InstanceName implements ResourceName {
     private Builder(InstanceName instanceName) {
       Preconditions.checkArgument(
           Objects.equals(instanceName.pathTemplate, PROJECT_ZONE_INSTANCE),
-          "toBuilder is only supported when InstanceName has the pattern of projects/{project}/zones/{zone}/instances/{instance}");
+          "toBuilder is only supported when InstanceName has the pattern of"
+              + " projects/{project}/zones/{zone}/instances/{instance}");
       this.project = instanceName.project;
       this.zone = instanceName.zone;
       this.instance = instanceName.instance;

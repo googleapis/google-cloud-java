@@ -38,6 +38,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.Condition)
     ConditionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Condition.newBuilder() to construct.
   private Condition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,6 +93,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return The value.
      */
     java.lang.String getValue();
+
     /**
      *
      *
@@ -123,6 +125,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getFullMatch();
   }
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.Condition.QueryTerm)
       QueryTermOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use QueryTerm.newBuilder() to construct.
     private QueryTerm(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -171,6 +175,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object value_ = "";
+
     /**
      *
      *
@@ -199,6 +204,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -230,6 +236,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
     public static final int FULL_MATCH_FIELD_NUMBER = 2;
     private boolean fullMatch_ = false;
+
     /**
      *
      *
@@ -415,6 +422,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -615,6 +623,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object value_ = "";
+
       /**
        *
        *
@@ -642,6 +651,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -669,6 +679,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -695,6 +706,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -717,6 +729,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -746,6 +759,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean fullMatch_;
+
       /**
        *
        *
@@ -761,6 +775,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       public boolean getFullMatch() {
         return fullMatch_;
       }
+
       /**
        *
        *
@@ -780,6 +795,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -879,6 +895,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
+
     /**
      *
      *
@@ -891,6 +908,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return The startTime.
      */
     com.google.protobuf.Timestamp getStartTime();
+
     /**
      *
      *
@@ -914,6 +932,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     boolean hasEndTime();
+
     /**
      *
      *
@@ -926,6 +945,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return The endTime.
      */
     com.google.protobuf.Timestamp getEndTime();
+
     /**
      *
      *
@@ -937,6 +957,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -952,6 +973,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.Condition.TimeRange)
       TimeRangeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TimeRange.newBuilder() to construct.
     private TimeRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -983,6 +1005,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int START_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp startTime_;
+
     /**
      *
      *
@@ -998,6 +1021,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1013,6 +1037,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getStartTime() {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
+
     /**
      *
      *
@@ -1029,6 +1054,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
     public static final int END_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp endTime_;
+
     /**
      *
      *
@@ -1044,6 +1070,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1059,6 +1086,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getEndTime() {
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
+
     /**
      *
      *
@@ -1252,6 +1280,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1478,6 +1507,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           startTimeBuilder_;
+
       /**
        *
        *
@@ -1492,6 +1522,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1512,6 +1543,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           return startTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1534,6 +1566,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1553,6 +1586,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1580,6 +1614,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1599,6 +1634,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1613,6 +1649,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1631,6 +1668,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
               : startTime_;
         }
       }
+
       /**
        *
        *
@@ -1663,6 +1701,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           endTimeBuilder_;
+
       /**
        *
        *
@@ -1677,6 +1716,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEndTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1695,6 +1735,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           return endTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1717,6 +1758,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1736,6 +1778,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1763,6 +1806,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1782,6 +1826,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1796,6 +1841,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEndTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1812,6 +1858,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
         }
       }
+
       /**
        *
        *
@@ -1906,6 +1953,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.Condition.QueryTerm> queryTerms_;
+
   /**
    *
    *
@@ -1922,6 +1970,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.retail.v2beta.Condition.QueryTerm> getQueryTermsList() {
     return queryTerms_;
   }
+
   /**
    *
    *
@@ -1939,6 +1988,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       getQueryTermsOrBuilderList() {
     return queryTerms_;
   }
+
   /**
    *
    *
@@ -1955,6 +2005,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public int getQueryTermsCount() {
     return queryTerms_.size();
   }
+
   /**
    *
    *
@@ -1971,6 +2022,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.retail.v2beta.Condition.QueryTerm getQueryTerms(int index) {
     return queryTerms_.get(index);
   }
+
   /**
    *
    *
@@ -1993,6 +2045,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.Condition.TimeRange> activeTimeRange_;
+
   /**
    *
    *
@@ -2008,6 +2061,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       getActiveTimeRangeList() {
     return activeTimeRange_;
   }
+
   /**
    *
    *
@@ -2023,6 +2077,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       getActiveTimeRangeOrBuilderList() {
     return activeTimeRange_;
   }
+
   /**
    *
    *
@@ -2037,6 +2092,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public int getActiveTimeRangeCount() {
     return activeTimeRange_.size();
   }
+
   /**
    *
    *
@@ -2051,6 +2107,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.retail.v2beta.Condition.TimeRange getActiveTimeRange(int index) {
     return activeTimeRange_.get(index);
   }
+
   /**
    *
    *
@@ -2072,6 +2129,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList pageCategories_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2089,6 +2147,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPageCategoriesList() {
     return pageCategories_;
   }
+
   /**
    *
    *
@@ -2106,6 +2165,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public int getPageCategoriesCount() {
     return pageCategories_.size();
   }
+
   /**
    *
    *
@@ -2124,6 +2184,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPageCategories(int index) {
     return pageCategories_.get(index);
   }
+
   /**
    *
    *
@@ -2330,6 +2391,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2679,6 +2741,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         return queryTermsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2698,6 +2761,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         return queryTermsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2717,6 +2781,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         return queryTermsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2743,6 +2808,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2766,6 +2832,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2791,6 +2858,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2817,6 +2885,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2840,6 +2909,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2863,6 +2933,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2886,6 +2957,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2908,6 +2980,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2930,6 +3003,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2946,6 +3020,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getQueryTermsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2966,6 +3041,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         return queryTermsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2986,6 +3062,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(queryTerms_);
       }
     }
+
     /**
      *
      *
@@ -3002,6 +3079,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       return getQueryTermsFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2beta.Condition.QueryTerm.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3020,6 +3098,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.retail.v2beta.Condition.QueryTerm.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3090,6 +3169,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         return activeTimeRangeBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3107,6 +3187,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         return activeTimeRangeBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3124,6 +3205,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         return activeTimeRangeBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3148,6 +3230,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3169,6 +3252,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3192,6 +3276,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3216,6 +3301,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3237,6 +3323,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3258,6 +3345,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3279,6 +3367,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3299,6 +3388,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3319,6 +3409,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3333,6 +3424,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getActiveTimeRangeFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3351,6 +3443,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         return activeTimeRangeBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3369,6 +3462,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(activeTimeRange_);
       }
     }
+
     /**
      *
      *
@@ -3383,6 +3477,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       return getActiveTimeRangeFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2beta.Condition.TimeRange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3399,6 +3494,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.retail.v2beta.Condition.TimeRange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3443,6 +3539,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -3461,6 +3558,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       pageCategories_.makeImmutable();
       return pageCategories_;
     }
+
     /**
      *
      *
@@ -3478,6 +3576,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public int getPageCategoriesCount() {
       return pageCategories_.size();
     }
+
     /**
      *
      *
@@ -3496,6 +3595,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPageCategories(int index) {
       return pageCategories_.get(index);
     }
+
     /**
      *
      *
@@ -3514,6 +3614,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPageCategoriesBytes(int index) {
       return pageCategories_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3540,6 +3641,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3565,6 +3667,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3587,6 +3690,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3608,6 +3712,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

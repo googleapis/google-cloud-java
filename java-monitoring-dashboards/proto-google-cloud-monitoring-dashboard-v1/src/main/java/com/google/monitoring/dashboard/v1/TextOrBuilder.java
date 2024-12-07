@@ -36,6 +36,7 @@ public interface TextOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TextOrBuilder
    * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface TextOrBuilder
    * @return Whether the style field is set.
    */
   boolean hasStyle();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface TextOrBuilder
    * @return The style.
    */
   com.google.monitoring.dashboard.v1.Text.TextStyle getStyle();
+
   /**
    *
    *

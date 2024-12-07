@@ -33,6 +33,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.ApplyConversionWorkspaceRequest)
     ApplyConversionWorkspaceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ApplyConversionWorkspaceRequest.newBuilder() to construct.
   private ApplyConversionWorkspaceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -81,6 +82,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     private DestinationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,6 +117,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +178,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -225,6 +231,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
 
   public static final int DRY_RUN_FIELD_NUMBER = 3;
   private boolean dryRun_ = false;
+
   /**
    *
    *
@@ -245,6 +252,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
 
   public static final int AUTO_COMMIT_FIELD_NUMBER = 4;
   private boolean autoCommit_ = false;
+
   /**
    *
    *
@@ -263,6 +271,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
   }
 
   public static final int CONNECTION_PROFILE_FIELD_NUMBER = 100;
+
   /**
    *
    *
@@ -278,6 +287,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
   public boolean hasConnectionProfile() {
     return destinationCase_ == 100;
   }
+
   /**
    *
    *
@@ -306,6 +316,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -544,6 +555,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -815,6 +827,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -841,6 +854,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -867,6 +881,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -892,6 +907,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +929,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +958,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -964,6 +982,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -987,6 +1006,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1029,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1048,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1074,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     }
 
     private boolean dryRun_;
+
     /**
      *
      *
@@ -1069,6 +1092,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     public boolean getDryRun() {
       return dryRun_;
     }
+
     /**
      *
      *
@@ -1090,6 +1114,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1136,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     }
 
     private boolean autoCommit_;
+
     /**
      *
      *
@@ -1127,6 +1153,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     public boolean getAutoCommit() {
       return autoCommit_;
     }
+
     /**
      *
      *
@@ -1147,6 +1174,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1210,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     public boolean hasConnectionProfile() {
       return destinationCase_ == 100;
     }
+
     /**
      *
      *
@@ -1211,6 +1240,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1240,6 +1270,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1262,6 +1293,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1282,6 +1314,7 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *

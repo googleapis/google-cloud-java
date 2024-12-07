@@ -39,6 +39,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Part)
     PartOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Part.newBuilder() to construct.
   private Part(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,6 +88,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     private DataCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -141,6 +143,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     private MetadataCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -172,6 +175,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -186,6 +190,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
   public boolean hasText() {
     return dataCase_ == 1;
   }
+
   /**
    *
    *
@@ -213,6 +218,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -242,6 +248,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INLINE_DATA_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -259,6 +266,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInlineData() {
     return dataCase_ == 2;
   }
+
   /**
    *
    *
@@ -279,6 +287,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.Blob.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -299,6 +308,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_DATA_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -316,6 +326,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFileData() {
     return dataCase_ == 3;
   }
+
   /**
    *
    *
@@ -336,6 +347,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.FileData.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -356,6 +368,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FUNCTION_CALL_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -375,6 +388,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFunctionCall() {
     return dataCase_ == 5;
   }
+
   /**
    *
    *
@@ -397,6 +411,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.FunctionCall.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -419,6 +434,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FUNCTION_RESPONSE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -439,6 +455,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFunctionResponse() {
     return dataCase_ == 6;
   }
+
   /**
    *
    *
@@ -462,6 +479,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.FunctionResponse.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -485,6 +503,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VIDEO_METADATA_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -503,6 +522,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVideoMetadata() {
     return metadataCase_ == 4;
   }
+
   /**
    *
    *
@@ -524,6 +544,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.VideoMetadata.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -798,6 +819,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1137,6 +1159,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     public boolean hasText() {
       return dataCase_ == 1;
     }
+
     /**
      *
      *
@@ -1165,6 +1188,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1193,6 +1217,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1214,6 +1239,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1259,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1261,6 +1288,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.Blob.Builder,
             com.google.cloud.aiplatform.v1.BlobOrBuilder>
         inlineDataBuilder_;
+
     /**
      *
      *
@@ -1278,6 +1306,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInlineData() {
       return dataCase_ == 2;
     }
+
     /**
      *
      *
@@ -1305,6 +1334,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.Blob.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1329,6 +1359,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1350,6 +1381,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1383,6 +1415,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1410,6 +1443,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1458,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.Blob.Builder getInlineDataBuilder() {
       return getInlineDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1446,6 +1481,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.Blob.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1484,6 +1520,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.FileData.Builder,
             com.google.cloud.aiplatform.v1.FileDataOrBuilder>
         fileDataBuilder_;
+
     /**
      *
      *
@@ -1501,6 +1538,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFileData() {
       return dataCase_ == 3;
     }
+
     /**
      *
      *
@@ -1528,6 +1566,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.FileData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1552,6 +1591,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1573,6 +1613,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1607,6 +1648,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1634,6 +1676,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1648,6 +1691,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.FileData.Builder getFileDataBuilder() {
       return getFileDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1670,6 +1714,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.FileData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1708,6 +1753,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.FunctionCall.Builder,
             com.google.cloud.aiplatform.v1.FunctionCallOrBuilder>
         functionCallBuilder_;
+
     /**
      *
      *
@@ -1727,6 +1773,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFunctionCall() {
       return dataCase_ == 5;
     }
+
     /**
      *
      *
@@ -1756,6 +1803,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.FunctionCall.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1782,6 +1830,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1806,6 +1855,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1842,6 +1892,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1871,6 +1922,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1887,6 +1939,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.FunctionCall.Builder getFunctionCallBuilder() {
       return getFunctionCallFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1911,6 +1964,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.FunctionCall.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1953,6 +2007,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.FunctionResponse.Builder,
             com.google.cloud.aiplatform.v1.FunctionResponseOrBuilder>
         functionResponseBuilder_;
+
     /**
      *
      *
@@ -1973,6 +2028,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFunctionResponse() {
       return dataCase_ == 6;
     }
+
     /**
      *
      *
@@ -2003,6 +2059,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.FunctionResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2030,6 +2087,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2055,6 +2113,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2092,6 +2151,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2122,6 +2182,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2139,6 +2200,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.FunctionResponse.Builder getFunctionResponseBuilder() {
       return getFunctionResponseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2164,6 +2226,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.FunctionResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2207,6 +2270,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.VideoMetadata.Builder,
             com.google.cloud.aiplatform.v1.VideoMetadataOrBuilder>
         videoMetadataBuilder_;
+
     /**
      *
      *
@@ -2225,6 +2289,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVideoMetadata() {
       return metadataCase_ == 4;
     }
+
     /**
      *
      *
@@ -2253,6 +2318,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.VideoMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2278,6 +2344,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2301,6 +2368,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2336,6 +2404,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2364,6 +2433,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2379,6 +2449,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.VideoMetadata.Builder getVideoMetadataBuilder() {
       return getVideoMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2402,6 +2473,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.VideoMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *

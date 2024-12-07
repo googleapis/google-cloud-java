@@ -36,6 +36,7 @@ public final class ListMerchantCenterAccountLinksResponse
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.ListMerchantCenterAccountLinksResponse)
     ListMerchantCenterAccountLinksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListMerchantCenterAccountLinksResponse.newBuilder() to construct.
   private ListMerchantCenterAccountLinksResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class ListMerchantCenterAccountLinksResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2alpha.MerchantCenterAccountLink>
       merchantCenterAccountLinks_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class ListMerchantCenterAccountLinksResponse
       getMerchantCenterAccountLinksList() {
     return merchantCenterAccountLinks_;
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class ListMerchantCenterAccountLinksResponse
       getMerchantCenterAccountLinksOrBuilderList() {
     return merchantCenterAccountLinks_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class ListMerchantCenterAccountLinksResponse
   public int getMerchantCenterAccountLinksCount() {
     return merchantCenterAccountLinks_.size();
   }
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class ListMerchantCenterAccountLinksResponse
       int index) {
     return merchantCenterAccountLinks_.get(index);
   }
+
   /**
    *
    *
@@ -319,6 +325,7 @@ public final class ListMerchantCenterAccountLinksResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -597,6 +604,7 @@ public final class ListMerchantCenterAccountLinksResponse
         return merchantCenterAccountLinksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -615,6 +623,7 @@ public final class ListMerchantCenterAccountLinksResponse
         return merchantCenterAccountLinksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -634,6 +643,7 @@ public final class ListMerchantCenterAccountLinksResponse
         return merchantCenterAccountLinksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -659,6 +669,7 @@ public final class ListMerchantCenterAccountLinksResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +693,7 @@ public final class ListMerchantCenterAccountLinksResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class ListMerchantCenterAccountLinksResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class ListMerchantCenterAccountLinksResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class ListMerchantCenterAccountLinksResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class ListMerchantCenterAccountLinksResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class ListMerchantCenterAccountLinksResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class ListMerchantCenterAccountLinksResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class ListMerchantCenterAccountLinksResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +876,7 @@ public final class ListMerchantCenterAccountLinksResponse
         getMerchantCenterAccountLinksBuilder(int index) {
       return getMerchantCenterAccountLinksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -876,6 +896,7 @@ public final class ListMerchantCenterAccountLinksResponse
         return merchantCenterAccountLinksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -896,6 +917,7 @@ public final class ListMerchantCenterAccountLinksResponse
         return java.util.Collections.unmodifiableList(merchantCenterAccountLinks_);
       }
     }
+
     /**
      *
      *
@@ -913,6 +935,7 @@ public final class ListMerchantCenterAccountLinksResponse
           .addBuilder(
               com.google.cloud.retail.v2alpha.MerchantCenterAccountLink.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -931,6 +954,7 @@ public final class ListMerchantCenterAccountLinksResponse
               index,
               com.google.cloud.retail.v2alpha.MerchantCenterAccountLink.getDefaultInstance());
     }
+
     /**
      *
      *

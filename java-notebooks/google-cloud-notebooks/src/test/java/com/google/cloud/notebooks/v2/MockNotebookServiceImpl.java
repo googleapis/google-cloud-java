@@ -241,7 +241,8 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CheckInstanceUpgradability, expected %s or %s",
+                  "Unrecognized response type %s for method CheckInstanceUpgradability, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CheckInstanceUpgradabilityResponse.class.getName(),
                   Exception.class.getName())));

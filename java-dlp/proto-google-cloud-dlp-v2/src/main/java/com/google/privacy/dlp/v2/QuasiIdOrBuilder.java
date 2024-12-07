@@ -37,6 +37,7 @@ public interface QuasiIdOrBuilder
    * @return Whether the field field is set.
    */
   boolean hasField();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface QuasiIdOrBuilder
    * @return The field.
    */
   com.google.privacy.dlp.v2.FieldId getField();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface QuasiIdOrBuilder
    * @return Whether the infoType field is set.
    */
   boolean hasInfoType();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface QuasiIdOrBuilder
    * @return The infoType.
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface QuasiIdOrBuilder
    * @return Whether the customTag field is set.
    */
   boolean hasCustomTag();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface QuasiIdOrBuilder
    * @return The customTag.
    */
   java.lang.String getCustomTag();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface QuasiIdOrBuilder
    * @return Whether the inferred field is set.
    */
   boolean hasInferred();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface QuasiIdOrBuilder
    * @return The inferred.
    */
   com.google.protobuf.Empty getInferred();
+
   /**
    *
    *

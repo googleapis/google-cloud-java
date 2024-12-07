@@ -33,6 +33,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DeidentifyContentRequest)
     DeidentifyContentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeidentifyContentRequest.newBuilder() to construct.
   private DeidentifyContentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -150,6 +153,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
 
   public static final int DEIDENTIFY_CONFIG_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DeidentifyConfig deidentifyConfig_;
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
   public boolean hasDeidentifyConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         ? com.google.privacy.dlp.v2.DeidentifyConfig.getDefaultInstance()
         : deidentifyConfig_;
   }
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
 
   public static final int INSPECT_CONFIG_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.InspectConfig inspectConfig_;
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
   public boolean hasInspectConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
         : inspectConfig_;
   }
+
   /**
    *
    *
@@ -262,6 +271,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
 
   public static final int ITEM_FIELD_NUMBER = 4;
   private com.google.privacy.dlp.v2.ContentItem item_;
+
   /**
    *
    *
@@ -284,6 +294,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
   public boolean hasItem() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
   public com.google.privacy.dlp.v2.ContentItem getItem() {
     return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
   }
+
   /**
    *
    *
@@ -331,6 +343,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inspectTemplateName_ = "";
+
   /**
    *
    *
@@ -358,6 +371,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -390,6 +404,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deidentifyTemplateName_ = "";
+
   /**
    *
    *
@@ -417,6 +432,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -449,6 +465,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationId_ = "";
+
   /**
    *
    *
@@ -472,6 +489,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -724,6 +742,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1023,6 +1042,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1060,6 +1080,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1118,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1133,6 +1155,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1188,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1233,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
             com.google.privacy.dlp.v2.DeidentifyConfig.Builder,
             com.google.privacy.dlp.v2.DeidentifyConfigOrBuilder>
         deidentifyConfigBuilder_;
+
     /**
      *
      *
@@ -1225,6 +1250,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
     public boolean hasDeidentifyConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1247,6 +1273,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         return deidentifyConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1271,6 +1298,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1321,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1323,6 +1352,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1374,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1360,6 +1391,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return getDeidentifyConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1380,6 +1412,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
             : deidentifyConfig_;
       }
     }
+
     /**
      *
      *
@@ -1414,6 +1447,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
             com.google.privacy.dlp.v2.InspectConfig.Builder,
             com.google.privacy.dlp.v2.InspectConfigOrBuilder>
         inspectConfigBuilder_;
+
     /**
      *
      *
@@ -1430,6 +1464,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
     public boolean hasInspectConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1452,6 +1487,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         return inspectConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1476,6 +1512,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1498,6 +1535,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1527,6 +1565,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1548,6 +1587,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1564,6 +1604,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return getInspectConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1584,6 +1625,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
             : inspectConfig_;
       }
     }
+
     /**
      *
      *
@@ -1618,6 +1660,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
             com.google.privacy.dlp.v2.ContentItem.Builder,
             com.google.privacy.dlp.v2.ContentItemOrBuilder>
         itemBuilder_;
+
     /**
      *
      *
@@ -1639,6 +1682,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
     public boolean hasItem() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1664,6 +1708,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         return itemBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1693,6 +1738,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1719,6 +1765,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1753,6 +1800,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1779,6 +1827,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1800,6 +1849,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return getItemFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1823,6 +1873,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
       }
     }
+
     /**
      *
      *
@@ -1857,6 +1908,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object inspectTemplateName_ = "";
+
     /**
      *
      *
@@ -1883,6 +1935,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1909,6 +1962,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1934,6 +1988,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1955,6 +2010,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1983,6 +2039,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object deidentifyTemplateName_ = "";
+
     /**
      *
      *
@@ -2009,6 +2066,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2035,6 +2093,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2060,6 +2119,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2081,6 +2141,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2109,6 +2170,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object locationId_ = "";
+
     /**
      *
      *
@@ -2131,6 +2193,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2153,6 +2216,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2174,6 +2238,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2191,6 +2256,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

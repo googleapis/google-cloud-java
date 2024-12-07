@@ -38,6 +38,7 @@ public interface SiteVerificationInfoOrBuilder
    * @return The enum numeric value on the wire for siteVerificationState.
    */
   int getSiteVerificationStateValue();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface SiteVerificationInfoOrBuilder
    * @return Whether the verifyTime field is set.
    */
   boolean hasVerifyTime();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface SiteVerificationInfoOrBuilder
    * @return The verifyTime.
    */
   com.google.protobuf.Timestamp getVerifyTime();
+
   /**
    *
    *

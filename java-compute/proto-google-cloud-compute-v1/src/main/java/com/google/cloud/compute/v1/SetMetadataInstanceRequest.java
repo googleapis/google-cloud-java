@@ -33,6 +33,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetMetadataInstanceRequest)
     SetMetadataInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetMetadataInstanceRequest.newBuilder() to construct.
   private SetMetadataInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
 
   public static final int METADATA_RESOURCE_FIELD_NUMBER = 291086110;
   private com.google.cloud.compute.v1.Metadata metadataResource_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
   public boolean hasMetadataResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
         ? com.google.cloud.compute.v1.Metadata.getDefaultInstance()
         : metadataResource_;
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -271,6 +281,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -299,6 +310,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -324,6 +336,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -558,6 +571,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -819,6 +833,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
+
     /**
      *
      *
@@ -841,6 +856,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -863,6 +879,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -884,6 +901,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +919,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +949,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.Metadata.Builder,
             com.google.cloud.compute.v1.MetadataOrBuilder>
         metadataResourceBuilder_;
+
     /**
      *
      *
@@ -946,6 +966,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
     public boolean hasMetadataResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -968,6 +989,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
         return metadataResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -992,6 +1014,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1037,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1067,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1089,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1106,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       onChanged();
       return getMetadataResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1100,6 +1127,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
             : metadataResource_;
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1157,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1153,6 +1182,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1177,6 +1207,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1200,6 +1231,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1219,6 +1251,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1245,6 +1278,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1259,6 +1293,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1281,6 +1316,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1303,6 +1339,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1324,6 +1361,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1341,6 +1379,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1404,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1389,6 +1429,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1413,6 +1454,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1436,6 +1478,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1455,6 +1498,7 @@ public final class SetMetadataInstanceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

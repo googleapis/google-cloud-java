@@ -36,6 +36,7 @@ public interface GetHealthBackendServiceRequestOrBuilder
    * @return The backendService.
    */
   java.lang.String getBackendService();
+
   /**
    *
    *
@@ -55,6 +56,7 @@ public interface GetHealthBackendServiceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -76,6 +78,7 @@ public interface GetHealthBackendServiceRequestOrBuilder
    * @return Whether the resourceGroupReferenceResource field is set.
    */
   boolean hasResourceGroupReferenceResource();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface GetHealthBackendServiceRequestOrBuilder
    * @return The resourceGroupReferenceResource.
    */
   com.google.cloud.compute.v1.ResourceGroupReference getResourceGroupReferenceResource();
+
   /**
    *
    *

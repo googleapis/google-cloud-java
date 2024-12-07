@@ -41,6 +41,7 @@ public interface SimulatedFindingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface SimulatedFindingOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface SimulatedFindingOrBuilder
    * @return The resourceName.
    */
   java.lang.String getResourceName();
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public interface SimulatedFindingOrBuilder
    * @return The category.
    */
   java.lang.String getCategory();
+
   /**
    *
    *
@@ -166,6 +170,7 @@ public interface SimulatedFindingOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public interface SimulatedFindingOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
    */
   int getSourcePropertiesCount();
+
   /**
    *
    *
@@ -207,9 +213,11 @@ public interface SimulatedFindingOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
    */
   boolean containsSourceProperties(java.lang.String key);
+
   /** Use {@link #getSourcePropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getSourceProperties();
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public interface SimulatedFindingOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getSourcePropertiesMap();
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public interface SimulatedFindingOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
+
   /**
    *
    *
@@ -275,6 +285,7 @@ public interface SimulatedFindingOrBuilder
    * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
+
   /**
    *
    *
@@ -296,6 +307,7 @@ public interface SimulatedFindingOrBuilder
    * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
+
   /**
    *
    *
@@ -329,6 +341,7 @@ public interface SimulatedFindingOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
+
   /**
    *
    *
@@ -357,6 +370,7 @@ public interface SimulatedFindingOrBuilder
    * @return The enum numeric value on the wire for findingClass.
    */
   int getFindingClassValue();
+
   /**
    *
    *

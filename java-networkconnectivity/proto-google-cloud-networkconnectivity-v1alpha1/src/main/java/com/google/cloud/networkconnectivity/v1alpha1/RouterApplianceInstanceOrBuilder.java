@@ -36,6 +36,7 @@ public interface RouterApplianceInstanceOrBuilder
    * @return The virtualMachine.
    */
   java.lang.String getVirtualMachine();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RouterApplianceInstanceOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface RouterApplianceInstanceOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getNetworkInterface();
+
   /**
    * <code>string network_interface = 2 [deprecated = true];</code>
    *

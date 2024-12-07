@@ -41,6 +41,7 @@ public interface UpdateBackupVaultRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateBackupVaultRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateBackupVaultRequestOrBuilder
    * @return Whether the backupVault field is set.
    */
   boolean hasBackupVault();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateBackupVaultRequestOrBuilder
    * @return The backupVault.
    */
   com.google.cloud.netapp.v1.BackupVault getBackupVault();
+
   /**
    *
    *

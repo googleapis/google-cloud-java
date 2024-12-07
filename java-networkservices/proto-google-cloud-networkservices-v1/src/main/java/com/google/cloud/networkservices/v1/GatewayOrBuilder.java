@@ -37,6 +37,7 @@ public interface GatewayOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GatewayOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface GatewayOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface GatewayOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface GatewayOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface GatewayOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface GatewayOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -172,9 +179,11 @@ public interface GatewayOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -185,6 +194,7 @@ public interface GatewayOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface GatewayOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -223,6 +234,7 @@ public interface GatewayOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -252,6 +264,7 @@ public interface GatewayOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -282,6 +295,7 @@ public interface GatewayOrBuilder
    * @return A list containing the ports.
    */
   java.util.List<java.lang.Integer> getPortsList();
+
   /**
    *
    *
@@ -296,6 +310,7 @@ public interface GatewayOrBuilder
    * @return The count of ports.
    */
   int getPortsCount();
+
   /**
    *
    *
@@ -333,6 +348,7 @@ public interface GatewayOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
+
   /**
    *
    *
@@ -368,6 +384,7 @@ public interface GatewayOrBuilder
    * @return The serverTlsPolicy.
    */
   java.lang.String getServerTlsPolicy();
+
   /**
    *
    *

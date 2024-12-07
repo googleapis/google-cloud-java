@@ -39,6 +39,7 @@ public interface GetDiscoveryConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

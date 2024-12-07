@@ -37,6 +37,7 @@ public interface LiveAdTagDetailOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface LiveAdTagDetailOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.AdRequest ad_requests = 2;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.AdRequest> getAdRequestsList();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface LiveAdTagDetailOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.AdRequest ad_requests = 2;</code>
    */
   com.google.cloud.video.stitcher.v1.AdRequest getAdRequests(int index);
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface LiveAdTagDetailOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.AdRequest ad_requests = 2;</code>
    */
   int getAdRequestsCount();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface LiveAdTagDetailOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.AdRequestOrBuilder>
       getAdRequestsOrBuilderList();
+
   /**
    *
    *

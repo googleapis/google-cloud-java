@@ -34,6 +34,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.QueryContextLineageSubgraphRequest)
     QueryContextLineageSubgraphRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryContextLineageSubgraphRequest.newBuilder() to construct.
   private QueryContextLineageSubgraphRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object context_ = "";
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -295,6 +298,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -488,6 +492,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object context_ = "";
+
     /**
      *
      *
@@ -519,6 +524,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -550,6 +556,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -580,6 +587,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +614,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

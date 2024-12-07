@@ -36,6 +36,7 @@ public interface LinkLayerAddressOrBuilder
    * @return The macAddress.
    */
   java.lang.String getMacAddress();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface LinkLayerAddressOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *

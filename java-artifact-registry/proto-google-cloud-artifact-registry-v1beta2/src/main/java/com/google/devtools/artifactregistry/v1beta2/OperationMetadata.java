@@ -33,6 +33,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1beta2.OperationMetadata)
     OperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OperationMetadata.newBuilder() to construct.
   private OperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

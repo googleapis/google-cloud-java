@@ -40,6 +40,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.HcxActivationKey)
     HcxActivationKeyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HcxActivationKey.newBuilder() to construct.
   private HcxActivationKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,6 +137,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -146,6 +148,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
      * <code>AVAILABLE = 1;</code>
      */
     public static final int AVAILABLE_VALUE = 1;
+
     /**
      *
      *
@@ -156,6 +159,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
      * <code>CONSUMED = 2;</code>
      */
     public static final int CONSUMED_VALUE = 2;
+
     /**
      *
      *
@@ -259,6 +263,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -286,6 +291,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -316,6 +322,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -332,6 +339,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -348,6 +356,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -365,6 +374,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -382,6 +392,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -408,6 +419,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object activationKey_ = "";
+
   /**
    *
    *
@@ -431,6 +443,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -459,6 +472,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -482,6 +496,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -708,6 +723,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -971,6 +987,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -997,6 +1014,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1041,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1048,6 +1067,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1089,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1123,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1118,6 +1140,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1140,6 +1163,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1164,6 +1188,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1185,6 +1210,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1214,6 +1240,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1262,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1251,6 +1279,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1271,6 +1300,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1300,6 +1330,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1317,6 +1348,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1337,6 +1369,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1391,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.vmwareengine.v1.HcxActivationKey.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1381,6 +1415,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1402,6 +1437,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object activationKey_ = "";
+
     /**
      *
      *
@@ -1424,6 +1460,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1446,6 +1483,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1467,6 +1505,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1484,6 +1523,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1508,6 +1548,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -1530,6 +1571,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1552,6 +1594,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1573,6 +1616,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1590,6 +1634,7 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

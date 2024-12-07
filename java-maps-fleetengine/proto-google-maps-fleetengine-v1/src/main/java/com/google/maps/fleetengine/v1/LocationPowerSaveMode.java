@@ -109,6 +109,7 @@ public enum LocationPowerSaveMode implements com.google.protobuf.ProtocolMessage
    * <code>UNKNOWN_LOCATION_POWER_SAVE_MODE = 0;</code>
    */
   public static final int UNKNOWN_LOCATION_POWER_SAVE_MODE_VALUE = 0;
+
   /**
    *
    *
@@ -120,6 +121,7 @@ public enum LocationPowerSaveMode implements com.google.protobuf.ProtocolMessage
    * <code>LOCATION_MODE_NO_CHANGE = 1;</code>
    */
   public static final int LOCATION_MODE_NO_CHANGE_VALUE = 1;
+
   /**
    *
    *
@@ -131,6 +133,7 @@ public enum LocationPowerSaveMode implements com.google.protobuf.ProtocolMessage
    * <code>LOCATION_MODE_GPS_DISABLED_WHEN_SCREEN_OFF = 2;</code>
    */
   public static final int LOCATION_MODE_GPS_DISABLED_WHEN_SCREEN_OFF_VALUE = 2;
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public enum LocationPowerSaveMode implements com.google.protobuf.ProtocolMessage
    * <code>LOCATION_MODE_ALL_DISABLED_WHEN_SCREEN_OFF = 3;</code>
    */
   public static final int LOCATION_MODE_ALL_DISABLED_WHEN_SCREEN_OFF_VALUE = 3;
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public enum LocationPowerSaveMode implements com.google.protobuf.ProtocolMessage
    * <code>LOCATION_MODE_FOREGROUND_ONLY = 4;</code>
    */
   public static final int LOCATION_MODE_FOREGROUND_ONLY_VALUE = 4;
+
   /**
    *
    *

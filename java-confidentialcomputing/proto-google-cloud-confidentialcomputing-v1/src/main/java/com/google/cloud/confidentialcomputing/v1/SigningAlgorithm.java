@@ -82,6 +82,7 @@ public enum SigningAlgorithm implements com.google.protobuf.ProtocolMessageEnum 
    * <code>SIGNING_ALGORITHM_UNSPECIFIED = 0;</code>
    */
   public static final int SIGNING_ALGORITHM_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum SigningAlgorithm implements com.google.protobuf.ProtocolMessageEnum 
    * <code>RSASSA_PSS_SHA256 = 1;</code>
    */
   public static final int RSASSA_PSS_SHA256_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum SigningAlgorithm implements com.google.protobuf.ProtocolMessageEnum 
    * <code>RSASSA_PKCS1V15_SHA256 = 2;</code>
    */
   public static final int RSASSA_PKCS1V15_SHA256_VALUE = 2;
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class TrafficSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.TrafficSource)
     TrafficSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TrafficSource.newBuilder() to construct.
   private TrafficSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -124,6 +125,7 @@ public final class TrafficSource extends com.google.protobuf.GeneratedMessageV3
      * <code>TRAFFIC_SOURCE_ENUM_UNSPECIFIED = 0;</code>
      */
     public static final int TRAFFIC_SOURCE_ENUM_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -134,6 +136,7 @@ public final class TrafficSource extends com.google.protobuf.GeneratedMessageV3
      * <code>ORGANIC = 1;</code>
      */
     public static final int ORGANIC_VALUE = 1;
+
     /**
      *
      *
@@ -144,6 +147,7 @@ public final class TrafficSource extends com.google.protobuf.GeneratedMessageV3
      * <code>ADS = 2;</code>
      */
     public static final int ADS_VALUE = 2;
+
     /**
      *
      *
@@ -396,6 +400,7 @@ public final class TrafficSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

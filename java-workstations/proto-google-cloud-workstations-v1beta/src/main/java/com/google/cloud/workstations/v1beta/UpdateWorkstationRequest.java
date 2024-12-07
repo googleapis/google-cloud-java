@@ -33,6 +33,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1beta.UpdateWorkstationRequest)
     UpdateWorkstationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateWorkstationRequest.newBuilder() to construct.
   private UpdateWorkstationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int WORKSTATION_FIELD_NUMBER = 1;
   private com.google.cloud.workstations.v1beta.Workstation workstation_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
   public boolean hasWorkstation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
         ? com.google.cloud.workstations.v1beta.Workstation.getDefaultInstance()
         : workstation_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 4;
   private boolean allowMissing_ = false;
+
   /**
    *
    *
@@ -406,6 +415,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -658,6 +668,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
             com.google.cloud.workstations.v1beta.Workstation.Builder,
             com.google.cloud.workstations.v1beta.WorkstationOrBuilder>
         workstationBuilder_;
+
     /**
      *
      *
@@ -674,6 +685,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
     public boolean hasWorkstation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
         return workstationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -720,6 +733,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +756,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +787,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +809,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return getWorkstationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -829,6 +847,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
             : workstation_;
       }
     }
+
     /**
      *
      *
@@ -863,6 +882,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -879,6 +899,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -901,6 +922,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -925,6 +947,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +969,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +999,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1021,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1038,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1032,6 +1059,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1089,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1077,6 +1106,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1097,6 +1127,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1148,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
     }
 
     private boolean allowMissing_;
+
     /**
      *
      *
@@ -1134,6 +1166,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
     public boolean getAllowMissing() {
       return allowMissing_;
     }
+
     /**
      *
      *
@@ -1155,6 +1188,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

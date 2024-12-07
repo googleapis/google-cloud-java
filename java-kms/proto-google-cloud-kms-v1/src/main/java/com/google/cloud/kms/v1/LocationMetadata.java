@@ -34,6 +34,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.LocationMetadata)
     LocationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocationMetadata.newBuilder() to construct.
   private LocationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int HSM_AVAILABLE_FIELD_NUMBER = 1;
   private boolean hsmAvailable_ = false;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int EKM_AVAILABLE_FIELD_NUMBER = 2;
   private boolean ekmAvailable_ = false;
+
   /**
    *
    *
@@ -271,6 +274,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -466,6 +470,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private boolean hsmAvailable_;
+
     /**
      *
      *
@@ -484,6 +489,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public boolean getHsmAvailable() {
       return hsmAvailable_;
     }
+
     /**
      *
      *
@@ -506,6 +512,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -528,6 +535,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean ekmAvailable_;
+
     /**
      *
      *
@@ -546,6 +554,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public boolean getEkmAvailable() {
       return ekmAvailable_;
     }
+
     /**
      *
      *
@@ -568,6 +577,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

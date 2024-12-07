@@ -34,6 +34,7 @@ public final class BatchCreateResourceValueConfigsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.BatchCreateResourceValueConfigsRequest)
     BatchCreateResourceValueConfigsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateResourceValueConfigsRequest.newBuilder() to construct.
   private BatchCreateResourceValueConfigsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class BatchCreateResourceValueConfigsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class BatchCreateResourceValueConfigsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class BatchCreateResourceValueConfigsRequest
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.CreateResourceValueConfigRequest>
       requests_;
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class BatchCreateResourceValueConfigsRequest
       getRequestsList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class BatchCreateResourceValueConfigsRequest
       getRequestsOrBuilderList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class BatchCreateResourceValueConfigsRequest
   public int getRequestsCount() {
     return requests_.size();
   }
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class BatchCreateResourceValueConfigsRequest
       int index) {
     return requests_.get(index);
   }
+
   /**
    *
    *
@@ -385,6 +393,7 @@ public final class BatchCreateResourceValueConfigsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -643,6 +652,7 @@ public final class BatchCreateResourceValueConfigsRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -669,6 +679,7 @@ public final class BatchCreateResourceValueConfigsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -695,6 +706,7 @@ public final class BatchCreateResourceValueConfigsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -720,6 +732,7 @@ public final class BatchCreateResourceValueConfigsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +754,7 @@ public final class BatchCreateResourceValueConfigsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +819,7 @@ public final class BatchCreateResourceValueConfigsRequest
         return requestsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -823,6 +838,7 @@ public final class BatchCreateResourceValueConfigsRequest
         return requestsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -842,6 +858,7 @@ public final class BatchCreateResourceValueConfigsRequest
         return requestsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -867,6 +884,7 @@ public final class BatchCreateResourceValueConfigsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +909,7 @@ public final class BatchCreateResourceValueConfigsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +935,7 @@ public final class BatchCreateResourceValueConfigsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +961,7 @@ public final class BatchCreateResourceValueConfigsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +985,7 @@ public final class BatchCreateResourceValueConfigsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1010,7 @@ public final class BatchCreateResourceValueConfigsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1035,7 @@ public final class BatchCreateResourceValueConfigsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1057,7 @@ public final class BatchCreateResourceValueConfigsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1079,7 @@ public final class BatchCreateResourceValueConfigsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1095,7 @@ public final class BatchCreateResourceValueConfigsRequest
         getRequestsBuilder(int index) {
       return getRequestsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1088,6 +1115,7 @@ public final class BatchCreateResourceValueConfigsRequest
         return requestsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1108,6 +1136,7 @@ public final class BatchCreateResourceValueConfigsRequest
         return java.util.Collections.unmodifiableList(requests_);
       }
     }
+
     /**
      *
      *
@@ -1126,6 +1155,7 @@ public final class BatchCreateResourceValueConfigsRequest
               com.google.cloud.securitycenter.v1.CreateResourceValueConfigRequest
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1145,6 +1175,7 @@ public final class BatchCreateResourceValueConfigsRequest
               com.google.cloud.securitycenter.v1.CreateResourceValueConfigRequest
                   .getDefaultInstance());
     }
+
     /**
      *
      *

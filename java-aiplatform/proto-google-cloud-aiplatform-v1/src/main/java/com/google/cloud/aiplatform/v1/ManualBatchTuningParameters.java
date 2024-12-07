@@ -33,6 +33,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ManualBatchTuningParameters)
     ManualBatchTuningParametersOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ManualBatchTuningParameters.newBuilder() to construct.
   private ManualBatchTuningParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
 
   public static final int BATCH_SIZE_FIELD_NUMBER = 1;
   private int batchSize_ = 0;
+
   /**
    *
    *
@@ -245,6 +247,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -427,6 +430,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
     private int bitField0_;
 
     private int batchSize_;
+
     /**
      *
      *
@@ -448,6 +452,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
     public int getBatchSize() {
       return batchSize_;
     }
+
     /**
      *
      *
@@ -473,6 +478,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

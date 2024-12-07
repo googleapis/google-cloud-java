@@ -38,6 +38,7 @@ public interface GetVPCSCConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

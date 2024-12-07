@@ -33,6 +33,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.source.AliasContext)
     AliasContextOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AliasContext.newBuilder() to construct.
   private AliasContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,6 +129,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
      * <code>KIND_UNSPECIFIED = 0;</code>
      */
     public static final int KIND_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -138,6 +140,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
      * <code>FIXED = 1;</code>
      */
     public static final int FIXED_VALUE = 1;
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
      * <code>MOVABLE = 2;</code>
      */
     public static final int MOVABLE_VALUE = 2;
+
     /**
      *
      *
@@ -247,6 +251,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KIND_FIELD_NUMBER = 1;
   private int kind_ = 0;
+
   /**
    *
    *
@@ -262,6 +267,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
   public int getKindValue() {
     return kind_;
   }
+
   /**
    *
    *
@@ -284,6 +290,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -307,6 +314,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -498,6 +506,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -694,6 +703,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int kind_ = 0;
+
     /**
      *
      *
@@ -709,6 +719,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
     public int getKindValue() {
       return kind_;
     }
+
     /**
      *
      *
@@ -727,6 +738,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +756,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
           io.grafeas.v1beta1.source.AliasContext.Kind.forNumber(kind_);
       return result == null ? io.grafeas.v1beta1.source.AliasContext.Kind.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -765,6 +778,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +798,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -806,6 +821,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -828,6 +844,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -849,6 +866,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +884,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

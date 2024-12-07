@@ -33,6 +33,7 @@ public final class ExpressKeySettings extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.ExpressKeySettings)
     ExpressKeySettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExpressKeySettings.newBuilder() to construct.
   private ExpressKeySettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class ExpressKeySettings extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

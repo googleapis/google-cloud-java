@@ -38,6 +38,7 @@ public interface CreatePhraseSetRequestOrBuilder
    * @return Whether the phraseSet field is set.
    */
   boolean hasPhraseSet();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CreatePhraseSetRequestOrBuilder
    * @return The phraseSet.
    */
   com.google.cloud.speech.v2.PhraseSet getPhraseSet();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface CreatePhraseSetRequestOrBuilder
    * @return The phraseSetId.
    */
   java.lang.String getPhraseSetId();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface CreatePhraseSetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

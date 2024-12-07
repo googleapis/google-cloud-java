@@ -37,6 +37,7 @@ public interface BasicScalingOrBuilder
    * @return Whether the idleTimeout field is set.
    */
   boolean hasIdleTimeout();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface BasicScalingOrBuilder
    * @return The idleTimeout.
    */
   com.google.protobuf.Duration getIdleTimeout();
+
   /**
    *
    *

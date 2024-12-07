@@ -37,6 +37,7 @@ public interface ServiceProjectAttachmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ServiceProjectAttachmentOrBuilder
    * @return The serviceProject.
    */
   java.lang.String getServiceProject();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface ServiceProjectAttachmentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface ServiceProjectAttachmentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface ServiceProjectAttachmentOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface ServiceProjectAttachmentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

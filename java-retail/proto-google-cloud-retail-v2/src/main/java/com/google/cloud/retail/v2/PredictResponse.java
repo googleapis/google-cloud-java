@@ -33,6 +33,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.PredictResponse)
     PredictResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PredictResponse.newBuilder() to construct.
   private PredictResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return The id.
      */
     java.lang.String getId();
+
     /**
      *
      *
@@ -112,6 +114,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 2;</code>
      */
     int getMetadataCount();
+
     /**
      *
      *
@@ -129,9 +132,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 2;</code>
      */
     boolean containsMetadata(java.lang.String key);
+
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadata();
+
     /**
      *
      *
@@ -149,6 +154,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 2;</code>
      */
     java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadataMap();
+
     /**
      *
      *
@@ -170,6 +176,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         java.lang.String key,
         /* nullable */
         com.google.protobuf.Value defaultValue);
+
     /**
      *
      *
@@ -188,6 +195,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.Value getMetadataOrThrow(java.lang.String key);
   }
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.PredictResponse.PredictionResult)
       PredictionResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PredictionResult.newBuilder() to construct.
     private PredictionResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -248,6 +257,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -271,6 +281,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -324,6 +335,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
+
     /**
      *
      *
@@ -347,12 +359,14 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
+
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadata() {
       return getMetadataMap();
     }
+
     /**
      *
      *
@@ -373,6 +387,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
+
     /**
      *
      *
@@ -401,6 +416,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
           internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -608,6 +624,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -839,6 +856,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object id_ = "";
+
       /**
        *
        *
@@ -861,6 +879,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -883,6 +902,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -904,6 +924,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -921,6 +942,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1000,6 +1022,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       public int getMetadataCount() {
         return internalGetMetadata().ensureBuilderMap().size();
       }
+
       /**
        *
        *
@@ -1023,12 +1046,14 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         }
         return internalGetMetadata().ensureBuilderMap().containsKey(key);
       }
+
       /** Use {@link #getMetadataMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadata() {
         return getMetadataMap();
       }
+
       /**
        *
        *
@@ -1049,6 +1074,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadataMap() {
         return internalGetMetadata().getImmutableMap();
       }
+
       /**
        *
        *
@@ -1077,6 +1103,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             internalGetMutableMetadata().ensureBuilderMap();
         return map.containsKey(key) ? metadataConverter.build(map.get(key)) : defaultValue;
       }
+
       /**
        *
        *
@@ -1111,6 +1138,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         internalGetMutableMetadata().clear();
         return this;
       }
+
       /**
        *
        *
@@ -1134,12 +1162,14 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         internalGetMutableMetadata().ensureBuilderMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableMetadata() {
         bitField0_ |= 0x00000002;
         return internalGetMutableMetadata().ensureMessageMap();
       }
+
       /**
        *
        *
@@ -1167,6 +1197,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000002;
         return this;
       }
+
       /**
        *
        *
@@ -1195,6 +1226,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000002;
         return this;
       }
+
       /**
        *
        *
@@ -1295,6 +1327,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2.PredictResponse.PredictionResult> results_;
+
   /**
    *
    *
@@ -1310,6 +1343,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       getResultsList() {
     return results_;
   }
+
   /**
    *
    *
@@ -1326,6 +1360,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       getResultsOrBuilderList() {
     return results_;
   }
+
   /**
    *
    *
@@ -1340,6 +1375,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   public int getResultsCount() {
     return results_.size();
   }
+
   /**
    *
    *
@@ -1354,6 +1390,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.retail.v2.PredictResponse.PredictionResult getResults(int index) {
     return results_.get(index);
   }
+
   /**
    *
    *
@@ -1374,6 +1411,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attributionToken_ = "";
+
   /**
    *
    *
@@ -1400,6 +1438,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1432,6 +1471,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList missingIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1446,6 +1486,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getMissingIdsList() {
     return missingIds_;
   }
+
   /**
    *
    *
@@ -1460,6 +1501,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   public int getMissingIdsCount() {
     return missingIds_.size();
   }
+
   /**
    *
    *
@@ -1475,6 +1517,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getMissingIds(int index) {
     return missingIds_.get(index);
   }
+
   /**
    *
    *
@@ -1493,6 +1536,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -1704,6 +1748,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2018,6 +2063,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         return resultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2035,6 +2081,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         return resultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2052,6 +2099,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         return resultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2076,6 +2124,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2098,6 +2147,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2121,6 +2171,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2145,6 +2196,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2166,6 +2218,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2188,6 +2241,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2210,6 +2264,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2230,6 +2285,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2250,6 +2306,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2264,6 +2321,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2282,6 +2340,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2301,6 +2360,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(results_);
       }
     }
+
     /**
      *
      *
@@ -2316,6 +2376,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               com.google.cloud.retail.v2.PredictResponse.PredictionResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2333,6 +2394,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
               index,
               com.google.cloud.retail.v2.PredictResponse.PredictionResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2366,6 +2428,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object attributionToken_ = "";
+
     /**
      *
      *
@@ -2391,6 +2454,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2416,6 +2480,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2440,6 +2505,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2460,6 +2526,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2495,6 +2562,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -2510,6 +2578,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       missingIds_.makeImmutable();
       return missingIds_;
     }
+
     /**
      *
      *
@@ -2524,6 +2593,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public int getMissingIdsCount() {
       return missingIds_.size();
     }
+
     /**
      *
      *
@@ -2539,6 +2609,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getMissingIds(int index) {
       return missingIds_.get(index);
     }
+
     /**
      *
      *
@@ -2554,6 +2625,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getMissingIdsBytes(int index) {
       return missingIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2577,6 +2649,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2599,6 +2672,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2618,6 +2692,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2636,6 +2711,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2661,6 +2737,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -2676,6 +2753,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -2695,6 +2773,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

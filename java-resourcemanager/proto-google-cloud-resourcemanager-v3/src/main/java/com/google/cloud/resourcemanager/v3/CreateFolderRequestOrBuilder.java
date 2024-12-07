@@ -39,6 +39,7 @@ public interface CreateFolderRequestOrBuilder
    * @return Whether the folder field is set.
    */
   boolean hasFolder();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface CreateFolderRequestOrBuilder
    * @return The folder.
    */
   com.google.cloud.resourcemanager.v3.Folder getFolder();
+
   /**
    *
    *

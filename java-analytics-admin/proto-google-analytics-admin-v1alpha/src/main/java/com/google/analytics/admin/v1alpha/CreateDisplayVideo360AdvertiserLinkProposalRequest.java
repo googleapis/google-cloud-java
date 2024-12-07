@@ -35,6 +35,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest)
     CreateDisplayVideo360AdvertiserLinkProposalRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDisplayVideo360AdvertiserLinkProposalRequest.newBuilder() to construct.
   private CreateDisplayVideo360AdvertiserLinkProposalRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
   public static final int DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL_FIELD_NUMBER = 2;
   private com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
       displayVideo360AdvertiserLinkProposal_;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
   public boolean hasDisplayVideo360AdvertiserLinkProposal() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
             .getDefaultInstance()
         : displayVideo360AdvertiserLinkProposal_;
   }
+
   /**
    *
    *
@@ -384,6 +390,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -623,6 +630,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -647,6 +655,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -671,6 +680,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -694,6 +704,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +724,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +757,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
             com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.Builder,
             com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposalOrBuilder>
         displayVideo360AdvertiserLinkProposalBuilder_;
+
     /**
      *
      *
@@ -761,6 +774,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
     public boolean hasDisplayVideo360AdvertiserLinkProposal() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -785,6 +799,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
         return displayVideo360AdvertiserLinkProposalBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -810,6 +825,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +849,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +882,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +904,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +922,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
       onChanged();
       return getDisplayVideo360AdvertiserLinkProposalFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -925,6 +945,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
             : displayVideo360AdvertiserLinkProposal_;
       }
     }
+
     /**
      *
      *

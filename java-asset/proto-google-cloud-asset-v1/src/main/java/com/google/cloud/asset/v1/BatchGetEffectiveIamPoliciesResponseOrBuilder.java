@@ -42,6 +42,7 @@ public interface BatchGetEffectiveIamPoliciesResponseOrBuilder
    */
   java.util.List<com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy>
       getPolicyResultsList();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface BatchGetEffectiveIamPoliciesResponseOrBuilder
    */
   com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy
       getPolicyResults(int index);
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface BatchGetEffectiveIamPoliciesResponseOrBuilder
    * </code>
    */
   int getPolicyResultsCount();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface BatchGetEffectiveIamPoliciesResponseOrBuilder
               com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse
                   .EffectiveIamPolicyOrBuilder>
       getPolicyResultsOrBuilderList();
+
   /**
    *
    *

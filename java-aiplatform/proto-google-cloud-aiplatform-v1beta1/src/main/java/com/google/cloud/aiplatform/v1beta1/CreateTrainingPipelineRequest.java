@@ -34,6 +34,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest)
     CreateTrainingPipelineRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateTrainingPipelineRequest.newBuilder() to construct.
   private CreateTrainingPipelineRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
 
   public static final int TRAINING_PIPELINE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.TrainingPipeline trainingPipeline_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
   public boolean hasTrainingPipeline() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
         ? com.google.cloud.aiplatform.v1beta1.TrainingPipeline.getDefaultInstance()
         : trainingPipeline_;
   }
+
   /**
    *
    *
@@ -354,6 +360,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -575,6 +582,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -600,6 +608,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -625,6 +634,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -649,6 +659,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -669,6 +680,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
             com.google.cloud.aiplatform.v1beta1.TrainingPipeline.Builder,
             com.google.cloud.aiplatform.v1beta1.TrainingPipelineOrBuilder>
         trainingPipelineBuilder_;
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
     public boolean hasTrainingPipeline() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
         return trainingPipelineBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -763,6 +778,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +855,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +873,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
       onChanged();
       return getTrainingPipelineFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
             : trainingPipeline_;
       }
     }
+
     /**
      *
      *

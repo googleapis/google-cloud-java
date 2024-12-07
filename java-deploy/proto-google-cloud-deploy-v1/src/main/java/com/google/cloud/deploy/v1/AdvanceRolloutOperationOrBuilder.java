@@ -36,6 +36,7 @@ public interface AdvanceRolloutOperationOrBuilder
    * @return The sourcePhase.
    */
   java.lang.String getSourcePhase();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AdvanceRolloutOperationOrBuilder
    * @return Whether the wait field is set.
    */
   boolean hasWait();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface AdvanceRolloutOperationOrBuilder
    * @return The wait.
    */
   com.google.protobuf.Duration getWait();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface AdvanceRolloutOperationOrBuilder
    * @return The rollout.
    */
   java.lang.String getRollout();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface AdvanceRolloutOperationOrBuilder
    * @return The destinationPhase.
    */
   java.lang.String getDestinationPhase();
+
   /**
    *
    *

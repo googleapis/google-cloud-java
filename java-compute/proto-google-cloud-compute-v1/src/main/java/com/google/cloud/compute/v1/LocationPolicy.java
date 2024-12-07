@@ -33,6 +33,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.LocationPolicy)
     LocationPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocationPolicy.newBuilder() to construct.
   private LocationPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,6 +139,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TARGET_SHAPE = 0;</code>
      */
     public static final int UNDEFINED_TARGET_SHAPE_VALUE = 0;
+
     /**
      *
      *
@@ -148,6 +150,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>ANY = 64972;</code>
      */
     public static final int ANY_VALUE = 64972;
+
     /**
      *
      *
@@ -158,6 +161,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>ANY_SINGLE_ZONE = 61100880;</code>
      */
     public static final int ANY_SINGLE_ZONE_VALUE = 61100880;
+
     /**
      *
      *
@@ -289,6 +293,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getLocationsCount() {
     return internalGetLocations().getMap().size();
   }
+
   /**
    *
    *
@@ -306,6 +311,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLocations().getMap().containsKey(key);
   }
+
   /** Use {@link #getLocationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -313,6 +319,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       getLocations() {
     return getLocationsMap();
   }
+
   /**
    *
    *
@@ -328,6 +335,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       getLocationsMap() {
     return internalGetLocations().getMap();
   }
+
   /**
    *
    *
@@ -350,6 +358,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
         internalGetLocations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -378,6 +387,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetShape_ = "";
+
   /**
    *
    *
@@ -394,6 +404,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTargetShape() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -418,6 +429,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -626,6 +638,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -913,6 +926,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getLocationsCount() {
       return internalGetLocations().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -931,6 +945,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLocations().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getLocationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -938,6 +953,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
         getLocations() {
       return getLocationsMap();
     }
+
     /**
      *
      *
@@ -954,6 +970,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
         getLocationsMap() {
       return internalGetLocations().getImmutableMap();
     }
+
     /**
      *
      *
@@ -977,6 +994,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableLocations().ensureBuilderMap();
       return map.containsKey(key) ? locationsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1007,6 +1025,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLocations().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1044,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLocations().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.compute.v1.LocationPolicyLocation>
@@ -1032,6 +1052,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return internalGetMutableLocations().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1055,6 +1076,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1101,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1130,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object targetShape_ = "";
+
     /**
      *
      *
@@ -1122,6 +1146,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTargetShape() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1145,6 +1170,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1168,6 +1194,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1190,6 +1217,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1236,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

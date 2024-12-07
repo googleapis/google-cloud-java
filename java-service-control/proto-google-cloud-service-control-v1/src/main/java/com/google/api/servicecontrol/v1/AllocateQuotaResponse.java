@@ -33,6 +33,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.api.servicecontrol.v1.AllocateQuotaResponse)
     AllocateQuotaResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AllocateQuotaResponse.newBuilder() to construct.
   private AllocateQuotaResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object operationId_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicecontrol.v1.QuotaError> allocateErrors_;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.api.servicecontrol.v1.QuotaError> getAllocateErrorsList() {
     return allocateErrors_;
   }
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       getAllocateErrorsOrBuilderList() {
     return allocateErrors_;
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
   public int getAllocateErrorsCount() {
     return allocateErrors_.size();
   }
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
   public com.google.api.servicecontrol.v1.QuotaError getAllocateErrors(int index) {
     return allocateErrors_.get(index);
   }
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicecontrol.v1.MetricValueSet> quotaMetrics_;
+
   /**
    *
    *
@@ -217,6 +226,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.api.servicecontrol.v1.MetricValueSet> getQuotaMetricsList() {
     return quotaMetrics_;
   }
+
   /**
    *
    *
@@ -240,6 +250,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       getQuotaMetricsOrBuilderList() {
     return quotaMetrics_;
   }
+
   /**
    *
    *
@@ -262,6 +273,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
   public int getQuotaMetricsCount() {
     return quotaMetrics_.size();
   }
+
   /**
    *
    *
@@ -284,6 +296,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
   public com.google.api.servicecontrol.v1.MetricValueSet getQuotaMetrics(int index) {
     return quotaMetrics_.get(index);
   }
+
   /**
    *
    *
@@ -312,6 +325,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceConfigId_ = "";
+
   /**
    *
    *
@@ -335,6 +349,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -550,6 +565,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -867,6 +883,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object operationId_ = "";
+
     /**
      *
      *
@@ -890,6 +907,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -913,6 +931,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -935,6 +954,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +973,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1031,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return allocateErrorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1048,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return allocateErrorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1042,6 +1065,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return allocateErrorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1088,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1109,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1132,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1155,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1176,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1197,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1188,6 +1218,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1238,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1226,6 +1258,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1271,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     public com.google.api.servicecontrol.v1.QuotaError.Builder getAllocateErrorsBuilder(int index) {
       return getAllocateErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1255,6 +1289,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return allocateErrorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1272,6 +1307,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(allocateErrors_);
       }
     }
+
     /**
      *
      *
@@ -1285,6 +1321,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       return getAllocateErrorsFieldBuilder()
           .addBuilder(com.google.api.servicecontrol.v1.QuotaError.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1298,6 +1335,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       return getAllocateErrorsFieldBuilder()
           .addBuilder(index, com.google.api.servicecontrol.v1.QuotaError.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1374,6 +1412,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return quotaMetricsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1399,6 +1438,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return quotaMetricsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1424,6 +1464,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return quotaMetricsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1456,6 +1497,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1485,6 +1527,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1516,6 +1559,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1548,6 +1592,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1577,6 +1622,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1606,6 +1652,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1635,6 +1682,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1663,6 +1711,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1691,6 +1740,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1713,6 +1763,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return getQuotaMetricsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1739,6 +1790,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return quotaMetricsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1765,6 +1817,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(quotaMetrics_);
       }
     }
+
     /**
      *
      *
@@ -1787,6 +1840,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       return getQuotaMetricsFieldBuilder()
           .addBuilder(com.google.api.servicecontrol.v1.MetricValueSet.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1810,6 +1864,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       return getQuotaMetricsFieldBuilder()
           .addBuilder(index, com.google.api.servicecontrol.v1.MetricValueSet.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1851,6 +1906,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object serviceConfigId_ = "";
+
     /**
      *
      *
@@ -1873,6 +1929,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1895,6 +1952,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1916,6 +1974,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1933,6 +1992,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

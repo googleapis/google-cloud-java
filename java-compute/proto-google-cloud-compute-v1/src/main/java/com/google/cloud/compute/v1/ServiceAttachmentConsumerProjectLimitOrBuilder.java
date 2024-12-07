@@ -36,6 +36,7 @@ public interface ServiceAttachmentConsumerProjectLimitOrBuilder
    * @return Whether the connectionLimit field is set.
    */
   boolean hasConnectionLimit();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ServiceAttachmentConsumerProjectLimitOrBuilder
    * @return Whether the networkUrl field is set.
    */
   boolean hasNetworkUrl();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ServiceAttachmentConsumerProjectLimitOrBuilder
    * @return The networkUrl.
    */
   java.lang.String getNetworkUrl();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ServiceAttachmentConsumerProjectLimitOrBuilder
    * @return Whether the projectIdOrNum field is set.
    */
   boolean hasProjectIdOrNum();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ServiceAttachmentConsumerProjectLimitOrBuilder
    * @return The projectIdOrNum.
    */
   java.lang.String getProjectIdOrNum();
+
   /**
    *
    *

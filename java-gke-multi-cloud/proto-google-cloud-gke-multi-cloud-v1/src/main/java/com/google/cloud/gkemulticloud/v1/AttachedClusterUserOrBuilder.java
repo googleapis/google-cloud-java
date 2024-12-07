@@ -36,6 +36,7 @@ public interface AttachedClusterUserOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *

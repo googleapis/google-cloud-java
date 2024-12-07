@@ -36,6 +36,7 @@ public interface DeleteZoneOperationRequestOrBuilder
    * @return The operation.
    */
   java.lang.String getOperation();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DeleteZoneOperationRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface DeleteZoneOperationRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

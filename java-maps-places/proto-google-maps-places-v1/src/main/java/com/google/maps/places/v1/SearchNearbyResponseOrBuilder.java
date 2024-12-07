@@ -35,6 +35,7 @@ public interface SearchNearbyResponseOrBuilder
    * <code>repeated .google.maps.places.v1.Place places = 1;</code>
    */
   java.util.List<com.google.maps.places.v1.Place> getPlacesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface SearchNearbyResponseOrBuilder
    * <code>repeated .google.maps.places.v1.Place places = 1;</code>
    */
   com.google.maps.places.v1.Place getPlaces(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface SearchNearbyResponseOrBuilder
    * <code>repeated .google.maps.places.v1.Place places = 1;</code>
    */
   int getPlacesCount();
+
   /**
    *
    *
@@ -68,6 +71,7 @@ public interface SearchNearbyResponseOrBuilder
    * <code>repeated .google.maps.places.v1.Place places = 1;</code>
    */
   java.util.List<? extends com.google.maps.places.v1.PlaceOrBuilder> getPlacesOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface SearchNearbyResponseOrBuilder
    * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
    */
   java.util.List<com.google.maps.places.v1.RoutingSummary> getRoutingSummariesList();
+
   /**
    *
    *
@@ -108,6 +113,7 @@ public interface SearchNearbyResponseOrBuilder
    * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
    */
   com.google.maps.places.v1.RoutingSummary getRoutingSummaries(int index);
+
   /**
    *
    *
@@ -122,6 +128,7 @@ public interface SearchNearbyResponseOrBuilder
    * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
    */
   int getRoutingSummariesCount();
+
   /**
    *
    *
@@ -137,6 +144,7 @@ public interface SearchNearbyResponseOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.RoutingSummaryOrBuilder>
       getRoutingSummariesOrBuilderList();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface PollAirflowCommandRequestOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PollAirflowCommandRequestOrBuilder
    * @return The executionId.
    */
   java.lang.String getExecutionId();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface PollAirflowCommandRequestOrBuilder
    * @return The pod.
    */
   java.lang.String getPod();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface PollAirflowCommandRequestOrBuilder
    * @return The podNamespace.
    */
   java.lang.String getPodNamespace();
+
   /**
    *
    *

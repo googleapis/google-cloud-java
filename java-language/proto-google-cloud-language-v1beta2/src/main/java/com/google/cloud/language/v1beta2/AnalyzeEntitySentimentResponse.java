@@ -33,6 +33,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse)
     AnalyzeEntitySentimentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnalyzeEntitySentimentResponse.newBuilder() to construct.
   private AnalyzeEntitySentimentResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v1beta2.Entity> entities_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
   public java.util.List<com.google.cloud.language.v1beta2.Entity> getEntitiesList() {
     return entities_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       getEntitiesOrBuilderList() {
     return entities_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
   public int getEntitiesCount() {
     return entities_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
   public com.google.cloud.language.v1beta2.Entity getEntities(int index) {
     return entities_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object language_ = "";
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -364,6 +372,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -644,6 +653,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
         return entitiesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -660,6 +670,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
         return entitiesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -676,6 +687,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
         return entitiesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +754,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +777,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +797,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +818,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +839,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +879,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +892,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
     public com.google.cloud.language.v1beta2.Entity.Builder getEntitiesBuilder(int index) {
       return getEntitiesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -887,6 +909,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
         return entitiesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -904,6 +927,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(entities_);
       }
     }
+
     /**
      *
      *
@@ -917,6 +941,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       return getEntitiesFieldBuilder()
           .addBuilder(com.google.cloud.language.v1beta2.Entity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -930,6 +955,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       return getEntitiesFieldBuilder()
           .addBuilder(index, com.google.cloud.language.v1beta2.Entity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -962,6 +988,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object language_ = "";
+
     /**
      *
      *
@@ -987,6 +1014,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1012,6 +1040,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1036,6 +1065,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1086,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

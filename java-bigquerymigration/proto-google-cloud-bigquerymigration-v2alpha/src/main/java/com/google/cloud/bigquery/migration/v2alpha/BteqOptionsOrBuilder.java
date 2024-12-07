@@ -37,6 +37,7 @@ public interface BteqOptionsOrBuilder
    * @return Whether the projectDataset field is set.
    */
   boolean hasProjectDataset();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface BteqOptionsOrBuilder
    * @return The projectDataset.
    */
   com.google.cloud.bigquery.migration.v2alpha.DatasetReference getProjectDataset();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface BteqOptionsOrBuilder
    * @return The defaultPathUri.
    */
   java.lang.String getDefaultPathUri();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface BteqOptionsOrBuilder
    * <code>map&lt;string, string&gt; file_replacement_map = 3;</code>
    */
   int getFileReplacementMapCount();
+
   /**
    *
    *
@@ -114,9 +118,11 @@ public interface BteqOptionsOrBuilder
    * <code>map&lt;string, string&gt; file_replacement_map = 3;</code>
    */
   boolean containsFileReplacementMap(java.lang.String key);
+
   /** Use {@link #getFileReplacementMapMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getFileReplacementMap();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface BteqOptionsOrBuilder
    * <code>map&lt;string, string&gt; file_replacement_map = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getFileReplacementMapMap();
+
   /**
    *
    *
@@ -145,6 +152,7 @@ public interface BteqOptionsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

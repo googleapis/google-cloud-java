@@ -40,6 +40,7 @@ public interface CreateFeaturestoreRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateFeaturestoreRequestOrBuilder
    * @return Whether the featurestore field is set.
    */
   boolean hasFeaturestore();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateFeaturestoreRequestOrBuilder
    * @return The featurestore.
    */
   com.google.cloud.aiplatform.v1beta1.Featurestore getFeaturestore();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateFeaturestoreRequestOrBuilder
    * @return The featurestoreId.
    */
   java.lang.String getFeaturestoreId();
+
   /**
    *
    *

@@ -72,6 +72,7 @@ public enum ClassificationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>CLASSIFICATION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int CLASSIFICATION_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum ClassificationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>MULTICLASS = 1;</code>
    */
   public static final int MULTICLASS_VALUE = 1;
+
   /**
    *
    *

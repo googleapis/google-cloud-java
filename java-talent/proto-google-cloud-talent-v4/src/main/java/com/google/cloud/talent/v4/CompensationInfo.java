@@ -33,6 +33,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.CompensationInfo)
     CompensationInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompensationInfo.newBuilder() to construct.
   private CompensationInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -205,6 +206,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>COMPENSATION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int COMPENSATION_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -218,6 +220,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>BASE = 1;</code>
      */
     public static final int BASE_VALUE = 1;
+
     /**
      *
      *
@@ -228,6 +231,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>BONUS = 2;</code>
      */
     public static final int BONUS_VALUE = 2;
+
     /**
      *
      *
@@ -238,6 +242,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>SIGNING_BONUS = 3;</code>
      */
     public static final int SIGNING_BONUS_VALUE = 3;
+
     /**
      *
      *
@@ -248,6 +253,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>EQUITY = 4;</code>
      */
     public static final int EQUITY_VALUE = 4;
+
     /**
      *
      *
@@ -258,6 +264,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>PROFIT_SHARING = 5;</code>
      */
     public static final int PROFIT_SHARING_VALUE = 5;
+
     /**
      *
      *
@@ -268,6 +275,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>COMMISSIONS = 6;</code>
      */
     public static final int COMMISSIONS_VALUE = 6;
+
     /**
      *
      *
@@ -278,6 +286,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>TIPS = 7;</code>
      */
     public static final int TIPS_VALUE = 7;
+
     /**
      *
      *
@@ -489,6 +498,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>COMPENSATION_UNIT_UNSPECIFIED = 0;</code>
      */
     public static final int COMPENSATION_UNIT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -499,6 +509,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>HOURLY = 1;</code>
      */
     public static final int HOURLY_VALUE = 1;
+
     /**
      *
      *
@@ -509,6 +520,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>DAILY = 2;</code>
      */
     public static final int DAILY_VALUE = 2;
+
     /**
      *
      *
@@ -519,6 +531,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>WEEKLY = 3;</code>
      */
     public static final int WEEKLY_VALUE = 3;
+
     /**
      *
      *
@@ -529,6 +542,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>MONTHLY = 4;</code>
      */
     public static final int MONTHLY_VALUE = 4;
+
     /**
      *
      *
@@ -539,6 +553,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>YEARLY = 5;</code>
      */
     public static final int YEARLY_VALUE = 5;
+
     /**
      *
      *
@@ -549,6 +564,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>ONE_TIME = 6;</code>
      */
     public static final int ONE_TIME_VALUE = 6;
+
     /**
      *
      *
@@ -675,6 +691,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
+
     /**
      *
      *
@@ -706,6 +723,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire for unit.
      */
     int getUnitValue();
+
     /**
      *
      *
@@ -734,6 +752,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return Whether the amount field is set.
      */
     boolean hasAmount();
+
     /**
      *
      *
@@ -746,6 +765,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return The amount.
      */
     com.google.type.Money getAmount();
+
     /**
      *
      *
@@ -769,6 +789,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return Whether the range field is set.
      */
     boolean hasRange();
+
     /**
      *
      *
@@ -781,6 +802,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return The range.
      */
     com.google.cloud.talent.v4.CompensationInfo.CompensationRange getRange();
+
     /**
      *
      *
@@ -806,6 +828,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return The description.
      */
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -842,6 +865,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return Whether the expectedUnitsPerYear field is set.
      */
     boolean hasExpectedUnitsPerYear();
+
     /**
      *
      *
@@ -863,6 +887,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return The expectedUnitsPerYear.
      */
     com.google.protobuf.DoubleValue getExpectedUnitsPerYear();
+
     /**
      *
      *
@@ -886,6 +911,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     com.google.cloud.talent.v4.CompensationInfo.CompensationEntry.CompensationAmountCase
         getCompensationAmountCase();
   }
+
   /**
    *
    *
@@ -915,6 +941,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.CompensationInfo.CompensationEntry)
       CompensationEntryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CompensationEntry.newBuilder() to construct.
     private CompensationEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -965,6 +992,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       private CompensationAmountCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -999,6 +1027,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
 
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
+
     /**
      *
      *
@@ -1017,6 +1046,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1042,6 +1072,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
 
     public static final int UNIT_FIELD_NUMBER = 2;
     private int unit_ = 0;
+
     /**
      *
      *
@@ -1060,6 +1091,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     public int getUnitValue() {
       return unit_;
     }
+
     /**
      *
      *
@@ -1084,6 +1116,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int AMOUNT_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -1099,6 +1132,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     public boolean hasAmount() {
       return compensationAmountCase_ == 3;
     }
+
     /**
      *
      *
@@ -1117,6 +1151,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
       return com.google.type.Money.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1135,6 +1170,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int RANGE_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -1150,6 +1186,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     public boolean hasRange() {
       return compensationAmountCase_ == 4;
     }
+
     /**
      *
      *
@@ -1168,6 +1205,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
       return com.google.cloud.talent.v4.CompensationInfo.CompensationRange.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1190,6 +1228,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1215,6 +1254,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -1243,6 +1283,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
 
     public static final int EXPECTED_UNITS_PER_YEAR_FIELD_NUMBER = 6;
     private com.google.protobuf.DoubleValue expectedUnitsPerYear_;
+
     /**
      *
      *
@@ -1267,6 +1308,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     public boolean hasExpectedUnitsPerYear() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1293,6 +1335,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           ? com.google.protobuf.DoubleValue.getDefaultInstance()
           : expectedUnitsPerYear_;
     }
+
     /**
      *
      *
@@ -1566,6 +1609,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1894,6 +1938,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private int type_ = 0;
+
       /**
        *
        *
@@ -1912,6 +1957,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       public int getTypeValue() {
         return type_;
       }
+
       /**
        *
        *
@@ -1933,6 +1979,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1955,6 +2002,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
             ? com.google.cloud.talent.v4.CompensationInfo.CompensationType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1979,6 +2027,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2001,6 +2050,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
 
       private int unit_ = 0;
+
       /**
        *
        *
@@ -2019,6 +2069,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       public int getUnitValue() {
         return unit_;
       }
+
       /**
        *
        *
@@ -2040,6 +2091,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2062,6 +2114,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
             ? com.google.cloud.talent.v4.CompensationInfo.CompensationUnit.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2086,6 +2139,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2110,6 +2164,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
           amountBuilder_;
+
       /**
        *
        *
@@ -2125,6 +2180,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       public boolean hasAmount() {
         return compensationAmountCase_ == 3;
       }
+
       /**
        *
        *
@@ -2150,6 +2206,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           return com.google.type.Money.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2172,6 +2229,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         compensationAmountCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -2191,6 +2249,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         compensationAmountCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -2222,6 +2281,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         compensationAmountCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -2247,6 +2307,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2259,6 +2320,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       public com.google.type.Money.Builder getAmountBuilder() {
         return getAmountFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2279,6 +2341,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           return com.google.type.Money.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2313,6 +2376,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
               com.google.cloud.talent.v4.CompensationInfo.CompensationRange.Builder,
               com.google.cloud.talent.v4.CompensationInfo.CompensationRangeOrBuilder>
           rangeBuilder_;
+
       /**
        *
        *
@@ -2328,6 +2392,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       public boolean hasRange() {
         return compensationAmountCase_ == 4;
       }
+
       /**
        *
        *
@@ -2354,6 +2419,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           return com.google.cloud.talent.v4.CompensationInfo.CompensationRange.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2376,6 +2442,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         compensationAmountCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -2396,6 +2463,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         compensationAmountCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -2432,6 +2500,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         compensationAmountCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -2457,6 +2526,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2470,6 +2540,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           getRangeBuilder() {
         return getRangeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2492,6 +2563,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           return com.google.cloud.talent.v4.CompensationInfo.CompensationRange.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2528,6 +2600,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -2552,6 +2625,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2576,6 +2650,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2599,6 +2674,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2618,6 +2694,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2649,6 +2726,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.DoubleValue.Builder,
               com.google.protobuf.DoubleValueOrBuilder>
           expectedUnitsPerYearBuilder_;
+
       /**
        *
        *
@@ -2672,6 +2750,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       public boolean hasExpectedUnitsPerYear() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -2701,6 +2780,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           return expectedUnitsPerYearBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2732,6 +2812,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2761,6 +2842,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2797,6 +2879,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2825,6 +2908,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2848,6 +2932,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getExpectedUnitsPerYearFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2875,6 +2960,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
               : expectedUnitsPerYear_;
         }
       }
+
       /**
        *
        *
@@ -2997,6 +3083,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return Whether the maxCompensation field is set.
      */
     boolean hasMaxCompensation();
+
     /**
      *
      *
@@ -3012,6 +3099,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return The maxCompensation.
      */
     com.google.type.Money getMaxCompensation();
+
     /**
      *
      *
@@ -3040,6 +3128,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return Whether the minCompensation field is set.
      */
     boolean hasMinCompensation();
+
     /**
      *
      *
@@ -3054,6 +3143,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return The minCompensation.
      */
     com.google.type.Money getMinCompensation();
+
     /**
      *
      *
@@ -3067,6 +3157,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      */
     com.google.type.MoneyOrBuilder getMinCompensationOrBuilder();
   }
+
   /**
    *
    *
@@ -3081,6 +3172,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.CompensationInfo.CompensationRange)
       CompensationRangeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CompensationRange.newBuilder() to construct.
     private CompensationRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3112,6 +3204,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
     public static final int MAX_COMPENSATION_FIELD_NUMBER = 2;
     private com.google.type.Money maxCompensation_;
+
     /**
      *
      *
@@ -3130,6 +3223,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     public boolean hasMaxCompensation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3150,6 +3244,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           ? com.google.type.Money.getDefaultInstance()
           : maxCompensation_;
     }
+
     /**
      *
      *
@@ -3171,6 +3266,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
 
     public static final int MIN_COMPENSATION_FIELD_NUMBER = 1;
     private com.google.type.Money minCompensation_;
+
     /**
      *
      *
@@ -3188,6 +3284,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     public boolean hasMinCompensation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3207,6 +3304,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           ? com.google.type.Money.getDefaultInstance()
           : minCompensation_;
     }
+
     /**
      *
      *
@@ -3405,6 +3503,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3636,6 +3735,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
           maxCompensationBuilder_;
+
       /**
        *
        *
@@ -3653,6 +3753,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       public boolean hasMaxCompensation() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -3676,6 +3777,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           return maxCompensationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3701,6 +3803,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3723,6 +3826,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3753,6 +3857,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -3775,6 +3880,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3792,6 +3898,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getMaxCompensationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3813,6 +3920,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
               : maxCompensation_;
         }
       }
+
       /**
        *
        *
@@ -3844,6 +3952,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
           minCompensationBuilder_;
+
       /**
        *
        *
@@ -3860,6 +3969,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       public boolean hasMinCompensation() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -3882,6 +3992,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           return minCompensationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3906,6 +4017,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3927,6 +4039,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3956,6 +4069,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -3977,6 +4091,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3993,6 +4108,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getMinCompensationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4013,6 +4129,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
               : minCompensation_;
         }
       }
+
       /**
        *
        *
@@ -4111,6 +4228,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4.CompensationInfo.CompensationEntry> entries_;
+
   /**
    *
    *
@@ -4129,6 +4247,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       getEntriesList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -4148,6 +4267,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       getEntriesOrBuilderList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -4165,6 +4285,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
   public int getEntriesCount() {
     return entries_.size();
   }
+
   /**
    *
    *
@@ -4182,6 +4303,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.talent.v4.CompensationInfo.CompensationEntry getEntries(int index) {
     return entries_.get(index);
   }
+
   /**
    *
    *
@@ -4204,6 +4326,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
   public static final int ANNUALIZED_BASE_COMPENSATION_RANGE_FIELD_NUMBER = 2;
   private com.google.cloud.talent.v4.CompensationInfo.CompensationRange
       annualizedBaseCompensationRange_;
+
   /**
    *
    *
@@ -4229,6 +4352,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
   public boolean hasAnnualizedBaseCompensationRange() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4257,6 +4381,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.talent.v4.CompensationInfo.CompensationRange.getDefaultInstance()
         : annualizedBaseCompensationRange_;
   }
+
   /**
    *
    *
@@ -4287,6 +4412,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
   public static final int ANNUALIZED_TOTAL_COMPENSATION_RANGE_FIELD_NUMBER = 3;
   private com.google.cloud.talent.v4.CompensationInfo.CompensationRange
       annualizedTotalCompensationRange_;
+
   /**
    *
    *
@@ -4312,6 +4438,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
   public boolean hasAnnualizedTotalCompensationRange() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -4340,6 +4467,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.talent.v4.CompensationInfo.CompensationRange.getDefaultInstance()
         : annualizedTotalCompensationRange_;
   }
+
   /**
    *
    *
@@ -4564,6 +4692,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4890,6 +5019,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         return entriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4910,6 +5040,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         return entriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4930,6 +5061,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         return entriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4957,6 +5089,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4982,6 +5115,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5008,6 +5142,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5035,6 +5170,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5059,6 +5195,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5084,6 +5221,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5109,6 +5247,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5132,6 +5271,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5155,6 +5295,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5172,6 +5313,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5193,6 +5335,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5215,6 +5358,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(entries_);
       }
     }
+
     /**
      *
      *
@@ -5234,6 +5378,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               com.google.cloud.talent.v4.CompensationInfo.CompensationEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5254,6 +5399,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
               index,
               com.google.cloud.talent.v4.CompensationInfo.CompensationEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5296,6 +5442,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
             com.google.cloud.talent.v4.CompensationInfo.CompensationRange.Builder,
             com.google.cloud.talent.v4.CompensationInfo.CompensationRangeOrBuilder>
         annualizedBaseCompensationRangeBuilder_;
+
     /**
      *
      *
@@ -5320,6 +5467,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     public boolean hasAnnualizedBaseCompensationRange() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -5351,6 +5499,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         return annualizedBaseCompensationRangeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5384,6 +5533,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5414,6 +5564,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5454,6 +5605,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5483,6 +5635,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5508,6 +5661,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getAnnualizedBaseCompensationRangeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5537,6 +5691,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
             : annualizedBaseCompensationRange_;
       }
     }
+
     /**
      *
      *
@@ -5580,6 +5735,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
             com.google.cloud.talent.v4.CompensationInfo.CompensationRange.Builder,
             com.google.cloud.talent.v4.CompensationInfo.CompensationRangeOrBuilder>
         annualizedTotalCompensationRangeBuilder_;
+
     /**
      *
      *
@@ -5604,6 +5760,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     public boolean hasAnnualizedTotalCompensationRange() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -5635,6 +5792,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         return annualizedTotalCompensationRangeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5668,6 +5826,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5698,6 +5857,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5738,6 +5898,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5767,6 +5928,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5792,6 +5954,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getAnnualizedTotalCompensationRangeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5821,6 +5984,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
             : annualizedTotalCompensationRange_;
       }
     }
+
     /**
      *
      *

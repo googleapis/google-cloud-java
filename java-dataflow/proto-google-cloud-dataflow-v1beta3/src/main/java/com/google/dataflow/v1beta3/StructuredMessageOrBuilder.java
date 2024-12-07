@@ -36,6 +36,7 @@ public interface StructuredMessageOrBuilder
    * @return The messageText.
    */
   java.lang.String getMessageText();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface StructuredMessageOrBuilder
    * @return The messageKey.
    */
   java.lang.String getMessageKey();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface StructuredMessageOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StructuredMessage.Parameter parameters = 3;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.StructuredMessage.Parameter> getParametersList();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface StructuredMessageOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StructuredMessage.Parameter parameters = 3;</code>
    */
   com.google.dataflow.v1beta3.StructuredMessage.Parameter getParameters(int index);
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface StructuredMessageOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StructuredMessage.Parameter parameters = 3;</code>
    */
   int getParametersCount();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface StructuredMessageOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.StructuredMessage.ParameterOrBuilder>
       getParametersOrBuilderList();
+
   /**
    *
    *

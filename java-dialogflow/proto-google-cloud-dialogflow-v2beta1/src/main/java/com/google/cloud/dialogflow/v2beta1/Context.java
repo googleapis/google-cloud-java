@@ -47,6 +47,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Context)
     ContextOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Context.newBuilder() to construct.
   private Context(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -127,6 +129,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +178,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LIFESPAN_COUNT_FIELD_NUMBER = 2;
   private int lifespanCount_ = 0;
+
   /**
    *
    *
@@ -196,6 +200,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARAMETERS_FIELD_NUMBER = 3;
   private com.google.protobuf.Struct parameters_;
+
   /**
    *
    *
@@ -224,6 +229,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
   public boolean hasParameters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -252,6 +258,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Struct getParameters() {
     return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
   }
+
   /**
    *
    *
@@ -461,6 +468,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -700,6 +708,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -744,6 +753,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -788,6 +798,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -831,6 +842,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +882,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +929,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int lifespanCount_;
+
     /**
      *
      *
@@ -934,6 +948,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     public int getLifespanCount() {
       return lifespanCount_;
     }
+
     /**
      *
      *
@@ -956,6 +971,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +999,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         parametersBuilder_;
+
     /**
      *
      *
@@ -1010,6 +1027,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     public boolean hasParameters() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1041,6 +1059,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         return parametersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1076,6 +1095,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1108,6 +1128,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1169,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1180,6 +1202,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1230,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1236,6 +1260,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
       }
     }
+
     /**
      *
      *

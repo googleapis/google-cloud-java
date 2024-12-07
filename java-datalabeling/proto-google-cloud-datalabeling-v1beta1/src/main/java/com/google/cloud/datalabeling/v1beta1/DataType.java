@@ -60,6 +60,7 @@ public enum DataType implements com.google.protobuf.ProtocolMessageEnum {
 
   /** <code>DATA_TYPE_UNSPECIFIED = 0;</code> */
   public static final int DATA_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -70,8 +71,10 @@ public enum DataType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGE = 1;</code>
    */
   public static final int IMAGE_VALUE = 1;
+
   /** <code>VIDEO = 2;</code> */
   public static final int VIDEO_VALUE = 2;
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public enum DataType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEXT = 4;</code>
    */
   public static final int TEXT_VALUE = 4;
+
   /**
    *
    *

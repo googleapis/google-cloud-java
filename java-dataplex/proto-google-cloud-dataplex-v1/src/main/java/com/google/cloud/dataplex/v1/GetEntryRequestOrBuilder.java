@@ -39,6 +39,7 @@ public interface GetEntryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface GetEntryRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface GetEntryRequestOrBuilder
    * @return A list containing the aspectTypes.
    */
   java.util.List<java.lang.String> getAspectTypesList();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface GetEntryRequestOrBuilder
    * @return The count of aspectTypes.
    */
   int getAspectTypesCount();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface GetEntryRequestOrBuilder
    * @return The aspectTypes at the given index.
    */
   java.lang.String getAspectTypes(int index);
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public interface GetEntryRequestOrBuilder
    * @return A list containing the paths.
    */
   java.util.List<java.lang.String> getPathsList();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface GetEntryRequestOrBuilder
    * @return The count of paths.
    */
   int getPathsCount();
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public interface GetEntryRequestOrBuilder
    * @return The paths at the given index.
    */
   java.lang.String getPaths(int index);
+
   /**
    *
    *

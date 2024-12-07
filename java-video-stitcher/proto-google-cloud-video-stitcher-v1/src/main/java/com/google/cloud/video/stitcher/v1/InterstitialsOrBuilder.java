@@ -34,6 +34,7 @@ public interface InterstitialsOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.VodSessionAdBreak ad_breaks = 1;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.VodSessionAdBreak> getAdBreaksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface InterstitialsOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.VodSessionAdBreak ad_breaks = 1;</code>
    */
   com.google.cloud.video.stitcher.v1.VodSessionAdBreak getAdBreaks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface InterstitialsOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.VodSessionAdBreak ad_breaks = 1;</code>
    */
   int getAdBreaksCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface InterstitialsOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.VodSessionAdBreakOrBuilder>
       getAdBreaksOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface InterstitialsOrBuilder
    * @return Whether the sessionContent field is set.
    */
   boolean hasSessionContent();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface InterstitialsOrBuilder
    * @return The sessionContent.
    */
   com.google.cloud.video.stitcher.v1.VodSessionContent getSessionContent();
+
   /**
    *
    *

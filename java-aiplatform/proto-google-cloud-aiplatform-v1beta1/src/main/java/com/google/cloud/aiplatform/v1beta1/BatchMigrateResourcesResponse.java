@@ -34,6 +34,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BatchMigrateResourcesResponse)
     BatchMigrateResourcesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchMigrateResourcesResponse.newBuilder() to construct.
   private BatchMigrateResourcesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.MigrateResourceResponse>
       migrateResourceResponses_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
       getMigrateResourceResponsesList() {
     return migrateResourceResponses_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
       getMigrateResourceResponsesOrBuilderList() {
     return migrateResourceResponses_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
   public int getMigrateResourceResponsesCount() {
     return migrateResourceResponses_.size();
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
       int index) {
     return migrateResourceResponses_.get(index);
   }
+
   /**
    *
    *
@@ -316,6 +322,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -590,6 +597,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
         return migrateResourceResponsesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -608,6 +616,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
         return migrateResourceResponsesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -627,6 +636,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
         return migrateResourceResponsesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +738,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +761,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +809,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +831,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +853,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
         getMigrateResourceResponsesBuilder(int index) {
       return getMigrateResourceResponsesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -869,6 +889,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
         return migrateResourceResponsesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -889,6 +910,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(migrateResourceResponses_);
       }
     }
+
     /**
      *
      *
@@ -906,6 +928,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
           .addBuilder(
               com.google.cloud.aiplatform.v1beta1.MigrateResourceResponse.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -924,6 +947,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
               index,
               com.google.cloud.aiplatform.v1beta1.MigrateResourceResponse.getDefaultInstance());
     }
+
     /**
      *
      *

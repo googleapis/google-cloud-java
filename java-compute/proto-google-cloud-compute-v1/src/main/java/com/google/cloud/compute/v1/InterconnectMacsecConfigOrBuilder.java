@@ -37,6 +37,7 @@ public interface InterconnectMacsecConfigOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectMacsecConfigPreSharedKey>
       getPreSharedKeysList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface InterconnectMacsecConfigOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectMacsecConfigPreSharedKey getPreSharedKeys(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface InterconnectMacsecConfigOrBuilder
    * </code>
    */
   int getPreSharedKeysCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface InterconnectMacsecConfigOrBuilder
   java.util.List<
           ? extends com.google.cloud.compute.v1.InterconnectMacsecConfigPreSharedKeyOrBuilder>
       getPreSharedKeysOrBuilderList();
+
   /**
    *
    *

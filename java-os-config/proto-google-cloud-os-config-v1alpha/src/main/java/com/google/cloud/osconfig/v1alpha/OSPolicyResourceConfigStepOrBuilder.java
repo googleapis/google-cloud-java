@@ -37,6 +37,7 @@ public interface OSPolicyResourceConfigStepOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface OSPolicyResourceConfigStepOrBuilder
    * @return The enum numeric value on the wire for outcome.
    */
   int getOutcomeValue();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface OSPolicyResourceConfigStepOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
+
   /**
    *
    *

@@ -82,6 +82,7 @@ public enum CommitmentPlan implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMMITMENT_PLAN_UNSPECIFIED = 0;</code>
    */
   public static final int COMMITMENT_PLAN_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum CommitmentPlan implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMMITMENT_PLAN_NONE = 1;</code>
    */
   public static final int COMMITMENT_PLAN_NONE_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum CommitmentPlan implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMMITMENT_PLAN_ONE_YEAR = 2;</code>
    */
   public static final int COMMITMENT_PLAN_ONE_YEAR_VALUE = 2;
+
   /**
    *
    *

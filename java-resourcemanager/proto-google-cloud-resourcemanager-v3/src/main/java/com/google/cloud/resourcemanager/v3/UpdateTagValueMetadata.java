@@ -33,6 +33,7 @@ public final class UpdateTagValueMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.UpdateTagValueMetadata)
     UpdateTagValueMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateTagValueMetadata.newBuilder() to construct.
   private UpdateTagValueMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class UpdateTagValueMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

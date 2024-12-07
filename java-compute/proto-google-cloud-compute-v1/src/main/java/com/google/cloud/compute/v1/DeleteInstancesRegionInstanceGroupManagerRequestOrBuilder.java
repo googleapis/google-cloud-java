@@ -37,6 +37,7 @@ public interface DeleteInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface DeleteInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DeleteInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface DeleteInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return Whether the regionInstanceGroupManagersDeleteInstancesRequestResource field is set.
    */
   boolean hasRegionInstanceGroupManagersDeleteInstancesRequestResource();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface DeleteInstancesRegionInstanceGroupManagerRequestOrBuilder
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest
       getRegionInstanceGroupManagersDeleteInstancesRequestResource();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface DeleteInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface DeleteInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Model models = 1;</code>
    */
   java.util.List<com.google.cloud.retail.v2alpha.Model> getModelsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Model models = 1;</code>
    */
   com.google.cloud.retail.v2alpha.Model getModels(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Model models = 1;</code>
    */
   int getModelsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Model models = 1;</code>
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.ModelOrBuilder> getModelsOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface ListModelsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

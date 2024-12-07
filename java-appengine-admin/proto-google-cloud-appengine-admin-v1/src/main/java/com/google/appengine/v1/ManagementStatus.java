@@ -110,6 +110,7 @@ public enum ManagementStatus implements com.google.protobuf.ProtocolMessageEnum 
 
   /** <code>MANAGEMENT_STATUS_UNSPECIFIED = 0;</code> */
   public static final int MANAGEMENT_STATUS_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -121,6 +122,7 @@ public enum ManagementStatus implements com.google.protobuf.ProtocolMessageEnum 
    * <code>OK = 1;</code>
    */
   public static final int OK_VALUE = 1;
+
   /**
    *
    *
@@ -131,6 +133,7 @@ public enum ManagementStatus implements com.google.protobuf.ProtocolMessageEnum 
    * <code>PENDING = 2;</code>
    */
   public static final int PENDING_VALUE = 2;
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public enum ManagementStatus implements com.google.protobuf.ProtocolMessageEnum 
    * <code>FAILED_RETRYING_NOT_VISIBLE = 4;</code>
    */
   public static final int FAILED_RETRYING_NOT_VISIBLE_VALUE = 4;
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public enum ManagementStatus implements com.google.protobuf.ProtocolMessageEnum 
    * <code>FAILED_PERMANENT = 6;</code>
    */
   public static final int FAILED_PERMANENT_VALUE = 6;
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public enum ManagementStatus implements com.google.protobuf.ProtocolMessageEnum 
    * <code>FAILED_RETRYING_CAA_FORBIDDEN = 7;</code>
    */
   public static final int FAILED_RETRYING_CAA_FORBIDDEN_VALUE = 7;
+
   /**
    *
    *

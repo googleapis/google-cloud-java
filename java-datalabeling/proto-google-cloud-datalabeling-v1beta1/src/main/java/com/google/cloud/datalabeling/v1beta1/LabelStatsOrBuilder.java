@@ -38,6 +38,7 @@ public interface LabelStatsOrBuilder
    * <code>map&lt;string, int64&gt; example_count = 1;</code>
    */
   int getExampleCountCount();
+
   /**
    *
    *
@@ -52,9 +53,11 @@ public interface LabelStatsOrBuilder
    * <code>map&lt;string, int64&gt; example_count = 1;</code>
    */
   boolean containsExampleCount(java.lang.String key);
+
   /** Use {@link #getExampleCountMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Long> getExampleCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface LabelStatsOrBuilder
    * <code>map&lt;string, int64&gt; example_count = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.Long> getExampleCountMap();
+
   /**
    *
    *
@@ -83,6 +87,7 @@ public interface LabelStatsOrBuilder
    * <code>map&lt;string, int64&gt; example_count = 1;</code>
    */
   long getExampleCountOrDefault(java.lang.String key, long defaultValue);
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface SessionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SessionOrBuilder
    * @return The userId.
    */
   java.lang.String getUserId();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface SessionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface SessionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface SessionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

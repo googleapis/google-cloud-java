@@ -33,6 +33,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.LogprobsResult)
     LogprobsResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LogprobsResult.newBuilder() to construct.
   private LogprobsResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the token field is set.
      */
     boolean hasToken();
+
     /**
      *
      *
@@ -93,6 +95,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
      * @return The token.
      */
     java.lang.String getToken();
+
     /**
      *
      *
@@ -118,6 +121,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tokenId field is set.
      */
     boolean hasTokenId();
+
     /**
      *
      *
@@ -143,6 +147,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the logProbability field is set.
      */
     boolean hasLogProbability();
+
     /**
      *
      *
@@ -156,6 +161,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
      */
     float getLogProbability();
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.LogprobsResult.Candidate)
       CandidateOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Candidate.newBuilder() to construct.
     private Candidate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -205,6 +212,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object token_ = "";
+
     /**
      *
      *
@@ -220,6 +228,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasToken() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -243,6 +252,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -269,6 +279,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TOKEN_ID_FIELD_NUMBER = 3;
     private int tokenId_ = 0;
+
     /**
      *
      *
@@ -284,6 +295,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTokenId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -302,6 +314,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LOG_PROBABILITY_FIELD_NUMBER = 2;
     private float logProbability_ = 0F;
+
     /**
      *
      *
@@ -317,6 +330,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLogProbability() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -528,6 +542,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -746,6 +761,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object token_ = "";
+
       /**
        *
        *
@@ -760,6 +776,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       public boolean hasToken() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -782,6 +799,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -804,6 +822,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -825,6 +844,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -842,6 +862,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -866,6 +887,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int tokenId_;
+
       /**
        *
        *
@@ -881,6 +903,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTokenId() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -896,6 +919,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       public int getTokenId() {
         return tokenId_;
       }
+
       /**
        *
        *
@@ -915,6 +939,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -934,6 +959,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float logProbability_;
+
       /**
        *
        *
@@ -949,6 +975,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLogProbability() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -964,6 +991,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       public float getLogProbability() {
         return logProbability_;
       }
+
       /**
        *
        *
@@ -983,6 +1011,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1080,6 +1109,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.aiplatform.v1.LogprobsResult.Candidate candidates = 1;</code>
      */
     java.util.List<com.google.cloud.aiplatform.v1.LogprobsResult.Candidate> getCandidatesList();
+
     /**
      *
      *
@@ -1090,6 +1120,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.aiplatform.v1.LogprobsResult.Candidate candidates = 1;</code>
      */
     com.google.cloud.aiplatform.v1.LogprobsResult.Candidate getCandidates(int index);
+
     /**
      *
      *
@@ -1100,6 +1131,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.aiplatform.v1.LogprobsResult.Candidate candidates = 1;</code>
      */
     int getCandidatesCount();
+
     /**
      *
      *
@@ -1111,6 +1143,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.aiplatform.v1.LogprobsResult.CandidateOrBuilder>
         getCandidatesOrBuilderList();
+
     /**
      *
      *
@@ -1123,6 +1156,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.aiplatform.v1.LogprobsResult.CandidateOrBuilder getCandidatesOrBuilder(
         int index);
   }
+
   /**
    *
    *
@@ -1137,6 +1171,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.LogprobsResult.TopCandidates)
       TopCandidatesOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TopCandidates.newBuilder() to construct.
     private TopCandidates(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1171,6 +1206,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1.LogprobsResult.Candidate> candidates_;
+
     /**
      *
      *
@@ -1185,6 +1221,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         getCandidatesList() {
       return candidates_;
     }
+
     /**
      *
      *
@@ -1200,6 +1237,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         getCandidatesOrBuilderList() {
       return candidates_;
     }
+
     /**
      *
      *
@@ -1213,6 +1251,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
     public int getCandidatesCount() {
       return candidates_.size();
     }
+
     /**
      *
      *
@@ -1226,6 +1265,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.LogprobsResult.Candidate getCandidates(int index) {
       return candidates_.get(index);
     }
+
     /**
      *
      *
@@ -1404,6 +1444,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1675,6 +1716,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
           return candidatesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1691,6 +1733,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
           return candidatesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1707,6 +1750,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
           return candidatesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1730,6 +1774,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1751,6 +1796,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1773,6 +1819,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1796,6 +1843,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1816,6 +1864,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1837,6 +1886,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1858,6 +1908,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1877,6 +1928,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1896,6 +1948,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1909,6 +1962,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return getCandidatesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1926,6 +1980,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
           return candidatesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1944,6 +1999,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(candidates_);
         }
       }
+
       /**
        *
        *
@@ -1959,6 +2015,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 com.google.cloud.aiplatform.v1.LogprobsResult.Candidate.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1975,6 +2032,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
                 index,
                 com.google.cloud.aiplatform.v1.LogprobsResult.Candidate.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2076,6 +2134,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.LogprobsResult.TopCandidates>
       topCandidates_;
+
   /**
    *
    *
@@ -2091,6 +2150,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       getTopCandidatesList() {
     return topCandidates_;
   }
+
   /**
    *
    *
@@ -2107,6 +2167,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       getTopCandidatesOrBuilderList() {
     return topCandidates_;
   }
+
   /**
    *
    *
@@ -2121,6 +2182,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
   public int getTopCandidatesCount() {
     return topCandidates_.size();
   }
+
   /**
    *
    *
@@ -2135,6 +2197,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.LogprobsResult.TopCandidates getTopCandidates(int index) {
     return topCandidates_.get(index);
   }
+
   /**
    *
    *
@@ -2155,6 +2218,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.LogprobsResult.Candidate> chosenCandidates_;
+
   /**
    *
    *
@@ -2171,6 +2235,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       getChosenCandidatesList() {
     return chosenCandidates_;
   }
+
   /**
    *
    *
@@ -2187,6 +2252,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       getChosenCandidatesOrBuilderList() {
     return chosenCandidates_;
   }
+
   /**
    *
    *
@@ -2202,6 +2268,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
   public int getChosenCandidatesCount() {
     return chosenCandidates_.size();
   }
+
   /**
    *
    *
@@ -2217,6 +2284,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.LogprobsResult.Candidate getChosenCandidates(int index) {
     return chosenCandidates_.get(index);
   }
+
   /**
    *
    *
@@ -2406,6 +2474,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2727,6 +2796,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         return topCandidatesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2744,6 +2814,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         return topCandidatesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2761,6 +2832,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         return topCandidatesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2785,6 +2857,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2807,6 +2880,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2831,6 +2905,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2855,6 +2930,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2876,6 +2952,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2898,6 +2975,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2920,6 +2998,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2940,6 +3019,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2960,6 +3040,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2974,6 +3055,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         getTopCandidatesBuilder(int index) {
       return getTopCandidatesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2992,6 +3074,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         return topCandidatesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3011,6 +3094,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(topCandidates_);
       }
     }
+
     /**
      *
      *
@@ -3027,6 +3111,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.aiplatform.v1.LogprobsResult.TopCandidates.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3044,6 +3129,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.aiplatform.v1.LogprobsResult.TopCandidates.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3116,6 +3202,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         return chosenCandidatesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3134,6 +3221,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         return chosenCandidatesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3152,6 +3240,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         return chosenCandidatesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3177,6 +3266,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3200,6 +3290,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3225,6 +3316,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3250,6 +3342,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3272,6 +3365,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3295,6 +3389,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3318,6 +3413,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3339,6 +3435,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3360,6 +3457,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3375,6 +3473,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         getChosenCandidatesBuilder(int index) {
       return getChosenCandidatesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3394,6 +3493,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         return chosenCandidatesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3414,6 +3514,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(chosenCandidates_);
       }
     }
+
     /**
      *
      *
@@ -3430,6 +3531,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
       return getChosenCandidatesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.LogprobsResult.Candidate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3447,6 +3549,7 @@ public final class LogprobsResult extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.aiplatform.v1.LogprobsResult.Candidate.getDefaultInstance());
     }
+
     /**
      *
      *

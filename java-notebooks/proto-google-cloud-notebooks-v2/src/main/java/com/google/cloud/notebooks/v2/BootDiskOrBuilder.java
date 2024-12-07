@@ -53,6 +53,7 @@ public interface BootDiskOrBuilder
    * @return The enum numeric value on the wire for diskType.
    */
   int getDiskTypeValue();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface BootDiskOrBuilder
    * @return The enum numeric value on the wire for diskEncryption.
    */
   int getDiskEncryptionValue();
+
   /**
    *
    *
@@ -117,6 +119,7 @@ public interface BootDiskOrBuilder
    * @return The kmsKey.
    */
   java.lang.String getKmsKey();
+
   /**
    *
    *

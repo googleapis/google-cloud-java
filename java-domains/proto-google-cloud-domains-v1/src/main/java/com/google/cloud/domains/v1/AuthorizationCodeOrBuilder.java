@@ -37,6 +37,7 @@ public interface AuthorizationCodeOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
+
   /**
    *
    *

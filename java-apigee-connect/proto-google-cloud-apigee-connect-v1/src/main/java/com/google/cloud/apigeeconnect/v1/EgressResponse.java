@@ -33,6 +33,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apigeeconnect.v1.EgressResponse)
     EgressResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EgressResponse.newBuilder() to construct.
   private EgressResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HTTP_RESPONSE_FIELD_NUMBER = 2;
   private com.google.cloud.apigeeconnect.v1.HttpResponse httpResponse_;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHttpResponse() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.apigeeconnect.v1.HttpResponse.getDefaultInstance()
         : httpResponse_;
   }
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 3;
   private com.google.rpc.Status status_;
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
+
   /**
    *
    *
@@ -219,6 +228,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -243,6 +253,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -272,6 +283,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object traceId_ = "";
+
   /**
    *
    *
@@ -296,6 +308,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -323,6 +336,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENDPOINT_FIELD_NUMBER = 6;
   private int endpoint_ = 0;
+
   /**
    *
    *
@@ -338,6 +352,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
   public int getEndpointValue() {
     return endpoint_;
   }
+
   /**
    *
    *
@@ -360,6 +375,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -384,6 +400,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -636,6 +653,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -927,6 +945,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -949,6 +968,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -971,6 +991,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -992,6 +1013,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1009,6 +1031,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1061,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apigeeconnect.v1.HttpResponse.Builder,
             com.google.cloud.apigeeconnect.v1.HttpResponseOrBuilder>
         httpResponseBuilder_;
+
     /**
      *
      *
@@ -1052,6 +1076,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHttpResponse() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1072,6 +1097,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         return httpResponseBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1094,6 +1120,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1114,6 +1141,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1170,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1190,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1205,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHttpResponseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1193,6 +1224,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
             : httpResponse_;
       }
     }
+
     /**
      *
      *
@@ -1223,6 +1255,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -1237,6 +1270,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1255,6 +1289,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1277,6 +1312,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1332,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1323,6 +1360,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1342,6 +1380,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1395,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1372,6 +1412,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
+
     /**
      *
      *
@@ -1396,6 +1437,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1419,6 +1461,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1442,6 +1485,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1464,6 +1508,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1482,6 +1527,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1507,6 +1553,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object traceId_ = "";
+
     /**
      *
      *
@@ -1530,6 +1577,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1553,6 +1601,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1575,6 +1624,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1593,6 +1643,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1618,6 +1669,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int endpoint_ = 0;
+
     /**
      *
      *
@@ -1633,6 +1685,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     public int getEndpointValue() {
       return endpoint_;
     }
+
     /**
      *
      *
@@ -1651,6 +1704,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1670,6 +1724,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.apigeeconnect.v1.TetherEndpoint.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1691,6 +1746,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1710,6 +1766,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1733,6 +1790,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1756,6 +1814,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1778,6 +1837,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1796,6 +1856,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

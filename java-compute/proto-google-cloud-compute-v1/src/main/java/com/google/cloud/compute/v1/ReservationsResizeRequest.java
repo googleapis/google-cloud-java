@@ -32,6 +32,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ReservationsResizeRequest)
     ReservationsResizeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReservationsResizeRequest.newBuilder() to construct.
   private ReservationsResizeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int SPECIFIC_SKU_COUNT_FIELD_NUMBER = 13890720;
   private long specificSkuCount_ = 0L;
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
   public boolean hasSpecificSkuCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -259,6 +262,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -443,6 +447,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private long specificSkuCount_;
+
     /**
      *
      *
@@ -458,6 +463,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
     public boolean hasSpecificSkuCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -473,6 +479,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
     public long getSpecificSkuCount() {
       return specificSkuCount_;
     }
+
     /**
      *
      *
@@ -492,6 +499,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.MerchantCenterFeedFilter)
     MerchantCenterFeedFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MerchantCenterFeedFilter.newBuilder() to construct.
   private MerchantCenterFeedFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
 
   public static final int PRIMARY_FEED_ID_FIELD_NUMBER = 1;
   private long primaryFeedId_ = 0L;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object primaryFeedName_ = "";
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -303,6 +307,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -500,6 +505,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
     private int bitField0_;
 
     private long primaryFeedId_;
+
     /**
      *
      *
@@ -515,6 +521,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
     public long getPrimaryFeedId() {
       return primaryFeedId_;
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
     }
 
     private java.lang.Object primaryFeedName_ = "";
+
     /**
      *
      *
@@ -576,6 +585,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -599,6 +609,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -621,6 +632,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -639,6 +651,7 @@ public final class MerchantCenterFeedFilter extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface VehicleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface VehicleOrBuilder
    * @return The enum numeric value on the wire for vehicleState.
    */
   int getVehicleStateValue();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface VehicleOrBuilder
    * @return A list containing the supportedTripTypes.
    */
   java.util.List<com.google.maps.fleetengine.v1.TripType> getSupportedTripTypesList();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface VehicleOrBuilder
    * @return The count of supportedTripTypes.
    */
   int getSupportedTripTypesCount();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface VehicleOrBuilder
    * @return The supportedTripTypes at the given index.
    */
   com.google.maps.fleetengine.v1.TripType getSupportedTripTypes(int index);
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface VehicleOrBuilder
    * @return A list containing the enum numeric values on the wire for supportedTripTypes.
    */
   java.util.List<java.lang.Integer> getSupportedTripTypesValueList();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface VehicleOrBuilder
    * @return A list containing the currentTrips.
    */
   java.util.List<java.lang.String> getCurrentTripsList();
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public interface VehicleOrBuilder
    * @return The count of currentTrips.
    */
   int getCurrentTripsCount();
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public interface VehicleOrBuilder
    * @return The currentTrips at the given index.
    */
   java.lang.String getCurrentTrips(int index);
+
   /**
    *
    *
@@ -206,6 +215,7 @@ public interface VehicleOrBuilder
    * @return Whether the lastLocation field is set.
    */
   boolean hasLastLocation();
+
   /**
    *
    *
@@ -218,6 +228,7 @@ public interface VehicleOrBuilder
    * @return The lastLocation.
    */
   com.google.maps.fleetengine.v1.VehicleLocation getLastLocation();
+
   /**
    *
    *
@@ -254,6 +265,7 @@ public interface VehicleOrBuilder
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 8;</code>
    */
   java.util.List<com.google.maps.fleetengine.v1.VehicleAttribute> getAttributesList();
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public interface VehicleOrBuilder
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 8;</code>
    */
   com.google.maps.fleetengine.v1.VehicleAttribute getAttributes(int index);
+
   /**
    *
    *
@@ -276,6 +289,7 @@ public interface VehicleOrBuilder
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 8;</code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -288,6 +302,7 @@ public interface VehicleOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.VehicleAttributeOrBuilder>
       getAttributesOrBuilderList();
+
   /**
    *
    *
@@ -315,6 +330,7 @@ public interface VehicleOrBuilder
    * @return Whether the vehicleType field is set.
    */
   boolean hasVehicleType();
+
   /**
    *
    *
@@ -330,6 +346,7 @@ public interface VehicleOrBuilder
    * @return The vehicleType.
    */
   com.google.maps.fleetengine.v1.Vehicle.VehicleType getVehicleType();
+
   /**
    *
    *
@@ -356,6 +373,7 @@ public interface VehicleOrBuilder
    * @return Whether the licensePlate field is set.
    */
   boolean hasLicensePlate();
+
   /**
    *
    *
@@ -368,6 +386,7 @@ public interface VehicleOrBuilder
    * @return The licensePlate.
    */
   com.google.maps.fleetengine.v1.LicensePlate getLicensePlate();
+
   /**
    *
    *
@@ -390,6 +409,7 @@ public interface VehicleOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.maps.fleetengine.v1.TerminalLocation> getRouteList();
+
   /**
    *
    *
@@ -401,6 +421,7 @@ public interface VehicleOrBuilder
    */
   @java.lang.Deprecated
   com.google.maps.fleetengine.v1.TerminalLocation getRoute(int index);
+
   /**
    *
    *
@@ -412,6 +433,7 @@ public interface VehicleOrBuilder
    */
   @java.lang.Deprecated
   int getRouteCount();
+
   /**
    *
    *
@@ -424,6 +446,7 @@ public interface VehicleOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.maps.fleetengine.v1.TerminalLocationOrBuilder>
       getRouteOrBuilderList();
+
   /**
    *
    *
@@ -453,6 +476,7 @@ public interface VehicleOrBuilder
    * @return The currentRouteSegment.
    */
   java.lang.String getCurrentRouteSegment();
+
   /**
    *
    *
@@ -486,6 +510,7 @@ public interface VehicleOrBuilder
    * @return Whether the currentRouteSegmentTraffic field is set.
    */
   boolean hasCurrentRouteSegmentTraffic();
+
   /**
    *
    *
@@ -501,6 +526,7 @@ public interface VehicleOrBuilder
    * @return The currentRouteSegmentTraffic.
    */
   com.google.maps.fleetengine.v1.TrafficPolylineData getCurrentRouteSegmentTraffic();
+
   /**
    *
    *
@@ -532,6 +558,7 @@ public interface VehicleOrBuilder
    * @return Whether the currentRouteSegmentVersion field is set.
    */
   boolean hasCurrentRouteSegmentVersion();
+
   /**
    *
    *
@@ -548,6 +575,7 @@ public interface VehicleOrBuilder
    * @return The currentRouteSegmentVersion.
    */
   com.google.protobuf.Timestamp getCurrentRouteSegmentVersion();
+
   /**
    *
    *
@@ -580,6 +608,7 @@ public interface VehicleOrBuilder
    * @return Whether the currentRouteSegmentEndPoint field is set.
    */
   boolean hasCurrentRouteSegmentEndPoint();
+
   /**
    *
    *
@@ -597,6 +626,7 @@ public interface VehicleOrBuilder
    * @return The currentRouteSegmentEndPoint.
    */
   com.google.maps.fleetengine.v1.TripWaypoint getCurrentRouteSegmentEndPoint();
+
   /**
    *
    *
@@ -628,6 +658,7 @@ public interface VehicleOrBuilder
    * @return Whether the remainingDistanceMeters field is set.
    */
   boolean hasRemainingDistanceMeters();
+
   /**
    *
    *
@@ -643,6 +674,7 @@ public interface VehicleOrBuilder
    * @return The remainingDistanceMeters.
    */
   com.google.protobuf.Int32Value getRemainingDistanceMeters();
+
   /**
    *
    *
@@ -674,6 +706,7 @@ public interface VehicleOrBuilder
    * @return Whether the etaToFirstWaypoint field is set.
    */
   boolean hasEtaToFirstWaypoint();
+
   /**
    *
    *
@@ -691,6 +724,7 @@ public interface VehicleOrBuilder
    * @return The etaToFirstWaypoint.
    */
   com.google.protobuf.Timestamp getEtaToFirstWaypoint();
+
   /**
    *
    *
@@ -728,6 +762,7 @@ public interface VehicleOrBuilder
    * @return Whether the remainingTimeSeconds field is set.
    */
   boolean hasRemainingTimeSeconds();
+
   /**
    *
    *
@@ -749,6 +784,7 @@ public interface VehicleOrBuilder
    * @return The remainingTimeSeconds.
    */
   com.google.protobuf.Int32Value getRemainingTimeSeconds();
+
   /**
    *
    *
@@ -779,6 +815,7 @@ public interface VehicleOrBuilder
    * <code>repeated .maps.fleetengine.v1.TripWaypoint waypoints = 22;</code>
    */
   java.util.List<com.google.maps.fleetengine.v1.TripWaypoint> getWaypointsList();
+
   /**
    *
    *
@@ -789,6 +826,7 @@ public interface VehicleOrBuilder
    * <code>repeated .maps.fleetengine.v1.TripWaypoint waypoints = 22;</code>
    */
   com.google.maps.fleetengine.v1.TripWaypoint getWaypoints(int index);
+
   /**
    *
    *
@@ -799,6 +837,7 @@ public interface VehicleOrBuilder
    * <code>repeated .maps.fleetengine.v1.TripWaypoint waypoints = 22;</code>
    */
   int getWaypointsCount();
+
   /**
    *
    *
@@ -810,6 +849,7 @@ public interface VehicleOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.TripWaypointOrBuilder>
       getWaypointsOrBuilderList();
+
   /**
    *
    *
@@ -837,6 +877,7 @@ public interface VehicleOrBuilder
    * @return Whether the waypointsVersion field is set.
    */
   boolean hasWaypointsVersion();
+
   /**
    *
    *
@@ -853,6 +894,7 @@ public interface VehicleOrBuilder
    * @return The waypointsVersion.
    */
   com.google.protobuf.Timestamp getWaypointsVersion();
+
   /**
    *
    *
@@ -895,6 +937,7 @@ public interface VehicleOrBuilder
    * @return The enum numeric value on the wire for navigationStatus.
    */
   int getNavigationStatusValue();
+
   /**
    *
    *
@@ -923,6 +966,7 @@ public interface VehicleOrBuilder
    * @return Whether the deviceSettings field is set.
    */
   boolean hasDeviceSettings();
+
   /**
    *
    *
@@ -938,6 +982,7 @@ public interface VehicleOrBuilder
    * @return The deviceSettings.
    */
   com.google.maps.fleetengine.v1.DeviceSettings getDeviceSettings();
+
   /**
    *
    *

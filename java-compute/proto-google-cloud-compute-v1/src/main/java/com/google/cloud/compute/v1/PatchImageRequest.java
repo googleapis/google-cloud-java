@@ -33,6 +33,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchImageRequest)
     PatchImageRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PatchImageRequest.newBuilder() to construct.
   private PatchImageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object image_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int IMAGE_RESOURCE_FIELD_NUMBER = 371171954;
   private com.google.cloud.compute.v1.Image imageResource_;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasImageResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.compute.v1.Image.getDefaultInstance()
         : imageResource_;
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -270,6 +280,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -491,6 +502,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -735,6 +747,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object image_ = "";
+
     /**
      *
      *
@@ -757,6 +770,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -779,6 +793,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -800,6 +815,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +833,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +863,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.compute.v1.Image.Builder,
             com.google.cloud.compute.v1.ImageOrBuilder>
         imageResourceBuilder_;
+
     /**
      *
      *
@@ -862,6 +880,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasImageResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -884,6 +903,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
         return imageResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -908,6 +928,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +950,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1002,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1019,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getImageResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1015,6 +1040,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
             : imageResource_;
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1070,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1068,6 +1095,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1120,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1144,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1164,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1160,6 +1191,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1174,6 +1206,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1196,6 +1229,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1218,6 +1252,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1239,6 +1274,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1292,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

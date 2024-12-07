@@ -57,6 +57,7 @@ public interface ListDeidentifyTemplatesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -104,6 +105,7 @@ public interface ListDeidentifyTemplatesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -156,6 +158,7 @@ public interface ListDeidentifyTemplatesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -193,6 +196,7 @@ public interface ListDeidentifyTemplatesRequestOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
+
   /**
    *
    *

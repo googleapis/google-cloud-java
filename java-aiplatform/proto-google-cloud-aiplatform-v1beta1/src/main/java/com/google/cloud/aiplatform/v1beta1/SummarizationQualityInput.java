@@ -33,6 +33,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SummarizationQualityInput)
     SummarizationQualityInputOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SummarizationQualityInput.newBuilder() to construct.
   private SummarizationQualityInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int METRIC_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.SummarizationQualitySpec metricSpec_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
   public boolean hasMetricSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
         ? com.google.cloud.aiplatform.v1beta1.SummarizationQualitySpec.getDefaultInstance()
         : metricSpec_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
 
   public static final int INSTANCE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.SummarizationQualityInstance instance_;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
         ? com.google.cloud.aiplatform.v1beta1.SummarizationQualityInstance.getDefaultInstance()
         : instance_;
   }
+
   /**
    *
    *
@@ -355,6 +362,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -580,6 +588,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1beta1.SummarizationQualitySpec.Builder,
             com.google.cloud.aiplatform.v1beta1.SummarizationQualitySpecOrBuilder>
         metricSpecBuilder_;
+
     /**
      *
      *
@@ -596,6 +605,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
     public boolean hasMetricSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -618,6 +628,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
         return metricSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -643,6 +654,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +677,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +710,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +732,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +750,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
       onChanged();
       return getMetricSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -756,6 +772,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
             : metricSpec_;
       }
     }
+
     /**
      *
      *
@@ -790,6 +807,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1beta1.SummarizationQualityInstance.Builder,
             com.google.cloud.aiplatform.v1beta1.SummarizationQualityInstanceOrBuilder>
         instanceBuilder_;
+
     /**
      *
      *
@@ -806,6 +824,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -828,6 +847,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
         return instanceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -853,6 +873,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +896,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +929,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +951,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +969,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -966,6 +991,7 @@ public final class SummarizationQualityInput extends com.google.protobuf.Generat
             : instance_;
       }
     }
+
     /**
      *
      *

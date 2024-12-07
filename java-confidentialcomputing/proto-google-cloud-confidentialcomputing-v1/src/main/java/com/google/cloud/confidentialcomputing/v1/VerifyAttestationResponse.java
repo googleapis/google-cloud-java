@@ -34,6 +34,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.VerifyAttestationResponse)
     VerifyAttestationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VerifyAttestationResponse.newBuilder() to construct.
   private VerifyAttestationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object oidcClaimsToken_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> partialErrors_;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.rpc.Status> getPartialErrorsList() {
     return partialErrors_;
   }
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList() {
     return partialErrors_;
   }
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
   public int getPartialErrorsCount() {
     return partialErrors_.size();
   }
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
   public com.google.rpc.Status getPartialErrors(int index) {
     return partialErrors_.get(index);
   }
+
   /**
    *
    *
@@ -373,6 +381,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -625,6 +634,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object oidcClaimsToken_ = "";
+
     /**
      *
      *
@@ -647,6 +657,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -669,6 +680,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +777,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
         return partialErrorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -782,6 +797,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
         return partialErrorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -801,6 +817,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
         return partialErrorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -826,6 +843,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +892,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +918,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +941,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +964,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +987,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1010,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1033,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1049,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     public com.google.rpc.Status.Builder getPartialErrorsBuilder(int index) {
       return getPartialErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1042,6 +1069,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
         return partialErrorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1062,6 +1090,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(partialErrors_);
       }
     }
+
     /**
      *
      *
@@ -1077,6 +1106,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     public com.google.rpc.Status.Builder addPartialErrorsBuilder() {
       return getPartialErrorsFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1093,6 +1123,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       return getPartialErrorsFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *

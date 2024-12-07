@@ -36,6 +36,7 @@ public interface UpstreamPolicyOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface UpstreamPolicyOrBuilder
    * @return The repository.
    */
   java.lang.String getRepository();
+
   /**
    *
    *

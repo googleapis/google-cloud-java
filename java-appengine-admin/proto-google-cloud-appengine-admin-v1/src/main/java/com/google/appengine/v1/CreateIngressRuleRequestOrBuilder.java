@@ -37,6 +37,7 @@ public interface CreateIngressRuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface CreateIngressRuleRequestOrBuilder
    * @return Whether the rule field is set.
    */
   boolean hasRule();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface CreateIngressRuleRequestOrBuilder
    * @return The rule.
    */
   com.google.appengine.v1.firewall.FirewallRule getRule();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.LiveAdTagDetail)
     LiveAdTagDetailOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LiveAdTagDetail.newBuilder() to construct.
   private LiveAdTagDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.AdRequest> adRequests_;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.video.stitcher.v1.AdRequest> getAdRequestsList() {
     return adRequests_;
   }
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       getAdRequestsOrBuilderList() {
     return adRequests_;
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
   public int getAdRequestsCount() {
     return adRequests_.size();
   }
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.video.stitcher.v1.AdRequest getAdRequests(int index) {
     return adRequests_.get(index);
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -607,6 +616,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -630,6 +640,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -653,6 +664,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -675,6 +687,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +706,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +764,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
         return adRequestsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -766,6 +781,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
         return adRequestsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -782,6 +798,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
         return adRequestsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -804,6 +821,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +842,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +865,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +888,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +909,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +930,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +951,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +971,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +991,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1004,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.video.stitcher.v1.AdRequest.Builder getAdRequestsBuilder(int index) {
       return getAdRequestsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -994,6 +1021,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
         return adRequestsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1011,6 +1039,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(adRequests_);
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1053,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       return getAdRequestsFieldBuilder()
           .addBuilder(com.google.cloud.video.stitcher.v1.AdRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1037,6 +1067,7 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
       return getAdRequestsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.stitcher.v1.AdRequest.getDefaultInstance());
     }
+
     /**
      *
      *

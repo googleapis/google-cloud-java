@@ -34,6 +34,7 @@ public interface RegionInstanceGroupManagersListErrorsResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstanceManagedByIgmError items = 100526016;</code>
    */
   java.util.List<com.google.cloud.compute.v1.InstanceManagedByIgmError> getItemsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface RegionInstanceGroupManagersListErrorsResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstanceManagedByIgmError items = 100526016;</code>
    */
   com.google.cloud.compute.v1.InstanceManagedByIgmError getItems(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface RegionInstanceGroupManagersListErrorsResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstanceManagedByIgmError items = 100526016;</code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface RegionInstanceGroupManagersListErrorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InstanceManagedByIgmErrorOrBuilder>
       getItemsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface RegionInstanceGroupManagersListErrorsResponseOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface RegionInstanceGroupManagersListErrorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

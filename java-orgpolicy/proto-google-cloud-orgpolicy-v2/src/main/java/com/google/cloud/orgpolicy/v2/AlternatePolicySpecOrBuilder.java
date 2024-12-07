@@ -38,6 +38,7 @@ public interface AlternatePolicySpecOrBuilder
    * @return The launch.
    */
   java.lang.String getLaunch();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AlternatePolicySpecOrBuilder
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface AlternatePolicySpecOrBuilder
    * @return The spec.
    */
   com.google.cloud.orgpolicy.v2.PolicySpec getSpec();
+
   /**
    *
    *

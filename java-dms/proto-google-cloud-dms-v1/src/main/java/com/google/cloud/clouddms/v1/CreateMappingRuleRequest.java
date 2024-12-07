@@ -33,6 +33,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.CreateMappingRuleRequest)
     CreateMappingRuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateMappingRuleRequest.newBuilder() to construct.
   private CreateMappingRuleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mappingRuleId_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
 
   public static final int MAPPING_RULE_FIELD_NUMBER = 3;
   private com.google.cloud.clouddms.v1.MappingRule mappingRule_;
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
   public boolean hasMappingRule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
         ? com.google.cloud.clouddms.v1.MappingRule.getDefaultInstance()
         : mappingRule_;
   }
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -267,6 +276,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -489,6 +499,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -733,6 +744,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -757,6 +769,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -781,6 +794,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -804,6 +818,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +838,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +865,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object mappingRuleId_ = "";
+
     /**
      *
      *
@@ -871,6 +888,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -893,6 +911,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -914,6 +933,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +951,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +981,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
             com.google.cloud.clouddms.v1.MappingRule.Builder,
             com.google.cloud.clouddms.v1.MappingRuleOrBuilder>
         mappingRuleBuilder_;
+
     /**
      *
      *
@@ -978,6 +1000,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
     public boolean hasMappingRule() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1002,6 +1025,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
         return mappingRuleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1052,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1077,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1109,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1133,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1152,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return getMappingRuleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1146,6 +1175,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
             : mappingRule_;
       }
     }
+
     /**
      *
      *
@@ -1177,6 +1207,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1205,6 +1236,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1233,6 +1265,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1260,6 +1293,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1317,7 @@ public final class CreateMappingRuleRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

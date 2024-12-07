@@ -33,6 +33,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.BatchRecognizeFileResult)
     BatchRecognizeFileResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchRecognizeFileResult.newBuilder() to construct.
   private BatchRecognizeFileResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     private ResultCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,6 +117,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
 
   public static final int ERROR_FIELD_NUMBER = 2;
   private com.google.rpc.Status error_;
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
   public boolean hasError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
 
   public static final int METADATA_FIELD_NUMBER = 3;
   private com.google.cloud.speech.v2.RecognitionResponseMetadata metadata_;
+
   /**
    * <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code>
    *
@@ -170,6 +176,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    * <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code>
    *
@@ -181,6 +188,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         ? com.google.cloud.speech.v2.RecognitionResponseMetadata.getDefaultInstance()
         : metadata_;
   }
+
   /** <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code> */
   @java.lang.Override
   public com.google.cloud.speech.v2.RecognitionResponseMetadataOrBuilder getMetadataOrBuilder() {
@@ -190,6 +198,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
   }
 
   public static final int CLOUD_STORAGE_RESULT_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
   public boolean hasCloudStorageResult() {
     return resultCase_ == 5;
   }
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     }
     return com.google.cloud.speech.v2.CloudStorageResult.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -253,6 +264,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
   }
 
   public static final int INLINE_RESULT_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -271,6 +283,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
   public boolean hasInlineResult() {
     return resultCase_ == 6;
   }
+
   /**
    *
    *
@@ -292,6 +305,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     }
     return com.google.cloud.speech.v2.InlineResult.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -316,6 +330,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -342,6 +357,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -371,6 +387,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
 
   public static final int TRANSCRIPT_FIELD_NUMBER = 4;
   private com.google.cloud.speech.v2.BatchRecognizeResults transcript_;
+
   /**
    *
    *
@@ -389,6 +406,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
   public boolean hasTranscript() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -409,6 +427,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         ? com.google.cloud.speech.v2.BatchRecognizeResults.getDefaultInstance()
         : transcript_;
   }
+
   /**
    *
    *
@@ -666,6 +685,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -983,6 +1003,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -997,6 +1018,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     public boolean hasError() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1015,6 +1037,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1060,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1080,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1108,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1128,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1116,6 +1143,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1132,6 +1160,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
+
     /**
      *
      *
@@ -1161,6 +1190,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
             com.google.cloud.speech.v2.RecognitionResponseMetadata.Builder,
             com.google.cloud.speech.v2.RecognitionResponseMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      * <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code>
      *
@@ -1169,6 +1199,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code>
      *
@@ -1183,6 +1214,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         return metadataBuilder_.getMessage();
       }
     }
+
     /** <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code> */
     public Builder setMetadata(com.google.cloud.speech.v2.RecognitionResponseMetadata value) {
       if (metadataBuilder_ == null) {
@@ -1197,6 +1229,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /** <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code> */
     public Builder setMetadata(
         com.google.cloud.speech.v2.RecognitionResponseMetadata.Builder builderForValue) {
@@ -1209,6 +1242,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /** <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code> */
     public Builder mergeMetadata(com.google.cloud.speech.v2.RecognitionResponseMetadata value) {
       if (metadataBuilder_ == null) {
@@ -1229,6 +1263,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /** <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code> */
     public Builder clearMetadata() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1240,12 +1275,14 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /** <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code> */
     public com.google.cloud.speech.v2.RecognitionResponseMetadata.Builder getMetadataBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /** <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code> */
     public com.google.cloud.speech.v2.RecognitionResponseMetadataOrBuilder getMetadataOrBuilder() {
       if (metadataBuilder_ != null) {
@@ -1256,6 +1293,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
             : metadata_;
       }
     }
+
     /** <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.speech.v2.RecognitionResponseMetadata,
@@ -1279,6 +1317,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
             com.google.cloud.speech.v2.CloudStorageResult.Builder,
             com.google.cloud.speech.v2.CloudStorageResultOrBuilder>
         cloudStorageResultBuilder_;
+
     /**
      *
      *
@@ -1298,6 +1337,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     public boolean hasCloudStorageResult() {
       return resultCase_ == 5;
     }
+
     /**
      *
      *
@@ -1327,6 +1367,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         return com.google.cloud.speech.v2.CloudStorageResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1353,6 +1394,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       resultCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1419,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       resultCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1413,6 +1456,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       resultCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1442,6 +1486,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1458,6 +1503,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     public com.google.cloud.speech.v2.CloudStorageResult.Builder getCloudStorageResultBuilder() {
       return getCloudStorageResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1482,6 +1528,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         return com.google.cloud.speech.v2.CloudStorageResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1524,6 +1571,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
             com.google.cloud.speech.v2.InlineResult.Builder,
             com.google.cloud.speech.v2.InlineResultOrBuilder>
         inlineResultBuilder_;
+
     /**
      *
      *
@@ -1542,6 +1590,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     public boolean hasInlineResult() {
       return resultCase_ == 6;
     }
+
     /**
      *
      *
@@ -1570,6 +1619,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         return com.google.cloud.speech.v2.InlineResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1595,6 +1645,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       resultCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1618,6 +1669,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       resultCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1653,6 +1705,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       resultCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1681,6 +1734,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1696,6 +1750,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     public com.google.cloud.speech.v2.InlineResult.Builder getInlineResultBuilder() {
       return getInlineResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1719,6 +1774,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         return com.google.cloud.speech.v2.InlineResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1756,6 +1812,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1781,6 +1838,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1806,6 +1864,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1830,6 +1889,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1850,6 +1910,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1882,6 +1943,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
             com.google.cloud.speech.v2.BatchRecognizeResults.Builder,
             com.google.cloud.speech.v2.BatchRecognizeResultsOrBuilder>
         transcriptBuilder_;
+
     /**
      *
      *
@@ -1900,6 +1962,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     public boolean hasTranscript() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1924,6 +1987,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         return transcriptBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1948,6 +2012,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1970,6 +2035,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2000,6 +2066,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2021,6 +2088,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2037,6 +2105,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       onChanged();
       return getTranscriptFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2057,6 +2126,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
             : transcript_;
       }
     }
+
     /**
      *
      *

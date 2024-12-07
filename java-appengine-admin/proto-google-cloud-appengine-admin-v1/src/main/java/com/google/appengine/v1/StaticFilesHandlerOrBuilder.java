@@ -38,6 +38,7 @@ public interface StaticFilesHandlerOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface StaticFilesHandlerOrBuilder
    * @return The uploadPathRegex.
    */
   java.lang.String getUploadPathRegex();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface StaticFilesHandlerOrBuilder
    * <code>map&lt;string, string&gt; http_headers = 3;</code>
    */
   int getHttpHeadersCount();
+
   /**
    *
    *
@@ -100,9 +103,11 @@ public interface StaticFilesHandlerOrBuilder
    * <code>map&lt;string, string&gt; http_headers = 3;</code>
    */
   boolean containsHttpHeaders(java.lang.String key);
+
   /** Use {@link #getHttpHeadersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getHttpHeaders();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface StaticFilesHandlerOrBuilder
    * <code>map&lt;string, string&gt; http_headers = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getHttpHeadersMap();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface StaticFilesHandlerOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface StaticFilesHandlerOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public interface StaticFilesHandlerOrBuilder
    * @return Whether the expiration field is set.
    */
   boolean hasExpiration();
+
   /**
    *
    *
@@ -195,6 +204,7 @@ public interface StaticFilesHandlerOrBuilder
    * @return The expiration.
    */
   com.google.protobuf.Duration getExpiration();
+
   /**
    *
    *

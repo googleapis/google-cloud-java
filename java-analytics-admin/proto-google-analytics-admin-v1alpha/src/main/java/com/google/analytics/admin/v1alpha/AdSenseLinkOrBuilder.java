@@ -38,6 +38,7 @@ public interface AdSenseLinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface AdSenseLinkOrBuilder
    * @return The adClientCode.
    */
   java.lang.String getAdClientCode();
+
   /**
    *
    *

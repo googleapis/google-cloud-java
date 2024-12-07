@@ -45,6 +45,7 @@ public interface CalculateEffectiveSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

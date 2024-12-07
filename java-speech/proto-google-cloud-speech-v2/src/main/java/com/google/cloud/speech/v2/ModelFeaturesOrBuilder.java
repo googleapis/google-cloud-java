@@ -34,6 +34,7 @@ public interface ModelFeaturesOrBuilder
    * <code>repeated .google.cloud.speech.v2.ModelFeature model_feature = 1;</code>
    */
   java.util.List<com.google.cloud.speech.v2.ModelFeature> getModelFeatureList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ModelFeaturesOrBuilder
    * <code>repeated .google.cloud.speech.v2.ModelFeature model_feature = 1;</code>
    */
   com.google.cloud.speech.v2.ModelFeature getModelFeature(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ModelFeaturesOrBuilder
    * <code>repeated .google.cloud.speech.v2.ModelFeature model_feature = 1;</code>
    */
   int getModelFeatureCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ModelFeaturesOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v2.ModelFeatureOrBuilder>
       getModelFeatureOrBuilderList();
+
   /**
    *
    *

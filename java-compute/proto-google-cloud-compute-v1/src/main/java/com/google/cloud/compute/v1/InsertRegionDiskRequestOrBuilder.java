@@ -38,6 +38,7 @@ public interface InsertRegionDiskRequestOrBuilder
    * @return Whether the diskResource field is set.
    */
   boolean hasDiskResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InsertRegionDiskRequestOrBuilder
    * @return The diskResource.
    */
   com.google.cloud.compute.v1.Disk getDiskResource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface InsertRegionDiskRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface InsertRegionDiskRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface InsertRegionDiskRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface InsertRegionDiskRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface InsertRegionDiskRequestOrBuilder
    * @return Whether the sourceImage field is set.
    */
   boolean hasSourceImage();
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public interface InsertRegionDiskRequestOrBuilder
    * @return The sourceImage.
    */
   java.lang.String getSourceImage();
+
   /**
    *
    *

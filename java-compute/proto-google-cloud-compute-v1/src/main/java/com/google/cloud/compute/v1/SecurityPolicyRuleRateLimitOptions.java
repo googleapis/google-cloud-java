@@ -32,6 +32,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions)
     SecurityPolicyRuleRateLimitOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyRuleRateLimitOptions.newBuilder() to construct.
   private SecurityPolicyRuleRateLimitOptions(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -120,24 +121,34 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * <code>UNDEFINED_ENFORCE_ON_KEY = 0;</code>
      */
     public static final int UNDEFINED_ENFORCE_ON_KEY_VALUE = 0;
+
     /** <code>ALL = 64897;</code> */
     public static final int ALL_VALUE = 64897;
+
     /** <code>HTTP_COOKIE = 494981627;</code> */
     public static final int HTTP_COOKIE_VALUE = 494981627;
+
     /** <code>HTTP_HEADER = 91597348;</code> */
     public static final int HTTP_HEADER_VALUE = 91597348;
+
     /** <code>HTTP_PATH = 311503228;</code> */
     public static final int HTTP_PATH_VALUE = 311503228;
+
     /** <code>IP = 2343;</code> */
     public static final int IP_VALUE = 2343;
+
     /** <code>REGION_CODE = 79559768;</code> */
     public static final int REGION_CODE_VALUE = 79559768;
+
     /** <code>SNI = 82254;</code> */
     public static final int SNI_VALUE = 82254;
+
     /** <code>TLS_JA3_FINGERPRINT = 327127933;</code> */
     public static final int TLS_JA3_FINGERPRINT_VALUE = 327127933;
+
     /** <code>USER_IP = 34009627;</code> */
     public static final int USER_IP_VALUE = 34009627;
+
     /** <code>XFF_IP = 438707118;</code> */
     public static final int XFF_IP_VALUE = 438707118;
 
@@ -245,6 +256,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   private int bitField0_;
   public static final int BAN_DURATION_SEC_FIELD_NUMBER = 42896726;
   private int banDurationSec_ = 0;
+
   /**
    *
    *
@@ -260,6 +272,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   public boolean hasBanDurationSec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -278,6 +291,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
 
   public static final int BAN_THRESHOLD_FIELD_NUMBER = 501208123;
   private com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold banThreshold_;
+
   /**
    *
    *
@@ -295,6 +309,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   public boolean hasBanThreshold() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -315,6 +330,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             .getDefaultInstance()
         : banThreshold_;
   }
+
   /**
    *
    *
@@ -339,6 +355,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conformAction_ = "";
+
   /**
    *
    *
@@ -354,6 +371,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   public boolean hasConformAction() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -377,6 +395,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -405,6 +424,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object enforceOnKey_ = "";
+
   /**
    *
    *
@@ -421,6 +441,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   public boolean hasEnforceOnKey() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -445,6 +466,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -476,6 +498,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   private java.util.List<
           com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig>
       enforceOnKeyConfigs_;
+
   /**
    *
    *
@@ -493,6 +516,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       getEnforceOnKeyConfigsList() {
     return enforceOnKeyConfigs_;
   }
+
   /**
    *
    *
@@ -512,6 +536,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       getEnforceOnKeyConfigsOrBuilderList() {
     return enforceOnKeyConfigs_;
   }
+
   /**
    *
    *
@@ -527,6 +552,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   public int getEnforceOnKeyConfigsCount() {
     return enforceOnKeyConfigs_.size();
   }
+
   /**
    *
    *
@@ -543,6 +569,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       getEnforceOnKeyConfigs(int index) {
     return enforceOnKeyConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -564,6 +591,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object enforceOnKeyName_ = "";
+
   /**
    *
    *
@@ -579,6 +607,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   public boolean hasEnforceOnKeyName() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -602,6 +631,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -630,6 +660,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object exceedAction_ = "";
+
   /**
    *
    *
@@ -645,6 +676,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   public boolean hasExceedAction() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -668,6 +700,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -694,6 +727,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
 
   public static final int EXCEED_REDIRECT_OPTIONS_FIELD_NUMBER = 473646694;
   private com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions exceedRedirectOptions_;
+
   /**
    *
    *
@@ -711,6 +745,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   public boolean hasExceedRedirectOptions() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -730,6 +765,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         ? com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.getDefaultInstance()
         : exceedRedirectOptions_;
   }
+
   /**
    *
    *
@@ -752,6 +788,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   public static final int RATE_LIMIT_THRESHOLD_FIELD_NUMBER = 315875208;
   private com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold
       rateLimitThreshold_;
+
   /**
    *
    *
@@ -769,6 +806,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   public boolean hasRateLimitThreshold() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -790,6 +828,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             .getDefaultInstance()
         : rateLimitThreshold_;
   }
+
   /**
    *
    *
@@ -1092,6 +1131,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1481,6 +1521,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     private int bitField0_;
 
     private int banDurationSec_;
+
     /**
      *
      *
@@ -1496,6 +1537,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     public boolean hasBanDurationSec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1511,6 +1553,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     public int getBanDurationSec() {
       return banDurationSec_;
     }
+
     /**
      *
      *
@@ -1530,6 +1573,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1554,6 +1598,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold.Builder,
             com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThresholdOrBuilder>
         banThresholdBuilder_;
+
     /**
      *
      *
@@ -1570,6 +1615,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     public boolean hasBanThreshold() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1594,6 +1640,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return banThresholdBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1619,6 +1666,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1642,6 +1690,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1674,6 +1723,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -1695,6 +1745,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1712,6 +1763,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return getBanThresholdFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1734,6 +1786,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             : banThreshold_;
       }
     }
+
     /**
      *
      *
@@ -1763,6 +1816,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     }
 
     private java.lang.Object conformAction_ = "";
+
     /**
      *
      *
@@ -1777,6 +1831,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     public boolean hasConformAction() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1799,6 +1854,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1821,6 +1877,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1842,6 +1899,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1859,6 +1917,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1883,6 +1942,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     }
 
     private java.lang.Object enforceOnKey_ = "";
+
     /**
      *
      *
@@ -1898,6 +1958,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     public boolean hasEnforceOnKey() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1921,6 +1982,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1944,6 +2006,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1966,6 +2029,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1984,6 +2048,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2050,6 +2115,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return enforceOnKeyConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2068,6 +2134,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return enforceOnKeyConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2087,6 +2154,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return enforceOnKeyConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2113,6 +2181,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -2137,6 +2206,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -2162,6 +2232,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -2188,6 +2259,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -2211,6 +2283,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -2235,6 +2308,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -2261,6 +2335,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -2282,6 +2357,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -2303,6 +2379,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -2318,6 +2395,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         getEnforceOnKeyConfigsBuilder(int index) {
       return getEnforceOnKeyConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2337,6 +2415,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return enforceOnKeyConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2359,6 +2438,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return java.util.Collections.unmodifiableList(enforceOnKeyConfigs_);
       }
     }
+
     /**
      *
      *
@@ -2377,6 +2457,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
               com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2396,6 +2477,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
               com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2439,6 +2521,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     }
 
     private java.lang.Object enforceOnKeyName_ = "";
+
     /**
      *
      *
@@ -2453,6 +2536,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     public boolean hasEnforceOnKeyName() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2475,6 +2559,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2497,6 +2582,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2518,6 +2604,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2535,6 +2622,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2559,6 +2647,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     }
 
     private java.lang.Object exceedAction_ = "";
+
     /**
      *
      *
@@ -2573,6 +2662,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     public boolean hasExceedAction() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2595,6 +2685,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2617,6 +2708,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2638,6 +2730,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2655,6 +2748,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2684,6 +2778,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Builder,
             com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptionsOrBuilder>
         exceedRedirectOptionsBuilder_;
+
     /**
      *
      *
@@ -2700,6 +2795,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     public boolean hasExceedRedirectOptions() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2723,6 +2819,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return exceedRedirectOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2748,6 +2845,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2770,6 +2868,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2802,6 +2901,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -2823,6 +2923,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2840,6 +2941,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return getExceedRedirectOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2861,6 +2963,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             : exceedRedirectOptions_;
       }
     }
+
     /**
      *
      *
@@ -2896,6 +2999,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold.Builder,
             com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThresholdOrBuilder>
         rateLimitThresholdBuilder_;
+
     /**
      *
      *
@@ -2912,6 +3016,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     public boolean hasRateLimitThreshold() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2936,6 +3041,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         return rateLimitThresholdBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2961,6 +3067,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2984,6 +3091,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3016,6 +3124,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -3037,6 +3146,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3054,6 +3164,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       onChanged();
       return getRateLimitThresholdFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3076,6 +3187,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             : rateLimitThreshold_;
       }
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface CreateCertificateIssuanceConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateCertificateIssuanceConfigRequestOrBuilder
    * @return The certificateIssuanceConfigId.
    */
   java.lang.String getCertificateIssuanceConfigId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateCertificateIssuanceConfigRequestOrBuilder
    * @return Whether the certificateIssuanceConfig field is set.
    */
   boolean hasCertificateIssuanceConfig();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateCertificateIssuanceConfigRequestOrBuilder
    * @return The certificateIssuanceConfig.
    */
   com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig getCertificateIssuanceConfig();
+
   /**
    *
    *

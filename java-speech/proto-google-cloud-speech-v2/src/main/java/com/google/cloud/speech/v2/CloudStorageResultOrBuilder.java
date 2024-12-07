@@ -36,6 +36,7 @@ public interface CloudStorageResultOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface CloudStorageResultOrBuilder
    * @return The vttFormatUri.
    */
   java.lang.String getVttFormatUri();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface CloudStorageResultOrBuilder
    * @return The srtFormatUri.
    */
   java.lang.String getSrtFormatUri();
+
   /**
    *
    *

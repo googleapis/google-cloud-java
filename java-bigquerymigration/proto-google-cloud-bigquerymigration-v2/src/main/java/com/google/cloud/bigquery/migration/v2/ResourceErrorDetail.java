@@ -33,6 +33,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.ResourceErrorDetail)
     ResourceErrorDetailOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceErrorDetail.newBuilder() to construct.
   private ResourceErrorDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int RESOURCE_INFO_FIELD_NUMBER = 1;
   private com.google.rpc.ResourceInfo resourceInfo_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
   public boolean hasResourceInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
   public com.google.rpc.ResourceInfo getResourceInfo() {
     return resourceInfo_ == null ? com.google.rpc.ResourceInfo.getDefaultInstance() : resourceInfo_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.migration.v2.ErrorDetail> errorDetails_;
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.bigquery.migration.v2.ErrorDetail> getErrorDetailsList() {
     return errorDetails_;
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       getErrorDetailsOrBuilderList() {
     return errorDetails_;
   }
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
   public int getErrorDetailsCount() {
     return errorDetails_.size();
   }
+
   /**
    *
    *
@@ -178,6 +186,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
   public com.google.cloud.bigquery.migration.v2.ErrorDetail getErrorDetails(int index) {
     return errorDetails_.get(index);
   }
+
   /**
    *
    *
@@ -197,6 +206,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
 
   public static final int ERROR_COUNT_FIELD_NUMBER = 3;
   private int errorCount_ = 0;
+
   /**
    *
    *
@@ -400,6 +410,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -680,6 +691,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
             com.google.rpc.ResourceInfo.Builder,
             com.google.rpc.ResourceInfoOrBuilder>
         resourceInfoBuilder_;
+
     /**
      *
      *
@@ -695,6 +707,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     public boolean hasResourceInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -716,6 +729,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
         return resourceInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +774,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +803,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +824,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +840,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       onChanged();
       return getResourceInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
             : resourceInfo_;
       }
     }
+
     /**
      *
      *
@@ -905,6 +925,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
         return errorDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -923,6 +944,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
         return errorDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -941,6 +963,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
         return errorDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -966,6 +989,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1012,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1037,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1063,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1086,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1109,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1132,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1154,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1176,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1160,6 +1192,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
         int index) {
       return getErrorDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1179,6 +1212,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
         return errorDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1198,6 +1232,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(errorDetails_);
       }
     }
+
     /**
      *
      *
@@ -1213,6 +1248,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       return getErrorDetailsFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.migration.v2.ErrorDetail.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1230,6 +1266,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.cloud.bigquery.migration.v2.ErrorDetail.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1264,6 +1301,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     }
 
     private int errorCount_;
+
     /**
      *
      *
@@ -1281,6 +1319,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     public int getErrorCount() {
       return errorCount_;
     }
+
     /**
      *
      *
@@ -1302,6 +1341,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

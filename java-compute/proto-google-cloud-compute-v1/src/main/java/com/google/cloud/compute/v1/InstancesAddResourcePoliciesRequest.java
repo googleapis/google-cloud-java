@@ -33,6 +33,7 @@ public final class InstancesAddResourcePoliciesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstancesAddResourcePoliciesRequest)
     InstancesAddResourcePoliciesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstancesAddResourcePoliciesRequest.newBuilder() to construct.
   private InstancesAddResourcePoliciesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class InstancesAddResourcePoliciesRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourcePolicies_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class InstancesAddResourcePoliciesRequest
   public com.google.protobuf.ProtocolStringList getResourcePoliciesList() {
     return resourcePolicies_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class InstancesAddResourcePoliciesRequest
   public int getResourcePoliciesCount() {
     return resourcePolicies_.size();
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class InstancesAddResourcePoliciesRequest
   public java.lang.String getResourcePolicies(int index) {
     return resourcePolicies_.get(index);
   }
+
   /**
    *
    *
@@ -296,6 +301,7 @@ public final class InstancesAddResourcePoliciesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -498,6 +504,7 @@ public final class InstancesAddResourcePoliciesRequest
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -513,6 +520,7 @@ public final class InstancesAddResourcePoliciesRequest
       resourcePolicies_.makeImmutable();
       return resourcePolicies_;
     }
+
     /**
      *
      *
@@ -527,6 +535,7 @@ public final class InstancesAddResourcePoliciesRequest
     public int getResourcePoliciesCount() {
       return resourcePolicies_.size();
     }
+
     /**
      *
      *
@@ -542,6 +551,7 @@ public final class InstancesAddResourcePoliciesRequest
     public java.lang.String getResourcePolicies(int index) {
       return resourcePolicies_.get(index);
     }
+
     /**
      *
      *
@@ -557,6 +567,7 @@ public final class InstancesAddResourcePoliciesRequest
     public com.google.protobuf.ByteString getResourcePoliciesBytes(int index) {
       return resourcePolicies_.getByteString(index);
     }
+
     /**
      *
      *
@@ -580,6 +591,7 @@ public final class InstancesAddResourcePoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -602,6 +614,7 @@ public final class InstancesAddResourcePoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -621,6 +634,7 @@ public final class InstancesAddResourcePoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -639,6 +653,7 @@ public final class InstancesAddResourcePoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

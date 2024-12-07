@@ -34,6 +34,7 @@ public interface BatchRunReportsResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.RunReportResponse reports = 1;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.RunReportResponse> getReportsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BatchRunReportsResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.RunReportResponse reports = 1;</code>
    */
   com.google.analytics.data.v1beta.RunReportResponse getReports(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BatchRunReportsResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.RunReportResponse reports = 1;</code>
    */
   int getReportsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BatchRunReportsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.RunReportResponseOrBuilder>
       getReportsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface BatchRunReportsResponseOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *

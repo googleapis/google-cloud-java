@@ -40,6 +40,7 @@ public interface GenerateRetrievalUrlRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

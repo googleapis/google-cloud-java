@@ -38,6 +38,7 @@ public interface PlaybookVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface PlaybookVersionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface PlaybookVersionOrBuilder
    * @return Whether the playbook field is set.
    */
   boolean hasPlaybook();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface PlaybookVersionOrBuilder
    * @return The playbook.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Playbook getPlaybook();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface PlaybookVersionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Example> getExamplesList();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface PlaybookVersionOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Example getExamples(int index);
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public interface PlaybookVersionOrBuilder
    * </code>
    */
   int getExamplesCount();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface PlaybookVersionOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ExampleOrBuilder>
       getExamplesOrBuilderList();
+
   /**
    *
    *
@@ -199,6 +207,7 @@ public interface PlaybookVersionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public interface PlaybookVersionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

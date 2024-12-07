@@ -38,6 +38,7 @@ public interface SecretOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface SecretOrBuilder
    * @return Whether the replication field is set.
    */
   boolean hasReplication();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface SecretOrBuilder
    * @return The replication.
    */
   com.google.cloud.secretmanager.v1.Replication getReplication();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface SecretOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface SecretOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface SecretOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -184,9 +190,11 @@ public interface SecretOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public interface SecretOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -231,6 +240,7 @@ public interface SecretOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -265,6 +275,7 @@ public interface SecretOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.secretmanager.v1.Topic> getTopicsList();
+
   /**
    *
    *
@@ -278,6 +289,7 @@ public interface SecretOrBuilder
    * </code>
    */
   com.google.cloud.secretmanager.v1.Topic getTopics(int index);
+
   /**
    *
    *
@@ -291,6 +303,7 @@ public interface SecretOrBuilder
    * </code>
    */
   int getTopicsCount();
+
   /**
    *
    *
@@ -305,6 +318,7 @@ public interface SecretOrBuilder
    */
   java.util.List<? extends com.google.cloud.secretmanager.v1.TopicOrBuilder>
       getTopicsOrBuilderList();
+
   /**
    *
    *
@@ -334,6 +348,7 @@ public interface SecretOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -349,6 +364,7 @@ public interface SecretOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -376,6 +392,7 @@ public interface SecretOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
+
   /**
    *
    *
@@ -389,6 +406,7 @@ public interface SecretOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
+
   /**
    *
    *
@@ -414,6 +432,7 @@ public interface SecretOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -444,6 +463,7 @@ public interface SecretOrBuilder
    * @return Whether the rotation field is set.
    */
   boolean hasRotation();
+
   /**
    *
    *
@@ -460,6 +480,7 @@ public interface SecretOrBuilder
    * @return The rotation.
    */
   com.google.cloud.secretmanager.v1.Rotation getRotation();
+
   /**
    *
    *
@@ -496,6 +517,7 @@ public interface SecretOrBuilder
    * </code>
    */
   int getVersionAliasesCount();
+
   /**
    *
    *
@@ -517,9 +539,11 @@ public interface SecretOrBuilder
    * </code>
    */
   boolean containsVersionAliases(java.lang.String key);
+
   /** Use {@link #getVersionAliasesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Long> getVersionAliases();
+
   /**
    *
    *
@@ -541,6 +565,7 @@ public interface SecretOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.Long> getVersionAliasesMap();
+
   /**
    *
    *
@@ -562,6 +587,7 @@ public interface SecretOrBuilder
    * </code>
    */
   long getVersionAliasesOrDefault(java.lang.String key, long defaultValue);
+
   /**
    *
    *
@@ -606,6 +632,7 @@ public interface SecretOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -628,9 +655,11 @@ public interface SecretOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -653,6 +682,7 @@ public interface SecretOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -679,6 +709,7 @@ public interface SecretOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -721,6 +752,7 @@ public interface SecretOrBuilder
    * @return Whether the versionDestroyTtl field is set.
    */
   boolean hasVersionDestroyTtl();
+
   /**
    *
    *
@@ -740,6 +772,7 @@ public interface SecretOrBuilder
    * @return The versionDestroyTtl.
    */
   com.google.protobuf.Duration getVersionDestroyTtl();
+
   /**
    *
    *
@@ -780,6 +813,7 @@ public interface SecretOrBuilder
    * @return Whether the customerManagedEncryption field is set.
    */
   boolean hasCustomerManagedEncryption();
+
   /**
    *
    *
@@ -802,6 +836,7 @@ public interface SecretOrBuilder
    * @return The customerManagedEncryption.
    */
   com.google.cloud.secretmanager.v1.CustomerManagedEncryption getCustomerManagedEncryption();
+
   /**
    *
    *

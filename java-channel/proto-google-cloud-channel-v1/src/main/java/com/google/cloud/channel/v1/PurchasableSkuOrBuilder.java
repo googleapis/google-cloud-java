@@ -36,6 +36,7 @@ public interface PurchasableSkuOrBuilder
    * @return Whether the sku field is set.
    */
   boolean hasSku();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PurchasableSkuOrBuilder
    * @return The sku.
    */
   com.google.cloud.channel.v1.Sku getSku();
+
   /**
    *
    *

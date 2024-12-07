@@ -39,6 +39,7 @@ public interface AdvanceRolloutRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface AdvanceRolloutRequestOrBuilder
    * @return The phaseId.
    */
   java.lang.String getPhaseId();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface AdvanceRolloutRequestOrBuilder
    * @return A list containing the overrideDeployPolicy.
    */
   java.util.List<java.lang.String> getOverrideDeployPolicyList();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface AdvanceRolloutRequestOrBuilder
    * @return The count of overrideDeployPolicy.
    */
   int getOverrideDeployPolicyCount();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface AdvanceRolloutRequestOrBuilder
    * @return The overrideDeployPolicy at the given index.
    */
   java.lang.String getOverrideDeployPolicy(int index);
+
   /**
    *
    *

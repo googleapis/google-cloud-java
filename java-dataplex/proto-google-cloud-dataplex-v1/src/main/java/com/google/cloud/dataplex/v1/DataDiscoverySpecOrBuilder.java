@@ -38,6 +38,7 @@ public interface DataDiscoverySpecOrBuilder
    * @return Whether the bigqueryPublishingConfig field is set.
    */
   boolean hasBigqueryPublishingConfig();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface DataDiscoverySpecOrBuilder
    */
   com.google.cloud.dataplex.v1.DataDiscoverySpec.BigQueryPublishingConfig
       getBigqueryPublishingConfig();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface DataDiscoverySpecOrBuilder
    * @return Whether the storageConfig field is set.
    */
   boolean hasStorageConfig();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface DataDiscoverySpecOrBuilder
    * @return The storageConfig.
    */
   com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig getStorageConfig();
+
   /**
    *
    *

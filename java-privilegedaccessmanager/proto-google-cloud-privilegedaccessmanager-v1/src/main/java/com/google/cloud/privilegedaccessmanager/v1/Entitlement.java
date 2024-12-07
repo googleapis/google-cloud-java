@@ -35,6 +35,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Entitlement)
     EntitlementOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Entitlement.newBuilder() to construct.
   private Entitlement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -151,6 +152,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -161,6 +163,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -171,6 +174,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * <code>AVAILABLE = 2;</code>
      */
     public static final int AVAILABLE_VALUE = 2;
+
     /**
      *
      *
@@ -181,6 +185,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 3;</code>
      */
     public static final int DELETING_VALUE = 3;
+
     /**
      *
      *
@@ -191,6 +196,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETED = 4;</code>
      */
     public static final int DELETED_VALUE = 4;
+
     /**
      *
      *
@@ -313,6 +319,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the notMandatory field is set.
      */
     boolean hasNotMandatory();
+
     /**
      *
      *
@@ -330,6 +337,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.privilegedaccessmanager.v1.Entitlement.RequesterJustificationConfig
             .NotMandatory
         getNotMandatory();
+
     /**
      *
      *
@@ -362,6 +370,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the unstructured field is set.
      */
     boolean hasUnstructured();
+
     /**
      *
      *
@@ -380,6 +389,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.privilegedaccessmanager.v1.Entitlement.RequesterJustificationConfig
             .Unstructured
         getUnstructured();
+
     /**
      *
      *
@@ -401,6 +411,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             .JustificationTypeCase
         getJustificationTypeCase();
   }
+
   /**
    *
    *
@@ -418,6 +429,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Entitlement.RequesterJustificationConfig)
       RequesterJustificationConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RequesterJustificationConfig.newBuilder() to construct.
     private RequesterJustificationConfig(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -453,6 +465,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.privilegedaccessmanager.v1.Entitlement.RequesterJustificationConfig.NotMandatory)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -469,6 +482,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Entitlement.RequesterJustificationConfig.NotMandatory)
         NotMandatoryOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use NotMandatory.newBuilder() to construct.
       private NotMandatory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -680,6 +694,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -945,6 +960,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.privilegedaccessmanager.v1.Entitlement.RequesterJustificationConfig.Unstructured)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -960,6 +976,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Entitlement.RequesterJustificationConfig.Unstructured)
         UnstructuredOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Unstructured.newBuilder() to construct.
       private Unstructured(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1171,6 +1188,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1448,6 +1466,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       private JustificationTypeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1481,6 +1500,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NOT_MANDATORY_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -1499,6 +1519,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNotMandatory() {
       return justificationTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -1525,6 +1546,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.privilegedaccessmanager.v1.Entitlement.RequesterJustificationConfig
           .NotMandatory.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1551,6 +1573,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int UNSTRUCTURED_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -1570,6 +1593,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUnstructured() {
       return justificationTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1597,6 +1621,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.privilegedaccessmanager.v1.Entitlement.RequesterJustificationConfig
           .Unstructured.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1850,6 +1875,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2115,6 +2141,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.privilegedaccessmanager.v1.Entitlement.RequesterJustificationConfig
                   .NotMandatoryOrBuilder>
           notMandatoryBuilder_;
+
       /**
        *
        *
@@ -2133,6 +2160,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       public boolean hasNotMandatory() {
         return justificationTypeCase_ == 1;
       }
+
       /**
        *
        *
@@ -2167,6 +2195,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
               .RequesterJustificationConfig.NotMandatory.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2195,6 +2224,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         justificationTypeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2220,6 +2250,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         justificationTypeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2263,6 +2294,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         justificationTypeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2291,6 +2323,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2308,6 +2341,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
           getNotMandatoryBuilder() {
         return getNotMandatoryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2336,6 +2370,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
               .RequesterJustificationConfig.NotMandatory.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2390,6 +2425,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.privilegedaccessmanager.v1.Entitlement.RequesterJustificationConfig
                   .UnstructuredOrBuilder>
           unstructuredBuilder_;
+
       /**
        *
        *
@@ -2409,6 +2445,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUnstructured() {
         return justificationTypeCase_ == 2;
       }
+
       /**
        *
        *
@@ -2444,6 +2481,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
               .RequesterJustificationConfig.Unstructured.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2473,6 +2511,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         justificationTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -2499,6 +2538,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         justificationTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -2543,6 +2583,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         justificationTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -2572,6 +2613,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2590,6 +2632,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
           getUnstructuredBuilder() {
         return getUnstructuredFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2619,6 +2662,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
               .RequesterJustificationConfig.Unstructured.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2756,6 +2800,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the adminEmailRecipients.
      */
     java.util.List<java.lang.String> getAdminEmailRecipientsList();
+
     /**
      *
      *
@@ -2770,6 +2815,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * @return The count of adminEmailRecipients.
      */
     int getAdminEmailRecipientsCount();
+
     /**
      *
      *
@@ -2785,6 +2831,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * @return The adminEmailRecipients at the given index.
      */
     java.lang.String getAdminEmailRecipients(int index);
+
     /**
      *
      *
@@ -2816,6 +2863,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the requesterEmailRecipients.
      */
     java.util.List<java.lang.String> getRequesterEmailRecipientsList();
+
     /**
      *
      *
@@ -2831,6 +2879,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * @return The count of requesterEmailRecipients.
      */
     int getRequesterEmailRecipientsCount();
+
     /**
      *
      *
@@ -2847,6 +2896,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * @return The requesterEmailRecipients at the given index.
      */
     java.lang.String getRequesterEmailRecipients(int index);
+
     /**
      *
      *
@@ -2864,6 +2914,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getRequesterEmailRecipientsBytes(int index);
   }
+
   /**
    *
    *
@@ -2880,6 +2931,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Entitlement.AdditionalNotificationTargets)
       AdditionalNotificationTargetsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AdditionalNotificationTargets.newBuilder() to construct.
     private AdditionalNotificationTargets(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -2919,6 +2971,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList adminEmailRecipients_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -2935,6 +2988,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getAdminEmailRecipientsList() {
       return adminEmailRecipients_;
     }
+
     /**
      *
      *
@@ -2951,6 +3005,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public int getAdminEmailRecipientsCount() {
       return adminEmailRecipients_.size();
     }
+
     /**
      *
      *
@@ -2968,6 +3023,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAdminEmailRecipients(int index) {
       return adminEmailRecipients_.get(index);
     }
+
     /**
      *
      *
@@ -2991,6 +3047,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList requesterEmailRecipients_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -3008,6 +3065,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getRequesterEmailRecipientsList() {
       return requesterEmailRecipients_;
     }
+
     /**
      *
      *
@@ -3025,6 +3083,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public int getRequesterEmailRecipientsCount() {
       return requesterEmailRecipients_.size();
     }
+
     /**
      *
      *
@@ -3043,6 +3102,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRequesterEmailRecipients(int index) {
       return requesterEmailRecipients_.get(index);
     }
+
     /**
      *
      *
@@ -3271,6 +3331,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3518,6 +3579,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -3535,6 +3597,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         adminEmailRecipients_.makeImmutable();
         return adminEmailRecipients_;
       }
+
       /**
        *
        *
@@ -3551,6 +3614,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       public int getAdminEmailRecipientsCount() {
         return adminEmailRecipients_.size();
       }
+
       /**
        *
        *
@@ -3568,6 +3632,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getAdminEmailRecipients(int index) {
         return adminEmailRecipients_.get(index);
       }
+
       /**
        *
        *
@@ -3585,6 +3650,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getAdminEmailRecipientsBytes(int index) {
         return adminEmailRecipients_.getByteString(index);
       }
+
       /**
        *
        *
@@ -3610,6 +3676,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3634,6 +3701,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3655,6 +3723,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3675,6 +3744,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3711,6 +3781,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -3729,6 +3800,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         requesterEmailRecipients_.makeImmutable();
         return requesterEmailRecipients_;
       }
+
       /**
        *
        *
@@ -3746,6 +3818,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       public int getRequesterEmailRecipientsCount() {
         return requesterEmailRecipients_.size();
       }
+
       /**
        *
        *
@@ -3764,6 +3837,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getRequesterEmailRecipients(int index) {
         return requesterEmailRecipients_.get(index);
       }
+
       /**
        *
        *
@@ -3782,6 +3856,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getRequesterEmailRecipientsBytes(int index) {
         return requesterEmailRecipients_.getByteString(index);
       }
+
       /**
        *
        *
@@ -3808,6 +3883,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3833,6 +3909,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3855,6 +3932,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3876,6 +3954,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3979,6 +4058,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -4007,6 +4087,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -4038,6 +4119,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -4054,6 +4136,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4070,6 +4153,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -4087,6 +4171,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -4103,6 +4188,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -4119,6 +4205,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -4139,6 +4226,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.privilegedaccessmanager.v1.AccessControlEntry>
       eligibleUsers_;
+
   /**
    *
    *
@@ -4156,6 +4244,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       getEligibleUsersList() {
     return eligibleUsers_;
   }
+
   /**
    *
    *
@@ -4174,6 +4263,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       getEligibleUsersOrBuilderList() {
     return eligibleUsers_;
   }
+
   /**
    *
    *
@@ -4190,6 +4280,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public int getEligibleUsersCount() {
     return eligibleUsers_.size();
   }
+
   /**
    *
    *
@@ -4207,6 +4298,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return eligibleUsers_.get(index);
   }
+
   /**
    *
    *
@@ -4227,6 +4319,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APPROVAL_WORKFLOW_FIELD_NUMBER = 6;
   private com.google.cloud.privilegedaccessmanager.v1.ApprovalWorkflow approvalWorkflow_;
+
   /**
    *
    *
@@ -4245,6 +4338,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasApprovalWorkflow() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -4265,6 +4359,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.privilegedaccessmanager.v1.ApprovalWorkflow.getDefaultInstance()
         : approvalWorkflow_;
   }
+
   /**
    *
    *
@@ -4287,6 +4382,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIVILEGED_ACCESS_FIELD_NUMBER = 7;
   private com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess privilegedAccess_;
+
   /**
    *
    *
@@ -4302,6 +4398,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrivilegedAccess() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -4319,6 +4416,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.getDefaultInstance()
         : privilegedAccess_;
   }
+
   /**
    *
    *
@@ -4338,6 +4436,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_REQUEST_DURATION_FIELD_NUMBER = 8;
   private com.google.protobuf.Duration maxRequestDuration_;
+
   /**
    *
    *
@@ -4356,6 +4455,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxRequestDuration() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -4376,6 +4476,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : maxRequestDuration_;
   }
+
   /**
    *
    *
@@ -4397,6 +4498,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 9;
   private int state_ = 0;
+
   /**
    *
    *
@@ -4414,6 +4516,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -4439,6 +4542,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public static final int REQUESTER_JUSTIFICATION_CONFIG_FIELD_NUMBER = 10;
   private com.google.cloud.privilegedaccessmanager.v1.Entitlement.RequesterJustificationConfig
       requesterJustificationConfig_;
+
   /**
    *
    *
@@ -4457,6 +4561,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRequesterJustificationConfig() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -4479,6 +4584,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : requesterJustificationConfig_;
   }
+
   /**
    *
    *
@@ -4504,6 +4610,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public static final int ADDITIONAL_NOTIFICATION_TARGETS_FIELD_NUMBER = 11;
   private com.google.cloud.privilegedaccessmanager.v1.Entitlement.AdditionalNotificationTargets
       additionalNotificationTargets_;
+
   /**
    *
    *
@@ -4521,6 +4628,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdditionalNotificationTargets() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -4542,6 +4650,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : additionalNotificationTargets_;
   }
+
   /**
    *
    *
@@ -4567,6 +4676,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -4595,6 +4705,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -4922,6 +5033,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5358,6 +5470,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -5385,6 +5498,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5412,6 +5526,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5438,6 +5553,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5460,6 +5576,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5494,6 +5611,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -5510,6 +5628,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -5532,6 +5651,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5556,6 +5676,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5577,6 +5698,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5606,6 +5728,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5627,6 +5750,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5643,6 +5767,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5663,6 +5788,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -5697,6 +5823,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -5713,6 +5840,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -5735,6 +5863,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5759,6 +5888,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5780,6 +5910,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5809,6 +5940,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5830,6 +5962,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5846,6 +5979,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5866,6 +6000,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -5932,6 +6067,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return eligibleUsersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5951,6 +6087,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return eligibleUsersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5971,6 +6108,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return eligibleUsersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5997,6 +6135,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6021,6 +6160,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6047,6 +6187,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6073,6 +6214,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6096,6 +6238,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6120,6 +6263,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6144,6 +6288,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6166,6 +6311,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6188,6 +6334,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6204,6 +6351,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         getEligibleUsersBuilder(int index) {
       return getEligibleUsersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6224,6 +6372,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return eligibleUsersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6245,6 +6394,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(eligibleUsers_);
       }
     }
+
     /**
      *
      *
@@ -6263,6 +6413,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.privilegedaccessmanager.v1.AccessControlEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6282,6 +6433,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.privilegedaccessmanager.v1.AccessControlEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6325,6 +6477,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.privilegedaccessmanager.v1.ApprovalWorkflow.Builder,
             com.google.cloud.privilegedaccessmanager.v1.ApprovalWorkflowOrBuilder>
         approvalWorkflowBuilder_;
+
     /**
      *
      *
@@ -6342,6 +6495,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasApprovalWorkflow() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -6365,6 +6519,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return approvalWorkflowBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6391,6 +6546,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6414,6 +6570,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6447,6 +6604,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6469,6 +6627,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6487,6 +6646,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getApprovalWorkflowFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6509,6 +6669,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             : approvalWorkflow_;
       }
     }
+
     /**
      *
      *
@@ -6544,6 +6705,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.Builder,
             com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccessOrBuilder>
         privilegedAccessBuilder_;
+
     /**
      *
      *
@@ -6558,6 +6720,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrivilegedAccess() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -6578,6 +6741,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return privilegedAccessBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6601,6 +6765,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6621,6 +6786,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6651,6 +6817,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6670,6 +6837,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6685,6 +6853,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPrivilegedAccessFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6704,6 +6873,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             : privilegedAccess_;
       }
     }
+
     /**
      *
      *
@@ -6736,6 +6906,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         maxRequestDurationBuilder_;
+
     /**
      *
      *
@@ -6753,6 +6924,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxRequestDuration() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -6776,6 +6948,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return maxRequestDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6801,6 +6974,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6823,6 +6997,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6853,6 +7028,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6875,6 +7051,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6892,6 +7069,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMaxRequestDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6913,6 +7091,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             : maxRequestDuration_;
       }
     }
+
     /**
      *
      *
@@ -6943,6 +7122,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -6960,6 +7140,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -6980,6 +7161,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7001,6 +7183,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.privilegedaccessmanager.v1.Entitlement.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -7024,6 +7207,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7053,6 +7237,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.privilegedaccessmanager.v1.Entitlement
                 .RequesterJustificationConfigOrBuilder>
         requesterJustificationConfigBuilder_;
+
     /**
      *
      *
@@ -7070,6 +7255,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRequesterJustificationConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -7095,6 +7281,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return requesterJustificationConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7122,6 +7309,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7146,6 +7334,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7180,6 +7369,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7202,6 +7392,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7221,6 +7412,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRequesterJustificationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7245,6 +7437,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             : requesterJustificationConfig_;
       }
     }
+
     /**
      *
      *
@@ -7288,6 +7481,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.privilegedaccessmanager.v1.Entitlement
                 .AdditionalNotificationTargetsOrBuilder>
         additionalNotificationTargetsBuilder_;
+
     /**
      *
      *
@@ -7304,6 +7498,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdditionalNotificationTargets() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -7328,6 +7523,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return additionalNotificationTargetsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7354,6 +7550,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7378,6 +7575,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7411,6 +7609,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7432,6 +7631,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7450,6 +7650,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAdditionalNotificationTargetsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7473,6 +7674,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
             : additionalNotificationTargets_;
       }
     }
+
     /**
      *
      *
@@ -7507,6 +7709,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -7534,6 +7737,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7561,6 +7765,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7587,6 +7792,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7609,6 +7815,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -410,7 +410,8 @@ public class RecommenderName implements ResourceName {
     private Builder(RecommenderName recommenderName) {
       Preconditions.checkArgument(
           Objects.equals(recommenderName.pathTemplate, PROJECT_LOCATION_RECOMMENDER),
-          "toBuilder is only supported when RecommenderName has the pattern of projects/{project}/locations/{location}/recommenders/{recommender}");
+          "toBuilder is only supported when RecommenderName has the pattern of"
+              + " projects/{project}/locations/{location}/recommenders/{recommender}");
       this.project = recommenderName.project;
       this.location = recommenderName.location;
       this.recommender = recommenderName.recommender;

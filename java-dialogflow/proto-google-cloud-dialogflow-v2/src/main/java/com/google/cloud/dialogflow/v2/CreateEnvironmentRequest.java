@@ -34,6 +34,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.CreateEnvironmentRequest)
     CreateEnvironmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateEnvironmentRequest.newBuilder() to construct.
   private CreateEnvironmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2.Environment environment_;
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
   public boolean hasEnvironment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
         ? com.google.cloud.dialogflow.v2.Environment.getDefaultInstance()
         : environment_;
   }
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object environmentId_ = "";
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -419,6 +427,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +658,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -677,6 +687,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -705,6 +716,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -732,6 +744,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +768,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +804,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
             com.google.cloud.dialogflow.v2.Environment.Builder,
             com.google.cloud.dialogflow.v2.EnvironmentOrBuilder>
         environmentBuilder_;
+
     /**
      *
      *
@@ -806,6 +821,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
     public boolean hasEnvironment() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -828,6 +844,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
         return environmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -852,6 +869,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +892,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +922,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +944,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +961,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -960,6 +982,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
             : environment_;
       }
     }
+
     /**
      *
      *
@@ -989,6 +1012,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object environmentId_ = "";
+
     /**
      *
      *
@@ -1011,6 +1035,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1058,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1054,6 +1080,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1098,7 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

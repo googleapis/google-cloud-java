@@ -40,6 +40,7 @@ public interface UpdateDataSchemaRequestOrBuilder
    * @return Whether the dataSchema field is set.
    */
   boolean hasDataSchema();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateDataSchemaRequestOrBuilder
    * @return The dataSchema.
    */
   com.google.cloud.visionai.v1.DataSchema getDataSchema();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface UpdateDataSchemaRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateDataSchemaRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

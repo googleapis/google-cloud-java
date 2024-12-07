@@ -37,6 +37,7 @@ public interface ListQaScorecardRevisionsResponseOrBuilder
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardRevision>
       getQaScorecardRevisionsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListQaScorecardRevisionsResponseOrBuilder
    * </code>
    */
   com.google.cloud.contactcenterinsights.v1.QaScorecardRevision getQaScorecardRevisions(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListQaScorecardRevisionsResponseOrBuilder
    * </code>
    */
   int getQaScorecardRevisionsCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListQaScorecardRevisionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.QaScorecardRevisionOrBuilder>
       getQaScorecardRevisionsOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ListQaScorecardRevisionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

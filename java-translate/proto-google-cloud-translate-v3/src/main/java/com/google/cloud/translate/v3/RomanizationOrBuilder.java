@@ -38,6 +38,7 @@ public interface RomanizationOrBuilder
    * @return The romanizedText.
    */
   java.lang.String getRomanizedText();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface RomanizationOrBuilder
    * @return The detectedLanguageCode.
    */
   java.lang.String getDetectedLanguageCode();
+
   /**
    *
    *

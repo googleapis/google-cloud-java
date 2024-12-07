@@ -40,6 +40,7 @@ public interface TaskOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface TaskOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface TaskOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface TaskOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface TaskOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface TaskOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface TaskOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public interface TaskOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public interface TaskOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public interface TaskOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -257,9 +267,11 @@ public interface TaskOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -270,6 +282,7 @@ public interface TaskOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -284,6 +297,7 @@ public interface TaskOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -309,6 +323,7 @@ public interface TaskOrBuilder
    * @return Whether the triggerSpec field is set.
    */
   boolean hasTriggerSpec();
+
   /**
    *
    *
@@ -323,6 +338,7 @@ public interface TaskOrBuilder
    * @return The triggerSpec.
    */
   com.google.cloud.dataplex.v1.Task.TriggerSpec getTriggerSpec();
+
   /**
    *
    *
@@ -350,6 +366,7 @@ public interface TaskOrBuilder
    * @return Whether the executionSpec field is set.
    */
   boolean hasExecutionSpec();
+
   /**
    *
    *
@@ -364,6 +381,7 @@ public interface TaskOrBuilder
    * @return The executionSpec.
    */
   com.google.cloud.dataplex.v1.Task.ExecutionSpec getExecutionSpec();
+
   /**
    *
    *
@@ -391,6 +409,7 @@ public interface TaskOrBuilder
    * @return Whether the executionStatus field is set.
    */
   boolean hasExecutionStatus();
+
   /**
    *
    *
@@ -405,6 +424,7 @@ public interface TaskOrBuilder
    * @return The executionStatus.
    */
   com.google.cloud.dataplex.v1.Task.ExecutionStatus getExecutionStatus();
+
   /**
    *
    *
@@ -430,6 +450,7 @@ public interface TaskOrBuilder
    * @return Whether the spark field is set.
    */
   boolean hasSpark();
+
   /**
    *
    *
@@ -442,6 +463,7 @@ public interface TaskOrBuilder
    * @return The spark.
    */
   com.google.cloud.dataplex.v1.Task.SparkTaskConfig getSpark();
+
   /**
    *
    *
@@ -465,6 +487,7 @@ public interface TaskOrBuilder
    * @return Whether the notebook field is set.
    */
   boolean hasNotebook();
+
   /**
    *
    *
@@ -477,6 +500,7 @@ public interface TaskOrBuilder
    * @return The notebook.
    */
   com.google.cloud.dataplex.v1.Task.NotebookTaskConfig getNotebook();
+
   /**
    *
    *

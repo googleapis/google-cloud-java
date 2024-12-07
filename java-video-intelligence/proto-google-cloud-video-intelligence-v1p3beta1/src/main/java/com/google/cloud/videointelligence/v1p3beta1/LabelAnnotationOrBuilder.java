@@ -36,6 +36,7 @@ public interface LabelAnnotationOrBuilder
    * @return Whether the entity field is set.
    */
   boolean hasEntity();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LabelAnnotationOrBuilder
    * @return The entity.
    */
   com.google.cloud.videointelligence.v1p3beta1.Entity getEntity();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface LabelAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Entity category_entities = 2;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.Entity> getCategoryEntitiesList();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface LabelAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Entity category_entities = 2;</code>
    */
   com.google.cloud.videointelligence.v1p3beta1.Entity getCategoryEntities(int index);
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface LabelAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Entity category_entities = 2;</code>
    */
   int getCategoryEntitiesCount();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface LabelAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.EntityOrBuilder>
       getCategoryEntitiesOrBuilderList();
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public interface LabelAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.LabelSegment segments = 3;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.LabelSegment> getSegmentsList();
+
   /**
    *
    *
@@ -147,6 +154,7 @@ public interface LabelAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.LabelSegment segments = 3;</code>
    */
   com.google.cloud.videointelligence.v1p3beta1.LabelSegment getSegments(int index);
+
   /**
    *
    *
@@ -157,6 +165,7 @@ public interface LabelAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.LabelSegment segments = 3;</code>
    */
   int getSegmentsCount();
+
   /**
    *
    *
@@ -168,6 +177,7 @@ public interface LabelAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.LabelSegmentOrBuilder>
       getSegmentsOrBuilderList();
+
   /**
    *
    *
@@ -190,6 +200,7 @@ public interface LabelAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.LabelFrame frames = 4;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.LabelFrame> getFramesList();
+
   /**
    *
    *
@@ -200,6 +211,7 @@ public interface LabelAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.LabelFrame frames = 4;</code>
    */
   com.google.cloud.videointelligence.v1p3beta1.LabelFrame getFrames(int index);
+
   /**
    *
    *
@@ -210,6 +222,7 @@ public interface LabelAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.LabelFrame frames = 4;</code>
    */
   int getFramesCount();
+
   /**
    *
    *
@@ -221,6 +234,7 @@ public interface LabelAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.LabelFrameOrBuilder>
       getFramesOrBuilderList();
+
   /**
    *
    *

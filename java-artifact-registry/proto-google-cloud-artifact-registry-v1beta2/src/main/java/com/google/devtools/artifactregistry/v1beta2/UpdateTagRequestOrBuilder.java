@@ -36,6 +36,7 @@ public interface UpdateTagRequestOrBuilder
    * @return Whether the tag field is set.
    */
   boolean hasTag();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateTagRequestOrBuilder
    * @return The tag.
    */
   com.google.devtools.artifactregistry.v1beta2.Tag getTag();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface UpdateTagRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface UpdateTagRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

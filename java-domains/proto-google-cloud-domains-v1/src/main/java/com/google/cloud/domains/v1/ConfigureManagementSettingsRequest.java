@@ -33,6 +33,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.domains.v1.ConfigureManagementSettingsRequest)
     ConfigureManagementSettingsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConfigureManagementSettingsRequest.newBuilder() to construct.
   private ConfigureManagementSettingsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object registration_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
 
   public static final int MANAGEMENT_SETTINGS_FIELD_NUMBER = 2;
   private com.google.cloud.domains.v1.ManagementSettings managementSettings_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
   public boolean hasManagementSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
         ? com.google.cloud.domains.v1.ManagementSettings.getDefaultInstance()
         : managementSettings_;
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -415,6 +424,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -654,6 +664,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object registration_ = "";
+
     /**
      *
      *
@@ -679,6 +690,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -704,6 +716,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -728,6 +741,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +762,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +795,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
             com.google.cloud.domains.v1.ManagementSettings.Builder,
             com.google.cloud.domains.v1.ManagementSettingsOrBuilder>
         managementSettingsBuilder_;
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
     public boolean hasManagementSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -814,6 +831,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
         return managementSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +875,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +904,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +924,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +939,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
       onChanged();
       return getManagementSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -936,6 +959,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
             : managementSettings_;
       }
     }
+
     /**
      *
      *
@@ -968,6 +992,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -985,6 +1010,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1008,6 +1034,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1060,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1083,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1114,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1137,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1155,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1145,6 +1177,7 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
             : updateMask_;
       }
     }
+
     /**
      *
      *

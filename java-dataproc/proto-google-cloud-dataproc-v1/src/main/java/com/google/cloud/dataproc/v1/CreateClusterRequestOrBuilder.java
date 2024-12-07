@@ -37,6 +37,7 @@ public interface CreateClusterRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CreateClusterRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface CreateClusterRequestOrBuilder
    * @return Whether the cluster field is set.
    */
   boolean hasCluster();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface CreateClusterRequestOrBuilder
    * @return The cluster.
    */
   com.google.cloud.dataproc.v1.Cluster getCluster();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface CreateClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public interface CreateClusterRequestOrBuilder
    * @return The enum numeric value on the wire for actionOnFailedPrimaryWorkers.
    */
   int getActionOnFailedPrimaryWorkersValue();
+
   /**
    *
    *

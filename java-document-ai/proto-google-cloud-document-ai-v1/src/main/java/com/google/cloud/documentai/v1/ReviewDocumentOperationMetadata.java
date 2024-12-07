@@ -35,6 +35,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.ReviewDocumentOperationMetadata)
     ReviewDocumentOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReviewDocumentOperationMetadata.newBuilder() to construct.
   private ReviewDocumentOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
   private int bitField0_;
   public static final int COMMON_METADATA_FIELD_NUMBER = 5;
   private com.google.cloud.documentai.v1.CommonOperationMetadata commonMetadata_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
   public boolean hasCommonMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
         ? com.google.cloud.documentai.v1.CommonOperationMetadata.getDefaultInstance()
         : commonMetadata_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object questionId_ = "";
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -343,6 +349,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -567,6 +574,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
             com.google.cloud.documentai.v1.CommonOperationMetadata.Builder,
             com.google.cloud.documentai.v1.CommonOperationMetadataOrBuilder>
         commonMetadataBuilder_;
+
     /**
      *
      *
@@ -581,6 +589,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     public boolean hasCommonMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -601,6 +610,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
         return commonMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -623,6 +633,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -643,6 +654,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -672,6 +684,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +704,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +720,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       onChanged();
       return getCommonMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -725,6 +740,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
             : commonMetadata_;
       }
     }
+
     /**
      *
      *
@@ -752,6 +768,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     }
 
     private java.lang.Object questionId_ = "";
+
     /**
      *
      *
@@ -774,6 +791,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -796,6 +814,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -817,6 +836,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +854,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

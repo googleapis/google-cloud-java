@@ -36,6 +36,7 @@ public interface RestoreClusterRequestOrBuilder
    * @return Whether the backupSource field is set.
    */
   boolean hasBackupSource();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RestoreClusterRequestOrBuilder
    * @return The backupSource.
    */
   com.google.cloud.alloydb.v1.BackupSource getBackupSource();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface RestoreClusterRequestOrBuilder
    * @return Whether the continuousBackupSource field is set.
    */
   boolean hasContinuousBackupSource();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface RestoreClusterRequestOrBuilder
    * @return The continuousBackupSource.
    */
   com.google.cloud.alloydb.v1.ContinuousBackupSource getContinuousBackupSource();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface RestoreClusterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface RestoreClusterRequestOrBuilder
    * @return The clusterId.
    */
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface RestoreClusterRequestOrBuilder
    * @return Whether the cluster field is set.
    */
   boolean hasCluster();
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public interface RestoreClusterRequestOrBuilder
    * @return The cluster.
    */
   com.google.cloud.alloydb.v1.Cluster getCluster();
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public interface RestoreClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

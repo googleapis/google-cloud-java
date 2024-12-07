@@ -36,6 +36,7 @@ public interface StartEnvironmentMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

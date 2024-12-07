@@ -33,6 +33,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.PropertyTypeOptions)
     PropertyTypeOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PropertyTypeOptions.newBuilder() to construct.
   private PropertyTypeOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.PropertyDefinition>
       propertyDefinitions_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
       getPropertyDefinitionsList() {
     return propertyDefinitions_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
       getPropertyDefinitionsOrBuilderList() {
     return propertyDefinitions_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
   public int getPropertyDefinitionsCount() {
     return propertyDefinitions_.size();
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
   public com.google.cloud.contentwarehouse.v1.PropertyDefinition getPropertyDefinitions(int index) {
     return propertyDefinitions_.get(index);
   }
+
   /**
    *
    *
@@ -310,6 +316,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -577,6 +584,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
         return propertyDefinitionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -595,6 +603,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
         return propertyDefinitionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
         return propertyDefinitionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -639,6 +649,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +699,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +772,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +796,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +818,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +840,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +856,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
         getPropertyDefinitionsBuilder(int index) {
       return getPropertyDefinitionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -856,6 +876,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
         return propertyDefinitionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -876,6 +897,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(propertyDefinitions_);
       }
     }
+
     /**
      *
      *
@@ -892,6 +914,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
       return getPropertyDefinitionsFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.PropertyDefinition.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -909,6 +932,7 @@ public final class PropertyTypeOptions extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.cloud.contentwarehouse.v1.PropertyDefinition.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeprecationStatus)
     DeprecationStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeprecationStatus.newBuilder() to construct.
   private DeprecationStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,12 +109,16 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
+
     /** <code>ACTIVE = 314733318;</code> */
     public static final int ACTIVE_VALUE = 314733318;
+
     /** <code>DELETED = 120962041;</code> */
     public static final int DELETED_VALUE = 120962041;
+
     /** <code>DEPRECATED = 463360435;</code> */
     public static final int DEPRECATED_VALUE = 463360435;
+
     /** <code>OBSOLETE = 66532761;</code> */
     public static final int OBSOLETE_VALUE = 66532761;
 
@@ -209,6 +214,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deleted_ = "";
+
   /**
    *
    *
@@ -224,6 +230,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
   public boolean hasDeleted() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +254,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -275,6 +283,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deprecated_ = "";
+
   /**
    *
    *
@@ -290,6 +299,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
   public boolean hasDeprecated() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -313,6 +323,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -341,6 +352,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object obsolete_ = "";
+
   /**
    *
    *
@@ -356,6 +368,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
   public boolean hasObsolete() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -379,6 +392,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -407,6 +421,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object replacement_ = "";
+
   /**
    *
    *
@@ -422,6 +437,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
   public boolean hasReplacement() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -445,6 +461,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -473,6 +490,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
+
   /**
    *
    *
@@ -489,6 +507,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
   public boolean hasState() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -513,6 +532,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -758,6 +778,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1008,6 +1029,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object deleted_ = "";
+
     /**
      *
      *
@@ -1022,6 +1044,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     public boolean hasDeleted() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1044,6 +1067,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1066,6 +1090,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1087,6 +1112,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1130,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1155,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object deprecated_ = "";
+
     /**
      *
      *
@@ -1142,6 +1170,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     public boolean hasDeprecated() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1164,6 +1193,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1186,6 +1216,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1207,6 +1238,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1256,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1248,6 +1281,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object obsolete_ = "";
+
     /**
      *
      *
@@ -1262,6 +1296,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     public boolean hasObsolete() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1284,6 +1319,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1342,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1327,6 +1364,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1382,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1368,6 +1407,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object replacement_ = "";
+
     /**
      *
      *
@@ -1382,6 +1422,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     public boolean hasReplacement() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1404,6 +1445,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1426,6 +1468,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1447,6 +1490,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1464,6 +1508,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1488,6 +1533,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object state_ = "";
+
     /**
      *
      *
@@ -1503,6 +1549,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     public boolean hasState() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1526,6 +1573,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1549,6 +1597,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1571,6 +1620,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1589,6 +1639,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

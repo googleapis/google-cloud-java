@@ -33,6 +33,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertTargetVpnGatewayRequest)
     InsertTargetVpnGatewayRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertTargetVpnGatewayRequest.newBuilder() to construct.
   private InsertTargetVpnGatewayRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
 
   public static final int TARGET_VPN_GATEWAY_RESOURCE_FIELD_NUMBER = 498050;
   private com.google.cloud.compute.v1.TargetVpnGateway targetVpnGatewayResource_;
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
   public boolean hasTargetVpnGatewayResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
         ? com.google.cloud.compute.v1.TargetVpnGateway.getDefaultInstance()
         : targetVpnGatewayResource_;
   }
+
   /**
    *
    *
@@ -498,6 +509,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -746,6 +758,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -794,6 +808,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -817,6 +832,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +879,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -886,6 +904,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -910,6 +929,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -933,6 +953,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +973,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1000,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -992,6 +1015,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1014,6 +1038,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1036,6 +1061,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1083,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1074,6 +1101,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1131,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.TargetVpnGateway.Builder,
             com.google.cloud.compute.v1.TargetVpnGatewayOrBuilder>
         targetVpnGatewayResourceBuilder_;
+
     /**
      *
      *
@@ -1119,6 +1148,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
     public boolean hasTargetVpnGatewayResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1141,6 +1171,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return targetVpnGatewayResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1165,6 +1196,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1219,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1251,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1273,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1291,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return getTargetVpnGatewayResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1277,6 +1313,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
             : targetVpnGatewayResource_;
       }
     }
+
     /**
      *
      *

@@ -42,6 +42,7 @@ public interface AzureClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface AzureClusterOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface AzureClusterOrBuilder
    * @return The azureRegion.
    */
   java.lang.String getAzureRegion();
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public interface AzureClusterOrBuilder
    * @return The resourceGroupId.
    */
   java.lang.String getResourceGroupId();
+
   /**
    *
    *
@@ -178,6 +182,7 @@ public interface AzureClusterOrBuilder
    * @return The azureClient.
    */
   java.lang.String getAzureClient();
+
   /**
    *
    *
@@ -219,6 +224,7 @@ public interface AzureClusterOrBuilder
    * @return Whether the networking field is set.
    */
   boolean hasNetworking();
+
   /**
    *
    *
@@ -233,6 +239,7 @@ public interface AzureClusterOrBuilder
    * @return The networking.
    */
   com.google.cloud.gkemulticloud.v1.AzureClusterNetworking getNetworking();
+
   /**
    *
    *
@@ -260,6 +267,7 @@ public interface AzureClusterOrBuilder
    * @return Whether the controlPlane field is set.
    */
   boolean hasControlPlane();
+
   /**
    *
    *
@@ -274,6 +282,7 @@ public interface AzureClusterOrBuilder
    * @return The controlPlane.
    */
   com.google.cloud.gkemulticloud.v1.AzureControlPlane getControlPlane();
+
   /**
    *
    *
@@ -301,6 +310,7 @@ public interface AzureClusterOrBuilder
    * @return Whether the authorization field is set.
    */
   boolean hasAuthorization();
+
   /**
    *
    *
@@ -315,6 +325,7 @@ public interface AzureClusterOrBuilder
    * @return The authorization.
    */
   com.google.cloud.gkemulticloud.v1.AzureAuthorization getAuthorization();
+
   /**
    *
    *
@@ -344,6 +355,7 @@ public interface AzureClusterOrBuilder
    * @return Whether the azureServicesAuthentication field is set.
    */
   boolean hasAzureServicesAuthentication();
+
   /**
    *
    *
@@ -360,6 +372,7 @@ public interface AzureClusterOrBuilder
    * @return The azureServicesAuthentication.
    */
   com.google.cloud.gkemulticloud.v1.AzureServicesAuthentication getAzureServicesAuthentication();
+
   /**
    *
    *
@@ -390,6 +403,7 @@ public interface AzureClusterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -417,6 +431,7 @@ public interface AzureClusterOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
+
   /**
    *
    *
@@ -442,6 +457,7 @@ public interface AzureClusterOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -481,6 +497,7 @@ public interface AzureClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -494,6 +511,7 @@ public interface AzureClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -519,6 +537,7 @@ public interface AzureClusterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -532,6 +551,7 @@ public interface AzureClusterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -560,6 +580,7 @@ public interface AzureClusterOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -596,6 +617,7 @@ public interface AzureClusterOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -615,9 +637,11 @@ public interface AzureClusterOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -637,6 +661,7 @@ public interface AzureClusterOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -660,6 +685,7 @@ public interface AzureClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -694,6 +720,7 @@ public interface AzureClusterOrBuilder
    * @return Whether the workloadIdentityConfig field is set.
    */
   boolean hasWorkloadIdentityConfig();
+
   /**
    *
    *
@@ -708,6 +735,7 @@ public interface AzureClusterOrBuilder
    * @return The workloadIdentityConfig.
    */
   com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig getWorkloadIdentityConfig();
+
   /**
    *
    *
@@ -734,6 +762,7 @@ public interface AzureClusterOrBuilder
    * @return The clusterCaCertificate.
    */
   java.lang.String getClusterCaCertificate();
+
   /**
    *
    *
@@ -761,6 +790,7 @@ public interface AzureClusterOrBuilder
    * @return Whether the fleet field is set.
    */
   boolean hasFleet();
+
   /**
    *
    *
@@ -775,6 +805,7 @@ public interface AzureClusterOrBuilder
    * @return The fleet.
    */
   com.google.cloud.gkemulticloud.v1.Fleet getFleet();
+
   /**
    *
    *
@@ -802,6 +833,7 @@ public interface AzureClusterOrBuilder
    * @return Whether the managedResources field is set.
    */
   boolean hasManagedResources();
+
   /**
    *
    *
@@ -816,6 +848,7 @@ public interface AzureClusterOrBuilder
    * @return The managedResources.
    */
   com.google.cloud.gkemulticloud.v1.AzureClusterResources getManagedResources();
+
   /**
    *
    *
@@ -843,6 +876,7 @@ public interface AzureClusterOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
+
   /**
    *
    *
@@ -857,6 +891,7 @@ public interface AzureClusterOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.gkemulticloud.v1.LoggingConfig getLoggingConfig();
+
   /**
    *
    *
@@ -882,6 +917,7 @@ public interface AzureClusterOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterError> getErrorsList();
+
   /**
    *
    *
@@ -894,6 +930,7 @@ public interface AzureClusterOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AzureClusterError getErrors(int index);
+
   /**
    *
    *
@@ -906,6 +943,7 @@ public interface AzureClusterOrBuilder
    * </code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -919,6 +957,7 @@ public interface AzureClusterOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AzureClusterErrorOrBuilder>
       getErrorsOrBuilderList();
+
   /**
    *
    *
@@ -946,6 +985,7 @@ public interface AzureClusterOrBuilder
    * @return Whether the monitoringConfig field is set.
    */
   boolean hasMonitoringConfig();
+
   /**
    *
    *
@@ -960,6 +1000,7 @@ public interface AzureClusterOrBuilder
    * @return The monitoringConfig.
    */
   com.google.cloud.gkemulticloud.v1.MonitoringConfig getMonitoringConfig();
+
   /**
    *
    *

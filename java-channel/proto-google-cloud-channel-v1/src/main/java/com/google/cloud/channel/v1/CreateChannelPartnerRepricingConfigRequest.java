@@ -35,6 +35,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest)
     CreateChannelPartnerRepricingConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateChannelPartnerRepricingConfigRequest.newBuilder() to construct.
   private CreateChannelPartnerRepricingConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
 
   public static final int CHANNEL_PARTNER_REPRICING_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.channel.v1.ChannelPartnerRepricingConfig channelPartnerRepricingConfig_;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
   public boolean hasChannelPartnerRepricingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
         ? com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.getDefaultInstance()
         : channelPartnerRepricingConfig_;
   }
+
   /**
    *
    *
@@ -363,6 +369,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -589,6 +596,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -615,6 +623,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -641,6 +650,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -666,6 +676,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +698,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +733,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
             com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.Builder,
             com.google.cloud.channel.v1.ChannelPartnerRepricingConfigOrBuilder>
         channelPartnerRepricingConfigBuilder_;
+
     /**
      *
      *
@@ -737,6 +750,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
     public boolean hasChannelPartnerRepricingConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -760,6 +774,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
         return channelPartnerRepricingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -785,6 +800,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +823,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +855,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +877,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +895,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
       onChanged();
       return getChannelPartnerRepricingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -897,6 +917,7 @@ public final class CreateChannelPartnerRepricingConfigRequest
             : channelPartnerRepricingConfig_;
       }
     }
+
     /**
      *
      *

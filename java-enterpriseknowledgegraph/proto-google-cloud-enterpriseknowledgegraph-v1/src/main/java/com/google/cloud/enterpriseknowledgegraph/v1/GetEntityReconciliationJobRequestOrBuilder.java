@@ -40,6 +40,7 @@ public interface GetEntityReconciliationJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

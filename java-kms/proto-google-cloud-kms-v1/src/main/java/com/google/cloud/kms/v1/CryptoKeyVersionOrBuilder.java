@@ -38,6 +38,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The enum numeric value on the wire for algorithm.
    */
   int getAlgorithmValue();
+
   /**
    *
    *
@@ -166,6 +170,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return Whether the attestation field is set.
    */
   boolean hasAttestation();
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The attestation.
    */
   com.google.cloud.kms.v1.KeyOperationAttestation getAttestation();
+
   /**
    *
    *
@@ -215,6 +221,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -258,6 +266,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return Whether the generateTime field is set.
    */
   boolean hasGenerateTime();
+
   /**
    *
    *
@@ -274,6 +283,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The generateTime.
    */
   com.google.protobuf.Timestamp getGenerateTime();
+
   /**
    *
    *
@@ -306,6 +316,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return Whether the destroyTime field is set.
    */
   boolean hasDestroyTime();
+
   /**
    *
    *
@@ -323,6 +334,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The destroyTime.
    */
   com.google.protobuf.Timestamp getDestroyTime();
+
   /**
    *
    *
@@ -356,6 +368,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return Whether the destroyEventTime field is set.
    */
   boolean hasDestroyEventTime();
+
   /**
    *
    *
@@ -373,6 +386,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The destroyEventTime.
    */
   com.google.protobuf.Timestamp getDestroyEventTime();
+
   /**
    *
    *
@@ -404,6 +418,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The importJob.
    */
   java.lang.String getImportJob();
+
   /**
    *
    *
@@ -435,6 +450,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return Whether the importTime field is set.
    */
   boolean hasImportTime();
+
   /**
    *
    *
@@ -450,6 +466,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The importTime.
    */
   com.google.protobuf.Timestamp getImportTime();
+
   /**
    *
    *
@@ -478,6 +495,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The importFailureReason.
    */
   java.lang.String getImportFailureReason();
+
   /**
    *
    *
@@ -508,6 +526,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The generationFailureReason.
    */
   java.lang.String getGenerationFailureReason();
+
   /**
    *
    *
@@ -541,6 +560,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The externalDestructionFailureReason.
    */
   java.lang.String getExternalDestructionFailureReason();
+
   /**
    *
    *
@@ -578,6 +598,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return Whether the externalProtectionLevelOptions field is set.
    */
   boolean hasExternalProtectionLevelOptions();
+
   /**
    *
    *
@@ -597,6 +618,7 @@ public interface CryptoKeyVersionOrBuilder
    * @return The externalProtectionLevelOptions.
    */
   com.google.cloud.kms.v1.ExternalProtectionLevelOptions getExternalProtectionLevelOptions();
+
   /**
    *
    *

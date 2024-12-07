@@ -33,6 +33,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertInstanceRequest)
     InsertInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertInstanceRequest.newBuilder() to construct.
   private InsertInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int INSTANCE_RESOURCE_FIELD_NUMBER = 215988344;
   private com.google.cloud.compute.v1.Instance instanceResource_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
   public boolean hasInstanceResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.compute.v1.Instance.getDefaultInstance()
         : instanceResource_;
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -221,6 +229,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceInstanceTemplate_ = "";
+
   /**
    *
    *
@@ -264,6 +274,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
   public boolean hasSourceInstanceTemplate() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -287,6 +298,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -315,6 +327,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceMachineImage_ = "";
+
   /**
    *
    *
@@ -330,6 +343,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
   public boolean hasSourceMachineImage() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -353,6 +367,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -381,6 +396,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -406,6 +422,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -662,6 +679,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -945,6 +963,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.Instance.Builder,
             com.google.cloud.compute.v1.InstanceOrBuilder>
         instanceResourceBuilder_;
+
     /**
      *
      *
@@ -961,6 +980,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     public boolean hasInstanceResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -983,6 +1003,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         return instanceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1007,6 +1028,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1051,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1081,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1103,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1120,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getInstanceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1115,6 +1141,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
             : instanceResource_;
       }
     }
+
     /**
      *
      *
@@ -1144,6 +1171,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1168,6 +1196,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1192,6 +1221,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1215,6 +1245,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1265,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1292,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1274,6 +1307,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1296,6 +1330,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1318,6 +1353,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1339,6 +1375,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1393,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1380,6 +1418,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object sourceInstanceTemplate_ = "";
+
     /**
      *
      *
@@ -1394,6 +1433,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     public boolean hasSourceInstanceTemplate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1416,6 +1456,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1438,6 +1479,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1459,6 +1501,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1476,6 +1519,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1500,6 +1544,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object sourceMachineImage_ = "";
+
     /**
      *
      *
@@ -1514,6 +1559,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     public boolean hasSourceMachineImage() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1536,6 +1582,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1558,6 +1605,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1579,6 +1627,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1596,6 +1645,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1620,6 +1670,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1644,6 +1695,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1668,6 +1720,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1691,6 +1744,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1710,6 +1764,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

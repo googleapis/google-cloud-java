@@ -37,6 +37,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return Whether the ingress field is set.
    */
   boolean hasIngress();
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public interface ClientConnectorServiceOrBuilder
    */
   com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
       getIngress();
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return Whether the egress field is set.
    */
   boolean hasEgress();
+
   /**
    *
    *
@@ -230,6 +239,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return The egress.
    */
   com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress getEgress();
+
   /**
    *
    *
@@ -258,6 +268,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

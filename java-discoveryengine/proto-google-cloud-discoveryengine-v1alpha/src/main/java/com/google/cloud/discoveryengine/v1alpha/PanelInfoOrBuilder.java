@@ -36,6 +36,7 @@ public interface PanelInfoOrBuilder
    * @return The panelId.
    */
   java.lang.String getPanelId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PanelInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface PanelInfoOrBuilder
    * @return Whether the panelPosition field is set.
    */
   boolean hasPanelPosition();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface PanelInfoOrBuilder
    * @return Whether the totalPanels field is set.
    */
   boolean hasTotalPanels();
+
   /**
    *
    *

@@ -32,6 +32,7 @@ public interface CertificateAuthorityOrBuilder
    * @return Whether the managedServerCa field is set.
    */
   boolean hasManagedServerCa();
+
   /**
    * <code>
    * .google.cloud.redis.cluster.v1beta1.CertificateAuthority.ManagedCertificateAuthority managed_server_ca = 1;
@@ -41,6 +42,7 @@ public interface CertificateAuthorityOrBuilder
    */
   com.google.cloud.redis.cluster.v1beta1.CertificateAuthority.ManagedCertificateAuthority
       getManagedServerCa();
+
   /**
    * <code>
    * .google.cloud.redis.cluster.v1beta1.CertificateAuthority.ManagedCertificateAuthority managed_server_ca = 1;
@@ -63,6 +65,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

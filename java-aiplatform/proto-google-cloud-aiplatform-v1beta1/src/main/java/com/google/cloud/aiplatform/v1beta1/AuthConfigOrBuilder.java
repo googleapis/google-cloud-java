@@ -36,6 +36,7 @@ public interface AuthConfigOrBuilder
    * @return Whether the apiKeyConfig field is set.
    */
   boolean hasApiKeyConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AuthConfigOrBuilder
    * @return The apiKeyConfig.
    */
   com.google.cloud.aiplatform.v1beta1.AuthConfig.ApiKeyConfig getApiKeyConfig();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface AuthConfigOrBuilder
    * @return Whether the httpBasicAuthConfig field is set.
    */
   boolean hasHttpBasicAuthConfig();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface AuthConfigOrBuilder
    * @return The httpBasicAuthConfig.
    */
   com.google.cloud.aiplatform.v1beta1.AuthConfig.HttpBasicAuthConfig getHttpBasicAuthConfig();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface AuthConfigOrBuilder
    * @return Whether the googleServiceAccountConfig field is set.
    */
   boolean hasGoogleServiceAccountConfig();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface AuthConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.AuthConfig.GoogleServiceAccountConfig
       getGoogleServiceAccountConfig();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface AuthConfigOrBuilder
    * @return Whether the oauthConfig field is set.
    */
   boolean hasOauthConfig();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface AuthConfigOrBuilder
    * @return The oauthConfig.
    */
   com.google.cloud.aiplatform.v1beta1.AuthConfig.OauthConfig getOauthConfig();
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface AuthConfigOrBuilder
    * @return Whether the oidcConfig field is set.
    */
   boolean hasOidcConfig();
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public interface AuthConfigOrBuilder
    * @return The oidcConfig.
    */
   com.google.cloud.aiplatform.v1beta1.AuthConfig.OidcConfig getOidcConfig();
+
   /**
    *
    *
@@ -226,6 +236,7 @@ public interface AuthConfigOrBuilder
    * @return The enum numeric value on the wire for authType.
    */
   int getAuthTypeValue();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface TopicOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -97,6 +98,7 @@ public interface TopicOrBuilder
    * <code>map&lt;string, string&gt; configs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getConfigsCount();
+
   /**
    *
    *
@@ -109,9 +111,11 @@ public interface TopicOrBuilder
    * <code>map&lt;string, string&gt; configs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsConfigs(java.lang.String key);
+
   /** Use {@link #getConfigsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getConfigs();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface TopicOrBuilder
    * <code>map&lt;string, string&gt; configs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getConfigsMap();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface TopicOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

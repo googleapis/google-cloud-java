@@ -34,6 +34,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.AnnotateImageRequest)
     AnnotateImageRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotateImageRequest.newBuilder() to construct.
   private AnnotateImageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int IMAGE_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p3beta1.Image image_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
   public boolean hasImage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.vision.v1p3beta1.Image getImage() {
     return image_ == null ? com.google.cloud.vision.v1p3beta1.Image.getDefaultInstance() : image_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p3beta1.Feature> features_;
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.vision.v1p3beta1.Feature> getFeaturesList() {
     return features_;
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       getFeaturesOrBuilderList() {
     return features_;
   }
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
   public int getFeaturesCount() {
     return features_.size();
   }
+
   /**
    *
    *
@@ -168,6 +176,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.vision.v1p3beta1.Feature getFeatures(int index) {
     return features_.get(index);
   }
+
   /**
    *
    *
@@ -184,6 +193,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
 
   public static final int IMAGE_CONTEXT_FIELD_NUMBER = 3;
   private com.google.cloud.vision.v1p3beta1.ImageContext imageContext_;
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
   public boolean hasImageContext() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -216,6 +227,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.vision.v1p3beta1.ImageContext.getDefaultInstance()
         : imageContext_;
   }
+
   /**
    *
    *
@@ -422,6 +434,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -708,6 +721,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.vision.v1p3beta1.Image.Builder,
             com.google.cloud.vision.v1p3beta1.ImageOrBuilder>
         imageBuilder_;
+
     /**
      *
      *
@@ -722,6 +736,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     public boolean hasImage() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -742,6 +757,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         return imageBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -764,6 +780,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +800,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +828,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +848,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +863,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getImageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -861,6 +882,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
             : image_;
       }
     }
+
     /**
      *
      *
@@ -919,6 +941,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         return featuresBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -935,6 +958,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         return featuresBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -951,6 +975,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         return featuresBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -973,6 +998,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1019,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1015,6 +1042,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1065,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1085,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1106,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1127,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1147,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1167,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1180,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.vision.v1p3beta1.Feature.Builder getFeaturesBuilder(int index) {
       return getFeaturesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1162,6 +1197,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         return featuresBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1179,6 +1215,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(features_);
       }
     }
+
     /**
      *
      *
@@ -1192,6 +1229,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       return getFeaturesFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1p3beta1.Feature.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1205,6 +1243,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       return getFeaturesFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1p3beta1.Feature.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1242,6 +1281,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.vision.v1p3beta1.ImageContext.Builder,
             com.google.cloud.vision.v1p3beta1.ImageContextOrBuilder>
         imageContextBuilder_;
+
     /**
      *
      *
@@ -1256,6 +1296,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     public boolean hasImageContext() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1276,6 +1317,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         return imageContextBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1298,6 +1340,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1361,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1346,6 +1390,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1410,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1379,6 +1425,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getImageContextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1397,6 +1444,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
             : imageContext_;
       }
     }
+
     /**
      *
      *

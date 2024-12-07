@@ -33,6 +33,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v2.GitHubConfig)
     GitHubConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GitHubConfig.newBuilder() to construct.
   private GitHubConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int AUTHORIZER_CREDENTIAL_FIELD_NUMBER = 1;
   private com.google.cloudbuild.v2.OAuthCredential authorizerCredential_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAuthorizerCredential() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloudbuild.v2.OAuthCredential.getDefaultInstance()
         : authorizerCredential_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APP_INSTALLATION_ID_FIELD_NUMBER = 2;
   private long appInstallationId_ = 0L;
+
   /**
    *
    *
@@ -308,6 +313,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -527,6 +533,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v2.OAuthCredential.Builder,
             com.google.cloudbuild.v2.OAuthCredentialOrBuilder>
         authorizerCredentialBuilder_;
+
     /**
      *
      *
@@ -543,6 +550,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAuthorizerCredential() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -565,6 +573,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
         return authorizerCredentialBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -589,6 +598,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -641,6 +652,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +674,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +691,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAuthorizerCredentialFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -698,6 +712,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
             : authorizerCredential_;
       }
     }
+
     /**
      *
      *
@@ -727,6 +742,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long appInstallationId_;
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
     public long getAppInstallationId() {
       return appInstallationId_;
     }
+
     /**
      *
      *
@@ -761,6 +778,7 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

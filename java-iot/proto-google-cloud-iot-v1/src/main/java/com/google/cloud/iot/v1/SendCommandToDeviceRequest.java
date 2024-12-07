@@ -33,6 +33,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.SendCommandToDeviceRequest)
     SendCommandToDeviceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SendCommandToDeviceRequest.newBuilder() to construct.
   private SendCommandToDeviceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
 
   public static final int BINARY_DATA_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString binaryData_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subfolder_ = "";
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -378,6 +384,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -590,6 +597,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -616,6 +624,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -642,6 +651,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -667,6 +677,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +699,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +728,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
     }
 
     private com.google.protobuf.ByteString binaryData_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -731,6 +744,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getBinaryData() {
       return binaryData_;
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object subfolder_ = "";
+
     /**
      *
      *
@@ -797,6 +813,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -823,6 +840,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +888,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

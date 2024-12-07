@@ -33,6 +33,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.deployment.Deployable)
     DeployableOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Deployable.newBuilder() to construct.
   private Deployable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourceUri_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getResourceUriList() {
     return resourceUri_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
   public int getResourceUriCount() {
     return resourceUri_.size();
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getResourceUri(int index) {
     return resourceUri_.get(index);
   }
+
   /**
    *
    *
@@ -292,6 +297,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -490,6 +496,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -505,6 +512,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
       resourceUri_.makeImmutable();
       return resourceUri_;
     }
+
     /**
      *
      *
@@ -519,6 +527,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
     public int getResourceUriCount() {
       return resourceUri_.size();
     }
+
     /**
      *
      *
@@ -534,6 +543,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getResourceUri(int index) {
       return resourceUri_.get(index);
     }
+
     /**
      *
      *
@@ -549,6 +559,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getResourceUriBytes(int index) {
       return resourceUri_.getByteString(index);
     }
+
     /**
      *
      *
@@ -572,6 +583,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -594,6 +606,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -613,6 +626,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +645,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

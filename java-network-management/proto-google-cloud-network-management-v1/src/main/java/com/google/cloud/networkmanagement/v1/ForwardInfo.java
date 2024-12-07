@@ -33,6 +33,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.ForwardInfo)
     ForwardInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ForwardInfo.newBuilder() to construct.
   private ForwardInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -190,6 +191,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>TARGET_UNSPECIFIED = 0;</code>
      */
     public static final int TARGET_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -200,6 +202,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PEERING_VPC = 1;</code>
      */
     public static final int PEERING_VPC_VALUE = 1;
+
     /**
      *
      *
@@ -210,6 +213,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>VPN_GATEWAY = 2;</code>
      */
     public static final int VPN_GATEWAY_VALUE = 2;
+
     /**
      *
      *
@@ -220,6 +224,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERCONNECT = 3;</code>
      */
     public static final int INTERCONNECT_VALUE = 3;
+
     /**
      *
      *
@@ -230,6 +235,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>GKE_MASTER = 4 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int GKE_MASTER_VALUE = 4;
+
     /**
      *
      *
@@ -240,6 +246,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPORTED_CUSTOM_ROUTE_NEXT_HOP = 5;</code>
      */
     public static final int IMPORTED_CUSTOM_ROUTE_NEXT_HOP_VALUE = 5;
+
     /**
      *
      *
@@ -250,6 +257,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_SQL_INSTANCE = 6 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int CLOUD_SQL_INSTANCE_VALUE = 6;
+
     /**
      *
      *
@@ -260,6 +268,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>ANOTHER_PROJECT = 7;</code>
      */
     public static final int ANOTHER_PROJECT_VALUE = 7;
+
     /**
      *
      *
@@ -270,6 +279,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NCC_HUB = 8;</code>
      */
     public static final int NCC_HUB_VALUE = 8;
+
     /**
      *
      *
@@ -382,6 +392,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_FIELD_NUMBER = 1;
   private int target_ = 0;
+
   /**
    *
    *
@@ -397,6 +408,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
   public int getTargetValue() {
     return target_;
   }
+
   /**
    *
    *
@@ -421,6 +433,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceUri_ = "";
+
   /**
    *
    *
@@ -444,6 +457,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -472,6 +486,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
+
   /**
    *
    *
@@ -495,6 +510,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -700,6 +716,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -912,6 +929,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int target_ = 0;
+
     /**
      *
      *
@@ -927,6 +945,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
     public int getTargetValue() {
       return target_;
     }
+
     /**
      *
      *
@@ -945,6 +964,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +984,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1.ForwardInfo.Target.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -985,6 +1006,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1026,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resourceUri_ = "";
+
     /**
      *
      *
@@ -1026,6 +1049,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1048,6 +1072,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1094,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1112,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1137,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -1132,6 +1160,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1154,6 +1183,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1175,6 +1205,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1223,7 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

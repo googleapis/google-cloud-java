@@ -36,6 +36,7 @@ public interface AttachedServerConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AttachedServerConfigOrBuilder
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AttachedPlatformVersionInfo>
       getValidVersionsList();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface AttachedServerConfigOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AttachedPlatformVersionInfo getValidVersions(int index);
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface AttachedServerConfigOrBuilder
    * </code>
    */
   int getValidVersionsCount();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface AttachedServerConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AttachedPlatformVersionInfoOrBuilder>
       getValidVersionsOrBuilderList();
+
   /**
    *
    *

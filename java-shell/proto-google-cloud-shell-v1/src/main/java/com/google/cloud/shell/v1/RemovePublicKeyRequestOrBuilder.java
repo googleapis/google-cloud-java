@@ -37,6 +37,7 @@ public interface RemovePublicKeyRequestOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RemovePublicKeyRequestOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *

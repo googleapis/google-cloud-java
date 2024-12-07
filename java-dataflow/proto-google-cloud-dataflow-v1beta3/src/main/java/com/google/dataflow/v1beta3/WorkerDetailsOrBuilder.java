@@ -36,6 +36,7 @@ public interface WorkerDetailsOrBuilder
    * @return The workerName.
    */
   java.lang.String getWorkerName();
+
   /**
    *
    *
@@ -59,6 +60,7 @@ public interface WorkerDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.WorkItemDetails work_items = 2;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.WorkItemDetails> getWorkItemsList();
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface WorkerDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.WorkItemDetails work_items = 2;</code>
    */
   com.google.dataflow.v1beta3.WorkItemDetails getWorkItems(int index);
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface WorkerDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.WorkItemDetails work_items = 2;</code>
    */
   int getWorkItemsCount();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface WorkerDetailsOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.WorkItemDetailsOrBuilder>
       getWorkItemsOrBuilderList();
+
   /**
    *
    *

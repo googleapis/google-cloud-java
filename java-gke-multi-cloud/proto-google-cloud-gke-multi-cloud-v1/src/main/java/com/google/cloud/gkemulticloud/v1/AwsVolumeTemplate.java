@@ -33,6 +33,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AwsVolumeTemplate)
     AwsVolumeTemplateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AwsVolumeTemplate.newBuilder() to construct.
   private AwsVolumeTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * <code>VOLUME_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int VOLUME_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * <code>GP2 = 1;</code>
      */
     public static final int GP2_VALUE = 1;
+
     /**
      *
      *
@@ -228,6 +231,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
 
   public static final int SIZE_GIB_FIELD_NUMBER = 1;
   private int sizeGib_ = 0;
+
   /**
    *
    *
@@ -249,6 +253,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
 
   public static final int VOLUME_TYPE_FIELD_NUMBER = 2;
   private int volumeType_ = 0;
+
   /**
    *
    *
@@ -268,6 +273,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
   public int getVolumeTypeValue() {
     return volumeType_;
   }
+
   /**
    *
    *
@@ -294,6 +300,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
 
   public static final int IOPS_FIELD_NUMBER = 3;
   private int iops_ = 0;
+
   /**
    *
    *
@@ -313,6 +320,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
 
   public static final int THROUGHPUT_FIELD_NUMBER = 5;
   private int throughput_ = 0;
+
   /**
    *
    *
@@ -336,6 +344,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyArn_ = "";
+
   /**
    *
    *
@@ -363,6 +372,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -590,6 +600,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -826,6 +837,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int sizeGib_;
+
     /**
      *
      *
@@ -844,6 +856,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     public int getSizeGib() {
       return sizeGib_;
     }
+
     /**
      *
      *
@@ -866,6 +879,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +902,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private int volumeType_ = 0;
+
     /**
      *
      *
@@ -907,6 +922,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     public int getVolumeTypeValue() {
       return volumeType_;
     }
+
     /**
      *
      *
@@ -929,6 +945,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +969,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.VolumeType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -978,6 +996,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1001,6 +1020,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private int iops_;
+
     /**
      *
      *
@@ -1017,6 +1037,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     public int getIops() {
       return iops_;
     }
+
     /**
      *
      *
@@ -1037,6 +1058,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1079,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private int throughput_;
+
     /**
      *
      *
@@ -1075,6 +1098,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     public int getThroughput() {
       return throughput_;
     }
+
     /**
      *
      *
@@ -1097,6 +1121,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1144,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object kmsKeyArn_ = "";
+
     /**
      *
      *
@@ -1145,6 +1171,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1171,6 +1198,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1196,6 +1224,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1246,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

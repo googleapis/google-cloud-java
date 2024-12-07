@@ -34,6 +34,7 @@ public interface ResourcePoliciesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.ResourcePolicy resource_policies = 22220385;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ResourcePolicy> getResourcePoliciesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ResourcePoliciesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.ResourcePolicy resource_policies = 22220385;</code>
    */
   com.google.cloud.compute.v1.ResourcePolicy getResourcePolicies(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ResourcePoliciesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.ResourcePolicy resource_policies = 22220385;</code>
    */
   int getResourcePoliciesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ResourcePoliciesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ResourcePolicyOrBuilder>
       getResourcePoliciesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ResourcePoliciesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface ResourcePoliciesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

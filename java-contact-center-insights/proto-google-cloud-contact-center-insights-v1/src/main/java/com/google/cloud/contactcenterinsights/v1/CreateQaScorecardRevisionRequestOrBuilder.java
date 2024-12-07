@@ -38,6 +38,7 @@ public interface CreateQaScorecardRevisionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateQaScorecardRevisionRequestOrBuilder
    * @return Whether the qaScorecardRevision field is set.
    */
   boolean hasQaScorecardRevision();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateQaScorecardRevisionRequestOrBuilder
    * @return The qaScorecardRevision.
    */
   com.google.cloud.contactcenterinsights.v1.QaScorecardRevision getQaScorecardRevision();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateQaScorecardRevisionRequestOrBuilder
    * @return The qaScorecardRevisionId.
    */
   java.lang.String getQaScorecardRevisionId();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.ListFirewallPoliciesResponse)
     ListFirewallPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListFirewallPoliciesResponse.newBuilder() to construct.
   private ListFirewallPoliciesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.recaptchaenterprise.v1.FirewallPolicy> firewallPolicies_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       getFirewallPoliciesList() {
     return firewallPolicies_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       getFirewallPoliciesOrBuilderList() {
     return firewallPolicies_;
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
   public int getFirewallPoliciesCount() {
     return firewallPolicies_.size();
   }
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
   public com.google.recaptchaenterprise.v1.FirewallPolicy getFirewallPolicies(int index) {
     return firewallPolicies_.get(index);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -366,6 +374,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -650,6 +659,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
         return firewallPoliciesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -667,6 +677,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
         return firewallPoliciesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -684,6 +695,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
         return firewallPoliciesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -708,6 +720,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +742,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +791,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +813,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +835,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +857,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +878,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +899,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +914,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
         int index) {
       return getFirewallPoliciesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -911,6 +933,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
         return firewallPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -929,6 +952,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(firewallPolicies_);
       }
     }
+
     /**
      *
      *
@@ -943,6 +967,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       return getFirewallPoliciesFieldBuilder()
           .addBuilder(com.google.recaptchaenterprise.v1.FirewallPolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -958,6 +983,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       return getFirewallPoliciesFieldBuilder()
           .addBuilder(index, com.google.recaptchaenterprise.v1.FirewallPolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -994,6 +1020,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1017,6 +1044,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1068,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1062,6 +1091,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1110,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

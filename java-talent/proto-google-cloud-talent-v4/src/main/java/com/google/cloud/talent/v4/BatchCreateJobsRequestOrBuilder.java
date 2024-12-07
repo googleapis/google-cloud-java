@@ -41,6 +41,7 @@ public interface BatchCreateJobsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface BatchCreateJobsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.talent.v4.Job> getJobsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface BatchCreateJobsRequestOrBuilder
    * </code>
    */
   com.google.cloud.talent.v4.Job getJobs(int index);
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface BatchCreateJobsRequestOrBuilder
    * </code>
    */
   int getJobsCount();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface BatchCreateJobsRequestOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.talent.v4.JobOrBuilder> getJobsOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse)
     ListGroupStatsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListGroupStatsResponse.newBuilder() to construct.
   private ListGroupStatsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>
       errorGroupStats_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       getErrorGroupStatsList() {
     return errorGroupStats_;
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       getErrorGroupStatsOrBuilderList() {
     return errorGroupStats_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
   public int getErrorGroupStatsCount() {
     return errorGroupStats_.size();
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       int index) {
     return errorGroupStats_.get(index);
   }
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
 
   public static final int TIME_RANGE_BEGIN_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp timeRangeBegin_;
+
   /**
    *
    *
@@ -226,6 +235,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
   public boolean hasTimeRangeBegin() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -246,6 +256,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : timeRangeBegin_;
   }
+
   /**
    *
    *
@@ -451,6 +462,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -772,6 +784,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
         return errorGroupStatsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -790,6 +803,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
         return errorGroupStatsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -809,6 +823,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
         return errorGroupStatsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -834,6 +849,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +873,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +899,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +925,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +948,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +972,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +997,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1019,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1041,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1057,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
         getErrorGroupStatsBuilder(int index) {
       return getErrorGroupStatsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1052,6 +1077,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
         return errorGroupStatsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1072,6 +1098,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(errorGroupStats_);
       }
     }
+
     /**
      *
      *
@@ -1089,6 +1116,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
           .addBuilder(
               com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1107,6 +1135,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
               index,
               com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1144,6 +1173,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1168,6 +1198,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1192,6 +1223,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1215,6 +1247,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1267,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1265,6 +1299,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timeRangeBeginBuilder_;
+
     /**
      *
      *
@@ -1282,6 +1317,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
     public boolean hasTimeRangeBegin() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1305,6 +1341,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
         return timeRangeBeginBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1330,6 +1367,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1352,6 +1390,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1382,6 +1421,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1404,6 +1444,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1421,6 +1462,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getTimeRangeBeginFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1442,6 +1484,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
             : timeRangeBegin_;
       }
     }
+
     /**
      *
      *

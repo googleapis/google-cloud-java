@@ -36,6 +36,7 @@ public interface BuildArtifactOrBuilder
    * @return The image.
    */
   java.lang.String getImage();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface BuildArtifactOrBuilder
    * @return The tag.
    */
   java.lang.String getTag();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface PreviewOrBuilder
    * @return Whether the terraformBlueprint field is set.
    */
   boolean hasTerraformBlueprint();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PreviewOrBuilder
    * @return The terraformBlueprint.
    */
   com.google.cloud.config.v1.TerraformBlueprint getTerraformBlueprint();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface PreviewOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface PreviewOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface PreviewOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface PreviewOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -146,9 +152,11 @@ public interface PreviewOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -159,6 +167,7 @@ public interface PreviewOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -173,6 +182,7 @@ public interface PreviewOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -198,6 +208,7 @@ public interface PreviewOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -230,6 +241,7 @@ public interface PreviewOrBuilder
    * @return The deployment.
    */
   java.lang.String getDeployment();
+
   /**
    *
    *
@@ -262,6 +274,7 @@ public interface PreviewOrBuilder
    * @return The enum numeric value on the wire for previewMode.
    */
   int getPreviewModeValue();
+
   /**
    *
    *
@@ -293,6 +306,7 @@ public interface PreviewOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -332,6 +346,7 @@ public interface PreviewOrBuilder
    * @return Whether the artifactsGcsBucket field is set.
    */
   boolean hasArtifactsGcsBucket();
+
   /**
    *
    *
@@ -354,6 +369,7 @@ public interface PreviewOrBuilder
    * @return The artifactsGcsBucket.
    */
   java.lang.String getArtifactsGcsBucket();
+
   /**
    *
    *
@@ -396,6 +412,7 @@ public interface PreviewOrBuilder
    * @return Whether the workerPool field is set.
    */
   boolean hasWorkerPool();
+
   /**
    *
    *
@@ -415,6 +432,7 @@ public interface PreviewOrBuilder
    * @return The workerPool.
    */
   java.lang.String getWorkerPool();
+
   /**
    *
    *
@@ -449,6 +467,7 @@ public interface PreviewOrBuilder
    * @return The enum numeric value on the wire for errorCode.
    */
   int getErrorCodeValue();
+
   /**
    *
    *
@@ -476,6 +495,7 @@ public interface PreviewOrBuilder
    * @return Whether the errorStatus field is set.
    */
   boolean hasErrorStatus();
+
   /**
    *
    *
@@ -488,6 +508,7 @@ public interface PreviewOrBuilder
    * @return The errorStatus.
    */
   com.google.rpc.Status getErrorStatus();
+
   /**
    *
    *
@@ -511,6 +532,7 @@ public interface PreviewOrBuilder
    * @return The build.
    */
   java.lang.String getBuild();
+
   /**
    *
    *
@@ -537,6 +559,7 @@ public interface PreviewOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.config.v1.TerraformError> getTfErrorsList();
+
   /**
    *
    *
@@ -550,6 +573,7 @@ public interface PreviewOrBuilder
    * </code>
    */
   com.google.cloud.config.v1.TerraformError getTfErrors(int index);
+
   /**
    *
    *
@@ -563,6 +587,7 @@ public interface PreviewOrBuilder
    * </code>
    */
   int getTfErrorsCount();
+
   /**
    *
    *
@@ -577,6 +602,7 @@ public interface PreviewOrBuilder
    */
   java.util.List<? extends com.google.cloud.config.v1.TerraformErrorOrBuilder>
       getTfErrorsOrBuilderList();
+
   /**
    *
    *
@@ -605,6 +631,7 @@ public interface PreviewOrBuilder
    * @return The errorLogs.
    */
   java.lang.String getErrorLogs();
+
   /**
    *
    *
@@ -634,6 +661,7 @@ public interface PreviewOrBuilder
    * @return Whether the previewArtifacts field is set.
    */
   boolean hasPreviewArtifacts();
+
   /**
    *
    *
@@ -648,6 +676,7 @@ public interface PreviewOrBuilder
    * @return The previewArtifacts.
    */
   com.google.cloud.config.v1.PreviewArtifacts getPreviewArtifacts();
+
   /**
    *
    *
@@ -673,6 +702,7 @@ public interface PreviewOrBuilder
    * @return The logs.
    */
   java.lang.String getLogs();
+
   /**
    *
    *
@@ -699,6 +729,7 @@ public interface PreviewOrBuilder
    * @return The tfVersion.
    */
   java.lang.String getTfVersion();
+
   /**
    *
    *
@@ -727,6 +758,7 @@ public interface PreviewOrBuilder
    * @return Whether the tfVersionConstraint field is set.
    */
   boolean hasTfVersionConstraint();
+
   /**
    *
    *
@@ -741,6 +773,7 @@ public interface PreviewOrBuilder
    * @return The tfVersionConstraint.
    */
   java.lang.String getTfVersionConstraint();
+
   /**
    *
    *

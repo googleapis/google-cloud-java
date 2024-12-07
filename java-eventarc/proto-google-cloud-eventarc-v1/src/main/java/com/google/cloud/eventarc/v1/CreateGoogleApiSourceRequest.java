@@ -33,6 +33,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.CreateGoogleApiSourceRequest)
     CreateGoogleApiSourceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateGoogleApiSourceRequest.newBuilder() to construct.
   private CreateGoogleApiSourceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
 
   public static final int GOOGLE_API_SOURCE_FIELD_NUMBER = 2;
   private com.google.cloud.eventarc.v1.GoogleApiSource googleApiSource_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
   public boolean hasGoogleApiSource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
         ? com.google.cloud.eventarc.v1.GoogleApiSource.getDefaultInstance()
         : googleApiSource_;
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object googleApiSourceId_ = "";
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -440,6 +449,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -682,6 +692,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -706,6 +717,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -730,6 +742,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -753,6 +766,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +786,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +818,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
             com.google.cloud.eventarc.v1.GoogleApiSource.Builder,
             com.google.cloud.eventarc.v1.GoogleApiSourceOrBuilder>
         googleApiSourceBuilder_;
+
     /**
      *
      *
@@ -819,6 +835,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
     public boolean hasGoogleApiSource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -841,6 +858,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
         return googleApiSourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -865,6 +883,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +937,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +959,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +976,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
       onChanged();
       return getGoogleApiSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -974,6 +997,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
             : googleApiSource_;
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1027,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object googleApiSourceId_ = "";
+
     /**
      *
      *
@@ -1026,6 +1051,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1075,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1071,6 +1098,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1117,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1114,6 +1143,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1130,6 +1160,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1150,6 +1181,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

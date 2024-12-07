@@ -39,6 +39,7 @@ public interface ListViolationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface ListViolationsRequestOrBuilder
    * @return Whether the interval field is set.
    */
   boolean hasInterval();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface ListViolationsRequestOrBuilder
    * @return The interval.
    */
   com.google.cloud.assuredworkloads.v1.TimeWindow getInterval();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface ListViolationsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface ListViolationsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

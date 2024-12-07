@@ -62,6 +62,7 @@ public interface CitationOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface CitationOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface CitationOrBuilder
    * @return The license.
    */
   java.lang.String getLicense();
+
   /**
    *
    *
@@ -138,6 +141,7 @@ public interface CitationOrBuilder
    * @return Whether the publicationDate field is set.
    */
   boolean hasPublicationDate();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface CitationOrBuilder
    * @return The publicationDate.
    */
   com.google.type.Date getPublicationDate();
+
   /**
    *
    *

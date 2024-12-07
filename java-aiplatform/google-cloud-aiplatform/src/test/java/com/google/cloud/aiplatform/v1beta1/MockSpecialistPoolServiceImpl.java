@@ -73,7 +73,8 @@ public class MockSpecialistPoolServiceImpl extends SpecialistPoolServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateSpecialistPool, expected %s or %s",
+                  "Unrecognized response type %s for method CreateSpecialistPool, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +138,8 @@ public class MockSpecialistPoolServiceImpl extends SpecialistPoolServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteSpecialistPool, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteSpecialistPool, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -158,7 +160,8 @@ public class MockSpecialistPoolServiceImpl extends SpecialistPoolServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateSpecialistPool, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateSpecialistPool, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

@@ -37,6 +37,7 @@ public interface SummarySuggestionOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.SummarySuggestion.SummarySection>
       getSummarySectionsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SummarySuggestionOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.SummarySuggestion.SummarySection getSummarySections(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface SummarySuggestionOrBuilder
    * </code>
    */
   int getSummarySectionsCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface SummarySuggestionOrBuilder
   java.util.List<
           ? extends com.google.cloud.dialogflow.v2beta1.SummarySuggestion.SummarySectionOrBuilder>
       getSummarySectionsOrBuilderList();
+
   /**
    *
    *

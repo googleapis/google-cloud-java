@@ -36,6 +36,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the checkIntervalSec field is set.
    */
   boolean hasCheckIntervalSec();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface HealthCheckOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface HealthCheckOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -129,12 +134,14 @@ public interface HealthCheckOrBuilder
    * @return Whether the grpcHealthCheck field is set.
    */
   boolean hasGrpcHealthCheck();
+
   /**
    * <code>optional .google.cloud.compute.v1.GRPCHealthCheck grpc_health_check = 85529574;</code>
    *
    * @return The grpcHealthCheck.
    */
   com.google.cloud.compute.v1.GRPCHealthCheck getGrpcHealthCheck();
+
   /**
    * <code>optional .google.cloud.compute.v1.GRPCHealthCheck grpc_health_check = 85529574;</code>
    */
@@ -152,6 +159,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the healthyThreshold field is set.
    */
   boolean hasHealthyThreshold();
+
   /**
    *
    *
@@ -171,12 +179,14 @@ public interface HealthCheckOrBuilder
    * @return Whether the http2HealthCheck field is set.
    */
   boolean hasHttp2HealthCheck();
+
   /**
    * <code>optional .google.cloud.compute.v1.HTTP2HealthCheck http2_health_check = 11360986;</code>
    *
    * @return The http2HealthCheck.
    */
   com.google.cloud.compute.v1.HTTP2HealthCheck getHttp2HealthCheck();
+
   /**
    * <code>optional .google.cloud.compute.v1.HTTP2HealthCheck http2_health_check = 11360986;</code>
    */
@@ -188,12 +198,14 @@ public interface HealthCheckOrBuilder
    * @return Whether the httpHealthCheck field is set.
    */
   boolean hasHttpHealthCheck();
+
   /**
    * <code>optional .google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
    *
    * @return The httpHealthCheck.
    */
   com.google.cloud.compute.v1.HTTPHealthCheck getHttpHealthCheck();
+
   /**
    * <code>optional .google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
    */
@@ -205,12 +217,14 @@ public interface HealthCheckOrBuilder
    * @return Whether the httpsHealthCheck field is set.
    */
   boolean hasHttpsHealthCheck();
+
   /**
    * <code>optional .google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
    *
    * @return The httpsHealthCheck.
    */
   com.google.cloud.compute.v1.HTTPSHealthCheck getHttpsHealthCheck();
+
   /**
    * <code>optional .google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
    */
@@ -228,6 +242,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -253,6 +268,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -265,6 +281,7 @@ public interface HealthCheckOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -290,6 +307,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the logConfig field is set.
    */
   boolean hasLogConfig();
+
   /**
    *
    *
@@ -302,6 +320,7 @@ public interface HealthCheckOrBuilder
    * @return The logConfig.
    */
   com.google.cloud.compute.v1.HealthCheckLogConfig getLogConfig();
+
   /**
    *
    *
@@ -325,6 +344,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -337,6 +357,7 @@ public interface HealthCheckOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -362,6 +383,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -374,6 +396,7 @@ public interface HealthCheckOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -399,6 +422,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -411,6 +435,7 @@ public interface HealthCheckOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -436,6 +461,7 @@ public interface HealthCheckOrBuilder
    * @return A list containing the sourceRegions.
    */
   java.util.List<java.lang.String> getSourceRegionsList();
+
   /**
    *
    *
@@ -448,6 +474,7 @@ public interface HealthCheckOrBuilder
    * @return The count of sourceRegions.
    */
   int getSourceRegionsCount();
+
   /**
    *
    *
@@ -461,6 +488,7 @@ public interface HealthCheckOrBuilder
    * @return The sourceRegions at the given index.
    */
   java.lang.String getSourceRegions(int index);
+
   /**
    *
    *
@@ -481,12 +509,14 @@ public interface HealthCheckOrBuilder
    * @return Whether the sslHealthCheck field is set.
    */
   boolean hasSslHealthCheck();
+
   /**
    * <code>optional .google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
    *
    * @return The sslHealthCheck.
    */
   com.google.cloud.compute.v1.SSLHealthCheck getSslHealthCheck();
+
   /** <code>optional .google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code> */
   com.google.cloud.compute.v1.SSLHealthCheckOrBuilder getSslHealthCheckOrBuilder();
 
@@ -496,12 +526,14 @@ public interface HealthCheckOrBuilder
    * @return Whether the tcpHealthCheck field is set.
    */
   boolean hasTcpHealthCheck();
+
   /**
    * <code>optional .google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
    *
    * @return The tcpHealthCheck.
    */
   com.google.cloud.compute.v1.TCPHealthCheck getTcpHealthCheck();
+
   /** <code>optional .google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code> */
   com.google.cloud.compute.v1.TCPHealthCheckOrBuilder getTcpHealthCheckOrBuilder();
 
@@ -517,6 +549,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the timeoutSec field is set.
    */
   boolean hasTimeoutSec();
+
   /**
    *
    *
@@ -543,6 +576,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -556,6 +590,7 @@ public interface HealthCheckOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -582,6 +617,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the unhealthyThreshold field is set.
    */
   boolean hasUnhealthyThreshold();
+
   /**
    *
    *

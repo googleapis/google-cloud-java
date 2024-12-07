@@ -548,20 +548,23 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
   @Override
   public UnaryCallable<ListViolationsRequest, ListViolationsResponse> listViolationsCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: listViolationsCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: listViolationsCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override
   public UnaryCallable<GetViolationRequest, Violation> getViolationCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: getViolationCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: getViolationCallable(). REST transport is not implemented for this method"
+            + " yet.");
   }
 
   @Override
   public UnaryCallable<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
       acknowledgeViolationCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: acknowledgeViolationCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: acknowledgeViolationCallable(). REST transport is not implemented for"
+            + " this method yet.");
   }
 
   @Override

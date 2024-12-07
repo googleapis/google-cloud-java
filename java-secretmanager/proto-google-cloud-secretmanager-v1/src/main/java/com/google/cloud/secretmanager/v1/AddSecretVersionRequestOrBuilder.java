@@ -41,6 +41,7 @@ public interface AddSecretVersionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface AddSecretVersionRequestOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface AddSecretVersionRequestOrBuilder
    * @return The payload.
    */
   com.google.cloud.secretmanager.v1.SecretPayload getPayload();
+
   /**
    *
    *

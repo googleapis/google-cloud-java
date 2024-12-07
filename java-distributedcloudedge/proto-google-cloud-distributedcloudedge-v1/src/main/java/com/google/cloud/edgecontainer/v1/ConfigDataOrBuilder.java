@@ -36,6 +36,7 @@ public interface ConfigDataOrBuilder
    * @return A list containing the availableExternalLbPoolsIpv4.
    */
   java.util.List<java.lang.String> getAvailableExternalLbPoolsIpv4List();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ConfigDataOrBuilder
    * @return The count of availableExternalLbPoolsIpv4.
    */
   int getAvailableExternalLbPoolsIpv4Count();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ConfigDataOrBuilder
    * @return The availableExternalLbPoolsIpv4 at the given index.
    */
   java.lang.String getAvailableExternalLbPoolsIpv4(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface ConfigDataOrBuilder
    * @return A list containing the availableExternalLbPoolsIpv6.
    */
   java.util.List<java.lang.String> getAvailableExternalLbPoolsIpv6List();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface ConfigDataOrBuilder
    * @return The count of availableExternalLbPoolsIpv6.
    */
   int getAvailableExternalLbPoolsIpv6Count();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface ConfigDataOrBuilder
    * @return The availableExternalLbPoolsIpv6 at the given index.
    */
   java.lang.String getAvailableExternalLbPoolsIpv6(int index);
+
   /**
    *
    *

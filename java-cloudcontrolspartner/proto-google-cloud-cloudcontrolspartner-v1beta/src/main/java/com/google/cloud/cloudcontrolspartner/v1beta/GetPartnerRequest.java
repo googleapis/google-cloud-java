@@ -33,6 +33,7 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.cloudcontrolspartner.v1beta.GetPartnerRequest)
     GetPartnerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetPartnerRequest.newBuilder() to construct.
   private GetPartnerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -280,6 +283,7 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -467,6 +471,7 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -492,6 +497,7 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -517,6 +523,7 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -541,6 +548,7 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -561,6 +569,7 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest)
     GetTransferRunRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetTransferRunRequest.newBuilder() to construct.
   private GetTransferRunRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -284,6 +287,7 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -472,6 +476,7 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -499,6 +504,7 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -526,6 +532,7 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -552,6 +559,7 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -574,6 +582,7 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

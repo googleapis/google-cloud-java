@@ -36,6 +36,7 @@ public interface UpdateApplicationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface UpdateApplicationRequestOrBuilder
    * @return Whether the application field is set.
    */
   boolean hasApplication();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface UpdateApplicationRequestOrBuilder
    * @return The application.
    */
   com.google.appengine.v1.Application getApplication();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface UpdateApplicationRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface UpdateApplicationRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

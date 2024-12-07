@@ -36,6 +36,7 @@ public interface UserSegmentOrBuilder
    * @return Whether the userInclusionCriteria field is set.
    */
   boolean hasUserInclusionCriteria();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UserSegmentOrBuilder
    * @return The userInclusionCriteria.
    */
   com.google.analytics.data.v1alpha.UserSegmentCriteria getUserInclusionCriteria();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface UserSegmentOrBuilder
    * @return Whether the exclusion field is set.
    */
   boolean hasExclusion();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface UserSegmentOrBuilder
    * @return The exclusion.
    */
   com.google.analytics.data.v1alpha.UserSegmentExclusion getExclusion();
+
   /**
    *
    *

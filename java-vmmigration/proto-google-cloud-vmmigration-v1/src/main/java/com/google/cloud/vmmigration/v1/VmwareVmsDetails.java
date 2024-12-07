@@ -33,6 +33,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.VmwareVmsDetails)
     VmwareVmsDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VmwareVmsDetails.newBuilder() to construct.
   private VmwareVmsDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.VmwareVmDetails> details_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.vmmigration.v1.VmwareVmDetails> getDetailsList() {
     return details_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
       getDetailsOrBuilderList() {
     return details_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
   public int getDetailsCount() {
     return details_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.vmmigration.v1.VmwareVmDetails getDetails(int index) {
     return details_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -558,6 +565,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
         return detailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -574,6 +582,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
         return detailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -590,6 +599,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
         return detailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -612,6 +622,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +643,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +689,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +710,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +731,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +752,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +772,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +792,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +805,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.vmmigration.v1.VmwareVmDetails.Builder getDetailsBuilder(int index) {
       return getDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -802,6 +822,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
         return detailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -819,6 +840,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(details_);
       }
     }
+
     /**
      *
      *
@@ -832,6 +854,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
       return getDetailsFieldBuilder()
           .addBuilder(com.google.cloud.vmmigration.v1.VmwareVmDetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -845,6 +868,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
       return getDetailsFieldBuilder()
           .addBuilder(index, com.google.cloud.vmmigration.v1.VmwareVmDetails.getDefaultInstance());
     }
+
     /**
      *
      *

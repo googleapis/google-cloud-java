@@ -34,6 +34,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ListTransferableOffersRequest)
     ListTransferableOffersRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListTransferableOffersRequest.newBuilder() to construct.
   private ListTransferableOffersRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,6 +86,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     private TransferredCustomerIdentityCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,6 +120,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
   }
 
   public static final int CLOUD_IDENTITY_ID_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
   public boolean hasCloudIdentityId() {
     return transferredCustomerIdentityCase_ == 4;
   }
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
   }
 
   public static final int CUSTOMER_NAME_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
   public boolean hasCustomerName() {
     return transferredCustomerIdentityCase_ == 5;
   }
+
   /**
    *
    *
@@ -231,6 +238,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -264,6 +272,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -287,6 +296,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -313,6 +323,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -335,6 +346,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -363,6 +375,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -396,6 +409,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sku_ = "";
+
   /**
    *
    *
@@ -419,6 +433,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -447,6 +462,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -472,6 +488,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -502,6 +519,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object billingAccount_ = "";
+
   /**
    *
    *
@@ -529,6 +547,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -800,6 +819,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1129,6 +1149,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     public boolean hasCloudIdentityId() {
       return transferredCustomerIdentityCase_ == 4;
     }
+
     /**
      *
      *
@@ -1157,6 +1178,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1185,6 +1207,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1206,6 +1229,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1225,6 +1249,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1289,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     public boolean hasCustomerName() {
       return transferredCustomerIdentityCase_ == 5;
     }
+
     /**
      *
      *
@@ -1293,6 +1319,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1322,6 +1349,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1344,6 +1372,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1364,6 +1393,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1389,6 +1419,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1411,6 +1442,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1433,6 +1465,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1454,6 +1487,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1471,6 +1505,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1495,6 +1530,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1512,6 +1548,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1533,6 +1570,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1554,6 +1592,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1581,6 +1620,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1608,6 +1648,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1634,6 +1675,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1656,6 +1698,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1685,6 +1728,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object sku_ = "";
+
     /**
      *
      *
@@ -1707,6 +1751,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1729,6 +1774,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1750,6 +1796,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1767,6 +1814,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1791,6 +1839,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -1815,6 +1864,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1839,6 +1889,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1862,6 +1913,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1881,6 +1933,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1907,6 +1960,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object billingAccount_ = "";
+
     /**
      *
      *
@@ -1933,6 +1987,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1959,6 +2014,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1984,6 +2040,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2005,6 +2062,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

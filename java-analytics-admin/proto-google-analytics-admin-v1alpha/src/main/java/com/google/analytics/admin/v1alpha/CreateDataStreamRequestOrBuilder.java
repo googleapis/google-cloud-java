@@ -38,6 +38,7 @@ public interface CreateDataStreamRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateDataStreamRequestOrBuilder
    * @return Whether the dataStream field is set.
    */
   boolean hasDataStream();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateDataStreamRequestOrBuilder
    * @return The dataStream.
    */
   com.google.analytics.admin.v1alpha.DataStream getDataStream();
+
   /**
    *
    *

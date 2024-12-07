@@ -33,6 +33,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.support.v2.Case)
     CaseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Case.newBuilder() to construct.
   private Case(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -153,6 +154,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -163,6 +165,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * <code>NEW = 1;</code>
      */
     public static final int NEW_VALUE = 1;
+
     /**
      *
      *
@@ -173,6 +176,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * <code>IN_PROGRESS_GOOGLE_SUPPORT = 2;</code>
      */
     public static final int IN_PROGRESS_GOOGLE_SUPPORT_VALUE = 2;
+
     /**
      *
      *
@@ -183,6 +187,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTION_REQUIRED = 3;</code>
      */
     public static final int ACTION_REQUIRED_VALUE = 3;
+
     /**
      *
      *
@@ -193,6 +198,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * <code>SOLUTION_PROVIDED = 4;</code>
      */
     public static final int SOLUTION_PROVIDED_VALUE = 4;
+
     /**
      *
      *
@@ -379,6 +385,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIORITY_UNSPECIFIED = 0;</code>
      */
     public static final int PRIORITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -389,6 +396,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * <code>P0 = 1;</code>
      */
     public static final int P0_VALUE = 1;
+
     /**
      *
      *
@@ -399,6 +407,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * <code>P1 = 2;</code>
      */
     public static final int P1_VALUE = 2;
+
     /**
      *
      *
@@ -410,6 +419,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * <code>P2 = 3;</code>
      */
     public static final int P2_VALUE = 3;
+
     /**
      *
      *
@@ -421,6 +431,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * <code>P3 = 4;</code>
      */
     public static final int P3_VALUE = 4;
+
     /**
      *
      *
@@ -527,6 +538,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -550,6 +562,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -578,6 +591,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -601,6 +615,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -629,6 +644,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -652,6 +668,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -678,6 +695,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLASSIFICATION_FIELD_NUMBER = 4;
   private com.google.cloud.support.v2.CaseClassification classification_;
+
   /**
    *
    *
@@ -693,6 +711,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   public boolean hasClassification() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -710,6 +729,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.support.v2.CaseClassification.getDefaultInstance()
         : classification_;
   }
+
   /**
    *
    *
@@ -730,6 +750,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timeZone_ = "";
+
   /**
    *
    *
@@ -755,6 +776,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -786,6 +808,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList subscriberEmailAddresses_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -800,6 +823,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSubscriberEmailAddressesList() {
     return subscriberEmailAddresses_;
   }
+
   /**
    *
    *
@@ -814,6 +838,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   public int getSubscriberEmailAddressesCount() {
     return subscriberEmailAddresses_.size();
   }
+
   /**
    *
    *
@@ -829,6 +854,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSubscriberEmailAddresses(int index) {
     return subscriberEmailAddresses_.get(index);
   }
+
   /**
    *
    *
@@ -847,6 +873,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 12;
   private int state_ = 0;
+
   /**
    *
    *
@@ -864,6 +891,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -886,6 +914,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -902,6 +931,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -918,6 +948,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -935,6 +966,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 14;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -951,6 +983,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -967,6 +1000,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -984,6 +1018,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATOR_FIELD_NUMBER = 15;
   private com.google.cloud.support.v2.Actor creator_;
+
   /**
    *
    *
@@ -1002,6 +1037,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreator() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1020,6 +1056,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.support.v2.Actor getCreator() {
     return creator_ == null ? com.google.cloud.support.v2.Actor.getDefaultInstance() : creator_;
   }
+
   /**
    *
    *
@@ -1041,6 +1078,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object contactEmail_ = "";
+
   /**
    *
    *
@@ -1066,6 +1104,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1094,6 +1133,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ESCALATED_FIELD_NUMBER = 17;
   private boolean escalated_ = false;
+
   /**
    *
    *
@@ -1112,6 +1152,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TEST_CASE_FIELD_NUMBER = 19;
   private boolean testCase_ = false;
+
   /**
    *
    *
@@ -1133,6 +1174,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -1163,6 +1205,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1196,6 +1239,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIORITY_FIELD_NUMBER = 32;
   private int priority_ = 0;
+
   /**
    *
    *
@@ -1211,6 +1255,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   public int getPriorityValue() {
     return priority_;
   }
+
   /**
    *
    *
@@ -1541,6 +1586,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1959,6 +2005,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1981,6 +2028,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2003,6 +2051,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2024,6 +2073,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2041,6 +2091,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2065,6 +2116,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2087,6 +2139,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2109,6 +2162,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2130,6 +2184,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2147,6 +2202,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2171,6 +2227,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2193,6 +2250,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2215,6 +2273,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2236,6 +2295,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2253,6 +2313,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2282,6 +2343,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.support.v2.CaseClassification.Builder,
             com.google.cloud.support.v2.CaseClassificationOrBuilder>
         classificationBuilder_;
+
     /**
      *
      *
@@ -2296,6 +2358,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     public boolean hasClassification() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2316,6 +2379,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return classificationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2338,6 +2402,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2358,6 +2423,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2386,6 +2452,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2405,6 +2472,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2419,6 +2487,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getClassificationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2437,6 +2506,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
             : classification_;
       }
     }
+
     /**
      *
      *
@@ -2464,6 +2534,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object timeZone_ = "";
+
     /**
      *
      *
@@ -2488,6 +2559,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2512,6 +2584,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2535,6 +2608,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2554,6 +2628,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2589,6 +2664,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -2604,6 +2680,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       subscriberEmailAddresses_.makeImmutable();
       return subscriberEmailAddresses_;
     }
+
     /**
      *
      *
@@ -2618,6 +2695,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     public int getSubscriberEmailAddressesCount() {
       return subscriberEmailAddresses_.size();
     }
+
     /**
      *
      *
@@ -2633,6 +2711,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSubscriberEmailAddresses(int index) {
       return subscriberEmailAddresses_.get(index);
     }
+
     /**
      *
      *
@@ -2648,6 +2727,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSubscriberEmailAddressesBytes(int index) {
       return subscriberEmailAddresses_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2671,6 +2751,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2693,6 +2774,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2712,6 +2794,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2730,6 +2813,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2755,6 +2839,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2772,6 +2857,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2792,6 +2878,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2811,6 +2898,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.support.v2.Case.State.forNumber(state_);
       return result == null ? com.google.cloud.support.v2.Case.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2834,6 +2922,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2860,6 +2949,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2876,6 +2966,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2898,6 +2989,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2922,6 +3014,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2943,6 +3036,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2972,6 +3066,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2993,6 +3088,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3009,6 +3105,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3029,6 +3126,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3063,6 +3161,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -3079,6 +3178,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3101,6 +3201,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3125,6 +3226,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3146,6 +3248,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3175,6 +3278,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3196,6 +3300,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3212,6 +3317,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3232,6 +3338,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -3266,6 +3373,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.support.v2.Actor.Builder,
             com.google.cloud.support.v2.ActorOrBuilder>
         creatorBuilder_;
+
     /**
      *
      *
@@ -3283,6 +3391,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreator() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3304,6 +3413,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return creatorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3329,6 +3439,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3351,6 +3462,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3381,6 +3493,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3403,6 +3516,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3420,6 +3534,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreatorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3439,6 +3554,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return creator_ == null ? com.google.cloud.support.v2.Actor.getDefaultInstance() : creator_;
       }
     }
+
     /**
      *
      *
@@ -3469,6 +3585,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object contactEmail_ = "";
+
     /**
      *
      *
@@ -3493,6 +3610,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3517,6 +3635,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3540,6 +3659,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3559,6 +3679,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3585,6 +3706,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean escalated_;
+
     /**
      *
      *
@@ -3600,6 +3722,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     public boolean getEscalated() {
       return escalated_;
     }
+
     /**
      *
      *
@@ -3619,6 +3742,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3638,6 +3762,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean testCase_;
+
     /**
      *
      *
@@ -3654,6 +3779,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     public boolean getTestCase() {
       return testCase_;
     }
+
     /**
      *
      *
@@ -3674,6 +3800,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3694,6 +3821,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -3723,6 +3851,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3752,6 +3881,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3780,6 +3910,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3804,6 +3935,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3835,6 +3967,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int priority_ = 0;
+
     /**
      *
      *
@@ -3850,6 +3983,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     public int getPriorityValue() {
       return priority_;
     }
+
     /**
      *
      *
@@ -3868,6 +4002,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3885,6 +4020,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.support.v2.Case.Priority.forNumber(priority_);
       return result == null ? com.google.cloud.support.v2.Case.Priority.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3906,6 +4042,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

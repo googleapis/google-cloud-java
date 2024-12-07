@@ -253,7 +253,8 @@ public class DlpJobName implements ResourceName {
     private Builder(DlpJobName dlpJobName) {
       Preconditions.checkArgument(
           Objects.equals(dlpJobName.pathTemplate, PROJECT_DLP_JOB),
-          "toBuilder is only supported when DlpJobName has the pattern of projects/{project}/dlpJobs/{dlp_job}");
+          "toBuilder is only supported when DlpJobName has the pattern of"
+              + " projects/{project}/dlpJobs/{dlp_job}");
       this.project = dlpJobName.project;
       this.dlpJob = dlpJobName.dlpJob;
     }

@@ -33,6 +33,7 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.DebugOptions)
     DebugOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DebugOptions.newBuilder() to construct.
   private DebugOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_HOT_KEY_LOGGING_FIELD_NUMBER = 1;
   private boolean enableHotKeyLogging_ = false;
+
   /**
    *
    *
@@ -238,6 +240,7 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -419,6 +422,7 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean enableHotKeyLogging_;
+
     /**
      *
      *
@@ -435,6 +439,7 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableHotKeyLogging() {
       return enableHotKeyLogging_;
     }
+
     /**
      *
      *
@@ -455,6 +460,7 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

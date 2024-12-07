@@ -39,6 +39,7 @@ public interface ListTasksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface ListTasksRequestOrBuilder
    * @return The enum numeric value on the wire for responseView.
    */
   int getResponseViewValue();
+
   /**
    *
    *
@@ -142,6 +144,7 @@ public interface ListTasksRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

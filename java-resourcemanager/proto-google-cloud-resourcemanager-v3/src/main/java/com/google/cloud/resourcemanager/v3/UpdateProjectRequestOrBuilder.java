@@ -38,6 +38,7 @@ public interface UpdateProjectRequestOrBuilder
    * @return Whether the project field is set.
    */
   boolean hasProject();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateProjectRequestOrBuilder
    * @return The project.
    */
   com.google.cloud.resourcemanager.v3.Project getProject();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateProjectRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateProjectRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest)
     RegionTargetHttpsProxiesSetSslCertificatesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionTargetHttpsProxiesSetSslCertificatesRequest.newBuilder() to construct.
   private RegionTargetHttpsProxiesSetSslCertificatesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sslCertificates_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
   public com.google.protobuf.ProtocolStringList getSslCertificatesList() {
     return sslCertificates_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
   public int getSslCertificatesCount() {
     return sslCertificates_.size();
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
   public java.lang.String getSslCertificates(int index) {
     return sslCertificates_.get(index);
   }
+
   /**
    *
    *
@@ -304,6 +309,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -514,6 +520,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -529,6 +536,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
       sslCertificates_.makeImmutable();
       return sslCertificates_;
     }
+
     /**
      *
      *
@@ -543,6 +551,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
     public int getSslCertificatesCount() {
       return sslCertificates_.size();
     }
+
     /**
      *
      *
@@ -558,6 +567,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
     public java.lang.String getSslCertificates(int index) {
       return sslCertificates_.get(index);
     }
+
     /**
      *
      *
@@ -573,6 +583,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
     public com.google.protobuf.ByteString getSslCertificatesBytes(int index) {
       return sslCertificates_.getByteString(index);
     }
+
     /**
      *
      *
@@ -596,6 +607,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -618,6 +630,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -637,6 +650,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +669,7 @@ public final class RegionTargetHttpsProxiesSetSslCertificatesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -30,6 +30,7 @@ public interface SubnetworksSetPrivateIpGoogleAccessRequestOrBuilder
    * @return Whether the privateIpGoogleAccess field is set.
    */
   boolean hasPrivateIpGoogleAccess();
+
   /**
    * <code>optional bool private_ip_google_access = 421491790;</code>
    *

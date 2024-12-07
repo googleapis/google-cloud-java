@@ -40,6 +40,7 @@ public interface GetModelDeploymentMonitoringJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

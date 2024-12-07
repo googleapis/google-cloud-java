@@ -39,6 +39,7 @@ public interface DeleteAdminOverrideRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface DeleteAdminOverrideRequestOrBuilder
    * @return A list containing the forceOnly.
    */
   java.util.List<com.google.api.serviceusage.v1beta1.QuotaSafetyCheck> getForceOnlyList();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface DeleteAdminOverrideRequestOrBuilder
    * @return The count of forceOnly.
    */
   int getForceOnlyCount();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface DeleteAdminOverrideRequestOrBuilder
    * @return The forceOnly at the given index.
    */
   com.google.api.serviceusage.v1beta1.QuotaSafetyCheck getForceOnly(int index);
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface DeleteAdminOverrideRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for forceOnly.
    */
   java.util.List<java.lang.Integer> getForceOnlyValueList();
+
   /**
    *
    *

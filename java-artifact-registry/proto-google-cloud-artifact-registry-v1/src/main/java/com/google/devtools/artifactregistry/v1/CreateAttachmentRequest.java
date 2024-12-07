@@ -33,6 +33,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.CreateAttachmentRequest)
     CreateAttachmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateAttachmentRequest.newBuilder() to construct.
   private CreateAttachmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attachmentId_ = "";
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
 
   public static final int ATTACHMENT_FIELD_NUMBER = 3;
   private com.google.devtools.artifactregistry.v1.Attachment attachment_;
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
   public boolean hasAttachment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
         ? com.google.devtools.artifactregistry.v1.Attachment.getDefaultInstance()
         : attachment_;
   }
+
   /**
    *
    *
@@ -412,6 +420,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -644,6 +653,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -669,6 +679,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -694,6 +705,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -718,6 +730,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +751,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +779,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object attachmentId_ = "";
+
     /**
      *
      *
@@ -787,6 +802,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -809,6 +825,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -830,6 +847,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +865,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +895,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
             com.google.devtools.artifactregistry.v1.Attachment.Builder,
             com.google.devtools.artifactregistry.v1.AttachmentOrBuilder>
         attachmentBuilder_;
+
     /**
      *
      *
@@ -892,6 +912,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
     public boolean hasAttachment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -914,6 +935,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
         return attachmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -938,6 +960,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +983,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1036,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1053,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
       onChanged();
       return getAttachmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1047,6 +1074,7 @@ public final class CreateAttachmentRequest extends com.google.protobuf.Generated
             : attachment_;
       }
     }
+
     /**
      *
      *

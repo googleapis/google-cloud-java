@@ -83,7 +83,8 @@ public class MockWebRiskServiceImpl extends WebRiskServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ComputeThreatListDiff, expected %s or %s",
+                  "Unrecognized response type %s for method ComputeThreatListDiff, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ComputeThreatListDiffResponse.class.getName(),
                   Exception.class.getName())));

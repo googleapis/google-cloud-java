@@ -36,6 +36,7 @@ public interface PermissionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PermissionOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface PermissionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface PermissionOrBuilder
    * @return The enum numeric value on the wire for stage.
    */
   int getStageValue();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public interface PermissionOrBuilder
    * @return The enum numeric value on the wire for customRolesSupportLevel.
    */
   int getCustomRolesSupportLevelValue();
+
   /**
    *
    *
@@ -189,6 +194,7 @@ public interface PermissionOrBuilder
    * @return The primaryPermission.
    */
   java.lang.String getPrimaryPermission();
+
   /**
    *
    *

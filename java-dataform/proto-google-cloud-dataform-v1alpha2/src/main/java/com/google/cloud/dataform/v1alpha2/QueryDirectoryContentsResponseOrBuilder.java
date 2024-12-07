@@ -37,6 +37,7 @@ public interface QueryDirectoryContentsResponseOrBuilder
    */
   java.util.List<com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry>
       getDirectoryEntriesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface QueryDirectoryContentsResponseOrBuilder
    */
   com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry
       getDirectoryEntries(int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface QueryDirectoryContentsResponseOrBuilder
    * </code>
    */
   int getDirectoryEntriesCount();
+
   /**
    *
    *
@@ -78,6 +81,7 @@ public interface QueryDirectoryContentsResponseOrBuilder
               com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse
                   .DirectoryEntryOrBuilder>
       getDirectoryEntriesOrBuilderList();
+
   /**
    *
    *
@@ -105,6 +109,7 @@ public interface QueryDirectoryContentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface TextSentimentPredictionInstanceOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface TextSentimentPredictionInstanceOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *

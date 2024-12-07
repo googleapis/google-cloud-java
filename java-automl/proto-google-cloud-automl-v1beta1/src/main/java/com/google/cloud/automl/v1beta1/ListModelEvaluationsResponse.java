@@ -33,6 +33,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ListModelEvaluationsResponse)
     ListModelEvaluationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListModelEvaluationsResponse.newBuilder() to construct.
   private ListModelEvaluationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.ModelEvaluation> modelEvaluation_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.automl.v1beta1.ModelEvaluation> getModelEvaluationList() {
     return modelEvaluation_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       getModelEvaluationOrBuilderList() {
     return modelEvaluation_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
   public int getModelEvaluationCount() {
     return modelEvaluation_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
   public com.google.cloud.automl.v1beta1.ModelEvaluation getModelEvaluation(int index) {
     return modelEvaluation_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -362,6 +370,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -645,6 +654,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
         return modelEvaluationBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -661,6 +671,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
         return modelEvaluationBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
         return modelEvaluationBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +733,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +756,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +780,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +843,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +863,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +883,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +897,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
         int index) {
       return getModelEvaluationFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -893,6 +915,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
         return modelEvaluationBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -910,6 +933,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(modelEvaluation_);
       }
     }
+
     /**
      *
      *
@@ -923,6 +947,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       return getModelEvaluationFieldBuilder()
           .addBuilder(com.google.cloud.automl.v1beta1.ModelEvaluation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -937,6 +962,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       return getModelEvaluationFieldBuilder()
           .addBuilder(index, com.google.cloud.automl.v1beta1.ModelEvaluation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -972,6 +998,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -996,6 +1023,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1048,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1043,6 +1072,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1092,7 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

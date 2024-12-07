@@ -36,6 +36,7 @@ public interface VmSelectionConfigOrBuilder
    * @return The vmZone.
    */
   java.lang.String getVmZone();
+
   /**
    *
    *

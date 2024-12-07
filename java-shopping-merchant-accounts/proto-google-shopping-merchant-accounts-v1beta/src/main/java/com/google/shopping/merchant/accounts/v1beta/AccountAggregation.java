@@ -33,6 +33,7 @@ public final class AccountAggregation extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.AccountAggregation)
     AccountAggregationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AccountAggregation.newBuilder() to construct.
   private AccountAggregation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class AccountAggregation extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

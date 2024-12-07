@@ -40,6 +40,7 @@ public interface VmwareEngineNetworkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface VmwareEngineNetworkOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface VmwareEngineNetworkOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface VmwareEngineNetworkOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface VmwareEngineNetworkOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface VmwareEngineNetworkOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface VmwareEngineNetworkOrBuilder
    */
   java.util.List<com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork>
       getVpcNetworksList();
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public interface VmwareEngineNetworkOrBuilder
    * </code>
    */
   com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork getVpcNetworks(int index);
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public interface VmwareEngineNetworkOrBuilder
    * </code>
    */
   int getVpcNetworksCount();
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public interface VmwareEngineNetworkOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetworkOrBuilder>
       getVpcNetworksOrBuilderList();
+
   /**
    *
    *
@@ -246,6 +256,7 @@ public interface VmwareEngineNetworkOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -275,6 +286,7 @@ public interface VmwareEngineNetworkOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -302,6 +314,7 @@ public interface VmwareEngineNetworkOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -330,6 +343,7 @@ public interface VmwareEngineNetworkOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

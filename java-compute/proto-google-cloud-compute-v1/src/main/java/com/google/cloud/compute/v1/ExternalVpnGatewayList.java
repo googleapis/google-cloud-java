@@ -33,6 +33,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ExternalVpnGatewayList)
     ExternalVpnGatewayListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExternalVpnGatewayList.newBuilder() to construct.
   private ExternalVpnGatewayList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -82,6 +84,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
   public boolean hasEtag() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -99,6 +102,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -121,6 +125,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
   public boolean hasId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ExternalVpnGateway> items_;
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.compute.v1.ExternalVpnGateway> getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -214,6 +223,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -240,6 +251,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
   public com.google.cloud.compute.v1.ExternalVpnGateway getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -258,6 +270,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -273,6 +286,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
   public boolean hasKind() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -296,6 +310,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -324,6 +339,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -339,6 +355,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -362,6 +379,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -390,6 +408,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -405,6 +424,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -428,6 +448,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -454,6 +475,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -469,6 +491,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -484,6 +507,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -743,6 +767,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1083,6 +1108,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object etag_ = "";
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1091,6 +1117,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     public boolean hasEtag() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1107,6 +1134,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1123,6 +1151,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1138,6 +1167,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1149,6 +1179,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1167,6 +1198,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1181,6 +1213,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     public boolean hasId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1203,6 +1236,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1225,6 +1259,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1246,6 +1281,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1299,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1355,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1334,6 +1372,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1350,6 +1389,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1372,6 +1412,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1392,6 +1433,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1456,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1436,6 +1479,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1456,6 +1500,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1476,6 +1521,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1496,6 +1542,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1515,6 +1562,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1534,6 +1582,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1546,6 +1595,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.ExternalVpnGateway.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1562,6 +1612,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1579,6 +1630,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -1592,6 +1644,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.ExternalVpnGateway.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1605,6 +1658,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       return getItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.ExternalVpnGateway.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1637,6 +1691,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1651,6 +1706,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     public boolean hasKind() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1673,6 +1729,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1695,6 +1752,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1716,6 +1774,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1733,6 +1792,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1757,6 +1817,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1771,6 +1832,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1793,6 +1855,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1815,6 +1878,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1836,6 +1900,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1853,6 +1918,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1877,6 +1943,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -1891,6 +1958,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1913,6 +1981,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1935,6 +2004,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1956,6 +2026,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1973,6 +2044,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2002,6 +2074,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -2016,6 +2089,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2036,6 +2110,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2058,6 +2133,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2077,6 +2153,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2104,6 +2181,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2123,6 +2201,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2137,6 +2216,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2155,6 +2235,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
             : warning_;
       }
     }
+
     /**
      *
      *

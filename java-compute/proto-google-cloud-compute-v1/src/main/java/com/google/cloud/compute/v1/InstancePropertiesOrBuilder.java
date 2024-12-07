@@ -38,6 +38,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the advancedMachineFeatures field is set.
    */
   boolean hasAdvancedMachineFeatures();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InstancePropertiesOrBuilder
    * @return The advancedMachineFeatures.
    */
   com.google.cloud.compute.v1.AdvancedMachineFeatures getAdvancedMachineFeatures();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the canIpForward field is set.
    */
   boolean hasCanIpForward();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the confidentialInstanceConfig field is set.
    */
   boolean hasConfidentialInstanceConfig();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface InstancePropertiesOrBuilder
    * @return The confidentialInstanceConfig.
    */
   com.google.cloud.compute.v1.ConfidentialInstanceConfig getConfidentialInstanceConfig();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public interface InstancePropertiesOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface InstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
    */
   java.util.List<com.google.cloud.compute.v1.AttachedDisk> getDisksList();
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public interface InstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
    */
   com.google.cloud.compute.v1.AttachedDisk getDisks(int index);
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public interface InstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
    */
   int getDisksCount();
+
   /**
    *
    *
@@ -211,6 +221,7 @@ public interface InstancePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AttachedDiskOrBuilder>
       getDisksOrBuilderList();
+
   /**
    *
    *
@@ -233,6 +244,7 @@ public interface InstancePropertiesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList();
+
   /**
    *
    *
@@ -244,6 +256,7 @@ public interface InstancePropertiesOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index);
+
   /**
    *
    *
@@ -255,6 +268,7 @@ public interface InstancePropertiesOrBuilder
    * </code>
    */
   int getGuestAcceleratorsCount();
+
   /**
    *
    *
@@ -267,6 +281,7 @@ public interface InstancePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
       getGuestAcceleratorsOrBuilderList();
+
   /**
    *
    *
@@ -292,6 +307,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the keyRevocationActionType field is set.
    */
   boolean hasKeyRevocationActionType();
+
   /**
    *
    *
@@ -305,6 +321,7 @@ public interface InstancePropertiesOrBuilder
    * @return The keyRevocationActionType.
    */
   java.lang.String getKeyRevocationActionType();
+
   /**
    *
    *
@@ -329,6 +346,7 @@ public interface InstancePropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -339,9 +357,11 @@ public interface InstancePropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -352,6 +372,7 @@ public interface InstancePropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -366,6 +387,7 @@ public interface InstancePropertiesOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -389,6 +411,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the machineType field is set.
    */
   boolean hasMachineType();
+
   /**
    *
    *
@@ -401,6 +424,7 @@ public interface InstancePropertiesOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
@@ -426,6 +450,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -438,6 +463,7 @@ public interface InstancePropertiesOrBuilder
    * @return The metadata.
    */
   com.google.cloud.compute.v1.Metadata getMetadata();
+
   /**
    *
    *
@@ -461,6 +487,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the minCpuPlatform field is set.
    */
   boolean hasMinCpuPlatform();
+
   /**
    *
    *
@@ -473,6 +500,7 @@ public interface InstancePropertiesOrBuilder
    * @return The minCpuPlatform.
    */
   java.lang.String getMinCpuPlatform();
+
   /**
    *
    *
@@ -496,6 +524,7 @@ public interface InstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NetworkInterface> getNetworkInterfacesList();
+
   /**
    *
    *
@@ -506,6 +535,7 @@ public interface InstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
    */
   com.google.cloud.compute.v1.NetworkInterface getNetworkInterfaces(int index);
+
   /**
    *
    *
@@ -516,6 +546,7 @@ public interface InstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
    */
   int getNetworkInterfacesCount();
+
   /**
    *
    *
@@ -527,6 +558,7 @@ public interface InstancePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NetworkInterfaceOrBuilder>
       getNetworkInterfacesOrBuilderList();
+
   /**
    *
    *
@@ -552,6 +584,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the networkPerformanceConfig field is set.
    */
   boolean hasNetworkPerformanceConfig();
+
   /**
    *
    *
@@ -566,6 +599,7 @@ public interface InstancePropertiesOrBuilder
    * @return The networkPerformanceConfig.
    */
   com.google.cloud.compute.v1.NetworkPerformanceConfig getNetworkPerformanceConfig();
+
   /**
    *
    *
@@ -593,6 +627,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the privateIpv6GoogleAccess field is set.
    */
   boolean hasPrivateIpv6GoogleAccess();
+
   /**
    *
    *
@@ -606,6 +641,7 @@ public interface InstancePropertiesOrBuilder
    * @return The privateIpv6GoogleAccess.
    */
   java.lang.String getPrivateIpv6GoogleAccess();
+
   /**
    *
    *
@@ -633,6 +669,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the reservationAffinity field is set.
    */
   boolean hasReservationAffinity();
+
   /**
    *
    *
@@ -646,6 +683,7 @@ public interface InstancePropertiesOrBuilder
    * @return The reservationAffinity.
    */
   com.google.cloud.compute.v1.ReservationAffinity getReservationAffinity();
+
   /**
    *
    *
@@ -668,6 +706,7 @@ public interface InstancePropertiesOrBuilder
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
    */
   int getResourceManagerTagsCount();
+
   /**
    *
    *
@@ -678,9 +717,11 @@ public interface InstancePropertiesOrBuilder
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
    */
   boolean containsResourceManagerTags(java.lang.String key);
+
   /** Use {@link #getResourceManagerTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags();
+
   /**
    *
    *
@@ -691,6 +732,7 @@ public interface InstancePropertiesOrBuilder
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap();
+
   /**
    *
    *
@@ -705,6 +747,7 @@ public interface InstancePropertiesOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -728,6 +771,7 @@ public interface InstancePropertiesOrBuilder
    * @return A list containing the resourcePolicies.
    */
   java.util.List<java.lang.String> getResourcePoliciesList();
+
   /**
    *
    *
@@ -740,6 +784,7 @@ public interface InstancePropertiesOrBuilder
    * @return The count of resourcePolicies.
    */
   int getResourcePoliciesCount();
+
   /**
    *
    *
@@ -753,6 +798,7 @@ public interface InstancePropertiesOrBuilder
    * @return The resourcePolicies at the given index.
    */
   java.lang.String getResourcePolicies(int index);
+
   /**
    *
    *
@@ -779,6 +825,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the scheduling field is set.
    */
   boolean hasScheduling();
+
   /**
    *
    *
@@ -791,6 +838,7 @@ public interface InstancePropertiesOrBuilder
    * @return The scheduling.
    */
   com.google.cloud.compute.v1.Scheduling getScheduling();
+
   /**
    *
    *
@@ -812,6 +860,7 @@ public interface InstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ServiceAccount> getServiceAccountsList();
+
   /**
    *
    *
@@ -822,6 +871,7 @@ public interface InstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   com.google.cloud.compute.v1.ServiceAccount getServiceAccounts(int index);
+
   /**
    *
    *
@@ -832,6 +882,7 @@ public interface InstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   int getServiceAccountsCount();
+
   /**
    *
    *
@@ -843,6 +894,7 @@ public interface InstancePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ServiceAccountOrBuilder>
       getServiceAccountsOrBuilderList();
+
   /**
    *
    *
@@ -868,6 +920,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the shieldedInstanceConfig field is set.
    */
   boolean hasShieldedInstanceConfig();
+
   /**
    *
    *
@@ -882,6 +935,7 @@ public interface InstancePropertiesOrBuilder
    * @return The shieldedInstanceConfig.
    */
   com.google.cloud.compute.v1.ShieldedInstanceConfig getShieldedInstanceConfig();
+
   /**
    *
    *
@@ -907,6 +961,7 @@ public interface InstancePropertiesOrBuilder
    * @return Whether the tags field is set.
    */
   boolean hasTags();
+
   /**
    *
    *
@@ -919,6 +974,7 @@ public interface InstancePropertiesOrBuilder
    * @return The tags.
    */
   com.google.cloud.compute.v1.Tags getTags();
+
   /**
    *
    *

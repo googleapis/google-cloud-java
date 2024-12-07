@@ -25,6 +25,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.EvaluationMetrics)
     EvaluationMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EvaluationMetrics.newBuilder() to construct.
   private EvaluationMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     private MetricsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -103,6 +105,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CLASSIFICATION_METRICS_FIELD_NUMBER = 1;
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
    * </code>
@@ -113,6 +116,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
   public boolean hasClassificationMetrics() {
     return metricsCase_ == 1;
   }
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
    * </code>
@@ -126,6 +130,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datalabeling.v1beta1.ClassificationMetrics.getDefaultInstance();
   }
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
    * </code>
@@ -140,6 +145,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int OBJECT_DETECTION_METRICS_FIELD_NUMBER = 2;
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
    * </code>
@@ -150,6 +156,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
   public boolean hasObjectDetectionMetrics() {
     return metricsCase_ == 2;
   }
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
    * </code>
@@ -163,6 +170,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics.getDefaultInstance();
   }
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
    * </code>
@@ -368,6 +376,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationMetrics} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -598,6 +607,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datalabeling.v1beta1.ClassificationMetrics.Builder,
             com.google.cloud.datalabeling.v1beta1.ClassificationMetricsOrBuilder>
         classificationMetricsBuilder_;
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
      * </code>
@@ -608,6 +618,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     public boolean hasClassificationMetrics() {
       return metricsCase_ == 1;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
      * </code>
@@ -628,6 +639,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datalabeling.v1beta1.ClassificationMetrics.getDefaultInstance();
       }
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
      * </code>
@@ -646,6 +658,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       metricsCase_ = 1;
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
      * </code>
@@ -661,6 +674,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       metricsCase_ = 1;
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
      * </code>
@@ -691,6 +705,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       metricsCase_ = 1;
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
      * </code>
@@ -711,6 +726,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
      * </code>
@@ -719,6 +735,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
         getClassificationMetricsBuilder() {
       return getClassificationMetricsFieldBuilder().getBuilder();
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
      * </code>
@@ -735,6 +752,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datalabeling.v1beta1.ClassificationMetrics.getDefaultInstance();
       }
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
      * </code>
@@ -769,6 +787,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics.Builder,
             com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetricsOrBuilder>
         objectDetectionMetricsBuilder_;
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
      * </code>
@@ -779,6 +798,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     public boolean hasObjectDetectionMetrics() {
       return metricsCase_ == 2;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
      * </code>
@@ -800,6 +820,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics.getDefaultInstance();
       }
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
      * </code>
@@ -818,6 +839,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       metricsCase_ = 2;
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
      * </code>
@@ -833,6 +855,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       metricsCase_ = 2;
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
      * </code>
@@ -863,6 +886,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       metricsCase_ = 2;
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
      * </code>
@@ -883,6 +907,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
      * </code>
@@ -891,6 +916,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
         getObjectDetectionMetricsBuilder() {
       return getObjectDetectionMetricsFieldBuilder().getBuilder();
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
      * </code>
@@ -907,6 +933,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics.getDefaultInstance();
       }
     }
+
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
      * </code>

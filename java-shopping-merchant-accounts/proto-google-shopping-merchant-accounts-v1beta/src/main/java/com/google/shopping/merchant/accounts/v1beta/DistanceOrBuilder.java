@@ -36,6 +36,7 @@ public interface DistanceOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface DistanceOrBuilder
    * @return Whether the unit field is set.
    */
   boolean hasUnit();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface DistanceOrBuilder
    * @return The enum numeric value on the wire for unit.
    */
   int getUnitValue();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface GetOpenIDConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

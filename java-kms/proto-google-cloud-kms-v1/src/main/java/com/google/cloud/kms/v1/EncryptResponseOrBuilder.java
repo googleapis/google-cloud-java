@@ -39,6 +39,7 @@ public interface EncryptResponseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public interface EncryptResponseOrBuilder
    * @return Whether the ciphertextCrc32c field is set.
    */
   boolean hasCiphertextCrc32C();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface EncryptResponseOrBuilder
    * @return The ciphertextCrc32c.
    */
   com.google.protobuf.Int64Value getCiphertextCrc32C();
+
   /**
    *
    *
@@ -205,6 +208,7 @@ public interface EncryptResponseOrBuilder
    * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
+
   /**
    *
    *

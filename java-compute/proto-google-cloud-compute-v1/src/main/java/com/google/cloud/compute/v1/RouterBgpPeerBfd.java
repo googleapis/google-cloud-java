@@ -32,6 +32,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RouterBgpPeerBfd)
     RouterBgpPeerBfdOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RouterBgpPeerBfd.newBuilder() to construct.
   private RouterBgpPeerBfd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -101,10 +102,13 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_SESSION_INITIALIZATION_MODE = 0;</code>
      */
     public static final int UNDEFINED_SESSION_INITIALIZATION_MODE_VALUE = 0;
+
     /** <code>ACTIVE = 314733318;</code> */
     public static final int ACTIVE_VALUE = 314733318;
+
     /** <code>DISABLED = 516696700;</code> */
     public static final int DISABLED_VALUE = 516696700;
+
     /** <code>PASSIVE = 462813959;</code> */
     public static final int PASSIVE_VALUE = 462813959;
 
@@ -199,6 +203,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int MIN_RECEIVE_INTERVAL_FIELD_NUMBER = 186981614;
   private int minReceiveInterval_ = 0;
+
   /**
    *
    *
@@ -214,6 +219,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
   public boolean hasMinReceiveInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -232,6 +238,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
 
   public static final int MIN_TRANSMIT_INTERVAL_FIELD_NUMBER = 523282631;
   private int minTransmitInterval_ = 0;
+
   /**
    *
    *
@@ -247,6 +254,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
   public boolean hasMinTransmitInterval() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -265,6 +273,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
 
   public static final int MULTIPLIER_FIELD_NUMBER = 191331777;
   private int multiplier_ = 0;
+
   /**
    *
    *
@@ -280,6 +289,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
   public boolean hasMultiplier() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -300,6 +310,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sessionInitializationMode_ = "";
+
   /**
    *
    *
@@ -316,6 +327,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
   public boolean hasSessionInitializationMode() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -340,6 +352,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -577,6 +590,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -804,6 +818,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int minReceiveInterval_;
+
     /**
      *
      *
@@ -819,6 +834,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     public boolean hasMinReceiveInterval() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -834,6 +850,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     public int getMinReceiveInterval() {
       return minReceiveInterval_;
     }
+
     /**
      *
      *
@@ -853,6 +870,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +890,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     }
 
     private int minTransmitInterval_;
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     public boolean hasMinTransmitInterval() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -902,6 +922,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     public int getMinTransmitInterval() {
       return minTransmitInterval_;
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +962,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     }
 
     private int multiplier_;
+
     /**
      *
      *
@@ -955,6 +978,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     public boolean hasMultiplier() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -970,6 +994,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     public int getMultiplier() {
       return multiplier_;
     }
+
     /**
      *
      *
@@ -989,6 +1014,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1034,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object sessionInitializationMode_ = "";
+
     /**
      *
      *
@@ -1023,6 +1050,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     public boolean hasSessionInitializationMode() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1046,6 +1074,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1098,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1091,6 +1121,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1140,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

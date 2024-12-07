@@ -33,6 +33,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.QuestionAnsweringQualityInstance)
     QuestionAnsweringQualityInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QuestionAnsweringQualityInstance.newBuilder() to construct.
   private QuestionAnsweringQualityInstance(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object prediction_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
   public boolean hasPrediction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reference_ = "";
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
   public boolean hasReference() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object context_ = "";
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
   public boolean hasContext() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -270,6 +280,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instruction_ = "";
+
   /**
    *
    *
@@ -285,6 +296,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
   public boolean hasInstruction() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -308,6 +320,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -539,6 +552,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -778,6 +792,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object prediction_ = "";
+
     /**
      *
      *
@@ -792,6 +807,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
     public boolean hasPrediction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -814,6 +830,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -836,6 +853,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -857,6 +875,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +893,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +918,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
     }
 
     private java.lang.Object reference_ = "";
+
     /**
      *
      *
@@ -912,6 +933,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
     public boolean hasReference() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -934,6 +956,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -956,6 +979,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -977,6 +1001,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -994,6 +1019,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1044,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
     }
 
     private java.lang.Object context_ = "";
+
     /**
      *
      *
@@ -1032,6 +1059,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
     public boolean hasContext() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1054,6 +1082,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1076,6 +1105,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1127,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1114,6 +1145,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1170,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
     }
 
     private java.lang.Object instruction_ = "";
+
     /**
      *
      *
@@ -1152,6 +1185,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
     public boolean hasInstruction() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1174,6 +1208,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1196,6 +1231,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1253,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1271,7 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface CategoryOrBuilder
    * @return The serviceDisplayName.
    */
   java.lang.String getServiceDisplayName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface CategoryOrBuilder
    * @return The resourceFamily.
    */
   java.lang.String getResourceFamily();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface CategoryOrBuilder
    * @return The resourceGroup.
    */
   java.lang.String getResourceGroup();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CategoryOrBuilder
    * @return The usageType.
    */
   java.lang.String getUsageType();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class UpdateApplicationInstancesResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.UpdateApplicationInstancesResponse)
     UpdateApplicationInstancesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateApplicationInstancesResponse.newBuilder() to construct.
   private UpdateApplicationInstancesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -213,6 +214,7 @@ public final class UpdateApplicationInstancesResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ModifyOrderRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ModifyOrderRequestOrBuilder
    */
   java.util.List<com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest.Modification>
       getModificationsList();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ModifyOrderRequestOrBuilder
    */
   com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest.Modification
       getModifications(int index);
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface ModifyOrderRequestOrBuilder
    * </code>
    */
   int getModificationsCount();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface ModifyOrderRequestOrBuilder
               com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest
                   .ModificationOrBuilder>
       getModificationsOrBuilderList();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface ModifyOrderRequestOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface ModifyOrderRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface CreateNotebookExecutionJobOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CreateNotebookExecutionJobOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata getGenericMetadata();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface CreateNotebookExecutionJobOperationMetadataOrBuilder
    * @return The progressMessage.
    */
   java.lang.String getProgressMessage();
+
   /**
    *
    *

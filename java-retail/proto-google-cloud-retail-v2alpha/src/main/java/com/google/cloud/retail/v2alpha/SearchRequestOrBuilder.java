@@ -41,6 +41,7 @@ public interface SearchRequestOrBuilder
    * @return The placement.
    */
   java.lang.String getPlacement();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface SearchRequestOrBuilder
    * @return The branch.
    */
   java.lang.String getBranch();
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public interface SearchRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -148,6 +151,7 @@ public interface SearchRequestOrBuilder
    * @return The visitorId.
    */
   java.lang.String getVisitorId();
+
   /**
    *
    *
@@ -182,6 +186,7 @@ public interface SearchRequestOrBuilder
    * @return Whether the userInfo field is set.
    */
   boolean hasUserInfo();
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public interface SearchRequestOrBuilder
    * @return The userInfo.
    */
   com.google.cloud.retail.v2alpha.UserInfo getUserInfo();
+
   /**
    *
    *
@@ -243,6 +249,7 @@ public interface SearchRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -302,6 +309,7 @@ public interface SearchRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -343,6 +351,7 @@ public interface SearchRequestOrBuilder
    * @return The canonicalFilter.
    */
   java.lang.String getCanonicalFilter();
+
   /**
    *
    *
@@ -385,6 +394,7 @@ public interface SearchRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -417,6 +427,7 @@ public interface SearchRequestOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.SearchRequest.FacetSpec facet_specs = 12;</code>
    */
   java.util.List<com.google.cloud.retail.v2alpha.SearchRequest.FacetSpec> getFacetSpecsList();
+
   /**
    *
    *
@@ -430,6 +441,7 @@ public interface SearchRequestOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.SearchRequest.FacetSpec facet_specs = 12;</code>
    */
   com.google.cloud.retail.v2alpha.SearchRequest.FacetSpec getFacetSpecs(int index);
+
   /**
    *
    *
@@ -443,6 +455,7 @@ public interface SearchRequestOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.SearchRequest.FacetSpec facet_specs = 12;</code>
    */
   int getFacetSpecsCount();
+
   /**
    *
    *
@@ -457,6 +470,7 @@ public interface SearchRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.SearchRequest.FacetSpecOrBuilder>
       getFacetSpecsOrBuilderList();
+
   /**
    *
    *
@@ -493,6 +507,7 @@ public interface SearchRequestOrBuilder
    */
   @java.lang.Deprecated
   boolean hasDynamicFacetSpec();
+
   /**
    *
    *
@@ -514,6 +529,7 @@ public interface SearchRequestOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec getDynamicFacetSpec();
+
   /**
    *
    *
@@ -554,6 +570,7 @@ public interface SearchRequestOrBuilder
    * @return Whether the boostSpec field is set.
    */
   boolean hasBoostSpec();
+
   /**
    *
    *
@@ -575,6 +592,7 @@ public interface SearchRequestOrBuilder
    * @return The boostSpec.
    */
   com.google.cloud.retail.v2alpha.SearchRequest.BoostSpec getBoostSpec();
+
   /**
    *
    *
@@ -610,6 +628,7 @@ public interface SearchRequestOrBuilder
    * @return Whether the queryExpansionSpec field is set.
    */
   boolean hasQueryExpansionSpec();
+
   /**
    *
    *
@@ -625,6 +644,7 @@ public interface SearchRequestOrBuilder
    * @return The queryExpansionSpec.
    */
   com.google.cloud.retail.v2alpha.SearchRequest.QueryExpansionSpec getQueryExpansionSpec();
+
   /**
    *
    *
@@ -659,6 +679,7 @@ public interface SearchRequestOrBuilder
    * @return The enum numeric value on the wire for relevanceThreshold.
    */
   int getRelevanceThresholdValue();
+
   /**
    *
    *
@@ -769,6 +790,7 @@ public interface SearchRequestOrBuilder
    * @return A list containing the variantRollupKeys.
    */
   java.util.List<java.lang.String> getVariantRollupKeysList();
+
   /**
    *
    *
@@ -859,6 +881,7 @@ public interface SearchRequestOrBuilder
    * @return The count of variantRollupKeys.
    */
   int getVariantRollupKeysCount();
+
   /**
    *
    *
@@ -950,6 +973,7 @@ public interface SearchRequestOrBuilder
    * @return The variantRollupKeys at the given index.
    */
   java.lang.String getVariantRollupKeys(int index);
+
   /**
    *
    *
@@ -1065,6 +1089,7 @@ public interface SearchRequestOrBuilder
    * @return A list containing the pageCategories.
    */
   java.util.List<java.lang.String> getPageCategoriesList();
+
   /**
    *
    *
@@ -1088,6 +1113,7 @@ public interface SearchRequestOrBuilder
    * @return The count of pageCategories.
    */
   int getPageCategoriesCount();
+
   /**
    *
    *
@@ -1112,6 +1138,7 @@ public interface SearchRequestOrBuilder
    * @return The pageCategories at the given index.
    */
   java.lang.String getPageCategories(int index);
+
   /**
    *
    *
@@ -1150,6 +1177,7 @@ public interface SearchRequestOrBuilder
    * @return The enum numeric value on the wire for searchMode.
    */
   int getSearchModeValue();
+
   /**
    *
    *
@@ -1186,6 +1214,7 @@ public interface SearchRequestOrBuilder
    * @return Whether the personalizationSpec field is set.
    */
   boolean hasPersonalizationSpec();
+
   /**
    *
    *
@@ -1208,6 +1237,7 @@ public interface SearchRequestOrBuilder
    * @return The personalizationSpec.
    */
   com.google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec getPersonalizationSpec();
+
   /**
    *
    *
@@ -1256,6 +1286,7 @@ public interface SearchRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 34;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -1282,9 +1313,11 @@ public interface SearchRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 34;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -1311,6 +1344,7 @@ public interface SearchRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 34;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -1341,6 +1375,7 @@ public interface SearchRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -1383,6 +1418,7 @@ public interface SearchRequestOrBuilder
    * @return Whether the spellCorrectionSpec field is set.
    */
   boolean hasSpellCorrectionSpec();
+
   /**
    *
    *
@@ -1398,6 +1434,7 @@ public interface SearchRequestOrBuilder
    * @return The spellCorrectionSpec.
    */
   com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec getSpellCorrectionSpec();
+
   /**
    *
    *
@@ -1430,6 +1467,7 @@ public interface SearchRequestOrBuilder
    * @return The entity.
    */
   java.lang.String getEntity();
+
   /**
    *
    *
@@ -1463,6 +1501,7 @@ public interface SearchRequestOrBuilder
    * @return Whether the conversationalSearchSpec field is set.
    */
   boolean hasConversationalSearchSpec();
+
   /**
    *
    *
@@ -1479,6 +1518,7 @@ public interface SearchRequestOrBuilder
    */
   com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
       getConversationalSearchSpec();
+
   /**
    *
    *
@@ -1508,6 +1548,7 @@ public interface SearchRequestOrBuilder
    * @return Whether the tileNavigationSpec field is set.
    */
   boolean hasTileNavigationSpec();
+
   /**
    *
    *
@@ -1522,6 +1563,7 @@ public interface SearchRequestOrBuilder
    * @return The tileNavigationSpec.
    */
   com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec getTileNavigationSpec();
+
   /**
    *
    *

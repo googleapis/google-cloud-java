@@ -36,6 +36,7 @@ public interface GetNodeTypeRequestOrBuilder
    * @return The nodeType.
    */
   java.lang.String getNodeType();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetNodeTypeRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetNodeTypeRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

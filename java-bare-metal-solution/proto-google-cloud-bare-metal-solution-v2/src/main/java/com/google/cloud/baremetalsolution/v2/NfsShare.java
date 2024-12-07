@@ -33,6 +33,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.NfsShare)
     NfsShareOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NfsShare.newBuilder() to construct.
   private NfsShare(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -154,6 +155,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -164,6 +166,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVISIONED = 1;</code>
      */
     public static final int PROVISIONED_VALUE = 1;
+
     /**
      *
      *
@@ -174,6 +177,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 2;</code>
      */
     public static final int CREATING_VALUE = 2;
+
     /**
      *
      *
@@ -184,6 +188,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
+
     /**
      *
      *
@@ -335,6 +340,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * <code>MOUNT_PERMISSIONS_UNSPECIFIED = 0;</code>
      */
     public static final int MOUNT_PERMISSIONS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -345,6 +351,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * <code>READ = 1;</code>
      */
     public static final int READ_VALUE = 1;
+
     /**
      *
      *
@@ -494,6 +501,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * <code>STORAGE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int STORAGE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -504,6 +512,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * <code>SSD = 1;</code>
      */
     public static final int SSD_VALUE = 1;
+
     /**
      *
      *
@@ -615,6 +624,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * @return The network.
      */
     java.lang.String getNetwork();
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * @return The shareIp.
      */
     java.lang.String getShareIp();
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * @return The allowedClientsCidr.
      */
     java.lang.String getAllowedClientsCidr();
+
     /**
      *
      *
@@ -693,6 +705,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for mountPermissions.
      */
     int getMountPermissionsValue();
+
     /**
      *
      *
@@ -762,6 +775,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * @return The nfsPath.
      */
     java.lang.String getNfsPath();
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNfsPathBytes();
   }
+
   /**
    *
    *
@@ -791,6 +806,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.NfsShare.AllowedClient)
       AllowedClientOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AllowedClient.newBuilder() to construct.
     private AllowedClient(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -829,6 +845,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -852,6 +869,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -880,6 +898,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object shareIp_ = "";
+
     /**
      *
      *
@@ -904,6 +923,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -933,6 +953,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object allowedClientsCidr_ = "";
+
     /**
      *
      *
@@ -956,6 +977,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -982,6 +1004,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MOUNT_PERMISSIONS_FIELD_NUMBER = 4;
     private int mountPermissions_ = 0;
+
     /**
      *
      *
@@ -998,6 +1021,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     public int getMountPermissionsValue() {
       return mountPermissions_;
     }
+
     /**
      *
      *
@@ -1022,6 +1046,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALLOW_DEV_FIELD_NUMBER = 5;
     private boolean allowDev_ = false;
+
     /**
      *
      *
@@ -1040,6 +1065,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALLOW_SUID_FIELD_NUMBER = 6;
     private boolean allowSuid_ = false;
+
     /**
      *
      *
@@ -1058,6 +1084,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
     public static final int NO_ROOT_SQUASH_FIELD_NUMBER = 7;
     private boolean noRootSquash_ = false;
+
     /**
      *
      *
@@ -1080,6 +1107,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object nfsPath_ = "";
+
     /**
      *
      *
@@ -1105,6 +1133,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1361,6 +1390,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1648,6 +1678,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object network_ = "";
+
       /**
        *
        *
@@ -1670,6 +1701,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1692,6 +1724,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1713,6 +1746,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1730,6 +1764,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1754,6 +1789,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object shareIp_ = "";
+
       /**
        *
        *
@@ -1777,6 +1813,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1800,6 +1837,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1822,6 +1860,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1840,6 +1879,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1865,6 +1905,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object allowedClientsCidr_ = "";
+
       /**
        *
        *
@@ -1887,6 +1928,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1909,6 +1951,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1930,6 +1973,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1947,6 +1991,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1971,6 +2016,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int mountPermissions_ = 0;
+
       /**
        *
        *
@@ -1987,6 +2033,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       public int getMountPermissionsValue() {
         return mountPermissions_;
       }
+
       /**
        *
        *
@@ -2006,6 +2053,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2027,6 +2075,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.baremetalsolution.v2.NfsShare.MountPermissions.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2050,6 +2099,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2070,6 +2120,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean allowDev_;
+
       /**
        *
        *
@@ -2085,6 +2136,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       public boolean getAllowDev() {
         return allowDev_;
       }
+
       /**
        *
        *
@@ -2104,6 +2156,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2123,6 +2176,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean allowSuid_;
+
       /**
        *
        *
@@ -2138,6 +2192,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       public boolean getAllowSuid() {
         return allowSuid_;
       }
+
       /**
        *
        *
@@ -2157,6 +2212,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2176,6 +2232,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean noRootSquash_;
+
       /**
        *
        *
@@ -2193,6 +2250,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       public boolean getNoRootSquash() {
         return noRootSquash_;
       }
+
       /**
        *
        *
@@ -2214,6 +2272,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2235,6 +2294,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object nfsPath_ = "";
+
       /**
        *
        *
@@ -2259,6 +2319,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2283,6 +2344,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2306,6 +2368,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2325,6 +2388,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2421,6 +2485,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2444,6 +2509,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2472,6 +2538,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nfsShareId_ = "";
+
   /**
    *
    *
@@ -2496,6 +2563,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2525,6 +2593,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -2549,6 +2618,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2576,6 +2646,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -2593,6 +2664,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -2619,6 +2691,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object volume_ = "";
+
   /**
    *
    *
@@ -2645,6 +2718,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2677,6 +2751,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.NfsShare.AllowedClient>
       allowedClients_;
+
   /**
    *
    *
@@ -2692,6 +2767,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       getAllowedClientsList() {
     return allowedClients_;
   }
+
   /**
    *
    *
@@ -2708,6 +2784,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       getAllowedClientsOrBuilderList() {
     return allowedClients_;
   }
+
   /**
    *
    *
@@ -2722,6 +2799,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
   public int getAllowedClientsCount() {
     return allowedClients_.size();
   }
+
   /**
    *
    *
@@ -2736,6 +2814,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.baremetalsolution.v2.NfsShare.AllowedClient getAllowedClients(int index) {
     return allowedClients_.get(index);
   }
+
   /**
    *
    *
@@ -2778,6 +2857,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -2794,12 +2874,14 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -2813,6 +2895,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -2833,6 +2916,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -2856,6 +2940,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUESTED_SIZE_GIB_FIELD_NUMBER = 7;
   private long requestedSizeGib_ = 0L;
+
   /**
    *
    *
@@ -2874,6 +2959,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STORAGE_TYPE_FIELD_NUMBER = 9;
   private int storageType_ = 0;
+
   /**
    *
    *
@@ -2891,6 +2977,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
   public int getStorageTypeValue() {
     return storageType_;
   }
+
   /**
    *
    *
@@ -3160,6 +3247,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3529,6 +3617,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3551,6 +3640,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3573,6 +3663,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3594,6 +3685,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3611,6 +3703,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3635,6 +3728,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nfsShareId_ = "";
+
     /**
      *
      *
@@ -3658,6 +3752,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3681,6 +3776,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3703,6 +3799,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3721,6 +3818,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3746,6 +3844,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -3769,6 +3868,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3792,6 +3892,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3814,6 +3915,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3832,6 +3934,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3857,6 +3960,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3874,6 +3978,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3894,6 +3999,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3915,6 +4021,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.baremetalsolution.v2.NfsShare.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3938,6 +4045,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3959,6 +4067,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object volume_ = "";
+
     /**
      *
      *
@@ -3984,6 +4093,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4009,6 +4119,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4033,6 +4144,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4053,6 +4165,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4115,6 +4228,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return allowedClientsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4132,6 +4246,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return allowedClientsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4150,6 +4265,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return allowedClientsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4174,6 +4290,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4196,6 +4313,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4220,6 +4338,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4244,6 +4363,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4265,6 +4385,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4287,6 +4408,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4309,6 +4431,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4329,6 +4452,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4349,6 +4473,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4363,6 +4488,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         getAllowedClientsBuilder(int index) {
       return getAllowedClientsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4381,6 +4507,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return allowedClientsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4400,6 +4527,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(allowedClients_);
       }
     }
+
     /**
      *
      *
@@ -4416,6 +4544,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.baremetalsolution.v2.NfsShare.AllowedClient.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4433,6 +4562,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.baremetalsolution.v2.NfsShare.AllowedClient.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4493,6 +4623,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -4509,12 +4640,14 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -4528,6 +4661,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -4548,6 +4682,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -4574,6 +4709,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -4590,12 +4726,14 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -4616,6 +4754,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -4632,6 +4771,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long requestedSizeGib_;
+
     /**
      *
      *
@@ -4647,6 +4787,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     public long getRequestedSizeGib() {
       return requestedSizeGib_;
     }
+
     /**
      *
      *
@@ -4666,6 +4807,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4685,6 +4827,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int storageType_ = 0;
+
     /**
      *
      *
@@ -4702,6 +4845,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     public int getStorageTypeValue() {
       return storageType_;
     }
+
     /**
      *
      *
@@ -4722,6 +4866,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4743,6 +4888,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.baremetalsolution.v2.NfsShare.StorageType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4767,6 +4913,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

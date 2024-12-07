@@ -36,6 +36,7 @@ public interface GetTemplateRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GetTemplateRequestOrBuilder
    * @return Whether the gcsPath field is set.
    */
   boolean hasGcsPath();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface GetTemplateRequestOrBuilder
    * @return The gcsPath.
    */
   java.lang.String getGcsPath();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface GetTemplateRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface GetTemplateRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

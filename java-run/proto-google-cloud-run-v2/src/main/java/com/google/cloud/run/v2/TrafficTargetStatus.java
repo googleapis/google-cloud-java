@@ -33,6 +33,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.TrafficTargetStatus)
     TrafficTargetStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TrafficTargetStatus.newBuilder() to construct.
   private TrafficTargetStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revision_ = "";
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
 
   public static final int PERCENT_FIELD_NUMBER = 3;
   private int percent_ = 0;
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tag_ = "";
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -250,6 +259,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -475,6 +485,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -714,6 +725,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -729,6 +741,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -747,6 +760,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +780,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.run.v2.TrafficTargetAllocationType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -787,6 +802,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +822,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object revision_ = "";
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -850,6 +868,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -871,6 +890,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +908,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +933,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
     }
 
     private int percent_;
+
     /**
      *
      *
@@ -927,6 +949,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
     public int getPercent() {
       return percent_;
     }
+
     /**
      *
      *
@@ -946,6 +969,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +989,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object tag_ = "";
+
     /**
      *
      *
@@ -987,6 +1012,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1035,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1057,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1075,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1100,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1093,6 +1123,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1146,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1136,6 +1168,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1186,7 @@ public final class TrafficTargetStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

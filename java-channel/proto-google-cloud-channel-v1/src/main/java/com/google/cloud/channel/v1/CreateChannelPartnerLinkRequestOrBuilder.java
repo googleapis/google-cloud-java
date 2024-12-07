@@ -38,6 +38,7 @@ public interface CreateChannelPartnerLinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateChannelPartnerLinkRequestOrBuilder
    * @return Whether the channelPartnerLink field is set.
    */
   boolean hasChannelPartnerLink();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateChannelPartnerLinkRequestOrBuilder
    * @return The channelPartnerLink.
    */
   com.google.cloud.channel.v1.ChannelPartnerLink getChannelPartnerLink();
+
   /**
    *
    *

@@ -50,6 +50,7 @@ public interface HealthCheckOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
+
   /**
    *
    *
@@ -118,6 +119,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the checkInterval field is set.
    */
   boolean hasCheckInterval();
+
   /**
    *
    *
@@ -130,6 +132,7 @@ public interface HealthCheckOrBuilder
    * @return The checkInterval.
    */
   com.google.protobuf.Duration getCheckInterval();
+
   /**
    *
    *
@@ -153,6 +156,7 @@ public interface HealthCheckOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public interface HealthCheckOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
+
   /**
    *
    *

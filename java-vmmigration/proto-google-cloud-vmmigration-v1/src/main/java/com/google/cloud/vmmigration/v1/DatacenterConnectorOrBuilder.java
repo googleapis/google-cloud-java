@@ -38,6 +38,7 @@ public interface DatacenterConnectorOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface DatacenterConnectorOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The registrationId.
    */
   java.lang.String getRegistrationId();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The bucket.
    */
   java.lang.String getBucket();
+
   /**
    *
    *
@@ -253,6 +262,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -282,6 +292,7 @@ public interface DatacenterConnectorOrBuilder
    * @return Whether the stateTime field is set.
    */
   boolean hasStateTime();
+
   /**
    *
    *
@@ -295,6 +306,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The stateTime.
    */
   com.google.protobuf.Timestamp getStateTime();
+
   /**
    *
    *
@@ -320,6 +332,7 @@ public interface DatacenterConnectorOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -333,6 +346,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -361,6 +375,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The applianceInfrastructureVersion.
    */
   java.lang.String getApplianceInfrastructureVersion();
+
   /**
    *
    *
@@ -393,6 +408,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The applianceSoftwareVersion.
    */
   java.lang.String getApplianceSoftwareVersion();
+
   /**
    *
    *
@@ -423,6 +439,7 @@ public interface DatacenterConnectorOrBuilder
    * @return Whether the availableVersions field is set.
    */
   boolean hasAvailableVersions();
+
   /**
    *
    *
@@ -437,6 +454,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The availableVersions.
    */
   com.google.cloud.vmmigration.v1.AvailableUpdates getAvailableVersions();
+
   /**
    *
    *
@@ -464,6 +482,7 @@ public interface DatacenterConnectorOrBuilder
    * @return Whether the upgradeStatus field is set.
    */
   boolean hasUpgradeStatus();
+
   /**
    *
    *
@@ -478,6 +497,7 @@ public interface DatacenterConnectorOrBuilder
    * @return The upgradeStatus.
    */
   com.google.cloud.vmmigration.v1.UpgradeStatus getUpgradeStatus();
+
   /**
    *
    *

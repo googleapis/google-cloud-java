@@ -37,6 +37,7 @@ public interface VideoAnnotationResultsOrBuilder
    * @return The inputUri.
    */
   java.lang.String getInputUri();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface VideoAnnotationResultsOrBuilder
    * @return Whether the segment field is set.
    */
   boolean hasSegment();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface VideoAnnotationResultsOrBuilder
    * @return The segment.
    */
   com.google.cloud.videointelligence.v1.VideoSegment getSegment();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
       getSegmentLabelAnnotationsList();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1.LabelAnnotation getSegmentLabelAnnotations(int index);
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getSegmentLabelAnnotationsCount();
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>
       getSegmentLabelAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
       getSegmentPresenceLabelAnnotationsList();
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   com.google.cloud.videointelligence.v1.LabelAnnotation getSegmentPresenceLabelAnnotations(
       int index);
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getSegmentPresenceLabelAnnotationsCount();
+
   /**
    *
    *
@@ -226,6 +236,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>
       getSegmentPresenceLabelAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -258,6 +269,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
       getShotLabelAnnotationsList();
+
   /**
    *
    *
@@ -270,6 +282,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1.LabelAnnotation getShotLabelAnnotations(int index);
+
   /**
    *
    *
@@ -282,6 +295,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getShotLabelAnnotationsCount();
+
   /**
    *
    *
@@ -295,6 +309,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>
       getShotLabelAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -326,6 +341,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
       getShotPresenceLabelAnnotationsList();
+
   /**
    *
    *
@@ -342,6 +358,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1.LabelAnnotation getShotPresenceLabelAnnotations(int index);
+
   /**
    *
    *
@@ -358,6 +375,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getShotPresenceLabelAnnotationsCount();
+
   /**
    *
    *
@@ -375,6 +393,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>
       getShotPresenceLabelAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -406,6 +425,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
       getFrameLabelAnnotationsList();
+
   /**
    *
    *
@@ -418,6 +438,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1.LabelAnnotation getFrameLabelAnnotations(int index);
+
   /**
    *
    *
@@ -430,6 +451,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getFrameLabelAnnotationsCount();
+
   /**
    *
    *
@@ -443,6 +465,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>
       getFrameLabelAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -470,6 +493,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.cloud.videointelligence.v1.FaceAnnotation> getFaceAnnotationsList();
+
   /**
    *
    *
@@ -483,6 +507,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.videointelligence.v1.FaceAnnotation getFaceAnnotations(int index);
+
   /**
    *
    *
@@ -496,6 +521,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   @java.lang.Deprecated
   int getFaceAnnotationsCount();
+
   /**
    *
    *
@@ -510,6 +536,7 @@ public interface VideoAnnotationResultsOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.videointelligence.v1.FaceAnnotationOrBuilder>
       getFaceAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -538,6 +565,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1.FaceDetectionAnnotation>
       getFaceDetectionAnnotationsList();
+
   /**
    *
    *
@@ -551,6 +579,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   com.google.cloud.videointelligence.v1.FaceDetectionAnnotation getFaceDetectionAnnotations(
       int index);
+
   /**
    *
    *
@@ -563,6 +592,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getFaceDetectionAnnotationsCount();
+
   /**
    *
    *
@@ -576,6 +606,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.FaceDetectionAnnotationOrBuilder>
       getFaceDetectionAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -600,6 +631,7 @@ public interface VideoAnnotationResultsOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment shot_annotations = 6;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1.VideoSegment> getShotAnnotationsList();
+
   /**
    *
    *
@@ -610,6 +642,7 @@ public interface VideoAnnotationResultsOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment shot_annotations = 6;</code>
    */
   com.google.cloud.videointelligence.v1.VideoSegment getShotAnnotations(int index);
+
   /**
    *
    *
@@ -620,6 +653,7 @@ public interface VideoAnnotationResultsOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment shot_annotations = 6;</code>
    */
   int getShotAnnotationsCount();
+
   /**
    *
    *
@@ -631,6 +665,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder>
       getShotAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -656,6 +691,7 @@ public interface VideoAnnotationResultsOrBuilder
    * @return Whether the explicitAnnotation field is set.
    */
   boolean hasExplicitAnnotation();
+
   /**
    *
    *
@@ -669,6 +705,7 @@ public interface VideoAnnotationResultsOrBuilder
    * @return The explicitAnnotation.
    */
   com.google.cloud.videointelligence.v1.ExplicitContentAnnotation getExplicitAnnotation();
+
   /**
    *
    *
@@ -695,6 +732,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1.SpeechTranscription>
       getSpeechTranscriptionsList();
+
   /**
    *
    *
@@ -707,6 +745,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1.SpeechTranscription getSpeechTranscriptions(int index);
+
   /**
    *
    *
@@ -719,6 +758,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getSpeechTranscriptionsCount();
+
   /**
    *
    *
@@ -732,6 +772,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.SpeechTranscriptionOrBuilder>
       getSpeechTranscriptionsOrBuilderList();
+
   /**
    *
    *
@@ -758,6 +799,7 @@ public interface VideoAnnotationResultsOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1.TextAnnotation> getTextAnnotationsList();
+
   /**
    *
    *
@@ -770,6 +812,7 @@ public interface VideoAnnotationResultsOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;</code>
    */
   com.google.cloud.videointelligence.v1.TextAnnotation getTextAnnotations(int index);
+
   /**
    *
    *
@@ -782,6 +825,7 @@ public interface VideoAnnotationResultsOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;</code>
    */
   int getTextAnnotationsCount();
+
   /**
    *
    *
@@ -795,6 +839,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.TextAnnotationOrBuilder>
       getTextAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -822,6 +867,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation>
       getObjectAnnotationsList();
+
   /**
    *
    *
@@ -834,6 +880,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation getObjectAnnotations(int index);
+
   /**
    *
    *
@@ -846,6 +893,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getObjectAnnotationsCount();
+
   /**
    *
    *
@@ -859,6 +907,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.ObjectTrackingAnnotationOrBuilder>
       getObjectAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -886,6 +935,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1.LogoRecognitionAnnotation>
       getLogoRecognitionAnnotationsList();
+
   /**
    *
    *
@@ -899,6 +949,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   com.google.cloud.videointelligence.v1.LogoRecognitionAnnotation getLogoRecognitionAnnotations(
       int index);
+
   /**
    *
    *
@@ -911,6 +962,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getLogoRecognitionAnnotationsCount();
+
   /**
    *
    *
@@ -924,6 +976,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.LogoRecognitionAnnotationOrBuilder>
       getLogoRecognitionAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -951,6 +1004,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1.PersonDetectionAnnotation>
       getPersonDetectionAnnotationsList();
+
   /**
    *
    *
@@ -964,6 +1018,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   com.google.cloud.videointelligence.v1.PersonDetectionAnnotation getPersonDetectionAnnotations(
       int index);
+
   /**
    *
    *
@@ -976,6 +1031,7 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getPersonDetectionAnnotationsCount();
+
   /**
    *
    *
@@ -989,6 +1045,7 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.PersonDetectionAnnotationOrBuilder>
       getPersonDetectionAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -1016,6 +1073,7 @@ public interface VideoAnnotationResultsOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -1029,6 +1087,7 @@ public interface VideoAnnotationResultsOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *

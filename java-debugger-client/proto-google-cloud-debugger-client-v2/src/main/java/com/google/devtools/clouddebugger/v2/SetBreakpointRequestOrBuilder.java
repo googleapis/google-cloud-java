@@ -36,6 +36,7 @@ public interface SetBreakpointRequestOrBuilder
    * @return The debuggeeId.
    */
   java.lang.String getDebuggeeId();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface SetBreakpointRequestOrBuilder
    * @return Whether the breakpoint field is set.
    */
   boolean hasBreakpoint();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface SetBreakpointRequestOrBuilder
    * @return The breakpoint.
    */
   com.google.devtools.clouddebugger.v2.Breakpoint getBreakpoint();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface SetBreakpointRequestOrBuilder
    * @return The clientVersion.
    */
   java.lang.String getClientVersion();
+
   /**
    *
    *

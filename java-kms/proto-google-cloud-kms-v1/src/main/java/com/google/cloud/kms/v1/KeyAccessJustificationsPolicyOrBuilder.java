@@ -40,6 +40,7 @@ public interface KeyAccessJustificationsPolicyOrBuilder
    * @return A list containing the allowedAccessReasons.
    */
   java.util.List<com.google.cloud.kms.v1.AccessReason> getAllowedAccessReasonsList();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface KeyAccessJustificationsPolicyOrBuilder
    * @return The count of allowedAccessReasons.
    */
   int getAllowedAccessReasonsCount();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface KeyAccessJustificationsPolicyOrBuilder
    * @return The allowedAccessReasons at the given index.
    */
   com.google.cloud.kms.v1.AccessReason getAllowedAccessReasons(int index);
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface KeyAccessJustificationsPolicyOrBuilder
    * @return A list containing the enum numeric values on the wire for allowedAccessReasons.
    */
   java.util.List<java.lang.Integer> getAllowedAccessReasonsValueList();
+
   /**
    *
    *

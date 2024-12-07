@@ -34,6 +34,7 @@ public interface ListTensorFlowVersionsResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v1.TensorFlowVersion tensorflow_versions = 1;</code>
    */
   java.util.List<com.google.cloud.tpu.v1.TensorFlowVersion> getTensorflowVersionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTensorFlowVersionsResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v1.TensorFlowVersion tensorflow_versions = 1;</code>
    */
   com.google.cloud.tpu.v1.TensorFlowVersion getTensorflowVersions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTensorFlowVersionsResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v1.TensorFlowVersion tensorflow_versions = 1;</code>
    */
   int getTensorflowVersionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListTensorFlowVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.tpu.v1.TensorFlowVersionOrBuilder>
       getTensorflowVersionsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListTensorFlowVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListTensorFlowVersionsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListTensorFlowVersionsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListTensorFlowVersionsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

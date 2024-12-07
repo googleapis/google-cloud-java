@@ -36,6 +36,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * @return Whether the ipRange field is set.
    */
   boolean hasIpRange();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * @return The ipRange.
    */
   java.lang.String getIpRange();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * @return Whether the project field is set.
    */
   boolean hasProject();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *

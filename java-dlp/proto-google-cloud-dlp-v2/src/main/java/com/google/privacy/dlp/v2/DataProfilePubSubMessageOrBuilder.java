@@ -38,6 +38,7 @@ public interface DataProfilePubSubMessageOrBuilder
    * @return Whether the profile field is set.
    */
   boolean hasProfile();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DataProfilePubSubMessageOrBuilder
    * @return The profile.
    */
   com.google.privacy.dlp.v2.TableDataProfile getProfile();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface DataProfilePubSubMessageOrBuilder
    * @return Whether the fileStoreProfile field is set.
    */
   boolean hasFileStoreProfile();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface DataProfilePubSubMessageOrBuilder
    * @return The fileStoreProfile.
    */
   com.google.privacy.dlp.v2.FileStoreDataProfile getFileStoreProfile();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface DataProfilePubSubMessageOrBuilder
    * @return The enum numeric value on the wire for event.
    */
   int getEventValue();
+
   /**
    *
    *

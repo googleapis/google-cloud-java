@@ -36,6 +36,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.PersistentResource)
     PersistentResourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PersistentResource.newBuilder() to construct.
   private PersistentResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -180,6 +181,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -191,6 +193,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * <code>PROVISIONING = 1;</code>
      */
     public static final int PROVISIONING_VALUE = 1;
+
     /**
      *
      *
@@ -202,6 +205,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * <code>RUNNING = 3;</code>
      */
     public static final int RUNNING_VALUE = 3;
+
     /**
      *
      *
@@ -212,6 +216,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * <code>STOPPING = 4;</code>
      */
     public static final int STOPPING_VALUE = 4;
+
     /**
      *
      *
@@ -223,6 +228,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * <code>ERROR = 5;</code>
      */
     public static final int ERROR_VALUE = 5;
+
     /**
      *
      *
@@ -234,6 +240,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * <code>REBOOTING = 6;</code>
      */
     public static final int REBOOTING_VALUE = 6;
+
     /**
      *
      *
@@ -343,6 +350,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -366,6 +374,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -394,6 +403,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -419,6 +429,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -449,6 +460,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.ResourcePool> resourcePools_;
+
   /**
    *
    *
@@ -464,6 +476,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.aiplatform.v1.ResourcePool> getResourcePoolsList() {
     return resourcePools_;
   }
+
   /**
    *
    *
@@ -480,6 +493,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       getResourcePoolsOrBuilderList() {
     return resourcePools_;
   }
+
   /**
    *
    *
@@ -495,6 +509,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public int getResourcePoolsCount() {
     return resourcePools_.size();
   }
+
   /**
    *
    *
@@ -510,6 +525,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.aiplatform.v1.ResourcePool getResourcePools(int index) {
     return resourcePools_.get(index);
   }
+
   /**
    *
    *
@@ -528,6 +544,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
+
   /**
    *
    *
@@ -545,6 +562,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -569,6 +587,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
 
   public static final int ERROR_FIELD_NUMBER = 6;
   private com.google.rpc.Status error_;
+
   /**
    *
    *
@@ -585,6 +604,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public boolean hasError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -601,6 +621,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
+
   /**
    *
    *
@@ -618,6 +639,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -634,6 +656,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -650,6 +673,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -667,6 +691,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
 
   public static final int START_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -684,6 +709,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -701,6 +727,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -719,6 +746,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -735,6 +763,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -751,6 +780,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -792,6 +822,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -815,12 +846,14 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -841,6 +874,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -868,6 +902,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -900,6 +935,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -939,6 +975,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -981,6 +1018,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
 
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 12;
   private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+
   /**
    *
    *
@@ -1000,6 +1038,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public boolean hasEncryptionSpec() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1021,6 +1060,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
         : encryptionSpec_;
   }
+
   /**
    *
    *
@@ -1043,6 +1083,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
 
   public static final int RESOURCE_RUNTIME_SPEC_FIELD_NUMBER = 13;
   private com.google.cloud.aiplatform.v1.ResourceRuntimeSpec resourceRuntimeSpec_;
+
   /**
    *
    *
@@ -1061,6 +1102,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public boolean hasResourceRuntimeSpec() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -1081,6 +1123,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.ResourceRuntimeSpec.getDefaultInstance()
         : resourceRuntimeSpec_;
   }
+
   /**
    *
    *
@@ -1103,6 +1146,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
 
   public static final int RESOURCE_RUNTIME_FIELD_NUMBER = 14;
   private com.google.cloud.aiplatform.v1.ResourceRuntime resourceRuntime_;
+
   /**
    *
    *
@@ -1120,6 +1164,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public boolean hasResourceRuntime() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -1139,6 +1184,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.ResourceRuntime.getDefaultInstance()
         : resourceRuntime_;
   }
+
   /**
    *
    *
@@ -1162,6 +1208,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList reservedIpRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1183,6 +1230,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getReservedIpRangesList() {
     return reservedIpRanges_;
   }
+
   /**
    *
    *
@@ -1204,6 +1252,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public int getReservedIpRangesCount() {
     return reservedIpRanges_.size();
   }
+
   /**
    *
    *
@@ -1226,6 +1275,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
   public java.lang.String getReservedIpRanges(int index) {
     return reservedIpRanges_.get(index);
   }
+
   /**
    *
    *
@@ -1580,6 +1630,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2084,6 +2135,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2106,6 +2158,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2128,6 +2181,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2149,6 +2203,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2166,6 +2221,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2190,6 +2246,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2214,6 +2271,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2238,6 +2296,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2261,6 +2320,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2280,6 +2340,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2340,6 +2401,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return resourcePoolsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2358,6 +2420,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return resourcePoolsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2376,6 +2439,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return resourcePoolsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2400,6 +2464,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2422,6 +2487,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2446,6 +2512,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2470,6 +2537,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2492,6 +2560,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2514,6 +2583,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2536,6 +2606,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2557,6 +2628,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2578,6 +2650,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2592,6 +2665,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.ResourcePool.Builder getResourcePoolsBuilder(int index) {
       return getResourcePoolsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2611,6 +2685,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return resourcePoolsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2630,6 +2705,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(resourcePools_);
       }
     }
+
     /**
      *
      *
@@ -2645,6 +2721,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       return getResourcePoolsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.ResourcePool.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2660,6 +2737,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       return getResourcePoolsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.ResourcePool.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2697,6 +2775,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2714,6 +2793,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2734,6 +2814,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2755,6 +2836,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.aiplatform.v1.PersistentResource.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2778,6 +2860,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2802,6 +2885,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -2817,6 +2901,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public boolean hasError() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2836,6 +2921,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2859,6 +2945,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2879,6 +2966,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2907,6 +2995,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2927,6 +3016,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2942,6 +3032,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2959,6 +3050,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
+
     /**
      *
      *
@@ -2989,6 +3081,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3005,6 +3098,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3027,6 +3121,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3051,6 +3146,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3072,6 +3168,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3101,6 +3198,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3122,6 +3220,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3138,6 +3237,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3158,6 +3258,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3192,6 +3293,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -3208,6 +3310,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3228,6 +3331,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3252,6 +3356,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3273,6 +3378,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3302,6 +3408,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3323,6 +3430,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3339,6 +3447,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3357,6 +3466,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -3391,6 +3501,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -3407,6 +3518,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3429,6 +3541,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3453,6 +3566,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3474,6 +3588,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3503,6 +3618,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3524,6 +3640,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3540,6 +3657,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3560,6 +3678,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -3613,6 +3732,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -3636,12 +3756,14 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -3662,6 +3784,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -3689,6 +3812,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3722,6 +3846,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3745,12 +3870,14 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -3778,6 +3905,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000100;
       return this;
     }
+
     /**
      *
      *
@@ -3801,6 +3929,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -3839,6 +3968,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3877,6 +4007,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3914,6 +4045,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3947,6 +4079,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3992,6 +4125,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
             com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
         encryptionSpecBuilder_;
+
     /**
      *
      *
@@ -4010,6 +4144,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public boolean hasEncryptionSpec() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -4034,6 +4169,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return encryptionSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4060,6 +4196,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4084,6 +4221,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4116,6 +4254,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4139,6 +4278,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4157,6 +4297,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4179,6 +4320,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
             : encryptionSpec_;
       }
     }
+
     /**
      *
      *
@@ -4215,6 +4357,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.ResourceRuntimeSpec.Builder,
             com.google.cloud.aiplatform.v1.ResourceRuntimeSpecOrBuilder>
         resourceRuntimeSpecBuilder_;
+
     /**
      *
      *
@@ -4232,6 +4375,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public boolean hasResourceRuntimeSpec() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -4255,6 +4399,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return resourceRuntimeSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4281,6 +4426,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4304,6 +4450,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4336,6 +4483,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4358,6 +4506,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4376,6 +4525,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getResourceRuntimeSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4398,6 +4548,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
             : resourceRuntimeSpec_;
       }
     }
+
     /**
      *
      *
@@ -4433,6 +4584,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.ResourceRuntime.Builder,
             com.google.cloud.aiplatform.v1.ResourceRuntimeOrBuilder>
         resourceRuntimeBuilder_;
+
     /**
      *
      *
@@ -4449,6 +4601,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public boolean hasResourceRuntime() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -4471,6 +4624,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         return resourceRuntimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4495,6 +4649,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4517,6 +4672,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4547,6 +4703,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4568,6 +4725,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4584,6 +4742,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getResourceRuntimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4604,6 +4763,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
             : resourceRuntime_;
       }
     }
+
     /**
      *
      *
@@ -4641,6 +4801,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00002000;
     }
+
     /**
      *
      *
@@ -4664,6 +4825,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       reservedIpRanges_.makeImmutable();
       return reservedIpRanges_;
     }
+
     /**
      *
      *
@@ -4686,6 +4848,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public int getReservedIpRangesCount() {
       return reservedIpRanges_.size();
     }
+
     /**
      *
      *
@@ -4709,6 +4872,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public java.lang.String getReservedIpRanges(int index) {
       return reservedIpRanges_.get(index);
     }
+
     /**
      *
      *
@@ -4732,6 +4896,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getReservedIpRangesBytes(int index) {
       return reservedIpRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4763,6 +4928,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4793,6 +4959,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4820,6 +4987,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4846,6 +5014,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

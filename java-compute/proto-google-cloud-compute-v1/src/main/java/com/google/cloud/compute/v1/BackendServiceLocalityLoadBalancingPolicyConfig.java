@@ -34,6 +34,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig)
     BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackendServiceLocalityLoadBalancingPolicyConfig.newBuilder() to construct.
   private BackendServiceLocalityLoadBalancingPolicyConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
   public static final int CUSTOM_POLICY_FIELD_NUMBER = 4818368;
   private com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
       customPolicy_;
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -79,6 +81,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
   public boolean hasCustomPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -94,6 +97,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
             .getDefaultInstance()
         : customPolicy_;
   }
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -111,6 +115,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
 
   public static final int POLICY_FIELD_NUMBER = 91071794;
   private com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy_;
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;
@@ -122,6 +127,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
   public boolean hasPolicy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;
@@ -137,6 +143,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
             .getDefaultInstance()
         : policy_;
   }
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;
@@ -337,6 +344,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -574,6 +582,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
             com.google.cloud.compute.v1
                 .BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicyOrBuilder>
         customPolicyBuilder_;
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -584,6 +593,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
     public boolean hasCustomPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -602,6 +612,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
         return customPolicyBuilder_.getMessage();
       }
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -622,6 +633,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -640,6 +652,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -668,6 +681,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
       }
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -683,6 +697,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -695,6 +710,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
       onChanged();
       return getCustomPolicyFieldBuilder().getBuilder();
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -712,6 +728,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
             : customPolicy_;
       }
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy custom_policy = 4818368;
@@ -748,6 +765,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
             com.google.cloud.compute.v1
                 .BackendServiceLocalityLoadBalancingPolicyConfigPolicyOrBuilder>
         policyBuilder_;
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;
@@ -758,6 +776,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;
@@ -776,6 +795,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
         return policyBuilder_.getMessage();
       }
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;
@@ -795,6 +815,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;
@@ -812,6 +833,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;
@@ -838,6 +860,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
       }
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;
@@ -853,6 +876,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;
@@ -864,6 +888,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;
@@ -881,6 +906,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
             : policy_;
       }
     }
+
     /**
      * <code>
      * optional .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy policy = 91071794;

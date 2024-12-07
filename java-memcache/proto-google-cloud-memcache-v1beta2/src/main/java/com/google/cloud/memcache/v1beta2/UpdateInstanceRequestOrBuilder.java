@@ -39,6 +39,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return The resource.
    */
   com.google.cloud.memcache.v1beta2.Instance getResource();
+
   /**
    *
    *

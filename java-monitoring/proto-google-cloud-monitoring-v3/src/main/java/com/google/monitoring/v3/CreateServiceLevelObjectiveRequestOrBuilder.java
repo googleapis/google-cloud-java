@@ -40,6 +40,7 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    * @return The serviceLevelObjectiveId.
    */
   java.lang.String getServiceLevelObjectiveId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    * @return Whether the serviceLevelObjective field is set.
    */
   boolean hasServiceLevelObjective();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    * @return The serviceLevelObjective.
    */
   com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjective();
+
   /**
    *
    *

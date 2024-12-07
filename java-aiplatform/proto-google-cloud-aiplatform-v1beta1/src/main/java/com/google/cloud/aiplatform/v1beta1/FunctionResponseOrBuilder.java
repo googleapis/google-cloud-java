@@ -37,6 +37,7 @@ public interface FunctionResponseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface FunctionResponseOrBuilder
    * @return Whether the response field is set.
    */
   boolean hasResponse();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface FunctionResponseOrBuilder
    * @return The response.
    */
   com.google.protobuf.Struct getResponse();
+
   /**
    *
    *

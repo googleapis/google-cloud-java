@@ -34,6 +34,7 @@ public final class QueryRepositoryDirectoryContentsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest)
     QueryRepositoryDirectoryContentsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryRepositoryDirectoryContentsRequest.newBuilder() to construct.
   private QueryRepositoryDirectoryContentsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class QueryRepositoryDirectoryContentsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class QueryRepositoryDirectoryContentsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class QueryRepositoryDirectoryContentsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object commitSha_ = "";
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class QueryRepositoryDirectoryContentsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class QueryRepositoryDirectoryContentsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public final class QueryRepositoryDirectoryContentsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public final class QueryRepositoryDirectoryContentsRequest
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -254,6 +262,7 @@ public final class QueryRepositoryDirectoryContentsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -283,6 +292,7 @@ public final class QueryRepositoryDirectoryContentsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -511,6 +521,7 @@ public final class QueryRepositoryDirectoryContentsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -764,6 +775,7 @@ public final class QueryRepositoryDirectoryContentsRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -788,6 +800,7 @@ public final class QueryRepositoryDirectoryContentsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -812,6 +825,7 @@ public final class QueryRepositoryDirectoryContentsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -835,6 +849,7 @@ public final class QueryRepositoryDirectoryContentsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +869,7 @@ public final class QueryRepositoryDirectoryContentsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +896,7 @@ public final class QueryRepositoryDirectoryContentsRequest
     }
 
     private java.lang.Object commitSha_ = "";
+
     /**
      *
      *
@@ -903,6 +920,7 @@ public final class QueryRepositoryDirectoryContentsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -926,6 +944,7 @@ public final class QueryRepositoryDirectoryContentsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -948,6 +967,7 @@ public final class QueryRepositoryDirectoryContentsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +986,7 @@ public final class QueryRepositoryDirectoryContentsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1012,7 @@ public final class QueryRepositoryDirectoryContentsRequest
     }
 
     private java.lang.Object path_ = "";
+
     /**
      *
      *
@@ -1014,6 +1036,7 @@ public final class QueryRepositoryDirectoryContentsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1060,7 @@ public final class QueryRepositoryDirectoryContentsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1059,6 +1083,7 @@ public final class QueryRepositoryDirectoryContentsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1102,7 @@ public final class QueryRepositoryDirectoryContentsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1128,7 @@ public final class QueryRepositoryDirectoryContentsRequest
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1119,6 +1146,7 @@ public final class QueryRepositoryDirectoryContentsRequest
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1140,6 +1168,7 @@ public final class QueryRepositoryDirectoryContentsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1190,7 @@ public final class QueryRepositoryDirectoryContentsRequest
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1189,6 +1219,7 @@ public final class QueryRepositoryDirectoryContentsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1248,7 @@ public final class QueryRepositoryDirectoryContentsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1244,6 +1276,7 @@ public final class QueryRepositoryDirectoryContentsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1300,7 @@ public final class QueryRepositoryDirectoryContentsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

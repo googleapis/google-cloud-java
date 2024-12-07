@@ -37,6 +37,7 @@ public interface ImportAptArtifactsRequestOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ImportAptArtifactsRequestOrBuilder
    * @return The gcsSource.
    */
   com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsGcsSource getGcsSource();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ImportAptArtifactsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public final class VideoObjectTrackingEvaluationMetrics
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics)
     VideoObjectTrackingEvaluationMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VideoObjectTrackingEvaluationMetrics.newBuilder() to construct.
   private VideoObjectTrackingEvaluationMetrics(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class VideoObjectTrackingEvaluationMetrics
 
   public static final int EVALUATED_FRAME_COUNT_FIELD_NUMBER = 1;
   private int evaluatedFrameCount_ = 0;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class VideoObjectTrackingEvaluationMetrics
 
   public static final int EVALUATED_BOUNDING_BOX_COUNT_FIELD_NUMBER = 2;
   private int evaluatedBoundingBoxCount_ = 0;
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class VideoObjectTrackingEvaluationMetrics
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry>
       boundingBoxMetricsEntries_;
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       getBoundingBoxMetricsEntriesList() {
     return boundingBoxMetricsEntries_;
   }
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       getBoundingBoxMetricsEntriesOrBuilderList() {
     return boundingBoxMetricsEntries_;
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class VideoObjectTrackingEvaluationMetrics
   public int getBoundingBoxMetricsEntriesCount() {
     return boundingBoxMetricsEntries_.size();
   }
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       int index) {
     return boundingBoxMetricsEntries_.get(index);
   }
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public final class VideoObjectTrackingEvaluationMetrics
 
   public static final int BOUNDING_BOX_MEAN_AVERAGE_PRECISION_FIELD_NUMBER = 6;
   private float boundingBoxMeanAveragePrecision_ = 0F;
+
   /**
    *
    *
@@ -419,6 +428,7 @@ public final class VideoObjectTrackingEvaluationMetrics
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -699,6 +709,7 @@ public final class VideoObjectTrackingEvaluationMetrics
     private int bitField0_;
 
     private int evaluatedFrameCount_;
+
     /**
      *
      *
@@ -714,6 +725,7 @@ public final class VideoObjectTrackingEvaluationMetrics
     public int getEvaluatedFrameCount() {
       return evaluatedFrameCount_;
     }
+
     /**
      *
      *
@@ -733,6 +745,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +765,7 @@ public final class VideoObjectTrackingEvaluationMetrics
     }
 
     private int evaluatedBoundingBoxCount_;
+
     /**
      *
      *
@@ -768,6 +782,7 @@ public final class VideoObjectTrackingEvaluationMetrics
     public int getEvaluatedBoundingBoxCount() {
       return evaluatedBoundingBoxCount_;
     }
+
     /**
      *
      *
@@ -788,6 +803,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +863,7 @@ public final class VideoObjectTrackingEvaluationMetrics
         return boundingBoxMetricsEntriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -868,6 +885,7 @@ public final class VideoObjectTrackingEvaluationMetrics
         return boundingBoxMetricsEntriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -890,6 +908,7 @@ public final class VideoObjectTrackingEvaluationMetrics
         return boundingBoxMetricsEntriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -918,6 +937,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       }
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +964,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       }
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +993,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       }
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1022,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       }
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1048,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       }
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1075,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       }
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1102,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       }
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1127,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       }
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1152,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       }
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1171,7 @@ public final class VideoObjectTrackingEvaluationMetrics
         getBoundingBoxMetricsEntriesBuilder(int index) {
       return getBoundingBoxMetricsEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1165,6 +1194,7 @@ public final class VideoObjectTrackingEvaluationMetrics
         return boundingBoxMetricsEntriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1188,6 +1218,7 @@ public final class VideoObjectTrackingEvaluationMetrics
         return java.util.Collections.unmodifiableList(boundingBoxMetricsEntries_);
       }
     }
+
     /**
      *
      *
@@ -1207,6 +1238,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       return getBoundingBoxMetricsEntriesFieldBuilder()
           .addBuilder(com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1227,6 +1259,7 @@ public final class VideoObjectTrackingEvaluationMetrics
           .addBuilder(
               index, com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1267,6 +1300,7 @@ public final class VideoObjectTrackingEvaluationMetrics
     }
 
     private float boundingBoxMeanAveragePrecision_;
+
     /**
      *
      *
@@ -1283,6 +1317,7 @@ public final class VideoObjectTrackingEvaluationMetrics
     public float getBoundingBoxMeanAveragePrecision() {
       return boundingBoxMeanAveragePrecision_;
     }
+
     /**
      *
      *
@@ -1303,6 +1338,7 @@ public final class VideoObjectTrackingEvaluationMetrics
       onChanged();
       return this;
     }
+
     /**
      *
      *

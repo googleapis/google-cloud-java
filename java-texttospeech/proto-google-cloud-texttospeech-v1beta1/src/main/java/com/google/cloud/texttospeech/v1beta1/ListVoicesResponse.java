@@ -33,6 +33,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1beta1.ListVoicesResponse)
     ListVoicesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListVoicesResponse.newBuilder() to construct.
   private ListVoicesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.texttospeech.v1beta1.Voice> voices_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.texttospeech.v1beta1.Voice> getVoicesList() {
     return voices_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
       getVoicesOrBuilderList() {
     return voices_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
   public int getVoicesCount() {
     return voices_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.texttospeech.v1beta1.Voice getVoices(int index) {
     return voices_.get(index);
   }
+
   /**
    *
    *
@@ -296,6 +302,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -557,6 +564,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
         return voicesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -573,6 +581,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
         return voicesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -589,6 +598,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
         return voicesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -653,6 +665,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +708,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +729,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +750,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +770,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +790,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +803,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.texttospeech.v1beta1.Voice.Builder getVoicesBuilder(int index) {
       return getVoicesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -800,6 +820,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
         return voicesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -817,6 +838,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(voices_);
       }
     }
+
     /**
      *
      *
@@ -830,6 +852,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
       return getVoicesFieldBuilder()
           .addBuilder(com.google.cloud.texttospeech.v1beta1.Voice.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -843,6 +866,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
       return getVoicesFieldBuilder()
           .addBuilder(index, com.google.cloud.texttospeech.v1beta1.Voice.getDefaultInstance());
     }
+
     /**
      *
      *

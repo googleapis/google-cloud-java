@@ -41,6 +41,7 @@ public interface WorkloadALTSConfigOrBuilder
    * @return Whether the enableAlts field is set.
    */
   boolean hasEnableAlts();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface WorkloadALTSConfigOrBuilder
    * @return The enableAlts.
    */
   com.google.protobuf.BoolValue getEnableAlts();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface CreateGlossaryEntryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateGlossaryEntryRequestOrBuilder
    * @return Whether the glossaryEntry field is set.
    */
   boolean hasGlossaryEntry();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateGlossaryEntryRequestOrBuilder
    * @return The glossaryEntry.
    */
   com.google.cloud.translate.v3.GlossaryEntry getGlossaryEntry();
+
   /**
    *
    *

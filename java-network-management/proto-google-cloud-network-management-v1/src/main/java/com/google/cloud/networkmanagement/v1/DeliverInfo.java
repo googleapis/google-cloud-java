@@ -33,6 +33,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.DeliverInfo)
     DeliverInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeliverInfo.newBuilder() to construct.
   private DeliverInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -273,6 +274,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>TARGET_UNSPECIFIED = 0;</code>
      */
     public static final int TARGET_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -283,6 +285,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTANCE = 1;</code>
      */
     public static final int INSTANCE_VALUE = 1;
+
     /**
      *
      *
@@ -293,6 +296,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERNET = 2;</code>
      */
     public static final int INTERNET_VALUE = 2;
+
     /**
      *
      *
@@ -303,6 +307,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>GOOGLE_API = 3;</code>
      */
     public static final int GOOGLE_API_VALUE = 3;
+
     /**
      *
      *
@@ -313,6 +318,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>GKE_MASTER = 4;</code>
      */
     public static final int GKE_MASTER_VALUE = 4;
+
     /**
      *
      *
@@ -323,6 +329,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_SQL_INSTANCE = 5;</code>
      */
     public static final int CLOUD_SQL_INSTANCE_VALUE = 5;
+
     /**
      *
      *
@@ -334,6 +341,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PSC_PUBLISHED_SERVICE = 6;</code>
      */
     public static final int PSC_PUBLISHED_SERVICE_VALUE = 6;
+
     /**
      *
      *
@@ -345,6 +353,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PSC_GOOGLE_API = 7;</code>
      */
     public static final int PSC_GOOGLE_API_VALUE = 7;
+
     /**
      *
      *
@@ -356,6 +365,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PSC_VPC_SC = 8;</code>
      */
     public static final int PSC_VPC_SC_VALUE = 8;
+
     /**
      *
      *
@@ -366,6 +376,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVERLESS_NEG = 9;</code>
      */
     public static final int SERVERLESS_NEG_VALUE = 9;
+
     /**
      *
      *
@@ -376,6 +387,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>STORAGE_BUCKET = 10;</code>
      */
     public static final int STORAGE_BUCKET_VALUE = 10;
+
     /**
      *
      *
@@ -386,6 +398,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIVATE_NETWORK = 11;</code>
      */
     public static final int PRIVATE_NETWORK_VALUE = 11;
+
     /**
      *
      *
@@ -396,6 +409,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_FUNCTION = 12;</code>
      */
     public static final int CLOUD_FUNCTION_VALUE = 12;
+
     /**
      *
      *
@@ -406,6 +420,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>APP_ENGINE_VERSION = 13;</code>
      */
     public static final int APP_ENGINE_VERSION_VALUE = 13;
+
     /**
      *
      *
@@ -416,6 +431,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_RUN_REVISION = 14;</code>
      */
     public static final int CLOUD_RUN_REVISION_VALUE = 14;
+
     /**
      *
      *
@@ -426,6 +442,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>GOOGLE_MANAGED_SERVICE = 15;</code>
      */
     public static final int GOOGLE_MANAGED_SERVICE_VALUE = 15;
+
     /**
      *
      *
@@ -436,6 +453,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>REDIS_INSTANCE = 16;</code>
      */
     public static final int REDIS_INSTANCE_VALUE = 16;
+
     /**
      *
      *
@@ -564,6 +582,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_FIELD_NUMBER = 1;
   private int target_ = 0;
+
   /**
    *
    *
@@ -579,6 +598,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
   public int getTargetValue() {
     return target_;
   }
+
   /**
    *
    *
@@ -603,6 +623,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceUri_ = "";
+
   /**
    *
    *
@@ -626,6 +647,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -654,6 +676,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
+
   /**
    *
    *
@@ -677,6 +700,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -705,6 +729,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storageBucket_ = "";
+
   /**
    *
    *
@@ -729,6 +754,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -758,6 +784,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pscGoogleApiTarget_ = "";
+
   /**
    *
    *
@@ -781,6 +808,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1004,6 +1032,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1246,6 +1275,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int target_ = 0;
+
     /**
      *
      *
@@ -1261,6 +1291,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     public int getTargetValue() {
       return target_;
     }
+
     /**
      *
      *
@@ -1279,6 +1310,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1330,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1.DeliverInfo.Target.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1319,6 +1352,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1338,6 +1372,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resourceUri_ = "";
+
     /**
      *
      *
@@ -1360,6 +1395,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1382,6 +1418,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1403,6 +1440,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1420,6 +1458,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1444,6 +1483,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -1466,6 +1506,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1488,6 +1529,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1509,6 +1551,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1526,6 +1569,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1550,6 +1594,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object storageBucket_ = "";
+
     /**
      *
      *
@@ -1573,6 +1618,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1596,6 +1642,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1618,6 +1665,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1636,6 +1684,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1661,6 +1710,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object pscGoogleApiTarget_ = "";
+
     /**
      *
      *
@@ -1683,6 +1733,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1705,6 +1756,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1726,6 +1778,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1743,6 +1796,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

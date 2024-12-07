@@ -34,6 +34,7 @@ public interface BatchGetServicesResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1.Service services = 1;</code>
    */
   java.util.List<com.google.api.serviceusage.v1.Service> getServicesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BatchGetServicesResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1.Service services = 1;</code>
    */
   com.google.api.serviceusage.v1.Service getServices(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BatchGetServicesResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1.Service services = 1;</code>
    */
   int getServicesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BatchGetServicesResponseOrBuilder
    */
   java.util.List<? extends com.google.api.serviceusage.v1.ServiceOrBuilder>
       getServicesOrBuilderList();
+
   /**
    *
    *

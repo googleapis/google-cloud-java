@@ -36,6 +36,7 @@ public interface ModelMonitoringSpecOrBuilder
    * @return Whether the objectiveSpec field is set.
    */
   boolean hasObjectiveSpec();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ModelMonitoringSpecOrBuilder
    * @return The objectiveSpec.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveSpec getObjectiveSpec();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ModelMonitoringSpecOrBuilder
    * @return Whether the notificationSpec field is set.
    */
   boolean hasNotificationSpec();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface ModelMonitoringSpecOrBuilder
    * @return The notificationSpec.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec getNotificationSpec();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface ModelMonitoringSpecOrBuilder
    * @return Whether the outputSpec field is set.
    */
   boolean hasOutputSpec();
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public interface ModelMonitoringSpecOrBuilder
    * @return The outputSpec.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringOutputSpec getOutputSpec();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.GuestConfigDetails)
     GuestConfigDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GuestConfigDetails.newBuilder() to construct.
   private GuestConfigDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,6 +128,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
      * <code>SE_LINUX_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int SE_LINUX_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -137,6 +139,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
      * <code>SE_LINUX_MODE_DISABLED = 1;</code>
      */
     public static final int SE_LINUX_MODE_DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -147,6 +150,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
      * <code>SE_LINUX_MODE_PERMISSIVE = 2;</code>
      */
     public static final int SE_LINUX_MODE_PERMISSIVE_VALUE = 2;
+
     /**
      *
      *
@@ -250,6 +254,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object issue_ = "";
+
   /**
    *
    *
@@ -273,6 +278,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -299,6 +305,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
 
   public static final int FSTAB_FIELD_NUMBER = 2;
   private com.google.cloud.migrationcenter.v1.FstabEntryList fstab_;
+
   /**
    *
    *
@@ -314,6 +321,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
   public boolean hasFstab() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -331,6 +339,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.migrationcenter.v1.FstabEntryList.getDefaultInstance()
         : fstab_;
   }
+
   /**
    *
    *
@@ -349,6 +358,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
 
   public static final int HOSTS_FIELD_NUMBER = 3;
   private com.google.cloud.migrationcenter.v1.HostsEntryList hosts_;
+
   /**
    *
    *
@@ -364,6 +374,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
   public boolean hasHosts() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -381,6 +392,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.migrationcenter.v1.HostsEntryList.getDefaultInstance()
         : hosts_;
   }
+
   /**
    *
    *
@@ -399,6 +411,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
 
   public static final int NFS_EXPORTS_FIELD_NUMBER = 4;
   private com.google.cloud.migrationcenter.v1.NfsExportList nfsExports_;
+
   /**
    *
    *
@@ -414,6 +427,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
   public boolean hasNfsExports() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -431,6 +445,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.migrationcenter.v1.NfsExportList.getDefaultInstance()
         : nfsExports_;
   }
+
   /**
    *
    *
@@ -449,6 +464,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
 
   public static final int SELINUX_MODE_FIELD_NUMBER = 5;
   private int selinuxMode_ = 0;
+
   /**
    *
    *
@@ -464,6 +480,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
   public int getSelinuxModeValue() {
     return selinuxMode_;
   }
+
   /**
    *
    *
@@ -701,6 +718,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -965,6 +983,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object issue_ = "";
+
     /**
      *
      *
@@ -987,6 +1006,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1029,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1051,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1069,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1099,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
             com.google.cloud.migrationcenter.v1.FstabEntryList.Builder,
             com.google.cloud.migrationcenter.v1.FstabEntryListOrBuilder>
         fstabBuilder_;
+
     /**
      *
      *
@@ -1090,6 +1114,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
     public boolean hasFstab() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1110,6 +1135,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
         return fstabBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1132,6 +1158,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1179,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1207,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1198,6 +1227,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1242,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getFstabFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1230,6 +1261,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
             : fstab_;
       }
     }
+
     /**
      *
      *
@@ -1262,6 +1294,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
             com.google.cloud.migrationcenter.v1.HostsEntryList.Builder,
             com.google.cloud.migrationcenter.v1.HostsEntryListOrBuilder>
         hostsBuilder_;
+
     /**
      *
      *
@@ -1276,6 +1309,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
     public boolean hasHosts() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1296,6 +1330,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
         return hostsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1318,6 +1353,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1338,6 +1374,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1402,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1384,6 +1422,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1398,6 +1437,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getHostsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1416,6 +1456,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
             : hosts_;
       }
     }
+
     /**
      *
      *
@@ -1448,6 +1489,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
             com.google.cloud.migrationcenter.v1.NfsExportList.Builder,
             com.google.cloud.migrationcenter.v1.NfsExportListOrBuilder>
         nfsExportsBuilder_;
+
     /**
      *
      *
@@ -1462,6 +1504,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
     public boolean hasNfsExports() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1482,6 +1525,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
         return nfsExportsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1504,6 +1548,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1524,6 +1569,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1552,6 +1598,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1571,6 +1618,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1585,6 +1633,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getNfsExportsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1603,6 +1652,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
             : nfsExports_;
       }
     }
+
     /**
      *
      *
@@ -1630,6 +1680,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
     }
 
     private int selinuxMode_ = 0;
+
     /**
      *
      *
@@ -1646,6 +1697,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
     public int getSelinuxModeValue() {
       return selinuxMode_;
     }
+
     /**
      *
      *
@@ -1665,6 +1717,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1686,6 +1739,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.migrationcenter.v1.GuestConfigDetails.SeLinuxMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1709,6 +1763,7 @@ public final class GuestConfigDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

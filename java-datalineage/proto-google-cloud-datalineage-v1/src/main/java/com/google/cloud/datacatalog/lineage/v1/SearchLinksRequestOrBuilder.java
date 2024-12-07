@@ -38,6 +38,7 @@ public interface SearchLinksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface SearchLinksRequestOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface SearchLinksRequestOrBuilder
    * @return The source.
    */
   com.google.cloud.datacatalog.lineage.v1.EntityReference getSource();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface SearchLinksRequestOrBuilder
    * @return Whether the target field is set.
    */
   boolean hasTarget();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface SearchLinksRequestOrBuilder
    * @return The target.
    */
   com.google.cloud.datacatalog.lineage.v1.EntityReference getTarget();
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public interface SearchLinksRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

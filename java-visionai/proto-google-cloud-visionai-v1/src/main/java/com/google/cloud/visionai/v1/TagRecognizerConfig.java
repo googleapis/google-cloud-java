@@ -33,6 +33,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.TagRecognizerConfig)
     TagRecognizerConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TagRecognizerConfig.newBuilder() to construct.
   private TagRecognizerConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int ENTITY_DETECTION_CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
   private float entityDetectionConfidenceThreshold_ = 0F;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
 
   public static final int TAG_PARSING_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.visionai.v1.TagParsingConfig tagParsingConfig_;
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
   public boolean hasTagParsingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.visionai.v1.TagParsingConfig.getDefaultInstance()
         : tagParsingConfig_;
   }
+
   /**
    *
    *
@@ -308,6 +313,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -521,6 +527,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private float entityDetectionConfidenceThreshold_;
+
     /**
      *
      *
@@ -537,6 +544,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
     public float getEntityDetectionConfidenceThreshold() {
       return entityDetectionConfidenceThreshold_;
     }
+
     /**
      *
      *
@@ -557,6 +565,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -582,6 +591,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.visionai.v1.TagParsingConfig.Builder,
             com.google.cloud.visionai.v1.TagParsingConfigOrBuilder>
         tagParsingConfigBuilder_;
+
     /**
      *
      *
@@ -596,6 +606,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
     public boolean hasTagParsingConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -616,6 +627,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
         return tagParsingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -638,6 +650,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +671,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +700,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +720,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +735,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getTagParsingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -737,6 +754,7 @@ public final class TagRecognizerConfig extends com.google.protobuf.GeneratedMess
             : tagParsingConfig_;
       }
     }
+
     /**
      *
      *

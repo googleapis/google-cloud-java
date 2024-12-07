@@ -35,6 +35,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AutomaticResources)
     AutomaticResourcesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutomaticResources.newBuilder() to construct.
   private AutomaticResources(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
 
   public static final int MIN_REPLICA_COUNT_FIELD_NUMBER = 1;
   private int minReplicaCount_ = 0;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
 
   public static final int MAX_REPLICA_COUNT_FIELD_NUMBER = 2;
   private int maxReplicaCount_ = 0;
+
   /**
    *
    *
@@ -281,6 +284,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -478,6 +482,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int minReplicaCount_;
+
     /**
      *
      *
@@ -498,6 +503,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
     public int getMinReplicaCount() {
       return minReplicaCount_;
     }
+
     /**
      *
      *
@@ -522,6 +528,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -546,6 +553,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
     }
 
     private int maxReplicaCount_;
+
     /**
      *
      *
@@ -569,6 +577,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
     public int getMaxReplicaCount() {
       return maxReplicaCount_;
     }
+
     /**
      *
      *
@@ -596,6 +605,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

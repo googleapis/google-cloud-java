@@ -41,6 +41,7 @@ public interface UpdateClusterRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface UpdateClusterRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface UpdateClusterRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public interface UpdateClusterRequestOrBuilder
    * @return Whether the update field is set.
    */
   boolean hasUpdate();
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public interface UpdateClusterRequestOrBuilder
    * @return The update.
    */
   com.google.container.v1.ClusterUpdate getUpdate();
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public interface UpdateClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

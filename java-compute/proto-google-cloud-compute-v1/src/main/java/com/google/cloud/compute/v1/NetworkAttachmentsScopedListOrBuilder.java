@@ -35,6 +35,7 @@ public interface NetworkAttachmentsScopedListOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.NetworkAttachment> getNetworkAttachmentsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface NetworkAttachmentsScopedListOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.NetworkAttachment getNetworkAttachments(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface NetworkAttachmentsScopedListOrBuilder
    * </code>
    */
   int getNetworkAttachmentsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface NetworkAttachmentsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NetworkAttachmentOrBuilder>
       getNetworkAttachmentsOrBuilderList();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface NetworkAttachmentsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -105,6 +110,7 @@ public interface NetworkAttachmentsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

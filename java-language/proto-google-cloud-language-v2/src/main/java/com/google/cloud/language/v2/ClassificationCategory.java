@@ -33,6 +33,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.language.v2.ClassificationCategory)
     ClassificationCategoryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClassificationCategory.newBuilder() to construct.
   private ClassificationCategory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
 
   public static final int SEVERITY_FIELD_NUMBER = 3;
   private float severity_ = 0F;
+
   /**
    *
    *
@@ -332,6 +337,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -542,6 +548,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -564,6 +571,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -586,6 +594,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -607,6 +616,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -664,6 +676,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -684,6 +697,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -704,6 +718,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     }
 
     private float severity_;
+
     /**
      *
      *
@@ -721,6 +736,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     public float getSeverity() {
       return severity_;
     }
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.AggregateAssetsValuesRequest)
     AggregateAssetsValuesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AggregateAssetsValuesRequest.newBuilder() to construct.
   private AggregateAssetsValuesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.Aggregation> aggregations_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.migrationcenter.v1.Aggregation> getAggregationsList() {
     return aggregations_;
   }
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       getAggregationsOrBuilderList() {
     return aggregations_;
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
   public int getAggregationsCount() {
     return aggregations_.size();
   }
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
   public com.google.cloud.migrationcenter.v1.Aggregation getAggregations(int index) {
     return aggregations_.get(index);
   }
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -220,6 +229,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -424,6 +434,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -689,6 +700,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -711,6 +723,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +844,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
         return aggregationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -845,6 +862,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
         return aggregationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -862,6 +880,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
         return aggregationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -886,6 +905,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +951,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +976,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +998,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1020,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1042,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1063,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1084,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1099,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
         int index) {
       return getAggregationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1089,6 +1118,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
         return aggregationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1107,6 +1137,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(aggregations_);
       }
     }
+
     /**
      *
      *
@@ -1121,6 +1152,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       return getAggregationsFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.Aggregation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1136,6 +1168,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       return getAggregationsFieldBuilder()
           .addBuilder(index, com.google.cloud.migrationcenter.v1.Aggregation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1169,6 +1202,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -1191,6 +1225,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1213,6 +1248,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1234,6 +1270,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1251,6 +1288,7 @@ public final class AggregateAssetsValuesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

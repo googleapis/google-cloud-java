@@ -33,6 +33,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ArticleSuggestionData)
     ArticleSuggestionDataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ArticleSuggestionData.newBuilder() to construct.
   private ArticleSuggestionData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
 
   public static final int CONFIDENCE_SCORE_FIELD_NUMBER = 3;
   private float confidenceScore_ = 0F;
+
   /**
    *
    *
@@ -226,6 +232,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
   public int getMetadataCount() {
     return internalGetMetadata().getMap().size();
   }
+
   /**
    *
    *
@@ -243,12 +250,14 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
+
   /**
    *
    *
@@ -284,6 +294,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -310,6 +321,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object queryRecord_ = "";
+
   /**
    *
    *
@@ -335,6 +347,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -365,6 +378,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object source_ = "";
+
   /**
    *
    *
@@ -390,6 +404,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -630,6 +645,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -917,6 +933,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -939,6 +956,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -961,6 +979,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -982,6 +1001,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1019,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1044,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1045,6 +1067,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1067,6 +1090,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1088,6 +1112,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1130,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1155,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     }
 
     private float confidenceScore_;
+
     /**
      *
      *
@@ -1146,6 +1173,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     public float getConfidenceScore() {
       return confidenceScore_;
     }
+
     /**
      *
      *
@@ -1167,6 +1195,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1213,6 +1242,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
+
     /**
      *
      *
@@ -1230,12 +1260,14 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
+
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
+
     /**
      *
      *
@@ -1250,6 +1282,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
+
     /**
      *
      *
@@ -1271,6 +1304,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1298,6 +1332,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1315,12 +1350,14 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       bitField0_ |= 0x00000008;
       return internalGetMutableMetadata().getMutableMap();
     }
+
     /**
      *
      *
@@ -1342,6 +1379,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1397,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object queryRecord_ = "";
+
     /**
      *
      *
@@ -1383,6 +1422,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1407,6 +1447,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1430,6 +1471,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1449,6 +1491,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1475,6 +1518,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object source_ = "";
+
     /**
      *
      *
@@ -1499,6 +1543,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1523,6 +1568,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1546,6 +1592,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1565,6 +1612,7 @@ public final class ArticleSuggestionData extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

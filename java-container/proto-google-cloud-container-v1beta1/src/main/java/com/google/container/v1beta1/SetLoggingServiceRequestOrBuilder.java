@@ -42,6 +42,7 @@ public interface SetLoggingServiceRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface SetLoggingServiceRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public interface SetLoggingServiceRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -155,6 +158,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * @return The loggingService.
    */
   java.lang.String getLoggingService();
+
   /**
    *
    *
@@ -191,6 +195,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface TaskGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface TaskGroupOrBuilder
    * @return Whether the taskSpec field is set.
    */
   boolean hasTaskSpec();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface TaskGroupOrBuilder
    * @return The taskSpec.
    */
   com.google.cloud.batch.v1.TaskSpec getTaskSpec();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface TaskGroupOrBuilder
    * @return The enum numeric value on the wire for schedulingPolicy.
    */
   int getSchedulingPolicyValue();
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public interface TaskGroupOrBuilder
    * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
    */
   java.util.List<com.google.cloud.batch.v1.Environment> getTaskEnvironmentsList();
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public interface TaskGroupOrBuilder
    * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
    */
   com.google.cloud.batch.v1.Environment getTaskEnvironments(int index);
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public interface TaskGroupOrBuilder
    * <code>repeated .google.cloud.batch.v1.Environment task_environments = 9;</code>
    */
   int getTaskEnvironmentsCount();
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public interface TaskGroupOrBuilder
    */
   java.util.List<? extends com.google.cloud.batch.v1.EnvironmentOrBuilder>
       getTaskEnvironmentsOrBuilderList();
+
   /**
    *
    *

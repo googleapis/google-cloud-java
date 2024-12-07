@@ -33,6 +33,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.ScheduledSnapshotsConfig)
     ScheduledSnapshotsConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ScheduledSnapshotsConfig.newBuilder() to construct.
   private ScheduledSnapshotsConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object snapshotLocation_ = "";
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object snapshotCreationSchedule_ = "";
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timeZone_ = "";
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -441,6 +449,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -682,6 +691,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -697,6 +707,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -716,6 +727,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +747,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
     }
 
     private java.lang.Object snapshotLocation_ = "";
+
     /**
      *
      *
@@ -758,6 +771,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -781,6 +795,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -803,6 +818,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +837,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +863,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
     }
 
     private java.lang.Object snapshotCreationSchedule_ = "";
+
     /**
      *
      *
@@ -870,6 +888,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -894,6 +913,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -917,6 +937,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +957,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +984,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
     }
 
     private java.lang.Object timeZone_ = "";
+
     /**
      *
      *
@@ -985,6 +1008,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1032,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1055,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1074,7 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

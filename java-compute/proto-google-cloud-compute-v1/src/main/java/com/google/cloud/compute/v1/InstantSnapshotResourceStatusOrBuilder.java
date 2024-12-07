@@ -36,6 +36,7 @@ public interface InstantSnapshotResourceStatusOrBuilder
    * @return Whether the storageSizeBytes field is set.
    */
   boolean hasStorageSizeBytes();
+
   /**
    *
    *

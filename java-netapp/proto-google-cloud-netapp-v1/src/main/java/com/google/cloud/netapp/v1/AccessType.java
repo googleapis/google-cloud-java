@@ -82,6 +82,7 @@ public enum AccessType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACCESS_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int ACCESS_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum AccessType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>READ_ONLY = 1;</code>
    */
   public static final int READ_ONLY_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum AccessType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>READ_WRITE = 2;</code>
    */
   public static final int READ_WRITE_VALUE = 2;
+
   /**
    *
    *

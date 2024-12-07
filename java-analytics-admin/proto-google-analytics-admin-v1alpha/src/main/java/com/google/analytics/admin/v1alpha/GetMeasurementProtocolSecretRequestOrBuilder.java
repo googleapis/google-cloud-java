@@ -40,6 +40,7 @@ public interface GetMeasurementProtocolSecretRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

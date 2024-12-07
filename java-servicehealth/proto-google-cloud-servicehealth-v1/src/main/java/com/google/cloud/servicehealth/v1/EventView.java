@@ -74,6 +74,7 @@ public enum EventView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EVENT_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int EVENT_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public enum EventView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EVENT_VIEW_BASIC = 1;</code>
    */
   public static final int EVENT_VIEW_BASIC_VALUE = 1;
+
   /**
    *
    *

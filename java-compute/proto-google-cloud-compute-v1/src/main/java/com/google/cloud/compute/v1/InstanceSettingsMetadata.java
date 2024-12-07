@@ -32,6 +32,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceSettingsMetadata)
     InstanceSettingsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceSettingsMetadata.newBuilder() to construct.
   private InstanceSettingsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -101,6 +102,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
   public int getItemsCount() {
     return internalGetItems().getMap().size();
   }
+
   /**
    *
    *
@@ -117,12 +119,14 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
     }
     return internalGetItems().getMap().containsKey(key);
   }
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getItems() {
     return getItemsMap();
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
   public java.util.Map<java.lang.String, java.lang.String> getItemsMap() {
     return internalGetItems().getMap();
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
     java.util.Map<java.lang.String, java.lang.String> map = internalGetItems().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
   public boolean hasKind() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -424,6 +433,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -672,6 +682,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
     public int getItemsCount() {
       return internalGetItems().getMap().size();
     }
+
     /**
      *
      *
@@ -688,12 +699,14 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
       }
       return internalGetItems().getMap().containsKey(key);
     }
+
     /** Use {@link #getItemsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getItems() {
       return getItemsMap();
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
     public java.util.Map<java.lang.String, java.lang.String> getItemsMap() {
       return internalGetItems().getMap();
     }
+
     /**
      *
      *
@@ -727,6 +741,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
       java.util.Map<java.lang.String, java.lang.String> map = internalGetItems().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -753,6 +768,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
       internalGetMutableItems().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -769,12 +785,14 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
       internalGetMutableItems().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableItems() {
       bitField0_ |= 0x00000001;
       return internalGetMutableItems().getMutableMap();
     }
+
     /**
      *
      *
@@ -795,6 +813,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +830,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -825,6 +845,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
     public boolean hasKind() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -847,6 +868,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -869,6 +891,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -890,6 +913,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +931,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

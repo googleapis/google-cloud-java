@@ -34,6 +34,7 @@ public interface ListRuntimesResponseOrBuilder
    * <code>repeated .google.cloud.functions.v2.ListRuntimesResponse.Runtime runtimes = 1;</code>
    */
   java.util.List<com.google.cloud.functions.v2.ListRuntimesResponse.Runtime> getRuntimesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListRuntimesResponseOrBuilder
    * <code>repeated .google.cloud.functions.v2.ListRuntimesResponse.Runtime runtimes = 1;</code>
    */
   com.google.cloud.functions.v2.ListRuntimesResponse.Runtime getRuntimes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListRuntimesResponseOrBuilder
    * <code>repeated .google.cloud.functions.v2.ListRuntimesResponse.Runtime runtimes = 1;</code>
    */
   int getRuntimesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListRuntimesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.functions.v2.ListRuntimesResponse.RuntimeOrBuilder>
       getRuntimesOrBuilderList();
+
   /**
    *
    *

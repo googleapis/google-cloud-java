@@ -37,6 +37,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.AdManagerError)
     AdManagerErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AdManagerError.newBuilder() to construct.
   private AdManagerError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorCode_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fieldPath_ = "";
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object trigger_ = "";
+
   /**
    *
    *
@@ -252,6 +260,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -280,6 +289,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stackTrace_ = "";
+
   /**
    *
    *
@@ -303,6 +313,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -331,6 +342,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Any> details_;
+
   /**
    *
    *
@@ -344,6 +356,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.protobuf.Any> getDetailsList() {
     return details_;
   }
+
   /**
    *
    *
@@ -357,6 +370,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<? extends com.google.protobuf.AnyOrBuilder> getDetailsOrBuilderList() {
     return details_;
   }
+
   /**
    *
    *
@@ -370,6 +384,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
   public int getDetailsCount() {
     return details_.size();
   }
+
   /**
    *
    *
@@ -383,6 +398,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Any getDetails(int index) {
     return details_.get(index);
   }
+
   /**
    *
    *
@@ -603,6 +619,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -909,6 +926,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object errorCode_ = "";
+
     /**
      *
      *
@@ -931,6 +949,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -953,6 +972,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -974,6 +994,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1012,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1015,6 +1037,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -1037,6 +1060,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1059,6 +1083,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1105,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1123,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1148,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fieldPath_ = "";
+
     /**
      *
      *
@@ -1143,6 +1171,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1165,6 +1194,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1186,6 +1216,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1234,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1259,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object trigger_ = "";
+
     /**
      *
      *
@@ -1249,6 +1282,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1271,6 +1305,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1292,6 +1327,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1309,6 +1345,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1333,6 +1370,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object stackTrace_ = "";
+
     /**
      *
      *
@@ -1355,6 +1393,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1377,6 +1416,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1398,6 +1438,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1415,6 +1456,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1469,6 +1511,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return detailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1485,6 +1528,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return detailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1501,6 +1545,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return detailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1523,6 +1568,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1542,6 +1588,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1564,6 +1611,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1586,6 +1634,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1605,6 +1654,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1624,6 +1674,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1643,6 +1694,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1662,6 +1714,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1681,6 +1734,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1693,6 +1747,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Any.Builder getDetailsBuilder(int index) {
       return getDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1709,6 +1764,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return detailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1725,6 +1781,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(details_);
       }
     }
+
     /**
      *
      *
@@ -1737,6 +1794,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Any.Builder addDetailsBuilder() {
       return getDetailsFieldBuilder().addBuilder(com.google.protobuf.Any.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1750,6 +1808,7 @@ public final class AdManagerError extends com.google.protobuf.GeneratedMessageV3
       return getDetailsFieldBuilder()
           .addBuilder(index, com.google.protobuf.Any.getDefaultInstance());
     }
+
     /**
      *
      *

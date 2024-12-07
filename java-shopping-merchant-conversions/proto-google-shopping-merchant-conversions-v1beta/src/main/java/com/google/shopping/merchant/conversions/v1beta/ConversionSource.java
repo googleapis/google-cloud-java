@@ -34,6 +34,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.conversions.v1beta.ConversionSource)
     ConversionSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConversionSource.newBuilder() to construct.
   private ConversionSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,6 +131,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +142,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
+
     /**
      *
      *
@@ -151,6 +154,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
      * <code>ARCHIVED = 2;</code>
      */
     public static final int ARCHIVED_VALUE = 2;
+
     /**
      *
      *
@@ -302,6 +306,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
      * <code>CONTROLLER_UNSPECIFIED = 0;</code>
      */
     public static final int CONTROLLER_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -312,6 +317,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
      * <code>MERCHANT = 1;</code>
      */
     public static final int MERCHANT_VALUE = 1;
+
     /**
      *
      *
@@ -426,6 +432,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
     private SourceDataCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -459,6 +466,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int GOOGLE_ANALYTICS_LINK_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -476,6 +484,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
   public boolean hasGoogleAnalyticsLink() {
     return sourceDataCase_ == 3;
   }
+
   /**
    *
    *
@@ -497,6 +506,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
     }
     return com.google.shopping.merchant.conversions.v1beta.GoogleAnalyticsLink.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -518,6 +528,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MERCHANT_CENTER_DESTINATION_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -535,6 +546,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
   public boolean hasMerchantCenterDestination() {
     return sourceDataCase_ == 4;
   }
+
   /**
    *
    *
@@ -558,6 +570,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
     return com.google.shopping.merchant.conversions.v1beta.MerchantCenterDestination
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -584,6 +597,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -616,6 +630,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -651,6 +666,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
+
   /**
    *
    *
@@ -669,6 +685,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -694,6 +711,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp expireTime_;
+
   /**
    *
    *
@@ -711,6 +729,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -728,6 +747,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
+
   /**
    *
    *
@@ -746,6 +766,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
 
   public static final int CONTROLLER_FIELD_NUMBER = 7;
   private int controller_ = 0;
+
   /**
    *
    *
@@ -763,6 +784,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
   public int getControllerValue() {
     return controller_;
   }
+
   /**
    *
    *
@@ -1034,6 +1056,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1347,6 +1370,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
             com.google.shopping.merchant.conversions.v1beta.GoogleAnalyticsLink.Builder,
             com.google.shopping.merchant.conversions.v1beta.GoogleAnalyticsLinkOrBuilder>
         googleAnalyticsLinkBuilder_;
+
     /**
      *
      *
@@ -1364,6 +1388,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
     public boolean hasGoogleAnalyticsLink() {
       return sourceDataCase_ == 3;
     }
+
     /**
      *
      *
@@ -1394,6 +1419,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1419,6 +1445,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       sourceDataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1442,6 +1469,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       sourceDataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1480,6 +1508,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       sourceDataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1507,6 +1536,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1522,6 +1552,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
         getGoogleAnalyticsLinkBuilder() {
       return getGoogleAnalyticsLinkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1546,6 +1577,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1588,6 +1620,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
             com.google.shopping.merchant.conversions.v1beta.MerchantCenterDestination.Builder,
             com.google.shopping.merchant.conversions.v1beta.MerchantCenterDestinationOrBuilder>
         merchantCenterDestinationBuilder_;
+
     /**
      *
      *
@@ -1605,6 +1638,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
     public boolean hasMerchantCenterDestination() {
       return sourceDataCase_ == 4;
     }
+
     /**
      *
      *
@@ -1636,6 +1670,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1661,6 +1696,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       sourceDataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1684,6 +1720,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       sourceDataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1722,6 +1759,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       sourceDataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1749,6 +1787,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1764,6 +1803,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
         getMerchantCenterDestinationBuilder() {
       return getMerchantCenterDestinationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1789,6 +1829,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1828,6 +1869,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1859,6 +1901,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1890,6 +1933,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1920,6 +1964,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1946,6 +1991,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1979,6 +2025,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1997,6 +2044,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2018,6 +2066,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2040,6 +2089,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
           ? com.google.shopping.merchant.conversions.v1beta.ConversionSource.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2065,6 +2115,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2092,6 +2143,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -2109,6 +2161,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2132,6 +2185,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
         return expireTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2157,6 +2211,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2179,6 +2234,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2209,6 +2265,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2231,6 +2288,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2248,6 +2306,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2269,6 +2328,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
             : expireTime_;
       }
     }
+
     /**
      *
      *
@@ -2299,6 +2359,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
     }
 
     private int controller_ = 0;
+
     /**
      *
      *
@@ -2316,6 +2377,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
     public int getControllerValue() {
       return controller_;
     }
+
     /**
      *
      *
@@ -2336,6 +2398,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2359,6 +2422,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
           ? com.google.shopping.merchant.conversions.v1beta.ConversionSource.Controller.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2383,6 +2447,7 @@ public final class ConversionSource extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

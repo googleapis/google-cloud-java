@@ -33,6 +33,7 @@ public final class ResetInstanceResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.ResetInstanceResponse)
     ResetInstanceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResetInstanceResponse.newBuilder() to construct.
   private ResetInstanceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class ResetInstanceResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

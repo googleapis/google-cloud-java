@@ -34,6 +34,7 @@ public interface KnowledgeAnswersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer> getAnswersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface KnowledgeAnswersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer getAnswers(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface KnowledgeAnswersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
    */
   int getAnswersCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface KnowledgeAnswersOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder>
       getAnswersOrBuilderList();
+
   /**
    *
    *

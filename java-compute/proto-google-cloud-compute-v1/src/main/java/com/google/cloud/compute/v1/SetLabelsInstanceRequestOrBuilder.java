@@ -36,6 +36,7 @@ public interface SetLabelsInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SetLabelsInstanceRequestOrBuilder
    * @return Whether the instancesSetLabelsRequestResource field is set.
    */
   boolean hasInstancesSetLabelsRequestResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SetLabelsInstanceRequestOrBuilder
    * @return The instancesSetLabelsRequestResource.
    */
   com.google.cloud.compute.v1.InstancesSetLabelsRequest getInstancesSetLabelsRequestResource();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface SetLabelsInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface SetLabelsInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface SetLabelsInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface SetLabelsInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

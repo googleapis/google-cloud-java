@@ -30,12 +30,14 @@ public interface UpdateReservationRequestOrBuilder
    * @return Whether the paths field is set.
    */
   boolean hasPaths();
+
   /**
    * <code>optional string paths = 106438894;</code>
    *
    * @return The paths.
    */
   java.lang.String getPaths();
+
   /**
    * <code>optional string paths = 106438894;</code>
    *
@@ -57,6 +59,7 @@ public interface UpdateReservationRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface UpdateReservationRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface UpdateReservationRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface UpdateReservationRequestOrBuilder
    * @return The reservation.
    */
   java.lang.String getReservation();
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public interface UpdateReservationRequestOrBuilder
    * @return Whether the reservationResource field is set.
    */
   boolean hasReservationResource();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface UpdateReservationRequestOrBuilder
    * @return The reservationResource.
    */
   com.google.cloud.compute.v1.Reservation getReservationResource();
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public interface UpdateReservationRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public interface UpdateReservationRequestOrBuilder
    * @return The updateMask.
    */
   java.lang.String getUpdateMask();
+
   /**
    *
    *
@@ -226,6 +236,7 @@ public interface UpdateReservationRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

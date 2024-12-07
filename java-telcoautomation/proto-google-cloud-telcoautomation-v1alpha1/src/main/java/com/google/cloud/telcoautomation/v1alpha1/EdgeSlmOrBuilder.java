@@ -36,6 +36,7 @@ public interface EdgeSlmOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface EdgeSlmOrBuilder
    * @return The orchestrationCluster.
    */
   java.lang.String getOrchestrationCluster();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface EdgeSlmOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface EdgeSlmOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface EdgeSlmOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface EdgeSlmOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface EdgeSlmOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -180,9 +187,11 @@ public interface EdgeSlmOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -194,6 +203,7 @@ public interface EdgeSlmOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -209,6 +219,7 @@ public interface EdgeSlmOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -233,6 +244,7 @@ public interface EdgeSlmOrBuilder
    * @return The tnaVersion.
    */
   java.lang.String getTnaVersion();
+
   /**
    *
    *
@@ -260,6 +272,7 @@ public interface EdgeSlmOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public interface EdgeSlmOrBuilder
    * @return The enum numeric value on the wire for workloadClusterType.
    */
   int getWorkloadClusterTypeValue();
+
   /**
    *
    *

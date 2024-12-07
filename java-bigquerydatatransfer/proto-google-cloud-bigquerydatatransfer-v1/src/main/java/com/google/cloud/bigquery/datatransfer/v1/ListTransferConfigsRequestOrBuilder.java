@@ -40,6 +40,7 @@ public interface ListTransferConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ListTransferConfigsRequestOrBuilder
    * @return A list containing the dataSourceIds.
    */
   java.util.List<java.lang.String> getDataSourceIdsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ListTransferConfigsRequestOrBuilder
    * @return The count of dataSourceIds.
    */
   int getDataSourceIdsCount();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface ListTransferConfigsRequestOrBuilder
    * @return The dataSourceIds at the given index.
    */
   java.lang.String getDataSourceIds(int index);
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface ListTransferConfigsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

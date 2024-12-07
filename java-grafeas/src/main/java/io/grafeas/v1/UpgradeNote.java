@@ -37,6 +37,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.UpgradeNote)
     UpgradeNoteOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpgradeNote.newBuilder() to construct.
   private UpgradeNote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object package_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VERSION_FIELD_NUMBER = 2;
   private io.grafeas.v1.Version version_;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.Version getVersion() {
     return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.UpgradeDistribution> distributions_;
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<io.grafeas.v1.UpgradeDistribution> getDistributionsList() {
     return distributions_;
   }
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       getDistributionsOrBuilderList() {
     return distributions_;
   }
+
   /**
    *
    *
@@ -210,6 +219,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   public int getDistributionsCount() {
     return distributions_.size();
   }
+
   /**
    *
    *
@@ -223,6 +233,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.UpgradeDistribution getDistributions(int index) {
     return distributions_.get(index);
   }
+
   /**
    *
    *
@@ -239,6 +250,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WINDOWS_UPDATE_FIELD_NUMBER = 4;
   private io.grafeas.v1.WindowsUpdate windowsUpdate_;
+
   /**
    *
    *
@@ -254,6 +266,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWindowsUpdate() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -271,6 +284,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         ? io.grafeas.v1.WindowsUpdate.getDefaultInstance()
         : windowsUpdate_;
   }
+
   /**
    *
    *
@@ -483,6 +497,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -774,6 +789,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object package_ = "";
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -818,6 +835,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -839,6 +857,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +875,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +903,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder>
         versionBuilder_;
+
     /**
      *
      *
@@ -898,6 +919,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -917,6 +939,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         return versionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -940,6 +963,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +984,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1013,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1034,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1050,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1040,6 +1068,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1125,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         return distributionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1112,6 +1142,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         return distributionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1128,6 +1159,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         return distributionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1182,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1203,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1226,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1214,6 +1249,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1269,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1253,6 +1290,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1273,6 +1311,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1292,6 +1331,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1311,6 +1351,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1323,6 +1364,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.UpgradeDistribution.Builder getDistributionsBuilder(int index) {
       return getDistributionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1339,6 +1381,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         return distributionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1356,6 +1399,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(distributions_);
       }
     }
+
     /**
      *
      *
@@ -1369,6 +1413,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return getDistributionsFieldBuilder()
           .addBuilder(io.grafeas.v1.UpgradeDistribution.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1382,6 +1427,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return getDistributionsFieldBuilder()
           .addBuilder(index, io.grafeas.v1.UpgradeDistribution.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1421,6 +1467,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.WindowsUpdate.Builder,
             io.grafeas.v1.WindowsUpdateOrBuilder>
         windowsUpdateBuilder_;
+
     /**
      *
      *
@@ -1435,6 +1482,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWindowsUpdate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1455,6 +1503,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         return windowsUpdateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1477,6 +1526,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1496,6 +1546,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1523,6 +1574,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1542,6 +1594,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1556,6 +1609,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWindowsUpdateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1574,6 +1628,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
             : windowsUpdate_;
       }
     }
+
     /**
      *
      *

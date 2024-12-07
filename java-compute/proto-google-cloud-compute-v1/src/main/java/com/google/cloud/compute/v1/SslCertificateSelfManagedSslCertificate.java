@@ -34,6 +34,7 @@ public final class SslCertificateSelfManagedSslCertificate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate)
     SslCertificateSelfManagedSslCertificateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SslCertificateSelfManagedSslCertificate.newBuilder() to construct.
   private SslCertificateSelfManagedSslCertificate(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class SslCertificateSelfManagedSslCertificate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object certificate_ = "";
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class SslCertificateSelfManagedSslCertificate
   public boolean hasCertificate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class SslCertificateSelfManagedSslCertificate
       return s;
     }
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class SslCertificateSelfManagedSslCertificate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateKey_ = "";
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class SslCertificateSelfManagedSslCertificate
   public boolean hasPrivateKey() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class SslCertificateSelfManagedSslCertificate
       return s;
     }
   }
+
   /**
    *
    *
@@ -379,6 +386,7 @@ public final class SslCertificateSelfManagedSslCertificate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -589,6 +597,7 @@ public final class SslCertificateSelfManagedSslCertificate
     private int bitField0_;
 
     private java.lang.Object certificate_ = "";
+
     /**
      *
      *
@@ -603,6 +612,7 @@ public final class SslCertificateSelfManagedSslCertificate
     public boolean hasCertificate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -625,6 +635,7 @@ public final class SslCertificateSelfManagedSslCertificate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -647,6 +658,7 @@ public final class SslCertificateSelfManagedSslCertificate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -668,6 +680,7 @@ public final class SslCertificateSelfManagedSslCertificate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -685,6 +698,7 @@ public final class SslCertificateSelfManagedSslCertificate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +723,7 @@ public final class SslCertificateSelfManagedSslCertificate
     }
 
     private java.lang.Object privateKey_ = "";
+
     /**
      *
      *
@@ -723,6 +738,7 @@ public final class SslCertificateSelfManagedSslCertificate
     public boolean hasPrivateKey() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -745,6 +761,7 @@ public final class SslCertificateSelfManagedSslCertificate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -767,6 +784,7 @@ public final class SslCertificateSelfManagedSslCertificate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -788,6 +806,7 @@ public final class SslCertificateSelfManagedSslCertificate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +824,7 @@ public final class SslCertificateSelfManagedSslCertificate
       onChanged();
       return this;
     }
+
     /**
      *
      *

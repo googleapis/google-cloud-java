@@ -34,6 +34,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.CreateConversationModelRequest)
     CreateConversationModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateConversationModelRequest.newBuilder() to construct.
   private CreateConversationModelRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
 
   public static final int CONVERSATION_MODEL_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2.ConversationModel conversationModel_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
   public boolean hasConversationModel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
         ? com.google.cloud.dialogflow.v2.ConversationModel.getDefaultInstance()
         : conversationModel_;
   }
+
   /**
    *
    *
@@ -349,6 +355,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -570,6 +577,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -593,6 +601,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -616,6 +625,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -638,6 +648,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +667,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
             com.google.cloud.dialogflow.v2.ConversationModel.Builder,
             com.google.cloud.dialogflow.v2.ConversationModelOrBuilder>
         conversationModelBuilder_;
+
     /**
      *
      *
@@ -702,6 +715,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
     public boolean hasConversationModel() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -724,6 +738,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
         return conversationModelBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -748,6 +763,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +786,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +839,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +856,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
       onChanged();
       return getConversationModelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class CreateConversationModelRequest extends com.google.protobuf.Ge
             : conversationModel_;
       }
     }
+
     /**
      *
      *

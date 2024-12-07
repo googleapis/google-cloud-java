@@ -36,6 +36,7 @@ public final class FetchDomainVerificationStatusRequest
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusRequest)
     FetchDomainVerificationStatusRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchDomainVerificationStatusRequest.newBuilder() to construct.
   private FetchDomainVerificationStatusRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class FetchDomainVerificationStatusRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object siteSearchEngine_ = "";
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public final class FetchDomainVerificationStatusRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class FetchDomainVerificationStatusRequest
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class FetchDomainVerificationStatusRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public final class FetchDomainVerificationStatusRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -396,6 +402,7 @@ public final class FetchDomainVerificationStatusRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -622,6 +629,7 @@ public final class FetchDomainVerificationStatusRequest
     private int bitField0_;
 
     private java.lang.Object siteSearchEngine_ = "";
+
     /**
      *
      *
@@ -648,6 +656,7 @@ public final class FetchDomainVerificationStatusRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -674,6 +683,7 @@ public final class FetchDomainVerificationStatusRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -699,6 +709,7 @@ public final class FetchDomainVerificationStatusRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +731,7 @@ public final class FetchDomainVerificationStatusRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +760,7 @@ public final class FetchDomainVerificationStatusRequest
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -767,6 +780,7 @@ public final class FetchDomainVerificationStatusRequest
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -790,6 +804,7 @@ public final class FetchDomainVerificationStatusRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +828,7 @@ public final class FetchDomainVerificationStatusRequest
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -840,6 +856,7 @@ public final class FetchDomainVerificationStatusRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -867,6 +884,7 @@ public final class FetchDomainVerificationStatusRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -893,6 +911,7 @@ public final class FetchDomainVerificationStatusRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +934,7 @@ public final class FetchDomainVerificationStatusRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

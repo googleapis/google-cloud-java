@@ -34,6 +34,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.CVSSv3)
     CVSSv3OrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CVSSv3.newBuilder() to construct.
   private CVSSv3(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -150,6 +151,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>ATTACK_VECTOR_UNSPECIFIED = 0;</code>
      */
     public static final int ATTACK_VECTOR_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -162,6 +164,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>ATTACK_VECTOR_NETWORK = 1;</code>
      */
     public static final int ATTACK_VECTOR_NETWORK_VALUE = 1;
+
     /**
      *
      *
@@ -173,6 +176,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>ATTACK_VECTOR_ADJACENT = 2;</code>
      */
     public static final int ATTACK_VECTOR_ADJACENT_VALUE = 2;
+
     /**
      *
      *
@@ -184,6 +188,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>ATTACK_VECTOR_LOCAL = 3;</code>
      */
     public static final int ATTACK_VECTOR_LOCAL_VALUE = 3;
+
     /**
      *
      *
@@ -343,6 +348,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>ATTACK_COMPLEXITY_UNSPECIFIED = 0;</code>
      */
     public static final int ATTACK_COMPLEXITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -355,6 +361,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>ATTACK_COMPLEXITY_LOW = 1;</code>
      */
     public static final int ATTACK_COMPLEXITY_LOW_VALUE = 1;
+
     /**
      *
      *
@@ -526,6 +533,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIVILEGES_REQUIRED_UNSPECIFIED = 0;</code>
      */
     public static final int PRIVILEGES_REQUIRED_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -538,6 +546,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIVILEGES_REQUIRED_NONE = 1;</code>
      */
     public static final int PRIVILEGES_REQUIRED_NONE_VALUE = 1;
+
     /**
      *
      *
@@ -551,6 +560,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIVILEGES_REQUIRED_LOW = 2;</code>
      */
     public static final int PRIVILEGES_REQUIRED_LOW_VALUE = 2;
+
     /**
      *
      *
@@ -708,6 +718,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>USER_INTERACTION_UNSPECIFIED = 0;</code>
      */
     public static final int USER_INTERACTION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -718,6 +729,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>USER_INTERACTION_NONE = 1;</code>
      */
     public static final int USER_INTERACTION_NONE_VALUE = 1;
+
     /**
      *
      *
@@ -871,6 +883,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>SCOPE_UNSPECIFIED = 0;</code>
      */
     public static final int SCOPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -882,6 +895,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>SCOPE_UNCHANGED = 1;</code>
      */
     public static final int SCOPE_UNCHANGED_VALUE = 1;
+
     /**
      *
      *
@@ -1042,6 +1056,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPACT_UNSPECIFIED = 0;</code>
      */
     public static final int IMPACT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1052,6 +1067,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPACT_HIGH = 1;</code>
      */
     public static final int IMPACT_HIGH_VALUE = 1;
+
     /**
      *
      *
@@ -1062,6 +1078,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPACT_LOW = 2;</code>
      */
     public static final int IMPACT_LOW_VALUE = 2;
+
     /**
      *
      *
@@ -1160,6 +1177,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BASE_SCORE_FIELD_NUMBER = 1;
   private float baseScore_ = 0F;
+
   /**
    *
    *
@@ -1179,6 +1197,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPLOITABILITY_SCORE_FIELD_NUMBER = 2;
   private float exploitabilityScore_ = 0F;
+
   /**
    *
    *
@@ -1199,6 +1218,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMPACT_SCORE_FIELD_NUMBER = 3;
   private float impactScore_ = 0F;
+
   /**
    *
    *
@@ -1217,6 +1237,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ATTACK_VECTOR_FIELD_NUMBER = 5;
   private int attackVector_ = 0;
+
   /**
    *
    *
@@ -1233,6 +1254,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   public int getAttackVectorValue() {
     return attackVector_;
   }
+
   /**
    *
    *
@@ -1254,6 +1276,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ATTACK_COMPLEXITY_FIELD_NUMBER = 6;
   private int attackComplexity_ = 0;
+
   /**
    *
    *
@@ -1270,6 +1293,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   public int getAttackComplexityValue() {
     return attackComplexity_;
   }
+
   /**
    *
    *
@@ -1293,6 +1317,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIVILEGES_REQUIRED_FIELD_NUMBER = 7;
   private int privilegesRequired_ = 0;
+
   /**
    *
    *
@@ -1309,6 +1334,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   public int getPrivilegesRequiredValue() {
     return privilegesRequired_;
   }
+
   /**
    *
    *
@@ -1332,6 +1358,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USER_INTERACTION_FIELD_NUMBER = 8;
   private int userInteraction_ = 0;
+
   /**
    *
    *
@@ -1349,6 +1376,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   public int getUserInteractionValue() {
     return userInteraction_;
   }
+
   /**
    *
    *
@@ -1373,6 +1401,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCOPE_FIELD_NUMBER = 9;
   private int scope_ = 0;
+
   /**
    *
    *
@@ -1389,6 +1418,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   public int getScopeValue() {
     return scope_;
   }
+
   /**
    *
    *
@@ -1410,6 +1440,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENTIALITY_IMPACT_FIELD_NUMBER = 10;
   private int confidentialityImpact_ = 0;
+
   /**
    *
    *
@@ -1427,6 +1458,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   public int getConfidentialityImpactValue() {
     return confidentialityImpact_;
   }
+
   /**
    *
    *
@@ -1449,6 +1481,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INTEGRITY_IMPACT_FIELD_NUMBER = 11;
   private int integrityImpact_ = 0;
+
   /**
    *
    *
@@ -1465,6 +1498,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   public int getIntegrityImpactValue() {
     return integrityImpact_;
   }
+
   /**
    *
    *
@@ -1486,6 +1520,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVAILABILITY_IMPACT_FIELD_NUMBER = 12;
   private int availabilityImpact_ = 0;
+
   /**
    *
    *
@@ -1502,6 +1537,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   public int getAvailabilityImpactValue() {
     return availabilityImpact_;
   }
+
   /**
    *
    *
@@ -1791,6 +1827,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2102,6 +2139,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private float baseScore_;
+
     /**
      *
      *
@@ -2118,6 +2156,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public float getBaseScore() {
       return baseScore_;
     }
+
     /**
      *
      *
@@ -2138,6 +2177,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2158,6 +2198,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float exploitabilityScore_;
+
     /**
      *
      *
@@ -2175,6 +2216,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public float getExploitabilityScore() {
       return exploitabilityScore_;
     }
+
     /**
      *
      *
@@ -2196,6 +2238,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2217,6 +2260,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float impactScore_;
+
     /**
      *
      *
@@ -2232,6 +2276,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public float getImpactScore() {
       return impactScore_;
     }
+
     /**
      *
      *
@@ -2251,6 +2296,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2270,6 +2316,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int attackVector_ = 0;
+
     /**
      *
      *
@@ -2286,6 +2333,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public int getAttackVectorValue() {
       return attackVector_;
     }
+
     /**
      *
      *
@@ -2305,6 +2353,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2325,6 +2374,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.osconfig.v1.CVSSv3.AttackVector.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2347,6 +2397,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2367,6 +2418,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int attackComplexity_ = 0;
+
     /**
      *
      *
@@ -2383,6 +2435,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public int getAttackComplexityValue() {
       return attackComplexity_;
     }
+
     /**
      *
      *
@@ -2402,6 +2455,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2422,6 +2476,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.osconfig.v1.CVSSv3.AttackComplexity.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2444,6 +2499,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2464,6 +2520,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int privilegesRequired_ = 0;
+
     /**
      *
      *
@@ -2480,6 +2537,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public int getPrivilegesRequiredValue() {
       return privilegesRequired_;
     }
+
     /**
      *
      *
@@ -2499,6 +2557,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2519,6 +2578,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.osconfig.v1.CVSSv3.PrivilegesRequired.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2542,6 +2602,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2562,6 +2623,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int userInteraction_ = 0;
+
     /**
      *
      *
@@ -2579,6 +2641,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public int getUserInteractionValue() {
       return userInteraction_;
     }
+
     /**
      *
      *
@@ -2599,6 +2662,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2620,6 +2684,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.osconfig.v1.CVSSv3.UserInteraction.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2643,6 +2708,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2664,6 +2730,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int scope_ = 0;
+
     /**
      *
      *
@@ -2680,6 +2747,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public int getScopeValue() {
       return scope_;
     }
+
     /**
      *
      *
@@ -2699,6 +2767,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2717,6 +2786,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.osconfig.v1.CVSSv3.Scope.forNumber(scope_);
       return result == null ? com.google.cloud.osconfig.v1.CVSSv3.Scope.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2739,6 +2809,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2759,6 +2830,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int confidentialityImpact_ = 0;
+
     /**
      *
      *
@@ -2776,6 +2848,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public int getConfidentialityImpactValue() {
       return confidentialityImpact_;
     }
+
     /**
      *
      *
@@ -2796,6 +2869,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2815,6 +2889,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.osconfig.v1.CVSSv3.Impact.forNumber(confidentialityImpact_);
       return result == null ? com.google.cloud.osconfig.v1.CVSSv3.Impact.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2838,6 +2913,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2859,6 +2935,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int integrityImpact_ = 0;
+
     /**
      *
      *
@@ -2875,6 +2952,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public int getIntegrityImpactValue() {
       return integrityImpact_;
     }
+
     /**
      *
      *
@@ -2894,6 +2972,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2912,6 +2991,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.osconfig.v1.CVSSv3.Impact.forNumber(integrityImpact_);
       return result == null ? com.google.cloud.osconfig.v1.CVSSv3.Impact.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2934,6 +3014,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2954,6 +3035,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int availabilityImpact_ = 0;
+
     /**
      *
      *
@@ -2970,6 +3052,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     public int getAvailabilityImpactValue() {
       return availabilityImpact_;
     }
+
     /**
      *
      *
@@ -2989,6 +3072,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3007,6 +3091,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.osconfig.v1.CVSSv3.Impact.forNumber(availabilityImpact_);
       return result == null ? com.google.cloud.osconfig.v1.CVSSv3.Impact.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3029,6 +3114,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

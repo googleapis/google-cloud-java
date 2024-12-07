@@ -36,6 +36,7 @@ public interface NodeTypeOrBuilder
    * @return Whether the cpuPlatform field is set.
    */
   boolean hasCpuPlatform();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NodeTypeOrBuilder
    * @return The cpuPlatform.
    */
   java.lang.String getCpuPlatform();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface NodeTypeOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface NodeTypeOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface NodeTypeOrBuilder
    * @return Whether the deprecated field is set.
    */
   boolean hasDeprecated();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface NodeTypeOrBuilder
    * @return The deprecated.
    */
   com.google.cloud.compute.v1.DeprecationStatus getDeprecated();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface NodeTypeOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public interface NodeTypeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public interface NodeTypeOrBuilder
    * @return Whether the guestCpus field is set.
    */
   boolean hasGuestCpus();
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public interface NodeTypeOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public interface NodeTypeOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -244,6 +255,7 @@ public interface NodeTypeOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -269,6 +281,7 @@ public interface NodeTypeOrBuilder
    * @return Whether the localSsdGb field is set.
    */
   boolean hasLocalSsdGb();
+
   /**
    *
    *
@@ -294,6 +307,7 @@ public interface NodeTypeOrBuilder
    * @return Whether the memoryMb field is set.
    */
   boolean hasMemoryMb();
+
   /**
    *
    *
@@ -319,6 +333,7 @@ public interface NodeTypeOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -331,6 +346,7 @@ public interface NodeTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -356,6 +372,7 @@ public interface NodeTypeOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -368,6 +385,7 @@ public interface NodeTypeOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -393,6 +411,7 @@ public interface NodeTypeOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
+
   /**
    *
    *
@@ -405,6 +424,7 @@ public interface NodeTypeOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

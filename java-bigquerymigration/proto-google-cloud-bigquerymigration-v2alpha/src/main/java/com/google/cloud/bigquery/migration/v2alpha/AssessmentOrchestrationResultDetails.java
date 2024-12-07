@@ -35,6 +35,7 @@ public final class AssessmentOrchestrationResultDetails
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.AssessmentOrchestrationResultDetails)
     AssessmentOrchestrationResultDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AssessmentOrchestrationResultDetails.newBuilder() to construct.
   private AssessmentOrchestrationResultDetails(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class AssessmentOrchestrationResultDetails
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object outputTablesSchemaVersion_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class AssessmentOrchestrationResultDetails
       return s;
     }
   }
+
   /**
    *
    *
@@ -287,6 +290,7 @@ public final class AssessmentOrchestrationResultDetails
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -488,6 +492,7 @@ public final class AssessmentOrchestrationResultDetails
     private int bitField0_;
 
     private java.lang.Object outputTablesSchemaVersion_ = "";
+
     /**
      *
      *
@@ -511,6 +516,7 @@ public final class AssessmentOrchestrationResultDetails
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -534,6 +540,7 @@ public final class AssessmentOrchestrationResultDetails
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -556,6 +563,7 @@ public final class AssessmentOrchestrationResultDetails
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -574,6 +582,7 @@ public final class AssessmentOrchestrationResultDetails
       onChanged();
       return this;
     }
+
     /**
      *
      *

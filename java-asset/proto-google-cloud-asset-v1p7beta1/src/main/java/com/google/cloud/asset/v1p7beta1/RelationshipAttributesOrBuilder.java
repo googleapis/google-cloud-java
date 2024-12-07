@@ -37,6 +37,7 @@ public interface RelationshipAttributesOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RelationshipAttributesOrBuilder
    * @return The sourceResourceType.
    */
   java.lang.String getSourceResourceType();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface RelationshipAttributesOrBuilder
    * @return The targetResourceType.
    */
   java.lang.String getTargetResourceType();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface RelationshipAttributesOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
+
   /**
    *
    *

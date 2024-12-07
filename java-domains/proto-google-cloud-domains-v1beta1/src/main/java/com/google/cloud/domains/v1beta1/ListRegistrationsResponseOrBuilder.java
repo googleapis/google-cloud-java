@@ -34,6 +34,7 @@ public interface ListRegistrationsResponseOrBuilder
    * <code>repeated .google.cloud.domains.v1beta1.Registration registrations = 1;</code>
    */
   java.util.List<com.google.cloud.domains.v1beta1.Registration> getRegistrationsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListRegistrationsResponseOrBuilder
    * <code>repeated .google.cloud.domains.v1beta1.Registration registrations = 1;</code>
    */
   com.google.cloud.domains.v1beta1.Registration getRegistrations(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListRegistrationsResponseOrBuilder
    * <code>repeated .google.cloud.domains.v1beta1.Registration registrations = 1;</code>
    */
   int getRegistrationsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListRegistrationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.domains.v1beta1.RegistrationOrBuilder>
       getRegistrationsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListRegistrationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

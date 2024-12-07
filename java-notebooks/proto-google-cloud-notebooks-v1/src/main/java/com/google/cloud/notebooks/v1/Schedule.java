@@ -33,6 +33,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.Schedule)
     ScheduleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Schedule.newBuilder() to construct.
   private Schedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -167,6 +168,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -177,6 +179,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
+
     /**
      *
      *
@@ -189,6 +192,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>PAUSED = 2;</code>
      */
     public static final int PAUSED_VALUE = 2;
+
     /**
      *
      *
@@ -200,6 +204,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>DISABLED = 3;</code>
      */
     public static final int DISABLED_VALUE = 3;
+
     /**
      *
      *
@@ -212,6 +217,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATE_FAILED = 4;</code>
      */
     public static final int UPDATE_FAILED_VALUE = 4;
+
     /**
      *
      *
@@ -222,6 +228,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>INITIALIZING = 5;</code>
      */
     public static final int INITIALIZING_VALUE = 5;
+
     /**
      *
      *
@@ -329,6 +336,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -353,6 +361,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -382,6 +391,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -407,6 +417,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -437,6 +448,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -460,6 +472,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -486,6 +499,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    * <code>.google.cloud.notebooks.v1.Schedule.State state = 4;</code>
    *
@@ -495,6 +509,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    * <code>.google.cloud.notebooks.v1.Schedule.State state = 4;</code>
    *
@@ -511,6 +526,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cronSchedule_ = "";
+
   /**
    *
    *
@@ -537,6 +553,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -568,6 +585,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timeZone_ = "";
+
   /**
    *
    *
@@ -598,6 +616,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -631,6 +650,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -647,6 +667,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -663,6 +684,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -680,6 +702,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -696,6 +719,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -712,6 +736,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -729,6 +754,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXECUTION_TEMPLATE_FIELD_NUMBER = 9;
   private com.google.cloud.notebooks.v1.ExecutionTemplate executionTemplate_;
+
   /**
    *
    *
@@ -744,6 +770,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExecutionTemplate() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -761,6 +788,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.notebooks.v1.ExecutionTemplate.getDefaultInstance()
         : executionTemplate_;
   }
+
   /**
    *
    *
@@ -781,6 +809,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.notebooks.v1.Execution> recentExecutions_;
+
   /**
    *
    *
@@ -797,6 +826,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.notebooks.v1.Execution> getRecentExecutionsList() {
     return recentExecutions_;
   }
+
   /**
    *
    *
@@ -814,6 +844,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       getRecentExecutionsOrBuilderList() {
     return recentExecutions_;
   }
+
   /**
    *
    *
@@ -830,6 +861,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public int getRecentExecutionsCount() {
     return recentExecutions_.size();
   }
+
   /**
    *
    *
@@ -846,6 +878,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.notebooks.v1.Execution getRecentExecutions(int index) {
     return recentExecutions_.get(index);
   }
+
   /**
    *
    *
@@ -1120,6 +1153,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1508,6 +1542,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1531,6 +1566,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1554,6 +1590,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1576,6 +1613,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1594,6 +1632,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1619,6 +1658,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1643,6 +1683,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1667,6 +1708,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1690,6 +1732,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1709,6 +1752,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1735,6 +1779,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1757,6 +1802,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1779,6 +1825,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1800,6 +1847,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1817,6 +1865,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1841,6 +1890,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      * <code>.google.cloud.notebooks.v1.Schedule.State state = 4;</code>
      *
@@ -1850,6 +1900,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      * <code>.google.cloud.notebooks.v1.Schedule.State state = 4;</code>
      *
@@ -1862,6 +1913,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>.google.cloud.notebooks.v1.Schedule.State state = 4;</code>
      *
@@ -1873,6 +1925,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.notebooks.v1.Schedule.State.forNumber(state_);
       return result == null ? com.google.cloud.notebooks.v1.Schedule.State.UNRECOGNIZED : result;
     }
+
     /**
      * <code>.google.cloud.notebooks.v1.Schedule.State state = 4;</code>
      *
@@ -1888,6 +1941,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>.google.cloud.notebooks.v1.Schedule.State state = 4;</code>
      *
@@ -1901,6 +1955,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object cronSchedule_ = "";
+
     /**
      *
      *
@@ -1926,6 +1981,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1951,6 +2007,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1975,6 +2032,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1995,6 +2053,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2022,6 +2081,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object timeZone_ = "";
+
     /**
      *
      *
@@ -2051,6 +2111,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2080,6 +2141,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2108,6 +2170,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2132,6 +2195,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2168,6 +2232,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2184,6 +2249,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2206,6 +2272,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2230,6 +2297,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2251,6 +2319,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2280,6 +2349,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2301,6 +2371,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2317,6 +2388,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2337,6 +2409,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2371,6 +2444,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2387,6 +2461,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2409,6 +2484,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2433,6 +2509,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2454,6 +2531,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2483,6 +2561,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2504,6 +2583,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2520,6 +2600,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2540,6 +2621,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2574,6 +2656,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.notebooks.v1.ExecutionTemplate.Builder,
             com.google.cloud.notebooks.v1.ExecutionTemplateOrBuilder>
         executionTemplateBuilder_;
+
     /**
      *
      *
@@ -2588,6 +2671,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExecutionTemplate() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2608,6 +2692,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return executionTemplateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2630,6 +2715,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2650,6 +2736,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2678,6 +2765,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2697,6 +2785,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2711,6 +2800,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExecutionTemplateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2730,6 +2820,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             : executionTemplate_;
       }
     }
+
     /**
      *
      *
@@ -2792,6 +2883,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return recentExecutionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2811,6 +2903,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return recentExecutionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2830,6 +2923,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return recentExecutionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2855,6 +2949,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2878,6 +2973,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2903,6 +2999,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2928,6 +3025,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2951,6 +3049,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2974,6 +3073,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2997,6 +3097,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3019,6 +3120,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3041,6 +3143,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3056,6 +3159,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.notebooks.v1.Execution.Builder getRecentExecutionsBuilder(int index) {
       return getRecentExecutionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3076,6 +3180,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return recentExecutionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3096,6 +3201,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(recentExecutions_);
       }
     }
+
     /**
      *
      *
@@ -3112,6 +3218,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       return getRecentExecutionsFieldBuilder()
           .addBuilder(com.google.cloud.notebooks.v1.Execution.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3128,6 +3235,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       return getRecentExecutionsFieldBuilder()
           .addBuilder(index, com.google.cloud.notebooks.v1.Execution.getDefaultInstance());
     }
+
     /**
      *
      *

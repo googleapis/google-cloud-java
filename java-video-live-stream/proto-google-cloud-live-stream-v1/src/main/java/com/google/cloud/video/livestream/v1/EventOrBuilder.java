@@ -37,6 +37,7 @@ public interface EventOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface EventOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface EventOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface EventOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface EventOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface EventOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -147,9 +153,11 @@ public interface EventOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -160,6 +168,7 @@ public interface EventOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -174,6 +183,7 @@ public interface EventOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -197,6 +207,7 @@ public interface EventOrBuilder
    * @return Whether the inputSwitch field is set.
    */
   boolean hasInputSwitch();
+
   /**
    *
    *
@@ -209,6 +220,7 @@ public interface EventOrBuilder
    * @return The inputSwitch.
    */
   com.google.cloud.video.livestream.v1.Event.InputSwitchTask getInputSwitch();
+
   /**
    *
    *
@@ -232,6 +244,7 @@ public interface EventOrBuilder
    * @return Whether the adBreak field is set.
    */
   boolean hasAdBreak();
+
   /**
    *
    *
@@ -244,6 +257,7 @@ public interface EventOrBuilder
    * @return The adBreak.
    */
   com.google.cloud.video.livestream.v1.Event.AdBreakTask getAdBreak();
+
   /**
    *
    *
@@ -268,6 +282,7 @@ public interface EventOrBuilder
    * @return Whether the returnToProgram field is set.
    */
   boolean hasReturnToProgram();
+
   /**
    *
    *
@@ -281,6 +296,7 @@ public interface EventOrBuilder
    * @return The returnToProgram.
    */
   com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask getReturnToProgram();
+
   /**
    *
    *
@@ -306,6 +322,7 @@ public interface EventOrBuilder
    * @return Whether the slate field is set.
    */
   boolean hasSlate();
+
   /**
    *
    *
@@ -318,6 +335,7 @@ public interface EventOrBuilder
    * @return The slate.
    */
   com.google.cloud.video.livestream.v1.Event.SlateTask getSlate();
+
   /**
    *
    *
@@ -341,6 +359,7 @@ public interface EventOrBuilder
    * @return Whether the mute field is set.
    */
   boolean hasMute();
+
   /**
    *
    *
@@ -353,6 +372,7 @@ public interface EventOrBuilder
    * @return The mute.
    */
   com.google.cloud.video.livestream.v1.Event.MuteTask getMute();
+
   /**
    *
    *
@@ -376,6 +396,7 @@ public interface EventOrBuilder
    * @return Whether the unmute field is set.
    */
   boolean hasUnmute();
+
   /**
    *
    *
@@ -388,6 +409,7 @@ public interface EventOrBuilder
    * @return The unmute.
    */
   com.google.cloud.video.livestream.v1.Event.UnmuteTask getUnmute();
+
   /**
    *
    *
@@ -434,6 +456,7 @@ public interface EventOrBuilder
    * @return Whether the executionTime field is set.
    */
   boolean hasExecutionTime();
+
   /**
    *
    *
@@ -452,6 +475,7 @@ public interface EventOrBuilder
    * @return The executionTime.
    */
   com.google.protobuf.Timestamp getExecutionTime();
+
   /**
    *
    *
@@ -483,6 +507,7 @@ public interface EventOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -511,6 +536,7 @@ public interface EventOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -524,6 +550,7 @@ public interface EventOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *

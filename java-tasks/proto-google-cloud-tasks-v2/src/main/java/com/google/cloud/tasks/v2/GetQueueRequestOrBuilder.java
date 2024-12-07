@@ -39,6 +39,7 @@ public interface GetQueueRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

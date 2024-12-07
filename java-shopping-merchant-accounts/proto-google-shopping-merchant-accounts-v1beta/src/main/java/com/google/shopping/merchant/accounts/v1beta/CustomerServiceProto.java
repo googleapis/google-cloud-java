@@ -41,18 +41,20 @@ public final class CustomerServiceProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n>google/shopping/merchant/accounts/v1be"
-          + "ta/customerservice.proto\022(google.shoppin"
+      "\n"
+          + ">google/shopping/merchant/accounts/v1beta/customerservice.proto\022(google.shoppin"
           + "g.merchant.accounts.v1beta\032\037google/api/f"
-          + "ield_behavior.proto\032\036google/type/phone_n"
-          + "umber.proto\"\220\001\n\017CustomerService\022\025\n\003uri\030\001"
-          + " \001(\tB\003\340A\001H\000\210\001\001\022\027\n\005email\030\002 \001(\tB\003\340A\001H\001\210\001\001\022"
-          + "1\n\005phone\030\003 \001(\0132\030.google.type.PhoneNumber"
-          + "B\003\340A\001H\002\210\001\001B\006\n\004_uriB\010\n\006_emailB\010\n\006_phoneB\226"
-          + "\001\n,com.google.shopping.merchant.accounts"
-          + ".v1betaB\024CustomerServiceProtoP\001ZNcloud.g"
-          + "oogle.com/go/shopping/merchant/accounts/"
-          + "apiv1beta/accountspb;accountspbb\006proto3"
+          + "ield_behavior.proto\032\036google/type/phone_number.proto\"\220\001\n"
+          + "\017CustomerService\022\025\n"
+          + "\003uri\030\001 \001(\tB\003\340A\001H\000\210\001\001\022\027\n"
+          + "\005email\030\002 \001(\tB\003\340A\001H\001\210\001\001\0221\n"
+          + "\005phone\030\003"
+          + " \001(\0132\030.google.type.PhoneNumberB\003\340A\001H\002\210\001\001B\006\n"
+          + "\004_uriB\010\n"
+          + "\006_emailB\010\n"
+          + "\006_phoneB\226\001\n"
+          + ",com.google.shopping.merchant.accounts.v1betaB\024CustomerServiceProtoP\001ZNcloud.g"
+          + "oogle.com/go/shopping/merchant/accounts/apiv1beta/accountspb;accountspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

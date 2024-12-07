@@ -36,6 +36,7 @@ public interface DeviceRegistryOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface DeviceRegistryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface DeviceRegistryOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.iot.v1.EventNotificationConfig> getEventNotificationConfigsList();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface DeviceRegistryOrBuilder
    * </code>
    */
   com.google.cloud.iot.v1.EventNotificationConfig getEventNotificationConfigs(int index);
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface DeviceRegistryOrBuilder
    * </code>
    */
   int getEventNotificationConfigsCount();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface DeviceRegistryOrBuilder
    */
   java.util.List<? extends com.google.cloud.iot.v1.EventNotificationConfigOrBuilder>
       getEventNotificationConfigsOrBuilderList();
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public interface DeviceRegistryOrBuilder
    * @return Whether the stateNotificationConfig field is set.
    */
   boolean hasStateNotificationConfig();
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public interface DeviceRegistryOrBuilder
    * @return The stateNotificationConfig.
    */
   com.google.cloud.iot.v1.StateNotificationConfig getStateNotificationConfig();
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public interface DeviceRegistryOrBuilder
    * @return Whether the mqttConfig field is set.
    */
   boolean hasMqttConfig();
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public interface DeviceRegistryOrBuilder
    * @return The mqttConfig.
    */
   com.google.cloud.iot.v1.MqttConfig getMqttConfig();
+
   /**
    *
    *
@@ -271,6 +281,7 @@ public interface DeviceRegistryOrBuilder
    * @return Whether the httpConfig field is set.
    */
   boolean hasHttpConfig();
+
   /**
    *
    *
@@ -283,6 +294,7 @@ public interface DeviceRegistryOrBuilder
    * @return The httpConfig.
    */
   com.google.cloud.iot.v1.HttpConfig getHttpConfig();
+
   /**
    *
    *
@@ -309,6 +321,7 @@ public interface DeviceRegistryOrBuilder
    * @return The enum numeric value on the wire for logLevel.
    */
   int getLogLevelValue();
+
   /**
    *
    *
@@ -345,6 +358,7 @@ public interface DeviceRegistryOrBuilder
    * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
    */
   java.util.List<com.google.cloud.iot.v1.RegistryCredential> getCredentialsList();
+
   /**
    *
    *
@@ -365,6 +379,7 @@ public interface DeviceRegistryOrBuilder
    * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
    */
   com.google.cloud.iot.v1.RegistryCredential getCredentials(int index);
+
   /**
    *
    *
@@ -385,6 +400,7 @@ public interface DeviceRegistryOrBuilder
    * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
    */
   int getCredentialsCount();
+
   /**
    *
    *
@@ -406,6 +422,7 @@ public interface DeviceRegistryOrBuilder
    */
   java.util.List<? extends com.google.cloud.iot.v1.RegistryCredentialOrBuilder>
       getCredentialsOrBuilderList();
+
   /**
    *
    *

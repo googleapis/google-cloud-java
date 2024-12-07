@@ -102,6 +102,7 @@ public enum BatteryStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNKNOWN_BATTERY_STATUS = 0;</code>
    */
   public static final int UNKNOWN_BATTERY_STATUS_VALUE = 0;
+
   /**
    *
    *
@@ -112,6 +113,7 @@ public enum BatteryStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BATTERY_STATUS_CHARGING = 1;</code>
    */
   public static final int BATTERY_STATUS_CHARGING_VALUE = 1;
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public enum BatteryStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BATTERY_STATUS_DISCHARGING = 2;</code>
    */
   public static final int BATTERY_STATUS_DISCHARGING_VALUE = 2;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public enum BatteryStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BATTERY_STATUS_FULL = 3;</code>
    */
   public static final int BATTERY_STATUS_FULL_VALUE = 3;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public enum BatteryStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BATTERY_STATUS_NOT_CHARGING = 4;</code>
    */
   public static final int BATTERY_STATUS_NOT_CHARGING_VALUE = 4;
+
   /**
    *
    *

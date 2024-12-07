@@ -32,6 +32,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerStatus)
     InstanceGroupManagerStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupManagerStatus.newBuilder() to construct.
   private InstanceGroupManagerStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
   public static final int ALL_INSTANCES_CONFIG_FIELD_NUMBER = 112596737;
   private com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig
       allInstancesConfig_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
   public boolean hasAllInstancesConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             .getDefaultInstance()
         : allInstancesConfig_;
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object autoscaler_ = "";
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
   public boolean hasAutoscaler() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
 
   public static final int IS_STABLE_FIELD_NUMBER = 108410864;
   private boolean isStable_ = false;
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
   public boolean hasIsStable() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
 
   public static final int STATEFUL_FIELD_NUMBER = 244462412;
   private com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful_;
+
   /**
    *
    *
@@ -242,6 +252,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
   public boolean hasStateful() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -261,6 +272,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         ? com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.getDefaultInstance()
         : stateful_;
   }
+
   /**
    *
    *
@@ -282,6 +294,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
 
   public static final int VERSION_TARGET_FIELD_NUMBER = 289386200;
   private com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget versionTarget_;
+
   /**
    *
    *
@@ -299,6 +312,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
   public boolean hasVersionTarget() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -318,6 +332,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         ? com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.getDefaultInstance()
         : versionTarget_;
   }
+
   /**
    *
    *
@@ -561,6 +576,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -837,6 +853,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfigOrBuilder>
         allInstancesConfigBuilder_;
+
     /**
      *
      *
@@ -853,6 +870,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public boolean hasAllInstancesConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -877,6 +895,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         return allInstancesConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -902,6 +921,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +945,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +978,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1000,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1018,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return getAllInstancesConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1017,6 +1041,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             : allInstancesConfig_;
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1071,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     }
 
     private java.lang.Object autoscaler_ = "";
+
     /**
      *
      *
@@ -1060,6 +1086,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public boolean hasAutoscaler() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1082,6 +1109,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1104,6 +1132,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1125,6 +1154,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1172,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1197,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     }
 
     private boolean isStable_;
+
     /**
      *
      *
@@ -1181,6 +1213,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public boolean hasIsStable() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1196,6 +1229,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public boolean getIsStable() {
       return isStable_;
     }
+
     /**
      *
      *
@@ -1215,6 +1249,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1274,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulOrBuilder>
         statefulBuilder_;
+
     /**
      *
      *
@@ -1255,6 +1291,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public boolean hasStateful() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1277,6 +1314,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         return statefulBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1302,6 +1340,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1363,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1396,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1418,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1394,6 +1436,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return getStatefulFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1415,6 +1458,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             : stateful_;
       }
     }
+
     /**
      *
      *
@@ -1449,6 +1493,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTargetOrBuilder>
         versionTargetBuilder_;
+
     /**
      *
      *
@@ -1465,6 +1510,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public boolean hasVersionTarget() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1488,6 +1534,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         return versionTargetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1513,6 +1560,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1536,6 +1584,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1568,6 +1617,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1589,6 +1639,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1606,6 +1657,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       onChanged();
       return getVersionTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1628,6 +1680,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             : versionTarget_;
       }
     }
+
     /**
      *
      *

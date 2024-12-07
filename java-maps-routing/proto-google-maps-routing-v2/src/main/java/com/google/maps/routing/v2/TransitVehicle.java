@@ -33,6 +33,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.TransitVehicle)
     TransitVehicleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransitVehicle.newBuilder() to construct.
   private TransitVehicle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -282,6 +283,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>TRANSIT_VEHICLE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TRANSIT_VEHICLE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -292,6 +294,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>BUS = 1;</code>
      */
     public static final int BUS_VALUE = 1;
+
     /**
      *
      *
@@ -303,6 +306,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>CABLE_CAR = 2;</code>
      */
     public static final int CABLE_CAR_VALUE = 2;
+
     /**
      *
      *
@@ -313,6 +317,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>COMMUTER_TRAIN = 3;</code>
      */
     public static final int COMMUTER_TRAIN_VALUE = 3;
+
     /**
      *
      *
@@ -323,6 +328,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>FERRY = 4;</code>
      */
     public static final int FERRY_VALUE = 4;
+
     /**
      *
      *
@@ -335,6 +341,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>FUNICULAR = 5;</code>
      */
     public static final int FUNICULAR_VALUE = 5;
+
     /**
      *
      *
@@ -345,6 +352,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>GONDOLA_LIFT = 6;</code>
      */
     public static final int GONDOLA_LIFT_VALUE = 6;
+
     /**
      *
      *
@@ -355,6 +363,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>HEAVY_RAIL = 7;</code>
      */
     public static final int HEAVY_RAIL_VALUE = 7;
+
     /**
      *
      *
@@ -365,6 +374,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>HIGH_SPEED_TRAIN = 8;</code>
      */
     public static final int HIGH_SPEED_TRAIN_VALUE = 8;
+
     /**
      *
      *
@@ -375,6 +385,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERCITY_BUS = 9;</code>
      */
     public static final int INTERCITY_BUS_VALUE = 9;
+
     /**
      *
      *
@@ -385,6 +396,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>LONG_DISTANCE_TRAIN = 10;</code>
      */
     public static final int LONG_DISTANCE_TRAIN_VALUE = 10;
+
     /**
      *
      *
@@ -395,6 +407,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>METRO_RAIL = 11;</code>
      */
     public static final int METRO_RAIL_VALUE = 11;
+
     /**
      *
      *
@@ -405,6 +418,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>MONORAIL = 12;</code>
      */
     public static final int MONORAIL_VALUE = 12;
+
     /**
      *
      *
@@ -415,6 +429,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>OTHER = 13;</code>
      */
     public static final int OTHER_VALUE = 13;
+
     /**
      *
      *
@@ -425,6 +440,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>RAIL = 14;</code>
      */
     public static final int RAIL_VALUE = 14;
+
     /**
      *
      *
@@ -436,6 +452,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>SHARE_TAXI = 15;</code>
      */
     public static final int SHARE_TAXI_VALUE = 15;
+
     /**
      *
      *
@@ -446,6 +463,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>SUBWAY = 16;</code>
      */
     public static final int SUBWAY_VALUE = 16;
+
     /**
      *
      *
@@ -456,6 +474,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>TRAM = 17;</code>
      */
     public static final int TRAM_VALUE = 17;
+
     /**
      *
      *
@@ -588,6 +607,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private com.google.type.LocalizedText name_;
+
   /**
    *
    *
@@ -603,6 +623,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -618,6 +639,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LocalizedText getName() {
     return name_ == null ? com.google.type.LocalizedText.getDefaultInstance() : name_;
   }
+
   /**
    *
    *
@@ -634,6 +656,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
+
   /**
    *
    *
@@ -649,6 +672,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -673,6 +697,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object iconUri_ = "";
+
   /**
    *
    *
@@ -696,6 +721,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -724,6 +750,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object localIconUri_ = "";
+
   /**
    *
    *
@@ -748,6 +775,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -970,6 +998,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1215,6 +1244,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
             com.google.type.LocalizedText.Builder,
             com.google.type.LocalizedTextOrBuilder>
         nameBuilder_;
+
     /**
      *
      *
@@ -1229,6 +1259,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1247,6 +1278,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
         return nameBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1269,6 +1301,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1288,6 +1321,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1315,6 +1349,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1369,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1384,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNameFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1364,6 +1401,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
         return name_ == null ? com.google.type.LocalizedText.getDefaultInstance() : name_;
       }
     }
+
     /**
      *
      *
@@ -1391,6 +1429,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1406,6 +1445,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1424,6 +1464,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1484,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.routing.v2.TransitVehicle.TransitVehicleType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1464,6 +1506,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1483,6 +1526,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object iconUri_ = "";
+
     /**
      *
      *
@@ -1505,6 +1549,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1527,6 +1572,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1548,6 +1594,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1565,6 +1612,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1589,6 +1637,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object localIconUri_ = "";
+
     /**
      *
      *
@@ -1612,6 +1661,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1635,6 +1685,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1657,6 +1708,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1675,6 +1727,7 @@ public final class TransitVehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface DestinationDatasetOrBuilder
    * @return Whether the datasetReference field is set.
    */
   boolean hasDatasetReference();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DestinationDatasetOrBuilder
    * @return The datasetReference.
    */
   com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference getDatasetReference();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface DestinationDatasetOrBuilder
    * @return Whether the friendlyName field is set.
    */
   boolean hasFriendlyName();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface DestinationDatasetOrBuilder
    * @return The friendlyName.
    */
   com.google.protobuf.StringValue getFriendlyName();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface DestinationDatasetOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface DestinationDatasetOrBuilder
    * @return The description.
    */
   com.google.protobuf.StringValue getDescription();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface DestinationDatasetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -170,9 +177,11 @@ public interface DestinationDatasetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -187,6 +196,7 @@ public interface DestinationDatasetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -205,6 +215,7 @@ public interface DestinationDatasetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -234,6 +245,7 @@ public interface DestinationDatasetOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

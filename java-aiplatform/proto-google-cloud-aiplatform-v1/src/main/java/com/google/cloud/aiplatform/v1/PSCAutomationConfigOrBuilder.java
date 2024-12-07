@@ -36,6 +36,7 @@ public interface PSCAutomationConfigOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface PSCAutomationConfigOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *

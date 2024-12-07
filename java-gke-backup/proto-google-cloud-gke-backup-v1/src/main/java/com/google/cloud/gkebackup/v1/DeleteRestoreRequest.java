@@ -33,6 +33,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.DeleteRestoreRequest)
     DeleteRestoreRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteRestoreRequest.newBuilder() to construct.
   private DeleteRestoreRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
 
   public static final int FORCE_FIELD_NUMBER = 3;
   private boolean force_ = false;
+
   /**
    *
    *
@@ -373,6 +379,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -585,6 +592,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -610,6 +618,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -635,6 +644,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -659,6 +669,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -679,6 +690,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -730,6 +743,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +839,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
     }
 
     private boolean force_;
+
     /**
      *
      *
@@ -839,6 +857,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
     public boolean getForce() {
       return force_;
     }
+
     /**
      *
      *
@@ -860,6 +879,7 @@ public final class DeleteRestoreRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface UpdateDeviceRequestOrBuilder
    * @return Whether the device field is set.
    */
   boolean hasDevice();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateDeviceRequestOrBuilder
    * @return The device.
    */
   com.google.cloud.iot.v1.Device getDevice();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface UpdateDeviceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateDeviceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

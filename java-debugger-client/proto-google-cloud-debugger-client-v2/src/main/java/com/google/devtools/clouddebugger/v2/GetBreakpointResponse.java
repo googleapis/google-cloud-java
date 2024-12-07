@@ -33,6 +33,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.devtools.clouddebugger.v2.GetBreakpointResponse)
     GetBreakpointResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetBreakpointResponse.newBuilder() to construct.
   private GetBreakpointResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int BREAKPOINT_FIELD_NUMBER = 1;
   private com.google.devtools.clouddebugger.v2.Breakpoint breakpoint_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
   public boolean hasBreakpoint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
         ? com.google.devtools.clouddebugger.v2.Breakpoint.getDefaultInstance()
         : breakpoint_;
   }
+
   /**
    *
    *
@@ -280,6 +284,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -483,6 +488,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
             com.google.devtools.clouddebugger.v2.Breakpoint.Builder,
             com.google.devtools.clouddebugger.v2.BreakpointOrBuilder>
         breakpointBuilder_;
+
     /**
      *
      *
@@ -498,6 +504,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
     public boolean hasBreakpoint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -519,6 +526,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
         return breakpointBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -542,6 +550,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -563,6 +572,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -592,6 +602,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -612,6 +623,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -627,6 +639,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getBreakpointFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -646,6 +659,7 @@ public final class GetBreakpointResponse extends com.google.protobuf.GeneratedMe
             : breakpoint_;
       }
     }
+
     /**
      *
      *

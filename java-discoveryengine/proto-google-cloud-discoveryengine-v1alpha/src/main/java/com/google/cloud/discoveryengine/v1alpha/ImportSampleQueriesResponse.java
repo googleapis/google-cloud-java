@@ -37,6 +37,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ImportSampleQueriesResponse)
     ImportSampleQueriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportSampleQueriesResponse.newBuilder() to construct.
   private ImportSampleQueriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
     return errorSamples_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList() {
     return errorSamples_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
   public int getErrorSamplesCount() {
     return errorSamples_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
   public com.google.rpc.Status getErrorSamples(int index) {
     return errorSamples_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
 
   public static final int ERROR_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig errorConfig_;
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
   public boolean hasErrorConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -172,6 +180,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
         ? com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig.getDefaultInstance()
         : errorConfig_;
   }
+
   /**
    *
    *
@@ -366,6 +375,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -665,6 +675,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
         return errorSamplesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
         return errorSamplesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
         return errorSamplesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -719,6 +732,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +775,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +798,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +818,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +898,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +911,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
     public com.google.rpc.Status.Builder getErrorSamplesBuilder(int index) {
       return getErrorSamplesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -905,6 +928,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
         return errorSamplesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -921,6 +945,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(errorSamples_);
       }
     }
+
     /**
      *
      *
@@ -933,6 +958,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
     public com.google.rpc.Status.Builder addErrorSamplesBuilder() {
       return getErrorSamplesFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -946,6 +972,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       return getErrorSamplesFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -980,6 +1007,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
             com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig.Builder,
             com.google.cloud.discoveryengine.v1alpha.ImportErrorConfigOrBuilder>
         errorConfigBuilder_;
+
     /**
      *
      *
@@ -994,6 +1022,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
     public boolean hasErrorConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1014,6 +1043,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
         return errorConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1067,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1088,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1119,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1139,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1155,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1140,6 +1175,7 @@ public final class ImportSampleQueriesResponse extends com.google.protobuf.Gener
             : errorConfig_;
       }
     }
+
     /**
      *
      *

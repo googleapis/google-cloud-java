@@ -37,6 +37,7 @@ public interface CompileSuggestionResponseOrBuilder
    * @return Whether the suggestion field is set.
    */
   boolean hasSuggestion();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface CompileSuggestionResponseOrBuilder
    * @return The suggestion.
    */
   com.google.cloud.dialogflow.v2beta1.Suggestion getSuggestion();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface CompileSuggestionResponseOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
+
   /**
    *
    *

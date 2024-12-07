@@ -36,6 +36,7 @@ public interface TransferStatsOrBuilder
    * @return Whether the transferBytes field is set.
    */
   boolean hasTransferBytes();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface TransferStatsOrBuilder
    * @return Whether the totalTransferDuration field is set.
    */
   boolean hasTotalTransferDuration();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface TransferStatsOrBuilder
    * @return The totalTransferDuration.
    */
   com.google.protobuf.Duration getTotalTransferDuration();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface TransferStatsOrBuilder
    * @return Whether the lastTransferBytes field is set.
    */
   boolean hasLastTransferBytes();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface TransferStatsOrBuilder
    * @return Whether the lastTransferDuration field is set.
    */
   boolean hasLastTransferDuration();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface TransferStatsOrBuilder
    * @return The lastTransferDuration.
    */
   com.google.protobuf.Duration getLastTransferDuration();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface TransferStatsOrBuilder
    * @return Whether the lagDuration field is set.
    */
   boolean hasLagDuration();
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public interface TransferStatsOrBuilder
    * @return The lagDuration.
    */
   com.google.protobuf.Duration getLagDuration();
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public interface TransferStatsOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public interface TransferStatsOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public interface TransferStatsOrBuilder
    * @return Whether the lastTransferEndTime field is set.
    */
   boolean hasLastTransferEndTime();
+
   /**
    *
    *
@@ -244,6 +255,7 @@ public interface TransferStatsOrBuilder
    * @return The lastTransferEndTime.
    */
   com.google.protobuf.Timestamp getLastTransferEndTime();
+
   /**
    *
    *
@@ -267,6 +279,7 @@ public interface TransferStatsOrBuilder
    * @return Whether the lastTransferError field is set.
    */
   boolean hasLastTransferError();
+
   /**
    *
    *
@@ -279,6 +292,7 @@ public interface TransferStatsOrBuilder
    * @return The lastTransferError.
    */
   java.lang.String getLastTransferError();
+
   /**
    *
    *

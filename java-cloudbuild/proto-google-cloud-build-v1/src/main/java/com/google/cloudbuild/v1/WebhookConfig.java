@@ -34,6 +34,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.WebhookConfig)
     WebhookConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WebhookConfig.newBuilder() to construct.
   private WebhookConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>OK = 1;</code>
      */
     public static final int OK_VALUE = 1;
+
     /**
      *
      *
@@ -238,6 +241,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
     private AuthMethodCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -269,6 +273,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECRET_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -285,6 +290,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSecret() {
     return authMethodCase_ == 3;
   }
+
   /**
    *
    *
@@ -314,6 +320,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -346,6 +353,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    *
    *
@@ -362,6 +370,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -561,6 +570,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -801,6 +811,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSecret() {
       return authMethodCase_ == 3;
     }
+
     /**
      *
      *
@@ -831,6 +842,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -861,6 +873,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -884,6 +897,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +919,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +946,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -947,6 +963,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -966,6 +983,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1002,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.cloudbuild.v1.WebhookConfig.State.forNumber(state_);
       return result == null ? com.google.cloudbuild.v1.WebhookConfig.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1006,6 +1025,7 @@ public final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

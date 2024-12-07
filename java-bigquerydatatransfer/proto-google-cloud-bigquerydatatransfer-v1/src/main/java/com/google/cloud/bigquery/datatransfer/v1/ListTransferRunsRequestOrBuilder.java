@@ -41,6 +41,7 @@ public interface ListTransferRunsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface ListTransferRunsRequestOrBuilder
    * @return A list containing the states.
    */
   java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferState> getStatesList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ListTransferRunsRequestOrBuilder
    * @return The count of states.
    */
   int getStatesCount();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ListTransferRunsRequestOrBuilder
    * @return The states at the given index.
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferState getStates(int index);
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface ListTransferRunsRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for states.
    */
   java.util.List<java.lang.Integer> getStatesValueList();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface ListTransferRunsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface ListTransferRunsRequestOrBuilder
    * @return The enum numeric value on the wire for runAttempt.
    */
   int getRunAttemptValue();
+
   /**
    *
    *

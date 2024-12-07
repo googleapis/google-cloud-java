@@ -35,6 +35,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v2.InstallationState)
     InstallationStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstallationState.newBuilder() to construct.
   private InstallationState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -141,6 +142,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
      * <code>STAGE_UNSPECIFIED = 0;</code>
      */
     public static final int STAGE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -152,6 +154,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
      * <code>PENDING_CREATE_APP = 1;</code>
      */
     public static final int PENDING_CREATE_APP_VALUE = 1;
+
     /**
      *
      *
@@ -162,6 +165,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
      * <code>PENDING_USER_OAUTH = 2;</code>
      */
     public static final int PENDING_USER_OAUTH_VALUE = 2;
+
     /**
      *
      *
@@ -172,6 +176,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
      * <code>PENDING_INSTALL_APP = 3;</code>
      */
     public static final int PENDING_INSTALL_APP_VALUE = 3;
+
     /**
      *
      *
@@ -272,6 +277,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
 
   public static final int STAGE_FIELD_NUMBER = 1;
   private int stage_ = 0;
+
   /**
    *
    *
@@ -289,6 +295,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
   public int getStageValue() {
     return stage_;
   }
+
   /**
    *
    *
@@ -313,6 +320,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -337,6 +345,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -366,6 +375,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object actionUri_ = "";
+
   /**
    *
    *
@@ -390,6 +400,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -592,6 +603,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -805,6 +817,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int stage_ = 0;
+
     /**
      *
      *
@@ -822,6 +835,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
     public int getStageValue() {
       return stage_;
     }
+
     /**
      *
      *
@@ -842,6 +856,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +878,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
           ? com.google.cloudbuild.v2.InstallationState.Stage.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -886,6 +902,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +924,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -930,6 +948,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -953,6 +972,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -975,6 +995,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1014,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1040,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object actionUri_ = "";
+
     /**
      *
      *
@@ -1041,6 +1064,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1088,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1086,6 +1111,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1130,7 @@ public final class InstallationState extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

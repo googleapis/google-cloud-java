@@ -33,6 +33,7 @@ public final class AffinityClusteringConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.AffinityClusteringConfig)
     AffinityClusteringConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AffinityClusteringConfig.newBuilder() to construct.
   private AffinityClusteringConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class AffinityClusteringConfig extends com.google.protobuf.Generate
 
   public static final int COMPRESSION_ROUND_COUNT_FIELD_NUMBER = 1;
   private long compressionRoundCount_ = 0L;
+
   /**
    *
    *
@@ -240,6 +242,7 @@ public final class AffinityClusteringConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -429,6 +432,7 @@ public final class AffinityClusteringConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private long compressionRoundCount_;
+
     /**
      *
      *
@@ -444,6 +448,7 @@ public final class AffinityClusteringConfig extends com.google.protobuf.Generate
     public long getCompressionRoundCount() {
       return compressionRoundCount_;
     }
+
     /**
      *
      *
@@ -463,6 +468,7 @@ public final class AffinityClusteringConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

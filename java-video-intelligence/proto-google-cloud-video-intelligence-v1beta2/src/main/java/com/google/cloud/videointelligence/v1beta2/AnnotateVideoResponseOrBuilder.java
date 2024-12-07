@@ -37,6 +37,7 @@ public interface AnnotateVideoResponseOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1beta2.VideoAnnotationResults>
       getAnnotationResultsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface AnnotateVideoResponseOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1beta2.VideoAnnotationResults getAnnotationResults(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface AnnotateVideoResponseOrBuilder
    * </code>
    */
   int getAnnotationResultsCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface AnnotateVideoResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.videointelligence.v1beta2.VideoAnnotationResultsOrBuilder>
       getAnnotationResultsOrBuilderList();
+
   /**
    *
    *

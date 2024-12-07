@@ -40,6 +40,7 @@ public interface FhirStoreSourceOrBuilder
    * @return The fhirStore.
    */
   java.lang.String getFhirStore();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface FhirStoreSourceOrBuilder
    * @return The gcsStagingDir.
    */
   java.lang.String getGcsStagingDir();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface FhirStoreSourceOrBuilder
    * @return A list containing the resourceTypes.
    */
   java.util.List<java.lang.String> getResourceTypesList();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface FhirStoreSourceOrBuilder
    * @return The count of resourceTypes.
    */
   int getResourceTypesCount();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface FhirStoreSourceOrBuilder
    * @return The resourceTypes at the given index.
    */
   java.lang.String getResourceTypes(int index);
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.NetworkAddress)
     NetworkAddressOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkAddress.newBuilder() to construct.
   private NetworkAddress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
      * <code>ADDRESS_ASSIGNMENT_UNSPECIFIED = 0;</code>
      */
     public static final int ADDRESS_ASSIGNMENT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
      * <code>ADDRESS_ASSIGNMENT_STATIC = 1;</code>
      */
     public static final int ADDRESS_ASSIGNMENT_STATIC_VALUE = 1;
+
     /**
      *
      *
@@ -233,6 +236,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
+
   /**
    *
    *
@@ -256,6 +260,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -284,6 +289,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetMask_ = "";
+
   /**
    *
    *
@@ -307,6 +313,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -335,6 +342,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bcast_ = "";
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -386,6 +395,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fqdn_ = "";
+
   /**
    *
    *
@@ -409,6 +419,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -435,6 +446,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ASSIGNMENT_FIELD_NUMBER = 5;
   private int assignment_ = 0;
+
   /**
    *
    *
@@ -450,6 +462,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
   public int getAssignmentValue() {
     return assignment_;
   }
+
   /**
    *
    *
@@ -671,6 +684,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -913,6 +927,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -935,6 +950,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -957,6 +973,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -978,6 +995,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1013,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1038,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object subnetMask_ = "";
+
     /**
      *
      *
@@ -1041,6 +1061,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1084,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1106,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1124,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1149,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object bcast_ = "";
+
     /**
      *
      *
@@ -1147,6 +1172,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1169,6 +1195,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1190,6 +1217,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1235,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1231,6 +1260,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fqdn_ = "";
+
     /**
      *
      *
@@ -1253,6 +1283,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1275,6 +1306,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1296,6 +1328,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1313,6 +1346,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1371,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int assignment_ = 0;
+
     /**
      *
      *
@@ -1353,6 +1388,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
     public int getAssignmentValue() {
       return assignment_;
     }
+
     /**
      *
      *
@@ -1372,6 +1408,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1430,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.migrationcenter.v1.NetworkAddress.AddressAssignment.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1416,6 +1454,7 @@ public final class NetworkAddress extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

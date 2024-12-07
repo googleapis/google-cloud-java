@@ -36,6 +36,7 @@ public interface ErrorHandlerOrBuilder
    * @return The enum numeric value on the wire for errorCode.
    */
   int getErrorCodeValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ErrorHandlerOrBuilder
    * @return The staticFile.
    */
   java.lang.String getStaticFile();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ErrorHandlerOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *

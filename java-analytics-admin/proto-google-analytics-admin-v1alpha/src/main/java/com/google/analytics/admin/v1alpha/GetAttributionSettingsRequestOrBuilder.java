@@ -39,6 +39,7 @@ public interface GetAttributionSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

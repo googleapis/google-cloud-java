@@ -36,6 +36,7 @@ public interface RelationDescriptorOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RelationDescriptorOrBuilder
    */
   java.util.List<com.google.cloud.dataform.v1alpha2.RelationDescriptor.ColumnDescriptor>
       getColumnsList();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface RelationDescriptorOrBuilder
    * </code>
    */
   com.google.cloud.dataform.v1alpha2.RelationDescriptor.ColumnDescriptor getColumns(int index);
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface RelationDescriptorOrBuilder
    * </code>
    */
   int getColumnsCount();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface RelationDescriptorOrBuilder
   java.util.List<
           ? extends com.google.cloud.dataform.v1alpha2.RelationDescriptor.ColumnDescriptorOrBuilder>
       getColumnsOrBuilderList();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface RelationDescriptorOrBuilder
    * <code>map&lt;string, string&gt; bigquery_labels = 3;</code>
    */
   int getBigqueryLabelsCount();
+
   /**
    *
    *
@@ -129,9 +135,11 @@ public interface RelationDescriptorOrBuilder
    * <code>map&lt;string, string&gt; bigquery_labels = 3;</code>
    */
   boolean containsBigqueryLabels(java.lang.String key);
+
   /** Use {@link #getBigqueryLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getBigqueryLabels();
+
   /**
    *
    *
@@ -142,6 +150,7 @@ public interface RelationDescriptorOrBuilder
    * <code>map&lt;string, string&gt; bigquery_labels = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getBigqueryLabelsMap();
+
   /**
    *
    *
@@ -156,6 +165,7 @@ public interface RelationDescriptorOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

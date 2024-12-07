@@ -37,6 +37,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * @return Whether the segmentStartTime field is set.
    */
   boolean hasSegmentStartTime();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * @return The segmentStartTime.
    */
   com.google.protobuf.Timestamp getSegmentStartTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * @return Whether the segmentEndTime field is set.
    */
   boolean hasSegmentEndTime();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * @return The segmentEndTime.
    */
   com.google.protobuf.Timestamp getSegmentEndTime();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface VideoClassificationPredictionResultOrBuilder
   java.util.List<
           com.google.cloud.visionai.v1.VideoClassificationPredictionResult.IdentifiedClassification>
       getClassificationsList();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    */
   com.google.cloud.visionai.v1.VideoClassificationPredictionResult.IdentifiedClassification
       getClassifications(int index);
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * </code>
    */
   int getClassificationsCount();
+
   /**
    *
    *
@@ -161,6 +168,7 @@ public interface VideoClassificationPredictionResultOrBuilder
               com.google.cloud.visionai.v1.VideoClassificationPredictionResult
                   .IdentifiedClassificationOrBuilder>
       getClassificationsOrBuilderList();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface TunedModelRefOrBuilder
    * @return Whether the tunedModel field is set.
    */
   boolean hasTunedModel();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TunedModelRefOrBuilder
    * @return The tunedModel.
    */
   java.lang.String getTunedModel();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface TunedModelRefOrBuilder
    * @return Whether the tuningJob field is set.
    */
   boolean hasTuningJob();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface TunedModelRefOrBuilder
    * @return The tuningJob.
    */
   java.lang.String getTuningJob();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface TunedModelRefOrBuilder
    * @return Whether the pipelineJob field is set.
    */
   boolean hasPipelineJob();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface TunedModelRefOrBuilder
    * @return The pipelineJob.
    */
   java.lang.String getPipelineJob();
+
   /**
    *
    *

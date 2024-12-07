@@ -33,6 +33,7 @@ public final class EventThreatDetectionSettings extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.EventThreatDetectionSettings)
     EventThreatDetectionSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EventThreatDetectionSettings.newBuilder() to construct.
   private EventThreatDetectionSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -220,6 +221,7 @@ public final class EventThreatDetectionSettings extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface EncryptionKeyOrBuilder
    * @return The gcpKmsEncryptionKey.
    */
   java.lang.String getGcpKmsEncryptionKey();
+
   /**
    *
    *

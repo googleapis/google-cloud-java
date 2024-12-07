@@ -38,6 +38,7 @@ public interface EscalateCaseRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface EscalateCaseRequestOrBuilder
    * @return Whether the escalation field is set.
    */
   boolean hasEscalation();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface EscalateCaseRequestOrBuilder
    * @return The escalation.
    */
   com.google.cloud.support.v2.Escalation getEscalation();
+
   /**
    *
    *

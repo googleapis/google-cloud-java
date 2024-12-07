@@ -33,6 +33,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.PredictRequest)
     PredictRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PredictRequest.newBuilder() to construct.
   private PredictRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PAYLOAD_FIELD_NUMBER = 2;
   private com.google.cloud.automl.v1beta1.ExamplePayload payload_;
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPayload() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.automl.v1beta1.ExamplePayload.getDefaultInstance()
         : payload_;
   }
+
   /**
    *
    *
@@ -216,6 +222,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
   public int getParamsCount() {
     return internalGetParams().getMap().size();
   }
+
   /**
    *
    *
@@ -251,12 +258,14 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetParams().getMap().containsKey(key);
   }
+
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParams() {
     return getParamsMap();
   }
+
   /**
    *
    *
@@ -289,6 +298,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
     return internalGetParams().getMap();
   }
+
   /**
    *
    *
@@ -328,6 +338,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -558,6 +569,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -811,6 +823,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -835,6 +848,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -859,6 +873,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -882,6 +897,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +917,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +949,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.ExamplePayload.Builder,
             com.google.cloud.automl.v1beta1.ExamplePayloadOrBuilder>
         payloadBuilder_;
+
     /**
      *
      *
@@ -949,6 +967,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPayload() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -972,6 +991,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         return payloadBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -997,6 +1017,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1041,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1072,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1095,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1113,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPayloadFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1110,6 +1135,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
             : payload_;
       }
     }
+
     /**
      *
      *
@@ -1164,6 +1190,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     public int getParamsCount() {
       return internalGetParams().getMap().size();
     }
+
     /**
      *
      *
@@ -1199,12 +1226,14 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetParams().getMap().containsKey(key);
     }
+
     /** Use {@link #getParamsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParams() {
       return getParamsMap();
     }
+
     /**
      *
      *
@@ -1237,6 +1266,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
       return internalGetParams().getMap();
     }
+
     /**
      *
      *
@@ -1276,6 +1306,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1321,6 +1352,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1356,12 +1388,14 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableParams().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParams() {
       bitField0_ |= 0x00000004;
       return internalGetMutableParams().getMutableMap();
     }
+
     /**
      *
      *
@@ -1401,6 +1435,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *

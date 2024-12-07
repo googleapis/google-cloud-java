@@ -36,6 +36,7 @@ public interface ErrorsOrBuilder
    * @return Whether the code field is set.
    */
   boolean hasCode();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ErrorsOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ErrorsOrBuilder
    * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ErrorDetails> getErrorDetailsList();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface ErrorsOrBuilder
    * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
    */
   com.google.cloud.compute.v1.ErrorDetails getErrorDetails(int index);
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ErrorsOrBuilder
    * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
    */
   int getErrorDetailsCount();
+
   /**
    *
    *
@@ -102,6 +107,7 @@ public interface ErrorsOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ErrorDetailsOrBuilder>
       getErrorDetailsOrBuilderList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ErrorsOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -137,6 +144,7 @@ public interface ErrorsOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface ErrorsOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
+
   /**
    *
    *
@@ -174,6 +183,7 @@ public interface ErrorsOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *

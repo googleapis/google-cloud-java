@@ -36,6 +36,7 @@ public interface CustomTargetTypeNotificationEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CustomTargetTypeNotificationEventOrBuilder
    * @return The customTargetTypeUid.
    */
   java.lang.String getCustomTargetTypeUid();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface CustomTargetTypeNotificationEventOrBuilder
    * @return The customTargetType.
    */
   java.lang.String getCustomTargetType();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface CustomTargetTypeNotificationEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.StoredInfoTypeStats)
     StoredInfoTypeStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StoredInfoTypeStats.newBuilder() to construct.
   private StoredInfoTypeStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
     private TypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LARGE_CUSTOM_DICTIONARY_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
   public boolean hasLargeCustomDictionary() {
     return typeCase_ == 1;
   }
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
     }
     return com.google.privacy.dlp.v2.LargeCustomDictionaryStats.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -333,6 +338,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -551,6 +557,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.LargeCustomDictionaryStats.Builder,
             com.google.privacy.dlp.v2.LargeCustomDictionaryStatsOrBuilder>
         largeCustomDictionaryBuilder_;
+
     /**
      *
      *
@@ -566,6 +573,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
     public boolean hasLargeCustomDictionary() {
       return typeCase_ == 1;
     }
+
     /**
      *
      *
@@ -591,6 +599,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.LargeCustomDictionaryStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
       typeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -634,6 +644,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
       typeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
       typeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
         getLargeCustomDictionaryBuilder() {
       return getLargeCustomDictionaryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.LargeCustomDictionaryStats.getDefaultInstance();
       }
     }
+
     /**
      *
      *

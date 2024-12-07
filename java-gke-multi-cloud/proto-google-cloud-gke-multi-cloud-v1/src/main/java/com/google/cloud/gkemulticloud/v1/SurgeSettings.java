@@ -33,6 +33,7 @@ public final class SurgeSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.SurgeSettings)
     SurgeSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SurgeSettings.newBuilder() to construct.
   private SurgeSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class SurgeSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_SURGE_FIELD_NUMBER = 1;
   private int maxSurge_ = 0;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class SurgeSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_UNAVAILABLE_FIELD_NUMBER = 2;
   private int maxUnavailable_ = 0;
+
   /**
    *
    *
@@ -268,6 +271,7 @@ public final class SurgeSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -463,6 +467,7 @@ public final class SurgeSettings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int maxSurge_;
+
     /**
      *
      *
@@ -479,6 +484,7 @@ public final class SurgeSettings extends com.google.protobuf.GeneratedMessageV3
     public int getMaxSurge() {
       return maxSurge_;
     }
+
     /**
      *
      *
@@ -499,6 +505,7 @@ public final class SurgeSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -519,6 +526,7 @@ public final class SurgeSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int maxUnavailable_;
+
     /**
      *
      *
@@ -536,6 +544,7 @@ public final class SurgeSettings extends com.google.protobuf.GeneratedMessageV3
     public int getMaxUnavailable() {
       return maxUnavailable_;
     }
+
     /**
      *
      *
@@ -557,6 +566,7 @@ public final class SurgeSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

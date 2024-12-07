@@ -38,6 +38,7 @@ public interface ImportConversationDataOperationResponseOrBuilder
    * @return The conversationDataset.
    */
   java.lang.String getConversationDataset();
+
   /**
    *
    *

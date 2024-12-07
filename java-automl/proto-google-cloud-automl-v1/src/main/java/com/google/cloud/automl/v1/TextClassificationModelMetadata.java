@@ -33,6 +33,7 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.TextClassificationModelMetadata)
     TextClassificationModelMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TextClassificationModelMetadata.newBuilder() to construct.
   private TextClassificationModelMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,6 +67,7 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
 
   public static final int CLASSIFICATION_TYPE_FIELD_NUMBER = 3;
   private int classificationType_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
   public int getClassificationTypeValue() {
     return classificationType_;
   }
+
   /**
    *
    *
@@ -263,6 +266,7 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -445,6 +449,7 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
     private int bitField0_;
 
     private int classificationType_ = 0;
+
     /**
      *
      *
@@ -460,6 +465,7 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
     public int getClassificationTypeValue() {
       return classificationType_;
     }
+
     /**
      *
      *
@@ -478,6 +484,7 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -495,6 +502,7 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
           com.google.cloud.automl.v1.ClassificationType.forNumber(classificationType_);
       return result == null ? com.google.cloud.automl.v1.ClassificationType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -516,6 +524,7 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

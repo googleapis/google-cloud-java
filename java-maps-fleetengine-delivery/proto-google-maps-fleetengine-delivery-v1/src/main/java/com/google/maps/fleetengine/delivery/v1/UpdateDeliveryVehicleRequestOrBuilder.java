@@ -38,6 +38,7 @@ public interface UpdateDeliveryVehicleRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateDeliveryVehicleRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader getHeader();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateDeliveryVehicleRequestOrBuilder
    * @return Whether the deliveryVehicle field is set.
    */
   boolean hasDeliveryVehicle();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateDeliveryVehicleRequestOrBuilder
    * @return The deliveryVehicle.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryVehicle getDeliveryVehicle();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface UpdateDeliveryVehicleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface UpdateDeliveryVehicleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

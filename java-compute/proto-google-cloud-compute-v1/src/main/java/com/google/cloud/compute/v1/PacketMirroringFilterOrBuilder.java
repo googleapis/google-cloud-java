@@ -36,6 +36,7 @@ public interface PacketMirroringFilterOrBuilder
    * @return A list containing the iPProtocols.
    */
   java.util.List<java.lang.String> getIPProtocolsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PacketMirroringFilterOrBuilder
    * @return The count of iPProtocols.
    */
   int getIPProtocolsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface PacketMirroringFilterOrBuilder
    * @return The iPProtocols at the given index.
    */
   java.lang.String getIPProtocols(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface PacketMirroringFilterOrBuilder
    * @return A list containing the cidrRanges.
    */
   java.util.List<java.lang.String> getCidrRangesList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface PacketMirroringFilterOrBuilder
    * @return The count of cidrRanges.
    */
   int getCidrRangesCount();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface PacketMirroringFilterOrBuilder
    * @return The cidrRanges at the given index.
    */
   java.lang.String getCidrRanges(int index);
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public interface PacketMirroringFilterOrBuilder
    * @return Whether the direction field is set.
    */
   boolean hasDirection();
+
   /**
    *
    *
@@ -152,6 +159,7 @@ public interface PacketMirroringFilterOrBuilder
    * @return The direction.
    */
   java.lang.String getDirection();
+
   /**
    *
    *

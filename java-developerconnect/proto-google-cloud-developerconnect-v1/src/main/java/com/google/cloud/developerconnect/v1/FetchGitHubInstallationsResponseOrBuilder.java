@@ -38,6 +38,7 @@ public interface FetchGitHubInstallationsResponseOrBuilder
    */
   java.util.List<com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse.Installation>
       getInstallationsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface FetchGitHubInstallationsResponseOrBuilder
    */
   com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse.Installation
       getInstallations(int index);
+
   /**
    *
    *
@@ -65,6 +67,7 @@ public interface FetchGitHubInstallationsResponseOrBuilder
    * </code>
    */
   int getInstallationsCount();
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface FetchGitHubInstallationsResponseOrBuilder
               com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse
                   .InstallationOrBuilder>
       getInstallationsOrBuilderList();
+
   /**
    *
    *

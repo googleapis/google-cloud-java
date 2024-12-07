@@ -33,6 +33,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.servicecontrol.v2.CheckResponse)
     CheckResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CheckResponse.newBuilder() to construct.
   private CheckResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int STATUS_FIELD_NUMBER = 1;
   private com.google.rpc.Status status_;
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
   public int getHeadersCount() {
     return internalGetHeaders().getMap().size();
   }
+
   /**
    *
    *
@@ -168,12 +173,14 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetHeaders().getMap().containsKey(key);
   }
+
   /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
     return getHeadersMap();
   }
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
     return internalGetHeaders().getMap();
   }
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -409,6 +418,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -650,6 +660,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +745,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +775,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +797,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +814,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -815,6 +833,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     public int getHeadersCount() {
       return internalGetHeaders().getMap().size();
     }
+
     /**
      *
      *
@@ -881,12 +901,14 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetHeaders().getMap().containsKey(key);
     }
+
     /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
       return getHeadersMap();
     }
+
     /**
      *
      *
@@ -900,6 +922,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
+
     /**
      *
      *
@@ -920,6 +943,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -946,6 +970,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableHeaders().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -962,12 +987,14 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableHeaders().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
       bitField0_ |= 0x00000002;
       return internalGetMutableHeaders().getMutableMap();
     }
+
     /**
      *
      *
@@ -988,6 +1015,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

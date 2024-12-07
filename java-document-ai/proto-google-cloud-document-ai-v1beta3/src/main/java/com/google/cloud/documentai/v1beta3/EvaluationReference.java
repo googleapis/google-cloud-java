@@ -33,6 +33,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.EvaluationReference)
     EvaluationReferenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EvaluationReference.newBuilder() to construct.
   private EvaluationReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object operation_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object evaluation_ = "";
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
 
   public static final int AGGREGATE_METRICS_FIELD_NUMBER = 4;
   private com.google.cloud.documentai.v1beta3.Evaluation.Metrics aggregateMetrics_;
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
   public boolean hasAggregateMetrics() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.documentai.v1beta3.Evaluation.Metrics.getDefaultInstance()
         : aggregateMetrics_;
   }
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
 
   public static final int AGGREGATE_METRICS_EXACT_FIELD_NUMBER = 5;
   private com.google.cloud.documentai.v1beta3.Evaluation.Metrics aggregateMetricsExact_;
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
   public boolean hasAggregateMetricsExact() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -252,6 +262,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.documentai.v1beta3.Evaluation.Metrics.getDefaultInstance()
         : aggregateMetricsExact_;
   }
+
   /**
    *
    *
@@ -467,6 +478,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -720,6 +732,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object operation_ = "";
+
     /**
      *
      *
@@ -742,6 +755,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -764,6 +778,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -785,6 +800,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +818,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +843,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object evaluation_ = "";
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -870,6 +889,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -891,6 +911,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +929,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +959,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
             com.google.cloud.documentai.v1beta3.Evaluation.Metrics.Builder,
             com.google.cloud.documentai.v1beta3.Evaluation.MetricsOrBuilder>
         aggregateMetricsBuilder_;
+
     /**
      *
      *
@@ -951,6 +974,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
     public boolean hasAggregateMetrics() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -971,6 +995,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
         return aggregateMetricsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -994,6 +1019,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1040,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1070,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1090,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1106,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAggregateMetricsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1096,6 +1126,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
             : aggregateMetrics_;
       }
     }
+
     /**
      *
      *
@@ -1128,6 +1159,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
             com.google.cloud.documentai.v1beta3.Evaluation.Metrics.Builder,
             com.google.cloud.documentai.v1beta3.Evaluation.MetricsOrBuilder>
         aggregateMetricsExactBuilder_;
+
     /**
      *
      *
@@ -1142,6 +1174,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
     public boolean hasAggregateMetricsExact() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1162,6 +1195,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
         return aggregateMetricsExactBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1185,6 +1219,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1240,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1270,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1253,6 +1290,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1268,6 +1306,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAggregateMetricsExactFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1287,6 +1326,7 @@ public final class EvaluationReference extends com.google.protobuf.GeneratedMess
             : aggregateMetricsExact_;
       }
     }
+
     /**
      *
      *

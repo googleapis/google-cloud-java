@@ -35,6 +35,7 @@ public interface RowOrBuilder
    * <code>repeated .google.cloud.channel.v1.ReportValue values = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.ReportValue> getValuesList();
+
   /**
    *
    *
@@ -45,6 +46,7 @@ public interface RowOrBuilder
    * <code>repeated .google.cloud.channel.v1.ReportValue values = 1;</code>
    */
   com.google.cloud.channel.v1.ReportValue getValues(int index);
+
   /**
    *
    *
@@ -55,6 +57,7 @@ public interface RowOrBuilder
    * <code>repeated .google.cloud.channel.v1.ReportValue values = 1;</code>
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -66,6 +69,7 @@ public interface RowOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.ReportValueOrBuilder>
       getValuesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface RowOrBuilder
    * @return The partitionKey.
    */
   java.lang.String getPartitionKey();
+
   /**
    *
    *

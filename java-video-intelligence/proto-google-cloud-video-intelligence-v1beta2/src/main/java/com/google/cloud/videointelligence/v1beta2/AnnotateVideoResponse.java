@@ -35,6 +35,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1beta2.AnnotateVideoResponse)
     AnnotateVideoResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotateVideoResponse.newBuilder() to construct.
   private AnnotateVideoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1beta2.VideoAnnotationResults>
       annotationResults_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
       getAnnotationResultsList() {
     return annotationResults_;
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
       getAnnotationResultsOrBuilderList() {
     return annotationResults_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
   public int getAnnotationResultsCount() {
     return annotationResults_.size();
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
       int index) {
     return annotationResults_.get(index);
   }
+
   /**
    *
    *
@@ -314,6 +320,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -588,6 +595,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
         return annotationResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -606,6 +614,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
         return annotationResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -625,6 +634,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
         return annotationResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +684,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +759,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +830,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +852,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +868,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
         getAnnotationResultsBuilder(int index) {
       return getAnnotationResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -868,6 +888,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
         return annotationResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -888,6 +909,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(annotationResults_);
       }
     }
+
     /**
      *
      *
@@ -906,6 +928,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.videointelligence.v1beta2.VideoAnnotationResults
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -925,6 +948,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.videointelligence.v1beta2.VideoAnnotationResults
                   .getDefaultInstance());
     }
+
     /**
      *
      *

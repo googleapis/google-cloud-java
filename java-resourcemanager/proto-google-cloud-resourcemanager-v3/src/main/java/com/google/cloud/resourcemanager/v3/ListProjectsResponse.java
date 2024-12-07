@@ -42,6 +42,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.ListProjectsResponse)
     ListProjectsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListProjectsResponse.newBuilder() to construct.
   private ListProjectsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.resourcemanager.v3.Project> projects_;
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.resourcemanager.v3.Project> getProjectsList() {
     return projects_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       getProjectsOrBuilderList() {
     return projects_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
   public int getProjectsCount() {
     return projects_.size();
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.resourcemanager.v3.Project getProjects(int index) {
     return projects_.get(index);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -386,6 +394,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -671,6 +680,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
         return projectsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -687,6 +697,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
         return projectsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -703,6 +714,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
         return projectsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -725,6 +737,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +758,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +781,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +804,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +825,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +846,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +867,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +887,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +907,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +920,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.resourcemanager.v3.Project.Builder getProjectsBuilder(int index) {
       return getProjectsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -915,6 +937,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
         return projectsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -932,6 +955,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(projects_);
       }
     }
+
     /**
      *
      *
@@ -945,6 +969,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       return getProjectsFieldBuilder()
           .addBuilder(com.google.cloud.resourcemanager.v3.Project.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -958,6 +983,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       return getProjectsFieldBuilder()
           .addBuilder(index, com.google.cloud.resourcemanager.v3.Project.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -990,6 +1016,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1022,6 +1049,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1054,6 +1082,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1085,6 +1114,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1112,6 +1142,7 @@ public final class ListProjectsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

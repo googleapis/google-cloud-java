@@ -100,7 +100,8 @@ public class MockController2Impl extends Controller2ImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListActiveBreakpoints, expected %s or %s",
+                  "Unrecognized response type %s for method ListActiveBreakpoints, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListActiveBreakpointsResponse.class.getName(),
                   Exception.class.getName())));
@@ -122,7 +123,8 @@ public class MockController2Impl extends Controller2ImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateActiveBreakpoint, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateActiveBreakpoint, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   UpdateActiveBreakpointResponse.class.getName(),
                   Exception.class.getName())));

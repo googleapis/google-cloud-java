@@ -37,6 +37,7 @@ public interface SchemaOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

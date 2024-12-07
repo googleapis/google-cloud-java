@@ -40,6 +40,7 @@ public interface ListApiOperationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -108,6 +109,7 @@ public interface ListApiOperationsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -192,6 +194,7 @@ public interface ListApiOperationsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.TemplateParameter)
     TemplateParameterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TemplateParameter.newBuilder() to construct.
   private TemplateParameter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList fields_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -199,6 +203,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getFieldsList() {
     return fields_;
   }
+
   /**
    *
    *
@@ -256,6 +261,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
   public int getFieldsCount() {
     return fields_.size();
   }
+
   /**
    *
    *
@@ -314,6 +320,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
   public java.lang.String getFields(int index) {
     return fields_.get(index);
   }
+
   /**
    *
    *
@@ -377,6 +384,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -401,6 +409,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -428,6 +437,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
 
   public static final int VALIDATION_FIELD_NUMBER = 4;
   private com.google.cloud.dataproc.v1.ParameterValidation validation_;
+
   /**
    *
    *
@@ -445,6 +455,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
   public boolean hasValidation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -464,6 +475,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.dataproc.v1.ParameterValidation.getDefaultInstance()
         : validation_;
   }
+
   /**
    *
    *
@@ -680,6 +692,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -937,6 +950,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -965,6 +979,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -993,6 +1008,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1036,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1060,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1099,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1139,6 +1158,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       fields_.makeImmutable();
       return fields_;
     }
+
     /**
      *
      *
@@ -1196,6 +1216,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     public int getFieldsCount() {
       return fields_.size();
     }
+
     /**
      *
      *
@@ -1254,6 +1275,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     public java.lang.String getFields(int index) {
       return fields_.get(index);
     }
+
     /**
      *
      *
@@ -1312,6 +1334,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getFieldsBytes(int index) {
       return fields_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1378,6 +1401,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1467,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1505,6 +1530,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1566,6 +1592,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1634,6 +1661,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1657,6 +1685,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1680,6 +1709,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1702,6 +1732,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1720,6 +1751,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1750,6 +1782,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dataproc.v1.ParameterValidation.Builder,
             com.google.cloud.dataproc.v1.ParameterValidationOrBuilder>
         validationBuilder_;
+
     /**
      *
      *
@@ -1766,6 +1799,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     public boolean hasValidation() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1788,6 +1822,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
         return validationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1812,6 +1847,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1834,6 +1870,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1864,6 +1901,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1885,6 +1923,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1901,6 +1940,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getValidationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1921,6 +1961,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
             : validation_;
       }
     }
+
     /**
      *
      *

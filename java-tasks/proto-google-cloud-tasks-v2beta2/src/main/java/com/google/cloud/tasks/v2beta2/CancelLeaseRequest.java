@@ -34,6 +34,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.CancelLeaseRequest)
     CancelLeaseRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CancelLeaseRequest.newBuilder() to construct.
   private CancelLeaseRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp scheduleTime_;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasScheduleTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : scheduleTime_;
   }
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int RESPONSE_VIEW_FIELD_NUMBER = 3;
   private int responseView_ = 0;
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
   public int getResponseViewValue() {
     return responseView_;
   }
+
   /**
    *
    *
@@ -429,6 +437,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -657,6 +666,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -682,6 +692,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -707,6 +718,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -731,6 +743,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +764,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +797,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         scheduleTimeBuilder_;
+
     /**
      *
      *
@@ -802,6 +817,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasScheduleTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -827,6 +843,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
         return scheduleTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -854,6 +871,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +896,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +929,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +954,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +974,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -976,6 +998,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
             : scheduleTime_;
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1031,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private int responseView_ = 0;
+
     /**
      *
      *
@@ -1035,6 +1059,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
     public int getResponseViewValue() {
       return responseView_;
     }
+
     /**
      *
      *
@@ -1065,6 +1090,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1120,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
           com.google.cloud.tasks.v2beta2.Task.View.forNumber(responseView_);
       return result == null ? com.google.cloud.tasks.v2beta2.Task.View.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1127,6 +1154,7 @@ public final class CancelLeaseRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

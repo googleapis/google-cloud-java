@@ -36,6 +36,7 @@ public interface TaggedEntryOrBuilder
    * @return Whether the v1Entry field is set.
    */
   boolean hasV1Entry();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TaggedEntryOrBuilder
    * @return The v1Entry.
    */
   com.google.cloud.datacatalog.v1.Entry getV1Entry();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface TaggedEntryOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.datacatalog.v1.Tag> getPresentTagsList();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface TaggedEntryOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1.Tag getPresentTags(int index);
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface TaggedEntryOrBuilder
    * </code>
    */
   int getPresentTagsCount();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface TaggedEntryOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1.TagOrBuilder>
       getPresentTagsOrBuilderList();
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public interface TaggedEntryOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.datacatalog.v1.Tag> getAbsentTagsList();
+
   /**
    *
    *
@@ -152,6 +159,7 @@ public interface TaggedEntryOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1.Tag getAbsentTags(int index);
+
   /**
    *
    *
@@ -165,6 +173,7 @@ public interface TaggedEntryOrBuilder
    * </code>
    */
   int getAbsentTagsCount();
+
   /**
    *
    *
@@ -179,6 +188,7 @@ public interface TaggedEntryOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1.TagOrBuilder>
       getAbsentTagsOrBuilderList();
+
   /**
    *
    *

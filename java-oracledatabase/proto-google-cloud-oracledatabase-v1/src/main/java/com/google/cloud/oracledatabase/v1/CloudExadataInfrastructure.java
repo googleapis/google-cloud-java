@@ -34,6 +34,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.CloudExadataInfrastructure)
     CloudExadataInfrastructureOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudExadataInfrastructure.newBuilder() to construct.
   private CloudExadataInfrastructure(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcpOracleZone_ = "";
+
   /**
    *
    *
@@ -213,6 +219,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -241,6 +248,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entitlementId_ = "";
+
   /**
    *
    *
@@ -265,6 +273,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -292,6 +301,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
 
   public static final int PROPERTIES_FIELD_NUMBER = 5;
   private com.google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties_;
+
   /**
    *
    *
@@ -309,6 +319,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
   public boolean hasProperties() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -329,6 +340,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
             .getDefaultInstance()
         : properties_;
   }
+
   /**
    *
    *
@@ -375,6 +387,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -391,12 +404,14 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -410,6 +425,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -430,6 +446,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -453,6 +470,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -469,6 +487,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -485,6 +504,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -732,6 +752,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1054,6 +1075,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1078,6 +1100,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1102,6 +1125,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1125,6 +1149,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1169,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1196,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1192,6 +1219,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1214,6 +1242,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1235,6 +1264,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1282,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1307,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
     }
 
     private java.lang.Object gcpOracleZone_ = "";
+
     /**
      *
      *
@@ -1298,6 +1330,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1320,6 +1353,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1341,6 +1375,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1393,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1382,6 +1418,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
     }
 
     private java.lang.Object entitlementId_ = "";
+
     /**
      *
      *
@@ -1405,6 +1442,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1428,6 +1466,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1450,6 +1489,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1468,6 +1508,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1498,6 +1539,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
             com.google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties.Builder,
             com.google.cloud.oracledatabase.v1.CloudExadataInfrastructurePropertiesOrBuilder>
         propertiesBuilder_;
+
     /**
      *
      *
@@ -1514,6 +1556,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
     public boolean hasProperties() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1537,6 +1580,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
         return propertiesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1562,6 +1606,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1585,6 +1630,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1617,6 +1663,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1685,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1655,6 +1703,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return getPropertiesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1677,6 +1726,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
             : properties_;
       }
     }
+
     /**
      *
      *
@@ -1730,6 +1780,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1746,12 +1797,14 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1765,6 +1818,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1785,6 +1839,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1811,6 +1866,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1827,12 +1883,14 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -1853,6 +1911,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *
@@ -1874,6 +1933,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1890,6 +1950,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1912,6 +1973,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1936,6 +1998,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1957,6 +2020,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1986,6 +2050,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2007,6 +2072,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2023,6 +2089,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2043,6 +2110,7 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
             : createTime_;
       }
     }
+
     /**
      *
      *

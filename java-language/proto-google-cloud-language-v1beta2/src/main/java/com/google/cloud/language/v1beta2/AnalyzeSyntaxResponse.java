@@ -33,6 +33,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.AnalyzeSyntaxResponse)
     AnalyzeSyntaxResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnalyzeSyntaxResponse.newBuilder() to construct.
   private AnalyzeSyntaxResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v1beta2.Sentence> sentences_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.language.v1beta2.Sentence> getSentencesList() {
     return sentences_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       getSentencesOrBuilderList() {
     return sentences_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
   public int getSentencesCount() {
     return sentences_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.language.v1beta2.Sentence getSentences(int index) {
     return sentences_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v1beta2.Token> tokens_;
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.language.v1beta2.Token> getTokensList() {
     return tokens_;
   }
+
   /**
    *
    *
@@ -167,6 +175,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       getTokensOrBuilderList() {
     return tokens_;
   }
+
   /**
    *
    *
@@ -180,6 +189,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
   public int getTokensCount() {
     return tokens_.size();
   }
+
   /**
    *
    *
@@ -193,6 +203,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.language.v1beta2.Token getTokens(int index) {
     return tokens_.get(index);
   }
+
   /**
    *
    *
@@ -211,6 +222,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object language_ = "";
+
   /**
    *
    *
@@ -237,6 +249,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -446,6 +459,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -779,6 +793,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         return sentencesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -795,6 +810,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         return sentencesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -811,6 +827,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         return sentencesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +871,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +894,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +917,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +938,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +959,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +980,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +1000,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1020,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1033,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.language.v1beta2.Sentence.Builder getSentencesBuilder(int index) {
       return getSentencesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1023,6 +1050,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         return sentencesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1068,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(sentences_);
       }
     }
+
     /**
      *
      *
@@ -1053,6 +1082,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       return getSentencesFieldBuilder()
           .addBuilder(com.google.cloud.language.v1beta2.Sentence.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1066,6 +1096,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       return getSentencesFieldBuilder()
           .addBuilder(index, com.google.cloud.language.v1beta2.Sentence.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1129,6 +1160,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         return tokensBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1145,6 +1177,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         return tokensBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1161,6 +1194,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         return tokensBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1183,6 +1217,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1238,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1225,6 +1261,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1247,6 +1284,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1304,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1286,6 +1325,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1346,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1325,6 +1366,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1386,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1399,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.language.v1beta2.Token.Builder getTokensBuilder(int index) {
       return getTokensFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1372,6 +1416,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         return tokensBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1389,6 +1434,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(tokens_);
       }
     }
+
     /**
      *
      *
@@ -1402,6 +1448,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       return getTokensFieldBuilder()
           .addBuilder(com.google.cloud.language.v1beta2.Token.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1415,6 +1462,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       return getTokensFieldBuilder()
           .addBuilder(index, com.google.cloud.language.v1beta2.Token.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1446,6 +1494,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object language_ = "";
+
     /**
      *
      *
@@ -1471,6 +1520,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1496,6 +1546,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1520,6 +1571,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1540,6 +1592,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

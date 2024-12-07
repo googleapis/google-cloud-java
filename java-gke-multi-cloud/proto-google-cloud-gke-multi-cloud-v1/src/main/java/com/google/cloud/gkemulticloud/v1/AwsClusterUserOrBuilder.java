@@ -36,6 +36,7 @@ public interface AwsClusterUserOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *

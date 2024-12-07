@@ -46,6 +46,7 @@ public interface UpdateCompletionConfigRequestOrBuilder
    * @return Whether the completionConfig field is set.
    */
   boolean hasCompletionConfig();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface UpdateCompletionConfigRequestOrBuilder
    * @return The completionConfig.
    */
   com.google.cloud.retail.v2alpha.CompletionConfig getCompletionConfig();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface UpdateCompletionConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface UpdateCompletionConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

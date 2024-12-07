@@ -41,6 +41,7 @@ public interface JobOrBuilder
    * @return Whether the reference field is set.
    */
   boolean hasReference();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface JobOrBuilder
    * @return The reference.
    */
   com.google.cloud.dataproc.v1.JobReference getReference();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface JobOrBuilder
    * @return Whether the placement field is set.
    */
   boolean hasPlacement();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface JobOrBuilder
    * @return The placement.
    */
   com.google.cloud.dataproc.v1.JobPlacement getPlacement();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface JobOrBuilder
    * @return Whether the hadoopJob field is set.
    */
   boolean hasHadoopJob();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface JobOrBuilder
    * @return The hadoopJob.
    */
   com.google.cloud.dataproc.v1.HadoopJob getHadoopJob();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface JobOrBuilder
    * @return Whether the sparkJob field is set.
    */
   boolean hasSparkJob();
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public interface JobOrBuilder
    * @return The sparkJob.
    */
   com.google.cloud.dataproc.v1.SparkJob getSparkJob();
+
   /**
    *
    *
@@ -214,6 +222,7 @@ public interface JobOrBuilder
    * @return Whether the pysparkJob field is set.
    */
   boolean hasPysparkJob();
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public interface JobOrBuilder
    * @return The pysparkJob.
    */
   com.google.cloud.dataproc.v1.PySparkJob getPysparkJob();
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public interface JobOrBuilder
    * @return Whether the hiveJob field is set.
    */
   boolean hasHiveJob();
+
   /**
    *
    *
@@ -267,6 +278,7 @@ public interface JobOrBuilder
    * @return The hiveJob.
    */
   com.google.cloud.dataproc.v1.HiveJob getHiveJob();
+
   /**
    *
    *
@@ -292,6 +304,7 @@ public interface JobOrBuilder
    * @return Whether the pigJob field is set.
    */
   boolean hasPigJob();
+
   /**
    *
    *
@@ -305,6 +318,7 @@ public interface JobOrBuilder
    * @return The pigJob.
    */
   com.google.cloud.dataproc.v1.PigJob getPigJob();
+
   /**
    *
    *
@@ -331,6 +345,7 @@ public interface JobOrBuilder
    * @return Whether the sparkRJob field is set.
    */
   boolean hasSparkRJob();
+
   /**
    *
    *
@@ -345,6 +360,7 @@ public interface JobOrBuilder
    * @return The sparkRJob.
    */
   com.google.cloud.dataproc.v1.SparkRJob getSparkRJob();
+
   /**
    *
    *
@@ -372,6 +388,7 @@ public interface JobOrBuilder
    * @return Whether the sparkSqlJob field is set.
    */
   boolean hasSparkSqlJob();
+
   /**
    *
    *
@@ -386,6 +403,7 @@ public interface JobOrBuilder
    * @return The sparkSqlJob.
    */
   com.google.cloud.dataproc.v1.SparkSqlJob getSparkSqlJob();
+
   /**
    *
    *
@@ -413,6 +431,7 @@ public interface JobOrBuilder
    * @return Whether the prestoJob field is set.
    */
   boolean hasPrestoJob();
+
   /**
    *
    *
@@ -427,6 +446,7 @@ public interface JobOrBuilder
    * @return The prestoJob.
    */
   com.google.cloud.dataproc.v1.PrestoJob getPrestoJob();
+
   /**
    *
    *
@@ -454,6 +474,7 @@ public interface JobOrBuilder
    * @return Whether the trinoJob field is set.
    */
   boolean hasTrinoJob();
+
   /**
    *
    *
@@ -468,6 +489,7 @@ public interface JobOrBuilder
    * @return The trinoJob.
    */
   com.google.cloud.dataproc.v1.TrinoJob getTrinoJob();
+
   /**
    *
    *
@@ -495,6 +517,7 @@ public interface JobOrBuilder
    * @return Whether the flinkJob field is set.
    */
   boolean hasFlinkJob();
+
   /**
    *
    *
@@ -509,6 +532,7 @@ public interface JobOrBuilder
    * @return The flinkJob.
    */
   com.google.cloud.dataproc.v1.FlinkJob getFlinkJob();
+
   /**
    *
    *
@@ -538,6 +562,7 @@ public interface JobOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -554,6 +579,7 @@ public interface JobOrBuilder
    * @return The status.
    */
   com.google.cloud.dataproc.v1.JobStatus getStatus();
+
   /**
    *
    *
@@ -581,6 +607,7 @@ public interface JobOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.JobStatus> getStatusHistoryList();
+
   /**
    *
    *
@@ -593,6 +620,7 @@ public interface JobOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.JobStatus getStatusHistory(int index);
+
   /**
    *
    *
@@ -605,6 +633,7 @@ public interface JobOrBuilder
    * </code>
    */
   int getStatusHistoryCount();
+
   /**
    *
    *
@@ -618,6 +647,7 @@ public interface JobOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.JobStatusOrBuilder>
       getStatusHistoryOrBuilderList();
+
   /**
    *
    *
@@ -646,6 +676,7 @@ public interface JobOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.YarnApplication> getYarnApplicationsList();
+
   /**
    *
    *
@@ -661,6 +692,7 @@ public interface JobOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.YarnApplication getYarnApplications(int index);
+
   /**
    *
    *
@@ -676,6 +708,7 @@ public interface JobOrBuilder
    * </code>
    */
   int getYarnApplicationsCount();
+
   /**
    *
    *
@@ -692,6 +725,7 @@ public interface JobOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.YarnApplicationOrBuilder>
       getYarnApplicationsOrBuilderList();
+
   /**
    *
    *
@@ -722,6 +756,7 @@ public interface JobOrBuilder
    * @return The driverOutputResourceUri.
    */
   java.lang.String getDriverOutputResourceUri();
+
   /**
    *
    *
@@ -751,6 +786,7 @@ public interface JobOrBuilder
    * @return The driverControlFilesUri.
    */
   java.lang.String getDriverControlFilesUri();
+
   /**
    *
    *
@@ -782,6 +818,7 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -798,9 +835,11 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -817,6 +856,7 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -837,6 +877,7 @@ public interface JobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -868,6 +909,7 @@ public interface JobOrBuilder
    * @return Whether the scheduling field is set.
    */
   boolean hasScheduling();
+
   /**
    *
    *
@@ -882,6 +924,7 @@ public interface JobOrBuilder
    * @return The scheduling.
    */
   com.google.cloud.dataproc.v1.JobScheduling getScheduling();
+
   /**
    *
    *
@@ -909,6 +952,7 @@ public interface JobOrBuilder
    * @return The jobUuid.
    */
   java.lang.String getJobUuid();
+
   /**
    *
    *
@@ -954,6 +998,7 @@ public interface JobOrBuilder
    * @return Whether the driverSchedulingConfig field is set.
    */
   boolean hasDriverSchedulingConfig();
+
   /**
    *
    *
@@ -968,6 +1013,7 @@ public interface JobOrBuilder
    * @return The driverSchedulingConfig.
    */
   com.google.cloud.dataproc.v1.DriverSchedulingConfig getDriverSchedulingConfig();
+
   /**
    *
    *

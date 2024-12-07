@@ -34,6 +34,7 @@ public final class EnvironmentTypeEnum extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.EnvironmentTypeEnum)
     EnvironmentTypeEnumOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EnvironmentTypeEnum.newBuilder() to construct.
   private EnvironmentTypeEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -115,6 +116,7 @@ public final class EnvironmentTypeEnum extends com.google.protobuf.GeneratedMess
      * <code>ENVIRONMENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ENVIRONMENT_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -125,6 +127,7 @@ public final class EnvironmentTypeEnum extends com.google.protobuf.GeneratedMess
      * <code>BROWSER = 1;</code>
      */
     public static final int BROWSER_VALUE = 1;
+
     /**
      *
      *
@@ -371,6 +374,7 @@ public final class EnvironmentTypeEnum extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

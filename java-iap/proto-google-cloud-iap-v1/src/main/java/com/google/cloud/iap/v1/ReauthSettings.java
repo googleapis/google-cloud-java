@@ -33,6 +33,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.ReauthSettings)
     ReauthSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReauthSettings.newBuilder() to construct.
   private ReauthSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,6 +131,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>METHOD_UNSPECIFIED = 0;</code>
      */
     public static final int METHOD_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,8 +142,10 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>LOGIN = 1;</code>
      */
     public static final int LOGIN_VALUE = 1;
+
     /** <code>PASSWORD = 2 [deprecated = true];</code> */
     @java.lang.Deprecated public static final int PASSWORD_VALUE = 2;
+
     /**
      *
      *
@@ -152,6 +156,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>SECURE_KEY = 3;</code>
      */
     public static final int SECURE_KEY_VALUE = 3;
+
     /**
      *
      *
@@ -304,6 +309,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>POLICY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int POLICY_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -315,6 +321,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>MINIMUM = 1;</code>
      */
     public static final int MINIMUM_VALUE = 1;
+
     /**
      *
      *
@@ -412,6 +419,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int METHOD_FIELD_NUMBER = 1;
   private int method_ = 0;
+
   /**
    *
    *
@@ -427,6 +435,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
   public int getMethodValue() {
     return method_;
   }
+
   /**
    *
    *
@@ -447,6 +456,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_AGE_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration maxAge_;
+
   /**
    *
    *
@@ -463,6 +473,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxAge() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -479,6 +490,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getMaxAge() {
     return maxAge_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxAge_;
   }
+
   /**
    *
    *
@@ -496,6 +508,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POLICY_TYPE_FIELD_NUMBER = 3;
   private int policyType_ = 0;
+
   /**
    *
    *
@@ -512,6 +525,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
   public int getPolicyTypeValue() {
     return policyType_;
   }
+
   /**
    *
    *
@@ -714,6 +728,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -937,6 +952,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int method_ = 0;
+
     /**
      *
      *
@@ -952,6 +968,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
     public int getMethodValue() {
       return method_;
     }
+
     /**
      *
      *
@@ -970,6 +987,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1005,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.iap.v1.ReauthSettings.Method.forNumber(method_);
       return result == null ? com.google.cloud.iap.v1.ReauthSettings.Method.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1008,6 +1027,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1052,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         maxAgeBuilder_;
+
     /**
      *
      *
@@ -1047,6 +1068,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxAge() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1066,6 +1088,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
         return maxAgeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1089,6 +1112,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1133,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1162,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1183,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1172,6 +1199,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMaxAgeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1189,6 +1217,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
         return maxAge_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxAge_;
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1246,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int policyType_ = 0;
+
     /**
      *
      *
@@ -1233,6 +1263,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
     public int getPolicyTypeValue() {
       return policyType_;
     }
+
     /**
      *
      *
@@ -1252,6 +1283,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1272,6 +1304,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.iap.v1.ReauthSettings.PolicyType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1294,6 +1327,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

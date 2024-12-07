@@ -33,6 +33,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.UpdateAclConfigRequest)
     UpdateAclConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateAclConfigRequest.newBuilder() to construct.
   private UpdateAclConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int ACL_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.discoveryengine.v1alpha.AclConfig aclConfig_;
+
   /**
    * <code>
    * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -75,6 +77,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
   public boolean hasAclConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>
    * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -88,6 +91,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.discoveryengine.v1alpha.AclConfig.getDefaultInstance()
         : aclConfig_;
   }
+
   /**
    * <code>
    * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -265,6 +269,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -472,6 +477,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.discoveryengine.v1alpha.AclConfig.Builder,
             com.google.cloud.discoveryengine.v1alpha.AclConfigOrBuilder>
         aclConfigBuilder_;
+
     /**
      * <code>
      * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -482,6 +488,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
     public boolean hasAclConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>
      * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -498,6 +505,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
         return aclConfigBuilder_.getMessage();
       }
     }
+
     /**
      * <code>
      * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -516,6 +524,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -532,6 +541,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -556,6 +566,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -571,6 +582,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -581,6 +593,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getAclConfigFieldBuilder().getBuilder();
     }
+
     /**
      * <code>
      * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -595,6 +608,7 @@ public final class UpdateAclConfigRequest extends com.google.protobuf.GeneratedM
             : aclConfig_;
       }
     }
+
     /**
      * <code>
      * .google.cloud.discoveryengine.v1alpha.AclConfig acl_config = 1 [(.google.api.field_behavior) = REQUIRED];

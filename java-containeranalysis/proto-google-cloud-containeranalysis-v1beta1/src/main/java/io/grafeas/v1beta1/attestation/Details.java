@@ -33,6 +33,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.attestation.Details)
     DetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Details.newBuilder() to construct.
   private Details(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ATTESTATION_FIELD_NUMBER = 1;
   private io.grafeas.v1beta1.attestation.Attestation attestation_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAttestation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
         ? io.grafeas.v1beta1.attestation.Attestation.getDefaultInstance()
         : attestation_;
   }
+
   /**
    *
    *
@@ -275,6 +279,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -478,6 +483,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.attestation.Attestation.Builder,
             io.grafeas.v1beta1.attestation.AttestationOrBuilder>
         attestationBuilder_;
+
     /**
      *
      *
@@ -492,6 +498,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAttestation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -512,6 +519,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
         return attestationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -534,6 +542,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -554,6 +563,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,6 +591,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -600,6 +611,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +626,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAttestationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -632,6 +645,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
             : attestation_;
       }
     }
+
     /**
      *
      *

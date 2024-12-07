@@ -35,6 +35,7 @@ public interface ListIntentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Intent intents = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Intent> getIntentsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListIntentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Intent intents = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Intent getIntents(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListIntentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Intent intents = 1;</code>
    */
   int getIntentsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListIntentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.IntentOrBuilder>
       getIntentsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListIntentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

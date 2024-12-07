@@ -33,6 +33,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment)
     FraudPreventionAssessmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FraudPreventionAssessment.newBuilder() to construct.
   private FraudPreventionAssessment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
      */
     float getRisk();
   }
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict)
       StolenInstrumentVerdictOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StolenInstrumentVerdict.newBuilder() to construct.
     private StolenInstrumentVerdict(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -128,6 +131,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
 
     public static final int RISK_FIELD_NUMBER = 1;
     private float risk_ = 0F;
+
     /**
      *
      *
@@ -332,6 +336,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -544,6 +549,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       private int bitField0_;
 
       private float risk_;
+
       /**
        *
        *
@@ -560,6 +566,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       public float getRisk() {
         return risk_;
       }
+
       /**
        *
        *
@@ -580,6 +587,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -689,6 +697,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
      */
     float getRisk();
   }
+
   /**
    *
    *
@@ -705,6 +714,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict)
       CardTestingVerdictOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CardTestingVerdict.newBuilder() to construct.
     private CardTestingVerdict(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -737,6 +747,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
 
     public static final int RISK_FIELD_NUMBER = 1;
     private float risk_ = 0F;
+
     /**
      *
      *
@@ -937,6 +948,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1143,6 +1155,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       private int bitField0_;
 
       private float risk_;
+
       /**
        *
        *
@@ -1159,6 +1172,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       public float getRisk() {
         return risk_;
       }
+
       /**
        *
        *
@@ -1179,6 +1193,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1287,6 +1302,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
      */
     float getTrust();
   }
+
   /**
    *
    *
@@ -1302,6 +1318,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict)
       BehavioralTrustVerdictOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BehavioralTrustVerdict.newBuilder() to construct.
     private BehavioralTrustVerdict(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1334,6 +1351,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
 
     public static final int TRUST_FIELD_NUMBER = 1;
     private float trust_ = 0F;
+
     /**
      *
      *
@@ -1538,6 +1556,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1746,6 +1765,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       private int bitField0_;
 
       private float trust_;
+
       /**
        *
        *
@@ -1762,6 +1782,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       public float getTrust() {
         return trust_;
       }
+
       /**
        *
        *
@@ -1782,6 +1803,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1875,6 +1897,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int TRANSACTION_RISK_FIELD_NUMBER = 1;
   private float transactionRisk_ = 0F;
+
   /**
    *
    *
@@ -1895,6 +1918,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   public static final int STOLEN_INSTRUMENT_VERDICT_FIELD_NUMBER = 2;
   private com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict
       stolenInstrumentVerdict_;
+
   /**
    *
    *
@@ -1912,6 +1936,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   public boolean hasStolenInstrumentVerdict() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1933,6 +1958,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             .getDefaultInstance()
         : stolenInstrumentVerdict_;
   }
+
   /**
    *
    *
@@ -1957,6 +1983,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   public static final int CARD_TESTING_VERDICT_FIELD_NUMBER = 3;
   private com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict
       cardTestingVerdict_;
+
   /**
    *
    *
@@ -1975,6 +2002,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   public boolean hasCardTestingVerdict() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1997,6 +2025,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             .getDefaultInstance()
         : cardTestingVerdict_;
   }
+
   /**
    *
    *
@@ -2022,6 +2051,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   public static final int BEHAVIORAL_TRUST_VERDICT_FIELD_NUMBER = 4;
   private com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
       behavioralTrustVerdict_;
+
   /**
    *
    *
@@ -2039,6 +2069,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   public boolean hasBehavioralTrustVerdict() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -2060,6 +2091,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             .getDefaultInstance()
         : behavioralTrustVerdict_;
   }
+
   /**
    *
    *
@@ -2286,6 +2318,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2551,6 +2584,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     private int bitField0_;
 
     private float transactionRisk_;
+
     /**
      *
      *
@@ -2567,6 +2601,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public float getTransactionRisk() {
       return transactionRisk_;
     }
+
     /**
      *
      *
@@ -2587,6 +2622,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2616,6 +2652,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
                 .StolenInstrumentVerdictOrBuilder>
         stolenInstrumentVerdictBuilder_;
+
     /**
      *
      *
@@ -2632,6 +2669,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public boolean hasStolenInstrumentVerdict() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2656,6 +2694,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         return stolenInstrumentVerdictBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2682,6 +2721,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2706,6 +2746,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2739,6 +2780,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2760,6 +2802,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2778,6 +2821,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return getStolenInstrumentVerdictFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2801,6 +2845,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             : stolenInstrumentVerdict_;
       }
     }
+
     /**
      *
      *
@@ -2844,6 +2889,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
                 .CardTestingVerdictOrBuilder>
         cardTestingVerdictBuilder_;
+
     /**
      *
      *
@@ -2861,6 +2907,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public boolean hasCardTestingVerdict() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2886,6 +2933,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         return cardTestingVerdictBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2912,6 +2960,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2936,6 +2985,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2969,6 +3019,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2991,6 +3042,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3010,6 +3062,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return getCardTestingVerdictFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3034,6 +3087,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             : cardTestingVerdict_;
       }
     }
+
     /**
      *
      *
@@ -3076,6 +3130,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
                 .BehavioralTrustVerdictOrBuilder>
         behavioralTrustVerdictBuilder_;
+
     /**
      *
      *
@@ -3092,6 +3147,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public boolean hasBehavioralTrustVerdict() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -3116,6 +3172,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         return behavioralTrustVerdictBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3142,6 +3199,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3166,6 +3224,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3199,6 +3258,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3220,6 +3280,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3238,6 +3299,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return getBehavioralTrustVerdictFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3261,6 +3323,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             : behavioralTrustVerdict_;
       }
     }
+
     /**
      *
      *

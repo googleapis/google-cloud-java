@@ -33,6 +33,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1beta1.ListInsightTypesResponse)
     ListInsightTypesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListInsightTypesResponse.newBuilder() to construct.
   private ListInsightTypesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommender.v1beta1.InsightType> insightTypes_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.recommender.v1beta1.InsightType> getInsightTypesList() {
     return insightTypes_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       getInsightTypesOrBuilderList() {
     return insightTypes_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
   public int getInsightTypesCount() {
     return insightTypes_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
   public com.google.cloud.recommender.v1beta1.InsightType getInsightTypes(int index) {
     return insightTypes_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -642,6 +651,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
         return insightTypesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
         return insightTypesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -674,6 +685,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
         return insightTypesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +777,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +798,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +819,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +840,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +880,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +894,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
         int index) {
       return getInsightTypesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -890,6 +912,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
         return insightTypesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -907,6 +930,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(insightTypes_);
       }
     }
+
     /**
      *
      *
@@ -920,6 +944,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       return getInsightTypesFieldBuilder()
           .addBuilder(com.google.cloud.recommender.v1beta1.InsightType.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -934,6 +959,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       return getInsightTypesFieldBuilder()
           .addBuilder(index, com.google.cloud.recommender.v1beta1.InsightType.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -966,6 +992,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -989,6 +1016,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1012,6 +1040,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1034,6 +1063,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1082,7 @@ public final class ListInsightTypesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

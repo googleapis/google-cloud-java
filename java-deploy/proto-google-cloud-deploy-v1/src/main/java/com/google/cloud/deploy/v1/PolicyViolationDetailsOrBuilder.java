@@ -38,6 +38,7 @@ public interface PolicyViolationDetailsOrBuilder
    * @return The policy.
    */
   java.lang.String getPolicy();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface PolicyViolationDetailsOrBuilder
    * @return The ruleId.
    */
   java.lang.String getRuleId();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface PolicyViolationDetailsOrBuilder
    * @return The failureMessage.
    */
   java.lang.String getFailureMessage();
+
   /**
    *
    *

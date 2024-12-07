@@ -32,6 +32,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.LocalDisk)
     LocalDiskOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocalDisk.newBuilder() to construct.
   private LocalDisk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int DISK_COUNT_FIELD_NUMBER = 182933485;
   private int diskCount_ = 0;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiskCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 316263735;
   private int diskSizeGb_ = 0;
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiskSizeGb() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object diskType_ = "";
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiskType() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -385,6 +393,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -598,6 +607,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int diskCount_;
+
     /**
      *
      *
@@ -613,6 +623,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDiskCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public int getDiskCount() {
       return diskCount_;
     }
+
     /**
      *
      *
@@ -647,6 +659,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +679,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int diskSizeGb_;
+
     /**
      *
      *
@@ -681,6 +695,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDiskSizeGb() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -696,6 +711,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public int getDiskSizeGb() {
       return diskSizeGb_;
     }
+
     /**
      *
      *
@@ -715,6 +731,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +751,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object diskType_ = "";
+
     /**
      *
      *
@@ -748,6 +766,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDiskType() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -770,6 +789,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -792,6 +812,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -813,6 +834,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +852,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

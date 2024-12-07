@@ -36,6 +36,7 @@ public interface SettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SettingsOrBuilder
    * @return The preferenceSet.
    */
   java.lang.String getPreferenceSet();
+
   /**
    *
    *

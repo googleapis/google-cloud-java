@@ -40,6 +40,7 @@ public interface GetNasTrialDetailRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

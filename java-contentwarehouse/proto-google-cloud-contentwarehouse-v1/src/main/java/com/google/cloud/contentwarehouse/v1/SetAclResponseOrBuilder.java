@@ -36,6 +36,7 @@ public interface SetAclResponseOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SetAclResponseOrBuilder
    * @return The policy.
    */
   com.google.iam.v1.Policy getPolicy();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface SetAclResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface SetAclResponseOrBuilder
    * @return The metadata.
    */
   com.google.cloud.contentwarehouse.v1.ResponseMetadata getMetadata();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class BatchCreateConsumerOverridesResponse
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.BatchCreateConsumerOverridesResponse)
     BatchCreateConsumerOverridesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateConsumerOverridesResponse.newBuilder() to construct.
   private BatchCreateConsumerOverridesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class BatchCreateConsumerOverridesResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1beta1.QuotaOverride> overrides_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class BatchCreateConsumerOverridesResponse
   public java.util.List<com.google.api.serviceusage.v1beta1.QuotaOverride> getOverridesList() {
     return overrides_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class BatchCreateConsumerOverridesResponse
       getOverridesOrBuilderList() {
     return overrides_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class BatchCreateConsumerOverridesResponse
   public int getOverridesCount() {
     return overrides_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class BatchCreateConsumerOverridesResponse
   public com.google.api.serviceusage.v1beta1.QuotaOverride getOverrides(int index) {
     return overrides_.get(index);
   }
+
   /**
    *
    *
@@ -301,6 +307,7 @@ public final class BatchCreateConsumerOverridesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -574,6 +581,7 @@ public final class BatchCreateConsumerOverridesResponse
         return overridesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -590,6 +598,7 @@ public final class BatchCreateConsumerOverridesResponse
         return overridesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -606,6 +615,7 @@ public final class BatchCreateConsumerOverridesResponse
         return overridesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -629,6 +639,7 @@ public final class BatchCreateConsumerOverridesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -649,6 +660,7 @@ public final class BatchCreateConsumerOverridesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -671,6 +683,7 @@ public final class BatchCreateConsumerOverridesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +707,7 @@ public final class BatchCreateConsumerOverridesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +728,7 @@ public final class BatchCreateConsumerOverridesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +749,7 @@ public final class BatchCreateConsumerOverridesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +770,7 @@ public final class BatchCreateConsumerOverridesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +790,7 @@ public final class BatchCreateConsumerOverridesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +810,7 @@ public final class BatchCreateConsumerOverridesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +824,7 @@ public final class BatchCreateConsumerOverridesResponse
         int index) {
       return getOverridesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -822,6 +842,7 @@ public final class BatchCreateConsumerOverridesResponse
         return overridesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -839,6 +860,7 @@ public final class BatchCreateConsumerOverridesResponse
         return java.util.Collections.unmodifiableList(overrides_);
       }
     }
+
     /**
      *
      *
@@ -852,6 +874,7 @@ public final class BatchCreateConsumerOverridesResponse
       return getOverridesFieldBuilder()
           .addBuilder(com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -867,6 +890,7 @@ public final class BatchCreateConsumerOverridesResponse
           .addBuilder(
               index, com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance());
     }
+
     /**
      *
      *

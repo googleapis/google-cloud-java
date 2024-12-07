@@ -39,6 +39,7 @@ public interface PostureOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface PostureOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface PostureOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface PostureOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface PostureOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface PostureOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public interface PostureOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public interface PostureOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public interface PostureOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.securityposture.v1.PolicySet> getPolicySetsList();
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public interface PostureOrBuilder
    * </code>
    */
   com.google.cloud.securityposture.v1.PolicySet getPolicySets(int index);
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public interface PostureOrBuilder
    * </code>
    */
   int getPolicySetsCount();
+
   /**
    *
    *
@@ -267,6 +278,7 @@ public interface PostureOrBuilder
    */
   java.util.List<? extends com.google.cloud.securityposture.v1.PolicySetOrBuilder>
       getPolicySetsOrBuilderList();
+
   /**
    *
    *
@@ -301,6 +313,7 @@ public interface PostureOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -336,6 +349,7 @@ public interface PostureOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -349,9 +363,11 @@ public interface PostureOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -365,6 +381,7 @@ public interface PostureOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -382,6 +399,7 @@ public interface PostureOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

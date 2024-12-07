@@ -30,6 +30,7 @@ public interface Uint128OrBuilder
    * @return Whether the high field is set.
    */
   boolean hasHigh();
+
   /**
    * <code>optional uint64 high = 3202466;</code>
    *
@@ -43,6 +44,7 @@ public interface Uint128OrBuilder
    * @return Whether the low field is set.
    */
   boolean hasLow();
+
   /**
    * <code>optional uint64 low = 107348;</code>
    *

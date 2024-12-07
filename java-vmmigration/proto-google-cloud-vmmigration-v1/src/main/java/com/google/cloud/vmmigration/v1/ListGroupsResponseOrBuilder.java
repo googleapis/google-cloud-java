@@ -36,6 +36,7 @@ public interface ListGroupsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.Group> getGroupsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListGroupsResponseOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.Group getGroups(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListGroupsResponseOrBuilder
    * </code>
    */
   int getGroupsCount();
+
   /**
    *
    *
@@ -72,6 +75,7 @@ public interface ListGroupsResponseOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.GroupOrBuilder> getGroupsOrBuilderList();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface ListGroupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface ListGroupsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public interface ListGroupsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -149,6 +156,7 @@ public interface ListGroupsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

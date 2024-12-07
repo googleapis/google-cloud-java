@@ -39,6 +39,7 @@ public interface DeleteHttpRouteRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

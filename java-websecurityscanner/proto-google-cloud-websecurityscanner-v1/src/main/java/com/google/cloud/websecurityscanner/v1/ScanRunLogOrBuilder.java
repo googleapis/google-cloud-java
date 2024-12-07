@@ -36,6 +36,7 @@ public interface ScanRunLogOrBuilder
    * @return The summary.
    */
   java.lang.String getSummary();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ScanRunLogOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ScanRunLogOrBuilder
    * @return The enum numeric value on the wire for executionState.
    */
   int getExecutionStateValue();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface ScanRunLogOrBuilder
    * @return The enum numeric value on the wire for resultState.
    */
   int getResultStateValue();
+
   /**
    *
    *
@@ -151,12 +155,14 @@ public interface ScanRunLogOrBuilder
    * @return Whether the errorTrace field is set.
    */
   boolean hasErrorTrace();
+
   /**
    * <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code>
    *
    * @return The errorTrace.
    */
   com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace getErrorTrace();
+
   /** <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code> */
   com.google.cloud.websecurityscanner.v1.ScanRunErrorTraceOrBuilder getErrorTraceOrBuilder();
 }

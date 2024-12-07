@@ -37,6 +37,7 @@ public interface QueryAuditableServicesResponseOrBuilder
    */
   java.util.List<com.google.iam.admin.v1.QueryAuditableServicesResponse.AuditableService>
       getServicesList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface QueryAuditableServicesResponseOrBuilder
    * </code>
    */
   com.google.iam.admin.v1.QueryAuditableServicesResponse.AuditableService getServices(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface QueryAuditableServicesResponseOrBuilder
    * </code>
    */
   int getServicesCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface QueryAuditableServicesResponseOrBuilder
           ? extends
               com.google.iam.admin.v1.QueryAuditableServicesResponse.AuditableServiceOrBuilder>
       getServicesOrBuilderList();
+
   /**
    *
    *

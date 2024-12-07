@@ -40,6 +40,7 @@ public interface ReportBillableTripRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface ReportBillableTripRequestOrBuilder
    * @return The countryCode.
    */
   java.lang.String getCountryCode();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface ReportBillableTripRequestOrBuilder
    * @return The enum numeric value on the wire for platform.
    */
   int getPlatformValue();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface ReportBillableTripRequestOrBuilder
    * @return A list containing the relatedIds.
    */
   java.util.List<java.lang.String> getRelatedIdsList();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface ReportBillableTripRequestOrBuilder
    * @return The count of relatedIds.
    */
   int getRelatedIdsCount();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface ReportBillableTripRequestOrBuilder
    * @return The relatedIds at the given index.
    */
   java.lang.String getRelatedIds(int index);
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public interface ReportBillableTripRequestOrBuilder
    * @return The enum numeric value on the wire for solutionType.
    */
   int getSolutionTypeValue();
+
   /**
    *
    *

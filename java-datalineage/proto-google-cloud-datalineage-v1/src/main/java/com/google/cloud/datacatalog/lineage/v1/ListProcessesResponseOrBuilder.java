@@ -34,6 +34,7 @@ public interface ListProcessesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.Process processes = 1;</code>
    */
   java.util.List<com.google.cloud.datacatalog.lineage.v1.Process> getProcessesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListProcessesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.Process processes = 1;</code>
    */
   com.google.cloud.datacatalog.lineage.v1.Process getProcesses(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListProcessesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.Process processes = 1;</code>
    */
   int getProcessesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListProcessesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.lineage.v1.ProcessOrBuilder>
       getProcessesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListProcessesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

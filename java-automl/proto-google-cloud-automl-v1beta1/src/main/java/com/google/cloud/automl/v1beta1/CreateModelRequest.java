@@ -33,6 +33,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.CreateModelRequest)
     CreateModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateModelRequest.newBuilder() to construct.
   private CreateModelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int MODEL_FIELD_NUMBER = 4;
   private com.google.cloud.automl.v1beta1.Model model_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasModel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.automl.v1beta1.Model getModel() {
     return model_ == null ? com.google.cloud.automl.v1beta1.Model.getDefaultInstance() : model_;
   }
+
   /**
    *
    *
@@ -341,6 +347,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -554,6 +561,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -578,6 +586,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -625,6 +635,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +687,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.automl.v1beta1.Model.Builder,
             com.google.cloud.automl.v1beta1.ModelOrBuilder>
         modelBuilder_;
+
     /**
      *
      *
@@ -690,6 +703,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasModel() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -709,6 +723,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
         return modelBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -732,6 +747,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +768,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +797,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +818,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +834,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getModelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -832,6 +852,7 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
         return model_ == null ? com.google.cloud.automl.v1beta1.Model.getDefaultInstance() : model_;
       }
     }
+
     /**
      *
      *

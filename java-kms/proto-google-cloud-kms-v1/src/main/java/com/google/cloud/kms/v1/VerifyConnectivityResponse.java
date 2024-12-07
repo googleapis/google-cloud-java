@@ -34,6 +34,7 @@ public final class VerifyConnectivityResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.VerifyConnectivityResponse)
     VerifyConnectivityResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VerifyConnectivityResponse.newBuilder() to construct.
   private VerifyConnectivityResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class VerifyConnectivityResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

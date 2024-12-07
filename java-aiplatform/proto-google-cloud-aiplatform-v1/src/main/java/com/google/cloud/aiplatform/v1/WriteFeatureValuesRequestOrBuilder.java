@@ -43,6 +43,7 @@ public interface WriteFeatureValuesRequestOrBuilder
    * @return The entityType.
    */
   java.lang.String getEntityType();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface WriteFeatureValuesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.WriteFeatureValuesPayload> getPayloadsList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface WriteFeatureValuesRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.WriteFeatureValuesPayload getPayloads(int index);
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface WriteFeatureValuesRequestOrBuilder
    * </code>
    */
   int getPayloadsCount();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface WriteFeatureValuesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.WriteFeatureValuesPayloadOrBuilder>
       getPayloadsOrBuilderList();
+
   /**
    *
    *

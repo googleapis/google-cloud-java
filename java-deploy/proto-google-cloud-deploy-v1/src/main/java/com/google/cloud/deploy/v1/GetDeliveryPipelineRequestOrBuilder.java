@@ -39,6 +39,7 @@ public interface GetDeliveryPipelineRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

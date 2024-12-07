@@ -39,6 +39,7 @@ public interface CreateFunctionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateFunctionRequestOrBuilder
    * @return Whether the function field is set.
    */
   boolean hasFunction();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateFunctionRequestOrBuilder
    * @return The function.
    */
   com.google.cloud.functions.v2beta.Function getFunction();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateFunctionRequestOrBuilder
    * @return The functionId.
    */
   java.lang.String getFunctionId();
+
   /**
    *
    *

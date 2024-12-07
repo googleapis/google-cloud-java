@@ -34,6 +34,7 @@ public final class DeleteAccessApprovalSettingsMessage
     // @@protoc_insertion_point(message_implements:google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage)
     DeleteAccessApprovalSettingsMessageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteAccessApprovalSettingsMessage.newBuilder() to construct.
   private DeleteAccessApprovalSettingsMessage(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class DeleteAccessApprovalSettingsMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class DeleteAccessApprovalSettingsMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -277,6 +280,7 @@ public final class DeleteAccessApprovalSettingsMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -469,6 +473,7 @@ public final class DeleteAccessApprovalSettingsMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -491,6 +496,7 @@ public final class DeleteAccessApprovalSettingsMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -513,6 +519,7 @@ public final class DeleteAccessApprovalSettingsMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class DeleteAccessApprovalSettingsMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -551,6 +559,7 @@ public final class DeleteAccessApprovalSettingsMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

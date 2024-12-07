@@ -36,6 +36,7 @@ public interface StreamObjectOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface StreamObjectOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface StreamObjectOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface StreamObjectOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface StreamObjectOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface StreamObjectOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface StreamObjectOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.datastream.v1.Error> getErrorsList();
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public interface StreamObjectOrBuilder
    * </code>
    */
   com.google.cloud.datastream.v1.Error getErrors(int index);
+
   /**
    *
    *
@@ -186,6 +194,7 @@ public interface StreamObjectOrBuilder
    * </code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public interface StreamObjectOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.datastream.v1.ErrorOrBuilder> getErrorsOrBuilderList();
+
   /**
    *
    *
@@ -223,6 +233,7 @@ public interface StreamObjectOrBuilder
    * @return Whether the backfillJob field is set.
    */
   boolean hasBackfillJob();
+
   /**
    *
    *
@@ -235,6 +246,7 @@ public interface StreamObjectOrBuilder
    * @return The backfillJob.
    */
   com.google.cloud.datastream.v1.BackfillJob getBackfillJob();
+
   /**
    *
    *
@@ -258,6 +270,7 @@ public interface StreamObjectOrBuilder
    * @return Whether the sourceObject field is set.
    */
   boolean hasSourceObject();
+
   /**
    *
    *
@@ -270,6 +283,7 @@ public interface StreamObjectOrBuilder
    * @return The sourceObject.
    */
   com.google.cloud.datastream.v1.SourceObjectIdentifier getSourceObject();
+
   /**
    *
    *

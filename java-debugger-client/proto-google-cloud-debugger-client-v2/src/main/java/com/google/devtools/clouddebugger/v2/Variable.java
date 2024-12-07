@@ -141,6 +141,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.clouddebugger.v2.Variable)
     VariableOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Variable.newBuilder() to construct.
   private Variable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -179,6 +180,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -202,6 +204,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -230,6 +233,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object value_ = "";
+
   /**
    *
    *
@@ -253,6 +257,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -281,6 +286,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -307,6 +313,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -338,6 +345,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouddebugger.v2.Variable> members_;
+
   /**
    *
    *
@@ -351,6 +359,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.devtools.clouddebugger.v2.Variable> getMembersList() {
     return members_;
   }
+
   /**
    *
    *
@@ -365,6 +374,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       getMembersOrBuilderList() {
     return members_;
   }
+
   /**
    *
    *
@@ -378,6 +388,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
   public int getMembersCount() {
     return members_.size();
   }
+
   /**
    *
    *
@@ -391,6 +402,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
   public com.google.devtools.clouddebugger.v2.Variable getMembers(int index) {
     return members_.get(index);
   }
+
   /**
    *
    *
@@ -407,6 +419,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VAR_TABLE_INDEX_FIELD_NUMBER = 4;
   private com.google.protobuf.Int32Value varTableIndex_;
+
   /**
    *
    *
@@ -424,6 +437,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVarTableIndex() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -443,6 +457,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Int32Value.getDefaultInstance()
         : varTableIndex_;
   }
+
   /**
    *
    *
@@ -463,6 +478,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 5;
   private com.google.devtools.clouddebugger.v2.StatusMessage status_;
+
   /**
    *
    *
@@ -496,6 +512,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -531,6 +548,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.clouddebugger.v2.StatusMessage.getDefaultInstance()
         : status_;
   }
+
   /**
    *
    *
@@ -781,6 +799,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1212,6 +1231,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1234,6 +1254,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1256,6 +1277,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1277,6 +1299,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1294,6 +1317,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1342,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object value_ = "";
+
     /**
      *
      *
@@ -1340,6 +1365,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1362,6 +1388,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1383,6 +1410,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1428,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1453,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -1449,6 +1479,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1474,6 +1505,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1498,6 +1530,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1518,6 +1551,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1576,6 +1610,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         return membersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1592,6 +1627,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         return membersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1608,6 +1644,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         return membersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1630,6 +1667,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1650,6 +1688,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1672,6 +1711,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1694,6 +1734,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1714,6 +1755,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1734,6 +1776,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1754,6 +1797,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1773,6 +1817,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1792,6 +1837,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1804,6 +1850,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouddebugger.v2.Variable.Builder getMembersBuilder(int index) {
       return getMembersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1820,6 +1867,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         return membersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1837,6 +1885,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(members_);
       }
     }
+
     /**
      *
      *
@@ -1850,6 +1899,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       return getMembersFieldBuilder()
           .addBuilder(com.google.devtools.clouddebugger.v2.Variable.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1863,6 +1913,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       return getMembersFieldBuilder()
           .addBuilder(index, com.google.devtools.clouddebugger.v2.Variable.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1900,6 +1951,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         varTableIndexBuilder_;
+
     /**
      *
      *
@@ -1916,6 +1968,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVarTableIndex() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1938,6 +1991,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         return varTableIndexBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1962,6 +2016,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1983,6 +2038,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2012,6 +2068,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2033,6 +2090,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2049,6 +2107,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVarTableIndexFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2069,6 +2128,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
             : varTableIndex_;
       }
     }
+
     /**
      *
      *
@@ -2103,6 +2163,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.clouddebugger.v2.StatusMessage.Builder,
             com.google.devtools.clouddebugger.v2.StatusMessageOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -2135,6 +2196,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2173,6 +2235,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2213,6 +2276,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2251,6 +2315,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2296,6 +2361,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2333,6 +2399,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2365,6 +2432,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2401,6 +2469,7 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
             : status_;
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ListDeidentifyTemplatesResponse)
     ListDeidentifyTemplatesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDeidentifyTemplatesResponse.newBuilder() to construct.
   private ListDeidentifyTemplatesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.DeidentifyTemplate> deidentifyTemplates_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
   public java.util.List<com.google.privacy.dlp.v2.DeidentifyTemplate> getDeidentifyTemplatesList() {
     return deidentifyTemplates_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       getDeidentifyTemplatesOrBuilderList() {
     return deidentifyTemplates_;
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
   public int getDeidentifyTemplatesCount() {
     return deidentifyTemplates_.size();
   }
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
   public com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplates(int index) {
     return deidentifyTemplates_.get(index);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -367,6 +375,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -647,6 +656,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
         return deidentifyTemplatesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -664,6 +674,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
         return deidentifyTemplatesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
         return deidentifyTemplatesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -705,6 +717,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +739,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +788,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +832,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +875,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +896,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +911,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
         int index) {
       return getDeidentifyTemplatesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -908,6 +930,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
         return deidentifyTemplatesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -926,6 +949,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(deidentifyTemplates_);
       }
     }
+
     /**
      *
      *
@@ -940,6 +964,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       return getDeidentifyTemplatesFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.DeidentifyTemplate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -955,6 +980,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       return getDeidentifyTemplatesFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.DeidentifyTemplate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -991,6 +1017,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1014,6 +1041,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1065,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1059,6 +1088,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1107,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

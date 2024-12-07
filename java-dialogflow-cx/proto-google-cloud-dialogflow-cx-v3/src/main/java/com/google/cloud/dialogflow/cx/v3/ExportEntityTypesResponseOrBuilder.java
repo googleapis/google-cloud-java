@@ -38,6 +38,7 @@ public interface ExportEntityTypesResponseOrBuilder
    * @return Whether the entityTypesUri field is set.
    */
   boolean hasEntityTypesUri();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ExportEntityTypesResponseOrBuilder
    * @return The entityTypesUri.
    */
   java.lang.String getEntityTypesUri();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ExportEntityTypesResponseOrBuilder
    * @return Whether the entityTypesContent field is set.
    */
   boolean hasEntityTypesContent();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface ExportEntityTypesResponseOrBuilder
    * @return The entityTypesContent.
    */
   com.google.cloud.dialogflow.cx.v3.InlineDestination getEntityTypesContent();
+
   /**
    *
    *

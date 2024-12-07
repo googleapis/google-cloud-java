@@ -34,6 +34,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1.MembershipEndpoint)
     MembershipEndpointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MembershipEndpoint.newBuilder() to construct.
   private MembershipEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int GKE_CLUSTER_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.v1.GkeCluster gkeCluster_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
   public boolean hasGkeCluster() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.gkehub.v1.GkeCluster.getDefaultInstance()
         : gkeCluster_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
 
   public static final int KUBERNETES_METADATA_FIELD_NUMBER = 2;
   private com.google.cloud.gkehub.v1.KubernetesMetadata kubernetesMetadata_;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
   public boolean hasKubernetesMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.gkehub.v1.KubernetesMetadata.getDefaultInstance()
         : kubernetesMetadata_;
   }
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
 
   public static final int KUBERNETES_RESOURCE_FIELD_NUMBER = 3;
   private com.google.cloud.gkehub.v1.KubernetesResource kubernetesResource_;
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
   public boolean hasKubernetesResource() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -227,6 +236,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.gkehub.v1.KubernetesResource.getDefaultInstance()
         : kubernetesResource_;
   }
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
 
   public static final int GOOGLE_MANAGED_FIELD_NUMBER = 8;
   private boolean googleManaged_ = false;
+
   /**
    *
    *
@@ -472,6 +483,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -734,6 +746,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
             com.google.cloud.gkehub.v1.GkeCluster.Builder,
             com.google.cloud.gkehub.v1.GkeClusterOrBuilder>
         gkeClusterBuilder_;
+
     /**
      *
      *
@@ -750,6 +763,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     public boolean hasGkeCluster() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -772,6 +786,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
         return gkeClusterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -796,6 +811,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +833,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +863,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +885,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +902,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getGkeClusterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -903,6 +923,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
             : gkeCluster_;
       }
     }
+
     /**
      *
      *
@@ -937,6 +958,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
             com.google.cloud.gkehub.v1.KubernetesMetadata.Builder,
             com.google.cloud.gkehub.v1.KubernetesMetadataOrBuilder>
         kubernetesMetadataBuilder_;
+
     /**
      *
      *
@@ -953,6 +975,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     public boolean hasKubernetesMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -975,6 +998,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
         return kubernetesMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -999,6 +1023,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1046,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1077,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1099,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1116,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getKubernetesMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1108,6 +1137,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
             : kubernetesMetadata_;
       }
     }
+
     /**
      *
      *
@@ -1142,6 +1172,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
             com.google.cloud.gkehub.v1.KubernetesResource.Builder,
             com.google.cloud.gkehub.v1.KubernetesResourceOrBuilder>
         kubernetesResourceBuilder_;
+
     /**
      *
      *
@@ -1165,6 +1196,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     public boolean hasKubernetesResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1194,6 +1226,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
         return kubernetesResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1225,6 +1258,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1288,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1291,6 +1326,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1319,6 +1355,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1342,6 +1379,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getKubernetesResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1369,6 +1407,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
             : kubernetesResource_;
       }
     }
+
     /**
      *
      *
@@ -1405,6 +1444,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean googleManaged_;
+
     /**
      *
      *
@@ -1421,6 +1461,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     public boolean getGoogleManaged() {
       return googleManaged_;
     }
+
     /**
      *
      *
@@ -1441,6 +1482,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

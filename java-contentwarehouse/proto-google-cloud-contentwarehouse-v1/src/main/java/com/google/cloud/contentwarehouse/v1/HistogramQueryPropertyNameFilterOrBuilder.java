@@ -43,6 +43,7 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    * @return A list containing the documentSchemas.
    */
   java.util.List<java.lang.String> getDocumentSchemasList();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    * @return The count of documentSchemas.
    */
   int getDocumentSchemasCount();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    * @return The documentSchemas at the given index.
    */
   java.lang.String getDocumentSchemas(int index);
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    * @return A list containing the propertyNames.
    */
   java.util.List<java.lang.String> getPropertyNamesList();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    * @return The count of propertyNames.
    */
   int getPropertyNamesCount();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    * @return The propertyNames at the given index.
    */
   java.lang.String getPropertyNames(int index);
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    * @return The enum numeric value on the wire for yAxis.
    */
   int getYAxisValue();
+
   /**
    *
    *

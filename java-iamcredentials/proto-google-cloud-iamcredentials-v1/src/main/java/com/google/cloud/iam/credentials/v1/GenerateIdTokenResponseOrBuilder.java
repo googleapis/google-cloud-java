@@ -36,6 +36,7 @@ public interface GenerateIdTokenResponseOrBuilder
    * @return The token.
    */
   java.lang.String getToken();
+
   /**
    *
    *

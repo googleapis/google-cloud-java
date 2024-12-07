@@ -39,6 +39,7 @@ public interface GetGoogleSignalsSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

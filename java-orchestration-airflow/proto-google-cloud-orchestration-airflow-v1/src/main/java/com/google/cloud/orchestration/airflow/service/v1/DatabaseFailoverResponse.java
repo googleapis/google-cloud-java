@@ -33,6 +33,7 @@ public final class DatabaseFailoverResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.DatabaseFailoverResponse)
     DatabaseFailoverResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DatabaseFailoverResponse.newBuilder() to construct.
   private DatabaseFailoverResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -220,6 +221,7 @@ public final class DatabaseFailoverResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

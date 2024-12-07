@@ -33,6 +33,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.LabelValue)
     LabelValueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LabelValue.newBuilder() to construct.
   private LabelValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
     private ValueCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,6 +116,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoolValue() {
     return valueCase_ == 1;
   }
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INT64_VALUE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInt64Value() {
     return valueCase_ == 2;
   }
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStringValue() {
     return valueCase_ == 3;
   }
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -453,6 +462,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -697,6 +707,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoolValue() {
       return valueCase_ == 1;
     }
+
     /**
      *
      *
@@ -714,6 +725,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
+
     /**
      *
      *
@@ -733,6 +745,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +780,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInt64Value() {
       return valueCase_ == 2;
     }
+
     /**
      *
      *
@@ -784,6 +798,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
       }
       return 0L;
     }
+
     /**
      *
      *
@@ -803,6 +818,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +854,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStringValue() {
       return valueCase_ == 3;
     }
+
     /**
      *
      *
@@ -866,6 +883,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -894,6 +912,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -915,6 +934,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +954,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *

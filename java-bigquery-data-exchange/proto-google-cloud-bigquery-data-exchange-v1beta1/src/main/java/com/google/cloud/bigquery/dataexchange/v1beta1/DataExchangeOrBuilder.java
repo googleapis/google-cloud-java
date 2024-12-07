@@ -37,6 +37,7 @@ public interface DataExchangeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface DataExchangeOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface DataExchangeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface DataExchangeOrBuilder
    * @return The primaryContact.
    */
   java.lang.String getPrimaryContact();
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public interface DataExchangeOrBuilder
    * @return The documentation.
    */
   java.lang.String getDocumentation();
+
   /**
    *
    *

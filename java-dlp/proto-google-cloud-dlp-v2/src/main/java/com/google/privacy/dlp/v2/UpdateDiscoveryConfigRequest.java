@@ -33,6 +33,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.UpdateDiscoveryConfigRequest)
     UpdateDiscoveryConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateDiscoveryConfigRequest.newBuilder() to construct.
   private UpdateDiscoveryConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
 
   public static final int DISCOVERY_CONFIG_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DiscoveryConfig discoveryConfig_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
   public boolean hasDiscoveryConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
         ? com.google.privacy.dlp.v2.DiscoveryConfig.getDefaultInstance()
         : discoveryConfig_;
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -411,6 +420,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -644,6 +654,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -669,6 +680,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.DiscoveryConfig.Builder,
             com.google.privacy.dlp.v2.DiscoveryConfigOrBuilder>
         discoveryConfigBuilder_;
+
     /**
      *
      *
@@ -786,6 +802,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
     public boolean hasDiscoveryConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -808,6 +825,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
         return discoveryConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +873,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +903,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +925,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +942,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return getDiscoveryConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -940,6 +963,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
             : discoveryConfig_;
       }
     }
+
     /**
      *
      *
@@ -974,6 +998,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -988,6 +1013,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1008,6 +1034,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1057,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1049,6 +1077,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1105,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1125,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1140,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1127,6 +1159,7 @@ public final class UpdateDiscoveryConfigRequest extends com.google.protobuf.Gene
             : updateMask_;
       }
     }
+
     /**
      *
      *

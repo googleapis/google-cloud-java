@@ -46,6 +46,7 @@ public interface ListFoldersRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -97,6 +98,7 @@ public interface ListFoldersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ReservationAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ReservationAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface ReservationAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -83,9 +86,11 @@ public interface ReservationAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.ReservationsScopedList> getItems();
+
   /**
    *
    *
@@ -97,6 +102,7 @@ public interface ReservationAggregatedListOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.ReservationsScopedList> getItemsMap();
+
   /**
    *
    *
@@ -112,6 +118,7 @@ public interface ReservationAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.ReservationsScopedList defaultValue);
+
   /**
    *
    *
@@ -136,6 +143,7 @@ public interface ReservationAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -148,6 +156,7 @@ public interface ReservationAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -173,6 +182,7 @@ public interface ReservationAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -185,6 +195,7 @@ public interface ReservationAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -210,6 +221,7 @@ public interface ReservationAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -222,6 +234,7 @@ public interface ReservationAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -247,6 +260,7 @@ public interface ReservationAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
+
   /**
    *
    *
@@ -259,6 +273,7 @@ public interface ReservationAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
+
   /**
    *
    *
@@ -272,6 +287,7 @@ public interface ReservationAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
+
   /**
    *
    *
@@ -298,6 +314,7 @@ public interface ReservationAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -310,6 +327,7 @@ public interface ReservationAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

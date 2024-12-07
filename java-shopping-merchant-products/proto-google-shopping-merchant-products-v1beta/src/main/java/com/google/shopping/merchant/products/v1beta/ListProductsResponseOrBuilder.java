@@ -35,6 +35,7 @@ public interface ListProductsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.products.v1beta.Product products = 1;</code>
    */
   java.util.List<com.google.shopping.merchant.products.v1beta.Product> getProductsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListProductsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.products.v1beta.Product products = 1;</code>
    */
   com.google.shopping.merchant.products.v1beta.Product getProducts(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListProductsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.products.v1beta.Product products = 1;</code>
    */
   int getProductsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListProductsResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.products.v1beta.ProductOrBuilder>
       getProductsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListProductsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.RuntimeInfo)
     RuntimeInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RuntimeInfo.newBuilder() to construct.
   private RuntimeInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -103,6 +104,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
   public int getEndpointsCount() {
     return internalGetEndpoints().getMap().size();
   }
+
   /**
    *
    *
@@ -121,12 +123,14 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetEndpoints().getMap().containsKey(key);
   }
+
   /** Use {@link #getEndpointsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getEndpoints() {
     return getEndpointsMap();
   }
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getEndpointsMap() {
     return internalGetEndpoints().getMap();
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetEndpoints().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object outputUri_ = "";
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object diagnosticOutputUri_ = "";
+
   /**
    *
    *
@@ -267,6 +276,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -293,6 +303,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APPROXIMATE_USAGE_FIELD_NUMBER = 6;
   private com.google.cloud.dataproc.v1.UsageMetrics approximateUsage_;
+
   /**
    *
    *
@@ -320,6 +331,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasApproximateUsage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -349,6 +361,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataproc.v1.UsageMetrics.getDefaultInstance()
         : approximateUsage_;
   }
+
   /**
    *
    *
@@ -379,6 +392,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CURRENT_USAGE_FIELD_NUMBER = 7;
   private com.google.cloud.dataproc.v1.UsageSnapshot currentUsage_;
+
   /**
    *
    *
@@ -396,6 +410,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCurrentUsage() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -415,6 +430,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataproc.v1.UsageSnapshot.getDefaultInstance()
         : currentUsage_;
   }
+
   /**
    *
    *
@@ -645,6 +661,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -961,6 +978,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     public int getEndpointsCount() {
       return internalGetEndpoints().getMap().size();
     }
+
     /**
      *
      *
@@ -979,12 +997,14 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetEndpoints().getMap().containsKey(key);
     }
+
     /** Use {@link #getEndpointsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getEndpoints() {
       return getEndpointsMap();
     }
+
     /**
      *
      *
@@ -1000,6 +1020,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getEndpointsMap() {
       return internalGetEndpoints().getMap();
     }
+
     /**
      *
      *
@@ -1022,6 +1043,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetEndpoints().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1050,6 +1072,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEndpoints().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1068,12 +1091,14 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEndpoints().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEndpoints() {
       bitField0_ |= 0x00000001;
       return internalGetMutableEndpoints().getMutableMap();
     }
+
     /**
      *
      *
@@ -1096,6 +1121,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1114,6 +1140,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object outputUri_ = "";
+
     /**
      *
      *
@@ -1137,6 +1164,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1188,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1182,6 +1211,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1230,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1225,6 +1256,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object diagnosticOutputUri_ = "";
+
     /**
      *
      *
@@ -1247,6 +1279,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1269,6 +1302,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1324,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1307,6 +1342,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1336,6 +1372,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.UsageMetrics.Builder,
             com.google.cloud.dataproc.v1.UsageMetricsOrBuilder>
         approximateUsageBuilder_;
+
     /**
      *
      *
@@ -1362,6 +1399,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasApproximateUsage() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1394,6 +1432,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
         return approximateUsageBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1428,6 +1467,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1460,6 +1500,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1500,6 +1541,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1531,6 +1573,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1557,6 +1600,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getApproximateUsageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1587,6 +1631,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
             : approximateUsage_;
       }
     }
+
     /**
      *
      *
@@ -1631,6 +1676,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.UsageSnapshot.Builder,
             com.google.cloud.dataproc.v1.UsageSnapshotOrBuilder>
         currentUsageBuilder_;
+
     /**
      *
      *
@@ -1647,6 +1693,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCurrentUsage() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1669,6 +1716,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
         return currentUsageBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1693,6 +1741,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1715,6 +1764,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1744,6 +1794,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1765,6 +1816,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1833,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCurrentUsageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1801,6 +1854,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
             : currentUsage_;
       }
     }
+
     /**
      *
      *

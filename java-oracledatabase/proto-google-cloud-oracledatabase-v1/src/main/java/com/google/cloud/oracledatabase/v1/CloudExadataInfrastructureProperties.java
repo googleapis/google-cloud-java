@@ -34,6 +34,7 @@ public final class CloudExadataInfrastructureProperties
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties)
     CloudExadataInfrastructurePropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudExadataInfrastructureProperties.newBuilder() to construct.
   private CloudExadataInfrastructureProperties(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -177,6 +178,7 @@ public final class CloudExadataInfrastructureProperties
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -187,6 +189,7 @@ public final class CloudExadataInfrastructureProperties
      * <code>PROVISIONING = 1;</code>
      */
     public static final int PROVISIONING_VALUE = 1;
+
     /**
      *
      *
@@ -197,6 +200,7 @@ public final class CloudExadataInfrastructureProperties
      * <code>AVAILABLE = 2;</code>
      */
     public static final int AVAILABLE_VALUE = 2;
+
     /**
      *
      *
@@ -207,6 +211,7 @@ public final class CloudExadataInfrastructureProperties
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
+
     /**
      *
      *
@@ -217,6 +222,7 @@ public final class CloudExadataInfrastructureProperties
      * <code>TERMINATING = 4;</code>
      */
     public static final int TERMINATING_VALUE = 4;
+
     /**
      *
      *
@@ -227,6 +233,7 @@ public final class CloudExadataInfrastructureProperties
      * <code>TERMINATED = 5;</code>
      */
     public static final int TERMINATED_VALUE = 5;
+
     /**
      *
      *
@@ -237,6 +244,7 @@ public final class CloudExadataInfrastructureProperties
      * <code>FAILED = 6;</code>
      */
     public static final int FAILED_VALUE = 6;
+
     /**
      *
      *
@@ -348,6 +356,7 @@ public final class CloudExadataInfrastructureProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ocid_ = "";
+
   /**
    *
    *
@@ -372,6 +381,7 @@ public final class CloudExadataInfrastructureProperties
       return s;
     }
   }
+
   /**
    *
    *
@@ -399,6 +409,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int COMPUTE_COUNT_FIELD_NUMBER = 2;
   private int computeCount_ = 0;
+
   /**
    *
    *
@@ -417,6 +428,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int STORAGE_COUNT_FIELD_NUMBER = 3;
   private int storageCount_ = 0;
+
   /**
    *
    *
@@ -436,6 +448,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int TOTAL_STORAGE_SIZE_GB_FIELD_NUMBER = 4;
   private int totalStorageSizeGb_ = 0;
+
   /**
    *
    *
@@ -455,6 +468,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int AVAILABLE_STORAGE_SIZE_GB_FIELD_NUMBER = 5;
   private int availableStorageSizeGb_ = 0;
+
   /**
    *
    *
@@ -474,6 +488,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int MAINTENANCE_WINDOW_FIELD_NUMBER = 6;
   private com.google.cloud.oracledatabase.v1.MaintenanceWindow maintenanceWindow_;
+
   /**
    *
    *
@@ -491,6 +506,7 @@ public final class CloudExadataInfrastructureProperties
   public boolean hasMaintenanceWindow() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -510,6 +526,7 @@ public final class CloudExadataInfrastructureProperties
         ? com.google.cloud.oracledatabase.v1.MaintenanceWindow.getDefaultInstance()
         : maintenanceWindow_;
   }
+
   /**
    *
    *
@@ -531,6 +548,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int STATE_FIELD_NUMBER = 7;
   private int state_ = 0;
+
   /**
    *
    *
@@ -548,6 +566,7 @@ public final class CloudExadataInfrastructureProperties
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -575,6 +594,7 @@ public final class CloudExadataInfrastructureProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object shape_ = "";
+
   /**
    *
    *
@@ -599,6 +619,7 @@ public final class CloudExadataInfrastructureProperties
       return s;
     }
   }
+
   /**
    *
    *
@@ -628,6 +649,7 @@ public final class CloudExadataInfrastructureProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ociUrl_ = "";
+
   /**
    *
    *
@@ -651,6 +673,7 @@ public final class CloudExadataInfrastructureProperties
       return s;
     }
   }
+
   /**
    *
    *
@@ -677,6 +700,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int CPU_COUNT_FIELD_NUMBER = 10;
   private int cpuCount_ = 0;
+
   /**
    *
    *
@@ -695,6 +719,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int MAX_CPU_COUNT_FIELD_NUMBER = 11;
   private int maxCpuCount_ = 0;
+
   /**
    *
    *
@@ -713,6 +738,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int MEMORY_SIZE_GB_FIELD_NUMBER = 12;
   private int memorySizeGb_ = 0;
+
   /**
    *
    *
@@ -731,6 +757,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int MAX_MEMORY_GB_FIELD_NUMBER = 13;
   private int maxMemoryGb_ = 0;
+
   /**
    *
    *
@@ -749,6 +776,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int DB_NODE_STORAGE_SIZE_GB_FIELD_NUMBER = 14;
   private int dbNodeStorageSizeGb_ = 0;
+
   /**
    *
    *
@@ -767,6 +795,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int MAX_DB_NODE_STORAGE_SIZE_GB_FIELD_NUMBER = 15;
   private int maxDbNodeStorageSizeGb_ = 0;
+
   /**
    *
    *
@@ -786,6 +815,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int DATA_STORAGE_SIZE_TB_FIELD_NUMBER = 16;
   private double dataStorageSizeTb_ = 0D;
+
   /**
    *
    *
@@ -804,6 +834,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int MAX_DATA_STORAGE_TB_FIELD_NUMBER = 17;
   private double maxDataStorageTb_ = 0D;
+
   /**
    *
    *
@@ -822,6 +853,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int ACTIVATED_STORAGE_COUNT_FIELD_NUMBER = 18;
   private int activatedStorageCount_ = 0;
+
   /**
    *
    *
@@ -841,6 +873,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int ADDITIONAL_STORAGE_COUNT_FIELD_NUMBER = 19;
   private int additionalStorageCount_ = 0;
+
   /**
    *
    *
@@ -862,6 +895,7 @@ public final class CloudExadataInfrastructureProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dbServerVersion_ = "";
+
   /**
    *
    *
@@ -886,6 +920,7 @@ public final class CloudExadataInfrastructureProperties
       return s;
     }
   }
+
   /**
    *
    *
@@ -915,6 +950,7 @@ public final class CloudExadataInfrastructureProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storageServerVersion_ = "";
+
   /**
    *
    *
@@ -939,6 +975,7 @@ public final class CloudExadataInfrastructureProperties
       return s;
     }
   }
+
   /**
    *
    *
@@ -968,6 +1005,7 @@ public final class CloudExadataInfrastructureProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextMaintenanceRunId_ = "";
+
   /**
    *
    *
@@ -991,6 +1029,7 @@ public final class CloudExadataInfrastructureProperties
       return s;
     }
   }
+
   /**
    *
    *
@@ -1017,6 +1056,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int NEXT_MAINTENANCE_RUN_TIME_FIELD_NUMBER = 23;
   private com.google.protobuf.Timestamp nextMaintenanceRunTime_;
+
   /**
    *
    *
@@ -1034,6 +1074,7 @@ public final class CloudExadataInfrastructureProperties
   public boolean hasNextMaintenanceRunTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1053,6 +1094,7 @@ public final class CloudExadataInfrastructureProperties
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : nextMaintenanceRunTime_;
   }
+
   /**
    *
    *
@@ -1073,6 +1115,7 @@ public final class CloudExadataInfrastructureProperties
 
   public static final int NEXT_SECURITY_MAINTENANCE_RUN_TIME_FIELD_NUMBER = 24;
   private com.google.protobuf.Timestamp nextSecurityMaintenanceRunTime_;
+
   /**
    *
    *
@@ -1090,6 +1133,7 @@ public final class CloudExadataInfrastructureProperties
   public boolean hasNextSecurityMaintenanceRunTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1109,6 +1153,7 @@ public final class CloudExadataInfrastructureProperties
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : nextSecurityMaintenanceRunTime_;
   }
+
   /**
    *
    *
@@ -1131,6 +1176,7 @@ public final class CloudExadataInfrastructureProperties
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oracledatabase.v1.CustomerContact> customerContacts_;
+
   /**
    *
    *
@@ -1147,6 +1193,7 @@ public final class CloudExadataInfrastructureProperties
       getCustomerContactsList() {
     return customerContacts_;
   }
+
   /**
    *
    *
@@ -1163,6 +1210,7 @@ public final class CloudExadataInfrastructureProperties
       getCustomerContactsOrBuilderList() {
     return customerContacts_;
   }
+
   /**
    *
    *
@@ -1178,6 +1226,7 @@ public final class CloudExadataInfrastructureProperties
   public int getCustomerContactsCount() {
     return customerContacts_.size();
   }
+
   /**
    *
    *
@@ -1193,6 +1242,7 @@ public final class CloudExadataInfrastructureProperties
   public com.google.cloud.oracledatabase.v1.CustomerContact getCustomerContacts(int index) {
     return customerContacts_.get(index);
   }
+
   /**
    *
    *
@@ -1214,6 +1264,7 @@ public final class CloudExadataInfrastructureProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object monthlyStorageServerVersion_ = "";
+
   /**
    *
    *
@@ -1239,6 +1290,7 @@ public final class CloudExadataInfrastructureProperties
       return s;
     }
   }
+
   /**
    *
    *
@@ -1269,6 +1321,7 @@ public final class CloudExadataInfrastructureProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object monthlyDbServerVersion_ = "";
+
   /**
    *
    *
@@ -1294,6 +1347,7 @@ public final class CloudExadataInfrastructureProperties
       return s;
     }
   }
+
   /**
    *
    *
@@ -1755,6 +1809,7 @@ public final class CloudExadataInfrastructureProperties
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2392,6 +2447,7 @@ public final class CloudExadataInfrastructureProperties
     private int bitField0_;
 
     private java.lang.Object ocid_ = "";
+
     /**
      *
      *
@@ -2415,6 +2471,7 @@ public final class CloudExadataInfrastructureProperties
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2438,6 +2495,7 @@ public final class CloudExadataInfrastructureProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2460,6 +2518,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2478,6 +2537,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2503,6 +2563,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private int computeCount_;
+
     /**
      *
      *
@@ -2518,6 +2579,7 @@ public final class CloudExadataInfrastructureProperties
     public int getComputeCount() {
       return computeCount_;
     }
+
     /**
      *
      *
@@ -2537,6 +2599,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2556,6 +2619,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private int storageCount_;
+
     /**
      *
      *
@@ -2572,6 +2636,7 @@ public final class CloudExadataInfrastructureProperties
     public int getStorageCount() {
       return storageCount_;
     }
+
     /**
      *
      *
@@ -2592,6 +2657,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2612,6 +2678,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private int totalStorageSizeGb_;
+
     /**
      *
      *
@@ -2628,6 +2695,7 @@ public final class CloudExadataInfrastructureProperties
     public int getTotalStorageSizeGb() {
       return totalStorageSizeGb_;
     }
+
     /**
      *
      *
@@ -2648,6 +2716,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2668,6 +2737,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private int availableStorageSizeGb_;
+
     /**
      *
      *
@@ -2685,6 +2755,7 @@ public final class CloudExadataInfrastructureProperties
     public int getAvailableStorageSizeGb() {
       return availableStorageSizeGb_;
     }
+
     /**
      *
      *
@@ -2706,6 +2777,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2732,6 +2804,7 @@ public final class CloudExadataInfrastructureProperties
             com.google.cloud.oracledatabase.v1.MaintenanceWindow.Builder,
             com.google.cloud.oracledatabase.v1.MaintenanceWindowOrBuilder>
         maintenanceWindowBuilder_;
+
     /**
      *
      *
@@ -2748,6 +2821,7 @@ public final class CloudExadataInfrastructureProperties
     public boolean hasMaintenanceWindow() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2770,6 +2844,7 @@ public final class CloudExadataInfrastructureProperties
         return maintenanceWindowBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2795,6 +2870,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2817,6 +2893,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2848,6 +2925,7 @@ public final class CloudExadataInfrastructureProperties
       }
       return this;
     }
+
     /**
      *
      *
@@ -2869,6 +2947,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2886,6 +2965,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return getMaintenanceWindowFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2907,6 +2987,7 @@ public final class CloudExadataInfrastructureProperties
             : maintenanceWindow_;
       }
     }
+
     /**
      *
      *
@@ -2936,6 +3017,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2953,6 +3035,7 @@ public final class CloudExadataInfrastructureProperties
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2973,6 +3056,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2997,6 +3081,7 @@ public final class CloudExadataInfrastructureProperties
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3021,6 +3106,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3042,6 +3128,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private java.lang.Object shape_ = "";
+
     /**
      *
      *
@@ -3065,6 +3152,7 @@ public final class CloudExadataInfrastructureProperties
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3088,6 +3176,7 @@ public final class CloudExadataInfrastructureProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3110,6 +3199,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3128,6 +3218,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3153,6 +3244,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private java.lang.Object ociUrl_ = "";
+
     /**
      *
      *
@@ -3175,6 +3267,7 @@ public final class CloudExadataInfrastructureProperties
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3197,6 +3290,7 @@ public final class CloudExadataInfrastructureProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3218,6 +3312,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3235,6 +3330,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3259,6 +3355,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private int cpuCount_;
+
     /**
      *
      *
@@ -3274,6 +3371,7 @@ public final class CloudExadataInfrastructureProperties
     public int getCpuCount() {
       return cpuCount_;
     }
+
     /**
      *
      *
@@ -3293,6 +3391,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3312,6 +3411,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private int maxCpuCount_;
+
     /**
      *
      *
@@ -3327,6 +3427,7 @@ public final class CloudExadataInfrastructureProperties
     public int getMaxCpuCount() {
       return maxCpuCount_;
     }
+
     /**
      *
      *
@@ -3346,6 +3447,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3365,6 +3467,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private int memorySizeGb_;
+
     /**
      *
      *
@@ -3380,6 +3483,7 @@ public final class CloudExadataInfrastructureProperties
     public int getMemorySizeGb() {
       return memorySizeGb_;
     }
+
     /**
      *
      *
@@ -3399,6 +3503,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3418,6 +3523,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private int maxMemoryGb_;
+
     /**
      *
      *
@@ -3433,6 +3539,7 @@ public final class CloudExadataInfrastructureProperties
     public int getMaxMemoryGb() {
       return maxMemoryGb_;
     }
+
     /**
      *
      *
@@ -3452,6 +3559,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3471,6 +3579,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private int dbNodeStorageSizeGb_;
+
     /**
      *
      *
@@ -3486,6 +3595,7 @@ public final class CloudExadataInfrastructureProperties
     public int getDbNodeStorageSizeGb() {
       return dbNodeStorageSizeGb_;
     }
+
     /**
      *
      *
@@ -3505,6 +3615,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3524,6 +3635,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private int maxDbNodeStorageSizeGb_;
+
     /**
      *
      *
@@ -3540,6 +3652,7 @@ public final class CloudExadataInfrastructureProperties
     public int getMaxDbNodeStorageSizeGb() {
       return maxDbNodeStorageSizeGb_;
     }
+
     /**
      *
      *
@@ -3560,6 +3673,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3580,6 +3694,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private double dataStorageSizeTb_;
+
     /**
      *
      *
@@ -3595,6 +3710,7 @@ public final class CloudExadataInfrastructureProperties
     public double getDataStorageSizeTb() {
       return dataStorageSizeTb_;
     }
+
     /**
      *
      *
@@ -3614,6 +3730,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3633,6 +3750,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private double maxDataStorageTb_;
+
     /**
      *
      *
@@ -3648,6 +3766,7 @@ public final class CloudExadataInfrastructureProperties
     public double getMaxDataStorageTb() {
       return maxDataStorageTb_;
     }
+
     /**
      *
      *
@@ -3667,6 +3786,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3686,6 +3806,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private int activatedStorageCount_;
+
     /**
      *
      *
@@ -3702,6 +3823,7 @@ public final class CloudExadataInfrastructureProperties
     public int getActivatedStorageCount() {
       return activatedStorageCount_;
     }
+
     /**
      *
      *
@@ -3722,6 +3844,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3742,6 +3865,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private int additionalStorageCount_;
+
     /**
      *
      *
@@ -3759,6 +3883,7 @@ public final class CloudExadataInfrastructureProperties
     public int getAdditionalStorageCount() {
       return additionalStorageCount_;
     }
+
     /**
      *
      *
@@ -3780,6 +3905,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3801,6 +3927,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private java.lang.Object dbServerVersion_ = "";
+
     /**
      *
      *
@@ -3824,6 +3951,7 @@ public final class CloudExadataInfrastructureProperties
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3847,6 +3975,7 @@ public final class CloudExadataInfrastructureProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3869,6 +3998,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3887,6 +4017,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3912,6 +4043,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private java.lang.Object storageServerVersion_ = "";
+
     /**
      *
      *
@@ -3935,6 +4067,7 @@ public final class CloudExadataInfrastructureProperties
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3958,6 +4091,7 @@ public final class CloudExadataInfrastructureProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3980,6 +4114,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3998,6 +4133,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4023,6 +4159,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private java.lang.Object nextMaintenanceRunId_ = "";
+
     /**
      *
      *
@@ -4046,6 +4183,7 @@ public final class CloudExadataInfrastructureProperties
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4069,6 +4207,7 @@ public final class CloudExadataInfrastructureProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4091,6 +4230,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4109,6 +4249,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4139,6 +4280,7 @@ public final class CloudExadataInfrastructureProperties
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         nextMaintenanceRunTimeBuilder_;
+
     /**
      *
      *
@@ -4155,6 +4297,7 @@ public final class CloudExadataInfrastructureProperties
     public boolean hasNextMaintenanceRunTime() {
       return ((bitField0_ & 0x00400000) != 0);
     }
+
     /**
      *
      *
@@ -4177,6 +4320,7 @@ public final class CloudExadataInfrastructureProperties
         return nextMaintenanceRunTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4201,6 +4345,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4223,6 +4368,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4252,6 +4398,7 @@ public final class CloudExadataInfrastructureProperties
       }
       return this;
     }
+
     /**
      *
      *
@@ -4273,6 +4420,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4289,6 +4437,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return getNextMaintenanceRunTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4309,6 +4458,7 @@ public final class CloudExadataInfrastructureProperties
             : nextMaintenanceRunTime_;
       }
     }
+
     /**
      *
      *
@@ -4343,6 +4493,7 @@ public final class CloudExadataInfrastructureProperties
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         nextSecurityMaintenanceRunTimeBuilder_;
+
     /**
      *
      *
@@ -4359,6 +4510,7 @@ public final class CloudExadataInfrastructureProperties
     public boolean hasNextSecurityMaintenanceRunTime() {
       return ((bitField0_ & 0x00800000) != 0);
     }
+
     /**
      *
      *
@@ -4381,6 +4533,7 @@ public final class CloudExadataInfrastructureProperties
         return nextSecurityMaintenanceRunTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4405,6 +4558,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4427,6 +4581,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4457,6 +4612,7 @@ public final class CloudExadataInfrastructureProperties
       }
       return this;
     }
+
     /**
      *
      *
@@ -4478,6 +4634,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4494,6 +4651,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return getNextSecurityMaintenanceRunTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4514,6 +4672,7 @@ public final class CloudExadataInfrastructureProperties
             : nextSecurityMaintenanceRunTime_;
       }
     }
+
     /**
      *
      *
@@ -4579,6 +4738,7 @@ public final class CloudExadataInfrastructureProperties
         return customerContactsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4597,6 +4757,7 @@ public final class CloudExadataInfrastructureProperties
         return customerContactsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4615,6 +4776,7 @@ public final class CloudExadataInfrastructureProperties
         return customerContactsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4640,6 +4802,7 @@ public final class CloudExadataInfrastructureProperties
       }
       return this;
     }
+
     /**
      *
      *
@@ -4662,6 +4825,7 @@ public final class CloudExadataInfrastructureProperties
       }
       return this;
     }
+
     /**
      *
      *
@@ -4686,6 +4850,7 @@ public final class CloudExadataInfrastructureProperties
       }
       return this;
     }
+
     /**
      *
      *
@@ -4711,6 +4876,7 @@ public final class CloudExadataInfrastructureProperties
       }
       return this;
     }
+
     /**
      *
      *
@@ -4733,6 +4899,7 @@ public final class CloudExadataInfrastructureProperties
       }
       return this;
     }
+
     /**
      *
      *
@@ -4755,6 +4922,7 @@ public final class CloudExadataInfrastructureProperties
       }
       return this;
     }
+
     /**
      *
      *
@@ -4777,6 +4945,7 @@ public final class CloudExadataInfrastructureProperties
       }
       return this;
     }
+
     /**
      *
      *
@@ -4798,6 +4967,7 @@ public final class CloudExadataInfrastructureProperties
       }
       return this;
     }
+
     /**
      *
      *
@@ -4819,6 +4989,7 @@ public final class CloudExadataInfrastructureProperties
       }
       return this;
     }
+
     /**
      *
      *
@@ -4834,6 +5005,7 @@ public final class CloudExadataInfrastructureProperties
         int index) {
       return getCustomerContactsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4853,6 +5025,7 @@ public final class CloudExadataInfrastructureProperties
         return customerContactsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4872,6 +5045,7 @@ public final class CloudExadataInfrastructureProperties
         return java.util.Collections.unmodifiableList(customerContacts_);
       }
     }
+
     /**
      *
      *
@@ -4887,6 +5061,7 @@ public final class CloudExadataInfrastructureProperties
       return getCustomerContactsFieldBuilder()
           .addBuilder(com.google.cloud.oracledatabase.v1.CustomerContact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4904,6 +5079,7 @@ public final class CloudExadataInfrastructureProperties
           .addBuilder(
               index, com.google.cloud.oracledatabase.v1.CustomerContact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4941,6 +5117,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private java.lang.Object monthlyStorageServerVersion_ = "";
+
     /**
      *
      *
@@ -4966,6 +5143,7 @@ public final class CloudExadataInfrastructureProperties
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4991,6 +5169,7 @@ public final class CloudExadataInfrastructureProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5015,6 +5194,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5035,6 +5215,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5062,6 +5243,7 @@ public final class CloudExadataInfrastructureProperties
     }
 
     private java.lang.Object monthlyDbServerVersion_ = "";
+
     /**
      *
      *
@@ -5086,6 +5268,7 @@ public final class CloudExadataInfrastructureProperties
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5110,6 +5293,7 @@ public final class CloudExadataInfrastructureProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5133,6 +5317,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5152,6 +5337,7 @@ public final class CloudExadataInfrastructureProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface BackupConfigInfoOrBuilder
    * @return The enum numeric value on the wire for lastBackupState.
    */
   int getLastBackupStateValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface BackupConfigInfoOrBuilder
    * @return Whether the lastSuccessfulBackupConsistencyTime field is set.
    */
   boolean hasLastSuccessfulBackupConsistencyTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface BackupConfigInfoOrBuilder
    * @return The lastSuccessfulBackupConsistencyTime.
    */
   com.google.protobuf.Timestamp getLastSuccessfulBackupConsistencyTime();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface BackupConfigInfoOrBuilder
    * @return Whether the lastBackupError field is set.
    */
   boolean hasLastBackupError();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface BackupConfigInfoOrBuilder
    * @return The lastBackupError.
    */
   com.google.rpc.Status getLastBackupError();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface BackupConfigInfoOrBuilder
    * @return Whether the gcpBackupConfig field is set.
    */
   boolean hasGcpBackupConfig();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface BackupConfigInfoOrBuilder
    * @return The gcpBackupConfig.
    */
   com.google.cloud.backupdr.v1.GcpBackupConfig getGcpBackupConfig();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface BackupConfigInfoOrBuilder
    * @return Whether the backupApplianceBackupConfig field is set.
    */
   boolean hasBackupApplianceBackupConfig();
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface BackupConfigInfoOrBuilder
    * @return The backupApplianceBackupConfig.
    */
   com.google.cloud.backupdr.v1.BackupApplianceBackupConfig getBackupApplianceBackupConfig();
+
   /**
    *
    *

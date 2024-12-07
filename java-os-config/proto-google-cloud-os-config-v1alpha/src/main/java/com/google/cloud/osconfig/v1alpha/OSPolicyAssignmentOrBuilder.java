@@ -41,6 +41,7 @@ public interface OSPolicyAssignmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface OSPolicyAssignmentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface OSPolicyAssignmentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicy> getOsPoliciesList();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface OSPolicyAssignmentOrBuilder
    * </code>
    */
   com.google.cloud.osconfig.v1alpha.OSPolicy getOsPolicies(int index);
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface OSPolicyAssignmentOrBuilder
    * </code>
    */
   int getOsPoliciesCount();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface OSPolicyAssignmentOrBuilder
    */
   java.util.List<? extends com.google.cloud.osconfig.v1alpha.OSPolicyOrBuilder>
       getOsPoliciesOrBuilderList();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface OSPolicyAssignmentOrBuilder
    * @return Whether the instanceFilter field is set.
    */
   boolean hasInstanceFilter();
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface OSPolicyAssignmentOrBuilder
    * @return The instanceFilter.
    */
   com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter getInstanceFilter();
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public interface OSPolicyAssignmentOrBuilder
    * @return Whether the rollout field is set.
    */
   boolean hasRollout();
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public interface OSPolicyAssignmentOrBuilder
    * @return The rollout.
    */
   com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.Rollout getRollout();
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public interface OSPolicyAssignmentOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *
@@ -295,6 +306,7 @@ public interface OSPolicyAssignmentOrBuilder
    * @return Whether the revisionCreateTime field is set.
    */
   boolean hasRevisionCreateTime();
+
   /**
    *
    *
@@ -309,6 +321,7 @@ public interface OSPolicyAssignmentOrBuilder
    * @return The revisionCreateTime.
    */
   com.google.protobuf.Timestamp getRevisionCreateTime();
+
   /**
    *
    *
@@ -335,6 +348,7 @@ public interface OSPolicyAssignmentOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -363,6 +377,7 @@ public interface OSPolicyAssignmentOrBuilder
    * @return The enum numeric value on the wire for rolloutState.
    */
   int getRolloutStateValue();
+
   /**
    *
    *
@@ -436,6 +451,7 @@ public interface OSPolicyAssignmentOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *

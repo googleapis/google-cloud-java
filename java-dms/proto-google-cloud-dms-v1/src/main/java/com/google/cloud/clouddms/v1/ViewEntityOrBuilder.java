@@ -36,6 +36,7 @@ public interface ViewEntityOrBuilder
    * @return The sqlCode.
    */
   java.lang.String getSqlCode();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ViewEntityOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ViewEntityOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface ViewEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ConstraintEntity constraints = 3;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.ConstraintEntity> getConstraintsList();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface ViewEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ConstraintEntity constraints = 3;</code>
    */
   com.google.cloud.clouddms.v1.ConstraintEntity getConstraints(int index);
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface ViewEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ConstraintEntity constraints = 3;</code>
    */
   int getConstraintsCount();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ViewEntityOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.ConstraintEntityOrBuilder>
       getConstraintsOrBuilderList();
+
   /**
    *
    *

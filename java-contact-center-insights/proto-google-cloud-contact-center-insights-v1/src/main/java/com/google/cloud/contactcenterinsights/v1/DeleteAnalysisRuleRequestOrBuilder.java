@@ -38,6 +38,7 @@ public interface DeleteAnalysisRuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface DurationOrBuilder
    * @return Whether the nanos field is set.
    */
   boolean hasNanos();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DurationOrBuilder
    * @return Whether the seconds field is set.
    */
   boolean hasSeconds();
+
   /**
    *
    *

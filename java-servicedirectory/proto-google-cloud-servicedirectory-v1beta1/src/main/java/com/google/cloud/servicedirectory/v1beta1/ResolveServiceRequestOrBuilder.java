@@ -38,6 +38,7 @@ public interface ResolveServiceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -115,6 +116,7 @@ public interface ResolveServiceRequestOrBuilder
    * @return The endpointFilter.
    */
   java.lang.String getEndpointFilter();
+
   /**
    *
    *

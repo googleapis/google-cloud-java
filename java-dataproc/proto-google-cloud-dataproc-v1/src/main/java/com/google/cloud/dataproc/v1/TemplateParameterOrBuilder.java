@@ -42,6 +42,7 @@ public interface TemplateParameterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -116,6 +117,7 @@ public interface TemplateParameterOrBuilder
    * @return A list containing the fields.
    */
   java.util.List<java.lang.String> getFieldsList();
+
   /**
    *
    *
@@ -171,6 +173,7 @@ public interface TemplateParameterOrBuilder
    * @return The count of fields.
    */
   int getFieldsCount();
+
   /**
    *
    *
@@ -227,6 +230,7 @@ public interface TemplateParameterOrBuilder
    * @return The fields at the given index.
    */
   java.lang.String getFields(int index);
+
   /**
    *
    *
@@ -297,6 +301,7 @@ public interface TemplateParameterOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -325,6 +330,7 @@ public interface TemplateParameterOrBuilder
    * @return Whether the validation field is set.
    */
   boolean hasValidation();
+
   /**
    *
    *
@@ -339,6 +345,7 @@ public interface TemplateParameterOrBuilder
    * @return The validation.
    */
   com.google.cloud.dataproc.v1.ParameterValidation getValidation();
+
   /**
    *
    *

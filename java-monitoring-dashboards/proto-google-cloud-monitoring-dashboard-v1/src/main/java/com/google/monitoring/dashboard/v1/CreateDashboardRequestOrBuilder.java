@@ -42,6 +42,7 @@ public interface CreateDashboardRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface CreateDashboardRequestOrBuilder
    * @return Whether the dashboard field is set.
    */
   boolean hasDashboard();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface CreateDashboardRequestOrBuilder
    * @return The dashboard.
    */
   com.google.monitoring.dashboard.v1.Dashboard getDashboard();
+
   /**
    *
    *

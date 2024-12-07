@@ -37,6 +37,7 @@ public interface DSSEAttestationNoteOrBuilder
    * @return Whether the hint field is set.
    */
   boolean hasHint();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface DSSEAttestationNoteOrBuilder
    * @return The hint.
    */
   io.grafeas.v1.DSSEAttestationNote.DSSEHint getHint();
+
   /**
    *
    *

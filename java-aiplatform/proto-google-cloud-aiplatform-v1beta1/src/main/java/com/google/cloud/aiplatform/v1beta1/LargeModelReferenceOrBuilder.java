@@ -38,6 +38,7 @@ public interface LargeModelReferenceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

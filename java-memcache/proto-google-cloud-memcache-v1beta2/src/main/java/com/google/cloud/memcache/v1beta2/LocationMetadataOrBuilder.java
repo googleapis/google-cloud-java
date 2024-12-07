@@ -38,6 +38,7 @@ public interface LocationMetadataOrBuilder
    * </code>
    */
   int getAvailableZonesCount();
+
   /**
    *
    *
@@ -52,10 +53,12 @@ public interface LocationMetadataOrBuilder
    * </code>
    */
   boolean containsAvailableZones(java.lang.String key);
+
   /** Use {@link #getAvailableZonesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.memcache.v1beta2.ZoneMetadata>
       getAvailableZones();
+
   /**
    *
    *
@@ -71,6 +74,7 @@ public interface LocationMetadataOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.memcache.v1beta2.ZoneMetadata>
       getAvailableZonesMap();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface LocationMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.memcache.v1beta2.ZoneMetadata defaultValue);
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.UpdateTaxonomyRequest)
     UpdateTaxonomyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateTaxonomyRequest.newBuilder() to construct.
   private UpdateTaxonomyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int TAXONOMY_FIELD_NUMBER = 1;
   private com.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
   public boolean hasTaxonomy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.datacatalog.v1beta1.Taxonomy.getDefaultInstance()
         : taxonomy_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -350,6 +357,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -573,6 +581,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.datacatalog.v1beta1.Taxonomy.Builder,
             com.google.cloud.datacatalog.v1beta1.TaxonomyOrBuilder>
         taxonomyBuilder_;
+
     /**
      *
      *
@@ -588,6 +597,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     public boolean hasTaxonomy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
         return taxonomyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -632,6 +643,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -653,6 +665,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +694,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +715,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +731,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getTaxonomyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -735,6 +751,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
             : taxonomy_;
       }
     }
+
     /**
      *
      *
@@ -768,6 +785,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -785,6 +803,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -808,6 +827,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -833,6 +853,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +876,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +907,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +930,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +948,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -945,6 +970,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
             : updateMask_;
       }
     }
+
     /**
      *
      *

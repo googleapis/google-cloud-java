@@ -38,6 +38,7 @@ public interface InsertRegionTargetHttpsProxyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface InsertRegionTargetHttpsProxyRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface InsertRegionTargetHttpsProxyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface InsertRegionTargetHttpsProxyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface InsertRegionTargetHttpsProxyRequestOrBuilder
    * @return Whether the targetHttpsProxyResource field is set.
    */
   boolean hasTargetHttpsProxyResource();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface InsertRegionTargetHttpsProxyRequestOrBuilder
    * @return The targetHttpsProxyResource.
    */
   com.google.cloud.compute.v1.TargetHttpsProxy getTargetHttpsProxyResource();
+
   /**
    *
    *

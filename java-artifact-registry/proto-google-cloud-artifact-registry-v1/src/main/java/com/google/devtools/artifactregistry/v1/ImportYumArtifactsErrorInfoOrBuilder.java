@@ -36,6 +36,7 @@ public interface ImportYumArtifactsErrorInfoOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ImportYumArtifactsErrorInfoOrBuilder
    * @return The gcsSource.
    */
   com.google.devtools.artifactregistry.v1.ImportYumArtifactsGcsSource getGcsSource();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface ImportYumArtifactsErrorInfoOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface ImportYumArtifactsErrorInfoOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *

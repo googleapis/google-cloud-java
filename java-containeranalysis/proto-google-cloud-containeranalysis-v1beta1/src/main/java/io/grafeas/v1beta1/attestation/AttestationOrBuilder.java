@@ -36,6 +36,7 @@ public interface AttestationOrBuilder
    * @return Whether the pgpSignedAttestation field is set.
    */
   boolean hasPgpSignedAttestation();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AttestationOrBuilder
    * @return The pgpSignedAttestation.
    */
   io.grafeas.v1beta1.attestation.PgpSignedAttestation getPgpSignedAttestation();
+
   /**
    *
    *
@@ -66,6 +68,7 @@ public interface AttestationOrBuilder
    * @return Whether the genericSignedAttestation field is set.
    */
   boolean hasGenericSignedAttestation();
+
   /**
    * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
    * </code>
@@ -73,6 +76,7 @@ public interface AttestationOrBuilder
    * @return The genericSignedAttestation.
    */
   io.grafeas.v1beta1.attestation.GenericSignedAttestation getGenericSignedAttestation();
+
   /**
    * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
    * </code>

@@ -36,6 +36,7 @@ public interface FlinkJobOrBuilder
    * @return Whether the mainJarFileUri field is set.
    */
   boolean hasMainJarFileUri();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FlinkJobOrBuilder
    * @return The mainJarFileUri.
    */
   java.lang.String getMainJarFileUri();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface FlinkJobOrBuilder
    * @return Whether the mainClass field is set.
    */
   boolean hasMainClass();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface FlinkJobOrBuilder
    * @return The mainClass.
    */
   java.lang.String getMainClass();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface FlinkJobOrBuilder
    * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface FlinkJobOrBuilder
    * @return The count of args.
    */
   int getArgsCount();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface FlinkJobOrBuilder
    * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface FlinkJobOrBuilder
    * @return A list containing the jarFileUris.
    */
   java.util.List<java.lang.String> getJarFileUrisList();
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public interface FlinkJobOrBuilder
    * @return The count of jarFileUris.
    */
   int getJarFileUrisCount();
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public interface FlinkJobOrBuilder
    * @return The jarFileUris at the given index.
    */
   java.lang.String getJarFileUris(int index);
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public interface FlinkJobOrBuilder
    * @return The savepointUri.
    */
   java.lang.String getSavepointUri();
+
   /**
    *
    *
@@ -259,6 +270,7 @@ public interface FlinkJobOrBuilder
    * </code>
    */
   int getPropertiesCount();
+
   /**
    *
    *
@@ -273,9 +285,11 @@ public interface FlinkJobOrBuilder
    * </code>
    */
   boolean containsProperties(java.lang.String key);
+
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getProperties();
+
   /**
    *
    *
@@ -290,6 +304,7 @@ public interface FlinkJobOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
+
   /**
    *
    *
@@ -308,6 +323,7 @@ public interface FlinkJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -337,6 +353,7 @@ public interface FlinkJobOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
+
   /**
    *
    *
@@ -351,6 +368,7 @@ public interface FlinkJobOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig();
+
   /**
    *
    *

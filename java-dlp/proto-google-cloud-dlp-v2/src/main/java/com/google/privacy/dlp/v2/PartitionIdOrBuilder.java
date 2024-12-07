@@ -36,6 +36,7 @@ public interface PartitionIdOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PartitionIdOrBuilder
    * @return The namespaceId.
    */
   java.lang.String getNamespaceId();
+
   /**
    *
    *

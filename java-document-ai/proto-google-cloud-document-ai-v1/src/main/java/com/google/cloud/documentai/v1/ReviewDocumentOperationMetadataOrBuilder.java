@@ -36,6 +36,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * @return Whether the commonMetadata field is set.
    */
   boolean hasCommonMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * @return The commonMetadata.
    */
   com.google.cloud.documentai.v1.CommonOperationMetadata getCommonMetadata();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * @return The questionId.
    */
   java.lang.String getQuestionId();
+
   /**
    *
    *

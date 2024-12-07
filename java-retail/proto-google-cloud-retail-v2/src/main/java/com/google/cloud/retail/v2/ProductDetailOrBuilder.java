@@ -53,6 +53,7 @@ public interface ProductDetailOrBuilder
    * @return Whether the product field is set.
    */
   boolean hasProduct();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface ProductDetailOrBuilder
    * @return The product.
    */
   com.google.cloud.retail.v2.Product getProduct();
+
   /**
    *
    *
@@ -126,6 +128,7 @@ public interface ProductDetailOrBuilder
    * @return Whether the quantity field is set.
    */
   boolean hasQuantity();
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public interface ProductDetailOrBuilder
    * @return The quantity.
    */
   com.google.protobuf.Int32Value getQuantity();
+
   /**
    *
    *

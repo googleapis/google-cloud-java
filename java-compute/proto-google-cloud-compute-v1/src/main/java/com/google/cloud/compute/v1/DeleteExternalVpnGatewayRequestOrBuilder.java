@@ -36,6 +36,7 @@ public interface DeleteExternalVpnGatewayRequestOrBuilder
    * @return The externalVpnGateway.
    */
   java.lang.String getExternalVpnGateway();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DeleteExternalVpnGatewayRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DeleteExternalVpnGatewayRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface DeleteExternalVpnGatewayRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

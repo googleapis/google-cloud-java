@@ -33,6 +33,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.VertexAutoMLVideoConfig)
     VertexAutoMLVideoConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VertexAutoMLVideoConfig.newBuilder() to construct.
   private VertexAutoMLVideoConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
 
   public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
   private float confidenceThreshold_ = 0F;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList blockedLabels_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getBlockedLabelsList() {
     return blockedLabels_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
   public int getBlockedLabelsCount() {
     return blockedLabels_.size();
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
   public java.lang.String getBlockedLabels(int index) {
     return blockedLabels_.get(index);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
 
   public static final int MAX_PREDICTIONS_FIELD_NUMBER = 3;
   private int maxPredictions_ = 0;
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
 
   public static final int BOUNDING_BOX_SIZE_LIMIT_FIELD_NUMBER = 4;
   private float boundingBoxSizeLimit_ = 0F;
+
   /**
    *
    *
@@ -380,6 +388,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -610,6 +619,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
     private int bitField0_;
 
     private float confidenceThreshold_;
+
     /**
      *
      *
@@ -626,6 +636,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
     public float getConfidenceThreshold() {
       return confidenceThreshold_;
     }
+
     /**
      *
      *
@@ -646,6 +657,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +686,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -689,6 +702,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
       blockedLabels_.makeImmutable();
       return blockedLabels_;
     }
+
     /**
      *
      *
@@ -703,6 +717,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
     public int getBlockedLabelsCount() {
       return blockedLabels_.size();
     }
+
     /**
      *
      *
@@ -718,6 +733,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
     public java.lang.String getBlockedLabels(int index) {
       return blockedLabels_.get(index);
     }
+
     /**
      *
      *
@@ -733,6 +749,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getBlockedLabelsBytes(int index) {
       return blockedLabels_.getByteString(index);
     }
+
     /**
      *
      *
@@ -756,6 +773,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +796,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +816,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +835,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +861,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
     }
 
     private int maxPredictions_;
+
     /**
      *
      *
@@ -856,6 +878,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
     public int getMaxPredictions() {
       return maxPredictions_;
     }
+
     /**
      *
      *
@@ -876,6 +899,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +920,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
     }
 
     private float boundingBoxSizeLimit_;
+
     /**
      *
      *
@@ -913,6 +938,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
     public float getBoundingBoxSizeLimit() {
       return boundingBoxSizeLimit_;
     }
+
     /**
      *
      *
@@ -934,6 +960,7 @@ public final class VertexAutoMLVideoConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

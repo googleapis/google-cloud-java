@@ -33,6 +33,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.Image)
     ImageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Image.newBuilder() to construct.
   private Image(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CONTENT_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_FIELD_NUMBER = 2;
   private com.google.cloud.vision.v1.ImageSource source_;
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vision.v1.ImageSource getSource() {
     return source_ == null ? com.google.cloud.vision.v1.ImageSource.getDefaultInstance() : source_;
   }
+
   /**
    *
    *
@@ -309,6 +314,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -518,6 +524,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -538,6 +545,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getContent() {
       return content_;
     }
+
     /**
      *
      *
@@ -564,6 +572,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1.ImageSource.Builder,
             com.google.cloud.vision.v1.ImageSourceOrBuilder>
         sourceBuilder_;
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         return sourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -655,6 +667,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +689,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +719,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +741,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
             : source_;
       }
     }
+
     /**
      *
      *

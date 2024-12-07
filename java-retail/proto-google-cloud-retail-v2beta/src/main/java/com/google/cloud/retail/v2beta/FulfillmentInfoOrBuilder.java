@@ -53,6 +53,7 @@ public interface FulfillmentInfoOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -104,6 +105,7 @@ public interface FulfillmentInfoOrBuilder
    * @return A list containing the placeIds.
    */
   java.util.List<java.lang.String> getPlaceIdsList();
+
   /**
    *
    *
@@ -125,6 +127,7 @@ public interface FulfillmentInfoOrBuilder
    * @return The count of placeIds.
    */
   int getPlaceIdsCount();
+
   /**
    *
    *
@@ -147,6 +150,7 @@ public interface FulfillmentInfoOrBuilder
    * @return The placeIds at the given index.
    */
   java.lang.String getPlaceIds(int index);
+
   /**
    *
    *

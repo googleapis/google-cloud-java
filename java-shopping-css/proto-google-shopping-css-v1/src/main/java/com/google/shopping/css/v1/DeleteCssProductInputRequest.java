@@ -33,6 +33,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.DeleteCssProductInputRequest)
     DeleteCssProductInputRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteCssProductInputRequest.newBuilder() to construct.
   private DeleteCssProductInputRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
 
   public static final int SUPPLEMENTAL_FEED_ID_FIELD_NUMBER = 2;
   private long supplementalFeedId_ = 0L;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
   public boolean hasSupplementalFeedId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -334,6 +339,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -534,6 +540,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -559,6 +566,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -584,6 +592,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -608,6 +617,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -628,6 +638,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +666,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
     }
 
     private long supplementalFeedId_;
+
     /**
      *
      *
@@ -673,6 +685,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
     public boolean hasSupplementalFeedId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -691,6 +704,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
     public long getSupplementalFeedId() {
       return supplementalFeedId_;
     }
+
     /**
      *
      *
@@ -713,6 +727,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

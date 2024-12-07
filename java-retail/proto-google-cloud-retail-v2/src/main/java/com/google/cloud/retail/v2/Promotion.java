@@ -33,6 +33,7 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.Promotion)
     PromotionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Promotion.newBuilder() to construct.
   private Promotion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object promotionId_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -287,6 +290,7 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -469,6 +473,7 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object promotionId_ = "";
+
     /**
      *
      *
@@ -499,6 +504,7 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -529,6 +535,7 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -558,6 +565,7 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -583,6 +591,7 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.MinimumOrderValueTable)
     MinimumOrderValueTableOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MinimumOrderValueTable.newBuilder() to construct.
   private MinimumOrderValueTable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
      * @return A list containing the storeCodes.
      */
     java.util.List<java.lang.String> getStoreCodesList();
+
     /**
      *
      *
@@ -92,6 +94,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
      * @return The count of storeCodes.
      */
     int getStoreCodesCount();
+
     /**
      *
      *
@@ -105,6 +108,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
      * @return The storeCodes at the given index.
      */
     java.lang.String getStoreCodes(int index);
+
     /**
      *
      *
@@ -131,6 +135,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
      * @return Whether the value field is set.
      */
     boolean hasValue();
+
     /**
      *
      *
@@ -143,6 +148,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
      * @return The value.
      */
     com.google.shopping.type.Price getValue();
+
     /**
      *
      *
@@ -154,6 +160,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
      */
     com.google.shopping.type.PriceOrBuilder getValueOrBuilder();
   }
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.MinimumOrderValueTable.StoreCodeSetWithMov)
       StoreCodeSetWithMovOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StoreCodeSetWithMov.newBuilder() to construct.
     private StoreCodeSetWithMov(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -211,6 +219,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList storeCodes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -225,6 +234,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ProtocolStringList getStoreCodesList() {
       return storeCodes_;
     }
+
     /**
      *
      *
@@ -239,6 +249,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
     public int getStoreCodesCount() {
       return storeCodes_.size();
     }
+
     /**
      *
      *
@@ -254,6 +265,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
     public java.lang.String getStoreCodes(int index) {
       return storeCodes_.get(index);
     }
+
     /**
      *
      *
@@ -272,6 +284,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
 
     public static final int VALUE_FIELD_NUMBER = 2;
     private com.google.shopping.type.Price value_;
+
     /**
      *
      *
@@ -287,6 +300,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
     public boolean hasValue() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -302,6 +316,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
     public com.google.shopping.type.Price getValue() {
       return value_ == null ? com.google.shopping.type.Price.getDefaultInstance() : value_;
     }
+
     /**
      *
      *
@@ -523,6 +538,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -781,6 +797,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -796,6 +813,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         storeCodes_.makeImmutable();
         return storeCodes_;
       }
+
       /**
        *
        *
@@ -810,6 +828,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       public int getStoreCodesCount() {
         return storeCodes_.size();
       }
+
       /**
        *
        *
@@ -825,6 +844,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       public java.lang.String getStoreCodes(int index) {
         return storeCodes_.get(index);
       }
+
       /**
        *
        *
@@ -840,6 +860,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ByteString getStoreCodesBytes(int index) {
         return storeCodes_.getByteString(index);
       }
+
       /**
        *
        *
@@ -863,6 +884,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -885,6 +907,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -904,6 +927,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -922,6 +946,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -952,6 +977,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
               com.google.shopping.type.Price.Builder,
               com.google.shopping.type.PriceOrBuilder>
           valueBuilder_;
+
       /**
        *
        *
@@ -966,6 +992,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       public boolean hasValue() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -984,6 +1011,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
           return valueBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1006,6 +1034,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1025,6 +1054,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1052,6 +1082,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1071,6 +1102,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1085,6 +1117,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         onChanged();
         return getValueFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1101,6 +1134,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
           return value_ == null ? com.google.shopping.type.Price.getDefaultInstance() : value_;
         }
       }
+
       /**
        *
        *
@@ -1204,6 +1238,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
   private java.util.List<
           com.google.shopping.merchant.accounts.v1beta.MinimumOrderValueTable.StoreCodeSetWithMov>
       storeCodeSetWithMovs_;
+
   /**
    *
    *
@@ -1225,6 +1260,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       getStoreCodeSetWithMovsList() {
     return storeCodeSetWithMovs_;
   }
+
   /**
    *
    *
@@ -1248,6 +1284,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       getStoreCodeSetWithMovsOrBuilderList() {
     return storeCodeSetWithMovs_;
   }
+
   /**
    *
    *
@@ -1267,6 +1304,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
   public int getStoreCodeSetWithMovsCount() {
     return storeCodeSetWithMovs_.size();
   }
+
   /**
    *
    *
@@ -1287,6 +1325,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       getStoreCodeSetWithMovs(int index) {
     return storeCodeSetWithMovs_.get(index);
   }
+
   /**
    *
    *
@@ -1473,6 +1512,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1759,6 +1799,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         return storeCodeSetWithMovsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1781,6 +1822,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         return storeCodeSetWithMovsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1804,6 +1846,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         return storeCodeSetWithMovsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1835,6 +1878,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1864,6 +1908,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1894,6 +1939,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1925,6 +1971,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1953,6 +2000,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1982,6 +2030,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2012,6 +2061,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2037,6 +2087,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2062,6 +2113,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2082,6 +2134,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         getStoreCodeSetWithMovsBuilder(int index) {
       return getStoreCodeSetWithMovsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2106,6 +2159,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         return storeCodeSetWithMovsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2132,6 +2186,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(storeCodeSetWithMovs_);
       }
     }
+
     /**
      *
      *
@@ -2155,6 +2210,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
               com.google.shopping.merchant.accounts.v1beta.MinimumOrderValueTable
                   .StoreCodeSetWithMov.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2179,6 +2235,7 @@ public final class MinimumOrderValueTable extends com.google.protobuf.GeneratedM
               com.google.shopping.merchant.accounts.v1beta.MinimumOrderValueTable
                   .StoreCodeSetWithMov.getDefaultInstance());
     }
+
     /**
      *
      *

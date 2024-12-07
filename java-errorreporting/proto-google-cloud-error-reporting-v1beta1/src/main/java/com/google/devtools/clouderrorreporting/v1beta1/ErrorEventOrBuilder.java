@@ -38,6 +38,7 @@ public interface ErrorEventOrBuilder
    * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ErrorEventOrBuilder
    * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ErrorEventOrBuilder
    * @return Whether the serviceContext field is set.
    */
   boolean hasServiceContext();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ErrorEventOrBuilder
    * @return The serviceContext.
    */
   com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getServiceContext();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface ErrorEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface ErrorEventOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface ErrorEventOrBuilder
    * @return The context.
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorContext getContext();
+
   /**
    *
    *

@@ -44,6 +44,7 @@ public interface DeleteSessionEntityTypeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    * @return The enum numeric value on the wire for annotation.
    */
   int getAnnotationValue();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    */
   java.util.List<com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest.Reason>
       getReasonsList();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    * @return The count of reasons.
    */
   int getReasonsCount();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    * @return The reasons at the given index.
    */
   com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest.Reason getReasons(int index);
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for reasons.
    */
   java.util.List<java.lang.Integer> getReasonsValueList();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    * @return The accountId.
    */
   java.lang.String getAccountId();
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    * @return Whether the transactionEvent field is set.
    */
   boolean hasTransactionEvent();
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    * @return The transactionEvent.
    */
   com.google.recaptchaenterprise.v1.TransactionEvent getTransactionEvent();
+
   /**
    *
    *

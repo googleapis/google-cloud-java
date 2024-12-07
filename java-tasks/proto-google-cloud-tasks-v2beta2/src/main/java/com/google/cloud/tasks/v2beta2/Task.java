@@ -33,6 +33,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.Task)
     TaskOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Task.newBuilder() to construct.
   private Task(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -139,6 +140,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>VIEW_UNSPECIFIED = 0;</code>
      */
     public static final int VIEW_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -159,6 +161,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>BASIC = 1;</code>
      */
     public static final int BASIC_VALUE = 1;
+
     /**
      *
      *
@@ -277,6 +280,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     private PayloadTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -315,6 +319,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -358,6 +363,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -403,6 +409,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int APP_ENGINE_HTTP_REQUEST_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -425,6 +432,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAppEngineHttpRequest() {
     return payloadTypeCase_ == 3;
   }
+
   /**
    *
    *
@@ -450,6 +458,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.tasks.v2beta2.AppEngineHttpRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -476,6 +485,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PULL_MESSAGE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -497,6 +507,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPullMessage() {
     return payloadTypeCase_ == 4;
   }
+
   /**
    *
    *
@@ -521,6 +532,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.tasks.v2beta2.PullMessage.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -545,6 +557,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HTTP_REQUEST_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -563,6 +576,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHttpRequest() {
     return payloadTypeCase_ == 13;
   }
+
   /**
    *
    *
@@ -584,6 +598,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.tasks.v2beta2.HttpRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -606,6 +621,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp scheduleTime_;
+
   /**
    *
    *
@@ -631,6 +647,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScheduleTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -658,6 +675,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : scheduleTime_;
   }
+
   /**
    *
    *
@@ -686,6 +704,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -703,6 +722,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -720,6 +740,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -738,6 +759,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 7;
   private com.google.cloud.tasks.v2beta2.TaskStatus status_;
+
   /**
    *
    *
@@ -753,6 +775,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -770,6 +793,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.tasks.v2beta2.TaskStatus.getDefaultInstance()
         : status_;
   }
+
   /**
    *
    *
@@ -788,6 +812,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VIEW_FIELD_NUMBER = 8;
   private int view_ = 0;
+
   /**
    *
    *
@@ -804,6 +829,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public int getViewValue() {
     return view_;
   }
+
   /**
    *
    *
@@ -1085,6 +1111,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1428,6 +1455,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1470,6 +1498,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1512,6 +1541,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1553,6 +1583,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1590,6 +1621,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1670,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2beta2.AppEngineHttpRequest.Builder,
             com.google.cloud.tasks.v2beta2.AppEngineHttpRequestOrBuilder>
         appEngineHttpRequestBuilder_;
+
     /**
      *
      *
@@ -1660,6 +1693,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAppEngineHttpRequest() {
       return payloadTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -1692,6 +1726,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tasks.v2beta2.AppEngineHttpRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1722,6 +1757,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       payloadTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1749,6 +1785,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       payloadTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1790,6 +1827,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       payloadTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1822,6 +1860,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1842,6 +1881,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         getAppEngineHttpRequestBuilder() {
       return getAppEngineHttpRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1870,6 +1910,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tasks.v2beta2.AppEngineHttpRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1915,6 +1956,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2beta2.PullMessage.Builder,
             com.google.cloud.tasks.v2beta2.PullMessageOrBuilder>
         pullMessageBuilder_;
+
     /**
      *
      *
@@ -1936,6 +1978,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPullMessage() {
       return payloadTypeCase_ == 4;
     }
+
     /**
      *
      *
@@ -1967,6 +2010,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tasks.v2beta2.PullMessage.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1995,6 +2039,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       payloadTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2021,6 +2066,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       payloadTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2059,6 +2105,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       payloadTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2090,6 +2137,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2108,6 +2156,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tasks.v2beta2.PullMessage.Builder getPullMessageBuilder() {
       return getPullMessageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2134,6 +2183,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tasks.v2beta2.PullMessage.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2178,6 +2228,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2beta2.HttpRequest.Builder,
             com.google.cloud.tasks.v2beta2.HttpRequestOrBuilder>
         httpRequestBuilder_;
+
     /**
      *
      *
@@ -2196,6 +2247,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHttpRequest() {
       return payloadTypeCase_ == 13;
     }
+
     /**
      *
      *
@@ -2224,6 +2276,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tasks.v2beta2.HttpRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2249,6 +2302,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       payloadTypeCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -2272,6 +2326,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       payloadTypeCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -2307,6 +2362,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       payloadTypeCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -2335,6 +2391,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2350,6 +2407,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tasks.v2beta2.HttpRequest.Builder getHttpRequestBuilder() {
       return getHttpRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2373,6 +2431,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tasks.v2beta2.HttpRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2415,6 +2474,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         scheduleTimeBuilder_;
+
     /**
      *
      *
@@ -2439,6 +2499,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScheduleTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2469,6 +2530,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return scheduleTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2501,6 +2563,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2530,6 +2593,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2567,6 +2631,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2596,6 +2661,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2620,6 +2686,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2648,6 +2715,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             : scheduleTime_;
       }
     }
+
     /**
      *
      *
@@ -2690,6 +2758,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2706,6 +2775,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2728,6 +2798,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2752,6 +2823,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2773,6 +2845,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2802,6 +2875,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2823,6 +2897,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2839,6 +2914,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2859,6 +2935,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2893,6 +2970,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2beta2.TaskStatus.Builder,
             com.google.cloud.tasks.v2beta2.TaskStatusOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -2907,6 +2985,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2927,6 +3006,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2949,6 +3029,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2968,6 +3049,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2995,6 +3077,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3014,6 +3097,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3028,6 +3112,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3046,6 +3131,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             : status_;
       }
     }
+
     /**
      *
      *
@@ -3073,6 +3159,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int view_ = 0;
+
     /**
      *
      *
@@ -3089,6 +3176,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public int getViewValue() {
       return view_;
     }
+
     /**
      *
      *
@@ -3108,6 +3196,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3126,6 +3215,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.tasks.v2beta2.Task.View.forNumber(view_);
       return result == null ? com.google.cloud.tasks.v2beta2.Task.View.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3148,6 +3238,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

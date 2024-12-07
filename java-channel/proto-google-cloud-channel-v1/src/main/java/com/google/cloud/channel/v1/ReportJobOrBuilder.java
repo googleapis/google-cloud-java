@@ -39,6 +39,7 @@ public interface ReportJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ReportJobOrBuilder
    * @return Whether the reportStatus field is set.
    */
   boolean hasReportStatus();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface ReportJobOrBuilder
    * @return The reportStatus.
    */
   com.google.cloud.channel.v1.ReportStatus getReportStatus();
+
   /**
    *
    *

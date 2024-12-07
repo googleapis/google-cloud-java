@@ -34,6 +34,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.GetPolicyTagRequest)
     GetPolicyTagRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetPolicyTagRequest.newBuilder() to construct.
   private GetPolicyTagRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -278,6 +281,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -463,6 +467,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -487,6 +492,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -511,6 +517,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

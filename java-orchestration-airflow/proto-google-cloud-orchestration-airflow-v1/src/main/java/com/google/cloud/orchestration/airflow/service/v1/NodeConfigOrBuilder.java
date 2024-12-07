@@ -52,6 +52,7 @@ public interface NodeConfigOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -116,6 +117,7 @@ public interface NodeConfigOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
@@ -174,6 +176,7 @@ public interface NodeConfigOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -217,6 +220,7 @@ public interface NodeConfigOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *
@@ -272,6 +276,7 @@ public interface NodeConfigOrBuilder
    * @return A list containing the oauthScopes.
    */
   java.util.List<java.lang.String> getOauthScopesList();
+
   /**
    *
    *
@@ -289,6 +294,7 @@ public interface NodeConfigOrBuilder
    * @return The count of oauthScopes.
    */
   int getOauthScopesCount();
+
   /**
    *
    *
@@ -307,6 +313,7 @@ public interface NodeConfigOrBuilder
    * @return The oauthScopes at the given index.
    */
   java.lang.String getOauthScopes(int index);
+
   /**
    *
    *
@@ -340,6 +347,7 @@ public interface NodeConfigOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -370,6 +378,7 @@ public interface NodeConfigOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
+
   /**
    *
    *
@@ -385,6 +394,7 @@ public interface NodeConfigOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -401,6 +411,7 @@ public interface NodeConfigOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
+
   /**
    *
    *
@@ -433,6 +444,7 @@ public interface NodeConfigOrBuilder
    * @return Whether the ipAllocationPolicy field is set.
    */
   boolean hasIpAllocationPolicy();
+
   /**
    *
    *
@@ -448,6 +460,7 @@ public interface NodeConfigOrBuilder
    * @return The ipAllocationPolicy.
    */
   com.google.cloud.orchestration.airflow.service.v1.IPAllocationPolicy getIpAllocationPolicy();
+
   /**
    *
    *
@@ -503,6 +516,7 @@ public interface NodeConfigOrBuilder
    * @return The composerNetworkAttachment.
    */
   java.lang.String getComposerNetworkAttachment();
+
   /**
    *
    *
@@ -546,6 +560,7 @@ public interface NodeConfigOrBuilder
    * @return The composerInternalIpv4CidrBlock.
    */
   java.lang.String getComposerInternalIpv4CidrBlock();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest)
     UpdateChannelPartnerRepricingConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateChannelPartnerRepricingConfigRequest.newBuilder() to construct.
   private UpdateChannelPartnerRepricingConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
   private int bitField0_;
   public static final int CHANNEL_PARTNER_REPRICING_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.channel.v1.ChannelPartnerRepricingConfig channelPartnerRepricingConfig_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
   public boolean hasChannelPartnerRepricingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
         ? com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.getDefaultInstance()
         : channelPartnerRepricingConfig_;
   }
+
   /**
    *
    *
@@ -293,6 +297,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -510,6 +515,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
             com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.Builder,
             com.google.cloud.channel.v1.ChannelPartnerRepricingConfigOrBuilder>
         channelPartnerRepricingConfigBuilder_;
+
     /**
      *
      *
@@ -526,6 +532,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
     public boolean hasChannelPartnerRepricingConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -549,6 +556,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
         return channelPartnerRepricingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -574,6 +582,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -596,6 +605,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -627,6 +637,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +677,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
       onChanged();
       return getChannelPartnerRepricingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -686,6 +699,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
             : channelPartnerRepricingConfig_;
       }
     }
+
     /**
      *
      *

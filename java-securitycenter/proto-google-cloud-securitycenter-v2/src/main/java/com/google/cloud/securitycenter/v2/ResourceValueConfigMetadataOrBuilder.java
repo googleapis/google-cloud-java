@@ -36,6 +36,7 @@ public interface ResourceValueConfigMetadataOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

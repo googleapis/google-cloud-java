@@ -36,6 +36,7 @@ public interface StreamingSideInputLocationOrBuilder
    * @return The tag.
    */
   java.lang.String getTag();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface StreamingSideInputLocationOrBuilder
    * @return The stateFamily.
    */
   java.lang.String getStateFamily();
+
   /**
    *
    *

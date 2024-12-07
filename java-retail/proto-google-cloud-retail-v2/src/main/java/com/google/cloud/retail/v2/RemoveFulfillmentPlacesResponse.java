@@ -36,6 +36,7 @@ public final class RemoveFulfillmentPlacesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.RemoveFulfillmentPlacesResponse)
     RemoveFulfillmentPlacesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RemoveFulfillmentPlacesResponse.newBuilder() to construct.
   private RemoveFulfillmentPlacesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,6 +217,7 @@ public final class RemoveFulfillmentPlacesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

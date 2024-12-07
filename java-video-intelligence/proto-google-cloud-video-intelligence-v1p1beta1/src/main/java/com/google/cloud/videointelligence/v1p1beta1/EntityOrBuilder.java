@@ -38,6 +38,7 @@ public interface EntityOrBuilder
    * @return The entityId.
    */
   java.lang.String getEntityId();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface EntityOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface EntityOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

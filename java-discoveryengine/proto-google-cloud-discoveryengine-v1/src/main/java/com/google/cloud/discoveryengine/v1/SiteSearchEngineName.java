@@ -300,7 +300,8 @@ public class SiteSearchEngineName implements ResourceName {
     private Builder(SiteSearchEngineName siteSearchEngineName) {
       Preconditions.checkArgument(
           Objects.equals(siteSearchEngineName.pathTemplate, PROJECT_LOCATION_DATA_STORE),
-          "toBuilder is only supported when SiteSearchEngineName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/siteSearchEngine");
+          "toBuilder is only supported when SiteSearchEngineName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/siteSearchEngine");
       this.project = siteSearchEngineName.project;
       this.location = siteSearchEngineName.location;
       this.dataStore = siteSearchEngineName.dataStore;

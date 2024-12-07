@@ -37,6 +37,7 @@ public interface RoutingParametersOrBuilder
    * @return Whether the origin field is set.
    */
   boolean hasOrigin();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface RoutingParametersOrBuilder
    * @return The origin.
    */
   com.google.type.LatLng getOrigin();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface RoutingParametersOrBuilder
    * @return The enum numeric value on the wire for travelMode.
    */
   int getTravelModeValue();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface RoutingParametersOrBuilder
    * @return Whether the routeModifiers field is set.
    */
   boolean hasRouteModifiers();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface RoutingParametersOrBuilder
    * @return The routeModifiers.
    */
   com.google.maps.places.v1.RouteModifiers getRouteModifiers();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface RoutingParametersOrBuilder
    * @return The enum numeric value on the wire for routingPreference.
    */
   int getRoutingPreferenceValue();
+
   /**
    *
    *

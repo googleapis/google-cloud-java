@@ -62,6 +62,7 @@ public enum TermsOfServiceKind implements com.google.protobuf.ProtocolMessageEnu
    * <code>TERMS_OF_SERVICE_KIND_UNSPECIFIED = 0;</code>
    */
   public static final int TERMS_OF_SERVICE_KIND_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.NetworkUsage)
     NetworkUsageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkUsage.newBuilder() to construct.
   private NetworkUsage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int NETWORK_FIELD_NUMBER = 1;
   private com.google.cloud.baremetalsolution.v2.Network network_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNetwork() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.baremetalsolution.v2.Network.getDefaultInstance()
         : network_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList usedIps_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getUsedIpsList() {
     return usedIps_;
   }
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
   public int getUsedIpsCount() {
     return usedIps_.size();
   }
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getUsedIps(int index) {
     return usedIps_.get(index);
   }
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -583,6 +592,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.baremetalsolution.v2.Network.Builder,
             com.google.cloud.baremetalsolution.v2.NetworkOrBuilder>
         networkBuilder_;
+
     /**
      *
      *
@@ -597,6 +607,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -617,6 +628,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
         return networkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -639,6 +651,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +672,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +700,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +720,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +735,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNetworkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -737,6 +754,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
             : network_;
       }
     }
+
     /**
      *
      *
@@ -772,6 +790,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -787,6 +806,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       usedIps_.makeImmutable();
       return usedIps_;
     }
+
     /**
      *
      *
@@ -801,6 +821,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
     public int getUsedIpsCount() {
       return usedIps_.size();
     }
+
     /**
      *
      *
@@ -816,6 +837,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getUsedIps(int index) {
       return usedIps_.get(index);
     }
+
     /**
      *
      *
@@ -831,6 +853,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getUsedIpsBytes(int index) {
       return usedIps_.getByteString(index);
     }
+
     /**
      *
      *
@@ -854,6 +877,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +900,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +920,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +939,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

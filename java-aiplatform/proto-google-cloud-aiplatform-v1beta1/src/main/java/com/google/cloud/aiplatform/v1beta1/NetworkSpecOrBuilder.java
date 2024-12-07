@@ -50,6 +50,7 @@ public interface NetworkSpecOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface NetworkSpecOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface ParticipantOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ParticipantOrBuilder
    * @return The enum numeric value on the wire for role.
    */
   int getRoleValue();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface ParticipantOrBuilder
    * @return The sipRecordingMediaLabel.
    */
   java.lang.String getSipRecordingMediaLabel();
+
   /**
    *
    *
@@ -157,6 +160,7 @@ public interface ParticipantOrBuilder
    * @return The obfuscatedExternalUserId.
    */
   java.lang.String getObfuscatedExternalUserId();
+
   /**
    *
    *
@@ -230,6 +234,7 @@ public interface ParticipantOrBuilder
    * </code>
    */
   int getDocumentsMetadataFiltersCount();
+
   /**
    *
    *
@@ -258,9 +263,11 @@ public interface ParticipantOrBuilder
    * </code>
    */
   boolean containsDocumentsMetadataFilters(java.lang.String key);
+
   /** Use {@link #getDocumentsMetadataFiltersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDocumentsMetadataFilters();
+
   /**
    *
    *
@@ -289,6 +296,7 @@ public interface ParticipantOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDocumentsMetadataFiltersMap();
+
   /**
    *
    *
@@ -321,6 +329,7 @@ public interface ParticipantOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

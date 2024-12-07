@@ -35,6 +35,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.CorrelationStats)
     CorrelationStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CorrelationStats.newBuilder() to construct.
   private CorrelationStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
 
   public static final int CRAMERS_V_FIELD_NUMBER = 1;
   private double cramersV_ = 0D;
+
   /**
    *
    *
@@ -244,6 +246,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -428,6 +431,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private double cramersV_;
+
     /**
      *
      *
@@ -443,6 +447,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
     public double getCramersV() {
       return cramersV_;
     }
+
     /**
      *
      *
@@ -462,6 +467,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

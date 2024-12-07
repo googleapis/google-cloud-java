@@ -38,6 +38,7 @@ public interface InsertStoragePoolRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface InsertStoragePoolRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface InsertStoragePoolRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface InsertStoragePoolRequestOrBuilder
    * @return Whether the storagePoolResource field is set.
    */
   boolean hasStoragePoolResource();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface InsertStoragePoolRequestOrBuilder
    * @return The storagePoolResource.
    */
   com.google.cloud.compute.v1.StoragePool getStoragePoolResource();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface InsertStoragePoolRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

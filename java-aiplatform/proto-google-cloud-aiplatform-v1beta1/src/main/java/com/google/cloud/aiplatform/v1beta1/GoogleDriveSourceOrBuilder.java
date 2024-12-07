@@ -37,6 +37,7 @@ public interface GoogleDriveSourceOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.ResourceId>
       getResourceIdsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface GoogleDriveSourceOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.ResourceId getResourceIds(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface GoogleDriveSourceOrBuilder
    * </code>
    */
   int getResourceIdsCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface GoogleDriveSourceOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.ResourceIdOrBuilder>
       getResourceIdsOrBuilderList();
+
   /**
    *
    *

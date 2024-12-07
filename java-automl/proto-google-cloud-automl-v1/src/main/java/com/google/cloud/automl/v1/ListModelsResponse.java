@@ -33,6 +33,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.ListModelsResponse)
     ListModelsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListModelsResponse.newBuilder() to construct.
   private ListModelsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1.Model> model_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.automl.v1.Model> getModelList() {
     return model_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       getModelOrBuilderList() {
     return model_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
   public int getModelCount() {
     return model_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.automl.v1.Model getModel(int index) {
     return model_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -631,6 +640,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return modelBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -647,6 +657,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return modelBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return modelBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -704,6 +717,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +763,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +783,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +803,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +824,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +844,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +864,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +877,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.automl.v1.Model.Builder getModelBuilder(int index) {
       return getModelFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -872,6 +894,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return modelBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -889,6 +912,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(model_);
       }
     }
+
     /**
      *
      *
@@ -902,6 +926,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       return getModelFieldBuilder()
           .addBuilder(com.google.cloud.automl.v1.Model.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -915,6 +940,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       return getModelFieldBuilder()
           .addBuilder(index, com.google.cloud.automl.v1.Model.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -946,6 +972,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -969,6 +996,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -992,6 +1020,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1043,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1062,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

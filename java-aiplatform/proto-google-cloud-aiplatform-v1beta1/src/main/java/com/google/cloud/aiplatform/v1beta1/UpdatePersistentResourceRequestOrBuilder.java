@@ -42,6 +42,7 @@ public interface UpdatePersistentResourceRequestOrBuilder
    * @return Whether the persistentResource field is set.
    */
   boolean hasPersistentResource();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdatePersistentResourceRequestOrBuilder
    * @return The persistentResource.
    */
   com.google.cloud.aiplatform.v1beta1.PersistentResource getPersistentResource();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface UpdatePersistentResourceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface UpdatePersistentResourceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

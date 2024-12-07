@@ -34,6 +34,7 @@ public interface ListAnalysisRulesResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.AnalysisRule analysis_rules = 1;</code>
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.AnalysisRule> getAnalysisRulesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListAnalysisRulesResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.AnalysisRule analysis_rules = 1;</code>
    */
   com.google.cloud.contactcenterinsights.v1.AnalysisRule getAnalysisRules(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListAnalysisRulesResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.AnalysisRule analysis_rules = 1;</code>
    */
   int getAnalysisRulesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListAnalysisRulesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.AnalysisRuleOrBuilder>
       getAnalysisRulesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListAnalysisRulesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

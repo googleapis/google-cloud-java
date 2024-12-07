@@ -34,6 +34,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
    */
   int getDomainStatusCount();
+
   /**
    *
    *
@@ -44,9 +45,11 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
    */
   boolean containsDomainStatus(java.lang.String key);
+
   /** Use {@link #getDomainStatusMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDomainStatus();
+
   /**
    *
    *
@@ -57,6 +60,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDomainStatusMap();
+
   /**
    *
    *
@@ -71,6 +75,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -94,6 +99,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    * @return A list containing the domains.
    */
   java.util.List<java.lang.String> getDomainsList();
+
   /**
    *
    *
@@ -106,6 +112,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    * @return The count of domains.
    */
   int getDomainsCount();
+
   /**
    *
    *
@@ -119,6 +126,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    * @return The domains at the given index.
    */
   java.lang.String getDomains(int index);
+
   /**
    *
    *
@@ -146,6 +154,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -159,6 +168,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *

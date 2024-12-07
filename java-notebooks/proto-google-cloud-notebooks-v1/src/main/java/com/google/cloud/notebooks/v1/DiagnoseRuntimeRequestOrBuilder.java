@@ -39,6 +39,7 @@ public interface DiagnoseRuntimeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface DiagnoseRuntimeRequestOrBuilder
    * @return Whether the diagnosticConfig field is set.
    */
   boolean hasDiagnosticConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface DiagnoseRuntimeRequestOrBuilder
    * @return The diagnosticConfig.
    */
   com.google.cloud.notebooks.v1.DiagnosticConfig getDiagnosticConfig();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.AggregateAssetsValuesResponse)
     AggregateAssetsValuesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AggregateAssetsValuesResponse.newBuilder() to construct.
   private AggregateAssetsValuesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.AggregationResult> results_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
   public java.util.List<com.google.cloud.migrationcenter.v1.AggregationResult> getResultsList() {
     return results_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
       getResultsOrBuilderList() {
     return results_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
   public int getResultsCount() {
     return results_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
   public com.google.cloud.migrationcenter.v1.AggregationResult getResults(int index) {
     return results_.get(index);
   }
+
   /**
    *
    *
@@ -298,6 +304,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -567,6 +574,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
         return resultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -583,6 +591,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
         return resultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -599,6 +608,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
         return resultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -622,6 +632,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +653,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -664,6 +676,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +700,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +721,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +742,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +764,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +784,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +804,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +818,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
         int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -816,6 +836,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -833,6 +854,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(results_);
       }
     }
+
     /**
      *
      *
@@ -846,6 +868,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
       return getResultsFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.AggregationResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -861,6 +884,7 @@ public final class AggregateAssetsValuesResponse extends com.google.protobuf.Gen
           .addBuilder(
               index, com.google.cloud.migrationcenter.v1.AggregationResult.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -53,6 +53,7 @@ public interface Cvssv3OrBuilder
    * @return The enum numeric value on the wire for attackVector.
    */
   int getAttackVectorValue();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface Cvssv3OrBuilder
    * @return The enum numeric value on the wire for attackComplexity.
    */
   int getAttackComplexityValue();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface Cvssv3OrBuilder
    * @return The enum numeric value on the wire for privilegesRequired.
    */
   int getPrivilegesRequiredValue();
+
   /**
    *
    *
@@ -138,6 +141,7 @@ public interface Cvssv3OrBuilder
    * @return The enum numeric value on the wire for userInteraction.
    */
   int getUserInteractionValue();
+
   /**
    *
    *
@@ -166,6 +170,7 @@ public interface Cvssv3OrBuilder
    * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public interface Cvssv3OrBuilder
    * @return The enum numeric value on the wire for confidentialityImpact.
    */
   int getConfidentialityImpactValue();
+
   /**
    *
    *
@@ -222,6 +228,7 @@ public interface Cvssv3OrBuilder
    * @return The enum numeric value on the wire for integrityImpact.
    */
   int getIntegrityImpactValue();
+
   /**
    *
    *
@@ -249,6 +256,7 @@ public interface Cvssv3OrBuilder
    * @return The enum numeric value on the wire for availabilityImpact.
    */
   int getAvailabilityImpactValue();
+
   /**
    *
    *

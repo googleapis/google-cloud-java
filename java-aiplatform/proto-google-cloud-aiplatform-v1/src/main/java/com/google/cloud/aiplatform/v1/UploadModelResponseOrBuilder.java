@@ -37,6 +37,7 @@ public interface UploadModelResponseOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface UploadModelResponseOrBuilder
    * @return The modelVersionId.
    */
   java.lang.String getModelVersionId();
+
   /**
    *
    *

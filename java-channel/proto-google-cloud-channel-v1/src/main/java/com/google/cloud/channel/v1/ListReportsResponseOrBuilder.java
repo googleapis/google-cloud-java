@@ -35,6 +35,7 @@ public interface ListReportsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Report reports = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.Report> getReportsList();
+
   /**
    *
    *
@@ -45,6 +46,7 @@ public interface ListReportsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Report reports = 1;</code>
    */
   com.google.cloud.channel.v1.Report getReports(int index);
+
   /**
    *
    *
@@ -55,6 +57,7 @@ public interface ListReportsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Report reports = 1;</code>
    */
   int getReportsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListReportsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Report reports = 1;</code>
    */
   java.util.List<? extends com.google.cloud.channel.v1.ReportOrBuilder> getReportsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListReportsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

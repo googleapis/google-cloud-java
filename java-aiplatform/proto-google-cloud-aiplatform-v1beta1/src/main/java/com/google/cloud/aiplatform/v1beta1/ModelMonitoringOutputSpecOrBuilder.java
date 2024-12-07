@@ -36,6 +36,7 @@ public interface ModelMonitoringOutputSpecOrBuilder
    * @return Whether the gcsBaseDirectory field is set.
    */
   boolean hasGcsBaseDirectory();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ModelMonitoringOutputSpecOrBuilder
    * @return The gcsBaseDirectory.
    */
   com.google.cloud.aiplatform.v1beta1.GcsDestination getGcsBaseDirectory();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface DiagnoseInterconnectResponseOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DiagnoseInterconnectResponseOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface DiagnoseInterconnectResponseOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface DiagnoseInterconnectResponseOrBuilder
    * @return The result.
    */
   com.google.cloud.edgenetwork.v1.InterconnectDiagnostics getResult();
+
   /**
    *
    *

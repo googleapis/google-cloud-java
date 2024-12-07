@@ -34,6 +34,7 @@ public interface ListPreviewsResponseOrBuilder
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>
    */
   java.util.List<com.google.cloud.config.v1.Preview> getPreviewsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListPreviewsResponseOrBuilder
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>
    */
   com.google.cloud.config.v1.Preview getPreviews(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListPreviewsResponseOrBuilder
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>
    */
   int getPreviewsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListPreviewsResponseOrBuilder
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>
    */
   java.util.List<? extends com.google.cloud.config.v1.PreviewOrBuilder> getPreviewsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListPreviewsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface ListPreviewsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -126,6 +132,7 @@ public interface ListPreviewsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -139,6 +146,7 @@ public interface ListPreviewsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.RateGroup)
     RateGroupOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RateGroup.newBuilder() to construct.
   private RateGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,6 +76,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList applicableShippingLabels_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getApplicableShippingLabelsList() {
     return applicableShippingLabels_;
   }
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
   public int getApplicableShippingLabelsCount() {
     return applicableShippingLabels_.size();
   }
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getApplicableShippingLabels(int index) {
     return applicableShippingLabels_.get(index);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SINGLE_VALUE_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.accounts.v1beta.Value singleValue_;
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSingleValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.Value.getDefaultInstance()
         : singleValue_;
   }
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAIN_TABLE_FIELD_NUMBER = 3;
   private com.google.shopping.merchant.accounts.v1beta.Table mainTable_;
+
   /**
    *
    *
@@ -226,6 +235,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMainTable() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -245,6 +255,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.Table.getDefaultInstance()
         : mainTable_;
   }
+
   /**
    *
    *
@@ -267,6 +278,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.Table> subtables_;
+
   /**
    *
    *
@@ -283,6 +295,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.shopping.merchant.accounts.v1beta.Table> getSubtablesList() {
     return subtables_;
   }
+
   /**
    *
    *
@@ -300,6 +313,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       getSubtablesOrBuilderList() {
     return subtables_;
   }
+
   /**
    *
    *
@@ -316,6 +330,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
   public int getSubtablesCount() {
     return subtables_.size();
   }
+
   /**
    *
    *
@@ -332,6 +347,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.merchant.accounts.v1beta.Table getSubtables(int index) {
     return subtables_.get(index);
   }
+
   /**
    *
    *
@@ -354,6 +370,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.CarrierRate> carrierRates_;
+
   /**
    *
    *
@@ -371,6 +388,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       getCarrierRatesList() {
     return carrierRates_;
   }
+
   /**
    *
    *
@@ -388,6 +406,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       getCarrierRatesOrBuilderList() {
     return carrierRates_;
   }
+
   /**
    *
    *
@@ -404,6 +423,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
   public int getCarrierRatesCount() {
     return carrierRates_.size();
   }
+
   /**
    *
    *
@@ -420,6 +440,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.merchant.accounts.v1beta.CarrierRate getCarrierRates(int index) {
     return carrierRates_.get(index);
   }
+
   /**
    *
    *
@@ -442,6 +463,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -458,6 +480,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -482,6 +505,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -740,6 +764,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1129,6 +1154,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -1150,6 +1176,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       applicableShippingLabels_.makeImmutable();
       return applicableShippingLabels_;
     }
+
     /**
      *
      *
@@ -1170,6 +1197,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
     public int getApplicableShippingLabelsCount() {
       return applicableShippingLabels_.size();
     }
+
     /**
      *
      *
@@ -1191,6 +1219,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getApplicableShippingLabels(int index) {
       return applicableShippingLabels_.get(index);
     }
+
     /**
      *
      *
@@ -1212,6 +1241,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getApplicableShippingLabelsBytes(int index) {
       return applicableShippingLabels_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1241,6 +1271,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1269,6 +1300,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1294,6 +1326,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1351,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1354,6 +1388,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.Value.Builder,
             com.google.shopping.merchant.accounts.v1beta.ValueOrBuilder>
         singleValueBuilder_;
+
     /**
      *
      *
@@ -1369,6 +1404,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSingleValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1390,6 +1426,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return singleValueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1413,6 +1450,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1434,6 +1472,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1502,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1483,6 +1523,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1498,6 +1539,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSingleValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1517,6 +1559,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
             : singleValue_;
       }
     }
+
     /**
      *
      *
@@ -1550,6 +1593,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.Table.Builder,
             com.google.shopping.merchant.accounts.v1beta.TableOrBuilder>
         mainTableBuilder_;
+
     /**
      *
      *
@@ -1566,6 +1610,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMainTable() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1588,6 +1633,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return mainTableBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1612,6 +1658,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1634,6 +1681,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1664,6 +1712,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1685,6 +1734,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1701,6 +1751,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMainTableFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1721,6 +1772,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
             : mainTable_;
       }
     }
+
     /**
      *
      *
@@ -1785,6 +1837,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return subtablesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1804,6 +1857,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return subtablesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1823,6 +1877,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return subtablesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1849,6 +1904,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1872,6 +1928,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1897,6 +1954,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1923,6 +1981,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1946,6 +2005,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1969,6 +2029,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1992,6 +2053,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2014,6 +2076,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2036,6 +2099,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2052,6 +2116,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSubtablesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2072,6 +2137,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return subtablesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2092,6 +2158,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(subtables_);
       }
     }
+
     /**
      *
      *
@@ -2108,6 +2175,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       return getSubtablesFieldBuilder()
           .addBuilder(com.google.shopping.merchant.accounts.v1beta.Table.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2126,6 +2194,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.shopping.merchant.accounts.v1beta.Table.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2198,6 +2267,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return carrierRatesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2217,6 +2287,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return carrierRatesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2236,6 +2307,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return carrierRatesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2262,6 +2334,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2286,6 +2359,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2311,6 +2385,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2337,6 +2412,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2360,6 +2436,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2384,6 +2461,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2408,6 +2486,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2430,6 +2509,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2452,6 +2532,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2468,6 +2549,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getCarrierRatesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2488,6 +2570,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return carrierRatesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2509,6 +2592,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(carrierRates_);
       }
     }
+
     /**
      *
      *
@@ -2527,6 +2611,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.shopping.merchant.accounts.v1beta.CarrierRate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2545,6 +2630,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.shopping.merchant.accounts.v1beta.CarrierRate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2580,6 +2666,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2595,6 +2682,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2618,6 +2706,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2641,6 +2730,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2663,6 +2753,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2681,6 +2772,7 @@ public final class RateGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

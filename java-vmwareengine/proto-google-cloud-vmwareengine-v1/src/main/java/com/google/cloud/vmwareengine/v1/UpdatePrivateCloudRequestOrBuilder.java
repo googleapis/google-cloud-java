@@ -38,6 +38,7 @@ public interface UpdatePrivateCloudRequestOrBuilder
    * @return Whether the privateCloud field is set.
    */
   boolean hasPrivateCloud();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdatePrivateCloudRequestOrBuilder
    * @return The privateCloud.
    */
   com.google.cloud.vmwareengine.v1.PrivateCloud getPrivateCloud();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface UpdatePrivateCloudRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpdatePrivateCloudRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface UpdatePrivateCloudRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

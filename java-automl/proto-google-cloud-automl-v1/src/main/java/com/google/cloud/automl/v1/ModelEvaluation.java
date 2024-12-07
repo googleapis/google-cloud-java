@@ -33,6 +33,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.ModelEvaluation)
     ModelEvaluationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ModelEvaluation.newBuilder() to construct.
   private ModelEvaluation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,6 +87,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     private MetricsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -125,6 +127,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CLASSIFICATION_EVALUATION_METRICS_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   public boolean hasClassificationEvaluationMetrics() {
     return metricsCase_ == 8;
   }
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -193,6 +198,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TRANSLATION_EVALUATION_METRICS_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -209,6 +215,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   public boolean hasTranslationEvaluationMetrics() {
     return metricsCase_ == 9;
   }
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.automl.v1.TranslationEvaluationMetrics.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IMAGE_OBJECT_DETECTION_EVALUATION_METRICS_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -265,6 +274,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   public boolean hasImageObjectDetectionEvaluationMetrics() {
     return metricsCase_ == 12;
   }
+
   /**
    *
    *
@@ -286,6 +296,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -307,6 +318,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TEXT_SENTIMENT_EVALUATION_METRICS_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -324,6 +336,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   public boolean hasTextSentimentEvaluationMetrics() {
     return metricsCase_ == 11;
   }
+
   /**
    *
    *
@@ -345,6 +358,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -366,6 +380,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TEXT_EXTRACTION_EVALUATION_METRICS_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -383,6 +398,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   public boolean hasTextExtractionEvaluationMetrics() {
     return metricsCase_ == 13;
   }
+
   /**
    *
    *
@@ -404,6 +420,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -428,6 +445,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -453,6 +471,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -483,6 +502,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object annotationSpecId_ = "";
+
   /**
    *
    *
@@ -513,6 +533,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -548,6 +569,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -580,6 +602,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -615,6 +638,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -630,6 +654,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -645,6 +670,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -661,6 +687,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
 
   public static final int EVALUATED_EXAMPLE_COUNT_FIELD_NUMBER = 6;
   private int evaluatedExampleCount_ = 0;
+
   /**
    *
    *
@@ -975,6 +1002,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1357,6 +1385,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.automl.v1.ClassificationEvaluationMetrics.Builder,
             com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder>
         classificationEvaluationMetricsBuilder_;
+
     /**
      *
      *
@@ -1377,6 +1406,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     public boolean hasClassificationEvaluationMetrics() {
       return metricsCase_ == 8;
     }
+
     /**
      *
      *
@@ -1408,6 +1438,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1436,6 +1467,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1461,6 +1493,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1501,6 +1534,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1531,6 +1565,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1549,6 +1584,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         getClassificationEvaluationMetricsBuilder() {
       return getClassificationEvaluationMetricsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1575,6 +1611,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1619,6 +1656,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.automl.v1.TranslationEvaluationMetrics.Builder,
             com.google.cloud.automl.v1.TranslationEvaluationMetricsOrBuilder>
         translationEvaluationMetricsBuilder_;
+
     /**
      *
      *
@@ -1636,6 +1674,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     public boolean hasTranslationEvaluationMetrics() {
       return metricsCase_ == 9;
     }
+
     /**
      *
      *
@@ -1664,6 +1703,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.automl.v1.TranslationEvaluationMetrics.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1689,6 +1729,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -1711,6 +1752,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -1747,6 +1789,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -1774,6 +1817,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1789,6 +1833,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         getTranslationEvaluationMetricsBuilder() {
       return getTranslationEvaluationMetricsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1812,6 +1857,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.automl.v1.TranslationEvaluationMetrics.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1852,6 +1898,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics.Builder,
             com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetricsOrBuilder>
         imageObjectDetectionEvaluationMetricsBuilder_;
+
     /**
      *
      *
@@ -1869,6 +1916,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     public boolean hasImageObjectDetectionEvaluationMetrics() {
       return metricsCase_ == 12;
     }
+
     /**
      *
      *
@@ -1899,6 +1947,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1924,6 +1973,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -1946,6 +1996,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -1983,6 +2034,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -2010,6 +2062,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2025,6 +2078,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         getImageObjectDetectionEvaluationMetricsBuilder() {
       return getImageObjectDetectionEvaluationMetricsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2049,6 +2103,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2090,6 +2145,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.Builder,
             com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder>
         textSentimentEvaluationMetricsBuilder_;
+
     /**
      *
      *
@@ -2107,6 +2163,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     public boolean hasTextSentimentEvaluationMetrics() {
       return metricsCase_ == 11;
     }
+
     /**
      *
      *
@@ -2135,6 +2192,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2160,6 +2218,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2182,6 +2241,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2218,6 +2278,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2245,6 +2306,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2260,6 +2322,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         getTextSentimentEvaluationMetricsBuilder() {
       return getTextSentimentEvaluationMetricsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2283,6 +2346,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2323,6 +2387,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.Builder,
             com.google.cloud.automl.v1.TextExtractionEvaluationMetricsOrBuilder>
         textExtractionEvaluationMetricsBuilder_;
+
     /**
      *
      *
@@ -2340,6 +2405,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     public boolean hasTextExtractionEvaluationMetrics() {
       return metricsCase_ == 13;
     }
+
     /**
      *
      *
@@ -2368,6 +2434,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2393,6 +2460,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -2415,6 +2483,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -2452,6 +2521,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metricsCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -2479,6 +2549,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2494,6 +2565,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         getTextExtractionEvaluationMetricsBuilder() {
       return getTextExtractionEvaluationMetricsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2517,6 +2589,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2554,6 +2627,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2578,6 +2652,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2602,6 +2677,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2625,6 +2701,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2644,6 +2721,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2670,6 +2748,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object annotationSpecId_ = "";
+
     /**
      *
      *
@@ -2699,6 +2778,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2728,6 +2808,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2756,6 +2837,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2780,6 +2862,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2811,6 +2894,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2842,6 +2926,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2873,6 +2958,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2903,6 +2989,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2929,6 +3016,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2967,6 +3055,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2981,6 +3070,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3001,6 +3091,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3023,6 +3114,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3042,6 +3134,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3069,6 +3162,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3088,6 +3182,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3102,6 +3197,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3120,6 +3216,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3147,6 +3244,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
 
     private int evaluatedExampleCount_;
+
     /**
      *
      *
@@ -3169,6 +3267,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     public int getEvaluatedExampleCount() {
       return evaluatedExampleCount_;
     }
+
     /**
      *
      *
@@ -3195,6 +3294,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

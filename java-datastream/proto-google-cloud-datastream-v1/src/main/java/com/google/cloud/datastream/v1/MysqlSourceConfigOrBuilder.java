@@ -36,6 +36,7 @@ public interface MysqlSourceConfigOrBuilder
    * @return Whether the includeObjects field is set.
    */
   boolean hasIncludeObjects();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MysqlSourceConfigOrBuilder
    * @return The includeObjects.
    */
   com.google.cloud.datastream.v1.MysqlRdbms getIncludeObjects();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface MysqlSourceConfigOrBuilder
    * @return Whether the excludeObjects field is set.
    */
   boolean hasExcludeObjects();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface MysqlSourceConfigOrBuilder
    * @return The excludeObjects.
    */
   com.google.cloud.datastream.v1.MysqlRdbms getExcludeObjects();
+
   /**
    *
    *

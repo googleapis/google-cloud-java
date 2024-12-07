@@ -50,6 +50,7 @@ public interface ShippingDimensionOrBuilder
    * @return The unit.
    */
   java.lang.String getUnit();
+
   /**
    *
    *

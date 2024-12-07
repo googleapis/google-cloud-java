@@ -35,6 +35,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.TrainCustomModelRequest)
     TrainCustomModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TrainCustomModelRequest.newBuilder() to construct.
   private TrainCustomModelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,6 +91,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      * @return The corpusDataPath.
      */
     java.lang.String getCorpusDataPath();
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      * @return The queryDataPath.
      */
     java.lang.String getQueryDataPath();
+
     /**
      *
      *
@@ -165,6 +168,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      * @return The trainDataPath.
      */
     java.lang.String getTrainDataPath();
+
     /**
      *
      *
@@ -200,6 +204,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      * @return The testDataPath.
      */
     java.lang.String getTestDataPath();
+
     /**
      *
      *
@@ -214,6 +219,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getTestDataPathBytes();
   }
+
   /**
    *
    *
@@ -229,6 +235,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.TrainCustomModelRequest.GcsTrainingInput)
       GcsTrainingInputOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GcsTrainingInput.newBuilder() to construct.
     private GcsTrainingInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -268,6 +275,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object corpusDataPath_ = "";
+
     /**
      *
      *
@@ -297,6 +305,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -331,6 +340,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object queryDataPath_ = "";
+
     /**
      *
      *
@@ -359,6 +369,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -392,6 +403,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object trainDataPath_ = "";
+
     /**
      *
      *
@@ -424,6 +436,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -461,6 +474,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object testDataPath_ = "";
+
     /**
      *
      *
@@ -485,6 +499,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -707,6 +722,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -957,6 +973,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object corpusDataPath_ = "";
+
       /**
        *
        *
@@ -985,6 +1002,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1013,6 +1031,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1040,6 +1059,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1063,6 +1083,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1093,6 +1114,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       }
 
       private java.lang.Object queryDataPath_ = "";
+
       /**
        *
        *
@@ -1120,6 +1142,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1147,6 +1170,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1173,6 +1197,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1195,6 +1220,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1224,6 +1250,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       }
 
       private java.lang.Object trainDataPath_ = "";
+
       /**
        *
        *
@@ -1255,6 +1282,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1286,6 +1314,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1316,6 +1345,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1342,6 +1372,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1375,6 +1406,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       }
 
       private java.lang.Object testDataPath_ = "";
+
       /**
        *
        *
@@ -1398,6 +1430,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1421,6 +1454,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1443,6 +1477,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1461,6 +1496,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1571,6 +1607,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
     private TrainingInputCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1602,6 +1639,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
   }
 
   public static final int GCS_TRAINING_INPUT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1619,6 +1657,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
   public boolean hasGcsTrainingInput() {
     return trainingInputCase_ == 2;
   }
+
   /**
    *
    *
@@ -1642,6 +1681,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
     return com.google.cloud.discoveryengine.v1alpha.TrainCustomModelRequest.GcsTrainingInput
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1668,6 +1708,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataStore_ = "";
+
   /**
    *
    *
@@ -1695,6 +1736,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -1727,6 +1769,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelType_ = "";
+
   /**
    *
    *
@@ -1752,6 +1795,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -1780,6 +1824,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
 
   public static final int ERROR_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig errorConfig_;
+
   /**
    *
    *
@@ -1796,6 +1841,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
   public boolean hasErrorConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1814,6 +1860,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         ? com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig.getDefaultInstance()
         : errorConfig_;
   }
+
   /**
    *
    *
@@ -1836,6 +1883,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelId_ = "";
+
   /**
    *
    *
@@ -1859,6 +1907,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -2104,6 +2153,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2407,6 +2457,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
             com.google.cloud.discoveryengine.v1alpha.TrainCustomModelRequest
                 .GcsTrainingInputOrBuilder>
         gcsTrainingInputBuilder_;
+
     /**
      *
      *
@@ -2424,6 +2475,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
     public boolean hasGcsTrainingInput() {
       return trainingInputCase_ == 2;
     }
+
     /**
      *
      *
@@ -2455,6 +2507,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2480,6 +2533,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       trainingInputCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2503,6 +2557,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       trainingInputCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2543,6 +2598,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       trainingInputCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2570,6 +2626,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2585,6 +2642,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         getGcsTrainingInputBuilder() {
       return getGcsTrainingInputFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2611,6 +2669,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2654,6 +2713,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object dataStore_ = "";
+
     /**
      *
      *
@@ -2680,6 +2740,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2706,6 +2767,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2731,6 +2793,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2752,6 +2815,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2780,6 +2844,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object modelType_ = "";
+
     /**
      *
      *
@@ -2804,6 +2869,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2828,6 +2894,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2851,6 +2918,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2870,6 +2938,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2901,6 +2970,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
             com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig.Builder,
             com.google.cloud.discoveryengine.v1alpha.ImportErrorConfigOrBuilder>
         errorConfigBuilder_;
+
     /**
      *
      *
@@ -2916,6 +2986,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
     public boolean hasErrorConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2937,6 +3008,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         return errorConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2961,6 +3033,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2982,6 +3055,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3013,6 +3087,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3033,6 +3108,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3049,6 +3125,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3069,6 +3146,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
             : errorConfig_;
       }
     }
+
     /**
      *
      *
@@ -3097,6 +3175,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object modelId_ = "";
+
     /**
      *
      *
@@ -3119,6 +3198,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3141,6 +3221,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3162,6 +3243,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3179,6 +3261,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

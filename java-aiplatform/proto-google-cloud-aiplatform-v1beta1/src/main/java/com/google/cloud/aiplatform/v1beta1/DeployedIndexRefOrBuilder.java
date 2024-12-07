@@ -38,6 +38,7 @@ public interface DeployedIndexRefOrBuilder
    * @return The indexEndpoint.
    */
   java.lang.String getIndexEndpoint();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface DeployedIndexRefOrBuilder
    * @return The deployedIndexId.
    */
   java.lang.String getDeployedIndexId();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DeployedIndexRefOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

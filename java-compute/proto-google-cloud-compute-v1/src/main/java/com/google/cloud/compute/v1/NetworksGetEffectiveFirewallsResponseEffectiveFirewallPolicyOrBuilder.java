@@ -36,6 +36,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * @return Whether the displayName field is set.
    */
   boolean hasDisplayName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
    */
   java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> getRulesList();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
    */
   com.google.cloud.compute.v1.FirewallPolicyRule getRules(int index);
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -164,6 +172,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    */
   java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
       getRulesOrBuilderList();
+
   /**
    *
    *
@@ -187,6 +196,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * @return Whether the shortName field is set.
    */
   boolean hasShortName();
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * @return The shortName.
    */
   java.lang.String getShortName();
+
   /**
    *
    *
@@ -225,6 +236,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -238,6 +250,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

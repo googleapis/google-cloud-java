@@ -39,6 +39,7 @@ public interface EdgeClusterOrBuilder
    * @return The resourceLink.
    */
   java.lang.String getResourceLink();
+
   /**
    *
    *

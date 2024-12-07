@@ -39,6 +39,7 @@ public interface TermsOfServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface TermsOfServiceOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface TermsOfServiceOrBuilder
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface TermsOfServiceOrBuilder
    * @return Whether the fileUri field is set.
    */
   boolean hasFileUri();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface TermsOfServiceOrBuilder
    * @return The fileUri.
    */
   java.lang.String getFileUri();
+
   /**
    *
    *

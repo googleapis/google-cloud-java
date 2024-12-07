@@ -33,6 +33,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AccessConfig)
     AccessConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AccessConfig.newBuilder() to construct.
   private AccessConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -143,6 +144,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_TIER_VALUE = 0;
+
     /**
      *
      *
@@ -153,6 +155,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>FIXED_STANDARD = 310464328;</code>
      */
     public static final int FIXED_STANDARD_VALUE = 310464328;
+
     /**
      *
      *
@@ -163,6 +166,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>PREMIUM = 399530551;</code>
      */
     public static final int PREMIUM_VALUE = 399530551;
+
     /**
      *
      *
@@ -173,6 +177,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>STANDARD = 484642493;</code>
      */
     public static final int STANDARD_VALUE = 484642493;
+
     /**
      *
      *
@@ -308,8 +313,10 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
+
     /** <code>DIRECT_IPV6 = 4397213;</code> */
     public static final int DIRECT_IPV6_VALUE = 4397213;
+
     /** <code>ONE_TO_ONE_NAT = 84090205;</code> */
     public static final int ONE_TO_ONE_NAT_VALUE = 84090205;
 
@@ -401,6 +408,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalIpv6_ = "";
+
   /**
    *
    *
@@ -416,6 +424,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExternalIpv6() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -439,6 +448,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -465,6 +475,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXTERNAL_IPV6_PREFIX_LENGTH_FIELD_NUMBER = 425672143;
   private int externalIpv6PrefixLength_ = 0;
+
   /**
    *
    *
@@ -480,6 +491,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExternalIpv6PrefixLength() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -500,6 +512,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -515,6 +528,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKind() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -538,6 +552,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -566,6 +581,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -581,6 +597,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -604,6 +621,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -632,6 +650,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object natIP_ = "";
+
   /**
    *
    *
@@ -647,6 +666,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNatIP() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -670,6 +690,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -698,6 +719,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkTier_ = "";
+
   /**
    *
    *
@@ -714,6 +736,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNetworkTier() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -738,6 +761,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -767,6 +791,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicPtrDomainName_ = "";
+
   /**
    *
    *
@@ -782,6 +807,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPublicPtrDomainName() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -805,6 +831,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -833,6 +860,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object securityPolicy_ = "";
+
   /**
    *
    *
@@ -848,6 +876,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSecurityPolicy() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -871,6 +900,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -897,6 +927,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SET_PUBLIC_PTR_FIELD_NUMBER = 523870229;
   private boolean setPublicPtr_ = false;
+
   /**
    *
    *
@@ -912,6 +943,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSetPublicPtr() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -932,6 +964,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -948,6 +981,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasType() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -972,6 +1006,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1289,6 +1324,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1615,6 +1651,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object externalIpv6_ = "";
+
     /**
      *
      *
@@ -1629,6 +1666,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExternalIpv6() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1651,6 +1689,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1673,6 +1712,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1694,6 +1734,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1711,6 +1752,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1735,6 +1777,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int externalIpv6PrefixLength_;
+
     /**
      *
      *
@@ -1750,6 +1793,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExternalIpv6PrefixLength() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1765,6 +1809,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public int getExternalIpv6PrefixLength() {
       return externalIpv6PrefixLength_;
     }
+
     /**
      *
      *
@@ -1784,6 +1829,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1803,6 +1849,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1817,6 +1864,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1839,6 +1887,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1861,6 +1910,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1882,6 +1932,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1899,6 +1950,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1923,6 +1975,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1937,6 +1990,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1959,6 +2013,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1981,6 +2036,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2002,6 +2058,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2019,6 +2076,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2043,6 +2101,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object natIP_ = "";
+
     /**
      *
      *
@@ -2057,6 +2116,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNatIP() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2079,6 +2139,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2101,6 +2162,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2122,6 +2184,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2139,6 +2202,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2163,6 +2227,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object networkTier_ = "";
+
     /**
      *
      *
@@ -2178,6 +2243,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetworkTier() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2201,6 +2267,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2224,6 +2291,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2246,6 +2314,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2264,6 +2333,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2289,6 +2359,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object publicPtrDomainName_ = "";
+
     /**
      *
      *
@@ -2303,6 +2374,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPublicPtrDomainName() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2325,6 +2397,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2347,6 +2420,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2368,6 +2442,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2385,6 +2460,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2409,6 +2485,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object securityPolicy_ = "";
+
     /**
      *
      *
@@ -2423,6 +2500,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSecurityPolicy() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2445,6 +2523,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2467,6 +2546,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2488,6 +2568,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2505,6 +2586,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2529,6 +2611,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean setPublicPtr_;
+
     /**
      *
      *
@@ -2544,6 +2627,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSetPublicPtr() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2559,6 +2643,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getSetPublicPtr() {
       return setPublicPtr_;
     }
+
     /**
      *
      *
@@ -2578,6 +2663,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2597,6 +2683,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -2612,6 +2699,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasType() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2635,6 +2723,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2658,6 +2747,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2680,6 +2770,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2698,6 +2789,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

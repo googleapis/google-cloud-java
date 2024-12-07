@@ -38,6 +38,7 @@ public interface CryptoKeyConfigOrBuilder
    * @return The keyReference.
    */
   java.lang.String getKeyReference();
+
   /**
    *
    *

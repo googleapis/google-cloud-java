@@ -94,6 +94,7 @@ public enum VehicleEmissionType implements com.google.protobuf.ProtocolMessageEn
    * <code>VEHICLE_EMISSION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int VEHICLE_EMISSION_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -104,6 +105,7 @@ public enum VehicleEmissionType implements com.google.protobuf.ProtocolMessageEn
    * <code>GASOLINE = 1;</code>
    */
   public static final int GASOLINE_VALUE = 1;
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public enum VehicleEmissionType implements com.google.protobuf.ProtocolMessageEn
    * <code>ELECTRIC = 2;</code>
    */
   public static final int ELECTRIC_VALUE = 2;
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public enum VehicleEmissionType implements com.google.protobuf.ProtocolMessageEn
    * <code>HYBRID = 3;</code>
    */
   public static final int HYBRID_VALUE = 3;
+
   /**
    *
    *

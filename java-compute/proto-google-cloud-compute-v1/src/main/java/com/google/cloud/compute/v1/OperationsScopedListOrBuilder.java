@@ -34,6 +34,7 @@ public interface OperationsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Operation operations = 4184044;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Operation> getOperationsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface OperationsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Operation operations = 4184044;</code>
    */
   com.google.cloud.compute.v1.Operation getOperations(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface OperationsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Operation operations = 4184044;</code>
    */
   int getOperationsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface OperationsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.OperationOrBuilder>
       getOperationsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface OperationsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface OperationsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

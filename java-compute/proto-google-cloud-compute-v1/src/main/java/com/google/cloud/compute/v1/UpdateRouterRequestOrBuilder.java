@@ -38,6 +38,7 @@ public interface UpdateRouterRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface UpdateRouterRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface UpdateRouterRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface UpdateRouterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface UpdateRouterRequestOrBuilder
    * @return The router.
    */
   java.lang.String getRouter();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface UpdateRouterRequestOrBuilder
    * @return Whether the routerResource field is set.
    */
   boolean hasRouterResource();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface UpdateRouterRequestOrBuilder
    * @return The routerResource.
    */
   com.google.cloud.compute.v1.Router getRouterResource();
+
   /**
    *
    *

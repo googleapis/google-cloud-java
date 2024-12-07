@@ -34,6 +34,7 @@ public interface ListMetadataSchemasResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.MetadataSchema metadata_schemas = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.MetadataSchema> getMetadataSchemasList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListMetadataSchemasResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.MetadataSchema metadata_schemas = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.MetadataSchema getMetadataSchemas(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListMetadataSchemasResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.MetadataSchema metadata_schemas = 1;</code>
    */
   int getMetadataSchemasCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListMetadataSchemasResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MetadataSchemaOrBuilder>
       getMetadataSchemasOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface ListMetadataSchemasResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface DeleteInstanceGroupRequestOrBuilder
    * @return The instanceGroup.
    */
   java.lang.String getInstanceGroup();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DeleteInstanceGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DeleteInstanceGroupRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface DeleteInstanceGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface DeleteInstanceGroupRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

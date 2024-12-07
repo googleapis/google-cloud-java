@@ -49,6 +49,7 @@ public interface RetryAttemptOrBuilder
    * @return Whether the wait field is set.
    */
   boolean hasWait();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RetryAttemptOrBuilder
    * @return The wait.
    */
   com.google.protobuf.Duration getWait();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface RetryAttemptOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface RetryAttemptOrBuilder
    * @return The stateDesc.
    */
   java.lang.String getStateDesc();
+
   /**
    *
    *

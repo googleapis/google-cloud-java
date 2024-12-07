@@ -39,6 +39,7 @@ public interface CreateUserRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateUserRequestOrBuilder
    * @return The userId.
    */
   java.lang.String getUserId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateUserRequestOrBuilder
    * @return Whether the user field is set.
    */
   boolean hasUser();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateUserRequestOrBuilder
    * @return The user.
    */
   com.google.shopping.merchant.accounts.v1beta.User getUser();
+
   /**
    *
    *

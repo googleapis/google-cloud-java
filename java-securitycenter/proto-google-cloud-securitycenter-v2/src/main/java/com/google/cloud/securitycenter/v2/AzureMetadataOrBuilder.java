@@ -38,6 +38,7 @@ public interface AzureMetadataOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v2.AzureMetadata.AzureManagementGroup>
       getManagementGroupsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AzureMetadataOrBuilder
    */
   com.google.cloud.securitycenter.v2.AzureMetadata.AzureManagementGroup getManagementGroups(
       int index);
+
   /**
    *
    *
@@ -65,6 +67,7 @@ public interface AzureMetadataOrBuilder
    * </code>
    */
   int getManagementGroupsCount();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface AzureMetadataOrBuilder
   java.util.List<
           ? extends com.google.cloud.securitycenter.v2.AzureMetadata.AzureManagementGroupOrBuilder>
       getManagementGroupsOrBuilderList();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface AzureMetadataOrBuilder
    * @return Whether the subscription field is set.
    */
   boolean hasSubscription();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface AzureMetadataOrBuilder
    * @return The subscription.
    */
   com.google.cloud.securitycenter.v2.AzureMetadata.AzureSubscription getSubscription();
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public interface AzureMetadataOrBuilder
    * @return Whether the resourceGroup field is set.
    */
   boolean hasResourceGroup();
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public interface AzureMetadataOrBuilder
    * @return The resourceGroup.
    */
   com.google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroup getResourceGroup();
+
   /**
    *
    *

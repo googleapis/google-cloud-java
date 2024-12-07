@@ -42,6 +42,7 @@ public interface SettingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface SettingOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface SettingOrBuilder
    * @return The metadata.
    */
   com.google.cloud.resourcesettings.v1.SettingMetadata getMetadata();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface SettingOrBuilder
    * @return Whether the localValue field is set.
    */
   boolean hasLocalValue();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface SettingOrBuilder
    * @return The localValue.
    */
   com.google.cloud.resourcesettings.v1.Value getLocalValue();
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public interface SettingOrBuilder
    * @return Whether the effectiveValue field is set.
    */
   boolean hasEffectiveValue();
+
   /**
    *
    *
@@ -212,6 +218,7 @@ public interface SettingOrBuilder
    * @return The effectiveValue.
    */
   com.google.cloud.resourcesettings.v1.Value getEffectiveValue();
+
   /**
    *
    *
@@ -255,6 +262,7 @@ public interface SettingOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

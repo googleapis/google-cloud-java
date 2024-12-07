@@ -36,6 +36,7 @@ public interface TripOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TripOrBuilder
    * @return The vehicleId.
    */
   java.lang.String getVehicleId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface TripOrBuilder
    * @return The enum numeric value on the wire for tripStatus.
    */
   int getTripStatusValue();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface TripOrBuilder
    * @return The enum numeric value on the wire for tripType.
    */
   int getTripTypeValue();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface TripOrBuilder
    * @return Whether the pickupPoint field is set.
    */
   boolean hasPickupPoint();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface TripOrBuilder
    * @return The pickupPoint.
    */
   com.google.maps.fleetengine.v1.TerminalLocation getPickupPoint();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface TripOrBuilder
    * @return Whether the actualPickupPoint field is set.
    */
   boolean hasActualPickupPoint();
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public interface TripOrBuilder
    * @return The actualPickupPoint.
    */
   com.google.maps.fleetengine.v1.StopLocation getActualPickupPoint();
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public interface TripOrBuilder
    * @return Whether the actualPickupArrivalPoint field is set.
    */
   boolean hasActualPickupArrivalPoint();
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public interface TripOrBuilder
    * @return The actualPickupArrivalPoint.
    */
   com.google.maps.fleetengine.v1.StopLocation getActualPickupArrivalPoint();
+
   /**
    *
    *
@@ -270,6 +280,7 @@ public interface TripOrBuilder
    * @return Whether the pickupTime field is set.
    */
   boolean hasPickupTime();
+
   /**
    *
    *
@@ -284,6 +295,7 @@ public interface TripOrBuilder
    * @return The pickupTime.
    */
   com.google.protobuf.Timestamp getPickupTime();
+
   /**
    *
    *
@@ -309,6 +321,7 @@ public interface TripOrBuilder
    * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
    */
   java.util.List<com.google.maps.fleetengine.v1.TerminalLocation> getIntermediateDestinationsList();
+
   /**
    *
    *
@@ -321,6 +334,7 @@ public interface TripOrBuilder
    * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
    */
   com.google.maps.fleetengine.v1.TerminalLocation getIntermediateDestinations(int index);
+
   /**
    *
    *
@@ -333,6 +347,7 @@ public interface TripOrBuilder
    * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
    */
   int getIntermediateDestinationsCount();
+
   /**
    *
    *
@@ -346,6 +361,7 @@ public interface TripOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.TerminalLocationOrBuilder>
       getIntermediateDestinationsOrBuilderList();
+
   /**
    *
    *
@@ -375,6 +391,7 @@ public interface TripOrBuilder
    * @return Whether the intermediateDestinationsVersion field is set.
    */
   boolean hasIntermediateDestinationsVersion();
+
   /**
    *
    *
@@ -390,6 +407,7 @@ public interface TripOrBuilder
    * @return The intermediateDestinationsVersion.
    */
   com.google.protobuf.Timestamp getIntermediateDestinationsVersion();
+
   /**
    *
    *
@@ -438,6 +456,7 @@ public interface TripOrBuilder
    */
   java.util.List<com.google.maps.fleetengine.v1.StopLocation>
       getActualIntermediateDestinationArrivalPointsList();
+
   /**
    *
    *
@@ -454,6 +473,7 @@ public interface TripOrBuilder
    */
   com.google.maps.fleetengine.v1.StopLocation getActualIntermediateDestinationArrivalPoints(
       int index);
+
   /**
    *
    *
@@ -469,6 +489,7 @@ public interface TripOrBuilder
    * </code>
    */
   int getActualIntermediateDestinationArrivalPointsCount();
+
   /**
    *
    *
@@ -485,6 +506,7 @@ public interface TripOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.StopLocationOrBuilder>
       getActualIntermediateDestinationArrivalPointsOrBuilderList();
+
   /**
    *
    *
@@ -517,6 +539,7 @@ public interface TripOrBuilder
    */
   java.util.List<com.google.maps.fleetengine.v1.StopLocation>
       getActualIntermediateDestinationsList();
+
   /**
    *
    *
@@ -531,6 +554,7 @@ public interface TripOrBuilder
    * </code>
    */
   com.google.maps.fleetengine.v1.StopLocation getActualIntermediateDestinations(int index);
+
   /**
    *
    *
@@ -545,6 +569,7 @@ public interface TripOrBuilder
    * </code>
    */
   int getActualIntermediateDestinationsCount();
+
   /**
    *
    *
@@ -560,6 +585,7 @@ public interface TripOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.StopLocationOrBuilder>
       getActualIntermediateDestinationsOrBuilderList();
+
   /**
    *
    *
@@ -588,6 +614,7 @@ public interface TripOrBuilder
    * @return Whether the dropoffPoint field is set.
    */
   boolean hasDropoffPoint();
+
   /**
    *
    *
@@ -600,6 +627,7 @@ public interface TripOrBuilder
    * @return The dropoffPoint.
    */
   com.google.maps.fleetengine.v1.TerminalLocation getDropoffPoint();
+
   /**
    *
    *
@@ -627,6 +655,7 @@ public interface TripOrBuilder
    * @return Whether the actualDropoffPoint field is set.
    */
   boolean hasActualDropoffPoint();
+
   /**
    *
    *
@@ -643,6 +672,7 @@ public interface TripOrBuilder
    * @return The actualDropoffPoint.
    */
   com.google.maps.fleetengine.v1.StopLocation getActualDropoffPoint();
+
   /**
    *
    *
@@ -673,6 +703,7 @@ public interface TripOrBuilder
    * @return Whether the dropoffTime field is set.
    */
   boolean hasDropoffTime();
+
   /**
    *
    *
@@ -688,6 +719,7 @@ public interface TripOrBuilder
    * @return The dropoffTime.
    */
   com.google.protobuf.Timestamp getDropoffTime();
+
   /**
    *
    *
@@ -715,6 +747,7 @@ public interface TripOrBuilder
    * </code>
    */
   java.util.List<com.google.maps.fleetengine.v1.TripWaypoint> getRemainingWaypointsList();
+
   /**
    *
    *
@@ -728,6 +761,7 @@ public interface TripOrBuilder
    * </code>
    */
   com.google.maps.fleetengine.v1.TripWaypoint getRemainingWaypoints(int index);
+
   /**
    *
    *
@@ -741,6 +775,7 @@ public interface TripOrBuilder
    * </code>
    */
   int getRemainingWaypointsCount();
+
   /**
    *
    *
@@ -755,6 +790,7 @@ public interface TripOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.TripWaypointOrBuilder>
       getRemainingWaypointsOrBuilderList();
+
   /**
    *
    *
@@ -784,6 +820,7 @@ public interface TripOrBuilder
    * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
    */
   java.util.List<com.google.maps.fleetengine.v1.TripWaypoint> getVehicleWaypointsList();
+
   /**
    *
    *
@@ -799,6 +836,7 @@ public interface TripOrBuilder
    * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
    */
   com.google.maps.fleetengine.v1.TripWaypoint getVehicleWaypoints(int index);
+
   /**
    *
    *
@@ -814,6 +852,7 @@ public interface TripOrBuilder
    * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
    */
   int getVehicleWaypointsCount();
+
   /**
    *
    *
@@ -830,6 +869,7 @@ public interface TripOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.TripWaypointOrBuilder>
       getVehicleWaypointsOrBuilderList();
+
   /**
    *
    *
@@ -859,6 +899,7 @@ public interface TripOrBuilder
    * </code>
    */
   java.util.List<com.google.type.LatLng> getRouteList();
+
   /**
    *
    *
@@ -872,6 +913,7 @@ public interface TripOrBuilder
    * </code>
    */
   com.google.type.LatLng getRoute(int index);
+
   /**
    *
    *
@@ -885,6 +927,7 @@ public interface TripOrBuilder
    * </code>
    */
   int getRouteCount();
+
   /**
    *
    *
@@ -898,6 +941,7 @@ public interface TripOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.type.LatLngOrBuilder> getRouteOrBuilderList();
+
   /**
    *
    *
@@ -927,6 +971,7 @@ public interface TripOrBuilder
    * @return The currentRouteSegment.
    */
   java.lang.String getCurrentRouteSegment();
+
   /**
    *
    *
@@ -960,6 +1005,7 @@ public interface TripOrBuilder
    * @return Whether the currentRouteSegmentVersion field is set.
    */
   boolean hasCurrentRouteSegmentVersion();
+
   /**
    *
    *
@@ -977,6 +1023,7 @@ public interface TripOrBuilder
    * @return The currentRouteSegmentVersion.
    */
   com.google.protobuf.Timestamp getCurrentRouteSegmentVersion();
+
   /**
    *
    *
@@ -1011,6 +1058,7 @@ public interface TripOrBuilder
    * @return Whether the currentRouteSegmentTraffic field is set.
    */
   boolean hasCurrentRouteSegmentTraffic();
+
   /**
    *
    *
@@ -1029,6 +1077,7 @@ public interface TripOrBuilder
    * @return The currentRouteSegmentTraffic.
    */
   com.google.maps.fleetengine.v1.ConsumableTrafficPolyline getCurrentRouteSegmentTraffic();
+
   /**
    *
    *
@@ -1065,6 +1114,7 @@ public interface TripOrBuilder
    * @return Whether the currentRouteSegmentTrafficVersion field is set.
    */
   boolean hasCurrentRouteSegmentTrafficVersion();
+
   /**
    *
    *
@@ -1083,6 +1133,7 @@ public interface TripOrBuilder
    * @return The currentRouteSegmentTrafficVersion.
    */
   com.google.protobuf.Timestamp getCurrentRouteSegmentTrafficVersion();
+
   /**
    *
    *
@@ -1114,6 +1165,7 @@ public interface TripOrBuilder
    * @return Whether the currentRouteSegmentEndPoint field is set.
    */
   boolean hasCurrentRouteSegmentEndPoint();
+
   /**
    *
    *
@@ -1128,6 +1180,7 @@ public interface TripOrBuilder
    * @return The currentRouteSegmentEndPoint.
    */
   com.google.maps.fleetengine.v1.TripWaypoint getCurrentRouteSegmentEndPoint();
+
   /**
    *
    *
@@ -1157,6 +1210,7 @@ public interface TripOrBuilder
    * @return Whether the remainingDistanceMeters field is set.
    */
   boolean hasRemainingDistanceMeters();
+
   /**
    *
    *
@@ -1173,6 +1227,7 @@ public interface TripOrBuilder
    * @return The remainingDistanceMeters.
    */
   com.google.protobuf.Int32Value getRemainingDistanceMeters();
+
   /**
    *
    *
@@ -1204,6 +1259,7 @@ public interface TripOrBuilder
    * @return Whether the etaToFirstWaypoint field is set.
    */
   boolean hasEtaToFirstWaypoint();
+
   /**
    *
    *
@@ -1220,6 +1276,7 @@ public interface TripOrBuilder
    * @return The etaToFirstWaypoint.
    */
   com.google.protobuf.Timestamp getEtaToFirstWaypoint();
+
   /**
    *
    *
@@ -1252,6 +1309,7 @@ public interface TripOrBuilder
    * @return Whether the remainingTimeToFirstWaypoint field is set.
    */
   boolean hasRemainingTimeToFirstWaypoint();
+
   /**
    *
    *
@@ -1269,6 +1327,7 @@ public interface TripOrBuilder
    * @return The remainingTimeToFirstWaypoint.
    */
   com.google.protobuf.Duration getRemainingTimeToFirstWaypoint();
+
   /**
    *
    *
@@ -1300,6 +1359,7 @@ public interface TripOrBuilder
    * @return Whether the remainingWaypointsVersion field is set.
    */
   boolean hasRemainingWaypointsVersion();
+
   /**
    *
    *
@@ -1315,6 +1375,7 @@ public interface TripOrBuilder
    * @return The remainingWaypointsVersion.
    */
   com.google.protobuf.Timestamp getRemainingWaypointsVersion();
+
   /**
    *
    *
@@ -1347,6 +1408,7 @@ public interface TripOrBuilder
    * @return Whether the remainingWaypointsRouteVersion field is set.
    */
   boolean hasRemainingWaypointsRouteVersion();
+
   /**
    *
    *
@@ -1365,6 +1427,7 @@ public interface TripOrBuilder
    * @return The remainingWaypointsRouteVersion.
    */
   com.google.protobuf.Timestamp getRemainingWaypointsRouteVersion();
+
   /**
    *
    *
@@ -1412,6 +1475,7 @@ public interface TripOrBuilder
    * @return Whether the lastLocation field is set.
    */
   boolean hasLastLocation();
+
   /**
    *
    *
@@ -1427,6 +1491,7 @@ public interface TripOrBuilder
    * @return The lastLocation.
    */
   com.google.maps.fleetengine.v1.VehicleLocation getLastLocation();
+
   /**
    *
    *
@@ -1470,6 +1535,7 @@ public interface TripOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
+
   /**
    *
    *

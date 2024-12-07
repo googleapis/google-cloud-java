@@ -33,6 +33,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.TeradataDialect)
     TeradataDialectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TeradataDialect.newBuilder() to construct.
   private TeradataDialect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,6 +117,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
      * <code>MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
      * <code>SQL = 1;</code>
      */
     public static final int SQL_VALUE = 1;
+
     /**
      *
      *
@@ -224,6 +227,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
 
   public static final int MODE_FIELD_NUMBER = 1;
   private int mode_ = 0;
+
   /**
    *
    *
@@ -239,6 +243,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
   public int getModeValue() {
     return mode_;
   }
+
   /**
    *
    *
@@ -423,6 +428,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -605,6 +611,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int mode_ = 0;
+
     /**
      *
      *
@@ -620,6 +627,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
     public int getModeValue() {
       return mode_;
     }
+
     /**
      *
      *
@@ -638,6 +646,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +666,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.bigquery.migration.v2.TeradataDialect.Mode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -678,6 +688,7 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

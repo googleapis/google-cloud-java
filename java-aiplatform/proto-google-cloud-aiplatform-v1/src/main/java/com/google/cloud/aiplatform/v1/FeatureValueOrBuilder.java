@@ -36,6 +36,7 @@ public interface FeatureValueOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface FeatureValueOrBuilder
    * @return Whether the doubleValue field is set.
    */
   boolean hasDoubleValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface FeatureValueOrBuilder
    * @return Whether the int64Value field is set.
    */
   boolean hasInt64Value();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface FeatureValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface FeatureValueOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface FeatureValueOrBuilder
    * @return Whether the boolArrayValue field is set.
    */
   boolean hasBoolArrayValue();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface FeatureValueOrBuilder
    * @return The boolArrayValue.
    */
   com.google.cloud.aiplatform.v1.BoolArray getBoolArrayValue();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface FeatureValueOrBuilder
    * @return Whether the doubleArrayValue field is set.
    */
   boolean hasDoubleArrayValue();
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public interface FeatureValueOrBuilder
    * @return The doubleArrayValue.
    */
   com.google.cloud.aiplatform.v1.DoubleArray getDoubleArrayValue();
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public interface FeatureValueOrBuilder
    * @return Whether the int64ArrayValue field is set.
    */
   boolean hasInt64ArrayValue();
+
   /**
    *
    *
@@ -230,6 +240,7 @@ public interface FeatureValueOrBuilder
    * @return The int64ArrayValue.
    */
   com.google.cloud.aiplatform.v1.Int64Array getInt64ArrayValue();
+
   /**
    *
    *
@@ -253,6 +264,7 @@ public interface FeatureValueOrBuilder
    * @return Whether the stringArrayValue field is set.
    */
   boolean hasStringArrayValue();
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public interface FeatureValueOrBuilder
    * @return The stringArrayValue.
    */
   com.google.cloud.aiplatform.v1.StringArray getStringArrayValue();
+
   /**
    *
    *
@@ -288,6 +301,7 @@ public interface FeatureValueOrBuilder
    * @return Whether the bytesValue field is set.
    */
   boolean hasBytesValue();
+
   /**
    *
    *
@@ -313,6 +327,7 @@ public interface FeatureValueOrBuilder
    * @return Whether the structValue field is set.
    */
   boolean hasStructValue();
+
   /**
    *
    *
@@ -325,6 +340,7 @@ public interface FeatureValueOrBuilder
    * @return The structValue.
    */
   com.google.cloud.aiplatform.v1.StructValue getStructValue();
+
   /**
    *
    *
@@ -348,6 +364,7 @@ public interface FeatureValueOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -360,6 +377,7 @@ public interface FeatureValueOrBuilder
    * @return The metadata.
    */
   com.google.cloud.aiplatform.v1.FeatureValue.Metadata getMetadata();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface KeyRangeLocationOrBuilder
    * @return The start.
    */
   java.lang.String getStart();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface KeyRangeLocationOrBuilder
    * @return The end.
    */
   java.lang.String getEnd();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface KeyRangeLocationOrBuilder
    * @return The deliveryEndpoint.
    */
   java.lang.String getDeliveryEndpoint();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface KeyRangeLocationOrBuilder
    * @return The dataDisk.
    */
   java.lang.String getDataDisk();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface KeyRangeLocationOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getDeprecatedPersistentDirectory();
+
   /**
    *
    *

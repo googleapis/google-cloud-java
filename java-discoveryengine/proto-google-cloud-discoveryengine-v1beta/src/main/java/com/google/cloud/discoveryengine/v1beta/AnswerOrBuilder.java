@@ -37,6 +37,7 @@ public interface AnswerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AnswerOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface AnswerOrBuilder
    * @return The answerText.
    */
   java.lang.String getAnswerText();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface AnswerOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Answer.Citation citations = 4;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.Answer.Citation> getCitationsList();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface AnswerOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Answer.Citation citations = 4;</code>
    */
   com.google.cloud.discoveryengine.v1beta.Answer.Citation getCitations(int index);
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface AnswerOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Answer.Citation citations = 4;</code>
    */
   int getCitationsCount();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface AnswerOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.Answer.CitationOrBuilder>
       getCitationsOrBuilderList();
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public interface AnswerOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Answer.Reference references = 5;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.Answer.Reference> getReferencesList();
+
   /**
    *
    *
@@ -173,6 +181,7 @@ public interface AnswerOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Answer.Reference references = 5;</code>
    */
   com.google.cloud.discoveryengine.v1beta.Answer.Reference getReferences(int index);
+
   /**
    *
    *
@@ -183,6 +192,7 @@ public interface AnswerOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Answer.Reference references = 5;</code>
    */
   int getReferencesCount();
+
   /**
    *
    *
@@ -194,6 +204,7 @@ public interface AnswerOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.Answer.ReferenceOrBuilder>
       getReferencesOrBuilderList();
+
   /**
    *
    *
@@ -218,6 +229,7 @@ public interface AnswerOrBuilder
    * @return A list containing the relatedQuestions.
    */
   java.util.List<java.lang.String> getRelatedQuestionsList();
+
   /**
    *
    *
@@ -230,6 +242,7 @@ public interface AnswerOrBuilder
    * @return The count of relatedQuestions.
    */
   int getRelatedQuestionsCount();
+
   /**
    *
    *
@@ -243,6 +256,7 @@ public interface AnswerOrBuilder
    * @return The relatedQuestions at the given index.
    */
   java.lang.String getRelatedQuestions(int index);
+
   /**
    *
    *
@@ -267,6 +281,7 @@ public interface AnswerOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Answer.Step steps = 7;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.Answer.Step> getStepsList();
+
   /**
    *
    *
@@ -277,6 +292,7 @@ public interface AnswerOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Answer.Step steps = 7;</code>
    */
   com.google.cloud.discoveryengine.v1beta.Answer.Step getSteps(int index);
+
   /**
    *
    *
@@ -287,6 +303,7 @@ public interface AnswerOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Answer.Step steps = 7;</code>
    */
   int getStepsCount();
+
   /**
    *
    *
@@ -298,6 +315,7 @@ public interface AnswerOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.Answer.StepOrBuilder>
       getStepsOrBuilderList();
+
   /**
    *
    *
@@ -323,6 +341,7 @@ public interface AnswerOrBuilder
    * @return Whether the queryUnderstandingInfo field is set.
    */
   boolean hasQueryUnderstandingInfo();
+
   /**
    *
    *
@@ -337,6 +356,7 @@ public interface AnswerOrBuilder
    * @return The queryUnderstandingInfo.
    */
   com.google.cloud.discoveryengine.v1beta.Answer.QueryUnderstandingInfo getQueryUnderstandingInfo();
+
   /**
    *
    *
@@ -367,6 +387,7 @@ public interface AnswerOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.Answer.AnswerSkippedReason>
       getAnswerSkippedReasonsList();
+
   /**
    *
    *
@@ -382,6 +403,7 @@ public interface AnswerOrBuilder
    * @return The count of answerSkippedReasons.
    */
   int getAnswerSkippedReasonsCount();
+
   /**
    *
    *
@@ -399,6 +421,7 @@ public interface AnswerOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.Answer.AnswerSkippedReason getAnswerSkippedReasons(
       int index);
+
   /**
    *
    *
@@ -414,6 +437,7 @@ public interface AnswerOrBuilder
    * @return A list containing the enum numeric values on the wire for answerSkippedReasons.
    */
   java.util.List<java.lang.Integer> getAnswerSkippedReasonsValueList();
+
   /**
    *
    *
@@ -444,6 +468,7 @@ public interface AnswerOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -457,6 +482,7 @@ public interface AnswerOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -483,6 +509,7 @@ public interface AnswerOrBuilder
    * @return Whether the completeTime field is set.
    */
   boolean hasCompleteTime();
+
   /**
    *
    *
@@ -497,6 +524,7 @@ public interface AnswerOrBuilder
    * @return The completeTime.
    */
   com.google.protobuf.Timestamp getCompleteTime();
+
   /**
    *
    *

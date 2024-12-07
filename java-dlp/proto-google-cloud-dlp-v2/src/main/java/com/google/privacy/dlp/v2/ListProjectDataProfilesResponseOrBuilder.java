@@ -34,6 +34,7 @@ public interface ListProjectDataProfilesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.ProjectDataProfile project_data_profiles = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.ProjectDataProfile> getProjectDataProfilesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListProjectDataProfilesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.ProjectDataProfile project_data_profiles = 1;</code>
    */
   com.google.privacy.dlp.v2.ProjectDataProfile getProjectDataProfiles(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListProjectDataProfilesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.ProjectDataProfile project_data_profiles = 1;</code>
    */
   int getProjectDataProfilesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListProjectDataProfilesResponseOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ProjectDataProfileOrBuilder>
       getProjectDataProfilesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListProjectDataProfilesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

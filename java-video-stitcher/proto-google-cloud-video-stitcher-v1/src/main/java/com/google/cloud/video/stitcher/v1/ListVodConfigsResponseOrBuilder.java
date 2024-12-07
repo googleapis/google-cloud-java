@@ -34,6 +34,7 @@ public interface ListVodConfigsResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.VodConfig vod_configs = 1;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.VodConfig> getVodConfigsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListVodConfigsResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.VodConfig vod_configs = 1;</code>
    */
   com.google.cloud.video.stitcher.v1.VodConfig getVodConfigs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListVodConfigsResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.VodConfig vod_configs = 1;</code>
    */
   int getVodConfigsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListVodConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.VodConfigOrBuilder>
       getVodConfigsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListVodConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListVodConfigsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListVodConfigsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListVodConfigsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

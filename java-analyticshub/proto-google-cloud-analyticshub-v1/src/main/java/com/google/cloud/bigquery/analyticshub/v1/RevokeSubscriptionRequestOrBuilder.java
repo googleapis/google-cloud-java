@@ -39,6 +39,7 @@ public interface RevokeSubscriptionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

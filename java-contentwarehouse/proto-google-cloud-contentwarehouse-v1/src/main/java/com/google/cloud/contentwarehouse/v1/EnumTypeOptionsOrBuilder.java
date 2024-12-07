@@ -36,6 +36,7 @@ public interface EnumTypeOptionsOrBuilder
    * @return A list containing the possibleValues.
    */
   java.util.List<java.lang.String> getPossibleValuesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface EnumTypeOptionsOrBuilder
    * @return The count of possibleValues.
    */
   int getPossibleValuesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface EnumTypeOptionsOrBuilder
    * @return The possibleValues at the given index.
    */
   java.lang.String getPossibleValues(int index);
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ServiceAttachmentAggregatedList)
     ServiceAttachmentAggregatedListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServiceAttachmentAggregatedList.newBuilder() to construct.
   private ServiceAttachmentAggregatedList(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -85,6 +86,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +186,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
   public int getItemsCount() {
     return internalGetItems().getMap().size();
   }
+
   /**
    *
    *
@@ -200,6 +205,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     }
     return internalGetItems().getMap().containsKey(key);
   }
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -207,6 +213,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       getItems() {
     return getItemsMap();
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       getItemsMap() {
     return internalGetItems().getMap();
   }
+
   /**
    *
    *
@@ -246,6 +254,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
         internalGetItems().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -275,6 +284,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -290,6 +300,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -313,6 +324,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -341,6 +353,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -356,6 +369,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -379,6 +393,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -407,6 +422,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -422,6 +438,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -445,6 +462,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -474,6 +492,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachables_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -488,6 +507,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
   public com.google.protobuf.ProtocolStringList getUnreachablesList() {
     return unreachables_;
   }
+
   /**
    *
    *
@@ -502,6 +522,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
   public int getUnreachablesCount() {
     return unreachables_.size();
   }
+
   /**
    *
    *
@@ -517,6 +538,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
   public java.lang.String getUnreachables(int index) {
     return unreachables_.get(index);
   }
+
   /**
    *
    *
@@ -535,6 +557,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -550,6 +573,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -565,6 +589,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -837,6 +862,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1163,6 +1189,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1177,6 +1204,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1199,6 +1227,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1221,6 +1250,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1242,6 +1272,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1290,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1342,6 +1374,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     public int getItemsCount() {
       return internalGetItems().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -1360,6 +1393,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       }
       return internalGetItems().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getItemsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1367,6 +1401,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
         getItems() {
       return getItemsMap();
     }
+
     /**
      *
      *
@@ -1383,6 +1418,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
         getItemsMap() {
       return internalGetItems().getImmutableMap();
     }
+
     /**
      *
      *
@@ -1408,6 +1444,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
           map = internalGetMutableItems().ensureBuilderMap();
       return map.containsKey(key) ? itemsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1439,6 +1476,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       internalGetMutableItems().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1457,6 +1495,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       internalGetMutableItems().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.compute.v1.ServiceAttachmentsScopedList>
@@ -1464,6 +1503,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       bitField0_ |= 0x00000002;
       return internalGetMutableItems().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1487,6 +1527,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1512,6 +1553,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1541,6 +1583,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1555,6 +1598,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1577,6 +1621,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1599,6 +1644,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1620,6 +1666,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1637,6 +1684,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1661,6 +1709,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1675,6 +1724,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1697,6 +1747,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1719,6 +1770,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1740,6 +1792,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1757,6 +1810,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1835,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -1795,6 +1850,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1817,6 +1873,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1839,6 +1896,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1860,6 +1918,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1877,6 +1936,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1909,6 +1969,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -1924,6 +1985,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       unreachables_.makeImmutable();
       return unreachables_;
     }
+
     /**
      *
      *
@@ -1938,6 +2000,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     public int getUnreachablesCount() {
       return unreachables_.size();
     }
+
     /**
      *
      *
@@ -1953,6 +2016,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     public java.lang.String getUnreachables(int index) {
       return unreachables_.get(index);
     }
+
     /**
      *
      *
@@ -1968,6 +2032,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     public com.google.protobuf.ByteString getUnreachablesBytes(int index) {
       return unreachables_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1991,6 +2056,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2013,6 +2079,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2032,6 +2099,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2050,6 +2118,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2080,6 +2149,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -2094,6 +2164,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2114,6 +2185,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2136,6 +2208,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2155,6 +2228,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2182,6 +2256,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2201,6 +2276,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2215,6 +2291,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2233,6 +2310,7 @@ public final class ServiceAttachmentAggregatedList extends com.google.protobuf.G
             : warning_;
       }
     }
+
     /**
      *
      *

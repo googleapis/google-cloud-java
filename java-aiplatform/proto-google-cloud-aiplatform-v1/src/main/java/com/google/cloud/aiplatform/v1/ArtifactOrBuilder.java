@@ -36,6 +36,7 @@ public interface ArtifactOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ArtifactOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface ArtifactOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface ArtifactOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public interface ArtifactOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -162,9 +167,11 @@ public interface ArtifactOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public interface ArtifactOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public interface ArtifactOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -231,6 +240,7 @@ public interface ArtifactOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -244,6 +254,7 @@ public interface ArtifactOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -269,6 +280,7 @@ public interface ArtifactOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -282,6 +294,7 @@ public interface ArtifactOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -309,6 +322,7 @@ public interface ArtifactOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -341,6 +355,7 @@ public interface ArtifactOrBuilder
    * @return The schemaTitle.
    */
   java.lang.String getSchemaTitle();
+
   /**
    *
    *
@@ -374,6 +389,7 @@ public interface ArtifactOrBuilder
    * @return The schemaVersion.
    */
   java.lang.String getSchemaVersion();
+
   /**
    *
    *
@@ -405,6 +421,7 @@ public interface ArtifactOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -419,6 +436,7 @@ public interface ArtifactOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Struct getMetadata();
+
   /**
    *
    *
@@ -444,6 +462,7 @@ public interface ArtifactOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

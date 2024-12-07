@@ -37,6 +37,7 @@ public interface MessageDeletedEventDataOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface MessageDeletedEventDataOrBuilder
    * @return The message.
    */
   com.google.chat.v1.Message getMessage();
+
   /**
    *
    *

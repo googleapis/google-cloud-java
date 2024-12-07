@@ -37,6 +37,7 @@ public interface ContactInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ContactInfoOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
+
   /**
    *
    *

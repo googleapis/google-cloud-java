@@ -36,6 +36,7 @@ public interface WorkloadReferenceOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *

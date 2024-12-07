@@ -32,6 +32,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RoutersPreviewResponse)
     RoutersPreviewResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RoutersPreviewResponse.newBuilder() to construct.
   private RoutersPreviewResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
   private com.google.cloud.compute.v1.Router resource_;
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
   public boolean hasResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.compute.v1.Router getResource() {
     return resource_ == null ? com.google.cloud.compute.v1.Router.getDefaultInstance() : resource_;
   }
+
   /**
    *
    *
@@ -271,6 +275,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -473,6 +478,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.Router.Builder,
             com.google.cloud.compute.v1.RouterOrBuilder>
         resourceBuilder_;
+
     /**
      *
      *
@@ -487,6 +493,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
     public boolean hasResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -507,6 +514,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
         return resourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -529,6 +537,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -548,6 +557,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -575,6 +585,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -594,6 +605,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -608,6 +620,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -626,6 +639,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
             : resource_;
       }
     }
+
     /**
      *
      *

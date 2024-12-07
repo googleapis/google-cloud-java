@@ -33,6 +33,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.BinaryAuthorization)
     BinaryAuthorizationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BinaryAuthorization.newBuilder() to construct.
   private BinaryAuthorization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -142,6 +143,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>EVALUATION_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int EVALUATION_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -152,6 +154,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -164,6 +167,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>PROJECT_SINGLETON_POLICY_ENFORCE = 2;</code>
      */
     public static final int PROJECT_SINGLETON_POLICY_ENFORCE_VALUE = 2;
+
     /**
      *
      *
@@ -175,6 +179,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>POLICY_BINDINGS = 5;</code>
      */
     public static final int POLICY_BINDINGS_VALUE = 5;
+
     /**
      *
      *
@@ -294,6 +299,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * @return Whether the name field is set.
      */
     boolean hasName();
+
     /**
      *
      *
@@ -308,6 +314,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -323,6 +330,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getNameBytes();
   }
+
   /**
    *
    *
@@ -337,6 +345,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.container.v1beta1.BinaryAuthorization.PolicyBinding)
       PolicyBindingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PolicyBinding.newBuilder() to construct.
     private PolicyBinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -372,6 +381,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -389,6 +399,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -414,6 +425,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -606,6 +618,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -800,6 +813,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -816,6 +830,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       public boolean hasName() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -840,6 +855,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -864,6 +880,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -887,6 +904,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -906,6 +924,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1000,6 +1019,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -1023,6 +1043,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
 
   public static final int EVALUATION_MODE_FIELD_NUMBER = 2;
   private int evaluationMode_ = 0;
+
   /**
    *
    *
@@ -1039,6 +1060,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
   public int getEvaluationModeValue() {
     return evaluationMode_;
   }
+
   /**
    *
    *
@@ -1065,6 +1087,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1beta1.BinaryAuthorization.PolicyBinding>
       policyBindings_;
+
   /**
    *
    *
@@ -1081,6 +1104,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       getPolicyBindingsList() {
     return policyBindings_;
   }
+
   /**
    *
    *
@@ -1098,6 +1122,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       getPolicyBindingsOrBuilderList() {
     return policyBindings_;
   }
+
   /**
    *
    *
@@ -1113,6 +1138,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
   public int getPolicyBindingsCount() {
     return policyBindings_.size();
   }
+
   /**
    *
    *
@@ -1129,6 +1155,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       int index) {
     return policyBindings_.get(index);
   }
+
   /**
    *
    *
@@ -1331,6 +1358,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1588,6 +1616,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -1608,6 +1637,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -1632,6 +1662,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1656,6 +1687,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     }
 
     private int evaluationMode_ = 0;
+
     /**
      *
      *
@@ -1673,6 +1705,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     public int getEvaluationModeValue() {
       return evaluationMode_;
     }
+
     /**
      *
      *
@@ -1693,6 +1726,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1715,6 +1749,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
           ? com.google.container.v1beta1.BinaryAuthorization.EvaluationMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1739,6 +1774,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1796,6 +1832,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         return policyBindingsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1814,6 +1851,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         return policyBindingsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1833,6 +1871,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         return policyBindingsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1858,6 +1897,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1881,6 +1921,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1906,6 +1947,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1931,6 +1973,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1953,6 +1996,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1976,6 +2020,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1999,6 +2044,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2020,6 +2066,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2041,6 +2088,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2056,6 +2104,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         getPolicyBindingsBuilder(int index) {
       return getPolicyBindingsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2075,6 +2124,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         return policyBindingsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2095,6 +2145,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(policyBindings_);
       }
     }
+
     /**
      *
      *
@@ -2112,6 +2163,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
           .addBuilder(
               com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2130,6 +2182,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
               index,
               com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceFailoverPolicy)
     BackendServiceFailoverPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackendServiceFailoverPolicy.newBuilder() to construct.
   private BackendServiceFailoverPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int DISABLE_CONNECTION_DRAIN_ON_FAILOVER_FIELD_NUMBER = 182150753;
   private boolean disableConnectionDrainOnFailover_ = false;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
   public boolean hasDisableConnectionDrainOnFailover() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
 
   public static final int DROP_TRAFFIC_IF_UNHEALTHY_FIELD_NUMBER = 112289428;
   private boolean dropTrafficIfUnhealthy_ = false;
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
   public boolean hasDropTrafficIfUnhealthy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
 
   public static final int FAILOVER_RATIO_FIELD_NUMBER = 212667006;
   private float failoverRatio_ = 0F;
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
   public boolean hasFailoverRatio() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -362,6 +369,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -575,6 +583,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     private int bitField0_;
 
     private boolean disableConnectionDrainOnFailover_;
+
     /**
      *
      *
@@ -590,6 +599,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     public boolean hasDisableConnectionDrainOnFailover() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -605,6 +615,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     public boolean getDisableConnectionDrainOnFailover() {
       return disableConnectionDrainOnFailover_;
     }
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -643,6 +655,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     }
 
     private boolean dropTrafficIfUnhealthy_;
+
     /**
      *
      *
@@ -658,6 +671,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     public boolean hasDropTrafficIfUnhealthy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -673,6 +687,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     public boolean getDropTrafficIfUnhealthy() {
       return dropTrafficIfUnhealthy_;
     }
+
     /**
      *
      *
@@ -692,6 +707,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +727,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     }
 
     private float failoverRatio_;
+
     /**
      *
      *
@@ -726,6 +743,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     public boolean hasFailoverRatio() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -741,6 +759,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     public float getFailoverRatio() {
       return failoverRatio_;
     }
+
     /**
      *
      *
@@ -760,6 +779,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

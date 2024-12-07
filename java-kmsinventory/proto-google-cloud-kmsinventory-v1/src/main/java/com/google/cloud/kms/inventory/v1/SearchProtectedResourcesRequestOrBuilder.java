@@ -39,6 +39,7 @@ public interface SearchProtectedResourcesRequestOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface SearchProtectedResourcesRequestOrBuilder
    * @return The cryptoKey.
    */
   java.lang.String getCryptoKey();
+
   /**
    *
    *
@@ -120,6 +122,7 @@ public interface SearchProtectedResourcesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -164,6 +167,7 @@ public interface SearchProtectedResourcesRequestOrBuilder
    * @return A list containing the resourceTypes.
    */
   java.util.List<java.lang.String> getResourceTypesList();
+
   /**
    *
    *
@@ -189,6 +193,7 @@ public interface SearchProtectedResourcesRequestOrBuilder
    * @return The count of resourceTypes.
    */
   int getResourceTypesCount();
+
   /**
    *
    *
@@ -215,6 +220,7 @@ public interface SearchProtectedResourcesRequestOrBuilder
    * @return The resourceTypes at the given index.
    */
   java.lang.String getResourceTypes(int index);
+
   /**
    *
    *

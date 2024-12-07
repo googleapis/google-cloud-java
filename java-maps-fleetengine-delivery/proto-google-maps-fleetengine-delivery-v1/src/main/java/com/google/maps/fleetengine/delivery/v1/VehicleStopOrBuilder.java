@@ -40,6 +40,7 @@ public interface VehicleStopOrBuilder
    * @return Whether the plannedLocation field is set.
    */
   boolean hasPlannedLocation();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface VehicleStopOrBuilder
    * @return The plannedLocation.
    */
   com.google.maps.fleetengine.delivery.v1.LocationInfo getPlannedLocation();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface VehicleStopOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.VehicleStop.TaskInfo tasks = 2;</code>
    */
   java.util.List<com.google.maps.fleetengine.delivery.v1.VehicleStop.TaskInfo> getTasksList();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface VehicleStopOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.VehicleStop.TaskInfo tasks = 2;</code>
    */
   com.google.maps.fleetengine.delivery.v1.VehicleStop.TaskInfo getTasks(int index);
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface VehicleStopOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.VehicleStop.TaskInfo tasks = 2;</code>
    */
   int getTasksCount();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface VehicleStopOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.delivery.v1.VehicleStop.TaskInfoOrBuilder>
       getTasksOrBuilderList();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface VehicleStopOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

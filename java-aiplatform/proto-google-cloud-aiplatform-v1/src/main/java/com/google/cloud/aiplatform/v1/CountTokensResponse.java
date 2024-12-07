@@ -33,6 +33,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CountTokensResponse)
     CountTokensResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CountTokensResponse.newBuilder() to construct.
   private CountTokensResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
 
   public static final int TOTAL_TOKENS_FIELD_NUMBER = 1;
   private int totalTokens_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
 
   public static final int TOTAL_BILLABLE_CHARACTERS_FIELD_NUMBER = 2;
   private int totalBillableCharacters_ = 0;
+
   /**
    *
    *
@@ -266,6 +269,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -461,6 +465,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int totalTokens_;
+
     /**
      *
      *
@@ -476,6 +481,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     public int getTotalTokens() {
       return totalTokens_;
     }
+
     /**
      *
      *
@@ -495,6 +501,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -514,6 +521,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     }
 
     private int totalBillableCharacters_;
+
     /**
      *
      *
@@ -530,6 +538,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     public int getTotalBillableCharacters() {
       return totalBillableCharacters_;
     }
+
     /**
      *
      *
@@ -550,6 +559,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

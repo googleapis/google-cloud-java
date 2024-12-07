@@ -39,6 +39,7 @@ public interface GetGeneratorRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

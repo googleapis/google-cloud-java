@@ -33,6 +33,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.UpdateDocumentRequest)
     UpdateDocumentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateDocumentRequest.newBuilder() to construct.
   private UpdateDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int DOCUMENT_FIELD_NUMBER = 2;
   private com.google.cloud.contentwarehouse.v1.Document document_;
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.contentwarehouse.v1.Document.getDefaultInstance()
         : document_;
   }
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int REQUEST_METADATA_FIELD_NUMBER = 3;
   private com.google.cloud.contentwarehouse.v1.RequestMetadata requestMetadata_;
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasRequestMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()
         : requestMetadata_;
   }
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int CLOUD_AI_DOCUMENT_OPTION_FIELD_NUMBER = 5;
   private com.google.cloud.contentwarehouse.v1.CloudAIDocumentOption cloudAiDocumentOption_;
+
   /**
    *
    *
@@ -258,6 +268,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasCloudAiDocumentOption() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -279,6 +290,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.contentwarehouse.v1.CloudAIDocumentOption.getDefaultInstance()
         : cloudAiDocumentOption_;
   }
+
   /**
    *
    *
@@ -302,6 +314,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATE_OPTIONS_FIELD_NUMBER = 6;
   private com.google.cloud.contentwarehouse.v1.UpdateOptions updateOptions_;
+
   /**
    *
    *
@@ -317,6 +330,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateOptions() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -334,6 +348,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.contentwarehouse.v1.UpdateOptions.getDefaultInstance()
         : updateOptions_;
   }
+
   /**
    *
    *
@@ -567,6 +582,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -843,6 +859,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -871,6 +888,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -899,6 +917,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -926,6 +945,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +969,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1005,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.contentwarehouse.v1.Document.Builder,
             com.google.cloud.contentwarehouse.v1.DocumentOrBuilder>
         documentBuilder_;
+
     /**
      *
      *
@@ -1000,6 +1022,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1022,6 +1045,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         return documentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1070,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1093,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1123,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1145,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1162,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1154,6 +1183,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
             : document_;
       }
     }
+
     /**
      *
      *
@@ -1188,6 +1218,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder,
             com.google.cloud.contentwarehouse.v1.RequestMetadataOrBuilder>
         requestMetadataBuilder_;
+
     /**
      *
      *
@@ -1203,6 +1234,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasRequestMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1224,6 +1256,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         return requestMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1247,6 +1280,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1268,6 +1302,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1333,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1354,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1371,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1354,6 +1392,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
             : requestMetadata_;
       }
     }
+
     /**
      *
      *
@@ -1387,6 +1426,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.contentwarehouse.v1.CloudAIDocumentOption.Builder,
             com.google.cloud.contentwarehouse.v1.CloudAIDocumentOptionOrBuilder>
         cloudAiDocumentOptionBuilder_;
+
     /**
      *
      *
@@ -1405,6 +1445,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasCloudAiDocumentOption() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1429,6 +1470,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         return cloudAiDocumentOptionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1456,6 +1498,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1480,6 +1523,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1514,6 +1558,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1537,6 +1582,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1556,6 +1602,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCloudAiDocumentOptionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1579,6 +1626,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
             : cloudAiDocumentOption_;
       }
     }
+
     /**
      *
      *
@@ -1615,6 +1663,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.contentwarehouse.v1.UpdateOptions.Builder,
             com.google.cloud.contentwarehouse.v1.UpdateOptionsOrBuilder>
         updateOptionsBuilder_;
+
     /**
      *
      *
@@ -1629,6 +1678,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateOptions() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1649,6 +1699,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         return updateOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1671,6 +1722,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1691,6 +1743,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1719,6 +1772,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1738,6 +1792,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1752,6 +1807,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1770,6 +1826,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
             : updateOptions_;
       }
     }
+
     /**
      *
      *

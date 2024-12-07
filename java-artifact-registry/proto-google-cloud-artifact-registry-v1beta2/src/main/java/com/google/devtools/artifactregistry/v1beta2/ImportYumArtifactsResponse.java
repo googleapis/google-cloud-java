@@ -33,6 +33,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1beta2.ImportYumArtifactsResponse)
     ImportYumArtifactsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportYumArtifactsResponse.newBuilder() to construct.
   private ImportYumArtifactsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1beta2.YumArtifact> yumArtifacts_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       getYumArtifactsList() {
     return yumArtifacts_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       getYumArtifactsOrBuilderList() {
     return yumArtifacts_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
   public int getYumArtifactsCount() {
     return yumArtifacts_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
   public com.google.devtools.artifactregistry.v1beta2.YumArtifact getYumArtifacts(int index) {
     return yumArtifacts_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsErrorInfo>
       errors_;
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       getErrorsList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       getErrorsOrBuilderList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -191,6 +200,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
   public int getErrorsCount() {
     return errors_.size();
   }
+
   /**
    *
    *
@@ -207,6 +217,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       int index) {
     return errors_.get(index);
   }
+
   /**
    *
    *
@@ -398,6 +409,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -732,6 +744,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
         return yumArtifactsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -749,6 +762,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
         return yumArtifactsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -766,6 +780,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
         return yumArtifactsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -790,6 +805,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +828,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +852,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +877,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +899,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +922,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +945,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +966,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +987,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1002,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
         int index) {
       return getYumArtifactsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -996,6 +1021,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
         return yumArtifactsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1041,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(yumArtifacts_);
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1058,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
           .addBuilder(
               com.google.devtools.artifactregistry.v1beta2.YumArtifact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1047,6 +1075,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.devtools.artifactregistry.v1beta2.YumArtifact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1116,6 +1145,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
         return errorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1134,6 +1164,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
         return errorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1153,6 +1184,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
         return errorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1178,6 +1210,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1202,6 +1235,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1261,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1287,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1275,6 +1311,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1299,6 +1336,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1323,6 +1361,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1383,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1405,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1380,6 +1421,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
         getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1399,6 +1441,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1420,6 +1463,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
+
     /**
      *
      *
@@ -1438,6 +1482,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
               com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsErrorInfo
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1457,6 +1502,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
               com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsErrorInfo
                   .getDefaultInstance());
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.BatchDeleteIntentsRequest)
     BatchDeleteIntentsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchDeleteIntentsRequest.newBuilder() to construct.
   private BatchDeleteIntentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.Intent> intents_;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.dialogflow.v2.Intent> getIntentsList() {
     return intents_;
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       getIntentsOrBuilderList() {
     return intents_;
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
   public int getIntentsCount() {
     return intents_.size();
   }
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
   public com.google.cloud.dialogflow.v2.Intent getIntents(int index) {
     return intents_.get(index);
   }
+
   /**
    *
    *
@@ -379,6 +387,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -625,6 +634,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -699,6 +711,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +732,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
         return intentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -799,6 +814,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
         return intentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -818,6 +834,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
         return intentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -843,6 +860,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +884,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +910,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +936,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +959,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +983,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1007,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1030,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1053,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1069,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
     public com.google.cloud.dialogflow.v2.Intent.Builder getIntentsBuilder(int index) {
       return getIntentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1062,6 +1089,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
         return intentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1082,6 +1110,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(intents_);
       }
     }
+
     /**
      *
      *
@@ -1098,6 +1127,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       return getIntentsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1114,6 +1144,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       return getIntentsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
     }
+
     /**
      *
      *

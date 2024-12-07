@@ -33,6 +33,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.source.v1.RepoId)
     RepoIdOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RepoId.newBuilder() to construct.
   private RepoId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     private IdCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_REPO_ID_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProjectRepoId() {
     return idCase_ == 1;
   }
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.devtools.source.v1.ProjectRepoId.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UID_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUid() {
     return idCase_ == 2;
   }
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -416,6 +424,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +655,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.source.v1.ProjectRepoId.Builder,
             com.google.devtools.source.v1.ProjectRepoIdOrBuilder>
         projectRepoIdBuilder_;
+
     /**
      *
      *
@@ -661,6 +671,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProjectRepoId() {
       return idCase_ == 1;
     }
+
     /**
      *
      *
@@ -686,6 +697,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.source.v1.ProjectRepoId.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -708,6 +720,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       idCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +741,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       idCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +774,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       idCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +800,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +813,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.source.v1.ProjectRepoId.Builder getProjectRepoIdBuilder() {
       return getProjectRepoIdFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -817,6 +834,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.source.v1.ProjectRepoId.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -865,6 +883,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUid() {
       return idCase_ == 2;
     }
+
     /**
      *
      *
@@ -893,6 +912,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -921,6 +941,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -942,6 +963,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +983,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *

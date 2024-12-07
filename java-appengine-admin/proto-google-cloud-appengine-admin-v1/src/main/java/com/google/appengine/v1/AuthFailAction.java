@@ -74,6 +74,7 @@ public enum AuthFailAction implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUTH_FAIL_ACTION_UNSPECIFIED = 0;</code>
    */
   public static final int AUTH_FAIL_ACTION_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public enum AuthFailAction implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUTH_FAIL_ACTION_REDIRECT = 1;</code>
    */
   public static final int AUTH_FAIL_ACTION_REDIRECT_VALUE = 1;
+
   /**
    *
    *

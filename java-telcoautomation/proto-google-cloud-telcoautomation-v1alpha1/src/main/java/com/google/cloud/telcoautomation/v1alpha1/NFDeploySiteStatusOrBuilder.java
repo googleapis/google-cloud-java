@@ -36,6 +36,7 @@ public interface NFDeploySiteStatusOrBuilder
    * @return The site.
    */
   java.lang.String getSite();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface NFDeploySiteStatusOrBuilder
    * @return Whether the hydration field is set.
    */
   boolean hasHydration();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface NFDeploySiteStatusOrBuilder
    * @return The hydration.
    */
   com.google.cloud.telcoautomation.v1alpha1.HydrationStatus getHydration();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface NFDeploySiteStatusOrBuilder
    * @return Whether the workload field is set.
    */
   boolean hasWorkload();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface NFDeploySiteStatusOrBuilder
    * @return The workload.
    */
   com.google.cloud.telcoautomation.v1alpha1.WorkloadStatus getWorkload();
+
   /**
    *
    *

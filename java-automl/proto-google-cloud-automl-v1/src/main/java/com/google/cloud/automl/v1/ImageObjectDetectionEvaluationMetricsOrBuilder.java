@@ -54,6 +54,7 @@ public interface ImageObjectDetectionEvaluationMetricsOrBuilder
    */
   java.util.List<com.google.cloud.automl.v1.BoundingBoxMetricsEntry>
       getBoundingBoxMetricsEntriesList();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ImageObjectDetectionEvaluationMetricsOrBuilder
    * </code>
    */
   com.google.cloud.automl.v1.BoundingBoxMetricsEntry getBoundingBoxMetricsEntries(int index);
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface ImageObjectDetectionEvaluationMetricsOrBuilder
    * </code>
    */
   int getBoundingBoxMetricsEntriesCount();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface ImageObjectDetectionEvaluationMetricsOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1.BoundingBoxMetricsEntryOrBuilder>
       getBoundingBoxMetricsEntriesOrBuilderList();
+
   /**
    *
    *

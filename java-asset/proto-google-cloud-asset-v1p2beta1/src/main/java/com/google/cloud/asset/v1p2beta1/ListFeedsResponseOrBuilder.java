@@ -34,6 +34,7 @@ public interface ListFeedsResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1p2beta1.Feed feeds = 1;</code>
    */
   java.util.List<com.google.cloud.asset.v1p2beta1.Feed> getFeedsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListFeedsResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1p2beta1.Feed feeds = 1;</code>
    */
   com.google.cloud.asset.v1p2beta1.Feed getFeeds(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListFeedsResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1p2beta1.Feed feeds = 1;</code>
    */
   int getFeedsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListFeedsResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1p2beta1.Feed feeds = 1;</code>
    */
   java.util.List<? extends com.google.cloud.asset.v1p2beta1.FeedOrBuilder> getFeedsOrBuilderList();
+
   /**
    *
    *

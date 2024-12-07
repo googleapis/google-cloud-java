@@ -33,6 +33,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.Dimensions)
     DimensionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Dimensions.newBuilder() to construct.
   private Dimensions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WIDTH_INCHES_FIELD_NUMBER = 1;
   private float widthInches_ = 0F;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HEIGHT_INCHES_FIELD_NUMBER = 2;
   private float heightInches_ = 0F;
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEPTH_INCHES_FIELD_NUMBER = 3;
   private float depthInches_ = 0F;
+
   /**
    *
    *
@@ -296,6 +300,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -504,6 +509,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private float widthInches_;
+
     /**
      *
      *
@@ -519,6 +525,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
     public float getWidthInches() {
       return widthInches_;
     }
+
     /**
      *
      *
@@ -538,6 +545,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -557,6 +565,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float heightInches_;
+
     /**
      *
      *
@@ -572,6 +581,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
     public float getHeightInches() {
       return heightInches_;
     }
+
     /**
      *
      *
@@ -591,6 +601,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -610,6 +621,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float depthInches_;
+
     /**
      *
      *
@@ -625,6 +637,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
     public float getDepthInches() {
       return depthInches_;
     }
+
     /**
      *
      *
@@ -644,6 +657,7 @@ public final class Dimensions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

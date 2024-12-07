@@ -37,6 +37,7 @@ public interface RoofSegmentSizeAndSunshineStatsOrBuilder
    * @return Whether the pitchDegrees field is set.
    */
   boolean hasPitchDegrees();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface RoofSegmentSizeAndSunshineStatsOrBuilder
    * @return Whether the azimuthDegrees field is set.
    */
   boolean hasAzimuthDegrees();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface RoofSegmentSizeAndSunshineStatsOrBuilder
    * @return Whether the stats field is set.
    */
   boolean hasStats();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface RoofSegmentSizeAndSunshineStatsOrBuilder
    * @return The stats.
    */
   com.google.maps.solar.v1.SizeAndSunshineStats getStats();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface RoofSegmentSizeAndSunshineStatsOrBuilder
    * @return Whether the center field is set.
    */
   boolean hasCenter();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface RoofSegmentSizeAndSunshineStatsOrBuilder
    * @return The center.
    */
   com.google.type.LatLng getCenter();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface RoofSegmentSizeAndSunshineStatsOrBuilder
    * @return Whether the boundingBox field is set.
    */
   boolean hasBoundingBox();
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface RoofSegmentSizeAndSunshineStatsOrBuilder
    * @return The boundingBox.
    */
   com.google.maps.solar.v1.LatLngBox getBoundingBox();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public interface RoofSegmentSizeAndSunshineStatsOrBuilder
    * @return Whether the planeHeightAtCenterMeters field is set.
    */
   boolean hasPlaneHeightAtCenterMeters();
+
   /**
    *
    *

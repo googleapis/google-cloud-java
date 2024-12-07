@@ -33,6 +33,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer)
     KnowledgeAssistAnswerOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use KnowledgeAssistAnswer.newBuilder() to construct.
   private KnowledgeAssistAnswer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
      * @return The queryText.
      */
     java.lang.String getQueryText();
+
     /**
      *
      *
@@ -93,6 +95,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getQueryTextBytes();
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.SuggestedQuery)
       SuggestedQueryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SuggestedQuery.newBuilder() to construct.
     private SuggestedQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -142,6 +146,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object queryText_ = "";
+
     /**
      *
      *
@@ -165,6 +170,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -357,6 +363,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -555,6 +562,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object queryText_ = "";
+
       /**
        *
        *
@@ -577,6 +585,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -599,6 +608,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -620,6 +630,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -637,6 +648,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -745,6 +757,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
      * @return The answerText.
      */
     java.lang.String getAnswerText();
+
     /**
      *
      *
@@ -772,6 +785,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
      * @return Whether the faqSource field is set.
      */
     boolean hasFaqSource();
+
     /**
      *
      *
@@ -787,6 +801,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
      */
     com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer.FaqSource
         getFaqSource();
+
     /**
      *
      *
@@ -815,6 +830,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
      * @return Whether the generativeSource field is set.
      */
     boolean hasGenerativeSource();
+
     /**
      *
      *
@@ -830,6 +846,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
      */
     com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
         getGenerativeSource();
+
     /**
      *
      *
@@ -848,6 +865,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer.SourceCase
         getSourceCase();
   }
+
   /**
    *
    *
@@ -863,6 +881,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer)
       KnowledgeAnswerOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use KnowledgeAnswer.newBuilder() to construct.
     private KnowledgeAnswer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -911,6 +930,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
        * @return The question.
        */
       java.lang.String getQuestion();
+
       /**
        *
        *
@@ -924,6 +944,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
        */
       com.google.protobuf.ByteString getQuestionBytes();
     }
+
     /**
      *
      *
@@ -939,6 +960,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer.FaqSource)
         FaqSourceOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use FaqSource.newBuilder() to construct.
       private FaqSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -975,6 +997,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object question_ = "";
+
       /**
        *
        *
@@ -998,6 +1021,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           return s;
         }
       }
+
       /**
        *
        *
@@ -1207,6 +1231,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1416,6 +1441,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         private int bitField0_;
 
         private java.lang.Object question_ = "";
+
         /**
          *
          *
@@ -1438,6 +1464,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1460,6 +1487,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1481,6 +1509,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1498,6 +1527,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1613,6 +1643,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer
                   .GenerativeSource.Snippet>
           getSnippetsList();
+
       /**
        *
        *
@@ -1628,6 +1659,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
               .Snippet
           getSnippets(int index);
+
       /**
        *
        *
@@ -1641,6 +1673,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
        * </code>
        */
       int getSnippetsCount();
+
       /**
        *
        *
@@ -1658,6 +1691,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
                   com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer
                       .GenerativeSource.SnippetOrBuilder>
           getSnippetsOrBuilderList();
+
       /**
        *
        *
@@ -1674,6 +1708,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               .SnippetOrBuilder
           getSnippetsOrBuilder(int index);
     }
+
     /**
      *
      *
@@ -1689,6 +1724,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource)
         GenerativeSourceOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use GenerativeSource.newBuilder() to construct.
       private GenerativeSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1738,6 +1774,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
          * @return The uri.
          */
         java.lang.String getUri();
+
         /**
          *
          *
@@ -1763,6 +1800,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
          * @return The text.
          */
         java.lang.String getText();
+
         /**
          *
          *
@@ -1788,6 +1826,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
          * @return The title.
          */
         java.lang.String getTitle();
+
         /**
          *
          *
@@ -1813,6 +1852,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
          * @return Whether the metadata field is set.
          */
         boolean hasMetadata();
+
         /**
          *
          *
@@ -1825,6 +1865,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
          * @return The metadata.
          */
         com.google.protobuf.Struct getMetadata();
+
         /**
          *
          *
@@ -1836,6 +1877,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
          */
         com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
       }
+
       /**
        *
        *
@@ -1851,6 +1893,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource.Snippet)
           SnippetOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use Snippet.newBuilder() to construct.
         private Snippet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -1890,6 +1933,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object uri_ = "";
+
         /**
          *
          *
@@ -1913,6 +1957,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             return s;
           }
         }
+
         /**
          *
          *
@@ -1941,6 +1986,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object text_ = "";
+
         /**
          *
          *
@@ -1964,6 +2010,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             return s;
           }
         }
+
         /**
          *
          *
@@ -1992,6 +2039,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object title_ = "";
+
         /**
          *
          *
@@ -2015,6 +2063,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             return s;
           }
         }
+
         /**
          *
          *
@@ -2041,6 +2090,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
 
         public static final int METADATA_FIELD_NUMBER = 5;
         private com.google.protobuf.Struct metadata_;
+
         /**
          *
          *
@@ -2056,6 +2106,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         public boolean hasMetadata() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -2071,6 +2122,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         public com.google.protobuf.Struct getMetadata() {
           return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
         }
+
         /**
          *
          *
@@ -2310,6 +2362,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -2586,6 +2639,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           private int bitField0_;
 
           private java.lang.Object uri_ = "";
+
           /**
            *
            *
@@ -2608,6 +2662,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -2630,6 +2685,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -2651,6 +2707,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2668,6 +2725,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2692,6 +2750,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           }
 
           private java.lang.Object text_ = "";
+
           /**
            *
            *
@@ -2714,6 +2773,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -2736,6 +2796,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -2757,6 +2818,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2774,6 +2836,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2798,6 +2861,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           }
 
           private java.lang.Object title_ = "";
+
           /**
            *
            *
@@ -2820,6 +2884,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -2842,6 +2907,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -2863,6 +2929,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2880,6 +2947,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2909,6 +2977,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
                   com.google.protobuf.Struct.Builder,
                   com.google.protobuf.StructOrBuilder>
               metadataBuilder_;
+
           /**
            *
            *
@@ -2923,6 +2992,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           public boolean hasMetadata() {
             return ((bitField0_ & 0x00000008) != 0);
           }
+
           /**
            *
            *
@@ -2943,6 +3013,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               return metadataBuilder_.getMessage();
             }
           }
+
           /**
            *
            *
@@ -2965,6 +3036,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2984,6 +3056,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3011,6 +3084,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             }
             return this;
           }
+
           /**
            *
            *
@@ -3030,6 +3104,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3044,6 +3119,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             onChanged();
             return getMetadataFieldBuilder().getBuilder();
           }
+
           /**
            *
            *
@@ -3062,6 +3138,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
                   : metadata_;
             }
           }
+
           /**
            *
            *
@@ -3167,6 +3244,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer
                   .GenerativeSource.Snippet>
           snippets_;
+
       /**
        *
        *
@@ -3186,6 +3264,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           getSnippetsList() {
         return snippets_;
       }
+
       /**
        *
        *
@@ -3206,6 +3285,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           getSnippetsOrBuilderList() {
         return snippets_;
       }
+
       /**
        *
        *
@@ -3222,6 +3302,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       public int getSnippetsCount() {
         return snippets_.size();
       }
+
       /**
        *
        *
@@ -3240,6 +3321,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           getSnippets(int index) {
         return snippets_.get(index);
       }
+
       /**
        *
        *
@@ -3449,6 +3531,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -3761,6 +3844,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             return snippetsBuilder_.getMessageList();
           }
         }
+
         /**
          *
          *
@@ -3780,6 +3864,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             return snippetsBuilder_.getCount();
           }
         }
+
         /**
          *
          *
@@ -3801,6 +3886,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             return snippetsBuilder_.getMessage(index);
           }
         }
+
         /**
          *
          *
@@ -3830,6 +3916,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -3856,6 +3943,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -3884,6 +3972,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -3913,6 +4002,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -3938,6 +4028,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -3964,6 +4055,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -3991,6 +4083,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -4013,6 +4106,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -4035,6 +4129,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -4052,6 +4147,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             getSnippetsBuilder(int index) {
           return getSnippetsFieldBuilder().getBuilder(index);
         }
+
         /**
          *
          *
@@ -4073,6 +4169,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             return snippetsBuilder_.getMessageOrBuilder(index);
           }
         }
+
         /**
          *
          *
@@ -4096,6 +4193,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             return java.util.Collections.unmodifiableList(snippets_);
           }
         }
+
         /**
          *
          *
@@ -4116,6 +4214,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
                   com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer
                       .GenerativeSource.Snippet.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -4137,6 +4236,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
                   com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer
                       .GenerativeSource.Snippet.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -4268,6 +4368,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       private SourceCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -4304,6 +4405,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object answerText_ = "";
+
     /**
      *
      *
@@ -4327,6 +4429,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -4352,6 +4455,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     }
 
     public static final int FAQ_SOURCE_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -4369,6 +4473,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     public boolean hasFaqSource() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -4392,6 +4497,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       return com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer.FaqSource
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4416,6 +4522,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     }
 
     public static final int GENERATIVE_SOURCE_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -4433,6 +4540,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     public boolean hasGenerativeSource() {
       return sourceCase_ == 4;
     }
+
     /**
      *
      *
@@ -4458,6 +4566,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       return com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer
           .GenerativeSource.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4702,6 +4811,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4965,6 +5075,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object answerText_ = "";
+
       /**
        *
        *
@@ -4987,6 +5098,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5009,6 +5121,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5030,6 +5143,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5047,6 +5161,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5077,6 +5192,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer
                   .FaqSourceOrBuilder>
           faqSourceBuilder_;
+
       /**
        *
        *
@@ -5094,6 +5210,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       public boolean hasFaqSource() {
         return sourceCase_ == 3;
       }
+
       /**
        *
        *
@@ -5126,6 +5243,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5152,6 +5270,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         sourceCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -5176,6 +5295,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         sourceCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -5217,6 +5337,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         sourceCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -5244,6 +5365,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5260,6 +5382,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           getFaqSourceBuilder() {
         return getFaqSourceFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5287,6 +5410,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5339,6 +5463,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer
                   .GenerativeSourceOrBuilder>
           generativeSourceBuilder_;
+
       /**
        *
        *
@@ -5356,6 +5481,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       public boolean hasGenerativeSource() {
         return sourceCase_ == 4;
       }
+
       /**
        *
        *
@@ -5389,6 +5515,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               .GenerativeSource.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5415,6 +5542,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         sourceCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -5439,6 +5567,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         sourceCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -5480,6 +5609,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         sourceCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -5507,6 +5637,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5523,6 +5654,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           getGenerativeSourceBuilder() {
         return getGenerativeSourceFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5550,6 +5682,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               .GenerativeSource.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5666,6 +5799,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int SUGGESTED_QUERY_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.SuggestedQuery suggestedQuery_;
+
   /**
    *
    *
@@ -5684,6 +5818,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
   public boolean hasSuggestedQuery() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -5706,6 +5841,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             .getDefaultInstance()
         : suggestedQuery_;
   }
+
   /**
    *
    *
@@ -5730,6 +5866,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
   public static final int SUGGESTED_QUERY_ANSWER_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer
       suggestedQueryAnswer_;
+
   /**
    *
    *
@@ -5748,6 +5885,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
   public boolean hasSuggestedQueryAnswer() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -5770,6 +5908,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             .getDefaultInstance()
         : suggestedQueryAnswer_;
   }
+
   /**
    *
    *
@@ -5795,6 +5934,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object answerRecord_ = "";
+
   /**
    *
    *
@@ -5820,6 +5960,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -6035,6 +6176,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -6278,6 +6420,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.SuggestedQuery.Builder,
             com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.SuggestedQueryOrBuilder>
         suggestedQueryBuilder_;
+
     /**
      *
      *
@@ -6295,6 +6438,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     public boolean hasSuggestedQuery() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -6320,6 +6464,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         return suggestedQueryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6346,6 +6491,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6370,6 +6516,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6403,6 +6550,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6425,6 +6573,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6443,6 +6592,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return getSuggestedQueryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6466,6 +6616,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             : suggestedQuery_;
       }
     }
+
     /**
      *
      *
@@ -6502,6 +6653,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer.Builder,
             com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswerOrBuilder>
         suggestedQueryAnswerBuilder_;
+
     /**
      *
      *
@@ -6519,6 +6671,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     public boolean hasSuggestedQueryAnswer() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -6544,6 +6697,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         return suggestedQueryAnswerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6570,6 +6724,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6594,6 +6749,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6627,6 +6783,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6649,6 +6806,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6667,6 +6825,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return getSuggestedQueryAnswerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6690,6 +6849,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             : suggestedQueryAnswer_;
       }
     }
+
     /**
      *
      *
@@ -6720,6 +6880,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object answerRecord_ = "";
+
     /**
      *
      *
@@ -6744,6 +6905,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6768,6 +6930,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6791,6 +6954,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6810,6 +6974,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

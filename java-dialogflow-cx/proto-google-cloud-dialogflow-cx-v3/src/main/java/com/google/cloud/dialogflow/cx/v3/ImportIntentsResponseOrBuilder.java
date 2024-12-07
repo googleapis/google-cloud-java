@@ -38,6 +38,7 @@ public interface ImportIntentsResponseOrBuilder
    * @return A list containing the intents.
    */
   java.util.List<java.lang.String> getIntentsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ImportIntentsResponseOrBuilder
    * @return The count of intents.
    */
   int getIntentsCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface ImportIntentsResponseOrBuilder
    * @return The intents at the given index.
    */
   java.lang.String getIntents(int index);
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface ImportIntentsResponseOrBuilder
    * @return Whether the conflictingResources field is set.
    */
   boolean hasConflictingResources();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface ImportIntentsResponseOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.ImportIntentsResponse.ConflictingResources
       getConflictingResources();
+
   /**
    *
    *

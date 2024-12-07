@@ -39,6 +39,7 @@ public interface GroupAssetsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -93,6 +94,7 @@ public interface GroupAssetsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -157,6 +159,7 @@ public interface GroupAssetsRequestOrBuilder
    * @return The groupBy.
    */
   java.lang.String getGroupBy();
+
   /**
    *
    *
@@ -215,6 +218,7 @@ public interface GroupAssetsRequestOrBuilder
    * @return Whether the compareDuration field is set.
    */
   boolean hasCompareDuration();
+
   /**
    *
    *
@@ -247,6 +251,7 @@ public interface GroupAssetsRequestOrBuilder
    * @return The compareDuration.
    */
   com.google.protobuf.Duration getCompareDuration();
+
   /**
    *
    *
@@ -293,6 +298,7 @@ public interface GroupAssetsRequestOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -308,6 +314,7 @@ public interface GroupAssetsRequestOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *
@@ -336,6 +343,7 @@ public interface GroupAssetsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

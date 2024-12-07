@@ -37,6 +37,7 @@ public interface DatabaseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface DatabaseOrBuilder
    * @return The charset.
    */
   java.lang.String getCharset();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DatabaseOrBuilder
    * @return The collation.
    */
   java.lang.String getCollation();
+
   /**
    *
    *

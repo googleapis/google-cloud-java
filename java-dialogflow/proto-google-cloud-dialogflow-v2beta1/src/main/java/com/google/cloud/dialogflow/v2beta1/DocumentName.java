@@ -306,7 +306,8 @@ public class DocumentName implements ResourceName {
     private Builder(DocumentName documentName) {
       Preconditions.checkArgument(
           Objects.equals(documentName.pathTemplate, PROJECT_KNOWLEDGE_BASE_DOCUMENT),
-          "toBuilder is only supported when DocumentName has the pattern of projects/{project}/knowledgeBases/{knowledge_base}/documents/{document}");
+          "toBuilder is only supported when DocumentName has the pattern of"
+              + " projects/{project}/knowledgeBases/{knowledge_base}/documents/{document}");
       this.project = documentName.project;
       this.knowledgeBase = documentName.knowledgeBase;
       this.document = documentName.document;

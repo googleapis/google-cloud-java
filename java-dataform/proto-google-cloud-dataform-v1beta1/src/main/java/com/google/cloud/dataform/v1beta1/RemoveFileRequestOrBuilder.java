@@ -38,6 +38,7 @@ public interface RemoveFileRequestOrBuilder
    * @return The workspace.
    */
   java.lang.String getWorkspace();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface RemoveFileRequestOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *

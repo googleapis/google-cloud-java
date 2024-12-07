@@ -33,6 +33,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.InputAudioConfig)
     InputAudioConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InputAudioConfig.newBuilder() to construct.
   private InputAudioConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
   private int audioEncoding_ = 0;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   public int getAudioEncodingValue() {
     return audioEncoding_;
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 2;
   private int sampleRateHertz_ = 0;
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int ENABLE_WORD_INFO_FIELD_NUMBER = 13;
   private boolean enableWordInfo_ = false;
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList phraseHints_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getPhraseHintsList() {
     return phraseHints_;
   }
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   public int getPhraseHintsCount() {
     return phraseHints_.size();
   }
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   public java.lang.String getPhraseHints(int index) {
     return phraseHints_.get(index);
   }
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -296,6 +307,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int MODEL_VARIANT_FIELD_NUMBER = 10;
   private int modelVariant_ = 0;
+
   /**
    *
    *
@@ -312,6 +324,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   public int getModelVariantValue() {
     return modelVariant_;
   }
+
   /**
    *
    *
@@ -335,6 +348,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int SINGLE_UTTERANCE_FIELD_NUMBER = 8;
   private boolean singleUtterance_ = false;
+
   /**
    *
    *
@@ -360,6 +374,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int BARGE_IN_CONFIG_FIELD_NUMBER = 15;
   private com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig bargeInConfig_;
+
   /**
    *
    *
@@ -375,6 +390,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasBargeInConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -392,6 +408,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig.getDefaultInstance()
         : bargeInConfig_;
   }
+
   /**
    *
    *
@@ -410,6 +427,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int OPT_OUT_CONFORMER_MODEL_MIGRATION_FIELD_NUMBER = 26;
   private boolean optOutConformerModelMigration_ = false;
+
   /**
    *
    *
@@ -686,6 +704,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1000,6 +1019,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int audioEncoding_ = 0;
+
     /**
      *
      *
@@ -1017,6 +1037,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public int getAudioEncodingValue() {
       return audioEncoding_;
     }
+
     /**
      *
      *
@@ -1037,6 +1058,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1080,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.dialogflow.cx.v3beta1.AudioEncoding.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1081,6 +1104,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1126,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int sampleRateHertz_;
+
     /**
      *
      *
@@ -1121,6 +1146,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public int getSampleRateHertz() {
       return sampleRateHertz_;
     }
+
     /**
      *
      *
@@ -1144,6 +1170,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1194,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean enableWordInfo_;
+
     /**
      *
      *
@@ -1187,6 +1215,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public boolean getEnableWordInfo() {
       return enableWordInfo_;
     }
+
     /**
      *
      *
@@ -1211,6 +1240,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1273,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1263,6 +1294,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       phraseHints_.makeImmutable();
       return phraseHints_;
     }
+
     /**
      *
      *
@@ -1282,6 +1314,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public int getPhraseHintsCount() {
       return phraseHints_.size();
     }
+
     /**
      *
      *
@@ -1302,6 +1335,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public java.lang.String getPhraseHints(int index) {
       return phraseHints_.get(index);
     }
+
     /**
      *
      *
@@ -1322,6 +1356,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getPhraseHintsBytes(int index) {
       return phraseHints_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1350,6 +1385,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1413,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1401,6 +1438,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1462,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1454,6 +1493,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -1479,6 +1519,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1504,6 +1545,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1528,6 +1570,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1548,6 +1591,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1619,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int modelVariant_ = 0;
+
     /**
      *
      *
@@ -1591,6 +1636,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public int getModelVariantValue() {
       return modelVariant_;
     }
+
     /**
      *
      *
@@ -1610,6 +1656,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1630,6 +1677,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.dialogflow.cx.v3beta1.SpeechModelVariant.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1653,6 +1701,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1673,6 +1722,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean singleUtterance_;
+
     /**
      *
      *
@@ -1695,6 +1745,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public boolean getSingleUtterance() {
       return singleUtterance_;
     }
+
     /**
      *
      *
@@ -1721,6 +1772,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1752,6 +1804,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.BargeInConfigOrBuilder>
         bargeInConfigBuilder_;
+
     /**
      *
      *
@@ -1766,6 +1819,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasBargeInConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -1786,6 +1840,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         return bargeInConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1808,6 +1863,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1828,6 +1884,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1856,6 +1913,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1875,6 +1933,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1889,6 +1948,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getBargeInConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1908,6 +1968,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             : bargeInConfig_;
       }
     }
+
     /**
      *
      *
@@ -1935,6 +1996,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean optOutConformerModelMigration_;
+
     /**
      *
      *
@@ -1953,6 +2015,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public boolean getOptOutConformerModelMigration() {
       return optOutConformerModelMigration_;
     }
+
     /**
      *
      *
@@ -1975,6 +2038,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

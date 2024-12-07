@@ -33,6 +33,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.CreateAnnotationSpecSetRequest)
     CreateAnnotationSpecSetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateAnnotationSpecSetRequest.newBuilder() to construct.
   private CreateAnnotationSpecSetRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
 
   public static final int ANNOTATION_SPEC_SET_FIELD_NUMBER = 2;
   private com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotationSpecSet_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
   public boolean hasAnnotationSpecSet() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet.getDefaultInstance()
         : annotationSpecSet_;
   }
+
   /**
    *
    *
@@ -360,6 +366,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -584,6 +591,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -609,6 +617,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -634,6 +643,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
             com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet.Builder,
             com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOrBuilder>
         annotationSpecSetBuilder_;
+
     /**
      *
      *
@@ -728,6 +741,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
     public boolean hasAnnotationSpecSet() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
         return annotationSpecSetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +819,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +853,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +877,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +897,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
       onChanged();
       return getAnnotationSpecSetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -901,6 +921,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
             : annotationSpecSet_;
       }
     }
+
     /**
      *
      *

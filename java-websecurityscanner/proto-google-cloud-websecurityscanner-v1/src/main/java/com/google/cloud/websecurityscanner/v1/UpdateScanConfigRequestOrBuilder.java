@@ -38,6 +38,7 @@ public interface UpdateScanConfigRequestOrBuilder
    * @return Whether the scanConfig field is set.
    */
   boolean hasScanConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateScanConfigRequestOrBuilder
    * @return The scanConfig.
    */
   com.google.cloud.websecurityscanner.v1.ScanConfig getScanConfig();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateScanConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface UpdateScanConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

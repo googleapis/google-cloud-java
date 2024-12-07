@@ -33,6 +33,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration)
     EncryptionConfigurationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EncryptionConfiguration.newBuilder() to construct.
   private EncryptionConfiguration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 1;
   private com.google.protobuf.StringValue kmsKeyName_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
   public boolean hasKmsKeyName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
   public com.google.protobuf.StringValue getKmsKeyName() {
     return kmsKeyName_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : kmsKeyName_;
   }
+
   /**
    *
    *
@@ -274,6 +278,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -482,6 +487,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
             com.google.protobuf.StringValue.Builder,
             com.google.protobuf.StringValueOrBuilder>
         kmsKeyNameBuilder_;
+
     /**
      *
      *
@@ -496,6 +502,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
     public boolean hasKmsKeyName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -516,6 +523,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
         return kmsKeyNameBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -538,6 +546,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -557,6 +566,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -584,6 +594,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -603,6 +614,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -617,6 +629,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
       onChanged();
       return getKmsKeyNameFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -635,6 +648,7 @@ public final class EncryptionConfiguration extends com.google.protobuf.Generated
             : kmsKeyName_;
       }
     }
+
     /**
      *
      *

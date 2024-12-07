@@ -36,6 +36,7 @@ public interface CreateSnapshotDiskRequestOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CreateSnapshotDiskRequestOrBuilder
    * @return Whether the guestFlush field is set.
    */
   boolean hasGuestFlush();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface CreateSnapshotDiskRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface CreateSnapshotDiskRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface CreateSnapshotDiskRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface CreateSnapshotDiskRequestOrBuilder
    * @return Whether the snapshotResource field is set.
    */
   boolean hasSnapshotResource();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface CreateSnapshotDiskRequestOrBuilder
    * @return The snapshotResource.
    */
   com.google.cloud.compute.v1.Snapshot getSnapshotResource();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface CreateSnapshotDiskRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

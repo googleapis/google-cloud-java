@@ -35,6 +35,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.RecognizeResponse)
     RecognizeResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RecognizeResponse.newBuilder() to construct.
   private RecognizeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult> results_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       getResultsList() {
     return results_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       getResultsOrBuilderList() {
     return results_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
   public int getResultsCount() {
     return results_.size();
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult getResults(int index) {
     return results_.get(index);
   }
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
 
   public static final int TOTAL_BILLED_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration totalBilledTime_;
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
   public boolean hasTotalBilledTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Duration.getDefaultInstance()
         : totalBilledTime_;
   }
+
   /**
    *
    *
@@ -197,6 +206,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
 
   public static final int SPEECH_ADAPTATION_INFO_FIELD_NUMBER = 7;
   private com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speechAdaptationInfo_;
+
   /**
    *
    *
@@ -212,6 +222,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
   public boolean hasSpeechAdaptationInfo() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -229,6 +240,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.getDefaultInstance()
         : speechAdaptationInfo_;
   }
+
   /**
    *
    *
@@ -248,6 +260,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
 
   public static final int REQUEST_ID_FIELD_NUMBER = 8;
   private long requestId_ = 0L;
+
   /**
    *
    *
@@ -464,6 +477,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -799,6 +813,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
         return resultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -816,6 +831,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
         return resultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -833,6 +849,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
         return resultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -857,6 +874,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +897,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +921,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +946,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +968,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +991,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1014,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1035,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1056,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1071,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
         int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1063,6 +1090,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1082,6 +1110,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(results_);
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1126,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1114,6 +1144,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
               index,
               com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1152,6 +1183,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         totalBilledTimeBuilder_;
+
     /**
      *
      *
@@ -1166,6 +1198,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     public boolean hasTotalBilledTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1186,6 +1219,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
         return totalBilledTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1208,6 +1242,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1262,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1290,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1273,6 +1310,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1325,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTotalBilledTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1305,6 +1344,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
             : totalBilledTime_;
       }
     }
+
     /**
      *
      *
@@ -1337,6 +1377,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.Builder,
             com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfoOrBuilder>
         speechAdaptationInfoBuilder_;
+
     /**
      *
      *
@@ -1351,6 +1392,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     public boolean hasSpeechAdaptationInfo() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1371,6 +1413,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
         return speechAdaptationInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1394,6 +1437,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1458,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1488,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1462,6 +1508,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1477,6 +1524,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSpeechAdaptationInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1496,6 +1544,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
             : speechAdaptationInfo_;
       }
     }
+
     /**
      *
      *
@@ -1523,6 +1572,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private long requestId_;
+
     /**
      *
      *
@@ -1539,6 +1589,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     public long getRequestId() {
       return requestId_;
     }
+
     /**
      *
      *
@@ -1559,6 +1610,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

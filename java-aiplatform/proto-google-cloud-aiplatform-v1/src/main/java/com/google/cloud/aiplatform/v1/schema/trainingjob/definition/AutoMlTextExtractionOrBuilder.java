@@ -38,6 +38,7 @@ public interface AutoMlTextExtractionOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface AutoMlTextExtractionOrBuilder
    */
   com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTextExtractionInputs
       getInputs();
+
   /**
    *
    *

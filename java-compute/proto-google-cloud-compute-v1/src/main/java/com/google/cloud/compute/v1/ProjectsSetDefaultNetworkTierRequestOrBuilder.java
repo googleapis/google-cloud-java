@@ -37,6 +37,7 @@ public interface ProjectsSetDefaultNetworkTierRequestOrBuilder
    * @return Whether the networkTier field is set.
    */
   boolean hasNetworkTier();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ProjectsSetDefaultNetworkTierRequestOrBuilder
    * @return The networkTier.
    */
   java.lang.String getNetworkTier();
+
   /**
    *
    *

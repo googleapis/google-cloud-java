@@ -42,6 +42,7 @@ public interface ListExternalAccessRulesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -94,6 +95,7 @@ public interface ListExternalAccessRulesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -148,6 +150,7 @@ public interface ListExternalAccessRulesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -201,6 +204,7 @@ public interface ListExternalAccessRulesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

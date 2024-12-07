@@ -36,6 +36,7 @@ public interface ProcessRequestOrBuilder
    * @return Whether the inlineDocument field is set.
    */
   boolean hasInlineDocument();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ProcessRequestOrBuilder
    * @return The inlineDocument.
    */
   com.google.cloud.documentai.v1.Document getInlineDocument();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ProcessRequestOrBuilder
    * @return Whether the rawDocument field is set.
    */
   boolean hasRawDocument();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ProcessRequestOrBuilder
    * @return The rawDocument.
    */
   com.google.cloud.documentai.v1.RawDocument getRawDocument();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface ProcessRequestOrBuilder
    * @return Whether the gcsDocument field is set.
    */
   boolean hasGcsDocument();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ProcessRequestOrBuilder
    * @return The gcsDocument.
    */
   com.google.cloud.documentai.v1.GcsDocument getGcsDocument();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface ProcessRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public interface ProcessRequestOrBuilder
    * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public interface ProcessRequestOrBuilder
    * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public interface ProcessRequestOrBuilder
    * @return Whether the processOptions field is set.
    */
   boolean hasProcessOptions();
+
   /**
    *
    *
@@ -258,6 +268,7 @@ public interface ProcessRequestOrBuilder
    * @return The processOptions.
    */
   com.google.cloud.documentai.v1.ProcessOptions getProcessOptions();
+
   /**
    *
    *
@@ -284,6 +295,7 @@ public interface ProcessRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -299,9 +311,11 @@ public interface ProcessRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -317,6 +331,7 @@ public interface ProcessRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -336,6 +351,7 @@ public interface ProcessRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

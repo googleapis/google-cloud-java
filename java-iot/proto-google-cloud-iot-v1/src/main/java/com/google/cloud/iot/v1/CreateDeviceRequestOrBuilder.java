@@ -40,6 +40,7 @@ public interface CreateDeviceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateDeviceRequestOrBuilder
    * @return Whether the device field is set.
    */
   boolean hasDevice();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateDeviceRequestOrBuilder
    * @return The device.
    */
   com.google.cloud.iot.v1.Device getDevice();
+
   /**
    *
    *

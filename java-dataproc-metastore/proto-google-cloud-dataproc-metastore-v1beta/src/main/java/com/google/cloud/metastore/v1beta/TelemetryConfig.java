@@ -33,6 +33,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1beta.TelemetryConfig)
     TelemetryConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TelemetryConfig.newBuilder() to construct.
   private TelemetryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,6 +109,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
      * <code>LOG_FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int LOG_FORMAT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -118,6 +120,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
      * <code>LEGACY = 1;</code>
      */
     public static final int LEGACY_VALUE = 1;
+
     /**
      *
      *
@@ -216,6 +219,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int LOG_FORMAT_FIELD_NUMBER = 1;
   private int logFormat_ = 0;
+
   /**
    *
    *
@@ -231,6 +235,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
   public int getLogFormatValue() {
     return logFormat_;
   }
+
   /**
    *
    *
@@ -414,6 +419,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -596,6 +602,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int logFormat_ = 0;
+
     /**
      *
      *
@@ -611,6 +618,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
     public int getLogFormatValue() {
       return logFormat_;
     }
+
     /**
      *
      *
@@ -629,6 +637,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +657,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.metastore.v1beta.TelemetryConfig.LogFormat.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -669,6 +679,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

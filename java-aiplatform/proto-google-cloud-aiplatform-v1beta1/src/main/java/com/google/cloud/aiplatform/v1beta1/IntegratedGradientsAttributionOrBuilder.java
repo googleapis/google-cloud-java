@@ -58,6 +58,7 @@ public interface IntegratedGradientsAttributionOrBuilder
    * @return Whether the smoothGradConfig field is set.
    */
   boolean hasSmoothGradConfig();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface IntegratedGradientsAttributionOrBuilder
    * @return The smoothGradConfig.
    */
   com.google.cloud.aiplatform.v1beta1.SmoothGradConfig getSmoothGradConfig();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface IntegratedGradientsAttributionOrBuilder
    * @return Whether the blurBaselineConfig field is set.
    */
   boolean hasBlurBaselineConfig();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface IntegratedGradientsAttributionOrBuilder
    * @return The blurBaselineConfig.
    */
   com.google.cloud.aiplatform.v1beta1.BlurBaselineConfig getBlurBaselineConfig();
+
   /**
    *
    *

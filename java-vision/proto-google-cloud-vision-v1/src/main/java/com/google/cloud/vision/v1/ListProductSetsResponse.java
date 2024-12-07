@@ -33,6 +33,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.ListProductSetsResponse)
     ListProductSetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListProductSetsResponse.newBuilder() to construct.
   private ListProductSetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.ProductSet> productSets_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.vision.v1.ProductSet> getProductSetsList() {
     return productSets_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       getProductSetsOrBuilderList() {
     return productSets_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
   public int getProductSetsCount() {
     return productSets_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
   public com.google.cloud.vision.v1.ProductSet getProductSets(int index) {
     return productSets_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -634,6 +643,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
         return productSetsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
         return productSetsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
         return productSetsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -688,6 +700,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +744,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +787,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +808,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +829,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +849,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +869,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +882,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
     public com.google.cloud.vision.v1.ProductSet.Builder getProductSetsBuilder(int index) {
       return getProductSetsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -877,6 +899,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
         return productSetsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -894,6 +917,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(productSets_);
       }
     }
+
     /**
      *
      *
@@ -907,6 +931,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       return getProductSetsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.ProductSet.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -920,6 +945,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       return getProductSetsFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.ProductSet.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -952,6 +978,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -975,6 +1002,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -998,6 +1026,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1049,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1068,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

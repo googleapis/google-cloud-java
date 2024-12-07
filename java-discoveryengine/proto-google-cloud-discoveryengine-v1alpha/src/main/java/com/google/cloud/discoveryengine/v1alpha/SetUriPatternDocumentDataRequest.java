@@ -35,6 +35,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest)
     SetUriPatternDocumentDataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetUriPatternDocumentDataRequest.newBuilder() to construct.
   private SetUriPatternDocumentDataRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -84,6 +85,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object siteSearchEngine_ = "";
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +175,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
   public int getDocumentDataMapCount() {
     return internalGetDocumentDataMap().getMap().size();
   }
+
   /**
    *
    *
@@ -209,12 +213,14 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
     }
     return internalGetDocumentDataMap().getMap().containsKey(key);
   }
+
   /** Use {@link #getDocumentDataMapMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Struct> getDocumentDataMap() {
     return getDocumentDataMapMap();
   }
+
   /**
    *
    *
@@ -249,6 +255,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
   public java.util.Map<java.lang.String, com.google.protobuf.Struct> getDocumentDataMapMap() {
     return internalGetDocumentDataMap().getMap();
   }
+
   /**
    *
    *
@@ -291,6 +298,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
         internalGetDocumentDataMap().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -336,6 +344,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
 
   public static final int EMPTY_DOCUMENT_DATA_MAP_FIELD_NUMBER = 4;
   private boolean emptyDocumentDataMap_ = false;
+
   /**
    *
    *
@@ -356,6 +365,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
 
   public static final int SCHEMA_FIELD_NUMBER = 3;
   private com.google.protobuf.Struct schema_;
+
   /**
    *
    *
@@ -375,6 +385,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
   public boolean hasSchema() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -394,6 +405,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
   public com.google.protobuf.Struct getSchema() {
     return schema_ == null ? com.google.protobuf.Struct.getDefaultInstance() : schema_;
   }
+
   /**
    *
    *
@@ -614,6 +626,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -895,6 +908,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object siteSearchEngine_ = "";
+
     /**
      *
      *
@@ -922,6 +936,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -949,6 +964,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -975,6 +991,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1014,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1100,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
     public int getDocumentDataMapCount() {
       return internalGetDocumentDataMap().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -1119,12 +1138,14 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       }
       return internalGetDocumentDataMap().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getDocumentDataMapMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Struct> getDocumentDataMap() {
       return getDocumentDataMapMap();
     }
+
     /**
      *
      *
@@ -1159,6 +1180,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
     public java.util.Map<java.lang.String, com.google.protobuf.Struct> getDocumentDataMapMap() {
       return internalGetDocumentDataMap().getImmutableMap();
     }
+
     /**
      *
      *
@@ -1201,6 +1223,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
           internalGetMutableDocumentDataMap().ensureBuilderMap();
       return map.containsKey(key) ? documentDataMapConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1249,6 +1272,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       internalGetMutableDocumentDataMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1286,12 +1310,14 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       internalGetMutableDocumentDataMap().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Struct> getMutableDocumentDataMap() {
       bitField0_ |= 0x00000002;
       return internalGetMutableDocumentDataMap().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1333,6 +1359,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1402,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1422,6 +1450,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
     }
 
     private boolean emptyDocumentDataMap_;
+
     /**
      *
      *
@@ -1439,6 +1468,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
     public boolean getEmptyDocumentDataMap() {
       return emptyDocumentDataMap_;
     }
+
     /**
      *
      *
@@ -1460,6 +1490,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1486,6 +1517,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         schemaBuilder_;
+
     /**
      *
      *
@@ -1504,6 +1536,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
     public boolean hasSchema() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1526,6 +1559,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
         return schemaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1552,6 +1586,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1610,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1606,6 +1642,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1629,6 +1666,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1647,6 +1685,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
       onChanged();
       return getSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1667,6 +1706,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
         return schema_ == null ? com.google.protobuf.Struct.getDefaultInstance() : schema_;
       }
     }
+
     /**
      *
      *

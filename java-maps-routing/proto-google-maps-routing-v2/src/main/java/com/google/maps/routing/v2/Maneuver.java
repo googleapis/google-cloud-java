@@ -253,6 +253,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MANEUVER_UNSPECIFIED = 0;</code>
    */
   public static final int MANEUVER_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -263,6 +264,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TURN_SLIGHT_LEFT = 1;</code>
    */
   public static final int TURN_SLIGHT_LEFT_VALUE = 1;
+
   /**
    *
    *
@@ -273,6 +275,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TURN_SHARP_LEFT = 2;</code>
    */
   public static final int TURN_SHARP_LEFT_VALUE = 2;
+
   /**
    *
    *
@@ -283,6 +286,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UTURN_LEFT = 3;</code>
    */
   public static final int UTURN_LEFT_VALUE = 3;
+
   /**
    *
    *
@@ -293,6 +297,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TURN_LEFT = 4;</code>
    */
   public static final int TURN_LEFT_VALUE = 4;
+
   /**
    *
    *
@@ -303,6 +308,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TURN_SLIGHT_RIGHT = 5;</code>
    */
   public static final int TURN_SLIGHT_RIGHT_VALUE = 5;
+
   /**
    *
    *
@@ -313,6 +319,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TURN_SHARP_RIGHT = 6;</code>
    */
   public static final int TURN_SHARP_RIGHT_VALUE = 6;
+
   /**
    *
    *
@@ -323,6 +330,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UTURN_RIGHT = 7;</code>
    */
   public static final int UTURN_RIGHT_VALUE = 7;
+
   /**
    *
    *
@@ -333,6 +341,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TURN_RIGHT = 8;</code>
    */
   public static final int TURN_RIGHT_VALUE = 8;
+
   /**
    *
    *
@@ -343,6 +352,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STRAIGHT = 9;</code>
    */
   public static final int STRAIGHT_VALUE = 9;
+
   /**
    *
    *
@@ -353,6 +363,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RAMP_LEFT = 10;</code>
    */
   public static final int RAMP_LEFT_VALUE = 10;
+
   /**
    *
    *
@@ -363,6 +374,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RAMP_RIGHT = 11;</code>
    */
   public static final int RAMP_RIGHT_VALUE = 11;
+
   /**
    *
    *
@@ -373,6 +385,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MERGE = 12;</code>
    */
   public static final int MERGE_VALUE = 12;
+
   /**
    *
    *
@@ -383,6 +396,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FORK_LEFT = 13;</code>
    */
   public static final int FORK_LEFT_VALUE = 13;
+
   /**
    *
    *
@@ -393,6 +407,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FORK_RIGHT = 14;</code>
    */
   public static final int FORK_RIGHT_VALUE = 14;
+
   /**
    *
    *
@@ -403,6 +418,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FERRY = 15;</code>
    */
   public static final int FERRY_VALUE = 15;
+
   /**
    *
    *
@@ -413,6 +429,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FERRY_TRAIN = 16;</code>
    */
   public static final int FERRY_TRAIN_VALUE = 16;
+
   /**
    *
    *
@@ -423,6 +440,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ROUNDABOUT_LEFT = 17;</code>
    */
   public static final int ROUNDABOUT_LEFT_VALUE = 17;
+
   /**
    *
    *
@@ -433,6 +451,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ROUNDABOUT_RIGHT = 18;</code>
    */
   public static final int ROUNDABOUT_RIGHT_VALUE = 18;
+
   /**
    *
    *
@@ -443,6 +462,7 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DEPART = 19;</code>
    */
   public static final int DEPART_VALUE = 19;
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface UpdateTransferConfigRequestOrBuilder
    * @return Whether the transferConfig field is set.
    */
   boolean hasTransferConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateTransferConfigRequestOrBuilder
    * @return The transferConfig.
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface UpdateTransferConfigRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getAuthorizationCode();
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public interface UpdateTransferConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public interface UpdateTransferConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -196,6 +201,7 @@ public interface UpdateTransferConfigRequestOrBuilder
    * @return The versionInfo.
    */
   java.lang.String getVersionInfo();
+
   /**
    *
    *
@@ -243,6 +249,7 @@ public interface UpdateTransferConfigRequestOrBuilder
    * @return The serviceAccountName.
    */
   java.lang.String getServiceAccountName();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchSnapshotSettingRequest)
     PatchSnapshotSettingRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PatchSnapshotSettingRequest.newBuilder() to construct.
   private PatchSnapshotSettingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
 
   public static final int SNAPSHOT_SETTINGS_RESOURCE_FIELD_NUMBER = 357664495;
   private com.google.cloud.compute.v1.SnapshotSettings snapshotSettingsResource_;
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
   public boolean hasSnapshotSettingsResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
         ? com.google.cloud.compute.v1.SnapshotSettings.getDefaultInstance()
         : snapshotSettingsResource_;
   }
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object updateMask_ = "";
+
   /**
    *
    *
@@ -263,6 +273,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -514,6 +526,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -763,6 +776,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -787,6 +801,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -834,6 +850,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +870,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +897,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -893,6 +912,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -915,6 +935,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -937,6 +958,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +998,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1028,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.SnapshotSettings.Builder,
             com.google.cloud.compute.v1.SnapshotSettingsOrBuilder>
         snapshotSettingsResourceBuilder_;
+
     /**
      *
      *
@@ -1020,6 +1045,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
     public boolean hasSnapshotSettingsResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1042,6 +1068,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
         return snapshotSettingsResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1066,6 +1093,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1116,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1148,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1170,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1188,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       onChanged();
       return getSnapshotSettingsResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1178,6 +1210,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
             : snapshotSettingsResource_;
       }
     }
+
     /**
      *
      *
@@ -1207,6 +1240,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object updateMask_ = "";
+
     /**
      *
      *
@@ -1221,6 +1255,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1243,6 +1278,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1265,6 +1301,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1286,6 +1323,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1303,6 +1341,7 @@ public final class PatchSnapshotSettingRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.language.v2.AnnotateTextResponse)
     AnnotateTextResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotateTextResponse.newBuilder() to construct.
   private AnnotateTextResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v2.Sentence> sentences_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.language.v2.Sentence> getSentencesList() {
     return sentences_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       getSentencesOrBuilderList() {
     return sentences_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   public int getSentencesCount() {
     return sentences_.size();
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.language.v2.Sentence getSentences(int index) {
     return sentences_.get(index);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v2.Entity> entities_;
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.language.v2.Entity> getEntitiesList() {
     return entities_;
   }
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       getEntitiesOrBuilderList() {
     return entities_;
   }
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   public int getEntitiesCount() {
     return entities_.size();
   }
+
   /**
    *
    *
@@ -217,6 +227,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.language.v2.Entity getEntities(int index) {
     return entities_.get(index);
   }
+
   /**
    *
    *
@@ -237,6 +248,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
 
   public static final int DOCUMENT_SENTIMENT_FIELD_NUMBER = 3;
   private com.google.cloud.language.v2.Sentiment documentSentiment_;
+
   /**
    *
    *
@@ -253,6 +265,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   public boolean hasDocumentSentiment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -271,6 +284,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.language.v2.Sentiment.getDefaultInstance()
         : documentSentiment_;
   }
+
   /**
    *
    *
@@ -292,6 +306,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -317,6 +332,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -347,6 +363,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v2.ClassificationCategory> categories_;
+
   /**
    *
    *
@@ -360,6 +377,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.language.v2.ClassificationCategory> getCategoriesList() {
     return categories_;
   }
+
   /**
    *
    *
@@ -374,6 +392,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       getCategoriesOrBuilderList() {
     return categories_;
   }
+
   /**
    *
    *
@@ -387,6 +406,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   public int getCategoriesCount() {
     return categories_.size();
   }
+
   /**
    *
    *
@@ -400,6 +420,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.language.v2.ClassificationCategory getCategories(int index) {
     return categories_.get(index);
   }
+
   /**
    *
    *
@@ -419,6 +440,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v2.ClassificationCategory> moderationCategories_;
+
   /**
    *
    *
@@ -434,6 +456,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       getModerationCategoriesList() {
     return moderationCategories_;
   }
+
   /**
    *
    *
@@ -449,6 +472,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       getModerationCategoriesOrBuilderList() {
     return moderationCategories_;
   }
+
   /**
    *
    *
@@ -463,6 +487,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   public int getModerationCategoriesCount() {
     return moderationCategories_.size();
   }
+
   /**
    *
    *
@@ -477,6 +502,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.language.v2.ClassificationCategory getModerationCategories(int index) {
     return moderationCategories_.get(index);
   }
+
   /**
    *
    *
@@ -495,6 +521,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
 
   public static final int LANGUAGE_SUPPORTED_FIELD_NUMBER = 7;
   private boolean languageSupported_ = false;
+
   /**
    *
    *
@@ -740,6 +767,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1237,6 +1265,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return sentencesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1254,6 +1283,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return sentencesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1271,6 +1301,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return sentencesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1294,6 +1325,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1315,6 +1347,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1338,6 +1371,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1395,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1381,6 +1416,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1402,6 +1438,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1423,6 +1460,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1481,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1502,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1476,6 +1516,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.language.v2.Sentence.Builder getSentencesBuilder(int index) {
       return getSentencesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1493,6 +1534,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return sentencesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1511,6 +1553,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(sentences_);
       }
     }
+
     /**
      *
      *
@@ -1525,6 +1568,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       return getSentencesFieldBuilder()
           .addBuilder(com.google.cloud.language.v2.Sentence.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1539,6 +1583,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       return getSentencesFieldBuilder()
           .addBuilder(index, com.google.cloud.language.v2.Sentence.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1606,6 +1651,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return entitiesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1626,6 +1672,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return entitiesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1646,6 +1693,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return entitiesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1672,6 +1720,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1696,6 +1745,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1722,6 +1772,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1748,6 +1799,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1771,6 +1823,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1795,6 +1848,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1819,6 +1873,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1842,6 +1897,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1865,6 +1921,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1881,6 +1938,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.language.v2.Entity.Builder getEntitiesBuilder(int index) {
       return getEntitiesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1901,6 +1959,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return entitiesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1922,6 +1981,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(entities_);
       }
     }
+
     /**
      *
      *
@@ -1939,6 +1999,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       return getEntitiesFieldBuilder()
           .addBuilder(com.google.cloud.language.v2.Entity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1956,6 +2017,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       return getEntitiesFieldBuilder()
           .addBuilder(index, com.google.cloud.language.v2.Entity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1996,6 +2058,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.language.v2.Sentiment.Builder,
             com.google.cloud.language.v2.SentimentOrBuilder>
         documentSentimentBuilder_;
+
     /**
      *
      *
@@ -2011,6 +2074,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     public boolean hasDocumentSentiment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2032,6 +2096,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return documentSentimentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2055,6 +2120,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2076,6 +2142,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2104,6 +2171,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2124,6 +2192,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2139,6 +2208,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getDocumentSentimentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2158,6 +2228,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
             : documentSentiment_;
       }
     }
+
     /**
      *
      *
@@ -2186,6 +2257,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -2210,6 +2282,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2234,6 +2307,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2257,6 +2331,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2276,6 +2351,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2335,6 +2411,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return categoriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2351,6 +2428,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return categoriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2367,6 +2445,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return categoriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2390,6 +2469,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2410,6 +2490,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2432,6 +2513,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2455,6 +2537,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2475,6 +2558,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2495,6 +2579,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2515,6 +2600,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2534,6 +2620,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2553,6 +2640,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2566,6 +2654,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         int index) {
       return getCategoriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2583,6 +2672,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return categoriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2600,6 +2690,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(categories_);
       }
     }
+
     /**
      *
      *
@@ -2613,6 +2704,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       return getCategoriesFieldBuilder()
           .addBuilder(com.google.cloud.language.v2.ClassificationCategory.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2628,6 +2720,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
           .addBuilder(
               index, com.google.cloud.language.v2.ClassificationCategory.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2695,6 +2788,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return moderationCategoriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2712,6 +2806,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return moderationCategoriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2729,6 +2824,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return moderationCategoriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2753,6 +2849,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2774,6 +2871,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2798,6 +2896,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2822,6 +2921,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2843,6 +2943,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2864,6 +2965,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2885,6 +2987,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2905,6 +3008,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2925,6 +3029,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2939,6 +3044,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         getModerationCategoriesBuilder(int index) {
       return getModerationCategoriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2957,6 +3063,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return moderationCategoriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2975,6 +3082,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(moderationCategories_);
       }
     }
+
     /**
      *
      *
@@ -2990,6 +3098,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       return getModerationCategoriesFieldBuilder()
           .addBuilder(com.google.cloud.language.v2.ClassificationCategory.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3006,6 +3115,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
           .addBuilder(
               index, com.google.cloud.language.v2.ClassificationCategory.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3042,6 +3152,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     }
 
     private boolean languageSupported_;
+
     /**
      *
      *
@@ -3059,6 +3170,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     public boolean getLanguageSupported() {
       return languageSupported_;
     }
+
     /**
      *
      *
@@ -3080,6 +3192,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

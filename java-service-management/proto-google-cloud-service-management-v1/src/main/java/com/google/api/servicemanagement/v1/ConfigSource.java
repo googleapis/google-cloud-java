@@ -34,6 +34,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.ConfigSource)
     ConfigSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConfigSource.newBuilder() to construct.
   private ConfigSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicemanagement.v1.ConfigFile> files_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.api.servicemanagement.v1.ConfigFile> getFilesList() {
     return files_;
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       getFilesOrBuilderList() {
     return files_;
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
   public int getFilesCount() {
     return files_.size();
   }
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
   public com.google.api.servicemanagement.v1.ConfigFile getFiles(int index) {
     return files_.get(index);
   }
+
   /**
    *
    *
@@ -366,6 +374,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -612,6 +621,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -636,6 +646,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -660,6 +671,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -702,6 +715,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +774,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
         return filesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
         return filesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
         return filesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -817,6 +834,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +856,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +880,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +904,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +926,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +948,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +970,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +991,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1012,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1026,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicemanagement.v1.ConfigFile.Builder getFilesBuilder(int index) {
       return getFilesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1017,6 +1044,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
         return filesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1035,6 +1063,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(files_);
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1078,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       return getFilesFieldBuilder()
           .addBuilder(com.google.api.servicemanagement.v1.ConfigFile.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1063,6 +1093,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
       return getFilesFieldBuilder()
           .addBuilder(index, com.google.api.servicemanagement.v1.ConfigFile.getDefaultInstance());
     }
+
     /**
      *
      *

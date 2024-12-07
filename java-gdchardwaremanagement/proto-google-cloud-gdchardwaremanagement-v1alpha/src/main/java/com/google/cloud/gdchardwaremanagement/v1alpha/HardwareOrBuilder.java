@@ -37,6 +37,7 @@ public interface HardwareOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface HardwareOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface HardwareOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface HardwareOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface HardwareOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface HardwareOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface HardwareOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -176,9 +183,11 @@ public interface HardwareOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -191,6 +200,7 @@ public interface HardwareOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -207,6 +217,7 @@ public interface HardwareOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -235,6 +246,7 @@ public interface HardwareOrBuilder
    * @return The order.
    */
   java.lang.String getOrder();
+
   /**
    *
    *
@@ -267,6 +279,7 @@ public interface HardwareOrBuilder
    * @return The hardwareGroup.
    */
   java.lang.String getHardwareGroup();
+
   /**
    *
    *
@@ -299,6 +312,7 @@ public interface HardwareOrBuilder
    * @return The site.
    */
   java.lang.String getSite();
+
   /**
    *
    *
@@ -329,6 +343,7 @@ public interface HardwareOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -357,6 +372,7 @@ public interface HardwareOrBuilder
    * @return The ciqUri.
    */
   java.lang.String getCiqUri();
+
   /**
    *
    *
@@ -385,6 +401,7 @@ public interface HardwareOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -399,6 +416,7 @@ public interface HardwareOrBuilder
    * @return The config.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.HardwareConfig getConfig();
+
   /**
    *
    *
@@ -426,6 +444,7 @@ public interface HardwareOrBuilder
    * @return Whether the estimatedInstallationDate field is set.
    */
   boolean hasEstimatedInstallationDate();
+
   /**
    *
    *
@@ -440,6 +459,7 @@ public interface HardwareOrBuilder
    * @return The estimatedInstallationDate.
    */
   com.google.type.Date getEstimatedInstallationDate();
+
   /**
    *
    *
@@ -467,6 +487,7 @@ public interface HardwareOrBuilder
    * @return Whether the physicalInfo field is set.
    */
   boolean hasPhysicalInfo();
+
   /**
    *
    *
@@ -481,6 +502,7 @@ public interface HardwareOrBuilder
    * @return The physicalInfo.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.HardwarePhysicalInfo getPhysicalInfo();
+
   /**
    *
    *
@@ -509,6 +531,7 @@ public interface HardwareOrBuilder
    * @return Whether the installationInfo field is set.
    */
   boolean hasInstallationInfo();
+
   /**
    *
    *
@@ -523,6 +546,7 @@ public interface HardwareOrBuilder
    * @return The installationInfo.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.HardwareInstallationInfo getInstallationInfo();
+
   /**
    *
    *
@@ -552,6 +576,7 @@ public interface HardwareOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *
@@ -584,6 +609,7 @@ public interface HardwareOrBuilder
    * @return Whether the requestedInstallationDate field is set.
    */
   boolean hasRequestedInstallationDate();
+
   /**
    *
    *
@@ -600,6 +626,7 @@ public interface HardwareOrBuilder
    * @return The requestedInstallationDate.
    */
   com.google.type.Date getRequestedInstallationDate();
+
   /**
    *
    *
@@ -630,6 +657,7 @@ public interface HardwareOrBuilder
    * @return Whether the actualInstallationDate field is set.
    */
   boolean hasActualInstallationDate();
+
   /**
    *
    *
@@ -645,6 +673,7 @@ public interface HardwareOrBuilder
    * @return The actualInstallationDate.
    */
   com.google.type.Date getActualInstallationDate();
+
   /**
    *
    *
@@ -672,6 +701,7 @@ public interface HardwareOrBuilder
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo>
       getMachineInfosList();
+
   /**
    *
    *
@@ -684,6 +714,7 @@ public interface HardwareOrBuilder
    * </code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo getMachineInfos(int index);
+
   /**
    *
    *
@@ -696,6 +727,7 @@ public interface HardwareOrBuilder
    * </code>
    */
   int getMachineInfosCount();
+
   /**
    *
    *
@@ -710,6 +742,7 @@ public interface HardwareOrBuilder
   java.util.List<
           ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfoOrBuilder>
       getMachineInfosOrBuilderList();
+
   /**
    *
    *

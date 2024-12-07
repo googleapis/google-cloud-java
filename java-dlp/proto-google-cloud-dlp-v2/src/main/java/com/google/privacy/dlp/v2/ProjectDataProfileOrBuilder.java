@@ -36,6 +36,7 @@ public interface ProjectDataProfileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ProjectDataProfileOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ProjectDataProfileOrBuilder
    * @return Whether the profileLastGenerated field is set.
    */
   boolean hasProfileLastGenerated();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ProjectDataProfileOrBuilder
    * @return The profileLastGenerated.
    */
   com.google.protobuf.Timestamp getProfileLastGenerated();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface ProjectDataProfileOrBuilder
    * @return Whether the sensitivityScore field is set.
    */
   boolean hasSensitivityScore();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface ProjectDataProfileOrBuilder
    * @return The sensitivityScore.
    */
   com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface ProjectDataProfileOrBuilder
    * @return Whether the dataRiskLevel field is set.
    */
   boolean hasDataRiskLevel();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface ProjectDataProfileOrBuilder
    * @return The dataRiskLevel.
    */
   com.google.privacy.dlp.v2.DataRiskLevel getDataRiskLevel();
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface ProjectDataProfileOrBuilder
    * @return Whether the profileStatus field is set.
    */
   boolean hasProfileStatus();
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public interface ProjectDataProfileOrBuilder
    * @return The profileStatus.
    */
   com.google.privacy.dlp.v2.ProfileStatus getProfileStatus();
+
   /**
    *
    *

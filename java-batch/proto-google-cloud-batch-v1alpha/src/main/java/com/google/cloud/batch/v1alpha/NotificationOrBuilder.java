@@ -40,6 +40,7 @@ public interface NotificationOrBuilder
    * @return The pubsubTopic.
    */
   java.lang.String getPubsubTopic();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface GetRevisionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

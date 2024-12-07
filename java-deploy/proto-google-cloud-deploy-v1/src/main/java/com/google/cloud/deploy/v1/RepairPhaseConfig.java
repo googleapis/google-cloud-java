@@ -33,6 +33,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.RepairPhaseConfig)
     RepairPhaseConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RepairPhaseConfig.newBuilder() to construct.
   private RepairPhaseConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
     private RepairPhaseCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RETRY_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasRetry() {
     return repairPhaseCase_ == 1;
   }
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.deploy.v1.Retry.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ROLLBACK_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasRollback() {
     return repairPhaseCase_ == 2;
   }
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.deploy.v1.Rollback.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -404,6 +412,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -638,6 +647,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.deploy.v1.Retry.Builder,
             com.google.cloud.deploy.v1.RetryOrBuilder>
         retryBuilder_;
+
     /**
      *
      *
@@ -654,6 +664,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasRetry() {
       return repairPhaseCase_ == 1;
     }
+
     /**
      *
      *
@@ -680,6 +691,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.deploy.v1.Retry.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -703,6 +715,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
       repairPhaseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
       repairPhaseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +770,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
       repairPhaseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +797,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +811,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.deploy.v1.Retry.Builder getRetryBuilder() {
       return getRetryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.deploy.v1.Retry.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -853,6 +871,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.deploy.v1.Rollback.Builder,
             com.google.cloud.deploy.v1.RollbackOrBuilder>
         rollbackBuilder_;
+
     /**
      *
      *
@@ -870,6 +889,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasRollback() {
       return repairPhaseCase_ == 2;
     }
+
     /**
      *
      *
@@ -897,6 +917,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.deploy.v1.Rollback.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
       repairPhaseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +964,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
       repairPhaseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +999,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
       repairPhaseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1003,6 +1027,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1042,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.deploy.v1.Rollback.Builder getRollbackBuilder() {
       return getRollbackFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1039,6 +1065,7 @@ public final class RepairPhaseConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.deploy.v1.Rollback.getDefaultInstance();
       }
     }
+
     /**
      *
      *

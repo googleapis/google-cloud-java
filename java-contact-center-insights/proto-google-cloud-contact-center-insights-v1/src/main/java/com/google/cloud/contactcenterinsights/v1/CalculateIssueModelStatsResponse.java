@@ -33,6 +33,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse)
     CalculateIssueModelStatsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CalculateIssueModelStatsResponse.newBuilder() to construct.
   private CalculateIssueModelStatsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,6 +67,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
   private int bitField0_;
   public static final int CURRENT_STATS_FIELD_NUMBER = 4;
   private com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats currentStats_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
   public boolean hasCurrentStats() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
         ? com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.getDefaultInstance()
         : currentStats_;
   }
+
   /**
    *
    *
@@ -290,6 +294,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -505,6 +510,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
             com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.Builder,
             com.google.cloud.contactcenterinsights.v1.IssueModelLabelStatsOrBuilder>
         currentStatsBuilder_;
+
     /**
      *
      *
@@ -520,6 +526,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
     public boolean hasCurrentStats() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -541,6 +548,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
         return currentStatsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -565,6 +573,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -586,6 +595,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -617,6 +627,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -653,6 +665,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
       onChanged();
       return getCurrentStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -673,6 +686,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
             : currentStats_;
       }
     }
+
     /**
      *
      *

@@ -48,6 +48,7 @@ public interface ListAlertPoliciesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface ListAlertPoliciesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -123,6 +125,7 @@ public interface ListAlertPoliciesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -168,6 +171,7 @@ public interface ListAlertPoliciesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

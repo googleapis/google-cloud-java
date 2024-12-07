@@ -34,6 +34,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.StoredInfoTypeVersion)
     StoredInfoTypeVersionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StoredInfoTypeVersion.newBuilder() to construct.
   private StoredInfoTypeVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int CONFIG_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.StoredInfoTypeConfig config_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         ? com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance()
         : config_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -206,6 +215,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.Error> errors_;
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -257,6 +268,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       getErrorsOrBuilderList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -282,6 +294,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
   public int getErrorsCount() {
     return errors_.size();
   }
+
   /**
    *
    *
@@ -307,6 +320,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
   public com.google.privacy.dlp.v2.Error getErrors(int index) {
     return errors_.get(index);
   }
+
   /**
    *
    *
@@ -335,6 +349,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
 
   public static final int STATS_FIELD_NUMBER = 5;
   private com.google.privacy.dlp.v2.StoredInfoTypeStats stats_;
+
   /**
    *
    *
@@ -350,6 +365,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
   public boolean hasStats() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -367,6 +383,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         ? com.google.privacy.dlp.v2.StoredInfoTypeStats.getDefaultInstance()
         : stats_;
   }
+
   /**
    *
    *
@@ -599,6 +616,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -915,6 +933,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder,
             com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder>
         configBuilder_;
+
     /**
      *
      *
@@ -929,6 +948,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -949,6 +969,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         return configBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -971,6 +992,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1013,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1041,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1061,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1076,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1069,6 +1095,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
             : config_;
       }
     }
+
     /**
      *
      *
@@ -1101,6 +1128,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1116,6 +1144,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1137,6 +1166,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1190,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1180,6 +1211,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1240,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1228,6 +1261,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1277,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1262,6 +1297,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1326,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1306,6 +1343,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1325,6 +1363,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1382,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
           com.google.privacy.dlp.v2.StoredInfoTypeState.forNumber(state_);
       return result == null ? com.google.privacy.dlp.v2.StoredInfoTypeState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1365,6 +1405,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1428,6 +1469,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         return errorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1456,6 +1498,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         return errorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1484,6 +1527,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         return errorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1518,6 +1562,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1549,6 +1594,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1583,6 +1629,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1617,6 +1664,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1648,6 +1696,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1679,6 +1728,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1711,6 +1761,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1742,6 +1793,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1773,6 +1825,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1797,6 +1850,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     public com.google.privacy.dlp.v2.Error.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1825,6 +1879,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1854,6 +1909,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
+
     /**
      *
      *
@@ -1879,6 +1935,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       return getErrorsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1904,6 +1961,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       return getErrorsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1952,6 +2010,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.StoredInfoTypeStats.Builder,
             com.google.privacy.dlp.v2.StoredInfoTypeStatsOrBuilder>
         statsBuilder_;
+
     /**
      *
      *
@@ -1966,6 +2025,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     public boolean hasStats() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1986,6 +2046,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         return statsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2008,6 +2069,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2027,6 +2089,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2054,6 +2117,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2073,6 +2137,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2087,6 +2152,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       onChanged();
       return getStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2105,6 +2171,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
             : stats_;
       }
     }
+
     /**
      *
      *

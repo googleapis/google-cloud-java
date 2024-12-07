@@ -36,6 +36,7 @@ public interface DataProfileActionOrBuilder
    * @return Whether the exportData field is set.
    */
   boolean hasExportData();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DataProfileActionOrBuilder
    * @return The exportData.
    */
   com.google.privacy.dlp.v2.DataProfileAction.Export getExportData();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface DataProfileActionOrBuilder
    * @return Whether the pubSubNotification field is set.
    */
   boolean hasPubSubNotification();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface DataProfileActionOrBuilder
    * @return The pubSubNotification.
    */
   com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification getPubSubNotification();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface DataProfileActionOrBuilder
    * @return Whether the publishToChronicle field is set.
    */
   boolean hasPublishToChronicle();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface DataProfileActionOrBuilder
    * @return The publishToChronicle.
    */
   com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle getPublishToChronicle();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface DataProfileActionOrBuilder
    * @return Whether the publishToScc field is set.
    */
   boolean hasPublishToScc();
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public interface DataProfileActionOrBuilder
    * @return The publishToScc.
    */
   com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter getPublishToScc();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface DataProfileActionOrBuilder
    * @return Whether the tagResources field is set.
    */
   boolean hasTagResources();
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public interface DataProfileActionOrBuilder
    * @return The tagResources.
    */
   com.google.privacy.dlp.v2.DataProfileAction.TagResources getTagResources();
+
   /**
    *
    *

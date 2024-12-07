@@ -33,6 +33,7 @@ public final class WebSecurityScanner extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.WebSecurityScanner)
     WebSecurityScannerOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WebSecurityScanner.newBuilder() to construct.
   private WebSecurityScanner(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class WebSecurityScanner extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

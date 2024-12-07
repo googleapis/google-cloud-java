@@ -39,6 +39,7 @@ public interface GetColumnDataProfileRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

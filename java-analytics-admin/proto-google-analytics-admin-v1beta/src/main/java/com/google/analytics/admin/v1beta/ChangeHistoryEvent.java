@@ -36,6 +36,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1beta.ChangeHistoryEvent)
     ChangeHistoryEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ChangeHistoryEvent.newBuilder() to construct.
   private ChangeHistoryEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
 
   public static final int CHANGE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp changeTime_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
   public boolean hasChangeTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getChangeTime() {
     return changeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : changeTime_;
   }
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
 
   public static final int ACTOR_TYPE_FIELD_NUMBER = 3;
   private int actorType_ = 0;
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
   public int getActorTypeValue() {
     return actorType_;
   }
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userActorEmail_ = "";
+
   /**
    *
    *
@@ -231,6 +240,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -259,6 +269,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
 
   public static final int CHANGES_FILTERED_FIELD_NUMBER = 5;
   private boolean changesFiltered_ = false;
+
   /**
    *
    *
@@ -280,6 +291,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1beta.ChangeHistoryChange> changes_;
+
   /**
    *
    *
@@ -294,6 +306,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.analytics.admin.v1beta.ChangeHistoryChange> getChangesList() {
     return changes_;
   }
+
   /**
    *
    *
@@ -309,6 +322,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       getChangesOrBuilderList() {
     return changes_;
   }
+
   /**
    *
    *
@@ -323,6 +337,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
   public int getChangesCount() {
     return changes_.size();
   }
+
   /**
    *
    *
@@ -337,6 +352,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
   public com.google.analytics.admin.v1beta.ChangeHistoryChange getChanges(int index) {
     return changes_.get(index);
   }
+
   /**
    *
    *
@@ -566,6 +582,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -886,6 +903,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -908,6 +926,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -930,6 +949,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -951,6 +971,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +989,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1019,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         changeTimeBuilder_;
+
     /**
      *
      *
@@ -1011,6 +1034,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     public boolean hasChangeTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1031,6 +1055,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         return changeTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1053,6 +1078,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1098,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1126,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1146,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1132,6 +1161,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getChangeTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1150,6 +1180,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
             : changeTime_;
       }
     }
+
     /**
      *
      *
@@ -1177,6 +1208,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     }
 
     private int actorType_ = 0;
+
     /**
      *
      *
@@ -1192,6 +1224,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     public int getActorTypeValue() {
       return actorType_;
     }
+
     /**
      *
      *
@@ -1210,6 +1243,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1261,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
           com.google.analytics.admin.v1beta.ActorType.forNumber(actorType_);
       return result == null ? com.google.analytics.admin.v1beta.ActorType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1248,6 +1283,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1303,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object userActorEmail_ = "";
+
     /**
      *
      *
@@ -1291,6 +1328,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1315,6 +1353,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1338,6 +1377,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1357,6 +1397,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1383,6 +1424,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean changesFiltered_;
+
     /**
      *
      *
@@ -1399,6 +1441,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     public boolean getChangesFiltered() {
       return changesFiltered_;
     }
+
     /**
      *
      *
@@ -1419,6 +1462,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1473,6 +1517,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         return changesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1490,6 +1535,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         return changesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1507,6 +1553,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         return changesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1531,6 +1578,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1552,6 +1600,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1624,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1599,6 +1649,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1620,6 +1671,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1641,6 +1693,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1663,6 +1716,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1683,6 +1737,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1703,6 +1758,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1717,6 +1773,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         int index) {
       return getChangesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1735,6 +1792,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         return changesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1753,6 +1811,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(changes_);
       }
     }
+
     /**
      *
      *
@@ -1767,6 +1826,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       return getChangesFieldBuilder()
           .addBuilder(com.google.analytics.admin.v1beta.ChangeHistoryChange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1783,6 +1843,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.analytics.admin.v1beta.ChangeHistoryChange.getDefaultInstance());
     }
+
     /**
      *
      *

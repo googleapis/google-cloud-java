@@ -40,6 +40,7 @@ public interface QuotaPreferenceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface QuotaPreferenceOrBuilder
    * </code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -105,9 +107,11 @@ public interface QuotaPreferenceOrBuilder
    * </code>
    */
   boolean containsDimensions(java.lang.String key);
+
   /** Use {@link #getDimensionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDimensions();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface QuotaPreferenceOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDimensionsMap();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface QuotaPreferenceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public interface QuotaPreferenceOrBuilder
    * @return Whether the quotaConfig field is set.
    */
   boolean hasQuotaConfig();
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public interface QuotaPreferenceOrBuilder
    * @return The quotaConfig.
    */
   com.google.api.cloudquotas.v1.QuotaConfig getQuotaConfig();
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public interface QuotaPreferenceOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -270,6 +279,7 @@ public interface QuotaPreferenceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -283,6 +293,7 @@ public interface QuotaPreferenceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -308,6 +319,7 @@ public interface QuotaPreferenceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -321,6 +333,7 @@ public interface QuotaPreferenceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -345,6 +358,7 @@ public interface QuotaPreferenceOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *
@@ -371,6 +385,7 @@ public interface QuotaPreferenceOrBuilder
    * @return The quotaId.
    */
   java.lang.String getQuotaId();
+
   /**
    *
    *
@@ -411,6 +426,7 @@ public interface QuotaPreferenceOrBuilder
    * @return The justification.
    */
   java.lang.String getJustification();
+
   /**
    *
    *
@@ -444,6 +460,7 @@ public interface QuotaPreferenceOrBuilder
    * @return The contactEmail.
    */
   java.lang.String getContactEmail();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GuestAttributes)
     GuestAttributesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GuestAttributes.newBuilder() to construct.
   private GuestAttributes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
   public boolean hasKind() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object queryPath_ = "";
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
   public boolean hasQueryPath() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
 
   public static final int QUERY_VALUE_FIELD_NUMBER = 157570874;
   private com.google.cloud.compute.v1.GuestAttributesValue queryValue_;
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
   public boolean hasQueryValue() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -234,6 +243,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.compute.v1.GuestAttributesValue.getDefaultInstance()
         : queryValue_;
   }
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -269,6 +280,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -292,6 +304,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -320,6 +333,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object variableKey_ = "";
+
   /**
    *
    *
@@ -335,6 +349,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
   public boolean hasVariableKey() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -358,6 +373,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -386,6 +402,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object variableValue_ = "";
+
   /**
    *
    *
@@ -401,6 +418,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
   public boolean hasVariableValue() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -424,6 +442,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -682,6 +701,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -959,6 +979,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -973,6 +994,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     public boolean hasKind() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -995,6 +1017,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1017,6 +1040,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1038,6 +1062,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1080,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1105,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object queryPath_ = "";
+
     /**
      *
      *
@@ -1093,6 +1120,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     public boolean hasQueryPath() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1115,6 +1143,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1137,6 +1166,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1158,6 +1188,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1206,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1204,6 +1236,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.GuestAttributesValue.Builder,
             com.google.cloud.compute.v1.GuestAttributesValueOrBuilder>
         queryValueBuilder_;
+
     /**
      *
      *
@@ -1218,6 +1251,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     public boolean hasQueryValue() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1238,6 +1272,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         return queryValueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1260,6 +1295,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1280,6 +1316,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1308,6 +1345,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1365,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1341,6 +1380,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getQueryValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1359,6 +1399,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
             : queryValue_;
       }
     }
+
     /**
      *
      *
@@ -1386,6 +1427,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -1400,6 +1442,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1422,6 +1465,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1444,6 +1488,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1465,6 +1510,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1482,6 +1528,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1506,6 +1553,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object variableKey_ = "";
+
     /**
      *
      *
@@ -1520,6 +1568,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     public boolean hasVariableKey() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1542,6 +1591,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1564,6 +1614,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1585,6 +1636,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1602,6 +1654,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1626,6 +1679,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object variableValue_ = "";
+
     /**
      *
      *
@@ -1640,6 +1694,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     public boolean hasVariableValue() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1662,6 +1717,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1684,6 +1740,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1705,6 +1762,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1722,6 +1780,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

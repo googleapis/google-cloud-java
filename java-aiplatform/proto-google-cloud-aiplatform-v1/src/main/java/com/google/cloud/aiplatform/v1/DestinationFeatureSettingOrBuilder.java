@@ -36,6 +36,7 @@ public interface DestinationFeatureSettingOrBuilder
    * @return The featureId.
    */
   java.lang.String getFeatureId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface DestinationFeatureSettingOrBuilder
    * @return The destinationField.
    */
   java.lang.String getDestinationField();
+
   /**
    *
    *

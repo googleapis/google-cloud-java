@@ -38,6 +38,7 @@ public interface GitHubConfigOrBuilder
    * @return Whether the authorizerCredential field is set.
    */
   boolean hasAuthorizerCredential();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface GitHubConfigOrBuilder
    * @return The authorizerCredential.
    */
   com.google.cloudbuild.v2.OAuthCredential getAuthorizerCredential();
+
   /**
    *
    *

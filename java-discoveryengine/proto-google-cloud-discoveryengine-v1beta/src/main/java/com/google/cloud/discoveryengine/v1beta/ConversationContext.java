@@ -33,6 +33,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.ConversationContext)
     ConversationContextOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConversationContext.newBuilder() to construct.
   private ConversationContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList contextDocuments_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getContextDocumentsList() {
     return contextDocuments_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
   public int getContextDocumentsCount() {
     return contextDocuments_.size();
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
   public java.lang.String getContextDocuments(int index) {
     return contextDocuments_.get(index);
   }
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object activeDocument_ = "";
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -361,6 +368,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -575,6 +583,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -591,6 +600,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       contextDocuments_.makeImmutable();
       return contextDocuments_;
     }
+
     /**
      *
      *
@@ -606,6 +616,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
     public int getContextDocumentsCount() {
       return contextDocuments_.size();
     }
+
     /**
      *
      *
@@ -622,6 +633,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
     public java.lang.String getContextDocuments(int index) {
       return contextDocuments_.get(index);
     }
+
     /**
      *
      *
@@ -638,6 +650,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getContextDocumentsBytes(int index) {
       return contextDocuments_.getByteString(index);
     }
+
     /**
      *
      *
@@ -662,6 +675,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -685,6 +699,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +720,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +740,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +767,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object activeDocument_ = "";
+
     /**
      *
      *
@@ -773,6 +791,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -796,6 +815,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -818,6 +838,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +857,7 @@ public final class ConversationContext extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

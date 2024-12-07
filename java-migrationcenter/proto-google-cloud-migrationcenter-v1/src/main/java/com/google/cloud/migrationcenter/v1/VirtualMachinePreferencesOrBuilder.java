@@ -38,6 +38,7 @@ public interface VirtualMachinePreferencesOrBuilder
    * @return The enum numeric value on the wire for targetProduct.
    */
   int getTargetProductValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface VirtualMachinePreferencesOrBuilder
    * @return Whether the regionPreferences field is set.
    */
   boolean hasRegionPreferences();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface VirtualMachinePreferencesOrBuilder
    * @return The regionPreferences.
    */
   com.google.cloud.migrationcenter.v1.RegionPreferences getRegionPreferences();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface VirtualMachinePreferencesOrBuilder
    * @return The enum numeric value on the wire for commitmentPlan.
    */
   int getCommitmentPlanValue();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface VirtualMachinePreferencesOrBuilder
    * @return The enum numeric value on the wire for sizingOptimizationStrategy.
    */
   int getSizingOptimizationStrategyValue();
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public interface VirtualMachinePreferencesOrBuilder
    * @return Whether the computeEnginePreferences field is set.
    */
   boolean hasComputeEnginePreferences();
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public interface VirtualMachinePreferencesOrBuilder
    * @return The computeEnginePreferences.
    */
   com.google.cloud.migrationcenter.v1.ComputeEnginePreferences getComputeEnginePreferences();
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public interface VirtualMachinePreferencesOrBuilder
    * @return Whether the vmwareEnginePreferences field is set.
    */
   boolean hasVmwareEnginePreferences();
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public interface VirtualMachinePreferencesOrBuilder
    * @return The vmwareEnginePreferences.
    */
   com.google.cloud.migrationcenter.v1.VmwareEnginePreferences getVmwareEnginePreferences();
+
   /**
    *
    *
@@ -259,6 +268,7 @@ public interface VirtualMachinePreferencesOrBuilder
    * @return Whether the soleTenancyPreferences field is set.
    */
   boolean hasSoleTenancyPreferences();
+
   /**
    *
    *
@@ -272,6 +282,7 @@ public interface VirtualMachinePreferencesOrBuilder
    * @return The soleTenancyPreferences.
    */
   com.google.cloud.migrationcenter.v1.SoleTenancyPreferences getSoleTenancyPreferences();
+
   /**
    *
    *

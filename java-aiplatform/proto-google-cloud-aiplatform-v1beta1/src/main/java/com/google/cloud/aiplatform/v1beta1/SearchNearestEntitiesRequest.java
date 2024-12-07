@@ -34,6 +34,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest)
     SearchNearestEntitiesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchNearestEntitiesRequest.newBuilder() to construct.
   private SearchNearestEntitiesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object featureView_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
 
   public static final int QUERY_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.NearestNeighborQuery query_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
   public boolean hasQuery() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
         ? com.google.cloud.aiplatform.v1beta1.NearestNeighborQuery.getDefaultInstance()
         : query_;
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
 
   public static final int RETURN_FULL_ENTITY_FIELD_NUMBER = 3;
   private boolean returnFullEntity_ = false;
+
   /**
    *
    *
@@ -382,6 +389,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -613,6 +621,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object featureView_ = "";
+
     /**
      *
      *
@@ -638,6 +647,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -663,6 +673,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -687,6 +698,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +752,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
             com.google.cloud.aiplatform.v1beta1.NearestNeighborQuery.Builder,
             com.google.cloud.aiplatform.v1beta1.NearestNeighborQueryOrBuilder>
         queryBuilder_;
+
     /**
      *
      *
@@ -755,6 +769,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
     public boolean hasQuery() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
         return queryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -801,6 +817,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +840,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +871,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +893,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
       onChanged();
       return getQueryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -910,6 +931,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
             : query_;
       }
     }
+
     /**
      *
      *
@@ -939,6 +961,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
     }
 
     private boolean returnFullEntity_;
+
     /**
      *
      *
@@ -957,6 +980,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
     public boolean getReturnFullEntity() {
       return returnFullEntity_;
     }
+
     /**
      *
      *
@@ -979,6 +1003,7 @@ public final class SearchNearestEntitiesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

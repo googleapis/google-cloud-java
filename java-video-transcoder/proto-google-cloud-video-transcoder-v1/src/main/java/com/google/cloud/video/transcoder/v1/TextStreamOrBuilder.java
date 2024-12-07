@@ -44,6 +44,7 @@ public interface TextStreamOrBuilder
    * @return The codec.
    */
   java.lang.String getCodec();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface TextStreamOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface TextStreamOrBuilder
    * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
    */
   java.util.List<com.google.cloud.video.transcoder.v1.TextStream.TextMapping> getMappingList();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface TextStreamOrBuilder
    * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
    */
   com.google.cloud.video.transcoder.v1.TextStream.TextMapping getMapping(int index);
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface TextStreamOrBuilder
    * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
    */
   int getMappingCount();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface TextStreamOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.transcoder.v1.TextStream.TextMappingOrBuilder>
       getMappingOrBuilderList();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface TextStreamOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

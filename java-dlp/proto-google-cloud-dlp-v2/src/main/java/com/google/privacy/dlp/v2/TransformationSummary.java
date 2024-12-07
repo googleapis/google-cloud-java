@@ -35,6 +35,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TransformationSummary)
     TransformationSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransformationSummary.newBuilder() to construct.
   private TransformationSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,6 +120,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      * <code>TRANSFORMATION_RESULT_CODE_UNSPECIFIED = 0;</code>
      */
     public static final int TRANSFORMATION_RESULT_CODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      * <code>SUCCESS = 1;</code>
      */
     public static final int SUCCESS_VALUE = 1;
+
     /**
      *
      *
@@ -256,6 +259,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      * @return The enum numeric value on the wire for code.
      */
     int getCodeValue();
+
     /**
      *
      *
@@ -282,6 +286,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      * @return The details.
      */
     java.lang.String getDetails();
+
     /**
      *
      *
@@ -296,6 +301,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getDetailsBytes();
   }
+
   /**
    *
    *
@@ -311,6 +317,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TransformationSummary.SummaryResult)
       SummaryResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SummaryResult.newBuilder() to construct.
     private SummaryResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -344,6 +351,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
     public static final int COUNT_FIELD_NUMBER = 1;
     private long count_ = 0L;
+
     /**
      *
      *
@@ -362,6 +370,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
     public static final int CODE_FIELD_NUMBER = 2;
     private int code_ = 0;
+
     /**
      *
      *
@@ -377,6 +386,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     public int getCodeValue() {
       return code_;
     }
+
     /**
      *
      *
@@ -401,6 +411,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object details_ = "";
+
     /**
      *
      *
@@ -425,6 +436,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -635,6 +647,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -853,6 +866,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private long count_;
+
       /**
        *
        *
@@ -868,6 +882,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       public long getCount() {
         return count_;
       }
+
       /**
        *
        *
@@ -887,6 +902,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -906,6 +922,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
 
       private int code_ = 0;
+
       /**
        *
        *
@@ -922,6 +939,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       public int getCodeValue() {
         return code_;
       }
+
       /**
        *
        *
@@ -941,6 +959,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -962,6 +981,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
             ? com.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -985,6 +1005,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1005,6 +1026,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object details_ = "";
+
       /**
        *
        *
@@ -1028,6 +1050,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1051,6 +1074,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1073,6 +1097,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1091,6 +1116,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1185,6 +1211,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int INFO_TYPE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.InfoType infoType_;
+
   /**
    *
    *
@@ -1200,6 +1227,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
   public boolean hasInfoType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1215,6 +1243,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
   }
+
   /**
    *
    *
@@ -1231,6 +1260,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
   public static final int FIELD_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.FieldId field_;
+
   /**
    *
    *
@@ -1246,6 +1276,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
   public boolean hasField() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1261,6 +1292,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
   public com.google.privacy.dlp.v2.FieldId getField() {
     return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
   }
+
   /**
    *
    *
@@ -1277,6 +1309,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
   public static final int TRANSFORMATION_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.PrimitiveTransformation transformation_;
+
   /**
    *
    *
@@ -1292,6 +1325,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
   public boolean hasTransformation() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1309,6 +1343,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         ? com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance()
         : transformation_;
   }
+
   /**
    *
    *
@@ -1329,6 +1364,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FieldTransformation> fieldTransformations_;
+
   /**
    *
    *
@@ -1345,6 +1381,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       getFieldTransformationsList() {
     return fieldTransformations_;
   }
+
   /**
    *
    *
@@ -1361,6 +1398,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       getFieldTransformationsOrBuilderList() {
     return fieldTransformations_;
   }
+
   /**
    *
    *
@@ -1376,6 +1414,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
   public int getFieldTransformationsCount() {
     return fieldTransformations_.size();
   }
+
   /**
    *
    *
@@ -1391,6 +1430,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
   public com.google.privacy.dlp.v2.FieldTransformation getFieldTransformations(int index) {
     return fieldTransformations_.get(index);
   }
+
   /**
    *
    *
@@ -1410,6 +1450,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
   public static final int RECORD_SUPPRESS_FIELD_NUMBER = 6;
   private com.google.privacy.dlp.v2.RecordSuppression recordSuppress_;
+
   /**
    *
    *
@@ -1425,6 +1466,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
   public boolean hasRecordSuppress() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1442,6 +1484,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         ? com.google.privacy.dlp.v2.RecordSuppression.getDefaultInstance()
         : recordSuppress_;
   }
+
   /**
    *
    *
@@ -1462,6 +1505,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.TransformationSummary.SummaryResult> results_;
+
   /**
    *
    *
@@ -1476,6 +1520,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       getResultsList() {
     return results_;
   }
+
   /**
    *
    *
@@ -1491,6 +1536,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       getResultsOrBuilderList() {
     return results_;
   }
+
   /**
    *
    *
@@ -1504,6 +1550,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
   public int getResultsCount() {
     return results_.size();
   }
+
   /**
    *
    *
@@ -1517,6 +1564,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
   public com.google.privacy.dlp.v2.TransformationSummary.SummaryResult getResults(int index) {
     return results_.get(index);
   }
+
   /**
    *
    *
@@ -1534,6 +1582,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
   public static final int TRANSFORMED_BYTES_FIELD_NUMBER = 7;
   private long transformedBytes_ = 0L;
+
   /**
    *
    *
@@ -1788,6 +1837,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2185,6 +2235,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.InfoType.Builder,
             com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         infoTypeBuilder_;
+
     /**
      *
      *
@@ -2199,6 +2250,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     public boolean hasInfoType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2219,6 +2271,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return infoTypeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2241,6 +2294,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2260,6 +2314,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2287,6 +2342,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2306,6 +2362,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2320,6 +2377,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return getInfoTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2338,6 +2396,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
             : infoType_;
       }
     }
+
     /**
      *
      *
@@ -2370,6 +2429,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.FieldId.Builder,
             com.google.privacy.dlp.v2.FieldIdOrBuilder>
         fieldBuilder_;
+
     /**
      *
      *
@@ -2384,6 +2444,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     public boolean hasField() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2402,6 +2463,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return fieldBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2424,6 +2486,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2443,6 +2506,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2470,6 +2534,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2489,6 +2554,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2503,6 +2569,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return getFieldFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2519,6 +2586,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
       }
     }
+
     /**
      *
      *
@@ -2551,6 +2619,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.PrimitiveTransformation.Builder,
             com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder>
         transformationBuilder_;
+
     /**
      *
      *
@@ -2565,6 +2634,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     public boolean hasTransformation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2585,6 +2655,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return transformationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2607,6 +2678,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2627,6 +2699,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2655,6 +2728,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2674,6 +2748,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2688,6 +2763,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return getTransformationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2706,6 +2782,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
             : transformation_;
       }
     }
+
     /**
      *
      *
@@ -2769,6 +2846,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return fieldTransformationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2787,6 +2865,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return fieldTransformationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2805,6 +2884,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return fieldTransformationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2830,6 +2910,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2852,6 +2933,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2876,6 +2958,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2901,6 +2984,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2923,6 +3007,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2945,6 +3030,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2967,6 +3053,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2988,6 +3075,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3009,6 +3097,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3024,6 +3113,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         int index) {
       return getFieldTransformationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3043,6 +3133,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return fieldTransformationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3062,6 +3153,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(fieldTransformations_);
       }
     }
+
     /**
      *
      *
@@ -3077,6 +3169,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return getFieldTransformationsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.FieldTransformation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3093,6 +3186,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return getFieldTransformationsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.FieldTransformation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3135,6 +3229,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.RecordSuppression.Builder,
             com.google.privacy.dlp.v2.RecordSuppressionOrBuilder>
         recordSuppressBuilder_;
+
     /**
      *
      *
@@ -3149,6 +3244,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     public boolean hasRecordSuppress() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3169,6 +3265,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return recordSuppressBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3191,6 +3288,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3211,6 +3309,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3239,6 +3338,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3258,6 +3358,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3272,6 +3373,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return getRecordSuppressFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3290,6 +3392,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
             : recordSuppress_;
       }
     }
+
     /**
      *
      *
@@ -3351,6 +3454,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return resultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3367,6 +3471,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return resultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3383,6 +3488,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return resultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3406,6 +3512,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3427,6 +3534,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3449,6 +3557,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3472,6 +3581,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3492,6 +3602,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3513,6 +3624,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3534,6 +3646,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3553,6 +3666,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3572,6 +3686,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3585,6 +3700,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3602,6 +3718,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3620,6 +3737,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(results_);
       }
     }
+
     /**
      *
      *
@@ -3635,6 +3753,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
           .addBuilder(
               com.google.privacy.dlp.v2.TransformationSummary.SummaryResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3651,6 +3770,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
               index,
               com.google.privacy.dlp.v2.TransformationSummary.SummaryResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3683,6 +3803,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     }
 
     private long transformedBytes_;
+
     /**
      *
      *
@@ -3698,6 +3819,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     public long getTransformedBytes() {
       return transformedBytes_;
     }
+
     /**
      *
      *
@@ -3717,6 +3839,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

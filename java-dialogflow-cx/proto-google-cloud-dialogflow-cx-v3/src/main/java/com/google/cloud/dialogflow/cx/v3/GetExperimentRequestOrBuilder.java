@@ -40,6 +40,7 @@ public interface GetExperimentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

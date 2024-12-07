@@ -102,6 +102,7 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRICE_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int PRICE_LEVEL_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -112,6 +113,7 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRICE_LEVEL_FREE = 1;</code>
    */
   public static final int PRICE_LEVEL_FREE_VALUE = 1;
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRICE_LEVEL_INEXPENSIVE = 2;</code>
    */
   public static final int PRICE_LEVEL_INEXPENSIVE_VALUE = 2;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRICE_LEVEL_MODERATE = 3;</code>
    */
   public static final int PRICE_LEVEL_MODERATE_VALUE = 3;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRICE_LEVEL_EXPENSIVE = 4;</code>
    */
   public static final int PRICE_LEVEL_EXPENSIVE_VALUE = 4;
+
   /**
    *
    *

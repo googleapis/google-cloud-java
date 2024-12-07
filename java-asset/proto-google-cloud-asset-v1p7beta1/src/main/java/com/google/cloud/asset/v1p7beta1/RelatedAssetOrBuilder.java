@@ -41,6 +41,7 @@ public interface RelatedAssetOrBuilder
    * @return The asset.
    */
   java.lang.String getAsset();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface RelatedAssetOrBuilder
    * @return The assetType.
    */
   java.lang.String getAssetType();
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public interface RelatedAssetOrBuilder
    * @return A list containing the ancestors.
    */
   java.util.List<java.lang.String> getAncestorsList();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface RelatedAssetOrBuilder
    * @return The count of ancestors.
    */
   int getAncestorsCount();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface RelatedAssetOrBuilder
    * @return The ancestors at the given index.
    */
   java.lang.String getAncestors(int index);
+
   /**
    *
    *

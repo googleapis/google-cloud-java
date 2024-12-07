@@ -34,6 +34,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.ConfidentialInstanceConfig)
     ConfidentialInstanceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConfidentialInstanceConfig.newBuilder() to construct.
   private ConfidentialInstanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
 
   public static final int ENABLE_CONFIDENTIAL_COMPUTE_FIELD_NUMBER = 1;
   private boolean enableConfidentialCompute_ = false;
+
   /**
    *
    *
@@ -241,6 +243,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -424,6 +427,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     private int bitField0_;
 
     private boolean enableConfidentialCompute_;
+
     /**
      *
      *
@@ -440,6 +444,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     public boolean getEnableConfidentialCompute() {
       return enableConfidentialCompute_;
     }
+
     /**
      *
      *
@@ -460,6 +465,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

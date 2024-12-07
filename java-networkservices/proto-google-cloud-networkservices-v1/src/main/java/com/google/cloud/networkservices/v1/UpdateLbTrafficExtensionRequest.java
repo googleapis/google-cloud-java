@@ -33,6 +33,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.UpdateLbTrafficExtensionRequest)
     UpdateLbTrafficExtensionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateLbTrafficExtensionRequest.newBuilder() to construct.
   private UpdateLbTrafficExtensionRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
 
   public static final int LB_TRAFFIC_EXTENSION_FIELD_NUMBER = 2;
   private com.google.cloud.networkservices.v1.LbTrafficExtension lbTrafficExtension_;
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
   public boolean hasLbTrafficExtension() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
         ? com.google.cloud.networkservices.v1.LbTrafficExtension.getDefaultInstance()
         : lbTrafficExtension_;
   }
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -451,6 +460,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -699,6 +709,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -718,6 +729,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -743,6 +755,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +808,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +841,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +866,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +886,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -892,6 +910,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -929,6 +948,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
             com.google.cloud.networkservices.v1.LbTrafficExtension.Builder,
             com.google.cloud.networkservices.v1.LbTrafficExtensionOrBuilder>
         lbTrafficExtensionBuilder_;
+
     /**
      *
      *
@@ -945,6 +965,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
     public boolean hasLbTrafficExtension() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -967,6 +988,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
         return lbTrafficExtensionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -992,6 +1014,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1037,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1069,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1091,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1109,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return getLbTrafficExtensionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1104,6 +1131,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
             : lbTrafficExtension_;
       }
     }
+
     /**
      *
      *
@@ -1133,6 +1161,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1169,6 +1198,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1205,6 +1235,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1240,6 +1271,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1271,6 +1303,7 @@ public final class UpdateLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface SharingEnvironmentConfigOrBuilder
    * @return Whether the defaultExchangeConfig field is set.
    */
   boolean hasDefaultExchangeConfig();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface SharingEnvironmentConfigOrBuilder
    */
   com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.DefaultExchangeConfig
       getDefaultExchangeConfig();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface SharingEnvironmentConfigOrBuilder
    * @return Whether the dcrExchangeConfig field is set.
    */
   boolean hasDcrExchangeConfig();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface SharingEnvironmentConfigOrBuilder
    */
   com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.DcrExchangeConfig
       getDcrExchangeConfig();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface NasJobSpecOrBuilder
    * @return Whether the multiTrialAlgorithmSpec field is set.
    */
   boolean hasMultiTrialAlgorithmSpec();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface NasJobSpecOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.NasJobSpec.MultiTrialAlgorithmSpec
       getMultiTrialAlgorithmSpec();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface NasJobSpecOrBuilder
    * @return The resumeNasJobId.
    */
   java.lang.String getResumeNasJobId();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface NasJobSpecOrBuilder
    * @return The searchSpaceSpec.
    */
   java.lang.String getSearchSpaceSpec();
+
   /**
    *
    *

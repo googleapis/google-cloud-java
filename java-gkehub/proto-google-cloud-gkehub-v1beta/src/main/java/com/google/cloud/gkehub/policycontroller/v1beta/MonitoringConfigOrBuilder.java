@@ -40,6 +40,7 @@ public interface MonitoringConfigOrBuilder
    */
   java.util.List<com.google.cloud.gkehub.policycontroller.v1beta.MonitoringConfig.MonitoringBackend>
       getBackendsList();
+
   /**
    *
    *
@@ -55,6 +56,7 @@ public interface MonitoringConfigOrBuilder
    * @return The count of backends.
    */
   int getBackendsCount();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface MonitoringConfigOrBuilder
    */
   com.google.cloud.gkehub.policycontroller.v1beta.MonitoringConfig.MonitoringBackend getBackends(
       int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface MonitoringConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for backends.
    */
   java.util.List<java.lang.Integer> getBackendsValueList();
+
   /**
    *
    *

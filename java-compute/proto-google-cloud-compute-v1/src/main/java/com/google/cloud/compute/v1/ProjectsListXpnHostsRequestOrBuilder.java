@@ -36,6 +36,7 @@ public interface ProjectsListXpnHostsRequestOrBuilder
    * @return Whether the organization field is set.
    */
   boolean hasOrganization();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ProjectsListXpnHostsRequestOrBuilder
    * @return The organization.
    */
   java.lang.String getOrganization();
+
   /**
    *
    *

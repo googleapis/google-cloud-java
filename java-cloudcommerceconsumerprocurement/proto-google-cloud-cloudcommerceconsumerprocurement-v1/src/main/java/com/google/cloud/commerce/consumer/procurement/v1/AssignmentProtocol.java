@@ -33,6 +33,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol)
     AssignmentProtocolOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AssignmentProtocol.newBuilder() to construct.
   private AssignmentProtocol(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol.ManualAssignmentType)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol.ManualAssignmentType)
       ManualAssignmentTypeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ManualAssignmentType.newBuilder() to construct.
     private ManualAssignmentType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -287,6 +290,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -564,6 +568,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
      * @return Whether the inactiveLicenseTtl field is set.
      */
     boolean hasInactiveLicenseTtl();
+
     /**
      *
      *
@@ -580,6 +585,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
      * @return The inactiveLicenseTtl.
      */
     com.google.protobuf.Duration getInactiveLicenseTtl();
+
     /**
      *
      *
@@ -595,6 +601,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.DurationOrBuilder getInactiveLicenseTtlOrBuilder();
   }
+
   /**
    *
    *
@@ -610,6 +617,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol.AutoAssignmentType)
       AutoAssignmentTypeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AutoAssignmentType.newBuilder() to construct.
     private AutoAssignmentType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -643,6 +651,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
     public static final int INACTIVE_LICENSE_TTL_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration inactiveLicenseTtl_;
+
     /**
      *
      *
@@ -662,6 +671,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
     public boolean hasInactiveLicenseTtl() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -683,6 +693,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
           ? com.google.protobuf.Duration.getDefaultInstance()
           : inactiveLicenseTtl_;
     }
+
     /**
      *
      *
@@ -895,6 +906,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1128,6 +1140,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           inactiveLicenseTtlBuilder_;
+
       /**
        *
        *
@@ -1146,6 +1159,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       public boolean hasInactiveLicenseTtl() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1170,6 +1184,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
           return inactiveLicenseTtlBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1196,6 +1211,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1219,6 +1235,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1250,6 +1267,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1273,6 +1291,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1291,6 +1310,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getInactiveLicenseTtlFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1313,6 +1333,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
               : inactiveLicenseTtl_;
         }
       }
+
       /**
        *
        *
@@ -1431,6 +1452,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
     private AssignmentTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1464,6 +1486,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MANUAL_ASSIGNMENT_TYPE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1481,6 +1504,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
   public boolean hasManualAssignmentType() {
     return assignmentTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -1505,6 +1529,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol.ManualAssignmentType
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1530,6 +1555,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int AUTO_ASSIGNMENT_TYPE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -1547,6 +1573,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
   public boolean hasAutoAssignmentType() {
     return assignmentTypeCase_ == 3;
   }
+
   /**
    *
    *
@@ -1571,6 +1598,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol.AutoAssignmentType
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1799,6 +1827,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2047,6 +2076,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
             com.google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol
                 .ManualAssignmentTypeOrBuilder>
         manualAssignmentTypeBuilder_;
+
     /**
      *
      *
@@ -2064,6 +2094,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
     public boolean hasManualAssignmentType() {
       return assignmentTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -2096,6 +2127,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
             .ManualAssignmentType.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2122,6 +2154,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       assignmentTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2146,6 +2179,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       assignmentTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2187,6 +2221,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       assignmentTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2214,6 +2249,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2230,6 +2266,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
         getManualAssignmentTypeBuilder() {
       return getManualAssignmentTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2257,6 +2294,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
             .ManualAssignmentType.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2309,6 +2347,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
             com.google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol
                 .AutoAssignmentTypeOrBuilder>
         autoAssignmentTypeBuilder_;
+
     /**
      *
      *
@@ -2326,6 +2365,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
     public boolean hasAutoAssignmentType() {
       return assignmentTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -2358,6 +2398,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
             .AutoAssignmentType.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2384,6 +2425,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       assignmentTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2408,6 +2450,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       assignmentTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2449,6 +2492,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       assignmentTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2476,6 +2520,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2492,6 +2537,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
         getAutoAssignmentTypeBuilder() {
       return getAutoAssignmentTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2519,6 +2565,7 @@ public final class AssignmentProtocol extends com.google.protobuf.GeneratedMessa
             .AutoAssignmentType.getDefaultInstance();
       }
     }
+
     /**
      *
      *

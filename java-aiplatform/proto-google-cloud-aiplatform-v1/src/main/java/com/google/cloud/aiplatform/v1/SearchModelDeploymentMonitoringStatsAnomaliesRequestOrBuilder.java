@@ -40,6 +40,7 @@ public interface SearchModelDeploymentMonitoringStatsAnomaliesRequestOrBuilder
    * @return The modelDeploymentMonitoringJob.
    */
   java.lang.String getModelDeploymentMonitoringJob();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface SearchModelDeploymentMonitoringStatsAnomaliesRequestOrBuilder
    * @return The deployedModelId.
    */
   java.lang.String getDeployedModelId();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface SearchModelDeploymentMonitoringStatsAnomaliesRequestOrBuilder
    * @return The featureDisplayName.
    */
   java.lang.String getFeatureDisplayName();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface SearchModelDeploymentMonitoringStatsAnomaliesRequestOrBuilder
           com.google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
               .StatsAnomaliesObjective>
       getObjectivesList();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface SearchModelDeploymentMonitoringStatsAnomaliesRequestOrBuilder
   com.google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
           .StatsAnomaliesObjective
       getObjectives(int index);
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface SearchModelDeploymentMonitoringStatsAnomaliesRequestOrBuilder
    * </code>
    */
   int getObjectivesCount();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface SearchModelDeploymentMonitoringStatsAnomaliesRequestOrBuilder
               com.google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
                   .StatsAnomaliesObjectiveOrBuilder>
       getObjectivesOrBuilderList();
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public interface SearchModelDeploymentMonitoringStatsAnomaliesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public interface SearchModelDeploymentMonitoringStatsAnomaliesRequestOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public interface SearchModelDeploymentMonitoringStatsAnomaliesRequestOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public interface SearchModelDeploymentMonitoringStatsAnomaliesRequestOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -293,6 +304,7 @@ public interface SearchModelDeploymentMonitoringStatsAnomaliesRequestOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

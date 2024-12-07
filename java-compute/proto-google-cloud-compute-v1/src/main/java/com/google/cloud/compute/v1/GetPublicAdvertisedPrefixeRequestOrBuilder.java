@@ -36,6 +36,7 @@ public interface GetPublicAdvertisedPrefixeRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface GetPublicAdvertisedPrefixeRequestOrBuilder
    * @return The publicAdvertisedPrefix.
    */
   java.lang.String getPublicAdvertisedPrefix();
+
   /**
    *
    *

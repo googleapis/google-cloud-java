@@ -33,6 +33,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1beta.SyncState)
     SyncStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SyncState.newBuilder() to construct.
   private SyncState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -172,6 +173,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>SYNC_CODE_UNSPECIFIED = 0;</code>
      */
     public static final int SYNC_CODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -182,6 +184,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>SYNCED = 1;</code>
      */
     public static final int SYNCED_VALUE = 1;
+
     /**
      *
      *
@@ -192,6 +195,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 2;</code>
      */
     public static final int PENDING_VALUE = 2;
+
     /**
      *
      *
@@ -202,6 +206,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 3;</code>
      */
     public static final int ERROR_VALUE = 3;
+
     /**
      *
      *
@@ -213,6 +218,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>NOT_CONFIGURED = 4;</code>
      */
     public static final int NOT_CONFIGURED_VALUE = 4;
+
     /**
      *
      *
@@ -223,6 +229,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>NOT_INSTALLED = 5;</code>
      */
     public static final int NOT_INSTALLED_VALUE = 5;
+
     /**
      *
      *
@@ -233,6 +240,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>UNAUTHORIZED = 6;</code>
      */
     public static final int UNAUTHORIZED_VALUE = 6;
+
     /**
      *
      *
@@ -344,6 +352,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceToken_ = "";
+
   /**
    *
    *
@@ -367,6 +376,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -395,6 +405,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object importToken_ = "";
+
   /**
    *
    *
@@ -418,6 +429,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -446,6 +458,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object syncToken_ = "";
+
   /**
    *
    *
@@ -469,6 +482,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -497,6 +511,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastSync_ = "";
+
   /**
    *
    *
@@ -525,6 +540,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -556,6 +572,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_SYNC_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp lastSyncTime_;
+
   /**
    *
    *
@@ -571,6 +588,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLastSyncTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -588,6 +606,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastSyncTime_;
   }
+
   /**
    *
    *
@@ -606,6 +625,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CODE_FIELD_NUMBER = 5;
   private int code_ = 0;
+
   /**
    *
    *
@@ -621,6 +641,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
   public int getCodeValue() {
     return code_;
   }
+
   /**
    *
    *
@@ -645,6 +666,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkehub.configmanagement.v1beta.SyncError> errors_;
+
   /**
    *
    *
@@ -660,6 +682,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.gkehub.configmanagement.v1beta.SyncError> getErrorsList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -677,6 +700,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       getErrorsOrBuilderList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -692,6 +716,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
   public int getErrorsCount() {
     return errors_.size();
   }
+
   /**
    *
    *
@@ -707,6 +732,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.gkehub.configmanagement.v1beta.SyncError getErrors(int index) {
     return errors_.get(index);
   }
+
   /**
    *
    *
@@ -949,6 +975,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1284,6 +1311,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object sourceToken_ = "";
+
     /**
      *
      *
@@ -1306,6 +1334,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1328,6 +1357,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1349,6 +1379,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1366,6 +1397,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1390,6 +1422,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object importToken_ = "";
+
     /**
      *
      *
@@ -1412,6 +1445,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1434,6 +1468,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1455,6 +1490,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1472,6 +1508,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1496,6 +1533,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object syncToken_ = "";
+
     /**
      *
      *
@@ -1518,6 +1556,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1540,6 +1579,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1561,6 +1601,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1578,6 +1619,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1602,6 +1644,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object lastSync_ = "";
+
     /**
      *
      *
@@ -1629,6 +1672,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1656,6 +1700,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1682,6 +1727,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1704,6 +1750,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1738,6 +1785,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastSyncTimeBuilder_;
+
     /**
      *
      *
@@ -1752,6 +1800,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastSyncTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1772,6 +1821,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return lastSyncTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1794,6 +1844,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1813,6 +1864,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1840,6 +1892,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1859,6 +1912,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1873,6 +1927,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLastSyncTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1891,6 +1946,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
             : lastSyncTime_;
       }
     }
+
     /**
      *
      *
@@ -1918,6 +1974,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int code_ = 0;
+
     /**
      *
      *
@@ -1933,6 +1990,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
     public int getCodeValue() {
       return code_;
     }
+
     /**
      *
      *
@@ -1951,6 +2009,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1970,6 +2029,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gkehub.configmanagement.v1beta.SyncState.SyncCode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1992,6 +2052,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2047,6 +2108,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2065,6 +2127,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2083,6 +2146,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2108,6 +2172,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2131,6 +2196,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2155,6 +2221,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2180,6 +2247,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2202,6 +2270,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2225,6 +2294,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2248,6 +2318,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2269,6 +2340,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2290,6 +2362,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2305,6 +2378,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2324,6 +2398,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2344,6 +2419,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
+
     /**
      *
      *
@@ -2360,6 +2436,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.gkehub.configmanagement.v1beta.SyncError.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2378,6 +2455,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.gkehub.configmanagement.v1beta.SyncError.getDefaultInstance());
     }
+
     /**
      *
      *

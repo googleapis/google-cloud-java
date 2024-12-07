@@ -39,6 +39,7 @@ public interface CreateEvaluationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreateEvaluationRequestOrBuilder
    * @return Whether the evaluation field is set.
    */
   boolean hasEvaluation();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateEvaluationRequestOrBuilder
    * @return The evaluation.
    */
   com.google.cloud.discoveryengine.v1beta.Evaluation getEvaluation();
+
   /**
    *
    *

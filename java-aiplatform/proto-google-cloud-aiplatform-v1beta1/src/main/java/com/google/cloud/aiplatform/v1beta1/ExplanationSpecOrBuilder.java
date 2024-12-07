@@ -38,6 +38,7 @@ public interface ExplanationSpecOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ExplanationSpecOrBuilder
    * @return The parameters.
    */
   com.google.cloud.aiplatform.v1beta1.ExplanationParameters getParameters();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ExplanationSpecOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface ExplanationSpecOrBuilder
    * @return The metadata.
    */
   com.google.cloud.aiplatform.v1beta1.ExplanationMetadata getMetadata();
+
   /**
    *
    *

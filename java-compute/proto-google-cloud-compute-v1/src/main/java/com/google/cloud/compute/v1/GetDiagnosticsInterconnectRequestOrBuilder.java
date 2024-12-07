@@ -36,6 +36,7 @@ public interface GetDiagnosticsInterconnectRequestOrBuilder
    * @return The interconnect.
    */
   java.lang.String getInterconnect();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetDiagnosticsInterconnectRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *

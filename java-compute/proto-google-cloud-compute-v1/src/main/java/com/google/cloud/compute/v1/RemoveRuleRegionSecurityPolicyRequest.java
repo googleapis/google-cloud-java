@@ -34,6 +34,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RemoveRuleRegionSecurityPolicyRequest)
     RemoveRuleRegionSecurityPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RemoveRuleRegionSecurityPolicyRequest.newBuilder() to construct.
   private RemoveRuleRegionSecurityPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
   private int bitField0_;
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_ = 0;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
   public boolean hasPriority() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object securityPolicy_ = "";
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -455,6 +464,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -690,6 +700,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
     private int bitField0_;
 
     private int priority_;
+
     /**
      *
      *
@@ -705,6 +716,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
     public boolean hasPriority() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -720,6 +732,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
     public int getPriority() {
       return priority_;
     }
+
     /**
      *
      *
@@ -739,6 +752,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +772,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -782,6 +797,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -806,6 +822,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -829,6 +846,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +893,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -898,6 +918,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -922,6 +943,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -945,6 +967,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +987,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
     }
 
     private java.lang.Object securityPolicy_ = "";
+
     /**
      *
      *
@@ -1012,6 +1037,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1034,6 +1060,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1082,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1100,7 @@ public final class RemoveRuleRegionSecurityPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.essentialcontacts.v1.SendTestMessageRequest)
     SendTestMessageRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SendTestMessageRequest.newBuilder() to construct.
   private SendTestMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList contacts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getContactsList() {
     return contacts_;
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
   public int getContactsCount() {
     return contacts_.size();
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
   public java.lang.String getContacts(int index) {
     return contacts_.get(index);
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
 
   public static final int NOTIFICATION_CATEGORY_FIELD_NUMBER = 3;
   private int notificationCategory_ = 0;
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
   public int getNotificationCategoryValue() {
     return notificationCategory_;
   }
+
   /**
    *
    *
@@ -446,6 +455,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -676,6 +686,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -696,6 +707,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       contacts_.makeImmutable();
       return contacts_;
     }
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
     public int getContactsCount() {
       return contacts_.size();
     }
+
     /**
      *
      *
@@ -735,6 +748,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
     public java.lang.String getContacts(int index) {
       return contacts_.get(index);
     }
+
     /**
      *
      *
@@ -755,6 +769,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getContactsBytes(int index) {
       return contacts_.getByteString(index);
     }
+
     /**
      *
      *
@@ -783,6 +798,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +826,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +875,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -915,6 +935,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -943,6 +964,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -970,6 +992,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1016,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1047,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
     }
 
     private int notificationCategory_ = 0;
+
     /**
      *
      *
@@ -1041,6 +1066,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
     public int getNotificationCategoryValue() {
       return notificationCategory_;
     }
+
     /**
      *
      *
@@ -1062,6 +1088,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1112,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
           ? com.google.cloud.essentialcontacts.v1.NotificationCategory.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1110,6 +1138,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

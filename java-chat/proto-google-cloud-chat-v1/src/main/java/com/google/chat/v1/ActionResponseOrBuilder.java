@@ -38,6 +38,7 @@ public interface ActionResponseOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ActionResponseOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface ActionResponseOrBuilder
    * @return Whether the dialogAction field is set.
    */
   boolean hasDialogAction();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface ActionResponseOrBuilder
    * @return The dialogAction.
    */
   com.google.chat.v1.DialogAction getDialogAction();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface ActionResponseOrBuilder
    * @return Whether the updatedWidget field is set.
    */
   boolean hasUpdatedWidget();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface ActionResponseOrBuilder
    * @return The updatedWidget.
    */
   com.google.chat.v1.ActionResponse.UpdatedWidget getUpdatedWidget();
+
   /**
    *
    *

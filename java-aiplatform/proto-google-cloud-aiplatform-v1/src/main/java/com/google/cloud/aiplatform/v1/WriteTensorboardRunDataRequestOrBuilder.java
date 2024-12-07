@@ -40,6 +40,7 @@ public interface WriteTensorboardRunDataRequestOrBuilder
    * @return The tensorboardRun.
    */
   java.lang.String getTensorboardRun();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface WriteTensorboardRunDataRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.TimeSeriesData> getTimeSeriesDataList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface WriteTensorboardRunDataRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.TimeSeriesData getTimeSeriesData(int index);
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface WriteTensorboardRunDataRequestOrBuilder
    * </code>
    */
   int getTimeSeriesDataCount();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface WriteTensorboardRunDataRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TimeSeriesDataOrBuilder>
       getTimeSeriesDataOrBuilderList();
+
   /**
    *
    *

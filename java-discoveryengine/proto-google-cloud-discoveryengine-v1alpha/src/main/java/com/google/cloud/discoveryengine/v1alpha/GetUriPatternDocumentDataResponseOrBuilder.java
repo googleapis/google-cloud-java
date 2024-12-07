@@ -42,6 +42,7 @@ public interface GetUriPatternDocumentDataResponseOrBuilder
    * <code>map&lt;string, .google.protobuf.Struct&gt; document_data_map = 1;</code>
    */
   int getDocumentDataMapCount();
+
   /**
    *
    *
@@ -60,9 +61,11 @@ public interface GetUriPatternDocumentDataResponseOrBuilder
    * <code>map&lt;string, .google.protobuf.Struct&gt; document_data_map = 1;</code>
    */
   boolean containsDocumentDataMap(java.lang.String key);
+
   /** Use {@link #getDocumentDataMapMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Struct> getDocumentDataMap();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface GetUriPatternDocumentDataResponseOrBuilder
    * <code>map&lt;string, .google.protobuf.Struct&gt; document_data_map = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Struct> getDocumentDataMapMap();
+
   /**
    *
    *
@@ -103,6 +107,7 @@ public interface GetUriPatternDocumentDataResponseOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Struct defaultValue);
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface HealthCheckServiceOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface HealthCheckServiceOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface HealthCheckServiceOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface HealthCheckServiceOrBuilder
    * @return A list containing the healthChecks.
    */
   java.util.List<java.lang.String> getHealthChecksList();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The count of healthChecks.
    */
   int getHealthChecksCount();
+
   /**
    *
    *
@@ -172,6 +180,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The healthChecks at the given index.
    */
   java.lang.String getHealthChecks(int index);
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public interface HealthCheckServiceOrBuilder
    * @return Whether the healthStatusAggregationPolicy field is set.
    */
   boolean hasHealthStatusAggregationPolicy();
+
   /**
    *
    *
@@ -212,6 +222,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The healthStatusAggregationPolicy.
    */
   java.lang.String getHealthStatusAggregationPolicy();
+
   /**
    *
    *
@@ -238,6 +249,7 @@ public interface HealthCheckServiceOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -263,6 +275,7 @@ public interface HealthCheckServiceOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -275,6 +288,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -300,6 +314,7 @@ public interface HealthCheckServiceOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -312,6 +327,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -337,6 +353,7 @@ public interface HealthCheckServiceOrBuilder
    * @return A list containing the networkEndpointGroups.
    */
   java.util.List<java.lang.String> getNetworkEndpointGroupsList();
+
   /**
    *
    *
@@ -349,6 +366,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The count of networkEndpointGroups.
    */
   int getNetworkEndpointGroupsCount();
+
   /**
    *
    *
@@ -362,6 +380,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The networkEndpointGroups at the given index.
    */
   java.lang.String getNetworkEndpointGroups(int index);
+
   /**
    *
    *
@@ -388,6 +407,7 @@ public interface HealthCheckServiceOrBuilder
    * @return A list containing the notificationEndpoints.
    */
   java.util.List<java.lang.String> getNotificationEndpointsList();
+
   /**
    *
    *
@@ -400,6 +420,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The count of notificationEndpoints.
    */
   int getNotificationEndpointsCount();
+
   /**
    *
    *
@@ -413,6 +434,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The notificationEndpoints at the given index.
    */
   java.lang.String getNotificationEndpoints(int index);
+
   /**
    *
    *
@@ -439,6 +461,7 @@ public interface HealthCheckServiceOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -451,6 +474,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -476,6 +500,7 @@ public interface HealthCheckServiceOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -488,6 +513,7 @@ public interface HealthCheckServiceOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *

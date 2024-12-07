@@ -36,6 +36,7 @@ public interface GenerateStreamHlsTokenRequestOrBuilder
    * @return The stream.
    */
   java.lang.String getStream();
+
   /**
    *
    *

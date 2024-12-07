@@ -36,6 +36,7 @@ public interface NamedPortOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NamedPortOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface NamedPortOrBuilder
    * @return Whether the port field is set.
    */
   boolean hasPort();
+
   /**
    *
    *

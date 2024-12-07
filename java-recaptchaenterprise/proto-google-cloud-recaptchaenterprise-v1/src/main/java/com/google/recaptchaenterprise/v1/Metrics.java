@@ -33,6 +33,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.Metrics)
     MetricsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Metrics.newBuilder() to construct.
   private Metrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.recaptchaenterprise.v1.ScoreMetrics> scoreMetrics_;
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.recaptchaenterprise.v1.ScoreMetrics> getScoreMetricsList() {
     return scoreMetrics_;
   }
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       getScoreMetricsOrBuilderList() {
     return scoreMetrics_;
   }
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
   public int getScoreMetricsCount() {
     return scoreMetrics_.size();
   }
+
   /**
    *
    *
@@ -230,6 +240,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
   public com.google.recaptchaenterprise.v1.ScoreMetrics getScoreMetrics(int index) {
     return scoreMetrics_.get(index);
   }
+
   /**
    *
    *
@@ -250,6 +261,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.recaptchaenterprise.v1.ChallengeMetrics> challengeMetrics_;
+
   /**
    *
    *
@@ -267,6 +279,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       getChallengeMetricsList() {
     return challengeMetrics_;
   }
+
   /**
    *
    *
@@ -284,6 +297,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       getChallengeMetricsOrBuilderList() {
     return challengeMetrics_;
   }
+
   /**
    *
    *
@@ -300,6 +314,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
   public int getChallengeMetricsCount() {
     return challengeMetrics_.size();
   }
+
   /**
    *
    *
@@ -316,6 +331,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
   public com.google.recaptchaenterprise.v1.ChallengeMetrics getChallengeMetrics(int index) {
     return challengeMetrics_.get(index);
   }
+
   /**
    *
    *
@@ -529,6 +545,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -860,6 +877,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -885,6 +903,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -910,6 +929,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -934,6 +954,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +975,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1008,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -1000,6 +1023,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1018,6 +1042,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1065,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1085,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1113,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1133,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1148,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1135,6 +1165,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1195,6 +1226,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return scoreMetricsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1244,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return scoreMetricsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1229,6 +1262,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return scoreMetricsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1253,6 +1287,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1309,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1297,6 +1333,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1321,6 +1358,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1342,6 +1380,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1402,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1384,6 +1424,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1404,6 +1445,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1466,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1438,6 +1481,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getScoreMetricsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1456,6 +1500,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return scoreMetricsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1474,6 +1519,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(scoreMetrics_);
       }
     }
+
     /**
      *
      *
@@ -1488,6 +1534,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       return getScoreMetricsFieldBuilder()
           .addBuilder(com.google.recaptchaenterprise.v1.ScoreMetrics.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1503,6 +1550,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       return getScoreMetricsFieldBuilder()
           .addBuilder(index, com.google.recaptchaenterprise.v1.ScoreMetrics.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1573,6 +1621,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return challengeMetricsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1592,6 +1641,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return challengeMetricsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1611,6 +1661,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return challengeMetricsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1637,6 +1688,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1660,6 +1712,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1685,6 +1738,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1711,6 +1765,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1734,6 +1789,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1757,6 +1813,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1780,6 +1837,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1860,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1824,6 +1883,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1840,6 +1900,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getChallengeMetricsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1860,6 +1921,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return challengeMetricsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1880,6 +1942,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(challengeMetrics_);
       }
     }
+
     /**
      *
      *
@@ -1896,6 +1959,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
       return getChallengeMetricsFieldBuilder()
           .addBuilder(com.google.recaptchaenterprise.v1.ChallengeMetrics.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1914,6 +1978,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.recaptchaenterprise.v1.ChallengeMetrics.getDefaultInstance());
     }
+
     /**
      *
      *

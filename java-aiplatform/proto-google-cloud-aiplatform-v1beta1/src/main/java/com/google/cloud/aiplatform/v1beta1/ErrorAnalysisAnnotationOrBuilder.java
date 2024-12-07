@@ -38,6 +38,7 @@ public interface ErrorAnalysisAnnotationOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ErrorAnalysisAnnotation.AttributedItem>
       getAttributedItemsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ErrorAnalysisAnnotationOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ErrorAnalysisAnnotation.AttributedItem getAttributedItems(
       int index);
+
   /**
    *
    *
@@ -65,6 +67,7 @@ public interface ErrorAnalysisAnnotationOrBuilder
    * </code>
    */
   int getAttributedItemsCount();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface ErrorAnalysisAnnotationOrBuilder
           ? extends
               com.google.cloud.aiplatform.v1beta1.ErrorAnalysisAnnotation.AttributedItemOrBuilder>
       getAttributedItemsOrBuilderList();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface ErrorAnalysisAnnotationOrBuilder
    * @return The enum numeric value on the wire for queryType.
    */
   int getQueryTypeValue();
+
   /**
    *
    *

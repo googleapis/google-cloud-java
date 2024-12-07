@@ -33,6 +33,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.Authorization)
     AuthorizationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Authorization.newBuilder() to construct.
   private Authorization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ADMIN_USERS_FIELD_NUMBER = 1;
   private com.google.cloud.edgecontainer.v1.ClusterUser adminUsers_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdminUsers() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.edgecontainer.v1.ClusterUser.getDefaultInstance()
         : adminUsers_;
   }
+
   /**
    *
    *
@@ -288,6 +292,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -491,6 +496,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.edgecontainer.v1.ClusterUser.Builder,
             com.google.cloud.edgecontainer.v1.ClusterUserOrBuilder>
         adminUsersBuilder_;
+
     /**
      *
      *
@@ -509,6 +515,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdminUsers() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -533,6 +540,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
         return adminUsersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -559,6 +567,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -583,6 +592,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +624,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +667,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAdminUsersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -677,6 +690,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
             : adminUsers_;
       }
     }
+
     /**
      *
      *

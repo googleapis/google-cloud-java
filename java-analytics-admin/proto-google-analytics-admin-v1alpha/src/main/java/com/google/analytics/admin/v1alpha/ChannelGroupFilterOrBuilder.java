@@ -36,6 +36,7 @@ public interface ChannelGroupFilterOrBuilder
    * @return Whether the stringFilter field is set.
    */
   boolean hasStringFilter();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ChannelGroupFilterOrBuilder
    * @return The stringFilter.
    */
   com.google.analytics.admin.v1alpha.ChannelGroupFilter.StringFilter getStringFilter();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface ChannelGroupFilterOrBuilder
    * @return Whether the inListFilter field is set.
    */
   boolean hasInListFilter();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface ChannelGroupFilterOrBuilder
    * @return The inListFilter.
    */
   com.google.analytics.admin.v1alpha.ChannelGroupFilter.InListFilter getInListFilter();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface ChannelGroupFilterOrBuilder
    * @return The fieldName.
    */
   java.lang.String getFieldName();
+
   /**
    *
    *

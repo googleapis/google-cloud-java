@@ -38,6 +38,7 @@ public interface FinishDlpJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

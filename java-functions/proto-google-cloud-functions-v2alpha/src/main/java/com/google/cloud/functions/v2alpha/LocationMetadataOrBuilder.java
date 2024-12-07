@@ -36,6 +36,7 @@ public interface LocationMetadataOrBuilder
    * @return A list containing the environments.
    */
   java.util.List<com.google.cloud.functions.v2alpha.Environment> getEnvironmentsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LocationMetadataOrBuilder
    * @return The count of environments.
    */
   int getEnvironmentsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface LocationMetadataOrBuilder
    * @return The environments at the given index.
    */
   com.google.cloud.functions.v2alpha.Environment getEnvironments(int index);
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface LocationMetadataOrBuilder
    * @return A list containing the enum numeric values on the wire for environments.
    */
   java.util.List<java.lang.Integer> getEnvironmentsValueList();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListRolloutsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Rollout rollouts = 1;</code>
    */
   java.util.List<com.google.cloud.deploy.v1.Rollout> getRolloutsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListRolloutsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Rollout rollouts = 1;</code>
    */
   com.google.cloud.deploy.v1.Rollout getRollouts(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListRolloutsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Rollout rollouts = 1;</code>
    */
   int getRolloutsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListRolloutsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Rollout rollouts = 1;</code>
    */
   java.util.List<? extends com.google.cloud.deploy.v1.RolloutOrBuilder> getRolloutsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListRolloutsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface ListRolloutsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -126,6 +132,7 @@ public interface ListRolloutsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -139,6 +146,7 @@ public interface ListRolloutsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

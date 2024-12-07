@@ -38,6 +38,7 @@ public interface AutonomousDatabaseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface AutonomousDatabaseOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface AutonomousDatabaseOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface AutonomousDatabaseOrBuilder
    * @return The entitlementId.
    */
   java.lang.String getEntitlementId();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface AutonomousDatabaseOrBuilder
    * @return The adminPassword.
    */
   java.lang.String getAdminPassword();
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public interface AutonomousDatabaseOrBuilder
    * @return Whether the properties field is set.
    */
   boolean hasProperties();
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public interface AutonomousDatabaseOrBuilder
    * @return The properties.
    */
   com.google.cloud.oracledatabase.v1.AutonomousDatabaseProperties getProperties();
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public interface AutonomousDatabaseOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -222,9 +230,11 @@ public interface AutonomousDatabaseOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -235,6 +245,7 @@ public interface AutonomousDatabaseOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -249,6 +260,7 @@ public interface AutonomousDatabaseOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -275,6 +287,7 @@ public interface AutonomousDatabaseOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -303,6 +316,7 @@ public interface AutonomousDatabaseOrBuilder
    * @return The cidr.
    */
   java.lang.String getCidr();
+
   /**
    *
    *
@@ -329,6 +343,7 @@ public interface AutonomousDatabaseOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -342,6 +357,7 @@ public interface AutonomousDatabaseOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

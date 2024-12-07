@@ -40,6 +40,7 @@ public interface CreateAssetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreateAssetRequestOrBuilder
    * @return Whether the asset field is set.
    */
   boolean hasAsset();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateAssetRequestOrBuilder
    * @return The asset.
    */
   com.google.cloud.visionai.v1.Asset getAsset();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface CreateAssetRequestOrBuilder
    * @return Whether the assetId field is set.
    */
   boolean hasAssetId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface CreateAssetRequestOrBuilder
    * @return The assetId.
    */
   java.lang.String getAssetId();
+
   /**
    *
    *

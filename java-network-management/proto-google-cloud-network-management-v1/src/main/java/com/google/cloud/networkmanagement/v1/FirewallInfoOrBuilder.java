@@ -37,6 +37,7 @@ public interface FirewallInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface FirewallInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface FirewallInfoOrBuilder
    * @return The direction.
    */
   java.lang.String getDirection();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface FirewallInfoOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface FirewallInfoOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public interface FirewallInfoOrBuilder
    * @return A list containing the targetTags.
    */
   java.util.List<java.lang.String> getTargetTagsList();
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public interface FirewallInfoOrBuilder
    * @return The count of targetTags.
    */
   int getTargetTagsCount();
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public interface FirewallInfoOrBuilder
    * @return The targetTags at the given index.
    */
   java.lang.String getTargetTags(int index);
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public interface FirewallInfoOrBuilder
    * @return A list containing the targetServiceAccounts.
    */
   java.util.List<java.lang.String> getTargetServiceAccountsList();
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public interface FirewallInfoOrBuilder
    * @return The count of targetServiceAccounts.
    */
   int getTargetServiceAccountsCount();
+
   /**
    *
    *
@@ -260,6 +270,7 @@ public interface FirewallInfoOrBuilder
    * @return The targetServiceAccounts at the given index.
    */
   java.lang.String getTargetServiceAccounts(int index);
+
   /**
    *
    *
@@ -288,6 +299,7 @@ public interface FirewallInfoOrBuilder
    * @return The policy.
    */
   java.lang.String getPolicy();
+
   /**
    *
    *
@@ -317,6 +329,7 @@ public interface FirewallInfoOrBuilder
    * @return The policyUri.
    */
   java.lang.String getPolicyUri();
+
   /**
    *
    *
@@ -345,6 +358,7 @@ public interface FirewallInfoOrBuilder
    * @return The enum numeric value on the wire for firewallRuleType.
    */
   int getFirewallRuleTypeValue();
+
   /**
    *
    *

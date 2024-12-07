@@ -38,6 +38,7 @@ public interface SetUrlMapRegionTargetHttpsProxyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SetUrlMapRegionTargetHttpsProxyRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface SetUrlMapRegionTargetHttpsProxyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface SetUrlMapRegionTargetHttpsProxyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface SetUrlMapRegionTargetHttpsProxyRequestOrBuilder
    * @return The targetHttpsProxy.
    */
   java.lang.String getTargetHttpsProxy();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface SetUrlMapRegionTargetHttpsProxyRequestOrBuilder
    * @return Whether the urlMapReferenceResource field is set.
    */
   boolean hasUrlMapReferenceResource();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface SetUrlMapRegionTargetHttpsProxyRequestOrBuilder
    * @return The urlMapReferenceResource.
    */
   com.google.cloud.compute.v1.UrlMapReference getUrlMapReferenceResource();
+
   /**
    *
    *

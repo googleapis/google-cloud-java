@@ -354,7 +354,8 @@ public class QuotaPreferenceName implements ResourceName {
     private Builder(QuotaPreferenceName quotaPreferenceName) {
       Preconditions.checkArgument(
           Objects.equals(quotaPreferenceName.pathTemplate, PROJECT_LOCATION_QUOTA_PREFERENCE),
-          "toBuilder is only supported when QuotaPreferenceName has the pattern of projects/{project}/locations/{location}/quotaPreferences/{quota_preference}");
+          "toBuilder is only supported when QuotaPreferenceName has the pattern of"
+              + " projects/{project}/locations/{location}/quotaPreferences/{quota_preference}");
       this.project = quotaPreferenceName.project;
       this.location = quotaPreferenceName.location;
       this.quotaPreference = quotaPreferenceName.quotaPreference;

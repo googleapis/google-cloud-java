@@ -34,6 +34,7 @@ public final class DeleteNoteRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:grafeas.v1.DeleteNoteRequest)
     DeleteNoteRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteNoteRequest.newBuilder() to construct.
   private DeleteNoteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class DeleteNoteRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class DeleteNoteRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -276,6 +279,7 @@ public final class DeleteNoteRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -457,6 +461,7 @@ public final class DeleteNoteRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -482,6 +487,7 @@ public final class DeleteNoteRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -507,6 +513,7 @@ public final class DeleteNoteRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -531,6 +538,7 @@ public final class DeleteNoteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -551,6 +559,7 @@ public final class DeleteNoteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

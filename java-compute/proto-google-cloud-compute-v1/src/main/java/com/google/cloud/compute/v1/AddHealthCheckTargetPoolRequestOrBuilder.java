@@ -38,6 +38,7 @@ public interface AddHealthCheckTargetPoolRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface AddHealthCheckTargetPoolRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface AddHealthCheckTargetPoolRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface AddHealthCheckTargetPoolRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface AddHealthCheckTargetPoolRequestOrBuilder
    * @return The targetPool.
    */
   java.lang.String getTargetPool();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface AddHealthCheckTargetPoolRequestOrBuilder
    * @return Whether the targetPoolsAddHealthCheckRequestResource field is set.
    */
   boolean hasTargetPoolsAddHealthCheckRequestResource();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface AddHealthCheckTargetPoolRequestOrBuilder
    */
   com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest
       getTargetPoolsAddHealthCheckRequestResource();
+
   /**
    *
    *

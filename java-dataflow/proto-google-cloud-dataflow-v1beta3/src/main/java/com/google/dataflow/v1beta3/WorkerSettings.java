@@ -33,6 +33,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.WorkerSettings)
     WorkerSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WorkerSettings.newBuilder() to construct.
   private WorkerSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseUrl_ = "";
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPORTING_ENABLED_FIELD_NUMBER = 2;
   private boolean reportingEnabled_ = false;
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object servicePath_ = "";
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -209,6 +215,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object shuffleServicePath_ = "";
+
   /**
    *
    *
@@ -233,6 +240,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -262,6 +270,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerId_ = "";
+
   /**
    *
    *
@@ -285,6 +294,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -313,6 +323,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tempStoragePrefix_ = "";
+
   /**
    *
    *
@@ -344,6 +355,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -580,6 +592,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -836,6 +849,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object baseUrl_ = "";
+
     /**
      *
      *
@@ -866,6 +880,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -896,6 +911,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -925,6 +941,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +967,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1000,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean reportingEnabled_;
+
     /**
      *
      *
@@ -997,6 +1016,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean getReportingEnabled() {
       return reportingEnabled_;
     }
+
     /**
      *
      *
@@ -1016,6 +1036,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1056,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object servicePath_ = "";
+
     /**
      *
      *
@@ -1058,6 +1080,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1104,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1103,6 +1127,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1146,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1172,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object shuffleServicePath_ = "";
+
     /**
      *
      *
@@ -1169,6 +1196,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1192,6 +1220,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1214,6 +1243,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1232,6 +1262,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1257,6 +1288,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object workerId_ = "";
+
     /**
      *
      *
@@ -1279,6 +1311,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1301,6 +1334,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1322,6 +1356,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1339,6 +1374,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1399,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object tempStoragePrefix_ = "";
+
     /**
      *
      *
@@ -1393,6 +1430,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1423,6 +1461,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1452,6 +1491,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1477,6 +1517,7 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

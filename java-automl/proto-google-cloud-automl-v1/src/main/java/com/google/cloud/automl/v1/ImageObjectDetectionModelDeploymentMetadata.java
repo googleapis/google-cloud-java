@@ -34,6 +34,7 @@ public final class ImageObjectDetectionModelDeploymentMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata)
     ImageObjectDetectionModelDeploymentMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImageObjectDetectionModelDeploymentMetadata.newBuilder() to construct.
   private ImageObjectDetectionModelDeploymentMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class ImageObjectDetectionModelDeploymentMetadata
 
   public static final int NODE_COUNT_FIELD_NUMBER = 1;
   private long nodeCount_ = 0L;
+
   /**
    *
    *
@@ -246,6 +248,7 @@ public final class ImageObjectDetectionModelDeploymentMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -436,6 +439,7 @@ public final class ImageObjectDetectionModelDeploymentMetadata
     private int bitField0_;
 
     private long nodeCount_;
+
     /**
      *
      *
@@ -455,6 +459,7 @@ public final class ImageObjectDetectionModelDeploymentMetadata
     public long getNodeCount() {
       return nodeCount_;
     }
+
     /**
      *
      *
@@ -478,6 +483,7 @@ public final class ImageObjectDetectionModelDeploymentMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *

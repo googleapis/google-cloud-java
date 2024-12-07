@@ -35,6 +35,7 @@ public interface SerialPipelineOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
    */
   java.util.List<com.google.cloud.deploy.v1.Stage> getStagesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface SerialPipelineOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
    */
   com.google.cloud.deploy.v1.Stage getStages(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface SerialPipelineOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
    */
   int getStagesCount();
+
   /**
    *
    *
@@ -68,6 +71,7 @@ public interface SerialPipelineOrBuilder
    * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
    */
   java.util.List<? extends com.google.cloud.deploy.v1.StageOrBuilder> getStagesOrBuilderList();
+
   /**
    *
    *

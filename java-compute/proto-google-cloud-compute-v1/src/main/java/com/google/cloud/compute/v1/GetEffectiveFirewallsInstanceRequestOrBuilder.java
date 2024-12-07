@@ -36,6 +36,7 @@ public interface GetEffectiveFirewallsInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetEffectiveFirewallsInstanceRequestOrBuilder
    * @return The networkInterface.
    */
   java.lang.String getNetworkInterface();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetEffectiveFirewallsInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface GetEffectiveFirewallsInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

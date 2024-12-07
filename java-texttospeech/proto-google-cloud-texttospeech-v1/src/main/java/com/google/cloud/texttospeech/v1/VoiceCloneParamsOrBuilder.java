@@ -36,6 +36,7 @@ public interface VoiceCloneParamsOrBuilder
    * @return The voiceCloningKey.
    */
   java.lang.String getVoiceCloningKey();
+
   /**
    *
    *

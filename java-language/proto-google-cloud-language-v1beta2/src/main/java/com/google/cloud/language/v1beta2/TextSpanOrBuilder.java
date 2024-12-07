@@ -36,6 +36,7 @@ public interface TextSpanOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *

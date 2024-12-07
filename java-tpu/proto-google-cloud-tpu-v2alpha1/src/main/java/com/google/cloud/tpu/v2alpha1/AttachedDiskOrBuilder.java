@@ -37,6 +37,7 @@ public interface AttachedDiskOrBuilder
    * @return The sourceDisk.
    */
   java.lang.String getSourceDisk();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AttachedDiskOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
+
   /**
    *
    *

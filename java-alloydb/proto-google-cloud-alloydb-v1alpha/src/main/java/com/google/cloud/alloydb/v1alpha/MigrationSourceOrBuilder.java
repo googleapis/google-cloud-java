@@ -37,6 +37,7 @@ public interface MigrationSourceOrBuilder
    * @return The hostPort.
    */
   java.lang.String getHostPort();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface MigrationSourceOrBuilder
    * @return The referenceId.
    */
   java.lang.String getReferenceId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface MigrationSourceOrBuilder
    * @return The enum numeric value on the wire for sourceType.
    */
   int getSourceTypeValue();
+
   /**
    *
    *

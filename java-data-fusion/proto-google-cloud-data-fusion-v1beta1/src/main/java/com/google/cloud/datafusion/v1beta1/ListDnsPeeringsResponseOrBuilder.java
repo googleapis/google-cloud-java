@@ -34,6 +34,7 @@ public interface ListDnsPeeringsResponseOrBuilder
    * <code>repeated .google.cloud.datafusion.v1beta1.DnsPeering dns_peerings = 1;</code>
    */
   java.util.List<com.google.cloud.datafusion.v1beta1.DnsPeering> getDnsPeeringsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDnsPeeringsResponseOrBuilder
    * <code>repeated .google.cloud.datafusion.v1beta1.DnsPeering dns_peerings = 1;</code>
    */
   com.google.cloud.datafusion.v1beta1.DnsPeering getDnsPeerings(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDnsPeeringsResponseOrBuilder
    * <code>repeated .google.cloud.datafusion.v1beta1.DnsPeering dns_peerings = 1;</code>
    */
   int getDnsPeeringsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDnsPeeringsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datafusion.v1beta1.DnsPeeringOrBuilder>
       getDnsPeeringsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListDnsPeeringsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

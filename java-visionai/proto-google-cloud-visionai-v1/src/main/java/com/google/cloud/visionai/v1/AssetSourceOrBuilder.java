@@ -36,6 +36,7 @@ public interface AssetSourceOrBuilder
    * @return Whether the assetGcsSource field is set.
    */
   boolean hasAssetGcsSource();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AssetSourceOrBuilder
    * @return The assetGcsSource.
    */
   com.google.cloud.visionai.v1.AssetSource.AssetGcsSource getAssetGcsSource();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface AssetSourceOrBuilder
    * @return Whether the assetContentData field is set.
    */
   boolean hasAssetContentData();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface AssetSourceOrBuilder
    * @return The assetContentData.
    */
   com.google.cloud.visionai.v1.AssetSource.AssetContentData getAssetContentData();
+
   /**
    *
    *

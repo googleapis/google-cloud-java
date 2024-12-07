@@ -34,6 +34,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.Image)
     ImageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Image.newBuilder() to construct.
   private Image(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     private DataCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,6 +112,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_BYTES_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImageBytes() {
     return dataCase_ == 1;
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object thumbnailUri_ = "";
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -380,6 +386,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -617,6 +624,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImageBytes() {
       return dataCase_ == 1;
     }
+
     /**
      *
      *
@@ -636,6 +644,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -659,6 +668,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +692,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object thumbnailUri_ = "";
+
     /**
      *
      *
@@ -704,6 +715,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -726,6 +738,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -747,6 +760,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +778,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

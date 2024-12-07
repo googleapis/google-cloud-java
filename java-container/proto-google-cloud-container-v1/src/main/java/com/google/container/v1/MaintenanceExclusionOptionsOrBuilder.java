@@ -37,6 +37,7 @@ public interface MaintenanceExclusionOptionsOrBuilder
    * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
+
   /**
    *
    *

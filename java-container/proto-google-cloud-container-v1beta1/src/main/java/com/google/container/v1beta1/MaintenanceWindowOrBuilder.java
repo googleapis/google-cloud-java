@@ -36,6 +36,7 @@ public interface MaintenanceWindowOrBuilder
    * @return Whether the dailyMaintenanceWindow field is set.
    */
   boolean hasDailyMaintenanceWindow();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MaintenanceWindowOrBuilder
    * @return The dailyMaintenanceWindow.
    */
   com.google.container.v1beta1.DailyMaintenanceWindow getDailyMaintenanceWindow();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface MaintenanceWindowOrBuilder
    * @return Whether the recurringWindow field is set.
    */
   boolean hasRecurringWindow();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface MaintenanceWindowOrBuilder
    * @return The recurringWindow.
    */
   com.google.container.v1beta1.RecurringTimeWindow getRecurringWindow();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface MaintenanceWindowOrBuilder
    * </code>
    */
   int getMaintenanceExclusionsCount();
+
   /**
    *
    *
@@ -124,10 +129,12 @@ public interface MaintenanceWindowOrBuilder
    * </code>
    */
   boolean containsMaintenanceExclusions(java.lang.String key);
+
   /** Use {@link #getMaintenanceExclusionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.container.v1beta1.TimeWindow>
       getMaintenanceExclusions();
+
   /**
    *
    *
@@ -141,6 +148,7 @@ public interface MaintenanceWindowOrBuilder
    */
   java.util.Map<java.lang.String, com.google.container.v1beta1.TimeWindow>
       getMaintenanceExclusionsMap();
+
   /**
    *
    *
@@ -157,6 +165,7 @@ public interface MaintenanceWindowOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.container.v1beta1.TimeWindow defaultValue);
+
   /**
    *
    *

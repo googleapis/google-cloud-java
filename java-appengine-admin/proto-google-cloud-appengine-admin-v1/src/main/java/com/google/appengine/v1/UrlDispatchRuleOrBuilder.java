@@ -39,6 +39,7 @@ public interface UrlDispatchRuleOrBuilder
    * @return The domain.
    */
   java.lang.String getDomain();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface UrlDispatchRuleOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface UrlDispatchRuleOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *

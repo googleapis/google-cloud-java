@@ -36,6 +36,7 @@ public interface WorkerReleasedEventOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface WorkerReleasedEventOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *

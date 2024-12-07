@@ -36,6 +36,7 @@ public interface AssociationInfoOrBuilder
    * @return The baseEntitlement.
    */
   java.lang.String getBaseEntitlement();
+
   /**
    *
    *

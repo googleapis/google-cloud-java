@@ -265,7 +265,8 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DisableSecretVersion, expected %s or %s",
+                  "Unrecognized response type %s for method DisableSecretVersion, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SecretVersion.class.getName(),
                   Exception.class.getName())));
@@ -307,7 +308,8 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DestroySecretVersion, expected %s or %s",
+                  "Unrecognized response type %s for method DestroySecretVersion, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SecretVersion.class.getName(),
                   Exception.class.getName())));

@@ -33,6 +33,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata)
     ImageObjectDetectionModelMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImageObjectDetectionModelMetadata.newBuilder() to construct.
   private ImageObjectDetectionModelMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelType_ = "";
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -162,6 +165,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
 
   public static final int NODE_COUNT_FIELD_NUMBER = 3;
   private long nodeCount_ = 0L;
+
   /**
    *
    *
@@ -182,6 +186,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
 
   public static final int NODE_QPS_FIELD_NUMBER = 4;
   private double nodeQps_ = 0D;
+
   /**
    *
    *
@@ -203,6 +208,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stopReason_ = "";
+
   /**
    *
    *
@@ -227,6 +233,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -254,6 +261,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
 
   public static final int TRAIN_BUDGET_MILLI_NODE_HOURS_FIELD_NUMBER = 6;
   private long trainBudgetMilliNodeHours_ = 0L;
+
   /**
    *
    *
@@ -286,6 +294,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
 
   public static final int TRAIN_COST_MILLI_NODE_HOURS_FIELD_NUMBER = 7;
   private long trainCostMilliNodeHours_ = 0L;
+
   /**
    *
    *
@@ -514,6 +523,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -770,6 +780,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object modelType_ = "";
+
     /**
      *
      *
@@ -814,6 +825,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -858,6 +870,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -901,6 +914,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +954,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1001,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     }
 
     private long nodeCount_;
+
     /**
      *
      *
@@ -1003,6 +1019,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     public long getNodeCount() {
       return nodeCount_;
     }
+
     /**
      *
      *
@@ -1024,6 +1041,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1063,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     }
 
     private double nodeQps_;
+
     /**
      *
      *
@@ -1061,6 +1080,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     public double getNodeQps() {
       return nodeQps_;
     }
+
     /**
      *
      *
@@ -1081,6 +1101,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1122,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     }
 
     private java.lang.Object stopReason_ = "";
+
     /**
      *
      *
@@ -1124,6 +1146,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1147,6 +1170,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1169,6 +1193,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1212,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1238,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     }
 
     private long trainBudgetMilliNodeHours_;
+
     /**
      *
      *
@@ -1241,6 +1268,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     public long getTrainBudgetMilliNodeHours() {
       return trainBudgetMilliNodeHours_;
     }
+
     /**
      *
      *
@@ -1274,6 +1302,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1307,6 +1336,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     }
 
     private long trainCostMilliNodeHours_;
+
     /**
      *
      *
@@ -1324,6 +1354,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     public long getTrainCostMilliNodeHours() {
       return trainCostMilliNodeHours_;
     }
+
     /**
      *
      *
@@ -1345,6 +1376,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

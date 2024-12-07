@@ -38,6 +38,7 @@ public interface JobTemplateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface JobTemplateOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface JobTemplateOrBuilder
    * @return The config.
    */
   com.google.cloud.video.transcoder.v1.JobConfig getConfig();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface JobTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -110,9 +114,11 @@ public interface JobTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface JobTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -139,6 +146,7 @@ public interface JobTemplateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

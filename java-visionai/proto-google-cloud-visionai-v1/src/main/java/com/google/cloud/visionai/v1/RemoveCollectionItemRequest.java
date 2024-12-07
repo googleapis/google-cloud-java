@@ -33,6 +33,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.RemoveCollectionItemRequest)
     RemoveCollectionItemRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RemoveCollectionItemRequest.newBuilder() to construct.
   private RemoveCollectionItemRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int ITEM_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.CollectionItem item_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
   public boolean hasItem() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
   public com.google.cloud.visionai.v1.CollectionItem getItem() {
     return item_ == null ? com.google.cloud.visionai.v1.CollectionItem.getDefaultInstance() : item_;
   }
+
   /**
    *
    *
@@ -279,6 +283,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -482,6 +487,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
             com.google.cloud.visionai.v1.CollectionItem.Builder,
             com.google.cloud.visionai.v1.CollectionItemOrBuilder>
         itemBuilder_;
+
     /**
      *
      *
@@ -498,6 +504,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
     public boolean hasItem() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -520,6 +527,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
         return itemBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -544,6 +552,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -565,6 +574,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -594,6 +604,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -615,6 +626,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +643,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
       onChanged();
       return getItemFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -651,6 +664,7 @@ public final class RemoveCollectionItemRequest extends com.google.protobuf.Gener
             : item_;
       }
     }
+
     /**
      *
      *

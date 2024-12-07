@@ -39,6 +39,7 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Explanation> getExplanationsList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Explanation getExplanations(int index);
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
    */
   int getExplanationsCount();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ExplainResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ExplanationOrBuilder>
       getExplanationsOrBuilderList();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface ExplainResponseOrBuilder
    * </code>
    */
   int getConcurrentExplanationsCount();
+
   /**
    *
    *
@@ -127,12 +132,14 @@ public interface ExplainResponseOrBuilder
    * </code>
    */
   boolean containsConcurrentExplanations(java.lang.String key);
+
   /** Use {@link #getConcurrentExplanationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
       getConcurrentExplanations();
+
   /**
    *
    *
@@ -149,6 +156,7 @@ public interface ExplainResponseOrBuilder
           java.lang.String,
           com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
       getConcurrentExplanationsMap();
+
   /**
    *
    *
@@ -167,6 +175,7 @@ public interface ExplainResponseOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation defaultValue);
+
   /**
    *
    *
@@ -194,6 +203,7 @@ public interface ExplainResponseOrBuilder
    * @return The deployedModelId.
    */
   java.lang.String getDeployedModelId();
+
   /**
    *
    *
@@ -219,6 +229,7 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.protobuf.Value predictions = 3;</code>
    */
   java.util.List<com.google.protobuf.Value> getPredictionsList();
+
   /**
    *
    *
@@ -231,6 +242,7 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.protobuf.Value predictions = 3;</code>
    */
   com.google.protobuf.Value getPredictions(int index);
+
   /**
    *
    *
@@ -243,6 +255,7 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.protobuf.Value predictions = 3;</code>
    */
   int getPredictionsCount();
+
   /**
    *
    *
@@ -255,6 +268,7 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.protobuf.Value predictions = 3;</code>
    */
   java.util.List<? extends com.google.protobuf.ValueOrBuilder> getPredictionsOrBuilderList();
+
   /**
    *
    *

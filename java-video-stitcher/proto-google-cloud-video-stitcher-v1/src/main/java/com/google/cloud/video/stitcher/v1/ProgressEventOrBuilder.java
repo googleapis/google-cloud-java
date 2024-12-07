@@ -37,6 +37,7 @@ public interface ProgressEventOrBuilder
    * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ProgressEventOrBuilder
    * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ProgressEventOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Event events = 2;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.Event> getEventsList();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface ProgressEventOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Event events = 2;</code>
    */
   com.google.cloud.video.stitcher.v1.Event getEvents(int index);
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ProgressEventOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Event events = 2;</code>
    */
   int getEventsCount();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ProgressEventOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.EventOrBuilder>
       getEventsOrBuilderList();
+
   /**
    *
    *

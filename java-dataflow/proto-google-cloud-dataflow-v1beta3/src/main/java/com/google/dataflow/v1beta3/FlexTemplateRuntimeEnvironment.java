@@ -33,6 +33,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment)
     FlexTemplateRuntimeEnvironmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FlexTemplateRuntimeEnvironment.newBuilder() to construct.
   private FlexTemplateRuntimeEnvironment(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -94,6 +95,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int NUM_WORKERS_FIELD_NUMBER = 1;
   private int numWorkers_ = 0;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int MAX_WORKERS_FIELD_NUMBER = 2;
   private int maxWorkers_ = 0;
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccountEmail_ = "";
+
   /**
    *
    *
@@ -213,6 +219,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -241,6 +248,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tempLocation_ = "";
+
   /**
    *
    *
@@ -265,6 +273,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -294,6 +303,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
+
   /**
    *
    *
@@ -318,6 +328,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -348,6 +359,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList additionalExperiments_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -362,6 +374,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public com.google.protobuf.ProtocolStringList getAdditionalExperimentsList() {
     return additionalExperiments_;
   }
+
   /**
    *
    *
@@ -376,6 +389,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public int getAdditionalExperimentsCount() {
     return additionalExperiments_.size();
   }
+
   /**
    *
    *
@@ -391,6 +405,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public java.lang.String getAdditionalExperiments(int index) {
     return additionalExperiments_.get(index);
   }
+
   /**
    *
    *
@@ -411,6 +426,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -435,6 +451,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -464,6 +481,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetwork_ = "";
+
   /**
    *
    *
@@ -492,6 +510,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -549,6 +568,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public int getAdditionalUserLabelsCount() {
     return internalGetAdditionalUserLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -570,12 +590,14 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
     return internalGetAdditionalUserLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getAdditionalUserLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabels() {
     return getAdditionalUserLabelsMap();
   }
+
   /**
    *
    *
@@ -594,6 +616,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabelsMap() {
     return internalGetAdditionalUserLabels().getMap();
   }
+
   /**
    *
    *
@@ -620,6 +643,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         internalGetAdditionalUserLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -651,6 +675,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyName_ = "";
+
   /**
    *
    *
@@ -676,6 +701,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -704,6 +730,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int IP_CONFIGURATION_FIELD_NUMBER = 12;
   private int ipConfiguration_ = 0;
+
   /**
    *
    *
@@ -719,6 +746,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public int getIpConfigurationValue() {
     return ipConfiguration_;
   }
+
   /**
    *
    *
@@ -743,6 +771,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerRegion_ = "";
+
   /**
    *
    *
@@ -770,6 +799,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -802,6 +832,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerZone_ = "";
+
   /**
    *
    *
@@ -830,6 +861,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -861,6 +893,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int ENABLE_STREAMING_ENGINE_FIELD_NUMBER = 15;
   private boolean enableStreamingEngine_ = false;
+
   /**
    *
    *
@@ -879,6 +912,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int FLEXRS_GOAL_FIELD_NUMBER = 16;
   private int flexrsGoal_ = 0;
+
   /**
    *
    *
@@ -895,6 +929,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public int getFlexrsGoalValue() {
     return flexrsGoal_;
   }
+
   /**
    *
    *
@@ -920,6 +955,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stagingLocation_ = "";
+
   /**
    *
    *
@@ -944,6 +980,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -973,6 +1010,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sdkContainerImage_ = "";
+
   /**
    *
    *
@@ -998,6 +1036,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -1026,6 +1065,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 20;
   private int diskSizeGb_ = 0;
+
   /**
    *
    *
@@ -1044,6 +1084,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int AUTOSCALING_ALGORITHM_FIELD_NUMBER = 21;
   private int autoscalingAlgorithm_ = 0;
+
   /**
    *
    *
@@ -1059,6 +1100,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public int getAutoscalingAlgorithmValue() {
     return autoscalingAlgorithm_;
   }
+
   /**
    *
    *
@@ -1079,6 +1121,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int DUMP_HEAP_ON_OOM_FIELD_NUMBER = 22;
   private boolean dumpHeapOnOom_ = false;
+
   /**
    *
    *
@@ -1102,6 +1145,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object saveHeapDumpsToGcsPath_ = "";
+
   /**
    *
    *
@@ -1127,6 +1171,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -1157,6 +1202,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object launcherMachineType_ = "";
+
   /**
    *
    *
@@ -1181,6 +1227,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -1594,6 +1641,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2126,6 +2174,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     private int bitField0_;
 
     private int numWorkers_;
+
     /**
      *
      *
@@ -2141,6 +2190,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getNumWorkers() {
       return numWorkers_;
     }
+
     /**
      *
      *
@@ -2160,6 +2210,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2179,6 +2230,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private int maxWorkers_;
+
     /**
      *
      *
@@ -2195,6 +2247,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getMaxWorkers() {
       return maxWorkers_;
     }
+
     /**
      *
      *
@@ -2215,6 +2268,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2235,6 +2289,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -2260,6 +2315,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2285,6 +2341,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2309,6 +2366,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2329,6 +2387,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2356,6 +2415,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object serviceAccountEmail_ = "";
+
     /**
      *
      *
@@ -2378,6 +2438,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2400,6 +2461,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2421,6 +2483,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2438,6 +2501,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2462,6 +2526,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object tempLocation_ = "";
+
     /**
      *
      *
@@ -2485,6 +2550,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2508,6 +2574,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2530,6 +2597,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2548,6 +2616,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2573,6 +2642,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object machineType_ = "";
+
     /**
      *
      *
@@ -2596,6 +2666,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2619,6 +2690,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2641,6 +2713,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2659,6 +2732,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2693,6 +2767,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -2708,6 +2783,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       additionalExperiments_.makeImmutable();
       return additionalExperiments_;
     }
+
     /**
      *
      *
@@ -2722,6 +2798,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getAdditionalExperimentsCount() {
       return additionalExperiments_.size();
     }
+
     /**
      *
      *
@@ -2737,6 +2814,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public java.lang.String getAdditionalExperiments(int index) {
       return additionalExperiments_.get(index);
     }
+
     /**
      *
      *
@@ -2752,6 +2830,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getAdditionalExperimentsBytes(int index) {
       return additionalExperiments_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2775,6 +2854,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2797,6 +2877,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2816,6 +2897,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2834,6 +2916,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2859,6 +2942,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -2882,6 +2966,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2905,6 +2990,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2927,6 +3013,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2945,6 +3032,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2970,6 +3058,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object subnetwork_ = "";
+
     /**
      *
      *
@@ -2997,6 +3086,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3024,6 +3114,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3050,6 +3141,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3072,6 +3164,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3129,6 +3222,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getAdditionalUserLabelsCount() {
       return internalGetAdditionalUserLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -3150,12 +3244,14 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       }
       return internalGetAdditionalUserLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getAdditionalUserLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabels() {
       return getAdditionalUserLabelsMap();
     }
+
     /**
      *
      *
@@ -3174,6 +3270,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabelsMap() {
       return internalGetAdditionalUserLabels().getMap();
     }
+
     /**
      *
      *
@@ -3200,6 +3297,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
           internalGetAdditionalUserLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3232,6 +3330,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       internalGetMutableAdditionalUserLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3253,12 +3352,14 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       internalGetMutableAdditionalUserLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAdditionalUserLabels() {
       bitField0_ |= 0x00000200;
       return internalGetMutableAdditionalUserLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -3284,6 +3385,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       bitField0_ |= 0x00000200;
       return this;
     }
+
     /**
      *
      *
@@ -3306,6 +3408,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object kmsKeyName_ = "";
+
     /**
      *
      *
@@ -3330,6 +3433,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3354,6 +3458,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3377,6 +3482,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3396,6 +3502,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3422,6 +3529,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private int ipConfiguration_ = 0;
+
     /**
      *
      *
@@ -3437,6 +3545,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getIpConfigurationValue() {
       return ipConfiguration_;
     }
+
     /**
      *
      *
@@ -3455,6 +3564,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3474,6 +3584,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
           ? com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3496,6 +3607,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3515,6 +3627,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object workerRegion_ = "";
+
     /**
      *
      *
@@ -3541,6 +3654,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3567,6 +3681,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3592,6 +3707,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3613,6 +3729,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3641,6 +3758,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object workerZone_ = "";
+
     /**
      *
      *
@@ -3668,6 +3786,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3695,6 +3814,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3721,6 +3841,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3743,6 +3864,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3772,6 +3894,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private boolean enableStreamingEngine_;
+
     /**
      *
      *
@@ -3787,6 +3910,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public boolean getEnableStreamingEngine() {
       return enableStreamingEngine_;
     }
+
     /**
      *
      *
@@ -3806,6 +3930,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3825,6 +3950,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private int flexrsGoal_ = 0;
+
     /**
      *
      *
@@ -3841,6 +3967,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getFlexrsGoalValue() {
       return flexrsGoal_;
     }
+
     /**
      *
      *
@@ -3860,6 +3987,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3880,6 +4008,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
           ? com.google.dataflow.v1beta3.FlexResourceSchedulingGoal.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3902,6 +4031,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3922,6 +4052,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object stagingLocation_ = "";
+
     /**
      *
      *
@@ -3945,6 +4076,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3968,6 +4100,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3990,6 +4123,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4008,6 +4142,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4033,6 +4168,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object sdkContainerImage_ = "";
+
     /**
      *
      *
@@ -4057,6 +4193,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4081,6 +4218,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4104,6 +4242,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4123,6 +4262,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4149,6 +4289,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private int diskSizeGb_;
+
     /**
      *
      *
@@ -4164,6 +4305,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getDiskSizeGb() {
       return diskSizeGb_;
     }
+
     /**
      *
      *
@@ -4183,6 +4325,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4202,6 +4345,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private int autoscalingAlgorithm_ = 0;
+
     /**
      *
      *
@@ -4217,6 +4361,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getAutoscalingAlgorithmValue() {
       return autoscalingAlgorithm_;
     }
+
     /**
      *
      *
@@ -4235,6 +4380,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4254,6 +4400,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
           ? com.google.dataflow.v1beta3.AutoscalingAlgorithm.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4275,6 +4422,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4294,6 +4442,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private boolean dumpHeapOnOom_;
+
     /**
      *
      *
@@ -4312,6 +4461,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public boolean getDumpHeapOnOom() {
       return dumpHeapOnOom_;
     }
+
     /**
      *
      *
@@ -4334,6 +4484,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4356,6 +4507,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object saveHeapDumpsToGcsPath_ = "";
+
     /**
      *
      *
@@ -4380,6 +4532,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4404,6 +4557,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4427,6 +4581,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4446,6 +4601,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4472,6 +4628,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object launcherMachineType_ = "";
+
     /**
      *
      *
@@ -4495,6 +4652,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4518,6 +4676,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4540,6 +4699,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4558,6 +4718,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

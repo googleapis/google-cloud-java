@@ -34,6 +34,7 @@ public interface ListNasTrialDetailsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.NasTrialDetail nas_trial_details = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.NasTrialDetail> getNasTrialDetailsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListNasTrialDetailsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.NasTrialDetail nas_trial_details = 1;</code>
    */
   com.google.cloud.aiplatform.v1.NasTrialDetail getNasTrialDetails(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListNasTrialDetailsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.NasTrialDetail nas_trial_details = 1;</code>
    */
   int getNasTrialDetailsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListNasTrialDetailsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.NasTrialDetailOrBuilder>
       getNasTrialDetailsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListNasTrialDetailsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

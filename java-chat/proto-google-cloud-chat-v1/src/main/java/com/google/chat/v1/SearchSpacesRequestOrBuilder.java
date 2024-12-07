@@ -85,6 +85,7 @@ public interface SearchSpacesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -182,6 +183,7 @@ public interface SearchSpacesRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -297,6 +299,7 @@ public interface SearchSpacesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

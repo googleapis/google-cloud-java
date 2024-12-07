@@ -37,6 +37,7 @@ public interface BatchUpdateRowsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface BatchUpdateRowsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.area120.tables.v1alpha1.UpdateRowRequest> getRequestsList();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface BatchUpdateRowsRequestOrBuilder
    * </code>
    */
   com.google.area120.tables.v1alpha1.UpdateRowRequest getRequests(int index);
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface BatchUpdateRowsRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface BatchUpdateRowsRequestOrBuilder
    */
   java.util.List<? extends com.google.area120.tables.v1alpha1.UpdateRowRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *

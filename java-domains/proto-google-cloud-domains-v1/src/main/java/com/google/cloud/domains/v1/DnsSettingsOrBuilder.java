@@ -36,6 +36,7 @@ public interface DnsSettingsOrBuilder
    * @return Whether the customDns field is set.
    */
   boolean hasCustomDns();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DnsSettingsOrBuilder
    * @return The customDns.
    */
   com.google.cloud.domains.v1.DnsSettings.CustomDns getCustomDns();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface DnsSettingsOrBuilder
    * @return Whether the googleDomainsDns field is set.
    */
   boolean hasGoogleDomainsDns();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface DnsSettingsOrBuilder
    * @return The googleDomainsDns.
    */
   com.google.cloud.domains.v1.DnsSettings.GoogleDomainsDns getGoogleDomainsDns();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface DnsSettingsOrBuilder
    * <code>repeated .google.cloud.domains.v1.DnsSettings.GlueRecord glue_records = 4;</code>
    */
   java.util.List<com.google.cloud.domains.v1.DnsSettings.GlueRecord> getGlueRecordsList();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface DnsSettingsOrBuilder
    * <code>repeated .google.cloud.domains.v1.DnsSettings.GlueRecord glue_records = 4;</code>
    */
   com.google.cloud.domains.v1.DnsSettings.GlueRecord getGlueRecords(int index);
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface DnsSettingsOrBuilder
    * <code>repeated .google.cloud.domains.v1.DnsSettings.GlueRecord glue_records = 4;</code>
    */
   int getGlueRecordsCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface DnsSettingsOrBuilder
    */
   java.util.List<? extends com.google.cloud.domains.v1.DnsSettings.GlueRecordOrBuilder>
       getGlueRecordsOrBuilderList();
+
   /**
    *
    *

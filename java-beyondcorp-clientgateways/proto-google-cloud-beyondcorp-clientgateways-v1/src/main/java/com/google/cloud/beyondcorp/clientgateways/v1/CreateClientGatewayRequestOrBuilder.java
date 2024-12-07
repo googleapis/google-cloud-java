@@ -38,6 +38,7 @@ public interface CreateClientGatewayRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateClientGatewayRequestOrBuilder
    * @return The clientGatewayId.
    */
   java.lang.String getClientGatewayId();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface CreateClientGatewayRequestOrBuilder
    * @return Whether the clientGateway field is set.
    */
   boolean hasClientGateway();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateClientGatewayRequestOrBuilder
    * @return The clientGateway.
    */
   com.google.cloud.beyondcorp.clientgateways.v1.ClientGateway getClientGateway();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public interface CreateClientGatewayRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

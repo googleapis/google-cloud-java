@@ -35,6 +35,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.LocationMetadata)
     LocationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocationMetadata.newBuilder() to construct.
   private LocationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -110,6 +111,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * <code>CAPABILITY_UNSPECIFIED = 0;</code>
      */
     public static final int CAPABILITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -223,6 +225,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
                   : result;
             }
           };
+
   /**
    *
    *
@@ -243,6 +246,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         java.lang.Integer, com.google.cloud.vmwareengine.v1.LocationMetadata.Capability>(
         capabilities_, capabilities_converter_);
   }
+
   /**
    *
    *
@@ -260,6 +264,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   public int getCapabilitiesCount() {
     return capabilities_.size();
   }
+
   /**
    *
    *
@@ -278,6 +283,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.vmwareengine.v1.LocationMetadata.Capability getCapabilities(int index) {
     return capabilities_converter_.convert(capabilities_.get(index));
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Integer> getCapabilitiesValueList() {
     return capabilities_;
   }
+
   /**
    *
    *
@@ -492,6 +499,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -711,6 +719,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
       }
     }
+
     /**
      *
      *
@@ -730,6 +739,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
           java.lang.Integer, com.google.cloud.vmwareengine.v1.LocationMetadata.Capability>(
           capabilities_, capabilities_converter_);
     }
+
     /**
      *
      *
@@ -746,6 +756,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public int getCapabilitiesCount() {
       return capabilities_.size();
     }
+
     /**
      *
      *
@@ -763,6 +774,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.vmwareengine.v1.LocationMetadata.Capability getCapabilities(int index) {
       return capabilities_converter_.convert(capabilities_.get(index));
     }
+
     /**
      *
      *
@@ -788,6 +800,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +825,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +850,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +870,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +887,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public java.util.List<java.lang.Integer> getCapabilitiesValueList() {
       return java.util.Collections.unmodifiableList(capabilities_);
     }
+
     /**
      *
      *
@@ -888,6 +905,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public int getCapabilitiesValue(int index) {
       return capabilities_.get(index);
     }
+
     /**
      *
      *
@@ -909,6 +927,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +948,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1beta2.VideoAnnotationResults)
     VideoAnnotationResultsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VideoAnnotationResults.newBuilder() to construct.
   private VideoAnnotationResults(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inputUri_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1beta2.LabelAnnotation>
       segmentLabelAnnotations_;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       getSegmentLabelAnnotationsList() {
     return segmentLabelAnnotations_;
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       getSegmentLabelAnnotationsOrBuilderList() {
     return segmentLabelAnnotations_;
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   public int getSegmentLabelAnnotationsCount() {
     return segmentLabelAnnotations_.size();
   }
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       int index) {
     return segmentLabelAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1beta2.LabelAnnotation>
       shotLabelAnnotations_;
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       getShotLabelAnnotationsList() {
     return shotLabelAnnotations_;
   }
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       getShotLabelAnnotationsOrBuilderList() {
     return shotLabelAnnotations_;
   }
+
   /**
    *
    *
@@ -269,6 +280,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   public int getShotLabelAnnotationsCount() {
     return shotLabelAnnotations_.size();
   }
+
   /**
    *
    *
@@ -286,6 +298,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       int index) {
     return shotLabelAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -309,6 +322,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1beta2.LabelAnnotation>
       frameLabelAnnotations_;
+
   /**
    *
    *
@@ -326,6 +340,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       getFrameLabelAnnotationsList() {
     return frameLabelAnnotations_;
   }
+
   /**
    *
    *
@@ -344,6 +359,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       getFrameLabelAnnotationsOrBuilderList() {
     return frameLabelAnnotations_;
   }
+
   /**
    *
    *
@@ -360,6 +376,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   public int getFrameLabelAnnotationsCount() {
     return frameLabelAnnotations_.size();
   }
+
   /**
    *
    *
@@ -377,6 +394,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       int index) {
     return frameLabelAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -400,6 +418,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1beta2.FaceAnnotation>
       faceAnnotations_;
+
   /**
    *
    *
@@ -415,6 +434,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       getFaceAnnotationsList() {
     return faceAnnotations_;
   }
+
   /**
    *
    *
@@ -431,6 +451,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       getFaceAnnotationsOrBuilderList() {
     return faceAnnotations_;
   }
+
   /**
    *
    *
@@ -445,6 +466,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   public int getFaceAnnotationsCount() {
     return faceAnnotations_.size();
   }
+
   /**
    *
    *
@@ -459,6 +481,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   public com.google.cloud.videointelligence.v1beta2.FaceAnnotation getFaceAnnotations(int index) {
     return faceAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -479,6 +502,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1beta2.VideoSegment> shotAnnotations_;
+
   /**
    *
    *
@@ -494,6 +518,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       getShotAnnotationsList() {
     return shotAnnotations_;
   }
+
   /**
    *
    *
@@ -509,6 +534,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       getShotAnnotationsOrBuilderList() {
     return shotAnnotations_;
   }
+
   /**
    *
    *
@@ -523,6 +549,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   public int getShotAnnotationsCount() {
     return shotAnnotations_.size();
   }
+
   /**
    *
    *
@@ -537,6 +564,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   public com.google.cloud.videointelligence.v1beta2.VideoSegment getShotAnnotations(int index) {
     return shotAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -555,6 +583,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
 
   public static final int EXPLICIT_ANNOTATION_FIELD_NUMBER = 7;
   private com.google.cloud.videointelligence.v1beta2.ExplicitContentAnnotation explicitAnnotation_;
+
   /**
    *
    *
@@ -572,6 +601,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   public boolean hasExplicitAnnotation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -592,6 +622,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         ? com.google.cloud.videointelligence.v1beta2.ExplicitContentAnnotation.getDefaultInstance()
         : explicitAnnotation_;
   }
+
   /**
    *
    *
@@ -613,6 +644,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
 
   public static final int ERROR_FIELD_NUMBER = 9;
   private com.google.rpc.Status error_;
+
   /**
    *
    *
@@ -629,6 +661,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   public boolean hasError() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -645,6 +678,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
+
   /**
    *
    *
@@ -910,6 +944,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1447,6 +1482,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object inputUri_ = "";
+
     /**
      *
      *
@@ -1470,6 +1506,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1493,6 +1530,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1515,6 +1553,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1533,6 +1572,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1595,6 +1635,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return segmentLabelAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1614,6 +1655,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return segmentLabelAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1634,6 +1676,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return segmentLabelAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1660,6 +1703,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1684,6 +1728,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1710,6 +1755,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1736,6 +1782,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1759,6 +1806,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1783,6 +1831,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1807,6 +1856,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1829,6 +1879,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1851,6 +1902,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1867,6 +1919,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         getSegmentLabelAnnotationsBuilder(int index) {
       return getSegmentLabelAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1887,6 +1940,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return segmentLabelAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1908,6 +1962,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(segmentLabelAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -1926,6 +1981,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
           .addBuilder(
               com.google.cloud.videointelligence.v1beta2.LabelAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1945,6 +2001,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
               index,
               com.google.cloud.videointelligence.v1beta2.LabelAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2020,6 +2077,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return shotLabelAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2039,6 +2097,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return shotLabelAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2059,6 +2118,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return shotLabelAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2085,6 +2145,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2109,6 +2170,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2135,6 +2197,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2161,6 +2224,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2184,6 +2248,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2208,6 +2273,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2232,6 +2298,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2254,6 +2321,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2276,6 +2344,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2292,6 +2361,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         getShotLabelAnnotationsBuilder(int index) {
       return getShotLabelAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2312,6 +2382,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return shotLabelAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2333,6 +2404,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(shotLabelAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -2351,6 +2423,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
           .addBuilder(
               com.google.cloud.videointelligence.v1beta2.LabelAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2370,6 +2443,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
               index,
               com.google.cloud.videointelligence.v1beta2.LabelAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2445,6 +2519,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return frameLabelAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2464,6 +2539,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return frameLabelAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2484,6 +2560,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return frameLabelAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2510,6 +2587,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2534,6 +2612,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2560,6 +2639,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2586,6 +2666,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2609,6 +2690,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2633,6 +2715,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2657,6 +2740,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2679,6 +2763,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2701,6 +2786,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2717,6 +2803,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         getFrameLabelAnnotationsBuilder(int index) {
       return getFrameLabelAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2737,6 +2824,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return frameLabelAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2758,6 +2846,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(frameLabelAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -2776,6 +2865,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
           .addBuilder(
               com.google.cloud.videointelligence.v1beta2.LabelAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2795,6 +2885,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
               index,
               com.google.cloud.videointelligence.v1beta2.LabelAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2868,6 +2959,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return faceAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2885,6 +2977,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return faceAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2902,6 +2995,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return faceAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2926,6 +3020,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2948,6 +3043,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2972,6 +3068,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2996,6 +3093,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3017,6 +3115,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3039,6 +3138,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3061,6 +3161,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3081,6 +3182,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3101,6 +3203,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3115,6 +3218,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         getFaceAnnotationsBuilder(int index) {
       return getFaceAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3133,6 +3237,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return faceAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3152,6 +3257,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(faceAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -3168,6 +3274,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
           .addBuilder(
               com.google.cloud.videointelligence.v1beta2.FaceAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3185,6 +3292,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
               index,
               com.google.cloud.videointelligence.v1beta2.FaceAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3256,6 +3364,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return shotAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3273,6 +3382,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return shotAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3290,6 +3400,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return shotAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3314,6 +3425,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3336,6 +3448,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3360,6 +3473,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3384,6 +3498,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3405,6 +3520,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3427,6 +3543,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3449,6 +3566,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3469,6 +3587,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3489,6 +3608,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3503,6 +3623,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         getShotAnnotationsBuilder(int index) {
       return getShotAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3521,6 +3642,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return shotAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3540,6 +3662,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(shotAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -3555,6 +3678,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       return getShotAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1beta2.VideoSegment.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3571,6 +3695,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.cloud.videointelligence.v1beta2.VideoSegment.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3613,6 +3738,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             com.google.cloud.videointelligence.v1beta2.ExplicitContentAnnotation.Builder,
             com.google.cloud.videointelligence.v1beta2.ExplicitContentAnnotationOrBuilder>
         explicitAnnotationBuilder_;
+
     /**
      *
      *
@@ -3629,6 +3755,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public boolean hasExplicitAnnotation() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3653,6 +3780,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return explicitAnnotationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3678,6 +3806,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3701,6 +3830,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3733,6 +3863,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3754,6 +3885,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3771,6 +3903,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       onChanged();
       return getExplicitAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3793,6 +3926,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             : explicitAnnotation_;
       }
     }
+
     /**
      *
      *
@@ -3825,6 +3959,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -3840,6 +3975,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public boolean hasError() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3859,6 +3995,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3882,6 +4019,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3902,6 +4040,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3930,6 +4069,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3950,6 +4090,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3965,6 +4106,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3982,6 +4124,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface CreateDependencyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface CreateDependencyRequestOrBuilder
    * @return The dependencyId.
    */
   java.lang.String getDependencyId();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface CreateDependencyRequestOrBuilder
    * @return Whether the dependency field is set.
    */
   boolean hasDependency();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface CreateDependencyRequestOrBuilder
    * @return The dependency.
    */
   com.google.cloud.apihub.v1.Dependency getDependency();
+
   /**
    *
    *

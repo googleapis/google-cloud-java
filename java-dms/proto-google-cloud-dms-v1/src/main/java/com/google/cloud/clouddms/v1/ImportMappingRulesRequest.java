@@ -33,6 +33,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.ImportMappingRulesRequest)
     ImportMappingRulesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportMappingRulesRequest.newBuilder() to construct.
   private ImportMappingRulesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      * @return The rulesSourceFilename.
      */
     java.lang.String getRulesSourceFilename();
+
     /**
      *
      *
@@ -111,6 +113,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      * @return The rulesContent.
      */
     java.lang.String getRulesContent();
+
     /**
      *
      *
@@ -124,6 +127,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
      */
     com.google.protobuf.ByteString getRulesContentBytes();
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile)
       RulesFileOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RulesFile.newBuilder() to construct.
     private RulesFile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -173,6 +178,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object rulesSourceFilename_ = "";
+
     /**
      *
      *
@@ -198,6 +204,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -228,6 +235,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object rulesContent_ = "";
+
     /**
      *
      *
@@ -251,6 +259,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -446,6 +455,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -655,6 +665,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       private int bitField0_;
 
       private java.lang.Object rulesSourceFilename_ = "";
+
       /**
        *
        *
@@ -679,6 +690,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -703,6 +715,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -726,6 +739,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -745,6 +759,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -771,6 +786,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       }
 
       private java.lang.Object rulesContent_ = "";
+
       /**
        *
        *
@@ -793,6 +809,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -815,6 +832,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -836,6 +854,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -853,6 +872,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -947,6 +967,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -974,6 +995,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1004,6 +1026,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
 
   public static final int RULES_FORMAT_FIELD_NUMBER = 2;
   private int rulesFormat_ = 0;
+
   /**
    *
    *
@@ -1021,6 +1044,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
   public int getRulesFormatValue() {
     return rulesFormat_;
   }
+
   /**
    *
    *
@@ -1048,6 +1072,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile>
       rulesFiles_;
+
   /**
    *
    *
@@ -1064,6 +1089,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       getRulesFilesList() {
     return rulesFiles_;
   }
+
   /**
    *
    *
@@ -1081,6 +1107,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       getRulesFilesOrBuilderList() {
     return rulesFiles_;
   }
+
   /**
    *
    *
@@ -1096,6 +1123,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
   public int getRulesFilesCount() {
     return rulesFiles_.size();
   }
+
   /**
    *
    *
@@ -1111,6 +1139,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
   public com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile getRulesFiles(int index) {
     return rulesFiles_.get(index);
   }
+
   /**
    *
    *
@@ -1130,6 +1159,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
 
   public static final int AUTO_COMMIT_FIELD_NUMBER = 6;
   private boolean autoCommit_ = false;
+
   /**
    *
    *
@@ -1340,6 +1370,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1612,6 +1643,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1638,6 +1670,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1664,6 +1697,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1689,6 +1723,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1710,6 +1745,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1738,6 +1774,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
     }
 
     private int rulesFormat_ = 0;
+
     /**
      *
      *
@@ -1755,6 +1792,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
     public int getRulesFormatValue() {
       return rulesFormat_;
     }
+
     /**
      *
      *
@@ -1775,6 +1813,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1796,6 +1835,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
           ? com.google.cloud.clouddms.v1.ImportRulesFileFormat.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1819,6 +1859,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1876,6 +1917,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         return rulesFilesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1894,6 +1936,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         return rulesFilesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1913,6 +1956,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         return rulesFilesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1938,6 +1982,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1961,6 +2006,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1986,6 +2032,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2011,6 +2058,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2033,6 +2081,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2056,6 +2105,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2080,6 +2130,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2101,6 +2152,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2122,6 +2174,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2137,6 +2190,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         getRulesFilesBuilder(int index) {
       return getRulesFilesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2156,6 +2210,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         return rulesFilesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2176,6 +2231,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(rulesFiles_);
       }
     }
+
     /**
      *
      *
@@ -2194,6 +2250,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
               com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2213,6 +2270,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
               com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2247,6 +2305,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
     }
 
     private boolean autoCommit_;
+
     /**
      *
      *
@@ -2263,6 +2322,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
     public boolean getAutoCommit() {
       return autoCommit_;
     }
+
     /**
      *
      *
@@ -2283,6 +2343,7 @@ public final class ImportMappingRulesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

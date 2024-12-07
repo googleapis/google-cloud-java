@@ -34,6 +34,7 @@ public final class UpdateApplicationStreamInputResponse
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.UpdateApplicationStreamInputResponse)
     UpdateApplicationStreamInputResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateApplicationStreamInputResponse.newBuilder() to construct.
   private UpdateApplicationStreamInputResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -215,6 +216,7 @@ public final class UpdateApplicationStreamInputResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

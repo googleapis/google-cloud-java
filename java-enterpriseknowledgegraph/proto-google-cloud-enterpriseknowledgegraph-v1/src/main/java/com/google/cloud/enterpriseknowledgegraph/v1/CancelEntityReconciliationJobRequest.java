@@ -35,6 +35,7 @@ public final class CancelEntityReconciliationJobRequest
     // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.CancelEntityReconciliationJobRequest)
     CancelEntityReconciliationJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CancelEntityReconciliationJobRequest.newBuilder() to construct.
   private CancelEntityReconciliationJobRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class CancelEntityReconciliationJobRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CancelEntityReconciliationJobRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -294,6 +297,7 @@ public final class CancelEntityReconciliationJobRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -495,6 +499,7 @@ public final class CancelEntityReconciliationJobRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -521,6 +526,7 @@ public final class CancelEntityReconciliationJobRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -547,6 +553,7 @@ public final class CancelEntityReconciliationJobRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -572,6 +579,7 @@ public final class CancelEntityReconciliationJobRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -593,6 +601,7 @@ public final class CancelEntityReconciliationJobRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -95,7 +95,8 @@ public class MockMetricsScopesImpl extends MetricsScopesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListMetricsScopesByMonitoredProject, expected %s or %s",
+                  "Unrecognized response type %s for method ListMetricsScopesByMonitoredProject,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListMetricsScopesByMonitoredProjectResponse.class.getName(),
                   Exception.class.getName())));
@@ -116,7 +117,8 @@ public class MockMetricsScopesImpl extends MetricsScopesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateMonitoredProject, expected %s or %s",
+                  "Unrecognized response type %s for method CreateMonitoredProject, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +139,8 @@ public class MockMetricsScopesImpl extends MetricsScopesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteMonitoredProject, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteMonitoredProject, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

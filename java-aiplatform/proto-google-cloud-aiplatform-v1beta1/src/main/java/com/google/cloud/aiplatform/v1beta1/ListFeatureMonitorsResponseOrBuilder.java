@@ -34,6 +34,7 @@ public interface ListFeatureMonitorsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureMonitor feature_monitors = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureMonitor> getFeatureMonitorsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListFeatureMonitorsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureMonitor feature_monitors = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.FeatureMonitor getFeatureMonitors(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListFeatureMonitorsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.FeatureMonitor feature_monitors = 1;</code>
    */
   int getFeatureMonitorsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListFeatureMonitorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.FeatureMonitorOrBuilder>
       getFeatureMonitorsOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface ListFeatureMonitorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

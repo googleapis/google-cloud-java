@@ -37,6 +37,7 @@ public interface GrpcRouteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GrpcRouteOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface GrpcRouteOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface GrpcRouteOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface GrpcRouteOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface GrpcRouteOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface GrpcRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -172,9 +179,11 @@ public interface GrpcRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -185,6 +194,7 @@ public interface GrpcRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface GrpcRouteOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -223,6 +234,7 @@ public interface GrpcRouteOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -279,6 +291,7 @@ public interface GrpcRouteOrBuilder
    * @return A list containing the hostnames.
    */
   java.util.List<java.lang.String> getHostnamesList();
+
   /**
    *
    *
@@ -321,6 +334,7 @@ public interface GrpcRouteOrBuilder
    * @return The count of hostnames.
    */
   int getHostnamesCount();
+
   /**
    *
    *
@@ -364,6 +378,7 @@ public interface GrpcRouteOrBuilder
    * @return The hostnames at the given index.
    */
   java.lang.String getHostnames(int index);
+
   /**
    *
    *
@@ -426,6 +441,7 @@ public interface GrpcRouteOrBuilder
    * @return A list containing the meshes.
    */
   java.util.List<java.lang.String> getMeshesList();
+
   /**
    *
    *
@@ -444,6 +460,7 @@ public interface GrpcRouteOrBuilder
    * @return The count of meshes.
    */
   int getMeshesCount();
+
   /**
    *
    *
@@ -463,6 +480,7 @@ public interface GrpcRouteOrBuilder
    * @return The meshes at the given index.
    */
   java.lang.String getMeshes(int index);
+
   /**
    *
    *
@@ -502,6 +520,7 @@ public interface GrpcRouteOrBuilder
    * @return A list containing the gateways.
    */
   java.util.List<java.lang.String> getGatewaysList();
+
   /**
    *
    *
@@ -521,6 +540,7 @@ public interface GrpcRouteOrBuilder
    * @return The count of gateways.
    */
   int getGatewaysCount();
+
   /**
    *
    *
@@ -541,6 +561,7 @@ public interface GrpcRouteOrBuilder
    * @return The gateways at the given index.
    */
   java.lang.String getGateways(int index);
+
   /**
    *
    *
@@ -578,6 +599,7 @@ public interface GrpcRouteOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.networkservices.v1.GrpcRoute.RouteRule> getRulesList();
+
   /**
    *
    *
@@ -594,6 +616,7 @@ public interface GrpcRouteOrBuilder
    * </code>
    */
   com.google.cloud.networkservices.v1.GrpcRoute.RouteRule getRules(int index);
+
   /**
    *
    *
@@ -610,6 +633,7 @@ public interface GrpcRouteOrBuilder
    * </code>
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -627,6 +651,7 @@ public interface GrpcRouteOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.GrpcRoute.RouteRuleOrBuilder>
       getRulesOrBuilderList();
+
   /**
    *
    *

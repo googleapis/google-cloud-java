@@ -33,6 +33,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.chat.v1.CreateSpaceRequest)
     CreateSpaceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateSpaceRequest.newBuilder() to construct.
   private CreateSpaceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int SPACE_FIELD_NUMBER = 1;
   private com.google.chat.v1.Space space_;
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasSpace() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
   public com.google.chat.v1.Space getSpace() {
     return space_ == null ? com.google.chat.v1.Space.getDefaultInstance() : space_;
   }
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -378,6 +384,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -595,6 +602,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
             com.google.chat.v1.Space.Builder,
             com.google.chat.v1.SpaceOrBuilder>
         spaceBuilder_;
+
     /**
      *
      *
@@ -621,6 +629,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSpace() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -651,6 +660,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
         return spaceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -685,6 +695,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +727,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +767,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +799,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +826,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSpaceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -840,6 +855,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
         return space_ == null ? com.google.chat.v1.Space.getDefaultInstance() : space_;
       }
     }
+
     /**
      *
      *
@@ -878,6 +894,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -905,6 +922,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -932,6 +950,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -958,6 +977,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -980,6 +1000,7 @@ public final class CreateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

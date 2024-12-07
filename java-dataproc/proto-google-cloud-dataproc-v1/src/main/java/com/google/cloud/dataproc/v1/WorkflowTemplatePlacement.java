@@ -35,6 +35,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.WorkflowTemplatePlacement)
     WorkflowTemplatePlacementOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WorkflowTemplatePlacement.newBuilder() to construct.
   private WorkflowTemplatePlacement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     private PlacementCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
   }
 
   public static final int MANAGED_CLUSTER_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
   public boolean hasManagedCluster() {
     return placementCase_ == 1;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     }
     return com.google.cloud.dataproc.v1.ManagedCluster.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
   }
 
   public static final int CLUSTER_SELECTOR_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
   public boolean hasClusterSelector() {
     return placementCase_ == 2;
   }
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     }
     return com.google.cloud.dataproc.v1.ClusterSelector.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -413,6 +421,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -650,6 +659,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
             com.google.cloud.dataproc.v1.ManagedCluster.Builder,
             com.google.cloud.dataproc.v1.ManagedClusterOrBuilder>
         managedClusterBuilder_;
+
     /**
      *
      *
@@ -665,6 +675,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     public boolean hasManagedCluster() {
       return placementCase_ == 1;
     }
+
     /**
      *
      *
@@ -690,6 +701,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
         return com.google.cloud.dataproc.v1.ManagedCluster.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -712,6 +724,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       placementCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       placementCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +778,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       placementCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +804,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +817,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     public com.google.cloud.dataproc.v1.ManagedCluster.Builder getManagedClusterBuilder() {
       return getManagedClusterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
         return com.google.cloud.dataproc.v1.ManagedCluster.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -859,6 +877,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
             com.google.cloud.dataproc.v1.ClusterSelector.Builder,
             com.google.cloud.dataproc.v1.ClusterSelectorOrBuilder>
         clusterSelectorBuilder_;
+
     /**
      *
      *
@@ -877,6 +896,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     public boolean hasClusterSelector() {
       return placementCase_ == 2;
     }
+
     /**
      *
      *
@@ -905,6 +925,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
         return com.google.cloud.dataproc.v1.ClusterSelector.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -930,6 +951,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       placementCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +975,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       placementCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1011,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       placementCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1016,6 +1040,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1056,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     public com.google.cloud.dataproc.v1.ClusterSelector.Builder getClusterSelectorBuilder() {
       return getClusterSelectorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1054,6 +1080,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
         return com.google.cloud.dataproc.v1.ClusterSelector.getDefaultInstance();
       }
     }
+
     /**
      *
      *

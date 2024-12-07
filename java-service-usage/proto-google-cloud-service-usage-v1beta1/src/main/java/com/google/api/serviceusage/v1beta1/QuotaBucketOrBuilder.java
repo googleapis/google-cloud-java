@@ -64,6 +64,7 @@ public interface QuotaBucketOrBuilder
    * @return Whether the producerOverride field is set.
    */
   boolean hasProducerOverride();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface QuotaBucketOrBuilder
    * @return The producerOverride.
    */
   com.google.api.serviceusage.v1beta1.QuotaOverride getProducerOverride();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface QuotaBucketOrBuilder
    * @return Whether the consumerOverride field is set.
    */
   boolean hasConsumerOverride();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface QuotaBucketOrBuilder
    * @return The consumerOverride.
    */
   com.google.api.serviceusage.v1beta1.QuotaOverride getConsumerOverride();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface QuotaBucketOrBuilder
    * @return Whether the adminOverride field is set.
    */
   boolean hasAdminOverride();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface QuotaBucketOrBuilder
    * @return The adminOverride.
    */
   com.google.api.serviceusage.v1beta1.QuotaOverride getAdminOverride();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface QuotaBucketOrBuilder
    * @return Whether the producerQuotaPolicy field is set.
    */
   boolean hasProducerQuotaPolicy();
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public interface QuotaBucketOrBuilder
    * @return The producerQuotaPolicy.
    */
   com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy getProducerQuotaPolicy();
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public interface QuotaBucketOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 6;</code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -233,9 +242,11 @@ public interface QuotaBucketOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 6;</code>
    */
   boolean containsDimensions(java.lang.String key);
+
   /** Use {@link #getDimensionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDimensions();
+
   /**
    *
    *
@@ -256,6 +267,7 @@ public interface QuotaBucketOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDimensionsMap();
+
   /**
    *
    *
@@ -280,6 +292,7 @@ public interface QuotaBucketOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.FetchErrorsResponse)
     FetchErrorsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchErrorsResponse.newBuilder() to construct.
   private FetchErrorsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1alpha1.Error> errors_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.datastream.v1alpha1.Error> getErrorsList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
       getErrorsOrBuilderList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
   public int getErrorsCount() {
     return errors_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.datastream.v1alpha1.Error getErrors(int index) {
     return errors_.get(index);
   }
+
   /**
    *
    *
@@ -296,6 +302,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -557,6 +564,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
         return errorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -573,6 +581,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
         return errorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -589,6 +598,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
         return errorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -653,6 +665,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +708,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +729,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +750,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +770,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +790,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +803,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.datastream.v1alpha1.Error.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -800,6 +820,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -817,6 +838,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
+
     /**
      *
      *
@@ -830,6 +852,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
       return getErrorsFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1alpha1.Error.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -843,6 +866,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
       return getErrorsFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1alpha1.Error.getDefaultInstance());
     }
+
     /**
      *
      *

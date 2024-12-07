@@ -40,6 +40,7 @@ public interface CreateAutomationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateAutomationRequestOrBuilder
    * @return The automationId.
    */
   java.lang.String getAutomationId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateAutomationRequestOrBuilder
    * @return Whether the automation field is set.
    */
   boolean hasAutomation();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateAutomationRequestOrBuilder
    * @return The automation.
    */
   com.google.cloud.deploy.v1.Automation getAutomation();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface CreateAutomationRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

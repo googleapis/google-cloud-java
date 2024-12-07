@@ -34,6 +34,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesResponse)
     FetchDatabasePropertiesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchDatabasePropertiesResponse.newBuilder() to construct.
   private FetchDatabasePropertiesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object primaryGceZone_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object secondaryGceZone_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
 
   public static final int IS_FAILOVER_REPLICA_AVAILABLE_FIELD_NUMBER = 3;
   private boolean isFailoverReplicaAvailable_ = false;
+
   /**
    *
    *
@@ -392,6 +398,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -625,6 +632,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object primaryGceZone_ = "";
+
     /**
      *
      *
@@ -647,6 +655,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -669,6 +678,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -690,6 +700,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +718,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +743,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object secondaryGceZone_ = "";
+
     /**
      *
      *
@@ -754,6 +767,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -799,6 +814,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +833,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +859,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
     }
 
     private boolean isFailoverReplicaAvailable_;
+
     /**
      *
      *
@@ -859,6 +877,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
     public boolean getIsFailoverReplicaAvailable() {
       return isFailoverReplicaAvailable_;
     }
+
     /**
      *
      *
@@ -880,6 +899,7 @@ public final class FetchDatabasePropertiesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

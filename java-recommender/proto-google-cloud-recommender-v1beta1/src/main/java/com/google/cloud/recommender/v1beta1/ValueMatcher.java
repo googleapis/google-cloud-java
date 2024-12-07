@@ -33,6 +33,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1beta1.ValueMatcher)
     ValueMatcherOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ValueMatcher.newBuilder() to construct.
   private ValueMatcher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
     private MatchVariantCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MATCHES_PATTERN_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMatchesPattern() {
     return matchVariantCase_ == 1;
   }
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -355,6 +360,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -582,6 +588,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMatchesPattern() {
       return matchVariantCase_ == 1;
     }
+
     /**
      *
      *
@@ -612,6 +619,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -642,6 +650,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -665,6 +674,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +696,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *

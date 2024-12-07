@@ -36,6 +36,7 @@ public interface ComputationTopologyOrBuilder
    * @return The systemStageName.
    */
   java.lang.String getSystemStageName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ComputationTopologyOrBuilder
    * @return The computationId.
    */
   java.lang.String getComputationId();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface ComputationTopologyOrBuilder
    * <code>repeated .google.dataflow.v1beta3.KeyRangeLocation key_ranges = 2;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.KeyRangeLocation> getKeyRangesList();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface ComputationTopologyOrBuilder
    * <code>repeated .google.dataflow.v1beta3.KeyRangeLocation key_ranges = 2;</code>
    */
   com.google.dataflow.v1beta3.KeyRangeLocation getKeyRanges(int index);
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface ComputationTopologyOrBuilder
    * <code>repeated .google.dataflow.v1beta3.KeyRangeLocation key_ranges = 2;</code>
    */
   int getKeyRangesCount();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ComputationTopologyOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.KeyRangeLocationOrBuilder>
       getKeyRangesOrBuilderList();
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public interface ComputationTopologyOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StreamLocation inputs = 3;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.StreamLocation> getInputsList();
+
   /**
    *
    *
@@ -146,6 +153,7 @@ public interface ComputationTopologyOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StreamLocation inputs = 3;</code>
    */
   com.google.dataflow.v1beta3.StreamLocation getInputs(int index);
+
   /**
    *
    *
@@ -156,6 +164,7 @@ public interface ComputationTopologyOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StreamLocation inputs = 3;</code>
    */
   int getInputsCount();
+
   /**
    *
    *
@@ -167,6 +176,7 @@ public interface ComputationTopologyOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.StreamLocationOrBuilder>
       getInputsOrBuilderList();
+
   /**
    *
    *
@@ -188,6 +198,7 @@ public interface ComputationTopologyOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StreamLocation outputs = 4;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.StreamLocation> getOutputsList();
+
   /**
    *
    *
@@ -198,6 +209,7 @@ public interface ComputationTopologyOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StreamLocation outputs = 4;</code>
    */
   com.google.dataflow.v1beta3.StreamLocation getOutputs(int index);
+
   /**
    *
    *
@@ -208,6 +220,7 @@ public interface ComputationTopologyOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StreamLocation outputs = 4;</code>
    */
   int getOutputsCount();
+
   /**
    *
    *
@@ -219,6 +232,7 @@ public interface ComputationTopologyOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.StreamLocationOrBuilder>
       getOutputsOrBuilderList();
+
   /**
    *
    *
@@ -240,6 +254,7 @@ public interface ComputationTopologyOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StateFamilyConfig state_families = 7;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.StateFamilyConfig> getStateFamiliesList();
+
   /**
    *
    *
@@ -250,6 +265,7 @@ public interface ComputationTopologyOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StateFamilyConfig state_families = 7;</code>
    */
   com.google.dataflow.v1beta3.StateFamilyConfig getStateFamilies(int index);
+
   /**
    *
    *
@@ -260,6 +276,7 @@ public interface ComputationTopologyOrBuilder
    * <code>repeated .google.dataflow.v1beta3.StateFamilyConfig state_families = 7;</code>
    */
   int getStateFamiliesCount();
+
   /**
    *
    *
@@ -271,6 +288,7 @@ public interface ComputationTopologyOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.StateFamilyConfigOrBuilder>
       getStateFamiliesOrBuilderList();
+
   /**
    *
    *

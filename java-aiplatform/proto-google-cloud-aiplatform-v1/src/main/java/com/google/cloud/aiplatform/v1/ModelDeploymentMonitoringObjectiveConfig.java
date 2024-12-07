@@ -35,6 +35,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveConfig)
     ModelDeploymentMonitoringObjectiveConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ModelDeploymentMonitoringObjectiveConfig.newBuilder() to construct.
   private ModelDeploymentMonitoringObjectiveConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deployedModelId_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
 
   public static final int OBJECTIVE_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig objectiveConfig_;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
   public boolean hasObjectiveConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
         ? com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.getDefaultInstance()
         : objectiveConfig_;
   }
+
   /**
    *
    *
@@ -344,6 +350,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -569,6 +576,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
     private int bitField0_;
 
     private java.lang.Object deployedModelId_ = "";
+
     /**
      *
      *
@@ -591,6 +599,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -613,6 +622,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -634,6 +644,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +662,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +692,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
             com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.Builder,
             com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfigOrBuilder>
         objectiveConfigBuilder_;
+
     /**
      *
      *
@@ -694,6 +707,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
     public boolean hasObjectiveConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -714,6 +728,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
         return objectiveConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -737,6 +752,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +773,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +804,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +824,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +840,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
       onChanged();
       return getObjectiveConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -840,6 +860,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
             : objectiveConfig_;
       }
     }
+
     /**
      *
      *

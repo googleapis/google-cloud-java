@@ -33,6 +33,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1p1beta1.UpdateNotificationConfigRequest)
     UpdateNotificationConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateNotificationConfigRequest.newBuilder() to construct.
   private UpdateNotificationConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,6 +67,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
   private int bitField0_;
   public static final int NOTIFICATION_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.securitycenter.v1p1beta1.NotificationConfig notificationConfig_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
   public boolean hasNotificationConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
         ? com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.getDefaultInstance()
         : notificationConfig_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -354,6 +361,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -591,6 +599,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
             com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.Builder,
             com.google.cloud.securitycenter.v1p1beta1.NotificationConfigOrBuilder>
         notificationConfigBuilder_;
+
     /**
      *
      *
@@ -607,6 +616,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
     public boolean hasNotificationConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -629,6 +639,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
         return notificationConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -654,6 +665,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +688,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +743,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +761,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return getNotificationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -767,6 +783,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
             : notificationConfig_;
       }
     }
+
     /**
      *
      *
@@ -801,6 +818,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -817,6 +835,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -863,6 +883,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +905,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +935,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +957,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +974,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -970,6 +995,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
             : updateMask_;
       }
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface BackupConfigOrBuilder
    * @return A list containing the backupPolicies.
    */
   java.util.List<java.lang.String> getBackupPoliciesList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface BackupConfigOrBuilder
    * @return The count of backupPolicies.
    */
   int getBackupPoliciesCount();
+
   /**
    *
    *
@@ -70,6 +72,7 @@ public interface BackupConfigOrBuilder
    * @return The backupPolicies at the given index.
    */
   java.lang.String getBackupPolicies(int index);
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface BackupConfigOrBuilder
    * @return The backupVault.
    */
   java.lang.String getBackupVault();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface BackupConfigOrBuilder
    * @return Whether the scheduledBackupEnabled field is set.
    */
   boolean hasScheduledBackupEnabled();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface BackupConfigOrBuilder
    * @return Whether the backupChainBytes field is set.
    */
   boolean hasBackupChainBytes();
+
   /**
    *
    *

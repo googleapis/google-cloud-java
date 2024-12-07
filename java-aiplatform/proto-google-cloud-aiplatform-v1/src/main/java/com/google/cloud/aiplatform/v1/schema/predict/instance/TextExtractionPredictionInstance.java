@@ -34,6 +34,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.predict.instance.TextExtractionPredictionInstance)
     TextExtractionPredictionInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TextExtractionPredictionInstance.newBuilder() to construct.
   private TextExtractionPredictionInstance(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,6 +76,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object content_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -436,6 +443,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -675,6 +683,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object content_ = "";
+
     /**
      *
      *
@@ -697,6 +706,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -719,6 +729,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -740,6 +751,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +769,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +794,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
     }
 
     private java.lang.Object mimeType_ = "";
+
     /**
      *
      *
@@ -805,6 +819,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -829,6 +844,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -852,6 +868,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +888,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +915,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
     }
 
     private java.lang.Object key_ = "";
+
     /**
      *
      *
@@ -923,6 +942,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -949,6 +969,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -974,6 +995,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1017,7 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

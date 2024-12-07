@@ -36,6 +36,7 @@ public interface AccessReasonOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AccessReasonOrBuilder
    * @return The detail.
    */
   java.lang.String getDetail();
+
   /**
    *
    *

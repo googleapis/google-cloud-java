@@ -36,6 +36,7 @@ public interface FloatArrayOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.Float> getValuesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FloatArrayOrBuilder
    * @return The count of values.
    */
   int getValuesCount();
+
   /**
    *
    *

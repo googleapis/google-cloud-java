@@ -33,6 +33,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.ListMigrationSubtasksRequest)
     ListMigrationSubtasksRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListMigrationSubtasksRequest.newBuilder() to construct.
   private ListMigrationSubtasksRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
 
   public static final int READ_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask readMask_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
   public boolean hasReadMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
   public com.google.protobuf.FieldMask getReadMask() {
     return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -279,6 +289,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -507,6 +518,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -770,6 +782,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -795,6 +808,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -820,6 +834,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -844,6 +859,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +880,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +913,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         readMaskBuilder_;
+
     /**
      *
      *
@@ -911,6 +929,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
     public boolean hasReadMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -930,6 +949,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
         return readMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -953,6 +973,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +994,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1001,6 +1023,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1044,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1060,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       onChanged();
       return getReadMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1053,6 +1078,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
         return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1107,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1097,6 +1124,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1117,6 +1145,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1166,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1163,6 +1193,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1220,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1214,6 +1246,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1268,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1297,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -1287,6 +1322,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1311,6 +1347,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1334,6 +1371,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1353,6 +1391,7 @@ public final class ListMigrationSubtasksRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

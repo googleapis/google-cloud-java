@@ -33,6 +33,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectJobConfig)
     InspectJobConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InspectJobConfig.newBuilder() to construct.
   private InspectJobConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int STORAGE_CONFIG_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.StorageConfig storageConfig_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasStorageConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.privacy.dlp.v2.StorageConfig.getDefaultInstance()
         : storageConfig_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int INSPECT_CONFIG_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.InspectConfig inspectConfig_;
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasInspectConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
         : inspectConfig_;
   }
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inspectTemplateName_ = "";
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.Action> actions_;
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.privacy.dlp.v2.Action> getActionsList() {
     return actions_;
   }
+
   /**
    *
    *
@@ -251,6 +262,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       getActionsOrBuilderList() {
     return actions_;
   }
+
   /**
    *
    *
@@ -264,6 +276,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
   public int getActionsCount() {
     return actions_.size();
   }
+
   /**
    *
    *
@@ -277,6 +290,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
   public com.google.privacy.dlp.v2.Action getActions(int index) {
     return actions_.get(index);
   }
+
   /**
    *
    *
@@ -489,6 +503,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -787,6 +802,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
             com.google.privacy.dlp.v2.StorageConfig.Builder,
             com.google.privacy.dlp.v2.StorageConfigOrBuilder>
         storageConfigBuilder_;
+
     /**
      *
      *
@@ -801,6 +817,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasStorageConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
         return storageConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -843,6 +861,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +882,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -909,6 +930,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +945,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getStorageConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -941,6 +964,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
             : storageConfig_;
       }
     }
+
     /**
      *
      *
@@ -973,6 +997,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
             com.google.privacy.dlp.v2.InspectConfig.Builder,
             com.google.privacy.dlp.v2.InspectConfigOrBuilder>
         inspectConfigBuilder_;
+
     /**
      *
      *
@@ -987,6 +1012,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasInspectConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1007,6 +1033,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
         return inspectConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1029,6 +1056,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1049,6 +1077,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1105,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1125,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1140,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getInspectConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1127,6 +1159,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
             : inspectConfig_;
       }
     }
+
     /**
      *
      *
@@ -1154,6 +1187,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object inspectTemplateName_ = "";
+
     /**
      *
      *
@@ -1178,6 +1212,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1202,6 +1237,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1225,6 +1261,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1281,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1301,6 +1339,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
         return actionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1317,6 +1356,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
         return actionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1333,6 +1373,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
         return actionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1355,6 +1396,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1416,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1396,6 +1439,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1418,6 +1462,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1437,6 +1482,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1456,6 +1502,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1476,6 +1523,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1495,6 +1543,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1514,6 +1563,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1526,6 +1576,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.Action.Builder getActionsBuilder(int index) {
       return getActionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1542,6 +1593,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
         return actionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1559,6 +1611,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(actions_);
       }
     }
+
     /**
      *
      *
@@ -1572,6 +1625,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       return getActionsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.Action.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1585,6 +1639,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       return getActionsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.Action.getDefaultInstance());
     }
+
     /**
      *
      *

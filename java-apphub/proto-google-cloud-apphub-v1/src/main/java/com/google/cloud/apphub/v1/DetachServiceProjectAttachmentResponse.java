@@ -34,6 +34,7 @@ public final class DetachServiceProjectAttachmentResponse
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.DetachServiceProjectAttachmentResponse)
     DetachServiceProjectAttachmentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DetachServiceProjectAttachmentResponse.newBuilder() to construct.
   private DetachServiceProjectAttachmentResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -215,6 +216,7 @@ public final class DetachServiceProjectAttachmentResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public final class ImportConversationDataOperationResponse
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.ImportConversationDataOperationResponse)
     ImportConversationDataOperationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportConversationDataOperationResponse.newBuilder() to construct.
   private ImportConversationDataOperationResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ImportConversationDataOperationResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationDataset_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class ImportConversationDataOperationResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class ImportConversationDataOperationResponse
 
   public static final int IMPORT_COUNT_FIELD_NUMBER = 3;
   private int importCount_ = 0;
+
   /**
    *
    *
@@ -310,6 +314,7 @@ public final class ImportConversationDataOperationResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -517,6 +522,7 @@ public final class ImportConversationDataOperationResponse
     private int bitField0_;
 
     private java.lang.Object conversationDataset_ = "";
+
     /**
      *
      *
@@ -541,6 +547,7 @@ public final class ImportConversationDataOperationResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -565,6 +572,7 @@ public final class ImportConversationDataOperationResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -588,6 +596,7 @@ public final class ImportConversationDataOperationResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -607,6 +616,7 @@ public final class ImportConversationDataOperationResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +643,7 @@ public final class ImportConversationDataOperationResponse
     }
 
     private int importCount_;
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class ImportConversationDataOperationResponse
     public int getImportCount() {
       return importCount_;
     }
+
     /**
      *
      *
@@ -667,6 +679,7 @@ public final class ImportConversationDataOperationResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

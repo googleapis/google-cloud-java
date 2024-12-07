@@ -32,6 +32,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest)
     GlobalOrganizationSetPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GlobalOrganizationSetPolicyRequest.newBuilder() to construct.
   private GlobalOrganizationSetPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Binding> bindings_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
   public java.util.List<com.google.cloud.compute.v1.Binding> getBindingsList() {
     return bindings_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       getBindingsOrBuilderList() {
     return bindings_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
   public int getBindingsCount() {
     return bindings_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
   public com.google.cloud.compute.v1.Binding getBindings(int index) {
     return bindings_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
   public boolean hasEtag() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -178,6 +186,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -204,6 +213,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
 
   public static final int POLICY_FIELD_NUMBER = 91071794;
   private com.google.cloud.compute.v1.Policy policy_;
+
   /**
    *
    *
@@ -219,6 +229,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
   public boolean hasPolicy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -234,6 +245,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
   public com.google.cloud.compute.v1.Policy getPolicy() {
     return policy_ == null ? com.google.cloud.compute.v1.Policy.getDefaultInstance() : policy_;
   }
+
   /**
    *
    *
@@ -438,6 +450,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -747,6 +760,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
         return bindingsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -763,6 +777,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
         return bindingsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
         return bindingsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -801,6 +817,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +861,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +904,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +925,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +946,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +966,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +986,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +999,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
     public com.google.cloud.compute.v1.Binding.Builder getBindingsBuilder(int index) {
       return getBindingsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -990,6 +1016,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
         return bindingsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1007,6 +1034,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
         return java.util.Collections.unmodifiableList(bindings_);
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1048,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       return getBindingsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Binding.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1033,6 +1062,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       return getBindingsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Binding.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1064,6 +1094,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -1078,6 +1109,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
     public boolean hasEtag() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1100,6 +1132,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1122,6 +1155,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1143,6 +1177,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1160,6 +1195,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1225,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
             com.google.cloud.compute.v1.Policy.Builder,
             com.google.cloud.compute.v1.PolicyOrBuilder>
         policyBuilder_;
+
     /**
      *
      *
@@ -1203,6 +1240,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1221,6 +1259,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
         return policyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1243,6 +1282,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1302,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1289,6 +1330,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -1308,6 +1350,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1322,6 +1365,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1338,6 +1382,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
         return policy_ == null ? com.google.cloud.compute.v1.Policy.getDefaultInstance() : policy_;
       }
     }
+
     /**
      *
      *

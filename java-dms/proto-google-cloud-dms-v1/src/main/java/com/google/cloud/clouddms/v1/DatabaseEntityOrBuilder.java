@@ -36,6 +36,7 @@ public interface DatabaseEntityOrBuilder
    * @return The shortName.
    */
   java.lang.String getShortName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DatabaseEntityOrBuilder
    * @return The parentEntity.
    */
   java.lang.String getParentEntity();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface DatabaseEntityOrBuilder
    * @return The enum numeric value on the wire for tree.
    */
   int getTreeValue();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface DatabaseEntityOrBuilder
    * @return The enum numeric value on the wire for entityType.
    */
   int getEntityTypeValue();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface DatabaseEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.EntityMapping mappings = 5;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.EntityMapping> getMappingsList();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface DatabaseEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.EntityMapping mappings = 5;</code>
    */
   com.google.cloud.clouddms.v1.EntityMapping getMappings(int index);
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface DatabaseEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.EntityMapping mappings = 5;</code>
    */
   int getMappingsCount();
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public interface DatabaseEntityOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.EntityMappingOrBuilder>
       getMappingsOrBuilderList();
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public interface DatabaseEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.EntityDdl> getEntityDdlList();
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public interface DatabaseEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
    */
   com.google.cloud.clouddms.v1.EntityDdl getEntityDdl(int index);
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public interface DatabaseEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
    */
   int getEntityDdlCount();
+
   /**
    *
    *
@@ -250,6 +261,7 @@ public interface DatabaseEntityOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.EntityDdlOrBuilder>
       getEntityDdlOrBuilderList();
+
   /**
    *
    *
@@ -273,6 +285,7 @@ public interface DatabaseEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.EntityIssue> getIssuesList();
+
   /**
    *
    *
@@ -283,6 +296,7 @@ public interface DatabaseEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
    */
   com.google.cloud.clouddms.v1.EntityIssue getIssues(int index);
+
   /**
    *
    *
@@ -293,6 +307,7 @@ public interface DatabaseEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
    */
   int getIssuesCount();
+
   /**
    *
    *
@@ -304,6 +319,7 @@ public interface DatabaseEntityOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.EntityIssueOrBuilder>
       getIssuesOrBuilderList();
+
   /**
    *
    *
@@ -327,6 +343,7 @@ public interface DatabaseEntityOrBuilder
    * @return Whether the database field is set.
    */
   boolean hasDatabase();
+
   /**
    *
    *
@@ -339,6 +356,7 @@ public interface DatabaseEntityOrBuilder
    * @return The database.
    */
   com.google.cloud.clouddms.v1.DatabaseInstanceEntity getDatabase();
+
   /**
    *
    *
@@ -362,6 +380,7 @@ public interface DatabaseEntityOrBuilder
    * @return Whether the schema field is set.
    */
   boolean hasSchema();
+
   /**
    *
    *
@@ -374,6 +393,7 @@ public interface DatabaseEntityOrBuilder
    * @return The schema.
    */
   com.google.cloud.clouddms.v1.SchemaEntity getSchema();
+
   /**
    *
    *
@@ -397,6 +417,7 @@ public interface DatabaseEntityOrBuilder
    * @return Whether the table field is set.
    */
   boolean hasTable();
+
   /**
    *
    *
@@ -409,6 +430,7 @@ public interface DatabaseEntityOrBuilder
    * @return The table.
    */
   com.google.cloud.clouddms.v1.TableEntity getTable();
+
   /**
    *
    *
@@ -432,6 +454,7 @@ public interface DatabaseEntityOrBuilder
    * @return Whether the view field is set.
    */
   boolean hasView();
+
   /**
    *
    *
@@ -444,6 +467,7 @@ public interface DatabaseEntityOrBuilder
    * @return The view.
    */
   com.google.cloud.clouddms.v1.ViewEntity getView();
+
   /**
    *
    *
@@ -467,6 +491,7 @@ public interface DatabaseEntityOrBuilder
    * @return Whether the sequence field is set.
    */
   boolean hasSequence();
+
   /**
    *
    *
@@ -479,6 +504,7 @@ public interface DatabaseEntityOrBuilder
    * @return The sequence.
    */
   com.google.cloud.clouddms.v1.SequenceEntity getSequence();
+
   /**
    *
    *
@@ -502,6 +528,7 @@ public interface DatabaseEntityOrBuilder
    * @return Whether the storedProcedure field is set.
    */
   boolean hasStoredProcedure();
+
   /**
    *
    *
@@ -514,6 +541,7 @@ public interface DatabaseEntityOrBuilder
    * @return The storedProcedure.
    */
   com.google.cloud.clouddms.v1.StoredProcedureEntity getStoredProcedure();
+
   /**
    *
    *
@@ -537,6 +565,7 @@ public interface DatabaseEntityOrBuilder
    * @return Whether the databaseFunction field is set.
    */
   boolean hasDatabaseFunction();
+
   /**
    *
    *
@@ -549,6 +578,7 @@ public interface DatabaseEntityOrBuilder
    * @return The databaseFunction.
    */
   com.google.cloud.clouddms.v1.FunctionEntity getDatabaseFunction();
+
   /**
    *
    *
@@ -572,6 +602,7 @@ public interface DatabaseEntityOrBuilder
    * @return Whether the synonym field is set.
    */
   boolean hasSynonym();
+
   /**
    *
    *
@@ -584,6 +615,7 @@ public interface DatabaseEntityOrBuilder
    * @return The synonym.
    */
   com.google.cloud.clouddms.v1.SynonymEntity getSynonym();
+
   /**
    *
    *
@@ -607,6 +639,7 @@ public interface DatabaseEntityOrBuilder
    * @return Whether the databasePackage field is set.
    */
   boolean hasDatabasePackage();
+
   /**
    *
    *
@@ -619,6 +652,7 @@ public interface DatabaseEntityOrBuilder
    * @return The databasePackage.
    */
   com.google.cloud.clouddms.v1.PackageEntity getDatabasePackage();
+
   /**
    *
    *
@@ -642,6 +676,7 @@ public interface DatabaseEntityOrBuilder
    * @return Whether the udt field is set.
    */
   boolean hasUdt();
+
   /**
    *
    *
@@ -654,6 +689,7 @@ public interface DatabaseEntityOrBuilder
    * @return The udt.
    */
   com.google.cloud.clouddms.v1.UDTEntity getUdt();
+
   /**
    *
    *
@@ -677,6 +713,7 @@ public interface DatabaseEntityOrBuilder
    * @return Whether the materializedView field is set.
    */
   boolean hasMaterializedView();
+
   /**
    *
    *
@@ -689,6 +726,7 @@ public interface DatabaseEntityOrBuilder
    * @return The materializedView.
    */
   com.google.cloud.clouddms.v1.MaterializedViewEntity getMaterializedView();
+
   /**
    *
    *

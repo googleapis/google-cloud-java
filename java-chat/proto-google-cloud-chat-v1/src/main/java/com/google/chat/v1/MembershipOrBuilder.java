@@ -38,6 +38,7 @@ public interface MembershipOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface MembershipOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface MembershipOrBuilder
    * @return The enum numeric value on the wire for role.
    */
   int getRoleValue();
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public interface MembershipOrBuilder
    * @return Whether the member field is set.
    */
   boolean hasMember();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface MembershipOrBuilder
    * @return The member.
    */
   com.google.chat.v1.User getMember();
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public interface MembershipOrBuilder
    * @return Whether the groupMember field is set.
    */
   boolean hasGroupMember();
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public interface MembershipOrBuilder
    * @return The groupMember.
    */
   com.google.chat.v1.Group getGroupMember();
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public interface MembershipOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -234,6 +242,7 @@ public interface MembershipOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -265,6 +274,7 @@ public interface MembershipOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -281,6 +291,7 @@ public interface MembershipOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *

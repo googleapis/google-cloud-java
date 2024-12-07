@@ -33,6 +33,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.SecurityBulletin)
     SecurityBulletinOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityBulletin.newBuilder() to construct.
   private SecurityBulletin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bulletinId_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
 
   public static final int SUBMISSION_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp submissionTime_;
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
   public boolean hasSubmissionTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : submissionTime_;
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object suggestedUpgradeVersion_ = "";
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -401,6 +409,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -630,6 +639,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object bulletinId_ = "";
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -674,6 +685,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -695,6 +707,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +755,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         submissionTimeBuilder_;
+
     /**
      *
      *
@@ -755,6 +770,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
     public boolean hasSubmissionTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -775,6 +791,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
         return submissionTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -797,6 +814,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +834,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +862,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +882,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +897,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getSubmissionTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -894,6 +916,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
             : submissionTime_;
       }
     }
+
     /**
      *
      *
@@ -921,6 +944,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object suggestedUpgradeVersion_ = "";
+
     /**
      *
      *
@@ -944,6 +968,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -967,6 +992,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -989,6 +1015,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1034,7 @@ public final class SecurityBulletin extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

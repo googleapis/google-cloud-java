@@ -40,6 +40,7 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface InstanceOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface InstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface InstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface InstanceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface InstanceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface InstanceOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -250,9 +259,11 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -263,6 +274,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -277,6 +289,7 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -300,6 +313,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.Lun> getLunsList();
+
   /**
    *
    *
@@ -312,6 +326,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.baremetalsolution.v2.Lun getLuns(int index);
+
   /**
    *
    *
@@ -324,6 +339,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getLunsCount();
+
   /**
    *
    *
@@ -337,6 +353,7 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.LunOrBuilder>
       getLunsOrBuilderList();
+
   /**
    *
    *
@@ -363,6 +380,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.Volume> getVolumesList();
+
   /**
    *
    *
@@ -376,6 +394,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.baremetalsolution.v2.Volume getVolumes(int index);
+
   /**
    *
    *
@@ -389,6 +408,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getVolumesCount();
+
   /**
    *
    *
@@ -403,6 +423,7 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.VolumeOrBuilder>
       getVolumesOrBuilderList();
+
   /**
    *
    *
@@ -429,6 +450,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.Network> getNetworksList();
+
   /**
    *
    *
@@ -441,6 +463,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.baremetalsolution.v2.Network getNetworks(int index);
+
   /**
    *
    *
@@ -453,6 +476,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getNetworksCount();
+
   /**
    *
    *
@@ -466,6 +490,7 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.NetworkOrBuilder>
       getNetworksOrBuilderList();
+
   /**
    *
    *
@@ -507,6 +532,7 @@ public interface InstanceOrBuilder
    * @return The osImage.
    */
   java.lang.String getOsImage();
+
   /**
    *
    *
@@ -535,6 +561,7 @@ public interface InstanceOrBuilder
    * @return The pod.
    */
   java.lang.String getPod();
+
   /**
    *
    *
@@ -565,6 +592,7 @@ public interface InstanceOrBuilder
    * @return The networkTemplate.
    */
   java.lang.String getNetworkTemplate();
+
   /**
    *
    *
@@ -597,6 +625,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.LogicalInterface> getLogicalInterfacesList();
+
   /**
    *
    *
@@ -614,6 +643,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.baremetalsolution.v2.LogicalInterface getLogicalInterfaces(int index);
+
   /**
    *
    *
@@ -631,6 +661,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getLogicalInterfacesCount();
+
   /**
    *
    *
@@ -649,6 +680,7 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.LogicalInterfaceOrBuilder>
       getLogicalInterfacesOrBuilderList();
+
   /**
    *
    *
@@ -680,6 +712,7 @@ public interface InstanceOrBuilder
    * @return The loginInfo.
    */
   java.lang.String getLoginInfo();
+
   /**
    *
    *
@@ -705,6 +738,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for workloadProfile.
    */
   int getWorkloadProfileValue();
+
   /**
    *
    *
@@ -730,6 +764,7 @@ public interface InstanceOrBuilder
    * @return The firmwareVersion.
    */
   java.lang.String getFirmwareVersion();
+
   /**
    *
    *

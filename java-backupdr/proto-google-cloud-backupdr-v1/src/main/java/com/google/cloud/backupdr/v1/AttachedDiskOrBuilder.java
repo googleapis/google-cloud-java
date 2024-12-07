@@ -38,6 +38,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the initializeParams field is set.
    */
   boolean hasInitializeParams();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AttachedDiskOrBuilder
    * @return The initializeParams.
    */
   com.google.cloud.backupdr.v1.AttachedDisk.InitializeParams getInitializeParams();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the deviceName field is set.
    */
   boolean hasDeviceName();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface AttachedDiskOrBuilder
    * @return The deviceName.
    */
   java.lang.String getDeviceName();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface AttachedDiskOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface AttachedDiskOrBuilder
    */
   @java.lang.Deprecated
   boolean hasDiskTypeDeprecated();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface AttachedDiskOrBuilder
    */
   @java.lang.Deprecated
   int getDiskTypeDeprecatedValue();
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the mode field is set.
    */
   boolean hasMode();
+
   /**
    *
    *
@@ -226,6 +235,7 @@ public interface AttachedDiskOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
+
   /**
    *
    *
@@ -267,6 +278,7 @@ public interface AttachedDiskOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
+
   /**
    *
    *
@@ -294,6 +306,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the index field is set.
    */
   boolean hasIndex();
+
   /**
    *
    *
@@ -321,6 +334,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the boot field is set.
    */
   boolean hasBoot();
+
   /**
    *
    *
@@ -348,6 +362,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the autoDelete field is set.
    */
   boolean hasAutoDelete();
+
   /**
    *
    *
@@ -374,6 +389,7 @@ public interface AttachedDiskOrBuilder
    * @return A list containing the license.
    */
   java.util.List<java.lang.String> getLicenseList();
+
   /**
    *
    *
@@ -386,6 +402,7 @@ public interface AttachedDiskOrBuilder
    * @return The count of license.
    */
   int getLicenseCount();
+
   /**
    *
    *
@@ -399,6 +416,7 @@ public interface AttachedDiskOrBuilder
    * @return The license at the given index.
    */
   java.lang.String getLicense(int index);
+
   /**
    *
    *
@@ -427,6 +445,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the diskInterface field is set.
    */
   boolean hasDiskInterface();
+
   /**
    *
    *
@@ -441,6 +460,7 @@ public interface AttachedDiskOrBuilder
    * @return The enum numeric value on the wire for diskInterface.
    */
   int getDiskInterfaceValue();
+
   /**
    *
    *
@@ -469,6 +489,7 @@ public interface AttachedDiskOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.GuestOsFeature> getGuestOsFeatureList();
+
   /**
    *
    *
@@ -482,6 +503,7 @@ public interface AttachedDiskOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.GuestOsFeature getGuestOsFeature(int index);
+
   /**
    *
    *
@@ -495,6 +517,7 @@ public interface AttachedDiskOrBuilder
    * </code>
    */
   int getGuestOsFeatureCount();
+
   /**
    *
    *
@@ -509,6 +532,7 @@ public interface AttachedDiskOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.GuestOsFeatureOrBuilder>
       getGuestOsFeatureOrBuilderList();
+
   /**
    *
    *
@@ -538,6 +562,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the diskEncryptionKey field is set.
    */
   boolean hasDiskEncryptionKey();
+
   /**
    *
    *
@@ -553,6 +578,7 @@ public interface AttachedDiskOrBuilder
    * @return The diskEncryptionKey.
    */
   com.google.cloud.backupdr.v1.CustomerEncryptionKey getDiskEncryptionKey();
+
   /**
    *
    *
@@ -579,6 +605,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the diskSizeGb field is set.
    */
   boolean hasDiskSizeGb();
+
   /**
    *
    *
@@ -606,6 +633,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the savedState field is set.
    */
   boolean hasSavedState();
+
   /**
    *
    *
@@ -620,6 +648,7 @@ public interface AttachedDiskOrBuilder
    * @return The enum numeric value on the wire for savedState.
    */
   int getSavedStateValue();
+
   /**
    *
    *
@@ -650,6 +679,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the diskType field is set.
    */
   boolean hasDiskType();
+
   /**
    *
    *
@@ -665,6 +695,7 @@ public interface AttachedDiskOrBuilder
    * @return The diskType.
    */
   java.lang.String getDiskType();
+
   /**
    *
    *
@@ -695,6 +726,7 @@ public interface AttachedDiskOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -709,6 +741,7 @@ public interface AttachedDiskOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

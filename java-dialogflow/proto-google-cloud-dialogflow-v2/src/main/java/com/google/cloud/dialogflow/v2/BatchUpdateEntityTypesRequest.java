@@ -34,6 +34,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest)
     BatchUpdateEntityTypesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchUpdateEntityTypesRequest.newBuilder() to construct.
   private BatchUpdateEntityTypesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     private EntityTypeBatchCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,6 +121,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
   }
 
   public static final int ENTITY_TYPE_BATCH_URI_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
   public boolean hasEntityTypeBatchUri() {
     return entityTypeBatchCase_ == 2;
   }
+
   /**
    *
    *
@@ -220,6 +226,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -252,6 +259,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
   }
 
   public static final int ENTITY_TYPE_BATCH_INLINE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -267,6 +275,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
   public boolean hasEntityTypeBatchInline() {
     return entityTypeBatchCase_ == 3;
   }
+
   /**
    *
    *
@@ -285,6 +294,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     }
     return com.google.cloud.dialogflow.v2.EntityTypeBatch.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -307,6 +317,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -334,6 +345,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -364,6 +376,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 5;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -380,6 +393,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -396,6 +410,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -631,6 +646,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -924,6 +940,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -949,6 +966,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -974,6 +992,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -998,6 +1017,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1038,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1083,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     public boolean hasEntityTypeBatchUri() {
       return entityTypeBatchCase_ == 2;
     }
+
     /**
      *
      *
@@ -1093,6 +1115,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1147,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1148,6 +1172,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1195,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1227,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
             com.google.cloud.dialogflow.v2.EntityTypeBatch.Builder,
             com.google.cloud.dialogflow.v2.EntityTypeBatchOrBuilder>
         entityTypeBatchInlineBuilder_;
+
     /**
      *
      *
@@ -1216,6 +1243,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     public boolean hasEntityTypeBatchInline() {
       return entityTypeBatchCase_ == 3;
     }
+
     /**
      *
      *
@@ -1241,6 +1269,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
         return com.google.cloud.dialogflow.v2.EntityTypeBatch.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1263,6 +1292,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       entityTypeBatchCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1313,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       entityTypeBatchCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1317,6 +1348,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       entityTypeBatchCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1342,6 +1374,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1388,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
         getEntityTypeBatchInlineBuilder() {
       return getEntityTypeBatchInlineFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1376,6 +1410,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
         return com.google.cloud.dialogflow.v2.EntityTypeBatch.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1410,6 +1445,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -1436,6 +1472,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1462,6 +1499,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1487,6 +1525,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1508,6 +1547,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1541,6 +1581,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -1556,6 +1597,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1577,6 +1619,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1600,6 +1643,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1620,6 +1664,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1648,6 +1693,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1668,6 +1714,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1683,6 +1730,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1702,6 +1750,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
             : updateMask_;
       }
     }
+
     /**
      *
      *

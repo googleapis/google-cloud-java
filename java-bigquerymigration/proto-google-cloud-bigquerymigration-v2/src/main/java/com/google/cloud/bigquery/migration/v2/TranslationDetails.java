@@ -34,6 +34,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.TranslationDetails)
     TranslationDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TranslationDetails.newBuilder() to construct.
   private TranslationDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.migration.v2.SourceTargetMapping>
       sourceTargetMapping_;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       getSourceTargetMappingList() {
     return sourceTargetMapping_;
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       getSourceTargetMappingOrBuilderList() {
     return sourceTargetMapping_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
   public int getSourceTargetMappingCount() {
     return sourceTargetMapping_.size();
   }
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       int index) {
     return sourceTargetMapping_.get(index);
   }
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetBaseUri_ = "";
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
 
   public static final int SOURCE_ENVIRONMENT_FIELD_NUMBER = 3;
   private com.google.cloud.bigquery.migration.v2.SourceEnvironment sourceEnvironment_;
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
   public boolean hasSourceEnvironment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -239,6 +249,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.bigquery.migration.v2.SourceEnvironment.getDefaultInstance()
         : sourceEnvironment_;
   }
+
   /**
    *
    *
@@ -261,6 +272,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList targetReturnLiterals_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -277,6 +289,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getTargetReturnLiteralsList() {
     return targetReturnLiterals_;
   }
+
   /**
    *
    *
@@ -293,6 +306,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
   public int getTargetReturnLiteralsCount() {
     return targetReturnLiterals_.size();
   }
+
   /**
    *
    *
@@ -310,6 +324,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
   public java.lang.String getTargetReturnLiterals(int index) {
     return targetReturnLiterals_.get(index);
   }
+
   /**
    *
    *
@@ -333,6 +348,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList targetTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -350,6 +366,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getTargetTypesList() {
     return targetTypes_;
   }
+
   /**
    *
    *
@@ -367,6 +384,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
   public int getTargetTypesCount() {
     return targetTypes_.size();
   }
+
   /**
    *
    *
@@ -385,6 +403,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
   public java.lang.String getTargetTypes(int index) {
     return targetTypes_.get(index);
   }
+
   /**
    *
    *
@@ -623,6 +642,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -984,6 +1004,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
         return sourceTargetMappingBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1023,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
         return sourceTargetMappingBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1021,6 +1043,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
         return sourceTargetMappingBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1069,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1093,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1119,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1145,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1141,6 +1168,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1192,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1216,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1238,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1260,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1276,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
         getSourceTargetMappingBuilder(int index) {
       return getSourceTargetMappingFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1263,6 +1296,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
         return sourceTargetMappingBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1283,6 +1317,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(sourceTargetMapping_);
       }
     }
+
     /**
      *
      *
@@ -1300,6 +1335,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               com.google.cloud.bigquery.migration.v2.SourceTargetMapping.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1318,6 +1354,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
               index,
               com.google.cloud.bigquery.migration.v2.SourceTargetMapping.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1355,6 +1392,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object targetBaseUri_ = "";
+
     /**
      *
      *
@@ -1377,6 +1415,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1399,6 +1438,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1420,6 +1460,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1437,6 +1478,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1508,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
             com.google.cloud.bigquery.migration.v2.SourceEnvironment.Builder,
             com.google.cloud.bigquery.migration.v2.SourceEnvironmentOrBuilder>
         sourceEnvironmentBuilder_;
+
     /**
      *
      *
@@ -1480,6 +1523,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     public boolean hasSourceEnvironment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1500,6 +1544,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
         return sourceEnvironmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1523,6 +1568,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1543,6 +1589,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1572,6 +1619,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1639,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1606,6 +1655,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSourceEnvironmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1625,6 +1675,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
             : sourceEnvironment_;
       }
     }
+
     /**
      *
      *
@@ -1660,6 +1711,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1677,6 +1729,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       targetReturnLiterals_.makeImmutable();
       return targetReturnLiterals_;
     }
+
     /**
      *
      *
@@ -1693,6 +1746,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     public int getTargetReturnLiteralsCount() {
       return targetReturnLiterals_.size();
     }
+
     /**
      *
      *
@@ -1710,6 +1764,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     public java.lang.String getTargetReturnLiterals(int index) {
       return targetReturnLiterals_.get(index);
     }
+
     /**
      *
      *
@@ -1727,6 +1782,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getTargetReturnLiteralsBytes(int index) {
       return targetReturnLiterals_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1752,6 +1808,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1776,6 +1833,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1797,6 +1855,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1817,6 +1876,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1852,6 +1912,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -1870,6 +1931,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       targetTypes_.makeImmutable();
       return targetTypes_;
     }
+
     /**
      *
      *
@@ -1887,6 +1949,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     public int getTargetTypesCount() {
       return targetTypes_.size();
     }
+
     /**
      *
      *
@@ -1905,6 +1968,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     public java.lang.String getTargetTypes(int index) {
       return targetTypes_.get(index);
     }
+
     /**
      *
      *
@@ -1923,6 +1987,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getTargetTypesBytes(int index) {
       return targetTypes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1949,6 +2014,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1974,6 +2040,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1996,6 +2063,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2017,6 +2085,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

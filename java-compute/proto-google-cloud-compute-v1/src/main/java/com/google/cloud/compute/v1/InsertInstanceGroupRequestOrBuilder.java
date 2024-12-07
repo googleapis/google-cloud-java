@@ -38,6 +38,7 @@ public interface InsertInstanceGroupRequestOrBuilder
    * @return Whether the instanceGroupResource field is set.
    */
   boolean hasInstanceGroupResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InsertInstanceGroupRequestOrBuilder
    * @return The instanceGroupResource.
    */
   com.google.cloud.compute.v1.InstanceGroup getInstanceGroupResource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface InsertInstanceGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface InsertInstanceGroupRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface InsertInstanceGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface InsertInstanceGroupRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

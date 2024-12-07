@@ -34,6 +34,7 @@ public final class GetAccessApprovalServiceAccountMessage
     // @@protoc_insertion_point(message_implements:google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage)
     GetAccessApprovalServiceAccountMessageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetAccessApprovalServiceAccountMessage.newBuilder() to construct.
   private GetAccessApprovalServiceAccountMessage(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class GetAccessApprovalServiceAccountMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class GetAccessApprovalServiceAccountMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -279,6 +282,7 @@ public final class GetAccessApprovalServiceAccountMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -474,6 +478,7 @@ public final class GetAccessApprovalServiceAccountMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -496,6 +501,7 @@ public final class GetAccessApprovalServiceAccountMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -518,6 +524,7 @@ public final class GetAccessApprovalServiceAccountMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -539,6 +546,7 @@ public final class GetAccessApprovalServiceAccountMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -556,6 +564,7 @@ public final class GetAccessApprovalServiceAccountMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

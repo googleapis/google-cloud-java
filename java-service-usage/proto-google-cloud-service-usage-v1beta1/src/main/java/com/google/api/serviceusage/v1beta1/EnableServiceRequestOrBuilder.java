@@ -46,6 +46,7 @@ public interface EnableServiceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

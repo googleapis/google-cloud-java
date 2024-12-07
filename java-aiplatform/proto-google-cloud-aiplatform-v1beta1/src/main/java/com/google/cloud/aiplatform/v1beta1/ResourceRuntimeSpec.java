@@ -37,6 +37,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ResourceRuntimeSpec)
     ResourceRuntimeSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceRuntimeSpec.newBuilder() to construct.
   private ResourceRuntimeSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int SERVICE_ACCOUNT_SPEC_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.ServiceAccountSpec serviceAccountSpec_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
   public boolean hasServiceAccountSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.aiplatform.v1beta1.ServiceAccountSpec.getDefaultInstance()
         : serviceAccountSpec_;
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
 
   public static final int RAY_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.RaySpec raySpec_;
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
   public boolean hasRaySpec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.aiplatform.v1beta1.RaySpec.getDefaultInstance()
         : raySpec_;
   }
+
   /**
    *
    *
@@ -361,6 +368,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -591,6 +599,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1beta1.ServiceAccountSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.ServiceAccountSpecOrBuilder>
         serviceAccountSpecBuilder_;
+
     /**
      *
      *
@@ -607,6 +616,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
     public boolean hasServiceAccountSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -629,6 +639,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
         return serviceAccountSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -654,6 +665,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +688,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +742,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +760,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return getServiceAccountSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -766,6 +782,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
             : serviceAccountSpec_;
       }
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1beta1.RaySpec.Builder,
             com.google.cloud.aiplatform.v1beta1.RaySpecOrBuilder>
         raySpecBuilder_;
+
     /**
      *
      *
@@ -817,6 +835,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
     public boolean hasRaySpec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
         return raySpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -865,6 +885,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +908,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +939,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +962,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +980,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRaySpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -977,6 +1002,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
             : raySpec_;
       }
     }
+
     /**
      *
      *

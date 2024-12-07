@@ -288,7 +288,8 @@ public class MockSecureSourceManagerImpl extends SecureSourceManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method TestIamPermissionsRepo, expected %s or %s",
+                  "Unrecognized response type %s for method TestIamPermissionsRepo, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));

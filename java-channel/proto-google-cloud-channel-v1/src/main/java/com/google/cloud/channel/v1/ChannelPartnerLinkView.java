@@ -77,6 +77,7 @@ public enum ChannelPartnerLinkView implements com.google.protobuf.ProtocolMessag
    * <code>UNSPECIFIED = 0;</code>
    */
   public static final int UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public enum ChannelPartnerLinkView implements com.google.protobuf.ProtocolMessag
    * <code>BASIC = 1;</code>
    */
   public static final int BASIC_VALUE = 1;
+
   /**
    *
    *

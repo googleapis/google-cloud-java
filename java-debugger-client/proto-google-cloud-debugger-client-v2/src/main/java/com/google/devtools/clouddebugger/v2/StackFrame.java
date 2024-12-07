@@ -33,6 +33,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.clouddebugger.v2.StackFrame)
     StackFrameOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StackFrame.newBuilder() to construct.
   private StackFrame(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object function_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCATION_FIELD_NUMBER = 2;
   private com.google.devtools.clouddebugger.v2.SourceLocation location_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.clouddebugger.v2.SourceLocation.getDefaultInstance()
         : location_;
   }
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouddebugger.v2.Variable> arguments_;
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.devtools.clouddebugger.v2.Variable> getArgumentsList() {
     return arguments_;
   }
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       getArgumentsOrBuilderList() {
     return arguments_;
   }
+
   /**
    *
    *
@@ -214,6 +223,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
   public int getArgumentsCount() {
     return arguments_.size();
   }
+
   /**
    *
    *
@@ -228,6 +238,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
   public com.google.devtools.clouddebugger.v2.Variable getArguments(int index) {
     return arguments_.get(index);
   }
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouddebugger.v2.Variable> locals_;
+
   /**
    *
    *
@@ -261,6 +273,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.devtools.clouddebugger.v2.Variable> getLocalsList() {
     return locals_;
   }
+
   /**
    *
    *
@@ -276,6 +289,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       getLocalsOrBuilderList() {
     return locals_;
   }
+
   /**
    *
    *
@@ -290,6 +304,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
   public int getLocalsCount() {
     return locals_.size();
   }
+
   /**
    *
    *
@@ -304,6 +319,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
   public com.google.devtools.clouddebugger.v2.Variable getLocals(int index) {
     return locals_.get(index);
   }
+
   /**
    *
    *
@@ -514,6 +530,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -846,6 +863,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object function_ = "";
+
     /**
      *
      *
@@ -868,6 +886,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -890,6 +909,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -911,6 +931,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +949,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +979,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.clouddebugger.v2.SourceLocation.Builder,
             com.google.devtools.clouddebugger.v2.SourceLocationOrBuilder>
         locationBuilder_;
+
     /**
      *
      *
@@ -971,6 +994,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -991,6 +1015,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return locationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1059,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1088,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1108,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1123,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1112,6 +1142,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
             : location_;
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1203,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return argumentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1221,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return argumentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1206,6 +1239,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return argumentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1229,6 +1263,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1250,6 +1285,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1273,6 +1309,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1333,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1317,6 +1355,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1338,6 +1377,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1399,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1379,6 +1420,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1399,6 +1441,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1412,6 +1455,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouddebugger.v2.Variable.Builder getArgumentsBuilder(int index) {
       return getArgumentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1429,6 +1473,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return argumentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1447,6 +1492,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(arguments_);
       }
     }
+
     /**
      *
      *
@@ -1461,6 +1507,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       return getArgumentsFieldBuilder()
           .addBuilder(com.google.devtools.clouddebugger.v2.Variable.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1475,6 +1522,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       return getArgumentsFieldBuilder()
           .addBuilder(index, com.google.devtools.clouddebugger.v2.Variable.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1540,6 +1588,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return localsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1557,6 +1606,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return localsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1574,6 +1624,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return localsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1597,6 +1648,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1618,6 +1670,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1641,6 +1694,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1664,6 +1718,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1685,6 +1740,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1706,6 +1762,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1727,6 +1784,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1747,6 +1805,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1767,6 +1826,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1780,6 +1840,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouddebugger.v2.Variable.Builder getLocalsBuilder(int index) {
       return getLocalsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1797,6 +1858,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return localsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1815,6 +1877,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(locals_);
       }
     }
+
     /**
      *
      *
@@ -1829,6 +1892,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       return getLocalsFieldBuilder()
           .addBuilder(com.google.devtools.clouddebugger.v2.Variable.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1843,6 +1907,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       return getLocalsFieldBuilder()
           .addBuilder(index, com.google.devtools.clouddebugger.v2.Variable.getDefaultInstance());
     }
+
     /**
      *
      *

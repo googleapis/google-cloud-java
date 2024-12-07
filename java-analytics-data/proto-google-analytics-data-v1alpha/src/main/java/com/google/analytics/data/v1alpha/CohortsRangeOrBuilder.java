@@ -37,6 +37,7 @@ public interface CohortsRangeOrBuilder
    * @return The enum numeric value on the wire for granularity.
    */
   int getGranularityValue();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface HelpOrBuilder
    * <code>repeated .google.cloud.compute.v1.HelpLink links = 102977465;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HelpLink> getLinksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface HelpOrBuilder
    * <code>repeated .google.cloud.compute.v1.HelpLink links = 102977465;</code>
    */
   com.google.cloud.compute.v1.HelpLink getLinks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface HelpOrBuilder
    * <code>repeated .google.cloud.compute.v1.HelpLink links = 102977465;</code>
    */
   int getLinksCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface HelpOrBuilder
    * <code>repeated .google.cloud.compute.v1.HelpLink links = 102977465;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.HelpLinkOrBuilder> getLinksOrBuilderList();
+
   /**
    *
    *

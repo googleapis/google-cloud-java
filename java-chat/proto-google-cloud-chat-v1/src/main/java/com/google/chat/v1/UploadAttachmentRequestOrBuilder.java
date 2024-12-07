@@ -39,6 +39,7 @@ public interface UploadAttachmentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface UploadAttachmentRequestOrBuilder
    * @return The filename.
    */
   java.lang.String getFilename();
+
   /**
    *
    *

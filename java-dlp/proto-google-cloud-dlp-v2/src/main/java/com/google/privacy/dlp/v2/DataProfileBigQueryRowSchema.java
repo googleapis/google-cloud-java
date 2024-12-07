@@ -34,6 +34,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileBigQueryRowSchema)
     DataProfileBigQueryRowSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataProfileBigQueryRowSchema.newBuilder() to construct.
   private DataProfileBigQueryRowSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     private DataProfileCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,6 +117,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
   }
 
   public static final int TABLE_PROFILE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
   public boolean hasTableProfile() {
     return dataProfileCase_ == 1;
   }
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     }
     return com.google.privacy.dlp.v2.TableDataProfile.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
   }
 
   public static final int COLUMN_PROFILE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
   public boolean hasColumnProfile() {
     return dataProfileCase_ == 2;
   }
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     }
     return com.google.privacy.dlp.v2.ColumnDataProfile.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
   }
 
   public static final int FILE_STORE_PROFILE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
   public boolean hasFileStoreProfile() {
     return dataProfileCase_ == 3;
   }
+
   /**
    *
    *
@@ -250,6 +260,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     }
     return com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -472,6 +483,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -726,6 +738,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.TableDataProfile.Builder,
             com.google.privacy.dlp.v2.TableDataProfileOrBuilder>
         tableProfileBuilder_;
+
     /**
      *
      *
@@ -741,6 +754,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     public boolean hasTableProfile() {
       return dataProfileCase_ == 1;
     }
+
     /**
      *
      *
@@ -766,6 +780,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.TableDataProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -788,6 +803,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       dataProfileCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +824,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       dataProfileCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +857,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       dataProfileCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +883,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +896,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     public com.google.privacy.dlp.v2.TableDataProfile.Builder getTableProfileBuilder() {
       return getTableProfileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -897,6 +917,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.TableDataProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -935,6 +956,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.ColumnDataProfile.Builder,
             com.google.privacy.dlp.v2.ColumnDataProfileOrBuilder>
         columnProfileBuilder_;
+
     /**
      *
      *
@@ -950,6 +972,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     public boolean hasColumnProfile() {
       return dataProfileCase_ == 2;
     }
+
     /**
      *
      *
@@ -975,6 +998,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.ColumnDataProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -997,6 +1021,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       dataProfileCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1042,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       dataProfileCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1049,6 +1075,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       dataProfileCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1074,6 +1101,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1114,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     public com.google.privacy.dlp.v2.ColumnDataProfile.Builder getColumnProfileBuilder() {
       return getColumnProfileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1106,6 +1135,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.ColumnDataProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1144,6 +1174,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.FileStoreDataProfile.Builder,
             com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder>
         fileStoreProfileBuilder_;
+
     /**
      *
      *
@@ -1159,6 +1190,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     public boolean hasFileStoreProfile() {
       return dataProfileCase_ == 3;
     }
+
     /**
      *
      *
@@ -1184,6 +1216,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1206,6 +1239,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       dataProfileCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1226,6 +1260,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       dataProfileCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1294,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       dataProfileCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1284,6 +1320,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1333,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     public com.google.privacy.dlp.v2.FileStoreDataProfile.Builder getFileStoreProfileBuilder() {
       return getFileStoreProfileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1316,6 +1354,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *

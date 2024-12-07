@@ -33,6 +33,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ClassificationMetrics)
     ClassificationMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClassificationMetrics.newBuilder() to construct.
   private ClassificationMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int PR_CURVE_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.PrCurve prCurve_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
   public boolean hasPrCurve() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.datalabeling.v1beta1.PrCurve.getDefaultInstance()
         : prCurve_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
 
   public static final int CONFUSION_MATRIX_FIELD_NUMBER = 2;
   private com.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusionMatrix_;
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
   public boolean hasConfusionMatrix() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.getDefaultInstance()
         : confusionMatrix_;
   }
+
   /**
    *
    *
@@ -345,6 +352,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -568,6 +576,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
             com.google.cloud.datalabeling.v1beta1.PrCurve.Builder,
             com.google.cloud.datalabeling.v1beta1.PrCurveOrBuilder>
         prCurveBuilder_;
+
     /**
      *
      *
@@ -583,6 +592,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     public boolean hasPrCurve() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -604,6 +614,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
         return prCurveBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -627,6 +638,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +660,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +689,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +710,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +726,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       onChanged();
       return getPrCurveFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -730,6 +746,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
             : prCurve_;
       }
     }
+
     /**
      *
      *
@@ -763,6 +780,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
             com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Builder,
             com.google.cloud.datalabeling.v1beta1.ConfusionMatrixOrBuilder>
         confusionMatrixBuilder_;
+
     /**
      *
      *
@@ -777,6 +795,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     public boolean hasConfusionMatrix() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -797,6 +816,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
         return confusionMatrixBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -819,6 +839,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +860,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +890,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +910,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +926,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       onChanged();
       return getConfusionMatrixFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -921,6 +946,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
             : confusionMatrix_;
       }
     }
+
     /**
      *
      *

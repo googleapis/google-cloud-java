@@ -35,6 +35,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.JobDependency)
     JobDependencyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use JobDependency.newBuilder() to construct.
   private JobDependency(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,6 +139,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -148,6 +150,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 1;</code>
      */
     public static final int SUCCEEDED_VALUE = 1;
+
     /**
      *
      *
@@ -158,6 +161,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 2;</code>
      */
     public static final int FAILED_VALUE = 2;
+
     /**
      *
      *
@@ -295,6 +299,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
   public int getItemsCount() {
     return internalGetItems().getMap().size();
   }
+
   /**
    *
    *
@@ -315,6 +320,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetItems().getMap().containsKey(key);
   }
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -322,6 +328,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       getItems() {
     return getItemsMap();
   }
+
   /**
    *
    *
@@ -340,6 +347,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       getItemsMap() {
     return internalGetAdaptedItemsMap(internalGetItems().getMap());
   }
+
   /**
    *
    *
@@ -364,6 +372,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetItems().getMap();
     return map.containsKey(key) ? itemsValueConverter.doForward(map.get(key)) : defaultValue;
   }
+
   /**
    *
    *
@@ -388,12 +397,14 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     }
     return itemsValueConverter.doForward(map.get(key));
   }
+
   /** Use {@link #getItemsValueMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Integer> getItemsValue() {
     return getItemsValueMap();
   }
+
   /**
    *
    *
@@ -411,6 +422,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.Integer> getItemsValueMap() {
     return internalGetItems().getMap();
   }
+
   /**
    *
    *
@@ -432,6 +444,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetItems().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -624,6 +637,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -856,6 +870,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     public int getItemsCount() {
       return internalGetItems().getMap().size();
     }
+
     /**
      *
      *
@@ -876,6 +891,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetItems().getMap().containsKey(key);
     }
+
     /** Use {@link #getItemsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -883,6 +899,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
         getItems() {
       return getItemsMap();
     }
+
     /**
      *
      *
@@ -901,6 +918,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
         getItemsMap() {
       return internalGetAdaptedItemsMap(internalGetItems().getMap());
     }
+
     /**
      *
      *
@@ -925,6 +943,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.Integer> map = internalGetItems().getMap();
       return map.containsKey(key) ? itemsValueConverter.doForward(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -949,12 +968,14 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       }
       return itemsValueConverter.doForward(map.get(key));
     }
+
     /** Use {@link #getItemsValueMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getItemsValue() {
       return getItemsValueMap();
     }
+
     /**
      *
      *
@@ -972,6 +993,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.Integer> getItemsValueMap() {
       return internalGetItems().getMap();
     }
+
     /**
      *
      *
@@ -993,6 +1015,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.Integer> map = internalGetItems().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1023,6 +1046,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableItems().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1067,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableItems().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.batch.v1alpha.JobDependency.Type>
@@ -1050,6 +1075,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return internalGetAdaptedItemsMap(internalGetMutableItems().getMutableMap());
     }
+
     /**
      *
      *
@@ -1073,6 +1099,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1092,12 +1119,14 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableItemsValue() {
       bitField0_ |= 0x00000001;
       return internalGetMutableItems().getMutableMap();
     }
+
     /**
      *
      *
@@ -1120,6 +1149,7 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

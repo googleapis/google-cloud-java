@@ -39,6 +39,7 @@ public interface CreateWorkflowRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateWorkflowRequestOrBuilder
    * @return Whether the workflow field is set.
    */
   boolean hasWorkflow();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateWorkflowRequestOrBuilder
    * @return The workflow.
    */
   com.google.cloud.workflows.v1.Workflow getWorkflow();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface CreateWorkflowRequestOrBuilder
    * @return The workflowId.
    */
   java.lang.String getWorkflowId();
+
   /**
    *
    *

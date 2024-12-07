@@ -38,6 +38,7 @@ public interface UpdateDnsAuthorizationRequestOrBuilder
    * @return Whether the dnsAuthorization field is set.
    */
   boolean hasDnsAuthorization();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateDnsAuthorizationRequestOrBuilder
    * @return The dnsAuthorization.
    */
   com.google.cloud.certificatemanager.v1.DnsAuthorization getDnsAuthorization();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateDnsAuthorizationRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateDnsAuthorizationRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

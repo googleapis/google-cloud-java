@@ -35,6 +35,7 @@ public final class SampledShapleyAttribution extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.SampledShapleyAttribution)
     SampledShapleyAttributionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SampledShapleyAttribution.newBuilder() to construct.
   private SampledShapleyAttribution(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class SampledShapleyAttribution extends com.google.protobuf.Generat
 
   public static final int PATH_COUNT_FIELD_NUMBER = 1;
   private int pathCount_ = 0;
+
   /**
    *
    *
@@ -244,6 +246,7 @@ public final class SampledShapleyAttribution extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -428,6 +431,7 @@ public final class SampledShapleyAttribution extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int pathCount_;
+
     /**
      *
      *
@@ -446,6 +450,7 @@ public final class SampledShapleyAttribution extends com.google.protobuf.Generat
     public int getPathCount() {
       return pathCount_;
     }
+
     /**
      *
      *
@@ -468,6 +473,7 @@ public final class SampledShapleyAttribution extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface DocumentMetadataOrBuilder
    * @return Whether the documentId field is set.
    */
   boolean hasDocumentId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DocumentMetadataOrBuilder
    * @return The documentId.
    */
   com.google.cloud.documentai.v1beta3.DocumentId getDocumentId();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface DocumentMetadataOrBuilder
    * @return The enum numeric value on the wire for datasetType.
    */
   int getDatasetTypeValue();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface DocumentMetadataOrBuilder
    * @return The enum numeric value on the wire for labelingState.
    */
   int getLabelingStateValue();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface DocumentMetadataOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

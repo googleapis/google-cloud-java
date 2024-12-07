@@ -33,6 +33,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.cloudcontrolspartner.v1.CustomerOnboardingStep)
     CustomerOnboardingStepOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomerOnboardingStep.newBuilder() to construct.
   private CustomerOnboardingStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
      * <code>STEP_UNSPECIFIED = 0;</code>
      */
     public static final int STEP_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
      * <code>KAJ_ENROLLMENT = 1;</code>
      */
     public static final int KAJ_ENROLLMENT_VALUE = 1;
+
     /**
      *
      *
@@ -226,6 +229,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int STEP_FIELD_NUMBER = 1;
   private int step_ = 0;
+
   /**
    *
    *
@@ -241,6 +245,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
   public int getStepValue() {
     return step_;
   }
+
   /**
    *
    *
@@ -263,6 +268,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
 
   public static final int START_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -278,6 +284,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -293,6 +300,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -309,6 +317,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
 
   public static final int COMPLETION_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp completionTime_;
+
   /**
    *
    *
@@ -324,6 +333,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
   public boolean hasCompletionTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -341,6 +351,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : completionTime_;
   }
+
   /**
    *
    *
@@ -359,6 +370,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
 
   public static final int COMPLETION_STATE_FIELD_NUMBER = 4;
   private int completionState_ = 0;
+
   /**
    *
    *
@@ -376,6 +388,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
   public int getCompletionStateValue() {
     return completionState_;
   }
+
   /**
    *
    *
@@ -603,6 +616,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -851,6 +865,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int step_ = 0;
+
     /**
      *
      *
@@ -866,6 +881,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
     public int getStepValue() {
       return step_;
     }
+
     /**
      *
      *
@@ -884,6 +900,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +920,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
           ? com.google.cloud.cloudcontrolspartner.v1.CustomerOnboardingStep.Step.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -925,6 +943,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +968,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -963,6 +983,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -981,6 +1002,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1025,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1045,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1049,6 +1073,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1093,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1108,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1098,6 +1125,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1130,6 +1158,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         completionTimeBuilder_;
+
     /**
      *
      *
@@ -1144,6 +1173,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
     public boolean hasCompletionTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1164,6 +1194,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
         return completionTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1186,6 +1217,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1237,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1232,6 +1265,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1251,6 +1285,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1265,6 +1300,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       onChanged();
       return getCompletionTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1283,6 +1319,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
             : completionTime_;
       }
     }
+
     /**
      *
      *
@@ -1310,6 +1347,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
     }
 
     private int completionState_ = 0;
+
     /**
      *
      *
@@ -1327,6 +1365,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
     public int getCompletionStateValue() {
       return completionState_;
     }
+
     /**
      *
      *
@@ -1347,6 +1386,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1368,6 +1408,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
           ? com.google.cloud.cloudcontrolspartner.v1.CompletionState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1392,6 +1433,7 @@ public final class CustomerOnboardingStep extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

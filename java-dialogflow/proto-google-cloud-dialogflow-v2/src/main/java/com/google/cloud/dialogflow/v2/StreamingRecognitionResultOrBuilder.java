@@ -37,6 +37,7 @@ public interface StreamingRecognitionResultOrBuilder
    * @return The enum numeric value on the wire for messageType.
    */
   int getMessageTypeValue();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface StreamingRecognitionResultOrBuilder
    * @return The transcript.
    */
   java.lang.String getTranscript();
+
   /**
    *
    *
@@ -126,6 +128,7 @@ public interface StreamingRecognitionResultOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.SpeechWordInfo> getSpeechWordInfoList();
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public interface StreamingRecognitionResultOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
    */
   com.google.cloud.dialogflow.v2.SpeechWordInfo getSpeechWordInfo(int index);
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface StreamingRecognitionResultOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
    */
   int getSpeechWordInfoCount();
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public interface StreamingRecognitionResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.SpeechWordInfoOrBuilder>
       getSpeechWordInfoOrBuilderList();
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public interface StreamingRecognitionResultOrBuilder
    * @return Whether the speechEndOffset field is set.
    */
   boolean hasSpeechEndOffset();
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public interface StreamingRecognitionResultOrBuilder
    * @return The speechEndOffset.
    */
   com.google.protobuf.Duration getSpeechEndOffset();
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public interface StreamingRecognitionResultOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

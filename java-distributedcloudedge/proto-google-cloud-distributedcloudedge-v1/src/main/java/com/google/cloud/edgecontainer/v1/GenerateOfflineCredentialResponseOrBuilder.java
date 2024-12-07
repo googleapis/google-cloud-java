@@ -36,6 +36,7 @@ public interface GenerateOfflineCredentialResponseOrBuilder
    * @return The clientCertificate.
    */
   java.lang.String getClientCertificate();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GenerateOfflineCredentialResponseOrBuilder
    * @return The clientKey.
    */
   java.lang.String getClientKey();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GenerateOfflineCredentialResponseOrBuilder
    * @return The userId.
    */
   java.lang.String getUserId();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface GenerateOfflineCredentialResponseOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface GenerateOfflineCredentialResponseOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *

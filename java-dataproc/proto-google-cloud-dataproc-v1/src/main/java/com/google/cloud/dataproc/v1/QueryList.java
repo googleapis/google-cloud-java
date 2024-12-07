@@ -33,6 +33,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.QueryList)
     QueryListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryList.newBuilder() to construct.
   private QueryList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList queries_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getQueriesList() {
     return queries_;
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
   public int getQueriesCount() {
     return queries_.size();
   }
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getQueries(int index) {
     return queries_.get(index);
   }
+
   /**
    *
    *
@@ -344,6 +349,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -542,6 +548,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -570,6 +577,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
       queries_.makeImmutable();
       return queries_;
     }
+
     /**
      *
      *
@@ -597,6 +605,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
     public int getQueriesCount() {
       return queries_.size();
     }
+
     /**
      *
      *
@@ -625,6 +634,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getQueries(int index) {
       return queries_.get(index);
     }
+
     /**
      *
      *
@@ -653,6 +663,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getQueriesBytes(int index) {
       return queries_.getByteString(index);
     }
+
     /**
      *
      *
@@ -689,6 +700,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +736,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +769,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +801,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

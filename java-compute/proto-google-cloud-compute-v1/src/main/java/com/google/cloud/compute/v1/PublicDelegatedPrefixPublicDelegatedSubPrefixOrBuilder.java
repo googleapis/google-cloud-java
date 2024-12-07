@@ -36,6 +36,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return Whether the allocatablePrefixLength field is set.
    */
   boolean hasAllocatablePrefixLength();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return Whether the delegateeProject field is set.
    */
   boolean hasDelegateeProject();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return The delegateeProject.
    */
   java.lang.String getDelegateeProject();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return Whether the ipCidrRange field is set.
    */
   boolean hasIpCidrRange();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return Whether the isAddress field is set.
    */
   boolean hasIsAddress();
+
   /**
    *
    *
@@ -198,6 +206,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return Whether the mode field is set.
    */
   boolean hasMode();
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return The mode.
    */
   java.lang.String getMode();
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -249,6 +260,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -274,6 +286,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -286,6 +299,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -312,6 +326,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -325,6 +340,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *

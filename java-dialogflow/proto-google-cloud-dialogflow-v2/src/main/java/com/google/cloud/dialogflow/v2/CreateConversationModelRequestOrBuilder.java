@@ -37,6 +37,7 @@ public interface CreateConversationModelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateConversationModelRequestOrBuilder
    * @return Whether the conversationModel field is set.
    */
   boolean hasConversationModel();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface CreateConversationModelRequestOrBuilder
    * @return The conversationModel.
    */
   com.google.cloud.dialogflow.v2.ConversationModel getConversationModel();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface EntrypointOrBuilder
    * @return Whether the shell field is set.
    */
   boolean hasShell();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface EntrypointOrBuilder
    * @return The shell.
    */
   java.lang.String getShell();
+
   /**
    *
    *

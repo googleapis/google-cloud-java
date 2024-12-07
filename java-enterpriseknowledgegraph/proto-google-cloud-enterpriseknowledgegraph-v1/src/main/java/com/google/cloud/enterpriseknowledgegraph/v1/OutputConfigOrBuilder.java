@@ -36,6 +36,7 @@ public interface OutputConfigOrBuilder
    * @return The bigqueryDataset.
    */
   java.lang.String getBigqueryDataset();
+
   /**
    *
    *

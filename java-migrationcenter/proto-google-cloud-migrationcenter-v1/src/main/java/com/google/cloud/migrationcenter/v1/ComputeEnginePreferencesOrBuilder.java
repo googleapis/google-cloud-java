@@ -36,6 +36,7 @@ public interface ComputeEnginePreferencesOrBuilder
    * @return Whether the machinePreferences field is set.
    */
   boolean hasMachinePreferences();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ComputeEnginePreferencesOrBuilder
    * @return The machinePreferences.
    */
   com.google.cloud.migrationcenter.v1.MachinePreferences getMachinePreferences();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ComputeEnginePreferencesOrBuilder
    * @return The enum numeric value on the wire for licenseType.
    */
   int getLicenseTypeValue();
+
   /**
    *
    *

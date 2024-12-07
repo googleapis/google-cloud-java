@@ -34,6 +34,7 @@ public interface AutomationResourceSelectorOrBuilder
    * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
    */
   java.util.List<com.google.cloud.deploy.v1.TargetAttribute> getTargetsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface AutomationResourceSelectorOrBuilder
    * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
    */
   com.google.cloud.deploy.v1.TargetAttribute getTargets(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface AutomationResourceSelectorOrBuilder
    * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
    */
   int getTargetsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface AutomationResourceSelectorOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.TargetAttributeOrBuilder>
       getTargetsOrBuilderList();
+
   /**
    *
    *

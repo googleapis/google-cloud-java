@@ -62,6 +62,7 @@ public enum SearchAddOn implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SEARCH_ADD_ON_UNSPECIFIED = 0;</code>
    */
   public static final int SEARCH_ADD_ON_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

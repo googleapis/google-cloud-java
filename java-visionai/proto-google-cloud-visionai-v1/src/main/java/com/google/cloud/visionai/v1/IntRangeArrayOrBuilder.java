@@ -34,6 +34,7 @@ public interface IntRangeArrayOrBuilder
    * <code>repeated .google.cloud.visionai.v1.IntRange int_ranges = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.IntRange> getIntRangesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface IntRangeArrayOrBuilder
    * <code>repeated .google.cloud.visionai.v1.IntRange int_ranges = 1;</code>
    */
   com.google.cloud.visionai.v1.IntRange getIntRanges(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface IntRangeArrayOrBuilder
    * <code>repeated .google.cloud.visionai.v1.IntRange int_ranges = 1;</code>
    */
   int getIntRangesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface IntRangeArrayOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.IntRangeOrBuilder>
       getIntRangesOrBuilderList();
+
   /**
    *
    *

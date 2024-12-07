@@ -38,6 +38,7 @@ public interface RowOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface RowOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; values = 2;</code>
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -77,9 +79,11 @@ public interface RowOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; values = 2;</code>
    */
   boolean containsValues(java.lang.String key);
+
   /** Use {@link #getValuesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getValues();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface RowOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; values = 2;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getValuesMap();
+
   /**
    *
    *
@@ -108,6 +113,7 @@ public interface RowOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
+
   /**
    *
    *

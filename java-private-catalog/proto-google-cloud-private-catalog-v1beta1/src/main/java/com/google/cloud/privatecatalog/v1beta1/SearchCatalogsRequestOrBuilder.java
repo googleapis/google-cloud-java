@@ -40,6 +40,7 @@ public interface SearchCatalogsRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface SearchCatalogsRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface SearchCatalogsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface NetworkEndpointOrBuilder
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -44,9 +45,11 @@ public interface NetworkEndpointOrBuilder
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -57,6 +60,7 @@ public interface NetworkEndpointOrBuilder
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -71,6 +75,7 @@ public interface NetworkEndpointOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -94,6 +99,7 @@ public interface NetworkEndpointOrBuilder
    * @return Whether the clientDestinationPort field is set.
    */
   boolean hasClientDestinationPort();
+
   /**
    *
    *
@@ -119,6 +125,7 @@ public interface NetworkEndpointOrBuilder
    * @return Whether the fqdn field is set.
    */
   boolean hasFqdn();
+
   /**
    *
    *
@@ -131,6 +138,7 @@ public interface NetworkEndpointOrBuilder
    * @return The fqdn.
    */
   java.lang.String getFqdn();
+
   /**
    *
    *
@@ -156,6 +164,7 @@ public interface NetworkEndpointOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
+
   /**
    *
    *
@@ -168,6 +177,7 @@ public interface NetworkEndpointOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -193,6 +203,7 @@ public interface NetworkEndpointOrBuilder
    * @return Whether the ipAddress field is set.
    */
   boolean hasIpAddress();
+
   /**
    *
    *
@@ -205,6 +216,7 @@ public interface NetworkEndpointOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *
@@ -230,6 +242,7 @@ public interface NetworkEndpointOrBuilder
    * @return Whether the ipv6Address field is set.
    */
   boolean hasIpv6Address();
+
   /**
    *
    *
@@ -242,6 +255,7 @@ public interface NetworkEndpointOrBuilder
    * @return The ipv6Address.
    */
   java.lang.String getIpv6Address();
+
   /**
    *
    *
@@ -267,6 +281,7 @@ public interface NetworkEndpointOrBuilder
    * @return Whether the port field is set.
    */
   boolean hasPort();
+
   /**
    *
    *

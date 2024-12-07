@@ -34,6 +34,7 @@ public interface ListScanRunsResponseOrBuilder
    * <code>repeated .google.cloud.websecurityscanner.v1.ScanRun scan_runs = 1;</code>
    */
   java.util.List<com.google.cloud.websecurityscanner.v1.ScanRun> getScanRunsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListScanRunsResponseOrBuilder
    * <code>repeated .google.cloud.websecurityscanner.v1.ScanRun scan_runs = 1;</code>
    */
   com.google.cloud.websecurityscanner.v1.ScanRun getScanRuns(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListScanRunsResponseOrBuilder
    * <code>repeated .google.cloud.websecurityscanner.v1.ScanRun scan_runs = 1;</code>
    */
   int getScanRunsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListScanRunsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.websecurityscanner.v1.ScanRunOrBuilder>
       getScanRunsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListScanRunsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

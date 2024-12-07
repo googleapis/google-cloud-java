@@ -38,6 +38,7 @@ public interface CreatePreferenceSetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreatePreferenceSetRequestOrBuilder
    * @return The preferenceSetId.
    */
   java.lang.String getPreferenceSetId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreatePreferenceSetRequestOrBuilder
    * @return Whether the preferenceSet field is set.
    */
   boolean hasPreferenceSet();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreatePreferenceSetRequestOrBuilder
    * @return The preferenceSet.
    */
   com.google.cloud.migrationcenter.v1.PreferenceSet getPreferenceSet();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface CreatePreferenceSetRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

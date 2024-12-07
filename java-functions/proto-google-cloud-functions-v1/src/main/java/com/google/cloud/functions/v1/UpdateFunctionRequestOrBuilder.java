@@ -38,6 +38,7 @@ public interface UpdateFunctionRequestOrBuilder
    * @return Whether the function field is set.
    */
   boolean hasFunction();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateFunctionRequestOrBuilder
    * @return The function.
    */
   com.google.cloud.functions.v1.CloudFunction getFunction();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateFunctionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface UpdateFunctionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

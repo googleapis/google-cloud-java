@@ -46,6 +46,7 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface InstanceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -114,9 +117,11 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface InstanceOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public interface InstanceOrBuilder
    * @return The alternativeLocationId.
    */
   java.lang.String getAlternativeLocationId();
+
   /**
    *
    *
@@ -237,6 +246,7 @@ public interface InstanceOrBuilder
    * @return The redisVersion.
    */
   java.lang.String getRedisVersion();
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public interface InstanceOrBuilder
    * @return The reservedIpRange.
    */
   java.lang.String getReservedIpRange();
+
   /**
    *
    *
@@ -312,6 +323,7 @@ public interface InstanceOrBuilder
    * @return The secondaryIpRange.
    */
   java.lang.String getSecondaryIpRange();
+
   /**
    *
    *
@@ -342,6 +354,7 @@ public interface InstanceOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
+
   /**
    *
    *
@@ -383,6 +396,7 @@ public interface InstanceOrBuilder
    * @return The currentLocationId.
    */
   java.lang.String getCurrentLocationId();
+
   /**
    *
    *
@@ -411,6 +425,7 @@ public interface InstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -424,6 +439,7 @@ public interface InstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -450,6 +466,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -478,6 +495,7 @@ public interface InstanceOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
+
   /**
    *
    *
@@ -522,6 +540,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getRedisConfigsCount();
+
   /**
    *
    *
@@ -552,9 +571,11 @@ public interface InstanceOrBuilder
    * </code>
    */
   boolean containsRedisConfigs(java.lang.String key);
+
   /** Use {@link #getRedisConfigsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getRedisConfigs();
+
   /**
    *
    *
@@ -585,6 +606,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap();
+
   /**
    *
    *
@@ -619,6 +641,7 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -663,6 +686,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for tier.
    */
   int getTierValue();
+
   /**
    *
    *
@@ -705,6 +729,7 @@ public interface InstanceOrBuilder
    * @return The authorizedNetwork.
    */
   java.lang.String getAuthorizedNetwork();
+
   /**
    *
    *
@@ -737,6 +762,7 @@ public interface InstanceOrBuilder
    * @return The persistenceIamIdentity.
    */
   java.lang.String getPersistenceIamIdentity();
+
   /**
    *
    *
@@ -769,6 +795,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for connectMode.
    */
   int getConnectModeValue();
+
   /**
    *
    *
@@ -812,6 +839,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.redis.v1.TlsCertificate> getServerCaCertsList();
+
   /**
    *
    *
@@ -824,6 +852,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.redis.v1.TlsCertificate getServerCaCerts(int index);
+
   /**
    *
    *
@@ -836,6 +865,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getServerCaCertsCount();
+
   /**
    *
    *
@@ -849,6 +879,7 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.redis.v1.TlsCertificateOrBuilder>
       getServerCaCertsOrBuilderList();
+
   /**
    *
    *
@@ -877,6 +908,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for transitEncryptionMode.
    */
   int getTransitEncryptionModeValue();
+
   /**
    *
    *
@@ -908,6 +940,7 @@ public interface InstanceOrBuilder
    * @return Whether the maintenancePolicy field is set.
    */
   boolean hasMaintenancePolicy();
+
   /**
    *
    *
@@ -923,6 +956,7 @@ public interface InstanceOrBuilder
    * @return The maintenancePolicy.
    */
   com.google.cloud.redis.v1.MaintenancePolicy getMaintenancePolicy();
+
   /**
    *
    *
@@ -952,6 +986,7 @@ public interface InstanceOrBuilder
    * @return Whether the maintenanceSchedule field is set.
    */
   boolean hasMaintenanceSchedule();
+
   /**
    *
    *
@@ -967,6 +1002,7 @@ public interface InstanceOrBuilder
    * @return The maintenanceSchedule.
    */
   com.google.cloud.redis.v1.MaintenanceSchedule getMaintenanceSchedule();
+
   /**
    *
    *
@@ -1010,6 +1046,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.redis.v1.NodeInfo> getNodesList();
+
   /**
    *
    *
@@ -1022,6 +1059,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.redis.v1.NodeInfo getNodes(int index);
+
   /**
    *
    *
@@ -1034,6 +1072,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getNodesCount();
+
   /**
    *
    *
@@ -1046,6 +1085,7 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.redis.v1.NodeInfoOrBuilder> getNodesOrBuilderList();
+
   /**
    *
    *
@@ -1074,6 +1114,7 @@ public interface InstanceOrBuilder
    * @return The readEndpoint.
    */
   java.lang.String getReadEndpoint();
+
   /**
    *
    *
@@ -1119,6 +1160,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for readReplicasMode.
    */
   int getReadReplicasModeValue();
+
   /**
    *
    *
@@ -1148,6 +1190,7 @@ public interface InstanceOrBuilder
    * @return The customerManagedKey.
    */
   java.lang.String getCustomerManagedKey();
+
   /**
    *
    *
@@ -1176,6 +1219,7 @@ public interface InstanceOrBuilder
    * @return Whether the persistenceConfig field is set.
    */
   boolean hasPersistenceConfig();
+
   /**
    *
    *
@@ -1190,6 +1234,7 @@ public interface InstanceOrBuilder
    * @return The persistenceConfig.
    */
   com.google.cloud.redis.v1.PersistenceConfig getPersistenceConfig();
+
   /**
    *
    *
@@ -1217,6 +1262,7 @@ public interface InstanceOrBuilder
    * @return A list containing the suspensionReasons.
    */
   java.util.List<com.google.cloud.redis.v1.Instance.SuspensionReason> getSuspensionReasonsList();
+
   /**
    *
    *
@@ -1231,6 +1277,7 @@ public interface InstanceOrBuilder
    * @return The count of suspensionReasons.
    */
   int getSuspensionReasonsCount();
+
   /**
    *
    *
@@ -1246,6 +1293,7 @@ public interface InstanceOrBuilder
    * @return The suspensionReasons at the given index.
    */
   com.google.cloud.redis.v1.Instance.SuspensionReason getSuspensionReasons(int index);
+
   /**
    *
    *
@@ -1260,6 +1308,7 @@ public interface InstanceOrBuilder
    * @return A list containing the enum numeric values on the wire for suspensionReasons.
    */
   java.util.List<java.lang.Integer> getSuspensionReasonsValueList();
+
   /**
    *
    *
@@ -1289,6 +1338,7 @@ public interface InstanceOrBuilder
    * @return The maintenanceVersion.
    */
   java.lang.String getMaintenanceVersion();
+
   /**
    *
    *
@@ -1318,6 +1368,7 @@ public interface InstanceOrBuilder
    * @return A list containing the availableMaintenanceVersions.
    */
   java.util.List<java.lang.String> getAvailableMaintenanceVersionsList();
+
   /**
    *
    *
@@ -1333,6 +1384,7 @@ public interface InstanceOrBuilder
    * @return The count of availableMaintenanceVersions.
    */
   int getAvailableMaintenanceVersionsCount();
+
   /**
    *
    *
@@ -1349,6 +1401,7 @@ public interface InstanceOrBuilder
    * @return The availableMaintenanceVersions at the given index.
    */
   java.lang.String getAvailableMaintenanceVersions(int index);
+
   /**
    *
    *

@@ -78,7 +78,8 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDeviceRegistry, expected %s or %s",
+                  "Unrecognized response type %s for method CreateDeviceRegistry, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DeviceRegistry.class.getName(),
                   Exception.class.getName())));
@@ -120,7 +121,8 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateDeviceRegistry, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateDeviceRegistry, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DeviceRegistry.class.getName(),
                   Exception.class.getName())));
@@ -141,7 +143,8 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDeviceRegistry, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteDeviceRegistry, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -163,7 +166,8 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDeviceRegistries, expected %s or %s",
+                  "Unrecognized response type %s for method ListDeviceRegistries, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDeviceRegistriesResponse.class.getName(),
                   Exception.class.getName())));
@@ -285,7 +289,8 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ModifyCloudToDeviceConfig, expected %s or %s",
+                  "Unrecognized response type %s for method ModifyCloudToDeviceConfig, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DeviceConfig.class.getName(),
                   Exception.class.getName())));
@@ -307,7 +312,8 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDeviceConfigVersions, expected %s or %s",
+                  "Unrecognized response type %s for method ListDeviceConfigVersions, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDeviceConfigVersionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -456,7 +462,8 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UnbindDeviceFromGateway, expected %s or %s",
+                  "Unrecognized response type %s for method UnbindDeviceFromGateway, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   UnbindDeviceFromGatewayResponse.class.getName(),
                   Exception.class.getName())));

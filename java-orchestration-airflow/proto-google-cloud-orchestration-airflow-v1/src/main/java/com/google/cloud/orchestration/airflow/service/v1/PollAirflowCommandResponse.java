@@ -33,6 +33,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse)
     PollAirflowCommandResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PollAirflowCommandResponse.newBuilder() to construct.
   private PollAirflowCommandResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -94,6 +95,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
      * @return The content.
      */
     java.lang.String getContent();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
      */
     com.google.protobuf.ByteString getContentBytes();
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse.Line)
       LineOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Line.newBuilder() to construct.
     private Line(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -156,6 +160,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
 
     public static final int LINE_NUMBER_FIELD_NUMBER = 1;
     private int lineNumber_ = 0;
+
     /**
      *
      *
@@ -176,6 +181,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object content_ = "";
+
     /**
      *
      *
@@ -199,6 +205,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -402,6 +409,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -620,6 +628,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       private int bitField0_;
 
       private int lineNumber_;
+
       /**
        *
        *
@@ -635,6 +644,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       public int getLineNumber() {
         return lineNumber_;
       }
+
       /**
        *
        *
@@ -654,6 +664,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -673,6 +684,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       }
 
       private java.lang.Object content_ = "";
+
       /**
        *
        *
@@ -695,6 +707,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -717,6 +730,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -738,6 +752,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -755,6 +770,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -877,6 +893,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
      * @return The error.
      */
     java.lang.String getError();
+
     /**
      *
      *
@@ -890,6 +907,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
      */
     com.google.protobuf.ByteString getErrorBytes();
   }
+
   /**
    *
    *
@@ -905,6 +923,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse.ExitInfo)
       ExitInfoOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ExitInfo.newBuilder() to construct.
     private ExitInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -939,6 +958,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
 
     public static final int EXIT_CODE_FIELD_NUMBER = 1;
     private int exitCode_ = 0;
+
     /**
      *
      *
@@ -959,6 +979,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object error_ = "";
+
     /**
      *
      *
@@ -982,6 +1003,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -1198,6 +1220,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1420,6 +1443,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       private int bitField0_;
 
       private int exitCode_;
+
       /**
        *
        *
@@ -1435,6 +1459,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       public int getExitCode() {
         return exitCode_;
       }
+
       /**
        *
        *
@@ -1454,6 +1479,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1473,6 +1499,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       }
 
       private java.lang.Object error_ = "";
+
       /**
        *
        *
@@ -1495,6 +1522,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1517,6 +1545,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1538,6 +1567,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1555,6 +1585,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1656,6 +1687,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
   private java.util.List<
           com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse.Line>
       output_;
+
   /**
    *
    *
@@ -1674,6 +1706,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       getOutputList() {
     return output_;
   }
+
   /**
    *
    *
@@ -1694,6 +1727,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       getOutputOrBuilderList() {
     return output_;
   }
+
   /**
    *
    *
@@ -1710,6 +1744,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
   public int getOutputCount() {
     return output_.size();
   }
+
   /**
    *
    *
@@ -1727,6 +1762,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       getOutput(int index) {
     return output_.get(index);
   }
+
   /**
    *
    *
@@ -1747,6 +1783,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
 
   public static final int OUTPUT_END_FIELD_NUMBER = 2;
   private boolean outputEnd_ = false;
+
   /**
    *
    *
@@ -1766,6 +1803,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
   public static final int EXIT_INFO_FIELD_NUMBER = 3;
   private com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse.ExitInfo
       exitInfo_;
+
   /**
    *
    *
@@ -1783,6 +1821,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
   public boolean hasExitInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1804,6 +1843,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
             .getDefaultInstance()
         : exitInfo_;
   }
+
   /**
    *
    *
@@ -2017,6 +2057,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2346,6 +2387,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         return outputBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2365,6 +2407,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         return outputBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2385,6 +2428,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         return outputBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2412,6 +2456,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2437,6 +2482,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2463,6 +2509,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2490,6 +2537,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2514,6 +2562,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2539,6 +2588,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2566,6 +2616,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2588,6 +2639,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2610,6 +2662,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2626,6 +2679,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         getOutputBuilder(int index) {
       return getOutputFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2647,6 +2701,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         return outputBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2670,6 +2725,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(output_);
       }
     }
+
     /**
      *
      *
@@ -2689,6 +2745,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
               com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse.Line
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2709,6 +2766,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
               com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse.Line
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2750,6 +2808,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     }
 
     private boolean outputEnd_;
+
     /**
      *
      *
@@ -2765,6 +2824,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     public boolean getOutputEnd() {
       return outputEnd_;
     }
+
     /**
      *
      *
@@ -2784,6 +2844,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2811,6 +2872,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
             com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse
                 .ExitInfoOrBuilder>
         exitInfoBuilder_;
+
     /**
      *
      *
@@ -2827,6 +2889,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     public boolean hasExitInfo() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2851,6 +2914,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
         return exitInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2877,6 +2941,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2901,6 +2966,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2934,6 +3000,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2955,6 +3022,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2973,6 +3041,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
       onChanged();
       return getExitInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2996,6 +3065,7 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
             : exitInfo_;
       }
     }
+
     /**
      *
      *

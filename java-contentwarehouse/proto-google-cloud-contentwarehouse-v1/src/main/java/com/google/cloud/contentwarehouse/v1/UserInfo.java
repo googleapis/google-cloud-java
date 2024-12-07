@@ -33,6 +33,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.UserInfo)
     UserInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UserInfo.newBuilder() to construct.
   private UserInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList groupIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getGroupIdsList() {
     return groupIds_;
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
   public int getGroupIdsCount() {
     return groupIds_.size();
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getGroupIds(int index) {
     return groupIds_.get(index);
   }
+
   /**
    *
    *
@@ -366,6 +373,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +579,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -597,6 +606,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -623,6 +633,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -669,6 +681,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       groupIds_.makeImmutable();
       return groupIds_;
     }
+
     /**
      *
      *
@@ -736,6 +751,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     public int getGroupIdsCount() {
       return groupIds_.size();
     }
+
     /**
      *
      *
@@ -752,6 +768,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getGroupIds(int index) {
       return groupIds_.get(index);
     }
+
     /**
      *
      *
@@ -768,6 +785,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getGroupIdsBytes(int index) {
       return groupIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -792,6 +810,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +834,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +855,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +875,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

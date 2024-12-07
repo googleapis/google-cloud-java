@@ -34,6 +34,7 @@ public interface SecretsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.SecretManagerSecret secret_manager = 1;</code>
    */
   java.util.List<com.google.cloudbuild.v1.SecretManagerSecret> getSecretManagerList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SecretsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.SecretManagerSecret secret_manager = 1;</code>
    */
   com.google.cloudbuild.v1.SecretManagerSecret getSecretManager(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SecretsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.SecretManagerSecret secret_manager = 1;</code>
    */
   int getSecretManagerCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SecretsOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v1.SecretManagerSecretOrBuilder>
       getSecretManagerOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface SecretsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.InlineSecret inline = 2;</code>
    */
   java.util.List<com.google.cloudbuild.v1.InlineSecret> getInlineList();
+
   /**
    *
    *
@@ -98,6 +103,7 @@ public interface SecretsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.InlineSecret inline = 2;</code>
    */
   com.google.cloudbuild.v1.InlineSecret getInline(int index);
+
   /**
    *
    *
@@ -109,6 +115,7 @@ public interface SecretsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.InlineSecret inline = 2;</code>
    */
   int getInlineCount();
+
   /**
    *
    *
@@ -120,6 +127,7 @@ public interface SecretsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.InlineSecret inline = 2;</code>
    */
   java.util.List<? extends com.google.cloudbuild.v1.InlineSecretOrBuilder> getInlineOrBuilderList();
+
   /**
    *
    *

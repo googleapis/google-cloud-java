@@ -36,6 +36,7 @@ public interface LocalInventoryOrBuilder
    * @return The placeId.
    */
   java.lang.String getPlaceId();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface LocalInventoryOrBuilder
    * @return Whether the priceInfo field is set.
    */
   boolean hasPriceInfo();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface LocalInventoryOrBuilder
    * @return The priceInfo.
    */
   com.google.cloud.retail.v2.PriceInfo getPriceInfo();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface LocalInventoryOrBuilder
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 3;</code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -147,9 +151,11 @@ public interface LocalInventoryOrBuilder
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 3;</code>
    */
   boolean containsAttributes(java.lang.String key);
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.retail.v2.CustomAttribute> getAttributes();
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public interface LocalInventoryOrBuilder
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 3;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.retail.v2.CustomAttribute> getAttributesMap();
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public interface LocalInventoryOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.retail.v2.CustomAttribute defaultValue);
+
   /**
    *
    *
@@ -269,6 +277,7 @@ public interface LocalInventoryOrBuilder
    * @return A list containing the fulfillmentTypes.
    */
   java.util.List<java.lang.String> getFulfillmentTypesList();
+
   /**
    *
    *
@@ -302,6 +311,7 @@ public interface LocalInventoryOrBuilder
    * @return The count of fulfillmentTypes.
    */
   int getFulfillmentTypesCount();
+
   /**
    *
    *
@@ -336,6 +346,7 @@ public interface LocalInventoryOrBuilder
    * @return The fulfillmentTypes at the given index.
    */
   java.lang.String getFulfillmentTypes(int index);
+
   /**
    *
    *

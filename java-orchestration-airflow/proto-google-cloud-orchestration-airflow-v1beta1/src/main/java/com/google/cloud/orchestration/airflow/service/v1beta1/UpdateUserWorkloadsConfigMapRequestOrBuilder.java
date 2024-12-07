@@ -38,6 +38,7 @@ public interface UpdateUserWorkloadsConfigMapRequestOrBuilder
    * @return Whether the userWorkloadsConfigMap field is set.
    */
   boolean hasUserWorkloadsConfigMap();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface UpdateUserWorkloadsConfigMapRequestOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap
       getUserWorkloadsConfigMap();
+
   /**
    *
    *

@@ -75,6 +75,7 @@ public enum ServingStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SERVING_STATUS_UNSPECIFIED = 0;</code>
    */
   public static final int SERVING_STATUS_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public enum ServingStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SERVING = 1;</code>
    */
   public static final int SERVING_VALUE = 1;
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ObjectTrackingConfigOrBuilder
    * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
+
   /**
    *
    *

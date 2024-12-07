@@ -38,6 +38,7 @@ public interface UpdateIssueRequestOrBuilder
    * @return Whether the issue field is set.
    */
   boolean hasIssue();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateIssueRequestOrBuilder
    * @return The issue.
    */
   com.google.cloud.contactcenterinsights.v1.Issue getIssue();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateIssueRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface UpdateIssueRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

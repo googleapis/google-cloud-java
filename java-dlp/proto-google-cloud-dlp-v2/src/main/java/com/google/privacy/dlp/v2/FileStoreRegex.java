@@ -33,6 +33,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.FileStoreRegex)
     FileStoreRegexOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FileStoreRegex.newBuilder() to construct.
   private FileStoreRegex(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
     private ResourceRegexCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_STORAGE_REGEX_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudStorageRegex() {
     return resourceRegexCase_ == 1;
   }
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.CloudStorageRegex.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -337,6 +342,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -555,6 +561,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.CloudStorageRegex.Builder,
             com.google.privacy.dlp.v2.CloudStorageRegexOrBuilder>
         cloudStorageRegexBuilder_;
+
     /**
      *
      *
@@ -572,6 +579,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudStorageRegex() {
       return resourceRegexCase_ == 1;
     }
+
     /**
      *
      *
@@ -599,6 +607,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.CloudStorageRegex.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -623,6 +632,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
       resourceRegexCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +655,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
       resourceRegexCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -679,6 +690,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
       resourceRegexCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +733,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.CloudStorageRegex.Builder getCloudStorageRegexBuilder() {
       return getCloudStorageRegexFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -742,6 +756,7 @@ public final class FileStoreRegex extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.CloudStorageRegex.getDefaultInstance();
       }
     }
+
     /**
      *
      *

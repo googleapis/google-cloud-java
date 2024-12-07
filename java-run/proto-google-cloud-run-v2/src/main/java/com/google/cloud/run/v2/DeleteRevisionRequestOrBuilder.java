@@ -40,6 +40,7 @@ public interface DeleteRevisionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public interface DeleteRevisionRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

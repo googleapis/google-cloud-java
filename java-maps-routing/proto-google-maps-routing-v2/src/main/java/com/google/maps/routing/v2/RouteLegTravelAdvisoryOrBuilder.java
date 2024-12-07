@@ -41,6 +41,7 @@ public interface RouteLegTravelAdvisoryOrBuilder
    * @return Whether the tollInfo field is set.
    */
   boolean hasTollInfo();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface RouteLegTravelAdvisoryOrBuilder
    * @return The tollInfo.
    */
   com.google.maps.routing.v2.TollInfo getTollInfo();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface RouteLegTravelAdvisoryOrBuilder
    * <code>repeated .google.maps.routing.v2.SpeedReadingInterval speed_reading_intervals = 2;</code>
    */
   java.util.List<com.google.maps.routing.v2.SpeedReadingInterval> getSpeedReadingIntervalsList();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface RouteLegTravelAdvisoryOrBuilder
    * <code>repeated .google.maps.routing.v2.SpeedReadingInterval speed_reading_intervals = 2;</code>
    */
   com.google.maps.routing.v2.SpeedReadingInterval getSpeedReadingIntervals(int index);
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface RouteLegTravelAdvisoryOrBuilder
    * <code>repeated .google.maps.routing.v2.SpeedReadingInterval speed_reading_intervals = 2;</code>
    */
   int getSpeedReadingIntervalsCount();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface RouteLegTravelAdvisoryOrBuilder
    */
   java.util.List<? extends com.google.maps.routing.v2.SpeedReadingIntervalOrBuilder>
       getSpeedReadingIntervalsOrBuilderList();
+
   /**
    *
    *

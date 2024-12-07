@@ -33,6 +33,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagFile)
     RagFileOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RagFile.newBuilder() to construct.
   private RagFile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,6 +120,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      * <code>RAG_FILE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RAG_FILE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      * <code>RAG_FILE_TYPE_TXT = 1;</code>
      */
     public static final int RAG_FILE_TYPE_TXT_VALUE = 1;
+
     /**
      *
      *
@@ -245,6 +248,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     private RagFileSourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -286,6 +290,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -304,6 +309,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsSource() {
     return ragFileSourceCase_ == 8;
   }
+
   /**
    *
    *
@@ -325,6 +331,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -346,6 +353,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GOOGLE_DRIVE_SOURCE_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -364,6 +372,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGoogleDriveSource() {
     return ragFileSourceCase_ == 9;
   }
+
   /**
    *
    *
@@ -385,6 +394,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -407,6 +417,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIRECT_UPLOAD_SOURCE_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -425,6 +436,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDirectUploadSource() {
     return ragFileSourceCase_ == 10;
   }
+
   /**
    *
    *
@@ -446,6 +458,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.DirectUploadSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -468,6 +481,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SLACK_SOURCE_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -483,6 +497,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSlackSource() {
     return ragFileSourceCase_ == 11;
   }
+
   /**
    *
    *
@@ -501,6 +516,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -519,6 +535,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int JIRA_SOURCE_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -534,6 +551,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasJiraSource() {
     return ragFileSourceCase_ == 12;
   }
+
   /**
    *
    *
@@ -552,6 +570,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -570,6 +589,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SHARE_POINT_SOURCES_FIELD_NUMBER = 14;
+
   /**
    *
    *
@@ -585,6 +605,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSharePointSources() {
     return ragFileSourceCase_ == 14;
   }
+
   /**
    *
    *
@@ -603,6 +624,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.SharePointSources.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -625,6 +647,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -648,6 +671,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -676,6 +700,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -701,6 +726,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -731,6 +757,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -754,6 +781,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -780,6 +808,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIZE_BYTES_FIELD_NUMBER = 4;
   private long sizeBytes_ = 0L;
+
   /**
    *
    *
@@ -798,6 +827,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RAG_FILE_TYPE_FIELD_NUMBER = 5;
   private int ragFileType_ = 0;
+
   /**
    *
    *
@@ -815,6 +845,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   public int getRagFileTypeValue() {
     return ragFileType_;
   }
+
   /**
    *
    *
@@ -839,6 +870,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -855,6 +887,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -871,6 +904,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -888,6 +922,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -904,6 +939,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -920,6 +956,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -937,6 +974,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FILE_STATUS_FIELD_NUMBER = 13;
   private com.google.cloud.aiplatform.v1beta1.FileStatus fileStatus_;
+
   /**
    *
    *
@@ -954,6 +992,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFileStatus() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -973,6 +1012,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.FileStatus.getDefaultInstance()
         : fileStatus_;
   }
+
   /**
    *
    *
@@ -1334,6 +1374,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1777,6 +1818,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.GcsSource.Builder,
             com.google.cloud.aiplatform.v1beta1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -1795,6 +1837,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsSource() {
       return ragFileSourceCase_ == 8;
     }
+
     /**
      *
      *
@@ -1823,6 +1866,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1848,6 +1892,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1871,6 +1916,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1907,6 +1953,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1935,6 +1982,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1950,6 +1998,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1973,6 +2022,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2014,6 +2064,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.Builder,
             com.google.cloud.aiplatform.v1beta1.GoogleDriveSourceOrBuilder>
         googleDriveSourceBuilder_;
+
     /**
      *
      *
@@ -2032,6 +2083,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGoogleDriveSource() {
       return ragFileSourceCase_ == 9;
     }
+
     /**
      *
      *
@@ -2060,6 +2112,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2086,6 +2139,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -2109,6 +2163,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -2146,6 +2201,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -2174,6 +2230,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2190,6 +2247,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         getGoogleDriveSourceBuilder() {
       return getGoogleDriveSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2214,6 +2272,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2256,6 +2315,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.DirectUploadSource.Builder,
             com.google.cloud.aiplatform.v1beta1.DirectUploadSourceOrBuilder>
         directUploadSourceBuilder_;
+
     /**
      *
      *
@@ -2274,6 +2334,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDirectUploadSource() {
       return ragFileSourceCase_ == 10;
     }
+
     /**
      *
      *
@@ -2302,6 +2363,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.DirectUploadSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2328,6 +2390,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2351,6 +2414,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2388,6 +2452,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2416,6 +2481,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2432,6 +2498,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         getDirectUploadSourceBuilder() {
       return getDirectUploadSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2456,6 +2523,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.DirectUploadSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2498,6 +2566,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.SlackSource.Builder,
             com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder>
         slackSourceBuilder_;
+
     /**
      *
      *
@@ -2513,6 +2582,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSlackSource() {
       return ragFileSourceCase_ == 11;
     }
+
     /**
      *
      *
@@ -2538,6 +2608,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2560,6 +2631,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2580,6 +2652,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2613,6 +2686,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2638,6 +2712,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2650,6 +2725,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.SlackSource.Builder getSlackSourceBuilder() {
       return getSlackSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2670,6 +2746,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2708,6 +2785,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.JiraSource.Builder,
             com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder>
         jiraSourceBuilder_;
+
     /**
      *
      *
@@ -2723,6 +2801,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasJiraSource() {
       return ragFileSourceCase_ == 12;
     }
+
     /**
      *
      *
@@ -2748,6 +2827,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2770,6 +2850,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -2790,6 +2871,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -2823,6 +2905,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -2848,6 +2931,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2860,6 +2944,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.JiraSource.Builder getJiraSourceBuilder() {
       return getJiraSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2880,6 +2965,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2918,6 +3004,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.SharePointSources.Builder,
             com.google.cloud.aiplatform.v1beta1.SharePointSourcesOrBuilder>
         sharePointSourcesBuilder_;
+
     /**
      *
      *
@@ -2933,6 +3020,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSharePointSources() {
       return ragFileSourceCase_ == 14;
     }
+
     /**
      *
      *
@@ -2958,6 +3046,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.SharePointSources.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2981,6 +3070,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -3001,6 +3091,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -3035,6 +3126,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       ragFileSourceCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -3060,6 +3152,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3073,6 +3166,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         getSharePointSourcesBuilder() {
       return getSharePointSourcesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3094,6 +3188,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.SharePointSources.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3129,6 +3224,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3151,6 +3247,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3173,6 +3270,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3194,6 +3292,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3211,6 +3310,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3235,6 +3335,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -3259,6 +3360,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3283,6 +3385,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3306,6 +3409,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3325,6 +3429,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3351,6 +3456,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -3373,6 +3479,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3395,6 +3502,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3416,6 +3524,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3433,6 +3542,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3457,6 +3567,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long sizeBytes_;
+
     /**
      *
      *
@@ -3472,6 +3583,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public long getSizeBytes() {
       return sizeBytes_;
     }
+
     /**
      *
      *
@@ -3491,6 +3603,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3510,6 +3623,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int ragFileType_ = 0;
+
     /**
      *
      *
@@ -3527,6 +3641,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public int getRagFileTypeValue() {
       return ragFileType_;
     }
+
     /**
      *
      *
@@ -3547,6 +3662,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3568,6 +3684,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1beta1.RagFile.RagFileType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3591,6 +3708,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3617,6 +3735,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3633,6 +3752,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3655,6 +3775,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3679,6 +3800,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3700,6 +3822,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3729,6 +3852,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3750,6 +3874,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3766,6 +3891,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3786,6 +3912,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3820,6 +3947,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -3836,6 +3964,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -3858,6 +3987,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3882,6 +4012,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3903,6 +4034,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3932,6 +4064,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3953,6 +4086,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3969,6 +4103,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3989,6 +4124,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -4023,6 +4159,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.FileStatus.Builder,
             com.google.cloud.aiplatform.v1beta1.FileStatusOrBuilder>
         fileStatusBuilder_;
+
     /**
      *
      *
@@ -4039,6 +4176,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFileStatus() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -4061,6 +4199,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         return fileStatusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4085,6 +4224,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4107,6 +4247,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4136,6 +4277,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4157,6 +4299,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4173,6 +4316,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFileStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4193,6 +4337,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
             : fileStatus_;
       }
     }
+
     /**
      *
      *

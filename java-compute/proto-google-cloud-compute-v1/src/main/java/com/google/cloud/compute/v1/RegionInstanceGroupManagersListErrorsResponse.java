@@ -33,6 +33,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionInstanceGroupManagersListErrorsResponse)
     RegionInstanceGroupManagersListErrorsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionInstanceGroupManagersListErrorsResponse.newBuilder() to construct.
   private RegionInstanceGroupManagersListErrorsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InstanceManagedByIgmError> items_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
   public java.util.List<com.google.cloud.compute.v1.InstanceManagedByIgmError> getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
   public com.google.cloud.compute.v1.InstanceManagedByIgmError getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -383,6 +392,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -674,6 +684,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -690,6 +701,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -729,6 +742,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +831,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +852,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +874,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +894,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +914,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +928,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -923,6 +946,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -940,6 +964,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -953,6 +978,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.InstanceManagedByIgmError.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -968,6 +994,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
           .addBuilder(
               index, com.google.cloud.compute.v1.InstanceManagedByIgmError.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1000,6 +1027,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1014,6 +1042,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1036,6 +1065,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1088,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1079,6 +1110,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1128,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

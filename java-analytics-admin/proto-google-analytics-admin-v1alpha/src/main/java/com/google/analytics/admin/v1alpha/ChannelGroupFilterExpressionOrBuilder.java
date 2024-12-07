@@ -38,6 +38,7 @@ public interface ChannelGroupFilterExpressionOrBuilder
    * @return Whether the andGroup field is set.
    */
   boolean hasAndGroup();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ChannelGroupFilterExpressionOrBuilder
    * @return The andGroup.
    */
   com.google.analytics.admin.v1alpha.ChannelGroupFilterExpressionList getAndGroup();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ChannelGroupFilterExpressionOrBuilder
    * @return Whether the orGroup field is set.
    */
   boolean hasOrGroup();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface ChannelGroupFilterExpressionOrBuilder
    * @return The orGroup.
    */
   com.google.analytics.admin.v1alpha.ChannelGroupFilterExpressionList getOrGroup();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface ChannelGroupFilterExpressionOrBuilder
    * @return Whether the notExpression field is set.
    */
   boolean hasNotExpression();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface ChannelGroupFilterExpressionOrBuilder
    * @return The notExpression.
    */
   com.google.analytics.admin.v1alpha.ChannelGroupFilterExpression getNotExpression();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface ChannelGroupFilterExpressionOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public interface ChannelGroupFilterExpressionOrBuilder
    * @return The filter.
    */
   com.google.analytics.admin.v1alpha.ChannelGroupFilter getFilter();
+
   /**
    *
    *

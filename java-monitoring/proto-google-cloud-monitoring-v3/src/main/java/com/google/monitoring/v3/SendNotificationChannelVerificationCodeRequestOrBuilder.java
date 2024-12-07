@@ -38,6 +38,7 @@ public interface SendNotificationChannelVerificationCodeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

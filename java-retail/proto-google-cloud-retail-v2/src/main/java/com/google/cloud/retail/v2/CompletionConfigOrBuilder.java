@@ -39,6 +39,7 @@ public interface CompletionConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface CompletionConfigOrBuilder
    * @return The matchingOrder.
    */
   java.lang.String getMatchingOrder();
+
   /**
    *
    *
@@ -162,6 +164,7 @@ public interface CompletionConfigOrBuilder
    * @return Whether the suggestionsInputConfig field is set.
    */
   boolean hasSuggestionsInputConfig();
+
   /**
    *
    *
@@ -177,6 +180,7 @@ public interface CompletionConfigOrBuilder
    * @return The suggestionsInputConfig.
    */
   com.google.cloud.retail.v2.CompletionDataInputConfig getSuggestionsInputConfig();
+
   /**
    *
    *
@@ -210,6 +214,7 @@ public interface CompletionConfigOrBuilder
    * @return The lastSuggestionsImportOperation.
    */
   java.lang.String getLastSuggestionsImportOperation();
+
   /**
    *
    *
@@ -244,6 +249,7 @@ public interface CompletionConfigOrBuilder
    * @return Whether the denylistInputConfig field is set.
    */
   boolean hasDenylistInputConfig();
+
   /**
    *
    *
@@ -259,6 +265,7 @@ public interface CompletionConfigOrBuilder
    * @return The denylistInputConfig.
    */
   com.google.cloud.retail.v2.CompletionDataInputConfig getDenylistInputConfig();
+
   /**
    *
    *
@@ -289,6 +296,7 @@ public interface CompletionConfigOrBuilder
    * @return The lastDenylistImportOperation.
    */
   java.lang.String getLastDenylistImportOperation();
+
   /**
    *
    *
@@ -321,6 +329,7 @@ public interface CompletionConfigOrBuilder
    * @return Whether the allowlistInputConfig field is set.
    */
   boolean hasAllowlistInputConfig();
+
   /**
    *
    *
@@ -336,6 +345,7 @@ public interface CompletionConfigOrBuilder
    * @return The allowlistInputConfig.
    */
   com.google.cloud.retail.v2.CompletionDataInputConfig getAllowlistInputConfig();
+
   /**
    *
    *
@@ -366,6 +376,7 @@ public interface CompletionConfigOrBuilder
    * @return The lastAllowlistImportOperation.
    */
   java.lang.String getLastAllowlistImportOperation();
+
   /**
    *
    *

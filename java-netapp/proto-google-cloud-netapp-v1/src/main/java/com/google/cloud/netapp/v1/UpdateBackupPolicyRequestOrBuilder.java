@@ -41,6 +41,7 @@ public interface UpdateBackupPolicyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateBackupPolicyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateBackupPolicyRequestOrBuilder
    * @return Whether the backupPolicy field is set.
    */
   boolean hasBackupPolicy();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateBackupPolicyRequestOrBuilder
    * @return The backupPolicy.
    */
   com.google.cloud.netapp.v1.BackupPolicy getBackupPolicy();
+
   /**
    *
    *

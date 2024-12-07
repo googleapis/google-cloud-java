@@ -56,6 +56,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.ServiceAccountKey)
     ServiceAccountKeyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServiceAccountKey.newBuilder() to construct.
   private ServiceAccountKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,6 +98,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -121,6 +123,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -148,6 +151,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
 
   public static final int PRIVATE_KEY_TYPE_FIELD_NUMBER = 2;
   private int privateKeyType_ = 0;
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
   public int getPrivateKeyTypeValue() {
     return privateKeyType_;
   }
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
 
   public static final int KEY_ALGORITHM_FIELD_NUMBER = 8;
   private int keyAlgorithm_ = 0;
+
   /**
    *
    *
@@ -210,6 +216,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
   public int getKeyAlgorithmValue() {
     return keyAlgorithm_;
   }
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
 
   public static final int PRIVATE_KEY_DATA_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString privateKeyData_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -256,6 +264,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
 
   public static final int PUBLIC_KEY_DATA_FIELD_NUMBER = 7;
   private com.google.protobuf.ByteString publicKeyData_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -274,6 +283,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
 
   public static final int VALID_AFTER_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp validAfterTime_;
+
   /**
    *
    *
@@ -289,6 +299,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
   public boolean hasValidAfterTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : validAfterTime_;
   }
+
   /**
    *
    *
@@ -324,6 +336,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
 
   public static final int VALID_BEFORE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp validBeforeTime_;
+
   /**
    *
    *
@@ -342,6 +355,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
   public boolean hasValidBeforeTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -362,6 +376,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : validBeforeTime_;
   }
+
   /**
    *
    *
@@ -383,6 +398,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
 
   public static final int KEY_ORIGIN_FIELD_NUMBER = 9;
   private int keyOrigin_ = 0;
+
   /**
    *
    *
@@ -398,6 +414,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
   public int getKeyOriginValue() {
     return keyOrigin_;
   }
+
   /**
    *
    *
@@ -418,6 +435,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
 
   public static final int KEY_TYPE_FIELD_NUMBER = 10;
   private int keyType_ = 0;
+
   /**
    *
    *
@@ -433,6 +451,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
   public int getKeyTypeValue() {
     return keyType_;
   }
+
   /**
    *
    *
@@ -455,6 +474,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
 
   public static final int DISABLED_FIELD_NUMBER = 11;
   private boolean disabled_ = false;
+
   /**
    *
    *
@@ -731,6 +751,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1078,6 +1099,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1101,6 +1123,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1147,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1146,6 +1170,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1189,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1215,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     }
 
     private int privateKeyType_ = 0;
+
     /**
      *
      *
@@ -1209,6 +1236,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public int getPrivateKeyTypeValue() {
       return privateKeyType_;
     }
+
     /**
      *
      *
@@ -1232,6 +1260,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1285,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
           ? com.google.iam.admin.v1.ServiceAccountPrivateKeyType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1282,6 +1312,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1337,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     }
 
     private int keyAlgorithm_ = 0;
+
     /**
      *
      *
@@ -1321,6 +1353,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public int getKeyAlgorithmValue() {
       return keyAlgorithm_;
     }
+
     /**
      *
      *
@@ -1339,6 +1372,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1392,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
           ? com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1379,6 +1414,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1398,6 +1434,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     }
 
     private com.google.protobuf.ByteString privateKeyData_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1419,6 +1456,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getPrivateKeyData() {
       return privateKeyData_;
     }
+
     /**
      *
      *
@@ -1446,6 +1484,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1471,6 +1510,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     }
 
     private com.google.protobuf.ByteString publicKeyData_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1486,6 +1526,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getPublicKeyData() {
       return publicKeyData_;
     }
+
     /**
      *
      *
@@ -1507,6 +1548,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1531,6 +1573,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         validAfterTimeBuilder_;
+
     /**
      *
      *
@@ -1545,6 +1588,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public boolean hasValidAfterTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1565,6 +1609,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
         return validAfterTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1587,6 +1632,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1606,6 +1652,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1633,6 +1680,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1700,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1666,6 +1715,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getValidAfterTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1684,6 +1734,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
             : validAfterTime_;
       }
     }
+
     /**
      *
      *
@@ -1716,6 +1767,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         validBeforeTimeBuilder_;
+
     /**
      *
      *
@@ -1733,6 +1785,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public boolean hasValidBeforeTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1756,6 +1809,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
         return validBeforeTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1781,6 +1835,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1803,6 +1858,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1833,6 +1889,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1855,6 +1912,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1872,6 +1930,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getValidBeforeTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1893,6 +1952,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
             : validBeforeTime_;
       }
     }
+
     /**
      *
      *
@@ -1923,6 +1983,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     }
 
     private int keyOrigin_ = 0;
+
     /**
      *
      *
@@ -1938,6 +1999,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public int getKeyOriginValue() {
       return keyOrigin_;
     }
+
     /**
      *
      *
@@ -1956,6 +2018,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1973,6 +2036,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
           com.google.iam.admin.v1.ServiceAccountKeyOrigin.forNumber(keyOrigin_);
       return result == null ? com.google.iam.admin.v1.ServiceAccountKeyOrigin.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1994,6 +2058,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2013,6 +2078,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     }
 
     private int keyType_ = 0;
+
     /**
      *
      *
@@ -2028,6 +2094,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public int getKeyTypeValue() {
       return keyType_;
     }
+
     /**
      *
      *
@@ -2046,6 +2113,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2065,6 +2133,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
           ? com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2086,6 +2155,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2105,6 +2175,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean disabled_;
+
     /**
      *
      *
@@ -2120,6 +2191,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public boolean getDisabled() {
       return disabled_;
     }
+
     /**
      *
      *
@@ -2139,6 +2211,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

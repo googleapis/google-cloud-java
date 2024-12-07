@@ -33,6 +33,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Lease)
     LeaseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Lease.newBuilder() to construct.
   private Lease(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object series_ = "";
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object owner_ = "";
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp expireTime_;
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
+
   /**
    *
    *
@@ -268,6 +278,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LEASE_TYPE_FIELD_NUMBER = 5;
   private int leaseType_ = 0;
+
   /**
    *
    *
@@ -283,6 +294,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
   public int getLeaseTypeValue() {
     return leaseType_;
   }
+
   /**
    *
    *
@@ -499,6 +511,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -753,6 +766,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -775,6 +789,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -797,6 +812,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -818,6 +834,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +852,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +877,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object series_ = "";
+
     /**
      *
      *
@@ -881,6 +900,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -903,6 +923,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -924,6 +945,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +963,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +988,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object owner_ = "";
+
     /**
      *
      *
@@ -987,6 +1011,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1034,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1056,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1074,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1104,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -1090,6 +1119,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1110,6 +1140,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
         return expireTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1132,6 +1163,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1151,6 +1183,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1211,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1197,6 +1231,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1246,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1229,6 +1265,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
             : expireTime_;
       }
     }
+
     /**
      *
      *
@@ -1256,6 +1293,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int leaseType_ = 0;
+
     /**
      *
      *
@@ -1271,6 +1309,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
     public int getLeaseTypeValue() {
       return leaseType_;
     }
+
     /**
      *
      *
@@ -1289,6 +1328,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1346,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.visionai.v1.LeaseType.forNumber(leaseType_);
       return result == null ? com.google.cloud.visionai.v1.LeaseType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1327,6 +1368,7 @@ public final class Lease extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

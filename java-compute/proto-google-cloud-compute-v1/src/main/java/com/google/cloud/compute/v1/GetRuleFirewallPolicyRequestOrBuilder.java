@@ -36,6 +36,7 @@ public interface GetRuleFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   java.lang.String getFirewallPolicy();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetRuleFirewallPolicyRequestOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
+
   /**
    *
    *

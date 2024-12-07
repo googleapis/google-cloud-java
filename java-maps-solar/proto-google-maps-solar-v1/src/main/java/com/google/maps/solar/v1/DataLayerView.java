@@ -102,6 +102,7 @@ public enum DataLayerView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATA_LAYER_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int DATA_LAYER_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -112,6 +113,7 @@ public enum DataLayerView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DSM_LAYER = 1;</code>
    */
   public static final int DSM_LAYER_VALUE = 1;
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public enum DataLayerView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGERY_LAYERS = 2;</code>
    */
   public static final int IMAGERY_LAYERS_VALUE = 2;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public enum DataLayerView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGERY_AND_ANNUAL_FLUX_LAYERS = 3;</code>
    */
   public static final int IMAGERY_AND_ANNUAL_FLUX_LAYERS_VALUE = 3;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public enum DataLayerView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGERY_AND_ALL_FLUX_LAYERS = 4;</code>
    */
   public static final int IMAGERY_AND_ALL_FLUX_LAYERS_VALUE = 4;
+
   /**
    *
    *

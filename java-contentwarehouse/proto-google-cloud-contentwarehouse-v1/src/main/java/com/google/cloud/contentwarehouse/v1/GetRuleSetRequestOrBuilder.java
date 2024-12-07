@@ -40,6 +40,7 @@ public interface GetRuleSetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

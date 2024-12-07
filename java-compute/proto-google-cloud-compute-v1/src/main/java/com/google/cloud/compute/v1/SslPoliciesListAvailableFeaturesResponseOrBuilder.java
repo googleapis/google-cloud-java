@@ -30,12 +30,14 @@ public interface SslPoliciesListAvailableFeaturesResponseOrBuilder
    * @return A list containing the features.
    */
   java.util.List<java.lang.String> getFeaturesList();
+
   /**
    * <code>repeated string features = 246211645;</code>
    *
    * @return The count of features.
    */
   int getFeaturesCount();
+
   /**
    * <code>repeated string features = 246211645;</code>
    *
@@ -43,6 +45,7 @@ public interface SslPoliciesListAvailableFeaturesResponseOrBuilder
    * @return The features at the given index.
    */
   java.lang.String getFeatures(int index);
+
   /**
    * <code>repeated string features = 246211645;</code>
    *

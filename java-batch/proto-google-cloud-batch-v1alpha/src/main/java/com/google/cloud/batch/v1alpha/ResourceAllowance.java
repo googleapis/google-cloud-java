@@ -35,6 +35,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.ResourceAllowance)
     ResourceAllowanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceAllowance.newBuilder() to construct.
   private ResourceAllowance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -96,6 +97,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
     private ResourceAllowanceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -127,6 +129,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int USAGE_RESOURCE_ALLOWANCE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
   public boolean hasUsageResourceAllowance() {
     return resourceAllowanceCase_ == 4;
   }
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.batch.v1alpha.UsageResourceAllowance.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -237,6 +244,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -263,6 +271,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -292,6 +301,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -308,6 +318,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -324,6 +335,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -365,6 +377,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -391,12 +404,14 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -420,6 +435,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -450,6 +466,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -485,6 +502,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.batch.v1alpha.Notification> notifications_;
+
   /**
    *
    *
@@ -500,6 +518,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.batch.v1alpha.Notification> getNotificationsList() {
     return notifications_;
   }
+
   /**
    *
    *
@@ -516,6 +535,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       getNotificationsOrBuilderList() {
     return notifications_;
   }
+
   /**
    *
    *
@@ -531,6 +551,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
   public int getNotificationsCount() {
     return notifications_.size();
   }
+
   /**
    *
    *
@@ -546,6 +567,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.batch.v1alpha.Notification getNotifications(int index) {
     return notifications_.get(index);
   }
+
   /**
    *
    *
@@ -797,6 +819,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1180,6 +1203,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
             com.google.cloud.batch.v1alpha.UsageResourceAllowance.Builder,
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceOrBuilder>
         usageResourceAllowanceBuilder_;
+
     /**
      *
      *
@@ -1195,6 +1219,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
     public boolean hasUsageResourceAllowance() {
       return resourceAllowanceCase_ == 4;
     }
+
     /**
      *
      *
@@ -1220,6 +1245,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.batch.v1alpha.UsageResourceAllowance.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1243,6 +1269,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       resourceAllowanceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1290,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       resourceAllowanceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1297,6 +1325,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       resourceAllowanceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1322,6 +1351,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1335,6 +1365,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
         getUsageResourceAllowanceBuilder() {
       return getUsageResourceAllowanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1356,6 +1387,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.batch.v1alpha.UsageResourceAllowance.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1391,6 +1423,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1415,6 +1448,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1439,6 +1473,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1462,6 +1497,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1481,6 +1517,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1507,6 +1544,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -1532,6 +1570,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1557,6 +1596,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1581,6 +1621,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1601,6 +1642,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1633,6 +1675,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1649,6 +1692,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1671,6 +1715,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1695,6 +1740,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1716,6 +1762,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1745,6 +1792,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1766,6 +1814,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1782,6 +1831,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1802,6 +1852,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1855,6 +1906,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1881,12 +1933,14 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1910,6 +1964,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1940,6 +1995,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1976,6 +2032,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2002,12 +2059,14 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2038,6 +2097,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *
@@ -2098,6 +2158,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
         return notificationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2116,6 +2177,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
         return notificationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2134,6 +2196,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
         return notificationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2158,6 +2221,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2180,6 +2244,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2204,6 +2269,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2228,6 +2294,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2250,6 +2317,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2272,6 +2340,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2294,6 +2363,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2315,6 +2385,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2336,6 +2407,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2350,6 +2422,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.batch.v1alpha.Notification.Builder getNotificationsBuilder(int index) {
       return getNotificationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2369,6 +2442,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
         return notificationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2388,6 +2462,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(notifications_);
       }
     }
+
     /**
      *
      *
@@ -2403,6 +2478,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       return getNotificationsFieldBuilder()
           .addBuilder(com.google.cloud.batch.v1alpha.Notification.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2418,6 +2494,7 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
       return getNotificationsFieldBuilder()
           .addBuilder(index, com.google.cloud.batch.v1alpha.Notification.getDefaultInstance());
     }
+
     /**
      *
      *

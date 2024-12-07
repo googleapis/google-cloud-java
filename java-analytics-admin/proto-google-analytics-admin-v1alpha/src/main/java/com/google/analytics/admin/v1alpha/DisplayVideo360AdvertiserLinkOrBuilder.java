@@ -40,6 +40,7 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    * @return The advertiserId.
    */
   java.lang.String getAdvertiserId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    * @return The advertiserDisplayName.
    */
   java.lang.String getAdvertiserDisplayName();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    * @return Whether the adsPersonalizationEnabled field is set.
    */
   boolean hasAdsPersonalizationEnabled();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    * @return The adsPersonalizationEnabled.
    */
   com.google.protobuf.BoolValue getAdsPersonalizationEnabled();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    * @return Whether the campaignDataSharingEnabled field is set.
    */
   boolean hasCampaignDataSharingEnabled();
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    * @return The campaignDataSharingEnabled.
    */
   com.google.protobuf.BoolValue getCampaignDataSharingEnabled();
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    * @return Whether the costDataSharingEnabled field is set.
    */
   boolean hasCostDataSharingEnabled();
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    * @return The costDataSharingEnabled.
    */
   com.google.protobuf.BoolValue getCostDataSharingEnabled();
+
   /**
    *
    *

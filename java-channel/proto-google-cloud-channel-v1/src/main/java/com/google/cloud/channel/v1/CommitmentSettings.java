@@ -33,6 +33,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.CommitmentSettings)
     CommitmentSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CommitmentSettings.newBuilder() to construct.
   private CommitmentSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
 
   public static final int RENEWAL_SETTINGS_FIELD_NUMBER = 4;
   private com.google.cloud.channel.v1.RenewalSettings renewalSettings_;
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
   public boolean hasRenewalSettings() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.channel.v1.RenewalSettings.getDefaultInstance()
         : renewalSettings_;
   }
+
   /**
    *
    *
@@ -408,6 +418,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +660,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -664,6 +676,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -706,6 +720,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +741,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +770,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +791,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +807,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -806,6 +825,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -839,6 +859,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -854,6 +875,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -873,6 +895,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -896,6 +919,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +940,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +969,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +990,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1006,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -996,6 +1024,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1029,6 +1058,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
             com.google.cloud.channel.v1.RenewalSettings.Builder,
             com.google.cloud.channel.v1.RenewalSettingsOrBuilder>
         renewalSettingsBuilder_;
+
     /**
      *
      *
@@ -1045,6 +1075,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
     public boolean hasRenewalSettings() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1067,6 +1098,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
         return renewalSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1091,6 +1123,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1146,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1177,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1199,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1180,6 +1216,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getRenewalSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1200,6 +1237,7 @@ public final class CommitmentSettings extends com.google.protobuf.GeneratedMessa
             : renewalSettings_;
       }
     }
+
     /**
      *
      *

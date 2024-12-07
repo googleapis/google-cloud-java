@@ -40,6 +40,7 @@ public interface DeleteLocalInventoryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

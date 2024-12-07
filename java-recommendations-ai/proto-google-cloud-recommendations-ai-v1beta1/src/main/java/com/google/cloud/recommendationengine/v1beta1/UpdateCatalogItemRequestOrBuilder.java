@@ -39,6 +39,7 @@ public interface UpdateCatalogItemRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface UpdateCatalogItemRequestOrBuilder
    * @return Whether the catalogItem field is set.
    */
   boolean hasCatalogItem();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateCatalogItemRequestOrBuilder
    * @return The catalogItem.
    */
   com.google.cloud.recommendationengine.v1beta1.CatalogItem getCatalogItem();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface UpdateCatalogItemRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface UpdateCatalogItemRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

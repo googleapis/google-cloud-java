@@ -36,6 +36,7 @@ public interface OracleConnectionProfileOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface OracleConnectionProfileOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface OracleConnectionProfileOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
+
   /**
    *
    *
@@ -151,6 +154,7 @@ public interface OracleConnectionProfileOrBuilder
    * @return The databaseService.
    */
   java.lang.String getDatabaseService();
+
   /**
    *
    *
@@ -179,6 +183,7 @@ public interface OracleConnectionProfileOrBuilder
    * @return Whether the ssl field is set.
    */
   boolean hasSsl();
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public interface OracleConnectionProfileOrBuilder
    * @return The ssl.
    */
   com.google.cloud.clouddms.v1.SslConfig getSsl();
+
   /**
    *
    *
@@ -222,6 +228,7 @@ public interface OracleConnectionProfileOrBuilder
    * @return Whether the staticServiceIpConnectivity field is set.
    */
   boolean hasStaticServiceIpConnectivity();
+
   /**
    *
    *
@@ -236,6 +243,7 @@ public interface OracleConnectionProfileOrBuilder
    * @return The staticServiceIpConnectivity.
    */
   com.google.cloud.clouddms.v1.StaticServiceIpConnectivity getStaticServiceIpConnectivity();
+
   /**
    *
    *
@@ -263,6 +271,7 @@ public interface OracleConnectionProfileOrBuilder
    * @return Whether the forwardSshConnectivity field is set.
    */
   boolean hasForwardSshConnectivity();
+
   /**
    *
    *
@@ -276,6 +285,7 @@ public interface OracleConnectionProfileOrBuilder
    * @return The forwardSshConnectivity.
    */
   com.google.cloud.clouddms.v1.ForwardSshTunnelConnectivity getForwardSshConnectivity();
+
   /**
    *
    *
@@ -301,6 +311,7 @@ public interface OracleConnectionProfileOrBuilder
    * @return Whether the privateConnectivity field is set.
    */
   boolean hasPrivateConnectivity();
+
   /**
    *
    *
@@ -313,6 +324,7 @@ public interface OracleConnectionProfileOrBuilder
    * @return The privateConnectivity.
    */
   com.google.cloud.clouddms.v1.PrivateConnectivity getPrivateConnectivity();
+
   /**
    *
    *

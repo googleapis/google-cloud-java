@@ -38,6 +38,7 @@ public interface LocalInventoryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface LocalInventoryOrBuilder
    * @return The storeCode.
    */
   java.lang.String getStoreCode();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface LocalInventoryOrBuilder
    * @return Whether the price field is set.
    */
   boolean hasPrice();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface LocalInventoryOrBuilder
    * @return The price.
    */
   com.google.shopping.type.Price getPrice();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface LocalInventoryOrBuilder
    * @return Whether the salePrice field is set.
    */
   boolean hasSalePrice();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface LocalInventoryOrBuilder
    * @return The salePrice.
    */
   com.google.shopping.type.Price getSalePrice();
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public interface LocalInventoryOrBuilder
    * @return Whether the salePriceEffectiveDate field is set.
    */
   boolean hasSalePriceEffectiveDate();
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public interface LocalInventoryOrBuilder
    * @return The salePriceEffectiveDate.
    */
   com.google.type.Interval getSalePriceEffectiveDate();
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public interface LocalInventoryOrBuilder
    * @return Whether the availability field is set.
    */
   boolean hasAvailability();
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public interface LocalInventoryOrBuilder
    * @return The availability.
    */
   java.lang.String getAvailability();
+
   /**
    *
    *
@@ -274,6 +284,7 @@ public interface LocalInventoryOrBuilder
    * @return Whether the quantity field is set.
    */
   boolean hasQuantity();
+
   /**
    *
    *
@@ -304,6 +315,7 @@ public interface LocalInventoryOrBuilder
    * @return Whether the pickupMethod field is set.
    */
   boolean hasPickupMethod();
+
   /**
    *
    *
@@ -320,6 +332,7 @@ public interface LocalInventoryOrBuilder
    * @return The pickupMethod.
    */
   java.lang.String getPickupMethod();
+
   /**
    *
    *
@@ -353,6 +366,7 @@ public interface LocalInventoryOrBuilder
    * @return Whether the pickupSla field is set.
    */
   boolean hasPickupSla();
+
   /**
    *
    *
@@ -369,6 +383,7 @@ public interface LocalInventoryOrBuilder
    * @return The pickupSla.
    */
   java.lang.String getPickupSla();
+
   /**
    *
    *
@@ -398,6 +413,7 @@ public interface LocalInventoryOrBuilder
    * @return Whether the instoreProductLocation field is set.
    */
   boolean hasInstoreProductLocation();
+
   /**
    *
    *
@@ -410,6 +426,7 @@ public interface LocalInventoryOrBuilder
    * @return The instoreProductLocation.
    */
   java.lang.String getInstoreProductLocation();
+
   /**
    *
    *
@@ -435,6 +452,7 @@ public interface LocalInventoryOrBuilder
    * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
    */
   java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList();
+
   /**
    *
    *
@@ -447,6 +465,7 @@ public interface LocalInventoryOrBuilder
    * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
    */
   com.google.shopping.type.CustomAttribute getCustomAttributes(int index);
+
   /**
    *
    *
@@ -459,6 +478,7 @@ public interface LocalInventoryOrBuilder
    * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
    */
   int getCustomAttributesCount();
+
   /**
    *
    *
@@ -472,6 +492,7 @@ public interface LocalInventoryOrBuilder
    */
   java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
       getCustomAttributesOrBuilderList();
+
   /**
    *
    *

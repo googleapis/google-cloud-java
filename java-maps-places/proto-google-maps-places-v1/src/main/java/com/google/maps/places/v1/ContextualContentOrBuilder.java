@@ -34,6 +34,7 @@ public interface ContextualContentOrBuilder
    * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
    */
   java.util.List<com.google.maps.places.v1.Review> getReviewsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ContextualContentOrBuilder
    * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
    */
   com.google.maps.places.v1.Review getReviews(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ContextualContentOrBuilder
    * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
    */
   int getReviewsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ContextualContentOrBuilder
    * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
    */
   java.util.List<? extends com.google.maps.places.v1.ReviewOrBuilder> getReviewsOrBuilderList();
+
   /**
    *
    *
@@ -86,6 +90,7 @@ public interface ContextualContentOrBuilder
    * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
    */
   java.util.List<com.google.maps.places.v1.Photo> getPhotosList();
+
   /**
    *
    *
@@ -97,6 +102,7 @@ public interface ContextualContentOrBuilder
    * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
    */
   com.google.maps.places.v1.Photo getPhotos(int index);
+
   /**
    *
    *
@@ -108,6 +114,7 @@ public interface ContextualContentOrBuilder
    * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
    */
   int getPhotosCount();
+
   /**
    *
    *
@@ -119,6 +126,7 @@ public interface ContextualContentOrBuilder
    * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
    */
   java.util.List<? extends com.google.maps.places.v1.PhotoOrBuilder> getPhotosOrBuilderList();
+
   /**
    *
    *
@@ -146,6 +154,7 @@ public interface ContextualContentOrBuilder
    * </code>
    */
   java.util.List<com.google.maps.places.v1.ContextualContent.Justification> getJustificationsList();
+
   /**
    *
    *
@@ -161,6 +170,7 @@ public interface ContextualContentOrBuilder
    * </code>
    */
   com.google.maps.places.v1.ContextualContent.Justification getJustifications(int index);
+
   /**
    *
    *
@@ -176,6 +186,7 @@ public interface ContextualContentOrBuilder
    * </code>
    */
   int getJustificationsCount();
+
   /**
    *
    *
@@ -192,6 +203,7 @@ public interface ContextualContentOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.ContextualContent.JustificationOrBuilder>
       getJustificationsOrBuilderList();
+
   /**
    *
    *

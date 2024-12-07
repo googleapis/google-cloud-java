@@ -36,6 +36,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.BatchCreateFeaturesRequest)
     BatchCreateFeaturesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateFeaturesRequest.newBuilder() to construct.
   private BatchCreateFeaturesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.CreateFeatureRequest> requests_;
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.aiplatform.v1.CreateFeatureRequest> getRequestsList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       getRequestsOrBuilderList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
   public int getRequestsCount() {
     return requests_.size();
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
   public com.google.cloud.aiplatform.v1.CreateFeatureRequest getRequests(int index) {
     return requests_.get(index);
   }
+
   /**
    *
    *
@@ -401,6 +409,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -650,6 +659,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -677,6 +687,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -704,6 +715,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -730,6 +742,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +765,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +833,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
         return requestsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -841,6 +856,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
         return requestsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -863,6 +879,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
         return requestsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -892,6 +909,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +936,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +965,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +995,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1001,6 +1022,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1049,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1076,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1102,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1128,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1148,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
         int index) {
       return getRequestsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1145,6 +1172,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
         return requestsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1168,6 +1196,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(requests_);
       }
     }
+
     /**
      *
      *
@@ -1187,6 +1216,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
       return getRequestsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.CreateFeatureRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1208,6 +1238,7 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.cloud.aiplatform.v1.CreateFeatureRequest.getDefaultInstance());
     }
+
     /**
      *
      *

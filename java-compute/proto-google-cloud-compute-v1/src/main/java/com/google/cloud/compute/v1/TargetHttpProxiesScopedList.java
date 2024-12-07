@@ -32,6 +32,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TargetHttpProxiesScopedList)
     TargetHttpProxiesScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TargetHttpProxiesScopedList.newBuilder() to construct.
   private TargetHttpProxiesScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.TargetHttpProxy> targetHttpProxies_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.compute.v1.TargetHttpProxy> getTargetHttpProxiesList() {
     return targetHttpProxies_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       getTargetHttpProxiesOrBuilderList() {
     return targetHttpProxies_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
   public int getTargetHttpProxiesCount() {
     return targetHttpProxies_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
   public com.google.cloud.compute.v1.TargetHttpProxy getTargetHttpProxies(int index) {
     return targetHttpProxies_.get(index);
   }
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -152,6 +159,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -167,6 +175,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -359,6 +368,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -652,6 +662,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
         return targetHttpProxiesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -669,6 +680,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
         return targetHttpProxiesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
         return targetHttpProxiesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +745,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +794,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +816,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +881,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +902,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +917,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
         int index) {
       return getTargetHttpProxiesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -913,6 +936,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
         return targetHttpProxiesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -931,6 +955,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(targetHttpProxies_);
       }
     }
+
     /**
      *
      *
@@ -945,6 +970,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       return getTargetHttpProxiesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.TargetHttpProxy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -960,6 +986,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       return getTargetHttpProxiesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.TargetHttpProxy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1001,6 +1028,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -1015,6 +1043,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1035,6 +1064,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1087,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1107,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1135,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1155,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1170,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1154,6 +1189,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
             : warning_;
       }
     }
+
     /**
      *
      *

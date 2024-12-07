@@ -33,6 +33,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ImportDataRequest)
     ImportDataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportDataRequest.newBuilder() to construct.
   private ImportDataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int INPUT_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.automl.v1beta1.InputConfig inputConfig_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.automl.v1beta1.InputConfig.getDefaultInstance()
         : inputConfig_;
   }
+
   /**
    *
    *
@@ -353,6 +359,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -567,6 +574,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -592,6 +600,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -617,6 +626,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +672,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +705,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.automl.v1beta1.InputConfig.Builder,
             com.google.cloud.automl.v1beta1.InputConfigOrBuilder>
         inputConfigBuilder_;
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -733,6 +747,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
         return inputConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -758,6 +773,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +797,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +828,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +851,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -871,6 +891,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
             : inputConfig_;
       }
     }
+
     /**
      *
      *

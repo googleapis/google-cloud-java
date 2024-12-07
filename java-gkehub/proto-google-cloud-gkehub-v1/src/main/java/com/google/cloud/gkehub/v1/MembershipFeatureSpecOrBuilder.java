@@ -36,6 +36,7 @@ public interface MembershipFeatureSpecOrBuilder
    * @return Whether the configmanagement field is set.
    */
   boolean hasConfigmanagement();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MembershipFeatureSpecOrBuilder
    * @return The configmanagement.
    */
   com.google.cloud.gkehub.configmanagement.v1.MembershipSpec getConfigmanagement();
+
   /**
    *
    *

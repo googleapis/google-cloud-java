@@ -33,6 +33,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1beta2.GetVersionRequest)
     GetVersionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetVersionRequest.newBuilder() to construct.
   private GetVersionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
   public int getViewValue() {
     return view_;
   }
+
   /**
    *
    *
@@ -325,6 +330,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -525,6 +531,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -547,6 +554,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -569,6 +577,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -590,6 +599,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -607,6 +617,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int view_ = 0;
+
     /**
      *
      *
@@ -646,6 +658,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
     public int getViewValue() {
       return view_;
     }
+
     /**
      *
      *
@@ -664,6 +677,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +697,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
           ? com.google.devtools.artifactregistry.v1beta2.VersionView.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -704,6 +719,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

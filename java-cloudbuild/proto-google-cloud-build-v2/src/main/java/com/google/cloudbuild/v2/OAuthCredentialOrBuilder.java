@@ -37,6 +37,7 @@ public interface OAuthCredentialOrBuilder
    * @return The oauthTokenSecretVersion.
    */
   java.lang.String getOauthTokenSecretVersion();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface OAuthCredentialOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface NetworkPolicyOrBuilder
    * @return The enum numeric value on the wire for provider.
    */
   int getProviderValue();
+
   /**
    *
    *

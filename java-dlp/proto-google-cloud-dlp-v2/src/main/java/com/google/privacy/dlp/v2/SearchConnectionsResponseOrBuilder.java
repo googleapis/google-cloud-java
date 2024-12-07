@@ -36,6 +36,7 @@ public interface SearchConnectionsResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Connection connections = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.Connection> getConnectionsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SearchConnectionsResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Connection connections = 1;</code>
    */
   com.google.privacy.dlp.v2.Connection getConnections(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface SearchConnectionsResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Connection connections = 1;</code>
    */
   int getConnectionsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface SearchConnectionsResponseOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ConnectionOrBuilder>
       getConnectionsOrBuilderList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface SearchConnectionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

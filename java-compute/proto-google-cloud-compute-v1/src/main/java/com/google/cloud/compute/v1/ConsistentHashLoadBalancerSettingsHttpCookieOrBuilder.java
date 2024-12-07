@@ -36,6 +36,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * @return Whether the path field is set.
    */
   boolean hasPath();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * @return The ttl.
    */
   com.google.cloud.compute.v1.Duration getTtl();
+
   /**
    *
    *

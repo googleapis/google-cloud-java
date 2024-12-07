@@ -38,6 +38,7 @@ public interface RejectBlueprintRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

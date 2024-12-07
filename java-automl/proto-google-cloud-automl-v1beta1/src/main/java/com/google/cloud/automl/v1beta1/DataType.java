@@ -34,6 +34,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.DataType)
     DataTypeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataType.newBuilder() to construct.
   private DataType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     private DetailsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LIST_ELEMENT_TYPE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
   public boolean hasListElementType() {
     return detailsCase_ == 2;
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.DataType.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRUCT_TYPE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStructType() {
     return detailsCase_ == 3;
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.StructType.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIME_FORMAT_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeFormat() {
     return detailsCase_ == 5;
   }
+
   /**
    *
    *
@@ -286,6 +296,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -326,6 +337,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_CODE_FIELD_NUMBER = 1;
   private int typeCode_ = 0;
+
   /**
    *
    *
@@ -341,6 +353,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
   public int getTypeCodeValue() {
     return typeCode_;
   }
+
   /**
    *
    *
@@ -361,6 +374,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NULLABLE_FIELD_NUMBER = 4;
   private boolean nullable_ = false;
+
   /**
    *
    *
@@ -597,6 +611,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -872,6 +887,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.DataType.Builder,
             com.google.cloud.automl.v1beta1.DataTypeOrBuilder>
         listElementTypeBuilder_;
+
     /**
      *
      *
@@ -888,6 +904,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     public boolean hasListElementType() {
       return detailsCase_ == 2;
     }
+
     /**
      *
      *
@@ -914,6 +931,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.DataType.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -937,6 +955,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +977,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1011,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1038,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1052,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.DataType.Builder getListElementTypeBuilder() {
       return getListElementTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1051,6 +1074,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.DataType.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1114,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.StructType.Builder,
             com.google.cloud.automl.v1beta1.StructTypeOrBuilder>
         structTypeBuilder_;
+
     /**
      *
      *
@@ -1106,6 +1131,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStructType() {
       return detailsCase_ == 3;
     }
+
     /**
      *
      *
@@ -1132,6 +1158,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.StructType.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1155,6 +1182,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1176,6 +1204,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1238,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1265,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1248,6 +1279,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.StructType.Builder getStructTypeBuilder() {
       return getStructTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1269,6 +1301,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.StructType.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1328,6 +1361,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeFormat() {
       return detailsCase_ == 5;
     }
+
     /**
      *
      *
@@ -1366,6 +1400,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1404,6 +1439,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1435,6 +1471,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1464,6 +1501,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1498,6 +1536,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int typeCode_ = 0;
+
     /**
      *
      *
@@ -1513,6 +1552,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     public int getTypeCodeValue() {
       return typeCode_;
     }
+
     /**
      *
      *
@@ -1531,6 +1571,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1548,6 +1589,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.automl.v1beta1.TypeCode.forNumber(typeCode_);
       return result == null ? com.google.cloud.automl.v1beta1.TypeCode.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1569,6 +1611,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1588,6 +1631,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean nullable_;
+
     /**
      *
      *
@@ -1604,6 +1648,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     public boolean getNullable() {
       return nullable_;
     }
+
     /**
      *
      *
@@ -1624,6 +1669,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

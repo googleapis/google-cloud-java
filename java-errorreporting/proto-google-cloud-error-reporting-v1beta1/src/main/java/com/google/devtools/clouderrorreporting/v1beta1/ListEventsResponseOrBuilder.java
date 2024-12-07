@@ -34,6 +34,7 @@ public interface ListEventsResponseOrBuilder
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
    */
   java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent> getErrorEventsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListEventsResponseOrBuilder
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent getErrorEvents(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListEventsResponseOrBuilder
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
    */
   int getErrorEventsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListEventsResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>
       getErrorEventsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListEventsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ListEventsResponseOrBuilder
    * @return Whether the timeRangeBegin field is set.
    */
   boolean hasTimeRangeBegin();
+
   /**
    *
    *
@@ -130,6 +136,7 @@ public interface ListEventsResponseOrBuilder
    * @return The timeRangeBegin.
    */
   com.google.protobuf.Timestamp getTimeRangeBegin();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface AutonomousDbVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AutonomousDbVersionOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface AutonomousDbVersionOrBuilder
    * @return The enum numeric value on the wire for dbWorkload.
    */
   int getDbWorkloadValue();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface AutonomousDbVersionOrBuilder
    * @return The workloadUri.
    */
   java.lang.String getWorkloadUri();
+
   /**
    *
    *

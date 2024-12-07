@@ -34,6 +34,7 @@ public interface ListNetworksResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Network networks = 1;</code>
    */
   java.util.List<com.google.ads.admanager.v1.Network> getNetworksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListNetworksResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Network networks = 1;</code>
    */
   com.google.ads.admanager.v1.Network getNetworks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListNetworksResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Network networks = 1;</code>
    */
   int getNetworksCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListNetworksResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Network networks = 1;</code>
    */
   java.util.List<? extends com.google.ads.admanager.v1.NetworkOrBuilder> getNetworksOrBuilderList();
+
   /**
    *
    *

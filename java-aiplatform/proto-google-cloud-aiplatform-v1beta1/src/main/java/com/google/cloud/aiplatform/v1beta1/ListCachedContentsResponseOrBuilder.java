@@ -34,6 +34,7 @@ public interface ListCachedContentsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.CachedContent cached_contents = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.CachedContent> getCachedContentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCachedContentsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.CachedContent cached_contents = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.CachedContent getCachedContents(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCachedContentsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.CachedContent cached_contents = 1;</code>
    */
   int getCachedContentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCachedContentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.CachedContentOrBuilder>
       getCachedContentsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListCachedContentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
   java.util.List<com.google.api.LabelDescriptor> getLabelsList();
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
   com.google.api.LabelDescriptor getLabels(int index);
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
   java.util.List<? extends com.google.api.LabelDescriptorOrBuilder> getLabelsOrBuilderList();
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public interface NotificationChannelDescriptorOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList();
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public interface NotificationChannelDescriptorOrBuilder
    */
   @java.lang.Deprecated
   int getSupportedTiersCount();
+
   /**
    *
    *
@@ -259,6 +269,7 @@ public interface NotificationChannelDescriptorOrBuilder
    */
   @java.lang.Deprecated
   com.google.monitoring.v3.ServiceTier getSupportedTiers(int index);
+
   /**
    *
    *
@@ -276,6 +287,7 @@ public interface NotificationChannelDescriptorOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<java.lang.Integer> getSupportedTiersValueList();
+
   /**
    *
    *
@@ -307,6 +319,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * @return The enum numeric value on the wire for launchStage.
    */
   int getLaunchStageValue();
+
   /**
    *
    *

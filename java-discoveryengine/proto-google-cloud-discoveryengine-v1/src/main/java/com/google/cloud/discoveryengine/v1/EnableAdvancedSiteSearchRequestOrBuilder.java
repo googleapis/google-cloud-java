@@ -41,6 +41,7 @@ public interface EnableAdvancedSiteSearchRequestOrBuilder
    * @return The siteSearchEngine.
    */
   java.lang.String getSiteSearchEngine();
+
   /**
    *
    *

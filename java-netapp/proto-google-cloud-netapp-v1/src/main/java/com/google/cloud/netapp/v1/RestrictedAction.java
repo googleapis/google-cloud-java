@@ -62,6 +62,7 @@ public enum RestrictedAction implements com.google.protobuf.ProtocolMessageEnum 
    * <code>RESTRICTED_ACTION_UNSPECIFIED = 0;</code>
    */
   public static final int RESTRICTED_ACTION_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface MetadataOrBuilder
    * @return The buildInvocationId.
    */
   java.lang.String getBuildInvocationId();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface MetadataOrBuilder
    * @return Whether the buildStartedOn field is set.
    */
   boolean hasBuildStartedOn();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface MetadataOrBuilder
    * @return The buildStartedOn.
    */
   com.google.protobuf.Timestamp getBuildStartedOn();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface MetadataOrBuilder
    * @return Whether the buildFinishedOn field is set.
    */
   boolean hasBuildFinishedOn();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface MetadataOrBuilder
    * @return The buildFinishedOn.
    */
   com.google.protobuf.Timestamp getBuildFinishedOn();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface MetadataOrBuilder
    * @return Whether the completeness field is set.
    */
   boolean hasCompleteness();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface MetadataOrBuilder
    * @return The completeness.
    */
   io.grafeas.v1.Completeness getCompleteness();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1.Autopilot)
     AutopilotOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Autopilot.newBuilder() to construct.
   private Autopilot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WORKLOAD_POLICY_CONFIG_FIELD_NUMBER = 2;
   private com.google.container.v1.WorkloadPolicyConfig workloadPolicyConfig_;
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWorkloadPolicyConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1.WorkloadPolicyConfig.getDefaultInstance()
         : workloadPolicyConfig_;
   }
+
   /**
    *
    *
@@ -302,6 +307,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -515,6 +521,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -530,6 +537,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -549,6 +557,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -573,6 +582,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1.WorkloadPolicyConfig.Builder,
             com.google.container.v1.WorkloadPolicyConfigOrBuilder>
         workloadPolicyConfigBuilder_;
+
     /**
      *
      *
@@ -587,6 +597,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWorkloadPolicyConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -607,6 +618,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
         return workloadPolicyConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -629,6 +641,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -649,6 +662,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +691,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +711,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +726,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWorkloadPolicyConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -729,6 +746,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
             : workloadPolicyConfig_;
       }
     }
+
     /**
      *
      *

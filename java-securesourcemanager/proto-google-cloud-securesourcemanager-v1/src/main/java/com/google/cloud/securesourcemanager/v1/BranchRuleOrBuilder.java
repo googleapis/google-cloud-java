@@ -38,6 +38,7 @@ public interface BranchRuleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface BranchRuleOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface BranchRuleOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface BranchRuleOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface BranchRuleOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface BranchRuleOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface BranchRuleOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -180,9 +187,11 @@ public interface BranchRuleOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public interface BranchRuleOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -213,6 +223,7 @@ public interface BranchRuleOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -241,6 +252,7 @@ public interface BranchRuleOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -271,6 +283,7 @@ public interface BranchRuleOrBuilder
    * @return The includePattern.
    */
   java.lang.String getIncludePattern();
+
   /**
    *
    *
@@ -396,6 +409,7 @@ public interface BranchRuleOrBuilder
    */
   java.util.List<com.google.cloud.securesourcemanager.v1.BranchRule.Check>
       getRequiredStatusChecksList();
+
   /**
    *
    *
@@ -408,6 +422,7 @@ public interface BranchRuleOrBuilder
    * </code>
    */
   com.google.cloud.securesourcemanager.v1.BranchRule.Check getRequiredStatusChecks(int index);
+
   /**
    *
    *
@@ -420,6 +435,7 @@ public interface BranchRuleOrBuilder
    * </code>
    */
   int getRequiredStatusChecksCount();
+
   /**
    *
    *
@@ -433,6 +449,7 @@ public interface BranchRuleOrBuilder
    */
   java.util.List<? extends com.google.cloud.securesourcemanager.v1.BranchRule.CheckOrBuilder>
       getRequiredStatusChecksOrBuilderList();
+
   /**
    *
    *

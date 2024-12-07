@@ -44,6 +44,7 @@ public interface ExportDataConfigOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ExportDataConfigOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.aiplatform.v1beta1.GcsDestination getGcsDestination();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface ExportDataConfigOrBuilder
    * @return Whether the fractionSplit field is set.
    */
   boolean hasFractionSplit();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface ExportDataConfigOrBuilder
    * @return The fractionSplit.
    */
   com.google.cloud.aiplatform.v1beta1.ExportFractionSplit getFractionSplit();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface ExportDataConfigOrBuilder
    * @return The annotationsFilter.
    */
   java.lang.String getAnnotationsFilter();
+
   /**
    *
    *

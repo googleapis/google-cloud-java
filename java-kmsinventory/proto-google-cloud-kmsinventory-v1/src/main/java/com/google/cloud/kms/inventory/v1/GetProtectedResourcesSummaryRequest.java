@@ -35,6 +35,7 @@ public final class GetProtectedResourcesSummaryRequest
     // @@protoc_insertion_point(message_implements:google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest)
     GetProtectedResourcesSummaryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetProtectedResourcesSummaryRequest.newBuilder() to construct.
   private GetProtectedResourcesSummaryRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class GetProtectedResourcesSummaryRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class GetProtectedResourcesSummaryRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -284,6 +287,7 @@ public final class GetProtectedResourcesSummaryRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -476,6 +480,7 @@ public final class GetProtectedResourcesSummaryRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -501,6 +506,7 @@ public final class GetProtectedResourcesSummaryRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -526,6 +532,7 @@ public final class GetProtectedResourcesSummaryRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -550,6 +557,7 @@ public final class GetProtectedResourcesSummaryRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -570,6 +578,7 @@ public final class GetProtectedResourcesSummaryRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

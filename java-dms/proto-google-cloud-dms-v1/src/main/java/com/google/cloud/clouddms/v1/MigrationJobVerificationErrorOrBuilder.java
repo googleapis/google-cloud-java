@@ -38,6 +38,7 @@ public interface MigrationJobVerificationErrorOrBuilder
    * @return The enum numeric value on the wire for errorCode.
    */
   int getErrorCodeValue();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface MigrationJobVerificationErrorOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface MigrationJobVerificationErrorOrBuilder
    * @return The errorDetailMessage.
    */
   java.lang.String getErrorDetailMessage();
+
   /**
    *
    *

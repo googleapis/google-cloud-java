@@ -33,6 +33,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse)
     QueryDirectoryContentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryDirectoryContentsResponse.newBuilder() to construct.
   private QueryDirectoryContentsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataform.v1beta1.DirectoryEntry> directoryEntries_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       getDirectoryEntriesList() {
     return directoryEntries_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       getDirectoryEntriesOrBuilderList() {
     return directoryEntries_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
   public int getDirectoryEntriesCount() {
     return directoryEntries_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
   public com.google.cloud.dataform.v1beta1.DirectoryEntry getDirectoryEntries(int index) {
     return directoryEntries_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -362,6 +370,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +655,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return directoryEntriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -662,6 +672,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return directoryEntriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return directoryEntriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +734,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +757,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +781,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +802,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +844,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +864,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +884,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +898,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         int index) {
       return getDirectoryEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -894,6 +916,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return directoryEntriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -911,6 +934,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(directoryEntries_);
       }
     }
+
     /**
      *
      *
@@ -924,6 +948,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       return getDirectoryEntriesFieldBuilder()
           .addBuilder(com.google.cloud.dataform.v1beta1.DirectoryEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -938,6 +963,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       return getDirectoryEntriesFieldBuilder()
           .addBuilder(index, com.google.cloud.dataform.v1beta1.DirectoryEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -973,6 +999,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -996,6 +1023,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1019,6 +1047,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1041,6 +1070,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1089,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public interface FetchNetworkPolicyExternalAddressesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.ExternalAddress external_addresses = 1;</code>
    */
   java.util.List<com.google.cloud.vmwareengine.v1.ExternalAddress> getExternalAddressesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface FetchNetworkPolicyExternalAddressesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.ExternalAddress external_addresses = 1;</code>
    */
   com.google.cloud.vmwareengine.v1.ExternalAddress getExternalAddresses(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface FetchNetworkPolicyExternalAddressesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.ExternalAddress external_addresses = 1;</code>
    */
   int getExternalAddressesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface FetchNetworkPolicyExternalAddressesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.ExternalAddressOrBuilder>
       getExternalAddressesOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface FetchNetworkPolicyExternalAddressesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

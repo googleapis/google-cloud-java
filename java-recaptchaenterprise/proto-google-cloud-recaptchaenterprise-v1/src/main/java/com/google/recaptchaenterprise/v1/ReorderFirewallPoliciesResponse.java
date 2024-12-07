@@ -33,6 +33,7 @@ public final class ReorderFirewallPoliciesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse)
     ReorderFirewallPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReorderFirewallPoliciesResponse.newBuilder() to construct.
   private ReorderFirewallPoliciesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -214,6 +215,7 @@ public final class ReorderFirewallPoliciesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

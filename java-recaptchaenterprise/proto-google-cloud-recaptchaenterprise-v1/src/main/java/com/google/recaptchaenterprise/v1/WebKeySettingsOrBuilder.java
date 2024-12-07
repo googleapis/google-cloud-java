@@ -52,6 +52,7 @@ public interface WebKeySettingsOrBuilder
    * @return A list containing the allowedDomains.
    */
   java.util.List<java.lang.String> getAllowedDomainsList();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface WebKeySettingsOrBuilder
    * @return The count of allowedDomains.
    */
   int getAllowedDomainsCount();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface WebKeySettingsOrBuilder
    * @return The allowedDomains at the given index.
    */
   java.lang.String getAllowedDomains(int index);
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface WebKeySettingsOrBuilder
    * @return The enum numeric value on the wire for integrationType.
    */
   int getIntegrationTypeValue();
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public interface WebKeySettingsOrBuilder
    * @return The enum numeric value on the wire for challengeSecurityPreference.
    */
   int getChallengeSecurityPreferenceValue();
+
   /**
    *
    *

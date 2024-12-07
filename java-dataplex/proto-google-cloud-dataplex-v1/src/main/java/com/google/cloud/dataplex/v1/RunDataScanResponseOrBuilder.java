@@ -36,6 +36,7 @@ public interface RunDataScanResponseOrBuilder
    * @return Whether the job field is set.
    */
   boolean hasJob();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RunDataScanResponseOrBuilder
    * @return The job.
    */
   com.google.cloud.dataplex.v1.DataScanJob getJob();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.CreateStoragePoolRequest)
     CreateStoragePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateStoragePoolRequest.newBuilder() to construct.
   private CreateStoragePoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storagePoolId_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
 
   public static final int STORAGE_POOL_FIELD_NUMBER = 3;
   private com.google.cloud.netapp.v1.StoragePool storagePool_;
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
   public boolean hasStoragePool() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
         ? com.google.cloud.netapp.v1.StoragePool.getDefaultInstance()
         : storagePool_;
   }
+
   /**
    *
    *
@@ -415,6 +423,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -644,6 +653,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -668,6 +678,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -692,6 +703,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +747,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +774,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object storagePoolId_ = "";
+
     /**
      *
      *
@@ -785,6 +800,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -810,6 +826,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +905,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
             com.google.cloud.netapp.v1.StoragePool.Builder,
             com.google.cloud.netapp.v1.StoragePoolOrBuilder>
         storagePoolBuilder_;
+
     /**
      *
      *
@@ -902,6 +922,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
     public boolean hasStoragePool() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -924,6 +945,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
         return storagePoolBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -948,6 +970,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +992,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1022,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1044,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1061,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return getStoragePoolFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1055,6 +1082,7 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
             : storagePool_;
       }
     }
+
     /**
      *
      *

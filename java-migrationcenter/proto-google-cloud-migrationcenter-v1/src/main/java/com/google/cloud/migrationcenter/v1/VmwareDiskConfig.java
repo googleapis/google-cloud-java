@@ -33,6 +33,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.VmwareDiskConfig)
     VmwareDiskConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VmwareDiskConfig.newBuilder() to construct.
   private VmwareDiskConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -178,6 +179,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
      * <code>BACKING_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int BACKING_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -188,6 +190,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
      * <code>BACKING_TYPE_FLAT_V1 = 1;</code>
      */
     public static final int BACKING_TYPE_FLAT_V1_VALUE = 1;
+
     /**
      *
      *
@@ -198,6 +201,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
      * <code>BACKING_TYPE_FLAT_V2 = 2;</code>
      */
     public static final int BACKING_TYPE_FLAT_V2_VALUE = 2;
+
     /**
      *
      *
@@ -208,6 +212,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
      * <code>BACKING_TYPE_PMEM = 3;</code>
      */
     public static final int BACKING_TYPE_PMEM_VALUE = 3;
+
     /**
      *
      *
@@ -218,6 +223,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
      * <code>BACKING_TYPE_RDM_V1 = 4;</code>
      */
     public static final int BACKING_TYPE_RDM_V1_VALUE = 4;
+
     /**
      *
      *
@@ -228,6 +234,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
      * <code>BACKING_TYPE_RDM_V2 = 5;</code>
      */
     public static final int BACKING_TYPE_RDM_V2_VALUE = 5;
+
     /**
      *
      *
@@ -238,6 +245,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
      * <code>BACKING_TYPE_SESPARSE = 6;</code>
      */
     public static final int BACKING_TYPE_SESPARSE_VALUE = 6;
+
     /**
      *
      *
@@ -248,6 +256,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
      * <code>BACKING_TYPE_SESPARSE_V1 = 7;</code>
      */
     public static final int BACKING_TYPE_SESPARSE_V1_VALUE = 7;
+
     /**
      *
      *
@@ -419,6 +428,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
      * <code>VMDK_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int VMDK_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -429,6 +439,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
      * <code>DEPENDENT = 1;</code>
      */
     public static final int DEPENDENT_VALUE = 1;
+
     /**
      *
      *
@@ -439,6 +450,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
      * <code>INDEPENDENT_PERSISTENT = 2;</code>
      */
     public static final int INDEPENDENT_PERSISTENT_VALUE = 2;
+
     /**
      *
      *
@@ -590,6 +602,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
      * <code>RDM_COMPATIBILITY_UNSPECIFIED = 0;</code>
      */
     public static final int RDM_COMPATIBILITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -600,6 +613,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
      * <code>PHYSICAL_COMPATIBILITY = 1;</code>
      */
     public static final int PHYSICAL_COMPATIBILITY_VALUE = 1;
+
     /**
      *
      *
@@ -700,6 +714,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int BACKING_TYPE_FIELD_NUMBER = 1;
   private int backingType_ = 0;
+
   /**
    *
    *
@@ -715,6 +730,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
   public int getBackingTypeValue() {
     return backingType_;
   }
+
   /**
    *
    *
@@ -737,6 +753,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int SHARED_FIELD_NUMBER = 2;
   private boolean shared_ = false;
+
   /**
    *
    *
@@ -755,6 +772,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int VMDK_MODE_FIELD_NUMBER = 3;
   private int vmdkMode_ = 0;
+
   /**
    *
    *
@@ -770,6 +788,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
   public int getVmdkModeValue() {
     return vmdkMode_;
   }
+
   /**
    *
    *
@@ -792,6 +811,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int RDM_COMPATIBILITY_FIELD_NUMBER = 4;
   private int rdmCompatibility_ = 0;
+
   /**
    *
    *
@@ -808,6 +828,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
   public int getRdmCompatibilityValue() {
     return rdmCompatibility_;
   }
+
   /**
    *
    *
@@ -1031,6 +1052,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1252,6 +1274,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int backingType_ = 0;
+
     /**
      *
      *
@@ -1267,6 +1290,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
     public int getBackingTypeValue() {
       return backingType_;
     }
+
     /**
      *
      *
@@ -1285,6 +1309,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1329,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.migrationcenter.v1.VmwareDiskConfig.BackingType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1326,6 +1352,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1345,6 +1372,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean shared_;
+
     /**
      *
      *
@@ -1360,6 +1388,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
     public boolean getShared() {
       return shared_;
     }
+
     /**
      *
      *
@@ -1379,6 +1408,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1398,6 +1428,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int vmdkMode_ = 0;
+
     /**
      *
      *
@@ -1413,6 +1444,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
     public int getVmdkModeValue() {
       return vmdkMode_;
     }
+
     /**
      *
      *
@@ -1431,6 +1463,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1450,6 +1483,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.migrationcenter.v1.VmwareDiskConfig.VmdkMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1472,6 +1506,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1491,6 +1526,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int rdmCompatibility_ = 0;
+
     /**
      *
      *
@@ -1508,6 +1544,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
     public int getRdmCompatibilityValue() {
       return rdmCompatibility_;
     }
+
     /**
      *
      *
@@ -1528,6 +1565,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1551,6 +1589,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.migrationcenter.v1.VmwareDiskConfig.RdmCompatibility.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1575,6 +1614,7 @@ public final class VmwareDiskConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

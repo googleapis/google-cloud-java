@@ -33,6 +33,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.biglake.v1alpha1.CreateLockRequest)
     CreateLockRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateLockRequest.newBuilder() to construct.
   private CreateLockRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int LOCK_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.biglake.v1alpha1.Lock lock_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasLock() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.bigquery.biglake.v1alpha1.Lock.getDefaultInstance()
         : lock_;
   }
+
   /**
    *
    *
@@ -356,6 +362,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -572,6 +579,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -598,6 +606,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -624,6 +633,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -649,6 +659,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +681,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -703,6 +715,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.bigquery.biglake.v1alpha1.Lock.Builder,
             com.google.cloud.bigquery.biglake.v1alpha1.LockOrBuilder>
         lockBuilder_;
+
     /**
      *
      *
@@ -720,6 +733,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasLock() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -743,6 +757,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
         return lockBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +807,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +861,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +879,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getLockFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -881,6 +901,7 @@ public final class CreateLockRequest extends com.google.protobuf.GeneratedMessag
             : lock_;
       }
     }
+
     /**
      *
      *

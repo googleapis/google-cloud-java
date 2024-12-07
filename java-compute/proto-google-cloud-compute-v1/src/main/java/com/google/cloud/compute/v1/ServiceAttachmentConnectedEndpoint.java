@@ -33,6 +33,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint)
     ServiceAttachmentConnectedEndpointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServiceAttachmentConnectedEndpoint.newBuilder() to construct.
   private ServiceAttachmentConnectedEndpoint(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -151,6 +152,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
+
     /**
      *
      *
@@ -161,6 +163,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * <code>ACCEPTED = 246714279;</code>
      */
     public static final int ACCEPTED_VALUE = 246714279;
+
     /**
      *
      *
@@ -171,6 +174,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * <code>CLOSED = 380163436;</code>
      */
     public static final int CLOSED_VALUE = 380163436;
+
     /**
      *
      *
@@ -181,6 +185,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * <code>NEEDS_ATTENTION = 344491452;</code>
      */
     public static final int NEEDS_ATTENTION_VALUE = 344491452;
+
     /**
      *
      *
@@ -191,6 +196,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * <code>PENDING = 35394935;</code>
      */
     public static final int PENDING_VALUE = 35394935;
+
     /**
      *
      *
@@ -201,6 +207,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * <code>REJECTED = 174130302;</code>
      */
     public static final int REJECTED_VALUE = 174130302;
+
     /** <code>STATUS_UNSPECIFIED = 42133066;</code> */
     public static final int STATUS_UNSPECIFIED_VALUE = 42133066;
 
@@ -302,6 +309,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object consumerNetwork_ = "";
+
   /**
    *
    *
@@ -317,6 +325,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
   public boolean hasConsumerNetwork() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -340,6 +349,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -368,6 +378,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
+
   /**
    *
    *
@@ -383,6 +394,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
   public boolean hasEndpoint() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -406,6 +418,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -432,6 +445,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
 
   public static final int PROPAGATED_CONNECTION_COUNT_FIELD_NUMBER = 324594130;
   private int propagatedConnectionCount_ = 0;
+
   /**
    *
    *
@@ -447,6 +461,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
   public boolean hasPropagatedConnectionCount() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -465,6 +480,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
 
   public static final int PSC_CONNECTION_ID_FIELD_NUMBER = 292082397;
   private long pscConnectionId_ = 0L;
+
   /**
    *
    *
@@ -480,6 +496,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
   public boolean hasPscConnectionId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -500,6 +517,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
+
   /**
    *
    *
@@ -516,6 +534,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -540,6 +559,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -788,6 +808,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1038,6 +1059,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object consumerNetwork_ = "";
+
     /**
      *
      *
@@ -1052,6 +1074,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public boolean hasConsumerNetwork() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1074,6 +1097,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1120,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1142,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1160,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1185,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     }
 
     private java.lang.Object endpoint_ = "";
+
     /**
      *
      *
@@ -1172,6 +1200,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public boolean hasEndpoint() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1194,6 +1223,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1216,6 +1246,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1237,6 +1268,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1286,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1278,6 +1311,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     }
 
     private int propagatedConnectionCount_;
+
     /**
      *
      *
@@ -1293,6 +1327,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public boolean hasPropagatedConnectionCount() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1308,6 +1343,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public int getPropagatedConnectionCount() {
       return propagatedConnectionCount_;
     }
+
     /**
      *
      *
@@ -1327,6 +1363,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1346,6 +1383,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     }
 
     private long pscConnectionId_;
+
     /**
      *
      *
@@ -1361,6 +1399,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public boolean hasPscConnectionId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1376,6 +1415,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public long getPscConnectionId() {
       return pscConnectionId_;
     }
+
     /**
      *
      *
@@ -1395,6 +1435,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1455,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     }
 
     private java.lang.Object status_ = "";
+
     /**
      *
      *
@@ -1429,6 +1471,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1452,6 +1495,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1475,6 +1519,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1497,6 +1542,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1515,6 +1561,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

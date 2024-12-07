@@ -33,6 +33,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.UpdateApplicationRequest)
     UpdateApplicationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateApplicationRequest.newBuilder() to construct.
   private UpdateApplicationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
 
   public static final int APPLICATION_FIELD_NUMBER = 2;
   private com.google.cloud.visionai.v1.Application application_;
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
   public boolean hasApplication() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
         ? com.google.cloud.visionai.v1.Application.getDefaultInstance()
         : application_;
   }
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -444,6 +453,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -682,6 +692,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -701,6 +712,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -726,6 +738,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -753,6 +766,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +849,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +869,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -875,6 +893,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -912,6 +931,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
             com.google.cloud.visionai.v1.Application.Builder,
             com.google.cloud.visionai.v1.ApplicationOrBuilder>
         applicationBuilder_;
+
     /**
      *
      *
@@ -928,6 +948,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
     public boolean hasApplication() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -950,6 +971,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
         return applicationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -974,6 +996,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1019,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1049,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1071,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1088,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return getApplicationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1082,6 +1109,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
             : application_;
       }
     }
+
     /**
      *
      *
@@ -1111,6 +1139,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1145,6 +1174,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1179,6 +1209,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1243,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1273,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

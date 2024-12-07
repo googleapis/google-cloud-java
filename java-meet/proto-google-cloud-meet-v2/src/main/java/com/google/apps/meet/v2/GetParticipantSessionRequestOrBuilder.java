@@ -38,6 +38,7 @@ public interface GetParticipantSessionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

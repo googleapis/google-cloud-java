@@ -220,7 +220,8 @@ public class MockVideoStitcherServiceImpl extends VideoStitcherServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListVodStitchDetails, expected %s or %s",
+                  "Unrecognized response type %s for method ListVodStitchDetails, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListVodStitchDetailsResponse.class.getName(),
                   Exception.class.getName())));
@@ -306,7 +307,8 @@ public class MockVideoStitcherServiceImpl extends VideoStitcherServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListLiveAdTagDetails, expected %s or %s",
+                  "Unrecognized response type %s for method ListLiveAdTagDetails, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListLiveAdTagDetailsResponse.class.getName(),
                   Exception.class.getName())));

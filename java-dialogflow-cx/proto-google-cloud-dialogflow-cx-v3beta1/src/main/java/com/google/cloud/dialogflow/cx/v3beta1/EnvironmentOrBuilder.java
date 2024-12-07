@@ -38,6 +38,7 @@ public interface EnvironmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface EnvironmentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface EnvironmentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface EnvironmentOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig>
       getVersionConfigsList();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface EnvironmentOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig getVersionConfigs(int index);
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface EnvironmentOrBuilder
    * </code>
    */
   int getVersionConfigsCount();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface EnvironmentOrBuilder
   java.util.List<
           ? extends com.google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfigOrBuilder>
       getVersionConfigsOrBuilderList();
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public interface EnvironmentOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the testCasesConfig field is set.
    */
   boolean hasTestCasesConfig();
+
   /**
    *
    *
@@ -251,6 +261,7 @@ public interface EnvironmentOrBuilder
    * @return The testCasesConfig.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Environment.TestCasesConfig getTestCasesConfig();
+
   /**
    *
    *
@@ -276,6 +287,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the webhookConfig field is set.
    */
   boolean hasWebhookConfig();
+
   /**
    *
    *
@@ -288,6 +300,7 @@ public interface EnvironmentOrBuilder
    * @return The webhookConfig.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig getWebhookConfig();
+
   /**
    *
    *

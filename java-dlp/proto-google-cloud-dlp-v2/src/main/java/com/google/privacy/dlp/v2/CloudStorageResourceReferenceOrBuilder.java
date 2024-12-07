@@ -36,6 +36,7 @@ public interface CloudStorageResourceReferenceOrBuilder
    * @return The bucketName.
    */
   java.lang.String getBucketName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface CloudStorageResourceReferenceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *

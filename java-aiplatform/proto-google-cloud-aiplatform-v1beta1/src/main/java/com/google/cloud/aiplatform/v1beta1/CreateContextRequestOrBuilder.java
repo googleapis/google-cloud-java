@@ -40,6 +40,7 @@ public interface CreateContextRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateContextRequestOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateContextRequestOrBuilder
    * @return The context.
    */
   com.google.cloud.aiplatform.v1beta1.Context getContext();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateContextRequestOrBuilder
    * @return The contextId.
    */
   java.lang.String getContextId();
+
   /**
    *
    *

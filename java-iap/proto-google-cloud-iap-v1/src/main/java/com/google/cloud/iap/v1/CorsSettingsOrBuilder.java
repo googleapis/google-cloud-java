@@ -37,6 +37,7 @@ public interface CorsSettingsOrBuilder
    * @return Whether the allowHttpOptions field is set.
    */
   boolean hasAllowHttpOptions();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface CorsSettingsOrBuilder
    * @return The allowHttpOptions.
    */
   com.google.protobuf.BoolValue getAllowHttpOptions();
+
   /**
    *
    *

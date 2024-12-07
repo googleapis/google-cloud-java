@@ -38,6 +38,7 @@ public interface PatchRegionSecurityPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface PatchRegionSecurityPolicyRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface PatchRegionSecurityPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface PatchRegionSecurityPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface PatchRegionSecurityPolicyRequestOrBuilder
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface PatchRegionSecurityPolicyRequestOrBuilder
    * @return Whether the securityPolicyResource field is set.
    */
   boolean hasSecurityPolicyResource();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface PatchRegionSecurityPolicyRequestOrBuilder
    * @return The securityPolicyResource.
    */
   com.google.cloud.compute.v1.SecurityPolicy getSecurityPolicyResource();
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public interface PatchRegionSecurityPolicyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public interface PatchRegionSecurityPolicyRequestOrBuilder
    * @return The updateMask.
    */
   java.lang.String getUpdateMask();
+
   /**
    *
    *

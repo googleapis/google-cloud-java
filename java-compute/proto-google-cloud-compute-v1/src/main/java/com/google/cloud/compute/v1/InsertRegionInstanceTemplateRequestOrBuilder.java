@@ -38,6 +38,7 @@ public interface InsertRegionInstanceTemplateRequestOrBuilder
    * @return Whether the instanceTemplateResource field is set.
    */
   boolean hasInstanceTemplateResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InsertRegionInstanceTemplateRequestOrBuilder
    * @return The instanceTemplateResource.
    */
   com.google.cloud.compute.v1.InstanceTemplate getInstanceTemplateResource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface InsertRegionInstanceTemplateRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface InsertRegionInstanceTemplateRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface InsertRegionInstanceTemplateRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface InsertRegionInstanceTemplateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

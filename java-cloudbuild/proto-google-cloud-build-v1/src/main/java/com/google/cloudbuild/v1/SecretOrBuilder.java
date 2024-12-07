@@ -36,6 +36,7 @@ public interface SecretOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface SecretOrBuilder
    * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
    */
   int getSecretEnvCount();
+
   /**
    *
    *
@@ -79,9 +81,11 @@ public interface SecretOrBuilder
    * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
    */
   boolean containsSecretEnv(java.lang.String key);
+
   /** Use {@link #getSecretEnvMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.ByteString> getSecretEnv();
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface SecretOrBuilder
    * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.ByteString> getSecretEnvMap();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface SecretOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.ByteString defaultValue);
+
   /**
    *
    *

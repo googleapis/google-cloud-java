@@ -34,6 +34,7 @@ public interface ListEkmConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.EkmConnection ekm_connections = 1;</code>
    */
   java.util.List<com.google.cloud.kms.v1.EkmConnection> getEkmConnectionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListEkmConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.EkmConnection ekm_connections = 1;</code>
    */
   com.google.cloud.kms.v1.EkmConnection getEkmConnections(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListEkmConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.EkmConnection ekm_connections = 1;</code>
    */
   int getEkmConnectionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListEkmConnectionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.kms.v1.EkmConnectionOrBuilder>
       getEkmConnectionsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListEkmConnectionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

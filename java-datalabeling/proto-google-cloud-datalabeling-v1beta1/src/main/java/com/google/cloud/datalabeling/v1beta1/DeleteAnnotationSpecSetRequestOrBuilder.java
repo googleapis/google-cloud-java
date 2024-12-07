@@ -39,6 +39,7 @@ public interface DeleteAnnotationSpecSetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

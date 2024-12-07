@@ -33,6 +33,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.LookupDiscoveredServiceResponse)
     LookupDiscoveredServiceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LookupDiscoveredServiceResponse.newBuilder() to construct.
   private LookupDiscoveredServiceResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
   private int bitField0_;
   public static final int DISCOVERED_SERVICE_FIELD_NUMBER = 1;
   private com.google.cloud.apphub.v1.DiscoveredService discoveredService_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
   public boolean hasDiscoveredService() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
         ? com.google.cloud.apphub.v1.DiscoveredService.getDefaultInstance()
         : discoveredService_;
   }
+
   /**
    *
    *
@@ -278,6 +282,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -485,6 +490,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
             com.google.cloud.apphub.v1.DiscoveredService.Builder,
             com.google.cloud.apphub.v1.DiscoveredServiceOrBuilder>
         discoveredServiceBuilder_;
+
     /**
      *
      *
@@ -499,6 +505,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
     public boolean hasDiscoveredService() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -519,6 +526,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
         return discoveredServiceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -541,6 +549,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -561,6 +570,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -589,6 +599,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -608,6 +619,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -622,6 +634,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
       onChanged();
       return getDiscoveredServiceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -640,6 +653,7 @@ public final class LookupDiscoveredServiceResponse extends com.google.protobuf.G
             : discoveredService_;
       }
     }
+
     /**
      *
      *

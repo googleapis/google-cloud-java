@@ -36,6 +36,7 @@ public interface TriggerEntityOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface TriggerEntityOrBuilder
    * @return A list containing the triggeringEvents.
    */
   java.util.List<java.lang.String> getTriggeringEventsList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface TriggerEntityOrBuilder
    * @return The count of triggeringEvents.
    */
   int getTriggeringEventsCount();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface TriggerEntityOrBuilder
    * @return The triggeringEvents at the given index.
    */
   java.lang.String getTriggeringEvents(int index);
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface TriggerEntityOrBuilder
    * @return The triggerType.
    */
   java.lang.String getTriggerType();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface TriggerEntityOrBuilder
    * @return The sqlCode.
    */
   java.lang.String getSqlCode();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface TriggerEntityOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface TriggerEntityOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
+
   /**
    *
    *

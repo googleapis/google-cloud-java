@@ -33,6 +33,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1.SqlResult)
     SqlResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SqlResult.newBuilder() to construct.
   private SqlResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.alloydb.v1.SqlResultColumn> columns_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.alloydb.v1.SqlResultColumn> getColumnsList() {
     return columns_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       getColumnsOrBuilderList() {
     return columns_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
   public int getColumnsCount() {
     return columns_.size();
   }
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.alloydb.v1.SqlResultColumn getColumns(int index) {
     return columns_.get(index);
   }
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.alloydb.v1.SqlResultRow> rows_;
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.alloydb.v1.SqlResultRow> getRowsList() {
     return rows_;
   }
+
   /**
    *
    *
@@ -171,6 +179,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       getRowsOrBuilderList() {
     return rows_;
   }
+
   /**
    *
    *
@@ -184,6 +193,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
   public int getRowsCount() {
     return rows_.size();
   }
+
   /**
    *
    *
@@ -197,6 +207,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.alloydb.v1.SqlResultRow getRows(int index) {
     return rows_.get(index);
   }
+
   /**
    *
    *
@@ -381,6 +392,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -697,6 +709,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
         return columnsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
         return columnsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -731,6 +745,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
         return columnsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +791,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +815,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +839,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +882,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +904,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +925,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +946,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +960,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.alloydb.v1.SqlResultColumn.Builder getColumnsBuilder(int index) {
       return getColumnsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -953,6 +978,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
         return columnsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -971,6 +997,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(columns_);
       }
     }
+
     /**
      *
      *
@@ -985,6 +1012,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       return getColumnsFieldBuilder()
           .addBuilder(com.google.cloud.alloydb.v1.SqlResultColumn.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -999,6 +1027,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       return getColumnsFieldBuilder()
           .addBuilder(index, com.google.cloud.alloydb.v1.SqlResultColumn.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1063,6 +1092,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1079,6 +1109,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1095,6 +1126,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1149,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1170,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1159,6 +1193,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1216,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1236,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1257,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1240,6 +1278,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1298,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1278,6 +1318,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1290,6 +1331,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.alloydb.v1.SqlResultRow.Builder getRowsBuilder(int index) {
       return getRowsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1306,6 +1348,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1323,6 +1366,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(rows_);
       }
     }
+
     /**
      *
      *
@@ -1336,6 +1380,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       return getRowsFieldBuilder()
           .addBuilder(com.google.cloud.alloydb.v1.SqlResultRow.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1349,6 +1394,7 @@ public final class SqlResult extends com.google.protobuf.GeneratedMessageV3
       return getRowsFieldBuilder()
           .addBuilder(index, com.google.cloud.alloydb.v1.SqlResultRow.getDefaultInstance());
     }
+
     /**
      *
      *

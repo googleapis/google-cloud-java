@@ -36,6 +36,7 @@ public interface AnalysisOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface AnalysisOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface AnalysisOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface AnalysisOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface AnalysisOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface AnalysisOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -145,9 +151,11 @@ public interface AnalysisOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -158,6 +166,7 @@ public interface AnalysisOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -172,6 +181,7 @@ public interface AnalysisOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -195,6 +205,7 @@ public interface AnalysisOrBuilder
    * @return Whether the analysisDefinition field is set.
    */
   boolean hasAnalysisDefinition();
+
   /**
    *
    *
@@ -207,6 +218,7 @@ public interface AnalysisOrBuilder
    * @return The analysisDefinition.
    */
   com.google.cloud.visionai.v1.AnalysisDefinition getAnalysisDefinition();
+
   /**
    *
    *
@@ -231,6 +243,7 @@ public interface AnalysisOrBuilder
    * <code>map&lt;string, string&gt; input_streams_mapping = 6;</code>
    */
   int getInputStreamsMappingCount();
+
   /**
    *
    *
@@ -244,9 +257,11 @@ public interface AnalysisOrBuilder
    * <code>map&lt;string, string&gt; input_streams_mapping = 6;</code>
    */
   boolean containsInputStreamsMapping(java.lang.String key);
+
   /** Use {@link #getInputStreamsMappingMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getInputStreamsMapping();
+
   /**
    *
    *
@@ -260,6 +275,7 @@ public interface AnalysisOrBuilder
    * <code>map&lt;string, string&gt; input_streams_mapping = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getInputStreamsMappingMap();
+
   /**
    *
    *
@@ -277,6 +293,7 @@ public interface AnalysisOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -304,6 +321,7 @@ public interface AnalysisOrBuilder
    * <code>map&lt;string, string&gt; output_streams_mapping = 7;</code>
    */
   int getOutputStreamsMappingCount();
+
   /**
    *
    *
@@ -317,9 +335,11 @@ public interface AnalysisOrBuilder
    * <code>map&lt;string, string&gt; output_streams_mapping = 7;</code>
    */
   boolean containsOutputStreamsMapping(java.lang.String key);
+
   /** Use {@link #getOutputStreamsMappingMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getOutputStreamsMapping();
+
   /**
    *
    *
@@ -333,6 +353,7 @@ public interface AnalysisOrBuilder
    * <code>map&lt;string, string&gt; output_streams_mapping = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getOutputStreamsMappingMap();
+
   /**
    *
    *
@@ -350,6 +371,7 @@ public interface AnalysisOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

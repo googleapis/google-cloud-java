@@ -36,6 +36,7 @@ public interface GetSnapshotRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetSnapshotRequestOrBuilder
    * @return The snapshot.
    */
   java.lang.String getSnapshot();
+
   /**
    *
    *

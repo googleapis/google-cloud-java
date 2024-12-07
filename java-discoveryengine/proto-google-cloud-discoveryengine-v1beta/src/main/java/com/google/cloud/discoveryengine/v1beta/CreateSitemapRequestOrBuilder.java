@@ -41,6 +41,7 @@ public interface CreateSitemapRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface CreateSitemapRequestOrBuilder
    * @return Whether the sitemap field is set.
    */
   boolean hasSitemap();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface CreateSitemapRequestOrBuilder
    * @return The sitemap.
    */
   com.google.cloud.discoveryengine.v1beta.Sitemap getSitemap();
+
   /**
    *
    *

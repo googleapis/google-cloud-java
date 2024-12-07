@@ -34,6 +34,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.CreateKeyRingRequest)
     CreateKeyRingRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateKeyRingRequest.newBuilder() to construct.
   private CreateKeyRingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyRingId_ = "";
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
 
   public static final int KEY_RING_FIELD_NUMBER = 3;
   private com.google.cloud.kms.v1.KeyRing keyRing_;
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
   public boolean hasKeyRing() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.kms.v1.KeyRing getKeyRing() {
     return keyRing_ == null ? com.google.cloud.kms.v1.KeyRing.getDefaultInstance() : keyRing_;
   }
+
   /**
    *
    *
@@ -412,6 +420,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -640,6 +649,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -666,6 +676,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -692,6 +703,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -717,6 +729,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +751,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +780,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object keyRingId_ = "";
+
     /**
      *
      *
@@ -789,6 +804,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -812,6 +828,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +870,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +901,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.kms.v1.KeyRing.Builder,
             com.google.cloud.kms.v1.KeyRingOrBuilder>
         keyRingBuilder_;
+
     /**
      *
      *
@@ -898,6 +918,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
     public boolean hasKeyRing() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -918,6 +939,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
         return keyRingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -942,6 +964,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +986,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -992,6 +1016,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1055,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getKeyRingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1047,6 +1074,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
         return keyRing_ == null ? com.google.cloud.kms.v1.KeyRing.getDefaultInstance() : keyRing_;
       }
     }
+
     /**
      *
      *

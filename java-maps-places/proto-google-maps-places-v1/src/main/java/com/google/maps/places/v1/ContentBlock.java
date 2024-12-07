@@ -33,6 +33,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.ContentBlock)
     ContentBlockOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ContentBlock.newBuilder() to construct.
   private ContentBlock(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object topic_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTENT_FIELD_NUMBER = 2;
   private com.google.type.LocalizedText content_;
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LocalizedText getContent() {
     return content_ == null ? com.google.type.LocalizedText.getDefaultInstance() : content_;
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REFERENCES_FIELD_NUMBER = 3;
   private com.google.maps.places.v1.References references_;
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReferences() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.places.v1.References.getDefaultInstance()
         : references_;
   }
+
   /**
    *
    *
@@ -409,6 +418,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -640,6 +650,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object topic_ = "";
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -684,6 +696,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +736,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +766,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
             com.google.type.LocalizedText.Builder,
             com.google.type.LocalizedTextOrBuilder>
         contentBuilder_;
+
     /**
      *
      *
@@ -765,6 +781,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContent() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -783,6 +800,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
         return contentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -805,6 +823,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +843,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +871,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +891,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +906,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getContentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -900,6 +923,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
         return content_ == null ? com.google.type.LocalizedText.getDefaultInstance() : content_;
       }
     }
+
     /**
      *
      *
@@ -932,6 +956,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.places.v1.References.Builder,
             com.google.maps.places.v1.ReferencesOrBuilder>
         referencesBuilder_;
+
     /**
      *
      *
@@ -950,6 +975,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReferences() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -974,6 +1000,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
         return referencesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1000,6 +1027,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1051,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1083,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1107,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1126,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReferencesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1117,6 +1149,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessageV3
             : references_;
       }
     }
+
     /**
      *
      *

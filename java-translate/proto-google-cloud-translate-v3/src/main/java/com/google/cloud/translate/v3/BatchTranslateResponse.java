@@ -36,6 +36,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.BatchTranslateResponse)
     BatchTranslateResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchTranslateResponse.newBuilder() to construct.
   private BatchTranslateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int TOTAL_CHARACTERS_FIELD_NUMBER = 1;
   private long totalCharacters_ = 0L;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
 
   public static final int TRANSLATED_CHARACTERS_FIELD_NUMBER = 2;
   private long translatedCharacters_ = 0L;
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
 
   public static final int FAILED_CHARACTERS_FIELD_NUMBER = 3;
   private long failedCharacters_ = 0L;
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
 
   public static final int SUBMIT_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp submitTime_;
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
   public boolean hasSubmitTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getSubmitTime() {
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
   }
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
 
   public static final int END_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -422,6 +432,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -681,6 +692,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private long totalCharacters_;
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     public long getTotalCharacters() {
       return totalCharacters_;
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     }
 
     private long translatedCharacters_;
+
     /**
      *
      *
@@ -749,6 +764,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     public long getTranslatedCharacters() {
       return translatedCharacters_;
     }
+
     /**
      *
      *
@@ -768,6 +784,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +804,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     }
 
     private long failedCharacters_;
+
     /**
      *
      *
@@ -802,6 +820,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     public long getFailedCharacters() {
       return failedCharacters_;
     }
+
     /**
      *
      *
@@ -821,6 +840,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +865,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         submitTimeBuilder_;
+
     /**
      *
      *
@@ -859,6 +880,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     public boolean hasSubmitTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -879,6 +901,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
         return submitTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -901,6 +924,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +944,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +972,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +992,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -980,6 +1007,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getSubmitTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -998,6 +1026,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
             : submitTime_;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1059,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1046,6 +1076,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1066,6 +1097,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1122,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1144,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1174,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1196,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1213,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1195,6 +1232,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *

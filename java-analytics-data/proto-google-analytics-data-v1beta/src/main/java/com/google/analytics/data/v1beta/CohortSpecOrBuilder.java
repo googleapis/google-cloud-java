@@ -37,6 +37,7 @@ public interface CohortSpecOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Cohort cohorts = 1;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Cohort> getCohortsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface CohortSpecOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Cohort cohorts = 1;</code>
    */
   com.google.analytics.data.v1beta.Cohort getCohorts(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface CohortSpecOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Cohort cohorts = 1;</code>
    */
   int getCohortsCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface CohortSpecOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.CohortOrBuilder>
       getCohortsOrBuilderList();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface CohortSpecOrBuilder
    * @return Whether the cohortsRange field is set.
    */
   boolean hasCohortsRange();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface CohortSpecOrBuilder
    * @return The cohortsRange.
    */
   com.google.analytics.data.v1beta.CohortsRange getCohortsRange();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface CohortSpecOrBuilder
    * @return Whether the cohortReportSettings field is set.
    */
   boolean hasCohortReportSettings();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface CohortSpecOrBuilder
    * @return The cohortReportSettings.
    */
   com.google.analytics.data.v1beta.CohortReportSettings getCohortReportSettings();
+
   /**
    *
    *

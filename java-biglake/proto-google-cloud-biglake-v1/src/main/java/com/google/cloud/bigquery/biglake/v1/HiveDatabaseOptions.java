@@ -33,6 +33,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.biglake.v1.HiveDatabaseOptions)
     HiveDatabaseOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HiveDatabaseOptions.newBuilder() to construct.
   private HiveDatabaseOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationUri_ = "";
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -154,6 +157,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
   public int getParametersCount() {
     return internalGetParameters().getMap().size();
   }
+
   /**
    *
    *
@@ -170,12 +174,14 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
     }
     return internalGetParameters().getMap().containsKey(key);
   }
+
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParameters() {
     return getParametersMap();
   }
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
   public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
     return internalGetParameters().getMap();
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -407,6 +415,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -632,6 +641,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object locationUri_ = "";
+
     /**
      *
      *
@@ -655,6 +665,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +784,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
     public int getParametersCount() {
       return internalGetParameters().getMap().size();
     }
+
     /**
      *
      *
@@ -786,12 +801,14 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
       }
       return internalGetParameters().getMap().containsKey(key);
     }
+
     /** Use {@link #getParametersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParameters() {
       return getParametersMap();
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
     public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
       return internalGetParameters().getMap();
     }
+
     /**
      *
      *
@@ -825,6 +843,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -851,6 +870,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
       internalGetMutableParameters().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -867,12 +887,14 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
       internalGetMutableParameters().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParameters() {
       bitField0_ |= 0x00000002;
       return internalGetMutableParameters().getMutableMap();
     }
+
     /**
      *
      *
@@ -893,6 +915,7 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

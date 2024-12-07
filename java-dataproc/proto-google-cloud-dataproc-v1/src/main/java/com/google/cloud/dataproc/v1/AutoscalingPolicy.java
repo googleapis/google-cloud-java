@@ -33,6 +33,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.AutoscalingPolicy)
     AutoscalingPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoscalingPolicy.newBuilder() to construct.
   private AutoscalingPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -93,6 +94,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     private AlgorithmCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -127,6 +129,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -154,6 +157,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -186,6 +190,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -218,6 +223,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -252,6 +258,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int BASIC_ALGORITHM_FIELD_NUMBER = 3;
+
   /**
    * <code>
    * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -263,6 +270,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   public boolean hasBasicAlgorithm() {
     return algorithmCase_ == 3;
   }
+
   /**
    * <code>
    * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -277,6 +285,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm.getDefaultInstance();
   }
+
   /**
    * <code>
    * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -293,6 +302,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
 
   public static final int WORKER_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig workerConfig_;
+
   /**
    *
    *
@@ -310,6 +320,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   public boolean hasWorkerConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -329,6 +340,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig.getDefaultInstance()
         : workerConfig_;
   }
+
   /**
    *
    *
@@ -350,6 +362,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
 
   public static final int SECONDARY_WORKER_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig secondaryWorkerConfig_;
+
   /**
    *
    *
@@ -367,6 +380,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   public boolean hasSecondaryWorkerConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -387,6 +401,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig.getDefaultInstance()
         : secondaryWorkerConfig_;
   }
+
   /**
    *
    *
@@ -432,6 +447,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -454,12 +470,14 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -479,6 +497,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -505,6 +524,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -770,6 +790,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1107,6 +1128,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1133,6 +1155,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1182,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1184,6 +1208,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1230,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1259,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1264,6 +1291,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1295,6 +1323,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1325,6 +1354,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1351,6 +1381,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1419,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm.Builder,
             com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithmOrBuilder>
         basicAlgorithmBuilder_;
+
     /**
      * <code>
      * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1399,6 +1431,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     public boolean hasBasicAlgorithm() {
       return algorithmCase_ == 3;
     }
+
     /**
      * <code>
      * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1420,6 +1453,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm.getDefaultInstance();
       }
     }
+
     /**
      * <code>
      * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1438,6 +1472,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       algorithmCase_ = 3;
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1454,6 +1489,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       algorithmCase_ = 3;
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1484,6 +1520,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       algorithmCase_ = 3;
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1505,6 +1542,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1514,6 +1552,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         getBasicAlgorithmBuilder() {
       return getBasicAlgorithmFieldBuilder().getBuilder();
     }
+
     /**
      * <code>
      * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1531,6 +1570,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm.getDefaultInstance();
       }
     }
+
     /**
      * <code>
      * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1566,6 +1606,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig.Builder,
             com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfigOrBuilder>
         workerConfigBuilder_;
+
     /**
      *
      *
@@ -1582,6 +1623,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     public boolean hasWorkerConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1604,6 +1646,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         return workerConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1629,6 +1672,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1651,6 +1695,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1683,6 +1728,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1704,6 +1750,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1721,6 +1768,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getWorkerConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1742,6 +1790,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
             : workerConfig_;
       }
     }
+
     /**
      *
      *
@@ -1777,6 +1826,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig.Builder,
             com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfigOrBuilder>
         secondaryWorkerConfigBuilder_;
+
     /**
      *
      *
@@ -1793,6 +1843,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     public boolean hasSecondaryWorkerConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1816,6 +1867,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         return secondaryWorkerConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1841,6 +1893,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1863,6 +1916,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1895,6 +1949,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1916,6 +1971,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1933,6 +1989,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSecondaryWorkerConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1954,6 +2011,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
             : secondaryWorkerConfig_;
       }
     }
+
     /**
      *
      *
@@ -2007,6 +2065,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2029,12 +2088,14 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2054,6 +2115,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2080,6 +2142,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2112,6 +2175,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2134,12 +2198,14 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2166,6 +2232,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *

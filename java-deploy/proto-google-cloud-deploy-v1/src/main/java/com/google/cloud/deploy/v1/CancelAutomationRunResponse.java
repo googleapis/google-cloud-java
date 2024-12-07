@@ -33,6 +33,7 @@ public final class CancelAutomationRunResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.CancelAutomationRunResponse)
     CancelAutomationRunResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CancelAutomationRunResponse.newBuilder() to construct.
   private CancelAutomationRunResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class CancelAutomationRunResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface DeleteListingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

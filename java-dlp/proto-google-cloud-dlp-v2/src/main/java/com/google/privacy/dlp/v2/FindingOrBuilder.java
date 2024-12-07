@@ -38,6 +38,7 @@ public interface FindingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface FindingOrBuilder
    * @return The quote.
    */
   java.lang.String getQuote();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface FindingOrBuilder
    * @return Whether the infoType field is set.
    */
   boolean hasInfoType();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface FindingOrBuilder
    * @return The infoType.
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface FindingOrBuilder
    * @return The enum numeric value on the wire for likelihood.
    */
   int getLikelihoodValue();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface FindingOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface FindingOrBuilder
    * @return The location.
    */
   com.google.privacy.dlp.v2.Location getLocation();
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public interface FindingOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public interface FindingOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -233,6 +242,7 @@ public interface FindingOrBuilder
    * @return Whether the quoteInfo field is set.
    */
   boolean hasQuoteInfo();
+
   /**
    *
    *
@@ -247,6 +257,7 @@ public interface FindingOrBuilder
    * @return The quoteInfo.
    */
   com.google.privacy.dlp.v2.QuoteInfo getQuoteInfo();
+
   /**
    *
    *
@@ -272,6 +283,7 @@ public interface FindingOrBuilder
    * @return The resourceName.
    */
   java.lang.String getResourceName();
+
   /**
    *
    *
@@ -297,6 +309,7 @@ public interface FindingOrBuilder
    * @return The triggerName.
    */
   java.lang.String getTriggerName();
+
   /**
    *
    *
@@ -333,6 +346,7 @@ public interface FindingOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -356,9 +370,11 @@ public interface FindingOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -382,6 +398,7 @@ public interface FindingOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -409,6 +426,7 @@ public interface FindingOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -445,6 +463,7 @@ public interface FindingOrBuilder
    * @return Whether the jobCreateTime field is set.
    */
   boolean hasJobCreateTime();
+
   /**
    *
    *
@@ -457,6 +476,7 @@ public interface FindingOrBuilder
    * @return The jobCreateTime.
    */
   com.google.protobuf.Timestamp getJobCreateTime();
+
   /**
    *
    *
@@ -480,6 +500,7 @@ public interface FindingOrBuilder
    * @return The jobName.
    */
   java.lang.String getJobName();
+
   /**
    *
    *
@@ -505,6 +526,7 @@ public interface FindingOrBuilder
    * @return The findingId.
    */
   java.lang.String getFindingId();
+
   /**
    *
    *

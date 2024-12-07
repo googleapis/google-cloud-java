@@ -37,6 +37,7 @@ public interface PubsubDestinationOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
+
   /**
    *
    *

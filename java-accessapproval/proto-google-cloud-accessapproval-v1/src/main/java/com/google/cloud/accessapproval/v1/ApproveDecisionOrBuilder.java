@@ -36,6 +36,7 @@ public interface ApproveDecisionOrBuilder
    * @return Whether the approveTime field is set.
    */
   boolean hasApproveTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ApproveDecisionOrBuilder
    * @return The approveTime.
    */
   com.google.protobuf.Timestamp getApproveTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ApproveDecisionOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ApproveDecisionOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface ApproveDecisionOrBuilder
    * @return Whether the invalidateTime field is set.
    */
   boolean hasInvalidateTime();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ApproveDecisionOrBuilder
    * @return The invalidateTime.
    */
   com.google.protobuf.Timestamp getInvalidateTime();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface ApproveDecisionOrBuilder
    * @return Whether the signatureInfo field is set.
    */
   boolean hasSignatureInfo();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface ApproveDecisionOrBuilder
    * @return The signatureInfo.
    */
   com.google.cloud.accessapproval.v1.SignatureInfo getSignatureInfo();
+
   /**
    *
    *

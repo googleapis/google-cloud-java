@@ -35,6 +35,7 @@ public interface ListPostureDeploymentsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.securityposture.v1.PostureDeployment> getPostureDeploymentsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListPostureDeploymentsResponseOrBuilder
    * </code>
    */
   com.google.cloud.securityposture.v1.PostureDeployment getPostureDeployments(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListPostureDeploymentsResponseOrBuilder
    * </code>
    */
   int getPostureDeploymentsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListPostureDeploymentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securityposture.v1.PostureDeploymentOrBuilder>
       getPostureDeploymentsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListPostureDeploymentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface ListPostureDeploymentsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -131,6 +137,7 @@ public interface ListPostureDeploymentsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -144,6 +151,7 @@ public interface ListPostureDeploymentsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

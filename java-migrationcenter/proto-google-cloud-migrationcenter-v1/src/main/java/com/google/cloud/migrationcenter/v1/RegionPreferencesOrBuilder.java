@@ -40,6 +40,7 @@ public interface RegionPreferencesOrBuilder
    * @return A list containing the preferredRegions.
    */
   java.util.List<java.lang.String> getPreferredRegionsList();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface RegionPreferencesOrBuilder
    * @return The count of preferredRegions.
    */
   int getPreferredRegionsCount();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface RegionPreferencesOrBuilder
    * @return The preferredRegions at the given index.
    */
   java.lang.String getPreferredRegions(int index);
+
   /**
    *
    *

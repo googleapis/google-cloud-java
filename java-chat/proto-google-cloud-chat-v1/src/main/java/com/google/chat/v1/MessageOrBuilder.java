@@ -50,6 +50,7 @@ public interface MessageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -94,6 +95,7 @@ public interface MessageOrBuilder
    * @return Whether the sender field is set.
    */
   boolean hasSender();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface MessageOrBuilder
    * @return The sender.
    */
   com.google.chat.v1.User getSender();
+
   /**
    *
    *
@@ -147,6 +150,7 @@ public interface MessageOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public interface MessageOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -201,6 +206,7 @@ public interface MessageOrBuilder
    * @return Whether the lastUpdateTime field is set.
    */
   boolean hasLastUpdateTime();
+
   /**
    *
    *
@@ -216,6 +222,7 @@ public interface MessageOrBuilder
    * @return The lastUpdateTime.
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
+
   /**
    *
    *
@@ -244,6 +251,7 @@ public interface MessageOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -258,6 +266,7 @@ public interface MessageOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -291,6 +300,7 @@ public interface MessageOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -346,6 +356,7 @@ public interface MessageOrBuilder
    * @return The formattedText.
    */
   java.lang.String getFormattedText();
+
   /**
    *
    *
@@ -397,6 +408,7 @@ public interface MessageOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.chat.v1.ContextualAddOnMarkup.Card> getCardsList();
+
   /**
    *
    *
@@ -413,6 +425,7 @@ public interface MessageOrBuilder
    */
   @java.lang.Deprecated
   com.google.chat.v1.ContextualAddOnMarkup.Card getCards(int index);
+
   /**
    *
    *
@@ -429,6 +442,7 @@ public interface MessageOrBuilder
    */
   @java.lang.Deprecated
   int getCardsCount();
+
   /**
    *
    *
@@ -446,6 +460,7 @@ public interface MessageOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.chat.v1.ContextualAddOnMarkup.CardOrBuilder>
       getCardsOrBuilderList();
+
   /**
    *
    *
@@ -483,6 +498,7 @@ public interface MessageOrBuilder
    * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
    */
   java.util.List<com.google.chat.v1.CardWithId> getCardsV2List();
+
   /**
    *
    *
@@ -503,6 +519,7 @@ public interface MessageOrBuilder
    * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
    */
   com.google.chat.v1.CardWithId getCardsV2(int index);
+
   /**
    *
    *
@@ -523,6 +540,7 @@ public interface MessageOrBuilder
    * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
    */
   int getCardsV2Count();
+
   /**
    *
    *
@@ -543,6 +561,7 @@ public interface MessageOrBuilder
    * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
    */
   java.util.List<? extends com.google.chat.v1.CardWithIdOrBuilder> getCardsV2OrBuilderList();
+
   /**
    *
    *
@@ -576,6 +595,7 @@ public interface MessageOrBuilder
    * </code>
    */
   java.util.List<com.google.chat.v1.Annotation> getAnnotationsList();
+
   /**
    *
    *
@@ -588,6 +608,7 @@ public interface MessageOrBuilder
    * </code>
    */
   com.google.chat.v1.Annotation getAnnotations(int index);
+
   /**
    *
    *
@@ -600,6 +621,7 @@ public interface MessageOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -612,6 +634,7 @@ public interface MessageOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.chat.v1.AnnotationOrBuilder> getAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -639,6 +662,7 @@ public interface MessageOrBuilder
    * @return Whether the thread field is set.
    */
   boolean hasThread();
+
   /**
    *
    *
@@ -653,6 +677,7 @@ public interface MessageOrBuilder
    * @return The thread.
    */
   com.google.chat.v1.Thread getThread();
+
   /**
    *
    *
@@ -682,6 +707,7 @@ public interface MessageOrBuilder
    * @return Whether the space field is set.
    */
   boolean hasSpace();
+
   /**
    *
    *
@@ -698,6 +724,7 @@ public interface MessageOrBuilder
    * @return The space.
    */
   com.google.chat.v1.Space getSpace();
+
   /**
    *
    *
@@ -726,6 +753,7 @@ public interface MessageOrBuilder
    * @return The fallbackText.
    */
   java.lang.String getFallbackText();
+
   /**
    *
    *
@@ -755,6 +783,7 @@ public interface MessageOrBuilder
    * @return Whether the actionResponse field is set.
    */
   boolean hasActionResponse();
+
   /**
    *
    *
@@ -770,6 +799,7 @@ public interface MessageOrBuilder
    * @return The actionResponse.
    */
   com.google.chat.v1.ActionResponse getActionResponse();
+
   /**
    *
    *
@@ -797,6 +827,7 @@ public interface MessageOrBuilder
    * @return The argumentText.
    */
   java.lang.String getArgumentText();
+
   /**
    *
    *
@@ -825,6 +856,7 @@ public interface MessageOrBuilder
    * @return Whether the slashCommand field is set.
    */
   boolean hasSlashCommand();
+
   /**
    *
    *
@@ -839,6 +871,7 @@ public interface MessageOrBuilder
    * @return The slashCommand.
    */
   com.google.chat.v1.SlashCommand getSlashCommand();
+
   /**
    *
    *
@@ -862,6 +895,7 @@ public interface MessageOrBuilder
    * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
    */
   java.util.List<com.google.chat.v1.Attachment> getAttachmentList();
+
   /**
    *
    *
@@ -872,6 +906,7 @@ public interface MessageOrBuilder
    * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
    */
   com.google.chat.v1.Attachment getAttachment(int index);
+
   /**
    *
    *
@@ -882,6 +917,7 @@ public interface MessageOrBuilder
    * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
    */
   int getAttachmentCount();
+
   /**
    *
    *
@@ -892,6 +928,7 @@ public interface MessageOrBuilder
    * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
    */
   java.util.List<? extends com.google.chat.v1.AttachmentOrBuilder> getAttachmentOrBuilderList();
+
   /**
    *
    *
@@ -918,6 +955,7 @@ public interface MessageOrBuilder
    * @return Whether the matchedUrl field is set.
    */
   boolean hasMatchedUrl();
+
   /**
    *
    *
@@ -933,6 +971,7 @@ public interface MessageOrBuilder
    * @return The matchedUrl.
    */
   com.google.chat.v1.MatchedUrl getMatchedUrl();
+
   /**
    *
    *
@@ -982,6 +1021,7 @@ public interface MessageOrBuilder
    * @return The clientAssignedMessageId.
    */
   java.lang.String getClientAssignedMessageId();
+
   /**
    *
    *
@@ -1012,6 +1052,7 @@ public interface MessageOrBuilder
    * </code>
    */
   java.util.List<com.google.chat.v1.EmojiReactionSummary> getEmojiReactionSummariesList();
+
   /**
    *
    *
@@ -1024,6 +1065,7 @@ public interface MessageOrBuilder
    * </code>
    */
   com.google.chat.v1.EmojiReactionSummary getEmojiReactionSummaries(int index);
+
   /**
    *
    *
@@ -1036,6 +1078,7 @@ public interface MessageOrBuilder
    * </code>
    */
   int getEmojiReactionSummariesCount();
+
   /**
    *
    *
@@ -1049,6 +1092,7 @@ public interface MessageOrBuilder
    */
   java.util.List<? extends com.google.chat.v1.EmojiReactionSummaryOrBuilder>
       getEmojiReactionSummariesOrBuilderList();
+
   /**
    *
    *
@@ -1088,6 +1132,7 @@ public interface MessageOrBuilder
    * @return Whether the privateMessageViewer field is set.
    */
   boolean hasPrivateMessageViewer();
+
   /**
    *
    *
@@ -1114,6 +1159,7 @@ public interface MessageOrBuilder
    * @return The privateMessageViewer.
    */
   com.google.chat.v1.User getPrivateMessageViewer();
+
   /**
    *
    *
@@ -1154,6 +1200,7 @@ public interface MessageOrBuilder
    * @return Whether the deletionMetadata field is set.
    */
   boolean hasDeletionMetadata();
+
   /**
    *
    *
@@ -1169,6 +1216,7 @@ public interface MessageOrBuilder
    * @return The deletionMetadata.
    */
   com.google.chat.v1.DeletionMetadata getDeletionMetadata();
+
   /**
    *
    *
@@ -1198,6 +1246,7 @@ public interface MessageOrBuilder
    * @return Whether the quotedMessageMetadata field is set.
    */
   boolean hasQuotedMessageMetadata();
+
   /**
    *
    *
@@ -1213,6 +1262,7 @@ public interface MessageOrBuilder
    * @return The quotedMessageMetadata.
    */
   com.google.chat.v1.QuotedMessageMetadata getQuotedMessageMetadata();
+
   /**
    *
    *
@@ -1239,6 +1289,7 @@ public interface MessageOrBuilder
    * </code>
    */
   java.util.List<com.google.chat.v1.AttachedGif> getAttachedGifsList();
+
   /**
    *
    *
@@ -1251,6 +1302,7 @@ public interface MessageOrBuilder
    * </code>
    */
   com.google.chat.v1.AttachedGif getAttachedGifs(int index);
+
   /**
    *
    *
@@ -1263,6 +1315,7 @@ public interface MessageOrBuilder
    * </code>
    */
   int getAttachedGifsCount();
+
   /**
    *
    *
@@ -1275,6 +1328,7 @@ public interface MessageOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.chat.v1.AttachedGifOrBuilder> getAttachedGifsOrBuilderList();
+
   /**
    *
    *
@@ -1306,6 +1360,7 @@ public interface MessageOrBuilder
    * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
    */
   java.util.List<com.google.chat.v1.AccessoryWidget> getAccessoryWidgetsList();
+
   /**
    *
    *
@@ -1324,6 +1379,7 @@ public interface MessageOrBuilder
    * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
    */
   com.google.chat.v1.AccessoryWidget getAccessoryWidgets(int index);
+
   /**
    *
    *
@@ -1342,6 +1398,7 @@ public interface MessageOrBuilder
    * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
    */
   int getAccessoryWidgetsCount();
+
   /**
    *
    *
@@ -1361,6 +1418,7 @@ public interface MessageOrBuilder
    */
   java.util.List<? extends com.google.chat.v1.AccessoryWidgetOrBuilder>
       getAccessoryWidgetsOrBuilderList();
+
   /**
    *
    *

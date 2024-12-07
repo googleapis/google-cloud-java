@@ -34,6 +34,7 @@ public interface ListFindingsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1beta1.Finding findings = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1beta1.Finding> getFindingsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListFindingsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1beta1.Finding findings = 1;</code>
    */
   com.google.cloud.securitycenter.v1beta1.Finding getFindings(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListFindingsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1beta1.Finding findings = 1;</code>
    */
   int getFindingsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListFindingsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1beta1.FindingOrBuilder>
       getFindingsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListFindingsResponseOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface ListFindingsResponseOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface ListFindingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

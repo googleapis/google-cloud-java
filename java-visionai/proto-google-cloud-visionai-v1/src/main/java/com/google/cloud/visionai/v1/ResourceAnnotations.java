@@ -33,6 +33,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ResourceAnnotations)
     ResourceAnnotationsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceAnnotations.newBuilder() to construct.
   private ResourceAnnotations(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.StreamAnnotation> applicationAnnotations_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       getApplicationAnnotationsList() {
     return applicationAnnotations_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       getApplicationAnnotationsOrBuilderList() {
     return applicationAnnotations_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
   public int getApplicationAnnotationsCount() {
     return applicationAnnotations_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
   public com.google.cloud.visionai.v1.StreamAnnotation getApplicationAnnotations(int index) {
     return applicationAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.ApplicationNodeAnnotation> nodeAnnotations_;
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       getNodeAnnotationsList() {
     return nodeAnnotations_;
   }
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       getNodeAnnotationsOrBuilderList() {
     return nodeAnnotations_;
   }
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
   public int getNodeAnnotationsCount() {
     return nodeAnnotations_.size();
   }
+
   /**
    *
    *
@@ -223,6 +233,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
   public com.google.cloud.visionai.v1.ApplicationNodeAnnotation getNodeAnnotations(int index) {
     return nodeAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -420,6 +431,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -741,6 +753,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
         return applicationAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -757,6 +770,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
         return applicationAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -773,6 +787,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
         return applicationAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -796,6 +811,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +832,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +855,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +879,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +900,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +921,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +962,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +982,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +996,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
         int index) {
       return getApplicationAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -989,6 +1014,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
         return applicationAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1006,6 +1032,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(applicationAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1047,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       return getApplicationAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.StreamAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1034,6 +1062,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       return getApplicationAnnotationsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.StreamAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1111,6 +1140,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
         return nodeAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1135,6 +1165,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
         return nodeAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1190,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
         return nodeAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1190,6 +1222,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1251,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1249,6 +1283,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1280,6 +1315,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1308,6 +1344,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1336,6 +1373,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1403,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1392,6 +1431,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1419,6 +1459,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1481,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
         int index) {
       return getNodeAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1465,6 +1507,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
         return nodeAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1490,6 +1533,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(nodeAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -1512,6 +1556,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
       return getNodeAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.ApplicationNodeAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1535,6 +1580,7 @@ public final class ResourceAnnotations extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.cloud.visionai.v1.ApplicationNodeAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *

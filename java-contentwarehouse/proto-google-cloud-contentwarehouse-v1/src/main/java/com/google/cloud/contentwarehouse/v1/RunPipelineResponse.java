@@ -33,6 +33,7 @@ public final class RunPipelineResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.RunPipelineResponse)
     RunPipelineResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RunPipelineResponse.newBuilder() to construct.
   private RunPipelineResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class RunPipelineResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

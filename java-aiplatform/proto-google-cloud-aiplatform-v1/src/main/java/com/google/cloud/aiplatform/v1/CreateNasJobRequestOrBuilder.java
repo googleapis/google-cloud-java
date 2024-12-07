@@ -39,6 +39,7 @@ public interface CreateNasJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateNasJobRequestOrBuilder
    * @return Whether the nasJob field is set.
    */
   boolean hasNasJob();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateNasJobRequestOrBuilder
    * @return The nasJob.
    */
   com.google.cloud.aiplatform.v1.NasJob getNasJob();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.BigQuerySource)
     BigQuerySourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigQuerySource.newBuilder() to construct.
   private BigQuerySource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     private PartitionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,6 +116,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARTITION_DATE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPartitionDate() {
     return partitionCase_ == 5;
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.type.Date.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object datasetId_ = "";
+
   /**
    *
    *
@@ -247,6 +255,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -276,6 +285,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tableId_ = "";
+
   /**
    *
    *
@@ -300,6 +310,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -329,6 +340,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcsStagingDir_ = "";
+
   /**
    *
    *
@@ -354,6 +366,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -384,6 +397,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataSchema_ = "";
+
   /**
    *
    *
@@ -425,6 +439,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -686,6 +701,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -977,6 +993,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         partitionDateBuilder_;
+
     /**
      *
      *
@@ -992,6 +1009,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPartitionDate() {
       return partitionCase_ == 5;
     }
+
     /**
      *
      *
@@ -1017,6 +1035,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.Date.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1058,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       partitionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1078,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       partitionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1109,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       partitionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1135,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1148,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.Date.Builder getPartitionDateBuilder() {
       return getPartitionDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1145,6 +1169,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.Date.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1198,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -1197,6 +1223,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1221,6 +1248,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1244,6 +1272,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1292,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1289,6 +1319,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object datasetId_ = "";
+
     /**
      *
      *
@@ -1312,6 +1343,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1335,6 +1367,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1357,6 +1390,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1409,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1435,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object tableId_ = "";
+
     /**
      *
      *
@@ -1423,6 +1459,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1446,6 +1483,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1468,6 +1506,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1486,6 +1525,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1511,6 +1551,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object gcsStagingDir_ = "";
+
     /**
      *
      *
@@ -1535,6 +1576,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1559,6 +1601,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1582,6 +1625,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1601,6 +1645,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1627,6 +1672,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dataSchema_ = "";
+
     /**
      *
      *
@@ -1667,6 +1713,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1707,6 +1754,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1746,6 +1794,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1830,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

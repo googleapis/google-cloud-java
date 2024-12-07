@@ -37,6 +37,7 @@ public interface UpdateCustomerRequestOrBuilder
    * @return Whether the customer field is set.
    */
   boolean hasCustomer();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface UpdateCustomerRequestOrBuilder
    * @return The customer.
    */
   com.google.cloud.channel.v1.Customer getCustomer();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface UpdateCustomerRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface UpdateCustomerRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

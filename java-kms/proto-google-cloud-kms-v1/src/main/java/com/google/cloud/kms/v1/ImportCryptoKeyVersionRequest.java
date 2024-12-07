@@ -34,6 +34,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.ImportCryptoKeyVersionRequest)
     ImportCryptoKeyVersionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportCryptoKeyVersionRequest.newBuilder() to construct.
   private ImportCryptoKeyVersionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     private WrappedKeyMaterialCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,6 +120,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -147,6 +150,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +185,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cryptoKeyVersion_ = "";
+
   /**
    *
    *
@@ -225,6 +230,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -272,6 +278,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
 
   public static final int ALGORITHM_FIELD_NUMBER = 2;
   private int algorithm_ = 0;
+
   /**
    *
    *
@@ -293,6 +300,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
   public int getAlgorithmValue() {
     return algorithm_;
   }
+
   /**
    *
    *
@@ -323,6 +331,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object importJob_ = "";
+
   /**
    *
    *
@@ -348,6 +357,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -376,6 +386,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
 
   public static final int WRAPPED_KEY_FIELD_NUMBER = 8;
   private com.google.protobuf.ByteString wrappedKey_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -431,6 +442,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
   }
 
   public static final int RSA_AES_WRAPPED_KEY_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -449,6 +461,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
   public boolean hasRsaAesWrappedKey() {
     return wrappedKeyMaterialCase_ == 5;
   }
+
   /**
    *
    *
@@ -697,6 +710,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -977,6 +991,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1005,6 +1020,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1049,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1060,6 +1077,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1101,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1132,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object cryptoKeyVersion_ = "";
+
     /**
      *
      *
@@ -1156,6 +1176,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1199,6 +1220,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1241,6 +1263,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1279,6 +1302,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1348,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     }
 
     private int algorithm_ = 0;
+
     /**
      *
      *
@@ -1345,6 +1370,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     public int getAlgorithmValue() {
       return algorithm_;
     }
+
     /**
      *
      *
@@ -1369,6 +1395,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1394,6 +1421,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
           ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1422,6 +1450,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1447,6 +1476,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object importJob_ = "";
+
     /**
      *
      *
@@ -1471,6 +1501,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1495,6 +1526,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1518,6 +1550,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1537,6 +1570,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1563,6 +1597,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     }
 
     private com.google.protobuf.ByteString wrappedKey_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1616,6 +1651,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getWrappedKey() {
       return wrappedKey_;
     }
+
     /**
      *
      *
@@ -1675,6 +1711,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1748,6 +1785,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     public boolean hasRsaAesWrappedKey() {
       return wrappedKeyMaterialCase_ == 5;
     }
+
     /**
      *
      *
@@ -1768,6 +1806,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -1792,6 +1831,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

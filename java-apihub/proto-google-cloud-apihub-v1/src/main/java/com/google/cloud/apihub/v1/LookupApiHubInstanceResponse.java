@@ -35,6 +35,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.LookupApiHubInstanceResponse)
     LookupApiHubInstanceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LookupApiHubInstanceResponse.newBuilder() to construct.
   private LookupApiHubInstanceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int API_HUB_INSTANCE_FIELD_NUMBER = 1;
   private com.google.cloud.apihub.v1.ApiHubInstance apiHubInstance_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
   public boolean hasApiHubInstance() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
         ? com.google.cloud.apihub.v1.ApiHubInstance.getDefaultInstance()
         : apiHubInstance_;
   }
+
   /**
    *
    *
@@ -279,6 +283,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -485,6 +490,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
             com.google.cloud.apihub.v1.ApiHubInstance.Builder,
             com.google.cloud.apihub.v1.ApiHubInstanceOrBuilder>
         apiHubInstanceBuilder_;
+
     /**
      *
      *
@@ -499,6 +505,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
     public boolean hasApiHubInstance() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -519,6 +526,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
         return apiHubInstanceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -541,6 +549,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -561,6 +570,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -588,6 +598,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -607,6 +618,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -621,6 +633,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
       onChanged();
       return getApiHubInstanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -639,6 +652,7 @@ public final class LookupApiHubInstanceResponse extends com.google.protobuf.Gene
             : apiHubInstance_;
       }
     }
+
     /**
      *
      *

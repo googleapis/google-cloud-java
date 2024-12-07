@@ -34,6 +34,7 @@ public interface ListStudiesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Study studies = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Study> getStudiesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListStudiesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Study studies = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Study getStudies(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListStudiesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Study studies = 1;</code>
    */
   int getStudiesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListStudiesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.StudyOrBuilder>
       getStudiesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListStudiesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

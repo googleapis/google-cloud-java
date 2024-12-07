@@ -34,6 +34,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.AccountIssue)
     AccountIssueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AccountIssue.newBuilder() to construct.
   private AccountIssue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,6 +134,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
      * <code>SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -143,6 +145,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
      * <code>CRITICAL = 1;</code>
      */
     public static final int CRITICAL_VALUE = 1;
+
     /**
      *
      *
@@ -154,6 +157,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 2;</code>
      */
     public static final int ERROR_VALUE = 2;
+
     /**
      *
      *
@@ -271,6 +275,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the reportingContext field is set.
      */
     boolean hasReportingContext();
+
     /**
      *
      *
@@ -285,6 +290,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for reportingContext.
      */
     int getReportingContextValue();
+
     /**
      *
      *
@@ -314,6 +320,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             com.google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination.Impact>
         getImpactsList();
+
     /**
      *
      *
@@ -327,6 +334,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination.Impact getImpacts(
         int index);
+
     /**
      *
      *
@@ -339,6 +347,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getImpactsCount();
+
     /**
      *
      *
@@ -355,6 +364,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination
                     .ImpactOrBuilder>
         getImpactsOrBuilderList();
+
     /**
      *
      *
@@ -369,6 +379,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     com.google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination.ImpactOrBuilder
         getImpactsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -383,6 +394,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination)
       ImpactedDestinationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ImpactedDestination.newBuilder() to construct.
     private ImpactedDestination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -433,6 +445,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
        * @return The regionCode.
        */
       java.lang.String getRegionCode();
+
       /**
        *
        *
@@ -459,6 +472,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
        * @return The enum numeric value on the wire for severity.
        */
       int getSeverityValue();
+
       /**
        *
        *
@@ -472,6 +486,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.shopping.merchant.accounts.v1beta.AccountIssue.Severity getSeverity();
     }
+
     /**
      *
      *
@@ -487,6 +502,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination.Impact)
         ImpactOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Impact.newBuilder() to construct.
       private Impact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -524,6 +540,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object regionCode_ = "";
+
       /**
        *
        *
@@ -548,6 +565,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -575,6 +593,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
 
       public static final int SEVERITY_FIELD_NUMBER = 2;
       private int severity_ = 0;
+
       /**
        *
        *
@@ -590,6 +609,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       public int getSeverityValue() {
         return severity_;
       }
+
       /**
        *
        *
@@ -810,6 +830,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1033,6 +1054,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object regionCode_ = "";
+
         /**
          *
          *
@@ -1056,6 +1078,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1079,6 +1102,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1101,6 +1125,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1119,6 +1144,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1144,6 +1170,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int severity_ = 0;
+
         /**
          *
          *
@@ -1160,6 +1187,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         public int getSeverityValue() {
           return severity_;
         }
+
         /**
          *
          *
@@ -1179,6 +1207,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1200,6 +1229,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
               ? com.google.shopping.merchant.accounts.v1beta.AccountIssue.Severity.UNRECOGNIZED
               : result;
         }
+
         /**
          *
          *
@@ -1223,6 +1253,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1316,6 +1347,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int REPORTING_CONTEXT_FIELD_NUMBER = 1;
     private int reportingContext_ = 0;
+
     /**
      *
      *
@@ -1333,6 +1365,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReportingContext() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1350,6 +1383,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     public int getReportingContextValue() {
       return reportingContext_;
     }
+
     /**
      *
      *
@@ -1379,6 +1413,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination.Impact>
         impacts_;
+
     /**
      *
      *
@@ -1396,6 +1431,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         getImpactsList() {
       return impacts_;
     }
+
     /**
      *
      *
@@ -1415,6 +1451,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         getImpactsOrBuilderList() {
       return impacts_;
     }
+
     /**
      *
      *
@@ -1430,6 +1467,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     public int getImpactsCount() {
       return impacts_.size();
     }
+
     /**
      *
      *
@@ -1446,6 +1484,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         getImpacts(int index) {
       return impacts_.get(index);
     }
+
     /**
      *
      *
@@ -1649,6 +1688,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1916,6 +1956,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int reportingContext_ = 0;
+
       /**
        *
        *
@@ -1933,6 +1974,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       public boolean hasReportingContext() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1950,6 +1992,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       public int getReportingContextValue() {
         return reportingContext_;
       }
+
       /**
        *
        *
@@ -1970,6 +2013,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1992,6 +2036,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
             ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2016,6 +2061,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2078,6 +2124,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
           return impactsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2096,6 +2143,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
           return impactsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2115,6 +2163,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
           return impactsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2142,6 +2191,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2167,6 +2217,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2193,6 +2244,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2220,6 +2272,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2244,6 +2297,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2269,6 +2323,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2295,6 +2350,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2316,6 +2372,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2337,6 +2394,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2353,6 +2411,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
           getImpactsBuilder(int index) {
         return getImpactsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -2373,6 +2432,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
           return impactsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -2395,6 +2455,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(impacts_);
         }
       }
+
       /**
        *
        *
@@ -2414,6 +2475,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination.Impact
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2434,6 +2496,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination.Impact
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2547,6 +2610,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2571,6 +2635,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2600,6 +2665,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
+
   /**
    *
    *
@@ -2623,6 +2689,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2649,6 +2716,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEVERITY_FIELD_NUMBER = 3;
   private int severity_ = 0;
+
   /**
    *
    *
@@ -2664,6 +2732,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
   public int getSeverityValue() {
     return severity_;
   }
+
   /**
    *
    *
@@ -2690,6 +2759,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
   private java.util.List<
           com.google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination>
       impactedDestinations_;
+
   /**
    *
    *
@@ -2707,6 +2777,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       getImpactedDestinationsList() {
     return impactedDestinations_;
   }
+
   /**
    *
    *
@@ -2726,6 +2797,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       getImpactedDestinationsOrBuilderList() {
     return impactedDestinations_;
   }
+
   /**
    *
    *
@@ -2741,6 +2813,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
   public int getImpactedDestinationsCount() {
     return impactedDestinations_.size();
   }
+
   /**
    *
    *
@@ -2757,6 +2830,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       getImpactedDestinations(int index) {
     return impactedDestinations_.get(index);
   }
+
   /**
    *
    *
@@ -2778,6 +2852,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object detail_ = "";
+
   /**
    *
    *
@@ -2801,6 +2876,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2829,6 +2905,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object documentationUri_ = "";
+
   /**
    *
    *
@@ -2853,6 +2930,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3090,6 +3168,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3396,6 +3475,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3419,6 +3499,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3442,6 +3523,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3464,6 +3546,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3482,6 +3565,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3507,6 +3591,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -3529,6 +3614,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3551,6 +3637,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3572,6 +3659,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3589,6 +3677,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3613,6 +3702,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int severity_ = 0;
+
     /**
      *
      *
@@ -3628,6 +3718,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     public int getSeverityValue() {
       return severity_;
     }
+
     /**
      *
      *
@@ -3646,6 +3737,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3665,6 +3757,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
           ? com.google.shopping.merchant.accounts.v1beta.AccountIssue.Severity.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3687,6 +3780,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3745,6 +3839,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         return impactedDestinationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3763,6 +3858,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         return impactedDestinationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3782,6 +3878,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         return impactedDestinationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3808,6 +3905,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3832,6 +3930,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3857,6 +3956,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3883,6 +3983,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3906,6 +4007,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3930,6 +4032,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3955,6 +4058,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3976,6 +4080,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3997,6 +4102,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4012,6 +4118,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         getImpactedDestinationsBuilder(int index) {
       return getImpactedDestinationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4031,6 +4138,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         return impactedDestinationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4053,6 +4161,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(impactedDestinations_);
       }
     }
+
     /**
      *
      *
@@ -4071,6 +4180,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
               com.google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4090,6 +4200,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
               com.google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4130,6 +4241,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object detail_ = "";
+
     /**
      *
      *
@@ -4152,6 +4264,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4174,6 +4287,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4195,6 +4309,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4212,6 +4327,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4236,6 +4352,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object documentationUri_ = "";
+
     /**
      *
      *
@@ -4259,6 +4376,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4282,6 +4400,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4304,6 +4423,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4322,6 +4442,7 @@ public final class AccountIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

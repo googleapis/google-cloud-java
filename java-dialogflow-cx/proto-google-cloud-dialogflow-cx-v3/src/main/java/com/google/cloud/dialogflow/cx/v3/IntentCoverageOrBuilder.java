@@ -34,6 +34,7 @@ public interface IntentCoverageOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.IntentCoverage.Intent intents = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.IntentCoverage.Intent> getIntentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface IntentCoverageOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.IntentCoverage.Intent intents = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3.IntentCoverage.Intent getIntents(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface IntentCoverageOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.IntentCoverage.Intent intents = 1;</code>
    */
   int getIntentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface IntentCoverageOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.IntentCoverage.IntentOrBuilder>
       getIntentsOrBuilderList();
+
   /**
    *
    *

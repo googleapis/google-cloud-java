@@ -220,7 +220,8 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateMetadataImport, expected %s or %s",
+                  "Unrecognized response type %s for method CreateMetadataImport, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -241,7 +242,8 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateMetadataImport, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateMetadataImport, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -429,7 +431,8 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method AlterMetadataResourceLocation, expected %s or %s",
+                  "Unrecognized response type %s for method AlterMetadataResourceLocation, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

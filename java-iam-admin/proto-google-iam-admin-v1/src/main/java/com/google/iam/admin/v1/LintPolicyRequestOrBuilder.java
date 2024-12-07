@@ -44,6 +44,7 @@ public interface LintPolicyRequestOrBuilder
    * @return The fullResourceName.
    */
   java.lang.String getFullResourceName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface LintPolicyRequestOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface LintPolicyRequestOrBuilder
    * @return The condition.
    */
   com.google.type.Expr getCondition();
+
   /**
    *
    *

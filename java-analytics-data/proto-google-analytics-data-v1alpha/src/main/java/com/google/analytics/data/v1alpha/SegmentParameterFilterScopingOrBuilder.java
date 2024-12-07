@@ -59,6 +59,7 @@ public interface SegmentParameterFilterScopingOrBuilder
    * @return Whether the inAnyNDayPeriod field is set.
    */
   boolean hasInAnyNDayPeriod();
+
   /**
    *
    *

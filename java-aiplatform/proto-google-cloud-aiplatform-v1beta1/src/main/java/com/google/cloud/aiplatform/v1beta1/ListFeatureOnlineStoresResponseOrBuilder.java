@@ -36,6 +36,7 @@ public interface ListFeatureOnlineStoresResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore>
       getFeatureOnlineStoresList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListFeatureOnlineStoresResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore getFeatureOnlineStores(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListFeatureOnlineStoresResponseOrBuilder
    * </code>
    */
   int getFeatureOnlineStoresCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListFeatureOnlineStoresResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreOrBuilder>
       getFeatureOnlineStoresOrBuilderList();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface ListFeatureOnlineStoresResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

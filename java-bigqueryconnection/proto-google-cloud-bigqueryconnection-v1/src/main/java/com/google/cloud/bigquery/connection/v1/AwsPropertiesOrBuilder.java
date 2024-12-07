@@ -43,6 +43,7 @@ public interface AwsPropertiesOrBuilder
    */
   @java.lang.Deprecated
   boolean hasCrossAccountRole();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface AwsPropertiesOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole getCrossAccountRole();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface AwsPropertiesOrBuilder
    * @return Whether the accessRole field is set.
    */
   boolean hasAccessRole();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface AwsPropertiesOrBuilder
    * @return The accessRole.
    */
   com.google.cloud.bigquery.connection.v1.AwsAccessRole getAccessRole();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface AwsMetadataOrBuilder
    * @return Whether the organization field is set.
    */
   boolean hasOrganization();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AwsMetadataOrBuilder
    * @return The organization.
    */
   com.google.cloud.securitycenter.v2.AwsMetadata.AwsOrganization getOrganization();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface AwsMetadataOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v2.AwsMetadata.AwsOrganizationalUnit>
       getOrganizationalUnitsList();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface AwsMetadataOrBuilder
    */
   com.google.cloud.securitycenter.v2.AwsMetadata.AwsOrganizationalUnit getOrganizationalUnits(
       int index);
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface AwsMetadataOrBuilder
    * </code>
    */
   int getOrganizationalUnitsCount();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface AwsMetadataOrBuilder
   java.util.List<
           ? extends com.google.cloud.securitycenter.v2.AwsMetadata.AwsOrganizationalUnitOrBuilder>
       getOrganizationalUnitsOrBuilderList();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface AwsMetadataOrBuilder
    * @return Whether the account field is set.
    */
   boolean hasAccount();
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public interface AwsMetadataOrBuilder
    * @return The account.
    */
   com.google.cloud.securitycenter.v2.AwsMetadata.AwsAccount getAccount();
+
   /**
    *
    *

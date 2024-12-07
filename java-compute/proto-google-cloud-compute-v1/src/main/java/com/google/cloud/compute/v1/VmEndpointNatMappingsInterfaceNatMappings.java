@@ -34,6 +34,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings)
     VmEndpointNatMappingsInterfaceNatMappingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VmEndpointNatMappingsInterfaceNatMappings.newBuilder() to construct.
   private VmEndpointNatMappingsInterfaceNatMappings(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,6 +76,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList drainNatIpPortRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   public com.google.protobuf.ProtocolStringList getDrainNatIpPortRangesList() {
     return drainNatIpPortRanges_;
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   public int getDrainNatIpPortRangesCount() {
     return drainNatIpPortRanges_.size();
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   public java.lang.String getDrainNatIpPortRanges(int index) {
     return drainNatIpPortRanges_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList natIpPortRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   public com.google.protobuf.ProtocolStringList getNatIpPortRangesList() {
     return natIpPortRanges_;
   }
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   public int getNatIpPortRangesCount() {
     return natIpPortRanges_.size();
   }
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   public java.lang.String getNatIpPortRanges(int index) {
     return natIpPortRanges_.get(index);
   }
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
 
   public static final int NUM_TOTAL_DRAIN_NAT_PORTS_FIELD_NUMBER = 335532793;
   private int numTotalDrainNatPorts_ = 0;
+
   /**
    *
    *
@@ -215,6 +225,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   public boolean hasNumTotalDrainNatPorts() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -233,6 +244,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
 
   public static final int NUM_TOTAL_NAT_PORTS_FIELD_NUMBER = 299904384;
   private int numTotalNatPorts_ = 0;
+
   /**
    *
    *
@@ -248,6 +260,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   public boolean hasNumTotalNatPorts() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -270,6 +283,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   private java.util.List<
           com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings>
       ruleMappings_;
+
   /**
    *
    *
@@ -287,6 +301,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       getRuleMappingsList() {
     return ruleMappings_;
   }
+
   /**
    *
    *
@@ -306,6 +321,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       getRuleMappingsOrBuilderList() {
     return ruleMappings_;
   }
+
   /**
    *
    *
@@ -321,6 +337,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   public int getRuleMappingsCount() {
     return ruleMappings_.size();
   }
+
   /**
    *
    *
@@ -337,6 +354,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       getRuleMappings(int index) {
     return ruleMappings_.get(index);
   }
+
   /**
    *
    *
@@ -359,6 +377,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceAliasIpRange_ = "";
+
   /**
    *
    *
@@ -374,6 +393,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   public boolean hasSourceAliasIpRange() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -397,6 +417,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       return s;
     }
   }
+
   /**
    *
    *
@@ -425,6 +446,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceVirtualIp_ = "";
+
   /**
    *
    *
@@ -440,6 +462,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   public boolean hasSourceVirtualIp() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -463,6 +486,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       return s;
     }
   }
+
   /**
    *
    *
@@ -743,6 +767,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1097,6 +1122,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -1112,6 +1138,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       drainNatIpPortRanges_.makeImmutable();
       return drainNatIpPortRanges_;
     }
+
     /**
      *
      *
@@ -1126,6 +1153,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public int getDrainNatIpPortRangesCount() {
       return drainNatIpPortRanges_.size();
     }
+
     /**
      *
      *
@@ -1141,6 +1169,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public java.lang.String getDrainNatIpPortRanges(int index) {
       return drainNatIpPortRanges_.get(index);
     }
+
     /**
      *
      *
@@ -1156,6 +1185,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public com.google.protobuf.ByteString getDrainNatIpPortRangesBytes(int index) {
       return drainNatIpPortRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1179,6 +1209,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1232,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1252,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1271,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1271,6 +1305,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1286,6 +1321,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       natIpPortRanges_.makeImmutable();
       return natIpPortRanges_;
     }
+
     /**
      *
      *
@@ -1300,6 +1336,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public int getNatIpPortRangesCount() {
       return natIpPortRanges_.size();
     }
+
     /**
      *
      *
@@ -1315,6 +1352,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public java.lang.String getNatIpPortRanges(int index) {
       return natIpPortRanges_.get(index);
     }
+
     /**
      *
      *
@@ -1330,6 +1368,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public com.google.protobuf.ByteString getNatIpPortRangesBytes(int index) {
       return natIpPortRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1353,6 +1392,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1415,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1394,6 +1435,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1412,6 +1454,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1437,6 +1480,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     }
 
     private int numTotalDrainNatPorts_;
+
     /**
      *
      *
@@ -1452,6 +1496,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public boolean hasNumTotalDrainNatPorts() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1467,6 +1512,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public int getNumTotalDrainNatPorts() {
       return numTotalDrainNatPorts_;
     }
+
     /**
      *
      *
@@ -1486,6 +1532,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1505,6 +1552,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     }
 
     private int numTotalNatPorts_;
+
     /**
      *
      *
@@ -1520,6 +1568,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public boolean hasNumTotalNatPorts() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1535,6 +1584,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public int getNumTotalNatPorts() {
       return numTotalNatPorts_;
     }
+
     /**
      *
      *
@@ -1554,6 +1604,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1614,6 +1665,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         return ruleMappingsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1632,6 +1684,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         return ruleMappingsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1651,6 +1704,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         return ruleMappingsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1678,6 +1732,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       return this;
     }
+
     /**
      *
      *
@@ -1702,6 +1757,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       return this;
     }
+
     /**
      *
      *
@@ -1728,6 +1784,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       return this;
     }
+
     /**
      *
      *
@@ -1755,6 +1812,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       return this;
     }
+
     /**
      *
      *
@@ -1778,6 +1836,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1861,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       return this;
     }
+
     /**
      *
      *
@@ -1828,6 +1888,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       return this;
     }
+
     /**
      *
      *
@@ -1849,6 +1910,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       return this;
     }
+
     /**
      *
      *
@@ -1870,6 +1932,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       return this;
     }
+
     /**
      *
      *
@@ -1886,6 +1949,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         getRuleMappingsBuilder(int index) {
       return getRuleMappingsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1906,6 +1970,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         return ruleMappingsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1928,6 +1993,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         return java.util.Collections.unmodifiableList(ruleMappings_);
       }
     }
+
     /**
      *
      *
@@ -1947,6 +2013,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
               com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1967,6 +2034,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
               com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2008,6 +2076,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     }
 
     private java.lang.Object sourceAliasIpRange_ = "";
+
     /**
      *
      *
@@ -2022,6 +2091,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public boolean hasSourceAliasIpRange() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2044,6 +2114,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2066,6 +2137,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2087,6 +2159,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2104,6 +2177,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2128,6 +2202,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     }
 
     private java.lang.Object sourceVirtualIp_ = "";
+
     /**
      *
      *
@@ -2142,6 +2217,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public boolean hasSourceVirtualIp() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2164,6 +2240,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2186,6 +2263,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2207,6 +2285,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2224,6 +2303,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       onChanged();
       return this;
     }
+
     /**
      *
      *

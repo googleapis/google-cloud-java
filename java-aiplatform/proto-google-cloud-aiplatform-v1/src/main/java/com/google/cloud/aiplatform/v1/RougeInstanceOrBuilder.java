@@ -36,6 +36,7 @@ public interface RougeInstanceOrBuilder
    * @return Whether the prediction field is set.
    */
   boolean hasPrediction();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RougeInstanceOrBuilder
    * @return The prediction.
    */
   java.lang.String getPrediction();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface RougeInstanceOrBuilder
    * @return Whether the reference field is set.
    */
   boolean hasReference();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface RougeInstanceOrBuilder
    * @return The reference.
    */
   java.lang.String getReference();
+
   /**
    *
    *

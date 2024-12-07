@@ -36,6 +36,7 @@ public interface UspsDataOrBuilder
    * @return Whether the standardizedAddress field is set.
    */
   boolean hasStandardizedAddress();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UspsDataOrBuilder
    * @return The standardizedAddress.
    */
   com.google.maps.addressvalidation.v1.UspsAddress getStandardizedAddress();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface UspsDataOrBuilder
    * @return The deliveryPointCode.
    */
   java.lang.String getDeliveryPointCode();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UspsDataOrBuilder
    * @return The deliveryPointCheckDigit.
    */
   java.lang.String getDeliveryPointCheckDigit();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface UspsDataOrBuilder
    * @return The dpvConfirmation.
    */
   java.lang.String getDpvConfirmation();
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public interface UspsDataOrBuilder
    * @return The dpvFootnote.
    */
   java.lang.String getDpvFootnote();
+
   /**
    *
    *
@@ -245,6 +251,7 @@ public interface UspsDataOrBuilder
    * @return The dpvCmra.
    */
   java.lang.String getDpvCmra();
+
   /**
    *
    *
@@ -278,6 +285,7 @@ public interface UspsDataOrBuilder
    * @return The dpvVacant.
    */
   java.lang.String getDpvVacant();
+
   /**
    *
    *
@@ -312,6 +320,7 @@ public interface UspsDataOrBuilder
    * @return The dpvNoStat.
    */
   java.lang.String getDpvNoStat();
+
   /**
    *
    *
@@ -372,6 +381,7 @@ public interface UspsDataOrBuilder
    * @return The dpvDrop.
    */
   java.lang.String getDpvDrop();
+
   /**
    *
    *
@@ -405,6 +415,7 @@ public interface UspsDataOrBuilder
    * @return The dpvThrowback.
    */
   java.lang.String getDpvThrowback();
+
   /**
    *
    *
@@ -439,6 +450,7 @@ public interface UspsDataOrBuilder
    * @return The dpvNonDeliveryDays.
    */
   java.lang.String getDpvNonDeliveryDays();
+
   /**
    *
    *
@@ -495,6 +507,7 @@ public interface UspsDataOrBuilder
    * @return The dpvNoSecureLocation.
    */
   java.lang.String getDpvNoSecureLocation();
+
   /**
    *
    *
@@ -529,6 +542,7 @@ public interface UspsDataOrBuilder
    * @return The dpvPbsa.
    */
   java.lang.String getDpvPbsa();
+
   /**
    *
    *
@@ -562,6 +576,7 @@ public interface UspsDataOrBuilder
    * @return The dpvDoorNotAccessible.
    */
   java.lang.String getDpvDoorNotAccessible();
+
   /**
    *
    *
@@ -604,6 +619,7 @@ public interface UspsDataOrBuilder
    * @return The dpvEnhancedDeliveryCode.
    */
   java.lang.String getDpvEnhancedDeliveryCode();
+
   /**
    *
    *
@@ -652,6 +668,7 @@ public interface UspsDataOrBuilder
    * @return The carrierRoute.
    */
   java.lang.String getCarrierRoute();
+
   /**
    *
    *
@@ -687,6 +704,7 @@ public interface UspsDataOrBuilder
    * @return The carrierRouteIndicator.
    */
   java.lang.String getCarrierRouteIndicator();
+
   /**
    *
    *
@@ -726,6 +744,7 @@ public interface UspsDataOrBuilder
    * @return The postOfficeCity.
    */
   java.lang.String getPostOfficeCity();
+
   /**
    *
    *
@@ -751,6 +770,7 @@ public interface UspsDataOrBuilder
    * @return The postOfficeState.
    */
   java.lang.String getPostOfficeState();
+
   /**
    *
    *
@@ -776,6 +796,7 @@ public interface UspsDataOrBuilder
    * @return The abbreviatedCity.
    */
   java.lang.String getAbbreviatedCity();
+
   /**
    *
    *
@@ -801,6 +822,7 @@ public interface UspsDataOrBuilder
    * @return The fipsCountyCode.
    */
   java.lang.String getFipsCountyCode();
+
   /**
    *
    *
@@ -826,6 +848,7 @@ public interface UspsDataOrBuilder
    * @return The county.
    */
   java.lang.String getCounty();
+
   /**
    *
    *
@@ -851,6 +874,7 @@ public interface UspsDataOrBuilder
    * @return The elotNumber.
    */
   java.lang.String getElotNumber();
+
   /**
    *
    *
@@ -876,6 +900,7 @@ public interface UspsDataOrBuilder
    * @return The elotFlag.
    */
   java.lang.String getElotFlag();
+
   /**
    *
    *
@@ -901,6 +926,7 @@ public interface UspsDataOrBuilder
    * @return The lacsLinkReturnCode.
    */
   java.lang.String getLacsLinkReturnCode();
+
   /**
    *
    *
@@ -926,6 +952,7 @@ public interface UspsDataOrBuilder
    * @return The lacsLinkIndicator.
    */
   java.lang.String getLacsLinkIndicator();
+
   /**
    *
    *
@@ -968,6 +995,7 @@ public interface UspsDataOrBuilder
    * @return The suitelinkFootnote.
    */
   java.lang.String getSuitelinkFootnote();
+
   /**
    *
    *
@@ -997,6 +1025,7 @@ public interface UspsDataOrBuilder
    * @return The pmbDesignator.
    */
   java.lang.String getPmbDesignator();
+
   /**
    *
    *
@@ -1022,6 +1051,7 @@ public interface UspsDataOrBuilder
    * @return The pmbNumber.
    */
   java.lang.String getPmbNumber();
+
   /**
    *
    *
@@ -1059,6 +1089,7 @@ public interface UspsDataOrBuilder
    * @return The addressRecordType.
    */
   java.lang.String getAddressRecordType();
+
   /**
    *
    *
@@ -1114,6 +1145,7 @@ public interface UspsDataOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
+
   /**
    *
    *

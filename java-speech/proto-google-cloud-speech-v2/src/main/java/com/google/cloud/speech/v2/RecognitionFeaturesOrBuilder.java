@@ -131,6 +131,7 @@ public interface RecognitionFeaturesOrBuilder
    * @return The enum numeric value on the wire for multiChannelMode.
    */
   int getMultiChannelModeValue();
+
   /**
    *
    *
@@ -164,6 +165,7 @@ public interface RecognitionFeaturesOrBuilder
    * @return Whether the diarizationConfig field is set.
    */
   boolean hasDiarizationConfig();
+
   /**
    *
    *
@@ -183,6 +185,7 @@ public interface RecognitionFeaturesOrBuilder
    * @return The diarizationConfig.
    */
   com.google.cloud.speech.v2.SpeakerDiarizationConfig getDiarizationConfig();
+
   /**
    *
    *

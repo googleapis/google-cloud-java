@@ -33,6 +33,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.AndroidKeySettings)
     AndroidKeySettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AndroidKeySettings.newBuilder() to construct.
   private AndroidKeySettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
 
   public static final int ALLOW_ALL_PACKAGE_NAMES_FIELD_NUMBER = 2;
   private boolean allowAllPackageNames_ = false;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowedPackageNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getAllowedPackageNamesList() {
     return allowedPackageNames_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
   public int getAllowedPackageNamesCount() {
     return allowedPackageNames_.size();
   }
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
   public java.lang.String getAllowedPackageNames(int index) {
     return allowedPackageNames_.get(index);
   }
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
 
   public static final int SUPPORT_NON_GOOGLE_APP_STORE_DISTRIBUTION_FIELD_NUMBER = 3;
   private boolean supportNonGoogleAppStoreDistribution_ = false;
+
   /**
    *
    *
@@ -364,6 +371,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -581,6 +589,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private boolean allowAllPackageNames_;
+
     /**
      *
      *
@@ -596,6 +605,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     public boolean getAllowAllPackageNames() {
       return allowAllPackageNames_;
     }
+
     /**
      *
      *
@@ -615,6 +625,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +653,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       allowedPackageNames_.makeImmutable();
       return allowedPackageNames_;
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     public int getAllowedPackageNamesCount() {
       return allowedPackageNames_.size();
     }
+
     /**
      *
      *
@@ -692,6 +706,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     public java.lang.String getAllowedPackageNames(int index) {
       return allowedPackageNames_.get(index);
     }
+
     /**
      *
      *
@@ -709,6 +724,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getAllowedPackageNamesBytes(int index) {
       return allowedPackageNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -734,6 +750,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +775,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +797,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +818,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +846,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean supportNonGoogleAppStoreDistribution_;
+
     /**
      *
      *
@@ -845,6 +866,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     public boolean getSupportNonGoogleAppStoreDistribution() {
       return supportNonGoogleAppStoreDistribution_;
     }
+
     /**
      *
      *
@@ -868,6 +890,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

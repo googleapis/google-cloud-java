@@ -38,6 +38,7 @@ public interface CreateRuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateRuleRequestOrBuilder
    * @return The ruleId.
    */
   java.lang.String getRuleId();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface CreateRuleRequestOrBuilder
    * @return Whether the rule field is set.
    */
   boolean hasRule();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface CreateRuleRequestOrBuilder
    * @return The rule.
    */
   com.google.devtools.artifactregistry.v1.Rule getRule();
+
   /**
    *
    *

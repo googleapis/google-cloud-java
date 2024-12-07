@@ -36,6 +36,7 @@ public interface ListPrivateConnectionsResponseOrBuilder
    */
   java.util.List<com.google.cloud.datastream.v1alpha1.PrivateConnection>
       getPrivateConnectionsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListPrivateConnectionsResponseOrBuilder
    * </code>
    */
   com.google.cloud.datastream.v1alpha1.PrivateConnection getPrivateConnections(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListPrivateConnectionsResponseOrBuilder
    * </code>
    */
   int getPrivateConnectionsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListPrivateConnectionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1alpha1.PrivateConnectionOrBuilder>
       getPrivateConnectionsOrBuilderList();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface ListPrivateConnectionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface ListPrivateConnectionsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -134,6 +140,7 @@ public interface ListPrivateConnectionsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -147,6 +154,7 @@ public interface ListPrivateConnectionsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface SSHKeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SSHKeyOrBuilder
    * @return The publicKey.
    */
   java.lang.String getPublicKey();
+
   /**
    *
    *

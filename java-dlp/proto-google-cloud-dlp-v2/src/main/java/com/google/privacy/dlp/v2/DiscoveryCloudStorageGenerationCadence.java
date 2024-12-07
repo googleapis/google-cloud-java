@@ -36,6 +36,7 @@ public final class DiscoveryCloudStorageGenerationCadence
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryCloudStorageGenerationCadence)
     DiscoveryCloudStorageGenerationCadenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveryCloudStorageGenerationCadence.newBuilder() to construct.
   private DiscoveryCloudStorageGenerationCadence(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class DiscoveryCloudStorageGenerationCadence
   private int bitField0_;
   public static final int REFRESH_FREQUENCY_FIELD_NUMBER = 1;
   private int refreshFrequency_ = 0;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class DiscoveryCloudStorageGenerationCadence
   public int getRefreshFrequencyValue() {
     return refreshFrequency_;
   }
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public final class DiscoveryCloudStorageGenerationCadence
   public static final int INSPECT_TEMPLATE_MODIFIED_CADENCE_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence
       inspectTemplateModifiedCadence_;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class DiscoveryCloudStorageGenerationCadence
   public boolean hasInspectTemplateModifiedCadence() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class DiscoveryCloudStorageGenerationCadence
         ? com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.getDefaultInstance()
         : inspectTemplateModifiedCadence_;
   }
+
   /**
    *
    *
@@ -360,6 +366,7 @@ public final class DiscoveryCloudStorageGenerationCadence
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -582,6 +589,7 @@ public final class DiscoveryCloudStorageGenerationCadence
     private int bitField0_;
 
     private int refreshFrequency_ = 0;
+
     /**
      *
      *
@@ -601,6 +609,7 @@ public final class DiscoveryCloudStorageGenerationCadence
     public int getRefreshFrequencyValue() {
       return refreshFrequency_;
     }
+
     /**
      *
      *
@@ -623,6 +632,7 @@ public final class DiscoveryCloudStorageGenerationCadence
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +656,7 @@ public final class DiscoveryCloudStorageGenerationCadence
           ? com.google.privacy.dlp.v2.DataProfileUpdateFrequency.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -671,6 +682,7 @@ public final class DiscoveryCloudStorageGenerationCadence
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class DiscoveryCloudStorageGenerationCadence
             com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.Builder,
             com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadenceOrBuilder>
         inspectTemplateModifiedCadenceBuilder_;
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class DiscoveryCloudStorageGenerationCadence
     public boolean hasInspectTemplateModifiedCadence() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -743,6 +757,7 @@ public final class DiscoveryCloudStorageGenerationCadence
         return inspectTemplateModifiedCadenceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class DiscoveryCloudStorageGenerationCadence
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class DiscoveryCloudStorageGenerationCadence
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class DiscoveryCloudStorageGenerationCadence
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +869,7 @@ public final class DiscoveryCloudStorageGenerationCadence
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +889,7 @@ public final class DiscoveryCloudStorageGenerationCadence
       onChanged();
       return getInspectTemplateModifiedCadenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -893,6 +913,7 @@ public final class DiscoveryCloudStorageGenerationCadence
             : inspectTemplateModifiedCadence_;
       }
     }
+
     /**
      *
      *

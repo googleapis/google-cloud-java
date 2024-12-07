@@ -400,7 +400,8 @@ public class QuotaInfoName implements ResourceName {
     private Builder(QuotaInfoName quotaInfoName) {
       Preconditions.checkArgument(
           Objects.equals(quotaInfoName.pathTemplate, PROJECT_LOCATION_SERVICE_QUOTA_INFO),
-          "toBuilder is only supported when QuotaInfoName has the pattern of projects/{project}/locations/{location}/services/{service}/quotaInfos/{quota_info}");
+          "toBuilder is only supported when QuotaInfoName has the pattern of"
+              + " projects/{project}/locations/{location}/services/{service}/quotaInfos/{quota_info}");
       this.project = quotaInfoName.project;
       this.location = quotaInfoName.location;
       this.service = quotaInfoName.service;

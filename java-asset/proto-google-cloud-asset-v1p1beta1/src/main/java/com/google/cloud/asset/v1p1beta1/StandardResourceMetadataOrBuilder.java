@@ -40,6 +40,7 @@ public interface StandardResourceMetadataOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface StandardResourceMetadataOrBuilder
    * @return The assetType.
    */
   java.lang.String getAssetType();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface StandardResourceMetadataOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface StandardResourceMetadataOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public interface StandardResourceMetadataOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public interface StandardResourceMetadataOrBuilder
    * @return A list containing the additionalAttributes.
    */
   java.util.List<java.lang.String> getAdditionalAttributesList();
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public interface StandardResourceMetadataOrBuilder
    * @return The count of additionalAttributes.
    */
   int getAdditionalAttributesCount();
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public interface StandardResourceMetadataOrBuilder
    * @return The additionalAttributes at the given index.
    */
   java.lang.String getAdditionalAttributes(int index);
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public interface StandardResourceMetadataOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -262,6 +271,7 @@ public interface StandardResourceMetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -275,9 +285,11 @@ public interface StandardResourceMetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -291,6 +303,7 @@ public interface StandardResourceMetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -308,6 +321,7 @@ public interface StandardResourceMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -338,6 +352,7 @@ public interface StandardResourceMetadataOrBuilder
    * @return A list containing the networkTags.
    */
   java.util.List<java.lang.String> getNetworkTagsList();
+
   /**
    *
    *
@@ -354,6 +369,7 @@ public interface StandardResourceMetadataOrBuilder
    * @return The count of networkTags.
    */
   int getNetworkTagsCount();
+
   /**
    *
    *
@@ -371,6 +387,7 @@ public interface StandardResourceMetadataOrBuilder
    * @return The networkTags at the given index.
    */
   java.lang.String getNetworkTags(int index);
+
   /**
    *
    *

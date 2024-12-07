@@ -39,6 +39,7 @@ public interface CompetitiveVisibilityBenchmarkViewOrBuilder
    * @return Whether the date field is set.
    */
   boolean hasDate();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface CompetitiveVisibilityBenchmarkViewOrBuilder
    * @return The date.
    */
   com.google.type.Date getDate();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CompetitiveVisibilityBenchmarkViewOrBuilder
    * @return Whether the reportCountryCode field is set.
    */
   boolean hasReportCountryCode();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface CompetitiveVisibilityBenchmarkViewOrBuilder
    * @return The reportCountryCode.
    */
   java.lang.String getReportCountryCode();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface CompetitiveVisibilityBenchmarkViewOrBuilder
    * @return Whether the reportCategoryId field is set.
    */
   boolean hasReportCategoryId();
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public interface CompetitiveVisibilityBenchmarkViewOrBuilder
    * @return Whether the trafficSource field is set.
    */
   boolean hasTrafficSource();
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public interface CompetitiveVisibilityBenchmarkViewOrBuilder
    * @return The enum numeric value on the wire for trafficSource.
    */
   int getTrafficSourceValue();
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public interface CompetitiveVisibilityBenchmarkViewOrBuilder
    * @return Whether the yourDomainVisibilityTrend field is set.
    */
   boolean hasYourDomainVisibilityTrend();
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public interface CompetitiveVisibilityBenchmarkViewOrBuilder
    * @return Whether the categoryBenchmarkVisibilityTrend field is set.
    */
   boolean hasCategoryBenchmarkVisibilityTrend();
+
   /**
    *
    *

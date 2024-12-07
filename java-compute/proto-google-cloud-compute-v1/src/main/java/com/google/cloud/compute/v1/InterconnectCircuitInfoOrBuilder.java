@@ -36,6 +36,7 @@ public interface InterconnectCircuitInfoOrBuilder
    * @return Whether the customerDemarcId field is set.
    */
   boolean hasCustomerDemarcId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InterconnectCircuitInfoOrBuilder
    * @return The customerDemarcId.
    */
   java.lang.String getCustomerDemarcId();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface InterconnectCircuitInfoOrBuilder
    * @return Whether the googleCircuitId field is set.
    */
   boolean hasGoogleCircuitId();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface InterconnectCircuitInfoOrBuilder
    * @return The googleCircuitId.
    */
   java.lang.String getGoogleCircuitId();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface InterconnectCircuitInfoOrBuilder
    * @return Whether the googleDemarcId field is set.
    */
   boolean hasGoogleDemarcId();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface InterconnectCircuitInfoOrBuilder
    * @return The googleDemarcId.
    */
   java.lang.String getGoogleDemarcId();
+
   /**
    *
    *

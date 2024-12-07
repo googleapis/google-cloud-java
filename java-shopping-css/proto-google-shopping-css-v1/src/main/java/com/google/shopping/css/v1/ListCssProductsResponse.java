@@ -33,6 +33,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.ListCssProductsResponse)
     ListCssProductsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListCssProductsResponse.newBuilder() to construct.
   private ListCssProductsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.css.v1.CssProduct> cssProducts_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.shopping.css.v1.CssProduct> getCssProductsList() {
     return cssProducts_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       getCssProductsOrBuilderList() {
     return cssProducts_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
   public int getCssProductsCount() {
     return cssProducts_.size();
   }
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
   public com.google.shopping.css.v1.CssProduct getCssProducts(int index) {
     return cssProducts_.get(index);
   }
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -363,6 +371,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -640,6 +649,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
         return cssProductsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -657,6 +667,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
         return cssProductsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -674,6 +685,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
         return cssProductsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +755,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +779,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +800,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +844,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +865,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +886,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +900,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
     public com.google.shopping.css.v1.CssProduct.Builder getCssProductsBuilder(int index) {
       return getCssProductsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -896,6 +918,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
         return cssProductsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -914,6 +937,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(cssProducts_);
       }
     }
+
     /**
      *
      *
@@ -928,6 +952,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       return getCssProductsFieldBuilder()
           .addBuilder(com.google.shopping.css.v1.CssProduct.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -942,6 +967,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       return getCssProductsFieldBuilder()
           .addBuilder(index, com.google.shopping.css.v1.CssProduct.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -975,6 +1001,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -998,6 +1025,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1021,6 +1049,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1043,6 +1072,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1091,7 @@ public final class ListCssProductsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

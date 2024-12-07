@@ -37,6 +37,7 @@ public interface RepoIdOrBuilder
    * @return Whether the projectRepoId field is set.
    */
   boolean hasProjectRepoId();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface RepoIdOrBuilder
    * @return The projectRepoId.
    */
   io.grafeas.v1.ProjectRepoId getProjectRepoId();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface RepoIdOrBuilder
    * @return Whether the uid field is set.
    */
   boolean hasUid();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface RepoIdOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *

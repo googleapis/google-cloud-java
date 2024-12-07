@@ -36,6 +36,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the address field is set.
    */
   boolean hasAddress();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the attachmentConfigurationConstraints field is set.
    */
   boolean hasAttachmentConfigurationConstraints();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface InterconnectRemoteLocationOrBuilder
    */
   com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints
       getAttachmentConfigurationConstraints();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the city field is set.
    */
   boolean hasCity();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The city.
    */
   java.lang.String getCity();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the constraints field is set.
    */
   boolean hasConstraints();
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The constraints.
    */
   com.google.cloud.compute.v1.InterconnectRemoteLocationConstraints getConstraints();
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the continent field is set.
    */
   boolean hasContinent();
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The continent.
    */
   java.lang.String getContinent();
+
   /**
    *
    *
@@ -235,6 +245,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -272,6 +284,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -284,6 +297,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -309,6 +323,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the facilityProvider field is set.
    */
   boolean hasFacilityProvider();
+
   /**
    *
    *
@@ -321,6 +336,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The facilityProvider.
    */
   java.lang.String getFacilityProvider();
+
   /**
    *
    *
@@ -346,6 +362,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the facilityProviderFacilityId field is set.
    */
   boolean hasFacilityProviderFacilityId();
+
   /**
    *
    *
@@ -358,6 +375,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The facilityProviderFacilityId.
    */
   java.lang.String getFacilityProviderFacilityId();
+
   /**
    *
    *
@@ -383,6 +401,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -408,6 +427,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -420,6 +440,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -446,6 +467,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the lacp field is set.
    */
   boolean hasLacp();
+
   /**
    *
    *
@@ -459,6 +481,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The lacp.
    */
   java.lang.String getLacp();
+
   /**
    *
    *
@@ -485,6 +508,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the maxLagSize100Gbps field is set.
    */
   boolean hasMaxLagSize100Gbps();
+
   /**
    *
    *
@@ -510,6 +534,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the maxLagSize10Gbps field is set.
    */
   boolean hasMaxLagSize10Gbps();
+
   /**
    *
    *
@@ -535,6 +560,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -547,6 +573,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -572,6 +599,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the peeringdbFacilityId field is set.
    */
   boolean hasPeeringdbFacilityId();
+
   /**
    *
    *
@@ -584,6 +612,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The peeringdbFacilityId.
    */
   java.lang.String getPeeringdbFacilityId();
+
   /**
    *
    *
@@ -610,6 +639,7 @@ public interface InterconnectRemoteLocationOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectRemoteLocationPermittedConnections>
       getPermittedConnectionsList();
+
   /**
    *
    *
@@ -623,6 +653,7 @@ public interface InterconnectRemoteLocationOrBuilder
    */
   com.google.cloud.compute.v1.InterconnectRemoteLocationPermittedConnections
       getPermittedConnections(int index);
+
   /**
    *
    *
@@ -635,6 +666,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * </code>
    */
   int getPermittedConnectionsCount();
+
   /**
    *
    *
@@ -650,6 +682,7 @@ public interface InterconnectRemoteLocationOrBuilder
           ? extends
               com.google.cloud.compute.v1.InterconnectRemoteLocationPermittedConnectionsOrBuilder>
       getPermittedConnectionsOrBuilderList();
+
   /**
    *
    *
@@ -676,6 +709,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the remoteService field is set.
    */
   boolean hasRemoteService();
+
   /**
    *
    *
@@ -688,6 +722,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The remoteService.
    */
   java.lang.String getRemoteService();
+
   /**
    *
    *
@@ -713,6 +748,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -725,6 +761,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -751,6 +788,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -764,6 +802,7 @@ public interface InterconnectRemoteLocationOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *

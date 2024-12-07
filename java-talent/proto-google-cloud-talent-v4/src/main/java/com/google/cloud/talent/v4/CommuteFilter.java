@@ -33,6 +33,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.CommuteFilter)
     CommuteFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CommuteFilter.newBuilder() to construct.
   private CommuteFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,6 +117,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>ROAD_TRAFFIC_UNSPECIFIED = 0;</code>
      */
     public static final int ROAD_TRAFFIC_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>TRAFFIC_FREE = 1;</code>
      */
     public static final int TRAFFIC_FREE_VALUE = 1;
+
     /**
      *
      *
@@ -238,6 +241,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     private TrafficOptionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -272,6 +276,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMMUTE_METHOD_FIELD_NUMBER = 1;
   private int commuteMethod_ = 0;
+
   /**
    *
    *
@@ -289,6 +294,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
   public int getCommuteMethodValue() {
     return commuteMethod_;
   }
+
   /**
    *
    *
@@ -311,6 +317,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_COORDINATES_FIELD_NUMBER = 2;
   private com.google.type.LatLng startCoordinates_;
+
   /**
    *
    *
@@ -328,6 +335,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartCoordinates() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -347,6 +355,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.LatLng.getDefaultInstance()
         : startCoordinates_;
   }
+
   /**
    *
    *
@@ -367,6 +376,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRAVEL_DURATION_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration travelDuration_;
+
   /**
    *
    *
@@ -384,6 +394,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTravelDuration() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -403,6 +414,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : travelDuration_;
   }
+
   /**
    *
    *
@@ -423,6 +435,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ALLOW_IMPRECISE_ADDRESSES_FIELD_NUMBER = 4;
   private boolean allowImpreciseAddresses_ = false;
+
   /**
    *
    *
@@ -444,6 +457,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROAD_TRAFFIC_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -458,6 +472,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRoadTraffic() {
     return trafficOptionCase_ == 5;
   }
+
   /**
    *
    *
@@ -475,6 +490,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     }
     return 0;
   }
+
   /**
    *
    *
@@ -499,6 +515,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEPARTURE_TIME_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -517,6 +534,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDepartureTime() {
     return trafficOptionCase_ == 6;
   }
+
   /**
    *
    *
@@ -538,6 +556,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.type.TimeOfDay.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -794,6 +813,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1096,6 +1116,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int commuteMethod_ = 0;
+
     /**
      *
      *
@@ -1113,6 +1134,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     public int getCommuteMethodValue() {
       return commuteMethod_;
     }
+
     /**
      *
      *
@@ -1133,6 +1155,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1175,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.talent.v4.CommuteMethod.forNumber(commuteMethod_);
       return result == null ? com.google.cloud.talent.v4.CommuteMethod.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1175,6 +1199,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1199,6 +1224,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         startCoordinatesBuilder_;
+
     /**
      *
      *
@@ -1215,6 +1241,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartCoordinates() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1237,6 +1264,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
         return startCoordinatesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1261,6 +1289,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1282,6 +1311,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1311,6 +1341,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1363,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1380,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartCoordinatesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1368,6 +1401,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
             : startCoordinates_;
       }
     }
+
     /**
      *
      *
@@ -1400,6 +1434,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         travelDurationBuilder_;
+
     /**
      *
      *
@@ -1417,6 +1452,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTravelDuration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1440,6 +1476,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
         return travelDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1465,6 +1502,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1487,6 +1525,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1517,6 +1556,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1539,6 +1579,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1556,6 +1597,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTravelDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1577,6 +1619,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
             : travelDuration_;
       }
     }
+
     /**
      *
      *
@@ -1607,6 +1650,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean allowImpreciseAddresses_;
+
     /**
      *
      *
@@ -1626,6 +1670,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean getAllowImpreciseAddresses() {
       return allowImpreciseAddresses_;
     }
+
     /**
      *
      *
@@ -1649,6 +1694,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1686,6 +1732,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRoadTraffic() {
       return trafficOptionCase_ == 5;
     }
+
     /**
      *
      *
@@ -1704,6 +1751,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -1722,6 +1770,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1745,6 +1794,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.talent.v4.CommuteFilter.RoadTraffic.ROAD_TRAFFIC_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -1766,6 +1816,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1791,6 +1842,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
             com.google.type.TimeOfDay.Builder,
             com.google.type.TimeOfDayOrBuilder>
         departureTimeBuilder_;
+
     /**
      *
      *
@@ -1809,6 +1861,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDepartureTime() {
       return trafficOptionCase_ == 6;
     }
+
     /**
      *
      *
@@ -1837,6 +1890,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.TimeOfDay.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1862,6 +1916,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       trafficOptionCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1884,6 +1939,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       trafficOptionCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1918,6 +1974,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       trafficOptionCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1946,6 +2003,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1961,6 +2019,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.TimeOfDay.Builder getDepartureTimeBuilder() {
       return getDepartureTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1984,6 +2043,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.TimeOfDay.getDefaultInstance();
       }
     }
+
     /**
      *
      *

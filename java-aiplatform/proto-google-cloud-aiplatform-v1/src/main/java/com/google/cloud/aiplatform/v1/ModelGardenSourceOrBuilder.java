@@ -36,6 +36,7 @@ public interface ModelGardenSourceOrBuilder
    * @return The publicModelName.
    */
   java.lang.String getPublicModelName();
+
   /**
    *
    *

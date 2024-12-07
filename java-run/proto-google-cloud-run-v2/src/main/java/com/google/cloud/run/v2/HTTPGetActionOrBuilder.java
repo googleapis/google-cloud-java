@@ -36,6 +36,7 @@ public interface HTTPGetActionOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface HTTPGetActionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.run.v2.HTTPHeader> getHttpHeadersList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface HTTPGetActionOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.HTTPHeader getHttpHeaders(int index);
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface HTTPGetActionOrBuilder
    * </code>
    */
   int getHttpHeadersCount();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface HTTPGetActionOrBuilder
    */
   java.util.List<? extends com.google.cloud.run.v2.HTTPHeaderOrBuilder>
       getHttpHeadersOrBuilderList();
+
   /**
    *
    *

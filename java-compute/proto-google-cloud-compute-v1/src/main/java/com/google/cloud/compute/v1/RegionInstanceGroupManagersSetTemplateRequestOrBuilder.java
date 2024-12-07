@@ -36,6 +36,7 @@ public interface RegionInstanceGroupManagersSetTemplateRequestOrBuilder
    * @return Whether the instanceTemplate field is set.
    */
   boolean hasInstanceTemplate();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RegionInstanceGroupManagersSetTemplateRequestOrBuilder
    * @return The instanceTemplate.
    */
   java.lang.String getInstanceTemplate();
+
   /**
    *
    *

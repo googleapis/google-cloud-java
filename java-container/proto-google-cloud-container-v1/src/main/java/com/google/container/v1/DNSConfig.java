@@ -33,6 +33,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1.DNSConfig)
     DNSConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DNSConfig.newBuilder() to construct.
   private DNSConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,6 +130,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVIDER_UNSPECIFIED = 0;</code>
      */
     public static final int PROVIDER_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -139,6 +141,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>PLATFORM_DEFAULT = 1;</code>
      */
     public static final int PLATFORM_DEFAULT_VALUE = 1;
+
     /**
      *
      *
@@ -149,6 +152,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_DNS = 2;</code>
      */
     public static final int CLOUD_DNS_VALUE = 2;
+
     /**
      *
      *
@@ -298,6 +302,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>DNS_SCOPE_UNSPECIFIED = 0;</code>
      */
     public static final int DNS_SCOPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -308,6 +313,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>CLUSTER_SCOPE = 1;</code>
      */
     public static final int CLUSTER_SCOPE_VALUE = 1;
+
     /**
      *
      *
@@ -404,6 +410,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLUSTER_DNS_FIELD_NUMBER = 1;
   private int clusterDns_ = 0;
+
   /**
    *
    *
@@ -419,6 +426,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
   public int getClusterDnsValue() {
     return clusterDns_;
   }
+
   /**
    *
    *
@@ -439,6 +447,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLUSTER_DNS_SCOPE_FIELD_NUMBER = 2;
   private int clusterDnsScope_ = 0;
+
   /**
    *
    *
@@ -454,6 +463,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
   public int getClusterDnsScopeValue() {
     return clusterDnsScope_;
   }
+
   /**
    *
    *
@@ -476,6 +486,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterDnsDomain_ = "";
+
   /**
    *
    *
@@ -499,6 +510,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -527,6 +539,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object additiveVpcScopeDnsDomain_ = "";
+
   /**
    *
    *
@@ -551,6 +564,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -765,6 +779,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -988,6 +1003,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int clusterDns_ = 0;
+
     /**
      *
      *
@@ -1003,6 +1019,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     public int getClusterDnsValue() {
       return clusterDns_;
     }
+
     /**
      *
      *
@@ -1021,6 +1038,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1056,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.container.v1.DNSConfig.Provider.forNumber(clusterDns_);
       return result == null ? com.google.container.v1.DNSConfig.Provider.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1059,6 +1078,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1098,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int clusterDnsScope_ = 0;
+
     /**
      *
      *
@@ -1093,6 +1114,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     public int getClusterDnsScopeValue() {
       return clusterDnsScope_;
     }
+
     /**
      *
      *
@@ -1111,6 +1133,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1151,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.container.v1.DNSConfig.DNSScope.forNumber(clusterDnsScope_);
       return result == null ? com.google.container.v1.DNSConfig.DNSScope.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1149,6 +1173,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1193,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clusterDnsDomain_ = "";
+
     /**
      *
      *
@@ -1190,6 +1216,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1239,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1233,6 +1261,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1250,6 +1279,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1304,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object additiveVpcScopeDnsDomain_ = "";
+
     /**
      *
      *
@@ -1297,6 +1328,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1320,6 +1352,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1342,6 +1375,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1360,6 +1394,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

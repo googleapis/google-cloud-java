@@ -38,6 +38,7 @@ public interface SubscribeListingRequestOrBuilder
    * @return Whether the destinationDataset field is set.
    */
   boolean hasDestinationDataset();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface SubscribeListingRequestOrBuilder
    * @return The destinationDataset.
    */
   com.google.cloud.bigquery.analyticshub.v1.DestinationDataset getDestinationDataset();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface SubscribeListingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

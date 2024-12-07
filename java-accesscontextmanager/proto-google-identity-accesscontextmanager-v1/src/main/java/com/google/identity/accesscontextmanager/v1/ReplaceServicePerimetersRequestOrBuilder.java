@@ -42,6 +42,7 @@ public interface ReplaceServicePerimetersRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface ReplaceServicePerimetersRequestOrBuilder
    */
   java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeter>
       getServicePerimetersList();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface ReplaceServicePerimetersRequestOrBuilder
    * </code>
    */
   com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeters(int index);
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface ReplaceServicePerimetersRequestOrBuilder
    * </code>
    */
   int getServicePerimetersCount();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface ReplaceServicePerimetersRequestOrBuilder
    */
   java.util.List<? extends com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder>
       getServicePerimetersOrBuilderList();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface ReplaceServicePerimetersRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

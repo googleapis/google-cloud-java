@@ -33,6 +33,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1beta.AuxiliaryVersionConfig)
     AuxiliaryVersionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AuxiliaryVersionConfig.newBuilder() to construct.
   private AuxiliaryVersionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -157,6 +160,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
   public int getConfigOverridesCount() {
     return internalGetConfigOverrides().getMap().size();
   }
+
   /**
    *
    *
@@ -177,12 +181,14 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
     }
     return internalGetConfigOverrides().getMap().containsKey(key);
   }
+
   /** Use {@link #getConfigOverridesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getConfigOverrides() {
     return getConfigOverridesMap();
   }
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
   public java.util.Map<java.lang.String, java.lang.String> getConfigOverridesMap() {
     return internalGetConfigOverrides().getMap();
   }
+
   /**
    *
    *
@@ -224,6 +231,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
     java.util.Map<java.lang.String, java.lang.String> map = internalGetConfigOverrides().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -251,6 +259,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
 
   public static final int NETWORK_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.metastore.v1beta.NetworkConfig networkConfig_;
+
   /**
    *
    *
@@ -269,6 +278,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
   public boolean hasNetworkConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -289,6 +299,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
         ? com.google.cloud.metastore.v1beta.NetworkConfig.getDefaultInstance()
         : networkConfig_;
   }
+
   /**
    *
    *
@@ -499,6 +510,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -754,6 +766,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -777,6 +790,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -800,6 +814,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -822,6 +837,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +856,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +910,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
     public int getConfigOverridesCount() {
       return internalGetConfigOverrides().getMap().size();
     }
+
     /**
      *
      *
@@ -913,12 +931,14 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
       }
       return internalGetConfigOverrides().getMap().containsKey(key);
     }
+
     /** Use {@link #getConfigOverridesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getConfigOverrides() {
       return getConfigOverridesMap();
     }
+
     /**
      *
      *
@@ -936,6 +956,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
     public java.util.Map<java.lang.String, java.lang.String> getConfigOverridesMap() {
       return internalGetConfigOverrides().getMap();
     }
+
     /**
      *
      *
@@ -960,6 +981,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
       java.util.Map<java.lang.String, java.lang.String> map = internalGetConfigOverrides().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -990,6 +1012,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
       internalGetMutableConfigOverrides().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1010,12 +1033,14 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
       internalGetMutableConfigOverrides().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableConfigOverrides() {
       bitField0_ |= 0x00000002;
       return internalGetMutableConfigOverrides().getMutableMap();
     }
+
     /**
      *
      *
@@ -1040,6 +1065,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1091,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
             com.google.cloud.metastore.v1beta.NetworkConfig.Builder,
             com.google.cloud.metastore.v1beta.NetworkConfigOrBuilder>
         networkConfigBuilder_;
+
     /**
      *
      *
@@ -1082,6 +1109,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
     public boolean hasNetworkConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1105,6 +1133,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
         return networkConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1130,6 +1159,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1183,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1215,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1238,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1223,6 +1256,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getNetworkConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1244,6 +1278,7 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
             : networkConfig_;
       }
     }
+
     /**
      *
      *

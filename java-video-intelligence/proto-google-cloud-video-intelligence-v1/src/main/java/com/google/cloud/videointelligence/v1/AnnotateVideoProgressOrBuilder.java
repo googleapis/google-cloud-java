@@ -37,6 +37,7 @@ public interface AnnotateVideoProgressOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1.VideoAnnotationProgress>
       getAnnotationProgressList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface AnnotateVideoProgressOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1.VideoAnnotationProgress getAnnotationProgress(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface AnnotateVideoProgressOrBuilder
    * </code>
    */
   int getAnnotationProgressCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface AnnotateVideoProgressOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.VideoAnnotationProgressOrBuilder>
       getAnnotationProgressOrBuilderList();
+
   /**
    *
    *

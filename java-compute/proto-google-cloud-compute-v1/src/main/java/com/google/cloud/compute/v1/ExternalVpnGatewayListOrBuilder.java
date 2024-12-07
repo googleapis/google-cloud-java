@@ -30,12 +30,14 @@ public interface ExternalVpnGatewayListOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -55,6 +57,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -67,6 +70,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * <code>repeated .google.cloud.compute.v1.ExternalVpnGateway items = 100526016;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ExternalVpnGateway> getItemsList();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * <code>repeated .google.cloud.compute.v1.ExternalVpnGateway items = 100526016;</code>
    */
   com.google.cloud.compute.v1.ExternalVpnGateway getItems(int index);
+
   /**
    *
    *
@@ -110,6 +116,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * <code>repeated .google.cloud.compute.v1.ExternalVpnGateway items = 100526016;</code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -121,6 +128,7 @@ public interface ExternalVpnGatewayListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ExternalVpnGatewayOrBuilder>
       getItemsOrBuilderList();
+
   /**
    *
    *
@@ -144,6 +152,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -156,6 +165,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -181,6 +191,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -193,6 +204,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -218,6 +230,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -230,6 +243,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -255,6 +269,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -267,6 +282,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

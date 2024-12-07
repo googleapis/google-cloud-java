@@ -33,6 +33,7 @@ public final class ImportYumArtifactsMetadata extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.ImportYumArtifactsMetadata)
     ImportYumArtifactsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportYumArtifactsMetadata.newBuilder() to construct.
   private ImportYumArtifactsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class ImportYumArtifactsMetadata extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

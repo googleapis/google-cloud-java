@@ -44,6 +44,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.RuntimeAcceleratorConfig)
     RuntimeAcceleratorConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RuntimeAcceleratorConfig.newBuilder() to construct.
   private RuntimeAcceleratorConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -218,6 +219,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      * <code>ACCELERATOR_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ACCELERATOR_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -228,6 +230,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      * <code>NVIDIA_TESLA_K80 = 1 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int NVIDIA_TESLA_K80_VALUE = 1;
+
     /**
      *
      *
@@ -238,6 +241,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      * <code>NVIDIA_TESLA_P100 = 2;</code>
      */
     public static final int NVIDIA_TESLA_P100_VALUE = 2;
+
     /**
      *
      *
@@ -248,6 +252,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      * <code>NVIDIA_TESLA_V100 = 3;</code>
      */
     public static final int NVIDIA_TESLA_V100_VALUE = 3;
+
     /**
      *
      *
@@ -258,6 +263,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      * <code>NVIDIA_TESLA_P4 = 4;</code>
      */
     public static final int NVIDIA_TESLA_P4_VALUE = 4;
+
     /**
      *
      *
@@ -268,6 +274,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      * <code>NVIDIA_TESLA_T4 = 5;</code>
      */
     public static final int NVIDIA_TESLA_T4_VALUE = 5;
+
     /**
      *
      *
@@ -278,6 +285,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      * <code>NVIDIA_TESLA_A100 = 6;</code>
      */
     public static final int NVIDIA_TESLA_A100_VALUE = 6;
+
     /**
      *
      *
@@ -288,6 +296,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      * <code>TPU_V2 = 7;</code>
      */
     public static final int TPU_V2_VALUE = 7;
+
     /**
      *
      *
@@ -298,6 +307,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      * <code>TPU_V3 = 8;</code>
      */
     public static final int TPU_V3_VALUE = 8;
+
     /**
      *
      *
@@ -308,6 +318,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      * <code>NVIDIA_TESLA_T4_VWS = 9;</code>
      */
     public static final int NVIDIA_TESLA_T4_VWS_VALUE = 9;
+
     /**
      *
      *
@@ -318,6 +329,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      * <code>NVIDIA_TESLA_P100_VWS = 10;</code>
      */
     public static final int NVIDIA_TESLA_P100_VWS_VALUE = 10;
+
     /**
      *
      *
@@ -436,6 +448,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -451,6 +464,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -473,6 +487,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
 
   public static final int CORE_COUNT_FIELD_NUMBER = 2;
   private long coreCount_ = 0L;
+
   /**
    *
    *
@@ -664,6 +679,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -870,6 +886,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -885,6 +902,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -903,6 +921,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +941,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
           ? com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig.AcceleratorType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -944,6 +964,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +984,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
     }
 
     private long coreCount_;
+
     /**
      *
      *
@@ -978,6 +1000,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
     public long getCoreCount() {
       return coreCount_;
     }
+
     /**
      *
      *
@@ -997,6 +1020,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -41,6 +41,7 @@ public interface SessionSegmentExclusionOrBuilder
    * @return The enum numeric value on the wire for sessionExclusionDuration.
    */
   int getSessionExclusionDurationValue();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface SessionSegmentExclusionOrBuilder
    * @return Whether the sessionExclusionCriteria field is set.
    */
   boolean hasSessionExclusionCriteria();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface SessionSegmentExclusionOrBuilder
    * @return The sessionExclusionCriteria.
    */
   com.google.analytics.data.v1alpha.SessionSegmentCriteria getSessionExclusionCriteria();
+
   /**
    *
    *

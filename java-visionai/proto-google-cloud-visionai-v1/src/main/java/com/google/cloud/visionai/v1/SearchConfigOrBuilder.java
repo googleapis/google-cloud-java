@@ -41,6 +41,7 @@ public interface SearchConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface SearchConfigOrBuilder
    * @return Whether the facetProperty field is set.
    */
   boolean hasFacetProperty();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface SearchConfigOrBuilder
    * @return The facetProperty.
    */
   com.google.cloud.visionai.v1.FacetProperty getFacetProperty();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface SearchConfigOrBuilder
    * @return Whether the searchCriteriaProperty field is set.
    */
   boolean hasSearchCriteriaProperty();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface SearchConfigOrBuilder
    * @return The searchCriteriaProperty.
    */
   com.google.cloud.visionai.v1.SearchCriteriaProperty getSearchCriteriaProperty();
+
   /**
    *
    *

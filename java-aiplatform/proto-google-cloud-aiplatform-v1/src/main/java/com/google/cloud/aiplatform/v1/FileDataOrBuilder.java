@@ -36,6 +36,7 @@ public interface FileDataOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface FileDataOrBuilder
    * @return The fileUri.
    */
   java.lang.String getFileUri();
+
   /**
    *
    *

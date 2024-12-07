@@ -36,6 +36,7 @@ public interface WorkerAssignedEventOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface WorkerAssignedEventOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface WorkerAssignedEventOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse)
     GetBackupIndexDownloadUrlResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetBackupIndexDownloadUrlResponse.newBuilder() to construct.
   private GetBackupIndexDownloadUrlResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object signedUrl_ = "";
+
   /**
    * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -85,6 +87,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
       return s;
     }
   }
+
   /**
    * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -263,6 +266,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -451,6 +455,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object signedUrl_ = "";
+
     /**
      * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -467,6 +472,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -483,6 +489,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -498,6 +505,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -509,6 +517,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *

@@ -36,6 +36,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.CreateEventThreatDetectionCustomModuleRequest)
     CreateEventThreatDetectionCustomModuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateEventThreatDetectionCustomModuleRequest.newBuilder() to construct.
   private CreateEventThreatDetectionCustomModuleRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,6 +75,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
   public static final int EVENT_THREAT_DETECTION_CUSTOM_MODULE_FIELD_NUMBER = 3;
   private com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule
       eventThreatDetectionCustomModule_;
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
   public boolean hasEventThreatDetectionCustomModule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
             .getDefaultInstance()
         : eventThreatDetectionCustomModule_;
   }
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -442,6 +449,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -700,6 +708,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -728,6 +737,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -756,6 +766,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -783,6 +794,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +818,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +855,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
             com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule.Builder,
             com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModuleOrBuilder>
         eventThreatDetectionCustomModuleBuilder_;
+
     /**
      *
      *
@@ -860,6 +874,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
     public boolean hasEventThreatDetectionCustomModule() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -886,6 +901,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
         return eventThreatDetectionCustomModuleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -913,6 +929,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +955,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +990,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1014,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1034,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
       onChanged();
       return getEventThreatDetectionCustomModuleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1038,6 +1059,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
             : eventThreatDetectionCustomModule_;
       }
     }
+
     /**
      *
      *
@@ -1071,6 +1093,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1098,6 +1121,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1129,6 +1153,7 @@ public final class CreateEventThreatDetectionCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.WindowsVersions)
     WindowsVersionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WindowsVersions.newBuilder() to construct.
   private WindowsVersions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
      * @return The imageType.
      */
     java.lang.String getImageType();
+
     /**
      *
      *
@@ -105,6 +107,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
      * @return The osVersion.
      */
     java.lang.String getOsVersion();
+
     /**
      *
      *
@@ -130,6 +133,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
      * @return Whether the supportEndDate field is set.
      */
     boolean hasSupportEndDate();
+
     /**
      *
      *
@@ -142,6 +146,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
      * @return The supportEndDate.
      */
     com.google.type.Date getSupportEndDate();
+
     /**
      *
      *
@@ -153,6 +158,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
      */
     com.google.type.DateOrBuilder getSupportEndDateOrBuilder();
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.container.v1beta1.WindowsVersions.WindowsVersion)
       WindowsVersionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use WindowsVersion.newBuilder() to construct.
     private WindowsVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -203,6 +210,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object imageType_ = "";
+
     /**
      *
      *
@@ -226,6 +234,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -254,6 +263,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object osVersion_ = "";
+
     /**
      *
      *
@@ -277,6 +287,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -303,6 +314,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
 
     public static final int SUPPORT_END_DATE_FIELD_NUMBER = 3;
     private com.google.type.Date supportEndDate_;
+
     /**
      *
      *
@@ -318,6 +330,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
     public boolean hasSupportEndDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -333,6 +346,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
     public com.google.type.Date getSupportEndDate() {
       return supportEndDate_ == null ? com.google.type.Date.getDefaultInstance() : supportEndDate_;
     }
+
     /**
      *
      *
@@ -531,6 +545,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -767,6 +782,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object imageType_ = "";
+
       /**
        *
        *
@@ -789,6 +805,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -811,6 +828,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -832,6 +850,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -849,6 +868,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -873,6 +893,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object osVersion_ = "";
+
       /**
        *
        *
@@ -895,6 +916,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -917,6 +939,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -938,6 +961,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -955,6 +979,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -982,6 +1007,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
           supportEndDateBuilder_;
+
       /**
        *
        *
@@ -996,6 +1022,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       public boolean hasSupportEndDate() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1016,6 +1043,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
           return supportEndDateBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1038,6 +1066,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1057,6 +1086,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1084,6 +1114,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -1103,6 +1134,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1117,6 +1149,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getSupportEndDateFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1135,6 +1168,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
               : supportEndDate_;
         }
       }
+
       /**
        *
        *
@@ -1229,6 +1263,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1beta1.WindowsVersions.WindowsVersion>
       windowsVersions_;
+
   /**
    *
    *
@@ -1244,6 +1279,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       getWindowsVersionsList() {
     return windowsVersions_;
   }
+
   /**
    *
    *
@@ -1260,6 +1296,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       getWindowsVersionsOrBuilderList() {
     return windowsVersions_;
   }
+
   /**
    *
    *
@@ -1274,6 +1311,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
   public int getWindowsVersionsCount() {
     return windowsVersions_.size();
   }
+
   /**
    *
    *
@@ -1288,6 +1326,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
   public com.google.container.v1beta1.WindowsVersions.WindowsVersion getWindowsVersions(int index) {
     return windowsVersions_.get(index);
   }
+
   /**
    *
    *
@@ -1465,6 +1504,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1729,6 +1769,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         return windowsVersionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1746,6 +1787,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         return windowsVersionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1764,6 +1806,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         return windowsVersionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1788,6 +1831,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1810,6 +1854,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1834,6 +1879,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1858,6 +1904,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1879,6 +1926,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1901,6 +1949,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1923,6 +1972,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1943,6 +1993,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1963,6 +2014,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1977,6 +2029,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         getWindowsVersionsBuilder(int index) {
       return getWindowsVersionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1995,6 +2048,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         return windowsVersionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2014,6 +2068,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(windowsVersions_);
       }
     }
+
     /**
      *
      *
@@ -2030,6 +2085,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               com.google.container.v1beta1.WindowsVersions.WindowsVersion.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2047,6 +2103,7 @@ public final class WindowsVersions extends com.google.protobuf.GeneratedMessageV
               index,
               com.google.container.v1beta1.WindowsVersions.WindowsVersion.getDefaultInstance());
     }
+
     /**
      *
      *

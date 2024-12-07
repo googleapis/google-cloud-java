@@ -39,6 +39,7 @@ public interface GetPublicKeyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

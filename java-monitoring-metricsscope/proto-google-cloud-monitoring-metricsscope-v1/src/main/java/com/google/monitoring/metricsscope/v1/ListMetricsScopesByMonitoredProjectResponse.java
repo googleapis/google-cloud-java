@@ -35,6 +35,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
     // @@protoc_insertion_point(message_implements:google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectResponse)
     ListMetricsScopesByMonitoredProjectResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListMetricsScopesByMonitoredProjectResponse.newBuilder() to construct.
   private ListMetricsScopesByMonitoredProjectResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.metricsscope.v1.MetricsScope> metricsScopes_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
   public java.util.List<com.google.monitoring.metricsscope.v1.MetricsScope> getMetricsScopesList() {
     return metricsScopes_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
       getMetricsScopesOrBuilderList() {
     return metricsScopes_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
   public int getMetricsScopesCount() {
     return metricsScopes_.size();
   }
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
   public com.google.monitoring.metricsscope.v1.MetricsScope getMetricsScopes(int index) {
     return metricsScopes_.get(index);
   }
+
   /**
    *
    *
@@ -314,6 +320,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -597,6 +604,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
         return metricsScopesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -614,6 +622,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
         return metricsScopesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -631,6 +640,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
         return metricsScopesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -655,6 +665,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +687,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +711,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +780,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +802,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +844,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
         int index) {
       return getMetricsScopesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
         return metricsScopesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -876,6 +897,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
         return java.util.Collections.unmodifiableList(metricsScopes_);
       }
     }
+
     /**
      *
      *
@@ -890,6 +912,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
       return getMetricsScopesFieldBuilder()
           .addBuilder(com.google.monitoring.metricsscope.v1.MetricsScope.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -906,6 +929,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
           .addBuilder(
               index, com.google.monitoring.metricsscope.v1.MetricsScope.getDefaultInstance());
     }
+
     /**
      *
      *

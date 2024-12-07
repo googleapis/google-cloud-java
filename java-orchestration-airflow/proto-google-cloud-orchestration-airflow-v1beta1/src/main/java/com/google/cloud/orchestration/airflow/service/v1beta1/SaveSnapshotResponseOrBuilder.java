@@ -39,6 +39,7 @@ public interface SaveSnapshotResponseOrBuilder
    * @return The snapshotPath.
    */
   java.lang.String getSnapshotPath();
+
   /**
    *
    *

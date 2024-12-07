@@ -36,6 +36,7 @@ public interface LocalFileSourceOrBuilder
    * @return The filename.
    */
   java.lang.String getFilename();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface LocalFileSourceOrBuilder
    * @return The enum numeric value on the wire for fileFormat.
    */
   int getFileFormatValue();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.CustomTargetSkaffoldActions)
     CustomTargetSkaffoldActionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomTargetSkaffoldActions.newBuilder() to construct.
   private CustomTargetSkaffoldActions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object renderAction_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deployAction_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.SkaffoldModules> includeSkaffoldModules_;
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       getIncludeSkaffoldModulesList() {
     return includeSkaffoldModules_;
   }
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       getIncludeSkaffoldModulesOrBuilderList() {
     return includeSkaffoldModules_;
   }
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
   public int getIncludeSkaffoldModulesCount() {
     return includeSkaffoldModules_.size();
   }
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
   public com.google.cloud.deploy.v1.SkaffoldModules getIncludeSkaffoldModules(int index) {
     return includeSkaffoldModules_.get(index);
   }
+
   /**
    *
    *
@@ -443,6 +453,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -704,6 +715,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object renderAction_ = "";
+
     /**
      *
      *
@@ -728,6 +740,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -752,6 +765,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -775,6 +789,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +809,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +836,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
     }
 
     private java.lang.Object deployAction_ = "";
+
     /**
      *
      *
@@ -842,6 +859,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -864,6 +882,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -885,6 +904,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +922,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +984,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
         return includeSkaffoldModulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -982,6 +1004,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
         return includeSkaffoldModulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1024,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
         return includeSkaffoldModulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1027,6 +1051,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1075,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1075,6 +1101,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1128,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1152,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1176,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1200,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1223,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1214,6 +1246,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1230,6 +1263,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
         int index) {
       return getIncludeSkaffoldModulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1250,6 +1284,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
         return includeSkaffoldModulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1270,6 +1305,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(includeSkaffoldModules_);
       }
     }
+
     /**
      *
      *
@@ -1286,6 +1322,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       return getIncludeSkaffoldModulesFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.SkaffoldModules.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1303,6 +1340,7 @@ public final class CustomTargetSkaffoldActions extends com.google.protobuf.Gener
       return getIncludeSkaffoldModulesFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.SkaffoldModules.getDefaultInstance());
     }
+
     /**
      *
      *

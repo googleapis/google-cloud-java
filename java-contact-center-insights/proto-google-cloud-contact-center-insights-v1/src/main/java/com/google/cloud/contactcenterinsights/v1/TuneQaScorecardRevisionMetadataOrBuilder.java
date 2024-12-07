@@ -37,6 +37,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
    * @return The request.
    */
   com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionRequest getRequest();
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
           com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
               .QaQuestionDatasetValidationResult>
       getQaQuestionDatasetValidationResultsList();
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
   com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
           .QaQuestionDatasetValidationResult
       getQaQuestionDatasetValidationResults(int index);
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
    * </code>
    */
   int getQaQuestionDatasetValidationResultsCount();
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
               com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
                   .QaQuestionDatasetValidationResultOrBuilder>
       getQaQuestionDatasetValidationResultsOrBuilderList();
+
   /**
    *
    *
@@ -230,6 +240,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
           com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
               .QaQuestionDatasetTuningMetrics>
       getQaQuestionDatasetTuningMetricsList();
+
   /**
    *
    *
@@ -245,6 +256,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
   com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
           .QaQuestionDatasetTuningMetrics
       getQaQuestionDatasetTuningMetrics(int index);
+
   /**
    *
    *
@@ -258,6 +270,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
    * </code>
    */
   int getQaQuestionDatasetTuningMetricsCount();
+
   /**
    *
    *
@@ -275,6 +288,7 @@ public interface TuneQaScorecardRevisionMetadataOrBuilder
               com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
                   .QaQuestionDatasetTuningMetricsOrBuilder>
       getQaQuestionDatasetTuningMetricsOrBuilderList();
+
   /**
    *
    *

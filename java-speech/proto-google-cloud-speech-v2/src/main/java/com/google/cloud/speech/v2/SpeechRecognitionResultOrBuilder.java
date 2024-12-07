@@ -36,6 +36,7 @@ public interface SpeechRecognitionResultOrBuilder
    * <code>repeated .google.cloud.speech.v2.SpeechRecognitionAlternative alternatives = 1;</code>
    */
   java.util.List<com.google.cloud.speech.v2.SpeechRecognitionAlternative> getAlternativesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SpeechRecognitionResultOrBuilder
    * <code>repeated .google.cloud.speech.v2.SpeechRecognitionAlternative alternatives = 1;</code>
    */
   com.google.cloud.speech.v2.SpeechRecognitionAlternative getAlternatives(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface SpeechRecognitionResultOrBuilder
    * <code>repeated .google.cloud.speech.v2.SpeechRecognitionAlternative alternatives = 1;</code>
    */
   int getAlternativesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface SpeechRecognitionResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v2.SpeechRecognitionAlternativeOrBuilder>
       getAlternativesOrBuilderList();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface SpeechRecognitionResultOrBuilder
    * @return Whether the resultEndOffset field is set.
    */
   boolean hasResultEndOffset();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface SpeechRecognitionResultOrBuilder
    * @return The resultEndOffset.
    */
   com.google.protobuf.Duration getResultEndOffset();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface SpeechRecognitionResultOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

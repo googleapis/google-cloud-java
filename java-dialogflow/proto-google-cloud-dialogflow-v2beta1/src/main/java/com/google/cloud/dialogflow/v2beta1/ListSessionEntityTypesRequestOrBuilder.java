@@ -51,6 +51,7 @@ public interface ListSessionEntityTypesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -105,6 +106,7 @@ public interface ListSessionEntityTypesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

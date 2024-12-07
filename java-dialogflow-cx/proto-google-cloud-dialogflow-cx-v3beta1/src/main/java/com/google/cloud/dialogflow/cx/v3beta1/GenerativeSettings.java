@@ -33,6 +33,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.GenerativeSettings)
     GenerativeSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerativeSettings.newBuilder() to construct.
   private GenerativeSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
      * @return The selectedPrompt.
      */
     java.lang.String getSelectedPrompt();
+
     /**
      *
      *
@@ -110,6 +112,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.FallbackSettings
                 .PromptTemplate>
         getPromptTemplatesList();
+
     /**
      *
      *
@@ -124,6 +127,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.FallbackSettings.PromptTemplate
         getPromptTemplates(int index);
+
     /**
      *
      *
@@ -137,6 +141,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     int getPromptTemplatesCount();
+
     /**
      *
      *
@@ -154,6 +159,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.FallbackSettings
                     .PromptTemplateOrBuilder>
         getPromptTemplatesOrBuilderList();
+
     /**
      *
      *
@@ -170,6 +176,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             .PromptTemplateOrBuilder
         getPromptTemplatesOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.FallbackSettings)
       FallbackSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FallbackSettings.newBuilder() to construct.
     private FallbackSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -233,6 +241,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
        * @return The displayName.
        */
       java.lang.String getDisplayName();
+
       /**
        *
        *
@@ -260,6 +269,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
        * @return The promptText.
        */
       java.lang.String getPromptText();
+
       /**
        *
        *
@@ -289,6 +299,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
        */
       boolean getFrozen();
     }
+
     /**
      *
      *
@@ -304,6 +315,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.FallbackSettings.PromptTemplate)
         PromptTemplateOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use PromptTemplate.newBuilder() to construct.
       private PromptTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -341,6 +353,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -364,6 +377,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return s;
         }
       }
+
       /**
        *
        *
@@ -392,6 +406,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object promptText_ = "";
+
       /**
        *
        *
@@ -417,6 +432,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return s;
         }
       }
+
       /**
        *
        *
@@ -445,6 +461,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
       public static final int FROZEN_FIELD_NUMBER = 3;
       private boolean frozen_ = false;
+
       /**
        *
        *
@@ -668,6 +685,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -911,6 +929,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         private int bitField0_;
 
         private java.lang.Object displayName_ = "";
+
         /**
          *
          *
@@ -933,6 +952,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -955,6 +975,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -976,6 +997,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -993,6 +1015,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1017,6 +1040,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         }
 
         private java.lang.Object promptText_ = "";
+
         /**
          *
          *
@@ -1041,6 +1065,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1065,6 +1090,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1088,6 +1114,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1107,6 +1134,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1133,6 +1161,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         }
 
         private boolean frozen_;
+
         /**
          *
          *
@@ -1149,6 +1178,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         public boolean getFrozen() {
           return frozen_;
         }
+
         /**
          *
          *
@@ -1169,6 +1199,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1264,6 +1295,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object selectedPrompt_ = "";
+
     /**
      *
      *
@@ -1287,6 +1319,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -1318,6 +1351,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.FallbackSettings
                 .PromptTemplate>
         promptTemplates_;
+
     /**
      *
      *
@@ -1337,6 +1371,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         getPromptTemplatesList() {
       return promptTemplates_;
     }
+
     /**
      *
      *
@@ -1357,6 +1392,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         getPromptTemplatesOrBuilderList() {
       return promptTemplates_;
     }
+
     /**
      *
      *
@@ -1373,6 +1409,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
     public int getPromptTemplatesCount() {
       return promptTemplates_.size();
     }
+
     /**
      *
      *
@@ -1390,6 +1427,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         getPromptTemplates(int index) {
       return promptTemplates_.get(index);
     }
+
     /**
      *
      *
@@ -1589,6 +1627,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1852,6 +1891,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object selectedPrompt_ = "";
+
       /**
        *
        *
@@ -1874,6 +1914,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1896,6 +1937,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1917,6 +1959,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1934,6 +1977,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2003,6 +2047,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return promptTemplatesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2022,6 +2067,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return promptTemplatesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2043,6 +2089,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return promptTemplatesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2071,6 +2118,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -2097,6 +2145,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -2124,6 +2173,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -2152,6 +2202,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -2177,6 +2228,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -2203,6 +2255,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -2230,6 +2283,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -2252,6 +2306,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -2274,6 +2329,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -2291,6 +2347,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           getPromptTemplatesBuilder(int index) {
         return getPromptTemplatesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -2312,6 +2369,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return promptTemplatesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -2335,6 +2393,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return java.util.Collections.unmodifiableList(promptTemplates_);
         }
       }
+
       /**
        *
        *
@@ -2355,6 +2414,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.FallbackSettings
                     .PromptTemplate.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2376,6 +2436,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.FallbackSettings
                     .PromptTemplate.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2508,6 +2569,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
      * @return The business.
      */
     java.lang.String getBusiness();
+
     /**
      *
      *
@@ -2535,6 +2597,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
      * @return The agent.
      */
     java.lang.String getAgent();
+
     /**
      *
      *
@@ -2560,6 +2623,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
      * @return The agentIdentity.
      */
     java.lang.String getAgentIdentity();
+
     /**
      *
      *
@@ -2586,6 +2650,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
      * @return The businessDescription.
      */
     java.lang.String getBusinessDescription();
+
     /**
      *
      *
@@ -2613,6 +2678,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
      * @return The agentScope.
      */
     java.lang.String getAgentScope();
+
     /**
      *
      *
@@ -2641,6 +2707,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
      */
     boolean getDisableDataStoreFallback();
   }
+
   /**
    *
    *
@@ -2660,6 +2727,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.KnowledgeConnectorSettings)
       KnowledgeConnectorSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use KnowledgeConnectorSettings.newBuilder() to construct.
     private KnowledgeConnectorSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2700,6 +2768,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object business_ = "";
+
     /**
      *
      *
@@ -2725,6 +2794,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -2755,6 +2825,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object agent_ = "";
+
     /**
      *
      *
@@ -2778,6 +2849,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -2806,6 +2878,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object agentIdentity_ = "";
+
     /**
      *
      *
@@ -2829,6 +2902,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -2857,6 +2931,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object businessDescription_ = "";
+
     /**
      *
      *
@@ -2881,6 +2956,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -2910,6 +2986,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object agentScope_ = "";
+
     /**
      *
      *
@@ -2934,6 +3011,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -2961,6 +3039,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
     public static final int DISABLE_DATA_STORE_FALLBACK_FIELD_NUMBER = 8;
     private boolean disableDataStoreFallback_ = false;
+
     /**
      *
      *
@@ -3206,6 +3285,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3490,6 +3570,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object business_ = "";
+
       /**
        *
        *
@@ -3514,6 +3595,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3538,6 +3620,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3561,6 +3644,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3580,6 +3664,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3606,6 +3691,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object agent_ = "";
+
       /**
        *
        *
@@ -3628,6 +3714,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3650,6 +3737,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3671,6 +3759,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3688,6 +3777,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3712,6 +3802,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object agentIdentity_ = "";
+
       /**
        *
        *
@@ -3734,6 +3825,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3756,6 +3848,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3777,6 +3870,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3794,6 +3888,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3818,6 +3913,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object businessDescription_ = "";
+
       /**
        *
        *
@@ -3841,6 +3937,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3864,6 +3961,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3886,6 +3984,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3904,6 +4003,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3929,6 +4029,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object agentScope_ = "";
+
       /**
        *
        *
@@ -3952,6 +4053,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3975,6 +4077,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3997,6 +4100,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4015,6 +4119,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4040,6 +4145,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       }
 
       private boolean disableDataStoreFallback_;
+
       /**
        *
        *
@@ -4056,6 +4162,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       public boolean getDisableDataStoreFallback() {
         return disableDataStoreFallback_;
       }
+
       /**
        *
        *
@@ -4076,6 +4183,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4171,6 +4279,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -4195,6 +4304,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -4223,6 +4333,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
   public static final int FALLBACK_SETTINGS_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.FallbackSettings
       fallbackSettings_;
+
   /**
    *
    *
@@ -4240,6 +4351,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
   public boolean hasFallbackSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4261,6 +4373,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance()
         : fallbackSettings_;
   }
+
   /**
    *
    *
@@ -4283,6 +4396,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
   public static final int GENERATIVE_SAFETY_SETTINGS_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.cx.v3beta1.SafetySettings generativeSafetySettings_;
+
   /**
    *
    *
@@ -4298,6 +4412,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
   public boolean hasGenerativeSafetySettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -4315,6 +4430,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.getDefaultInstance()
         : generativeSafetySettings_;
   }
+
   /**
    *
    *
@@ -4335,6 +4451,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
   public static final int KNOWLEDGE_CONNECTOR_SETTINGS_FIELD_NUMBER = 7;
   private com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.KnowledgeConnectorSettings
       knowledgeConnectorSettings_;
+
   /**
    *
    *
@@ -4352,6 +4469,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
   public boolean hasKnowledgeConnectorSettings() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -4373,6 +4491,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance()
         : knowledgeConnectorSettings_;
   }
+
   /**
    *
    *
@@ -4398,6 +4517,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -4421,6 +4541,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -4447,6 +4568,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
 
   public static final int LLM_MODEL_SETTINGS_FIELD_NUMBER = 8;
   private com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llmModelSettings_;
+
   /**
    *
    *
@@ -4462,6 +4584,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
   public boolean hasLlmModelSettings() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -4479,6 +4602,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.getDefaultInstance()
         : llmModelSettings_;
   }
+
   /**
    *
    *
@@ -4726,6 +4850,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5023,6 +5148,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -5046,6 +5172,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5069,6 +5196,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5091,6 +5219,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5109,6 +5238,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5140,6 +5270,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.FallbackSettings.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.FallbackSettingsOrBuilder>
         fallbackSettingsBuilder_;
+
     /**
      *
      *
@@ -5156,6 +5287,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
     public boolean hasFallbackSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -5180,6 +5312,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return fallbackSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5205,6 +5338,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5228,6 +5362,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5260,6 +5395,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5281,6 +5417,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5298,6 +5435,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getFallbackSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5320,6 +5458,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             : fallbackSettings_;
       }
     }
+
     /**
      *
      *
@@ -5355,6 +5494,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsOrBuilder>
         generativeSafetySettingsBuilder_;
+
     /**
      *
      *
@@ -5370,6 +5510,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
     public boolean hasGenerativeSafetySettings() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -5391,6 +5532,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return generativeSafetySettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5415,6 +5557,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5436,6 +5579,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5466,6 +5610,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5486,6 +5631,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5502,6 +5648,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getGenerativeSafetySettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5522,6 +5669,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             : generativeSafetySettings_;
       }
     }
+
     /**
      *
      *
@@ -5558,6 +5706,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings
                 .KnowledgeConnectorSettingsOrBuilder>
         knowledgeConnectorSettingsBuilder_;
+
     /**
      *
      *
@@ -5574,6 +5723,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
     public boolean hasKnowledgeConnectorSettings() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -5598,6 +5748,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return knowledgeConnectorSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5624,6 +5775,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5647,6 +5799,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5680,6 +5833,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5701,6 +5855,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5719,6 +5874,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getKnowledgeConnectorSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5742,6 +5898,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             : knowledgeConnectorSettings_;
       }
     }
+
     /**
      *
      *
@@ -5776,6 +5933,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -5798,6 +5956,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5820,6 +5979,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5841,6 +6001,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5858,6 +6019,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5887,6 +6049,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettingsOrBuilder>
         llmModelSettingsBuilder_;
+
     /**
      *
      *
@@ -5901,6 +6064,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
     public boolean hasLlmModelSettings() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -5921,6 +6085,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return llmModelSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5944,6 +6109,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5964,6 +6130,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5993,6 +6160,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -6012,6 +6180,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6027,6 +6196,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getLlmModelSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6046,6 +6216,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
             : llmModelSettings_;
       }
     }
+
     /**
      *
      *

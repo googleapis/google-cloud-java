@@ -39,6 +39,7 @@ public interface DeleteBudgetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

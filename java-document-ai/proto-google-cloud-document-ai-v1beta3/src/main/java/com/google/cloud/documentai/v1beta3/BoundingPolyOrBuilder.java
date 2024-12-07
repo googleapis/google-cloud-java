@@ -34,6 +34,7 @@ public interface BoundingPolyOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Vertex vertices = 1;</code>
    */
   java.util.List<com.google.cloud.documentai.v1beta3.Vertex> getVerticesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BoundingPolyOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Vertex vertices = 1;</code>
    */
   com.google.cloud.documentai.v1beta3.Vertex getVertices(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BoundingPolyOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Vertex vertices = 1;</code>
    */
   int getVerticesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BoundingPolyOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1beta3.VertexOrBuilder>
       getVerticesOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface BoundingPolyOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.documentai.v1beta3.NormalizedVertex> getNormalizedVerticesList();
+
   /**
    *
    *
@@ -98,6 +103,7 @@ public interface BoundingPolyOrBuilder
    * </code>
    */
   com.google.cloud.documentai.v1beta3.NormalizedVertex getNormalizedVertices(int index);
+
   /**
    *
    *
@@ -109,6 +115,7 @@ public interface BoundingPolyOrBuilder
    * </code>
    */
   int getNormalizedVerticesCount();
+
   /**
    *
    *
@@ -121,6 +128,7 @@ public interface BoundingPolyOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1beta3.NormalizedVertexOrBuilder>
       getNormalizedVerticesOrBuilderList();
+
   /**
    *
    *

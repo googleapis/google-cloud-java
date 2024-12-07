@@ -25,6 +25,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.BatchDeleteDocumentsMetadata)
     BatchDeleteDocumentsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchDeleteDocumentsMetadata.newBuilder() to construct.
   private BatchDeleteDocumentsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
      * @return Whether the documentId field is set.
      */
     boolean hasDocumentId();
+
     /**
      *
      *
@@ -84,6 +86,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
      * @return The documentId.
      */
     com.google.cloud.documentai.v1beta3.DocumentId getDocumentId();
+
     /**
      *
      *
@@ -107,6 +110,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
      * @return Whether the status field is set.
      */
     boolean hasStatus();
+
     /**
      *
      *
@@ -119,6 +123,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
      * @return The status.
      */
     com.google.rpc.Status getStatus();
+
     /**
      *
      *
@@ -130,6 +135,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
      */
     com.google.rpc.StatusOrBuilder getStatusOrBuilder();
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.BatchDeleteDocumentsMetadata.IndividualBatchDeleteStatus)
       IndividualBatchDeleteStatusOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IndividualBatchDeleteStatus.newBuilder() to construct.
     private IndividualBatchDeleteStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -179,6 +186,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
     private int bitField0_;
     public static final int DOCUMENT_ID_FIELD_NUMBER = 1;
     private com.google.cloud.documentai.v1beta3.DocumentId documentId_;
+
     /**
      *
      *
@@ -194,6 +202,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
     public boolean hasDocumentId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -211,6 +220,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
           ? com.google.cloud.documentai.v1beta3.DocumentId.getDefaultInstance()
           : documentId_;
     }
+
     /**
      *
      *
@@ -229,6 +239,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
 
     public static final int STATUS_FIELD_NUMBER = 2;
     private com.google.rpc.Status status_;
+
     /**
      *
      *
@@ -244,6 +255,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -259,6 +271,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
+
     /**
      *
      *
@@ -478,6 +491,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -732,6 +746,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
               com.google.cloud.documentai.v1beta3.DocumentId.Builder,
               com.google.cloud.documentai.v1beta3.DocumentIdOrBuilder>
           documentIdBuilder_;
+
       /**
        *
        *
@@ -746,6 +761,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       public boolean hasDocumentId() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -766,6 +782,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
           return documentIdBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -788,6 +805,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -808,6 +826,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -836,6 +855,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -855,6 +875,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -869,6 +890,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         onChanged();
         return getDocumentIdFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -887,6 +909,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
               : documentId_;
         }
       }
+
       /**
        *
        *
@@ -917,6 +940,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           statusBuilder_;
+
       /**
        *
        *
@@ -931,6 +955,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -949,6 +974,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
           return statusBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -971,6 +997,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -990,6 +1017,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1017,6 +1045,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -1036,6 +1065,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1050,6 +1080,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1066,6 +1097,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
           return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
         }
       }
+
       /**
        *
        *
@@ -1164,6 +1196,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int COMMON_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.documentai.v1beta3.CommonOperationMetadata commonMetadata_;
+
   /**
    *
    *
@@ -1179,6 +1212,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
   public boolean hasCommonMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1196,6 +1230,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         ? com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDefaultInstance()
         : commonMetadata_;
   }
+
   /**
    *
    *
@@ -1220,6 +1255,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
           com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsMetadata
               .IndividualBatchDeleteStatus>
       individualBatchDeleteStatuses_;
+
   /**
    *
    *
@@ -1238,6 +1274,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       getIndividualBatchDeleteStatusesList() {
     return individualBatchDeleteStatuses_;
   }
+
   /**
    *
    *
@@ -1257,6 +1294,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       getIndividualBatchDeleteStatusesOrBuilderList() {
     return individualBatchDeleteStatuses_;
   }
+
   /**
    *
    *
@@ -1272,6 +1310,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
   public int getIndividualBatchDeleteStatusesCount() {
     return individualBatchDeleteStatuses_.size();
   }
+
   /**
    *
    *
@@ -1289,6 +1328,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       getIndividualBatchDeleteStatuses(int index) {
     return individualBatchDeleteStatuses_.get(index);
   }
+
   /**
    *
    *
@@ -1309,6 +1349,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
 
   public static final int TOTAL_DOCUMENT_COUNT_FIELD_NUMBER = 3;
   private int totalDocumentCount_ = 0;
+
   /**
    *
    *
@@ -1327,6 +1368,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
 
   public static final int ERROR_DOCUMENT_COUNT_FIELD_NUMBER = 4;
   private int errorDocumentCount_ = 0;
+
   /**
    *
    *
@@ -1540,6 +1582,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.documentai.v1beta3.BatchDeleteDocumentsMetadata} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -1834,6 +1877,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
             com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder,
             com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder>
         commonMetadataBuilder_;
+
     /**
      *
      *
@@ -1848,6 +1892,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
     public boolean hasCommonMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1868,6 +1913,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         return commonMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1891,6 +1937,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1911,6 +1958,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1941,6 +1989,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1960,6 +2009,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1975,6 +2025,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       onChanged();
       return getCommonMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1994,6 +2045,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
             : commonMetadata_;
       }
     }
+
     /**
      *
      *
@@ -2065,6 +2117,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         return individualBatchDeleteStatusesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2083,6 +2136,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         return individualBatchDeleteStatusesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2103,6 +2157,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         return individualBatchDeleteStatusesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2130,6 +2185,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -2155,6 +2211,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -2181,6 +2238,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -2208,6 +2266,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -2232,6 +2291,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -2257,6 +2317,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -2284,6 +2345,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -2305,6 +2367,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -2326,6 +2389,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -2342,6 +2406,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         getIndividualBatchDeleteStatusesBuilder(int index) {
       return getIndividualBatchDeleteStatusesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2362,6 +2427,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         return individualBatchDeleteStatusesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2384,6 +2450,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(individualBatchDeleteStatuses_);
       }
     }
+
     /**
      *
      *
@@ -2403,6 +2470,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
               com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsMetadata
                   .IndividualBatchDeleteStatus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2423,6 +2491,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
               com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsMetadata
                   .IndividualBatchDeleteStatus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2468,6 +2537,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
     }
 
     private int totalDocumentCount_;
+
     /**
      *
      *
@@ -2483,6 +2553,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
     public int getTotalDocumentCount() {
       return totalDocumentCount_;
     }
+
     /**
      *
      *
@@ -2502,6 +2573,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2521,6 +2593,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
     }
 
     private int errorDocumentCount_;
+
     /**
      *
      *
@@ -2536,6 +2609,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
     public int getErrorDocumentCount() {
       return errorDocumentCount_;
     }
+
     /**
      *
      *
@@ -2555,6 +2629,7 @@ public final class BatchDeleteDocumentsMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

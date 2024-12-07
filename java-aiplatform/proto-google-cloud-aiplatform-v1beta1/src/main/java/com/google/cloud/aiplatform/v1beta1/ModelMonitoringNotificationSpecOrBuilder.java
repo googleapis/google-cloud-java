@@ -38,6 +38,7 @@ public interface ModelMonitoringNotificationSpecOrBuilder
    * @return Whether the emailConfig field is set.
    */
   boolean hasEmailConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ModelMonitoringNotificationSpecOrBuilder
    * @return The emailConfig.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec.EmailConfig getEmailConfig();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface ModelMonitoringNotificationSpecOrBuilder
           com.google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec
               .NotificationChannelConfig>
       getNotificationChannelConfigsList();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface ModelMonitoringNotificationSpecOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec.NotificationChannelConfig
       getNotificationChannelConfigs(int index);
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface ModelMonitoringNotificationSpecOrBuilder
    * </code>
    */
   int getNotificationChannelConfigsCount();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface ModelMonitoringNotificationSpecOrBuilder
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec
                   .NotificationChannelConfigOrBuilder>
       getNotificationChannelConfigsOrBuilderList();
+
   /**
    *
    *

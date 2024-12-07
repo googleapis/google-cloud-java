@@ -36,6 +36,7 @@ public interface ParameterValidationOrBuilder
    * @return Whether the regex field is set.
    */
   boolean hasRegex();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ParameterValidationOrBuilder
    * @return The regex.
    */
   com.google.cloud.dataproc.v1.RegexValidation getRegex();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ParameterValidationOrBuilder
    * @return Whether the values field is set.
    */
   boolean hasValues();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ParameterValidationOrBuilder
    * @return The values.
    */
   com.google.cloud.dataproc.v1.ValueValidation getValues();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface IdentityConfigOrBuilder
    * </code>
    */
   int getUserServiceAccountMappingCount();
+
   /**
    *
    *
@@ -48,9 +49,11 @@ public interface IdentityConfigOrBuilder
    * </code>
    */
   boolean containsUserServiceAccountMapping(java.lang.String key);
+
   /** Use {@link #getUserServiceAccountMappingMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserServiceAccountMapping();
+
   /**
    *
    *
@@ -63,6 +66,7 @@ public interface IdentityConfigOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserServiceAccountMappingMap();
+
   /**
    *
    *
@@ -79,6 +83,7 @@ public interface IdentityConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

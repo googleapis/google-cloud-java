@@ -36,6 +36,7 @@ public interface QueryOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface QueryOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface QueryOrBuilder
    * @return The queryId.
    */
   java.lang.String getQueryId();
+
   /**
    *
    *

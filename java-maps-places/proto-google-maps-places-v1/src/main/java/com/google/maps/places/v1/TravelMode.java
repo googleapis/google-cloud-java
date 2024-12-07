@@ -99,6 +99,7 @@ public enum TravelMode implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TRAVEL_MODE_UNSPECIFIED = 0;</code>
    */
   public static final int TRAVEL_MODE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -109,6 +110,7 @@ public enum TravelMode implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DRIVE = 1;</code>
    */
   public static final int DRIVE_VALUE = 1;
+
   /**
    *
    *
@@ -119,6 +121,7 @@ public enum TravelMode implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BICYCLE = 2;</code>
    */
   public static final int BICYCLE_VALUE = 2;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public enum TravelMode implements com.google.protobuf.ProtocolMessageEnum {
    * <code>WALK = 3;</code>
    */
   public static final int WALK_VALUE = 3;
+
   /**
    *
    *

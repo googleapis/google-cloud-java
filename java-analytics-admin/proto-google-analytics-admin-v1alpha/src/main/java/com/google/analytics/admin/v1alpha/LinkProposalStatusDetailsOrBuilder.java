@@ -38,6 +38,7 @@ public interface LinkProposalStatusDetailsOrBuilder
    * @return The enum numeric value on the wire for linkProposalInitiatingProduct.
    */
   int getLinkProposalInitiatingProductValue();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface LinkProposalStatusDetailsOrBuilder
    * @return The requestorEmail.
    */
   java.lang.String getRequestorEmail();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface LinkProposalStatusDetailsOrBuilder
    * @return The enum numeric value on the wire for linkProposalState.
    */
   int getLinkProposalStateValue();
+
   /**
    *
    *

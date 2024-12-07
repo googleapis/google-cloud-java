@@ -33,6 +33,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ListAdUnitsResponse)
     ListAdUnitsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListAdUnitsResponse.newBuilder() to construct.
   private ListAdUnitsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.AdUnit> adUnits_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.ads.admanager.v1.AdUnit> getAdUnitsList() {
     return adUnits_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       getAdUnitsOrBuilderList() {
     return adUnits_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
   public int getAdUnitsCount() {
     return adUnits_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
   public com.google.ads.admanager.v1.AdUnit getAdUnits(int index) {
     return adUnits_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
+
   /**
    *
    *
@@ -395,6 +404,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -684,6 +694,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
         return adUnitsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -700,6 +711,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
         return adUnitsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -716,6 +728,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
         return adUnitsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -738,6 +751,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +772,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +795,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +818,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +859,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +880,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +900,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +920,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +933,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
     public com.google.ads.admanager.v1.AdUnit.Builder getAdUnitsBuilder(int index) {
       return getAdUnitsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -927,6 +950,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
         return adUnitsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -944,6 +968,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(adUnits_);
       }
     }
+
     /**
      *
      *
@@ -957,6 +982,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       return getAdUnitsFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.AdUnit.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -970,6 +996,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       return getAdUnitsFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.AdUnit.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1001,6 +1028,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1024,6 +1052,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1047,6 +1076,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1099,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1118,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1112,6 +1144,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private int totalSize_;
+
     /**
      *
      *
@@ -1137,6 +1170,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
     public int getTotalSize() {
       return totalSize_;
     }
+
     /**
      *
      *
@@ -1166,6 +1200,7 @@ public final class ListAdUnitsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

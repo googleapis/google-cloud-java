@@ -36,6 +36,7 @@ public interface NamespacesOrBuilder
    * @return A list containing the namespaces.
    */
   java.util.List<java.lang.String> getNamespacesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NamespacesOrBuilder
    * @return The count of namespaces.
    */
   int getNamespacesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface NamespacesOrBuilder
    * @return The namespaces at the given index.
    */
   java.lang.String getNamespaces(int index);
+
   /**
    *
    *

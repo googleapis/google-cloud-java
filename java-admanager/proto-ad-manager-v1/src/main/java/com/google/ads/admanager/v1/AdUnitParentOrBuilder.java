@@ -39,6 +39,7 @@ public interface AdUnitParentOrBuilder
    * @return The parentAdUnit.
    */
   java.lang.String getParentAdUnit();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface AdUnitParentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface AdUnitParentOrBuilder
    * @return The adUnitCode.
    */
   java.lang.String getAdUnitCode();
+
   /**
    *
    *

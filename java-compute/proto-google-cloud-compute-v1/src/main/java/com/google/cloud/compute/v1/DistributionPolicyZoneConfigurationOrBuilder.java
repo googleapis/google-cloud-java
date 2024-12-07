@@ -36,6 +36,7 @@ public interface DistributionPolicyZoneConfigurationOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DistributionPolicyZoneConfigurationOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

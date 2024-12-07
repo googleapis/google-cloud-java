@@ -40,6 +40,7 @@ public interface ExternalAddressOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface ExternalAddressOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ExternalAddressOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface ExternalAddressOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface ExternalAddressOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface ExternalAddressOrBuilder
    * @return The internalIp.
    */
   java.lang.String getInternalIp();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface ExternalAddressOrBuilder
    * @return The externalIp.
    */
   java.lang.String getExternalIp();
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public interface ExternalAddressOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public interface ExternalAddressOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public interface ExternalAddressOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

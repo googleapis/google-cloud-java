@@ -38,6 +38,7 @@ public interface UpdateStyleGuideRequestOrBuilder
    * @return Whether the styleGuide field is set.
    */
   boolean hasStyleGuide();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateStyleGuideRequestOrBuilder
    * @return The styleGuide.
    */
   com.google.cloud.apihub.v1.StyleGuide getStyleGuide();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateStyleGuideRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateStyleGuideRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

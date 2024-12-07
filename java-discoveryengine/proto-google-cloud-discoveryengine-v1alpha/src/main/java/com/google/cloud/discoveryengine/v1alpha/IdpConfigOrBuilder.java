@@ -36,6 +36,7 @@ public interface IdpConfigOrBuilder
    * @return The enum numeric value on the wire for idpType.
    */
   int getIdpTypeValue();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface IdpConfigOrBuilder
    * @return Whether the externalIdpConfig field is set.
    */
   boolean hasExternalIdpConfig();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface IdpConfigOrBuilder
    * @return The externalIdpConfig.
    */
   com.google.cloud.discoveryengine.v1alpha.IdpConfig.ExternalIdpConfig getExternalIdpConfig();
+
   /**
    *
    *

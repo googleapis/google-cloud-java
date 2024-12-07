@@ -33,6 +33,7 @@ public final class UnitPricingBaseMeasure extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.UnitPricingBaseMeasure)
     UnitPricingBaseMeasureOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UnitPricingBaseMeasure.newBuilder() to construct.
   private UnitPricingBaseMeasure(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class UnitPricingBaseMeasure extends com.google.protobuf.GeneratedM
 
   public static final int VALUE_FIELD_NUMBER = 1;
   private long value_ = 0L;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class UnitPricingBaseMeasure extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object unit_ = "";
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class UnitPricingBaseMeasure extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -302,6 +306,7 @@ public final class UnitPricingBaseMeasure extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -506,6 +511,7 @@ public final class UnitPricingBaseMeasure extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private long value_;
+
     /**
      *
      *
@@ -521,6 +527,7 @@ public final class UnitPricingBaseMeasure extends com.google.protobuf.GeneratedM
     public long getValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -540,6 +547,7 @@ public final class UnitPricingBaseMeasure extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -559,6 +567,7 @@ public final class UnitPricingBaseMeasure extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object unit_ = "";
+
     /**
      *
      *
@@ -581,6 +590,7 @@ public final class UnitPricingBaseMeasure extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -603,6 +613,7 @@ public final class UnitPricingBaseMeasure extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class UnitPricingBaseMeasure extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -641,6 +653,7 @@ public final class UnitPricingBaseMeasure extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

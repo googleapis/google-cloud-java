@@ -34,6 +34,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.BatchProcessRequest)
     BatchProcessRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchProcessRequest.newBuilder() to construct.
   private BatchProcessRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
   public static final int INPUT_DOCUMENTS_FIELD_NUMBER = 5;
   private com.google.cloud.documentai.v1.BatchDocumentsInputConfig inputDocuments_;
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
   public boolean hasInputDocuments() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.documentai.v1.BatchDocumentsInputConfig.getDefaultInstance()
         : inputDocuments_;
   }
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
   public static final int DOCUMENT_OUTPUT_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.documentai.v1.DocumentOutputConfig documentOutputConfig_;
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
   public boolean hasDocumentOutputConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.documentai.v1.DocumentOutputConfig.getDefaultInstance()
         : documentOutputConfig_;
   }
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
   public static final int SKIP_HUMAN_REVIEW_FIELD_NUMBER = 4;
   private boolean skipHumanReview_ = false;
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
   public static final int PROCESS_OPTIONS_FIELD_NUMBER = 7;
   private com.google.cloud.documentai.v1.ProcessOptions processOptions_;
+
   /**
    *
    *
@@ -292,6 +303,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
   public boolean hasProcessOptions() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -309,6 +321,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.documentai.v1.ProcessOptions.getDefaultInstance()
         : processOptions_;
   }
+
   /**
    *
    *
@@ -351,6 +364,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -372,12 +386,14 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -396,6 +412,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -421,6 +438,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -675,6 +693,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -987,6 +1006,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1016,6 +1036,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1045,6 +1066,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1073,6 +1095,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1120,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1157,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.documentai.v1.BatchDocumentsInputConfig.Builder,
             com.google.cloud.documentai.v1.BatchDocumentsInputConfigOrBuilder>
         inputDocumentsBuilder_;
+
     /**
      *
      *
@@ -1149,6 +1174,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     public boolean hasInputDocuments() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1171,6 +1197,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         return inputDocumentsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1196,6 +1223,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1246,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1249,6 +1278,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1270,6 +1300,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1318,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getInputDocumentsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1308,6 +1340,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
             : inputDocuments_;
       }
     }
+
     /**
      *
      *
@@ -1342,6 +1375,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.documentai.v1.DocumentOutputConfig.Builder,
             com.google.cloud.documentai.v1.DocumentOutputConfigOrBuilder>
         documentOutputConfigBuilder_;
+
     /**
      *
      *
@@ -1358,6 +1392,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     public boolean hasDocumentOutputConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1380,6 +1415,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         return documentOutputConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1405,6 +1441,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1427,6 +1464,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1458,6 +1496,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1479,6 +1518,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1496,6 +1536,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getDocumentOutputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1517,6 +1558,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
             : documentOutputConfig_;
       }
     }
+
     /**
      *
      *
@@ -1546,6 +1588,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean skipHumanReview_;
+
     /**
      *
      *
@@ -1562,6 +1605,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     public boolean getSkipHumanReview() {
       return skipHumanReview_;
     }
+
     /**
      *
      *
@@ -1582,6 +1626,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1607,6 +1652,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.documentai.v1.ProcessOptions.Builder,
             com.google.cloud.documentai.v1.ProcessOptionsOrBuilder>
         processOptionsBuilder_;
+
     /**
      *
      *
@@ -1621,6 +1667,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     public boolean hasProcessOptions() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1641,6 +1688,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         return processOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1663,6 +1711,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1683,6 +1732,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1711,6 +1761,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1730,6 +1781,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1744,6 +1796,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getProcessOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1762,6 +1815,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
             : processOptions_;
       }
     }
+
     /**
      *
      *
@@ -1813,6 +1867,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1834,12 +1889,14 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1858,6 +1915,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1883,6 +1941,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1914,6 +1973,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1935,12 +1995,14 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -1966,6 +2028,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *

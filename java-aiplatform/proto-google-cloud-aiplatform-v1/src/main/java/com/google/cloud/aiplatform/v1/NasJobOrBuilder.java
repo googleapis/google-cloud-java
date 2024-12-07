@@ -36,6 +36,7 @@ public interface NasJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface NasJobOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface NasJobOrBuilder
    * @return Whether the nasJobSpec field is set.
    */
   boolean hasNasJobSpec();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface NasJobOrBuilder
    * @return The nasJobSpec.
    */
   com.google.cloud.aiplatform.v1.NasJobSpec getNasJobSpec();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface NasJobOrBuilder
    * @return Whether the nasJobOutput field is set.
    */
   boolean hasNasJobOutput();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface NasJobOrBuilder
    * @return The nasJobOutput.
    */
   com.google.cloud.aiplatform.v1.NasJobOutput getNasJobOutput();
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface NasJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface NasJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public interface NasJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public interface NasJobOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -255,6 +265,7 @@ public interface NasJobOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -282,6 +293,7 @@ public interface NasJobOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -296,6 +308,7 @@ public interface NasJobOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -322,6 +335,7 @@ public interface NasJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -335,6 +349,7 @@ public interface NasJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -360,6 +375,7 @@ public interface NasJobOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -373,6 +389,7 @@ public interface NasJobOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -401,6 +418,7 @@ public interface NasJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -417,9 +435,11 @@ public interface NasJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -436,6 +456,7 @@ public interface NasJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -456,6 +477,7 @@ public interface NasJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -487,6 +509,7 @@ public interface NasJobOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -501,6 +524,7 @@ public interface NasJobOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *

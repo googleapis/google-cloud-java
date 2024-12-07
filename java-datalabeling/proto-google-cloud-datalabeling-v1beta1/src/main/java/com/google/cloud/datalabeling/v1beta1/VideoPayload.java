@@ -33,6 +33,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.VideoPayload)
     VideoPayloadOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VideoPayload.newBuilder() to construct.
   private VideoPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object videoUri_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datalabeling.v1beta1.VideoThumbnail> videoThumbnails_;
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       getVideoThumbnailsList() {
     return videoThumbnails_;
   }
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       getVideoThumbnailsOrBuilderList() {
     return videoThumbnails_;
   }
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
   public int getVideoThumbnailsCount() {
     return videoThumbnails_.size();
   }
+
   /**
    *
    *
@@ -226,6 +235,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datalabeling.v1beta1.VideoThumbnail getVideoThumbnails(int index) {
     return videoThumbnails_.get(index);
   }
+
   /**
    *
    *
@@ -243,6 +253,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FRAME_RATE_FIELD_NUMBER = 4;
   private float frameRate_ = 0F;
+
   /**
    *
    *
@@ -263,6 +274,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object signedUri_ = "";
+
   /**
    *
    *
@@ -286,6 +298,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -508,6 +521,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -797,6 +811,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object mimeType_ = "";
+
     /**
      *
      *
@@ -819,6 +834,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -841,6 +857,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -862,6 +879,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +897,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +922,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object videoUri_ = "";
+
     /**
      *
      *
@@ -925,6 +945,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -947,6 +968,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -968,6 +990,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1008,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1067,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         return videoThumbnailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1059,6 +1084,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         return videoThumbnailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1075,6 +1101,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         return videoThumbnailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1098,6 +1125,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1146,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1169,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1193,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1183,6 +1214,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1235,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1223,6 +1256,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1242,6 +1276,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1261,6 +1296,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1310,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getVideoThumbnailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1291,6 +1328,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         return videoThumbnailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1308,6 +1346,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(videoThumbnails_);
       }
     }
+
     /**
      *
      *
@@ -1322,6 +1361,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       return getVideoThumbnailsFieldBuilder()
           .addBuilder(com.google.cloud.datalabeling.v1beta1.VideoThumbnail.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1337,6 +1377,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.datalabeling.v1beta1.VideoThumbnail.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1372,6 +1413,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float frameRate_;
+
     /**
      *
      *
@@ -1387,6 +1429,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     public float getFrameRate() {
       return frameRate_;
     }
+
     /**
      *
      *
@@ -1406,6 +1449,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1425,6 +1469,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object signedUri_ = "";
+
     /**
      *
      *
@@ -1447,6 +1492,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1469,6 +1515,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1490,6 +1537,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1507,6 +1555,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.IdpConfig)
     IdpConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IdpConfig.newBuilder() to construct.
   private IdpConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,6 +117,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>IDP_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int IDP_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>GSUITE = 1;</code>
      */
     public static final int GSUITE_VALUE = 1;
+
     /**
      *
      *
@@ -240,6 +243,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The workforcePoolName.
      */
     java.lang.String getWorkforcePoolName();
+
     /**
      *
      *
@@ -254,6 +258,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getWorkforcePoolNameBytes();
   }
+
   /**
    *
    *
@@ -268,6 +273,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.IdpConfig.ExternalIdpConfig)
       ExternalIdpConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ExternalIdpConfig.newBuilder() to construct.
     private ExternalIdpConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -302,6 +308,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object workforcePoolName_ = "";
+
     /**
      *
      *
@@ -326,6 +333,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -513,6 +521,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -708,6 +717,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object workforcePoolName_ = "";
+
       /**
        *
        *
@@ -731,6 +741,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -754,6 +765,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -776,6 +788,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -794,6 +807,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -888,6 +902,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int IDP_TYPE_FIELD_NUMBER = 1;
   private int idpType_ = 0;
+
   /**
    *
    *
@@ -903,6 +918,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
   public int getIdpTypeValue() {
     return idpType_;
   }
+
   /**
    *
    *
@@ -925,6 +941,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXTERNAL_IDP_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1alpha.IdpConfig.ExternalIdpConfig externalIdpConfig_;
+
   /**
    *
    *
@@ -942,6 +959,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExternalIdpConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -962,6 +980,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1alpha.IdpConfig.ExternalIdpConfig.getDefaultInstance()
         : externalIdpConfig_;
   }
+
   /**
    *
    *
@@ -1158,6 +1177,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1373,6 +1393,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int idpType_ = 0;
+
     /**
      *
      *
@@ -1388,6 +1409,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
     public int getIdpTypeValue() {
       return idpType_;
     }
+
     /**
      *
      *
@@ -1406,6 +1428,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1425,6 +1448,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.discoveryengine.v1alpha.IdpConfig.IdpType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1446,6 +1470,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1470,6 +1495,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1alpha.IdpConfig.ExternalIdpConfig.Builder,
             com.google.cloud.discoveryengine.v1alpha.IdpConfig.ExternalIdpConfigOrBuilder>
         externalIdpConfigBuilder_;
+
     /**
      *
      *
@@ -1486,6 +1512,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExternalIdpConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1510,6 +1537,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
         return externalIdpConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1535,6 +1563,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1558,6 +1587,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1590,6 +1620,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1611,6 +1642,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1628,6 +1660,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExternalIdpConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1650,6 +1683,7 @@ public final class IdpConfig extends com.google.protobuf.GeneratedMessageV3
             : externalIdpConfig_;
       }
     }
+
     /**
      *
      *

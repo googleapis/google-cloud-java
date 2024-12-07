@@ -38,6 +38,7 @@ public interface UpdateDisplayDeviceInstanceRequestOrBuilder
    * @return Whether the displayDeviceResource field is set.
    */
   boolean hasDisplayDeviceResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateDisplayDeviceInstanceRequestOrBuilder
    * @return The displayDeviceResource.
    */
   com.google.cloud.compute.v1.DisplayDevice getDisplayDeviceResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateDisplayDeviceInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface UpdateDisplayDeviceInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface UpdateDisplayDeviceInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface UpdateDisplayDeviceInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface UpdateDisplayDeviceInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder
    * @return Whether the snapshotAnalysis field is set.
    */
   boolean hasSnapshotAnalysis();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis
       getSnapshotAnalysis();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder
    * @return Whether the importFeaturesAnalysis field is set.
    */
   boolean hasImportFeaturesAnalysis();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
       getImportFeaturesAnalysis();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder
    * @return Whether the numericalThresholdConfig field is set.
    */
   boolean hasNumericalThresholdConfig();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig
       getNumericalThresholdConfig();
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder
    * @return Whether the categoricalThresholdConfig field is set.
    */
   boolean hasCategoricalThresholdConfig();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface FeaturestoreMonitoringConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig
       getCategoricalThresholdConfig();
+
   /**
    *
    *

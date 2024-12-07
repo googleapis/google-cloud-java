@@ -37,6 +37,7 @@ public interface CertificateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CertificateOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface CertificateOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface CertificateOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface CertificateOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface CertificateOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface CertificateOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -172,9 +179,11 @@ public interface CertificateOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -185,6 +194,7 @@ public interface CertificateOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface CertificateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -223,6 +234,7 @@ public interface CertificateOrBuilder
    * @return Whether the selfManaged field is set.
    */
   boolean hasSelfManaged();
+
   /**
    *
    *
@@ -236,6 +248,7 @@ public interface CertificateOrBuilder
    * @return The selfManaged.
    */
   com.google.cloud.certificatemanager.v1.Certificate.SelfManagedCertificate getSelfManaged();
+
   /**
    *
    *
@@ -261,6 +274,7 @@ public interface CertificateOrBuilder
    * @return Whether the managed field is set.
    */
   boolean hasManaged();
+
   /**
    *
    *
@@ -273,6 +287,7 @@ public interface CertificateOrBuilder
    * @return The managed.
    */
   com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate getManaged();
+
   /**
    *
    *
@@ -300,6 +315,7 @@ public interface CertificateOrBuilder
    * @return A list containing the sanDnsnames.
    */
   java.util.List<java.lang.String> getSanDnsnamesList();
+
   /**
    *
    *
@@ -315,6 +331,7 @@ public interface CertificateOrBuilder
    * @return The count of sanDnsnames.
    */
   int getSanDnsnamesCount();
+
   /**
    *
    *
@@ -331,6 +348,7 @@ public interface CertificateOrBuilder
    * @return The sanDnsnames at the given index.
    */
   java.lang.String getSanDnsnames(int index);
+
   /**
    *
    *
@@ -360,6 +378,7 @@ public interface CertificateOrBuilder
    * @return The pemCertificate.
    */
   java.lang.String getPemCertificate();
+
   /**
    *
    *
@@ -386,6 +405,7 @@ public interface CertificateOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -399,6 +419,7 @@ public interface CertificateOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -425,6 +446,7 @@ public interface CertificateOrBuilder
    * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1beta1.VmImage)
     VmImageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VmImage.newBuilder() to construct.
   private VmImage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
     private ImageCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_NAME_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImageName() {
     return imageCase_ == 2;
   }
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -237,6 +244,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_FAMILY_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -252,6 +260,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImageFamily() {
     return imageCase_ == 3;
   }
+
   /**
    *
    *
@@ -280,6 +289,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -503,6 +513,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -743,6 +754,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -766,6 +778,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -789,6 +802,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -811,6 +825,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +844,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +884,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImageName() {
       return imageCase_ == 2;
     }
+
     /**
      *
      *
@@ -896,6 +913,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -924,6 +942,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -945,6 +964,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +984,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1003,6 +1024,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImageFamily() {
       return imageCase_ == 3;
     }
+
     /**
      *
      *
@@ -1032,6 +1054,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1084,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1083,6 +1107,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1128,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *

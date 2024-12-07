@@ -34,6 +34,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.ApprovalResult)
     ApprovalResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ApprovalResult.newBuilder() to construct.
   private ApprovalResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
      * <code>DECISION_UNSPECIFIED = 0;</code>
      */
     public static final int DECISION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
      * <code>APPROVED = 1;</code>
      */
     public static final int APPROVED_VALUE = 1;
+
     /**
      *
      *
@@ -230,6 +233,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object approverAccount_ = "";
+
   /**
    *
    *
@@ -254,6 +258,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -281,6 +286,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APPROVAL_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp approvalTime_;
+
   /**
    *
    *
@@ -298,6 +304,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasApprovalTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -317,6 +324,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : approvalTime_;
   }
+
   /**
    *
    *
@@ -337,6 +345,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DECISION_FIELD_NUMBER = 4;
   private int decision_ = 0;
+
   /**
    *
    *
@@ -354,6 +363,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
   public int getDecisionValue() {
     return decision_;
   }
+
   /**
    *
    *
@@ -378,6 +388,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object comment_ = "";
+
   /**
    *
    *
@@ -401,6 +412,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -429,6 +441,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object url_ = "";
+
   /**
    *
    *
@@ -455,6 +468,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -683,6 +697,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -940,6 +955,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object approverAccount_ = "";
+
     /**
      *
      *
@@ -963,6 +979,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -986,6 +1003,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1026,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1045,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1076,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         approvalTimeBuilder_;
+
     /**
      *
      *
@@ -1072,6 +1093,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasApprovalTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1094,6 +1116,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
         return approvalTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1141,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1139,6 +1163,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1193,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1215,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1232,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getApprovalTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1225,6 +1253,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
             : approvalTime_;
       }
     }
+
     /**
      *
      *
@@ -1254,6 +1283,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int decision_ = 0;
+
     /**
      *
      *
@@ -1271,6 +1301,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
     public int getDecisionValue() {
       return decision_;
     }
+
     /**
      *
      *
@@ -1291,6 +1322,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1344,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloudbuild.v1.ApprovalResult.Decision.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1335,6 +1368,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1390,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object comment_ = "";
+
     /**
      *
      *
@@ -1378,6 +1413,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1400,6 +1436,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1421,6 +1458,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1438,6 +1476,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1462,6 +1501,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object url_ = "";
+
     /**
      *
      *
@@ -1487,6 +1527,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1512,6 +1553,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1536,6 +1578,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1556,6 +1599,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

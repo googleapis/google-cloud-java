@@ -39,6 +39,7 @@ public interface CreateSKAdNetworkConversionValueSchemaRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateSKAdNetworkConversionValueSchemaRequestOrBuilder
    * @return Whether the skadnetworkConversionValueSchema field is set.
    */
   boolean hasSkadnetworkConversionValueSchema();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface CreateSKAdNetworkConversionValueSchemaRequestOrBuilder
    */
   com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
       getSkadnetworkConversionValueSchema();
+
   /**
    *
    *

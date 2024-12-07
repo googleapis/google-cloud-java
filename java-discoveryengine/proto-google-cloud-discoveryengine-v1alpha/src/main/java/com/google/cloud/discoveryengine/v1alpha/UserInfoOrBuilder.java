@@ -46,6 +46,7 @@ public interface UserInfoOrBuilder
    * @return The userId.
    */
   java.lang.String getUserId();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface UserInfoOrBuilder
    * @return The userAgent.
    */
   java.lang.String getUserAgent();
+
   /**
    *
    *

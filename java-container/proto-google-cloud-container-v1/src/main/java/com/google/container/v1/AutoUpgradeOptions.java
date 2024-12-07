@@ -34,6 +34,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.container.v1.AutoUpgradeOptions)
     AutoUpgradeOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoUpgradeOptions.newBuilder() to construct.
   private AutoUpgradeOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object autoUpgradeStartTime_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -341,6 +346,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -540,6 +546,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object autoUpgradeStartTime_ = "";
+
     /**
      *
      *
@@ -564,6 +571,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -588,6 +596,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -611,6 +620,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +640,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +667,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -679,6 +691,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -702,6 +715,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -724,6 +738,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +757,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

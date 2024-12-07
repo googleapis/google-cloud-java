@@ -39,6 +39,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder
    * @return Whether the trainingDataset field is set.
    */
   boolean hasTrainingDataset();
+
   /**
    *
    *
@@ -55,6 +56,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.TrainingDataset
       getTrainingDataset();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder
    * @return Whether the trainingPredictionSkewDetectionConfig field is set.
    */
   boolean hasTrainingPredictionSkewDetectionConfig();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig
           .TrainingPredictionSkewDetectionConfig
       getTrainingPredictionSkewDetectionConfig();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder
    * @return Whether the predictionDriftDetectionConfig field is set.
    */
   boolean hasPredictionDriftDetectionConfig();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.PredictionDriftDetectionConfig
       getPredictionDriftDetectionConfig();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder
    * @return Whether the explanationConfig field is set.
    */
   boolean hasExplanationConfig();
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig
       getExplanationConfig();
+
   /**
    *
    *

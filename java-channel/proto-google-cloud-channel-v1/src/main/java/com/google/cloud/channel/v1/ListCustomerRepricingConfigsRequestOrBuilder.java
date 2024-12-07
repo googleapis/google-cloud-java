@@ -41,6 +41,7 @@ public interface ListCustomerRepricingConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface ListCustomerRepricingConfigsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -127,6 +129,7 @@ public interface ListCustomerRepricingConfigsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

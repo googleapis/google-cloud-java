@@ -38,6 +38,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CharacterMaskConfig)
     CharacterMaskConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CharacterMaskConfig.newBuilder() to construct.
   private CharacterMaskConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object maskingCharacter_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
 
   public static final int NUMBER_TO_MASK_FIELD_NUMBER = 2;
   private int numberToMask_ = 0;
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
 
   public static final int REVERSE_ORDER_FIELD_NUMBER = 3;
   private boolean reverseOrder_ = false;
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.CharsToIgnore> charactersToIgnore_;
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.privacy.dlp.v2.CharsToIgnore> getCharactersToIgnoreList() {
     return charactersToIgnore_;
   }
+
   /**
    *
    *
@@ -219,6 +226,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       getCharactersToIgnoreOrBuilderList() {
     return charactersToIgnore_;
   }
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
   public int getCharactersToIgnoreCount() {
     return charactersToIgnore_.size();
   }
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
   public com.google.privacy.dlp.v2.CharsToIgnore getCharactersToIgnore(int index) {
     return charactersToIgnore_.get(index);
   }
+
   /**
    *
    *
@@ -458,6 +468,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -732,6 +743,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object maskingCharacter_ = "";
+
     /**
      *
      *
@@ -757,6 +769,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -782,6 +795,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -806,6 +820,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +841,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +869,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
     }
 
     private int numberToMask_;
+
     /**
      *
      *
@@ -884,6 +901,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
     public int getNumberToMask() {
       return numberToMask_;
     }
+
     /**
      *
      *
@@ -919,6 +937,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +973,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
     }
 
     private boolean reverseOrder_;
+
     /**
      *
      *
@@ -973,6 +993,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
     public boolean getReverseOrder() {
       return reverseOrder_;
     }
+
     /**
      *
      *
@@ -996,6 +1017,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1076,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
         return charactersToIgnoreBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1073,6 +1096,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
         return charactersToIgnoreBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1116,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
         return charactersToIgnoreBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1142,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1166,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1192,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1190,6 +1218,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1213,6 +1242,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1236,6 +1266,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1290,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1313,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1303,6 +1336,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1352,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.CharsToIgnore.Builder getCharactersToIgnoreBuilder(int index) {
       return getCharactersToIgnoreFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1338,6 +1373,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
         return charactersToIgnoreBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1358,6 +1394,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(charactersToIgnore_);
       }
     }
+
     /**
      *
      *
@@ -1374,6 +1411,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       return getCharactersToIgnoreFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.CharsToIgnore.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1390,6 +1428,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       return getCharactersToIgnoreFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.CharsToIgnore.getDefaultInstance());
     }
+
     /**
      *
      *

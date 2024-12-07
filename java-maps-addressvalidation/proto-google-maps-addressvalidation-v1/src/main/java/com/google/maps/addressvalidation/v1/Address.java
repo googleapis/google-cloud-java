@@ -35,6 +35,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.addressvalidation.v1.Address)
     AddressOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Address.newBuilder() to construct.
   private Address(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object formattedAddress_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POSTAL_ADDRESS_FIELD_NUMBER = 3;
   private com.google.type.PostalAddress postalAddress_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPostalAddress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.PostalAddress.getDefaultInstance()
         : postalAddress_;
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.addressvalidation.v1.AddressComponent> addressComponents_;
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       getAddressComponentsList() {
     return addressComponents_;
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       getAddressComponentsOrBuilderList() {
     return addressComponents_;
   }
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public int getAddressComponentsCount() {
     return addressComponents_.size();
   }
+
   /**
    *
    *
@@ -259,6 +269,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.addressvalidation.v1.AddressComponent getAddressComponents(int index) {
     return addressComponents_.get(index);
   }
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList missingComponentTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -306,6 +318,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getMissingComponentTypesList() {
     return missingComponentTypes_;
   }
+
   /**
    *
    *
@@ -326,6 +339,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public int getMissingComponentTypesCount() {
     return missingComponentTypes_.size();
   }
+
   /**
    *
    *
@@ -347,6 +361,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getMissingComponentTypes(int index) {
     return missingComponentTypes_.get(index);
   }
+
   /**
    *
    *
@@ -374,6 +389,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unconfirmedComponentTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -398,6 +414,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getUnconfirmedComponentTypesList() {
     return unconfirmedComponentTypes_;
   }
+
   /**
    *
    *
@@ -422,6 +439,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public int getUnconfirmedComponentTypesCount() {
     return unconfirmedComponentTypes_.size();
   }
+
   /**
    *
    *
@@ -447,6 +465,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getUnconfirmedComponentTypes(int index) {
     return unconfirmedComponentTypes_.get(index);
   }
+
   /**
    *
    *
@@ -478,6 +497,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unresolvedTokens_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -496,6 +516,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getUnresolvedTokensList() {
     return unresolvedTokens_;
   }
+
   /**
    *
    *
@@ -514,6 +535,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public int getUnresolvedTokensCount() {
     return unresolvedTokens_.size();
   }
+
   /**
    *
    *
@@ -533,6 +555,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getUnresolvedTokens(int index) {
     return unresolvedTokens_.get(index);
   }
+
   /**
    *
    *
@@ -789,6 +812,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1132,6 +1156,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object formattedAddress_ = "";
+
     /**
      *
      *
@@ -1155,6 +1180,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1178,6 +1204,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1200,6 +1227,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1246,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1248,6 +1277,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
             com.google.type.PostalAddress.Builder,
             com.google.type.PostalAddressOrBuilder>
         postalAddressBuilder_;
+
     /**
      *
      *
@@ -1262,6 +1292,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPostalAddress() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1282,6 +1313,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return postalAddressBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1304,6 +1336,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1323,6 +1356,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1350,6 +1384,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1369,6 +1404,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1383,6 +1419,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPostalAddressFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1401,6 +1438,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
             : postalAddress_;
       }
     }
+
     /**
      *
      *
@@ -1469,6 +1507,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return addressComponentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1492,6 +1531,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return addressComponentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1515,6 +1555,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return addressComponentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1545,6 +1586,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1572,6 +1614,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1602,6 +1645,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1632,6 +1676,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1659,6 +1704,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1686,6 +1732,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1714,6 +1761,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1740,6 +1788,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1766,6 +1815,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1786,6 +1836,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         getAddressComponentsBuilder(int index) {
       return getAddressComponentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1810,6 +1861,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return addressComponentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1834,6 +1886,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(addressComponents_);
       }
     }
+
     /**
      *
      *
@@ -1855,6 +1908,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return getAddressComponentsFieldBuilder()
           .addBuilder(com.google.maps.addressvalidation.v1.AddressComponent.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1877,6 +1931,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.maps.addressvalidation.v1.AddressComponent.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1928,6 +1983,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1949,6 +2005,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       missingComponentTypes_.makeImmutable();
       return missingComponentTypes_;
     }
+
     /**
      *
      *
@@ -1969,6 +2026,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public int getMissingComponentTypesCount() {
       return missingComponentTypes_.size();
     }
+
     /**
      *
      *
@@ -1990,6 +2048,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getMissingComponentTypes(int index) {
       return missingComponentTypes_.get(index);
     }
+
     /**
      *
      *
@@ -2011,6 +2070,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getMissingComponentTypesBytes(int index) {
       return missingComponentTypes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2040,6 +2100,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2068,6 +2129,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2093,6 +2155,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2117,6 +2180,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2157,6 +2221,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -2182,6 +2247,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       unconfirmedComponentTypes_.makeImmutable();
       return unconfirmedComponentTypes_;
     }
+
     /**
      *
      *
@@ -2206,6 +2272,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public int getUnconfirmedComponentTypesCount() {
       return unconfirmedComponentTypes_.size();
     }
+
     /**
      *
      *
@@ -2231,6 +2298,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getUnconfirmedComponentTypes(int index) {
       return unconfirmedComponentTypes_.get(index);
     }
+
     /**
      *
      *
@@ -2256,6 +2324,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getUnconfirmedComponentTypesBytes(int index) {
       return unconfirmedComponentTypes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2289,6 +2358,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2321,6 +2391,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2350,6 +2421,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2378,6 +2450,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2421,6 +2494,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -2440,6 +2514,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       unresolvedTokens_.makeImmutable();
       return unresolvedTokens_;
     }
+
     /**
      *
      *
@@ -2458,6 +2533,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public int getUnresolvedTokensCount() {
       return unresolvedTokens_.size();
     }
+
     /**
      *
      *
@@ -2477,6 +2553,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getUnresolvedTokens(int index) {
       return unresolvedTokens_.get(index);
     }
+
     /**
      *
      *
@@ -2496,6 +2573,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getUnresolvedTokensBytes(int index) {
       return unresolvedTokens_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2523,6 +2601,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2549,6 +2628,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2572,6 +2652,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2594,6 +2675,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

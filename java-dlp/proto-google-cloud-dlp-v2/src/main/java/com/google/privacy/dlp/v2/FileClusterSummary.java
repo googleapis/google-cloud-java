@@ -33,6 +33,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.FileClusterSummary)
     FileClusterSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FileClusterSummary.newBuilder() to construct.
   private FileClusterSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int FILE_CLUSTER_TYPE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.FileClusterType fileClusterType_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   public boolean hasFileClusterType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         ? com.google.privacy.dlp.v2.FileClusterType.getDefaultInstance()
         : fileClusterType_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FileStoreInfoTypeSummary>
       fileStoreInfoTypeSummaries_;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       getFileStoreInfoTypeSummariesList() {
     return fileStoreInfoTypeSummaries_;
   }
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       getFileStoreInfoTypeSummariesOrBuilderList() {
     return fileStoreInfoTypeSummaries_;
   }
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   public int getFileStoreInfoTypeSummariesCount() {
     return fileStoreInfoTypeSummaries_.size();
   }
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       int index) {
     return fileStoreInfoTypeSummaries_.get(index);
   }
+
   /**
    *
    *
@@ -204,6 +213,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
 
   public static final int SENSITIVITY_SCORE_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.SensitivityScore sensitivityScore_;
+
   /**
    *
    *
@@ -220,6 +230,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   public boolean hasSensitivityScore() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -238,6 +249,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         ? com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()
         : sensitivityScore_;
   }
+
   /**
    *
    *
@@ -257,6 +269,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
 
   public static final int DATA_RISK_LEVEL_FIELD_NUMBER = 4;
   private com.google.privacy.dlp.v2.DataRiskLevel dataRiskLevel_;
+
   /**
    *
    *
@@ -273,6 +286,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   public boolean hasDataRiskLevel() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -291,6 +305,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         ? com.google.privacy.dlp.v2.DataRiskLevel.getDefaultInstance()
         : dataRiskLevel_;
   }
+
   /**
    *
    *
@@ -312,6 +327,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.Error> errors_;
+
   /**
    *
    *
@@ -326,6 +342,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -341,6 +358,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       getErrorsOrBuilderList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -355,6 +373,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   public int getErrorsCount() {
     return errors_.size();
   }
+
   /**
    *
    *
@@ -369,6 +388,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   public com.google.privacy.dlp.v2.Error getErrors(int index) {
     return errors_.get(index);
   }
+
   /**
    *
    *
@@ -388,6 +408,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FileExtensionInfo> fileExtensionsScanned_;
+
   /**
    *
    *
@@ -404,6 +425,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       getFileExtensionsScannedList() {
     return fileExtensionsScanned_;
   }
+
   /**
    *
    *
@@ -420,6 +442,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       getFileExtensionsScannedOrBuilderList() {
     return fileExtensionsScanned_;
   }
+
   /**
    *
    *
@@ -435,6 +458,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   public int getFileExtensionsScannedCount() {
     return fileExtensionsScanned_.size();
   }
+
   /**
    *
    *
@@ -450,6 +474,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   public com.google.privacy.dlp.v2.FileExtensionInfo getFileExtensionsScanned(int index) {
     return fileExtensionsScanned_.get(index);
   }
+
   /**
    *
    *
@@ -471,6 +496,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FileExtensionInfo> fileExtensionsSeen_;
+
   /**
    *
    *
@@ -485,6 +511,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.privacy.dlp.v2.FileExtensionInfo> getFileExtensionsSeenList() {
     return fileExtensionsSeen_;
   }
+
   /**
    *
    *
@@ -500,6 +527,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       getFileExtensionsSeenOrBuilderList() {
     return fileExtensionsSeen_;
   }
+
   /**
    *
    *
@@ -514,6 +542,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   public int getFileExtensionsSeenCount() {
     return fileExtensionsSeen_.size();
   }
+
   /**
    *
    *
@@ -528,6 +557,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
   public com.google.privacy.dlp.v2.FileExtensionInfo getFileExtensionsSeen(int index) {
     return fileExtensionsSeen_.get(index);
   }
+
   /**
    *
    *
@@ -546,6 +576,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
 
   public static final int NO_FILES_EXIST_FIELD_NUMBER = 9;
   private boolean noFilesExist_ = false;
+
   /**
    *
    *
@@ -815,6 +846,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1305,6 +1337,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
             com.google.privacy.dlp.v2.FileClusterType.Builder,
             com.google.privacy.dlp.v2.FileClusterTypeOrBuilder>
         fileClusterTypeBuilder_;
+
     /**
      *
      *
@@ -1319,6 +1352,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
     public boolean hasFileClusterType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1339,6 +1373,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return fileClusterTypeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1361,6 +1396,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1381,6 +1417,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1445,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1427,6 +1465,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1441,6 +1480,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getFileClusterTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1459,6 +1499,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
             : fileClusterType_;
       }
     }
+
     /**
      *
      *
@@ -1522,6 +1563,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return fileStoreInfoTypeSummariesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1540,6 +1582,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return fileStoreInfoTypeSummariesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1559,6 +1602,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return fileStoreInfoTypeSummariesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1584,6 +1628,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1606,6 +1651,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1631,6 +1677,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1656,6 +1703,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1678,6 +1726,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1700,6 +1749,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1722,6 +1772,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1743,6 +1794,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1764,6 +1816,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1779,6 +1832,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         getFileStoreInfoTypeSummariesBuilder(int index) {
       return getFileStoreInfoTypeSummariesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1798,6 +1852,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return fileStoreInfoTypeSummariesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1817,6 +1872,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(fileStoreInfoTypeSummaries_);
       }
     }
+
     /**
      *
      *
@@ -1833,6 +1889,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       return getFileStoreInfoTypeSummariesFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.FileStoreInfoTypeSummary.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1850,6 +1907,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.privacy.dlp.v2.FileStoreInfoTypeSummary.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1892,6 +1950,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
             com.google.privacy.dlp.v2.SensitivityScore.Builder,
             com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>
         sensitivityScoreBuilder_;
+
     /**
      *
      *
@@ -1907,6 +1966,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
     public boolean hasSensitivityScore() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1928,6 +1988,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return sensitivityScoreBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1951,6 +2012,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1972,6 +2034,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2001,6 +2064,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2021,6 +2085,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2036,6 +2101,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSensitivityScoreFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2055,6 +2121,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
             : sensitivityScore_;
       }
     }
+
     /**
      *
      *
@@ -2088,6 +2155,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
             com.google.privacy.dlp.v2.DataRiskLevel.Builder,
             com.google.privacy.dlp.v2.DataRiskLevelOrBuilder>
         dataRiskLevelBuilder_;
+
     /**
      *
      *
@@ -2103,6 +2171,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
     public boolean hasDataRiskLevel() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2124,6 +2193,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return dataRiskLevelBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2147,6 +2217,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2168,6 +2239,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2196,6 +2268,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2216,6 +2289,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2231,6 +2305,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getDataRiskLevelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2250,6 +2325,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
             : dataRiskLevel_;
       }
     }
+
     /**
      *
      *
@@ -2310,6 +2386,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return errorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2327,6 +2404,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return errorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2344,6 +2422,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return errorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2367,6 +2446,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2387,6 +2467,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2410,6 +2491,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2433,6 +2515,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2453,6 +2536,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2473,6 +2557,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2494,6 +2579,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2514,6 +2600,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2534,6 +2621,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2547,6 +2635,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
     public com.google.privacy.dlp.v2.Error.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2564,6 +2653,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2582,6 +2672,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
+
     /**
      *
      *
@@ -2596,6 +2687,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       return getErrorsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2610,6 +2702,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       return getErrorsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2678,6 +2771,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return fileExtensionsScannedBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2696,6 +2790,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return fileExtensionsScannedBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2714,6 +2809,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return fileExtensionsScannedBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2739,6 +2835,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2761,6 +2858,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2785,6 +2883,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2810,6 +2909,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2832,6 +2932,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2854,6 +2955,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2876,6 +2978,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2897,6 +3000,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2918,6 +3022,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2933,6 +3038,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         int index) {
       return getFileExtensionsScannedFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2952,6 +3058,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return fileExtensionsScannedBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2971,6 +3078,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(fileExtensionsScanned_);
       }
     }
+
     /**
      *
      *
@@ -2986,6 +3094,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       return getFileExtensionsScannedFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.FileExtensionInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3002,6 +3111,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       return getFileExtensionsScannedFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.FileExtensionInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3073,6 +3183,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return fileExtensionsSeenBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3090,6 +3201,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return fileExtensionsSeenBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3107,6 +3219,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return fileExtensionsSeenBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3131,6 +3244,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3152,6 +3266,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3175,6 +3290,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3199,6 +3315,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3220,6 +3337,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3241,6 +3359,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3262,6 +3381,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3282,6 +3402,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3302,6 +3423,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3316,6 +3438,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         int index) {
       return getFileExtensionsSeenFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3334,6 +3457,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return fileExtensionsSeenBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3352,6 +3476,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(fileExtensionsSeen_);
       }
     }
+
     /**
      *
      *
@@ -3366,6 +3491,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       return getFileExtensionsSeenFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.FileExtensionInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3381,6 +3507,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       return getFileExtensionsSeenFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.FileExtensionInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3417,6 +3544,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean noFilesExist_;
+
     /**
      *
      *
@@ -3434,6 +3562,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
     public boolean getNoFilesExist() {
       return noFilesExist_;
     }
+
     /**
      *
      *
@@ -3455,6 +3584,7 @@ public final class FileClusterSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

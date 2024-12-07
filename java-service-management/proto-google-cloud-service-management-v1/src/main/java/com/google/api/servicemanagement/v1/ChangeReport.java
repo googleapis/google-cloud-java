@@ -36,6 +36,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.ChangeReport)
     ChangeReportOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ChangeReport.newBuilder() to construct.
   private ChangeReport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.ConfigChange> configChanges_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.api.ConfigChange> getConfigChangesList() {
     return configChanges_;
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
       getConfigChangesOrBuilderList() {
     return configChanges_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
   public int getConfigChangesCount() {
     return configChanges_.size();
   }
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
   public com.google.api.ConfigChange getConfigChanges(int index) {
     return configChanges_.get(index);
   }
+
   /**
    *
    *
@@ -318,6 +324,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -585,6 +592,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
         return configChangesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -605,6 +613,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
         return configChangesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -625,6 +634,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
         return configChangesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -651,6 +661,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +740,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +764,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +789,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +879,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.ConfigChange.Builder getConfigChangesBuilder(int index) {
       return getConfigChangesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -880,6 +900,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
         return configChangesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -901,6 +922,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(configChanges_);
       }
     }
+
     /**
      *
      *
@@ -918,6 +940,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
       return getConfigChangesFieldBuilder()
           .addBuilder(com.google.api.ConfigChange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -935,6 +958,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
       return getConfigChangesFieldBuilder()
           .addBuilder(index, com.google.api.ConfigChange.getDefaultInstance());
     }
+
     /**
      *
      *

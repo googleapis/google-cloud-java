@@ -34,6 +34,7 @@ public interface ViewCollectionItemsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.CollectionItem items = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.CollectionItem> getItemsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ViewCollectionItemsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.CollectionItem items = 1;</code>
    */
   com.google.cloud.visionai.v1.CollectionItem getItems(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ViewCollectionItemsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.CollectionItem items = 1;</code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ViewCollectionItemsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.CollectionItemOrBuilder>
       getItemsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ViewCollectionItemsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

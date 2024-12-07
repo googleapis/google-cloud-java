@@ -34,6 +34,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.Fingerprint)
     FingerprintOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Fingerprint.newBuilder() to construct.
   private Fingerprint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object v1Name_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList v2Blob_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getV2BlobList() {
     return v2Blob_;
   }
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
   public int getV2BlobCount() {
     return v2Blob_.size();
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getV2Blob(int index) {
     return v2Blob_.get(index);
   }
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object v2Name_ = "";
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -419,6 +428,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -634,6 +644,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object v1Name_ = "";
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -680,6 +692,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -702,6 +715,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +734,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +768,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -768,6 +784,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       v2Blob_.makeImmutable();
       return v2Blob_;
     }
+
     /**
      *
      *
@@ -782,6 +799,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
     public int getV2BlobCount() {
       return v2Blob_.size();
     }
+
     /**
      *
      *
@@ -797,6 +815,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getV2Blob(int index) {
       return v2Blob_.get(index);
     }
+
     /**
      *
      *
@@ -812,6 +831,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getV2BlobBytes(int index) {
       return v2Blob_.getByteString(index);
     }
+
     /**
      *
      *
@@ -835,6 +855,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +878,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +898,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +917,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +943,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object v2Name_ = "";
+
     /**
      *
      *
@@ -944,6 +969,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -969,6 +995,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -993,6 +1020,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1041,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

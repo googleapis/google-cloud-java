@@ -33,6 +33,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.DetectedLanguage)
     DetectedLanguageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DetectedLanguage.newBuilder() to construct.
   private DetectedLanguage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -303,6 +307,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -499,6 +504,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -522,6 +528,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -545,6 +552,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -567,6 +575,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -610,6 +620,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -625,6 +636,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -644,6 +656,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

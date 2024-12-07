@@ -37,6 +37,7 @@ public interface ArtifactOrBuilder
    * @return The checksum.
    */
   java.lang.String getChecksum();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ArtifactOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface ArtifactOrBuilder
    * @return A list containing the names.
    */
   java.util.List<java.lang.String> getNamesList();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface ArtifactOrBuilder
    * @return The count of names.
    */
   int getNamesCount();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface ArtifactOrBuilder
    * @return The names at the given index.
    */
   java.lang.String getNames(int index);
+
   /**
    *
    *

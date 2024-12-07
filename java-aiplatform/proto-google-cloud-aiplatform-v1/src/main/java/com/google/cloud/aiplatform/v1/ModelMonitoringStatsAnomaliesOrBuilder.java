@@ -36,6 +36,7 @@ public interface ModelMonitoringStatsAnomaliesOrBuilder
    * @return The enum numeric value on the wire for objective.
    */
   int getObjectiveValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ModelMonitoringStatsAnomaliesOrBuilder
    * @return The deployedModelId.
    */
   java.lang.String getDeployedModelId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface ModelMonitoringStatsAnomaliesOrBuilder
           com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies
               .FeatureHistoricStatsAnomalies>
       getFeatureStatsList();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface ModelMonitoringStatsAnomaliesOrBuilder
    */
   com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies.FeatureHistoricStatsAnomalies
       getFeatureStats(int index);
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface ModelMonitoringStatsAnomaliesOrBuilder
    * </code>
    */
   int getFeatureStatsCount();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface ModelMonitoringStatsAnomaliesOrBuilder
               com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies
                   .FeatureHistoricStatsAnomaliesOrBuilder>
       getFeatureStatsOrBuilderList();
+
   /**
    *
    *

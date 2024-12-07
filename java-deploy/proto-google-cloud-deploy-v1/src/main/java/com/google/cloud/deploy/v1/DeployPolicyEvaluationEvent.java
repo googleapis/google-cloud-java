@@ -34,6 +34,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.DeployPolicyEvaluationEvent)
     DeployPolicyEvaluationEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeployPolicyEvaluationEvent.newBuilder() to construct.
   private DeployPolicyEvaluationEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,6 +131,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
      * <code>POLICY_VERDICT_UNSPECIFIED = 0;</code>
      */
     public static final int POLICY_VERDICT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -142,6 +144,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
      * <code>ALLOWED_BY_POLICY = 1;</code>
      */
     public static final int ALLOWED_BY_POLICY_VALUE = 1;
+
     /**
      *
      *
@@ -292,6 +295,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
      * <code>POLICY_VERDICT_OVERRIDE_UNSPECIFIED = 0;</code>
      */
     public static final int POLICY_VERDICT_OVERRIDE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -302,6 +306,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
      * <code>POLICY_OVERRIDDEN = 1;</code>
      */
     public static final int POLICY_OVERRIDDEN_VALUE = 1;
+
     /**
      *
      *
@@ -405,6 +410,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -428,6 +434,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -456,6 +463,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ruleType_ = "";
+
   /**
    *
    *
@@ -479,6 +487,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -507,6 +516,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rule_ = "";
+
   /**
    *
    *
@@ -530,6 +540,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -558,6 +569,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pipelineUid_ = "";
+
   /**
    *
    *
@@ -581,6 +593,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -609,6 +622,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deliveryPipeline_ = "";
+
   /**
    *
    *
@@ -632,6 +646,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -660,6 +675,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetUid_ = "";
+
   /**
    *
    *
@@ -684,6 +700,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -713,6 +730,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object target_ = "";
+
   /**
    *
    *
@@ -737,6 +755,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -764,6 +783,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
 
   public static final int INVOKER_FIELD_NUMBER = 8;
   private int invoker_ = 0;
+
   /**
    *
    *
@@ -779,6 +799,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
   public int getInvokerValue() {
     return invoker_;
   }
+
   /**
    *
    *
@@ -801,6 +822,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deployPolicy_ = "";
+
   /**
    *
    *
@@ -824,6 +846,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -852,6 +875,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deployPolicyUid_ = "";
+
   /**
    *
    *
@@ -875,6 +899,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -901,6 +926,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
 
   public static final int ALLOWED_FIELD_NUMBER = 11;
   private boolean allowed_ = false;
+
   /**
    *
    *
@@ -923,6 +949,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
 
   public static final int VERDICT_FIELD_NUMBER = 12;
   private int verdict_ = 0;
+
   /**
    *
    *
@@ -938,6 +965,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
   public int getVerdictValue() {
     return verdict_;
   }
+
   /**
    *
    *
@@ -981,6 +1009,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
                   : result;
             }
           };
+
   /**
    *
    *
@@ -1004,6 +1033,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         com.google.cloud.deploy.v1.DeployPolicyEvaluationEvent.PolicyVerdictOverride>(
         overrides_, overrides_converter_);
   }
+
   /**
    *
    *
@@ -1022,6 +1052,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
   public int getOverridesCount() {
     return overrides_.size();
   }
+
   /**
    *
    *
@@ -1042,6 +1073,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       int index) {
     return overrides_converter_.convert(overrides_.get(index));
   }
+
   /**
    *
    *
@@ -1060,6 +1092,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
   public java.util.List<java.lang.Integer> getOverridesValueList() {
     return overrides_;
   }
+
   /**
    *
    *
@@ -1374,6 +1407,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1759,6 +1793,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -1781,6 +1816,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1803,6 +1839,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1824,6 +1861,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1841,6 +1879,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1865,6 +1904,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     }
 
     private java.lang.Object ruleType_ = "";
+
     /**
      *
      *
@@ -1887,6 +1927,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1909,6 +1950,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1930,6 +1972,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1947,6 +1990,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1971,6 +2015,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     }
 
     private java.lang.Object rule_ = "";
+
     /**
      *
      *
@@ -1993,6 +2038,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2015,6 +2061,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2036,6 +2083,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2053,6 +2101,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2077,6 +2126,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     }
 
     private java.lang.Object pipelineUid_ = "";
+
     /**
      *
      *
@@ -2099,6 +2149,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2121,6 +2172,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2142,6 +2194,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2159,6 +2212,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2183,6 +2237,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     }
 
     private java.lang.Object deliveryPipeline_ = "";
+
     /**
      *
      *
@@ -2205,6 +2260,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2227,6 +2283,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2248,6 +2305,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2265,6 +2323,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2289,6 +2348,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     }
 
     private java.lang.Object targetUid_ = "";
+
     /**
      *
      *
@@ -2312,6 +2372,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2335,6 +2396,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2357,6 +2419,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2375,6 +2438,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2400,6 +2464,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     }
 
     private java.lang.Object target_ = "";
+
     /**
      *
      *
@@ -2423,6 +2488,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2446,6 +2512,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2468,6 +2535,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2486,6 +2554,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2511,6 +2580,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     }
 
     private int invoker_ = 0;
+
     /**
      *
      *
@@ -2526,6 +2596,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     public int getInvokerValue() {
       return invoker_;
     }
+
     /**
      *
      *
@@ -2544,6 +2615,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2561,6 +2633,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
           com.google.cloud.deploy.v1.DeployPolicy.Invoker.forNumber(invoker_);
       return result == null ? com.google.cloud.deploy.v1.DeployPolicy.Invoker.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2582,6 +2655,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2601,6 +2675,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     }
 
     private java.lang.Object deployPolicy_ = "";
+
     /**
      *
      *
@@ -2623,6 +2698,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2645,6 +2721,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2666,6 +2743,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2683,6 +2761,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2707,6 +2786,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     }
 
     private java.lang.Object deployPolicyUid_ = "";
+
     /**
      *
      *
@@ -2729,6 +2809,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2751,6 +2832,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2772,6 +2854,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2789,6 +2872,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2813,6 +2897,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     }
 
     private boolean allowed_;
+
     /**
      *
      *
@@ -2832,6 +2917,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     public boolean getAllowed() {
       return allowed_;
     }
+
     /**
      *
      *
@@ -2855,6 +2941,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2878,6 +2965,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     }
 
     private int verdict_ = 0;
+
     /**
      *
      *
@@ -2893,6 +2981,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     public int getVerdictValue() {
       return verdict_;
     }
+
     /**
      *
      *
@@ -2911,6 +3000,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2930,6 +3020,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
           ? com.google.cloud.deploy.v1.DeployPolicyEvaluationEvent.PolicyVerdict.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2952,6 +3043,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2978,6 +3070,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         bitField0_ |= 0x00001000;
       }
     }
+
     /**
      *
      *
@@ -3000,6 +3093,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
           com.google.cloud.deploy.v1.DeployPolicyEvaluationEvent.PolicyVerdictOverride>(
           overrides_, overrides_converter_);
     }
+
     /**
      *
      *
@@ -3017,6 +3111,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     public int getOverridesCount() {
       return overrides_.size();
     }
+
     /**
      *
      *
@@ -3036,6 +3131,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
         getOverrides(int index) {
       return overrides_converter_.convert(overrides_.get(index));
     }
+
     /**
      *
      *
@@ -3063,6 +3159,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3088,6 +3185,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3116,6 +3214,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3136,6 +3235,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3153,6 +3253,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     public java.util.List<java.lang.Integer> getOverridesValueList() {
       return java.util.Collections.unmodifiableList(overrides_);
     }
+
     /**
      *
      *
@@ -3171,6 +3272,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
     public int getOverridesValue(int index) {
       return overrides_.get(index);
     }
+
     /**
      *
      *
@@ -3193,6 +3295,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3214,6 +3317,7 @@ public final class DeployPolicyEvaluationEvent extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface QueryInputOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface QueryInputOrBuilder
    * @return The text.
    */
   com.google.cloud.dialogflow.cx.v3beta1.TextInput getText();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface QueryInputOrBuilder
    * @return Whether the intent field is set.
    */
   boolean hasIntent();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface QueryInputOrBuilder
    * @return The intent.
    */
   com.google.cloud.dialogflow.cx.v3beta1.IntentInput getIntent();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface QueryInputOrBuilder
    * @return Whether the audio field is set.
    */
   boolean hasAudio();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface QueryInputOrBuilder
    * @return The audio.
    */
   com.google.cloud.dialogflow.cx.v3beta1.AudioInput getAudio();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface QueryInputOrBuilder
    * @return Whether the event field is set.
    */
   boolean hasEvent();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface QueryInputOrBuilder
    * @return The event.
    */
   com.google.cloud.dialogflow.cx.v3beta1.EventInput getEvent();
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public interface QueryInputOrBuilder
    * @return Whether the dtmf field is set.
    */
   boolean hasDtmf();
+
   /**
    *
    *
@@ -188,6 +197,7 @@ public interface QueryInputOrBuilder
    * @return The dtmf.
    */
   com.google.cloud.dialogflow.cx.v3beta1.DtmfInput getDtmf();
+
   /**
    *
    *
@@ -211,6 +221,7 @@ public interface QueryInputOrBuilder
    * @return Whether the toolCallResult field is set.
    */
   boolean hasToolCallResult();
+
   /**
    *
    *
@@ -223,6 +234,7 @@ public interface QueryInputOrBuilder
    * @return The toolCallResult.
    */
   com.google.cloud.dialogflow.cx.v3beta1.ToolCallResult getToolCallResult();
+
   /**
    *
    *
@@ -249,6 +261,7 @@ public interface QueryInputOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

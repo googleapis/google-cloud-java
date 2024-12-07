@@ -33,6 +33,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest)
     AnnotateAssessmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotateAssessmentRequest.newBuilder() to construct.
   private AnnotateAssessmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -146,6 +147,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>ANNOTATION_UNSPECIFIED = 0;</code>
      */
     public static final int ANNOTATION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -156,6 +158,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>LEGITIMATE = 1;</code>
      */
     public static final int LEGITIMATE_VALUE = 1;
+
     /**
      *
      *
@@ -166,6 +169,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>FRAUDULENT = 2;</code>
      */
     public static final int FRAUDULENT_VALUE = 2;
+
     /**
      *
      *
@@ -178,6 +182,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>PASSWORD_CORRECT = 3 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int PASSWORD_CORRECT_VALUE = 3;
+
     /**
      *
      *
@@ -470,6 +475,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>REASON_UNSPECIFIED = 0;</code>
      */
     public static final int REASON_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -482,6 +488,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>CHARGEBACK = 1;</code>
      */
     public static final int CHARGEBACK_VALUE = 1;
+
     /**
      *
      *
@@ -494,6 +501,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>CHARGEBACK_FRAUD = 8;</code>
      */
     public static final int CHARGEBACK_FRAUD_VALUE = 8;
+
     /**
      *
      *
@@ -507,6 +515,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>CHARGEBACK_DISPUTE = 9;</code>
      */
     public static final int CHARGEBACK_DISPUTE_VALUE = 9;
+
     /**
      *
      *
@@ -518,6 +527,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>REFUND = 10;</code>
      */
     public static final int REFUND_VALUE = 10;
+
     /**
      *
      *
@@ -529,6 +539,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>REFUND_FRAUD = 11;</code>
      */
     public static final int REFUND_FRAUD_VALUE = 11;
+
     /**
      *
      *
@@ -540,6 +551,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>TRANSACTION_ACCEPTED = 12;</code>
      */
     public static final int TRANSACTION_ACCEPTED_VALUE = 12;
+
     /**
      *
      *
@@ -551,6 +563,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>TRANSACTION_DECLINED = 13;</code>
      */
     public static final int TRANSACTION_DECLINED_VALUE = 13;
+
     /**
      *
      *
@@ -563,6 +576,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>PAYMENT_HEURISTICS = 2;</code>
      */
     public static final int PAYMENT_HEURISTICS_VALUE = 2;
+
     /**
      *
      *
@@ -576,6 +590,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>INITIATED_TWO_FACTOR = 7;</code>
      */
     public static final int INITIATED_TWO_FACTOR_VALUE = 7;
+
     /**
      *
      *
@@ -586,6 +601,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>PASSED_TWO_FACTOR = 3;</code>
      */
     public static final int PASSED_TWO_FACTOR_VALUE = 3;
+
     /**
      *
      *
@@ -596,6 +612,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>FAILED_TWO_FACTOR = 4;</code>
      */
     public static final int FAILED_TWO_FACTOR_VALUE = 4;
+
     /**
      *
      *
@@ -606,6 +623,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>CORRECT_PASSWORD = 5;</code>
      */
     public static final int CORRECT_PASSWORD_VALUE = 5;
+
     /**
      *
      *
@@ -616,6 +634,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>INCORRECT_PASSWORD = 6;</code>
      */
     public static final int INCORRECT_PASSWORD_VALUE = 6;
+
     /**
      *
      *
@@ -742,6 +761,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -768,6 +788,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -797,6 +818,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
 
   public static final int ANNOTATION_FIELD_NUMBER = 2;
   private int annotation_ = 0;
+
   /**
    *
    *
@@ -816,6 +838,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
   public int getAnnotationValue() {
     return annotation_;
   }
+
   /**
    *
    *
@@ -865,6 +888,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
                   : result;
             }
           };
+
   /**
    *
    *
@@ -885,6 +909,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         java.lang.Integer, com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason>(
         reasons_, reasons_converter_);
   }
+
   /**
    *
    *
@@ -902,6 +927,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
   public int getReasonsCount() {
     return reasons_.size();
   }
+
   /**
    *
    *
@@ -921,6 +947,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       int index) {
     return reasons_converter_.convert(reasons_.get(index));
   }
+
   /**
    *
    *
@@ -938,6 +965,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
   public java.util.List<java.lang.Integer> getReasonsValueList() {
     return reasons_;
   }
+
   /**
    *
    *
@@ -961,6 +989,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
 
   public static final int HASHED_ACCOUNT_ID_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -983,6 +1012,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
 
   public static final int TRANSACTION_EVENT_FIELD_NUMBER = 5;
   private com.google.recaptchaenterprise.v1beta1.TransactionEvent transactionEvent_;
+
   /**
    *
    *
@@ -1001,6 +1031,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
   public boolean hasTransactionEvent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1021,6 +1052,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         ? com.google.recaptchaenterprise.v1beta1.TransactionEvent.getDefaultInstance()
         : transactionEvent_;
   }
+
   /**
    *
    *
@@ -1264,6 +1296,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1550,6 +1583,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1575,6 +1609,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1600,6 +1635,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1624,6 +1660,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1644,6 +1681,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1671,6 +1709,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     }
 
     private int annotation_ = 0;
+
     /**
      *
      *
@@ -1690,6 +1729,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     public int getAnnotationValue() {
       return annotation_;
     }
+
     /**
      *
      *
@@ -1712,6 +1752,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1737,6 +1778,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
           ? com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1763,6 +1805,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1793,6 +1836,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         bitField0_ |= 0x00000004;
       }
     }
+
     /**
      *
      *
@@ -1813,6 +1857,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
           com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason>(
           reasons_, reasons_converter_);
     }
+
     /**
      *
      *
@@ -1829,6 +1874,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     public int getReasonsCount() {
       return reasons_.size();
     }
+
     /**
      *
      *
@@ -1847,6 +1893,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         int index) {
       return reasons_converter_.convert(reasons_.get(index));
     }
+
     /**
      *
      *
@@ -1872,6 +1919,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1896,6 +1944,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1921,6 +1970,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1940,6 +1990,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1956,6 +2007,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     public java.util.List<java.lang.Integer> getReasonsValueList() {
       return java.util.Collections.unmodifiableList(reasons_);
     }
+
     /**
      *
      *
@@ -1973,6 +2025,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     public int getReasonsValue(int index) {
       return reasons_.get(index);
     }
+
     /**
      *
      *
@@ -1994,6 +2047,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2014,6 +2068,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2038,6 +2093,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     }
 
     private com.google.protobuf.ByteString hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -2057,6 +2113,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getHashedAccountId() {
       return hashedAccountId_;
     }
+
     /**
      *
      *
@@ -2082,6 +2139,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2110,6 +2168,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
             com.google.recaptchaenterprise.v1beta1.TransactionEvent.Builder,
             com.google.recaptchaenterprise.v1beta1.TransactionEventOrBuilder>
         transactionEventBuilder_;
+
     /**
      *
      *
@@ -2127,6 +2186,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     public boolean hasTransactionEvent() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2150,6 +2210,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         return transactionEventBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2176,6 +2237,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2199,6 +2261,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2231,6 +2294,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2253,6 +2317,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2271,6 +2336,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       onChanged();
       return getTransactionEventFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2293,6 +2359,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
             : transactionEvent_;
       }
     }
+
     /**
      *
      *

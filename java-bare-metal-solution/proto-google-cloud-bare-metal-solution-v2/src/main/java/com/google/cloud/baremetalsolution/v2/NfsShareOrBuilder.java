@@ -36,6 +36,7 @@ public interface NfsShareOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface NfsShareOrBuilder
    * @return The nfsShareId.
    */
   java.lang.String getNfsShareId();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface NfsShareOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface NfsShareOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface NfsShareOrBuilder
    * @return The volume.
    */
   java.lang.String getVolume();
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public interface NfsShareOrBuilder
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.NfsShare.AllowedClient>
       getAllowedClientsList();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface NfsShareOrBuilder
    * </code>
    */
   com.google.cloud.baremetalsolution.v2.NfsShare.AllowedClient getAllowedClients(int index);
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public interface NfsShareOrBuilder
    * </code>
    */
   int getAllowedClientsCount();
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public interface NfsShareOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.NfsShare.AllowedClientOrBuilder>
       getAllowedClientsOrBuilderList();
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public interface NfsShareOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -242,9 +252,11 @@ public interface NfsShareOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -255,6 +267,7 @@ public interface NfsShareOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -269,6 +282,7 @@ public interface NfsShareOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -307,6 +321,7 @@ public interface NfsShareOrBuilder
    * @return The enum numeric value on the wire for storageType.
    */
   int getStorageTypeValue();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface BusinessIdentityOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface BusinessIdentityOrBuilder
    * @return The enum numeric value on the wire for promotionsConsent.
    */
   int getPromotionsConsentValue();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface BusinessIdentityOrBuilder
    * @return Whether the blackOwned field is set.
    */
   boolean hasBlackOwned();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface BusinessIdentityOrBuilder
    * @return The blackOwned.
    */
   com.google.shopping.merchant.accounts.v1beta.BusinessIdentity.IdentityAttribute getBlackOwned();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public interface BusinessIdentityOrBuilder
    * @return Whether the womenOwned field is set.
    */
   boolean hasWomenOwned();
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public interface BusinessIdentityOrBuilder
    * @return The womenOwned.
    */
   com.google.shopping.merchant.accounts.v1beta.BusinessIdentity.IdentityAttribute getWomenOwned();
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public interface BusinessIdentityOrBuilder
    * @return Whether the veteranOwned field is set.
    */
   boolean hasVeteranOwned();
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public interface BusinessIdentityOrBuilder
    * @return The veteranOwned.
    */
   com.google.shopping.merchant.accounts.v1beta.BusinessIdentity.IdentityAttribute getVeteranOwned();
+
   /**
    *
    *
@@ -251,6 +259,7 @@ public interface BusinessIdentityOrBuilder
    * @return Whether the latinoOwned field is set.
    */
   boolean hasLatinoOwned();
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public interface BusinessIdentityOrBuilder
    * @return The latinoOwned.
    */
   com.google.shopping.merchant.accounts.v1beta.BusinessIdentity.IdentityAttribute getLatinoOwned();
+
   /**
    *
    *
@@ -301,6 +311,7 @@ public interface BusinessIdentityOrBuilder
    * @return Whether the smallBusiness field is set.
    */
   boolean hasSmallBusiness();
+
   /**
    *
    *
@@ -318,6 +329,7 @@ public interface BusinessIdentityOrBuilder
    */
   com.google.shopping.merchant.accounts.v1beta.BusinessIdentity.IdentityAttribute
       getSmallBusiness();
+
   /**
    *
    *

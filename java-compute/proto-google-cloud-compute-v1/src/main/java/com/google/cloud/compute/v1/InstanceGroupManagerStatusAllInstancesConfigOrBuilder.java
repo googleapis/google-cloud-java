@@ -36,6 +36,7 @@ public interface InstanceGroupManagerStatusAllInstancesConfigOrBuilder
    * @return Whether the currentRevision field is set.
    */
   boolean hasCurrentRevision();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstanceGroupManagerStatusAllInstancesConfigOrBuilder
    * @return The currentRevision.
    */
   java.lang.String getCurrentRevision();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface InstanceGroupManagerStatusAllInstancesConfigOrBuilder
    * @return Whether the effective field is set.
    */
   boolean hasEffective();
+
   /**
    *
    *

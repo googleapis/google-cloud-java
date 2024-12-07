@@ -33,6 +33,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.VpnGatewayStatusTunnel)
     VpnGatewayStatusTunnelOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VpnGatewayStatusTunnel.newBuilder() to construct.
   private VpnGatewayStatusTunnel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int LOCAL_GATEWAY_INTERFACE_FIELD_NUMBER = 158764330;
   private int localGatewayInterface_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
   public boolean hasLocalGatewayInterface() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
 
   public static final int PEER_GATEWAY_INTERFACE_FIELD_NUMBER = 214380385;
   private int peerGatewayInterface_ = 0;
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
   public boolean hasPeerGatewayInterface() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tunnelUrl_ = "";
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
   public boolean hasTunnelUrl() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -391,6 +399,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -606,6 +615,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int localGatewayInterface_;
+
     /**
      *
      *
@@ -621,6 +631,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     public boolean hasLocalGatewayInterface() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -636,6 +647,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     public int getLocalGatewayInterface() {
       return localGatewayInterface_;
     }
+
     /**
      *
      *
@@ -655,6 +667,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +687,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     }
 
     private int peerGatewayInterface_;
+
     /**
      *
      *
@@ -689,6 +703,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     public boolean hasPeerGatewayInterface() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -704,6 +719,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     public int getPeerGatewayInterface() {
       return peerGatewayInterface_;
     }
+
     /**
      *
      *
@@ -723,6 +739,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +759,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object tunnelUrl_ = "";
+
     /**
      *
      *
@@ -756,6 +774,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     public boolean hasTunnelUrl() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -778,6 +797,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -800,6 +820,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -821,6 +842,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +860,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

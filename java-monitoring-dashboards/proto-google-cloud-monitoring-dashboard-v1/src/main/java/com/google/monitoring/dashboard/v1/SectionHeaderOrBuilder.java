@@ -36,6 +36,7 @@ public interface SectionHeaderOrBuilder
    * @return The subtitle.
    */
   java.lang.String getSubtitle();
+
   /**
    *
    *

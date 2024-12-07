@@ -66,6 +66,7 @@ public enum OperatingSystemFamily implements com.google.protobuf.ProtocolMessage
 
   /** <code>OS_FAMILY_UNKNOWN = 0;</code> */
   public static final int OS_FAMILY_UNKNOWN_VALUE = 0;
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public enum OperatingSystemFamily implements com.google.protobuf.ProtocolMessage
    * <code>OS_FAMILY_WINDOWS = 1;</code>
    */
   public static final int OS_FAMILY_WINDOWS_VALUE = 1;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public enum OperatingSystemFamily implements com.google.protobuf.ProtocolMessage
    * <code>OS_FAMILY_LINUX = 2;</code>
    */
   public static final int OS_FAMILY_LINUX_VALUE = 2;
+
   /**
    *
    *

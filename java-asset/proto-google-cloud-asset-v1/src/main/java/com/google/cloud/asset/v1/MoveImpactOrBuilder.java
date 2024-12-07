@@ -36,6 +36,7 @@ public interface MoveImpactOrBuilder
    * @return The detail.
    */
   java.lang.String getDetail();
+
   /**
    *
    *

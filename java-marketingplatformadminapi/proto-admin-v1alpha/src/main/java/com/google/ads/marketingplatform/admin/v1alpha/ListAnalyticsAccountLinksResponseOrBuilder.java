@@ -37,6 +37,7 @@ public interface ListAnalyticsAccountLinksResponseOrBuilder
    */
   java.util.List<com.google.ads.marketingplatform.admin.v1alpha.AnalyticsAccountLink>
       getAnalyticsAccountLinksList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListAnalyticsAccountLinksResponseOrBuilder
    */
   com.google.ads.marketingplatform.admin.v1alpha.AnalyticsAccountLink getAnalyticsAccountLinks(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ListAnalyticsAccountLinksResponseOrBuilder
    * </code>
    */
   int getAnalyticsAccountLinksCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface ListAnalyticsAccountLinksResponseOrBuilder
   java.util.List<
           ? extends com.google.ads.marketingplatform.admin.v1alpha.AnalyticsAccountLinkOrBuilder>
       getAnalyticsAccountLinksOrBuilderList();
+
   /**
    *
    *
@@ -103,6 +107,7 @@ public interface ListAnalyticsAccountLinksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

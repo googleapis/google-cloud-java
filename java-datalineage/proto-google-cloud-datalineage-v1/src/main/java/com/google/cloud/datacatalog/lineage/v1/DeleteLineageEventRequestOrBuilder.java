@@ -38,6 +38,7 @@ public interface DeleteLineageEventRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

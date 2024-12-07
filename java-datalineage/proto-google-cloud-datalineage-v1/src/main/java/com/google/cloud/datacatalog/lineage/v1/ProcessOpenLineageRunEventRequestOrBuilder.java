@@ -37,6 +37,7 @@ public interface ProcessOpenLineageRunEventRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ProcessOpenLineageRunEventRequestOrBuilder
    * @return Whether the openLineage field is set.
    */
   boolean hasOpenLineage();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ProcessOpenLineageRunEventRequestOrBuilder
    * @return The openLineage.
    */
   com.google.protobuf.Struct getOpenLineage();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface ProcessOpenLineageRunEventRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

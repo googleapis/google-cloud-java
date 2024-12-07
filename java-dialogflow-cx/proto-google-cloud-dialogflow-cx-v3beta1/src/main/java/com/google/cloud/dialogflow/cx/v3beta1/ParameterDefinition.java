@@ -39,6 +39,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ParameterDefinition)
     ParameterDefinitionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ParameterDefinition.newBuilder() to construct.
   private ParameterDefinition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -165,6 +166,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>PARAMETER_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int PARAMETER_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -175,6 +177,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>STRING = 1;</code>
      */
     public static final int STRING_VALUE = 1;
+
     /**
      *
      *
@@ -185,6 +188,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>NUMBER = 2;</code>
      */
     public static final int NUMBER_VALUE = 2;
+
     /**
      *
      *
@@ -195,6 +199,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>BOOLEAN = 3;</code>
      */
     public static final int BOOLEAN_VALUE = 3;
+
     /**
      *
      *
@@ -205,6 +210,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>NULL = 4;</code>
      */
     public static final int NULL_VALUE = 4;
+
     /**
      *
      *
@@ -215,6 +221,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>OBJECT = 5;</code>
      */
     public static final int OBJECT_VALUE = 5;
+
     /**
      *
      *
@@ -323,6 +330,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -346,6 +354,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -372,6 +381,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
+
   /**
    *
    *
@@ -389,6 +399,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -415,6 +426,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -438,6 +450,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -646,6 +659,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -864,6 +878,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -886,6 +901,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -908,6 +924,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -929,6 +946,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +964,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +989,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -987,6 +1007,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1007,6 +1028,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1050,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1052,6 +1075,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1097,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1095,6 +1120,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1143,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1138,6 +1165,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1183,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

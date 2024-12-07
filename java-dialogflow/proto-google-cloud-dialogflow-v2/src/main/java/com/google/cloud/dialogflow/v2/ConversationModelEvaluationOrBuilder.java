@@ -38,6 +38,7 @@ public interface ConversationModelEvaluationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ConversationModelEvaluationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface ConversationModelEvaluationOrBuilder
    * @return Whether the evaluationConfig field is set.
    */
   boolean hasEvaluationConfig();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface ConversationModelEvaluationOrBuilder
    * @return The evaluationConfig.
    */
   com.google.cloud.dialogflow.v2.EvaluationConfig getEvaluationConfig();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface ConversationModelEvaluationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface ConversationModelEvaluationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface ConversationModelEvaluationOrBuilder
    * @return Whether the smartReplyMetrics field is set.
    */
   boolean hasSmartReplyMetrics();
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public interface ConversationModelEvaluationOrBuilder
    * @return The smartReplyMetrics.
    */
   com.google.cloud.dialogflow.v2.SmartReplyMetrics getSmartReplyMetrics();
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public interface ConversationModelEvaluationOrBuilder
    * @return The rawHumanEvalTemplateCsv.
    */
   java.lang.String getRawHumanEvalTemplateCsv();
+
   /**
    *
    *

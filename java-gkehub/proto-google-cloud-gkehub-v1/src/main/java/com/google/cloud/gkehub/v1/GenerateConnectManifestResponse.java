@@ -34,6 +34,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1.GenerateConnectManifestResponse)
     GenerateConnectManifestResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateConnectManifestResponse.newBuilder() to construct.
   private GenerateConnectManifestResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkehub.v1.ConnectAgentResource> manifest_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
   public java.util.List<com.google.cloud.gkehub.v1.ConnectAgentResource> getManifestList() {
     return manifest_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       getManifestOrBuilderList() {
     return manifest_;
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
   public int getManifestCount() {
     return manifest_.size();
   }
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
   public com.google.cloud.gkehub.v1.ConnectAgentResource getManifest(int index) {
     return manifest_.get(index);
   }
+
   /**
    *
    *
@@ -303,6 +309,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -568,6 +575,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
         return manifestBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -585,6 +593,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
         return manifestBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
         return manifestBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -625,6 +635,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +657,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -669,6 +681,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +705,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +727,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +749,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +771,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +792,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +813,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +827,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
     public com.google.cloud.gkehub.v1.ConnectAgentResource.Builder getManifestBuilder(int index) {
       return getManifestFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -826,6 +846,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
         return manifestBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -844,6 +865,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(manifest_);
       }
     }
+
     /**
      *
      *
@@ -858,6 +880,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       return getManifestFieldBuilder()
           .addBuilder(com.google.cloud.gkehub.v1.ConnectAgentResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -872,6 +895,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       return getManifestFieldBuilder()
           .addBuilder(index, com.google.cloud.gkehub.v1.ConnectAgentResource.getDefaultInstance());
     }
+
     /**
      *
      *

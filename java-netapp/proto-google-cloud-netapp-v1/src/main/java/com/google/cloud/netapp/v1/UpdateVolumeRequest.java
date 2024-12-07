@@ -33,6 +33,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.UpdateVolumeRequest)
     UpdateVolumeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateVolumeRequest.newBuilder() to construct.
   private UpdateVolumeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
 
   public static final int VOLUME_FIELD_NUMBER = 2;
   private com.google.cloud.netapp.v1.Volume volume_;
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
   public boolean hasVolume() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
   public com.google.cloud.netapp.v1.Volume getVolume() {
     return volume_ == null ? com.google.cloud.netapp.v1.Volume.getDefaultInstance() : volume_;
   }
+
   /**
    *
    *
@@ -350,6 +357,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +579,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -590,6 +599,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -615,6 +625,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -642,6 +653,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +678,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +711,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +736,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +756,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -764,6 +780,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -801,6 +818,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.netapp.v1.Volume.Builder,
             com.google.cloud.netapp.v1.VolumeOrBuilder>
         volumeBuilder_;
+
     /**
      *
      *
@@ -816,6 +834,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
     public boolean hasVolume() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -835,6 +854,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
         return volumeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +899,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +928,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +949,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +965,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getVolumeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -958,6 +983,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
         return volume_ == null ? com.google.cloud.netapp.v1.Volume.getDefaultInstance() : volume_;
       }
     }
+
     /**
      *
      *

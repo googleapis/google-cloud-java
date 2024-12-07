@@ -36,6 +36,7 @@ public interface LocationOrBuilder
    * @return Whether the latLng field is set.
    */
   boolean hasLatLng();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LocationOrBuilder
    * @return The latLng.
    */
   com.google.type.LatLng getLatLng();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface LocationOrBuilder
    * @return Whether the heading field is set.
    */
   boolean hasHeading();
+
   /**
    *
    *

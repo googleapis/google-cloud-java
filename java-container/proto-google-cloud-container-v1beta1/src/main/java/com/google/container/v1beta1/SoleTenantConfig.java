@@ -34,6 +34,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.SoleTenantConfig)
     SoleTenantConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SoleTenantConfig.newBuilder() to construct.
   private SoleTenantConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
      * @return The key.
      */
     java.lang.String getKey();
+
     /**
      *
      *
@@ -106,6 +108,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire for operator.
      */
     int getOperatorValue();
+
     /**
      *
      *
@@ -131,6 +134,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
      * @return A list containing the values.
      */
     java.util.List<java.lang.String> getValuesList();
+
     /**
      *
      *
@@ -143,6 +147,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
      * @return The count of values.
      */
     int getValuesCount();
+
     /**
      *
      *
@@ -156,6 +161,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
      * @return The values at the given index.
      */
     java.lang.String getValues(int index);
+
     /**
      *
      *
@@ -170,6 +176,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getValuesBytes(int index);
   }
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.container.v1beta1.SoleTenantConfig.NodeAffinity)
       NodeAffinityOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use NodeAffinity.newBuilder() to construct.
     private NodeAffinity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -272,6 +280,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
        * <code>OPERATOR_UNSPECIFIED = 0;</code>
        */
       public static final int OPERATOR_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -282,6 +291,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
        * <code>IN = 1;</code>
        */
       public static final int IN_VALUE = 1;
+
       /**
        *
        *
@@ -382,6 +392,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object key_ = "";
+
     /**
      *
      *
@@ -405,6 +416,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -431,6 +443,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
 
     public static final int OPERATOR_FIELD_NUMBER = 2;
     private int operator_ = 0;
+
     /**
      *
      *
@@ -446,6 +459,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
     public int getOperatorValue() {
       return operator_;
     }
+
     /**
      *
      *
@@ -471,6 +485,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList values_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -485,6 +500,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ProtocolStringList getValuesList() {
       return values_;
     }
+
     /**
      *
      *
@@ -499,6 +515,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
     public int getValuesCount() {
       return values_.size();
     }
+
     /**
      *
      *
@@ -514,6 +531,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
+
     /**
      *
      *
@@ -722,6 +740,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -949,6 +968,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object key_ = "";
+
       /**
        *
        *
@@ -971,6 +991,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -993,6 +1014,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1014,6 +1036,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1031,6 +1054,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1055,6 +1079,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       }
 
       private int operator_ = 0;
+
       /**
        *
        *
@@ -1070,6 +1095,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       public int getOperatorValue() {
         return operator_;
       }
+
       /**
        *
        *
@@ -1088,6 +1114,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1108,6 +1135,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
             ? com.google.container.v1beta1.SoleTenantConfig.NodeAffinity.Operator.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1130,6 +1158,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1157,6 +1186,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
@@ -1172,6 +1202,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         values_.makeImmutable();
         return values_;
       }
+
       /**
        *
        *
@@ -1186,6 +1217,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       public int getValuesCount() {
         return values_.size();
       }
+
       /**
        *
        *
@@ -1201,6 +1233,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       public java.lang.String getValues(int index) {
         return values_.get(index);
       }
+
       /**
        *
        *
@@ -1216,6 +1249,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       public com.google.protobuf.ByteString getValuesBytes(int index) {
         return values_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1239,6 +1273,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1261,6 +1296,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1280,6 +1316,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1298,6 +1335,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1392,6 +1430,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1beta1.SoleTenantConfig.NodeAffinity>
       nodeAffinities_;
+
   /**
    *
    *
@@ -1407,6 +1446,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       getNodeAffinitiesList() {
     return nodeAffinities_;
   }
+
   /**
    *
    *
@@ -1423,6 +1463,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       getNodeAffinitiesOrBuilderList() {
     return nodeAffinities_;
   }
+
   /**
    *
    *
@@ -1437,6 +1478,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
   public int getNodeAffinitiesCount() {
     return nodeAffinities_.size();
   }
+
   /**
    *
    *
@@ -1451,6 +1493,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
   public com.google.container.v1beta1.SoleTenantConfig.NodeAffinity getNodeAffinities(int index) {
     return nodeAffinities_.get(index);
   }
+
   /**
    *
    *
@@ -1628,6 +1671,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1893,6 +1937,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         return nodeAffinitiesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1910,6 +1955,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         return nodeAffinitiesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1927,6 +1973,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         return nodeAffinitiesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1951,6 +1998,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1973,6 +2021,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1997,6 +2046,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2021,6 +2071,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2042,6 +2093,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2064,6 +2116,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2086,6 +2139,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2106,6 +2160,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2126,6 +2181,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2140,6 +2196,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         getNodeAffinitiesBuilder(int index) {
       return getNodeAffinitiesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2158,6 +2215,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         return nodeAffinitiesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2177,6 +2235,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(nodeAffinities_);
       }
     }
+
     /**
      *
      *
@@ -2193,6 +2252,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               com.google.container.v1beta1.SoleTenantConfig.NodeAffinity.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2210,6 +2270,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
               index,
               com.google.container.v1beta1.SoleTenantConfig.NodeAffinity.getDefaultInstance());
     }
+
     /**
      *
      *

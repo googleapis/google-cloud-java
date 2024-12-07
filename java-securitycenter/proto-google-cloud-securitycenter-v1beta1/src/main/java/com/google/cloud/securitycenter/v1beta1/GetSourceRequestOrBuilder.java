@@ -39,6 +39,7 @@ public interface GetSourceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

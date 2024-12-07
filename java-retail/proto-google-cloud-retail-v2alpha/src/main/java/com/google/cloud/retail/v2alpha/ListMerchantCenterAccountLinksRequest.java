@@ -36,6 +36,7 @@ public final class ListMerchantCenterAccountLinksRequest
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.ListMerchantCenterAccountLinksRequest)
     ListMerchantCenterAccountLinksRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListMerchantCenterAccountLinksRequest.newBuilder() to construct.
   private ListMerchantCenterAccountLinksRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ListMerchantCenterAccountLinksRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class ListMerchantCenterAccountLinksRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -287,6 +290,7 @@ public final class ListMerchantCenterAccountLinksRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -480,6 +484,7 @@ public final class ListMerchantCenterAccountLinksRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -506,6 +511,7 @@ public final class ListMerchantCenterAccountLinksRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -532,6 +538,7 @@ public final class ListMerchantCenterAccountLinksRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -557,6 +564,7 @@ public final class ListMerchantCenterAccountLinksRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -578,6 +586,7 @@ public final class ListMerchantCenterAccountLinksRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ListAnnotationsResponse)
     ListAnnotationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListAnnotationsResponse.newBuilder() to construct.
   private ListAnnotationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.Annotation> annotations_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.visionai.v1.Annotation> getAnnotationsList() {
     return annotations_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       getAnnotationsOrBuilderList() {
     return annotations_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
   public int getAnnotationsCount() {
     return annotations_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
   public com.google.cloud.visionai.v1.Annotation getAnnotations(int index) {
     return annotations_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -635,6 +644,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
         return annotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -651,6 +661,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
         return annotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
         return annotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -689,6 +701,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +722,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +745,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +768,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +788,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +809,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +830,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +850,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +870,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +883,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
     public com.google.cloud.visionai.v1.Annotation.Builder getAnnotationsBuilder(int index) {
       return getAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -878,6 +900,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
         return annotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -895,6 +918,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(annotations_);
       }
     }
+
     /**
      *
      *
@@ -908,6 +932,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       return getAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.Annotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -921,6 +946,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       return getAnnotationsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.Annotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -953,6 +979,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -976,6 +1003,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -999,6 +1027,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1021,6 +1050,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1069,7 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

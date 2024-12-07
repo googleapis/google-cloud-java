@@ -284,7 +284,8 @@ public class FeedName implements ResourceName {
     private Builder(FeedName feedName) {
       Preconditions.checkArgument(
           Objects.equals(feedName.pathTemplate, PROJECT_FEED),
-          "toBuilder is only supported when FeedName has the pattern of projects/{project}/feeds/{feed}");
+          "toBuilder is only supported when FeedName has the pattern of"
+              + " projects/{project}/feeds/{feed}");
       this.project = feedName.project;
       this.feed = feedName.feed;
     }

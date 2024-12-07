@@ -34,6 +34,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.shell.v1.StartEnvironmentRequest)
     StartEnvironmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StartEnvironmentRequest.newBuilder() to construct.
   private StartEnvironmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accessToken_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList publicKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getPublicKeysList() {
     return publicKeys_;
   }
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
   public int getPublicKeysCount() {
     return publicKeys_.size();
   }
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
   public java.lang.String getPublicKeys(int index) {
     return publicKeys_.get(index);
   }
+
   /**
    *
    *
@@ -426,6 +435,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +658,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -719,6 +732,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +779,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object accessToken_ = "";
+
     /**
      *
      *
@@ -789,6 +805,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -814,6 +831,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -838,6 +856,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +877,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +913,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -908,6 +929,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       publicKeys_.makeImmutable();
       return publicKeys_;
     }
+
     /**
      *
      *
@@ -922,6 +944,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
     public int getPublicKeysCount() {
       return publicKeys_.size();
     }
+
     /**
      *
      *
@@ -937,6 +960,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
     public java.lang.String getPublicKeys(int index) {
       return publicKeys_.get(index);
     }
+
     /**
      *
      *
@@ -952,6 +976,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getPublicKeysBytes(int index) {
       return publicKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -975,6 +1000,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1023,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1016,6 +1043,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1062,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

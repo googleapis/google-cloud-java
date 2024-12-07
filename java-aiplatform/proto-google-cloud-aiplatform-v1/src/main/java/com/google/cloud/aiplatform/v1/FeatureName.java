@@ -372,7 +372,8 @@ public class FeatureName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               featureName.pathTemplate, PROJECT_LOCATION_FEATURESTORE_ENTITY_TYPE_FEATURE),
-          "toBuilder is only supported when FeatureName has the pattern of projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}");
+          "toBuilder is only supported when FeatureName has the pattern of"
+              + " projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}");
       this.project = featureName.project;
       this.location = featureName.location;
       this.featurestore = featureName.featurestore;

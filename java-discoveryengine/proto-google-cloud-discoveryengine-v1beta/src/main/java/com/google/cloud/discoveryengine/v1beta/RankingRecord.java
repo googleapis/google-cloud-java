@@ -35,6 +35,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.RankingRecord)
     RankingRecordOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RankingRecord.newBuilder() to construct.
   private RankingRecord(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object content_ = "";
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -238,6 +245,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCORE_FIELD_NUMBER = 4;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -442,6 +450,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -671,6 +680,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -693,6 +703,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -715,6 +726,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -736,6 +748,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +766,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -803,6 +818,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -829,6 +845,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -854,6 +871,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +893,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +922,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object content_ = "";
+
     /**
      *
      *
@@ -929,6 +949,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -955,6 +976,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -980,6 +1002,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1001,6 +1024,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1053,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float score_;
+
     /**
      *
      *
@@ -1044,6 +1069,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -1063,6 +1089,7 @@ public final class RankingRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

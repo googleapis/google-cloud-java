@@ -33,6 +33,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetGuestAttributesInstanceRequest)
     GetGuestAttributesInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetGuestAttributesInstanceRequest.newBuilder() to construct.
   private GetGuestAttributesInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object queryPath_ = "";
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
   public boolean hasQueryPath() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object variableKey_ = "";
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
   public boolean hasVariableKey() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -279,6 +289,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -307,6 +318,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -330,6 +342,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -560,6 +573,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -811,6 +825,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
+
     /**
      *
      *
@@ -833,6 +848,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -855,6 +871,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -876,6 +893,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +911,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +936,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -939,6 +959,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -961,6 +982,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -982,6 +1004,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1022,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1047,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     }
 
     private java.lang.Object queryPath_ = "";
+
     /**
      *
      *
@@ -1037,6 +1062,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     public boolean hasQueryPath() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1059,6 +1085,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1108,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1102,6 +1130,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1148,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1173,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     }
 
     private java.lang.Object variableKey_ = "";
+
     /**
      *
      *
@@ -1157,6 +1188,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     public boolean hasVariableKey() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1179,6 +1211,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1201,6 +1234,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1222,6 +1256,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1274,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1299,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1285,6 +1322,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1307,6 +1345,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1328,6 +1367,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1345,6 +1385,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

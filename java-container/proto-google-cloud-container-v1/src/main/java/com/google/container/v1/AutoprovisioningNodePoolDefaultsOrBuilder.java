@@ -36,6 +36,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return A list containing the oauthScopes.
    */
   java.util.List<java.lang.String> getOauthScopesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return The count of oauthScopes.
    */
   int getOauthScopesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return The oauthScopes at the given index.
    */
   java.lang.String getOauthScopes(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return Whether the upgradeSettings field is set.
    */
   boolean hasUpgradeSettings();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return The upgradeSettings.
    */
   com.google.container.v1.NodePool.UpgradeSettings getUpgradeSettings();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return Whether the management field is set.
    */
   boolean hasManagement();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return The management.
    */
   com.google.container.v1.NodeManagement getManagement();
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getMinCpuPlatform();
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return The diskType.
    */
   java.lang.String getDiskType();
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return Whether the shieldedInstanceConfig field is set.
    */
   boolean hasShieldedInstanceConfig();
+
   /**
    *
    *
@@ -292,6 +303,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return The shieldedInstanceConfig.
    */
   com.google.container.v1.ShieldedInstanceConfig getShieldedInstanceConfig();
+
   /**
    *
    *
@@ -320,6 +332,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return The bootDiskKmsKey.
    */
   java.lang.String getBootDiskKmsKey();
+
   /**
    *
    *
@@ -352,6 +365,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return The imageType.
    */
   java.lang.String getImageType();
+
   /**
    *
    *
@@ -379,6 +393,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return Whether the insecureKubeletReadonlyPortEnabled field is set.
    */
   boolean hasInsecureKubeletReadonlyPortEnabled();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.BatchAnnotateFilesResponse)
     BatchAnnotateFilesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchAnnotateFilesResponse.newBuilder() to construct.
   private BatchAnnotateFilesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p4beta1.AnnotateFileResponse> responses_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.vision.v1p4beta1.AnnotateFileResponse> getResponsesList() {
     return responses_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
       getResponsesOrBuilderList() {
     return responses_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
   public int getResponsesCount() {
     return responses_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
   public com.google.cloud.vision.v1p4beta1.AnnotateFileResponse getResponses(int index) {
     return responses_.get(index);
   }
+
   /**
    *
    *
@@ -302,6 +308,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +578,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
         return responsesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -588,6 +596,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
         return responsesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -605,6 +614,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
         return responsesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -629,6 +639,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -650,6 +661,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +685,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +710,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +732,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +754,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +777,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +798,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +819,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +834,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
         int index) {
       return getResponsesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -833,6 +853,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
         return responsesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -851,6 +872,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(responses_);
       }
     }
+
     /**
      *
      *
@@ -865,6 +887,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
       return getResponsesFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1p4beta1.AnnotateFileResponse.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -881,6 +904,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.cloud.vision.v1p4beta1.AnnotateFileResponse.getDefaultInstance());
     }
+
     /**
      *
      *

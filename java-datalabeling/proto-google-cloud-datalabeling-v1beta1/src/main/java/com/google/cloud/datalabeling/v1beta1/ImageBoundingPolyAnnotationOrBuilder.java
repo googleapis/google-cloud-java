@@ -30,12 +30,14 @@ public interface ImageBoundingPolyAnnotationOrBuilder
    * @return Whether the boundingPoly field is set.
    */
   boolean hasBoundingPoly();
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code>
    *
    * @return The boundingPoly.
    */
   com.google.cloud.datalabeling.v1beta1.BoundingPoly getBoundingPoly();
+
   /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code> */
   com.google.cloud.datalabeling.v1beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder();
 
@@ -46,6 +48,7 @@ public interface ImageBoundingPolyAnnotationOrBuilder
    * @return Whether the normalizedBoundingPoly field is set.
    */
   boolean hasNormalizedBoundingPoly();
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
    * </code>
@@ -53,6 +56,7 @@ public interface ImageBoundingPolyAnnotationOrBuilder
    * @return The normalizedBoundingPoly.
    */
   com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly getNormalizedBoundingPoly();
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
    * </code>
@@ -72,6 +76,7 @@ public interface ImageBoundingPolyAnnotationOrBuilder
    * @return Whether the annotationSpec field is set.
    */
   boolean hasAnnotationSpec();
+
   /**
    *
    *
@@ -84,6 +89,7 @@ public interface ImageBoundingPolyAnnotationOrBuilder
    * @return The annotationSpec.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec();
+
   /**
    *
    *

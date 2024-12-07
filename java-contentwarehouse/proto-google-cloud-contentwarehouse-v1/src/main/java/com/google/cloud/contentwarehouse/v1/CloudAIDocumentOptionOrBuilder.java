@@ -47,6 +47,7 @@ public interface CloudAIDocumentOptionOrBuilder
    * <code>map&lt;string, string&gt; customized_entities_properties_conversions = 2;</code>
    */
   int getCustomizedEntitiesPropertiesConversionsCount();
+
   /**
    *
    *
@@ -57,9 +58,11 @@ public interface CloudAIDocumentOptionOrBuilder
    * <code>map&lt;string, string&gt; customized_entities_properties_conversions = 2;</code>
    */
   boolean containsCustomizedEntitiesPropertiesConversions(java.lang.String key);
+
   /** Use {@link #getCustomizedEntitiesPropertiesConversionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getCustomizedEntitiesPropertiesConversions();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface CloudAIDocumentOptionOrBuilder
    * <code>map&lt;string, string&gt; customized_entities_properties_conversions = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getCustomizedEntitiesPropertiesConversionsMap();
+
   /**
    *
    *
@@ -84,6 +88,7 @@ public interface CloudAIDocumentOptionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

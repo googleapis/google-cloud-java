@@ -41,6 +41,7 @@ public interface BatchCalculateEffectiveSettingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface BatchCalculateEffectiveSettingsRequestOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest>
       getRequestsList();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface BatchCalculateEffectiveSettingsRequestOrBuilder
    */
   com.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest getRequests(
       int index);
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface BatchCalculateEffectiveSettingsRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface BatchCalculateEffectiveSettingsRequestOrBuilder
               com.google.cloud.securitycenter.settings.v1beta1
                   .CalculateEffectiveSettingsRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *

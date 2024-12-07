@@ -33,6 +33,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.CreateActiveDirectoryRequest)
     CreateActiveDirectoryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateActiveDirectoryRequest.newBuilder() to construct.
   private CreateActiveDirectoryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
 
   public static final int ACTIVE_DIRECTORY_FIELD_NUMBER = 2;
   private com.google.cloud.netapp.v1.ActiveDirectory activeDirectory_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
   public boolean hasActiveDirectory() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
         ? com.google.cloud.netapp.v1.ActiveDirectory.getDefaultInstance()
         : activeDirectory_;
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object activeDirectoryId_ = "";
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -416,6 +424,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -645,6 +654,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -669,6 +679,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -693,6 +704,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -716,6 +728,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +748,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +780,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
             com.google.cloud.netapp.v1.ActiveDirectory.Builder,
             com.google.cloud.netapp.v1.ActiveDirectoryOrBuilder>
         activeDirectoryBuilder_;
+
     /**
      *
      *
@@ -782,6 +797,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
     public boolean hasActiveDirectory() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
         return activeDirectoryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +868,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +899,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +921,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +938,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
       onChanged();
       return getActiveDirectoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -937,6 +959,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
             : activeDirectory_;
       }
     }
+
     /**
      *
      *
@@ -966,6 +989,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object activeDirectoryId_ = "";
+
     /**
      *
      *
@@ -991,6 +1015,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1016,6 +1041,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1066,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1060,6 +1087,7 @@ public final class CreateActiveDirectoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.RoofSegmentSummary)
     RoofSegmentSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RoofSegmentSummary.newBuilder() to construct.
   private RoofSegmentSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int PITCH_DEGREES_FIELD_NUMBER = 2;
   private float pitchDegrees_ = 0F;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
   public boolean hasPitchDegrees() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
 
   public static final int AZIMUTH_DEGREES_FIELD_NUMBER = 3;
   private float azimuthDegrees_ = 0F;
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
   public boolean hasAzimuthDegrees() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
 
   public static final int PANELS_COUNT_FIELD_NUMBER = 7;
   private int panelsCount_ = 0;
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
 
   public static final int YEARLY_ENERGY_DC_KWH_FIELD_NUMBER = 8;
   private float yearlyEnergyDcKwh_ = 0F;
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
 
   public static final int SEGMENT_INDEX_FIELD_NUMBER = 9;
   private int segmentIndex_ = 0;
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
   public boolean hasSegmentIndex() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -424,6 +433,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -663,6 +673,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private float pitchDegrees_;
+
     /**
      *
      *
@@ -679,6 +690,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     public boolean hasPitchDegrees() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -695,6 +707,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     public float getPitchDegrees() {
       return pitchDegrees_;
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +749,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     }
 
     private float azimuthDegrees_;
+
     /**
      *
      *
@@ -753,6 +768,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     public boolean hasAzimuthDegrees() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -771,6 +787,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     public float getAzimuthDegrees() {
       return azimuthDegrees_;
     }
+
     /**
      *
      *
@@ -793,6 +810,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +833,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     }
 
     private int panelsCount_;
+
     /**
      *
      *
@@ -830,6 +849,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     public int getPanelsCount() {
       return panelsCount_;
     }
+
     /**
      *
      *
@@ -849,6 +869,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +889,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     }
 
     private float yearlyEnergyDcKwh_;
+
     /**
      *
      *
@@ -884,6 +906,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     public float getYearlyEnergyDcKwh() {
       return yearlyEnergyDcKwh_;
     }
+
     /**
      *
      *
@@ -904,6 +927,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +948,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     }
 
     private int segmentIndex_;
+
     /**
      *
      *
@@ -941,6 +966,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     public boolean hasSegmentIndex() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -958,6 +984,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
     public int getSegmentIndex() {
       return segmentIndex_;
     }
+
     /**
      *
      *
@@ -979,6 +1006,7 @@ public final class RoofSegmentSummary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

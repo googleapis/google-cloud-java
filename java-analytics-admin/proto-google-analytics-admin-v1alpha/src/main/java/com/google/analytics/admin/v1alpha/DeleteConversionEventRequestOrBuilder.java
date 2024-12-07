@@ -40,6 +40,7 @@ public interface DeleteConversionEventRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

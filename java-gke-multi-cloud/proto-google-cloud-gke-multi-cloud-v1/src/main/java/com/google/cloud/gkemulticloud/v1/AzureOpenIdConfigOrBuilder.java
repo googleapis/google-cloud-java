@@ -36,6 +36,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return The issuer.
    */
   java.lang.String getIssuer();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return The jwksUri.
    */
   java.lang.String getJwksUri();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return A list containing the responseTypesSupported.
    */
   java.util.List<java.lang.String> getResponseTypesSupportedList();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return The count of responseTypesSupported.
    */
   int getResponseTypesSupportedCount();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return The responseTypesSupported at the given index.
    */
   java.lang.String getResponseTypesSupported(int index);
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return A list containing the subjectTypesSupported.
    */
   java.util.List<java.lang.String> getSubjectTypesSupportedList();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return The count of subjectTypesSupported.
    */
   int getSubjectTypesSupportedCount();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return The subjectTypesSupported at the given index.
    */
   java.lang.String getSubjectTypesSupported(int index);
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return A list containing the idTokenSigningAlgValuesSupported.
    */
   java.util.List<java.lang.String> getIdTokenSigningAlgValuesSupportedList();
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return The count of idTokenSigningAlgValuesSupported.
    */
   int getIdTokenSigningAlgValuesSupportedCount();
+
   /**
    *
    *
@@ -213,6 +223,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return The idTokenSigningAlgValuesSupported at the given index.
    */
   java.lang.String getIdTokenSigningAlgValuesSupported(int index);
+
   /**
    *
    *
@@ -239,6 +250,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return A list containing the claimsSupported.
    */
   java.util.List<java.lang.String> getClaimsSupportedList();
+
   /**
    *
    *
@@ -251,6 +263,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return The count of claimsSupported.
    */
   int getClaimsSupportedCount();
+
   /**
    *
    *
@@ -264,6 +277,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return The claimsSupported at the given index.
    */
   java.lang.String getClaimsSupported(int index);
+
   /**
    *
    *
@@ -290,6 +304,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return A list containing the grantTypes.
    */
   java.util.List<java.lang.String> getGrantTypesList();
+
   /**
    *
    *
@@ -302,6 +317,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return The count of grantTypes.
    */
   int getGrantTypesCount();
+
   /**
    *
    *
@@ -315,6 +331,7 @@ public interface AzureOpenIdConfigOrBuilder
    * @return The grantTypes at the given index.
    */
   java.lang.String getGrantTypes(int index);
+
   /**
    *
    *

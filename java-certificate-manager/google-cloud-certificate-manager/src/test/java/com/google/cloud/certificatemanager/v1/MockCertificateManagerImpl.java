@@ -221,7 +221,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateCertificateMap, expected %s or %s",
+                  "Unrecognized response type %s for method CreateCertificateMap, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -242,7 +243,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateCertificateMap, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateCertificateMap, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -263,7 +265,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteCertificateMap, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteCertificateMap, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -285,7 +288,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListCertificateMapEntries, expected %s or %s",
+                  "Unrecognized response type %s for method ListCertificateMapEntries, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListCertificateMapEntriesResponse.class.getName(),
                   Exception.class.getName())));
@@ -306,7 +310,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetCertificateMapEntry, expected %s or %s",
+                  "Unrecognized response type %s for method GetCertificateMapEntry, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CertificateMapEntry.class.getName(),
                   Exception.class.getName())));
@@ -327,7 +332,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateCertificateMapEntry, expected %s or %s",
+                  "Unrecognized response type %s for method CreateCertificateMapEntry, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -348,7 +354,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateCertificateMapEntry, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateCertificateMapEntry, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -369,7 +376,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteCertificateMapEntry, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteCertificateMapEntry, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -391,7 +399,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDnsAuthorizations, expected %s or %s",
+                  "Unrecognized response type %s for method ListDnsAuthorizations, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDnsAuthorizationsResponse.class.getName(),
                   Exception.class.getName())));
@@ -433,7 +442,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDnsAuthorization, expected %s or %s",
+                  "Unrecognized response type %s for method CreateDnsAuthorization, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -454,7 +464,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateDnsAuthorization, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateDnsAuthorization, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -475,7 +486,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDnsAuthorization, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteDnsAuthorization, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -497,7 +509,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListCertificateIssuanceConfigs, expected %s or %s",
+                  "Unrecognized response type %s for method ListCertificateIssuanceConfigs,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListCertificateIssuanceConfigsResponse.class.getName(),
                   Exception.class.getName())));
@@ -519,7 +532,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetCertificateIssuanceConfig, expected %s or %s",
+                  "Unrecognized response type %s for method GetCertificateIssuanceConfig, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CertificateIssuanceConfig.class.getName(),
                   Exception.class.getName())));
@@ -540,7 +554,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateCertificateIssuanceConfig, expected %s or %s",
+                  "Unrecognized response type %s for method CreateCertificateIssuanceConfig,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -561,7 +576,8 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteCertificateIssuanceConfig, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteCertificateIssuanceConfig,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

@@ -34,6 +34,7 @@ public interface BatchGetAssetsHistoryResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1p2beta1.TemporalAsset assets = 1;</code>
    */
   java.util.List<com.google.cloud.asset.v1p2beta1.TemporalAsset> getAssetsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BatchGetAssetsHistoryResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1p2beta1.TemporalAsset assets = 1;</code>
    */
   com.google.cloud.asset.v1p2beta1.TemporalAsset getAssets(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BatchGetAssetsHistoryResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1p2beta1.TemporalAsset assets = 1;</code>
    */
   int getAssetsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BatchGetAssetsHistoryResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1p2beta1.TemporalAssetOrBuilder>
       getAssetsOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.redis.v1.Instance)
     InstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Instance.newBuilder() to construct.
   private Instance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,6 +216,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -225,6 +227,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -235,6 +238,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>READY = 2;</code>
      */
     public static final int READY_VALUE = 2;
+
     /**
      *
      *
@@ -247,6 +251,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
+
     /**
      *
      *
@@ -257,6 +262,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 4;</code>
      */
     public static final int DELETING_VALUE = 4;
+
     /**
      *
      *
@@ -267,6 +273,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>REPAIRING = 5;</code>
      */
     public static final int REPAIRING_VALUE = 5;
+
     /**
      *
      *
@@ -277,6 +284,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>MAINTENANCE = 6;</code>
      */
     public static final int MAINTENANCE_VALUE = 6;
+
     /**
      *
      *
@@ -287,6 +295,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPORTING = 8;</code>
      */
     public static final int IMPORTING_VALUE = 8;
+
     /**
      *
      *
@@ -446,6 +455,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>TIER_UNSPECIFIED = 0;</code>
      */
     public static final int TIER_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -456,6 +466,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>BASIC = 1;</code>
      */
     public static final int BASIC_VALUE = 1;
+
     /**
      *
      *
@@ -605,6 +616,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>CONNECT_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int CONNECT_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -615,6 +627,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>DIRECT_PEERING = 1;</code>
      */
     public static final int DIRECT_PEERING_VALUE = 1;
+
     /**
      *
      *
@@ -764,6 +777,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>TRANSIT_ENCRYPTION_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int TRANSIT_ENCRYPTION_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -774,6 +788,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVER_AUTHENTICATION = 1;</code>
      */
     public static final int SERVER_AUTHENTICATION_VALUE = 1;
+
     /**
      *
      *
@@ -928,6 +943,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>READ_REPLICAS_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int READ_REPLICAS_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -939,6 +955,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>READ_REPLICAS_DISABLED = 1;</code>
      */
     public static final int READ_REPLICAS_DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -1079,6 +1096,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>SUSPENSION_REASON_UNSPECIFIED = 0;</code>
      */
     public static final int SUSPENSION_REASON_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1178,6 +1196,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1211,6 +1230,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1249,6 +1269,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -1272,6 +1293,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1322,6 +1344,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -1338,12 +1361,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -1357,6 +1382,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -1377,6 +1403,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1402,6 +1429,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationId_ = "";
+
   /**
    *
    *
@@ -1429,6 +1457,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1461,6 +1490,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object alternativeLocationId_ = "";
+
   /**
    *
    *
@@ -1488,6 +1518,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1520,6 +1551,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object redisVersion_ = "";
+
   /**
    *
    *
@@ -1550,6 +1582,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1585,6 +1618,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reservedIpRange_ = "";
+
   /**
    *
    *
@@ -1615,6 +1649,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1650,6 +1685,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object secondaryIpRange_ = "";
+
   /**
    *
    *
@@ -1677,6 +1713,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1709,6 +1746,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object host_ = "";
+
   /**
    *
    *
@@ -1733,6 +1771,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1760,6 +1799,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PORT_FIELD_NUMBER = 11;
   private int port_ = 0;
+
   /**
    *
    *
@@ -1780,6 +1820,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object currentLocationId_ = "";
+
   /**
    *
    *
@@ -1805,6 +1846,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1833,6 +1875,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -1849,6 +1892,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1865,6 +1909,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -1882,6 +1927,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 14;
   private int state_ = 0;
+
   /**
    *
    *
@@ -1899,6 +1945,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1923,6 +1970,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object statusMessage_ = "";
+
   /**
    *
    *
@@ -1947,6 +1995,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2000,6 +2049,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getRedisConfigsCount() {
     return internalGetRedisConfigs().getMap().size();
   }
+
   /**
    *
    *
@@ -2036,12 +2086,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetRedisConfigs().getMap().containsKey(key);
   }
+
   /** Use {@link #getRedisConfigsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getRedisConfigs() {
     return getRedisConfigsMap();
   }
+
   /**
    *
    *
@@ -2075,6 +2127,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap() {
     return internalGetRedisConfigs().getMap();
   }
+
   /**
    *
    *
@@ -2115,6 +2168,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetRedisConfigs().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -2158,6 +2212,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIER_FIELD_NUMBER = 17;
   private int tier_ = 0;
+
   /**
    *
    *
@@ -2174,6 +2229,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getTierValue() {
     return tier_;
   }
+
   /**
    *
    *
@@ -2195,6 +2251,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MEMORY_SIZE_GB_FIELD_NUMBER = 18;
   private int memorySizeGb_ = 0;
+
   /**
    *
    *
@@ -2215,6 +2272,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object authorizedNetwork_ = "";
+
   /**
    *
    *
@@ -2241,6 +2299,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2272,6 +2331,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object persistenceIamIdentity_ = "";
+
   /**
    *
    *
@@ -2299,6 +2359,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2329,6 +2390,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONNECT_MODE_FIELD_NUMBER = 22;
   private int connectMode_ = 0;
+
   /**
    *
    *
@@ -2347,6 +2409,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getConnectModeValue() {
     return connectMode_;
   }
+
   /**
    *
    *
@@ -2370,6 +2433,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTH_ENABLED_FIELD_NUMBER = 23;
   private boolean authEnabled_ = false;
+
   /**
    *
    *
@@ -2392,6 +2456,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.redis.v1.TlsCertificate> serverCaCerts_;
+
   /**
    *
    *
@@ -2407,6 +2472,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.redis.v1.TlsCertificate> getServerCaCertsList() {
     return serverCaCerts_;
   }
+
   /**
    *
    *
@@ -2423,6 +2489,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       getServerCaCertsOrBuilderList() {
     return serverCaCerts_;
   }
+
   /**
    *
    *
@@ -2438,6 +2505,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getServerCaCertsCount() {
     return serverCaCerts_.size();
   }
+
   /**
    *
    *
@@ -2453,6 +2521,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.redis.v1.TlsCertificate getServerCaCerts(int index) {
     return serverCaCerts_.get(index);
   }
+
   /**
    *
    *
@@ -2471,6 +2540,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRANSIT_ENCRYPTION_MODE_FIELD_NUMBER = 26;
   private int transitEncryptionMode_ = 0;
+
   /**
    *
    *
@@ -2489,6 +2559,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getTransitEncryptionModeValue() {
     return transitEncryptionMode_;
   }
+
   /**
    *
    *
@@ -2514,6 +2585,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 27;
   private com.google.cloud.redis.v1.MaintenancePolicy maintenancePolicy_;
+
   /**
    *
    *
@@ -2532,6 +2604,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaintenancePolicy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2552,6 +2625,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.redis.v1.MaintenancePolicy.getDefaultInstance()
         : maintenancePolicy_;
   }
+
   /**
    *
    *
@@ -2573,6 +2647,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAINTENANCE_SCHEDULE_FIELD_NUMBER = 28;
   private com.google.cloud.redis.v1.MaintenanceSchedule maintenanceSchedule_;
+
   /**
    *
    *
@@ -2591,6 +2666,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaintenanceSchedule() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -2611,6 +2687,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.redis.v1.MaintenanceSchedule.getDefaultInstance()
         : maintenanceSchedule_;
   }
+
   /**
    *
    *
@@ -2632,6 +2709,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPLICA_COUNT_FIELD_NUMBER = 31;
   private int replicaCount_ = 0;
+
   /**
    *
    *
@@ -2656,6 +2734,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.redis.v1.NodeInfo> nodes_;
+
   /**
    *
    *
@@ -2671,6 +2750,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.redis.v1.NodeInfo> getNodesList() {
     return nodes_;
   }
+
   /**
    *
    *
@@ -2687,6 +2767,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       getNodesOrBuilderList() {
     return nodes_;
   }
+
   /**
    *
    *
@@ -2702,6 +2783,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getNodesCount() {
     return nodes_.size();
   }
+
   /**
    *
    *
@@ -2717,6 +2799,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.redis.v1.NodeInfo getNodes(int index) {
     return nodes_.get(index);
   }
+
   /**
    *
    *
@@ -2737,6 +2820,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object readEndpoint_ = "";
+
   /**
    *
    *
@@ -2763,6 +2847,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2792,6 +2877,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int READ_ENDPOINT_PORT_FIELD_NUMBER = 34;
   private int readEndpointPort_ = 0;
+
   /**
    *
    *
@@ -2811,6 +2897,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int READ_REPLICAS_MODE_FIELD_NUMBER = 35;
   private int readReplicasMode_ = 0;
+
   /**
    *
    *
@@ -2829,6 +2916,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getReadReplicasModeValue() {
     return readReplicasMode_;
   }
+
   /**
    *
    *
@@ -2856,6 +2944,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customerManagedKey_ = "";
+
   /**
    *
    *
@@ -2880,6 +2969,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2907,6 +2997,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERSISTENCE_CONFIG_FIELD_NUMBER = 37;
   private com.google.cloud.redis.v1.PersistenceConfig persistenceConfig_;
+
   /**
    *
    *
@@ -2924,6 +3015,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPersistenceConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -2943,6 +3035,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.redis.v1.PersistenceConfig.getDefaultInstance()
         : persistenceConfig_;
   }
+
   /**
    *
    *
@@ -2980,6 +3073,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -3000,6 +3094,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.redis.v1.Instance.SuspensionReason>(
         suspensionReasons_, suspensionReasons_converter_);
   }
+
   /**
    *
    *
@@ -3017,6 +3112,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getSuspensionReasonsCount() {
     return suspensionReasons_.size();
   }
+
   /**
    *
    *
@@ -3035,6 +3131,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.redis.v1.Instance.SuspensionReason getSuspensionReasons(int index) {
     return suspensionReasons_converter_.convert(suspensionReasons_.get(index));
   }
+
   /**
    *
    *
@@ -3052,6 +3149,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getSuspensionReasonsValueList() {
     return suspensionReasons_;
   }
+
   /**
    *
    *
@@ -3077,6 +3175,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object maintenanceVersion_ = "";
+
   /**
    *
    *
@@ -3101,6 +3200,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3131,6 +3231,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList availableMaintenanceVersions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -3148,6 +3249,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAvailableMaintenanceVersionsList() {
     return availableMaintenanceVersions_;
   }
+
   /**
    *
    *
@@ -3165,6 +3267,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getAvailableMaintenanceVersionsCount() {
     return availableMaintenanceVersions_.size();
   }
+
   /**
    *
    *
@@ -3183,6 +3286,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAvailableMaintenanceVersions(int index) {
     return availableMaintenanceVersions_.get(index);
   }
+
   /**
    *
    *
@@ -3744,6 +3848,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4613,6 +4718,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     private int bitField1_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -4645,6 +4751,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4677,6 +4784,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4708,6 +4816,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4735,6 +4844,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4769,6 +4879,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -4791,6 +4902,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4813,6 +4925,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4834,6 +4947,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4851,6 +4965,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4899,6 +5014,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -4915,12 +5031,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -4934,6 +5052,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -4954,6 +5073,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -4980,6 +5100,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -4996,12 +5117,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000004;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -5022,6 +5145,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -5038,6 +5162,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object locationId_ = "";
+
     /**
      *
      *
@@ -5064,6 +5189,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5090,6 +5216,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5115,6 +5242,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5136,6 +5264,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5164,6 +5293,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object alternativeLocationId_ = "";
+
     /**
      *
      *
@@ -5190,6 +5320,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5216,6 +5347,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5241,6 +5373,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5262,6 +5395,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5290,6 +5424,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object redisVersion_ = "";
+
     /**
      *
      *
@@ -5319,6 +5454,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5348,6 +5484,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5376,6 +5513,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5400,6 +5538,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5431,6 +5570,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object reservedIpRange_ = "";
+
     /**
      *
      *
@@ -5460,6 +5600,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5489,6 +5630,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5517,6 +5659,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5541,6 +5684,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5572,6 +5716,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object secondaryIpRange_ = "";
+
     /**
      *
      *
@@ -5598,6 +5743,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5624,6 +5770,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5649,6 +5796,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5670,6 +5818,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5698,6 +5847,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object host_ = "";
+
     /**
      *
      *
@@ -5721,6 +5871,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5744,6 +5895,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5766,6 +5918,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5784,6 +5937,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5809,6 +5963,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int port_;
+
     /**
      *
      *
@@ -5824,6 +5979,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getPort() {
       return port_;
     }
+
     /**
      *
      *
@@ -5843,6 +5999,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5862,6 +6019,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object currentLocationId_ = "";
+
     /**
      *
      *
@@ -5886,6 +6044,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5910,6 +6069,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5933,6 +6093,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5952,6 +6113,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5983,6 +6145,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -5999,6 +6162,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -6021,6 +6185,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6045,6 +6210,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6066,6 +6232,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6095,6 +6262,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6116,6 +6284,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6132,6 +6301,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6152,6 +6322,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -6181,6 +6352,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -6198,6 +6370,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -6218,6 +6391,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6237,6 +6411,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.redis.v1.Instance.State.forNumber(state_);
       return result == null ? com.google.cloud.redis.v1.Instance.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -6260,6 +6435,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6281,6 +6457,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object statusMessage_ = "";
+
     /**
      *
      *
@@ -6304,6 +6481,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6327,6 +6505,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6349,6 +6528,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6367,6 +6547,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6419,6 +6600,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getRedisConfigsCount() {
       return internalGetRedisConfigs().getMap().size();
     }
+
     /**
      *
      *
@@ -6455,12 +6637,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetRedisConfigs().getMap().containsKey(key);
     }
+
     /** Use {@link #getRedisConfigsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getRedisConfigs() {
       return getRedisConfigsMap();
     }
+
     /**
      *
      *
@@ -6494,6 +6678,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap() {
       return internalGetRedisConfigs().getMap();
     }
+
     /**
      *
      *
@@ -6534,6 +6719,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetRedisConfigs().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -6580,6 +6766,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableRedisConfigs().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -6616,12 +6803,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableRedisConfigs().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableRedisConfigs() {
       bitField0_ |= 0x00004000;
       return internalGetMutableRedisConfigs().getMutableMap();
     }
+
     /**
      *
      *
@@ -6662,6 +6851,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00004000;
       return this;
     }
+
     /**
      *
      *
@@ -6698,6 +6888,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int tier_ = 0;
+
     /**
      *
      *
@@ -6715,6 +6906,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getTierValue() {
       return tier_;
     }
+
     /**
      *
      *
@@ -6735,6 +6927,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6754,6 +6947,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.redis.v1.Instance.Tier.forNumber(tier_);
       return result == null ? com.google.cloud.redis.v1.Instance.Tier.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -6777,6 +6971,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6798,6 +6993,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int memorySizeGb_;
+
     /**
      *
      *
@@ -6813,6 +7009,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getMemorySizeGb() {
       return memorySizeGb_;
     }
+
     /**
      *
      *
@@ -6832,6 +7029,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6851,6 +7049,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object authorizedNetwork_ = "";
+
     /**
      *
      *
@@ -6876,6 +7075,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6901,6 +7101,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6925,6 +7126,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6945,6 +7147,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6972,6 +7175,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object persistenceIamIdentity_ = "";
+
     /**
      *
      *
@@ -6999,6 +7203,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7026,6 +7231,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7052,6 +7258,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7074,6 +7281,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7103,6 +7311,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int connectMode_ = 0;
+
     /**
      *
      *
@@ -7121,6 +7330,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getConnectModeValue() {
       return connectMode_;
     }
+
     /**
      *
      *
@@ -7142,6 +7352,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7162,6 +7373,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.redis.v1.Instance.ConnectMode.forNumber(connectMode_);
       return result == null ? com.google.cloud.redis.v1.Instance.ConnectMode.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -7186,6 +7398,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7208,6 +7421,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean authEnabled_;
+
     /**
      *
      *
@@ -7225,6 +7439,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public boolean getAuthEnabled() {
       return authEnabled_;
     }
+
     /**
      *
      *
@@ -7246,6 +7461,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7301,6 +7517,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return serverCaCertsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -7319,6 +7536,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return serverCaCertsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -7337,6 +7555,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return serverCaCertsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -7361,6 +7580,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7383,6 +7603,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7407,6 +7628,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7431,6 +7653,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7453,6 +7676,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7475,6 +7699,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7497,6 +7722,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7518,6 +7744,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7539,6 +7766,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7553,6 +7781,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.redis.v1.TlsCertificate.Builder getServerCaCertsBuilder(int index) {
       return getServerCaCertsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -7571,6 +7800,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return serverCaCertsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -7590,6 +7820,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(serverCaCerts_);
       }
     }
+
     /**
      *
      *
@@ -7605,6 +7836,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return getServerCaCertsFieldBuilder()
           .addBuilder(com.google.cloud.redis.v1.TlsCertificate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -7620,6 +7852,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return getServerCaCertsFieldBuilder()
           .addBuilder(index, com.google.cloud.redis.v1.TlsCertificate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -7657,6 +7890,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int transitEncryptionMode_ = 0;
+
     /**
      *
      *
@@ -7675,6 +7909,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getTransitEncryptionModeValue() {
       return transitEncryptionMode_;
     }
+
     /**
      *
      *
@@ -7696,6 +7931,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7719,6 +7955,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.redis.v1.Instance.TransitEncryptionMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -7744,6 +7981,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7771,6 +8009,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.redis.v1.MaintenancePolicy.Builder,
             com.google.cloud.redis.v1.MaintenancePolicyOrBuilder>
         maintenancePolicyBuilder_;
+
     /**
      *
      *
@@ -7788,6 +8027,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaintenancePolicy() {
       return ((bitField0_ & 0x00800000) != 0);
     }
+
     /**
      *
      *
@@ -7811,6 +8051,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return maintenancePolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7836,6 +8077,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7859,6 +8101,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7890,6 +8133,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7912,6 +8156,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7929,6 +8174,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMaintenancePolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7950,6 +8196,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             : maintenancePolicy_;
       }
     }
+
     /**
      *
      *
@@ -7985,6 +8232,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.redis.v1.MaintenanceSchedule.Builder,
             com.google.cloud.redis.v1.MaintenanceScheduleOrBuilder>
         maintenanceScheduleBuilder_;
+
     /**
      *
      *
@@ -8002,6 +8250,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaintenanceSchedule() {
       return ((bitField0_ & 0x01000000) != 0);
     }
+
     /**
      *
      *
@@ -8025,6 +8274,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return maintenanceScheduleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8050,6 +8300,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8073,6 +8324,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8104,6 +8356,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8126,6 +8379,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8143,6 +8397,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMaintenanceScheduleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8165,6 +8420,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             : maintenanceSchedule_;
       }
     }
+
     /**
      *
      *
@@ -8195,6 +8451,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int replicaCount_;
+
     /**
      *
      *
@@ -8214,6 +8471,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getReplicaCount() {
       return replicaCount_;
     }
+
     /**
      *
      *
@@ -8237,6 +8495,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8293,6 +8552,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -8311,6 +8571,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -8329,6 +8590,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -8353,6 +8615,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8374,6 +8637,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8398,6 +8662,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8422,6 +8687,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8443,6 +8709,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8464,6 +8731,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8486,6 +8754,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8507,6 +8776,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8528,6 +8798,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8542,6 +8813,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.redis.v1.NodeInfo.Builder getNodesBuilder(int index) {
       return getNodesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -8560,6 +8832,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -8579,6 +8852,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(nodes_);
       }
     }
+
     /**
      *
      *
@@ -8594,6 +8868,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return getNodesFieldBuilder()
           .addBuilder(com.google.cloud.redis.v1.NodeInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8609,6 +8884,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return getNodesFieldBuilder()
           .addBuilder(index, com.google.cloud.redis.v1.NodeInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8642,6 +8918,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object readEndpoint_ = "";
+
     /**
      *
      *
@@ -8667,6 +8944,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8692,6 +8970,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8716,6 +8995,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8736,6 +9016,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8763,6 +9044,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int readEndpointPort_;
+
     /**
      *
      *
@@ -8779,6 +9061,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getReadEndpointPort() {
       return readEndpointPort_;
     }
+
     /**
      *
      *
@@ -8799,6 +9082,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8819,6 +9103,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int readReplicasMode_ = 0;
+
     /**
      *
      *
@@ -8837,6 +9122,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getReadReplicasModeValue() {
       return readReplicasMode_;
     }
+
     /**
      *
      *
@@ -8858,6 +9144,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8880,6 +9167,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.redis.v1.Instance.ReadReplicasMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -8904,6 +9192,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8926,6 +9215,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object customerManagedKey_ = "";
+
     /**
      *
      *
@@ -8949,6 +9239,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8972,6 +9263,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8994,6 +9286,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9012,6 +9305,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9042,6 +9336,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.redis.v1.PersistenceConfig.Builder,
             com.google.cloud.redis.v1.PersistenceConfigOrBuilder>
         persistenceConfigBuilder_;
+
     /**
      *
      *
@@ -9058,6 +9353,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPersistenceConfig() {
       return ((bitField0_ & 0x80000000) != 0);
     }
+
     /**
      *
      *
@@ -9080,6 +9376,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return persistenceConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9104,6 +9401,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9126,6 +9424,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9156,6 +9455,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9177,6 +9477,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9193,6 +9494,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPersistenceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9213,6 +9515,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             : persistenceConfig_;
       }
     }
+
     /**
      *
      *
@@ -9250,6 +9553,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         bitField1_ |= 0x00000001;
       }
     }
+
     /**
      *
      *
@@ -9269,6 +9573,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.redis.v1.Instance.SuspensionReason>(
           suspensionReasons_, suspensionReasons_converter_);
     }
+
     /**
      *
      *
@@ -9285,6 +9590,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getSuspensionReasonsCount() {
       return suspensionReasons_.size();
     }
+
     /**
      *
      *
@@ -9302,6 +9608,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.redis.v1.Instance.SuspensionReason getSuspensionReasons(int index) {
       return suspensionReasons_converter_.convert(suspensionReasons_.get(index));
     }
+
     /**
      *
      *
@@ -9327,6 +9634,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9350,6 +9658,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9373,6 +9682,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9392,6 +9702,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9408,6 +9719,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getSuspensionReasonsValueList() {
       return java.util.Collections.unmodifiableList(suspensionReasons_);
     }
+
     /**
      *
      *
@@ -9425,6 +9737,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getSuspensionReasonsValue(int index) {
       return suspensionReasons_.get(index);
     }
+
     /**
      *
      *
@@ -9446,6 +9759,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9466,6 +9780,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9490,6 +9805,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object maintenanceVersion_ = "";
+
     /**
      *
      *
@@ -9513,6 +9829,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9536,6 +9853,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9558,6 +9876,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9576,6 +9895,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9610,6 +9930,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       bitField1_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -9628,6 +9949,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       availableMaintenanceVersions_.makeImmutable();
       return availableMaintenanceVersions_;
     }
+
     /**
      *
      *
@@ -9645,6 +9967,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getAvailableMaintenanceVersionsCount() {
       return availableMaintenanceVersions_.size();
     }
+
     /**
      *
      *
@@ -9663,6 +9986,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAvailableMaintenanceVersions(int index) {
       return availableMaintenanceVersions_.get(index);
     }
+
     /**
      *
      *
@@ -9681,6 +10005,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAvailableMaintenanceVersionsBytes(int index) {
       return availableMaintenanceVersions_.getByteString(index);
     }
+
     /**
      *
      *
@@ -9707,6 +10032,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9732,6 +10058,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9754,6 +10081,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9775,6 +10103,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

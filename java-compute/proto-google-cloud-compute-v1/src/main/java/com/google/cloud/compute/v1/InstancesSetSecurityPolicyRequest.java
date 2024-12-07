@@ -32,6 +32,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstancesSetSecurityPolicyRequest)
     InstancesSetSecurityPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstancesSetSecurityPolicyRequest.newBuilder() to construct.
   private InstancesSetSecurityPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList networkInterfaces_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
   public com.google.protobuf.ProtocolStringList getNetworkInterfacesList() {
     return networkInterfaces_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
   public int getNetworkInterfacesCount() {
     return networkInterfaces_.size();
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
   public java.lang.String getNetworkInterfaces(int index) {
     return networkInterfaces_.get(index);
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object securityPolicy_ = "";
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
   public boolean hasSecurityPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -377,6 +385,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -596,6 +605,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
       networkInterfaces_.makeImmutable();
       return networkInterfaces_;
     }
+
     /**
      *
      *
@@ -625,6 +636,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
     public int getNetworkInterfacesCount() {
       return networkInterfaces_.size();
     }
+
     /**
      *
      *
@@ -640,6 +652,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
     public java.lang.String getNetworkInterfaces(int index) {
       return networkInterfaces_.get(index);
     }
+
     /**
      *
      *
@@ -655,6 +668,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
     public com.google.protobuf.ByteString getNetworkInterfacesBytes(int index) {
       return networkInterfaces_.getByteString(index);
     }
+
     /**
      *
      *
@@ -678,6 +692,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +715,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +735,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +754,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +780,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
     }
 
     private java.lang.Object securityPolicy_ = "";
+
     /**
      *
      *
@@ -776,6 +795,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
     public boolean hasSecurityPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -798,6 +818,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -820,6 +841,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -841,6 +863,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +881,7 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

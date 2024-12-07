@@ -40,6 +40,7 @@ public interface DetachServiceProjectAttachmentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

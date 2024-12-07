@@ -36,6 +36,7 @@ public interface AwsClusterGroupOrBuilder
    * @return The group.
    */
   java.lang.String getGroup();
+
   /**
    *
    *

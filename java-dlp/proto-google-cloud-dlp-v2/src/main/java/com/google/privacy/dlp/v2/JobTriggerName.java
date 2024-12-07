@@ -253,7 +253,8 @@ public class JobTriggerName implements ResourceName {
     private Builder(JobTriggerName jobTriggerName) {
       Preconditions.checkArgument(
           Objects.equals(jobTriggerName.pathTemplate, PROJECT_JOB_TRIGGER),
-          "toBuilder is only supported when JobTriggerName has the pattern of projects/{project}/jobTriggers/{job_trigger}");
+          "toBuilder is only supported when JobTriggerName has the pattern of"
+              + " projects/{project}/jobTriggers/{job_trigger}");
       this.project = jobTriggerName.project;
       this.jobTrigger = jobTriggerName.jobTrigger;
     }

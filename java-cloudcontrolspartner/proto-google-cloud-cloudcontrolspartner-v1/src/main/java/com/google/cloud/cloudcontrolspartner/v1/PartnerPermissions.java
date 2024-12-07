@@ -33,6 +33,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.cloudcontrolspartner.v1.PartnerPermissions)
     PartnerPermissionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PartnerPermissions.newBuilder() to construct.
   private PartnerPermissions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -139,6 +140,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
      * <code>PERMISSION_UNSPECIFIED = 0;</code>
      */
     public static final int PERMISSION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -149,6 +151,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
      * <code>ACCESS_TRANSPARENCY_AND_EMERGENCY_ACCESS_LOGS = 1;</code>
      */
     public static final int ACCESS_TRANSPARENCY_AND_EMERGENCY_ACCESS_LOGS_VALUE = 1;
+
     /**
      *
      *
@@ -159,6 +162,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
      * <code>ASSURED_WORKLOADS_MONITORING = 2;</code>
      */
     public static final int ASSURED_WORKLOADS_MONITORING_VALUE = 2;
+
     /**
      *
      *
@@ -169,6 +173,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
      * <code>ACCESS_APPROVAL_REQUESTS = 3;</code>
      */
     public static final int ACCESS_APPROVAL_REQUESTS_VALUE = 3;
+
     /**
      *
      *
@@ -179,6 +184,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
      * <code>ASSURED_WORKLOADS_EKM_CONNECTION_STATUS = 4;</code>
      */
     public static final int ASSURED_WORKLOADS_EKM_CONNECTION_STATUS_VALUE = 4;
+
     /**
      *
      *
@@ -285,6 +291,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -309,6 +316,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -356,6 +364,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
                   : result;
             }
           };
+
   /**
    *
    *
@@ -376,6 +385,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
         java.lang.Integer, com.google.cloud.cloudcontrolspartner.v1.PartnerPermissions.Permission>(
         partnerPermissions_, partnerPermissions_converter_);
   }
+
   /**
    *
    *
@@ -393,6 +403,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
   public int getPartnerPermissionsCount() {
     return partnerPermissions_.size();
   }
+
   /**
    *
    *
@@ -412,6 +423,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
       getPartnerPermissions(int index) {
     return partnerPermissions_converter_.convert(partnerPermissions_.get(index));
   }
+
   /**
    *
    *
@@ -429,6 +441,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
   public java.util.List<java.lang.Integer> getPartnerPermissionsValueList() {
     return partnerPermissions_;
   }
+
   /**
    *
    *
@@ -636,6 +649,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -861,6 +875,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -884,6 +899,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -907,6 +923,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -929,6 +946,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +965,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -980,6 +999,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000002;
       }
     }
+
     /**
      *
      *
@@ -1000,6 +1020,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
           com.google.cloud.cloudcontrolspartner.v1.PartnerPermissions.Permission>(
           partnerPermissions_, partnerPermissions_converter_);
     }
+
     /**
      *
      *
@@ -1016,6 +1037,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
     public int getPartnerPermissionsCount() {
       return partnerPermissions_.size();
     }
+
     /**
      *
      *
@@ -1034,6 +1056,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
         getPartnerPermissions(int index) {
       return partnerPermissions_converter_.convert(partnerPermissions_.get(index));
     }
+
     /**
      *
      *
@@ -1059,6 +1082,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1107,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1108,6 +1133,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1153,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1170,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
     public java.util.List<java.lang.Integer> getPartnerPermissionsValueList() {
       return java.util.Collections.unmodifiableList(partnerPermissions_);
     }
+
     /**
      *
      *
@@ -1160,6 +1188,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
     public int getPartnerPermissionsValue(int index) {
       return partnerPermissions_.get(index);
     }
+
     /**
      *
      *
@@ -1181,6 +1210,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1231,7 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

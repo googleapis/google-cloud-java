@@ -34,6 +34,7 @@ public interface ListModelMonitorsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.ModelMonitor model_monitors = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitor> getModelMonitorsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListModelMonitorsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.ModelMonitor model_monitors = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitor getModelMonitors(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListModelMonitorsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.ModelMonitor model_monitors = 1;</code>
    */
   int getModelMonitorsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListModelMonitorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ModelMonitorOrBuilder>
       getModelMonitorsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListModelMonitorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

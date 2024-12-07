@@ -73,7 +73,8 @@ public class MockGenerativeQuestionServiceImpl extends GenerativeQuestionService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateGenerativeQuestionsFeatureConfig, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateGenerativeQuestionsFeatureConfig,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerativeQuestionsFeatureConfig.class.getName(),
                   Exception.class.getName())));
@@ -95,7 +96,8 @@ public class MockGenerativeQuestionServiceImpl extends GenerativeQuestionService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetGenerativeQuestionsFeatureConfig, expected %s or %s",
+                  "Unrecognized response type %s for method GetGenerativeQuestionsFeatureConfig,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerativeQuestionsFeatureConfig.class.getName(),
                   Exception.class.getName())));
@@ -117,7 +119,8 @@ public class MockGenerativeQuestionServiceImpl extends GenerativeQuestionService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListGenerativeQuestionConfigs, expected %s or %s",
+                  "Unrecognized response type %s for method ListGenerativeQuestionConfigs, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListGenerativeQuestionConfigsResponse.class.getName(),
                   Exception.class.getName())));
@@ -139,7 +142,8 @@ public class MockGenerativeQuestionServiceImpl extends GenerativeQuestionService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateGenerativeQuestionConfig, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateGenerativeQuestionConfig,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerativeQuestionConfig.class.getName(),
                   Exception.class.getName())));
@@ -161,7 +165,8 @@ public class MockGenerativeQuestionServiceImpl extends GenerativeQuestionService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchUpdateGenerativeQuestionConfigs, expected %s or %s",
+                  "Unrecognized response type %s for method BatchUpdateGenerativeQuestionConfigs,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchUpdateGenerativeQuestionConfigsResponse.class.getName(),
                   Exception.class.getName())));

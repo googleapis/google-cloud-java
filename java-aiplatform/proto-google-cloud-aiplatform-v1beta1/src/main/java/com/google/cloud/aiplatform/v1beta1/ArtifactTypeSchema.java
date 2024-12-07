@@ -33,6 +33,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ArtifactTypeSchema)
     ArtifactTypeSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ArtifactTypeSchema.newBuilder() to construct.
   private ArtifactTypeSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
     private KindCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SCHEMA_TITLE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
   public boolean hasSchemaTitle() {
     return kindCase_ == 1;
   }
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -205,6 +210,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SCHEMA_URI_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -225,6 +231,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
   public boolean hasSchemaUri() {
     return kindCase_ == 2;
   }
+
   /**
    *
    *
@@ -258,6 +265,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -293,6 +301,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int INSTANCE_SCHEMA_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -308,6 +317,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
   public boolean hasInstanceSchema() {
     return kindCase_ == 3;
   }
+
   /**
    *
    *
@@ -336,6 +346,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -369,6 +380,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schemaVersion_ = "";
+
   /**
    *
    *
@@ -393,6 +405,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -626,6 +639,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -900,6 +914,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
     public boolean hasSchemaTitle() {
       return kindCase_ == 1;
     }
+
     /**
      *
      *
@@ -934,6 +949,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -968,6 +984,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -995,6 +1012,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1038,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1089,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
     public boolean hasSchemaUri() {
       return kindCase_ == 2;
     }
+
     /**
      *
      *
@@ -1104,6 +1124,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1138,6 +1159,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1165,6 +1187,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1190,6 +1213,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1259,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
     public boolean hasInstanceSchema() {
       return kindCase_ == 3;
     }
+
     /**
      *
      *
@@ -1264,6 +1289,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1293,6 +1319,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1315,6 +1342,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1335,6 +1363,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1360,6 +1389,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object schemaVersion_ = "";
+
     /**
      *
      *
@@ -1383,6 +1413,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1406,6 +1437,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1428,6 +1460,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1446,6 +1479,7 @@ public final class ArtifactTypeSchema extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

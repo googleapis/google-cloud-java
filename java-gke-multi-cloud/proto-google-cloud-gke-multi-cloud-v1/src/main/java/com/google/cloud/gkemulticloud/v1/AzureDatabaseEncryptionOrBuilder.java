@@ -41,6 +41,7 @@ public interface AzureDatabaseEncryptionOrBuilder
    * @return The keyId.
    */
   java.lang.String getKeyId();
+
   /**
    *
    *

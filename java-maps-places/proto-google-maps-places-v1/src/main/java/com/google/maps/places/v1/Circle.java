@@ -33,6 +33,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.Circle)
     CircleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Circle.newBuilder() to construct.
   private Circle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CENTER_FIELD_NUMBER = 1;
   private com.google.type.LatLng center_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCenter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getCenter() {
     return center_ == null ? com.google.type.LatLng.getDefaultInstance() : center_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RADIUS_FIELD_NUMBER = 2;
   private double radius_ = 0D;
+
   /**
    *
    *
@@ -309,6 +314,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -521,6 +527,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         centerBuilder_;
+
     /**
      *
      *
@@ -538,6 +545,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCenter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -559,6 +567,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
         return centerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -584,6 +593,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +616,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +647,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +670,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCenterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -694,6 +708,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
         return center_ == null ? com.google.type.LatLng.getDefaultInstance() : center_;
       }
     }
+
     /**
      *
      *
@@ -721,6 +736,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double radius_;
+
     /**
      *
      *
@@ -737,6 +753,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
     public double getRadius() {
       return radius_;
     }
+
     /**
      *
      *
@@ -757,6 +774,7 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

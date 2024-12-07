@@ -34,6 +34,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.AudienceSimpleFilter)
     AudienceSimpleFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AudienceSimpleFilter.newBuilder() to construct.
   private AudienceSimpleFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int SCOPE_FIELD_NUMBER = 1;
   private int scope_ = 0;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
   public int getScopeValue() {
     return scope_;
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
 
   public static final int FILTER_EXPRESSION_FIELD_NUMBER = 2;
   private com.google.analytics.admin.v1alpha.AudienceFilterExpression filterExpression_;
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
   public boolean hasFilterExpression() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
         ? com.google.analytics.admin.v1alpha.AudienceFilterExpression.getDefaultInstance()
         : filterExpression_;
   }
+
   /**
    *
    *
@@ -344,6 +350,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -558,6 +565,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int scope_ = 0;
+
     /**
      *
      *
@@ -575,6 +583,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
     public int getScopeValue() {
       return scope_;
     }
+
     /**
      *
      *
@@ -595,6 +604,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
           ? com.google.analytics.admin.v1alpha.AudienceFilterScope.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -639,6 +650,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +677,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
             com.google.analytics.admin.v1alpha.AudienceFilterExpression.Builder,
             com.google.analytics.admin.v1alpha.AudienceFilterExpressionOrBuilder>
         filterExpressionBuilder_;
+
     /**
      *
      *
@@ -682,6 +695,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
     public boolean hasFilterExpression() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -705,6 +719,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
         return filterExpressionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -731,6 +746,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +770,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +804,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +827,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +846,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
       onChanged();
       return getFilterExpressionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -849,6 +869,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
             : filterExpression_;
       }
     }
+
     /**
      *
      *

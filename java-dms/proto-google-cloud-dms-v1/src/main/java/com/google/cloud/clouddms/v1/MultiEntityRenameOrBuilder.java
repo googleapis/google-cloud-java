@@ -41,6 +41,7 @@ public interface MultiEntityRenameOrBuilder
    * @return The newNamePattern.
    */
   java.lang.String getNewNamePattern();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface MultiEntityRenameOrBuilder
    * @return The enum numeric value on the wire for sourceNameTransformation.
    */
   int getSourceNameTransformationValue();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetTargetForwardingRuleRequest)
     SetTargetForwardingRuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetTargetForwardingRuleRequest.newBuilder() to construct.
   private SetTargetForwardingRuleRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object forwardingRule_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -233,6 +240,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -271,6 +280,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -297,6 +307,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
 
   public static final int TARGET_REFERENCE_RESOURCE_FIELD_NUMBER = 523721712;
   private com.google.cloud.compute.v1.TargetReference targetReferenceResource_;
+
   /**
    *
    *
@@ -314,6 +325,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
   public boolean hasTargetReferenceResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -333,6 +345,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.TargetReference.getDefaultInstance()
         : targetReferenceResource_;
   }
+
   /**
    *
    *
@@ -560,6 +573,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -823,6 +837,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object forwardingRule_ = "";
+
     /**
      *
      *
@@ -845,6 +860,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -867,6 +883,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -888,6 +905,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +923,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +948,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -953,6 +973,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -977,6 +998,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1000,6 +1022,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1042,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1069,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1069,6 +1094,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1093,6 +1119,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1116,6 +1143,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1163,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1190,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1175,6 +1205,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1197,6 +1228,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1219,6 +1251,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1240,6 +1273,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1257,6 +1291,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1286,6 +1321,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.TargetReference.Builder,
             com.google.cloud.compute.v1.TargetReferenceOrBuilder>
         targetReferenceResourceBuilder_;
+
     /**
      *
      *
@@ -1302,6 +1338,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
     public boolean hasTargetReferenceResource() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1324,6 +1361,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
         return targetReferenceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1348,6 +1386,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1409,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1440,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1421,6 +1462,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1437,6 +1479,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       onChanged();
       return getTargetReferenceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1458,6 +1501,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
             : targetReferenceResource_;
       }
     }
+
     /**
      *
      *

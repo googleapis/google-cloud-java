@@ -33,6 +33,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.SearchAllResourcesResponse)
     SearchAllResourcesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchAllResourcesResponse.newBuilder() to construct.
   private SearchAllResourcesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.ResourceSearchResult> results_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.asset.v1.ResourceSearchResult> getResultsList() {
     return results_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       getResultsOrBuilderList() {
     return results_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
   public int getResultsCount() {
     return results_.size();
   }
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
   public com.google.cloud.asset.v1.ResourceSearchResult getResults(int index) {
     return results_.get(index);
   }
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -365,6 +373,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -643,6 +652,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
         return resultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -660,6 +670,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
         return resultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
         return resultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +734,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +782,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +804,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +848,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +890,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +904,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
     public com.google.cloud.asset.v1.ResourceSearchResult.Builder getResultsBuilder(int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -900,6 +922,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -918,6 +941,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(results_);
       }
     }
+
     /**
      *
      *
@@ -932,6 +956,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       return getResultsFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1.ResourceSearchResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -946,6 +971,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       return getResultsFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.ResourceSearchResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -979,6 +1005,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1003,6 +1030,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1027,6 +1055,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1050,6 +1079,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1099,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

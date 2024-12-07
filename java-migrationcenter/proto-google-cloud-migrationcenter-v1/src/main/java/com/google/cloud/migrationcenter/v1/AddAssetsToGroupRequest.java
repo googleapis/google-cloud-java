@@ -33,6 +33,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.AddAssetsToGroupRequest)
     AddAssetsToGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddAssetsToGroupRequest.newBuilder() to construct.
   private AddAssetsToGroupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object group_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -197,6 +202,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
 
   public static final int ASSETS_FIELD_NUMBER = 3;
   private com.google.cloud.migrationcenter.v1.AssetList assets_;
+
   /**
    *
    *
@@ -216,6 +222,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
   public boolean hasAssets() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -237,6 +244,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
         ? com.google.cloud.migrationcenter.v1.AssetList.getDefaultInstance()
         : assets_;
   }
+
   /**
    *
    *
@@ -259,6 +267,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
 
   public static final int ALLOW_EXISTING_FIELD_NUMBER = 4;
   private boolean allowExisting_ = false;
+
   /**
    *
    *
@@ -472,6 +481,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -713,6 +723,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object group_ = "";
+
     /**
      *
      *
@@ -737,6 +748,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -761,6 +773,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -784,6 +797,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +817,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +844,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -863,6 +879,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -897,6 +914,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -930,6 +948,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +978,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1020,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
             com.google.cloud.migrationcenter.v1.AssetList.Builder,
             com.google.cloud.migrationcenter.v1.AssetListOrBuilder>
         assetsBuilder_;
+
     /**
      *
      *
@@ -1018,6 +1039,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
     public boolean hasAssets() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1042,6 +1064,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
         return assetsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1068,6 +1091,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1116,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1148,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1172,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1191,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return getAssetsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1186,6 +1214,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
             : assets_;
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1246,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
     }
 
     private boolean allowExisting_;
+
     /**
      *
      *
@@ -1237,6 +1267,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
     public boolean getAllowExisting() {
       return allowExisting_;
     }
+
     /**
      *
      *
@@ -1261,6 +1292,7 @@ public final class AddAssetsToGroupRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

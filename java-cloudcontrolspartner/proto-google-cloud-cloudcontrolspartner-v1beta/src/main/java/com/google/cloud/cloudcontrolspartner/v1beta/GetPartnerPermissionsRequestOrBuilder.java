@@ -39,6 +39,7 @@ public interface GetPartnerPermissionsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

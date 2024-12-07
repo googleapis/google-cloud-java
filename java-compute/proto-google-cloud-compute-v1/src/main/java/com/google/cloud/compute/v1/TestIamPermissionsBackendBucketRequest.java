@@ -34,6 +34,7 @@ public final class TestIamPermissionsBackendBucketRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TestIamPermissionsBackendBucketRequest)
     TestIamPermissionsBackendBucketRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TestIamPermissionsBackendBucketRequest.newBuilder() to construct.
   private TestIamPermissionsBackendBucketRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class TestIamPermissionsBackendBucketRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class TestIamPermissionsBackendBucketRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class TestIamPermissionsBackendBucketRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class TestIamPermissionsBackendBucketRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class TestIamPermissionsBackendBucketRequest
 
   public static final int TEST_PERMISSIONS_REQUEST_RESOURCE_FIELD_NUMBER = 439214758;
   private com.google.cloud.compute.v1.TestPermissionsRequest testPermissionsRequestResource_;
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class TestIamPermissionsBackendBucketRequest
   public boolean hasTestPermissionsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class TestIamPermissionsBackendBucketRequest
         ? com.google.cloud.compute.v1.TestPermissionsRequest.getDefaultInstance()
         : testPermissionsRequestResource_;
   }
+
   /**
    *
    *
@@ -414,6 +422,7 @@ public final class TestIamPermissionsBackendBucketRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -654,6 +663,7 @@ public final class TestIamPermissionsBackendBucketRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -676,6 +686,7 @@ public final class TestIamPermissionsBackendBucketRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -698,6 +709,7 @@ public final class TestIamPermissionsBackendBucketRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -719,6 +731,7 @@ public final class TestIamPermissionsBackendBucketRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +749,7 @@ public final class TestIamPermissionsBackendBucketRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +774,7 @@ public final class TestIamPermissionsBackendBucketRequest
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -782,6 +797,7 @@ public final class TestIamPermissionsBackendBucketRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class TestIamPermissionsBackendBucketRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -825,6 +842,7 @@ public final class TestIamPermissionsBackendBucketRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class TestIamPermissionsBackendBucketRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +890,7 @@ public final class TestIamPermissionsBackendBucketRequest
             com.google.cloud.compute.v1.TestPermissionsRequest.Builder,
             com.google.cloud.compute.v1.TestPermissionsRequestOrBuilder>
         testPermissionsRequestResourceBuilder_;
+
     /**
      *
      *
@@ -887,6 +907,7 @@ public final class TestIamPermissionsBackendBucketRequest
     public boolean hasTestPermissionsRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -909,6 +930,7 @@ public final class TestIamPermissionsBackendBucketRequest
         return testPermissionsRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -934,6 +956,7 @@ public final class TestIamPermissionsBackendBucketRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +979,7 @@ public final class TestIamPermissionsBackendBucketRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1011,7 @@ public final class TestIamPermissionsBackendBucketRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1033,7 @@ public final class TestIamPermissionsBackendBucketRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1051,7 @@ public final class TestIamPermissionsBackendBucketRequest
       onChanged();
       return getTestPermissionsRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1046,6 +1073,7 @@ public final class TestIamPermissionsBackendBucketRequest
             : testPermissionsRequestResource_;
       }
     }
+
     /**
      *
      *

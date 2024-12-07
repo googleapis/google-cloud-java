@@ -40,6 +40,7 @@ public interface DeleteRepositoryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

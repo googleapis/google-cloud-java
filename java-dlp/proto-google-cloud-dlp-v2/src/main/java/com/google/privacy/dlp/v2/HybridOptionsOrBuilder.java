@@ -37,6 +37,7 @@ public interface HybridOptionsOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface HybridOptionsOrBuilder
    * @return A list containing the requiredFindingLabelKeys.
    */
   java.util.List<java.lang.String> getRequiredFindingLabelKeysList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface HybridOptionsOrBuilder
    * @return The count of requiredFindingLabelKeys.
    */
   int getRequiredFindingLabelKeysCount();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface HybridOptionsOrBuilder
    * @return The requiredFindingLabelKeys at the given index.
    */
   java.lang.String getRequiredFindingLabelKeys(int index);
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface HybridOptionsOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -176,9 +181,11 @@ public interface HybridOptionsOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface HybridOptionsOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public interface HybridOptionsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -266,6 +275,7 @@ public interface HybridOptionsOrBuilder
    * @return Whether the tableOptions field is set.
    */
   boolean hasTableOptions();
+
   /**
    *
    *
@@ -279,6 +289,7 @@ public interface HybridOptionsOrBuilder
    * @return The tableOptions.
    */
   com.google.privacy.dlp.v2.TableOptions getTableOptions();
+
   /**
    *
    *

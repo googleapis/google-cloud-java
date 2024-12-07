@@ -34,6 +34,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig)
     SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig.newBuilder()
   // to construct.
   private SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig(
@@ -73,6 +74,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   private int bitField0_;
   public static final int AUTO_DEPLOY_CONFIDENCE_THRESHOLD_FIELD_NUMBER = 84309694;
   private float autoDeployConfidenceThreshold_ = 0F;
+
   /**
    * <code>optional float auto_deploy_confidence_threshold = 84309694;</code>
    *
@@ -82,6 +84,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   public boolean hasAutoDeployConfidenceThreshold() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>optional float auto_deploy_confidence_threshold = 84309694;</code>
    *
@@ -94,6 +97,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
 
   public static final int AUTO_DEPLOY_EXPIRATION_SEC_FIELD_NUMBER = 69638793;
   private int autoDeployExpirationSec_ = 0;
+
   /**
    * <code>optional int32 auto_deploy_expiration_sec = 69638793;</code>
    *
@@ -103,6 +107,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   public boolean hasAutoDeployExpirationSec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    * <code>optional int32 auto_deploy_expiration_sec = 69638793;</code>
    *
@@ -115,6 +120,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
 
   public static final int AUTO_DEPLOY_IMPACTED_BASELINE_THRESHOLD_FIELD_NUMBER = 292441667;
   private float autoDeployImpactedBaselineThreshold_ = 0F;
+
   /**
    * <code>optional float auto_deploy_impacted_baseline_threshold = 292441667;</code>
    *
@@ -124,6 +130,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   public boolean hasAutoDeployImpactedBaselineThreshold() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    * <code>optional float auto_deploy_impacted_baseline_threshold = 292441667;</code>
    *
@@ -136,6 +143,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
 
   public static final int AUTO_DEPLOY_LOAD_THRESHOLD_FIELD_NUMBER = 522227738;
   private float autoDeployLoadThreshold_ = 0F;
+
   /**
    * <code>optional float auto_deploy_load_threshold = 522227738;</code>
    *
@@ -145,6 +153,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   public boolean hasAutoDeployLoadThreshold() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    * <code>optional float auto_deploy_load_threshold = 522227738;</code>
    *
@@ -157,6 +166,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
 
   public static final int DETECTION_ABSOLUTE_QPS_FIELD_NUMBER = 383123174;
   private float detectionAbsoluteQps_ = 0F;
+
   /**
    * <code>optional float detection_absolute_qps = 383123174;</code>
    *
@@ -166,6 +176,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   public boolean hasDetectionAbsoluteQps() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    * <code>optional float detection_absolute_qps = 383123174;</code>
    *
@@ -178,6 +189,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
 
   public static final int DETECTION_LOAD_THRESHOLD_FIELD_NUMBER = 430499148;
   private float detectionLoadThreshold_ = 0F;
+
   /**
    * <code>optional float detection_load_threshold = 430499148;</code>
    *
@@ -187,6 +199,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   public boolean hasDetectionLoadThreshold() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    * <code>optional float detection_load_threshold = 430499148;</code>
    *
@@ -199,6 +212,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
 
   public static final int DETECTION_RELATIVE_TO_BASELINE_QPS_FIELD_NUMBER = 291343749;
   private float detectionRelativeToBaselineQps_ = 0F;
+
   /**
    * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
    *
@@ -208,6 +222,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   public boolean hasDetectionRelativeToBaselineQps() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
    *
@@ -222,6 +237,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -237,6 +253,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   public boolean hasName() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -260,6 +277,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       return s;
     }
   }
+
   /**
    *
    *
@@ -291,6 +309,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
           com.google.cloud.compute.v1
               .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig>
       trafficGranularityConfigs_;
+
   /**
    *
    *
@@ -309,6 +328,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       getTrafficGranularityConfigsList() {
     return trafficGranularityConfigs_;
   }
+
   /**
    *
    *
@@ -328,6 +348,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       getTrafficGranularityConfigsOrBuilderList() {
     return trafficGranularityConfigs_;
   }
+
   /**
    *
    *
@@ -343,6 +364,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   public int getTrafficGranularityConfigsCount() {
     return trafficGranularityConfigs_.size();
   }
+
   /**
    *
    *
@@ -360,6 +382,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       getTrafficGranularityConfigs(int index) {
     return trafficGranularityConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -706,6 +729,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1094,6 +1118,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     private int bitField0_;
 
     private float autoDeployConfidenceThreshold_;
+
     /**
      * <code>optional float auto_deploy_confidence_threshold = 84309694;</code>
      *
@@ -1103,6 +1128,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public boolean hasAutoDeployConfidenceThreshold() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>optional float auto_deploy_confidence_threshold = 84309694;</code>
      *
@@ -1112,6 +1138,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public float getAutoDeployConfidenceThreshold() {
       return autoDeployConfidenceThreshold_;
     }
+
     /**
      * <code>optional float auto_deploy_confidence_threshold = 84309694;</code>
      *
@@ -1125,6 +1152,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       onChanged();
       return this;
     }
+
     /**
      * <code>optional float auto_deploy_confidence_threshold = 84309694;</code>
      *
@@ -1138,6 +1166,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     }
 
     private int autoDeployExpirationSec_;
+
     /**
      * <code>optional int32 auto_deploy_expiration_sec = 69638793;</code>
      *
@@ -1147,6 +1176,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public boolean hasAutoDeployExpirationSec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>optional int32 auto_deploy_expiration_sec = 69638793;</code>
      *
@@ -1156,6 +1186,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public int getAutoDeployExpirationSec() {
       return autoDeployExpirationSec_;
     }
+
     /**
      * <code>optional int32 auto_deploy_expiration_sec = 69638793;</code>
      *
@@ -1169,6 +1200,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       onChanged();
       return this;
     }
+
     /**
      * <code>optional int32 auto_deploy_expiration_sec = 69638793;</code>
      *
@@ -1182,6 +1214,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     }
 
     private float autoDeployImpactedBaselineThreshold_;
+
     /**
      * <code>optional float auto_deploy_impacted_baseline_threshold = 292441667;</code>
      *
@@ -1191,6 +1224,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public boolean hasAutoDeployImpactedBaselineThreshold() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      * <code>optional float auto_deploy_impacted_baseline_threshold = 292441667;</code>
      *
@@ -1200,6 +1234,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public float getAutoDeployImpactedBaselineThreshold() {
       return autoDeployImpactedBaselineThreshold_;
     }
+
     /**
      * <code>optional float auto_deploy_impacted_baseline_threshold = 292441667;</code>
      *
@@ -1213,6 +1248,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       onChanged();
       return this;
     }
+
     /**
      * <code>optional float auto_deploy_impacted_baseline_threshold = 292441667;</code>
      *
@@ -1226,6 +1262,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     }
 
     private float autoDeployLoadThreshold_;
+
     /**
      * <code>optional float auto_deploy_load_threshold = 522227738;</code>
      *
@@ -1235,6 +1272,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public boolean hasAutoDeployLoadThreshold() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      * <code>optional float auto_deploy_load_threshold = 522227738;</code>
      *
@@ -1244,6 +1282,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public float getAutoDeployLoadThreshold() {
       return autoDeployLoadThreshold_;
     }
+
     /**
      * <code>optional float auto_deploy_load_threshold = 522227738;</code>
      *
@@ -1257,6 +1296,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       onChanged();
       return this;
     }
+
     /**
      * <code>optional float auto_deploy_load_threshold = 522227738;</code>
      *
@@ -1270,6 +1310,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     }
 
     private float detectionAbsoluteQps_;
+
     /**
      * <code>optional float detection_absolute_qps = 383123174;</code>
      *
@@ -1279,6 +1320,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public boolean hasDetectionAbsoluteQps() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      * <code>optional float detection_absolute_qps = 383123174;</code>
      *
@@ -1288,6 +1330,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public float getDetectionAbsoluteQps() {
       return detectionAbsoluteQps_;
     }
+
     /**
      * <code>optional float detection_absolute_qps = 383123174;</code>
      *
@@ -1301,6 +1344,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       onChanged();
       return this;
     }
+
     /**
      * <code>optional float detection_absolute_qps = 383123174;</code>
      *
@@ -1314,6 +1358,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     }
 
     private float detectionLoadThreshold_;
+
     /**
      * <code>optional float detection_load_threshold = 430499148;</code>
      *
@@ -1323,6 +1368,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public boolean hasDetectionLoadThreshold() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      * <code>optional float detection_load_threshold = 430499148;</code>
      *
@@ -1332,6 +1378,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public float getDetectionLoadThreshold() {
       return detectionLoadThreshold_;
     }
+
     /**
      * <code>optional float detection_load_threshold = 430499148;</code>
      *
@@ -1345,6 +1392,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       onChanged();
       return this;
     }
+
     /**
      * <code>optional float detection_load_threshold = 430499148;</code>
      *
@@ -1358,6 +1406,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     }
 
     private float detectionRelativeToBaselineQps_;
+
     /**
      * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
      *
@@ -1367,6 +1416,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public boolean hasDetectionRelativeToBaselineQps() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
      *
@@ -1376,6 +1426,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public float getDetectionRelativeToBaselineQps() {
       return detectionRelativeToBaselineQps_;
     }
+
     /**
      * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
      *
@@ -1389,6 +1440,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       onChanged();
       return this;
     }
+
     /**
      * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
      *
@@ -1402,6 +1454,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1416,6 +1469,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public boolean hasName() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -1438,6 +1492,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1460,6 +1515,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1481,6 +1537,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1498,6 +1555,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1568,6 +1626,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return trafficGranularityConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1586,6 +1645,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return trafficGranularityConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1606,6 +1666,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return trafficGranularityConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1634,6 +1695,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -1660,6 +1722,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -1687,6 +1750,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -1715,6 +1779,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -1740,6 +1805,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -1766,6 +1832,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -1792,6 +1859,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -1813,6 +1881,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -1834,6 +1903,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -1851,6 +1921,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         getTrafficGranularityConfigsBuilder(int index) {
       return getTrafficGranularityConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1871,6 +1942,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return trafficGranularityConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1893,6 +1965,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return java.util.Collections.unmodifiableList(trafficGranularityConfigs_);
       }
     }
+
     /**
      *
      *
@@ -1914,6 +1987,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
                   .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1936,6 +2010,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
                   .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *

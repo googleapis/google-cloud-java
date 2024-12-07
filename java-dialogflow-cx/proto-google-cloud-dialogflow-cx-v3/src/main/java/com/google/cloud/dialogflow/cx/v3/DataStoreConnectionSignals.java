@@ -36,6 +36,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals)
     DataStoreConnectionSignalsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataStoreConnectionSignals.newBuilder() to construct.
   private DataStoreConnectionSignals(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,6 +88,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The renderedPrompt.
      */
     java.lang.String getRenderedPrompt();
+
     /**
      *
      *
@@ -112,6 +114,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The modelOutput.
      */
     java.lang.String getModelOutput();
+
     /**
      *
      *
@@ -138,6 +141,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The model.
      */
     java.lang.String getModel();
+
     /**
      *
      *
@@ -152,6 +156,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      */
     com.google.protobuf.ByteString getModelBytes();
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.RewriterModelCallSignals)
       RewriterModelCallSignalsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RewriterModelCallSignals.newBuilder() to construct.
     private RewriterModelCallSignals(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -205,6 +211,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object renderedPrompt_ = "";
+
     /**
      *
      *
@@ -228,6 +235,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -256,6 +264,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object modelOutput_ = "";
+
     /**
      *
      *
@@ -279,6 +288,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -307,6 +317,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -331,6 +342,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -557,6 +569,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -796,6 +809,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       private int bitField0_;
 
       private java.lang.Object renderedPrompt_ = "";
+
       /**
        *
        *
@@ -818,6 +832,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -840,6 +855,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -861,6 +877,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -878,6 +895,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -902,6 +920,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
 
       private java.lang.Object modelOutput_ = "";
+
       /**
        *
        *
@@ -924,6 +943,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -946,6 +966,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -967,6 +988,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -984,6 +1006,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1008,6 +1031,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
 
       private java.lang.Object model_ = "";
+
       /**
        *
        *
@@ -1031,6 +1055,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1054,6 +1079,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1076,6 +1102,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1094,6 +1121,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1206,6 +1234,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The documentTitle.
      */
     java.lang.String getDocumentTitle();
+
     /**
      *
      *
@@ -1231,6 +1260,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The documentUri.
      */
     java.lang.String getDocumentUri();
+
     /**
      *
      *
@@ -1256,6 +1286,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The text.
      */
     java.lang.String getText();
+
     /**
      *
      *
@@ -1269,6 +1300,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      */
     com.google.protobuf.ByteString getTextBytes();
   }
+
   /**
    *
    *
@@ -1283,6 +1315,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SearchSnippet)
       SearchSnippetOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SearchSnippet.newBuilder() to construct.
     private SearchSnippet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1320,6 +1353,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object documentTitle_ = "";
+
     /**
      *
      *
@@ -1343,6 +1377,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -1371,6 +1406,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object documentUri_ = "";
+
     /**
      *
      *
@@ -1394,6 +1430,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1459,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object text_ = "";
+
     /**
      *
      *
@@ -1445,6 +1483,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -1655,6 +1694,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1883,6 +1923,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       private int bitField0_;
 
       private java.lang.Object documentTitle_ = "";
+
       /**
        *
        *
@@ -1905,6 +1946,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1927,6 +1969,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1948,6 +1991,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1965,6 +2009,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1989,6 +2034,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
 
       private java.lang.Object documentUri_ = "";
+
       /**
        *
        *
@@ -2011,6 +2057,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2033,6 +2080,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2054,6 +2102,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2071,6 +2120,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2095,6 +2145,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
 
       private java.lang.Object text_ = "";
+
       /**
        *
        *
@@ -2117,6 +2168,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2139,6 +2191,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2160,6 +2213,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2177,6 +2231,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2285,6 +2340,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The renderedPrompt.
      */
     java.lang.String getRenderedPrompt();
+
     /**
      *
      *
@@ -2310,6 +2366,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The modelOutput.
      */
     java.lang.String getModelOutput();
+
     /**
      *
      *
@@ -2336,6 +2393,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The model.
      */
     java.lang.String getModel();
+
     /**
      *
      *
@@ -2350,6 +2408,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      */
     com.google.protobuf.ByteString getModelBytes();
   }
+
   /**
    *
    *
@@ -2366,6 +2425,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.AnswerGenerationModelCallSignals)
       AnswerGenerationModelCallSignalsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AnswerGenerationModelCallSignals.newBuilder() to construct.
     private AnswerGenerationModelCallSignals(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -2405,6 +2465,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object renderedPrompt_ = "";
+
     /**
      *
      *
@@ -2428,6 +2489,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -2456,6 +2518,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object modelOutput_ = "";
+
     /**
      *
      *
@@ -2479,6 +2542,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -2507,6 +2571,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -2531,6 +2596,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -2761,6 +2827,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3008,6 +3075,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       private int bitField0_;
 
       private java.lang.Object renderedPrompt_ = "";
+
       /**
        *
        *
@@ -3030,6 +3098,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3052,6 +3121,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3073,6 +3143,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3090,6 +3161,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3114,6 +3186,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
 
       private java.lang.Object modelOutput_ = "";
+
       /**
        *
        *
@@ -3136,6 +3209,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3158,6 +3232,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3179,6 +3254,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3196,6 +3272,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3220,6 +3297,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
 
       private java.lang.Object model_ = "";
+
       /**
        *
        *
@@ -3243,6 +3321,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3266,6 +3345,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3288,6 +3368,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3306,6 +3387,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3419,6 +3501,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The text.
      */
     java.lang.String getText();
+
     /**
      *
      *
@@ -3444,6 +3527,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return A list containing the supportingIndices.
      */
     java.util.List<java.lang.Integer> getSupportingIndicesList();
+
     /**
      *
      *
@@ -3456,6 +3540,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The count of supportingIndices.
      */
     int getSupportingIndicesCount();
+
     /**
      *
      *
@@ -3470,6 +3555,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      */
     int getSupportingIndices(int index);
   }
+
   /**
    *
    *
@@ -3484,6 +3570,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.AnswerPart)
       AnswerPartOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AnswerPart.newBuilder() to construct.
     private AnswerPart(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3520,6 +3607,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object text_ = "";
+
     /**
      *
      *
@@ -3543,6 +3631,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -3571,6 +3660,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList supportingIndices_ = emptyIntList();
+
     /**
      *
      *
@@ -3586,6 +3676,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     public java.util.List<java.lang.Integer> getSupportingIndicesList() {
       return supportingIndices_;
     }
+
     /**
      *
      *
@@ -3600,6 +3691,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     public int getSupportingIndicesCount() {
       return supportingIndices_.size();
     }
+
     /**
      *
      *
@@ -3808,6 +3900,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4040,6 +4133,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       private int bitField0_;
 
       private java.lang.Object text_ = "";
+
       /**
        *
        *
@@ -4062,6 +4156,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4084,6 +4179,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4105,6 +4201,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4122,6 +4219,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4153,6 +4251,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -4168,6 +4267,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         supportingIndices_.makeImmutable();
         return supportingIndices_;
       }
+
       /**
        *
        *
@@ -4182,6 +4282,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       public int getSupportingIndicesCount() {
         return supportingIndices_.size();
       }
+
       /**
        *
        *
@@ -4197,6 +4298,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       public int getSupportingIndices(int index) {
         return supportingIndices_.getInt(index);
       }
+
       /**
        *
        *
@@ -4218,6 +4320,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4238,6 +4341,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4258,6 +4362,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4363,6 +4468,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return Whether the searchSnippet field is set.
      */
     boolean hasSearchSnippet();
+
     /**
      *
      *
@@ -4377,6 +4483,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The searchSnippet.
      */
     com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SearchSnippet getSearchSnippet();
+
     /**
      *
      *
@@ -4404,6 +4511,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      */
     int getSnippetIndex();
   }
+
   /**
    *
    *
@@ -4418,6 +4526,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.CitedSnippet)
       CitedSnippetOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CitedSnippet.newBuilder() to construct.
     private CitedSnippet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4451,6 +4560,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     public static final int SEARCH_SNIPPET_FIELD_NUMBER = 1;
     private com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SearchSnippet
         searchSnippet_;
+
     /**
      *
      *
@@ -4468,6 +4578,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     public boolean hasSearchSnippet() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4489,6 +4600,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
               .getDefaultInstance()
           : searchSnippet_;
     }
+
     /**
      *
      *
@@ -4511,6 +4623,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     public static final int SNIPPET_INDEX_FIELD_NUMBER = 2;
     private int snippetIndex_ = 0;
+
     /**
      *
      *
@@ -4709,6 +4822,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4941,6 +5055,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
               com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SearchSnippet.Builder,
               com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SearchSnippetOrBuilder>
           searchSnippetBuilder_;
+
       /**
        *
        *
@@ -4957,6 +5072,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       public boolean hasSearchSnippet() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -4981,6 +5097,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return searchSnippetBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5006,6 +5123,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5029,6 +5147,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5061,6 +5180,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -5082,6 +5202,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5099,6 +5220,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return getSearchSnippetFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5121,6 +5243,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
               : searchSnippet_;
         }
       }
+
       /**
        *
        *
@@ -5152,6 +5275,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
 
       private int snippetIndex_;
+
       /**
        *
        *
@@ -5167,6 +5291,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       public int getSnippetIndex() {
         return snippetIndex_;
       }
+
       /**
        *
        *
@@ -5186,6 +5311,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5291,6 +5417,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The enum numeric value on the wire for decision.
      */
     int getDecisionValue();
+
     /**
      *
      *
@@ -5321,6 +5448,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The enum numeric value on the wire for score.
      */
     int getScoreValue();
+
     /**
      *
      *
@@ -5338,6 +5466,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
             .GroundingScoreBucket
         getScore();
   }
+
   /**
    *
    *
@@ -5352,6 +5481,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.GroundingSignals)
       GroundingSignalsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GroundingSignals.newBuilder() to construct.
     private GroundingSignals(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5438,6 +5568,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
        * <code>GROUNDING_DECISION_UNSPECIFIED = 0;</code>
        */
       public static final int GROUNDING_DECISION_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -5448,6 +5579,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
        * <code>ACCEPTED_BY_GROUNDING = 1;</code>
        */
       public static final int ACCEPTED_BY_GROUNDING_VALUE = 1;
+
       /**
        *
        *
@@ -5632,6 +5764,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
        * <code>GROUNDING_SCORE_BUCKET_UNSPECIFIED = 0;</code>
        */
       public static final int GROUNDING_SCORE_BUCKET_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -5642,6 +5775,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
        * <code>VERY_LOW = 1;</code>
        */
       public static final int VERY_LOW_VALUE = 1;
+
       /**
        *
        *
@@ -5652,6 +5786,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
        * <code>LOW = 3;</code>
        */
       public static final int LOW_VALUE = 3;
+
       /**
        *
        *
@@ -5662,6 +5797,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
        * <code>MEDIUM = 4;</code>
        */
       public static final int MEDIUM_VALUE = 4;
+
       /**
        *
        *
@@ -5672,6 +5808,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
        * <code>HIGH = 5;</code>
        */
       public static final int HIGH_VALUE = 5;
+
       /**
        *
        *
@@ -5780,6 +5917,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     public static final int DECISION_FIELD_NUMBER = 1;
     private int decision_ = 0;
+
     /**
      *
      *
@@ -5797,6 +5935,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     public int getDecisionValue() {
       return decision_;
     }
+
     /**
      *
      *
@@ -5827,6 +5966,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     public static final int SCORE_FIELD_NUMBER = 2;
     private int score_ = 0;
+
     /**
      *
      *
@@ -5844,6 +5984,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     public int getScoreValue() {
       return score_;
     }
+
     /**
      *
      *
@@ -6062,6 +6203,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6274,6 +6416,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       private int bitField0_;
 
       private int decision_ = 0;
+
       /**
        *
        *
@@ -6291,6 +6434,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       public int getDecisionValue() {
         return decision_;
       }
+
       /**
        *
        *
@@ -6311,6 +6455,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6338,6 +6483,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
                 .GroundingDecision.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -6364,6 +6510,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6385,6 +6532,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
 
       private int score_ = 0;
+
       /**
        *
        *
@@ -6402,6 +6550,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       public int getScoreValue() {
         return score_;
       }
+
       /**
        *
        *
@@ -6422,6 +6571,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6449,6 +6599,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
                 .GroundingScoreBucket.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -6475,6 +6626,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6583,6 +6735,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The enum numeric value on the wire for decision.
      */
     int getDecisionValue();
+
     /**
      *
      *
@@ -6613,6 +6766,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The enum numeric value on the wire for bannedPhraseMatch.
      */
     int getBannedPhraseMatchValue();
+
     /**
      *
      *
@@ -6641,6 +6795,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      * @return The matchedBannedPhrase.
      */
     java.lang.String getMatchedBannedPhrase();
+
     /**
      *
      *
@@ -6654,6 +6809,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
      */
     com.google.protobuf.ByteString getMatchedBannedPhraseBytes();
   }
+
   /**
    *
    *
@@ -6668,6 +6824,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SafetySignals)
       SafetySignalsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SafetySignals.newBuilder() to construct.
     private SafetySignals(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6757,6 +6914,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
        * <code>SAFETY_DECISION_UNSPECIFIED = 0;</code>
        */
       public static final int SAFETY_DECISION_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -6767,6 +6925,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
        * <code>ACCEPTED_BY_SAFETY_CHECK = 1;</code>
        */
       public static final int ACCEPTED_BY_SAFETY_CHECK_VALUE = 1;
+
       /**
        *
        *
@@ -6930,6 +7089,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
        * <code>BANNED_PHRASE_MATCH_UNSPECIFIED = 0;</code>
        */
       public static final int BANNED_PHRASE_MATCH_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -6940,6 +7100,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
        * <code>BANNED_PHRASE_MATCH_NONE = 1;</code>
        */
       public static final int BANNED_PHRASE_MATCH_NONE_VALUE = 1;
+
       /**
        *
        *
@@ -6950,6 +7111,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
        * <code>BANNED_PHRASE_MATCH_QUERY = 2;</code>
        */
       public static final int BANNED_PHRASE_MATCH_QUERY_VALUE = 2;
+
       /**
        *
        *
@@ -7054,6 +7216,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     public static final int DECISION_FIELD_NUMBER = 1;
     private int decision_ = 0;
+
     /**
      *
      *
@@ -7071,6 +7234,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     public int getDecisionValue() {
       return decision_;
     }
+
     /**
      *
      *
@@ -7099,6 +7263,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     public static final int BANNED_PHRASE_MATCH_FIELD_NUMBER = 2;
     private int bannedPhraseMatch_ = 0;
+
     /**
      *
      *
@@ -7116,6 +7281,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     public int getBannedPhraseMatchValue() {
       return bannedPhraseMatch_;
     }
+
     /**
      *
      *
@@ -7147,6 +7313,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object matchedBannedPhrase_ = "";
+
     /**
      *
      *
@@ -7170,6 +7337,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -7392,6 +7560,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7616,6 +7785,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       private int bitField0_;
 
       private int decision_ = 0;
+
       /**
        *
        *
@@ -7633,6 +7803,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       public int getDecisionValue() {
         return decision_;
       }
+
       /**
        *
        *
@@ -7653,6 +7824,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7679,6 +7851,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
                 .SafetyDecision.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -7704,6 +7877,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7725,6 +7899,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
 
       private int bannedPhraseMatch_ = 0;
+
       /**
        *
        *
@@ -7742,6 +7917,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       public int getBannedPhraseMatchValue() {
         return bannedPhraseMatch_;
       }
+
       /**
        *
        *
@@ -7762,6 +7938,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7788,6 +7965,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
                 .BannedPhraseMatch.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -7814,6 +7992,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7835,6 +8014,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
 
       private java.lang.Object matchedBannedPhrase_ = "";
+
       /**
        *
        *
@@ -7857,6 +8037,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7879,6 +8060,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7900,6 +8082,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7917,6 +8100,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8012,6 +8196,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
   public static final int REWRITER_MODEL_CALL_SIGNALS_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.RewriterModelCallSignals
       rewriterModelCallSignals_;
+
   /**
    *
    *
@@ -8029,6 +8214,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
   public boolean hasRewriterModelCallSignals() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -8050,6 +8236,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
             .getDefaultInstance()
         : rewriterModelCallSignals_;
   }
+
   /**
    *
    *
@@ -8075,6 +8262,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rewrittenQuery_ = "";
+
   /**
    *
    *
@@ -8098,6 +8286,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -8127,6 +8316,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SearchSnippet>
       searchSnippets_;
+
   /**
    *
    *
@@ -8143,6 +8333,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       getSearchSnippetsList() {
     return searchSnippets_;
   }
+
   /**
    *
    *
@@ -8161,6 +8352,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       getSearchSnippetsOrBuilderList() {
     return searchSnippets_;
   }
+
   /**
    *
    *
@@ -8176,6 +8368,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
   public int getSearchSnippetsCount() {
     return searchSnippets_.size();
   }
+
   /**
    *
    *
@@ -8192,6 +8385,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       getSearchSnippets(int index) {
     return searchSnippets_.get(index);
   }
+
   /**
    *
    *
@@ -8213,6 +8407,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
   private com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals
           .AnswerGenerationModelCallSignals
       answerGenerationModelCallSignals_;
+
   /**
    *
    *
@@ -8230,6 +8425,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
   public boolean hasAnswerGenerationModelCallSignals() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -8252,6 +8448,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
             .AnswerGenerationModelCallSignals.getDefaultInstance()
         : answerGenerationModelCallSignals_;
   }
+
   /**
    *
    *
@@ -8277,6 +8474,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object answer_ = "";
+
   /**
    *
    *
@@ -8300,6 +8498,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -8329,6 +8528,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.AnswerPart>
       answerParts_;
+
   /**
    *
    *
@@ -8347,6 +8547,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       getAnswerPartsList() {
     return answerParts_;
   }
+
   /**
    *
    *
@@ -8367,6 +8568,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       getAnswerPartsOrBuilderList() {
     return answerParts_;
   }
+
   /**
    *
    *
@@ -8384,6 +8586,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
   public int getAnswerPartsCount() {
     return answerParts_.size();
   }
+
   /**
    *
    *
@@ -8402,6 +8605,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       int index) {
     return answerParts_.get(index);
   }
+
   /**
    *
    *
@@ -8426,6 +8630,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.CitedSnippet>
       citedSnippets_;
+
   /**
    *
    *
@@ -8443,6 +8648,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       getCitedSnippetsList() {
     return citedSnippets_;
   }
+
   /**
    *
    *
@@ -8462,6 +8668,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       getCitedSnippetsOrBuilderList() {
     return citedSnippets_;
   }
+
   /**
    *
    *
@@ -8478,6 +8685,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
   public int getCitedSnippetsCount() {
     return citedSnippets_.size();
   }
+
   /**
    *
    *
@@ -8495,6 +8703,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       int index) {
     return citedSnippets_.get(index);
   }
+
   /**
    *
    *
@@ -8516,6 +8725,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
   public static final int GROUNDING_SIGNALS_FIELD_NUMBER = 8;
   private com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.GroundingSignals
       groundingSignals_;
+
   /**
    *
    *
@@ -8533,6 +8743,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
   public boolean hasGroundingSignals() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -8554,6 +8765,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
             .getDefaultInstance()
         : groundingSignals_;
   }
+
   /**
    *
    *
@@ -8576,6 +8788,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
 
   public static final int SAFETY_SIGNALS_FIELD_NUMBER = 9;
   private com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SafetySignals safetySignals_;
+
   /**
    *
    *
@@ -8593,6 +8806,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
   public boolean hasSafetySignals() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -8614,6 +8828,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
             .getDefaultInstance()
         : safetySignals_;
   }
+
   /**
    *
    *
@@ -8898,6 +9113,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -9391,6 +9607,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
             com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals
                 .RewriterModelCallSignalsOrBuilder>
         rewriterModelCallSignalsBuilder_;
+
     /**
      *
      *
@@ -9407,6 +9624,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     public boolean hasRewriterModelCallSignals() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -9431,6 +9649,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return rewriterModelCallSignalsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9457,6 +9676,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9481,6 +9701,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9514,6 +9735,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -9535,6 +9757,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9553,6 +9776,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return getRewriterModelCallSignalsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9576,6 +9800,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
             : rewriterModelCallSignals_;
       }
     }
+
     /**
      *
      *
@@ -9610,6 +9835,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     }
 
     private java.lang.Object rewrittenQuery_ = "";
+
     /**
      *
      *
@@ -9632,6 +9858,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9654,6 +9881,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9675,6 +9903,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9692,6 +9921,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9755,6 +9985,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return searchSnippetsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -9773,6 +10004,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return searchSnippetsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -9792,6 +10024,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return searchSnippetsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -9818,6 +10051,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -9842,6 +10076,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -9867,6 +10102,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -9893,6 +10129,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -9916,6 +10153,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -9940,6 +10178,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -9965,6 +10204,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -9986,6 +10226,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -10007,6 +10248,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -10022,6 +10264,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         getSearchSnippetsBuilder(int index) {
       return getSearchSnippetsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -10041,6 +10284,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return searchSnippetsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -10062,6 +10306,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(searchSnippets_);
       }
     }
+
     /**
      *
      *
@@ -10080,6 +10325,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
               com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SearchSnippet
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10099,6 +10345,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
               com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SearchSnippet
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10148,6 +10395,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
             com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals
                 .AnswerGenerationModelCallSignalsOrBuilder>
         answerGenerationModelCallSignalsBuilder_;
+
     /**
      *
      *
@@ -10164,6 +10412,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     public boolean hasAnswerGenerationModelCallSignals() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -10189,6 +10438,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return answerGenerationModelCallSignalsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10216,6 +10466,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10240,6 +10491,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10274,6 +10526,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -10295,6 +10548,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10313,6 +10567,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return getAnswerGenerationModelCallSignalsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10336,6 +10591,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
             : answerGenerationModelCallSignals_;
       }
     }
+
     /**
      *
      *
@@ -10371,6 +10627,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     }
 
     private java.lang.Object answer_ = "";
+
     /**
      *
      *
@@ -10393,6 +10650,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10415,6 +10673,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10436,6 +10695,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10453,6 +10713,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10516,6 +10777,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return answerPartsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -10536,6 +10798,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return answerPartsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -10557,6 +10820,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return answerPartsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -10584,6 +10848,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -10610,6 +10875,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -10637,6 +10903,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -10664,6 +10931,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -10689,6 +10957,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -10715,6 +10984,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -10741,6 +11011,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -10764,6 +11035,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -10787,6 +11059,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -10804,6 +11077,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         getAnswerPartsBuilder(int index) {
       return getAnswerPartsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -10825,6 +11099,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return answerPartsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -10848,6 +11123,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(answerParts_);
       }
     }
+
     /**
      *
      *
@@ -10868,6 +11144,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
               com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.AnswerPart
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10889,6 +11166,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
               com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.AnswerPart
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10965,6 +11243,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return citedSnippetsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -10984,6 +11263,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return citedSnippetsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -11004,6 +11284,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return citedSnippetsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -11031,6 +11312,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -11056,6 +11338,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -11082,6 +11365,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -11109,6 +11393,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -11133,6 +11418,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -11158,6 +11444,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -11183,6 +11470,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -11205,6 +11493,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -11227,6 +11516,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -11243,6 +11533,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         getCitedSnippetsBuilder(int index) {
       return getCitedSnippetsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -11263,6 +11554,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return citedSnippetsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -11285,6 +11577,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(citedSnippets_);
       }
     }
+
     /**
      *
      *
@@ -11304,6 +11597,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
               com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.CitedSnippet
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -11324,6 +11618,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
               com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.CitedSnippet
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -11369,6 +11664,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
             com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.GroundingSignals.Builder,
             com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.GroundingSignalsOrBuilder>
         groundingSignalsBuilder_;
+
     /**
      *
      *
@@ -11385,6 +11681,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     public boolean hasGroundingSignals() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -11409,6 +11706,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return groundingSignalsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -11434,6 +11732,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11457,6 +11756,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11489,6 +11789,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -11510,6 +11811,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11527,6 +11829,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return getGroundingSignalsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11549,6 +11852,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
             : groundingSignals_;
       }
     }
+
     /**
      *
      *
@@ -11586,6 +11890,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
             com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SafetySignals.Builder,
             com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SafetySignalsOrBuilder>
         safetySignalsBuilder_;
+
     /**
      *
      *
@@ -11602,6 +11907,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
     public boolean hasSafetySignals() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -11626,6 +11932,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
         return safetySignalsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -11651,6 +11958,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11674,6 +11982,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11706,6 +12015,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -11727,6 +12037,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11744,6 +12055,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
       onChanged();
       return getSafetySignalsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11766,6 +12078,7 @@ public final class DataStoreConnectionSignals extends com.google.protobuf.Genera
             : safetySignals_;
       }
     }
+
     /**
      *
      *

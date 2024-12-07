@@ -37,6 +37,7 @@ public interface FulfillIntentRequestOrBuilder
    * @return Whether the matchIntentRequest field is set.
    */
   boolean hasMatchIntentRequest();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface FulfillIntentRequestOrBuilder
    * @return The matchIntentRequest.
    */
   com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest getMatchIntentRequest();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface FulfillIntentRequestOrBuilder
    * @return Whether the match field is set.
    */
   boolean hasMatch();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface FulfillIntentRequestOrBuilder
    * @return The match.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Match getMatch();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface FulfillIntentRequestOrBuilder
    * @return Whether the outputAudioConfig field is set.
    */
   boolean hasOutputAudioConfig();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface FulfillIntentRequestOrBuilder
    * @return The outputAudioConfig.
    */
   com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig getOutputAudioConfig();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class ListAutonomousDatabaseBackupsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsRequest)
     ListAutonomousDatabaseBackupsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListAutonomousDatabaseBackupsRequest.newBuilder() to construct.
   private ListAutonomousDatabaseBackupsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ListAutonomousDatabaseBackupsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class ListAutonomousDatabaseBackupsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class ListAutonomousDatabaseBackupsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class ListAutonomousDatabaseBackupsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -189,6 +194,7 @@ public final class ListAutonomousDatabaseBackupsRequest
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -211,6 +217,7 @@ public final class ListAutonomousDatabaseBackupsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public final class ListAutonomousDatabaseBackupsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -446,6 +454,7 @@ public final class ListAutonomousDatabaseBackupsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -683,6 +692,7 @@ public final class ListAutonomousDatabaseBackupsRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -708,6 +718,7 @@ public final class ListAutonomousDatabaseBackupsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -733,6 +744,7 @@ public final class ListAutonomousDatabaseBackupsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -757,6 +769,7 @@ public final class ListAutonomousDatabaseBackupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +790,7 @@ public final class ListAutonomousDatabaseBackupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +818,7 @@ public final class ListAutonomousDatabaseBackupsRequest
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -832,6 +847,7 @@ public final class ListAutonomousDatabaseBackupsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -860,6 +876,7 @@ public final class ListAutonomousDatabaseBackupsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -887,6 +904,7 @@ public final class ListAutonomousDatabaseBackupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +928,7 @@ public final class ListAutonomousDatabaseBackupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +959,7 @@ public final class ListAutonomousDatabaseBackupsRequest
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -957,6 +977,7 @@ public final class ListAutonomousDatabaseBackupsRequest
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -978,6 +999,7 @@ public final class ListAutonomousDatabaseBackupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1021,7 @@ public final class ListAutonomousDatabaseBackupsRequest
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1021,6 +1044,7 @@ public final class ListAutonomousDatabaseBackupsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1043,6 +1067,7 @@ public final class ListAutonomousDatabaseBackupsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1089,7 @@ public final class ListAutonomousDatabaseBackupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1107,7 @@ public final class ListAutonomousDatabaseBackupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

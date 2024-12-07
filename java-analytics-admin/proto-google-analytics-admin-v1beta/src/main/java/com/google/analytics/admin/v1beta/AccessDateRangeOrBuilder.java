@@ -39,6 +39,7 @@ public interface AccessDateRangeOrBuilder
    * @return The startDate.
    */
   java.lang.String getStartDate();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface AccessDateRangeOrBuilder
    * @return The endDate.
    */
   java.lang.String getEndDate();
+
   /**
    *
    *

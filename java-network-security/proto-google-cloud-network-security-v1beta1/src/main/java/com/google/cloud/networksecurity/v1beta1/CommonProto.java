@@ -41,24 +41,22 @@ public final class CommonProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n1google/cloud/networksecurity/v1beta1/c"
-          + "ommon.proto\022$google.cloud.networksecurit"
-          + "y.v1beta1\032\037google/api/field_behavior.pro"
-          + "to\032\037google/protobuf/timestamp.proto\"\200\002\n\021"
-          + "OperationMetadata\0224\n\013create_time\030\001 \001(\0132\032"
-          + ".google.protobuf.TimestampB\003\340A\003\0221\n\010end_t"
-          + "ime\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340"
-          + "A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340"
-          + "A\003\022\033\n\016status_message\030\005 \001(\tB\003\340A\003\022#\n\026reque"
-          + "sted_cancellation\030\006 \001(\010B\003\340A\003\022\030\n\013api_vers"
-          + "ion\030\007 \001(\tB\003\340A\003B\205\002\n(com.google.cloud.netw"
-          + "orksecurity.v1beta1B\013CommonProtoP\001ZRclou"
-          + "d.google.com/go/networksecurity/apiv1bet"
-          + "a1/networksecuritypb;networksecuritypb\252\002"
+      "\n"
+          + "1google/cloud/networksecurity/v1beta1/common.proto\022$google.cloud.networksecurit"
+          + "y.v1beta1\032\037google/api/field_behavior.proto\032\037google/protobuf/timestamp.proto\"\200\002\n"
+          + "\021OperationMetadata\0224\n"
+          + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
+          + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
+          + "\006target\030\003 \001(\tB\003\340A\003\022\021\n"
+          + "\004verb\030\004 \001(\tB\003\340A\003\022\033\n"
+          + "\016status_message\030\005 \001(\tB\003\340A\003\022#\n"
+          + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
+          + "\013api_version\030\007 \001(\tB\003\340A\003B\205\002\n"
+          + "(com.google.cloud.networksecurity.v1beta1B\013CommonProtoP\001ZRclou"
+          + "d.google.com/go/networksecurity/apiv1beta1/networksecuritypb;networksecuritypb\252\002"
           + "$Google.Cloud.NetworkSecurity.V1Beta1\312\002$"
           + "Google\\Cloud\\NetworkSecurity\\V1beta1\352\002\'G"
-          + "oogle::Cloud::NetworkSecurity::V1beta1b\006"
-          + "proto3"
+          + "oogle::Cloud::NetworkSecurity::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

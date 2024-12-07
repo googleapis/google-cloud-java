@@ -34,6 +34,7 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.protobuf.Struct rows = 1;</code>
    */
   java.util.List<com.google.protobuf.Struct> getRowsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.protobuf.Struct rows = 1;</code>
    */
   com.google.protobuf.Struct getRows(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.protobuf.Struct rows = 1;</code>
    */
   int getRowsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.protobuf.Struct rows = 1;</code>
    */
   java.util.List<? extends com.google.protobuf.StructOrBuilder> getRowsOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface QueryResultOrBuilder
    * @return Whether the schema field is set.
    */
   boolean hasSchema();
+
   /**
    *
    *
@@ -99,6 +104,7 @@ public interface QueryResultOrBuilder
    * @return The schema.
    */
   com.google.cloud.asset.v1.TableSchema getSchema();
+
   /**
    *
    *
@@ -122,6 +128,7 @@ public interface QueryResultOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

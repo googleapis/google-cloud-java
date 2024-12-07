@@ -37,6 +37,7 @@ public interface ComparisonMetadataOrBuilder
    * @return The apiName.
    */
   java.lang.String getApiName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ComparisonMetadataOrBuilder
    * @return The uiName.
    */
   java.lang.String getUiName();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface ComparisonMetadataOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

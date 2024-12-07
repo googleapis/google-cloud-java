@@ -36,6 +36,7 @@ public interface ServerConfigOrBuilder
    * </code>
    */
   int getChannelsCount();
+
   /**
    *
    *
@@ -48,9 +49,11 @@ public interface ServerConfigOrBuilder
    * </code>
    */
   boolean containsChannels(java.lang.String key);
+
   /** Use {@link #getChannelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ChannelConfig> getChannels();
+
   /**
    *
    *
@@ -63,6 +66,7 @@ public interface ServerConfigOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ChannelConfig> getChannelsMap();
+
   /**
    *
    *
@@ -79,6 +83,7 @@ public interface ServerConfigOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.edgecontainer.v1.ChannelConfig defaultValue);
+
   /**
    *
    *
@@ -104,6 +109,7 @@ public interface ServerConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.edgecontainer.v1.Version> getVersionsList();
+
   /**
    *
    *
@@ -116,6 +122,7 @@ public interface ServerConfigOrBuilder
    * </code>
    */
   com.google.cloud.edgecontainer.v1.Version getVersions(int index);
+
   /**
    *
    *
@@ -128,6 +135,7 @@ public interface ServerConfigOrBuilder
    * </code>
    */
   int getVersionsCount();
+
   /**
    *
    *
@@ -141,6 +149,7 @@ public interface ServerConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgecontainer.v1.VersionOrBuilder>
       getVersionsOrBuilderList();
+
   /**
    *
    *
@@ -166,6 +175,7 @@ public interface ServerConfigOrBuilder
    * @return The defaultVersion.
    */
   java.lang.String getDefaultVersion();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface FeatureResourceStateOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

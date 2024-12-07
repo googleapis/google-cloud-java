@@ -40,6 +40,7 @@ public interface ListFindingTypeStatsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

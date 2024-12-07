@@ -38,6 +38,7 @@ public interface DeleteTableDataProfileRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

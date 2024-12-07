@@ -34,6 +34,7 @@ public interface ListWorkflowsResponseOrBuilder
    * <code>repeated .google.cloud.workflows.v1beta.Workflow workflows = 1;</code>
    */
   java.util.List<com.google.cloud.workflows.v1beta.Workflow> getWorkflowsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListWorkflowsResponseOrBuilder
    * <code>repeated .google.cloud.workflows.v1beta.Workflow workflows = 1;</code>
    */
   com.google.cloud.workflows.v1beta.Workflow getWorkflows(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListWorkflowsResponseOrBuilder
    * <code>repeated .google.cloud.workflows.v1beta.Workflow workflows = 1;</code>
    */
   int getWorkflowsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListWorkflowsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.workflows.v1beta.WorkflowOrBuilder>
       getWorkflowsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListWorkflowsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListWorkflowsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListWorkflowsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListWorkflowsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

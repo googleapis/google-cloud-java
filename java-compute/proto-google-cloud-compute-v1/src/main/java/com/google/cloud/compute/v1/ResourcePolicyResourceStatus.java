@@ -33,6 +33,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourcePolicyResourceStatus)
     ResourcePolicyResourceStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourcePolicyResourceStatus.newBuilder() to construct.
   private ResourcePolicyResourceStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
   public static final int INSTANCE_SCHEDULE_POLICY_FIELD_NUMBER = 344877104;
   private com.google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
       instanceSchedulePolicy_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
   public boolean hasInstanceSchedulePolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
             .getDefaultInstance()
         : instanceSchedulePolicy_;
   }
+
   /**
    *
    *
@@ -291,6 +295,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -501,6 +506,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
             com.google.cloud.compute.v1
                 .ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuilder>
         instanceSchedulePolicyBuilder_;
+
     /**
      *
      *
@@ -517,6 +523,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
     public boolean hasInstanceSchedulePolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -541,6 +548,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
         return instanceSchedulePolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -567,6 +575,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -590,6 +599,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +656,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +675,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
       onChanged();
       return getInstanceSchedulePolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -686,6 +699,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
             : instanceSchedulePolicy_;
       }
     }
+
     /**
      *
      *

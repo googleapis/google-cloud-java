@@ -36,6 +36,7 @@ public interface RouterNatRuleActionOrBuilder
    * @return A list containing the sourceNatActiveIps.
    */
   java.util.List<java.lang.String> getSourceNatActiveIpsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RouterNatRuleActionOrBuilder
    * @return The count of sourceNatActiveIps.
    */
   int getSourceNatActiveIpsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface RouterNatRuleActionOrBuilder
    * @return The sourceNatActiveIps at the given index.
    */
   java.lang.String getSourceNatActiveIps(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface RouterNatRuleActionOrBuilder
    * @return A list containing the sourceNatActiveRanges.
    */
   java.util.List<java.lang.String> getSourceNatActiveRangesList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface RouterNatRuleActionOrBuilder
    * @return The count of sourceNatActiveRanges.
    */
   int getSourceNatActiveRangesCount();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface RouterNatRuleActionOrBuilder
    * @return The sourceNatActiveRanges at the given index.
    */
   java.lang.String getSourceNatActiveRanges(int index);
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public interface RouterNatRuleActionOrBuilder
    * @return A list containing the sourceNatDrainIps.
    */
   java.util.List<java.lang.String> getSourceNatDrainIpsList();
+
   /**
    *
    *
@@ -150,6 +157,7 @@ public interface RouterNatRuleActionOrBuilder
    * @return The count of sourceNatDrainIps.
    */
   int getSourceNatDrainIpsCount();
+
   /**
    *
    *
@@ -163,6 +171,7 @@ public interface RouterNatRuleActionOrBuilder
    * @return The sourceNatDrainIps at the given index.
    */
   java.lang.String getSourceNatDrainIps(int index);
+
   /**
    *
    *
@@ -189,6 +198,7 @@ public interface RouterNatRuleActionOrBuilder
    * @return A list containing the sourceNatDrainRanges.
    */
   java.util.List<java.lang.String> getSourceNatDrainRangesList();
+
   /**
    *
    *
@@ -201,6 +211,7 @@ public interface RouterNatRuleActionOrBuilder
    * @return The count of sourceNatDrainRanges.
    */
   int getSourceNatDrainRangesCount();
+
   /**
    *
    *
@@ -214,6 +225,7 @@ public interface RouterNatRuleActionOrBuilder
    * @return The sourceNatDrainRanges at the given index.
    */
   java.lang.String getSourceNatDrainRanges(int index);
+
   /**
    *
    *

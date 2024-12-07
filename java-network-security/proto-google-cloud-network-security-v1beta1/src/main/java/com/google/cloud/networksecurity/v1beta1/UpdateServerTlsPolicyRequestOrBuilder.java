@@ -42,6 +42,7 @@ public interface UpdateServerTlsPolicyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdateServerTlsPolicyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface UpdateServerTlsPolicyRequestOrBuilder
    * @return Whether the serverTlsPolicy field is set.
    */
   boolean hasServerTlsPolicy();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface UpdateServerTlsPolicyRequestOrBuilder
    * @return The serverTlsPolicy.
    */
   com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy getServerTlsPolicy();
+
   /**
    *
    *

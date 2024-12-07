@@ -35,6 +35,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
   java.util.List<com.google.cloud.language.v1beta2.Sentence> getSentencesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
   com.google.cloud.language.v1beta2.Sentence getSentences(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
   int getSentencesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface AnnotateTextResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v1beta2.SentenceOrBuilder>
       getSentencesOrBuilderList();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
   java.util.List<com.google.cloud.language.v1beta2.Token> getTokensList();
+
   /**
    *
    *
@@ -105,6 +110,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
   com.google.cloud.language.v1beta2.Token getTokens(int index);
+
   /**
    *
    *
@@ -117,6 +123,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
   int getTokensCount();
+
   /**
    *
    *
@@ -130,6 +137,7 @@ public interface AnnotateTextResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v1beta2.TokenOrBuilder>
       getTokensOrBuilderList();
+
   /**
    *
    *
@@ -155,6 +163,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 3;</code>
    */
   java.util.List<com.google.cloud.language.v1beta2.Entity> getEntitiesList();
+
   /**
    *
    *
@@ -167,6 +176,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 3;</code>
    */
   com.google.cloud.language.v1beta2.Entity getEntities(int index);
+
   /**
    *
    *
@@ -179,6 +189,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 3;</code>
    */
   int getEntitiesCount();
+
   /**
    *
    *
@@ -192,6 +203,7 @@ public interface AnnotateTextResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v1beta2.EntityOrBuilder>
       getEntitiesOrBuilderList();
+
   /**
    *
    *
@@ -218,6 +230,7 @@ public interface AnnotateTextResponseOrBuilder
    * @return Whether the documentSentiment field is set.
    */
   boolean hasDocumentSentiment();
+
   /**
    *
    *
@@ -231,6 +244,7 @@ public interface AnnotateTextResponseOrBuilder
    * @return The documentSentiment.
    */
   com.google.cloud.language.v1beta2.Sentiment getDocumentSentiment();
+
   /**
    *
    *
@@ -258,6 +272,7 @@ public interface AnnotateTextResponseOrBuilder
    * @return The language.
    */
   java.lang.String getLanguage();
+
   /**
    *
    *
@@ -284,6 +299,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.ClassificationCategory categories = 6;</code>
    */
   java.util.List<com.google.cloud.language.v1beta2.ClassificationCategory> getCategoriesList();
+
   /**
    *
    *
@@ -294,6 +310,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.ClassificationCategory categories = 6;</code>
    */
   com.google.cloud.language.v1beta2.ClassificationCategory getCategories(int index);
+
   /**
    *
    *
@@ -304,6 +321,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.ClassificationCategory categories = 6;</code>
    */
   int getCategoriesCount();
+
   /**
    *
    *
@@ -315,6 +333,7 @@ public interface AnnotateTextResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v1beta2.ClassificationCategoryOrBuilder>
       getCategoriesOrBuilderList();
+
   /**
    *
    *
@@ -339,6 +358,7 @@ public interface AnnotateTextResponseOrBuilder
    */
   java.util.List<com.google.cloud.language.v1beta2.ClassificationCategory>
       getModerationCategoriesList();
+
   /**
    *
    *
@@ -350,6 +370,7 @@ public interface AnnotateTextResponseOrBuilder
    * </code>
    */
   com.google.cloud.language.v1beta2.ClassificationCategory getModerationCategories(int index);
+
   /**
    *
    *
@@ -361,6 +382,7 @@ public interface AnnotateTextResponseOrBuilder
    * </code>
    */
   int getModerationCategoriesCount();
+
   /**
    *
    *
@@ -373,6 +395,7 @@ public interface AnnotateTextResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v1beta2.ClassificationCategoryOrBuilder>
       getModerationCategoriesOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertRegionTargetTcpProxyRequest)
     InsertRegionTargetTcpProxyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertRegionTargetTcpProxyRequest.newBuilder() to construct.
   private InsertRegionTargetTcpProxyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +226,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
 
   public static final int TARGET_TCP_PROXY_RESOURCE_FIELD_NUMBER = 145913931;
   private com.google.cloud.compute.v1.TargetTcpProxy targetTcpProxyResource_;
+
   /**
    *
    *
@@ -262,6 +271,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
   public boolean hasTargetTcpProxyResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -281,6 +291,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
         ? com.google.cloud.compute.v1.TargetTcpProxy.getDefaultInstance()
         : targetTcpProxyResource_;
   }
+
   /**
    *
    *
@@ -498,6 +509,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -749,6 +761,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -773,6 +786,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -797,6 +811,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -820,6 +835,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +855,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +882,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -889,6 +907,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -913,6 +932,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -936,6 +956,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +976,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1003,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -995,6 +1018,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1017,6 +1041,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1064,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1060,6 +1086,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1104,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1134,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
             com.google.cloud.compute.v1.TargetTcpProxy.Builder,
             com.google.cloud.compute.v1.TargetTcpProxyOrBuilder>
         targetTcpProxyResourceBuilder_;
+
     /**
      *
      *
@@ -1122,6 +1151,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
     public boolean hasTargetTcpProxyResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1144,6 +1174,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
         return targetTcpProxyResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1168,6 +1199,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1190,6 +1222,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1253,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1275,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1257,6 +1292,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
       onChanged();
       return getTargetTcpProxyResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1278,6 +1314,7 @@ public final class InsertRegionTargetTcpProxyRequest extends com.google.protobuf
             : targetTcpProxyResource_;
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.WorkloadALTSConfig)
     WorkloadALTSConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WorkloadALTSConfig.newBuilder() to construct.
   private WorkloadALTSConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int ENABLE_ALTS_FIELD_NUMBER = 1;
   private com.google.protobuf.BoolValue enableAlts_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasEnableAlts() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.BoolValue getEnableAlts() {
     return enableAlts_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableAlts_;
   }
+
   /**
    *
    *
@@ -287,6 +291,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -490,6 +495,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         enableAltsBuilder_;
+
     /**
      *
      *
@@ -509,6 +515,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasEnableAlts() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
         return enableAltsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -561,6 +569,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -617,6 +627,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -641,6 +652,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +672,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getEnableAltsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
             : enableAlts_;
       }
     }
+
     /**
      *
      *

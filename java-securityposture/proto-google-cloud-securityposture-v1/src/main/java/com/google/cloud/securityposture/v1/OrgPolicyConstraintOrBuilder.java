@@ -36,6 +36,7 @@ public interface OrgPolicyConstraintOrBuilder
    * @return The cannedConstraintId.
    */
   java.lang.String getCannedConstraintId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface OrgPolicyConstraintOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.securityposture.v1.PolicyRule> getPolicyRulesList();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface OrgPolicyConstraintOrBuilder
    * </code>
    */
   com.google.cloud.securityposture.v1.PolicyRule getPolicyRules(int index);
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface OrgPolicyConstraintOrBuilder
    * </code>
    */
   int getPolicyRulesCount();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface OrgPolicyConstraintOrBuilder
    */
   java.util.List<? extends com.google.cloud.securityposture.v1.PolicyRuleOrBuilder>
       getPolicyRulesOrBuilderList();
+
   /**
    *
    *

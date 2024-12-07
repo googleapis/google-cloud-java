@@ -40,6 +40,7 @@ public interface ExportDataRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface ExportDataRequestOrBuilder
    * @return Whether the exportConfig field is set.
    */
   boolean hasExportConfig();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface ExportDataRequestOrBuilder
    * @return The exportConfig.
    */
   com.google.cloud.aiplatform.v1.ExportDataConfig getExportConfig();
+
   /**
    *
    *

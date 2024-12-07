@@ -34,6 +34,7 @@ public interface ListUserEventsResponseOrBuilder
    * <code>repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events = 1;</code>
    */
   java.util.List<com.google.cloud.recommendationengine.v1beta1.UserEvent> getUserEventsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListUserEventsResponseOrBuilder
    * <code>repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events = 1;</code>
    */
   com.google.cloud.recommendationengine.v1beta1.UserEvent getUserEvents(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListUserEventsResponseOrBuilder
    * <code>repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events = 1;</code>
    */
   int getUserEventsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListUserEventsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.recommendationengine.v1beta1.UserEventOrBuilder>
       getUserEventsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListUserEventsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

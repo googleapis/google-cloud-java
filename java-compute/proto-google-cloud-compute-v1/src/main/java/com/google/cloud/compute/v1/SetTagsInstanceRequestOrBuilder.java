@@ -36,6 +36,7 @@ public interface SetTagsInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SetTagsInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface SetTagsInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface SetTagsInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface SetTagsInstanceRequestOrBuilder
    * @return Whether the tagsResource field is set.
    */
   boolean hasTagsResource();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface SetTagsInstanceRequestOrBuilder
    * @return The tagsResource.
    */
   com.google.cloud.compute.v1.Tags getTagsResource();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface SetTagsInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

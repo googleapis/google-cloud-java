@@ -33,6 +33,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.BigQueryIODetails)
     BigQueryIODetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigQueryIODetails.newBuilder() to construct.
   private BigQueryIODetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object table_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataset_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
+
   /**
    *
    *
@@ -246,6 +254,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -456,6 +465,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -684,6 +694,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object table_ = "";
+
     /**
      *
      *
@@ -706,6 +717,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -728,6 +740,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -749,6 +762,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +780,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +805,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object dataset_ = "";
+
     /**
      *
      *
@@ -812,6 +828,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -855,6 +873,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +891,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +916,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -918,6 +939,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -940,6 +962,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -961,6 +984,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1002,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1027,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object query_ = "";
+
     /**
      *
      *
@@ -1024,6 +1050,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1073,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1067,6 +1095,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1113,7 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

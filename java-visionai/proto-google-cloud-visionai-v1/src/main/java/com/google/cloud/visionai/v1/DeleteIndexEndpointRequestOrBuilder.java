@@ -38,6 +38,7 @@ public interface DeleteIndexEndpointRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

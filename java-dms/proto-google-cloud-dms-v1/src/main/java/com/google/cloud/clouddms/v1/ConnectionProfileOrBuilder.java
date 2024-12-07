@@ -37,6 +37,7 @@ public interface ConnectionProfileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ConnectionProfileOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface ConnectionProfileOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface ConnectionProfileOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -167,9 +173,11 @@ public interface ConnectionProfileOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface ConnectionProfileOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -202,6 +211,7 @@ public interface ConnectionProfileOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -229,6 +239,7 @@ public interface ConnectionProfileOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -254,6 +265,7 @@ public interface ConnectionProfileOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -279,6 +291,7 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the mysql field is set.
    */
   boolean hasMysql();
+
   /**
    *
    *
@@ -291,6 +304,7 @@ public interface ConnectionProfileOrBuilder
    * @return The mysql.
    */
   com.google.cloud.clouddms.v1.MySqlConnectionProfile getMysql();
+
   /**
    *
    *
@@ -314,6 +328,7 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the postgresql field is set.
    */
   boolean hasPostgresql();
+
   /**
    *
    *
@@ -326,6 +341,7 @@ public interface ConnectionProfileOrBuilder
    * @return The postgresql.
    */
   com.google.cloud.clouddms.v1.PostgreSqlConnectionProfile getPostgresql();
+
   /**
    *
    *
@@ -349,6 +365,7 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the oracle field is set.
    */
   boolean hasOracle();
+
   /**
    *
    *
@@ -361,6 +378,7 @@ public interface ConnectionProfileOrBuilder
    * @return The oracle.
    */
   com.google.cloud.clouddms.v1.OracleConnectionProfile getOracle();
+
   /**
    *
    *
@@ -384,6 +402,7 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the cloudsql field is set.
    */
   boolean hasCloudsql();
+
   /**
    *
    *
@@ -396,6 +415,7 @@ public interface ConnectionProfileOrBuilder
    * @return The cloudsql.
    */
   com.google.cloud.clouddms.v1.CloudSqlConnectionProfile getCloudsql();
+
   /**
    *
    *
@@ -419,6 +439,7 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the alloydb field is set.
    */
   boolean hasAlloydb();
+
   /**
    *
    *
@@ -431,6 +452,7 @@ public interface ConnectionProfileOrBuilder
    * @return The alloydb.
    */
   com.google.cloud.clouddms.v1.AlloyDbConnectionProfile getAlloydb();
+
   /**
    *
    *
@@ -454,6 +476,7 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -466,6 +489,7 @@ public interface ConnectionProfileOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -489,6 +513,7 @@ public interface ConnectionProfileOrBuilder
    * @return The enum numeric value on the wire for provider.
    */
   int getProviderValue();
+
   /**
    *
    *

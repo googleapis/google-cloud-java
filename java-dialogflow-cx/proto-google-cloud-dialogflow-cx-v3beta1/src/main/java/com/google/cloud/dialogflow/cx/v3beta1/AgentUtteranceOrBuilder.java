@@ -36,6 +36,7 @@ public interface AgentUtteranceOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.conversions.v1beta.CreateConversionSourceRequest)
     CreateConversionSourceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateConversionSourceRequest.newBuilder() to construct.
   private CreateConversionSourceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
 
   public static final int CONVERSION_SOURCE_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.conversions.v1beta.ConversionSource conversionSource_;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
   public boolean hasConversionSource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
         ? com.google.shopping.merchant.conversions.v1beta.ConversionSource.getDefaultInstance()
         : conversionSource_;
   }
+
   /**
    *
    *
@@ -363,6 +369,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -590,6 +597,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -615,6 +623,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -640,6 +649,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -664,6 +674,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -684,6 +695,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +728,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
             com.google.shopping.merchant.conversions.v1beta.ConversionSource.Builder,
             com.google.shopping.merchant.conversions.v1beta.ConversionSourceOrBuilder>
         conversionSourceBuilder_;
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
     public boolean hasConversionSource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -756,6 +770,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
         return conversionSourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -782,6 +797,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +821,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +855,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +878,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +897,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
       onChanged();
       return getConversionSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -900,6 +920,7 @@ public final class CreateConversionSourceRequest extends com.google.protobuf.Gen
             : conversionSource_;
       }
     }
+
     /**
      *
      *

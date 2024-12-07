@@ -33,6 +33,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.container.v1.OperationProgress)
     OperationProgressOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OperationProgress.newBuilder() to construct.
   private OperationProgress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -108,6 +110,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
      * @return Whether the intValue field is set.
      */
     boolean hasIntValue();
+
     /**
      *
      *
@@ -133,6 +136,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
      * @return Whether the doubleValue field is set.
      */
     boolean hasDoubleValue();
+
     /**
      *
      *
@@ -158,6 +162,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
      * @return Whether the stringValue field is set.
      */
     boolean hasStringValue();
+
     /**
      *
      *
@@ -170,6 +175,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
      * @return The stringValue.
      */
     java.lang.String getStringValue();
+
     /**
      *
      *
@@ -185,6 +191,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
 
     com.google.container.v1.OperationProgress.Metric.ValueCase getValueCase();
   }
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.container.v1.OperationProgress.Metric)
       MetricOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Metric.newBuilder() to construct.
     private Metric(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -247,6 +255,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       private ValueCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -285,6 +294,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -308,6 +318,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
+
     /**
      *
      *
@@ -333,6 +344,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int INT_VALUE_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -348,6 +360,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     public boolean hasIntValue() {
       return valueCase_ == 2;
     }
+
     /**
      *
      *
@@ -368,6 +381,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int DOUBLE_VALUE_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -383,6 +397,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     public boolean hasDoubleValue() {
       return valueCase_ == 3;
     }
+
     /**
      *
      *
@@ -403,6 +418,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int STRING_VALUE_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -417,6 +433,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     public boolean hasStringValue() {
       return valueCase_ == 4;
     }
+
     /**
      *
      *
@@ -444,6 +461,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
+
     /**
      *
      *
@@ -688,6 +706,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -939,6 +958,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -961,6 +981,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -983,6 +1004,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1004,6 +1026,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1021,6 +1044,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1058,6 +1082,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       public boolean hasIntValue() {
         return valueCase_ == 2;
       }
+
       /**
        *
        *
@@ -1075,6 +1100,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         }
         return 0L;
       }
+
       /**
        *
        *
@@ -1094,6 +1120,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1128,6 +1155,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       public boolean hasDoubleValue() {
         return valueCase_ == 3;
       }
+
       /**
        *
        *
@@ -1145,6 +1173,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         }
         return 0D;
       }
+
       /**
        *
        *
@@ -1164,6 +1193,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1199,6 +1229,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       public boolean hasStringValue() {
         return valueCase_ == 4;
       }
+
       /**
        *
        *
@@ -1227,6 +1258,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1255,6 +1287,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1276,6 +1309,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1295,6 +1329,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -1386,6 +1421,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1410,6 +1446,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1437,6 +1474,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
 
   public static final int STATUS_FIELD_NUMBER = 2;
   private int status_ = 0;
+
   /**
    *
    *
@@ -1453,6 +1491,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   public int getStatusValue() {
     return status_;
   }
+
   /**
    *
    *
@@ -1476,6 +1515,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1.OperationProgress.Metric> metrics_;
+
   /**
    *
    *
@@ -1494,6 +1534,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.container.v1.OperationProgress.Metric> getMetricsList() {
     return metrics_;
   }
+
   /**
    *
    *
@@ -1513,6 +1554,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       getMetricsOrBuilderList() {
     return metrics_;
   }
+
   /**
    *
    *
@@ -1531,6 +1573,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   public int getMetricsCount() {
     return metrics_.size();
   }
+
   /**
    *
    *
@@ -1549,6 +1592,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   public com.google.container.v1.OperationProgress.Metric getMetrics(int index) {
     return metrics_.get(index);
   }
+
   /**
    *
    *
@@ -1572,6 +1616,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1.OperationProgress> stages_;
+
   /**
    *
    *
@@ -1585,6 +1630,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.container.v1.OperationProgress> getStagesList() {
     return stages_;
   }
+
   /**
    *
    *
@@ -1599,6 +1645,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       getStagesOrBuilderList() {
     return stages_;
   }
+
   /**
    *
    *
@@ -1612,6 +1659,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   public int getStagesCount() {
     return stages_.size();
   }
+
   /**
    *
    *
@@ -1625,6 +1673,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   public com.google.container.v1.OperationProgress getStages(int index) {
     return stages_.get(index);
   }
+
   /**
    *
    *
@@ -1829,6 +1878,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2142,6 +2192,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2165,6 +2216,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2188,6 +2240,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2210,6 +2263,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2228,6 +2282,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2253,6 +2308,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     }
 
     private int status_ = 0;
+
     /**
      *
      *
@@ -2269,6 +2325,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     public int getStatusValue() {
       return status_;
     }
+
     /**
      *
      *
@@ -2288,6 +2345,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2306,6 +2364,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
           com.google.container.v1.Operation.Status.forNumber(status_);
       return result == null ? com.google.container.v1.Operation.Status.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2328,6 +2387,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2385,6 +2445,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return metricsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2406,6 +2467,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return metricsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2427,6 +2489,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return metricsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2454,6 +2517,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2479,6 +2543,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2506,6 +2571,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2533,6 +2599,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2558,6 +2625,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2583,6 +2651,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2608,6 +2677,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2632,6 +2702,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2656,6 +2727,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2673,6 +2745,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     public com.google.container.v1.OperationProgress.Metric.Builder getMetricsBuilder(int index) {
       return getMetricsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2695,6 +2768,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return metricsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2717,6 +2791,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(metrics_);
       }
     }
+
     /**
      *
      *
@@ -2735,6 +2810,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       return getMetricsFieldBuilder()
           .addBuilder(com.google.container.v1.OperationProgress.Metric.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2753,6 +2829,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       return getMetricsFieldBuilder()
           .addBuilder(index, com.google.container.v1.OperationProgress.Metric.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2821,6 +2898,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return stagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2837,6 +2915,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return stagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2853,6 +2932,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return stagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2875,6 +2955,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2895,6 +2976,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2917,6 +2999,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2939,6 +3022,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2958,6 +3042,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2978,6 +3063,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2998,6 +3084,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3017,6 +3104,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3036,6 +3124,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3048,6 +3137,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     public com.google.container.v1.OperationProgress.Builder getStagesBuilder(int index) {
       return getStagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3064,6 +3154,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return stagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3081,6 +3172,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(stages_);
       }
     }
+
     /**
      *
      *
@@ -3094,6 +3186,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       return getStagesFieldBuilder()
           .addBuilder(com.google.container.v1.OperationProgress.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3107,6 +3200,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       return getStagesFieldBuilder()
           .addBuilder(index, com.google.container.v1.OperationProgress.getDefaultInstance());
     }
+
     /**
      *
      *

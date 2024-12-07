@@ -40,6 +40,7 @@ public interface SearchResourcesRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface SearchResourcesRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public interface SearchResourcesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -180,6 +183,7 @@ public interface SearchResourcesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:grafeas.v1.BuildProvenance)
     BuildProvenanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BuildProvenance.newBuilder() to construct.
   private BuildProvenance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,6 +87,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Command> commands_;
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public java.util.List<io.grafeas.v1.Command> getCommandsList() {
     return commands_;
   }
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public java.util.List<? extends io.grafeas.v1.CommandOrBuilder> getCommandsOrBuilderList() {
     return commands_;
   }
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public int getCommandsCount() {
     return commands_.size();
   }
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public io.grafeas.v1.Command getCommands(int index) {
     return commands_.get(index);
   }
+
   /**
    *
    *
@@ -258,6 +268,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Artifact> builtArtifacts_;
+
   /**
    *
    *
@@ -271,6 +282,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public java.util.List<io.grafeas.v1.Artifact> getBuiltArtifactsList() {
     return builtArtifacts_;
   }
+
   /**
    *
    *
@@ -285,6 +297,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       getBuiltArtifactsOrBuilderList() {
     return builtArtifacts_;
   }
+
   /**
    *
    *
@@ -298,6 +311,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public int getBuiltArtifactsCount() {
     return builtArtifacts_.size();
   }
+
   /**
    *
    *
@@ -311,6 +325,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public io.grafeas.v1.Artifact getBuiltArtifacts(int index) {
     return builtArtifacts_.get(index);
   }
+
   /**
    *
    *
@@ -327,6 +342,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -342,6 +358,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -357,6 +374,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -373,6 +391,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
   public static final int START_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -388,6 +407,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -403,6 +423,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -419,6 +440,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
   public static final int END_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -434,6 +456,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -449,6 +472,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -467,6 +491,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creator_ = "";
+
   /**
    *
    *
@@ -492,6 +517,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -522,6 +548,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object logsUri_ = "";
+
   /**
    *
    *
@@ -545,6 +572,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -571,6 +599,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
   public static final int SOURCE_PROVENANCE_FIELD_NUMBER = 10;
   private io.grafeas.v1.Source sourceProvenance_;
+
   /**
    *
    *
@@ -586,6 +615,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public boolean hasSourceProvenance() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -603,6 +633,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         ? io.grafeas.v1.Source.getDefaultInstance()
         : sourceProvenance_;
   }
+
   /**
    *
    *
@@ -623,6 +654,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object triggerId_ = "";
+
   /**
    *
    *
@@ -646,6 +678,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -698,6 +731,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public int getBuildOptionsCount() {
     return internalGetBuildOptions().getMap().size();
   }
+
   /**
    *
    *
@@ -715,12 +749,14 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetBuildOptions().getMap().containsKey(key);
   }
+
   /** Use {@link #getBuildOptionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getBuildOptions() {
     return getBuildOptionsMap();
   }
+
   /**
    *
    *
@@ -735,6 +771,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getBuildOptionsMap() {
     return internalGetBuildOptions().getMap();
   }
+
   /**
    *
    *
@@ -756,6 +793,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetBuildOptions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -782,6 +820,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object builderVersion_ = "";
+
   /**
    *
    *
@@ -805,6 +844,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1126,6 +1166,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1625,6 +1666,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1647,6 +1689,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1669,6 +1712,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1690,6 +1734,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1707,6 +1752,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1731,6 +1777,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -1753,6 +1800,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1775,6 +1823,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1796,6 +1845,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1813,6 +1863,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1865,6 +1916,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return commandsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1881,6 +1933,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return commandsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1897,6 +1950,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return commandsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1919,6 +1973,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1938,6 +1993,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1960,6 +2016,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1982,6 +2039,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2001,6 +2059,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2020,6 +2079,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2039,6 +2099,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2058,6 +2119,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2077,6 +2139,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2089,6 +2152,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public io.grafeas.v1.Command.Builder getCommandsBuilder(int index) {
       return getCommandsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2105,6 +2169,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return commandsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2121,6 +2186,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(commands_);
       }
     }
+
     /**
      *
      *
@@ -2133,6 +2199,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public io.grafeas.v1.Command.Builder addCommandsBuilder() {
       return getCommandsFieldBuilder().addBuilder(io.grafeas.v1.Command.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2146,6 +2213,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       return getCommandsFieldBuilder()
           .addBuilder(index, io.grafeas.v1.Command.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2204,6 +2272,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return builtArtifactsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2220,6 +2289,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return builtArtifactsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2236,6 +2306,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return builtArtifactsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2258,6 +2329,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2277,6 +2349,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2299,6 +2372,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2321,6 +2395,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2340,6 +2415,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2359,6 +2435,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2379,6 +2456,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2398,6 +2476,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2417,6 +2496,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2429,6 +2509,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public io.grafeas.v1.Artifact.Builder getBuiltArtifactsBuilder(int index) {
       return getBuiltArtifactsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2445,6 +2526,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return builtArtifactsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2462,6 +2544,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(builtArtifacts_);
       }
     }
+
     /**
      *
      *
@@ -2475,6 +2558,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       return getBuiltArtifactsFieldBuilder()
           .addBuilder(io.grafeas.v1.Artifact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2488,6 +2572,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       return getBuiltArtifactsFieldBuilder()
           .addBuilder(index, io.grafeas.v1.Artifact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2525,6 +2610,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2539,6 +2625,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2559,6 +2646,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2581,6 +2669,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2600,6 +2689,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2627,6 +2717,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2646,6 +2737,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2660,6 +2752,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2678,6 +2771,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2710,6 +2804,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -2724,6 +2819,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2742,6 +2838,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2764,6 +2861,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2783,6 +2881,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2810,6 +2909,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2829,6 +2929,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2843,6 +2944,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2859,6 +2961,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -2891,6 +2994,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -2905,6 +3009,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2923,6 +3028,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2945,6 +3051,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2964,6 +3071,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2991,6 +3099,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3010,6 +3119,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3024,6 +3134,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3040,6 +3151,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -3067,6 +3179,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object creator_ = "";
+
     /**
      *
      *
@@ -3091,6 +3204,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3115,6 +3229,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3138,6 +3253,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3157,6 +3273,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3183,6 +3300,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object logsUri_ = "";
+
     /**
      *
      *
@@ -3205,6 +3323,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3227,6 +3346,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3248,6 +3368,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3265,6 +3386,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3292,6 +3414,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.Source, io.grafeas.v1.Source.Builder, io.grafeas.v1.SourceOrBuilder>
         sourceProvenanceBuilder_;
+
     /**
      *
      *
@@ -3306,6 +3429,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public boolean hasSourceProvenance() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3326,6 +3450,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return sourceProvenanceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3348,6 +3473,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3367,6 +3493,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3394,6 +3521,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3413,6 +3541,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3427,6 +3556,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSourceProvenanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3445,6 +3575,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             : sourceProvenance_;
       }
     }
+
     /**
      *
      *
@@ -3468,6 +3599,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object triggerId_ = "";
+
     /**
      *
      *
@@ -3490,6 +3622,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3512,6 +3645,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3533,6 +3667,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3550,6 +3685,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3601,6 +3737,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public int getBuildOptionsCount() {
       return internalGetBuildOptions().getMap().size();
     }
+
     /**
      *
      *
@@ -3618,12 +3755,14 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetBuildOptions().getMap().containsKey(key);
     }
+
     /** Use {@link #getBuildOptionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getBuildOptions() {
       return getBuildOptionsMap();
     }
+
     /**
      *
      *
@@ -3638,6 +3777,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getBuildOptionsMap() {
       return internalGetBuildOptions().getMap();
     }
+
     /**
      *
      *
@@ -3659,6 +3799,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetBuildOptions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3686,6 +3827,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       internalGetMutableBuildOptions().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3703,12 +3845,14 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       internalGetMutableBuildOptions().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableBuildOptions() {
       bitField0_ |= 0x00000800;
       return internalGetMutableBuildOptions().getMutableMap();
     }
+
     /**
      *
      *
@@ -3730,6 +3874,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000800;
       return this;
     }
+
     /**
      *
      *
@@ -3747,6 +3892,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object builderVersion_ = "";
+
     /**
      *
      *
@@ -3769,6 +3915,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3791,6 +3938,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3812,6 +3960,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3829,6 +3978,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

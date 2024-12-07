@@ -38,6 +38,7 @@ public interface UpdateNotebookRuntimeTemplateRequestOrBuilder
    * @return Whether the notebookRuntimeTemplate field is set.
    */
   boolean hasNotebookRuntimeTemplate();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateNotebookRuntimeTemplateRequestOrBuilder
    * @return The notebookRuntimeTemplate.
    */
   com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate getNotebookRuntimeTemplate();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface UpdateNotebookRuntimeTemplateRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateNotebookRuntimeTemplateRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

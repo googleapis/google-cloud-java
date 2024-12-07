@@ -33,6 +33,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ToolUseExample)
     ToolUseExampleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ToolUseExample.newBuilder() to construct.
   private ToolUseExample(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
      * @return The extension.
      */
     java.lang.String getExtension();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
      * @return The operationId.
      */
     java.lang.String getOperationId();
+
     /**
      *
      *
@@ -120,6 +123,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getOperationIdBytes();
   }
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ToolUseExample.ExtensionOperation)
       ExtensionOperationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ExtensionOperation.newBuilder() to construct.
     private ExtensionOperation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -169,6 +174,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object extension_ = "";
+
     /**
      *
      *
@@ -192,6 +198,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -220,6 +227,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object operationId_ = "";
+
     /**
      *
      *
@@ -243,6 +251,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -438,6 +447,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object extension_ = "";
+
       /**
        *
        *
@@ -672,6 +683,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -694,6 +706,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -715,6 +728,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -732,6 +746,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -756,6 +771,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object operationId_ = "";
+
       /**
        *
        *
@@ -778,6 +794,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -800,6 +817,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -821,6 +839,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -838,6 +857,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -947,6 +967,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
     private TargetCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -980,6 +1001,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXTENSION_OPERATION_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -997,6 +1019,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExtensionOperation() {
     return targetCase_ == 10;
   }
+
   /**
    *
    *
@@ -1019,6 +1042,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.aiplatform.v1beta1.ToolUseExample.ExtensionOperation
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1041,6 +1065,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FUNCTION_NAME_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -1055,6 +1080,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFunctionName() {
     return targetCase_ == 11;
   }
+
   /**
    *
    *
@@ -1082,6 +1108,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1114,6 +1141,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -1137,6 +1165,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1165,6 +1194,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
+
   /**
    *
    *
@@ -1188,6 +1218,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1214,6 +1245,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUEST_PARAMS_FIELD_NUMBER = 3;
   private com.google.protobuf.Struct requestParams_;
+
   /**
    *
    *
@@ -1229,6 +1261,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRequestParams() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1246,6 +1279,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Struct.getDefaultInstance()
         : requestParams_;
   }
+
   /**
    *
    *
@@ -1264,6 +1298,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESPONSE_PARAMS_FIELD_NUMBER = 4;
   private com.google.protobuf.Struct responseParams_;
+
   /**
    *
    *
@@ -1279,6 +1314,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResponseParams() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1296,6 +1332,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Struct.getDefaultInstance()
         : responseParams_;
   }
+
   /**
    *
    *
@@ -1316,6 +1353,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object responseSummary_ = "";
+
   /**
    *
    *
@@ -1339,6 +1377,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1606,6 +1645,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1934,6 +1974,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.ToolUseExample.ExtensionOperation.Builder,
             com.google.cloud.aiplatform.v1beta1.ToolUseExample.ExtensionOperationOrBuilder>
         extensionOperationBuilder_;
+
     /**
      *
      *
@@ -1951,6 +1992,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExtensionOperation() {
       return targetCase_ == 10;
     }
+
     /**
      *
      *
@@ -1981,6 +2023,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2006,6 +2049,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       targetCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2029,6 +2073,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       targetCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2067,6 +2112,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       targetCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2094,6 +2140,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2109,6 +2156,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         getExtensionOperationBuilder() {
       return getExtensionOperationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2133,6 +2181,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2185,6 +2234,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFunctionName() {
       return targetCase_ == 11;
     }
+
     /**
      *
      *
@@ -2213,6 +2263,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2241,6 +2292,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2262,6 +2314,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2281,6 +2334,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2305,6 +2359,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2327,6 +2382,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2349,6 +2405,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2370,6 +2427,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2387,6 +2445,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2411,6 +2470,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object query_ = "";
+
     /**
      *
      *
@@ -2433,6 +2493,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2455,6 +2516,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2476,6 +2538,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2493,6 +2556,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2522,6 +2586,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         requestParamsBuilder_;
+
     /**
      *
      *
@@ -2536,6 +2601,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRequestParams() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2556,6 +2622,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         return requestParamsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2578,6 +2645,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2597,6 +2665,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2624,6 +2693,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2643,6 +2713,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2657,6 +2728,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRequestParamsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2675,6 +2747,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
             : requestParams_;
       }
     }
+
     /**
      *
      *
@@ -2707,6 +2780,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         responseParamsBuilder_;
+
     /**
      *
      *
@@ -2721,6 +2795,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResponseParams() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2741,6 +2816,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         return responseParamsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2763,6 +2839,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2782,6 +2859,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2809,6 +2887,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2828,6 +2907,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2842,6 +2922,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResponseParamsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2860,6 +2941,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
             : responseParams_;
       }
     }
+
     /**
      *
      *
@@ -2887,6 +2969,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object responseSummary_ = "";
+
     /**
      *
      *
@@ -2909,6 +2992,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2931,6 +3015,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2952,6 +3037,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2969,6 +3055,7 @@ public final class ToolUseExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

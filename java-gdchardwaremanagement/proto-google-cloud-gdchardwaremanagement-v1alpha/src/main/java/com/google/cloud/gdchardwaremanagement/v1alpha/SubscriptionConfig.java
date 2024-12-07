@@ -33,6 +33,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig)
     SubscriptionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SubscriptionConfig.newBuilder() to construct.
   private SubscriptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -152,6 +153,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
      * <code>SUBSCRIPTION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int SUBSCRIPTION_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -163,6 +165,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
+
     /**
      *
      *
@@ -174,6 +177,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
      * <code>INACTIVE = 2;</code>
      */
     public static final int INACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -184,6 +188,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
      * <code>ERROR = 3;</code>
      */
     public static final int ERROR_VALUE = 3;
+
     /**
      *
      *
@@ -195,6 +200,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
      * <code>FAILED_TO_RETRIEVE = 4;</code>
      */
     public static final int FAILED_TO_RETRIEVE_VALUE = 4;
+
     /**
      *
      *
@@ -304,6 +310,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subscriptionId_ = "";
+
   /**
    *
    *
@@ -327,6 +334,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -355,6 +363,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object billingId_ = "";
+
   /**
    *
    *
@@ -379,6 +388,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -406,6 +416,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -423,6 +434,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -633,6 +645,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -850,6 +863,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object subscriptionId_ = "";
+
     /**
      *
      *
@@ -872,6 +886,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -894,6 +909,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -915,6 +931,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +949,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +974,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object billingId_ = "";
+
     /**
      *
      *
@@ -979,6 +998,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1022,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1045,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1042,6 +1064,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1067,6 +1090,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1084,6 +1108,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1104,6 +1129,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1154,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1152,6 +1179,7 @@ public final class SubscriptionConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

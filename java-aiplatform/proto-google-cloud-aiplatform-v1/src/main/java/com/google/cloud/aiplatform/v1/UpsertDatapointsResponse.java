@@ -34,6 +34,7 @@ public final class UpsertDatapointsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.UpsertDatapointsResponse)
     UpsertDatapointsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpsertDatapointsResponse.newBuilder() to construct.
   private UpsertDatapointsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class UpsertDatapointsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

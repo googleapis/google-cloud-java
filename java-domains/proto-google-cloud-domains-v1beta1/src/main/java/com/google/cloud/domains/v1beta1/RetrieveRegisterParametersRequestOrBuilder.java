@@ -36,6 +36,7 @@ public interface RetrieveRegisterParametersRequestOrBuilder
    * @return The domainName.
    */
   java.lang.String getDomainName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RetrieveRegisterParametersRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

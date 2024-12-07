@@ -41,6 +41,7 @@ public interface UpdateLoggingServerRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateLoggingServerRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateLoggingServerRequestOrBuilder
    * @return Whether the loggingServer field is set.
    */
   boolean hasLoggingServer();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateLoggingServerRequestOrBuilder
    * @return The loggingServer.
    */
   com.google.cloud.vmwareengine.v1.LoggingServer getLoggingServer();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface UpdateLoggingServerRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

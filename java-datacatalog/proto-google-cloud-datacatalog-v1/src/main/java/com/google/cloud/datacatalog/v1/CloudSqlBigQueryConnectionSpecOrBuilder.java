@@ -36,6 +36,7 @@ public interface CloudSqlBigQueryConnectionSpecOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CloudSqlBigQueryConnectionSpecOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface CloudSqlBigQueryConnectionSpecOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

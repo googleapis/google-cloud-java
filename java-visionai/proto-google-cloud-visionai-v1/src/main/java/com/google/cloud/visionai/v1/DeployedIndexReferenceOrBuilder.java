@@ -38,6 +38,7 @@ public interface DeployedIndexReferenceOrBuilder
    * @return The indexEndpoint.
    */
   java.lang.String getIndexEndpoint();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface GetReportConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

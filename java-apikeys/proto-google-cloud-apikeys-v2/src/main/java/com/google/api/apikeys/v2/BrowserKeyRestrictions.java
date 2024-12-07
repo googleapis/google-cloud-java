@@ -33,6 +33,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.api.apikeys.v2.BrowserKeyRestrictions)
     BrowserKeyRestrictionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BrowserKeyRestrictions.newBuilder() to construct.
   private BrowserKeyRestrictions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowedReferrers_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getAllowedReferrersList() {
     return allowedReferrers_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
   public int getAllowedReferrersCount() {
     return allowedReferrers_.size();
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
   public java.lang.String getAllowedReferrers(int index) {
     return allowedReferrers_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +302,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -496,6 +502,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -512,6 +519,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
       allowedReferrers_.makeImmutable();
       return allowedReferrers_;
     }
+
     /**
      *
      *
@@ -527,6 +535,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
     public int getAllowedReferrersCount() {
       return allowedReferrers_.size();
     }
+
     /**
      *
      *
@@ -543,6 +552,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
     public java.lang.String getAllowedReferrers(int index) {
       return allowedReferrers_.get(index);
     }
+
     /**
      *
      *
@@ -559,6 +569,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getAllowedReferrersBytes(int index) {
       return allowedReferrers_.getByteString(index);
     }
+
     /**
      *
      *
@@ -583,6 +594,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +618,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -626,6 +639,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +659,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

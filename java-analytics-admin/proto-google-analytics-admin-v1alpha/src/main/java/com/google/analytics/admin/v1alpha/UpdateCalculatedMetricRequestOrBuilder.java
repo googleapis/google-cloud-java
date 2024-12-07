@@ -38,6 +38,7 @@ public interface UpdateCalculatedMetricRequestOrBuilder
    * @return Whether the calculatedMetric field is set.
    */
   boolean hasCalculatedMetric();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateCalculatedMetricRequestOrBuilder
    * @return The calculatedMetric.
    */
   com.google.analytics.admin.v1alpha.CalculatedMetric getCalculatedMetric();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateCalculatedMetricRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateCalculatedMetricRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface SecurityMarksOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface SecurityMarksOrBuilder
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
   int getMarksCount();
+
   /**
    *
    *
@@ -91,9 +93,11 @@ public interface SecurityMarksOrBuilder
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
   boolean containsMarks(java.lang.String key);
+
   /** Use {@link #getMarksMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMarks();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface SecurityMarksOrBuilder
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMarksMap();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface SecurityMarksOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

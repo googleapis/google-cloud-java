@@ -36,6 +36,7 @@ public interface QuestionAnsweringRelevanceResultOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface QuestionAnsweringRelevanceResultOrBuilder
    * @return The explanation.
    */
   java.lang.String getExplanation();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface QuestionAnsweringRelevanceResultOrBuilder
    * @return Whether the confidence field is set.
    */
   boolean hasConfidence();
+
   /**
    *
    *

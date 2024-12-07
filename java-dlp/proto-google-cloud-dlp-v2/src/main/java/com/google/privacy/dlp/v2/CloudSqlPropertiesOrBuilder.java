@@ -47,6 +47,7 @@ public interface CloudSqlPropertiesOrBuilder
    * @return The connectionName.
    */
   java.lang.String getConnectionName();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface CloudSqlPropertiesOrBuilder
    * @return Whether the usernamePassword field is set.
    */
   boolean hasUsernamePassword();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface CloudSqlPropertiesOrBuilder
    * @return The usernamePassword.
    */
   com.google.privacy.dlp.v2.SecretManagerCredential getUsernamePassword();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface CloudSqlPropertiesOrBuilder
    * @return Whether the cloudSqlIam field is set.
    */
   boolean hasCloudSqlIam();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface CloudSqlPropertiesOrBuilder
    * @return The cloudSqlIam.
    */
   com.google.privacy.dlp.v2.CloudSqlIamCredential getCloudSqlIam();
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public interface CloudSqlPropertiesOrBuilder
    * @return The enum numeric value on the wire for databaseEngine.
    */
   int getDatabaseEngineValue();
+
   /**
    *
    *

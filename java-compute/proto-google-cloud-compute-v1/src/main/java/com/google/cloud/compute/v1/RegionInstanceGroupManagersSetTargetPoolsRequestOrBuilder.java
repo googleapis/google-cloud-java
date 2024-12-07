@@ -36,6 +36,7 @@ public interface RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder
    * @return A list containing the targetPools.
    */
   java.util.List<java.lang.String> getTargetPoolsList();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder
    * @return The count of targetPools.
    */
   int getTargetPoolsCount();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder
    * @return The targetPools at the given index.
    */
   java.lang.String getTargetPools(int index);
+
   /**
    *
    *

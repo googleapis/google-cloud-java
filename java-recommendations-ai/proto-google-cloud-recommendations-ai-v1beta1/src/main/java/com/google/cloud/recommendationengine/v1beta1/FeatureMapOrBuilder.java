@@ -43,6 +43,7 @@ public interface FeatureMapOrBuilder
    * </code>
    */
   int getCategoricalFeaturesCount();
+
   /**
    *
    *
@@ -62,11 +63,13 @@ public interface FeatureMapOrBuilder
    * </code>
    */
   boolean containsCategoricalFeatures(java.lang.String key);
+
   /** Use {@link #getCategoricalFeaturesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
       getCategoricalFeatures();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface FeatureMapOrBuilder
   java.util.Map<
           java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
       getCategoricalFeaturesMap();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface FeatureMapOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList defaultValue);
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface FeatureMapOrBuilder
    * </code>
    */
   int getNumericalFeaturesCount();
+
   /**
    *
    *
@@ -169,11 +175,13 @@ public interface FeatureMapOrBuilder
    * </code>
    */
   boolean containsNumericalFeatures(java.lang.String key);
+
   /** Use {@link #getNumericalFeaturesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
       getNumericalFeatures();
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public interface FeatureMapOrBuilder
   java.util.Map<
           java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
       getNumericalFeaturesMap();
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public interface FeatureMapOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList defaultValue);
+
   /**
    *
    *

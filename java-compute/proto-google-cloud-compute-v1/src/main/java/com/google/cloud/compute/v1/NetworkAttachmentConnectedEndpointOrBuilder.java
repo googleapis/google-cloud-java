@@ -36,6 +36,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return Whether the ipAddress field is set.
    */
   boolean hasIpAddress();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return Whether the ipv6Address field is set.
    */
   boolean hasIpv6Address();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return The ipv6Address.
    */
   java.lang.String getIpv6Address();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return Whether the projectIdOrNum field is set.
    */
   boolean hasProjectIdOrNum();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return The projectIdOrNum.
    */
   java.lang.String getProjectIdOrNum();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return A list containing the secondaryIpCidrRanges.
    */
   java.util.List<java.lang.String> getSecondaryIpCidrRangesList();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return The count of secondaryIpCidrRanges.
    */
   int getSecondaryIpCidrRangesCount();
+
   /**
    *
    *
@@ -172,6 +180,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return The secondaryIpCidrRanges at the given index.
    */
   java.lang.String getSecondaryIpCidrRanges(int index);
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -212,6 +222,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -238,6 +249,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return Whether the subnetwork field is set.
    */
   boolean hasSubnetwork();
+
   /**
    *
    *
@@ -250,6 +262,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *
@@ -275,6 +288,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return Whether the subnetworkCidrRange field is set.
    */
   boolean hasSubnetworkCidrRange();
+
   /**
    *
    *
@@ -287,6 +301,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return The subnetworkCidrRange.
    */
   java.lang.String getSubnetworkCidrRange();
+
   /**
    *
    *

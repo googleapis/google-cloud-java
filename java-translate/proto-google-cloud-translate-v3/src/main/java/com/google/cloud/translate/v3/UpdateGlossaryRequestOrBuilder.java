@@ -38,6 +38,7 @@ public interface UpdateGlossaryRequestOrBuilder
    * @return Whether the glossary field is set.
    */
   boolean hasGlossary();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateGlossaryRequestOrBuilder
    * @return The glossary.
    */
   com.google.cloud.translate.v3.Glossary getGlossary();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateGlossaryRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateGlossaryRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

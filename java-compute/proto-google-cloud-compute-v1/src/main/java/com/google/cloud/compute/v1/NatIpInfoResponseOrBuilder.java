@@ -34,6 +34,7 @@ public interface NatIpInfoResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.NatIpInfo result = 139315229;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NatIpInfo> getResultList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface NatIpInfoResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.NatIpInfo result = 139315229;</code>
    */
   com.google.cloud.compute.v1.NatIpInfo getResult(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface NatIpInfoResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.NatIpInfo result = 139315229;</code>
    */
   int getResultCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface NatIpInfoResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.NatIpInfo result = 139315229;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.NatIpInfoOrBuilder> getResultOrBuilderList();
+
   /**
    *
    *

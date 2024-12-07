@@ -36,6 +36,7 @@ public interface ProvisionAccountTicketRequestOrBuilder
    * @return Whether the account field is set.
    */
   boolean hasAccount();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ProvisionAccountTicketRequestOrBuilder
    * @return The account.
    */
   com.google.analytics.admin.v1beta.Account getAccount();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface ProvisionAccountTicketRequestOrBuilder
    * @return The redirectUri.
    */
   java.lang.String getRedirectUri();
+
   /**
    *
    *

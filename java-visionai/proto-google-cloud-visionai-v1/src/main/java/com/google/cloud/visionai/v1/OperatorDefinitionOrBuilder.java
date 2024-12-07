@@ -39,6 +39,7 @@ public interface OperatorDefinitionOrBuilder
    * @return The operator.
    */
   java.lang.String getOperator();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface OperatorDefinitionOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.OperatorDefinition.ArgumentDefinition>
       getInputArgsList();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface OperatorDefinitionOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.OperatorDefinition.ArgumentDefinition getInputArgs(int index);
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface OperatorDefinitionOrBuilder
    * </code>
    */
   int getInputArgsCount();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface OperatorDefinitionOrBuilder
   java.util.List<
           ? extends com.google.cloud.visionai.v1.OperatorDefinition.ArgumentDefinitionOrBuilder>
       getInputArgsOrBuilderList();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface OperatorDefinitionOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.OperatorDefinition.ArgumentDefinition>
       getOutputArgsList();
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public interface OperatorDefinitionOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.OperatorDefinition.ArgumentDefinition getOutputArgs(int index);
+
   /**
    *
    *
@@ -149,6 +156,7 @@ public interface OperatorDefinitionOrBuilder
    * </code>
    */
   int getOutputArgsCount();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface OperatorDefinitionOrBuilder
   java.util.List<
           ? extends com.google.cloud.visionai.v1.OperatorDefinition.ArgumentDefinitionOrBuilder>
       getOutputArgsOrBuilderList();
+
   /**
    *
    *
@@ -187,6 +196,7 @@ public interface OperatorDefinitionOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.OperatorDefinition.AttributeDefinition>
       getAttributesList();
+
   /**
    *
    *
@@ -198,6 +208,7 @@ public interface OperatorDefinitionOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.OperatorDefinition.AttributeDefinition getAttributes(int index);
+
   /**
    *
    *
@@ -209,6 +220,7 @@ public interface OperatorDefinitionOrBuilder
    * </code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -222,6 +234,7 @@ public interface OperatorDefinitionOrBuilder
   java.util.List<
           ? extends com.google.cloud.visionai.v1.OperatorDefinition.AttributeDefinitionOrBuilder>
       getAttributesOrBuilderList();
+
   /**
    *
    *
@@ -247,6 +260,7 @@ public interface OperatorDefinitionOrBuilder
    * @return Whether the resources field is set.
    */
   boolean hasResources();
+
   /**
    *
    *
@@ -259,6 +273,7 @@ public interface OperatorDefinitionOrBuilder
    * @return The resources.
    */
   com.google.cloud.visionai.v1.ResourceSpecification getResources();
+
   /**
    *
    *
@@ -282,6 +297,7 @@ public interface OperatorDefinitionOrBuilder
    * @return The shortDescription.
    */
   java.lang.String getShortDescription();
+
   /**
    *
    *
@@ -307,6 +323,7 @@ public interface OperatorDefinitionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

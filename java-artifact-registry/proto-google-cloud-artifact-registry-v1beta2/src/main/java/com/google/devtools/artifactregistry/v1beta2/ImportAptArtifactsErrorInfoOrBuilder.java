@@ -37,6 +37,7 @@ public interface ImportAptArtifactsErrorInfoOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ImportAptArtifactsErrorInfoOrBuilder
    * @return The gcsSource.
    */
   com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsGcsSource getGcsSource();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ImportAptArtifactsErrorInfoOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface ImportAptArtifactsErrorInfoOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *

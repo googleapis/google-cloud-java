@@ -34,6 +34,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.ConferenceRecord)
     ConferenceRecordOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConferenceRecord.newBuilder() to construct.
   private ConferenceRecord(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
 
   public static final int START_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
 
   public static final int END_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp expireTime_;
+
   /**
    *
    *
@@ -242,6 +252,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -260,6 +271,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
+
   /**
    *
    *
@@ -281,6 +293,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object space_ = "";
+
   /**
    *
    *
@@ -306,6 +319,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -542,6 +556,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -808,6 +823,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -832,6 +848,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -856,6 +873,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -879,6 +897,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +917,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +949,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -944,6 +965,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -963,6 +985,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -986,6 +1009,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1030,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1059,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1080,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1096,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1086,6 +1114,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1119,6 +1148,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1135,6 +1165,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1155,6 +1186,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1179,6 +1211,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1233,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1263,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1250,6 +1285,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1302,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1284,6 +1321,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1318,6 +1356,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -1336,6 +1375,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1360,6 +1400,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
         return expireTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1386,6 +1427,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1409,6 +1451,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1483,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1507,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1481,6 +1526,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1503,6 +1549,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
             : expireTime_;
       }
     }
+
     /**
      *
      *
@@ -1534,6 +1581,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object space_ = "";
+
     /**
      *
      *
@@ -1558,6 +1606,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1582,6 +1631,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1605,6 +1655,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1624,6 +1675,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

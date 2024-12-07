@@ -38,6 +38,7 @@ public interface ExperimentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ExperimentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface ExperimentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface ExperimentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface ExperimentOrBuilder
    * @return Whether the definition field is set.
    */
   boolean hasDefinition();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface ExperimentOrBuilder
    * @return The definition.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Experiment.Definition getDefinition();
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public interface ExperimentOrBuilder
    * @return Whether the rolloutConfig field is set.
    */
   boolean hasRolloutConfig();
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public interface ExperimentOrBuilder
    * @return The rolloutConfig.
    */
   com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig getRolloutConfig();
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public interface ExperimentOrBuilder
    * @return Whether the rolloutState field is set.
    */
   boolean hasRolloutState();
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public interface ExperimentOrBuilder
    * @return The rolloutState.
    */
   com.google.cloud.dialogflow.cx.v3beta1.RolloutState getRolloutState();
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public interface ExperimentOrBuilder
    * @return The rolloutFailureReason.
    */
   java.lang.String getRolloutFailureReason();
+
   /**
    *
    *
@@ -292,6 +303,7 @@ public interface ExperimentOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
+
   /**
    *
    *
@@ -304,6 +316,7 @@ public interface ExperimentOrBuilder
    * @return The result.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result getResult();
+
   /**
    *
    *
@@ -327,6 +340,7 @@ public interface ExperimentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -339,6 +353,7 @@ public interface ExperimentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -362,6 +377,7 @@ public interface ExperimentOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -374,6 +390,7 @@ public interface ExperimentOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -397,6 +414,7 @@ public interface ExperimentOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -409,6 +427,7 @@ public interface ExperimentOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -432,6 +451,7 @@ public interface ExperimentOrBuilder
    * @return Whether the lastUpdateTime field is set.
    */
   boolean hasLastUpdateTime();
+
   /**
    *
    *
@@ -444,6 +464,7 @@ public interface ExperimentOrBuilder
    * @return The lastUpdateTime.
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
+
   /**
    *
    *
@@ -469,6 +490,7 @@ public interface ExperimentOrBuilder
    * @return Whether the experimentLength field is set.
    */
   boolean hasExperimentLength();
+
   /**
    *
    *
@@ -483,6 +505,7 @@ public interface ExperimentOrBuilder
    * @return The experimentLength.
    */
   com.google.protobuf.Duration getExperimentLength();
+
   /**
    *
    *
@@ -507,6 +530,7 @@ public interface ExperimentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.VariantsHistory> getVariantsHistoryList();
+
   /**
    *
    *
@@ -518,6 +542,7 @@ public interface ExperimentOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.VariantsHistory getVariantsHistory(int index);
+
   /**
    *
    *
@@ -529,6 +554,7 @@ public interface ExperimentOrBuilder
    * </code>
    */
   int getVariantsHistoryCount();
+
   /**
    *
    *
@@ -541,6 +567,7 @@ public interface ExperimentOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.VariantsHistoryOrBuilder>
       getVariantsHistoryOrBuilderList();
+
   /**
    *
    *

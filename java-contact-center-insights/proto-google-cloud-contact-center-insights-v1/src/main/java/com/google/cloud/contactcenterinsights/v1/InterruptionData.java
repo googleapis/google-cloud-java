@@ -33,6 +33,7 @@ public final class InterruptionData extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.InterruptionData)
     InterruptionDataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InterruptionData.newBuilder() to construct.
   private InterruptionData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class InterruptionData extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

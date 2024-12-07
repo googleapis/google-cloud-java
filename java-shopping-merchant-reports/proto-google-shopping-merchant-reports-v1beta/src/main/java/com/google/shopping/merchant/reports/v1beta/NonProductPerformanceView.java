@@ -44,6 +44,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.NonProductPerformanceView)
     NonProductPerformanceViewOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NonProductPerformanceView.newBuilder() to construct.
   private NonProductPerformanceView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,6 +76,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int DATE_FIELD_NUMBER = 1;
   private com.google.type.Date date_;
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
   public boolean hasDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
   public com.google.type.Date getDate() {
     return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
 
   public static final int WEEK_FIELD_NUMBER = 2;
   private com.google.type.Date week_;
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
   public boolean hasWeek() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
   public com.google.type.Date getWeek() {
     return week_ == null ? com.google.type.Date.getDefaultInstance() : week_;
   }
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
 
   public static final int CLICKS_FIELD_NUMBER = 3;
   private long clicks_ = 0L;
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
   public boolean hasClicks() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
 
   public static final int IMPRESSIONS_FIELD_NUMBER = 4;
   private long impressions_ = 0L;
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
   public boolean hasImpressions() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -246,6 +257,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
 
   public static final int CLICK_THROUGH_RATE_FIELD_NUMBER = 5;
   private double clickThroughRate_ = 0D;
+
   /**
    *
    *
@@ -263,6 +275,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
   public boolean hasClickThroughRate() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -507,6 +520,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -787,6 +801,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         dateBuilder_;
+
     /**
      *
      *
@@ -803,6 +818,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     public boolean hasDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -823,6 +839,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
         return dateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +886,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +916,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +938,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +955,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
       onChanged();
       return getDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -952,6 +974,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
         return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
       }
     }
+
     /**
      *
      *
@@ -980,6 +1003,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         weekBuilder_;
+
     /**
      *
      *
@@ -995,6 +1019,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     public boolean hasWeek() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1014,6 +1039,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
         return weekBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1063,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1084,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1113,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1134,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1150,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
       onChanged();
       return getWeekFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1137,6 +1168,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
         return week_ == null ? com.google.type.Date.getDefaultInstance() : week_;
       }
     }
+
     /**
      *
      *
@@ -1161,6 +1193,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     }
 
     private long clicks_;
+
     /**
      *
      *
@@ -1177,6 +1210,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     public boolean hasClicks() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1193,6 +1227,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     public long getClicks() {
       return clicks_;
     }
+
     /**
      *
      *
@@ -1213,6 +1248,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1269,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     }
 
     private long impressions_;
+
     /**
      *
      *
@@ -1249,6 +1286,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     public boolean hasImpressions() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1265,6 +1303,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     public long getImpressions() {
       return impressions_;
     }
+
     /**
      *
      *
@@ -1285,6 +1324,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1345,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     }
 
     private double clickThroughRate_;
+
     /**
      *
      *
@@ -1322,6 +1363,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     public boolean hasClickThroughRate() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1339,6 +1381,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
     public double getClickThroughRate() {
       return clickThroughRate_;
     }
+
     /**
      *
      *
@@ -1360,6 +1403,7 @@ public final class NonProductPerformanceView extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

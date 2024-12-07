@@ -38,6 +38,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.connectors.v1beta.MetadataExchangeRequest)
     MetadataExchangeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MetadataExchangeRequest.newBuilder() to construct.
   private MetadataExchangeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -123,6 +124,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
      * <code>AUTH_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int AUTH_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -133,6 +135,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
      * <code>DB_NATIVE = 1;</code>
      */
     public static final int DB_NATIVE_VALUE = 1;
+
     /**
      *
      *
@@ -233,6 +236,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userAgent_ = "";
+
   /**
    *
    *
@@ -256,6 +260,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -282,6 +287,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
 
   public static final int AUTH_TYPE_FIELD_NUMBER = 2;
   private int authType_ = 0;
+
   /**
    *
    *
@@ -298,6 +304,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
   public int getAuthTypeValue() {
     return authType_;
   }
+
   /**
    *
    *
@@ -324,6 +331,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object oauth2Token_ = "";
+
   /**
    *
    *
@@ -348,6 +356,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -558,6 +567,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -782,6 +792,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object userAgent_ = "";
+
     /**
      *
      *
@@ -804,6 +815,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -826,6 +838,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -847,6 +860,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +878,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +903,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
     }
 
     private int authType_ = 0;
+
     /**
      *
      *
@@ -904,6 +920,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
     public int getAuthTypeValue() {
       return authType_;
     }
+
     /**
      *
      *
@@ -923,6 +940,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +963,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
           ? com.google.cloud.alloydb.connectors.v1beta.MetadataExchangeRequest.AuthType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -968,6 +987,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1008,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object oauth2Token_ = "";
+
     /**
      *
      *
@@ -1011,6 +1032,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1034,6 +1056,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1079,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1074,6 +1098,7 @@ public final class MetadataExchangeRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

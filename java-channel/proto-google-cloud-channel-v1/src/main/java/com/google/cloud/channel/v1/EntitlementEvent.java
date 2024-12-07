@@ -33,6 +33,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.EntitlementEvent)
     EntitlementEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EntitlementEvent.newBuilder() to construct.
   private EntitlementEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -220,6 +221,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -230,6 +232,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>CREATED = 1;</code>
      */
     public static final int CREATED_VALUE = 1;
+
     /**
      *
      *
@@ -242,6 +245,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>PRICE_PLAN_SWITCHED = 3;</code>
      */
     public static final int PRICE_PLAN_SWITCHED_VALUE = 3;
+
     /**
      *
      *
@@ -252,6 +256,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>COMMITMENT_CHANGED = 4;</code>
      */
     public static final int COMMITMENT_CHANGED_VALUE = 4;
+
     /**
      *
      *
@@ -262,6 +267,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>RENEWED = 5;</code>
      */
     public static final int RENEWED_VALUE = 5;
+
     /**
      *
      *
@@ -272,6 +278,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>SUSPENDED = 6;</code>
      */
     public static final int SUSPENDED_VALUE = 6;
+
     /**
      *
      *
@@ -282,6 +289,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>ACTIVATED = 7;</code>
      */
     public static final int ACTIVATED_VALUE = 7;
+
     /**
      *
      *
@@ -292,6 +300,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>CANCELLED = 8;</code>
      */
     public static final int CANCELLED_VALUE = 8;
+
     /**
      *
      *
@@ -303,6 +312,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>SKU_CHANGED = 9;</code>
      */
     public static final int SKU_CHANGED_VALUE = 9;
+
     /**
      *
      *
@@ -313,6 +323,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>RENEWAL_SETTING_CHANGED = 10;</code>
      */
     public static final int RENEWAL_SETTING_CHANGED_VALUE = 10;
+
     /**
      *
      *
@@ -323,6 +334,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>PAID_SERVICE_STARTED = 11;</code>
      */
     public static final int PAID_SERVICE_STARTED_VALUE = 11;
+
     /**
      *
      *
@@ -333,6 +345,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>LICENSE_ASSIGNMENT_CHANGED = 12;</code>
      */
     public static final int LICENSE_ASSIGNMENT_CHANGED_VALUE = 12;
+
     /**
      *
      *
@@ -451,6 +464,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entitlement_ = "";
+
   /**
    *
    *
@@ -475,6 +489,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -502,6 +517,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
 
   public static final int EVENT_TYPE_FIELD_NUMBER = 2;
   private int eventType_ = 0;
+
   /**
    *
    *
@@ -517,6 +533,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
   public int getEventTypeValue() {
     return eventType_;
   }
+
   /**
    *
    *
@@ -705,6 +722,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -901,6 +919,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object entitlement_ = "";
+
     /**
      *
      *
@@ -924,6 +943,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -947,6 +967,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -969,6 +990,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1009,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1035,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
     }
 
     private int eventType_ = 0;
+
     /**
      *
      *
@@ -1027,6 +1051,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
     public int getEventTypeValue() {
       return eventType_;
     }
+
     /**
      *
      *
@@ -1045,6 +1070,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1090,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.channel.v1.EntitlementEvent.Type.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1085,6 +1112,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

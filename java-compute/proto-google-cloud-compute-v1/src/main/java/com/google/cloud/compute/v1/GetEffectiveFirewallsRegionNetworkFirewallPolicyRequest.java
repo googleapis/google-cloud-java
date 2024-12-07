@@ -35,6 +35,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest)
     GetEffectiveFirewallsRegionNetworkFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest.newBuilder() to construct.
   private GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,6 +75,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -410,6 +417,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -642,6 +650,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
     private int bitField0_;
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -664,6 +673,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -686,6 +696,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -707,6 +718,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +736,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +761,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -770,6 +784,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -792,6 +807,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -813,6 +829,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +847,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -876,6 +895,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -898,6 +918,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -919,6 +940,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +958,7 @@ public final class GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

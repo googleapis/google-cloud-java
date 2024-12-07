@@ -33,6 +33,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.LicensePool)
     LicensePoolOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LicensePool.newBuilder() to construct.
   private LicensePool(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
   public static final int LICENSE_ASSIGNMENT_PROTOCOL_FIELD_NUMBER = 2;
   private com.google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol
       licenseAssignmentProtocol_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLicenseAssignmentProtocol() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol.getDefaultInstance()
         : licenseAssignmentProtocol_;
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVAILABLE_LICENSE_COUNT_FIELD_NUMBER = 3;
   private int availableLicenseCount_ = 0;
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOTAL_LICENSE_COUNT_FIELD_NUMBER = 4;
   private int totalLicenseCount_ = 0;
+
   /**
    *
    *
@@ -407,6 +415,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -653,6 +662,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -676,6 +686,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -699,6 +710,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -721,6 +733,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +752,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +784,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol.Builder,
             com.google.cloud.commerce.consumer.procurement.v1.AssignmentProtocolOrBuilder>
         licenseAssignmentProtocolBuilder_;
+
     /**
      *
      *
@@ -786,6 +801,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLicenseAssignmentProtocol() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -810,6 +826,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
         return licenseAssignmentProtocolBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -835,6 +852,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +876,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +909,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +931,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +949,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLicenseAssignmentProtocolFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -950,6 +972,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
             : licenseAssignmentProtocol_;
       }
     }
+
     /**
      *
      *
@@ -979,6 +1002,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int availableLicenseCount_;
+
     /**
      *
      *
@@ -994,6 +1018,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
     public int getAvailableLicenseCount() {
       return availableLicenseCount_;
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1058,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int totalLicenseCount_;
+
     /**
      *
      *
@@ -1047,6 +1074,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
     public int getTotalLicenseCount() {
       return totalLicenseCount_;
     }
+
     /**
      *
      *
@@ -1066,6 +1094,7 @@ public final class LicensePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

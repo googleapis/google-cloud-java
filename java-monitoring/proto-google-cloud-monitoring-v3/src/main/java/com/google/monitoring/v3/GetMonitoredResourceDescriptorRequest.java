@@ -34,6 +34,7 @@ public final class GetMonitoredResourceDescriptorRequest
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.GetMonitoredResourceDescriptorRequest)
     GetMonitoredResourceDescriptorRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetMonitoredResourceDescriptorRequest.newBuilder() to construct.
   private GetMonitoredResourceDescriptorRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class GetMonitoredResourceDescriptorRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class GetMonitoredResourceDescriptorRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -290,6 +293,7 @@ public final class GetMonitoredResourceDescriptorRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -477,6 +481,7 @@ public final class GetMonitoredResourceDescriptorRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -506,6 +511,7 @@ public final class GetMonitoredResourceDescriptorRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -535,6 +541,7 @@ public final class GetMonitoredResourceDescriptorRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -563,6 +570,7 @@ public final class GetMonitoredResourceDescriptorRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -587,6 +595,7 @@ public final class GetMonitoredResourceDescriptorRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

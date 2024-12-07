@@ -56,6 +56,7 @@ public interface AwsVolumeTemplateOrBuilder
    * @return The enum numeric value on the wire for volumeType.
    */
   int getVolumeTypeValue();
+
   /**
    *
    *
@@ -119,6 +120,7 @@ public interface AwsVolumeTemplateOrBuilder
    * @return The kmsKeyArn.
    */
   java.lang.String getKmsKeyArn();
+
   /**
    *
    *

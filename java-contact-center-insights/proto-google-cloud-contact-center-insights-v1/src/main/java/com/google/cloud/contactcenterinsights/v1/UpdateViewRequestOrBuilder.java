@@ -38,6 +38,7 @@ public interface UpdateViewRequestOrBuilder
    * @return Whether the view field is set.
    */
   boolean hasView();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateViewRequestOrBuilder
    * @return The view.
    */
   com.google.cloud.contactcenterinsights.v1.View getView();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateViewRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface UpdateViewRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

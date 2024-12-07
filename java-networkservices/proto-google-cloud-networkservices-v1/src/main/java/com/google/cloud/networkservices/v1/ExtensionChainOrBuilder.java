@@ -41,6 +41,7 @@ public interface ExtensionChainOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface ExtensionChainOrBuilder
    * @return Whether the matchCondition field is set.
    */
   boolean hasMatchCondition();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface ExtensionChainOrBuilder
    * @return The matchCondition.
    */
   com.google.cloud.networkservices.v1.ExtensionChain.MatchCondition getMatchCondition();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface ExtensionChainOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.networkservices.v1.ExtensionChain.Extension> getExtensionsList();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface ExtensionChainOrBuilder
    * </code>
    */
   com.google.cloud.networkservices.v1.ExtensionChain.Extension getExtensions(int index);
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface ExtensionChainOrBuilder
    * </code>
    */
   int getExtensionsCount();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface ExtensionChainOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.ExtensionChain.ExtensionOrBuilder>
       getExtensionsOrBuilderList();
+
   /**
    *
    *

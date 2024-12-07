@@ -38,6 +38,7 @@ public interface UpdateFeedbackLabelRequestOrBuilder
    * @return Whether the feedbackLabel field is set.
    */
   boolean hasFeedbackLabel();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateFeedbackLabelRequestOrBuilder
    * @return The feedbackLabel.
    */
   com.google.cloud.contactcenterinsights.v1.FeedbackLabel getFeedbackLabel();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateFeedbackLabelRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateFeedbackLabelRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

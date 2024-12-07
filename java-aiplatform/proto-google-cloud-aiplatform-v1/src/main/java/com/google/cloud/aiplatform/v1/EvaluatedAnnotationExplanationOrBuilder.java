@@ -41,6 +41,7 @@ public interface EvaluatedAnnotationExplanationOrBuilder
    * @return The explanationType.
    */
   java.lang.String getExplanationType();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface EvaluatedAnnotationExplanationOrBuilder
    * @return Whether the explanation field is set.
    */
   boolean hasExplanation();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface EvaluatedAnnotationExplanationOrBuilder
    * @return The explanation.
    */
   com.google.cloud.aiplatform.v1.Explanation getExplanation();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface DeleteEndpointPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

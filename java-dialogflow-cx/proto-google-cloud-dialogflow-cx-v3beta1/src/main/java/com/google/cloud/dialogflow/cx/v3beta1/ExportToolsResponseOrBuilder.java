@@ -38,6 +38,7 @@ public interface ExportToolsResponseOrBuilder
    * @return Whether the toolsUri field is set.
    */
   boolean hasToolsUri();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ExportToolsResponseOrBuilder
    * @return The toolsUri.
    */
   java.lang.String getToolsUri();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ExportToolsResponseOrBuilder
    * @return Whether the toolsContent field is set.
    */
   boolean hasToolsContent();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface ExportToolsResponseOrBuilder
    * @return The toolsContent.
    */
   com.google.cloud.dialogflow.cx.v3beta1.InlineDestination getToolsContent();
+
   /**
    *
    *

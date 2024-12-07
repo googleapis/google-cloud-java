@@ -33,6 +33,7 @@ public final class BatchDeleteDocumentsResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.BatchDeleteDocumentsResponse)
     BatchDeleteDocumentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchDeleteDocumentsResponse.newBuilder() to construct.
   private BatchDeleteDocumentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class BatchDeleteDocumentsResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

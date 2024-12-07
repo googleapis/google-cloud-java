@@ -34,6 +34,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.domains.v1alpha2.DnsSettings)
     DnsSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DnsSettings.newBuilder() to construct.
   private DnsSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>DS_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int DS_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -132,6 +134,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>DS_RECORDS_UNPUBLISHED = 1;</code>
      */
     public static final int DS_RECORDS_UNPUBLISHED_VALUE = 1;
+
     /**
      *
      *
@@ -248,6 +251,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the nameServers.
      */
     java.util.List<java.lang.String> getNameServersList();
+
     /**
      *
      *
@@ -262,6 +266,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return The count of nameServers.
      */
     int getNameServersCount();
+
     /**
      *
      *
@@ -277,6 +282,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return The nameServers at the given index.
      */
     java.lang.String getNameServers(int index);
+
     /**
      *
      *
@@ -305,6 +311,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.domains.v1alpha2.DnsSettings.DsRecord ds_records = 2;</code>
      */
     java.util.List<com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord> getDsRecordsList();
+
     /**
      *
      *
@@ -317,6 +324,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.domains.v1alpha2.DnsSettings.DsRecord ds_records = 2;</code>
      */
     com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord getDsRecords(int index);
+
     /**
      *
      *
@@ -329,6 +337,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.domains.v1alpha2.DnsSettings.DsRecord ds_records = 2;</code>
      */
     int getDsRecordsCount();
+
     /**
      *
      *
@@ -342,6 +351,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.domains.v1alpha2.DnsSettings.DsRecordOrBuilder>
         getDsRecordsOrBuilderList();
+
     /**
      *
      *
@@ -356,6 +366,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.domains.v1alpha2.DnsSettings.DsRecordOrBuilder getDsRecordsOrBuilder(
         int index);
   }
+
   /**
    *
    *
@@ -370,6 +381,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.domains.v1alpha2.DnsSettings.CustomDns)
       CustomDnsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CustomDns.newBuilder() to construct.
     private CustomDns(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -406,6 +418,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList nameServers_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -422,6 +435,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getNameServersList() {
       return nameServers_;
     }
+
     /**
      *
      *
@@ -438,6 +452,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public int getNameServersCount() {
       return nameServers_.size();
     }
+
     /**
      *
      *
@@ -455,6 +470,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getNameServers(int index) {
       return nameServers_.get(index);
     }
+
     /**
      *
      *
@@ -477,6 +493,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord> dsRecords_;
+
     /**
      *
      *
@@ -493,6 +510,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         getDsRecordsList() {
       return dsRecords_;
     }
+
     /**
      *
      *
@@ -509,6 +527,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         getDsRecordsOrBuilderList() {
       return dsRecords_;
     }
+
     /**
      *
      *
@@ -524,6 +543,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public int getDsRecordsCount() {
       return dsRecords_.size();
     }
+
     /**
      *
      *
@@ -539,6 +559,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord getDsRecords(int index) {
       return dsRecords_.get(index);
     }
+
     /**
      *
      *
@@ -735,6 +756,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -999,6 +1021,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -1016,6 +1039,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         nameServers_.makeImmutable();
         return nameServers_;
       }
+
       /**
        *
        *
@@ -1032,6 +1056,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public int getNameServersCount() {
         return nameServers_.size();
       }
+
       /**
        *
        *
@@ -1049,6 +1074,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getNameServers(int index) {
         return nameServers_.get(index);
       }
+
       /**
        *
        *
@@ -1066,6 +1092,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getNameServersBytes(int index) {
         return nameServers_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1091,6 +1118,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1115,6 +1143,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1136,6 +1165,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1156,6 +1186,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1219,6 +1250,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return dsRecordsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1237,6 +1269,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return dsRecordsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1255,6 +1288,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return dsRecordsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1280,6 +1314,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1303,6 +1338,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1327,6 +1363,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1352,6 +1389,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1374,6 +1412,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1397,6 +1436,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1420,6 +1460,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1441,6 +1482,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1462,6 +1504,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1477,6 +1520,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return getDsRecordsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1496,6 +1540,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return dsRecordsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1516,6 +1561,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(dsRecords_);
         }
       }
+
       /**
        *
        *
@@ -1532,6 +1578,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1549,6 +1596,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 index, com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1666,6 +1714,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the nameServers.
      */
     java.util.List<java.lang.String> getNameServersList();
+
     /**
      *
      *
@@ -1681,6 +1730,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return The count of nameServers.
      */
     int getNameServersCount();
+
     /**
      *
      *
@@ -1697,6 +1747,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return The nameServers at the given index.
      */
     java.lang.String getNameServers(int index);
+
     /**
      *
      *
@@ -1729,6 +1780,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for dsState.
      */
     int getDsStateValue();
+
     /**
      *
      *
@@ -1759,6 +1811,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     java.util.List<com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord> getDsRecordsList();
+
     /**
      *
      *
@@ -1773,6 +1826,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord getDsRecords(int index);
+
     /**
      *
      *
@@ -1787,6 +1841,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getDsRecordsCount();
+
     /**
      *
      *
@@ -1802,6 +1857,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.domains.v1alpha2.DnsSettings.DsRecordOrBuilder>
         getDsRecordsOrBuilderList();
+
     /**
      *
      *
@@ -1818,6 +1874,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.domains.v1alpha2.DnsSettings.DsRecordOrBuilder getDsRecordsOrBuilder(
         int index);
   }
+
   /**
    *
    *
@@ -1835,6 +1892,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns)
       GoogleDomainsDnsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GoogleDomainsDns.newBuilder() to construct.
     private GoogleDomainsDns(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1872,6 +1930,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList nameServers_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -1889,6 +1948,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getNameServersList() {
       return nameServers_;
     }
+
     /**
      *
      *
@@ -1906,6 +1966,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public int getNameServersCount() {
       return nameServers_.size();
     }
+
     /**
      *
      *
@@ -1924,6 +1985,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getNameServers(int index) {
       return nameServers_.get(index);
     }
+
     /**
      *
      *
@@ -1945,6 +2007,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DS_STATE_FIELD_NUMBER = 2;
     private int dsState_ = 0;
+
     /**
      *
      *
@@ -1963,6 +2026,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public int getDsStateValue() {
       return dsState_;
     }
+
     /**
      *
      *
@@ -1990,6 +2054,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord> dsRecords_;
+
     /**
      *
      *
@@ -2008,6 +2073,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         getDsRecordsList() {
       return dsRecords_;
     }
+
     /**
      *
      *
@@ -2026,6 +2092,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         getDsRecordsOrBuilderList() {
       return dsRecords_;
     }
+
     /**
      *
      *
@@ -2043,6 +2110,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public int getDsRecordsCount() {
       return dsRecords_.size();
     }
+
     /**
      *
      *
@@ -2060,6 +2128,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord getDsRecords(int index) {
       return dsRecords_.get(index);
     }
+
     /**
      *
      *
@@ -2271,6 +2340,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2555,6 +2625,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -2573,6 +2644,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         nameServers_.makeImmutable();
         return nameServers_;
       }
+
       /**
        *
        *
@@ -2590,6 +2662,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public int getNameServersCount() {
         return nameServers_.size();
       }
+
       /**
        *
        *
@@ -2608,6 +2681,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getNameServers(int index) {
         return nameServers_.get(index);
       }
+
       /**
        *
        *
@@ -2626,6 +2700,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getNameServersBytes(int index) {
         return nameServers_.getByteString(index);
       }
+
       /**
        *
        *
@@ -2652,6 +2727,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2677,6 +2753,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2699,6 +2776,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2720,6 +2798,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2748,6 +2827,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int dsState_ = 0;
+
       /**
        *
        *
@@ -2766,6 +2846,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public int getDsStateValue() {
         return dsState_;
       }
+
       /**
        *
        *
@@ -2787,6 +2868,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2809,6 +2891,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.domains.v1alpha2.DnsSettings.DsState.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2833,6 +2916,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2893,6 +2977,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return dsRecordsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2913,6 +2998,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return dsRecordsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2933,6 +3019,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return dsRecordsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2960,6 +3047,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2985,6 +3073,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3011,6 +3100,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3038,6 +3128,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3062,6 +3153,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3087,6 +3179,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3112,6 +3205,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3135,6 +3229,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3158,6 +3253,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3175,6 +3271,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return getDsRecordsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3196,6 +3293,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return dsRecordsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3218,6 +3316,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(dsRecords_);
         }
       }
+
       /**
        *
        *
@@ -3236,6 +3335,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3255,6 +3355,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 index, com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3387,6 +3488,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for algorithm.
      */
     int getAlgorithmValue();
+
     /**
      *
      *
@@ -3412,6 +3514,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for digestType.
      */
     int getDigestTypeValue();
+
     /**
      *
      *
@@ -3437,6 +3540,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return The digest.
      */
     java.lang.String getDigest();
+
     /**
      *
      *
@@ -3450,6 +3554,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDigestBytes();
   }
+
   /**
    *
    *
@@ -3466,6 +3571,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.domains.v1alpha2.DnsSettings.DsRecord)
       DsRecordOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DsRecord.newBuilder() to construct.
     private DsRecord(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3702,6 +3808,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>ALGORITHM_UNSPECIFIED = 0;</code>
        */
       public static final int ALGORITHM_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -3712,6 +3819,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>RSAMD5 = 1;</code>
        */
       public static final int RSAMD5_VALUE = 1;
+
       /**
        *
        *
@@ -3722,6 +3830,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>DH = 2;</code>
        */
       public static final int DH_VALUE = 2;
+
       /**
        *
        *
@@ -3732,6 +3841,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>DSA = 3;</code>
        */
       public static final int DSA_VALUE = 3;
+
       /**
        *
        *
@@ -3742,6 +3852,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>ECC = 4;</code>
        */
       public static final int ECC_VALUE = 4;
+
       /**
        *
        *
@@ -3752,6 +3863,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>RSASHA1 = 5;</code>
        */
       public static final int RSASHA1_VALUE = 5;
+
       /**
        *
        *
@@ -3762,6 +3874,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>DSANSEC3SHA1 = 6;</code>
        */
       public static final int DSANSEC3SHA1_VALUE = 6;
+
       /**
        *
        *
@@ -3772,6 +3885,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>RSASHA1NSEC3SHA1 = 7;</code>
        */
       public static final int RSASHA1NSEC3SHA1_VALUE = 7;
+
       /**
        *
        *
@@ -3782,6 +3896,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>RSASHA256 = 8;</code>
        */
       public static final int RSASHA256_VALUE = 8;
+
       /**
        *
        *
@@ -3792,6 +3907,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>RSASHA512 = 10;</code>
        */
       public static final int RSASHA512_VALUE = 10;
+
       /**
        *
        *
@@ -3802,6 +3918,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>ECCGOST = 12;</code>
        */
       public static final int ECCGOST_VALUE = 12;
+
       /**
        *
        *
@@ -3812,6 +3929,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>ECDSAP256SHA256 = 13;</code>
        */
       public static final int ECDSAP256SHA256_VALUE = 13;
+
       /**
        *
        *
@@ -3822,6 +3940,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>ECDSAP384SHA384 = 14;</code>
        */
       public static final int ECDSAP384SHA384_VALUE = 14;
+
       /**
        *
        *
@@ -3832,6 +3951,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>ED25519 = 15;</code>
        */
       public static final int ED25519_VALUE = 15;
+
       /**
        *
        *
@@ -3842,6 +3962,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>ED448 = 16;</code>
        */
       public static final int ED448_VALUE = 16;
+
       /**
        *
        *
@@ -3852,6 +3973,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>INDIRECT = 252;</code>
        */
       public static final int INDIRECT_VALUE = 252;
+
       /**
        *
        *
@@ -3862,6 +3984,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>PRIVATEDNS = 253;</code>
        */
       public static final int PRIVATEDNS_VALUE = 253;
+
       /**
        *
        *
@@ -4062,6 +4185,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>DIGEST_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int DIGEST_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -4072,6 +4196,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>SHA1 = 1;</code>
        */
       public static final int SHA1_VALUE = 1;
+
       /**
        *
        *
@@ -4082,6 +4207,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>SHA256 = 2;</code>
        */
       public static final int SHA256_VALUE = 2;
+
       /**
        *
        *
@@ -4092,6 +4218,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * <code>GOST3411 = 3;</code>
        */
       public static final int GOST3411_VALUE = 3;
+
       /**
        *
        *
@@ -4194,6 +4321,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
     public static final int KEY_TAG_FIELD_NUMBER = 1;
     private int keyTag_ = 0;
+
     /**
      *
      *
@@ -4212,6 +4340,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALGORITHM_FIELD_NUMBER = 2;
     private int algorithm_ = 0;
+
     /**
      *
      *
@@ -4227,6 +4356,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public int getAlgorithmValue() {
       return algorithm_;
     }
+
     /**
      *
      *
@@ -4249,6 +4379,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DIGEST_TYPE_FIELD_NUMBER = 3;
     private int digestType_ = 0;
+
     /**
      *
      *
@@ -4264,6 +4395,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public int getDigestTypeValue() {
       return digestType_;
     }
+
     /**
      *
      *
@@ -4288,6 +4420,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object digest_ = "";
+
     /**
      *
      *
@@ -4311,6 +4444,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -4533,6 +4667,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4761,6 +4896,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int keyTag_;
+
       /**
        *
        *
@@ -4776,6 +4912,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public int getKeyTag() {
         return keyTag_;
       }
+
       /**
        *
        *
@@ -4795,6 +4932,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4814,6 +4952,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int algorithm_ = 0;
+
       /**
        *
        *
@@ -4829,6 +4968,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public int getAlgorithmValue() {
         return algorithm_;
       }
+
       /**
        *
        *
@@ -4847,6 +4987,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4866,6 +5007,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.Algorithm.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -4888,6 +5030,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4907,6 +5050,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int digestType_ = 0;
+
       /**
        *
        *
@@ -4923,6 +5067,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public int getDigestTypeValue() {
         return digestType_;
       }
+
       /**
        *
        *
@@ -4942,6 +5087,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4963,6 +5109,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.DigestType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -4986,6 +5133,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5006,6 +5154,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object digest_ = "";
+
       /**
        *
        *
@@ -5028,6 +5177,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5050,6 +5200,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5071,6 +5222,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5088,6 +5240,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5192,6 +5345,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return The hostName.
      */
     java.lang.String getHostName();
+
     /**
      *
      *
@@ -5219,6 +5373,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ipv4Addresses.
      */
     java.util.List<java.lang.String> getIpv4AddressesList();
+
     /**
      *
      *
@@ -5233,6 +5388,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return The count of ipv4Addresses.
      */
     int getIpv4AddressesCount();
+
     /**
      *
      *
@@ -5248,6 +5404,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return The ipv4Addresses at the given index.
      */
     java.lang.String getIpv4Addresses(int index);
+
     /**
      *
      *
@@ -5278,6 +5435,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ipv6Addresses.
      */
     java.util.List<java.lang.String> getIpv6AddressesList();
+
     /**
      *
      *
@@ -5292,6 +5450,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return The count of ipv6Addresses.
      */
     int getIpv6AddressesCount();
+
     /**
      *
      *
@@ -5307,6 +5466,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      * @return The ipv6Addresses at the given index.
      */
     java.lang.String getIpv6Addresses(int index);
+
     /**
      *
      *
@@ -5323,6 +5483,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getIpv6AddressesBytes(int index);
   }
+
   /**
    *
    *
@@ -5342,6 +5503,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.domains.v1alpha2.DnsSettings.GlueRecord)
       GlueRecordOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GlueRecord.newBuilder() to construct.
     private GlueRecord(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5378,6 +5540,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object hostName_ = "";
+
     /**
      *
      *
@@ -5401,6 +5564,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -5430,6 +5594,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList ipv4Addresses_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -5446,6 +5611,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getIpv4AddressesList() {
       return ipv4Addresses_;
     }
+
     /**
      *
      *
@@ -5462,6 +5628,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public int getIpv4AddressesCount() {
       return ipv4Addresses_.size();
     }
+
     /**
      *
      *
@@ -5479,6 +5646,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getIpv4Addresses(int index) {
       return ipv4Addresses_.get(index);
     }
+
     /**
      *
      *
@@ -5502,6 +5670,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList ipv6Addresses_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -5518,6 +5687,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getIpv6AddressesList() {
       return ipv6Addresses_;
     }
+
     /**
      *
      *
@@ -5534,6 +5704,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public int getIpv6AddressesCount() {
       return ipv6Addresses_.size();
     }
+
     /**
      *
      *
@@ -5551,6 +5722,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getIpv6Addresses(int index) {
       return ipv6Addresses_.get(index);
     }
+
     /**
      *
      *
@@ -5762,6 +5934,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5998,6 +6171,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object hostName_ = "";
+
       /**
        *
        *
@@ -6020,6 +6194,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6042,6 +6217,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6063,6 +6239,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6080,6 +6257,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6112,6 +6290,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -6129,6 +6308,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         ipv4Addresses_.makeImmutable();
         return ipv4Addresses_;
       }
+
       /**
        *
        *
@@ -6145,6 +6325,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public int getIpv4AddressesCount() {
         return ipv4Addresses_.size();
       }
+
       /**
        *
        *
@@ -6162,6 +6343,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getIpv4Addresses(int index) {
         return ipv4Addresses_.get(index);
       }
+
       /**
        *
        *
@@ -6179,6 +6361,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getIpv4AddressesBytes(int index) {
         return ipv4Addresses_.getByteString(index);
       }
+
       /**
        *
        *
@@ -6204,6 +6387,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6228,6 +6412,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6249,6 +6434,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6269,6 +6455,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6304,6 +6491,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
@@ -6321,6 +6509,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         ipv6Addresses_.makeImmutable();
         return ipv6Addresses_;
       }
+
       /**
        *
        *
@@ -6337,6 +6526,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public int getIpv6AddressesCount() {
         return ipv6Addresses_.size();
       }
+
       /**
        *
        *
@@ -6354,6 +6544,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getIpv6Addresses(int index) {
         return ipv6Addresses_.get(index);
       }
+
       /**
        *
        *
@@ -6371,6 +6562,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getIpv6AddressesBytes(int index) {
         return ipv6Addresses_.getByteString(index);
       }
+
       /**
        *
        *
@@ -6396,6 +6588,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6420,6 +6613,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6441,6 +6635,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6461,6 +6656,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6568,6 +6764,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     private DnsProviderCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -6601,6 +6798,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOM_DNS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -6616,6 +6814,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomDns() {
     return dnsProviderCase_ == 1;
   }
+
   /**
    *
    *
@@ -6634,6 +6833,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -6652,6 +6852,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GOOGLE_DOMAINS_DNS_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -6669,6 +6870,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGoogleDomainsDns() {
     return dnsProviderCase_ == 2;
   }
+
   /**
    *
    *
@@ -6689,6 +6891,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -6713,6 +6916,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord> glueRecords_;
+
   /**
    *
    *
@@ -6727,6 +6931,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       getGlueRecordsList() {
     return glueRecords_;
   }
+
   /**
    *
    *
@@ -6741,6 +6946,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       getGlueRecordsOrBuilderList() {
     return glueRecords_;
   }
+
   /**
    *
    *
@@ -6754,6 +6960,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
   public int getGlueRecordsCount() {
     return glueRecords_.size();
   }
+
   /**
    *
    *
@@ -6767,6 +6974,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord getGlueRecords(int index) {
     return glueRecords_.get(index);
   }
+
   /**
    *
    *
@@ -6984,6 +7192,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -7281,6 +7490,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns.Builder,
             com.google.cloud.domains.v1alpha2.DnsSettings.CustomDnsOrBuilder>
         customDnsBuilder_;
+
     /**
      *
      *
@@ -7296,6 +7506,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomDns() {
       return dnsProviderCase_ == 1;
     }
+
     /**
      *
      *
@@ -7321,6 +7532,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7343,6 +7555,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       dnsProviderCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -7363,6 +7576,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       dnsProviderCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -7396,6 +7610,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       dnsProviderCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -7421,6 +7636,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7433,6 +7649,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns.Builder getCustomDnsBuilder() {
       return getCustomDnsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7454,6 +7671,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7493,6 +7711,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns.Builder,
             com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDnsOrBuilder>
         googleDomainsDnsBuilder_;
+
     /**
      *
      *
@@ -7510,6 +7729,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGoogleDomainsDns() {
       return dnsProviderCase_ == 2;
     }
+
     /**
      *
      *
@@ -7537,6 +7757,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7562,6 +7783,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       dnsProviderCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -7584,6 +7806,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       dnsProviderCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -7621,6 +7844,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       dnsProviderCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -7648,6 +7872,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7663,6 +7888,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         getGoogleDomainsDnsBuilder() {
       return getGoogleDomainsDnsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7686,6 +7912,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7757,6 +7984,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         return glueRecordsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -7773,6 +8001,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         return glueRecordsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -7789,6 +8018,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         return glueRecordsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -7812,6 +8042,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7833,6 +8064,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7855,6 +8087,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7878,6 +8111,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7898,6 +8132,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7919,6 +8154,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7940,6 +8176,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7959,6 +8196,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7978,6 +8216,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7991,6 +8230,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getGlueRecordsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -8008,6 +8248,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         return glueRecordsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -8026,6 +8267,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(glueRecords_);
       }
     }
+
     /**
      *
      *
@@ -8041,6 +8283,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8056,6 +8299,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord.getDefaultInstance());
     }
+
     /**
      *
      *

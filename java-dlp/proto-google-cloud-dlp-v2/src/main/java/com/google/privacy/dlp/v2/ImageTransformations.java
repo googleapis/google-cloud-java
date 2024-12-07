@@ -33,6 +33,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ImageTransformations)
     ImageTransformationsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImageTransformations.newBuilder() to construct.
   private ImageTransformations(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
      * @return Whether the selectedInfoTypes field is set.
      */
     boolean hasSelectedInfoTypes();
+
     /**
      *
      *
@@ -97,6 +99,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
      */
     com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.SelectedInfoTypes
         getSelectedInfoTypes();
+
     /**
      *
      *
@@ -127,6 +130,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
      * @return Whether the allInfoTypes field is set.
      */
     boolean hasAllInfoTypes();
+
     /**
      *
      *
@@ -144,6 +148,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
      */
     com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllInfoTypes
         getAllInfoTypes();
+
     /**
      *
      *
@@ -174,6 +179,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
      * @return Whether the allText field is set.
      */
     boolean hasAllText();
+
     /**
      *
      *
@@ -188,6 +194,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
      * @return The allText.
      */
     com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText getAllText();
+
     /**
      *
      *
@@ -215,6 +222,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
      * @return Whether the redactionColor field is set.
      */
     boolean hasRedactionColor();
+
     /**
      *
      *
@@ -228,6 +236,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
      * @return The redactionColor.
      */
     com.google.privacy.dlp.v2.Color getRedactionColor();
+
     /**
      *
      *
@@ -242,6 +251,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
 
     com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.TargetCase getTargetCase();
   }
+
   /**
    *
    *
@@ -256,6 +266,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ImageTransformations.ImageTransformation)
       ImageTransformationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ImageTransformation.newBuilder() to construct.
     private ImageTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -302,6 +313,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        * </code>
        */
       java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList();
+
       /**
        *
        *
@@ -315,6 +327,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        * </code>
        */
       com.google.privacy.dlp.v2.InfoType getInfoTypes(int index);
+
       /**
        *
        *
@@ -328,6 +341,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        * </code>
        */
       int getInfoTypesCount();
+
       /**
        *
        *
@@ -342,6 +356,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        */
       java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder>
           getInfoTypesOrBuilderList();
+
       /**
        *
        *
@@ -356,6 +371,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        */
       com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(int index);
     }
+
     /**
      *
      *
@@ -371,6 +387,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ImageTransformations.ImageTransformation.SelectedInfoTypes)
         SelectedInfoTypesOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use SelectedInfoTypes.newBuilder() to construct.
       private SelectedInfoTypes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -407,6 +424,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
 
       @SuppressWarnings("serial")
       private java.util.List<com.google.privacy.dlp.v2.InfoType> infoTypes_;
+
       /**
        *
        *
@@ -423,6 +441,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       public java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList() {
         return infoTypes_;
       }
+
       /**
        *
        *
@@ -440,6 +459,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           getInfoTypesOrBuilderList() {
         return infoTypes_;
       }
+
       /**
        *
        *
@@ -456,6 +476,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       public int getInfoTypesCount() {
         return infoTypes_.size();
       }
+
       /**
        *
        *
@@ -472,6 +493,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       public com.google.privacy.dlp.v2.InfoType getInfoTypes(int index) {
         return infoTypes_.get(index);
       }
+
       /**
        *
        *
@@ -676,6 +698,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -967,6 +990,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
             return infoTypesBuilder_.getMessageList();
           }
         }
+
         /**
          *
          *
@@ -986,6 +1010,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
             return infoTypesBuilder_.getCount();
           }
         }
+
         /**
          *
          *
@@ -1005,6 +1030,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
             return infoTypesBuilder_.getMessage(index);
           }
         }
+
         /**
          *
          *
@@ -1030,6 +1056,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -1053,6 +1080,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -1078,6 +1106,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -1103,6 +1132,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -1125,6 +1155,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -1148,6 +1179,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -1171,6 +1203,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -1193,6 +1226,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -1215,6 +1249,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -1230,6 +1265,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypesBuilder(int index) {
           return getInfoTypesFieldBuilder().getBuilder(index);
         }
+
         /**
          *
          *
@@ -1249,6 +1285,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
             return infoTypesBuilder_.getMessageOrBuilder(index);
           }
         }
+
         /**
          *
          *
@@ -1269,6 +1306,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
             return java.util.Collections.unmodifiableList(infoTypes_);
           }
         }
+
         /**
          *
          *
@@ -1285,6 +1323,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           return getInfoTypesFieldBuilder()
               .addBuilder(com.google.privacy.dlp.v2.InfoType.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -1301,6 +1340,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           return getInfoTypesFieldBuilder()
               .addBuilder(index, com.google.privacy.dlp.v2.InfoType.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -1413,6 +1453,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         extends
         // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllInfoTypes)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -1428,6 +1469,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllInfoTypes)
         AllInfoTypesOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use AllInfoTypes.newBuilder() to construct.
       private AllInfoTypes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1621,6 +1663,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1871,6 +1914,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         extends
         // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -1885,6 +1929,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText)
         AllTextOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use AllText.newBuilder() to construct.
       private AllText(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2076,6 +2121,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2337,6 +2383,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       private TargetCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2372,6 +2419,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     }
 
     public static final int SELECTED_INFO_TYPES_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -2389,6 +2437,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     public boolean hasSelectedInfoTypes() {
       return targetCase_ == 4;
     }
+
     /**
      *
      *
@@ -2413,6 +2462,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.SelectedInfoTypes
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2438,6 +2488,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     }
 
     public static final int ALL_INFO_TYPES_FIELD_NUMBER = 5;
+
     /**
      *
      *
@@ -2457,6 +2508,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     public boolean hasAllInfoTypes() {
       return targetCase_ == 5;
     }
+
     /**
      *
      *
@@ -2482,6 +2534,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllInfoTypes
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2507,6 +2560,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     }
 
     public static final int ALL_TEXT_FIELD_NUMBER = 6;
+
     /**
      *
      *
@@ -2524,6 +2578,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     public boolean hasAllText() {
       return targetCase_ == 6;
     }
+
     /**
      *
      *
@@ -2545,6 +2600,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2568,6 +2624,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
 
     public static final int REDACTION_COLOR_FIELD_NUMBER = 3;
     private com.google.privacy.dlp.v2.Color redactionColor_;
+
     /**
      *
      *
@@ -2584,6 +2641,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     public boolean hasRedactionColor() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2602,6 +2660,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           ? com.google.privacy.dlp.v2.Color.getDefaultInstance()
           : redactionColor_;
     }
+
     /**
      *
      *
@@ -2855,6 +2914,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3152,6 +3212,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation
                   .SelectedInfoTypesOrBuilder>
           selectedInfoTypesBuilder_;
+
       /**
        *
        *
@@ -3169,6 +3230,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       public boolean hasSelectedInfoTypes() {
         return targetCase_ == 4;
       }
+
       /**
        *
        *
@@ -3201,6 +3263,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               .SelectedInfoTypes.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3227,6 +3290,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         targetCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -3251,6 +3315,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         targetCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -3292,6 +3357,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         targetCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -3319,6 +3385,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -3335,6 +3402,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           getSelectedInfoTypesBuilder() {
         return getSelectedInfoTypesFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3362,6 +3430,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               .SelectedInfoTypes.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3413,6 +3482,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation
                   .AllInfoTypesOrBuilder>
           allInfoTypesBuilder_;
+
       /**
        *
        *
@@ -3432,6 +3502,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       public boolean hasAllInfoTypes() {
         return targetCase_ == 5;
       }
+
       /**
        *
        *
@@ -3465,6 +3536,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3492,6 +3564,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         targetCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -3517,6 +3590,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         targetCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -3559,6 +3633,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         targetCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -3588,6 +3663,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -3605,6 +3681,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           getAllInfoTypesBuilder() {
         return getAllInfoTypesFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3633,6 +3710,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3682,6 +3760,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText.Builder,
               com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllTextOrBuilder>
           allTextBuilder_;
+
       /**
        *
        *
@@ -3699,6 +3778,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       public boolean hasAllText() {
         return targetCase_ == 6;
       }
+
       /**
        *
        *
@@ -3730,6 +3810,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3755,6 +3836,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         targetCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -3778,6 +3860,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         targetCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -3817,6 +3900,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         targetCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -3844,6 +3928,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -3859,6 +3944,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           getAllTextBuilder() {
         return getAllTextFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3884,6 +3970,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3930,6 +4017,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               com.google.privacy.dlp.v2.Color.Builder,
               com.google.privacy.dlp.v2.ColorOrBuilder>
           redactionColorBuilder_;
+
       /**
        *
        *
@@ -3945,6 +4033,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       public boolean hasRedactionColor() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -3966,6 +4055,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           return redactionColorBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3989,6 +4079,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4009,6 +4100,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4037,6 +4129,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -4057,6 +4150,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4072,6 +4166,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         onChanged();
         return getRedactionColorFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4091,6 +4186,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               : redactionColor_;
         }
       }
+
       /**
        *
        *
@@ -4190,6 +4286,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation>
       transforms_;
+
   /**
    *
    *
@@ -4205,6 +4302,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       getTransformsList() {
     return transforms_;
   }
+
   /**
    *
    *
@@ -4221,6 +4319,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       getTransformsOrBuilderList() {
     return transforms_;
   }
+
   /**
    *
    *
@@ -4235,6 +4334,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
   public int getTransformsCount() {
     return transforms_.size();
   }
+
   /**
    *
    *
@@ -4250,6 +4350,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       int index) {
     return transforms_.get(index);
   }
+
   /**
    *
    *
@@ -4427,6 +4528,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4692,6 +4794,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         return transformsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4710,6 +4813,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         return transformsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4729,6 +4833,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         return transformsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4754,6 +4859,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4778,6 +4884,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4803,6 +4910,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4828,6 +4936,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4851,6 +4960,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4875,6 +4985,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4899,6 +5010,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4920,6 +5032,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4941,6 +5054,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4956,6 +5070,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         getTransformsBuilder(int index) {
       return getTransformsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4975,6 +5090,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         return transformsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4995,6 +5111,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(transforms_);
       }
     }
+
     /**
      *
      *
@@ -5013,6 +5130,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5032,6 +5150,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation
                   .getDefaultInstance());
     }
+
     /**
      *
      *

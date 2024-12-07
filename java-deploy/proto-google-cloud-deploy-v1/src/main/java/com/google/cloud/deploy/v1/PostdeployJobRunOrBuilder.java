@@ -40,6 +40,7 @@ public interface PostdeployJobRunOrBuilder
    * @return The build.
    */
   java.lang.String getBuild();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface PostdeployJobRunOrBuilder
    * @return The enum numeric value on the wire for failureCause.
    */
   int getFailureCauseValue();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface PostdeployJobRunOrBuilder
    * @return The failureMessage.
    */
   java.lang.String getFailureMessage();
+
   /**
    *
    *

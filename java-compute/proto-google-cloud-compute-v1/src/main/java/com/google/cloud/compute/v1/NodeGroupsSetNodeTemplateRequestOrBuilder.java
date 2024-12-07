@@ -36,6 +36,7 @@ public interface NodeGroupsSetNodeTemplateRequestOrBuilder
    * @return Whether the nodeTemplate field is set.
    */
   boolean hasNodeTemplate();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NodeGroupsSetNodeTemplateRequestOrBuilder
    * @return The nodeTemplate.
    */
   java.lang.String getNodeTemplate();
+
   /**
    *
    *

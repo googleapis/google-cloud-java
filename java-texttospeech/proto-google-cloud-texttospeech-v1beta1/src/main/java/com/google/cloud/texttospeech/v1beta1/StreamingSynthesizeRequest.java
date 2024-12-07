@@ -37,6 +37,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1beta1.StreamingSynthesizeRequest)
     StreamingSynthesizeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingSynthesizeRequest.newBuilder() to construct.
   private StreamingSynthesizeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
     private StreamingRequestCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,6 +117,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
   }
 
   public static final int STREAMING_CONFIG_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
   public boolean hasStreamingConfig() {
     return streamingRequestCase_ == 1;
   }
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
     }
     return com.google.cloud.texttospeech.v1beta1.StreamingSynthesizeConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
   }
 
   public static final int INPUT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
   public boolean hasInput() {
     return streamingRequestCase_ == 2;
   }
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
     }
     return com.google.cloud.texttospeech.v1beta1.StreamingSynthesisInput.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -417,6 +425,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -661,6 +670,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
             com.google.cloud.texttospeech.v1beta1.StreamingSynthesizeConfig.Builder,
             com.google.cloud.texttospeech.v1beta1.StreamingSynthesizeConfigOrBuilder>
         streamingConfigBuilder_;
+
     /**
      *
      *
@@ -678,6 +688,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
     public boolean hasStreamingConfig() {
       return streamingRequestCase_ == 1;
     }
+
     /**
      *
      *
@@ -706,6 +717,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
         return com.google.cloud.texttospeech.v1beta1.StreamingSynthesizeConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -731,6 +743,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
       streamingRequestCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +766,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
       streamingRequestCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +805,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
       streamingRequestCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +849,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
         getStreamingConfigBuilder() {
       return getStreamingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -857,6 +874,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
         return com.google.cloud.texttospeech.v1beta1.StreamingSynthesizeConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -898,6 +916,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
             com.google.cloud.texttospeech.v1beta1.StreamingSynthesisInput.Builder,
             com.google.cloud.texttospeech.v1beta1.StreamingSynthesisInputOrBuilder>
         inputBuilder_;
+
     /**
      *
      *
@@ -914,6 +933,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
     public boolean hasInput() {
       return streamingRequestCase_ == 2;
     }
+
     /**
      *
      *
@@ -940,6 +960,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
         return com.google.cloud.texttospeech.v1beta1.StreamingSynthesisInput.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -963,6 +984,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
       streamingRequestCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1006,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
       streamingRequestCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1043,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
       streamingRequestCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1070,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1084,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
     public com.google.cloud.texttospeech.v1beta1.StreamingSynthesisInput.Builder getInputBuilder() {
       return getInputFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1081,6 +1107,7 @@ public final class StreamingSynthesizeRequest extends com.google.protobuf.Genera
         return com.google.cloud.texttospeech.v1beta1.StreamingSynthesisInput.getDefaultInstance();
       }
     }
+
     /**
      *
      *

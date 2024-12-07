@@ -132,6 +132,7 @@ public enum KindType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNKNOWN_KIND = 0;</code>
    */
   public static final int UNKNOWN_KIND_VALUE = 0;
+
   /**
    *
    *
@@ -142,6 +143,7 @@ public enum KindType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PAR_DO_KIND = 1;</code>
    */
   public static final int PAR_DO_KIND_VALUE = 1;
+
   /**
    *
    *
@@ -152,6 +154,7 @@ public enum KindType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GROUP_BY_KEY_KIND = 2;</code>
    */
   public static final int GROUP_BY_KEY_KIND_VALUE = 2;
+
   /**
    *
    *
@@ -162,6 +165,7 @@ public enum KindType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FLATTEN_KIND = 3;</code>
    */
   public static final int FLATTEN_KIND_VALUE = 3;
+
   /**
    *
    *
@@ -172,6 +176,7 @@ public enum KindType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>READ_KIND = 4;</code>
    */
   public static final int READ_KIND_VALUE = 4;
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public enum KindType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>WRITE_KIND = 5;</code>
    */
   public static final int WRITE_KIND_VALUE = 5;
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public enum KindType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONSTANT_KIND = 6;</code>
    */
   public static final int CONSTANT_KIND_VALUE = 6;
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public enum KindType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SINGLETON_KIND = 7;</code>
    */
   public static final int SINGLETON_KIND_VALUE = 7;
+
   /**
    *
    *

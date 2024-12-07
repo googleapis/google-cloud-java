@@ -156,6 +156,7 @@ public enum LoadBalancerType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>LOAD_BALANCER_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int LOAD_BALANCER_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -166,6 +167,7 @@ public enum LoadBalancerType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>HTTPS_ADVANCED_LOAD_BALANCER = 1;</code>
    */
   public static final int HTTPS_ADVANCED_LOAD_BALANCER_VALUE = 1;
+
   /**
    *
    *
@@ -176,6 +178,7 @@ public enum LoadBalancerType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>HTTPS_LOAD_BALANCER = 2;</code>
    */
   public static final int HTTPS_LOAD_BALANCER_VALUE = 2;
+
   /**
    *
    *
@@ -186,6 +189,7 @@ public enum LoadBalancerType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>REGIONAL_HTTPS_LOAD_BALANCER = 3;</code>
    */
   public static final int REGIONAL_HTTPS_LOAD_BALANCER_VALUE = 3;
+
   /**
    *
    *
@@ -196,6 +200,7 @@ public enum LoadBalancerType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>INTERNAL_HTTPS_LOAD_BALANCER = 4;</code>
    */
   public static final int INTERNAL_HTTPS_LOAD_BALANCER_VALUE = 4;
+
   /**
    *
    *
@@ -206,6 +211,7 @@ public enum LoadBalancerType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>SSL_PROXY_LOAD_BALANCER = 5;</code>
    */
   public static final int SSL_PROXY_LOAD_BALANCER_VALUE = 5;
+
   /**
    *
    *
@@ -216,6 +222,7 @@ public enum LoadBalancerType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>TCP_PROXY_LOAD_BALANCER = 6;</code>
    */
   public static final int TCP_PROXY_LOAD_BALANCER_VALUE = 6;
+
   /**
    *
    *
@@ -226,6 +233,7 @@ public enum LoadBalancerType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>INTERNAL_TCP_PROXY_LOAD_BALANCER = 7;</code>
    */
   public static final int INTERNAL_TCP_PROXY_LOAD_BALANCER_VALUE = 7;
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public enum LoadBalancerType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>NETWORK_LOAD_BALANCER = 8;</code>
    */
   public static final int NETWORK_LOAD_BALANCER_VALUE = 8;
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public enum LoadBalancerType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>LEGACY_NETWORK_LOAD_BALANCER = 9;</code>
    */
   public static final int LEGACY_NETWORK_LOAD_BALANCER_VALUE = 9;
+
   /**
    *
    *

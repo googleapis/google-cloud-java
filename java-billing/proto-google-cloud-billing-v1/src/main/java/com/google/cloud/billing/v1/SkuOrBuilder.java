@@ -37,6 +37,7 @@ public interface SkuOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface SkuOrBuilder
    * @return The skuId.
    */
   java.lang.String getSkuId();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface SkuOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface SkuOrBuilder
    * @return Whether the category field is set.
    */
   boolean hasCategory();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface SkuOrBuilder
    * @return The category.
    */
   com.google.cloud.billing.v1.Category getCategory();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface SkuOrBuilder
    * @return A list containing the serviceRegions.
    */
   java.util.List<java.lang.String> getServiceRegionsList();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface SkuOrBuilder
    * @return The count of serviceRegions.
    */
   int getServiceRegionsCount();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface SkuOrBuilder
    * @return The serviceRegions at the given index.
    */
   java.lang.String getServiceRegions(int index);
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public interface SkuOrBuilder
    * <code>repeated .google.cloud.billing.v1.PricingInfo pricing_info = 6;</code>
    */
   java.util.List<com.google.cloud.billing.v1.PricingInfo> getPricingInfoList();
+
   /**
    *
    *
@@ -219,6 +228,7 @@ public interface SkuOrBuilder
    * <code>repeated .google.cloud.billing.v1.PricingInfo pricing_info = 6;</code>
    */
   com.google.cloud.billing.v1.PricingInfo getPricingInfo(int index);
+
   /**
    *
    *
@@ -229,6 +239,7 @@ public interface SkuOrBuilder
    * <code>repeated .google.cloud.billing.v1.PricingInfo pricing_info = 6;</code>
    */
   int getPricingInfoCount();
+
   /**
    *
    *
@@ -240,6 +251,7 @@ public interface SkuOrBuilder
    */
   java.util.List<? extends com.google.cloud.billing.v1.PricingInfoOrBuilder>
       getPricingInfoOrBuilderList();
+
   /**
    *
    *
@@ -264,6 +276,7 @@ public interface SkuOrBuilder
    * @return The serviceProviderName.
    */
   java.lang.String getServiceProviderName();
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public interface SkuOrBuilder
    * @return Whether the geoTaxonomy field is set.
    */
   boolean hasGeoTaxonomy();
+
   /**
    *
    *
@@ -302,6 +316,7 @@ public interface SkuOrBuilder
    * @return The geoTaxonomy.
    */
   com.google.cloud.billing.v1.GeoTaxonomy getGeoTaxonomy();
+
   /**
    *
    *

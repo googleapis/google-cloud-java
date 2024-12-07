@@ -250,7 +250,8 @@ public class JobName implements ResourceName {
     private Builder(JobName jobName) {
       Preconditions.checkArgument(
           Objects.equals(jobName.pathTemplate, PROJECT_TENANT_JOB),
-          "toBuilder is only supported when JobName has the pattern of projects/{project}/tenants/{tenant}/jobs/{job}");
+          "toBuilder is only supported when JobName has the pattern of"
+              + " projects/{project}/tenants/{tenant}/jobs/{job}");
       this.project = jobName.project;
       this.tenant = jobName.tenant;
       this.job = jobName.job;

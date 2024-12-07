@@ -34,6 +34,7 @@ public interface ListTcpRoutesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.TcpRoute tcp_routes = 1;</code>
    */
   java.util.List<com.google.cloud.networkservices.v1.TcpRoute> getTcpRoutesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTcpRoutesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.TcpRoute tcp_routes = 1;</code>
    */
   com.google.cloud.networkservices.v1.TcpRoute getTcpRoutes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTcpRoutesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.TcpRoute tcp_routes = 1;</code>
    */
   int getTcpRoutesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListTcpRoutesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.TcpRouteOrBuilder>
       getTcpRoutesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListTcpRoutesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -32,6 +32,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.FirewallPolicyAssociation)
     FirewallPolicyAssociationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FirewallPolicyAssociation.newBuilder() to construct.
   private FirewallPolicyAssociation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attachmentTarget_ = "";
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
   public boolean hasAttachmentTarget() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
   public boolean hasDisplayName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firewallPolicyId_ = "";
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
   public boolean hasFirewallPolicyId() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -269,6 +279,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -284,6 +295,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
   public boolean hasName() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -307,6 +319,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -335,6 +348,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object shortName_ = "";
+
   /**
    *
    *
@@ -350,6 +364,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
   public boolean hasShortName() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -373,6 +388,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -620,6 +636,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -870,6 +887,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object attachmentTarget_ = "";
+
     /**
      *
      *
@@ -884,6 +902,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     public boolean hasAttachmentTarget() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -906,6 +925,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -928,6 +948,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -949,6 +970,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +988,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1013,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1004,6 +1028,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     public boolean hasDisplayName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1026,6 +1051,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1048,6 +1074,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1096,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1114,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1139,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     }
 
     private java.lang.Object firewallPolicyId_ = "";
+
     /**
      *
      *
@@ -1124,6 +1154,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     public boolean hasFirewallPolicyId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1146,6 +1177,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1168,6 +1200,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1222,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1240,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1230,6 +1265,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1244,6 +1280,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     public boolean hasName() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1266,6 +1303,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1288,6 +1326,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1309,6 +1348,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1326,6 +1366,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1350,6 +1391,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     }
 
     private java.lang.Object shortName_ = "";
+
     /**
      *
      *
@@ -1364,6 +1406,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     public boolean hasShortName() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1386,6 +1429,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1408,6 +1452,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1429,6 +1474,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1446,6 +1492,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

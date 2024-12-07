@@ -36,6 +36,7 @@ public interface AutoscalerStatusDetailsOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AutoscalerStatusDetailsOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface AutoscalerStatusDetailsOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface AutoscalerStatusDetailsOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

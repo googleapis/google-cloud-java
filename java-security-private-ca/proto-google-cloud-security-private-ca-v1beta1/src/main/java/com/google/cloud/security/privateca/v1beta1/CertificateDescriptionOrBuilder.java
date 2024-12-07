@@ -39,6 +39,7 @@ public interface CertificateDescriptionOrBuilder
    * @return Whether the subjectDescription field is set.
    */
   boolean hasSubjectDescription();
+
   /**
    *
    *
@@ -55,6 +56,7 @@ public interface CertificateDescriptionOrBuilder
    */
   com.google.cloud.security.privateca.v1beta1.CertificateDescription.SubjectDescription
       getSubjectDescription();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface CertificateDescriptionOrBuilder
    * @return Whether the configValues field is set.
    */
   boolean hasConfigValues();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface CertificateDescriptionOrBuilder
    * @return The configValues.
    */
   com.google.cloud.security.privateca.v1beta1.ReusableConfigValues getConfigValues();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface CertificateDescriptionOrBuilder
    * @return Whether the publicKey field is set.
    */
   boolean hasPublicKey();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface CertificateDescriptionOrBuilder
    * @return The publicKey.
    */
   com.google.cloud.security.privateca.v1beta1.PublicKey getPublicKey();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface CertificateDescriptionOrBuilder
    * @return Whether the subjectKeyId field is set.
    */
   boolean hasSubjectKeyId();
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public interface CertificateDescriptionOrBuilder
    * @return The subjectKeyId.
    */
   com.google.cloud.security.privateca.v1beta1.CertificateDescription.KeyId getSubjectKeyId();
+
   /**
    *
    *
@@ -198,6 +206,7 @@ public interface CertificateDescriptionOrBuilder
    * @return Whether the authorityKeyId field is set.
    */
   boolean hasAuthorityKeyId();
+
   /**
    *
    *
@@ -213,6 +222,7 @@ public interface CertificateDescriptionOrBuilder
    * @return The authorityKeyId.
    */
   com.google.cloud.security.privateca.v1beta1.CertificateDescription.KeyId getAuthorityKeyId();
+
   /**
    *
    *
@@ -242,6 +252,7 @@ public interface CertificateDescriptionOrBuilder
    * @return A list containing the crlDistributionPoints.
    */
   java.util.List<java.lang.String> getCrlDistributionPointsList();
+
   /**
    *
    *
@@ -256,6 +267,7 @@ public interface CertificateDescriptionOrBuilder
    * @return The count of crlDistributionPoints.
    */
   int getCrlDistributionPointsCount();
+
   /**
    *
    *
@@ -271,6 +283,7 @@ public interface CertificateDescriptionOrBuilder
    * @return The crlDistributionPoints at the given index.
    */
   java.lang.String getCrlDistributionPoints(int index);
+
   /**
    *
    *
@@ -300,6 +313,7 @@ public interface CertificateDescriptionOrBuilder
    * @return A list containing the aiaIssuingCertificateUrls.
    */
   java.util.List<java.lang.String> getAiaIssuingCertificateUrlsList();
+
   /**
    *
    *
@@ -313,6 +327,7 @@ public interface CertificateDescriptionOrBuilder
    * @return The count of aiaIssuingCertificateUrls.
    */
   int getAiaIssuingCertificateUrlsCount();
+
   /**
    *
    *
@@ -327,6 +342,7 @@ public interface CertificateDescriptionOrBuilder
    * @return The aiaIssuingCertificateUrls at the given index.
    */
   java.lang.String getAiaIssuingCertificateUrls(int index);
+
   /**
    *
    *
@@ -356,6 +372,7 @@ public interface CertificateDescriptionOrBuilder
    * @return Whether the certFingerprint field is set.
    */
   boolean hasCertFingerprint();
+
   /**
    *
    *
@@ -371,6 +388,7 @@ public interface CertificateDescriptionOrBuilder
    */
   com.google.cloud.security.privateca.v1beta1.CertificateDescription.CertificateFingerprint
       getCertFingerprint();
+
   /**
    *
    *

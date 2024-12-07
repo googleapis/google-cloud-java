@@ -40,6 +40,7 @@ public interface MonitoringComponentConfigOrBuilder
    */
   java.util.List<com.google.container.v1beta1.MonitoringComponentConfig.Component>
       getEnableComponentsList();
+
   /**
    *
    *
@@ -55,6 +56,7 @@ public interface MonitoringComponentConfigOrBuilder
    * @return The count of enableComponents.
    */
   int getEnableComponentsCount();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface MonitoringComponentConfigOrBuilder
    * @return The enableComponents at the given index.
    */
   com.google.container.v1beta1.MonitoringComponentConfig.Component getEnableComponents(int index);
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface MonitoringComponentConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for enableComponents.
    */
   java.util.List<java.lang.Integer> getEnableComponentsValueList();
+
   /**
    *
    *

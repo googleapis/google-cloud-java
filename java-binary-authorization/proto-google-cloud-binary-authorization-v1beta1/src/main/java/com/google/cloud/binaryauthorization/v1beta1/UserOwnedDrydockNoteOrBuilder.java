@@ -42,6 +42,7 @@ public interface UserOwnedDrydockNoteOrBuilder
    * @return The noteReference.
    */
   java.lang.String getNoteReference();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface UserOwnedDrydockNoteOrBuilder
    */
   java.util.List<com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey>
       getPublicKeysList();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface UserOwnedDrydockNoteOrBuilder
    * </code>
    */
   com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey getPublicKeys(int index);
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface UserOwnedDrydockNoteOrBuilder
    * </code>
    */
   int getPublicKeysCount();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface UserOwnedDrydockNoteOrBuilder
    */
   java.util.List<? extends com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKeyOrBuilder>
       getPublicKeysOrBuilderList();
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public interface UserOwnedDrydockNoteOrBuilder
    * @return The delegationServiceAccountEmail.
    */
   java.lang.String getDelegationServiceAccountEmail();
+
   /**
    *
    *

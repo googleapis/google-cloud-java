@@ -53,6 +53,7 @@ public interface CreateJobTriggerRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -97,6 +98,7 @@ public interface CreateJobTriggerRequestOrBuilder
    * @return Whether the jobTrigger field is set.
    */
   boolean hasJobTrigger();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface CreateJobTriggerRequestOrBuilder
    * @return The jobTrigger.
    */
   com.google.privacy.dlp.v2.JobTrigger getJobTrigger();
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public interface CreateJobTriggerRequestOrBuilder
    * @return The triggerId.
    */
   java.lang.String getTriggerId();
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public interface CreateJobTriggerRequestOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class SimulateMaintenanceEventInstanceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SimulateMaintenanceEventInstanceRequest)
     SimulateMaintenanceEventInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SimulateMaintenanceEventInstanceRequest.newBuilder() to construct.
   private SimulateMaintenanceEventInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class SimulateMaintenanceEventInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class SimulateMaintenanceEventInstanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class SimulateMaintenanceEventInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class SimulateMaintenanceEventInstanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class SimulateMaintenanceEventInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class SimulateMaintenanceEventInstanceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public final class SimulateMaintenanceEventInstanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public final class SimulateMaintenanceEventInstanceRequest
 
   public static final int WITH_EXTENDED_NOTIFICATIONS_FIELD_NUMBER = 405957627;
   private boolean withExtendedNotifications_ = false;
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class SimulateMaintenanceEventInstanceRequest
   public boolean hasWithExtendedNotifications() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -278,6 +288,7 @@ public final class SimulateMaintenanceEventInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -303,6 +314,7 @@ public final class SimulateMaintenanceEventInstanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -538,6 +550,7 @@ public final class SimulateMaintenanceEventInstanceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -791,6 +804,7 @@ public final class SimulateMaintenanceEventInstanceRequest
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
+
     /**
      *
      *
@@ -813,6 +827,7 @@ public final class SimulateMaintenanceEventInstanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -835,6 +850,7 @@ public final class SimulateMaintenanceEventInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -856,6 +872,7 @@ public final class SimulateMaintenanceEventInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +890,7 @@ public final class SimulateMaintenanceEventInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +915,7 @@ public final class SimulateMaintenanceEventInstanceRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -921,6 +940,7 @@ public final class SimulateMaintenanceEventInstanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -945,6 +965,7 @@ public final class SimulateMaintenanceEventInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -968,6 +989,7 @@ public final class SimulateMaintenanceEventInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1009,7 @@ public final class SimulateMaintenanceEventInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1036,7 @@ public final class SimulateMaintenanceEventInstanceRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1027,6 +1051,7 @@ public final class SimulateMaintenanceEventInstanceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1049,6 +1074,7 @@ public final class SimulateMaintenanceEventInstanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1071,6 +1097,7 @@ public final class SimulateMaintenanceEventInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1119,7 @@ public final class SimulateMaintenanceEventInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1137,7 @@ public final class SimulateMaintenanceEventInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1162,7 @@ public final class SimulateMaintenanceEventInstanceRequest
     }
 
     private boolean withExtendedNotifications_;
+
     /**
      *
      *
@@ -1148,6 +1178,7 @@ public final class SimulateMaintenanceEventInstanceRequest
     public boolean hasWithExtendedNotifications() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1163,6 +1194,7 @@ public final class SimulateMaintenanceEventInstanceRequest
     public boolean getWithExtendedNotifications() {
       return withExtendedNotifications_;
     }
+
     /**
      *
      *
@@ -1182,6 +1214,7 @@ public final class SimulateMaintenanceEventInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1234,7 @@ public final class SimulateMaintenanceEventInstanceRequest
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1225,6 +1259,7 @@ public final class SimulateMaintenanceEventInstanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1249,6 +1284,7 @@ public final class SimulateMaintenanceEventInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1272,6 +1308,7 @@ public final class SimulateMaintenanceEventInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1291,6 +1328,7 @@ public final class SimulateMaintenanceEventInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

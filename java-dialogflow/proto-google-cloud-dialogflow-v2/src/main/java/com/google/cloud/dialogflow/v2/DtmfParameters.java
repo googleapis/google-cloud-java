@@ -33,6 +33,7 @@ public final class DtmfParameters extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.DtmfParameters)
     DtmfParametersOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DtmfParameters.newBuilder() to construct.
   private DtmfParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class DtmfParameters extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCEPTS_DTMF_INPUT_FIELD_NUMBER = 1;
   private boolean acceptsDtmfInput_ = false;
+
   /**
    *
    *
@@ -238,6 +240,7 @@ public final class DtmfParameters extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -419,6 +422,7 @@ public final class DtmfParameters extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean acceptsDtmfInput_;
+
     /**
      *
      *
@@ -434,6 +438,7 @@ public final class DtmfParameters extends com.google.protobuf.GeneratedMessageV3
     public boolean getAcceptsDtmfInput() {
       return acceptsDtmfInput_;
     }
+
     /**
      *
      *
@@ -453,6 +458,7 @@ public final class DtmfParameters extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

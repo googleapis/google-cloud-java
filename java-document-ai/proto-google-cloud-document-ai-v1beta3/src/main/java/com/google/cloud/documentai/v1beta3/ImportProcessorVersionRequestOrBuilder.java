@@ -39,6 +39,7 @@ public interface ImportProcessorVersionRequestOrBuilder
    * @return Whether the processorVersionSource field is set.
    */
   boolean hasProcessorVersionSource();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ImportProcessorVersionRequestOrBuilder
    * @return The processorVersionSource.
    */
   java.lang.String getProcessorVersionSource();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface ImportProcessorVersionRequestOrBuilder
    * @return Whether the externalProcessorVersionSource field is set.
    */
   boolean hasExternalProcessorVersionSource();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface ImportProcessorVersionRequestOrBuilder
    */
   com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.ExternalProcessorVersionSource
       getExternalProcessorVersionSource();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface ImportProcessorVersionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

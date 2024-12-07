@@ -36,6 +36,7 @@ public interface AudienceRowOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.data.v1alpha.AudienceDimensionValue> getDimensionValuesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AudienceRowOrBuilder
    * </code>
    */
   com.google.analytics.data.v1alpha.AudienceDimensionValue getDimensionValues(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface AudienceRowOrBuilder
    * </code>
    */
   int getDimensionValuesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface AudienceRowOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.AudienceDimensionValueOrBuilder>
       getDimensionValuesOrBuilderList();
+
   /**
    *
    *

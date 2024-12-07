@@ -42,6 +42,7 @@ public interface ConsumerQuotaMetricOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface ConsumerQuotaMetricOrBuilder
    * @return The metric.
    */
   java.lang.String getMetric();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface ConsumerQuotaMetricOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface ConsumerQuotaMetricOrBuilder
    */
   java.util.List<com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit>
       getConsumerQuotaLimitsList();
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public interface ConsumerQuotaMetricOrBuilder
    * </code>
    */
   com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit getConsumerQuotaLimits(int index);
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface ConsumerQuotaMetricOrBuilder
    * </code>
    */
   int getConsumerQuotaLimitsCount();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface ConsumerQuotaMetricOrBuilder
    */
   java.util.List<? extends com.google.api.serviceusage.v1beta1.ConsumerQuotaLimitOrBuilder>
       getConsumerQuotaLimitsOrBuilderList();
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public interface ConsumerQuotaMetricOrBuilder
    */
   java.util.List<com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit>
       getDescendantConsumerQuotaLimitsList();
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public interface ConsumerQuotaMetricOrBuilder
    */
   com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit getDescendantConsumerQuotaLimits(
       int index);
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public interface ConsumerQuotaMetricOrBuilder
    * </code>
    */
   int getDescendantConsumerQuotaLimitsCount();
+
   /**
    *
    *
@@ -265,6 +275,7 @@ public interface ConsumerQuotaMetricOrBuilder
    */
   java.util.List<? extends com.google.api.serviceusage.v1beta1.ConsumerQuotaLimitOrBuilder>
       getDescendantConsumerQuotaLimitsOrBuilderList();
+
   /**
    *
    *
@@ -299,6 +310,7 @@ public interface ConsumerQuotaMetricOrBuilder
    * @return The unit.
    */
   java.lang.String getUnit();
+
   /**
    *
    *

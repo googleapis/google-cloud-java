@@ -33,6 +33,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.Volume)
     VolumeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Volume.newBuilder() to construct.
   private Volume(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -121,6 +123,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NFS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNfs() {
     return sourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.batch.v1alpha.NFS.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PD_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPd() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.batch.v1alpha.PD.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCS_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcs() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.batch.v1alpha.GCS.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -284,6 +295,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEVICE_NAME_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -302,6 +314,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeviceName() {
     return sourceCase_ == 6;
   }
+
   /**
    *
    *
@@ -333,6 +346,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -369,6 +383,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mountPath_ = "";
+
   /**
    *
    *
@@ -392,6 +407,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -421,6 +437,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList mountOptions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -447,6 +464,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getMountOptionsList() {
     return mountOptions_;
   }
+
   /**
    *
    *
@@ -473,6 +491,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public int getMountOptionsCount() {
     return mountOptions_.size();
   }
+
   /**
    *
    *
@@ -500,6 +519,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getMountOptions(int index) {
     return mountOptions_.get(index);
   }
+
   /**
    *
    *
@@ -768,6 +788,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1070,6 +1091,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1alpha.NFS.Builder,
             com.google.cloud.batch.v1alpha.NFSOrBuilder>
         nfsBuilder_;
+
     /**
      *
      *
@@ -1086,6 +1108,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNfs() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -1112,6 +1135,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.batch.v1alpha.NFS.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1135,6 +1159,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1180,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1218,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1245,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1231,6 +1259,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1alpha.NFS.Builder getNfsBuilder() {
       return getNfsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1252,6 +1281,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.batch.v1alpha.NFS.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1289,6 +1319,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1alpha.PD.Builder,
             com.google.cloud.batch.v1alpha.PDOrBuilder>
         pdBuilder_;
+
     /**
      *
      *
@@ -1307,6 +1338,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPd() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -1335,6 +1367,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.batch.v1alpha.PD.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1358,6 +1391,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1378,6 +1412,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1449,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1476,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1453,6 +1490,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1alpha.PD.Builder getPdBuilder() {
       return getPdFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1474,6 +1512,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.batch.v1alpha.PD.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1510,6 +1549,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1alpha.GCS.Builder,
             com.google.cloud.batch.v1alpha.GCSOrBuilder>
         gcsBuilder_;
+
     /**
      *
      *
@@ -1525,6 +1565,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcs() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -1550,6 +1591,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.batch.v1alpha.GCS.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1572,6 +1614,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1634,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1627,6 +1671,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1697,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1664,6 +1710,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1alpha.GCS.Builder getGcsBuilder() {
       return getGcsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1684,6 +1731,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.batch.v1alpha.GCS.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1734,6 +1782,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeviceName() {
       return sourceCase_ == 6;
     }
+
     /**
      *
      *
@@ -1766,6 +1815,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1798,6 +1848,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1823,6 +1874,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1846,6 +1898,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1874,6 +1927,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object mountPath_ = "";
+
     /**
      *
      *
@@ -1896,6 +1950,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1918,6 +1973,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1939,6 +1995,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1956,6 +2013,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1988,6 +2046,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -2015,6 +2074,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       mountOptions_.makeImmutable();
       return mountOptions_;
     }
+
     /**
      *
      *
@@ -2041,6 +2101,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public int getMountOptionsCount() {
       return mountOptions_.size();
     }
+
     /**
      *
      *
@@ -2068,6 +2129,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getMountOptions(int index) {
       return mountOptions_.get(index);
     }
+
     /**
      *
      *
@@ -2095,6 +2157,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getMountOptionsBytes(int index) {
       return mountOptions_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2130,6 +2193,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2164,6 +2228,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2195,6 +2260,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2225,6 +2291,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

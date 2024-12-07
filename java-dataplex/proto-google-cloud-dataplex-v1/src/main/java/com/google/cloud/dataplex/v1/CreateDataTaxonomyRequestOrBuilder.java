@@ -40,6 +40,7 @@ public interface CreateDataTaxonomyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface CreateDataTaxonomyRequestOrBuilder
    * @return The dataTaxonomyId.
    */
   java.lang.String getDataTaxonomyId();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface CreateDataTaxonomyRequestOrBuilder
    * @return Whether the dataTaxonomy field is set.
    */
   boolean hasDataTaxonomy();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface CreateDataTaxonomyRequestOrBuilder
    * @return The dataTaxonomy.
    */
   com.google.cloud.dataplex.v1.DataTaxonomy getDataTaxonomy();
+
   /**
    *
    *

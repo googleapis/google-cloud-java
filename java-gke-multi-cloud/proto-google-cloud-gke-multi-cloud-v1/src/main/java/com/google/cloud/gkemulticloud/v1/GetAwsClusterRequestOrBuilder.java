@@ -46,6 +46,7 @@ public interface GetAwsClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

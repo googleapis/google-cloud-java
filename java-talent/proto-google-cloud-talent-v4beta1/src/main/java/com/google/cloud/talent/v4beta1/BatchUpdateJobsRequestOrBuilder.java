@@ -42,6 +42,7 @@ public interface BatchUpdateJobsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface BatchUpdateJobsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.talent.v4beta1.Job> getJobsList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface BatchUpdateJobsRequestOrBuilder
    * </code>
    */
   com.google.cloud.talent.v4beta1.Job getJobs(int index);
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface BatchUpdateJobsRequestOrBuilder
    * </code>
    */
   int getJobsCount();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface BatchUpdateJobsRequestOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.talent.v4beta1.JobOrBuilder> getJobsOrBuilderList();
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public interface BatchUpdateJobsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface BatchUpdateJobsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

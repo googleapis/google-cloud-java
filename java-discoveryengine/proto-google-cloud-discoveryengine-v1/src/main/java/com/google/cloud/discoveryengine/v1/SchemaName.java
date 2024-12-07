@@ -342,7 +342,8 @@ public class SchemaName implements ResourceName {
     private Builder(SchemaName schemaName) {
       Preconditions.checkArgument(
           Objects.equals(schemaName.pathTemplate, PROJECT_LOCATION_DATA_STORE_SCHEMA),
-          "toBuilder is only supported when SchemaName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/schemas/{schema}");
+          "toBuilder is only supported when SchemaName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/schemas/{schema}");
       this.project = schemaName.project;
       this.location = schemaName.location;
       this.dataStore = schemaName.dataStore;

@@ -34,6 +34,7 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.ManagedPrometheusConfig)
     ManagedPrometheusConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ManagedPrometheusConfig.newBuilder() to construct.
   private ManagedPrometheusConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -239,6 +241,7 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -422,6 +425,7 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -437,6 +441,7 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -456,6 +461,7 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface GenerativeQuestionConfigOrBuilder
    * @return The catalog.
    */
   java.lang.String getCatalog();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GenerativeQuestionConfigOrBuilder
    * @return The facet.
    */
   java.lang.String getFacet();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface GenerativeQuestionConfigOrBuilder
    * @return The generatedQuestion.
    */
   java.lang.String getGeneratedQuestion();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface GenerativeQuestionConfigOrBuilder
    * @return The finalQuestion.
    */
   java.lang.String getFinalQuestion();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface GenerativeQuestionConfigOrBuilder
    * @return A list containing the exampleValues.
    */
   java.util.List<java.lang.String> getExampleValuesList();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface GenerativeQuestionConfigOrBuilder
    * @return The count of exampleValues.
    */
   int getExampleValuesCount();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface GenerativeQuestionConfigOrBuilder
    * @return The exampleValues at the given index.
    */
   java.lang.String getExampleValues(int index);
+
   /**
    *
    *

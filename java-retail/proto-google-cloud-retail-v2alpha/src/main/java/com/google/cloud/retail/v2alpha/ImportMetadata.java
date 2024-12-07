@@ -34,6 +34,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.ImportMetadata)
     ImportMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportMetadata.newBuilder() to construct.
   private ImportMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUCCESS_COUNT_FIELD_NUMBER = 3;
   private long successCount_ = 0L;
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FAILURE_COUNT_FIELD_NUMBER = 4;
   private long failureCount_ = 0L;
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -258,6 +269,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object notificationPubsubTopic_ = "";
+
   /**
    *
    *
@@ -285,6 +297,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -316,6 +329,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
   public static final int TRANSFORMED_USER_EVENTS_METADATA_FIELD_NUMBER = 7;
   private com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata
       transformedUserEventsMetadata_;
+
   /**
    *
    *
@@ -333,6 +347,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTransformedUserEventsMetadata() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -353,6 +368,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata.getDefaultInstance()
         : transformedUserEventsMetadata_;
   }
+
   /**
    *
    *
@@ -604,6 +620,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -905,6 +922,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -919,6 +937,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -939,6 +958,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -961,6 +981,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -980,6 +1001,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1029,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1049,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1064,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1058,6 +1083,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1116,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1105,6 +1132,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1126,6 +1154,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1149,6 +1178,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1169,6 +1199,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1197,6 +1228,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1249,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1232,6 +1265,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1251,6 +1285,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -1279,6 +1314,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long successCount_;
+
     /**
      *
      *
@@ -1294,6 +1330,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     public long getSuccessCount() {
       return successCount_;
     }
+
     /**
      *
      *
@@ -1313,6 +1350,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1370,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long failureCount_;
+
     /**
      *
      *
@@ -1347,6 +1386,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     public long getFailureCount() {
       return failureCount_;
     }
+
     /**
      *
      *
@@ -1366,6 +1406,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1385,6 +1426,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1410,6 +1452,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1435,6 +1478,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1459,6 +1503,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1479,6 +1524,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1506,6 +1552,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object notificationPubsubTopic_ = "";
+
     /**
      *
      *
@@ -1532,6 +1579,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1558,6 +1606,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1583,6 +1632,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1604,6 +1654,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1689,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata.Builder,
             com.google.cloud.retail.v2alpha.TransformedUserEventsMetadataOrBuilder>
         transformedUserEventsMetadataBuilder_;
+
     /**
      *
      *
@@ -1654,6 +1706,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTransformedUserEventsMetadata() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1677,6 +1730,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
         return transformedUserEventsMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1702,6 +1756,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1724,6 +1779,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1756,6 +1812,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1777,6 +1834,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1794,6 +1852,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTransformedUserEventsMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1815,6 +1874,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
             : transformedUserEventsMetadata_;
       }
     }
+
     /**
      *
      *

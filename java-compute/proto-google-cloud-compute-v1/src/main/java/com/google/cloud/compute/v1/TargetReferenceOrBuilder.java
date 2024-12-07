@@ -30,12 +30,14 @@ public interface TargetReferenceOrBuilder
    * @return Whether the target field is set.
    */
   boolean hasTarget();
+
   /**
    * <code>optional string target = 192835985;</code>
    *
    * @return The target.
    */
   java.lang.String getTarget();
+
   /**
    * <code>optional string target = 192835985;</code>
    *

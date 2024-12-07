@@ -40,6 +40,7 @@ public interface UpdateEntityTypeRequestOrBuilder
    * @return Whether the entityType field is set.
    */
   boolean hasEntityType();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateEntityTypeRequestOrBuilder
    * @return The entityType.
    */
   com.google.cloud.aiplatform.v1beta1.EntityType getEntityType();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface UpdateEntityTypeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public interface UpdateEntityTypeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

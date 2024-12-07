@@ -34,6 +34,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.ErrorDetail)
     ErrorDetailOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ErrorDetail.newBuilder() to construct.
   private ErrorDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int LOCATION_FIELD_NUMBER = 1;
   private com.google.cloud.bigquery.migration.v2.ErrorLocation location_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.bigquery.migration.v2.ErrorLocation.getDefaultInstance()
         : location_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ERROR_INFO_FIELD_NUMBER = 2;
   private com.google.rpc.ErrorInfo errorInfo_;
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
   public boolean hasErrorInfo() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.ErrorInfo getErrorInfo() {
     return errorInfo_ == null ? com.google.rpc.ErrorInfo.getDefaultInstance() : errorInfo_;
   }
+
   /**
    *
    *
@@ -343,6 +350,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -566,6 +574,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.ErrorLocation.Builder,
             com.google.cloud.bigquery.migration.v2.ErrorLocationOrBuilder>
         locationBuilder_;
+
     /**
      *
      *
@@ -582,6 +591,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -604,6 +614,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
         return locationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -650,6 +662,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +693,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +715,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +732,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -737,6 +753,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
             : location_;
       }
     }
+
     /**
      *
      *
@@ -771,6 +788,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
             com.google.rpc.ErrorInfo.Builder,
             com.google.rpc.ErrorInfoOrBuilder>
         errorInfoBuilder_;
+
     /**
      *
      *
@@ -785,6 +803,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
     public boolean hasErrorInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -803,6 +822,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
         return errorInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -825,6 +845,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +865,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +893,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +913,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +928,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getErrorInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -920,6 +945,7 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
         return errorInfo_ == null ? com.google.rpc.ErrorInfo.getDefaultInstance() : errorInfo_;
       }
     }
+
     /**
      *
      *

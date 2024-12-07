@@ -40,6 +40,7 @@ public interface UndeleteProjectRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

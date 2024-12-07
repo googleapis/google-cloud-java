@@ -33,6 +33,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteTargetVpnGatewayRequest)
     DeleteTargetVpnGatewayRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteTargetVpnGatewayRequest.newBuilder() to construct.
   private DeleteTargetVpnGatewayRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +226,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -247,6 +255,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetVpnGateway_ = "";
+
   /**
    *
    *
@@ -270,6 +279,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -487,6 +497,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -719,6 +730,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -743,6 +755,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -767,6 +780,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -790,6 +804,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +851,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -859,6 +876,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -883,6 +901,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -906,6 +925,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +945,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -951,6 +972,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -965,6 +987,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -987,6 +1010,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1033,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1055,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1073,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1098,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object targetVpnGateway_ = "";
+
     /**
      *
      *
@@ -1093,6 +1121,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1144,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1136,6 +1166,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1184,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

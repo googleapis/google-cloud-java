@@ -36,6 +36,7 @@ public interface RemoveResourcePoliciesInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RemoveResourcePoliciesInstanceRequestOrBuilder
    * @return Whether the instancesRemoveResourcePoliciesRequestResource field is set.
    */
   boolean hasInstancesRemoveResourcePoliciesRequestResource();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface RemoveResourcePoliciesInstanceRequestOrBuilder
    */
   com.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest
       getInstancesRemoveResourcePoliciesRequestResource();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface RemoveResourcePoliciesInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface RemoveResourcePoliciesInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface RemoveResourcePoliciesInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface RemoveResourcePoliciesInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

@@ -92,6 +92,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SEVERITY_UNSPECIFIED = 0;</code>
    */
   public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SEVERITY_ERROR = 1;</code>
    */
   public static final int SEVERITY_ERROR_VALUE = 1;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SEVERITY_WARNING = 2;</code>
    */
   public static final int SEVERITY_WARNING_VALUE = 2;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SEVERITY_INFO = 3;</code>
    */
   public static final int SEVERITY_INFO_VALUE = 3;
+
   /**
    *
    *

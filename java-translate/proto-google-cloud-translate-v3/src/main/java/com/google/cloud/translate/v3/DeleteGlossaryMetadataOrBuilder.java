@@ -36,6 +36,7 @@ public interface DeleteGlossaryMetadataOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DeleteGlossaryMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface DeleteGlossaryMetadataOrBuilder
    * @return Whether the submitTime field is set.
    */
   boolean hasSubmitTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface DeleteGlossaryMetadataOrBuilder
    * @return The submitTime.
    */
   com.google.protobuf.Timestamp getSubmitTime();
+
   /**
    *
    *

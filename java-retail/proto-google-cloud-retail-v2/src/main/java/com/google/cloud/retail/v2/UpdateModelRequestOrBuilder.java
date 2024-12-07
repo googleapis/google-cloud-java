@@ -36,6 +36,7 @@ public interface UpdateModelRequestOrBuilder
    * @return Whether the model field is set.
    */
   boolean hasModel();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateModelRequestOrBuilder
    * @return The model.
    */
   com.google.cloud.retail.v2.Model getModel();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface UpdateModelRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface UpdateModelRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

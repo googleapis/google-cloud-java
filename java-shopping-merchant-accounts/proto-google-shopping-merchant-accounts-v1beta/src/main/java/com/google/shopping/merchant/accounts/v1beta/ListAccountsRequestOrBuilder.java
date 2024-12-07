@@ -55,6 +55,7 @@ public interface ListAccountsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface ListAccountsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

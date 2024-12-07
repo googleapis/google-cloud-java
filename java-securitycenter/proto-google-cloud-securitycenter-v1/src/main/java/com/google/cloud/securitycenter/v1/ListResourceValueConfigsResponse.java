@@ -33,6 +33,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.ListResourceValueConfigsResponse)
     ListResourceValueConfigsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListResourceValueConfigsResponse.newBuilder() to construct.
   private ListResourceValueConfigsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.ResourceValueConfig>
       resourceValueConfigs_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       getResourceValueConfigsList() {
     return resourceValueConfigs_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       getResourceValueConfigsOrBuilderList() {
     return resourceValueConfigs_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
   public int getResourceValueConfigsCount() {
     return resourceValueConfigs_.size();
   }
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
   public com.google.cloud.securitycenter.v1.ResourceValueConfig getResourceValueConfigs(int index) {
     return resourceValueConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -370,6 +378,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -659,6 +668,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
         return resourceValueConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -677,6 +687,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
         return resourceValueConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -696,6 +707,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
         return resourceValueConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -721,6 +733,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +756,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +782,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +808,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +831,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +854,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +878,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +900,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +922,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +938,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
         getResourceValueConfigsBuilder(int index) {
       return getResourceValueConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -936,6 +958,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
         return resourceValueConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -955,6 +978,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(resourceValueConfigs_);
       }
     }
+
     /**
      *
      *
@@ -971,6 +995,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       return getResourceValueConfigsFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v1.ResourceValueConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -988,6 +1013,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
           .addBuilder(
               index, com.google.cloud.securitycenter.v1.ResourceValueConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1025,6 +1051,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1048,6 +1075,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1071,6 +1099,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1093,6 +1122,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1141,7 @@ public final class ListResourceValueConfigsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

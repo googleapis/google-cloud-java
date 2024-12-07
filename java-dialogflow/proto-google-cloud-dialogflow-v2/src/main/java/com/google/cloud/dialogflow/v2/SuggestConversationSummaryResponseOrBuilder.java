@@ -37,6 +37,7 @@ public interface SuggestConversationSummaryResponseOrBuilder
    * @return Whether the summary field is set.
    */
   boolean hasSummary();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SuggestConversationSummaryResponseOrBuilder
    * @return The summary.
    */
   com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary getSummary();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface SuggestConversationSummaryResponseOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
+
   /**
    *
    *

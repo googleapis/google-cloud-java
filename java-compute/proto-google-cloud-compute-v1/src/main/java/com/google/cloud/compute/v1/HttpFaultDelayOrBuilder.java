@@ -36,6 +36,7 @@ public interface HttpFaultDelayOrBuilder
    * @return Whether the fixedDelay field is set.
    */
   boolean hasFixedDelay();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface HttpFaultDelayOrBuilder
    * @return The fixedDelay.
    */
   com.google.cloud.compute.v1.Duration getFixedDelay();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface HttpFaultDelayOrBuilder
    * @return Whether the percentage field is set.
    */
   boolean hasPercentage();
+
   /**
    *
    *

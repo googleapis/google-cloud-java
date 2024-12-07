@@ -52,6 +52,7 @@ public interface SetMuteRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -95,6 +96,7 @@ public interface SetMuteRequestOrBuilder
    * @return The enum numeric value on the wire for mute.
    */
   int getMuteValue();
+
   /**
    *
    *

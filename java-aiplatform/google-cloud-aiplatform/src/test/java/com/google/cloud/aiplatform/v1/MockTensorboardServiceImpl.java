@@ -179,7 +179,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ReadTensorboardUsage, expected %s or %s",
+                  "Unrecognized response type %s for method ReadTensorboardUsage, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ReadTensorboardUsageResponse.class.getName(),
                   Exception.class.getName())));
@@ -223,7 +224,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateTensorboardExperiment, expected %s or %s",
+                  "Unrecognized response type %s for method CreateTensorboardExperiment, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TensorboardExperiment.class.getName(),
                   Exception.class.getName())));
@@ -245,7 +247,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetTensorboardExperiment, expected %s or %s",
+                  "Unrecognized response type %s for method GetTensorboardExperiment, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TensorboardExperiment.class.getName(),
                   Exception.class.getName())));
@@ -267,7 +270,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateTensorboardExperiment, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateTensorboardExperiment, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TensorboardExperiment.class.getName(),
                   Exception.class.getName())));
@@ -289,7 +293,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListTensorboardExperiments, expected %s or %s",
+                  "Unrecognized response type %s for method ListTensorboardExperiments, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListTensorboardExperimentsResponse.class.getName(),
                   Exception.class.getName())));
@@ -310,7 +315,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteTensorboardExperiment, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteTensorboardExperiment, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -331,7 +337,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateTensorboardRun, expected %s or %s",
+                  "Unrecognized response type %s for method CreateTensorboardRun, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   TensorboardRun.class.getName(),
                   Exception.class.getName())));
@@ -353,7 +360,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCreateTensorboardRuns, expected %s or %s",
+                  "Unrecognized response type %s for method BatchCreateTensorboardRuns, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchCreateTensorboardRunsResponse.class.getName(),
                   Exception.class.getName())));
@@ -395,7 +403,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateTensorboardRun, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateTensorboardRun, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   TensorboardRun.class.getName(),
                   Exception.class.getName())));
@@ -438,7 +447,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteTensorboardRun, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteTensorboardRun, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -460,7 +470,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCreateTensorboardTimeSeries, expected %s or %s",
+                  "Unrecognized response type %s for method BatchCreateTensorboardTimeSeries,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchCreateTensorboardTimeSeriesResponse.class.getName(),
                   Exception.class.getName())));
@@ -482,7 +493,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateTensorboardTimeSeries, expected %s or %s",
+                  "Unrecognized response type %s for method CreateTensorboardTimeSeries, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TensorboardTimeSeries.class.getName(),
                   Exception.class.getName())));
@@ -504,7 +516,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetTensorboardTimeSeries, expected %s or %s",
+                  "Unrecognized response type %s for method GetTensorboardTimeSeries, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TensorboardTimeSeries.class.getName(),
                   Exception.class.getName())));
@@ -526,7 +539,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateTensorboardTimeSeries, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateTensorboardTimeSeries, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TensorboardTimeSeries.class.getName(),
                   Exception.class.getName())));
@@ -548,7 +562,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListTensorboardTimeSeries, expected %s or %s",
+                  "Unrecognized response type %s for method ListTensorboardTimeSeries, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListTensorboardTimeSeriesResponse.class.getName(),
                   Exception.class.getName())));
@@ -569,7 +584,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteTensorboardTimeSeries, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteTensorboardTimeSeries, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -591,7 +607,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchReadTensorboardTimeSeriesData, expected %s or %s",
+                  "Unrecognized response type %s for method BatchReadTensorboardTimeSeriesData,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchReadTensorboardTimeSeriesDataResponse.class.getName(),
                   Exception.class.getName())));
@@ -613,7 +630,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ReadTensorboardTimeSeriesData, expected %s or %s",
+                  "Unrecognized response type %s for method ReadTensorboardTimeSeriesData, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ReadTensorboardTimeSeriesDataResponse.class.getName(),
                   Exception.class.getName())));
@@ -635,7 +653,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ReadTensorboardBlobData, expected %s or %s",
+                  "Unrecognized response type %s for method ReadTensorboardBlobData, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ReadTensorboardBlobDataResponse.class.getName(),
                   Exception.class.getName())));
@@ -657,7 +676,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method WriteTensorboardExperimentData, expected %s or %s",
+                  "Unrecognized response type %s for method WriteTensorboardExperimentData,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   WriteTensorboardExperimentDataResponse.class.getName(),
                   Exception.class.getName())));
@@ -679,7 +699,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method WriteTensorboardRunData, expected %s or %s",
+                  "Unrecognized response type %s for method WriteTensorboardRunData, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   WriteTensorboardRunDataResponse.class.getName(),
                   Exception.class.getName())));
@@ -701,7 +722,8 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ExportTensorboardTimeSeriesData, expected %s or %s",
+                  "Unrecognized response type %s for method ExportTensorboardTimeSeriesData,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ExportTensorboardTimeSeriesDataResponse.class.getName(),
                   Exception.class.getName())));

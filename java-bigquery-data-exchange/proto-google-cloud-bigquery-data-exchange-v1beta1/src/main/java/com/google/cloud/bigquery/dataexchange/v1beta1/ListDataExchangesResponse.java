@@ -33,6 +33,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesResponse)
     ListDataExchangesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDataExchangesResponse.newBuilder() to construct.
   private ListDataExchangesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange>
       dataExchanges_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       getDataExchangesList() {
     return dataExchanges_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       getDataExchangesOrBuilderList() {
     return dataExchanges_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
   public int getDataExchangesCount() {
     return dataExchanges_.size();
   }
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
   public com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange getDataExchanges(int index) {
     return dataExchanges_.get(index);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -368,6 +376,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -659,6 +668,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
         return dataExchangesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -676,6 +686,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
         return dataExchangesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -693,6 +704,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
         return dataExchangesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -717,6 +729,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +752,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +777,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +802,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +824,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +847,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +870,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +891,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +912,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +927,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
         getDataExchangesBuilder(int index) {
       return getDataExchangesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -924,6 +946,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
         return dataExchangesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -943,6 +966,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(dataExchanges_);
       }
     }
+
     /**
      *
      *
@@ -959,6 +983,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
           .addBuilder(
               com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -976,6 +1001,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
               index,
               com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1012,6 +1038,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1034,6 +1061,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1084,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1077,6 +1106,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1124,7 @@ public final class ListDataExchangesResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -56,6 +56,7 @@ public interface MerchantCenterLinkOrBuilder
    * @return The branchId.
    */
   java.lang.String getBranchId();
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public interface MerchantCenterLinkOrBuilder
    * @return A list containing the destinations.
    */
   java.util.List<java.lang.String> getDestinationsList();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface MerchantCenterLinkOrBuilder
    * @return The count of destinations.
    */
   int getDestinationsCount();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface MerchantCenterLinkOrBuilder
    * @return The destinations at the given index.
    */
   java.lang.String getDestinations(int index);
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public interface MerchantCenterLinkOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
+
   /**
    *
    *
@@ -205,6 +210,7 @@ public interface MerchantCenterLinkOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -237,6 +243,7 @@ public interface MerchantCenterLinkOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
    */
   java.util.List<com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter> getFeedsList();
+
   /**
    *
    *
@@ -249,6 +256,7 @@ public interface MerchantCenterLinkOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
    */
   com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter getFeeds(int index);
+
   /**
    *
    *
@@ -261,6 +269,7 @@ public interface MerchantCenterLinkOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
    */
   int getFeedsCount();
+
   /**
    *
    *
@@ -274,6 +283,7 @@ public interface MerchantCenterLinkOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.MerchantCenterFeedFilterOrBuilder>
       getFeedsOrBuilderList();
+
   /**
    *
    *

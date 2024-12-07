@@ -38,6 +38,7 @@ public interface HumanAgentHandoffConfigOrBuilder
    * @return Whether the livePersonConfig field is set.
    */
   boolean hasLivePersonConfig();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface HumanAgentHandoffConfigOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig.LivePersonConfig
       getLivePersonConfig();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface HumanAgentHandoffConfigOrBuilder
    * @return Whether the salesforceLiveAgentConfig field is set.
    */
   boolean hasSalesforceLiveAgentConfig();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface HumanAgentHandoffConfigOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig.SalesforceLiveAgentConfig
       getSalesforceLiveAgentConfig();
+
   /**
    *
    *

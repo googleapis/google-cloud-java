@@ -33,6 +33,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.UsableSubnetwork)
     UsableSubnetworkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UsableSubnetwork.newBuilder() to construct.
   private UsableSubnetwork(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -125,6 +126,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_IPV6_ACCESS_TYPE = 0;</code>
      */
     public static final int UNDEFINED_IPV6_ACCESS_TYPE_VALUE = 0;
+
     /**
      *
      *
@@ -135,6 +137,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>EXTERNAL = 35607499;</code>
      */
     public static final int EXTERNAL_VALUE = 35607499;
+
     /**
      *
      *
@@ -332,6 +335,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_PURPOSE = 0;</code>
      */
     public static final int UNDEFINED_PURPOSE_VALUE = 0;
+
     /**
      *
      *
@@ -342,6 +346,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>GLOBAL_MANAGED_PROXY = 236463602;</code>
      */
     public static final int GLOBAL_MANAGED_PROXY_VALUE = 236463602;
+
     /**
      *
      *
@@ -352,6 +357,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code>
      */
     public static final int INTERNAL_HTTPS_LOAD_BALANCER_VALUE = 248748889;
+
     /**
      *
      *
@@ -362,6 +368,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>PRIVATE = 403485027;</code>
      */
     public static final int PRIVATE_VALUE = 403485027;
+
     /**
      *
      *
@@ -372,6 +379,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>PRIVATE_NAT = 367764517;</code>
      */
     public static final int PRIVATE_NAT_VALUE = 367764517;
+
     /**
      *
      *
@@ -382,6 +390,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>PRIVATE_RFC_1918 = 254902107;</code>
      */
     public static final int PRIVATE_RFC_1918_VALUE = 254902107;
+
     /**
      *
      *
@@ -392,6 +401,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
      */
     public static final int PRIVATE_SERVICE_CONNECT_VALUE = 48134724;
+
     /**
      *
      *
@@ -549,6 +559,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_ROLE = 0;</code>
      */
     public static final int UNDEFINED_ROLE_VALUE = 0;
+
     /**
      *
      *
@@ -559,6 +570,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>ACTIVE = 314733318;</code>
      */
     public static final int ACTIVE_VALUE = 314733318;
+
     /**
      *
      *
@@ -716,6 +728,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_STACK_TYPE = 0;</code>
      */
     public static final int UNDEFINED_STACK_TYPE_VALUE = 0;
+
     /**
      *
      *
@@ -726,6 +739,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>IPV4_IPV6 = 22197249;</code>
      */
     public static final int IPV4_IPV6_VALUE = 22197249;
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>IPV4_ONLY = 22373798;</code>
      */
     public static final int IPV4_ONLY_VALUE = 22373798;
+
     /**
      *
      *
@@ -837,6 +852,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalIpv6Prefix_ = "";
+
   /**
    *
    *
@@ -852,6 +868,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   public boolean hasExternalIpv6Prefix() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -875,6 +892,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -903,6 +921,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object internalIpv6Prefix_ = "";
+
   /**
    *
    *
@@ -918,6 +937,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   public boolean hasInternalIpv6Prefix() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -941,6 +961,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -969,6 +990,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipCidrRange_ = "";
+
   /**
    *
    *
@@ -984,6 +1006,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   public boolean hasIpCidrRange() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1007,6 +1030,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -1035,6 +1059,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipv6AccessType_ = "";
+
   /**
    *
    *
@@ -1051,6 +1076,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   public boolean hasIpv6AccessType() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1075,6 +1101,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -1104,6 +1131,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -1119,6 +1147,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   public boolean hasNetwork() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1142,6 +1171,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -1170,6 +1200,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object purpose_ = "";
+
   /**
    *
    *
@@ -1186,6 +1217,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   public boolean hasPurpose() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -1210,6 +1242,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -1239,6 +1272,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object role_ = "";
+
   /**
    *
    *
@@ -1255,6 +1289,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   public boolean hasRole() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -1279,6 +1314,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -1309,6 +1345,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange>
       secondaryIpRanges_;
+
   /**
    *
    *
@@ -1325,6 +1362,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       getSecondaryIpRangesList() {
     return secondaryIpRanges_;
   }
+
   /**
    *
    *
@@ -1342,6 +1380,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       getSecondaryIpRangesOrBuilderList() {
     return secondaryIpRanges_;
   }
+
   /**
    *
    *
@@ -1357,6 +1396,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   public int getSecondaryIpRangesCount() {
     return secondaryIpRanges_.size();
   }
+
   /**
    *
    *
@@ -1373,6 +1413,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       int index) {
     return secondaryIpRanges_.get(index);
   }
+
   /**
    *
    *
@@ -1394,6 +1435,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stackType_ = "";
+
   /**
    *
    *
@@ -1410,6 +1452,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   public boolean hasStackType() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -1434,6 +1477,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -1463,6 +1507,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetwork_ = "";
+
   /**
    *
    *
@@ -1478,6 +1523,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   public boolean hasSubnetwork() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -1501,6 +1547,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -1816,6 +1863,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2191,6 +2239,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object externalIpv6Prefix_ = "";
+
     /**
      *
      *
@@ -2205,6 +2254,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     public boolean hasExternalIpv6Prefix() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2227,6 +2277,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2249,6 +2300,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2270,6 +2322,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2287,6 +2340,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2311,6 +2365,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object internalIpv6Prefix_ = "";
+
     /**
      *
      *
@@ -2325,6 +2380,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     public boolean hasInternalIpv6Prefix() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2347,6 +2403,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2369,6 +2426,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2390,6 +2448,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2407,6 +2466,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2431,6 +2491,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object ipCidrRange_ = "";
+
     /**
      *
      *
@@ -2445,6 +2506,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     public boolean hasIpCidrRange() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2467,6 +2529,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2489,6 +2552,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2510,6 +2574,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2527,6 +2592,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2551,6 +2617,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object ipv6AccessType_ = "";
+
     /**
      *
      *
@@ -2566,6 +2633,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     public boolean hasIpv6AccessType() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2589,6 +2657,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2612,6 +2681,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2634,6 +2704,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2652,6 +2723,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2677,6 +2749,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -2691,6 +2764,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2713,6 +2787,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2735,6 +2810,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2756,6 +2832,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2773,6 +2850,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2797,6 +2875,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object purpose_ = "";
+
     /**
      *
      *
@@ -2812,6 +2891,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     public boolean hasPurpose() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2835,6 +2915,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2858,6 +2939,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2880,6 +2962,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2898,6 +2981,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2923,6 +3007,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object role_ = "";
+
     /**
      *
      *
@@ -2938,6 +3023,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     public boolean hasRole() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2961,6 +3047,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2984,6 +3071,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3006,6 +3094,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3024,6 +3113,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3085,6 +3175,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return secondaryIpRangesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3103,6 +3194,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return secondaryIpRangesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3122,6 +3214,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return secondaryIpRangesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3147,6 +3240,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3170,6 +3264,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3195,6 +3290,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3220,6 +3316,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3242,6 +3339,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3265,6 +3363,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3288,6 +3387,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3309,6 +3409,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3330,6 +3431,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3345,6 +3447,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         getSecondaryIpRangesBuilder(int index) {
       return getSecondaryIpRangesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3364,6 +3467,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return secondaryIpRangesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3384,6 +3488,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(secondaryIpRanges_);
       }
     }
+
     /**
      *
      *
@@ -3401,6 +3506,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3419,6 +3525,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
               index,
               com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3456,6 +3563,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object stackType_ = "";
+
     /**
      *
      *
@@ -3471,6 +3579,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     public boolean hasStackType() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3494,6 +3603,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3517,6 +3627,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3539,6 +3650,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3557,6 +3669,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3582,6 +3695,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object subnetwork_ = "";
+
     /**
      *
      *
@@ -3596,6 +3710,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     public boolean hasSubnetwork() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3618,6 +3733,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3640,6 +3756,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3661,6 +3778,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3678,6 +3796,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

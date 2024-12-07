@@ -38,6 +38,7 @@ public interface ImportSampleQueriesRequestOrBuilder
    * @return Whether the inlineSource field is set.
    */
   boolean hasInlineSource();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface ImportSampleQueriesRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1alpha.ImportSampleQueriesRequest.InlineSource
       getInlineSource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ImportSampleQueriesRequestOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface ImportSampleQueriesRequestOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.discoveryengine.v1alpha.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface ImportSampleQueriesRequestOrBuilder
    * @return Whether the bigquerySource field is set.
    */
   boolean hasBigquerySource();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface ImportSampleQueriesRequestOrBuilder
    * @return The bigquerySource.
    */
   com.google.cloud.discoveryengine.v1alpha.BigQuerySource getBigquerySource();
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public interface ImportSampleQueriesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface ImportSampleQueriesRequestOrBuilder
    * @return Whether the errorConfig field is set.
    */
   boolean hasErrorConfig();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public interface ImportSampleQueriesRequestOrBuilder
    * @return The errorConfig.
    */
   com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig getErrorConfig();
+
   /**
    *
    *

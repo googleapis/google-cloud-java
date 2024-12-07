@@ -38,6 +38,7 @@ public interface GetWorkspaceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

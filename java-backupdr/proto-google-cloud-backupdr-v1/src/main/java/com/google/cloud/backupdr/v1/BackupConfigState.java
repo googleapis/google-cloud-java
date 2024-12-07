@@ -75,6 +75,7 @@ public enum BackupConfigState implements com.google.protobuf.ProtocolMessageEnum
    * <code>BACKUP_CONFIG_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int BACKUP_CONFIG_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public enum BackupConfigState implements com.google.protobuf.ProtocolMessageEnum
    * <code>ACTIVE = 1;</code>
    */
   public static final int ACTIVE_VALUE = 1;
+
   /**
    *
    *

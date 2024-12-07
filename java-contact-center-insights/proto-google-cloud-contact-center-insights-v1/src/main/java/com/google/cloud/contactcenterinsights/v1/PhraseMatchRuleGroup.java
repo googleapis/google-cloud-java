@@ -33,6 +33,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup)
     PhraseMatchRuleGroupOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PhraseMatchRuleGroup.newBuilder() to construct.
   private PhraseMatchRuleGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,6 +120,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
      * <code>PHRASE_MATCH_RULE_GROUP_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int PHRASE_MATCH_RULE_GROUP_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
      * <code>ALL_OF = 1;</code>
      */
     public static final int ALL_OF_VALUE = 1;
+
     /**
      *
      *
@@ -230,6 +233,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -247,6 +251,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -277,6 +282,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.PhraseMatchRule>
       phraseMatchRules_;
+
   /**
    *
    *
@@ -292,6 +298,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       getPhraseMatchRulesList() {
     return phraseMatchRules_;
   }
+
   /**
    *
    *
@@ -308,6 +315,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       getPhraseMatchRulesOrBuilderList() {
     return phraseMatchRules_;
   }
+
   /**
    *
    *
@@ -322,6 +330,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
   public int getPhraseMatchRulesCount() {
     return phraseMatchRules_.size();
   }
+
   /**
    *
    *
@@ -336,6 +345,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
   public com.google.cloud.contactcenterinsights.v1.PhraseMatchRule getPhraseMatchRules(int index) {
     return phraseMatchRules_.get(index);
   }
+
   /**
    *
    *
@@ -529,6 +539,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -776,6 +787,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -793,6 +805,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -813,6 +826,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +852,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -863,6 +878,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +935,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
         return phraseMatchRulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -936,6 +953,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
         return phraseMatchRulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -954,6 +972,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
         return phraseMatchRulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -978,6 +997,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1020,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1024,6 +1045,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1070,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1092,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1115,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1138,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1159,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1180,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1195,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
         getPhraseMatchRulesBuilder(int index) {
       return getPhraseMatchRulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1185,6 +1214,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
         return phraseMatchRulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1204,6 +1234,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(phraseMatchRules_);
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1251,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
           .addBuilder(
               com.google.cloud.contactcenterinsights.v1.PhraseMatchRule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1237,6 +1269,7 @@ public final class PhraseMatchRuleGroup extends com.google.protobuf.GeneratedMes
               index,
               com.google.cloud.contactcenterinsights.v1.PhraseMatchRule.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface GetBusinessIdentityRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

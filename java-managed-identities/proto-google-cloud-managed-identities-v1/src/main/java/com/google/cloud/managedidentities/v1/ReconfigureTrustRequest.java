@@ -34,6 +34,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.managedidentities.v1.ReconfigureTrustRequest)
     ReconfigureTrustRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReconfigureTrustRequest.newBuilder() to construct.
   private ReconfigureTrustRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetDomainName_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList targetDnsIpAddresses_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getTargetDnsIpAddressesList() {
     return targetDnsIpAddresses_;
   }
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
   public int getTargetDnsIpAddressesCount() {
     return targetDnsIpAddresses_.size();
   }
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
   public java.lang.String getTargetDnsIpAddresses(int index) {
     return targetDnsIpAddresses_.get(index);
   }
+
   /**
    *
    *
@@ -434,6 +443,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -659,6 +669,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -684,6 +695,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +767,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +795,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object targetDomainName_ = "";
+
     /**
      *
      *
@@ -803,6 +819,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -826,6 +843,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +885,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +919,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -916,6 +937,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       targetDnsIpAddresses_.makeImmutable();
       return targetDnsIpAddresses_;
     }
+
     /**
      *
      *
@@ -932,6 +954,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
     public int getTargetDnsIpAddressesCount() {
       return targetDnsIpAddresses_.size();
     }
+
     /**
      *
      *
@@ -949,6 +972,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
     public java.lang.String getTargetDnsIpAddresses(int index) {
       return targetDnsIpAddresses_.get(index);
     }
+
     /**
      *
      *
@@ -966,6 +990,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getTargetDnsIpAddressesBytes(int index) {
       return targetDnsIpAddresses_.getByteString(index);
     }
+
     /**
      *
      *
@@ -991,6 +1016,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1015,6 +1041,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1063,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1084,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

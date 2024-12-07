@@ -33,6 +33,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.UpdateDocumentResponse)
     UpdateDocumentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateDocumentResponse.newBuilder() to construct.
   private UpdateDocumentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private com.google.cloud.contentwarehouse.v1.Document document_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
         ? com.google.cloud.contentwarehouse.v1.Document.getDefaultInstance()
         : document_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
 
   public static final int RULE_ENGINE_OUTPUT_FIELD_NUMBER = 2;
   private com.google.cloud.contentwarehouse.v1.RuleEngineOutput ruleEngineOutput_;
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
   public boolean hasRuleEngineOutput() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
         ? com.google.cloud.contentwarehouse.v1.RuleEngineOutput.getDefaultInstance()
         : ruleEngineOutput_;
   }
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
 
   public static final int METADATA_FIELD_NUMBER = 3;
   private com.google.cloud.contentwarehouse.v1.ResponseMetadata metadata_;
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
         ? com.google.cloud.contentwarehouse.v1.ResponseMetadata.getDefaultInstance()
         : metadata_;
   }
+
   /**
    *
    *
@@ -418,6 +428,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -661,6 +672,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.contentwarehouse.v1.Document.Builder,
             com.google.cloud.contentwarehouse.v1.DocumentOrBuilder>
         documentBuilder_;
+
     /**
      *
      *
@@ -675,6 +687,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -695,6 +708,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
         return documentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -717,6 +731,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +752,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +780,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +800,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +815,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -815,6 +834,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
             : document_;
       }
     }
+
     /**
      *
      *
@@ -847,6 +867,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.contentwarehouse.v1.RuleEngineOutput.Builder,
             com.google.cloud.contentwarehouse.v1.RuleEngineOutputOrBuilder>
         ruleEngineOutputBuilder_;
+
     /**
      *
      *
@@ -864,6 +885,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
     public boolean hasRuleEngineOutput() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -887,6 +909,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
         return ruleEngineOutputBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -913,6 +936,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +960,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +993,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1016,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1035,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getRuleEngineOutputFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1030,6 +1058,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
             : ruleEngineOutput_;
       }
     }
+
     /**
      *
      *
@@ -1065,6 +1094,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.contentwarehouse.v1.ResponseMetadata.Builder,
             com.google.cloud.contentwarehouse.v1.ResponseMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -1080,6 +1110,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1101,6 +1132,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
         return metadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1156,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1178,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1174,6 +1208,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1229,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1245,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1228,6 +1265,7 @@ public final class UpdateDocumentResponse extends com.google.protobuf.GeneratedM
             : metadata_;
       }
     }
+
     /**
      *
      *

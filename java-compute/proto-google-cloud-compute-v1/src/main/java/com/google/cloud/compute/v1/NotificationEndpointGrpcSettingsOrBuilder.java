@@ -36,6 +36,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * @return Whether the authority field is set.
    */
   boolean hasAuthority();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * @return The authority.
    */
   java.lang.String getAuthority();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * @return Whether the endpoint field is set.
    */
   boolean hasEndpoint();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * @return Whether the payloadName field is set.
    */
   boolean hasPayloadName();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * @return The payloadName.
    */
   java.lang.String getPayloadName();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * @return Whether the resendInterval field is set.
    */
   boolean hasResendInterval();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * @return The resendInterval.
    */
   com.google.cloud.compute.v1.Duration getResendInterval();
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * @return Whether the retryDurationSec field is set.
    */
   boolean hasRetryDurationSec();
+
   /**
    *
    *

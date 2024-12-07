@@ -41,6 +41,7 @@ public interface DeleteProductRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface PublicKeyCredentialOrBuilder
    * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PublicKeyCredentialOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *

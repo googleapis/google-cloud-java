@@ -33,6 +33,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.UsageMetrics)
     UsageMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UsageMetrics.newBuilder() to construct.
   private UsageMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MILLI_DCU_SECONDS_FIELD_NUMBER = 1;
   private long milliDcuSeconds_ = 0L;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHUFFLE_STORAGE_GB_SECONDS_FIELD_NUMBER = 2;
   private long shuffleStorageGbSeconds_ = 0L;
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MILLI_ACCELERATOR_SECONDS_FIELD_NUMBER = 3;
   private long milliAcceleratorSeconds_ = 0L;
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object acceleratorType_ = "";
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +366,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -582,6 +589,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long milliDcuSeconds_;
+
     /**
      *
      *
@@ -599,6 +607,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
     public long getMilliDcuSeconds() {
       return milliDcuSeconds_;
     }
+
     /**
      *
      *
@@ -620,6 +629,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long shuffleStorageGbSeconds_;
+
     /**
      *
      *
@@ -658,6 +669,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
     public long getShuffleStorageGbSeconds() {
       return shuffleStorageGbSeconds_;
     }
+
     /**
      *
      *
@@ -679,6 +691,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +713,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long milliAcceleratorSeconds_;
+
     /**
      *
      *
@@ -717,6 +731,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
     public long getMilliAcceleratorSeconds() {
       return milliAcceleratorSeconds_;
     }
+
     /**
      *
      *
@@ -738,6 +753,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +775,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object acceleratorType_ = "";
+
     /**
      *
      *
@@ -781,6 +798,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -803,6 +821,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -824,6 +843,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +861,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

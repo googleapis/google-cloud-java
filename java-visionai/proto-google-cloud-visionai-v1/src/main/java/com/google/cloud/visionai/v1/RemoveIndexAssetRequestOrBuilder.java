@@ -40,6 +40,7 @@ public interface RemoveIndexAssetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface RemoveIndexAssetRequestOrBuilder
    * @return The index.
    */
   java.lang.String getIndex();
+
   /**
    *
    *

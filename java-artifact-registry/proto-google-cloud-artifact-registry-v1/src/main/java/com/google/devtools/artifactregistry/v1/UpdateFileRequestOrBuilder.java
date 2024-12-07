@@ -38,6 +38,7 @@ public interface UpdateFileRequestOrBuilder
    * @return Whether the file field is set.
    */
   boolean hasFile();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateFileRequestOrBuilder
    * @return The file.
    */
   com.google.devtools.artifactregistry.v1.File getFile();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateFileRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateFileRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

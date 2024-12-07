@@ -38,6 +38,7 @@ public interface SupportedDatabaseFlagOrBuilder
    * @return Whether the stringRestrictions field is set.
    */
   boolean hasStringRestrictions();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface SupportedDatabaseFlagOrBuilder
    * @return The stringRestrictions.
    */
   com.google.cloud.alloydb.v1.SupportedDatabaseFlag.StringRestrictions getStringRestrictions();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface SupportedDatabaseFlagOrBuilder
    * @return Whether the integerRestrictions field is set.
    */
   boolean hasIntegerRestrictions();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface SupportedDatabaseFlagOrBuilder
    * @return The integerRestrictions.
    */
   com.google.cloud.alloydb.v1.SupportedDatabaseFlag.IntegerRestrictions getIntegerRestrictions();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface SupportedDatabaseFlagOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface SupportedDatabaseFlagOrBuilder
    * @return The flagName.
    */
   java.lang.String getFlagName();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface SupportedDatabaseFlagOrBuilder
    * @return The enum numeric value on the wire for valueType.
    */
   int getValueTypeValue();
+
   /**
    * <code>.google.cloud.alloydb.v1.SupportedDatabaseFlag.ValueType value_type = 3;</code>
    *
@@ -203,6 +210,7 @@ public interface SupportedDatabaseFlagOrBuilder
    * @return A list containing the supportedDbVersions.
    */
   java.util.List<com.google.cloud.alloydb.v1.DatabaseVersion> getSupportedDbVersionsList();
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public interface SupportedDatabaseFlagOrBuilder
    * @return The count of supportedDbVersions.
    */
   int getSupportedDbVersionsCount();
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public interface SupportedDatabaseFlagOrBuilder
    * @return The supportedDbVersions at the given index.
    */
   com.google.cloud.alloydb.v1.DatabaseVersion getSupportedDbVersions(int index);
+
   /**
    *
    *
@@ -240,6 +250,7 @@ public interface SupportedDatabaseFlagOrBuilder
    * @return A list containing the enum numeric values on the wire for supportedDbVersions.
    */
   java.util.List<java.lang.Integer> getSupportedDbVersionsValueList();
+
   /**
    *
    *

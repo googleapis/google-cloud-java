@@ -53,6 +53,7 @@ public interface ServiceScalingOrBuilder
    * @return The enum numeric value on the wire for scalingMode.
    */
   int getScalingModeValue();
+
   /**
    *
    *

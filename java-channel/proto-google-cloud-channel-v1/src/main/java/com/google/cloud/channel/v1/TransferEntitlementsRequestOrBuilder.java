@@ -38,6 +38,7 @@ public interface TransferEntitlementsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface TransferEntitlementsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.channel.v1.Entitlement> getEntitlementsList();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface TransferEntitlementsRequestOrBuilder
    * </code>
    */
   com.google.cloud.channel.v1.Entitlement getEntitlements(int index);
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface TransferEntitlementsRequestOrBuilder
    * </code>
    */
   int getEntitlementsCount();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface TransferEntitlementsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.EntitlementOrBuilder>
       getEntitlementsOrBuilderList();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface TransferEntitlementsRequestOrBuilder
    * @return The authToken.
    */
   java.lang.String getAuthToken();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface TransferEntitlementsRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface LatLngBoxOrBuilder
    * @return Whether the sw field is set.
    */
   boolean hasSw();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LatLngBoxOrBuilder
    * @return The sw.
    */
   com.google.type.LatLng getSw();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface LatLngBoxOrBuilder
    * @return Whether the ne field is set.
    */
   boolean hasNe();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface LatLngBoxOrBuilder
    * @return The ne.
    */
   com.google.type.LatLng getNe();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class DeleteConversationDatasetOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata)
     DeleteConversationDatasetOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteConversationDatasetOperationMetadata.newBuilder() to construct.
   private DeleteConversationDatasetOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -217,6 +218,7 @@ public final class DeleteConversationDatasetOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

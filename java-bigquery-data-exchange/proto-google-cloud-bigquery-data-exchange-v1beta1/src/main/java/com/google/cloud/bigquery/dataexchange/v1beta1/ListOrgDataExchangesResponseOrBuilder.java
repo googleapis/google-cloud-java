@@ -36,6 +36,7 @@ public interface ListOrgDataExchangesResponseOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange>
       getDataExchangesList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListOrgDataExchangesResponseOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange getDataExchanges(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListOrgDataExchangesResponseOrBuilder
    * </code>
    */
   int getDataExchangesCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListOrgDataExchangesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.dataexchange.v1beta1.DataExchangeOrBuilder>
       getDataExchangesOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListOrgDataExchangesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

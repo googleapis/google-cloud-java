@@ -34,6 +34,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.BackupLock)
     BackupLockOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackupLock.newBuilder() to construct.
   private BackupLock(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
     private ClientLockInfoCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,6 +116,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCK_UNTIL_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp lockUntilTime_;
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLockUntilTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lockUntilTime_;
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BACKUP_APPLIANCE_LOCK_INFO_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBackupApplianceLockInfo() {
     return clientLockInfoCase_ == 3;
   }
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.backupdr.v1.BackupApplianceLockInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_LOCK_INFO_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
   public boolean hasServiceLockInfo() {
     return clientLockInfoCase_ == 4;
   }
+
   /**
    *
    *
@@ -263,6 +273,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.backupdr.v1.ServiceLockInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -486,6 +497,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -753,6 +765,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lockUntilTimeBuilder_;
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLockUntilTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -793,6 +807,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
         return lockUntilTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +856,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +887,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +910,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -909,6 +928,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLockUntilTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -930,6 +950,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
             : lockUntilTime_;
       }
     }
+
     /**
      *
      *
@@ -964,6 +985,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.backupdr.v1.BackupApplianceLockInfo.Builder,
             com.google.cloud.backupdr.v1.BackupApplianceLockInfoOrBuilder>
         backupApplianceLockInfoBuilder_;
+
     /**
      *
      *
@@ -981,6 +1003,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBackupApplianceLockInfo() {
       return clientLockInfoCase_ == 3;
     }
+
     /**
      *
      *
@@ -1008,6 +1031,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.backupdr.v1.BackupApplianceLockInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1057,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
       clientLockInfoCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1080,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
       clientLockInfoCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1117,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
       clientLockInfoCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1145,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1161,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
         getBackupApplianceLockInfoBuilder() {
       return getBackupApplianceLockInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1156,6 +1185,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.backupdr.v1.BackupApplianceLockInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1197,6 +1227,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.backupdr.v1.ServiceLockInfo.Builder,
             com.google.cloud.backupdr.v1.ServiceLockInfoOrBuilder>
         serviceLockInfoBuilder_;
+
     /**
      *
      *
@@ -1215,6 +1246,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
     public boolean hasServiceLockInfo() {
       return clientLockInfoCase_ == 4;
     }
+
     /**
      *
      *
@@ -1243,6 +1275,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.backupdr.v1.ServiceLockInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1268,6 +1301,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
       clientLockInfoCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1291,6 +1325,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
       clientLockInfoCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1362,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
       clientLockInfoCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1391,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1407,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.backupdr.v1.ServiceLockInfo.Builder getServiceLockInfoBuilder() {
       return getServiceLockInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1393,6 +1431,7 @@ public final class BackupLock extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.backupdr.v1.ServiceLockInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *

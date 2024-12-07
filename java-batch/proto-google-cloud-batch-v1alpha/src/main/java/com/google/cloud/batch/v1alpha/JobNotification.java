@@ -33,6 +33,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.JobNotification)
     JobNotificationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use JobNotification.newBuilder() to construct.
   private JobNotification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,6 +117,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      * <code>JOB_STATE_CHANGED = 1;</code>
      */
     public static final int JOB_STATE_CHANGED_VALUE = 1;
+
     /**
      *
      *
@@ -237,6 +240,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
+
     /**
      *
      *
@@ -262,6 +266,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for newJobState.
      */
     int getNewJobStateValue();
+
     /**
      *
      *
@@ -287,6 +292,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for newTaskState.
      */
     int getNewTaskStateValue();
+
     /**
      *
      *
@@ -300,6 +306,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      */
     com.google.cloud.batch.v1alpha.TaskStatus.State getNewTaskState();
   }
+
   /**
    *
    *
@@ -320,6 +327,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.JobNotification.Message)
       MessageOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Message.newBuilder() to construct.
     private Message(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -354,6 +362,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
 
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
+
     /**
      *
      *
@@ -369,6 +378,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -391,6 +401,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
 
     public static final int NEW_JOB_STATE_FIELD_NUMBER = 2;
     private int newJobState_ = 0;
+
     /**
      *
      *
@@ -406,6 +417,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
     public int getNewJobStateValue() {
       return newJobState_;
     }
+
     /**
      *
      *
@@ -426,6 +438,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
 
     public static final int NEW_TASK_STATE_FIELD_NUMBER = 3;
     private int newTaskState_ = 0;
+
     /**
      *
      *
@@ -441,6 +454,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
     public int getNewTaskStateValue() {
       return newTaskState_;
     }
+
     /**
      *
      *
@@ -644,6 +658,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -861,6 +876,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private int type_ = 0;
+
       /**
        *
        *
@@ -876,6 +892,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       public int getTypeValue() {
         return type_;
       }
+
       /**
        *
        *
@@ -894,6 +911,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -913,6 +931,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
             ? com.google.cloud.batch.v1alpha.JobNotification.Type.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -934,6 +953,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -953,6 +973,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       }
 
       private int newJobState_ = 0;
+
       /**
        *
        *
@@ -968,6 +989,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       public int getNewJobStateValue() {
         return newJobState_;
       }
+
       /**
        *
        *
@@ -986,6 +1008,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1005,6 +1028,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
             ? com.google.cloud.batch.v1alpha.JobStatus.State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1026,6 +1050,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1045,6 +1070,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       }
 
       private int newTaskState_ = 0;
+
       /**
        *
        *
@@ -1060,6 +1086,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       public int getNewTaskStateValue() {
         return newTaskState_;
       }
+
       /**
        *
        *
@@ -1078,6 +1105,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1097,6 +1125,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
             ? com.google.cloud.batch.v1alpha.TaskStatus.State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1118,6 +1147,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1205,6 +1235,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pubsubTopic_ = "";
+
   /**
    *
    *
@@ -1240,6 +1271,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1278,6 +1310,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
 
   public static final int MESSAGE_FIELD_NUMBER = 2;
   private com.google.cloud.batch.v1alpha.JobNotification.Message message_;
+
   /**
    *
    *
@@ -1294,6 +1327,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
   public boolean hasMessage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1312,6 +1346,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.batch.v1alpha.JobNotification.Message.getDefaultInstance()
         : message_;
   }
+
   /**
    *
    *
@@ -1502,6 +1537,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1714,6 +1750,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object pubsubTopic_ = "";
+
     /**
      *
      *
@@ -1748,6 +1785,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1782,6 +1820,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1815,6 +1854,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1844,6 +1884,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1885,6 +1926,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.batch.v1alpha.JobNotification.Message.Builder,
             com.google.cloud.batch.v1alpha.JobNotification.MessageOrBuilder>
         messageBuilder_;
+
     /**
      *
      *
@@ -1900,6 +1942,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
     public boolean hasMessage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1921,6 +1964,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
         return messageBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1944,6 +1988,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1965,6 +2010,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1994,6 +2040,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2014,6 +2061,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2029,6 +2077,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getMessageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2048,6 +2097,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
             : message_;
       }
     }
+
     /**
      *
      *

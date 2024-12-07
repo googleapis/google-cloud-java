@@ -39,6 +39,7 @@ public interface GetGenerativeQuestionsFeatureConfigRequestOrBuilder
    * @return The catalog.
    */
   java.lang.String getCatalog();
+
   /**
    *
    *

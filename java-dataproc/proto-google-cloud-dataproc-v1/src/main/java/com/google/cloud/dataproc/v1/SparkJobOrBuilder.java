@@ -36,6 +36,7 @@ public interface SparkJobOrBuilder
    * @return Whether the mainJarFileUri field is set.
    */
   boolean hasMainJarFileUri();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SparkJobOrBuilder
    * @return The mainJarFileUri.
    */
   java.lang.String getMainJarFileUri();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface SparkJobOrBuilder
    * @return Whether the mainClass field is set.
    */
   boolean hasMainClass();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface SparkJobOrBuilder
    * @return The mainClass.
    */
   java.lang.String getMainClass();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface SparkJobOrBuilder
    * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface SparkJobOrBuilder
    * @return The count of args.
    */
   int getArgsCount();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface SparkJobOrBuilder
    * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface SparkJobOrBuilder
    * @return A list containing the jarFileUris.
    */
   java.util.List<java.lang.String> getJarFileUrisList();
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public interface SparkJobOrBuilder
    * @return The count of jarFileUris.
    */
   int getJarFileUrisCount();
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public interface SparkJobOrBuilder
    * @return The jarFileUris at the given index.
    */
   java.lang.String getJarFileUris(int index);
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public interface SparkJobOrBuilder
    * @return A list containing the fileUris.
    */
   java.util.List<java.lang.String> getFileUrisList();
+
   /**
    *
    *
@@ -244,6 +255,7 @@ public interface SparkJobOrBuilder
    * @return The count of fileUris.
    */
   int getFileUrisCount();
+
   /**
    *
    *
@@ -258,6 +270,7 @@ public interface SparkJobOrBuilder
    * @return The fileUris at the given index.
    */
   java.lang.String getFileUris(int index);
+
   /**
    *
    *
@@ -287,6 +300,7 @@ public interface SparkJobOrBuilder
    * @return A list containing the archiveUris.
    */
   java.util.List<java.lang.String> getArchiveUrisList();
+
   /**
    *
    *
@@ -301,6 +315,7 @@ public interface SparkJobOrBuilder
    * @return The count of archiveUris.
    */
   int getArchiveUrisCount();
+
   /**
    *
    *
@@ -316,6 +331,7 @@ public interface SparkJobOrBuilder
    * @return The archiveUris at the given index.
    */
   java.lang.String getArchiveUris(int index);
+
   /**
    *
    *
@@ -346,6 +362,7 @@ public interface SparkJobOrBuilder
    * </code>
    */
   int getPropertiesCount();
+
   /**
    *
    *
@@ -360,9 +377,11 @@ public interface SparkJobOrBuilder
    * </code>
    */
   boolean containsProperties(java.lang.String key);
+
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getProperties();
+
   /**
    *
    *
@@ -377,6 +396,7 @@ public interface SparkJobOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
+
   /**
    *
    *
@@ -395,6 +415,7 @@ public interface SparkJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -424,6 +445,7 @@ public interface SparkJobOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
+
   /**
    *
    *
@@ -438,6 +460,7 @@ public interface SparkJobOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig();
+
   /**
    *
    *

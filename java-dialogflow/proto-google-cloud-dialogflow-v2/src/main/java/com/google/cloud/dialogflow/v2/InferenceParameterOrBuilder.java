@@ -36,6 +36,7 @@ public interface InferenceParameterOrBuilder
    * @return Whether the maxOutputTokens field is set.
    */
   boolean hasMaxOutputTokens();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface InferenceParameterOrBuilder
    * @return Whether the temperature field is set.
    */
   boolean hasTemperature();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface InferenceParameterOrBuilder
    * @return Whether the topK field is set.
    */
   boolean hasTopK();
+
   /**
    *
    *
@@ -138,6 +141,7 @@ public interface InferenceParameterOrBuilder
    * @return Whether the topP field is set.
    */
   boolean hasTopP();
+
   /**
    *
    *

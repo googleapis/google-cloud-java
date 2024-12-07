@@ -36,6 +36,7 @@ public interface FileContentBufferOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FileContentBufferOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface FileContentBufferOrBuilder
    * @return Whether the fileType field is set.
    */
   boolean hasFileType();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface FileContentBufferOrBuilder
    * @return The fileType.
    */
   java.lang.String getFileType();
+
   /**
    *
    *

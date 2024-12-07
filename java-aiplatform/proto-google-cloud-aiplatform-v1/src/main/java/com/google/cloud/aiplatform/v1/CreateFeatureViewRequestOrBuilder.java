@@ -40,6 +40,7 @@ public interface CreateFeatureViewRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateFeatureViewRequestOrBuilder
    * @return Whether the featureView field is set.
    */
   boolean hasFeatureView();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateFeatureViewRequestOrBuilder
    * @return The featureView.
    */
   com.google.cloud.aiplatform.v1.FeatureView getFeatureView();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateFeatureViewRequestOrBuilder
    * @return The featureViewId.
    */
   java.lang.String getFeatureViewId();
+
   /**
    *
    *

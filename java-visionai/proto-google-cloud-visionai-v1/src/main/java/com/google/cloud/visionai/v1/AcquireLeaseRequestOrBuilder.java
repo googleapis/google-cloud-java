@@ -36,6 +36,7 @@ public interface AcquireLeaseRequestOrBuilder
    * @return The series.
    */
   java.lang.String getSeries();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AcquireLeaseRequestOrBuilder
    * @return The owner.
    */
   java.lang.String getOwner();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface AcquireLeaseRequestOrBuilder
    * @return Whether the term field is set.
    */
   boolean hasTerm();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface AcquireLeaseRequestOrBuilder
    * @return The term.
    */
   com.google.protobuf.Duration getTerm();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface AcquireLeaseRequestOrBuilder
    * @return The enum numeric value on the wire for leaseType.
    */
   int getLeaseTypeValue();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface OtherCloudResourceRegexesOrBuilder
    * <code>repeated .google.privacy.dlp.v2.OtherCloudResourceRegex patterns = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.OtherCloudResourceRegex> getPatternsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface OtherCloudResourceRegexesOrBuilder
    * <code>repeated .google.privacy.dlp.v2.OtherCloudResourceRegex patterns = 1;</code>
    */
   com.google.privacy.dlp.v2.OtherCloudResourceRegex getPatterns(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface OtherCloudResourceRegexesOrBuilder
    * <code>repeated .google.privacy.dlp.v2.OtherCloudResourceRegex patterns = 1;</code>
    */
   int getPatternsCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface OtherCloudResourceRegexesOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.OtherCloudResourceRegexOrBuilder>
       getPatternsOrBuilderList();
+
   /**
    *
    *

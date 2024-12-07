@@ -36,6 +36,7 @@ public interface MonitoringConfigOrBuilder
    * @return Whether the componentConfig field is set.
    */
   boolean hasComponentConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MonitoringConfigOrBuilder
    * @return The componentConfig.
    */
   com.google.container.v1beta1.MonitoringComponentConfig getComponentConfig();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface MonitoringConfigOrBuilder
    * @return Whether the managedPrometheusConfig field is set.
    */
   boolean hasManagedPrometheusConfig();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface MonitoringConfigOrBuilder
    * @return The managedPrometheusConfig.
    */
   com.google.container.v1beta1.ManagedPrometheusConfig getManagedPrometheusConfig();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface MonitoringConfigOrBuilder
    * @return Whether the advancedDatapathObservabilityConfig field is set.
    */
   boolean hasAdvancedDatapathObservabilityConfig();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface MonitoringConfigOrBuilder
    */
   com.google.container.v1beta1.AdvancedDatapathObservabilityConfig
       getAdvancedDatapathObservabilityConfig();
+
   /**
    *
    *

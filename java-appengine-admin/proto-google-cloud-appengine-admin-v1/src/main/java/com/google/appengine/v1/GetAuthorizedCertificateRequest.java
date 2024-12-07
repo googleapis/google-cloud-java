@@ -33,6 +33,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.appengine.v1.GetAuthorizedCertificateRequest)
     GetAuthorizedCertificateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetAuthorizedCertificateRequest.newBuilder() to construct.
   private GetAuthorizedCertificateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
   public int getViewValue() {
     return view_;
   }
+
   /**
    *
    *
@@ -322,6 +327,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -519,6 +525,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -542,6 +549,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -565,6 +573,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -605,6 +615,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
     }
 
     private int view_ = 0;
+
     /**
      *
      *
@@ -645,6 +657,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
     public int getViewValue() {
       return view_;
     }
+
     /**
      *
      *
@@ -663,6 +676,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +696,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
           ? com.google.appengine.v1.AuthorizedCertificateView.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -703,6 +718,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

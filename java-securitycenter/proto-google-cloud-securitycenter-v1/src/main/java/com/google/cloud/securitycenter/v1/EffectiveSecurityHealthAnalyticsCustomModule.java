@@ -42,6 +42,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule)
     EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EffectiveSecurityHealthAnalyticsCustomModule.newBuilder() to construct.
   private EffectiveSecurityHealthAnalyticsCustomModule(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -130,6 +131,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      * <code>ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int ENABLEMENT_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +142,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
+
     /**
      *
      *
@@ -244,6 +247,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -273,6 +277,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
       return s;
     }
   }
+
   /**
    *
    *
@@ -305,6 +310,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
 
   public static final int CUSTOM_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.securitycenter.v1.CustomConfig customConfig_;
+
   /**
    *
    *
@@ -322,6 +328,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
   public boolean hasCustomConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -341,6 +348,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
         ? com.google.cloud.securitycenter.v1.CustomConfig.getDefaultInstance()
         : customConfig_;
   }
+
   /**
    *
    *
@@ -361,6 +369,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
 
   public static final int ENABLEMENT_STATE_FIELD_NUMBER = 3;
   private int enablementState_ = 0;
+
   /**
    *
    *
@@ -379,6 +388,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
   public int getEnablementStateValue() {
     return enablementState_;
   }
+
   /**
    *
    *
@@ -411,6 +421,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -436,6 +447,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
       return s;
     }
   }
+
   /**
    *
    *
@@ -668,6 +680,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -932,6 +945,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -960,6 +974,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -988,6 +1003,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1031,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1055,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1091,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
             com.google.cloud.securitycenter.v1.CustomConfig.Builder,
             com.google.cloud.securitycenter.v1.CustomConfigOrBuilder>
         customConfigBuilder_;
+
     /**
      *
      *
@@ -1089,6 +1108,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
     public boolean hasCustomConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1111,6 +1131,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
         return customConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1135,6 +1156,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1179,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1210,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
       }
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1232,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1249,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
       onChanged();
       return getCustomConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1244,6 +1270,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
             : customConfig_;
       }
     }
+
     /**
      *
      *
@@ -1273,6 +1300,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
     }
 
     private int enablementState_ = 0;
+
     /**
      *
      *
@@ -1291,6 +1319,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
     public int getEnablementStateValue() {
       return enablementState_;
     }
+
     /**
      *
      *
@@ -1312,6 +1341,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1370,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
               .EnablementState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1367,6 +1398,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1389,6 +1421,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1413,6 +1446,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1437,6 +1471,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1460,6 +1495,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1479,6 +1515,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *

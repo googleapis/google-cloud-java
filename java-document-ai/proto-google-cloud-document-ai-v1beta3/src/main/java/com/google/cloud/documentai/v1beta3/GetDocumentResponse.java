@@ -25,6 +25,7 @@ public final class GetDocumentResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.GetDocumentResponse)
     GetDocumentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetDocumentResponse.newBuilder() to construct.
   private GetDocumentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -56,6 +57,7 @@ public final class GetDocumentResponse extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private com.google.cloud.documentai.v1beta3.Document document_;
+
   /**
    * <code>.google.cloud.documentai.v1beta3.Document document = 1;</code>
    *
@@ -65,6 +67,7 @@ public final class GetDocumentResponse extends com.google.protobuf.GeneratedMess
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>.google.cloud.documentai.v1beta3.Document document = 1;</code>
    *
@@ -76,6 +79,7 @@ public final class GetDocumentResponse extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.documentai.v1beta3.Document.getDefaultInstance()
         : document_;
   }
+
   /** <code>.google.cloud.documentai.v1beta3.Document document = 1;</code> */
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.DocumentOrBuilder getDocumentOrBuilder() {
@@ -249,6 +253,7 @@ public final class GetDocumentResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.documentai.v1beta3.GetDocumentResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -444,6 +449,7 @@ public final class GetDocumentResponse extends com.google.protobuf.GeneratedMess
             com.google.cloud.documentai.v1beta3.Document.Builder,
             com.google.cloud.documentai.v1beta3.DocumentOrBuilder>
         documentBuilder_;
+
     /**
      * <code>.google.cloud.documentai.v1beta3.Document document = 1;</code>
      *
@@ -452,6 +458,7 @@ public final class GetDocumentResponse extends com.google.protobuf.GeneratedMess
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>.google.cloud.documentai.v1beta3.Document document = 1;</code>
      *
@@ -466,6 +473,7 @@ public final class GetDocumentResponse extends com.google.protobuf.GeneratedMess
         return documentBuilder_.getMessage();
       }
     }
+
     /** <code>.google.cloud.documentai.v1beta3.Document document = 1;</code> */
     public Builder setDocument(com.google.cloud.documentai.v1beta3.Document value) {
       if (documentBuilder_ == null) {
@@ -480,6 +488,7 @@ public final class GetDocumentResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /** <code>.google.cloud.documentai.v1beta3.Document document = 1;</code> */
     public Builder setDocument(
         com.google.cloud.documentai.v1beta3.Document.Builder builderForValue) {
@@ -492,6 +501,7 @@ public final class GetDocumentResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /** <code>.google.cloud.documentai.v1beta3.Document document = 1;</code> */
     public Builder mergeDocument(com.google.cloud.documentai.v1beta3.Document value) {
       if (documentBuilder_ == null) {
@@ -511,6 +521,7 @@ public final class GetDocumentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /** <code>.google.cloud.documentai.v1beta3.Document document = 1;</code> */
     public Builder clearDocument() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -522,12 +533,14 @@ public final class GetDocumentResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /** <code>.google.cloud.documentai.v1beta3.Document document = 1;</code> */
     public com.google.cloud.documentai.v1beta3.Document.Builder getDocumentBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
+
     /** <code>.google.cloud.documentai.v1beta3.Document document = 1;</code> */
     public com.google.cloud.documentai.v1beta3.DocumentOrBuilder getDocumentOrBuilder() {
       if (documentBuilder_ != null) {
@@ -538,6 +551,7 @@ public final class GetDocumentResponse extends com.google.protobuf.GeneratedMess
             : document_;
       }
     }
+
     /** <code>.google.cloud.documentai.v1beta3.Document document = 1;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1beta3.Document,

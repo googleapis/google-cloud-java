@@ -36,6 +36,7 @@ public interface PageOrBuilder
    * @return Whether the property field is set.
    */
   boolean hasProperty();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PageOrBuilder
    * @return The property.
    */
   com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty getProperty();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface PageOrBuilder
    * <code>repeated .google.cloud.vision.v1p1beta1.Block blocks = 4;</code>
    */
   java.util.List<com.google.cloud.vision.v1p1beta1.Block> getBlocksList();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface PageOrBuilder
    * <code>repeated .google.cloud.vision.v1p1beta1.Block blocks = 4;</code>
    */
   com.google.cloud.vision.v1p1beta1.Block getBlocks(int index);
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface PageOrBuilder
    * <code>repeated .google.cloud.vision.v1p1beta1.Block blocks = 4;</code>
    */
   int getBlocksCount();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface PageOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p1beta1.BlockOrBuilder>
       getBlocksOrBuilderList();
+
   /**
    *
    *

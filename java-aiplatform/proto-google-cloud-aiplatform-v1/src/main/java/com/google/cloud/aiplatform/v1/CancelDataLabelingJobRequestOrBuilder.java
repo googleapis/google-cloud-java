@@ -40,6 +40,7 @@ public interface CancelDataLabelingJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

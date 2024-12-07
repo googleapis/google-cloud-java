@@ -36,6 +36,7 @@ public interface SubscribeDataExchangeResponseOrBuilder
    * @return Whether the subscription field is set.
    */
   boolean hasSubscription();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SubscribeDataExchangeResponseOrBuilder
    * @return The subscription.
    */
   com.google.cloud.bigquery.analyticshub.v1.Subscription getSubscription();
+
   /**
    *
    *

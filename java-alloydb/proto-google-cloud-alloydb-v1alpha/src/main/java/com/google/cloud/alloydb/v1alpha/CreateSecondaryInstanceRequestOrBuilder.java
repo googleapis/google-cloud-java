@@ -39,6 +39,7 @@ public interface CreateSecondaryInstanceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateSecondaryInstanceRequestOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface CreateSecondaryInstanceRequestOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateSecondaryInstanceRequestOrBuilder
    * @return The instance.
    */
   com.google.cloud.alloydb.v1alpha.Instance getInstance();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface CreateSecondaryInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

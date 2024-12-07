@@ -37,6 +37,7 @@ public interface SetInstanceTemplateInstanceGroupManagerRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface SetInstanceTemplateInstanceGroupManagerRequestOrBuilder
    * @return Whether the instanceGroupManagersSetInstanceTemplateRequestResource field is set.
    */
   boolean hasInstanceGroupManagersSetInstanceTemplateRequestResource();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface SetInstanceTemplateInstanceGroupManagerRequestOrBuilder
    */
   com.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest
       getInstanceGroupManagersSetInstanceTemplateRequestResource();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface SetInstanceTemplateInstanceGroupManagerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface SetInstanceTemplateInstanceGroupManagerRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface SetInstanceTemplateInstanceGroupManagerRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface SetInstanceTemplateInstanceGroupManagerRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

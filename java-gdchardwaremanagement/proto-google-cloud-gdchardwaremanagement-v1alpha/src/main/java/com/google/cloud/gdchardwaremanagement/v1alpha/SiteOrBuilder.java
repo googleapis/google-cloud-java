@@ -37,6 +37,7 @@ public interface SiteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SiteOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface SiteOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface SiteOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface SiteOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public interface SiteOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface SiteOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface SiteOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -201,9 +209,11 @@ public interface SiteOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -216,6 +226,7 @@ public interface SiteOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -232,6 +243,7 @@ public interface SiteOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -259,6 +271,7 @@ public interface SiteOrBuilder
    * @return Whether the organizationContact field is set.
    */
   boolean hasOrganizationContact();
+
   /**
    *
    *
@@ -273,6 +286,7 @@ public interface SiteOrBuilder
    * @return The organizationContact.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact getOrganizationContact();
+
   /**
    *
    *
@@ -300,6 +314,7 @@ public interface SiteOrBuilder
    * @return The googleMapsPinUri.
    */
   java.lang.String getGoogleMapsPinUri();
+
   /**
    *
    *
@@ -333,6 +348,7 @@ public interface SiteOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.TimePeriod> getAccessTimesList();
+
   /**
    *
    *
@@ -352,6 +368,7 @@ public interface SiteOrBuilder
    * </code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.TimePeriod getAccessTimes(int index);
+
   /**
    *
    *
@@ -371,6 +388,7 @@ public interface SiteOrBuilder
    * </code>
    */
   int getAccessTimesCount();
+
   /**
    *
    *
@@ -391,6 +409,7 @@ public interface SiteOrBuilder
    */
   java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.TimePeriodOrBuilder>
       getAccessTimesOrBuilderList();
+
   /**
    *
    *
@@ -429,6 +448,7 @@ public interface SiteOrBuilder
    * @return The notes.
    */
   java.lang.String getNotes();
+
   /**
    *
    *
@@ -460,6 +480,7 @@ public interface SiteOrBuilder
    * @return The customerSiteId.
    */
   java.lang.String getCustomerSiteId();
+
   /**
    *
    *

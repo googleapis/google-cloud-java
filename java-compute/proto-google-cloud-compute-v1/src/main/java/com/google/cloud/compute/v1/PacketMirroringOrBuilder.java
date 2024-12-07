@@ -38,6 +38,7 @@ public interface PacketMirroringOrBuilder
    * @return Whether the collectorIlb field is set.
    */
   boolean hasCollectorIlb();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface PacketMirroringOrBuilder
    * @return The collectorIlb.
    */
   com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo getCollectorIlb();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface PacketMirroringOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface PacketMirroringOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface PacketMirroringOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface PacketMirroringOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface PacketMirroringOrBuilder
    * @return Whether the enable field is set.
    */
   boolean hasEnable();
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public interface PacketMirroringOrBuilder
    * @return The enable.
    */
   java.lang.String getEnable();
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface PacketMirroringOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public interface PacketMirroringOrBuilder
    * @return The filter.
    */
   com.google.cloud.compute.v1.PacketMirroringFilter getFilter();
+
   /**
    *
    *
@@ -226,6 +236,7 @@ public interface PacketMirroringOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -251,6 +262,7 @@ public interface PacketMirroringOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -263,6 +275,7 @@ public interface PacketMirroringOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public interface PacketMirroringOrBuilder
    * @return Whether the mirroredResources field is set.
    */
   boolean hasMirroredResources();
+
   /**
    *
    *
@@ -304,6 +318,7 @@ public interface PacketMirroringOrBuilder
    * @return The mirroredResources.
    */
   com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo getMirroredResources();
+
   /**
    *
    *
@@ -330,6 +345,7 @@ public interface PacketMirroringOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -342,6 +358,7 @@ public interface PacketMirroringOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -367,6 +384,7 @@ public interface PacketMirroringOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -379,6 +397,7 @@ public interface PacketMirroringOrBuilder
    * @return The network.
    */
   com.google.cloud.compute.v1.PacketMirroringNetworkInfo getNetwork();
+
   /**
    *
    *
@@ -402,6 +421,7 @@ public interface PacketMirroringOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
+
   /**
    *
    *
@@ -427,6 +447,7 @@ public interface PacketMirroringOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -439,6 +460,7 @@ public interface PacketMirroringOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -464,6 +486,7 @@ public interface PacketMirroringOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -476,6 +499,7 @@ public interface PacketMirroringOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *

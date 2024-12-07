@@ -38,6 +38,7 @@ public interface TaskLogsRetentionConfigOrBuilder
    * @return The enum numeric value on the wire for storageMode.
    */
   int getStorageModeValue();
+
   /**
    *
    *

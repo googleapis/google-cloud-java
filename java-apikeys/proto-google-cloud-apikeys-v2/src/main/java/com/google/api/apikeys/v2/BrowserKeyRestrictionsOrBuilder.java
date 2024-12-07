@@ -37,6 +37,7 @@ public interface BrowserKeyRestrictionsOrBuilder
    * @return A list containing the allowedReferrers.
    */
   java.util.List<java.lang.String> getAllowedReferrersList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface BrowserKeyRestrictionsOrBuilder
    * @return The count of allowedReferrers.
    */
   int getAllowedReferrersCount();
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface BrowserKeyRestrictionsOrBuilder
    * @return The allowedReferrers at the given index.
    */
   java.lang.String getAllowedReferrers(int index);
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.DataSource)
     DataSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataSource.newBuilder() to construct.
   private DataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -139,6 +140,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTHORIZATION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int AUTHORIZATION_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -150,6 +152,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTHORIZATION_CODE = 1;</code>
      */
     public static final int AUTHORIZATION_CODE_VALUE = 1;
+
     /**
      *
      *
@@ -161,6 +164,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>GOOGLE_PLUS_AUTHORIZATION_CODE = 2;</code>
      */
     public static final int GOOGLE_PLUS_AUTHORIZATION_CODE_VALUE = 2;
+
     /**
      *
      *
@@ -319,6 +323,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>DATA_REFRESH_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DATA_REFRESH_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -331,6 +336,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>SLIDING_WINDOW = 1;</code>
      */
     public static final int SLIDING_WINDOW_VALUE = 1;
+
     /**
      *
      *
@@ -436,6 +442,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -459,6 +466,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -487,6 +495,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataSourceId_ = "";
+
   /**
    *
    *
@@ -510,6 +519,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -538,6 +548,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -561,6 +572,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -589,6 +601,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -612,6 +625,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -640,6 +654,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientId_ = "";
+
   /**
    *
    *
@@ -663,6 +678,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -692,6 +708,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList scopes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -708,6 +725,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getScopesList() {
     return scopes_;
   }
+
   /**
    *
    *
@@ -724,6 +742,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public int getScopesCount() {
     return scopes_.size();
   }
+
   /**
    *
    *
@@ -741,6 +760,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getScopes(int index) {
     return scopes_.get(index);
   }
+
   /**
    *
    *
@@ -761,6 +781,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRANSFER_TYPE_FIELD_NUMBER = 7;
   private int transferType_ = 0;
+
   /**
    *
    *
@@ -781,6 +802,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public int getTransferTypeValue() {
     return transferType_;
   }
+
   /**
    *
    *
@@ -808,6 +830,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUPPORTS_MULTIPLE_TRANSFERS_FIELD_NUMBER = 8;
   private boolean supportsMultipleTransfers_ = false;
+
   /**
    *
    *
@@ -829,6 +852,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_DEADLINE_SECONDS_FIELD_NUMBER = 9;
   private int updateDeadlineSeconds_ = 0;
+
   /**
    *
    *
@@ -850,6 +874,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object defaultSchedule_ = "";
+
   /**
    *
    *
@@ -877,6 +902,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -907,6 +933,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUPPORTS_CUSTOM_SCHEDULE_FIELD_NUMBER = 11;
   private boolean supportsCustomSchedule_ = false;
+
   /**
    *
    *
@@ -929,6 +956,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter> parameters_;
+
   /**
    *
    *
@@ -944,6 +972,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       getParametersList() {
     return parameters_;
   }
+
   /**
    *
    *
@@ -960,6 +989,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       getParametersOrBuilderList() {
     return parameters_;
   }
+
   /**
    *
    *
@@ -974,6 +1004,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public int getParametersCount() {
     return parameters_.size();
   }
+
   /**
    *
    *
@@ -988,6 +1019,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter getParameters(int index) {
     return parameters_.get(index);
   }
+
   /**
    *
    *
@@ -1008,6 +1040,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object helpUrl_ = "";
+
   /**
    *
    *
@@ -1031,6 +1064,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1057,6 +1091,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTHORIZATION_TYPE_FIELD_NUMBER = 14;
   private int authorizationType_ = 0;
+
   /**
    *
    *
@@ -1074,6 +1109,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public int getAuthorizationTypeValue() {
     return authorizationType_;
   }
+
   /**
    *
    *
@@ -1100,6 +1136,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_REFRESH_TYPE_FIELD_NUMBER = 15;
   private int dataRefreshType_ = 0;
+
   /**
    *
    *
@@ -1119,6 +1156,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public int getDataRefreshTypeValue() {
     return dataRefreshType_;
   }
+
   /**
    *
    *
@@ -1146,6 +1184,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFAULT_DATA_REFRESH_WINDOW_DAYS_FIELD_NUMBER = 16;
   private int defaultDataRefreshWindowDays_ = 0;
+
   /**
    *
    *
@@ -1165,6 +1204,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MANUAL_RUNS_DISABLED_FIELD_NUMBER = 17;
   private boolean manualRunsDisabled_ = false;
+
   /**
    *
    *
@@ -1184,6 +1224,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MINIMUM_SCHEDULE_INTERVAL_FIELD_NUMBER = 18;
   private com.google.protobuf.Duration minimumScheduleInterval_;
+
   /**
    *
    *
@@ -1199,6 +1240,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinimumScheduleInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1216,6 +1258,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : minimumScheduleInterval_;
   }
+
   /**
    *
    *
@@ -1577,6 +1620,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2073,6 +2117,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2095,6 +2140,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2117,6 +2163,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2138,6 +2185,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2155,6 +2203,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2179,6 +2228,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dataSourceId_ = "";
+
     /**
      *
      *
@@ -2201,6 +2251,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2223,6 +2274,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2244,6 +2296,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2261,6 +2314,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2285,6 +2339,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2307,6 +2362,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2329,6 +2385,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2350,6 +2407,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2367,6 +2425,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2391,6 +2450,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2413,6 +2473,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2435,6 +2496,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2456,6 +2518,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2473,6 +2536,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2497,6 +2561,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clientId_ = "";
+
     /**
      *
      *
@@ -2519,6 +2584,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2541,6 +2607,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2562,6 +2629,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2579,6 +2647,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2611,6 +2680,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -2628,6 +2698,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       scopes_.makeImmutable();
       return scopes_;
     }
+
     /**
      *
      *
@@ -2644,6 +2715,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public int getScopesCount() {
       return scopes_.size();
     }
+
     /**
      *
      *
@@ -2661,6 +2733,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getScopes(int index) {
       return scopes_.get(index);
     }
+
     /**
      *
      *
@@ -2678,6 +2751,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getScopesBytes(int index) {
       return scopes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2703,6 +2777,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2727,6 +2802,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2748,6 +2824,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2768,6 +2845,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2795,6 +2873,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int transferType_ = 0;
+
     /**
      *
      *
@@ -2815,6 +2894,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public int getTransferTypeValue() {
       return transferType_;
     }
+
     /**
      *
      *
@@ -2838,6 +2918,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2862,6 +2943,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.datatransfer.v1.TransferType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2888,6 +2970,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2912,6 +2995,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean supportsMultipleTransfers_;
+
     /**
      *
      *
@@ -2930,6 +3014,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public boolean getSupportsMultipleTransfers() {
       return supportsMultipleTransfers_;
     }
+
     /**
      *
      *
@@ -2952,6 +3037,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2974,6 +3060,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int updateDeadlineSeconds_;
+
     /**
      *
      *
@@ -2990,6 +3077,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public int getUpdateDeadlineSeconds() {
       return updateDeadlineSeconds_;
     }
+
     /**
      *
      *
@@ -3010,6 +3098,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3030,6 +3119,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object defaultSchedule_ = "";
+
     /**
      *
      *
@@ -3056,6 +3146,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3082,6 +3173,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3107,6 +3199,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3128,6 +3221,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3156,6 +3250,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean supportsCustomSchedule_;
+
     /**
      *
      *
@@ -3173,6 +3268,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public boolean getSupportsCustomSchedule() {
       return supportsCustomSchedule_;
     }
+
     /**
      *
      *
@@ -3194,6 +3290,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3250,6 +3347,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return parametersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3267,6 +3365,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return parametersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3284,6 +3383,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return parametersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3308,6 +3408,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3330,6 +3431,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3354,6 +3456,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3378,6 +3481,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3399,6 +3503,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3421,6 +3526,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3443,6 +3549,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3463,6 +3570,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3483,6 +3591,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3497,6 +3606,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         getParametersBuilder(int index) {
       return getParametersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3515,6 +3625,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return parametersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3534,6 +3645,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(parameters_);
       }
     }
+
     /**
      *
      *
@@ -3550,6 +3662,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3567,6 +3680,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3600,6 +3714,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object helpUrl_ = "";
+
     /**
      *
      *
@@ -3622,6 +3737,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3644,6 +3760,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3665,6 +3782,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3682,6 +3800,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3706,6 +3825,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int authorizationType_ = 0;
+
     /**
      *
      *
@@ -3723,6 +3843,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public int getAuthorizationTypeValue() {
       return authorizationType_;
     }
+
     /**
      *
      *
@@ -3743,6 +3864,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3766,6 +3888,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3790,6 +3913,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3811,6 +3935,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int dataRefreshType_ = 0;
+
     /**
      *
      *
@@ -3831,6 +3956,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public int getDataRefreshTypeValue() {
       return dataRefreshType_;
     }
+
     /**
      *
      *
@@ -3854,6 +3980,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3880,6 +4007,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3907,6 +4035,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3931,6 +4060,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int defaultDataRefreshWindowDays_;
+
     /**
      *
      *
@@ -3947,6 +4077,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public int getDefaultDataRefreshWindowDays() {
       return defaultDataRefreshWindowDays_;
     }
+
     /**
      *
      *
@@ -3967,6 +4098,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3987,6 +4119,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean manualRunsDisabled_;
+
     /**
      *
      *
@@ -4003,6 +4136,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public boolean getManualRunsDisabled() {
       return manualRunsDisabled_;
     }
+
     /**
      *
      *
@@ -4023,6 +4157,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4048,6 +4183,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         minimumScheduleIntervalBuilder_;
+
     /**
      *
      *
@@ -4062,6 +4198,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinimumScheduleInterval() {
       return ((bitField0_ & 0x00020000) != 0);
     }
+
     /**
      *
      *
@@ -4082,6 +4219,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return minimumScheduleIntervalBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4104,6 +4242,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4124,6 +4263,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4151,6 +4291,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4170,6 +4311,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4184,6 +4326,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMinimumScheduleIntervalFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4202,6 +4345,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             : minimumScheduleInterval_;
       }
     }
+
     /**
      *
      *

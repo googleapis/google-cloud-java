@@ -36,6 +36,7 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    * @return Whether the sourceInstanceTemplateId field is set.
    */
   boolean hasSourceInstanceTemplateId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    * @return The sourceInstanceTemplateId.
    */
   java.lang.String getSourceInstanceTemplateId();
+
   /**
    *
    *

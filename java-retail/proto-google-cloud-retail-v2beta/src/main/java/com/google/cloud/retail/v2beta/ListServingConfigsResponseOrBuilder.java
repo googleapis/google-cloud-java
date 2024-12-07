@@ -34,6 +34,7 @@ public interface ListServingConfigsResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2beta.ServingConfig serving_configs = 1;</code>
    */
   java.util.List<com.google.cloud.retail.v2beta.ServingConfig> getServingConfigsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListServingConfigsResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2beta.ServingConfig serving_configs = 1;</code>
    */
   com.google.cloud.retail.v2beta.ServingConfig getServingConfigs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListServingConfigsResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2beta.ServingConfig serving_configs = 1;</code>
    */
   int getServingConfigsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListServingConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2beta.ServingConfigOrBuilder>
       getServingConfigsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListServingConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -77,6 +77,7 @@ public enum GroupResourceType implements com.google.protobuf.ProtocolMessageEnum
    * <code>RESOURCE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int RESOURCE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public enum GroupResourceType implements com.google.protobuf.ProtocolMessageEnum
    * <code>INSTANCE = 1;</code>
    */
   public static final int INSTANCE_VALUE = 1;
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface LbTrafficExtensionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface LbTrafficExtensionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface LbTrafficExtensionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface LbTrafficExtensionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface LbTrafficExtensionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface LbTrafficExtensionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface LbTrafficExtensionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -186,9 +193,11 @@ public interface LbTrafficExtensionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public interface LbTrafficExtensionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -221,6 +231,7 @@ public interface LbTrafficExtensionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -250,6 +261,7 @@ public interface LbTrafficExtensionOrBuilder
    * @return A list containing the forwardingRules.
    */
   java.util.List<java.lang.String> getForwardingRulesList();
+
   /**
    *
    *
@@ -264,6 +276,7 @@ public interface LbTrafficExtensionOrBuilder
    * @return The count of forwardingRules.
    */
   int getForwardingRulesCount();
+
   /**
    *
    *
@@ -279,6 +292,7 @@ public interface LbTrafficExtensionOrBuilder
    * @return The forwardingRules at the given index.
    */
   java.lang.String getForwardingRules(int index);
+
   /**
    *
    *
@@ -312,6 +326,7 @@ public interface LbTrafficExtensionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.networkservices.v1.ExtensionChain> getExtensionChainsList();
+
   /**
    *
    *
@@ -329,6 +344,7 @@ public interface LbTrafficExtensionOrBuilder
    * </code>
    */
   com.google.cloud.networkservices.v1.ExtensionChain getExtensionChains(int index);
+
   /**
    *
    *
@@ -346,6 +362,7 @@ public interface LbTrafficExtensionOrBuilder
    * </code>
    */
   int getExtensionChainsCount();
+
   /**
    *
    *
@@ -364,6 +381,7 @@ public interface LbTrafficExtensionOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.ExtensionChainOrBuilder>
       getExtensionChainsOrBuilderList();
+
   /**
    *
    *
@@ -401,6 +419,7 @@ public interface LbTrafficExtensionOrBuilder
    * @return The enum numeric value on the wire for loadBalancingScheme.
    */
   int getLoadBalancingSchemeValue();
+
   /**
    *
    *
@@ -439,6 +458,7 @@ public interface LbTrafficExtensionOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -458,6 +478,7 @@ public interface LbTrafficExtensionOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Struct getMetadata();
+
   /**
    *
    *

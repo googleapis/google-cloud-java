@@ -36,6 +36,7 @@ public interface AuditDataOrBuilder
    * @return Whether the permissionDelta field is set.
    */
   boolean hasPermissionDelta();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AuditDataOrBuilder
    * @return The permissionDelta.
    */
   com.google.iam.admin.v1.AuditData.PermissionDelta getPermissionDelta();
+
   /**
    *
    *

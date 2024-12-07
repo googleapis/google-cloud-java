@@ -33,6 +33,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1alpha.Feature)
     FeatureOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Feature.newBuilder() to construct.
   private Feature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -159,6 +162,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -175,12 +179,14 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESOURCE_STATE_FIELD_NUMBER = 3;
   private com.google.cloud.gkehub.v1alpha.FeatureResourceState resourceState_;
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResourceState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -273,6 +283,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkehub.v1alpha.FeatureResourceState.getDefaultInstance()
         : resourceState_;
   }
+
   /**
    *
    *
@@ -293,6 +304,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPEC_FIELD_NUMBER = 4;
   private com.google.cloud.gkehub.v1alpha.CommonFeatureSpec spec_;
+
   /**
    *
    *
@@ -311,6 +323,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -331,6 +344,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkehub.v1alpha.CommonFeatureSpec.getDefaultInstance()
         : spec_;
   }
+
   /**
    *
    *
@@ -385,6 +399,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   public int getMembershipSpecsCount() {
     return internalGetMembershipSpecs().getMap().size();
   }
+
   /**
    *
    *
@@ -419,6 +434,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetMembershipSpecs().getMap().containsKey(key);
   }
+
   /** Use {@link #getMembershipSpecsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -426,6 +442,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       getMembershipSpecs() {
     return getMembershipSpecsMap();
   }
+
   /**
    *
    *
@@ -458,6 +475,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       getMembershipSpecsMap() {
     return internalGetMembershipSpecs().getMap();
   }
+
   /**
    *
    *
@@ -498,6 +516,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         internalGetMembershipSpecs().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -541,6 +560,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 6;
   private com.google.cloud.gkehub.v1alpha.CommonFeatureState state_;
+
   /**
    *
    *
@@ -558,6 +578,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   public boolean hasState() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -577,6 +598,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkehub.v1alpha.CommonFeatureState.getDefaultInstance()
         : state_;
   }
+
   /**
    *
    *
@@ -631,6 +653,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   public int getMembershipStatesCount() {
     return internalGetMembershipStates().getMap().size();
   }
+
   /**
    *
    *
@@ -658,6 +681,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetMembershipStates().getMap().containsKey(key);
   }
+
   /** Use {@link #getMembershipStatesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -665,6 +689,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       getMembershipStates() {
     return getMembershipStatesMap();
   }
+
   /**
    *
    *
@@ -690,6 +715,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       getMembershipStatesMap() {
     return internalGetMembershipStates().getMap();
   }
+
   /**
    *
    *
@@ -723,6 +749,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         internalGetMembershipStates().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -759,6 +786,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -775,6 +803,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -791,6 +820,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -808,6 +838,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -824,6 +855,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -840,6 +872,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -857,6 +890,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp deleteTime_;
+
   /**
    *
    *
@@ -873,6 +907,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeleteTime() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -889,6 +924,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getDeleteTime() {
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
+
   /**
    *
    *
@@ -1203,6 +1239,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1602,6 +1639,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1625,6 +1663,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1648,6 +1687,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1670,6 +1710,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1688,6 +1729,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1737,6 +1779,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1753,12 +1796,14 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1772,6 +1817,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1792,6 +1838,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1818,6 +1865,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1834,12 +1882,14 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000002;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -1860,6 +1910,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1881,6 +1932,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.v1alpha.FeatureResourceState.Builder,
             com.google.cloud.gkehub.v1alpha.FeatureResourceStateOrBuilder>
         resourceStateBuilder_;
+
     /**
      *
      *
@@ -1897,6 +1949,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResourceState() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1919,6 +1972,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         return resourceStateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1943,6 +1997,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1965,6 +2020,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1995,6 +2051,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2016,6 +2073,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2032,6 +2090,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResourceStateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2053,6 +2112,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             : resourceState_;
       }
     }
+
     /**
      *
      *
@@ -2087,6 +2147,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.v1alpha.CommonFeatureSpec.Builder,
             com.google.cloud.gkehub.v1alpha.CommonFeatureSpecOrBuilder>
         specBuilder_;
+
     /**
      *
      *
@@ -2104,6 +2165,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpec() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2127,6 +2189,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         return specBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2152,6 +2215,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2175,6 +2239,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2205,6 +2270,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2227,6 +2293,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2244,6 +2311,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2265,6 +2333,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             : spec_;
       }
     }
+
     /**
      *
      *
@@ -2355,6 +2424,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public int getMembershipSpecsCount() {
       return internalGetMembershipSpecs().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -2389,6 +2459,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetMembershipSpecs().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getMembershipSpecsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2396,6 +2467,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         getMembershipSpecs() {
       return getMembershipSpecsMap();
     }
+
     /**
      *
      *
@@ -2428,6 +2500,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         getMembershipSpecsMap() {
       return internalGetMembershipSpecs().getImmutableMap();
     }
+
     /**
      *
      *
@@ -2469,6 +2542,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableMembershipSpecs().ensureBuilderMap();
       return map.containsKey(key) ? membershipSpecsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -2516,6 +2590,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableMembershipSpecs().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2550,6 +2625,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableMembershipSpecs().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec>
@@ -2557,6 +2633,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return internalGetMutableMembershipSpecs().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -2596,6 +2673,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *
@@ -2637,6 +2715,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *
@@ -2687,6 +2766,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.v1alpha.CommonFeatureState.Builder,
             com.google.cloud.gkehub.v1alpha.CommonFeatureStateOrBuilder>
         stateBuilder_;
+
     /**
      *
      *
@@ -2703,6 +2783,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public boolean hasState() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2725,6 +2806,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         return stateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2749,6 +2831,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2771,6 +2854,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2800,6 +2884,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2821,6 +2906,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2837,6 +2923,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2857,6 +2944,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             : state_;
       }
     }
+
     /**
      *
      *
@@ -2946,6 +3034,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public int getMembershipStatesCount() {
       return internalGetMembershipStates().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -2973,6 +3062,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetMembershipStates().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getMembershipStatesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2980,6 +3070,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         getMembershipStates() {
       return getMembershipStatesMap();
     }
+
     /**
      *
      *
@@ -3005,6 +3096,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         getMembershipStatesMap() {
       return internalGetMembershipStates().getImmutableMap();
     }
+
     /**
      *
      *
@@ -3039,6 +3131,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableMembershipStates().ensureBuilderMap();
       return map.containsKey(key) ? membershipStatesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -3079,6 +3172,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableMembershipStates().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3106,6 +3200,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableMembershipStates().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureState>
@@ -3113,6 +3208,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return internalGetMutableMembershipStates().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -3145,6 +3241,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -3179,6 +3276,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -3222,6 +3320,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3238,6 +3337,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3260,6 +3360,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3284,6 +3385,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3305,6 +3407,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3334,6 +3437,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3355,6 +3459,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3371,6 +3476,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3391,6 +3497,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3425,6 +3532,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -3441,6 +3549,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3463,6 +3572,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3487,6 +3597,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3508,6 +3619,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3537,6 +3649,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3558,6 +3671,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3574,6 +3688,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3594,6 +3709,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -3628,6 +3744,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deleteTimeBuilder_;
+
     /**
      *
      *
@@ -3644,6 +3761,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeleteTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3666,6 +3784,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         return deleteTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3690,6 +3809,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3711,6 +3831,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3740,6 +3861,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3761,6 +3883,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3777,6 +3900,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3797,6 +3921,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             : deleteTime_;
       }
     }
+
     /**
      *
      *

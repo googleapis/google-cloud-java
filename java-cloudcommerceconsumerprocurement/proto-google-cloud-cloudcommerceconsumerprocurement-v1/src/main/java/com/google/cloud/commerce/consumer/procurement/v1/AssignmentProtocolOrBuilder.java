@@ -38,6 +38,7 @@ public interface AssignmentProtocolOrBuilder
    * @return Whether the manualAssignmentType field is set.
    */
   boolean hasManualAssignmentType();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface AssignmentProtocolOrBuilder
    */
   com.google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol.ManualAssignmentType
       getManualAssignmentType();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface AssignmentProtocolOrBuilder
    * @return Whether the autoAssignmentType field is set.
    */
   boolean hasAutoAssignmentType();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface AssignmentProtocolOrBuilder
    */
   com.google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol.AutoAssignmentType
       getAutoAssignmentType();
+
   /**
    *
    *

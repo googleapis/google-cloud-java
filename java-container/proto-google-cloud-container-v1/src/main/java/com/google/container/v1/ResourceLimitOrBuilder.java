@@ -36,6 +36,7 @@ public interface ResourceLimitOrBuilder
    * @return The resourceType.
    */
   java.lang.String getResourceType();
+
   /**
    *
    *

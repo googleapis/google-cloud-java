@@ -34,6 +34,7 @@ public final class QueryCompilationResultActionsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.QueryCompilationResultActionsResponse)
     QueryCompilationResultActionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryCompilationResultActionsResponse.newBuilder() to construct.
   private QueryCompilationResultActionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class QueryCompilationResultActionsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataform.v1beta1.CompilationResultAction>
       compilationResultActions_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class QueryCompilationResultActionsResponse
       getCompilationResultActionsList() {
     return compilationResultActions_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class QueryCompilationResultActionsResponse
       getCompilationResultActionsOrBuilderList() {
     return compilationResultActions_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class QueryCompilationResultActionsResponse
   public int getCompilationResultActionsCount() {
     return compilationResultActions_.size();
   }
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class QueryCompilationResultActionsResponse
       int index) {
     return compilationResultActions_.get(index);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class QueryCompilationResultActionsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public final class QueryCompilationResultActionsResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -380,6 +388,7 @@ public final class QueryCompilationResultActionsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -673,6 +682,7 @@ public final class QueryCompilationResultActionsResponse
         return compilationResultActionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -691,6 +701,7 @@ public final class QueryCompilationResultActionsResponse
         return compilationResultActionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -710,6 +721,7 @@ public final class QueryCompilationResultActionsResponse
         return compilationResultActionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -735,6 +747,7 @@ public final class QueryCompilationResultActionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +771,7 @@ public final class QueryCompilationResultActionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +797,7 @@ public final class QueryCompilationResultActionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +823,7 @@ public final class QueryCompilationResultActionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +846,7 @@ public final class QueryCompilationResultActionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +870,7 @@ public final class QueryCompilationResultActionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +894,7 @@ public final class QueryCompilationResultActionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +916,7 @@ public final class QueryCompilationResultActionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +938,7 @@ public final class QueryCompilationResultActionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -933,6 +954,7 @@ public final class QueryCompilationResultActionsResponse
         getCompilationResultActionsBuilder(int index) {
       return getCompilationResultActionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -952,6 +974,7 @@ public final class QueryCompilationResultActionsResponse
         return compilationResultActionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -972,6 +995,7 @@ public final class QueryCompilationResultActionsResponse
         return java.util.Collections.unmodifiableList(compilationResultActions_);
       }
     }
+
     /**
      *
      *
@@ -989,6 +1013,7 @@ public final class QueryCompilationResultActionsResponse
           .addBuilder(
               com.google.cloud.dataform.v1beta1.CompilationResultAction.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1007,6 +1032,7 @@ public final class QueryCompilationResultActionsResponse
               index,
               com.google.cloud.dataform.v1beta1.CompilationResultAction.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1044,6 +1070,7 @@ public final class QueryCompilationResultActionsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1067,6 +1094,7 @@ public final class QueryCompilationResultActionsResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1118,7 @@ public final class QueryCompilationResultActionsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1112,6 +1141,7 @@ public final class QueryCompilationResultActionsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1130,6 +1160,7 @@ public final class QueryCompilationResultActionsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

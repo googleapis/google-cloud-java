@@ -40,6 +40,7 @@ public interface GetInstanceAuthStringRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

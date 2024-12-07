@@ -36,6 +36,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * @return Whether the weeklySchedule field is set.
    */
   boolean hasWeeklySchedule();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * @return The weeklySchedule.
    */
   com.google.cloud.alloydb.v1.AutomatedBackupPolicy.WeeklySchedule getWeeklySchedule();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * @return Whether the timeBasedRetention field is set.
    */
   boolean hasTimeBasedRetention();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * @return The timeBasedRetention.
    */
   com.google.cloud.alloydb.v1.AutomatedBackupPolicy.TimeBasedRetention getTimeBasedRetention();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * @return Whether the quantityBasedRetention field is set.
    */
   boolean hasQuantityBasedRetention();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface AutomatedBackupPolicyOrBuilder
    */
   com.google.cloud.alloydb.v1.AutomatedBackupPolicy.QuantityBasedRetention
       getQuantityBasedRetention();
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * @return Whether the enabled field is set.
    */
   boolean hasEnabled();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * @return Whether the backupWindow field is set.
    */
   boolean hasBackupWindow();
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * @return The backupWindow.
    */
   com.google.protobuf.Duration getBackupWindow();
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
+
   /**
    *
    *
@@ -256,6 +266,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * @return The encryptionConfig.
    */
   com.google.cloud.alloydb.v1.EncryptionConfig getEncryptionConfig();
+
   /**
    *
    *
@@ -287,6 +298,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -313,6 +325,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -323,9 +336,11 @@ public interface AutomatedBackupPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -336,6 +351,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -350,6 +366,7 @@ public interface AutomatedBackupPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

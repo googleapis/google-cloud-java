@@ -33,6 +33,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.FirewallPolicyRuleMatcher)
     FirewallPolicyRuleMatcherOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FirewallPolicyRuleMatcher.newBuilder() to construct.
   private FirewallPolicyRuleMatcher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList destAddressGroups_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getDestAddressGroupsList() {
     return destAddressGroups_;
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public int getDestAddressGroupsCount() {
     return destAddressGroups_.size();
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public java.lang.String getDestAddressGroups(int index) {
     return destAddressGroups_.get(index);
   }
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList destFqdns_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getDestFqdnsList() {
     return destFqdns_;
   }
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public int getDestFqdnsCount() {
     return destFqdns_.size();
   }
+
   /**
    *
    *
@@ -186,6 +194,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public java.lang.String getDestFqdns(int index) {
     return destFqdns_.get(index);
   }
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList destIpRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -221,6 +231,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getDestIpRangesList() {
     return destIpRanges_;
   }
+
   /**
    *
    *
@@ -235,6 +246,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public int getDestIpRangesCount() {
     return destIpRanges_.size();
   }
+
   /**
    *
    *
@@ -250,6 +262,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public java.lang.String getDestIpRanges(int index) {
     return destIpRanges_.get(index);
   }
+
   /**
    *
    *
@@ -271,6 +284,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList destRegionCodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -285,6 +299,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getDestRegionCodesList() {
     return destRegionCodes_;
   }
+
   /**
    *
    *
@@ -299,6 +314,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public int getDestRegionCodesCount() {
     return destRegionCodes_.size();
   }
+
   /**
    *
    *
@@ -314,6 +330,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public java.lang.String getDestRegionCodes(int index) {
     return destRegionCodes_.get(index);
   }
+
   /**
    *
    *
@@ -335,6 +352,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList destThreatIntelligences_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -349,6 +367,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getDestThreatIntelligencesList() {
     return destThreatIntelligences_;
   }
+
   /**
    *
    *
@@ -363,6 +382,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public int getDestThreatIntelligencesCount() {
     return destThreatIntelligences_.size();
   }
+
   /**
    *
    *
@@ -378,6 +398,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public java.lang.String getDestThreatIntelligences(int index) {
     return destThreatIntelligences_.get(index);
   }
+
   /**
    *
    *
@@ -399,6 +420,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config>
       layer4Configs_;
+
   /**
    *
    *
@@ -415,6 +437,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       getLayer4ConfigsList() {
     return layer4Configs_;
   }
+
   /**
    *
    *
@@ -432,6 +455,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       getLayer4ConfigsOrBuilderList() {
     return layer4Configs_;
   }
+
   /**
    *
    *
@@ -447,6 +471,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public int getLayer4ConfigsCount() {
     return layer4Configs_.size();
   }
+
   /**
    *
    *
@@ -463,6 +488,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       int index) {
     return layer4Configs_.get(index);
   }
+
   /**
    *
    *
@@ -485,6 +511,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList srcAddressGroups_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -499,6 +526,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getSrcAddressGroupsList() {
     return srcAddressGroups_;
   }
+
   /**
    *
    *
@@ -513,6 +541,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public int getSrcAddressGroupsCount() {
     return srcAddressGroups_.size();
   }
+
   /**
    *
    *
@@ -528,6 +557,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public java.lang.String getSrcAddressGroups(int index) {
     return srcAddressGroups_.get(index);
   }
+
   /**
    *
    *
@@ -549,6 +579,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList srcFqdns_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -563,6 +594,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getSrcFqdnsList() {
     return srcFqdns_;
   }
+
   /**
    *
    *
@@ -577,6 +609,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public int getSrcFqdnsCount() {
     return srcFqdns_.size();
   }
+
   /**
    *
    *
@@ -592,6 +625,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public java.lang.String getSrcFqdns(int index) {
     return srcFqdns_.get(index);
   }
+
   /**
    *
    *
@@ -613,6 +647,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList srcIpRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -627,6 +662,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getSrcIpRangesList() {
     return srcIpRanges_;
   }
+
   /**
    *
    *
@@ -641,6 +677,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public int getSrcIpRangesCount() {
     return srcIpRanges_.size();
   }
+
   /**
    *
    *
@@ -656,6 +693,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public java.lang.String getSrcIpRanges(int index) {
     return srcIpRanges_.get(index);
   }
+
   /**
    *
    *
@@ -677,6 +715,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList srcRegionCodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -691,6 +730,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getSrcRegionCodesList() {
     return srcRegionCodes_;
   }
+
   /**
    *
    *
@@ -705,6 +745,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public int getSrcRegionCodesCount() {
     return srcRegionCodes_.size();
   }
+
   /**
    *
    *
@@ -720,6 +761,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public java.lang.String getSrcRegionCodes(int index) {
     return srcRegionCodes_.get(index);
   }
+
   /**
    *
    *
@@ -740,6 +782,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag> srcSecureTags_;
+
   /**
    *
    *
@@ -756,6 +799,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       getSrcSecureTagsList() {
     return srcSecureTags_;
   }
+
   /**
    *
    *
@@ -772,6 +816,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       getSrcSecureTagsOrBuilderList() {
     return srcSecureTags_;
   }
+
   /**
    *
    *
@@ -787,6 +832,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public int getSrcSecureTagsCount() {
     return srcSecureTags_.size();
   }
+
   /**
    *
    *
@@ -802,6 +848,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag getSrcSecureTags(int index) {
     return srcSecureTags_.get(index);
   }
+
   /**
    *
    *
@@ -824,6 +871,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList srcThreatIntelligences_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -838,6 +886,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getSrcThreatIntelligencesList() {
     return srcThreatIntelligences_;
   }
+
   /**
    *
    *
@@ -852,6 +901,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public int getSrcThreatIntelligencesCount() {
     return srcThreatIntelligences_.size();
   }
+
   /**
    *
    *
@@ -867,6 +917,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public java.lang.String getSrcThreatIntelligences(int index) {
     return srcThreatIntelligences_.get(index);
   }
+
   /**
    *
    *
@@ -1229,6 +1280,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1745,6 +1797,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -1760,6 +1813,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       destAddressGroups_.makeImmutable();
       return destAddressGroups_;
     }
+
     /**
      *
      *
@@ -1774,6 +1828,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public int getDestAddressGroupsCount() {
       return destAddressGroups_.size();
     }
+
     /**
      *
      *
@@ -1789,6 +1844,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public java.lang.String getDestAddressGroups(int index) {
       return destAddressGroups_.get(index);
     }
+
     /**
      *
      *
@@ -1804,6 +1860,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getDestAddressGroupsBytes(int index) {
       return destAddressGroups_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1827,6 +1884,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1849,6 +1907,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1868,6 +1927,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1886,6 +1946,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1919,6 +1980,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1934,6 +1996,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       destFqdns_.makeImmutable();
       return destFqdns_;
     }
+
     /**
      *
      *
@@ -1948,6 +2011,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public int getDestFqdnsCount() {
       return destFqdns_.size();
     }
+
     /**
      *
      *
@@ -1963,6 +2027,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public java.lang.String getDestFqdns(int index) {
       return destFqdns_.get(index);
     }
+
     /**
      *
      *
@@ -1978,6 +2043,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getDestFqdnsBytes(int index) {
       return destFqdns_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2001,6 +2067,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2023,6 +2090,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2042,6 +2110,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2060,6 +2129,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2093,6 +2163,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -2108,6 +2179,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       destIpRanges_.makeImmutable();
       return destIpRanges_;
     }
+
     /**
      *
      *
@@ -2122,6 +2194,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public int getDestIpRangesCount() {
       return destIpRanges_.size();
     }
+
     /**
      *
      *
@@ -2137,6 +2210,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public java.lang.String getDestIpRanges(int index) {
       return destIpRanges_.get(index);
     }
+
     /**
      *
      *
@@ -2152,6 +2226,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getDestIpRangesBytes(int index) {
       return destIpRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2175,6 +2250,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2197,6 +2273,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2216,6 +2293,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2234,6 +2312,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2267,6 +2346,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -2282,6 +2362,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       destRegionCodes_.makeImmutable();
       return destRegionCodes_;
     }
+
     /**
      *
      *
@@ -2296,6 +2377,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public int getDestRegionCodesCount() {
       return destRegionCodes_.size();
     }
+
     /**
      *
      *
@@ -2311,6 +2393,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public java.lang.String getDestRegionCodes(int index) {
       return destRegionCodes_.get(index);
     }
+
     /**
      *
      *
@@ -2326,6 +2409,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getDestRegionCodesBytes(int index) {
       return destRegionCodes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2349,6 +2433,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2371,6 +2456,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2390,6 +2476,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2408,6 +2495,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2442,6 +2530,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -2457,6 +2546,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       destThreatIntelligences_.makeImmutable();
       return destThreatIntelligences_;
     }
+
     /**
      *
      *
@@ -2471,6 +2561,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public int getDestThreatIntelligencesCount() {
       return destThreatIntelligences_.size();
     }
+
     /**
      *
      *
@@ -2486,6 +2577,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public java.lang.String getDestThreatIntelligences(int index) {
       return destThreatIntelligences_.get(index);
     }
+
     /**
      *
      *
@@ -2501,6 +2593,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getDestThreatIntelligencesBytes(int index) {
       return destThreatIntelligences_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2524,6 +2617,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2546,6 +2640,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2565,6 +2660,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2583,6 +2679,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2644,6 +2741,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         return layer4ConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2662,6 +2760,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         return layer4ConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2681,6 +2780,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         return layer4ConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2706,6 +2806,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2729,6 +2830,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2754,6 +2856,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2779,6 +2882,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2801,6 +2905,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2824,6 +2929,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2848,6 +2954,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2869,6 +2976,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2890,6 +2998,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2905,6 +3014,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         getLayer4ConfigsBuilder(int index) {
       return getLayer4ConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2924,6 +3034,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         return layer4ConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2944,6 +3055,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(layer4Configs_);
       }
     }
+
     /**
      *
      *
@@ -2962,6 +3074,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
               com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2981,6 +3094,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
               com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3026,6 +3140,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -3041,6 +3156,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       srcAddressGroups_.makeImmutable();
       return srcAddressGroups_;
     }
+
     /**
      *
      *
@@ -3055,6 +3171,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public int getSrcAddressGroupsCount() {
       return srcAddressGroups_.size();
     }
+
     /**
      *
      *
@@ -3070,6 +3187,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public java.lang.String getSrcAddressGroups(int index) {
       return srcAddressGroups_.get(index);
     }
+
     /**
      *
      *
@@ -3085,6 +3203,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getSrcAddressGroupsBytes(int index) {
       return srcAddressGroups_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3108,6 +3227,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3130,6 +3250,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3149,6 +3270,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3167,6 +3289,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3200,6 +3323,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000080;
     }
+
     /**
      *
      *
@@ -3215,6 +3339,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       srcFqdns_.makeImmutable();
       return srcFqdns_;
     }
+
     /**
      *
      *
@@ -3229,6 +3354,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public int getSrcFqdnsCount() {
       return srcFqdns_.size();
     }
+
     /**
      *
      *
@@ -3244,6 +3370,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public java.lang.String getSrcFqdns(int index) {
       return srcFqdns_.get(index);
     }
+
     /**
      *
      *
@@ -3259,6 +3386,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getSrcFqdnsBytes(int index) {
       return srcFqdns_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3282,6 +3410,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3304,6 +3433,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3323,6 +3453,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3341,6 +3472,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3374,6 +3506,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000100;
     }
+
     /**
      *
      *
@@ -3389,6 +3522,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       srcIpRanges_.makeImmutable();
       return srcIpRanges_;
     }
+
     /**
      *
      *
@@ -3403,6 +3537,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public int getSrcIpRangesCount() {
       return srcIpRanges_.size();
     }
+
     /**
      *
      *
@@ -3418,6 +3553,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public java.lang.String getSrcIpRanges(int index) {
       return srcIpRanges_.get(index);
     }
+
     /**
      *
      *
@@ -3433,6 +3569,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getSrcIpRangesBytes(int index) {
       return srcIpRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3456,6 +3593,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3478,6 +3616,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3497,6 +3636,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3515,6 +3655,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3548,6 +3689,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000200;
     }
+
     /**
      *
      *
@@ -3563,6 +3705,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       srcRegionCodes_.makeImmutable();
       return srcRegionCodes_;
     }
+
     /**
      *
      *
@@ -3577,6 +3720,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public int getSrcRegionCodesCount() {
       return srcRegionCodes_.size();
     }
+
     /**
      *
      *
@@ -3592,6 +3736,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public java.lang.String getSrcRegionCodes(int index) {
       return srcRegionCodes_.get(index);
     }
+
     /**
      *
      *
@@ -3607,6 +3752,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getSrcRegionCodesBytes(int index) {
       return srcRegionCodes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3630,6 +3776,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3652,6 +3799,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3671,6 +3819,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3689,6 +3838,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3750,6 +3900,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         return srcSecureTagsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3768,6 +3919,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         return srcSecureTagsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3786,6 +3938,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         return srcSecureTagsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3811,6 +3964,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3834,6 +3988,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3858,6 +4013,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3883,6 +4039,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3905,6 +4062,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3928,6 +4086,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3951,6 +4110,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3972,6 +4132,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3993,6 +4154,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -4008,6 +4170,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         int index) {
       return getSrcSecureTagsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4027,6 +4190,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         return srcSecureTagsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4047,6 +4211,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(srcSecureTags_);
       }
     }
+
     /**
      *
      *
@@ -4063,6 +4228,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       return getSrcSecureTagsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4080,6 +4246,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
           .addBuilder(
               index, com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4126,6 +4293,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000800;
     }
+
     /**
      *
      *
@@ -4141,6 +4309,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       srcThreatIntelligences_.makeImmutable();
       return srcThreatIntelligences_;
     }
+
     /**
      *
      *
@@ -4155,6 +4324,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public int getSrcThreatIntelligencesCount() {
       return srcThreatIntelligences_.size();
     }
+
     /**
      *
      *
@@ -4170,6 +4340,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public java.lang.String getSrcThreatIntelligences(int index) {
       return srcThreatIntelligences_.get(index);
     }
+
     /**
      *
      *
@@ -4185,6 +4356,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getSrcThreatIntelligencesBytes(int index) {
       return srcThreatIntelligences_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4208,6 +4380,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4230,6 +4403,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4249,6 +4423,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4267,6 +4442,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

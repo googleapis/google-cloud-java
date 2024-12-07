@@ -36,6 +36,7 @@ public interface MembershipSpecOrBuilder
    * @return Whether the configSync field is set.
    */
   boolean hasConfigSync();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MembershipSpecOrBuilder
    * @return The configSync.
    */
   com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSync getConfigSync();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface MembershipSpecOrBuilder
    * @return Whether the policyController field is set.
    */
   boolean hasPolicyController();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface MembershipSpecOrBuilder
    * @return The policyController.
    */
   com.google.cloud.gkehub.configmanagement.v1alpha.PolicyController getPolicyController();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface MembershipSpecOrBuilder
    * @return Whether the binauthz field is set.
    */
   boolean hasBinauthz();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface MembershipSpecOrBuilder
    * @return The binauthz.
    */
   com.google.cloud.gkehub.configmanagement.v1alpha.BinauthzConfig getBinauthz();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface MembershipSpecOrBuilder
    * @return Whether the hierarchyController field is set.
    */
   boolean hasHierarchyController();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface MembershipSpecOrBuilder
    */
   com.google.cloud.gkehub.configmanagement.v1alpha.HierarchyControllerConfig
       getHierarchyController();
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public interface MembershipSpecOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

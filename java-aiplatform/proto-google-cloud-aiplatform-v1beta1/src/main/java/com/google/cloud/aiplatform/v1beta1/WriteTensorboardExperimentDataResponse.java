@@ -35,6 +35,7 @@ public final class WriteTensorboardExperimentDataResponse
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse)
     WriteTensorboardExperimentDataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WriteTensorboardExperimentDataResponse.newBuilder() to construct.
   private WriteTensorboardExperimentDataResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -223,6 +224,7 @@ public final class WriteTensorboardExperimentDataResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

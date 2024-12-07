@@ -37,6 +37,7 @@ public interface ApiHubResourceOrBuilder
    * @return Whether the api field is set.
    */
   boolean hasApi();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ApiHubResourceOrBuilder
    * @return The api.
    */
   com.google.cloud.apihub.v1.Api getApi();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ApiHubResourceOrBuilder
    * @return Whether the operation field is set.
    */
   boolean hasOperation();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface ApiHubResourceOrBuilder
    * @return The operation.
    */
   com.google.cloud.apihub.v1.ApiOperation getOperation();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface ApiHubResourceOrBuilder
    * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface ApiHubResourceOrBuilder
    * @return The deployment.
    */
   com.google.cloud.apihub.v1.Deployment getDeployment();
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface ApiHubResourceOrBuilder
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public interface ApiHubResourceOrBuilder
    * @return The spec.
    */
   com.google.cloud.apihub.v1.Spec getSpec();
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public interface ApiHubResourceOrBuilder
    * @return Whether the definition field is set.
    */
   boolean hasDefinition();
+
   /**
    *
    *
@@ -202,6 +211,7 @@ public interface ApiHubResourceOrBuilder
    * @return The definition.
    */
   com.google.cloud.apihub.v1.Definition getDefinition();
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public interface ApiHubResourceOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
+
   /**
    *
    *
@@ -240,6 +251,7 @@ public interface ApiHubResourceOrBuilder
    * @return The version.
    */
   com.google.cloud.apihub.v1.Version getVersion();
+
   /**
    *
    *

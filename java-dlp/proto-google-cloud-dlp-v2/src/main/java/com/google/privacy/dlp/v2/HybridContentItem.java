@@ -34,6 +34,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.HybridContentItem)
     HybridContentItemOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HybridContentItem.newBuilder() to construct.
   private HybridContentItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int ITEM_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.ContentItem item_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
   public boolean hasItem() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
   public com.google.privacy.dlp.v2.ContentItem getItem() {
     return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
 
   public static final int FINDING_DETAILS_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.HybridFindingDetails findingDetails_;
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
   public boolean hasFindingDetails() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
         ? com.google.privacy.dlp.v2.HybridFindingDetails.getDefaultInstance()
         : findingDetails_;
   }
+
   /**
    *
    *
@@ -337,6 +344,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -560,6 +568,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
             com.google.privacy.dlp.v2.ContentItem.Builder,
             com.google.privacy.dlp.v2.ContentItemOrBuilder>
         itemBuilder_;
+
     /**
      *
      *
@@ -574,6 +583,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
     public boolean hasItem() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -592,6 +602,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
         return itemBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -614,6 +625,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +645,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +673,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -679,6 +693,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +708,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getItemFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -709,6 +725,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
         return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
       }
     }
+
     /**
      *
      *
@@ -741,6 +758,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
             com.google.privacy.dlp.v2.HybridFindingDetails.Builder,
             com.google.privacy.dlp.v2.HybridFindingDetailsOrBuilder>
         findingDetailsBuilder_;
+
     /**
      *
      *
@@ -755,6 +773,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
     public boolean hasFindingDetails() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -775,6 +794,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
         return findingDetailsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -797,6 +817,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +838,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +867,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +887,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +902,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getFindingDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -896,6 +921,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
             : findingDetails_;
       }
     }
+
     /**
      *
      *

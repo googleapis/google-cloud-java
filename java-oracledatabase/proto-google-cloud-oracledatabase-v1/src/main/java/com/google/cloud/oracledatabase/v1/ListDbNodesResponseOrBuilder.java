@@ -34,6 +34,7 @@ public interface ListDbNodesResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.DbNode db_nodes = 1;</code>
    */
   java.util.List<com.google.cloud.oracledatabase.v1.DbNode> getDbNodesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDbNodesResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.DbNode db_nodes = 1;</code>
    */
   com.google.cloud.oracledatabase.v1.DbNode getDbNodes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDbNodesResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.DbNode db_nodes = 1;</code>
    */
   int getDbNodesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDbNodesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.oracledatabase.v1.DbNodeOrBuilder>
       getDbNodesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListDbNodesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

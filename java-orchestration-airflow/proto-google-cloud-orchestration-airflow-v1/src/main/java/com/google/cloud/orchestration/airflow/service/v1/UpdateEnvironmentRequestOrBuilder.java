@@ -37,6 +37,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * @return Whether the environment field is set.
    */
   boolean hasEnvironment();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * @return The environment.
    */
   com.google.cloud.orchestration.airflow.service.v1.Environment getEnvironment();
+
   /**
    *
    *
@@ -223,6 +226,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -357,6 +361,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

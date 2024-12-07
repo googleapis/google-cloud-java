@@ -33,6 +33,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.UsageResourceAllowanceSpec)
     UsageResourceAllowanceSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UsageResourceAllowanceSpec.newBuilder() to construct.
   private UsageResourceAllowanceSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
      * @return Whether the calendarPeriod field is set.
      */
     boolean hasCalendarPeriod();
+
     /**
      *
      *
@@ -98,6 +100,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
      * @return The enum numeric value on the wire for calendarPeriod.
      */
     int getCalendarPeriodValue();
+
     /**
      *
      *
@@ -133,6 +136,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
      * @return Whether the limit field is set.
      */
     boolean hasLimit();
+
     /**
      *
      *
@@ -155,6 +159,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
 
     com.google.cloud.batch.v1alpha.UsageResourceAllowanceSpec.Limit.DurationCase getDurationCase();
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.UsageResourceAllowanceSpec.Limit)
       LimitOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Limit.newBuilder() to construct.
     private Limit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -214,6 +220,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       private DurationCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -245,6 +252,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
     }
 
     public static final int CALENDAR_PERIOD_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -262,6 +270,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
     public boolean hasCalendarPeriod() {
       return durationCase_ == 1;
     }
+
     /**
      *
      *
@@ -282,6 +291,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       }
       return 0;
     }
+
     /**
      *
      *
@@ -307,6 +317,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
 
     public static final int LIMIT_FIELD_NUMBER = 2;
     private double limit_ = 0D;
+
     /**
      *
      *
@@ -329,6 +340,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
     public boolean hasLimit() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -547,6 +559,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -798,6 +811,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       public boolean hasCalendarPeriod() {
         return durationCase_ == 1;
       }
+
       /**
        *
        *
@@ -819,6 +833,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
         }
         return 0;
       }
+
       /**
        *
        *
@@ -840,6 +855,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -866,6 +882,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
         }
         return com.google.cloud.batch.v1alpha.CalendarPeriod.CALENDAR_PERIOD_UNSPECIFIED;
       }
+
       /**
        *
        *
@@ -890,6 +907,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -914,6 +932,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       }
 
       private double limit_;
+
       /**
        *
        *
@@ -936,6 +955,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       public boolean hasLimit() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -958,6 +978,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       public double getLimit() {
         return limit_;
       }
+
       /**
        *
        *
@@ -984,6 +1005,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1081,6 +1103,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -1106,6 +1129,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -1134,6 +1158,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
 
   public static final int LIMIT_FIELD_NUMBER = 2;
   private com.google.cloud.batch.v1alpha.UsageResourceAllowanceSpec.Limit limit_;
+
   /**
    *
    *
@@ -1152,6 +1177,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
   public boolean hasLimit() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1172,6 +1198,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
         ? com.google.cloud.batch.v1alpha.UsageResourceAllowanceSpec.Limit.getDefaultInstance()
         : limit_;
   }
+
   /**
    *
    *
@@ -1366,6 +1393,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1579,6 +1607,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -1603,6 +1632,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1627,6 +1657,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1650,6 +1681,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1669,6 +1701,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1700,6 +1733,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceSpec.Limit.Builder,
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceSpec.LimitOrBuilder>
         limitBuilder_;
+
     /**
      *
      *
@@ -1717,6 +1751,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
     public boolean hasLimit() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1740,6 +1775,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
         return limitBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1765,6 +1801,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1788,6 +1825,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1821,6 +1859,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1843,6 +1882,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1861,6 +1901,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
       onChanged();
       return getLimitFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1883,6 +1924,7 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
             : limit_;
       }
     }
+
     /**
      *
      *

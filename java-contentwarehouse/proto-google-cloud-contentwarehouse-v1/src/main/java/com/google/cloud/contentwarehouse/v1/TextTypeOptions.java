@@ -33,6 +33,7 @@ public final class TextTypeOptions extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.TextTypeOptions)
     TextTypeOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TextTypeOptions.newBuilder() to construct.
   private TextTypeOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class TextTypeOptions extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -86,6 +86,7 @@ public enum HttpElementLocation implements com.google.protobuf.ProtocolMessageEn
 
   /** <code>HTTP_IN_UNSPECIFIED = 0;</code> */
   public static final int HTTP_IN_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -96,6 +97,7 @@ public enum HttpElementLocation implements com.google.protobuf.ProtocolMessageEn
    * <code>HTTP_IN_QUERY = 1;</code>
    */
   public static final int HTTP_IN_QUERY_VALUE = 1;
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public enum HttpElementLocation implements com.google.protobuf.ProtocolMessageEn
    * <code>HTTP_IN_HEADER = 2;</code>
    */
   public static final int HTTP_IN_HEADER_VALUE = 2;
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public enum HttpElementLocation implements com.google.protobuf.ProtocolMessageEn
    * <code>HTTP_IN_PATH = 3;</code>
    */
   public static final int HTTP_IN_PATH_VALUE = 3;
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public enum HttpElementLocation implements com.google.protobuf.ProtocolMessageEn
    * <code>HTTP_IN_BODY = 4;</code>
    */
   public static final int HTTP_IN_BODY_VALUE = 4;
+
   /**
    *
    *

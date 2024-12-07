@@ -33,6 +33,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.Plugin)
     PluginOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Plugin.newBuilder() to construct.
   private Plugin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
+
     /**
      *
      *
@@ -230,6 +233,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -254,6 +258,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -283,6 +288,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -307,6 +313,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -334,6 +341,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 3;
   private com.google.cloud.apihub.v1.AttributeValues type_;
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
   public boolean hasType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -382,6 +391,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.apihub.v1.AttributeValues getType() {
     return type_ == null ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance() : type_;
   }
+
   /**
    *
    *
@@ -409,6 +419,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -433,6 +444,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -460,6 +472,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
+
   /**
    *
    *
@@ -477,6 +490,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -695,6 +709,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -949,6 +964,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -972,6 +988,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -995,6 +1012,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1017,6 +1035,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1054,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1060,6 +1080,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1083,6 +1104,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1106,6 +1128,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1128,6 +1151,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1170,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1176,6 +1201,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.AttributeValues.Builder,
             com.google.cloud.apihub.v1.AttributeValuesOrBuilder>
         typeBuilder_;
+
     /**
      *
      *
@@ -1199,6 +1225,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     public boolean hasType() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1228,6 +1255,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
         return typeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1259,6 +1287,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1316,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1323,6 +1353,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1351,6 +1382,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1406,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1401,6 +1434,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
             : type_;
       }
     }
+
     /**
      *
      *
@@ -1437,6 +1471,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1460,6 +1495,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1483,6 +1519,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1505,6 +1542,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1523,6 +1561,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1548,6 +1587,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1565,6 +1605,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1585,6 +1626,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1604,6 +1646,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.apihub.v1.Plugin.State.forNumber(state_);
       return result == null ? com.google.cloud.apihub.v1.Plugin.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1627,6 +1670,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

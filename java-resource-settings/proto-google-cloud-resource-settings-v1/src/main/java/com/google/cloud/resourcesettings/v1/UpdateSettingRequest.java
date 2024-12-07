@@ -33,6 +33,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.resourcesettings.v1.UpdateSettingRequest)
     UpdateSettingRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateSettingRequest.newBuilder() to construct.
   private UpdateSettingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int SETTING_FIELD_NUMBER = 1;
   private com.google.cloud.resourcesettings.v1.Setting setting_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
   public boolean hasSetting() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.resourcesettings.v1.Setting.getDefaultInstance()
         : setting_;
   }
+
   /**
    *
    *
@@ -286,6 +290,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -489,6 +494,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.resourcesettings.v1.Setting.Builder,
             com.google.cloud.resourcesettings.v1.SettingOrBuilder>
         settingBuilder_;
+
     /**
      *
      *
@@ -506,6 +512,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
     public boolean hasSetting() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -529,6 +536,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
         return settingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -554,6 +562,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -577,6 +586,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -607,6 +617,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +640,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +658,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getSettingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -667,6 +680,7 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
             : setting_;
       }
     }
+
     /**
      *
      *

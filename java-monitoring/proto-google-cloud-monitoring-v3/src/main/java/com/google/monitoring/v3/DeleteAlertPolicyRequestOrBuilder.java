@@ -42,6 +42,7 @@ public interface DeleteAlertPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

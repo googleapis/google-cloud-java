@@ -38,6 +38,7 @@ public interface ImageClassificationDatasetMetadataOrBuilder
    * @return The enum numeric value on the wire for classificationType.
    */
   int getClassificationTypeValue();
+
   /**
    *
    *

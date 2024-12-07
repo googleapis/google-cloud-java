@@ -38,6 +38,7 @@ public interface DeletePublicDelegatedPrefixeRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface DeletePublicDelegatedPrefixeRequestOrBuilder
    * @return The publicDelegatedPrefix.
    */
   java.lang.String getPublicDelegatedPrefix();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DeletePublicDelegatedPrefixeRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface DeletePublicDelegatedPrefixeRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface DeletePublicDelegatedPrefixeRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

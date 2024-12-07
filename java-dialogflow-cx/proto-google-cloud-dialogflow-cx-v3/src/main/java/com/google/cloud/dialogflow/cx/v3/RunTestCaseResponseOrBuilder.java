@@ -36,6 +36,7 @@ public interface RunTestCaseResponseOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RunTestCaseResponseOrBuilder
    * @return The result.
    */
   com.google.cloud.dialogflow.cx.v3.TestCaseResult getResult();
+
   /**
    *
    *

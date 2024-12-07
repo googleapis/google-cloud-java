@@ -38,6 +38,7 @@ public interface MeasurementProtocolSecretOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface MeasurementProtocolSecretOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface MeasurementProtocolSecretOrBuilder
    * @return The secretValue.
    */
   java.lang.String getSecretValue();
+
   /**
    *
    *

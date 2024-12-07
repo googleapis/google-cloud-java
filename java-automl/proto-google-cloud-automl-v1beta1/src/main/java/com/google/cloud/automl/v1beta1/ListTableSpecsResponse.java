@@ -33,6 +33,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ListTableSpecsResponse)
     ListTableSpecsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListTableSpecsResponse.newBuilder() to construct.
   private ListTableSpecsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.TableSpec> tableSpecs_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.automl.v1beta1.TableSpec> getTableSpecsList() {
     return tableSpecs_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       getTableSpecsOrBuilderList() {
     return tableSpecs_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
   public int getTableSpecsCount() {
     return tableSpecs_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.automl.v1beta1.TableSpec getTableSpecs(int index) {
     return tableSpecs_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -359,6 +367,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -636,6 +645,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
         return tableSpecsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
         return tableSpecsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
         return tableSpecsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +746,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +811,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +852,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +872,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +885,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.automl.v1beta1.TableSpec.Builder getTableSpecsBuilder(int index) {
       return getTableSpecsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -880,6 +902,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
         return tableSpecsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -897,6 +920,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(tableSpecs_);
       }
     }
+
     /**
      *
      *
@@ -910,6 +934,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       return getTableSpecsFieldBuilder()
           .addBuilder(com.google.cloud.automl.v1beta1.TableSpec.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -923,6 +948,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       return getTableSpecsFieldBuilder()
           .addBuilder(index, com.google.cloud.automl.v1beta1.TableSpec.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -955,6 +981,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -978,6 +1005,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1029,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1052,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1071,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

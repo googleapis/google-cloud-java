@@ -39,6 +39,7 @@ public interface AuthorizedDomainOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface AuthorizedDomainOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface GetCapacityCommitmentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

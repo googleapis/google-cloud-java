@@ -40,6 +40,7 @@ public interface GetClusterCertificateAuthorityRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

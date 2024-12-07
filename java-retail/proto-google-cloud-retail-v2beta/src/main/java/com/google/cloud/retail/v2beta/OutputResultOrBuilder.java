@@ -34,6 +34,7 @@ public interface OutputResultOrBuilder
    * <code>repeated .google.cloud.retail.v2beta.BigQueryOutputResult bigquery_result = 1;</code>
    */
   java.util.List<com.google.cloud.retail.v2beta.BigQueryOutputResult> getBigqueryResultList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface OutputResultOrBuilder
    * <code>repeated .google.cloud.retail.v2beta.BigQueryOutputResult bigquery_result = 1;</code>
    */
   com.google.cloud.retail.v2beta.BigQueryOutputResult getBigqueryResult(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface OutputResultOrBuilder
    * <code>repeated .google.cloud.retail.v2beta.BigQueryOutputResult bigquery_result = 1;</code>
    */
   int getBigqueryResultCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface OutputResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2beta.BigQueryOutputResultOrBuilder>
       getBigqueryResultOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface OutputResultOrBuilder
    * <code>repeated .google.cloud.retail.v2beta.GcsOutputResult gcs_result = 2;</code>
    */
   java.util.List<com.google.cloud.retail.v2beta.GcsOutputResult> getGcsResultList();
+
   /**
    *
    *
@@ -97,6 +102,7 @@ public interface OutputResultOrBuilder
    * <code>repeated .google.cloud.retail.v2beta.GcsOutputResult gcs_result = 2;</code>
    */
   com.google.cloud.retail.v2beta.GcsOutputResult getGcsResult(int index);
+
   /**
    *
    *
@@ -107,6 +113,7 @@ public interface OutputResultOrBuilder
    * <code>repeated .google.cloud.retail.v2beta.GcsOutputResult gcs_result = 2;</code>
    */
   int getGcsResultCount();
+
   /**
    *
    *
@@ -118,6 +125,7 @@ public interface OutputResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2beta.GcsOutputResultOrBuilder>
       getGcsResultOrBuilderList();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface CaseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CaseOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface CaseOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface CaseOrBuilder
    * @return Whether the classification field is set.
    */
   boolean hasClassification();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface CaseOrBuilder
    * @return The classification.
    */
   com.google.cloud.support.v2.CaseClassification getClassification();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface CaseOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface CaseOrBuilder
    * @return A list containing the subscriberEmailAddresses.
    */
   java.util.List<java.lang.String> getSubscriberEmailAddressesList();
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public interface CaseOrBuilder
    * @return The count of subscriberEmailAddresses.
    */
   int getSubscriberEmailAddressesCount();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface CaseOrBuilder
    * @return The subscriberEmailAddresses at the given index.
    */
   java.lang.String getSubscriberEmailAddresses(int index);
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public interface CaseOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -256,6 +266,7 @@ public interface CaseOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -269,6 +280,7 @@ public interface CaseOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -294,6 +306,7 @@ public interface CaseOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -307,6 +320,7 @@ public interface CaseOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -334,6 +348,7 @@ public interface CaseOrBuilder
    * @return Whether the creator field is set.
    */
   boolean hasCreator();
+
   /**
    *
    *
@@ -349,6 +364,7 @@ public interface CaseOrBuilder
    * @return The creator.
    */
   com.google.cloud.support.v2.Actor getCreator();
+
   /**
    *
    *
@@ -377,6 +393,7 @@ public interface CaseOrBuilder
    * @return The contactEmail.
    */
   java.lang.String getContactEmail();
+
   /**
    *
    *
@@ -438,6 +455,7 @@ public interface CaseOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -470,6 +488,7 @@ public interface CaseOrBuilder
    * @return The enum numeric value on the wire for priority.
    */
   int getPriorityValue();
+
   /**
    *
    *

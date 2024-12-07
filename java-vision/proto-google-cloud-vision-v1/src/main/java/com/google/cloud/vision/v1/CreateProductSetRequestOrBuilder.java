@@ -40,6 +40,7 @@ public interface CreateProductSetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateProductSetRequestOrBuilder
    * @return Whether the productSet field is set.
    */
   boolean hasProductSet();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateProductSetRequestOrBuilder
    * @return The productSet.
    */
   com.google.cloud.vision.v1.ProductSet getProductSet();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface CreateProductSetRequestOrBuilder
    * @return The productSetId.
    */
   java.lang.String getProductSetId();
+
   /**
    *
    *

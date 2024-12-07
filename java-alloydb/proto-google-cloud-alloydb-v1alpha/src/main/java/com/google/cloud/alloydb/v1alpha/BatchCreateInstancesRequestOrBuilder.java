@@ -38,6 +38,7 @@ public interface BatchCreateInstancesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface BatchCreateInstancesRequestOrBuilder
    * @return Whether the requests field is set.
    */
   boolean hasRequests();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface BatchCreateInstancesRequestOrBuilder
    * @return The requests.
    */
   com.google.cloud.alloydb.v1alpha.CreateInstanceRequests getRequests();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface BatchCreateInstancesRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

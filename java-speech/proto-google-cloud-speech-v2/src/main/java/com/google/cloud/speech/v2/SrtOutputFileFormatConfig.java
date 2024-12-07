@@ -35,6 +35,7 @@ public final class SrtOutputFileFormatConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.SrtOutputFileFormatConfig)
     SrtOutputFileFormatConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SrtOutputFileFormatConfig.newBuilder() to construct.
   private SrtOutputFileFormatConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class SrtOutputFileFormatConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

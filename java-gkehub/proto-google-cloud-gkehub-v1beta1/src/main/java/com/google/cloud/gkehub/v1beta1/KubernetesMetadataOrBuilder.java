@@ -38,6 +38,7 @@ public interface KubernetesMetadataOrBuilder
    * @return The kubernetesApiServerVersion.
    */
   java.lang.String getKubernetesApiServerVersion();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface KubernetesMetadataOrBuilder
    * @return The nodeProviderId.
    */
   java.lang.String getNodeProviderId();
+
   /**
    *
    *
@@ -140,6 +142,7 @@ public interface KubernetesMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -156,6 +159,7 @@ public interface KubernetesMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta3.UriOverride)
     UriOverrideOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UriOverride.newBuilder() to construct.
   private UriOverride(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -123,6 +124,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
      * <code>SCHEME_UNSPECIFIED = 0;</code>
      */
     public static final int SCHEME_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -134,6 +136,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
      * <code>HTTP = 1;</code>
      */
     public static final int HTTP_VALUE = 1;
+
     /**
      *
      *
@@ -285,6 +288,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
      * <code>URI_OVERRIDE_ENFORCE_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int URI_OVERRIDE_ENFORCE_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -296,6 +300,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
      * <code>IF_NOT_EXISTS = 1;</code>
      */
     public static final int IF_NOT_EXISTS_VALUE = 1;
+
     /**
      *
      *
@@ -397,6 +402,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SCHEME_FIELD_NUMBER = 1;
   private int scheme_ = 0;
+
   /**
    *
    *
@@ -415,6 +421,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScheme() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -433,6 +440,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
   public int getSchemeValue() {
     return scheme_;
   }
+
   /**
    *
    *
@@ -458,6 +466,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object host_ = "";
+
   /**
    *
    *
@@ -478,6 +487,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHost() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -506,6 +516,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -537,6 +548,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PORT_FIELD_NUMBER = 3;
   private long port_ = 0L;
+
   /**
    *
    *
@@ -557,6 +569,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPort() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -580,6 +593,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PATH_OVERRIDE_FIELD_NUMBER = 4;
   private com.google.cloud.tasks.v2beta3.PathOverride pathOverride_;
+
   /**
    *
    *
@@ -598,6 +612,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPathOverride() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -618,6 +633,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.tasks.v2beta3.PathOverride.getDefaultInstance()
         : pathOverride_;
   }
+
   /**
    *
    *
@@ -639,6 +655,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUERY_OVERRIDE_FIELD_NUMBER = 5;
   private com.google.cloud.tasks.v2beta3.QueryOverride queryOverride_;
+
   /**
    *
    *
@@ -657,6 +674,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQueryOverride() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -677,6 +695,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.tasks.v2beta3.QueryOverride.getDefaultInstance()
         : queryOverride_;
   }
+
   /**
    *
    *
@@ -698,6 +717,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
 
   public static final int URI_OVERRIDE_ENFORCE_MODE_FIELD_NUMBER = 6;
   private int uriOverrideEnforceMode_ = 0;
+
   /**
    *
    *
@@ -718,6 +738,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
   public int getUriOverrideEnforceModeValue() {
     return uriOverrideEnforceMode_;
   }
+
   /**
    *
    *
@@ -980,6 +1001,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1258,6 +1280,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int scheme_ = 0;
+
     /**
      *
      *
@@ -1276,6 +1299,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScheme() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1294,6 +1318,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     public int getSchemeValue() {
       return scheme_;
     }
+
     /**
      *
      *
@@ -1315,6 +1340,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1363,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.tasks.v2beta3.UriOverride.Scheme.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1361,6 +1388,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1383,6 +1411,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object host_ = "";
+
     /**
      *
      *
@@ -1402,6 +1431,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHost() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1429,6 +1459,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1456,6 +1487,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1482,6 +1514,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1504,6 +1537,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1533,6 +1567,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long port_;
+
     /**
      *
      *
@@ -1553,6 +1588,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPort() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1573,6 +1609,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     public long getPort() {
       return port_;
     }
+
     /**
      *
      *
@@ -1597,6 +1634,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1626,6 +1664,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2beta3.PathOverride.Builder,
             com.google.cloud.tasks.v2beta3.PathOverrideOrBuilder>
         pathOverrideBuilder_;
+
     /**
      *
      *
@@ -1643,6 +1682,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPathOverride() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1666,6 +1706,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
         return pathOverrideBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1691,6 +1732,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1714,6 +1756,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1744,6 +1787,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1766,6 +1810,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1783,6 +1828,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPathOverrideFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1804,6 +1850,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
             : pathOverride_;
       }
     }
+
     /**
      *
      *
@@ -1839,6 +1886,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2beta3.QueryOverride.Builder,
             com.google.cloud.tasks.v2beta3.QueryOverrideOrBuilder>
         queryOverrideBuilder_;
+
     /**
      *
      *
@@ -1856,6 +1904,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQueryOverride() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1879,6 +1928,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
         return queryOverrideBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1904,6 +1954,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1927,6 +1978,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1958,6 +2010,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1980,6 +2033,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1997,6 +2051,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getQueryOverrideFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2018,6 +2073,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
             : queryOverride_;
       }
     }
+
     /**
      *
      *
@@ -2048,6 +2104,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int uriOverrideEnforceMode_ = 0;
+
     /**
      *
      *
@@ -2068,6 +2125,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
     public int getUriOverrideEnforceModeValue() {
       return uriOverrideEnforceMode_;
     }
+
     /**
      *
      *
@@ -2091,6 +2149,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2117,6 +2176,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.tasks.v2beta3.UriOverride.UriOverrideEnforceMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2144,6 +2204,7 @@ public final class UriOverride extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

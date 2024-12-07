@@ -53,6 +53,7 @@ public interface RouteLegOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface RouteLegOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface RouteLegOrBuilder
    * @return Whether the staticDuration field is set.
    */
   boolean hasStaticDuration();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface RouteLegOrBuilder
    * @return The staticDuration.
    */
   com.google.protobuf.Duration getStaticDuration();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface RouteLegOrBuilder
    * @return Whether the polyline field is set.
    */
   boolean hasPolyline();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface RouteLegOrBuilder
    * @return The polyline.
    */
   com.google.maps.routing.v2.Polyline getPolyline();
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface RouteLegOrBuilder
    * @return Whether the startLocation field is set.
    */
   boolean hasStartLocation();
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public interface RouteLegOrBuilder
    * @return The startLocation.
    */
   com.google.maps.routing.v2.Location getStartLocation();
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public interface RouteLegOrBuilder
    * @return Whether the endLocation field is set.
    */
   boolean hasEndLocation();
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public interface RouteLegOrBuilder
    * @return The endLocation.
    */
   com.google.maps.routing.v2.Location getEndLocation();
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public interface RouteLegOrBuilder
    * <code>repeated .google.maps.routing.v2.RouteLegStep steps = 7;</code>
    */
   java.util.List<com.google.maps.routing.v2.RouteLegStep> getStepsList();
+
   /**
    *
    *
@@ -264,6 +275,7 @@ public interface RouteLegOrBuilder
    * <code>repeated .google.maps.routing.v2.RouteLegStep steps = 7;</code>
    */
   com.google.maps.routing.v2.RouteLegStep getSteps(int index);
+
   /**
    *
    *
@@ -275,6 +287,7 @@ public interface RouteLegOrBuilder
    * <code>repeated .google.maps.routing.v2.RouteLegStep steps = 7;</code>
    */
   int getStepsCount();
+
   /**
    *
    *
@@ -287,6 +300,7 @@ public interface RouteLegOrBuilder
    */
   java.util.List<? extends com.google.maps.routing.v2.RouteLegStepOrBuilder>
       getStepsOrBuilderList();
+
   /**
    *
    *
@@ -312,6 +326,7 @@ public interface RouteLegOrBuilder
    * @return Whether the travelAdvisory field is set.
    */
   boolean hasTravelAdvisory();
+
   /**
    *
    *
@@ -325,6 +340,7 @@ public interface RouteLegOrBuilder
    * @return The travelAdvisory.
    */
   com.google.maps.routing.v2.RouteLegTravelAdvisory getTravelAdvisory();
+
   /**
    *
    *
@@ -349,6 +365,7 @@ public interface RouteLegOrBuilder
    * @return Whether the localizedValues field is set.
    */
   boolean hasLocalizedValues();
+
   /**
    *
    *
@@ -361,6 +378,7 @@ public interface RouteLegOrBuilder
    * @return The localizedValues.
    */
   com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues getLocalizedValues();
+
   /**
    *
    *
@@ -386,6 +404,7 @@ public interface RouteLegOrBuilder
    * @return Whether the stepsOverview field is set.
    */
   boolean hasStepsOverview();
+
   /**
    *
    *
@@ -399,6 +418,7 @@ public interface RouteLegOrBuilder
    * @return The stepsOverview.
    */
   com.google.maps.routing.v2.RouteLeg.StepsOverview getStepsOverview();
+
   /**
    *
    *

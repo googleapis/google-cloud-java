@@ -36,6 +36,7 @@ public interface PatchGlobalForwardingRuleRequestOrBuilder
    * @return The forwardingRule.
    */
   java.lang.String getForwardingRule();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PatchGlobalForwardingRuleRequestOrBuilder
    * @return Whether the forwardingRuleResource field is set.
    */
   boolean hasForwardingRuleResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface PatchGlobalForwardingRuleRequestOrBuilder
    * @return The forwardingRuleResource.
    */
   com.google.cloud.compute.v1.ForwardingRule getForwardingRuleResource();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface PatchGlobalForwardingRuleRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface PatchGlobalForwardingRuleRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface PatchGlobalForwardingRuleRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

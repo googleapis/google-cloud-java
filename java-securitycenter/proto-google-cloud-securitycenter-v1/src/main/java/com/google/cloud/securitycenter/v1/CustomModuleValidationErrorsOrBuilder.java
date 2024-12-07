@@ -29,19 +29,23 @@ public interface CustomModuleValidationErrorsOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.CustomModuleValidationError> getErrorsList();
+
   /**
    * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
    */
   com.google.cloud.securitycenter.v1.CustomModuleValidationError getErrors(int index);
+
   /**
    * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
    */
   int getErrorsCount();
+
   /**
    * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.CustomModuleValidationErrorOrBuilder>
       getErrorsOrBuilderList();
+
   /**
    * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
    */
